@@ -2,120 +2,487 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Russ Rent Links</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Russellville.Rent | Rental Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
-    html, body {
-      height:100%;
-      margin:0;
-    }
-    body {
-      font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;
-      background:#0f111a;
-      color:#f0f4f9;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:flex-start;
-      padding:0.5rem;
-    }
-    .card {
-      width:100%;
-      max-width:420px;
-      background:#1f2435;
-      border-radius:14px;
-      padding:1rem;
-      box-shadow:0 30px 60px -10px rgba(0,0,0,0.5);
-      display:grid;
-      gap:16px;
-    }
-    h1 {
-      margin:0;
-      font-size:1.8rem;
-      letter-spacing:0.5px;
-    }
-    p.subtitle {
-      margin:4px 0 12px;
-      font-size:0.95rem;
-      color:#a0a8c0;
-    }
-    .links {
-      display:grid;
-      gap:12px;
+    :root {
+      --bg: #0b0f19;
+      --panel: #151b2d;
+      --panel-soft: #1d263d;
+      --text: #f4f7fb;
+      --muted: #aeb8cc;
+      --accent: #f7b733;
+      --accent-dark: #d99613;
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 24px 70px rgba(0,0,0,0.45);
     }
 
-    .link-card {
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(247,183,51,0.16), transparent 34rem),
+        radial-gradient(circle at bottom right, rgba(72,115,255,0.14), transparent 34rem),
+        var(--bg);
+      color: var(--text);
+      padding: 1rem;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .hero {
       position: relative;
       overflow: hidden;
-      border-radius: 14px;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 2rem;
+      background:
+        linear-gradient(135deg, rgba(29,38,61,0.95), rgba(21,27,45,0.96)),
+        var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -6rem -9rem auto;
+      width: 22rem;
+      height: 22rem;
+      background: rgba(247,183,51,0.12);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .brand-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      width: fit-content;
+      padding: 0.45rem 0.75rem;
+      border: 1px solid rgba(247,183,51,0.35);
+      border-radius: 999px;
+      color: #ffd98a;
+      background: rgba(247,183,51,0.08);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .brand-dot {
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 18px rgba(247,183,51,0.8);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(2.3rem, 6vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+    }
+
+    .subtitle {
+      max-width: 720px;
+      margin: 1.1rem 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2.2vw, 1.35rem);
+      line-height: 1.45;
+    }
+
+    .hero-actions {
       display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .button {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      height: 260px;
-      background: #1f2435;
+      min-height: 48px;
+      padding: 0.8rem 1.05rem;
+      border-radius: 999px;
       text-decoration: none;
-      transition: transform .2s;
-      width: 100%;
+      font-weight: 800;
+      line-height: 1;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
     }
-    .link-card:hover {
+
+    .button:hover {
       transform: translateY(-2px);
     }
-    .link-card img {
-      display: block;
+
+    .button-primary {
+      background: var(--accent);
+      color: #17120a;
+    }
+
+    .button-primary:hover {
+      background: #ffc957;
+    }
+
+    .button-secondary {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+    }
+
+    .button-secondary:hover {
+      border-color: rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.09);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 2rem 0 1rem;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.45rem, 3vw, 2.25rem);
+      letter-spacing: -0.035em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .rentals-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .rental-card {
+      position: relative;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-height: 500px;
+      overflow: hidden;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      text-decoration: none;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.28);
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .rental-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(247,183,51,0.45);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.42);
+    }
+
+    .image-wrap {
+      position: relative;
+      height: 340px;
+      background: #101624;
+      overflow: hidden;
+    }
+
+    .image-wrap img {
       width: 100%;
       height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.28s ease, opacity 0.28s ease;
+    }
+
+    .rental-card:hover .image-wrap img {
+      transform: scale(1.035);
+      opacity: 0.92;
+    }
+
+    .image-wrap.logo-fit img {
       object-fit: contain;
-      background: #1f2435;
+      padding: 1rem;
+      background: #101624;
+    }
+
+    .tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      z-index: 2;
+      padding: 0.42rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(11,15,25,0.78);
+      border: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(10px);
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .card-body {
+      display: grid;
+      gap: 0.75rem;
+      padding: 1.2rem;
+      background:
+        linear-gradient(180deg, rgba(29,38,61,0.96), rgba(18,24,39,0.98));
+    }
+
+    .card-body h3 {
+      margin: 0;
+      font-size: 1.45rem;
+      letter-spacing: -0.025em;
+    }
+
+    .card-body p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 0.25rem;
+      color: #ffd98a;
+      font-weight: 900;
+    }
+
+    .arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 999px;
+      background: rgba(247,183,51,0.14);
+      border: 1px solid rgba(247,183,51,0.25);
+      flex: 0 0 auto;
+    }
+
+    .contact-strip {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      margin-top: 1rem;
+      padding: 1.1rem;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.055);
+    }
+
+    .contact-strip strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-strip span {
+      color: var(--muted);
     }
 
     .footer {
-      margin-top:8px;
-      font-size:0.65rem;
-      text-align:center;
-      color:#777e9f;
+      padding: 1.5rem 0 0.5rem;
+      text-align: center;
+      color: #78839d;
+      font-size: 0.85rem;
     }
 
-    @media (min-width: 500px) and (max-width: 900px) {
-      .link-card {
+    @media (max-width: 760px) {
+      body {
+        padding: 0.65rem;
+      }
+
+      .hero {
+        padding: 1.35rem;
+        border-radius: 22px;
+      }
+
+      .rentals-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .rental-card {
+        min-height: auto;
+        border-radius: 22px;
+      }
+
+      .image-wrap {
         height: 300px;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 0.35rem;
+      }
+
+      .contact-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-strip .button {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .image-wrap {
+        height: 250px;
+      }
+
+      .hero-actions .button {
+        width: 100%;
       }
     }
   </style>
 </head>
+
 <body>
+  <main class="page">
+    <section class="hero" aria-label="Russellville rental hub">
+      <div class="brand-pill">
+        <span class="brand-dot" aria-hidden="true"></span>
+        Russellville.Rent
+      </div>
 
-  <div class="card" aria-label="Link hub">
-    <div class="header">
-      <h1>Welcome to Russellville</h1>
-      <p class="subtitle">Please select below what type of rental you are looking for:</p>
+      <h1>Find the right rental in Russellville.</h1>
+
+      <p class="subtitle">
+        Choose from commercial spaces, recreational vehicle rentals, storage options,
+        and short-term stays. Select a category below to get started.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button button-primary" href="tel:14799707301">Call 479-970-7301</a>
+        <a class="button button-secondary" href="sms:14799707301">Text Us</a>
+      </div>
+    </section>
+
+    <div class="section-head">
+      <div>
+        <h2>Rental categories</h2>
+        <p>Tap an image to view that rental option.</p>
+      </div>
     </div>
 
-    <div class="links">
-      <!-- Link 1: Apartments/Houses -->
-      <a class="link-card" href="https://www.facebook.com/yourpage1" target="_blank" rel="noopener" aria-label="Apartments and houses">
-        <img src="big%20house.jpg" alt="Apartments and houses" loading="lazy" />
+    <section class="rentals-grid" aria-label="Rental category links">
+      <!-- Commercial Spaces -->
+      <a class="rental-card" href="#" aria-label="Commercial spaces">
+        <div class="image-wrap">
+          <span class="tag">Commercial Spaces</span>
+          <img src="big%20house.jpg" alt="Russellville.Rent commercial spaces" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>Commercial Spaces</h3>
+          <p>
+            Interior office spaces, retail locations, industrial shop areas, and other
+            business rental opportunities around Russellville.
+          </p>
+          <div class="card-footer">
+            <span>View spaces</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </div>
+        </div>
       </a>
 
-      <!-- Link 2: Adventure RV -->
-      <a class="link-card" href="https://www.facebook.com/yourpage2" target="_blank" rel="noopener" aria-label="Adventure RV">
-        <img src="adventure%20rv%20logo.jpeg" alt="Adventure RV" loading="lazy" />
+      <!-- Adventure RV -->
+      <a class="rental-card" href="https://stayarv.com" target="_blank" rel="noopener" aria-label="Adventure RV rentals">
+        <div class="image-wrap">
+          <span class="tag">RV Rentals</span>
+          <img src="adventure%20rv%20logo.jpeg" alt="Adventure RV rentals" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>Adventure RV</h3>
+          <p>
+            Recreational vehicle rentals for weekend trips, lake stays, camping,
+            travel, and outdoor adventures.
+          </p>
+          <div class="card-footer">
+            <span>Visit StayARV.com</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </div>
+        </div>
       </a>
 
-      <!-- Link 3: CenterValley Storage -->
-      <a class="link-card" href="https://www.facebook.com/yourpage3" target="_blank" rel="noopener" aria-label="CenterValley Storage">
-        <img src="centervalley%20storage%20logo.png" alt="CenterValley Storage" loading="lazy" />
+      <!-- Center Valley Storage -->
+      <a class="rental-card" href="#" aria-label="Center Valley Storage">
+        <div class="image-wrap">
+          <span class="tag">Storage</span>
+          <img src="centervalley%20storage%20logo.png" alt="Center Valley Storage" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>Center Valley Storage</h3>
+          <p>
+            Storage for anything and everything: household items, business overflow,
+            equipment, seasonal goods, and more.
+          </p>
+          <div class="card-footer">
+            <span>View storage</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </div>
+        </div>
       </a>
 
-      <!-- Link 4: Airbnb Russ -->
-      <a class="link-card" href="https://www.airbnb.com/l/m6Hyr1Qj" target="_blank" rel="noopener" aria-label="Airbnb Russ">
-        <img src="airbnbruss.png" alt="Airbnb Russ" loading="lazy" />
+      <!-- Airbnb / Short-Term Stays -->
+      <a class="rental-card" href="https://www.airbnb.com/l/m6Hyr1Qj" target="_blank" rel="noopener" aria-label="Short-term stays and Airbnb rentals">
+        <div class="image-wrap">
+          <span class="tag">Short-Term Stays</span>
+          <img src="airbnbruss.png" alt="Airbnb short-term rentals in Russellville" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>Airbnb & Short-Term Stays</h3>
+          <p>
+            Furnished stays for visitors, contractors, family trips, events,
+            and anyone needing a comfortable short-term rental.
+          </p>
+          <div class="card-footer">
+            <span>Book a stay</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </div>
+        </div>
       </a>
-    </div>
+    </section>
 
-    <div class="footer">
-      © <span id="year"></span> Russ Rent
-    </div>
-  </div>
+    <section class="contact-strip" aria-label="Contact Russellville.Rent">
+      <div>
+        <strong>Need help choosing the right rental?</strong>
+        <span>Call or text Russellville.Rent at 479-970-7301.</span>
+      </div>
+      <a class="button button-primary" href="tel:14799707301">Contact Us</a>
+    </section>
+
+    <footer class="footer">
+      © <span id="year"></span> Russellville.Rent. All rights reserved.
+    </footer>
+  </main>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
