@@ -13,7 +13,6 @@
       --text: #f4f7fb;
       --muted: #aeb8cc;
       --accent: #f7b733;
-      --accent-dark: #d99613;
       --border: rgba(255,255,255,0.12);
       --shadow: 0 24px 70px rgba(0,0,0,0.45);
     }
@@ -155,10 +154,6 @@
     }
 
     .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 1rem;
       margin: 2rem 0 1rem;
     }
 
@@ -169,7 +164,7 @@
     }
 
     .section-head p {
-      margin: 0;
+      margin: 0.35rem 0 0;
       color: var(--muted);
       font-size: 0.95rem;
     }
@@ -181,10 +176,7 @@
     }
 
     .rental-card {
-      position: relative;
-      display: grid;
-      grid-template-rows: auto 1fr;
-      min-height: 500px;
+      display: block;
       overflow: hidden;
       border-radius: 24px;
       border: 1px solid var(--border);
@@ -201,7 +193,6 @@
     }
 
     .image-wrap {
-      position: relative;
       height: 340px;
       background: #101624;
       overflow: hidden;
@@ -216,72 +207,28 @@
     }
 
     .rental-card:hover .image-wrap img {
-      transform: scale(1.035);
-      opacity: 0.92;
-    }
-
-    .image-wrap.logo-fit img {
-      object-fit: contain;
-      padding: 1rem;
-      background: #101624;
-    }
-
-    .tag {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      z-index: 2;
-      padding: 0.42rem 0.7rem;
-      border-radius: 999px;
-      background: rgba(11,15,25,0.78);
-      border: 1px solid rgba(255,255,255,0.16);
-      backdrop-filter: blur(10px);
-      font-size: 0.78rem;
-      font-weight: 800;
-      color: #fff;
+      transform: scale(1.025);
+      opacity: 0.94;
     }
 
     .card-body {
-      display: grid;
-      gap: 0.75rem;
-      padding: 1.2rem;
-      background:
-        linear-gradient(180deg, rgba(29,38,61,0.96), rgba(18,24,39,0.98));
+      padding: 0.85rem 1rem 1rem;
+      background: linear-gradient(180deg, rgba(29,38,61,0.98), rgba(18,24,39,0.98));
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
     .card-body h3 {
-      margin: 0;
-      font-size: 1.45rem;
+      margin: 0 0 0.35rem;
+      font-size: 1.25rem;
+      line-height: 1.15;
       letter-spacing: -0.025em;
     }
 
     .card-body p {
       margin: 0;
       color: var(--muted);
-      line-height: 1.45;
-      font-size: 0.98rem;
-    }
-
-    .card-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-top: 0.25rem;
-      color: #ffd98a;
-      font-weight: 900;
-    }
-
-    .arrow {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 2rem;
-      height: 2rem;
-      border-radius: 999px;
-      background: rgba(247,183,51,0.14);
-      border: 1px solid rgba(247,183,51,0.25);
-      flex: 0 0 auto;
+      line-height: 1.35;
+      font-size: 0.86rem;
     }
 
     .contact-strip {
@@ -328,20 +275,11 @@
       }
 
       .rental-card {
-        min-height: auto;
         border-radius: 22px;
       }
 
       .image-wrap {
         height: 300px;
-      }
-
-      .section-head {
-        display: block;
-      }
-
-      .section-head p {
-        margin-top: 0.35rem;
       }
 
       .contact-strip {
@@ -361,6 +299,14 @@
       .hero-actions .button {
         width: 100%;
       }
+
+      .card-body h3 {
+        font-size: 1.15rem;
+      }
+
+      .card-body p {
+        font-size: 0.82rem;
+      }
     }
   </style>
 </head>
@@ -377,7 +323,7 @@
 
       <p class="subtitle">
         Choose from commercial spaces, recreational vehicle rentals, storage options,
-        and short-term stays. Select a category below to get started.
+        and short-term stays.
       </p>
 
       <div class="hero-actions">
@@ -387,86 +333,60 @@
     </section>
 
     <div class="section-head">
-      <div>
-        <h2>Rental categories</h2>
-        <p>Tap an image to view that rental option.</p>
-      </div>
+      <h2>Rental categories</h2>
+      <p>Tap an image to choose a rental option.</p>
     </div>
 
     <section class="rentals-grid" aria-label="Rental category links">
       <!-- Commercial Spaces -->
       <a class="rental-card" href="#" aria-label="Commercial spaces">
         <div class="image-wrap">
-          <span class="tag">Commercial Spaces</span>
           <img src="big%20house.jpg" alt="Russellville.Rent commercial spaces" loading="lazy" />
         </div>
         <div class="card-body">
           <h3>Commercial Spaces</h3>
           <p>
-            Interior office spaces, retail locations, industrial shop areas, and other
-            business rental opportunities around Russellville.
+            Interior office spaces, retail locations, industrial shop areas, and other business rental opportunities.
           </p>
-          <div class="card-footer">
-            <span>View spaces</span>
-            <span class="arrow" aria-hidden="true">→</span>
-          </div>
         </div>
       </a>
 
       <!-- Adventure RV -->
       <a class="rental-card" href="https://stayarv.com" target="_blank" rel="noopener" aria-label="Adventure RV rentals">
         <div class="image-wrap">
-          <span class="tag">RV Rentals</span>
           <img src="adventure%20rv%20logo.jpeg" alt="Adventure RV rentals" loading="lazy" />
         </div>
         <div class="card-body">
           <h3>Adventure RV</h3>
           <p>
-            Recreational vehicle rentals for weekend trips, lake stays, camping,
-            travel, and outdoor adventures.
+            Recreational vehicle rentals for weekend trips, lake stays, camping, travel, and outdoor adventures.
           </p>
-          <div class="card-footer">
-            <span>Visit StayARV.com</span>
-            <span class="arrow" aria-hidden="true">→</span>
-          </div>
         </div>
       </a>
 
       <!-- Center Valley Storage -->
       <a class="rental-card" href="#" aria-label="Center Valley Storage">
         <div class="image-wrap">
-          <span class="tag">Storage</span>
           <img src="centervalley%20storage%20logo.png" alt="Center Valley Storage" loading="lazy" />
         </div>
         <div class="card-body">
           <h3>Center Valley Storage</h3>
           <p>
-            Storage for anything and everything: household items, business overflow,
-            equipment, seasonal goods, and more.
+            Storage for anything and everything: household items, business overflow, equipment, seasonal goods, and more.
           </p>
-          <div class="card-footer">
-            <span>View storage</span>
-            <span class="arrow" aria-hidden="true">→</span>
-          </div>
         </div>
       </a>
 
       <!-- Airbnb / Short-Term Stays -->
       <a class="rental-card" href="https://www.airbnb.com/l/m6Hyr1Qj" target="_blank" rel="noopener" aria-label="Short-term stays and Airbnb rentals">
         <div class="image-wrap">
-          <span class="tag">Short-Term Stays</span>
           <img src="airbnbruss.png" alt="Airbnb short-term rentals in Russellville" loading="lazy" />
         </div>
         <div class="card-body">
           <h3>Airbnb & Short-Term Stays</h3>
           <p>
-            Furnished stays for visitors, contractors, family trips, events,
-            and anyone needing a comfortable short-term rental.
+            Furnished stays for visitors, contractors, family trips, events, and comfortable short-term rentals.
           </p>
-          <div class="card-footer">
-            <span>Book a stay</span>
-            <span class="arrow" aria-hidden="true">→</span>
-          </div>
         </div>
       </a>
     </section>
