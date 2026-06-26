@@ -9,7 +9,6 @@
     :root {
       --bg: #0b0f19;
       --panel: #151b2d;
-      --panel-soft: #1d263d;
       --text: #f4f7fb;
       --muted: #aeb8cc;
       --accent: #f7b733;
@@ -109,13 +108,6 @@
       line-height: 1.45;
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-top: 1.5rem;
-    }
-
     .button {
       display: inline-flex;
       align-items: center;
@@ -140,17 +132,6 @@
 
     .button-primary:hover {
       background: #ffc957;
-    }
-
-    .button-secondary {
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.06);
-      color: var(--text);
-    }
-
-    .button-secondary:hover {
-      border-color: rgba(255,255,255,0.28);
-      background: rgba(255,255,255,0.09);
     }
 
     .section-head {
@@ -296,10 +277,6 @@
         height: 250px;
       }
 
-      .hero-actions .button {
-        width: 100%;
-      }
-
       .card-body h3 {
         font-size: 1.15rem;
       }
@@ -325,11 +302,6 @@
         Choose from commercial spaces, recreational vehicle rentals, storage options,
         and short-term stays.
       </p>
-
-      <div class="hero-actions">
-        <a class="button button-primary" href="tel:14799707301">Call 479-970-7301</a>
-        <a class="button button-secondary" href="sms:14799707301">Text Us</a>
-      </div>
     </section>
 
     <div class="section-head">
@@ -338,7 +310,6 @@
     </div>
 
     <section class="rentals-grid" aria-label="Rental category links">
-      <!-- Commercial Spaces -->
       <a class="rental-card" href="#" aria-label="Commercial spaces">
         <div class="image-wrap">
           <img src="big%20house.jpg" alt="Russellville.Rent commercial spaces" loading="lazy" />
@@ -351,7 +322,6 @@
         </div>
       </a>
 
-      <!-- Adventure RV -->
       <a class="rental-card" href="https://stayarv.com" target="_blank" rel="noopener" aria-label="Adventure RV rentals">
         <div class="image-wrap">
           <img src="adventure%20rv%20logo.jpeg" alt="Adventure RV rentals" loading="lazy" />
@@ -364,7 +334,6 @@
         </div>
       </a>
 
-      <!-- Center Valley Storage -->
       <a class="rental-card" href="#" aria-label="Center Valley Storage">
         <div class="image-wrap">
           <img src="centervalley%20storage%20logo.png" alt="Center Valley Storage" loading="lazy" />
@@ -377,7 +346,6 @@
         </div>
       </a>
 
-      <!-- Airbnb / Short-Term Stays -->
       <a class="rental-card" href="https://www.airbnb.com/l/m6Hyr1Qj" target="_blank" rel="noopener" aria-label="Short-term stays and Airbnb rentals">
         <div class="image-wrap">
           <img src="airbnbruss.png" alt="Airbnb short-term rentals in Russellville" loading="lazy" />
