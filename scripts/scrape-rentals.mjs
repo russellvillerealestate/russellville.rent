@@ -105,6 +105,11 @@ function appfolioListing(html, url, manager) {
 
   const zipMatch = combined.match(/Russellville\s*,?\s*AR\s*(7280[12])?/i);
   const availabilityMatch = combined.match(/Available\s+(NOW|[A-Za-z]+\s+\d{1,2}(?:,\s*\d{4})?)/i);
+  const rawImage = $("meta[property='og:image']").attr("content") ||
+    $("img[src*='images.cdn.appfolio.com']").first().attr("src") ||
+    $("img[data-src*='images.cdn.appfolio.com']").first().attr("data-src") ||
+    null;
+  const imageUrl = rawImage ? new URL(rawImage, manager.base).href : null;
 
   return {
     id: `${manager.key}-${slug(h1)}`,
