@@ -120,6 +120,8 @@ function appfolioListing(html, url, manager) {
     source_name: manager.sourceName,
     source_url: url,
     availability: availabilityMatch ? `Available ${availabilityMatch[1]}` : "Check source",
+    image_url: imageUrl,
+    image_verified: Boolean(imageUrl),
     updated_at: now,
     seeded: false
   };
@@ -178,6 +180,8 @@ function mooreArticle(article, $, pageUrl, manager) {
   const sourceUrl = new URL(href, manager.base).href;
   const rent = money(rawTitle + " " + text);
   if (!rent) return null;
+  const rawImage = $(article).find("img").first().attr("data-src") || $(article).find("img").first().attr("src") || null;
+  const imageUrl = rawImage ? new URL(rawImage, manager.base).href : null;
 
   const address = parseAddressTitle(rawTitle);
   if (!address || /calling all property owners|rental resources|meet the team/i.test(address)) return null;
@@ -196,6 +200,8 @@ function mooreArticle(article, $, pageUrl, manager) {
     source_name: manager.sourceName,
     source_url: sourceUrl,
     availability: /available soon/i.test(text) ? "Available soon" : "Check source",
+    image_url: imageUrl,
+    image_verified: Boolean(imageUrl),
     updated_at: now,
     seeded: false
   };
@@ -248,7 +254,15 @@ for (const manager of managers) {
       : await discoverMoore(manager);
     console.log(`${manager.name}: ${found.length} Russellville listings found`);
     if (found.length) {
-      live.push(...found);
+      const enriched = found.map(item => {
+        const previous = current.find(x => slug(x.manager) === slug(item.manager) && slug(x.address) === slug(item.address));
+        if (!item.image_url && previous?.image_url) {
+          item.image_url = previous.image_url;
+          item.image_verified = previous.image_verified ?? false;
+        }
+        return item;
+      });
+      live.push(...enriched);
     } else {
       live.push(...current.filter(x => x.manager === manager.name));
     }
