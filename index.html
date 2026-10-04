@@ -1,180 +1,166 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Russellville.Rent | Your Local Rental Hub</title>
-<meta name="description" content="Find your next rental in Russellville, Arkansas. Explore homes, storage, tools, kayaks, RVs, boats, party rentals, commercial spaces, and local stays.">
-<link rel="canonical" href="https://russellville.rent/">
-<meta property="og:title" content="Russellville.Rent | Your Local Rental Hub">
-<meta property="og:description" content="A place to live. Gear for the weekend. Room to grow. Explore rentals around Russellville and the River Valley.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://russellville.rent/">
-<meta name="theme-color" content="#173f35">
-<style>
-:root{--ink:#183e34;--text:#243d35;--muted:#586b62;--paper:#f6f5ef;--line:#d7ded5;--gold:#edcb79}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--paper);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
-a{color:inherit}button,input,select{font:inherit}a,button,input,select{touch-action:manipulation}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #a86816;outline-offset:4px}
-.wrap{max-width:1200px;margin:auto;padding:0 28px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip{position:absolute;left:16px;top:-80px;background:white;padding:12px;z-index:10}.skip:focus{top:8px}
-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:22px;padding-bottom:22px}.brand{text-decoration:none;font-size:1.3rem;font-weight:800;letter-spacing:-.055em}.brand span{color:#728674}nav{display:flex;align-items:center;gap:25px;font-size:.88rem;font-weight:650}nav a{text-decoration:none}nav a:hover{text-decoration:underline}.nav-list{border:1px solid var(--line);border-radius:8px;padding:9px 15px}
-.hero{background:var(--ink);color:#fffef5;border-radius:20px;padding:58px;position:relative;overflow:hidden}.hero::after{content:"";position:absolute;width:440px;height:440px;border:1px solid #ffffff18;border-radius:50%;right:-140px;top:-200px;box-shadow:0 0 0 52px #ffffff06,0 0 0 104px #ffffff04;pointer-events:none}.eyebrow{font-size:.69rem;font-weight:750;text-transform:uppercase;letter-spacing:.13em;margin:0 0 12px}.hero .eyebrow{color:var(--gold)}h1{font-size:clamp(2.6rem,5.4vw,4.8rem);font-weight:650;line-height:1.06;letter-spacing:-.055em;margin:0;max-width:850px}h1 em{font-style:normal;color:var(--gold)}.intro{max-width:630px;color:#dce6dd;font-size:1.07rem;margin:24px 0 28px}.button{display:inline-flex;justify-content:center;align-items:center;min-height:46px;border-radius:8px;padding:11px 20px;text-decoration:none;font-weight:700;border:1px solid transparent;cursor:pointer}.primary{background:var(--gold);color:var(--ink)}.primary:hover{background:#f6d991}.secondary{border-color:#b8c9bd;background:transparent}.actions{display:flex;gap:12px;flex-wrap:wrap}.hero-note{display:flex;gap:24px;flex-wrap:wrap;border-top:1px solid #ffffff26;margin-top:36px;padding-top:19px;font-size:.76rem;color:#dce6dd}.hero-note span::before{content:"↗";color:var(--gold);margin-right:8px}
-.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:46px 0 22px}h2{font-size:clamp(1.7rem,3vw,2.3rem);line-height:1.15;letter-spacing:-.04em;margin:0 0 9px}.section-head p{margin:0;color:var(--muted);font-size:.94rem}.browse-label{white-space:nowrap;color:var(--muted);font-size:.8rem}
-.filters{display:grid;grid-template-columns:1fr 270px auto;gap:12px;align-items:end;background:#ebece4;border:1px solid var(--line);padding:18px;border-radius:12px;margin-bottom:15px}label{display:block;font-size:.75rem;font-weight:700;margin-bottom:5px}input,select{display:block;width:100%;min-height:48px;border:1px solid #bac9bd;background:#fff;color:var(--text);border-radius:7px;padding:10px 13px;min-width:0}button.reset{background:white;border:1px solid #bac9bd;min-height:48px}#result-count{font-size:.8rem;color:var(--muted);margin:0 0 18px}
-.rentals-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.rental-card{background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden;display:flex;flex-direction:column;min-width:0}.rental-card[hidden], [hidden]{display:none!important}.image-wrap,.category-art{height:195px;overflow:hidden;background:#e4e9df}.image-wrap img{width:100%;height:100%;display:block;object-fit:cover}.category-art{position:relative;display:flex;align-items:center;justify-content:center;color:#355a48;background:linear-gradient(125deg,#dfe8d5,#edf0e7)}.category-art::before,.category-art::after{content:"";position:absolute;width:180px;height:180px;border:1px solid #7f9b7c44;border-radius:50%;right:-40px;bottom:-90px}.category-art::after{right:-65px;bottom:-65px}.category-art>span{font-family:Georgia,serif;font-size:5.3rem;line-height:1}.category-art small{position:absolute;bottom:15px;left:20px;font-size:.58rem;letter-spacing:.2em;font-weight:700}.art-paddling,.art-boats{background:linear-gradient(125deg,#d9e7e6,#eaf0e9);color:#366768}.art-party,.art-other{background:linear-gradient(125deg,#f0e4c8,#f4eedf);color:#7a6038}.card-body{padding:22px;display:flex;flex-direction:column;flex:1}.card-body .eyebrow{color:#617b62;font-size:.61rem;margin-bottom:9px}.card-body h3{font-size:1.15rem;letter-spacing:-.025em;line-height:1.3;margin:0 0 10px}.card-body>p:not(.eyebrow){color:var(--muted);font-size:.85rem;margin:0 0 16px}.card-body .status{font-size:.72rem!important;color:#765e33!important}.card-link{border-top:1px solid #e7eae3;margin-top:auto;padding-top:15px;text-decoration:none;font-size:.8rem;font-weight:750;display:flex;justify-content:space-between;gap:10px}.card-link:hover{text-decoration:underline}.card-link>span{flex-shrink:0}
-.empty{border:1px dashed #91a08f;border-radius:12px;padding:30px;text-align:center}.empty h3{margin-top:0}.empty p{color:var(--muted)}.directory-note{font-size:.8rem;color:var(--muted);margin:22px 0}
-.how{display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px;padding:28px 0 38px;border-bottom:1px solid var(--line)}.step-number{font-size:.75rem;color:#7c6945;letter-spacing:.12em}.how h3{margin:9px 0;font-size:1rem}.how p{font-size:.85rem;color:var(--muted);margin:0}
-.owner{margin-top:40px;display:grid;grid-template-columns:1.3fr 1fr;gap:42px;background:#e8ecdf;border-radius:16px;padding:36px}.owner p{color:var(--muted);font-size:.92rem}.owner .eyebrow{color:#5a7254}.owner-details{border-left:1px solid #c5cfbf;padding-left:30px;align-self:center}.owner-details p{font-size:.83rem}.owner .button{background:var(--ink);color:white}
-.contact{margin:34px 0;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:30px 0}.contact h2{font-size:1.7rem}.contact p{color:var(--muted);max-width:620px;font-size:.9rem;margin-bottom:0}.contact .actions{flex-shrink:0}.contact .secondary{background:#fff}.phone{font-weight:700}
-footer{border-top:1px solid var(--line);padding:24px 0 30px;font-size:.75rem;color:var(--muted);display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-@media(max-width:900px){.hero{padding:40px}.rentals-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contact{align-items:start;flex-direction:column}.filters{grid-template-columns:1fr 220px auto}.owner{gap:24px}.wrap{padding:0 22px}}
-@media(max-width:600px){.wrap{padding:0 16px}header .wrap{gap:12px;padding-top:16px;padding-bottom:16px}.brand{font-size:1.08rem}nav{gap:12px;font-size:.75rem}nav .browse-nav{display:none}.nav-list{padding:7px 10px}.hero{padding:30px 24px;border-radius:14px}.intro{font-size:.96rem}.hero-note{gap:10px 20px;margin-top:28px}.section-head{margin-top:32px}.browse-label{display:none}.filters{grid-template-columns:1fr;padding:14px}.rentals-grid{grid-template-columns:1fr;gap:18px}.image-wrap,.category-art{height:210px}.how{grid-template-columns:1fr;gap:22px}.owner{grid-template-columns:1fr;padding:26px;gap:12px}.owner-details{border-left:0;border-top:1px solid #c5cfbf;padding:18px 0 0}.contact{margin-top:16px}.contact .actions{width:100%}.contact .button{flex:1}.card-body{padding:22px}}
-@media(max-width:380px){header .wrap{flex-wrap:wrap}nav{width:100%;justify-content:space-between}nav .browse-nav{display:inline}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-
-/* Real Russellville landmarks: keep the docks visible beside the headline. */
-.hero{isolation:isolate;padding:58px 52px 30px;min-height:620px;display:flex;flex-direction:column;justify-content:center}
-.hero::after{display:none}
-.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:64% 76%;z-index:-2}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,36,30,.91) 0%,rgba(12,36,30,.77) 39%,rgba(12,36,30,.25) 72%,rgba(12,36,30,.10) 100%);z-index:-1}
-.hero h1{font-size:clamp(2.6rem,4.8vw,4.25rem);max-width:680px}
-.hero .intro{max-width:490px;color:#f2f4eb}
-.hero .secondary{background:rgba(18,47,38,.7)}
-.hero .hero-note{max-width:660px;color:#fff;padding-top:18px;margin-top:42px;gap:12px 24px}
-.location-caption{align-self:flex-end;margin:34px 0 0;background:rgba(12,36,30,.86);padding:8px 13px;border:1px solid #ffffff3b;border-radius:6px;color:#fff;font-size:.7rem;letter-spacing:.02em}
-.hometown{display:grid;grid-template-columns:.88fr 1fr 1fr 1fr;gap:18px;align-items:stretch;margin:24px 0 8px}
-.hometown-copy{align-self:center;padding:12px 16px 12px 0}
-.hometown-copy .eyebrow{color:#637853}
-.hometown h2{font-family:Georgia,serif;font-weight:400;font-size:2rem;letter-spacing:-.035em}
-.hometown-copy>p:last-child{font-size:.84rem;color:var(--muted);margin:12px 0 0}
-.landmark{position:relative;margin:0;border-radius:12px;overflow:hidden;min-height:200px;background:var(--ink)}
-.landmark img{display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:cover}
-.landmark.tower img{object-position:34% 38%}
-.landmark.tech img{object-position:50% 60%}
-.landmark figcaption{position:absolute;bottom:0;left:0;right:0;color:white;padding:32px 16px 13px;background:linear-gradient(transparent,rgba(12,32,27,.90));font-size:.75rem;font-weight:650}
-.landmark figcaption span{display:block;font-size:.61rem;font-weight:400;color:#e0e9df;margin-top:2px}
-.photo-credits{font-size:.7rem;color:var(--muted);border-top:1px solid var(--line);padding:15px 0 25px}
-.photo-credits summary{cursor:pointer;width:fit-content}
-.photo-credits p{max-width:900px;line-height:1.7}
-@media(max-width:900px){.hero{padding:40px 34px 26px;min-height:590px}.hero h1{max-width:550px}.hero::before{background:linear-gradient(90deg,rgba(12,36,30,.91),rgba(12,36,30,.67) 55%,rgba(12,36,30,.22))}.hometown{grid-template-columns:1fr 1fr}.hometown-copy{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;column-gap:20px;padding:0}.hometown-copy .eyebrow{grid-column:1/-1;margin:6px 0}.hometown-copy>p:last-child{margin:0;align-self:center}.landmark{min-height:205px}}
-@media(max-width:600px){.hero{padding:0;display:block;min-height:0}.hero-photo{position:relative;z-index:0;height:245px;object-position:53% 77%;margin:0}.hero::before{display:none}.hero>.eyebrow,.hero>h1,.hero>.intro,.hero>.actions,.hero>.hero-note{margin-left:24px;margin-right:24px}.hero>.eyebrow{margin-top:25px}.hero h1{font-size:2.65rem}.hero .intro{margin-top:20px}.hero .hero-note{margin-top:27px}.hero .location-caption{position:absolute;top:207px;right:12px;margin:0;font-size:.6rem;padding:6px 9px}.hero .hero-note{margin-bottom:27px}.hometown{gap:12px;margin-top:25px}.hometown-copy{display:block}.hometown-copy>p:last-child{margin:8px 0 8px}.hometown h2{font-size:1.7rem}.landmark{min-height:175px}.landmark figcaption{font-size:.64rem;padding:30px 10px 10px}.landmark figcaption span{font-size:.56rem}.landmark.tower img{object-position:29% 40%}}
-
-.hero-photo{object-position:58% 52%}
-.landmark.downtown img{object-position:44% 50%}
-@media(min-width:601px) and (max-width:900px){.hometown{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:600px){.hero-photo{object-position:52% 50%}.landmark.downtown{grid-column:1/-1;min-height:195px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Russellville AR Rentals | Houses & Apartments | Russellville.Rent</title>
+  <meta name="description" content="Search houses, apartments, duplexes and other long-term rentals in Russellville, Arkansas. Compare public listings from local property managers in one place.">
+  <link rel="canonical" href="https://russellville.rent/">
+  <meta property="og:title" content="Russellville.Rent | Russellville, Arkansas rentals">
+  <meta property="og:description" content="One local place to search rental homes and apartments from multiple Russellville property managers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://russellville.rent/">
+  <meta name="theme-color" content="#102a24">
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<header><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><nav aria-label="Main navigation"><a class="browse-nav" href="#browse">Browse rentals</a><a href="#contact">Get in touch</a><a class="nav-list" href="#list">List your rental ↗</a></nav></div></header>
-<main id="main" class="wrap">
-<section class="hero" aria-labelledby="hero-title"><img class="hero-photo" src="assets/lake-dardanelle-sunset.jpg" alt="Sunset over the covered docks at Lake Dardanelle State Park, reflected in the still water" width="1920" height="910" fetchpriority="high"><p class="eyebrow">Russellville, Arkansas & the River Valley</p><h1 id="hero-title">Rent what you need.<br><em>Right here at home.</em></h1><p class="intro">From a place near Tech to a weekend on Lake Dardanelle. Find what you need from the people who call this place home.</p><div class="actions"><a class="button primary" href="#browse">Explore rentals <span aria-hidden="true">&nbsp; ↗</span></a><a class="button secondary" href="#list">Have something to rent?</a></div><div class="hero-note"><span>Local businesses & owners</span><span>Everyday needs to weekend plans</span><span>Connect directly</span></div><p class="location-caption">Lake Dardanelle State Park · Russellville, AR</p></section>
-<section class="hometown" aria-labelledby="hometown-title"><div class="hometown-copy"><p class="eyebrow">This is our kind of place</p><h2 id="hometown-title">A little lake time.<br>A whole lot of hometown.</h2><p>Lake days, Tech green and gold, and the familiar sights on the way home.</p></div><figure class="landmark downtown"><img src="assets/downtown-russellville-sunset.jpg" alt="Downtown Russellville beneath a vivid orange and pink sunset" width="1200" height="544" loading="lazy"><figcaption>Downtown Russellville<span>Home looks good from here</span></figcaption></figure><figure class="landmark tech"><img src="assets/arkansas-tech-wilson-hall.jpg" alt="The red brick buildings and white cupola of Wilson Hall at Arkansas Tech University" width="1280" height="848" loading="lazy"><figcaption>Arkansas Tech University<span>Wilson Hall · Russellville</span></figcaption></figure><figure class="landmark tower"><img src="water%20tower.jpg" alt="The I love Russellville water tower above the trees" width="900" height="486" loading="lazy"><figcaption>A familiar welcome home<span>The I ♥ Russellville water tower</span></figcaption></figure></section>
-<section id="browse" aria-labelledby="browse-title"><div class="section-head"><div><p class="eyebrow">Find it around here</p><h2 id="browse-title">What are you looking for?</h2><p>Explore rental options, or ask us about a category we’re building.</p></div><span class="browse-label">11 categories. One local hub.</span></div>
-<form class="filters" id="filters" role="search" hidden><div><label for="search">Search rentals</label><input type="search" id="search" placeholder="Try houses, kayaks, storage…" autocomplete="off"></div><div><label for="category">Category</label><select id="category"><option value="all">All categories</option><option value="homes">Long-term rentals</option><option value="storage">Storage</option><option value="tools">Tools &amp; equipment</option><option value="paddling">Kayaks, canoes &amp; paddleboards</option><option value="rvs">RV rentals</option><option value="boats">Boats</option><option value="party">Party &amp; event rentals</option><option value="commercial">Commercial spaces</option><option value="stays">Short-term stays</option><option value="camping">Camping &amp; RV sites</option><option value="other">Other local rentals</option></select></div><button type="reset" class="button reset">Clear filters</button></form>
-<p id="result-count" role="status" aria-live="polite" hidden></p>
-<div class="rentals-grid"><article class="rental-card" data-category="homes">
-<div class="category-art art-homes" aria-hidden="true"><span>⌂</span><small>EXPLORE LOCAL</small></div>
-<div class="card-body"><p class="eyebrow">Long-term rentals</p><h3>Long-term rentals</h3>
-<p>Houses, apartments, and places to settle in.</p>
-<p class="status">Building this category · Listings welcome</p>
-<a class="card-link" href="#contact">Ask about long-term rentals <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="storage">
-<div class="image-wrap"><img src="centervalley%20storage%20logo.png" alt="Center Valley Storage" loading="lazy" width="640" height="380"></div>
-<div class="card-body"><p class="eyebrow">Storage</p><h3>Center Valley Storage</h3>
-<p>Storage for household items, business overflow, equipment, and more.</p>
+<a class="skip" href="#main">Skip to listings</a>
 
-<a class="card-link" href="#contact">Ask about storage <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="tools">
-<div class="category-art art-tools" aria-hidden="true"><span>⚒</span><small>EXPLORE LOCAL</small></div>
-<div class="card-body"><p class="eyebrow">Tools &amp; equipment</p><h3>Tools &amp; equipment</h3>
-<p>The right gear for your next project.</p>
-<p class="status">Building this category · Listings welcome</p>
-<a class="card-link" href="#contact">Ask about tools &amp; equipment <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="paddling">
-<div class="category-art art-paddling" aria-hidden="true"><span>≈</span><small>EXPLORE LOCAL</small></div>
-<div class="card-body"><p class="eyebrow">Kayaks, canoes &amp; paddleboards</p><h3>Kayaks, canoes &amp; paddleboards</h3>
-<p>Get out on the water around the River Valley.</p>
-<p class="status">Building this category · Listings welcome</p>
-<a class="card-link" href="#contact">Ask about kayaks, canoes &amp; paddleboards <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="rvs">
-<div class="image-wrap"><img src="adventure%20rv%20logo.jpeg" alt="Adventure RV" loading="lazy" width="640" height="380"></div>
-<div class="card-body"><p class="eyebrow">RV rentals</p><h3>Adventure RV</h3>
-<p>RV rentals for trips, camping, lake stays, and outdoor adventures.</p>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#main">Find a rental</a>
+      <a href="#sources">Listing sources</a>
+      <a class="nav-cta" href="#property-managers">List properties</a>
+    </nav>
+  </div>
+</header>
 
-<a class="card-link" href="https://stayarv.com" target="_blank" rel="noopener noreferrer">Visit Adventure RV <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div></article>
-<article class="rental-card" data-category="boats">
-<div class="category-art art-boats" aria-hidden="true"><span>⚓</span><small>EXPLORE LOCAL</small></div>
-<div class="card-body"><p class="eyebrow">Boats</p><h3>Boats</h3>
-<p>Make a day of it on the lake.</p>
-<p class="status">Building this category · Listings welcome</p>
-<a class="card-link" href="#contact">Ask about boats <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="party">
-<div class="category-art art-party" aria-hidden="true"><span>✧</span><small>EXPLORE LOCAL</small></div>
-<div class="card-body"><p class="eyebrow">Party &amp; event rentals</p><h3>Party &amp; event rentals</h3>
-<p>Tents, tables, chairs, and more for getting together.</p>
-<p class="status">Building this category · Listings welcome</p>
-<a class="card-link" href="#contact">Ask about party &amp; event rentals <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="commercial">
-<div class="image-wrap"><img src="big%20house.jpg" alt="Commercial Spaces" loading="lazy" width="640" height="380"></div>
-<div class="card-body"><p class="eyebrow">Commercial spaces</p><h3>Commercial Spaces</h3>
-<p>Offices, retail spaces, shops, and other business rentals.</p>
-
-<a class="card-link" href="#contact">Ask about commercial space <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="stays">
-<div class="image-wrap"><img src="airbnbruss.png" alt="Airbnb &amp; Short-Term Stays" loading="lazy" width="640" height="380"></div>
-<div class="card-body"><p class="eyebrow">Short-term stays</p><h3>Airbnb &amp; Short-Term Stays</h3>
-<p>Furnished stays for visitors, contractors, family trips, and events.</p>
-
-<a class="card-link" href="https://www.airbnb.com/l/m6Hyr1Qj" target="_blank" rel="noopener noreferrer">Explore short-term stays <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div></article>
-<article class="rental-card" data-category="camping">
-<div class="image-wrap"><img src="First%20pic%20logo.PNG" alt="Lakeside Camp &amp; RV" loading="lazy" width="640" height="380"></div>
-<div class="card-body"><p class="eyebrow">Camping &amp; RV sites</p><h3>Lakeside Camp &amp; RV</h3>
-<p>Camping and RV stays on Lake Dardanelle.</p>
-
-<a class="card-link" href="#contact">Ask about camping <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="other">
-<div class="category-art art-other" aria-hidden="true"><span>+</span><small>EXPLORE LOCAL</small></div>
-<div class="card-body"><p class="eyebrow">Other local rentals</p><h3>Other local rentals</h3>
-<p>Something else you need? Start here.</p>
-<p class="status">Building this category · Listings welcome</p>
-<a class="card-link" href="#contact">Ask about other local rentals <span aria-hidden="true">↗</span></a></div></article></div>
-<div id="empty" class="empty" hidden><h3>No matching rental options yet.</h3><p>Try a broader search or clear the filters. We’re growing the directory.</p><a class="button secondary" href="#contact">Tell us what you need</a></div>
-<p class="directory-note">This is a growing local directory. Categories marked “Listings welcome” do not have published providers yet. Contact the provider or our hub to confirm availability, pricing, and rental terms.</p>
+<section class="hero" aria-labelledby="hero-title">
+  <img src="assets/lake-dardanelle-sunset.jpg" alt="Lake Dardanelle in Russellville, Arkansas" width="1920" height="910" fetchpriority="high">
+  <div class="wrap hero-content">
+    <p class="eyebrow">Russellville, Arkansas rental search</p>
+    <h1 id="hero-title">Find a place to live.<br>Without checking ten websites.</h1>
+    <p class="hero-copy">Search rental homes and apartments from multiple local property managers in one place. Compare the basics here, then verify the current details with the listing source.</p>
+    <div class="hero-actions">
+      <a class="button primary" href="#main">Search rentals ↓</a>
+      <a class="button secondary" href="sms:+14799707301">Tell us what you need</a>
+    </div>
+  </div>
 </section>
-<section aria-labelledby="how-title"><div class="section-head"><h2 id="how-title">Find it. Ask about it. Make it happen.</h2></div><div class="how"><div><span class="step-number">01 / EXPLORE</span><h3>Start with what you need</h3><p>Browse local rental businesses and the categories we’re adding.</p></div><div><span class="step-number">02 / CONNECT</span><h3>Talk to a real person</h3><p>Visit a provider’s site or call or text our hub for more information.</p></div><div><span class="step-number">03 / ARRANGE</span><h3>Work out the details</h3><p>Confirm rates, dates, pickup, and any agreement directly with the rental provider.</p></div></div></section>
-<section id="list" class="owner" aria-labelledby="owner-title"><div><p class="eyebrow">For local businesses & rental owners</p><h2 id="owner-title">Your rental belongs<br>in the neighborhood.</h2><p>Manage homes? Rent out tools, boats, storage, or event equipment? Help neighbors find what you offer.</p><a class="button" href="sms:+14799707301">Text us to request a listing ↗</a></div><div class="owner-details"><strong>Let’s build the local directory.</strong><p>Send your business or rental name, category, service area, website, and the best public contact details. We’ll review the information with you before adding a listing.</p><p>Ask about a basic listing or future featured placement. Any paid placement will be clearly labeled “Sponsored.”</p></div></section>
-<section id="contact" class="contact" aria-labelledby="contact-title"><div><p class="eyebrow">A little local help</p><h2 id="contact-title">Can’t find what you need?</h2><p>Tell us what you’re looking for, when you need it, and your budget. For listing requests or corrections, get in touch here too.</p><p class="phone">Russellville.Rent · <a href="tel:+14799707301">479-970-7301</a></p></div><div class="actions"><a class="button primary" href="sms:+14799707301">Text us ↗</a><a class="button secondary" href="tel:+14799707301">Call the hub</a></div></section>
-<footer><span>© <span id="year">2026</span> Russellville.Rent</span><span>Local rentals. Local connections. Russellville, Arkansas.</span><a href="#list">Request a listing</a></footer>
-<details class="photo-credits"><summary>Local photo credits</summary><p>Lake Dardanelle sunset and downtown sunset photographs supplied for Russellville.Rent. Wilson Hall: <a href="https://commons.wikimedia.org/wiki/File:Wilson_Hall%E2%80%94Arkansas_Tech_University.JPG">Valis55, Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. Photos cropped for the layout; the Wilson Hall crop is shared under the same license. Water-tower photo from the existing Russellville.Rent collection.</p></details>
+
+<div class="market-strip">
+  <div class="wrap market-box">
+    <div class="market-stat"><strong><span id="inventoryCount">—</span> rentals</strong><span>in the current index</span></div>
+    <div class="market-stat"><strong><span id="managerCount">—</span> sources</strong><span>local managers indexed</span></div>
+    <p class="market-note">Russellville.Rent is building a local rental index. Availability, fees, screening criteria and lease terms remain subject to confirmation with the property manager.</p>
+  </div>
+</div>
+
+<main id="main" class="wrap">
+  <section class="search-section" aria-labelledby="search-title">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Residential rentals</p>
+        <h2 id="search-title">Search Russellville listings</h2>
+        <p>Houses, apartments, duplexes and other long-term rentals.</p>
+      </div>
+    </div>
+
+    <form id="filters" class="filters" role="search">
+      <div class="field field-search">
+        <label for="q">Search</label>
+        <input id="q" type="search" placeholder="Address, manager, property type…">
+      </div>
+      <div class="field">
+        <label for="minRent">Min rent</label>
+        <select id="minRent">
+          <option value="">No min</option><option value="500">$500</option><option value="750">$750</option>
+          <option value="1000">$1,000</option><option value="1250">$1,250</option><option value="1500">$1,500</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="maxRent">Max rent</label>
+        <select id="maxRent">
+          <option value="">No max</option><option value="750">$750</option><option value="1000">$1,000</option>
+          <option value="1250">$1,250</option><option value="1500">$1,500</option><option value="2000">$2,000</option>
+          <option value="2500">$2,500</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="beds">Bedrooms</label>
+        <select id="beds"><option value="">Any</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select>
+      </div>
+      <div class="field">
+        <label for="type">Type</label>
+        <select id="type"><option value="">Any type</option></select>
+      </div>
+      <div class="field">
+        <label for="manager">Manager</label>
+        <select id="manager"><option value="">Any manager</option></select>
+      </div>
+      <button class="reset" type="reset">Clear</button>
+    </form>
+
+    <div class="toolbar">
+      <div id="resultCount" class="results-count" role="status" aria-live="polite">Loading rentals…</div>
+      <select id="sort" class="sort" aria-label="Sort rentals">
+        <option value="rent-asc">Rent: low to high</option>
+        <option value="rent-desc">Rent: high to low</option>
+        <option value="beds">Most bedrooms</option>
+      </select>
+    </div>
+
+    <div id="listings" class="listings" aria-live="polite"></div>
+    <div id="empty" class="empty" hidden>
+      <h3>No matching rentals.</h3>
+      <p>Change the filters or text Russellville.Rent and tell us what you need.</p>
+      <a class="button ghost" href="sms:+14799707301">Text Russellville.Rent</a>
+    </div>
+
+    <div class="notice">
+      <strong>Important:</strong> This index summarizes publicly available rental information and identifies the original listing source. Confirm availability, pricing, application requirements and all lease terms before relying on a listing. Property managers can request corrections or removal at any time.
+    </div>
+  </section>
+
+  <section id="sources" class="sources-section" aria-labelledby="sources-title">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Where listings come from</p>
+        <h2 id="sources-title">Local property-manager sources</h2>
+        <p>The automated index is designed to collect factual listing information from public manager pages and retain source attribution.</p>
+      </div>
+    </div>
+    <div class="source-grid">
+      <article class="source-card"><h3>River Valley Realty Management Service</h3><p>Residential and commercial rental listings serving Russellville and the River Valley.</p><a href="https://www.rentrvr.com/" target="_blank" rel="noopener noreferrer">Visit source ↗</a></article>
+      <article class="source-card"><h3>Moore &amp; Co. Rental</h3><p>Russellville-area homes and apartments published through its rental property pages.</p><a href="https://www.mooreforrent.com/rental-properties/russellville/" target="_blank" rel="noopener noreferrer">Visit source ↗</a></article>
+      <article class="source-card"><h3>Natural State Property Management</h3><p>Russellville rental availability published through its public property-management site.</p><a href="https://www.naturalstatepropertymanagement.com/" target="_blank" rel="noopener noreferrer">Visit source ↗</a></article>
+    </div>
+  </section>
+
+  <section id="property-managers" class="owner-band" aria-labelledby="manager-title">
+    <div>
+      <p class="eyebrow">Property managers & owners</p>
+      <h2 id="manager-title">Put your vacancies in front of Russellville renters.</h2>
+      <p>Want your listings added directly, corrected, removed, or connected to a cleaner inventory feed? Russellville.Rent is building a central local search experience while keeping each listing attributed to its actual manager.</p>
+    </div>
+    <div class="owner-actions">
+      <a class="button primary" href="sms:+14799707301">Text about listings</a>
+      <a class="button secondary" href="tel:+14799707301">Call 479-970-7301</a>
+    </div>
+  </section>
+
+  <section class="more-rentals" aria-labelledby="more-title">
+    <p class="eyebrow">More around Russellville</p>
+    <h2 id="more-title">Other rental categories</h2>
+    <div class="more-links">
+      <a href="https://stayarv.com" target="_blank" rel="noopener noreferrer">RV rentals ↗</a>
+      <a href="https://www.airbnb.com/l/m6Hyr1Qj" target="_blank" rel="noopener noreferrer">Short-term stays ↗</a>
+      <a href="sms:+14799707301?&body=I'm%20looking%20for%20storage%20in%20Russellville.">Storage</a>
+      <a href="sms:+14799707301?&body=I'm%20looking%20for%20commercial%20space%20in%20Russellville.">Commercial space</a>
+    </div>
+  </section>
 </main>
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-const form = document.getElementById("filters");
-const search = document.getElementById("search");
-const category = document.getElementById("category");
-const cards = Array.from(document.querySelectorAll(".rental-card"));
-const count = document.getElementById("result-count");
-const aliases = {homes:"house houses apartment apartments home housing long term monthly",storage:"self storage unit units",tools:"tool equipment machinery trailer trailers",paddling:"kayak kayaks canoe canoes paddleboard paddleboards sup adventure water",rvs:"rv rvs recreational vehicle camper motorhome",boats:"boat boats boating lake",party:"party parties event events tent tents table tables chair chairs",commercial:"commercial office offices retail shop shops warehouse",stays:"airbnb vacation short term lodging furnished",camping:"camp camping campground rv sites",other:"other services miscellaneous"};
-function filterRentals(){
-  const terms = search.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
-  let visible = 0;
-  cards.forEach(card=>{
-    const key = card.dataset.category;
-    const text = (card.textContent + " " + aliases[key]).toLowerCase();
-    const matches = (category.value === "all" || category.value === key) && terms.every(term=>text.includes(term));
-    card.hidden = !matches;
-    if(matches) visible++;
-  });
-  count.textContent = visible + " of " + cards.length + " rental categories shown";
-  document.getElementById("empty").hidden = visible !== 0;
-}
-form.hidden=false;count.hidden=false;
-form.addEventListener("submit",event=>event.preventDefault());
-search.addEventListener("input",filterRentals);
-category.addEventListener("change",filterRentals);
-form.addEventListener("reset",()=>{search.value="";category.value="all";filterRentals();});
-filterRentals();
-</script>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© <span id="year">2026</span> Russellville.Rent</span>
+    <span>Russellville, Arkansas rental index</span>
+    <span><a href="sms:+14799707301">Listing correction / removal</a></span>
+  </div>
+</footer>
+
+<script src="assets/app.js" defer></script>
 </body>
 </html>
