@@ -14,7 +14,9 @@
     "source_url": "https://www.rentrvr.com/listings/detail/6c7b99e1-d64d-4eb4-9099-868a11878fdd",
     "availability": "Check source",
     "updated_at": null,
-    "seeded": true
+    "seeded": true,
+    "image_url": "https://img.zumpercdn.com/721427851/1280x960?auto=format",
+    "image_verified": true
   },
   {
     "id": "rvr-146-booher-cemetery-a",
@@ -31,7 +33,9 @@
     "source_url": "https://www.rentrvr.com/listings/detail/995c006a-f91a-45db-ba72-e23b59f282e0",
     "availability": "Check source",
     "updated_at": null,
-    "seeded": true
+    "seeded": true,
+    "image_url": "https://www.trulia.com/pictures/thumbs_5/zillowstatic/fp/9a3ce69c032bf2c2389861c930a19eda-full.webp",
+    "image_verified": true
   },
   {
     "id": "rvr-1419-n-pittsburg",
@@ -48,7 +52,9 @@
     "source_url": "https://www.rentrvr.com/listings/detail/e4e359e8-4264-46ae-953d-bc0658dea76c",
     "availability": "Check source",
     "updated_at": null,
-    "seeded": true
+    "seeded": true,
+    "image_url": "https://images.cdn.appfolio.com/rivervalley/images/6912e811-9460-49b0-8f1f-bf19f900c2ab/large.jpeg",
+    "image_verified": true
   },
   {
     "id": "moore-304-elm",
@@ -65,7 +71,9 @@
     "source_url": "https://www.mooreforrent.com/rental-properties/russellville/",
     "availability": "Check source",
     "updated_at": null,
-    "seeded": true
+    "seeded": true,
+    "image_url": "https://images.unsplash.com/photo-1768941124460-6fa7161715ff?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=82&w=1600",
+    "image_verified": false
   },
   {
     "id": "moore-1131-e-9th-d",
@@ -82,7 +90,9 @@
     "source_url": "https://www.mooreforrent.com/rental-properties/russellville/",
     "availability": "Check source",
     "updated_at": null,
-    "seeded": true
+    "seeded": true,
+    "image_url": "https://img.zumpercdn.com/843424441/1280x960?dpr=1&fit=crop&h=542&q=76&w=991",
+    "image_verified": true
   },
   {
     "id": "moore-1601-s-boston-b",
@@ -99,7 +109,9 @@
     "source_url": "https://www.mooreforrent.com/rental-properties/russellville/",
     "availability": "Check source",
     "updated_at": null,
-    "seeded": true
+    "seeded": true,
+    "image_url": "https://photos.zillowstatic.com/fp/f112176aa969b39d794da1bc2d7ee3e7-cc_ft_960.jpg",
+    "image_verified": true
   },
   {
     "id": "moore-1807-s-erie",
@@ -116,7 +128,9 @@
     "source_url": "https://www.mooreforrent.com/rental-properties/russellville/",
     "availability": "Check source",
     "updated_at": null,
-    "seeded": true
+    "seeded": true,
+    "image_url": "https://images1.apartments.com/i2/gDwZBquhHx0rTr327Xt9IuEtRCOGb6G6CJn2as6a0kA/116/1807-s-erie-ave-russellville-ar-primary-photo.jpg?p=1",
+    "image_verified": true
   },
   {
     "id": "moore-the-pointe",
@@ -133,6 +147,8 @@
     "source_url": "https://www.mooreforrent.com/rental-properties/russellville/",
     "availability": "Check source",
     "updated_at": null,
-    "seeded": true
+    "seeded": true,
+    "image_url": "https://i.apartmentguide.com/t_3x2_fixed_webp_w1440/c27219d68038c2f208466b5c5c3cd9ca",
+    "image_verified": true
   }
 ]
