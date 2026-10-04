@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Russellville AR Rentals | Houses & Apartments | Russellville.Rent</title>
+  <meta name="description" content="Search houses, apartments, duplexes and other long-term rentals in Russellville, Arkansas. Compare public listings from local property managers in one place.">
+  <link rel="canonical" href="https://russellville.rent/long-term.html">
+  <meta property="og:title" content="Russellville.Rent | Russellville, Arkansas rentals">
+  <meta property="og:description" content="One local place to search rental homes and apartments from multiple Russellville property managers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://russellville.rent/long-term.html">
+  <meta name="theme-color" content="#102a24">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to listings</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a>
+    <nav aria-label="Main navigation">
+      <a href="/">All rental categories</a>
+      <a href="#main">Find a long-term rental</a>
+      <a href="#sources">Listing sources</a>
+      <a class="nav-cta" href="#property-managers">List properties</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" aria-labelledby="hero-title">
+  <img src="assets/lake-dardanelle-sunset.jpg" alt="Lake Dardanelle in Russellville, Arkansas" width="1920" height="910" fetchpriority="high">
+  <div class="wrap hero-content">
+    <p class="eyebrow">Russellville, Arkansas rental search</p>
+    <h1 id="hero-title">Find a place to live.<br>Without checking ten websites.</h1>
+    <p class="hero-copy">Search rental homes and apartments from multiple local property managers in one place. Compare the basics here, then verify the current details with the listing source.</p>
+    <div class="hero-actions">
+      <a class="button primary" href="#main">Search rentals ↓</a>
+      <a class="button secondary" href="sms:+14799707301">Tell us what you need</a>
+    </div>
+  </div>
+</section>
+
+<div class="market-strip">
+  <div class="wrap market-box">
+    <div class="market-stat"><strong><span id="inventoryCount">—</span> rentals</strong><span>in the current index</span></div>
+    <div class="market-stat"><strong><span id="managerCount">—</span> sources</strong><span>local managers indexed</span></div>
+    <p class="market-note">Russellville.Rent is building a local rental index. Availability, fees, screening criteria and lease terms remain subject to confirmation with the property manager.</p>
+  </div>
+</div>
+
+<main id="main" class="wrap">
+  <section class="search-section" aria-labelledby="search-title">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Residential rentals</p>
+        <h2 id="search-title">Search Russellville listings</h2>
+        <p>Houses, apartments, duplexes and other long-term rentals.</p>
+      </div>
+    </div>
+
+    <form id="filters" class="filters" role="search">
+      <div class="field field-search">
+        <label for="q">Search</label>
+        <input id="q" type="search" placeholder="Address, manager, property type…">
+      </div>
+      <div class="field">
+        <label for="minRent">Min rent</label>
+        <select id="minRent">
+          <option value="">No min</option><option value="500">$500</option><option value="750">$750</option>
+          <option value="1000">$1,000</option><option value="1250">$1,250</option><option value="1500">$1,500</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="maxRent">Max rent</label>
+        <select id="maxRent">
+          <option value="">No max</option><option value="750">$750</option><option value="1000">$1,000</option>
+          <option value="1250">$1,250</option><option value="1500">$1,500</option><option value="2000">$2,000</option>
+          <option value="2500">$2,500</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="beds">Bedrooms</label>
+        <select id="beds"><option value="">Any</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select>
+      </div>
+      <div class="field">
+        <label for="type">Type</label>
+        <select id="type"><option value="">Any type</option></select>
+      </div>
+      <div class="field">
+        <label for="manager">Manager</label>
+        <select id="manager"><option value="">Any manager</option></select>
+      </div>
+      <button class="reset" type="reset">Clear</button>
+    </form>
+
+    <div class="toolbar">
+      <div id="resultCount" class="results-count" role="status" aria-live="polite">Loading rentals…</div>
+      <select id="sort" class="sort" aria-label="Sort rentals">
+        <option value="rent-asc">Rent: low to high</option>
+        <option value="rent-desc">Rent: high to low</option>
+        <option value="beds">Most bedrooms</option>
+      </select>
+    </div>
+
+    <div id="listings" class="listings" aria-live="polite"></div>
+    <div id="empty" class="empty" hidden>
+      <h3>No matching rentals.</h3>
+      <p>Change the filters or text Russellville.Rent and tell us what you need.</p>
+      <a class="button ghost" href="sms:+14799707301">Text Russellville.Rent</a>
+    </div>
+
+    <div class="notice">
+      <strong>Important:</strong> This index summarizes publicly available rental information and identifies the original listing source. Confirm availability, pricing, application requirements and all lease terms before relying on a listing. Property managers can request corrections or removal at any time.
+    </div>
+  </section>
+
+  <section id="sources" class="sources-section" aria-labelledby="sources-title">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Where listings come from</p>
+        <h2 id="sources-title">Local property-manager sources</h2>
+        <p>The automated index is designed to collect factual listing information from public manager pages and retain source attribution.</p>
+      </div>
+    </div>
+    <div class="source-grid">
+      <article class="source-card"><h3>River Valley Realty Management Service</h3><p>Residential and commercial rental listings serving Russellville and the River Valley.</p><a href="https://www.rentrvr.com/" target="_blank" rel="noopener noreferrer">Visit source ↗</a></article>
+      <article class="source-card"><h3>Moore &amp; Co. Rental</h3><p>Russellville-area homes and apartments published through its rental property pages.</p><a href="https://www.mooreforrent.com/rental-properties/russellville/" target="_blank" rel="noopener noreferrer">Visit source ↗</a></article>
+      <article class="source-card"><h3>Natural State Property Management</h3><p>Russellville rental availability published through its public property-management site.</p><a href="https://www.naturalstatepropertymanagement.com/" target="_blank" rel="noopener noreferrer">Visit source ↗</a></article>
+    </div>
+  </section>
+
+  <section id="property-managers" class="owner-band" aria-labelledby="manager-title">
+    <div>
+      <p class="eyebrow">Property managers & owners</p>
+      <h2 id="manager-title">Put your vacancies in front of Russellville renters.</h2>
+      <p>Want your listings added directly, corrected, removed, or connected to a cleaner inventory feed? Russellville.Rent is building a central local search experience while keeping each listing attributed to its actual manager.</p>
+    </div>
+    <div class="owner-actions">
+      <a class="button primary" href="sms:+14799707301">Text about listings</a>
+      <a class="button secondary" href="tel:+14799707301">Call 479-970-7301</a>
+    </div>
+  </section>
+
+  <section class="more-rentals" aria-labelledby="more-title">\n    <p class="eyebrow">Russellville.Rent</p>\n    <h2 id="more-title">Looking for another kind of rental?</h2>\n    <div class="more-links"><a href="/">Back to all rental categories ↗</a></div>\n  </section>\n</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© <span id="year">2026</span> Russellville.Rent</span>
+    <span>Russellville, Arkansas rental index</span>
+    <span><a href="sms:+14799707301">Listing correction / removal</a></span>
+  </div>
+</footer>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>
