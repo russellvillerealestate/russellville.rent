@@ -1,6 +1,7 @@
 const state={listings:[],filtered:[]};
 const $=id=>document.getElementById(id);
 const money=n=>n?new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(n):"Call";
+const FALLBACK_IMAGE="https://images.unsplash.com/photo-1768941124460-6fa7161715ff?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=82&w=1600";
 const safe=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
 const ageLabel=item=>{
   if(!item.updated_at) return "Availability should be verified";
@@ -18,7 +19,7 @@ function card(item){
   ].filter(Boolean).map(s=>`<span>${safe(s)}</span>`).join("");
   const sms=`sms:+14799707301?&body=${encodeURIComponent("I'm interested in "+item.address+" listed on Russellville.Rent. Can you help me verify availability?")}`;
   return `<article class="card">
-    <div class="property-art"><span class="source-badge">${safe(item.source_name)}</span><span class="house-icon" aria-hidden="true">⌂</span></div>
+    <div class="property-art"><img class="property-photo" src="${safe(item.image_url||FALLBACK_IMAGE)}" alt="${safe(item.image_verified===false?'Generic rental home image':'Photo of '+item.address)}" loading="lazy"><span class="source-badge">${safe(item.source_name)}</span>${item.image_verified===false?'<span class="photo-note">Generic photo</span>':''}</div>
     <div class="card-body">
       <div class="price">${money(item.rent)} <small>/ month</small></div>
       <div class="specs">${specs}</div>
@@ -56,6 +57,7 @@ function apply(){
 }
 function render(){
   $("listings").innerHTML=state.filtered.map(card).join("");
+  document.querySelectorAll(".property-photo").forEach(img=>img.addEventListener("error",()=>{if(img.src!==FALLBACK_IMAGE)img.src=FALLBACK_IMAGE;}));
   $("empty").hidden=state.filtered.length!==0;
   $("resultCount").textContent=`${state.filtered.length} rental${state.filtered.length===1?"":"s"} shown`;
   $("inventoryCount").textContent=state.listings.length;
