@@ -1,0 +1,31 @@
+name: Update rental listings
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm install --omit=dev
+      - run: npm run scrape
+      - name: Commit updated listings
+        run: |
+          if git diff --quiet -- data/listings.json; then
+            echo "No listing changes."
+            exit 0
+          fi
+          git config user.name "russellville-rent-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/listings.json
+          git commit -m "Update public rental listings"
+          git push
