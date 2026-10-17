@@ -62,6 +62,13 @@ footer{border-top:1px solid var(--line);padding:24px 0 30px;font-size:.75rem;col
 .landmark.downtown img{object-position:44% 50%}
 @media(min-width:601px) and (max-width:900px){.hometown{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:600px){.hero-photo{object-position:52% 50%}.landmark.downtown{grid-column:1/-1;min-height:195px}}
+
+/* Review-volume selected provider identity in the homepage category presentation area. */
+.brand-feature{height:195px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:8px;padding:16px 20px;background:linear-gradient(135deg,#e7ede4,#f7f8f3);border-bottom:1px solid var(--line);overflow:hidden}
+.brand-feature img{width:94px;height:94px;max-width:100%;object-fit:contain;flex:0 0 auto}
+.brand-feature span{font-size:.94rem;line-height:1.2;font-weight:800;color:#183e34;max-width:100%}
+.brand-feature small{font-size:.58rem;letter-spacing:.12em;color:#617b62;font-weight:750}
+@media(max-width:600px){.brand-feature{height:210px}}
 </style>
 </head>
 <body>
@@ -80,19 +87,19 @@ footer{border-top:1px solid var(--line);padding:24px 0 30px;font-size:.75rem;col
 <p class="status">Browse current houses, apartments, duplexes, and other long-term listings.</p>
 <a class="card-link" href="long-term.html">Browse long-term rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="storage">
-<div class="image-wrap"><img src="centervalley%20storage%20logo.png" alt="Center Valley Storage" loading="lazy" width="640" height="380"></div>
+<div class="brand-feature" aria-label="Featured: Added Space Storage"><img src="https://www.google.com/s2/favicons?domain=russellvillestorage.com&amp;sz=256" alt="Added Space Storage brand mark" width="112" height="112" loading="lazy" decoding="async"><span>Added Space Storage</span><small>FEATURED LOCAL PROVIDER</small></div>
 <div class="card-body"><p class="eyebrow">Storage</p><h3>Center Valley Storage</h3>
 <p>Storage for household items, business overflow, equipment, and more.</p>
 
 <a class="card-link" href="storage.html">Browse storage providers <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="tools">
-<div class="category-art art-tools" aria-hidden="true"><span>⚒</span><small>EXPLORE LOCAL</small></div>
+<div class="brand-feature" aria-label="Featured: River Valley Tractor"><img src="https://www.google.com/s2/favicons?domain=rivervalleytractor.com&amp;sz=256" alt="River Valley Tractor brand mark" width="112" height="112" loading="lazy" decoding="async"><span>River Valley Tractor</span><small>FEATURED LOCAL PROVIDER</small></div>
 <div class="card-body"><p class="eyebrow">Tools &amp; equipment</p><h3>Tools &amp; equipment</h3>
 <p>The right gear for your next project.</p>
 <p class="status">Central Rental &amp; Supply · United Rentals</p>
 <a class="card-link" href="equipment.html">Browse tools &amp; equipment <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="paddling">
-<div class="category-art art-paddling" aria-hidden="true"><span>≈</span><small>EXPLORE LOCAL</small></div>
+<div class="brand-feature" aria-label="Featured: Whenever Watersports"><img src="https://www.google.com/s2/favicons?domain=wheneverwatersports.com&amp;sz=256" alt="Whenever Watersports brand mark" width="112" height="112" loading="lazy" decoding="async"><span>Whenever Watersports</span><small>FEATURED LOCAL PROVIDER</small></div>
 <div class="card-body"><p class="eyebrow">Kayaks, canoes &amp; paddleboards</p><h3>Kayaks, canoes &amp; paddleboards</h3>
 <p>Get out on the water around the River Valley.</p>
 <p class="status">Whenever Watersports · Lake Dardanelle State Park</p>
@@ -104,19 +111,19 @@ footer{border-top:1px solid var(--line);padding:24px 0 30px;font-size:.75rem;col
 
 <a class="card-link" href="https://stayarv.com" target="_blank" rel="noopener noreferrer">Visit Adventure RV <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div></article>
 <article class="rental-card" data-category="cars">
-<div class="category-art art-cars" aria-hidden="true"><span>🚗</span><small>EXPLORE LOCAL</small></div>
+<div class="brand-feature" aria-label="Featured: Cogswell Motors Rentals"><img src="https://www.google.com/s2/favicons?domain=cogswellmotors.com&amp;sz=256" alt="Cogswell Motors Rentals brand mark" width="112" height="112" loading="lazy" decoding="async"><span>Cogswell Motors Rentals</span><small>FEATURED LOCAL PROVIDER</small></div>
 <div class="card-body"><p class="eyebrow">Car rentals</p><h3>Car rentals in Russellville</h3>
 <p>Need a car for a trip, a visit, or while yours is in the shop?</p>
 <p class="status">24/7 Rent-A-Ride · Cogswell Rentals · Enterprise</p>
 <a class="card-link" href="cars.html">Explore local car rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="boats">
-<div class="category-art art-boats" aria-hidden="true"><span>⚓</span><small>EXPLORE LOCAL</small></div>
+<div class="brand-feature" aria-label="Featured: Russellville Marina"><img src="https://www.google.com/s2/favicons?domain=therussellvillemarina.com&amp;sz=256" alt="Russellville Marina brand mark" width="112" height="112" loading="lazy" decoding="async"><span>Russellville Marina</span><small>FEATURED LOCAL PROVIDER</small></div>
 <div class="card-body"><p class="eyebrow">Boats</p><h3>Boats</h3>
 <p>Make a day of it on the lake.</p>
 <p class="status">Russellville Marina &amp; Boat Repair</p>
 <a class="card-link" href="boats.html">Browse marina &amp; boat rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="party">
-<div class="category-art art-party" aria-hidden="true"><span>✧</span><small>EXPLORE LOCAL</small></div>
+<div class="brand-feature" aria-label="Featured: Happy Jumpers"><img src="https://www.google.com/s2/favicons?domain=happy-jumpers.com&amp;sz=256" alt="Happy Jumpers brand mark" width="112" height="112" loading="lazy" decoding="async"><span>Happy Jumpers</span><small>FEATURED LOCAL PROVIDER</small></div>
 <div class="card-body"><p class="eyebrow">Party &amp; event rentals</p><h3>Party &amp; event rentals</h3>
 <p>Tents, tables, chairs, and more for getting together.</p>
 <p class="status">NSaNe Inflatables · Happy Jumpers · Space Walk</p>
@@ -140,73 +147,73 @@ footer{border-top:1px solid var(--line);padding:24px 0 30px;font-size:.75rem;col
 
 <a class="card-link" href="#contact">Ask about camping <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="trailers">
-<div class="category-art art-other" aria-hidden="true"><span>▰</span><small>EXPLORE LOCAL</small></div>
+<div class="brand-feature" aria-label="Featured: U-Haul"><img src="https://www.google.com/s2/favicons?domain=uhaul.com&amp;sz=256" alt="U-Haul brand mark" width="112" height="112" loading="lazy" decoding="async"><span>U-Haul</span><small>FEATURED LOCAL PROVIDER</small></div>
 <div class="card-body"><p class="eyebrow">Trailer rentals</p><h3>Trailer rentals</h3>
 <p>Utility, enclosed, moving and car-hauler trailers.</p>
 <p class="status">White Trailer Rental · U-Haul</p>
 <a class="card-link" href="trailers.html">Browse trailer rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="mobile-storage">
-<div class="category-art art-other" aria-hidden="true"><span>▤</span><small>EXPLORE LOCAL</small></div>
+<div class="brand-feature" aria-label="Featured: Scotty's Storage Trailer Rentals"><img src="https://www.google.com/s2/favicons?domain=scottysstorage.com&amp;sz=256" alt="Scotty's Storage Trailer Rentals brand mark" width="112" height="112" loading="lazy" decoding="async"><span>Scotty's Storage Trailer Rentals</span><small>FEATURED LOCAL PROVIDER</small></div>
 <div class="card-body"><p class="eyebrow">Portable storage &amp; offices</p><h3>Portable storage &amp; offices</h3>
 <p>Mobile containers, storage trailers and temporary offices.</p>
 <p class="status">Scotty's Storage Trailer Rentals</p>
 <a class="card-link" href="mobile-storage.html">Browse portable storage <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="dumpsters">
-<div class="category-art art-other" aria-hidden="true"><span>▥</span><small>EXPLORE LOCAL</small></div>
+<div class="brand-feature" aria-label="Featured: RTI Trash"><img src="https://www.google.com/s2/favicons?domain=rtitrash.com&amp;sz=256" alt="RTI Trash brand mark" width="112" height="112" loading="lazy" decoding="async"><span>RTI Trash</span><small>FEATURED LOCAL PROVIDER</small></div>
 <div class="card-body"><p class="eyebrow">Dumpster &amp; roll-off rentals</p><h3>Dumpster rentals</h3>
 <p>Roll-off containers for cleanup, construction and waste.</p>
 <p class="status">Danny's Roll Offs · JCS Disposal · RTI Trash</p>
 <a class="card-link" href="dumpsters.html">Browse dumpster rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="venues">
-<div class="category-art art-other" aria-hidden="true"><span>⌂</span><small>EXPLORE LOCAL</small></div>
+<div class="brand-feature" aria-label="Featured: Fairfield Inn &amp; Suites"><img src="https://www.google.com/s2/favicons?domain=marriott.com&amp;sz=256" alt="Fairfield Inn &amp; Suites brand mark" width="112" height="112" loading="lazy" decoding="async"><span>Fairfield Inn &amp; Suites</span><small>FEATURED LOCAL PROVIDER</small></div>
 <div class="card-body"><p class="eyebrow">Venues &amp; meeting rooms</p><h3>Event venues</h3>
 <p>Community halls, meeting rooms and rentable event spaces.</p>
 <p class="status">Historic Train Depot · Columbus Club · Aquatic Center</p>
 <a class="card-link" href="venues.html">Browse event venues <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="moving">
-<div class="category-art art-other" aria-hidden="true"><span>↗</span><small>EXPLORE LOCAL</small></div>
+<div class="brand-feature" aria-label="Featured: U-Haul"><img src="https://www.google.com/s2/favicons?domain=uhaul.com&amp;sz=256" alt="U-Haul brand mark" width="112" height="112" loading="lazy" decoding="async"><span>U-Haul</span><small>FEATURED LOCAL PROVIDER</small></div>
 <div class="card-body"><p class="eyebrow">Moving trucks &amp; trailers</p><h3>Moving truck rentals</h3>
 <p>Trucks, trailers and equipment to get moving.</p>
 <p class="status">U-Haul Moving &amp; Storage of Russellville</p>
 <a class="card-link" href="moving.html">Browse moving rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="restrooms">
-<div class="category-art art-other" aria-hidden="true"><span>▥</span><small>EXPLORE LOCAL</small></div>
+<div class="brand-feature" aria-label="Featured: Murdock Portable Toilets"><img src="https://www.google.com/s2/favicons?domain=murdockportable.com&amp;sz=256" alt="Murdock Portable Toilets brand mark" width="112" height="112" loading="lazy" decoding="async"><span>Murdock Portable Toilets</span><small>FEATURED LOCAL PROVIDER</small></div>
 <div class="card-body"><p class="eyebrow">Portable restroom rentals</p><h3>Portable restroom rentals</h3>
 <p>Portable toilets and restroom trailers for jobsites and events.</p>
 <p class="status">Murdock · On Site · EZ Event Rentals</p>
 <a class="card-link" href="restrooms.html">Browse portable restroom rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="photo-booths">
-<div class="category-art art-other" aria-hidden="true"><span>▣</span><small>EXPLORE LOCAL</small></div>
+<div class="brand-feature" aria-label="Featured: 636 Entertainment"><img src="https://www.google.com/s2/favicons?domain=636entertainment.net&amp;sz=256" alt="636 Entertainment brand mark" width="112" height="112" loading="lazy" decoding="async"><span>636 Entertainment</span><small>FEATURED LOCAL PROVIDER</small></div>
 <div class="card-body"><p class="eyebrow">Photo booth rentals</p><h3>Photo booth rentals</h3>
 <p>Photo and video booths for weddings, parties and special events.</p>
 <p class="status">RBS Photo Booths · Bright Booths · 636 Entertainment</p>
 <a class="card-link" href="photo-booths.html">Browse photo booth rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="temporary-fencing">
-<div class="category-art art-other" aria-hidden="true"><span>▦</span><small>EXPLORE LOCAL</small></div>
+<div class="brand-feature" aria-label="Featured: AF&amp;G LLC"><img src="https://www.google.com/s2/favicons?domain=arfence.com&amp;sz=256" alt="AF&amp;G LLC brand mark" width="112" height="112" loading="lazy" decoding="async"><span>AF&amp;G LLC</span><small>FEATURED LOCAL PROVIDER</small></div>
 <div class="card-body"><p class="eyebrow">Temporary fencing rentals</p><h3>Temporary fencing rentals</h3>
 <p>Construction site and event fencing, panels and barriers.</p>
 <p class="status">AF&amp;G LLC · Arkansas-wide service</p>
 <a class="card-link" href="temporary-fencing.html">Browse temporary fencing rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="formalwear">
-<div class="category-art art-other" aria-hidden="true"><span>◇</span><small>EXPLORE LOCAL</small></div>
+<div class="brand-feature" aria-label="Featured: Formal Affairs"><img src="https://www.google.com/s2/favicons?domain=allformalaffairs.com&amp;sz=256" alt="Formal Affairs brand mark" width="112" height="112" loading="lazy" decoding="async"><span>Formal Affairs</span><small>FEATURED LOCAL PROVIDER</small></div>
 <div class="card-body"><p class="eyebrow">Formalwear rentals</p><h3>Formalwear rentals</h3>
 <p>Suits and tuxedos for proms, weddings and special occasions.</p>
 <p class="status">Formal Affairs · Russellville</p>
 <a class="card-link" href="formalwear.html">Browse formalwear rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="sheds">
-<div class="category-art art-other" aria-hidden="true"><span>⌂</span><small>EXPLORE LOCAL</small></div>
+<div class="brand-feature" aria-label="Featured: Affordable Buildings of Russellville"><img src="https://www.google.com/s2/favicons?domain=affordablebuildingsrussellville.com&amp;sz=256" alt="Affordable Buildings of Russellville brand mark" width="112" height="112" loading="lazy" decoding="async"><span>Affordable Buildings of Russellville</span><small>FEATURED LOCAL PROVIDER</small></div>
 <div class="card-body"><p class="eyebrow">Portable building rentals</p><h3>Portable building rentals</h3>
 <p>Rent-to-own storage sheds and portable buildings.</p>
 <p class="status">Derksen · Affordable Buildings · Frontier Shed Co.</p>
 <a class="card-link" href="sheds.html">Browse portable building rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="household-rentals">
-<div class="category-art art-other" aria-hidden="true"><span>▤</span><small>EXPLORE LOCAL</small></div>
+<div class="brand-feature" aria-label="Featured: Bestway Rent To Own"><img src="https://www.google.com/s2/favicons?domain=bestwayrto.com&amp;sz=256" alt="Bestway Rent To Own brand mark" width="112" height="112" loading="lazy" decoding="async"><span>Bestway Rent To Own</span><small>FEATURED LOCAL PROVIDER</small></div>
 <div class="card-body"><p class="eyebrow">Furniture &amp; appliance rentals</p><h3>Furniture &amp; appliance rentals</h3>
 <p>Rent-to-own furniture, appliances, TVs and electronics.</p>
 <p class="status">Rent-A-Center · Aaron's · Bestway</p>
 <a class="card-link" href="household-rentals.html">Browse furniture &amp; appliance rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="audio-visual">
-<div class="category-art art-other" aria-hidden="true"><span>♫</span><small>EXPLORE LOCAL</small></div>
+<div class="brand-feature" aria-label="Featured: 636 Entertainment"><img src="https://www.google.com/s2/favicons?domain=636entertainment.net&amp;sz=256" alt="636 Entertainment brand mark" width="112" height="112" loading="lazy" decoding="async"><span>636 Entertainment</span><small>FEATURED LOCAL PROVIDER</small></div>
 <div class="card-body"><p class="eyebrow">Audio &amp; visual rentals</p><h3>Audio &amp; visual rentals</h3>
 <p>Speakers, sound equipment, projectors and event lighting.</p>
 <p class="status">Roots &amp; Rhythm · A/V Arkansas · 636 Entertainment</p>
