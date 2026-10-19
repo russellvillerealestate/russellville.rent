@@ -116,6 +116,25 @@ nav a{transition:color .2s}nav a:hover{color:#a16d20}
 footer{margin-top:30px}
 @media(max-width:600px){header{position:relative}.hero{border-radius:17px;box-shadow:none;min-height:0}.hero h1{font-size:clamp(2.65rem,10vw,4rem)}.hero::before{display:none}.filters{padding:16px}.section-head{margin-top:40px}.rental-card:hover,.landmark:hover{transform:none}.owner{padding:26px}.contact{padding:24px}.how>div{padding:20px}}
 @media(prefers-reduced-motion:reduce){.rental-card,.landmark,.button,.image-wrap img{transition:none!important}}
+
+/* Logo-led card artwork: immersive branded backdrops without cropping marks. */
+.brand-feature{position:relative;isolation:isolate;min-height:205px;padding:14px 20px 12px;gap:5px;background:linear-gradient(145deg,#e5ede4,#f2f5ef);overflow:hidden}
+.brand-feature::before{content:"";position:absolute;inset:-20px;z-index:-2;background:var(--brand-bg,linear-gradient(135deg,#d9e8df,#eff4e9));}
+.brand-feature::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#ffffff12,#ffffff50)}
+.brand-feature img{width:100%;max-width:260px;height:140px;max-height:70%;object-fit:contain;filter:drop-shadow(0 5px 8px #102b2220);transition:transform .25s}
+.rental-card:hover .brand-feature img{transform:scale(1.06)}
+.brand-feature span{background:#ffffffdc;border-radius:100px;padding:5px 13px;box-shadow:0 2px 10px #0e38251b;font-size:.85rem;max-width:100%;overflow-wrap:anywhere}
+.brand-feature small{font-size:.52rem;color:#38594b;background:#ffffffba;padding:2px 8px;border-radius:100px}
+.brand-feature[aria-label*="Happy Jumpers"]{--brand-bg:linear-gradient(135deg,#ffddaa,#f8a8a1 55%,#f6d28b)}
+.brand-feature[aria-label*="RBS Photo Booths"]{--brand-bg:linear-gradient(135deg,#27272c,#5d4c64 55%,#c4a7b9)}
+.brand-feature[aria-label*="Whenever Watersports"]{--brand-bg:linear-gradient(135deg,#a6dfe8,#d3f0e6 65%,#7bc5d7)}
+.brand-feature[aria-label*="Cogswell"]{--brand-bg:linear-gradient(135deg,#cbd9e6,#e9eff3 55%,#b3c8db)}
+.brand-feature[aria-label*="U-Haul"]{--brand-bg:linear-gradient(135deg,#ffb267,#ffdaae 60%,#f5a46b)}
+.brand-feature[aria-label*="RTI Trash"]{--brand-bg:linear-gradient(135deg,#b7d6b4,#e2efdb 65%,#9ecb9e)}
+.brand-feature[aria-label*="AF&G"]{--brand-bg:linear-gradient(135deg,#c7d9c7,#eff3df 60%,#a7c6a5)}
+.brand-feature[aria-label*="Affordable Buildings"]{--brand-bg:linear-gradient(135deg,#d8c5ad,#f0e8d8 60%,#d0b899)}
+@media(max-width:600px){.brand-feature{min-height:210px}.brand-feature img{height:145px}}
+@media(prefers-reduced-motion:reduce){.brand-feature img{transition:none!important}}
 </style>
 </head>
 <body>
