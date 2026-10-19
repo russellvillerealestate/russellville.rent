@@ -69,6 +69,53 @@ footer{border-top:1px solid var(--line);padding:24px 0 30px;font-size:.75rem;col
 .brand-feature span{font-size:.94rem;line-height:1.2;font-weight:800;color:#183e34;max-width:100%}
 .brand-feature small{font-size:.58rem;letter-spacing:.12em;color:#617b62;font-weight:750}
 @media(max-width:600px){.brand-feature{height:210px}}
+
+/* 2026 visual refresh: editorial typography, premium cards and accessible motion */
+:root{--ink:#102f2b;--text:#203b35;--muted:#64776f;--paper:#f7f8f4;--line:#dfe6dc;--gold:#f0ca79}
+body{background:radial-gradient(ellipse at 90% 4%,#e8f0e8 0%,transparent 34%),var(--paper);letter-spacing:-.008em}
+header{position:sticky;top:0;z-index:30;background:rgba(248,250,246,.94);backdrop-filter:blur(18px);border-bottom:1px solid #dfe6dc}
+header .wrap{padding-top:16px;padding-bottom:16px}
+.brand{font-size:1.52rem;letter-spacing:-.065em;color:var(--ink)}
+nav a{transition:color .2s}nav a:hover{color:#a16d20}
+.nav-list{background:var(--ink);color:white;border-color:var(--ink);border-radius:100px;padding:10px 19px}
+.nav-list:hover{color:white;background:#2d6150;text-decoration:none}
+.hero{border-radius:24px;box-shadow:0 25px 65px #173e342b;min-height:650px}
+.hero::before{background:linear-gradient(90deg,rgba(8,32,29,.94) 0%,rgba(8,32,29,.75) 43%,rgba(8,32,29,.15) 100%)}
+.hero h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-.065em;font-size:clamp(3.3rem,5.8vw,5.7rem);line-height:1.02;max-width:800px;text-wrap:balance}
+.hero h1 em{font-style:italic;font-weight:400}
+.hero .eyebrow{letter-spacing:.2em}
+.button{border-radius:100px;padding:12px 24px;transition:transform .22s,box-shadow .22s,background .22s}
+.button:hover{transform:translateY(-2px);box-shadow:0 9px 25px #0000001c}
+.hometown{margin-top:42px;gap:18px}
+.hometown h2,.section-head h2,.owner h2,.contact h2{font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-.045em}
+.landmark{border-radius:17px;box-shadow:0 8px 25px #203b3514;transition:transform .25s,box-shadow .25s}
+.landmark:hover{transform:translateY(-4px);box-shadow:0 16px 35px #203b3529}
+.section-head{margin-top:68px}
+.section-head h2{font-size:clamp(2.1rem,4vw,3.2rem)}
+.filters{position:relative;background:white;border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 35px #1b3f3110;padding:22px;gap:16px}
+.filters input,.filters select{border-radius:11px;background:#f8faf7;border-color:#d8e3d8}
+.filters input:focus,.filters select:focus{background:white}
+.rentals-grid{gap:23px}
+.rental-card{border-radius:19px;border:1px solid #e1e8df;box-shadow:0 6px 20px #173e340b;transition:transform .24s,box-shadow .24s,border-color .24s}
+.rental-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px #173e3423;border-color:#b8cdbd}
+.image-wrap,.category-art,.brand-feature{height:205px}
+.image-wrap img{transition:transform .4s}.rental-card:hover .image-wrap img{transform:scale(1.055)}
+.category-art{background:radial-gradient(circle at 20% 10%,#fff9e8,transparent 55%),linear-gradient(125deg,#dbe8df,#eff4eb)}
+.category-art>span{font-size:5.7rem;filter:drop-shadow(0 8px 10px #123d3020)}
+.brand-feature{background:radial-gradient(circle at 20% 10%,#fff,transparent 60%),linear-gradient(140deg,#e4ede5,#f5f7ef)}
+.brand-feature img{width:180px;height:105px}
+.card-body{padding:25px}
+.card-body h3{font-size:1.24rem;letter-spacing:-.025em}
+.card-body .eyebrow{letter-spacing:.12em}
+.card-link{color:#14604b;font-size:.85rem;align-items:center}
+.card-link span{transition:transform .2s}.card-link:hover span{transform:translate(3px,-2px)}
+.how{gap:20px}.how>div{background:#fff;border:1px solid var(--line);border-radius:17px;padding:25px}
+.step-number{font-weight:800;color:#a57525}
+.owner{background:linear-gradient(125deg,#dce9dc,#f2f0e3);border:1px solid #d5e1d3;border-radius:23px;padding:44px}
+.contact{border-radius:20px;padding:36px;background:#fff;border:1px solid var(--line)}
+footer{margin-top:30px}
+@media(max-width:600px){header{position:relative}.hero{border-radius:17px;box-shadow:none;min-height:0}.hero h1{font-size:clamp(2.65rem,10vw,4rem)}.hero::before{display:none}.filters{padding:16px}.section-head{margin-top:40px}.rental-card:hover,.landmark:hover{transform:none}.owner{padding:26px}.contact{padding:24px}.how>div{padding:20px}}
+@media(prefers-reduced-motion:reduce){.rental-card,.landmark,.button,.image-wrap img{transition:none!important}}
 </style>
 </head>
 <body>
