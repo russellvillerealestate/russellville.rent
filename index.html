@@ -135,6 +135,15 @@ footer{margin-top:30px}
 .brand-feature[aria-label*="Affordable Buildings"]{--brand-bg:linear-gradient(135deg,#d8c5ad,#f0e8d8 60%,#d0b899)}
 @media(max-width:600px){.brand-feature{min-height:210px}.brand-feature img{height:145px}}
 @media(prefers-reduced-motion:reduce){.brand-feature img{transition:none!important}}
+
+/* Unique, clearly labeled category identity marks, not invented business logos. */
+.icon-tile{background:radial-gradient(circle at 75% 20%,#ffffffb8,transparent 46%),linear-gradient(135deg,var(--tile-bg),#fffdf5);color:var(--tile-ink);flex-direction:column;gap:10px}
+.icon-tile::before{width:245px;height:245px;right:-75px;bottom:-135px;border:2px solid currentColor;opacity:.14}
+.icon-tile::after{width:140px;height:140px;right:auto;left:-55px;top:-70px;bottom:auto;border:2px solid currentColor;opacity:.13}
+.icon-tile .icon-emblem{display:grid;place-items:center;width:108px;height:108px;border-radius:30px;background:linear-gradient(140deg,#ffffffea,#ffffff70);border:1px solid #ffffffd6;box-shadow:0 15px 28px #203a3620, inset 0 1px 0 white;font-family:Georgia,serif;font-size:4.1rem;font-weight:600;line-height:1;transform:rotate(-5deg);transition:transform .25s}
+.rental-card:hover .icon-tile .icon-emblem{transform:rotate(0deg) scale(1.05)}
+.icon-tile small{position:static;letter-spacing:.15em;font-size:.66rem;color:var(--tile-ink);background:#ffffffb8;border-radius:100px;padding:4px 12px}
+@media(prefers-reduced-motion:reduce){.icon-tile .icon-emblem{transition:none!important}}
 </style>
 </head>
 <body>
@@ -153,13 +162,13 @@ footer{margin-top:30px}
 <p class="status">Browse current houses, apartments, duplexes, and other long-term listings.</p>
 <a class="card-link" href="long-term.html">Browse long-term rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="storage">
-<div class="category-art" aria-hidden="true"><span>✦</span><small>LOCAL RENTALS</small></div>
+<div class="category-art icon-tile" style="--tile-ink:#285f61;--tile-bg:#d5e9e7" role="img" aria-label="storage category illustration"><span class="icon-emblem" aria-hidden="true">▤</span><small>STORAGE</small></div>
 <div class="card-body"><p class="eyebrow">Storage</p><h3>Self-storage &amp; vehicle storage</h3>
 <p>Compare storage units and vehicle storage providers around Russellville.</p>
 
 <a class="card-link" href="storage.html">Browse storage providers <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="tools">
-<div class="category-art" aria-hidden="true"><span>✦</span><small>LOCAL RENTALS</small></div>
+<div class="category-art icon-tile" style="--tile-ink:#4d5d3e;--tile-bg:#e5ebd8" role="img" aria-label="equipment category illustration"><span class="icon-emblem" aria-hidden="true">⚙</span><small>EQUIPMENT</small></div>
 <div class="card-body"><p class="eyebrow">Tools &amp; equipment</p><h3>Tools &amp; equipment</h3>
 <p>The right gear for your next project.</p>
 <p class="status">River Valley Tractor · Central Rental · United Rentals</p>
@@ -183,7 +192,7 @@ footer{margin-top:30px}
 <p class="status">24/7 Rent-A-Ride · Cogswell Rentals · Enterprise</p>
 <a class="card-link" href="cars.html">Explore local car rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="boats">
-<div class="category-art" aria-hidden="true"><span>✦</span><small>LOCAL RENTALS</small></div>
+<div class="category-art icon-tile" style="--tile-ink:#246c82;--tile-bg:#d4eaf1" role="img" aria-label="boat rentals category illustration"><span class="icon-emblem" aria-hidden="true">≋</span><small>BOAT RENTALS</small></div>
 <div class="card-body"><p class="eyebrow">Boats</p><h3>Boats</h3>
 <p>Make a day of it on the lake.</p>
 <p class="status">Russellville Marina &amp; Boat Repair</p>
@@ -219,7 +228,7 @@ footer{margin-top:30px}
 <p class="status">White Trailer Rental · U-Haul</p>
 <a class="card-link" href="trailers.html">Browse trailer rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="mobile-storage">
-<div class="category-art" aria-hidden="true"><span>✦</span><small>LOCAL RENTALS</small></div>
+<div class="category-art icon-tile" style="--tile-ink:#67543f;--tile-bg:#ece3d3" role="img" aria-label="portable storage category illustration"><span class="icon-emblem" aria-hidden="true">▣</span><small>PORTABLE STORAGE</small></div>
 <div class="card-body"><p class="eyebrow">Portable storage &amp; offices</p><h3>Portable storage &amp; offices</h3>
 <p>Mobile containers, storage trailers and temporary offices.</p>
 <p class="status">Scotty's Storage Trailer Rentals</p>
@@ -231,7 +240,7 @@ footer{margin-top:30px}
 <p class="status">Danny's Roll Offs · JCS Disposal · RTI Trash</p>
 <a class="card-link" href="dumpsters.html">Browse dumpster rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="venues">
-<div class="category-art" aria-hidden="true"><span>✦</span><small>LOCAL RENTALS</small></div>
+<div class="category-art icon-tile" style="--tile-ink:#684a69;--tile-bg:#f0dff0" role="img" aria-label="event venues category illustration"><span class="icon-emblem" aria-hidden="true">✧</span><small>EVENT VENUES</small></div>
 <div class="card-body"><p class="eyebrow">Venues &amp; meeting rooms</p><h3>Event venues</h3>
 <p>Community halls, meeting rooms and rentable event spaces.</p>
 <p class="status">Fairfield Inn &amp; Suites · Historic Train Depot · more</p>
@@ -243,7 +252,7 @@ footer{margin-top:30px}
 <p class="status">U-Haul Moving &amp; Storage of Russellville</p>
 <a class="card-link" href="moving.html">Browse moving rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="restrooms">
-<div class="category-art" aria-hidden="true"><span>✦</span><small>LOCAL RENTALS</small></div>
+<div class="category-art icon-tile" style="--tile-ink:#306e69;--tile-bg:#d8ece6" role="img" aria-label="restroom rentals category illustration"><span class="icon-emblem" aria-hidden="true">◈</span><small>RESTROOM RENTALS</small></div>
 <div class="card-body"><p class="eyebrow">Portable restroom rentals</p><h3>Portable restroom rentals</h3>
 <p>Portable toilets and restroom trailers for jobsites and events.</p>
 <p class="status">Murdock · On Site · EZ Event Rentals</p>
@@ -261,7 +270,7 @@ footer{margin-top:30px}
 <p class="status">AF&amp;G LLC · Arkansas-wide service</p>
 <a class="card-link" href="temporary-fencing.html">Browse temporary fencing rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="formalwear">
-<div class="category-art" aria-hidden="true"><span>✦</span><small>LOCAL RENTALS</small></div>
+<div class="category-art icon-tile" style="--tile-ink:#493f65;--tile-bg:#e5dff0" role="img" aria-label="formalwear category illustration"><span class="icon-emblem" aria-hidden="true">✦</span><small>FORMALWEAR</small></div>
 <div class="card-body"><p class="eyebrow">Formalwear rentals</p><h3>Formalwear rentals</h3>
 <p>Suits and tuxedos for proms, weddings and special occasions.</p>
 <p class="status">Formal Affairs · Russellville</p>
@@ -273,20 +282,20 @@ footer{margin-top:30px}
 <p class="status">Derksen · Affordable Buildings · Frontier Shed Co.</p>
 <a class="card-link" href="sheds.html">Browse portable building rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="household-rentals">
-<div class="category-art" aria-hidden="true"><span>✦</span><small>LOCAL RENTALS</small></div>
+<div class="category-art icon-tile" style="--tile-ink:#7d5945;--tile-bg:#f2e4d9" role="img" aria-label="home rentals category illustration"><span class="icon-emblem" aria-hidden="true">⌂</span><small>HOME RENTALS</small></div>
 <div class="card-body"><p class="eyebrow">Furniture &amp; appliance rentals</p><h3>Furniture &amp; appliance rentals</h3>
 <p>Rent-to-own furniture, appliances, TVs and electronics.</p>
 <p class="status">Rent-A-Center · Aaron's · Bestway</p>
 <a class="card-link" href="household-rentals.html">Browse furniture &amp; appliance rentals <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="audio-visual">
-<div class="brand-feature" aria-label="Featured: RBS Photo Booths"><img src="https://content.app-sources.com/s/30654076645747285/thumbnails/640x480/Images/logo-9753808.jpg?format=webp" alt="RBS Photo Booths official logo" width="170" height="104" loading="lazy" decoding="async"><span>RBS Photo Booths</span><small>FEATURED RENTAL PROVIDER</small></div>
-<div class="card-body"><p class="eyebrow">Audio &amp; visual rentals</p><h3>Audio &amp; visual rentals</h3>
+<article class="rental-card" data-category="audio-visual"><div class="category-art icon-tile" style="--tile-ink:#45517e;--tile-bg:#e1e5f5" role="img" aria-label="Audio and visual rental category illustration"><span class="icon-emblem" aria-hidden="true">♫</span><small>AUDIO &amp; VISUAL</small></div><div class="card-body"><p class="eyebrow">Audio &amp; visual rentals</p><h3>Audio &amp; visual rentals</h3>
 <p>Speakers, sound equipment, projectors and event lighting.</p>
 <p class="status">Roots &amp; Rhythm · A/V Arkansas · 636 Entertainment</p>
 <a class="card-link" href="audio-visual.html">Browse audio &amp; visual rentals <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="yard-signs"><div class="category-art art-party" aria-hidden="true"><span>★</span><small>YARD GREETINGS</small></div><div class="card-body"><p class="eyebrow">Yard sign rentals</p><h3>Yard greetings &amp; signs</h3><p>Personalized yard signs for birthdays, celebrations and special occasions.</p><p class="status">Sign Gypsies River Valley</p><a class="card-link" href="yard-signs.html">Browse yard sign rentals <span aria-hidden="true">↗</span></a></div></article>
+<article class="rental-card" data-category="yard-signs">
+<div class="category-art icon-tile" style="--tile-ink:#8b5839;--tile-bg:#f7e5cb" role="img" aria-label="yard greetings category illustration"><span class="icon-emblem" aria-hidden="true">★</span><small>YARD GREETINGS</small></div>
+<div class="card-body"><p class="eyebrow">Yard sign rentals</p><h3>Yard greetings &amp; signs</h3><p>Personalized yard signs for birthdays, celebrations and special occasions.</p><p class="status">Sign Gypsies River Valley</p><a class="card-link" href="yard-signs.html">Browse yard sign rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="other">
-<div class="category-art art-other" aria-hidden="true"><span>+</span><small>EXPLORE LOCAL</small></div>
+<div class="category-art icon-tile" style="--tile-ink:#426454;--tile-bg:#e2ece3" role="img" aria-label="more rentals category illustration"><span class="icon-emblem" aria-hidden="true">+</span><small>MORE RENTALS</small></div>
 <div class="card-body"><p class="eyebrow">Other local rentals</p><h3>Other local rentals</h3>
 <p>Something else you need? Start here.</p>
 <p class="status">Building this category · Listings welcome</p>
