@@ -15,26 +15,7 @@
     "availability": "Check source",
     "image_url": "https://images.cdn.appfolio.com/nspm/images/ebd6c578-2eb6-4edb-9e1c-763913289a32/medium.jpeg",
     "image_verified": true,
-    "updated_at": "2026-10-22T17:13:49.442Z",
-    "seeded": false
-  },
-  {
-    "id": "rvr-east-11th-st-114-e-11th-st-russellville-ar-72801",
-    "address": "East 11th St - 114 E 11th St",
-    "city": "Russellville",
-    "state": "AR",
-    "zip": "72801",
-    "rent": 300,
-    "beds": null,
-    "baths": null,
-    "type": "Apartment",
-    "manager": "River Valley Realty Management Service",
-    "source_name": "River Valley Realty",
-    "source_url": "https://www.rentrvr.com/listings/detail/1ded899a-bdac-4230-ac32-4cae48a5fde5",
-    "availability": "Check source",
-    "image_url": "https://images.cdn.appfolio.com/rivervalley/images/b027f6f3-248f-4e0e-af44-1212e0d6a396/large.jpeg",
-    "image_verified": true,
-    "updated_at": "2026-10-22T17:13:49.442Z",
+    "updated_at": "2026-10-22T21:39:10.083Z",
     "seeded": false
   },
   {
@@ -91,7 +72,7 @@
     "availability": "Check source",
     "image_url": "https://images.cdn.appfolio.com/rivervalley/images/5df5a05f-5b2b-4206-b81d-3c3993a589d9/large.jpeg",
     "image_verified": true,
-    "updated_at": "2026-10-22T17:13:49.442Z",
+    "updated_at": "2026-10-22T21:39:10.083Z",
     "seeded": false
   },
   {
@@ -167,7 +148,7 @@
     "availability": "Check source",
     "image_url": "https://images.cdn.appfolio.com/rivervalley/images/8bc65cba-1629-4d81-9d96-f261eafaa2cc/large.jpg",
     "image_verified": true,
-    "updated_at": "2026-10-22T17:13:49.442Z",
+    "updated_at": "2026-10-22T21:39:10.083Z",
     "seeded": false
   },
   {
@@ -186,7 +167,7 @@
     "availability": "Check source",
     "image_url": "https://images.cdn.appfolio.com/rivervalley/images/9bbdb5ef-e82d-4caa-bef8-0c50db79f143/large.jpg",
     "image_verified": true,
-    "updated_at": "2026-10-22T17:13:49.442Z",
+    "updated_at": "2026-10-22T21:39:10.083Z",
     "seeded": false
   }
 ]
