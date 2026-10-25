@@ -148,6 +148,13 @@ footer{margin-top:30px}
 /* Literal pictograms: each category shows an object or action, not an abstract mark. */
 .icon-tile .icon-emblem{font-family:system-ui,"Apple Color Emoji","Segoe UI Emoji",sans-serif;font-size:4.6rem;line-height:1;transform:none;width:120px;height:120px;border-radius:34px}
 .rental-card:hover .icon-tile .icon-emblem{transform:scale(1.055)}
+/* Refined browse interactions: clear focus, useful status, and unobscured section jumps. */
+@media(min-width:601px){html{scroll-padding-top:104px}}
+.filters{transition:border-color .2s ease,box-shadow .2s ease}
+.filters:focus-within{border-color:#8fae98;box-shadow:0 12px 34px #163b3119,0 0 0 3px #d7e8d9}
+#result-count:not([hidden]){display:inline-flex;align-items:center;background:#e8f0e7;border:1px solid #d4e2d2;border-radius:100px;padding:7px 14px;margin:3px 0 20px;font-weight:650;color:#245443}
+.rental-card:focus-within{border-color:#8fae98;box-shadow:0 12px 34px #163b3119}
+@media(prefers-reduced-motion:reduce){.filters{transition:none!important}}
 </style>
 </head>
 <body>
