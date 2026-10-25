@@ -288,6 +288,26 @@ footer{margin-top:30px}
 @media(max-width:600px){.active-filters{gap:8px;margin-bottom:18px}.active-filters-label{width:100%;margin-bottom:1px}.active-filter-chip{font-size:.77rem;max-width:100%}}
 @media(prefers-reduced-motion:reduce){.active-filter-chip{transition:none!important}}
 
+
+/* Hero discovery search: put the directory's most useful action above the fold. */
+.hero-find{position:relative;z-index:3;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.5fr);align-items:center;gap:26px;width:calc(100% - 60px);max-width:1050px;margin:-34px auto 31px;padding:19px 22px 19px 28px;background:#fffefa;border:1px solid #dce4d7;border-radius:18px;box-shadow:0 18px 42px #173f3526,0 3px 9px #173f3510}
+.hero-find-copy{min-width:0}
+.hero-find-kicker{display:block;color:#638069;font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;font-weight:850;margin-bottom:3px}
+.hero-find-copy strong{display:block;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.23rem,2vw,1.6rem);font-weight:400;line-height:1.2;letter-spacing:-.035em;color:#173f35}
+.hero-find-form{display:flex;align-items:stretch;gap:8px;min-width:0}
+.hero-find-input{position:relative;display:flex;align-items:center;flex:1;min-width:0;border:1px solid #b7cbb9;background:#f6f8f3;border-radius:11px;transition:border-color .2s,box-shadow .2s}
+.hero-find-input:focus-within{border-color:#567e64;box-shadow:0 0 0 3px #b4d5bc}
+.hero-find-input svg{width:21px;height:21px;margin-left:15px;flex:none;fill:none;stroke:#587363;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hero-find-input input{border:0;background:transparent;border-radius:11px;min-height:54px;padding:10px 12px;font-size:.92rem;outline:none;box-shadow:none}
+.hero-find-input input:focus-visible{outline:none}
+.hero-find-submit{flex:none;min-height:54px;border:0;border-radius:11px;padding:12px 21px;background:#173f35;color:#fff;font-size:.84rem;font-weight:800;cursor:pointer;transition:background-color .2s,transform .2s}
+.hero-find-submit:hover{background:#285f4b;transform:translateY(-1px)}
+.hero-find-submit:focus-visible{outline:3px solid #a86816;outline-offset:3px}
+@media(max-width:900px){.hero-find{grid-template-columns:1fr;gap:12px;width:calc(100% - 34px);padding:20px 22px}.hero-find-copy strong{font-size:1.5rem}}
+@media(max-width:600px){.hero-find{width:calc(100% - 18px);margin:-22px auto 24px;padding:18px 16px;border-radius:16px;gap:13px}.hero-find-copy strong{font-size:1.38rem}.hero-find-form{gap:7px}.hero-find-input input{min-height:51px;padding:10px 8px;font-size:.85rem}.hero-find-input svg{width:18px;height:18px;margin-left:11px}.hero-find-submit{min-height:51px;padding:10px 13px;font-size:.77rem}}
+@media(max-width:370px){.hero-find-form{flex-wrap:wrap}.hero-find-input{flex-basis:100%}.hero-find-submit{width:100%}}
+@media(prefers-reduced-motion:reduce){.hero-find-input,.hero-find-submit{transition:none!important}.hero-find-submit:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -295,6 +315,17 @@ footer{margin-top:30px}
 <header><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><nav aria-label="Main navigation"><a class="browse-nav" href="#browse">Browse rentals</a><a href="#contact">Get in touch</a><a class="nav-list" href="#list">List your rental ↗</a></nav></div></header>
 <main id="main" class="wrap">
 <section class="hero" aria-labelledby="hero-title"><img class="hero-photo" src="assets/lake-dardanelle-sunset.jpg" alt="Sunset over the covered docks at Lake Dardanelle State Park, reflected in the still water" width="1920" height="910" fetchpriority="high"><h1 id="hero-title">Rent what you need.<br><em>Right here at home.</em></h1><p class="intro">From a place near Tech to a weekend on Lake Dardanelle. Find what you need from the people who call this place home.</p><div class="actions"><a class="button primary" href="#browse">Explore rentals <span aria-hidden="true">&nbsp; ↗</span></a><a class="button secondary" href="#list">Have something to rent?</a></div><div class="hero-note"><span>Local businesses & owners</span><span>Everyday needs to weekend plans</span><span>Connect directly</span></div></section>
+<section class="hero-find" id="hero-find" aria-label="Find local rentals" hidden>
+  <div class="hero-find-copy"><span class="hero-find-kicker">YOUR NEXT RENTAL STARTS HERE</span><strong>What are you looking for?</strong></div>
+  <form class="hero-find-form" id="hero-search-form" role="search" aria-label="Search rental categories from the homepage">
+    <label class="sr-only" for="hero-query">Search local rental categories</label>
+    <div class="hero-find-input">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+      <input id="hero-query" type="search" placeholder="Homes, kayaks, equipment…" autocomplete="off">
+    </div>
+    <button class="hero-find-submit" type="submit">Find rentals ↗</button>
+  </form>
+</section>
 <section class="hometown" aria-labelledby="hometown-title"><div class="hometown-copy"><p class="eyebrow">This is our kind of place</p><h2 id="hometown-title">A little lake time.<br>A whole lot of hometown.</h2><p>Lake days, Tech green and gold, and the familiar sights on the way home.</p></div><figure class="landmark downtown"><img src="assets/downtown-russellville-sunset.jpg" alt="Downtown Russellville beneath a vivid orange and pink sunset" width="1200" height="544" loading="lazy"><figcaption>Downtown Russellville<span>Home looks good from here</span></figcaption></figure><figure class="landmark tech"><img src="assets/arkansas-tech-wilson-hall.jpg" alt="The red brick buildings and white cupola of Wilson Hall at Arkansas Tech University" width="1280" height="848" loading="lazy"><figcaption>Arkansas Tech University<span>Wilson Hall · Russellville</span></figcaption></figure><figure class="landmark tower"><img src="water%20tower.jpg" alt="The I love Russellville water tower above the trees" width="900" height="486" loading="lazy"><figcaption>A familiar welcome home<span>The I ♥ Russellville water tower</span></figcaption></figure></section>
 
 <section class="discovery" aria-labelledby="discovery-title">
@@ -332,7 +363,7 @@ footer{margin-top:30px}
 </div>
 
 <div class="browse-toolbar" id="browse-toolbar" hidden>
-<p id="result-count" role="status" aria-live="polite"></p>
+<p id="result-count" role="status" aria-live="polite" tabindex="-1"></p>
 <div class="view-switch" role="group" aria-label="Rental directory layout">
 <button type="button" data-view-choice="grid" aria-pressed="true" aria-controls="rental-results"><span class="view-icon" aria-hidden="true">▦</span> Grid</button>
 <button type="button" data-view-choice="list" aria-pressed="false" aria-controls="rental-results"><span class="view-icon" aria-hidden="true">☷</span> List</button>
@@ -521,6 +552,8 @@ footer{margin-top:30px}
 document.getElementById("year").textContent = new Date().getFullYear();
 const form = document.getElementById("filters");
 const search = document.getElementById("search");
+const heroSearchForm = document.getElementById("hero-search-form");
+const heroQuery = document.getElementById("hero-query");
 const category = document.getElementById("category");
 const cards = Array.from(document.querySelectorAll(".rental-card"));
 const count = document.getElementById("result-count");
@@ -586,11 +619,23 @@ function filterRentals(){
     if(matches) visible++;
   });
   count.textContent = visible + " of " + cards.length + " rental categories shown";
+  heroQuery.value = search.value;
   updateActiveFilters();
   quickPickButtons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.quickCategory === category.value)));
   document.getElementById("empty").hidden = visible !== 0;
 }
 form.hidden=false;document.getElementById("browse-toolbar").hidden=false;quickPaths.hidden=false;document.getElementById("mobile-dock").hidden=false;
+document.getElementById("hero-find").hidden=false;
+heroSearchForm.addEventListener("submit", event => {
+  event.preventDefault();
+  search.value = heroQuery.value.trim();
+  category.value = "all";
+  filterRentals();
+  heroQuery.blur();
+  count.focus({preventScroll:true});
+  count.scrollIntoView({behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"});
+});
+
 quickPickButtons.forEach(button => button.addEventListener("click", () => {
   const chosen = category.value === button.dataset.quickCategory ? "all" : button.dataset.quickCategory;
   search.value = "";
