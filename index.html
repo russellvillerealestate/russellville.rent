@@ -155,6 +155,19 @@ footer{margin-top:30px}
 #result-count:not([hidden]){display:inline-flex;align-items:center;background:#e8f0e7;border:1px solid #d4e2d2;border-radius:100px;padding:7px 14px;margin:3px 0 20px;font-weight:650;color:#245443}
 .rental-card:focus-within{border-color:#8fae98;box-shadow:0 12px 34px #163b3119}
 @media(prefers-reduced-motion:reduce){.filters{transition:none!important}}
+
+/* Browse shortcuts: recognizable categories before the full directory. */
+.quick-paths{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:2px 0 18px;padding:14px 16px;background:linear-gradient(110deg,#e8eee5,#f4f0e6);border:1px solid #d3dfd1;border-radius:15px}
+.quick-paths-label{margin-right:4px;font-size:.67rem;font-weight:850;letter-spacing:.12em;color:#496c53}
+.quick-pick{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:8px 15px 8px 9px;border:1px solid #d1ddd1;border-radius:999px;background:#fff;color:#254937;font-size:.82rem;font-weight:750;line-height:1.2;white-space:nowrap;box-shadow:0 3px 10px #1b40290d;cursor:pointer;transition:transform .18s ease,border-color .18s ease,background-color .18s ease}
+.quick-pick-icon{flex:none;display:grid;place-items:center;width:29px;height:29px;border-radius:50%;background:var(--pick-tint,#e7eee4);font-size:1.03rem;line-height:1}
+.quick-pick:hover{transform:translateY(-2px);border-color:#90ab98;box-shadow:0 5px 14px #1b402917}
+.quick-pick[aria-pressed="true"]{border-color:#173f35;background:#173f35;color:#fff;box-shadow:0 5px 15px #173f352a}
+.quick-pick[aria-pressed="true"] .quick-pick-icon{background:#f0dca5}
+@media(max-width:600px){.quick-paths{gap:8px;padding:13px}.quick-paths-label{width:100%;margin:0 0 2px}.quick-pick{flex:1 1 calc(50% - 8px);font-size:.79rem;gap:7px;padding:8px;min-width:0}.quick-pick-icon{width:27px;height:27px}}
+@media(max-width:380px){.quick-pick{font-size:.75rem;gap:6px}}
+@media(prefers-reduced-motion:reduce){.quick-pick{transition:none!important}.quick-pick:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -165,6 +178,17 @@ footer{margin-top:30px}
 <section class="hometown" aria-labelledby="hometown-title"><div class="hometown-copy"><p class="eyebrow">This is our kind of place</p><h2 id="hometown-title">A little lake time.<br>A whole lot of hometown.</h2><p>Lake days, Tech green and gold, and the familiar sights on the way home.</p></div><figure class="landmark downtown"><img src="assets/downtown-russellville-sunset.jpg" alt="Downtown Russellville beneath a vivid orange and pink sunset" width="1200" height="544" loading="lazy"><figcaption>Downtown Russellville<span>Home looks good from here</span></figcaption></figure><figure class="landmark tech"><img src="assets/arkansas-tech-wilson-hall.jpg" alt="The red brick buildings and white cupola of Wilson Hall at Arkansas Tech University" width="1280" height="848" loading="lazy"><figcaption>Arkansas Tech University<span>Wilson Hall · Russellville</span></figcaption></figure><figure class="landmark tower"><img src="water%20tower.jpg" alt="The I love Russellville water tower above the trees" width="900" height="486" loading="lazy"><figcaption>A familiar welcome home<span>The I ♥ Russellville water tower</span></figcaption></figure></section>
 <section id="browse" aria-labelledby="browse-title"><div class="section-head"><div><p class="eyebrow">Find it around here</p><h2 id="browse-title">What are you looking for?</h2><p>Explore rental options, or ask us about a category we’re building.</p></div><span class="browse-label">31 categories. One local hub.</span></div>
 <form class="filters" id="filters" role="search" hidden><div><label for="search">Search rentals</label><input type="search" id="search" placeholder="Try houses, cars, kayaks, storage…" autocomplete="off"></div><div><label for="category">Category</label><select id="category"><option value="all">All categories</option><option value="homes">Long-term rentals</option><option value="storage">Storage</option><option value="tools">Tools &amp; equipment</option><option value="paddling">Kayaks, canoes &amp; paddleboards</option><option value="bicycles">Bicycles &amp; e-bikes</option><option value="rvs">RV site rentals</option><option value="cars">Car rentals</option><option value="boats">Boats</option><option value="party">Party &amp; event rentals</option><option value="commercial">Commercial spaces</option><option value="stays">Short-term stays</option><option value="camping">Camping &amp; RV sites</option><option value="trailers">Trailer rentals</option><option value="mobile-storage">Portable storage</option><option value="dumpsters">Dumpster rentals</option><option value="venues">Event venues</option><option value="moving">Moving trucks</option><option value="restrooms">Portable restroom rentals</option><option value="photo-booths">Photo booth rentals</option><option value="temporary-fencing">Temporary fencing rentals</option><option value="formalwear">Formalwear rentals</option><option value="sheds">Portable building rentals</option><option value="household-rentals">Furniture &amp; appliance rentals</option><option value="audio-visual">Audio &amp; visual rentals</option><option value="instruments">Band instrument rentals</option><option value="yard-signs">Yard sign rentals</option><option value="golf-carts">Golf cart rentals</option><option value="stages">Stage &amp; platform rentals</option><option value="golf-simulators">Golf simulator rentals</option><option value="medical-equipment-loans">Medical equipment loans</option><option value="other">Other local rentals</option></select></div><button type="reset" class="button reset">Clear filters</button></form>
+
+<div class="quick-paths" id="quick-paths" role="group" aria-label="Quick rental category filters" hidden>
+  <span class="quick-paths-label">QUICK START</span>
+  <button type="button" class="quick-pick" data-quick-category="homes" aria-pressed="false" style="--pick-tint:#e2edde"><span class="quick-pick-icon" aria-hidden="true">⌂</span>Homes</button>
+  <button type="button" class="quick-pick" data-quick-category="storage" aria-pressed="false" style="--pick-tint:#e5ebdf"><span class="quick-pick-icon" aria-hidden="true">📦</span>Storage</button>
+  <button type="button" class="quick-pick" data-quick-category="tools" aria-pressed="false" style="--pick-tint:#f3e7d0"><span class="quick-pick-icon" aria-hidden="true">🚜</span>Equipment</button>
+  <button type="button" class="quick-pick" data-quick-category="paddling" aria-pressed="false" style="--pick-tint:#d9eef0"><span class="quick-pick-icon" aria-hidden="true">🛶</span>Kayaks</button>
+  <button type="button" class="quick-pick" data-quick-category="cars" aria-pressed="false" style="--pick-tint:#e0e8ef"><span class="quick-pick-icon" aria-hidden="true">🚗</span>Cars</button>
+  <button type="button" class="quick-pick" data-quick-category="party" aria-pressed="false" style="--pick-tint:#f6e2d7"><span class="quick-pick-icon" aria-hidden="true">🎪</span>Events</button>
+</div>
+
 <p id="result-count" role="status" aria-live="polite" hidden></p>
 <div class="rentals-grid"><article class="rental-card" data-category="homes">
 <div class="image-wrap"><img src="https://images.unsplash.com/photo-1768941124460-6fa7161715ff?auto=format&amp;fit=crop&amp;fm=jpg&amp;ixlib=rb-4.1.0&amp;q=82&amp;w=1600" alt="Illustrative photograph of residential houses" loading="lazy" width="640" height="380"></div>
@@ -345,6 +369,8 @@ const search = document.getElementById("search");
 const category = document.getElementById("category");
 const cards = Array.from(document.querySelectorAll(".rental-card"));
 const count = document.getElementById("result-count");
+const quickPaths = document.getElementById("quick-paths");
+const quickPickButtons = Array.from(quickPaths.querySelectorAll(".quick-pick"));
 const aliases = {homes:"house houses apartment apartments home housing long term monthly spring lake springlake lindsey management river valley realty natural state property management leasing",storage:"self storage unit units",tools:"tool equipment machinery trailer trailers central rental central rental supply united rentals excavators skid steers skidsteer skid-steer attachments brush cutter harley rake jackhammer pickup broom post hole auger grapple bucket post driver pallet forks hay spikes padfoot roller tree puller backhoe kubota b26 nifty lifts scissor lift boom lift generators resilient energy industrial power climate hvac ridout lumber hardware tool rentals",paddling:"kayak kayaks canoe canoes paddleboard paddleboards sup adventure water",bicycles:"bicycle bicycles bike bikes cycling mountain road gravel hardtail full suspension electric ebike e-bike commuter jackalope jackalope cycling rent rental downtown commerce",rvs:"rv rvs recreational vehicle camper motorhome camping site sites hookups monthly lake atkins adventure rv park",cars:"car cars vehicle vehicles auto automobile sedan suv truck passenger rental rent a ride enterprise cogswell",boats:"boat boats boating lake",party:"party parties event events tent tents table tables chair chairs",commercial:"commercial office offices retail shop shops warehouse coworking shared workspace desk desks conference room meeting room co create cocreate innovation hub hidden gem suites",stays:"airbnb vacation short term lodging furnished",camping:"camp camping campground campgrounds rv rvs recreational vehicle sites hookups overnight monthly ivys cove ivy edens rv resort lake dardanelle state park pottsville london",trailers:"trailer trailers car hauler cargo utility enclosed rent to own grace pro", "mobile-storage":"portable mobile storage container office trailer",dumpsters:"dumpster dumpsters roll off rolloff trash waste bin",venues:"venue venues event hall room meeting space depot wedding weddings reception barn welcome hill brookstock potts inn museum outdoor courtyard orenwood oren wood morrilton chamber commerce community board classroom",moving:"moving truck trucks van boxes uhaul u haul penske space world dardanelle old bank gun pawn union street","restrooms":"portable toilet toilets sanitation restroom bathroom handwashing jobsite septic","photo-booths":"photo booth booths camera 360 video wedding selfie rental","temporary-fencing":"temporary fencing fence panel panels barrier construction chain link","formalwear":"formal formalwear tuxedo tuxedos suit suits wedding prom clothes","sheds":"shed sheds portable building buildings rent to own lease storage","household-rentals":"furniture appliance appliances electronics couch sofa washer dryer television rent to own","audio-visual":"audio visual av microphone speakers sound lighting projector event equipment","instruments":"band musical instrument instruments music trumpet trombone saxophone flute clarinet student school orchestra rent to own cooper music","yard-signs":"yard sign signs greeting birthday celebration lawn sign gypsies","golf-carts":"golf cart carts buggy event vehicle transport mobility rental",stages:"stage stages staging portable mobile concert platform platforms riser risers festival performance production truss","golf-simulators":"golf simulator simulators indoor golf golf bay virtual golf tee time mobile golf event games","medical-equipment-loans":"medical equipment loan loans wheelchair walker crutches shower chair assistive technology free goodwill ican mobility reuse borrow",other:"other services miscellaneous"};
 function filterRentals(){
   const terms = search.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
@@ -357,9 +383,16 @@ function filterRentals(){
     if(matches) visible++;
   });
   count.textContent = visible + " of " + cards.length + " rental categories shown";
+  quickPickButtons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.quickCategory === category.value)));
   document.getElementById("empty").hidden = visible !== 0;
 }
-form.hidden=false;count.hidden=false;
+form.hidden=false;count.hidden=false;quickPaths.hidden=false;
+quickPickButtons.forEach(button => button.addEventListener("click", () => {
+  const chosen = category.value === button.dataset.quickCategory ? "all" : button.dataset.quickCategory;
+  search.value = "";
+  category.value = chosen;
+  filterRentals();
+}));
 form.addEventListener("submit",event=>event.preventDefault());
 search.addEventListener("input",filterRentals);
 category.addEventListener("change",filterRentals);
