@@ -276,6 +276,18 @@ footer{margin-top:30px}
 @media(max-width:600px){.owner{margin-top:36px;padding:29px 24px;border-radius:19px;gap:22px}.owner h2{font-size:clamp(2rem,8vw,2.65rem)}.owner .button{width:100%;text-align:center}.owner-details{padding:21px;border-left:3px solid #f0ca79}.owner::before{right:-225px;top:-140px}}
 @media(prefers-reduced-motion:reduce){.owner .button{transition:none}.owner .button:hover{transform:none}}
 
+
+/* Visible, removable filter tokens: keep the current search state easy to understand. */
+.active-filters{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin:-1px 0 22px;padding:0 2px}
+.active-filters-label{font-size:.68rem;font-weight:850;letter-spacing:.11em;text-transform:uppercase;color:#5c7265;margin-right:3px}
+.active-filter-chip{display:inline-flex;align-items:center;gap:10px;min-height:42px;max-width:100%;padding:7px 10px 7px 14px;border:1px solid #b6cbb9;border-radius:999px;background:#eaf3e9;color:#234b39;cursor:pointer;font-size:.8rem;font-weight:750;line-height:1.2;box-shadow:0 2px 8px #183e3410;transition:border-color .18s ease,background-color .18s ease}
+.active-filter-chip:hover{background:#dcebdc;border-color:#7e9f87}
+.active-filter-chip .chip-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.active-filter-chip .chip-remove{display:grid;place-items:center;flex:none;width:25px;height:25px;border-radius:50%;background:#d0e3d2;color:#204734;font-size:1.1rem;line-height:1}
+.active-filter-chip:focus-visible{outline:3px solid #a86816;outline-offset:3px}
+@media(max-width:600px){.active-filters{gap:8px;margin-bottom:18px}.active-filters-label{width:100%;margin-bottom:1px}.active-filter-chip{font-size:.77rem;max-width:100%}}
+@media(prefers-reduced-motion:reduce){.active-filter-chip{transition:none!important}}
+
 </style>
 </head>
 <body>
@@ -326,6 +338,7 @@ footer{margin-top:30px}
 <button type="button" data-view-choice="list" aria-pressed="false" aria-controls="rental-results"><span class="view-icon" aria-hidden="true">☷</span> List</button>
 </div>
 </div>
+<div class="active-filters" id="active-filters" role="group" aria-label="Applied rental filters" hidden><span class="active-filters-label">Your filters</span></div>
 <div class="rentals-grid" id="rental-results" data-view="grid"><article class="rental-card" data-category="homes">
 <div class="image-wrap"><img src="https://images.unsplash.com/photo-1768941124460-6fa7161715ff?auto=format&amp;fit=crop&amp;fm=jpg&amp;ixlib=rb-4.1.0&amp;q=82&amp;w=1600" alt="Illustrative photograph of residential houses" loading="lazy" width="640" height="380"></div>
 <div class="card-body"><p class="eyebrow">Long-term rentals</p><h3>Long-term rentals</h3>
@@ -514,6 +527,48 @@ const count = document.getElementById("result-count");
 const quickPaths = document.getElementById("quick-paths");
 const quickPickButtons = Array.from(quickPaths.querySelectorAll(".quick-pick"));
 const rentalGrid = document.getElementById("rental-results");
+
+const activeFilters = document.getElementById("active-filters");
+function updateActiveFilters(){
+  activeFilters.replaceChildren();
+  const searchTerm = search.value.trim();
+  const chosenCategory = category.value;
+  if(!searchTerm && chosenCategory === "all"){
+    activeFilters.hidden = true;
+    return;
+  }
+  const label = document.createElement("span");
+  label.className = "active-filters-label";
+  label.textContent = "Your filters";
+  activeFilters.appendChild(label);
+  function addFilterChip(name, value, control, clear){
+    const chip = document.createElement("button");
+    chip.type = "button";
+    chip.className = "active-filter-chip";
+    chip.setAttribute("aria-label", "Remove " + name.toLowerCase() + " filter: " + value);
+    const text = document.createElement("span");
+    text.className = "chip-text";
+    text.textContent = name + ": " + value;
+    const remove = document.createElement("span");
+    remove.className = "chip-remove";
+    remove.setAttribute("aria-hidden", "true");
+    remove.textContent = "×";
+    chip.append(text, remove);
+    chip.addEventListener("click", () => {
+      clear();
+      filterRentals();
+      control.focus({preventScroll:true});
+    });
+    activeFilters.appendChild(chip);
+  }
+  if(searchTerm) addFilterChip("Search", searchTerm, search, () => { search.value = ""; });
+  if(chosenCategory !== "all"){
+    const selectedLabel = category.options[category.selectedIndex].textContent;
+    addFilterChip("Category", selectedLabel, category, () => { category.value = "all"; });
+  }
+  activeFilters.hidden = false;
+}
+
 const viewButtons = Array.from(document.querySelectorAll("[data-view-choice]"));
 viewButtons.forEach(button => button.addEventListener("click", () => {
   rentalGrid.dataset.view = button.dataset.viewChoice;
@@ -531,6 +586,7 @@ function filterRentals(){
     if(matches) visible++;
   });
   count.textContent = visible + " of " + cards.length + " rental categories shown";
+  updateActiveFilters();
   quickPickButtons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.quickCategory === category.value)));
   document.getElementById("empty").hidden = visible !== 0;
 }
