@@ -237,6 +237,25 @@ footer{margin-top:30px}
 @media(max-width:650px){.discovery{margin-top:28px}.discovery-heading{display:block}.discovery-heading>p{margin:7px 0 0}.discovery-grid{grid-template-columns:1fr;gap:12px}.discovery-card{min-height:175px;padding:20px}.discovery-card h3{font-size:1.75rem}.discovery-card--gear .path-glyph{top:8px;font-size:5.5rem}}
 @media(prefers-reduced-motion:reduce){.discovery-card,.discovery-card>img{transition:none!important}.discovery-card:hover,.discovery-card:hover>img{transform:none!important}}
 
+
+/* Mobile discovery dock: persistent, thumb-friendly paths on a long rental directory. */
+.mobile-dock{display:none}
+@media(max-width:600px){
+  body{padding-bottom:calc(106px + env(safe-area-inset-bottom,0px))}
+  .mobile-dock:not([hidden]){position:fixed;z-index:40;left:50%;bottom:calc(10px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;width:min(480px,calc(100% - 24px));padding:6px;background:rgba(250,251,246,.97);border:1px solid #cbd9ce;border-radius:19px;box-shadow:0 12px 40px #0f332c3d,0 2px 8px #0f332c16;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+  .mobile-dock a{display:flex;align-items:center;justify-content:center;gap:7px;min-height:52px;min-width:0;padding:8px 5px;border-radius:13px;color:#2d5143;text-decoration:none;font-size:.78rem;font-weight:800;line-height:1.1;white-space:nowrap}
+  .mobile-dock a:hover{background:#e8f0e8}
+  .mobile-dock a:focus-visible{outline:3px solid #a86816;outline-offset:1px}
+  .mobile-dock a.mobile-dock-search{background:#173f35;color:#fff;box-shadow:0 3px 10px #173f3530}
+  .mobile-dock a.mobile-dock-search:hover{background:#285b4b}
+  .mobile-dock svg{width:19px;height:19px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  #search{scroll-margin-top:26px}
+}
+@media(max-width:350px){.mobile-dock a{font-size:.71rem;gap:4px}.mobile-dock svg{width:17px;height:17px}}
+@media(max-width:600px) and (max-height:400px){.mobile-dock:not([hidden]){display:none}body{padding-bottom:0}}
+@supports selector(body:has(#filters:focus-within)){
+  @media(max-width:600px){body:has(#filters:focus-within) .mobile-dock{display:none}}
+}
 </style>
 </head>
 <body>
@@ -459,6 +478,12 @@ footer{margin-top:30px}
 <footer><span>© <span id="year">2026</span> Russellville.Rent</span><span>Local rentals. Local connections. Russellville, Arkansas.</span><a href="#list">Request a listing</a></footer>
 <details class="photo-credits"><summary>Local photo credits</summary><p>Lake Dardanelle sunset and downtown sunset photographs supplied for Russellville.Rent. Wilson Hall: <a href="https://commons.wikimedia.org/wiki/File:Wilson_Hall%E2%80%94Arkansas_Tech_University.JPG">Valis55, Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. Photos cropped for the layout; the Wilson Hall crop is shared under the same license. Water-tower photo from the existing Russellville.Rent collection.</p></details>
 </main>
+
+<nav class="mobile-dock" id="mobile-dock" aria-label="Quick mobile navigation" hidden>
+  <a href="#browse" aria-label="Browse rental categories"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Browse</a>
+  <a class="mobile-dock-search" href="#search" aria-label="Search rentals"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 5 5"/></svg>Search</a>
+  <a href="#list" aria-label="List your rental"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/><circle cx="12" cy="12" r="10"/></svg>List yours</a>
+</nav>
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 const form = document.getElementById("filters");
@@ -489,7 +514,7 @@ function filterRentals(){
   quickPickButtons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.quickCategory === category.value)));
   document.getElementById("empty").hidden = visible !== 0;
 }
-form.hidden=false;document.getElementById("browse-toolbar").hidden=false;quickPaths.hidden=false;
+form.hidden=false;document.getElementById("browse-toolbar").hidden=false;quickPaths.hidden=false;document.getElementById("mobile-dock").hidden=false;
 quickPickButtons.forEach(button => button.addEventListener("click", () => {
   const chosen = category.value === button.dataset.quickCategory ? "all" : button.dataset.quickCategory;
   search.value = "";
