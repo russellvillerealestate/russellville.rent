@@ -168,6 +168,46 @@ footer{margin-top:30px}
 @media(max-width:380px){.quick-pick{font-size:.75rem;gap:6px}}
 @media(prefers-reduced-motion:reduce){.quick-pick{transition:none!important}.quick-pick:hover{transform:none}}
 
+
+/* An editorial list view for visitors scanning the 31-category directory. */
+.browse-toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:3px 0 20px}
+.browse-toolbar #result-count:not([hidden]){margin:0}
+.view-switch{display:inline-flex;align-items:center;gap:3px;padding:4px;border:1px solid #cddbcf;border-radius:12px;background:#e8eee5;box-shadow:0 3px 12px #173f350a}
+.view-switch button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:92px;min-height:40px;padding:8px 13px;border:0;border-radius:8px;background:transparent;color:#496257;font-size:.8rem;font-weight:750;cursor:pointer;transition:background-color .2s,color .2s,box-shadow .2s}
+.view-switch button:hover{background:#f9fcf7}
+.view-switch button[aria-pressed="true"]{background:#173f35;color:white;box-shadow:0 3px 9px #173f3525}
+.view-switch .view-icon{font-size:1.1rem;line-height:1;letter-spacing:-.09em}
+.rentals-grid[data-view="list"]{grid-template-columns:minmax(0,1fr);gap:14px}
+.rentals-grid[data-view="list"] .rental-card{display:grid;grid-template-columns:minmax(170px,230px) minmax(0,1fr);min-height:185px;align-items:stretch}
+.rentals-grid[data-view="list"] .image-wrap,.rentals-grid[data-view="list"] .category-art{height:100%;min-height:185px}
+.rentals-grid[data-view="list"] .card-body{padding:20px 26px}
+.rentals-grid[data-view="list"] .card-body h3{font-size:1.24rem;margin-bottom:7px}
+.rentals-grid[data-view="list"] .card-body>p:not(.eyebrow){margin-bottom:9px}
+.rentals-grid[data-view="list"] .card-link{margin-top:auto;padding-top:10px}
+.rentals-grid[data-view="list"] .brand-feature img{max-height:108px;max-width:190px}
+.rentals-grid[data-view="list"] .brand-feature span{font-size:.75rem}
+.rentals-grid[data-view="list"] .icon-tile .icon-emblem{width:100px;height:100px;font-size:3.8rem}
+@media(max-width:600px){
+ .browse-toolbar{align-items:flex-start;gap:10px}
+ .browse-toolbar #result-count:not([hidden]){font-size:.72rem;padding:8px 10px}
+ .view-switch{margin-left:auto}
+ .view-switch button{min-width:72px;min-height:38px;padding:7px 10px;gap:5px}
+ .rentals-grid[data-view="list"] .rental-card{grid-template-columns:100px minmax(0,1fr);min-height:155px}
+ .rentals-grid[data-view="list"] .image-wrap,.rentals-grid[data-view="list"] .category-art{min-height:155px}
+ .rentals-grid[data-view="list"] .card-body{padding:13px 14px}
+ .rentals-grid[data-view="list"] .card-body h3{font-size:1rem;line-height:1.25}
+ .rentals-grid[data-view="list"] .card-body .eyebrow{font-size:.55rem}
+ .rentals-grid[data-view="list"] .card-body>p:not(.eyebrow){font-size:.75rem;line-height:1.4}
+ .rentals-grid[data-view="list"] .card-link{font-size:.74rem}
+ .rentals-grid[data-view="list"] .icon-tile .icon-emblem{width:66px;height:66px;border-radius:20px;font-size:2.5rem}
+ .rentals-grid[data-view="list"] .icon-tile small{font-size:.47rem;letter-spacing:.04em;padding:3px 6px}
+ .rentals-grid[data-view="list"] .brand-feature{padding:10px 5px;gap:3px}
+ .rentals-grid[data-view="list"] .brand-feature img{width:90px;height:78px}
+ .rentals-grid[data-view="list"] .brand-feature span{font-size:.6rem;padding:4px 5px}
+ .rentals-grid[data-view="list"] .brand-feature small{display:none}
+}
+@media(prefers-reduced-motion:reduce){.view-switch button{transition:none}}
+
 </style>
 </head>
 <body>
@@ -189,8 +229,14 @@ footer{margin-top:30px}
   <button type="button" class="quick-pick" data-quick-category="party" aria-pressed="false" style="--pick-tint:#f6e2d7"><span class="quick-pick-icon" aria-hidden="true">🎪</span>Events</button>
 </div>
 
-<p id="result-count" role="status" aria-live="polite" hidden></p>
-<div class="rentals-grid"><article class="rental-card" data-category="homes">
+<div class="browse-toolbar" id="browse-toolbar" hidden>
+<p id="result-count" role="status" aria-live="polite"></p>
+<div class="view-switch" role="group" aria-label="Rental directory layout">
+<button type="button" data-view-choice="grid" aria-pressed="true" aria-controls="rental-results"><span class="view-icon" aria-hidden="true">▦</span> Grid</button>
+<button type="button" data-view-choice="list" aria-pressed="false" aria-controls="rental-results"><span class="view-icon" aria-hidden="true">☷</span> List</button>
+</div>
+</div>
+<div class="rentals-grid" id="rental-results" data-view="grid"><article class="rental-card" data-category="homes">
 <div class="image-wrap"><img src="https://images.unsplash.com/photo-1768941124460-6fa7161715ff?auto=format&amp;fit=crop&amp;fm=jpg&amp;ixlib=rb-4.1.0&amp;q=82&amp;w=1600" alt="Illustrative photograph of residential houses" loading="lazy" width="640" height="380"></div>
 <div class="card-body"><p class="eyebrow">Long-term rentals</p><h3>Long-term rentals</h3>
 <p>Houses, apartments, and places to settle in.</p>
@@ -371,6 +417,12 @@ const cards = Array.from(document.querySelectorAll(".rental-card"));
 const count = document.getElementById("result-count");
 const quickPaths = document.getElementById("quick-paths");
 const quickPickButtons = Array.from(quickPaths.querySelectorAll(".quick-pick"));
+const rentalGrid = document.getElementById("rental-results");
+const viewButtons = Array.from(document.querySelectorAll("[data-view-choice]"));
+viewButtons.forEach(button => button.addEventListener("click", () => {
+  rentalGrid.dataset.view = button.dataset.viewChoice;
+  viewButtons.forEach(choice => choice.setAttribute("aria-pressed", String(choice === button)));
+}));
 const aliases = {homes:"house houses apartment apartments home housing long term monthly spring lake springlake lindsey management river valley realty natural state property management leasing",storage:"self storage unit units",tools:"tool equipment machinery trailer trailers central rental central rental supply united rentals excavators skid steers skidsteer skid-steer attachments brush cutter harley rake jackhammer pickup broom post hole auger grapple bucket post driver pallet forks hay spikes padfoot roller tree puller backhoe kubota b26 nifty lifts scissor lift boom lift generators resilient energy industrial power climate hvac ridout lumber hardware tool rentals",paddling:"kayak kayaks canoe canoes paddleboard paddleboards sup adventure water",bicycles:"bicycle bicycles bike bikes cycling mountain road gravel hardtail full suspension electric ebike e-bike commuter jackalope jackalope cycling rent rental downtown commerce",rvs:"rv rvs recreational vehicle camper motorhome camping site sites hookups monthly lake atkins adventure rv park",cars:"car cars vehicle vehicles auto automobile sedan suv truck passenger rental rent a ride enterprise cogswell",boats:"boat boats boating lake",party:"party parties event events tent tents table tables chair chairs",commercial:"commercial office offices retail shop shops warehouse coworking shared workspace desk desks conference room meeting room co create cocreate innovation hub hidden gem suites",stays:"airbnb vacation short term lodging furnished",camping:"camp camping campground campgrounds rv rvs recreational vehicle sites hookups overnight monthly ivys cove ivy edens rv resort lake dardanelle state park pottsville london",trailers:"trailer trailers car hauler cargo utility enclosed rent to own grace pro", "mobile-storage":"portable mobile storage container office trailer",dumpsters:"dumpster dumpsters roll off rolloff trash waste bin",venues:"venue venues event hall room meeting space depot wedding weddings reception barn welcome hill brookstock potts inn museum outdoor courtyard orenwood oren wood morrilton chamber commerce community board classroom",moving:"moving truck trucks van boxes uhaul u haul penske space world dardanelle old bank gun pawn union street","restrooms":"portable toilet toilets sanitation restroom bathroom handwashing jobsite septic","photo-booths":"photo booth booths camera 360 video wedding selfie rental","temporary-fencing":"temporary fencing fence panel panels barrier construction chain link","formalwear":"formal formalwear tuxedo tuxedos suit suits wedding prom clothes","sheds":"shed sheds portable building buildings rent to own lease storage","household-rentals":"furniture appliance appliances electronics couch sofa washer dryer television rent to own","audio-visual":"audio visual av microphone speakers sound lighting projector event equipment","instruments":"band musical instrument instruments music trumpet trombone saxophone flute clarinet student school orchestra rent to own cooper music","yard-signs":"yard sign signs greeting birthday celebration lawn sign gypsies","golf-carts":"golf cart carts buggy event vehicle transport mobility rental",stages:"stage stages staging portable mobile concert platform platforms riser risers festival performance production truss","golf-simulators":"golf simulator simulators indoor golf golf bay virtual golf tee time mobile golf event games","medical-equipment-loans":"medical equipment loan loans wheelchair walker crutches shower chair assistive technology free goodwill ican mobility reuse borrow",other:"other services miscellaneous"};
 function filterRentals(){
   const terms = search.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
@@ -386,7 +438,7 @@ function filterRentals(){
   quickPickButtons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.quickCategory === category.value)));
   document.getElementById("empty").hidden = visible !== 0;
 }
-form.hidden=false;count.hidden=false;quickPaths.hidden=false;
+form.hidden=false;document.getElementById("browse-toolbar").hidden=false;quickPaths.hidden=false;
 quickPickButtons.forEach(button => button.addEventListener("click", () => {
   const chosen = category.value === button.dataset.quickCategory ? "all" : button.dataset.quickCategory;
   search.value = "";
