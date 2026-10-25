@@ -208,6 +208,35 @@ footer{margin-top:30px}
 }
 @media(prefers-reduced-motion:reduce){.view-switch button{transition:none}}
 
+
+/* Editorial discovery: three task-led paths into the existing directory. */
+.discovery{margin:34px 0 10px}
+.discovery-heading{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:16px}
+.discovery-heading .eyebrow{color:#637853;margin-bottom:7px}
+.discovery-heading h2{font-family:Georgia,serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:400;letter-spacing:-.045em;margin:0}
+.discovery-heading>p{max-width:330px;font-size:.84rem;color:var(--muted);margin:0 0 4px}
+.discovery-grid{display:grid;grid-template-columns:1.18fr 1fr 1fr;gap:15px}
+.discovery-card{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;min-height:250px;padding:22px 24px;overflow:hidden;border-radius:17px;border:1px solid #ffffff38;color:#fff;text-decoration:none;background:#1c493c;transition:transform .22s ease,box-shadow .22s ease}
+.discovery-card::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#0c251d47 0%,#102d2394 50%,#102d23e8 100%)}
+.discovery-card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .45s ease}
+.discovery-card--home>img{object-position:52% 53%}
+.discovery-card--water>img{object-position:65% 75%}
+.discovery-card--gear{color:#183e34;background:radial-gradient(circle at 87% 20%,#f8e9b4 0%,transparent 48%),linear-gradient(135deg,#e1eadb,#f2f1e7);border-color:#d4dfd0}
+.discovery-card--gear::before{background:radial-gradient(circle at 105% -5%,transparent 0 95px,#5477621b 96px 98px,transparent 99px 138px,#54776222 139px 141px,transparent 142px)}
+.discovery-card .path-kicker{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:850;opacity:.9}
+.discovery-card .path-content{display:flex;align-items:end;justify-content:space-between;gap:12px}
+.discovery-card h3{font-family:Georgia,serif;font-weight:400;font-size:clamp(1.55rem,2.6vw,2.1rem);line-height:1.06;letter-spacing:-.04em;margin:0 0 7px}
+.discovery-card .path-description{display:block;font-size:.78rem;font-weight:600;opacity:.88}
+.discovery-card .path-arrow{flex:none;display:grid;place-items:center;width:40px;height:40px;border:1px solid #ffffff99;border-radius:50%;background:#ffffff2b;font-size:1.25rem;line-height:1}
+.discovery-card--gear .path-arrow{border-color:#66806a;background:#ffffffbd}
+.discovery-card--gear .path-glyph{position:absolute;right:25px;top:40px;font-size:6.4rem;line-height:1;color:#406a50;opacity:.18;transform:rotate(-12deg);pointer-events:none}
+.discovery-card:hover{transform:translateY(-4px);box-shadow:0 14px 28px #153f3025}
+.discovery-card:hover>img{transform:scale(1.04)}
+.discovery-card:focus-visible{outline:3px solid #a86816;outline-offset:4px}
+@media(max-width:900px){.discovery-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.discovery-card{padding:19px;min-height:220px}.discovery-card h3{font-size:1.65rem}}
+@media(max-width:650px){.discovery{margin-top:28px}.discovery-heading{display:block}.discovery-heading>p{margin:7px 0 0}.discovery-grid{grid-template-columns:1fr;gap:12px}.discovery-card{min-height:175px;padding:20px}.discovery-card h3{font-size:1.75rem}.discovery-card--gear .path-glyph{top:8px;font-size:5.5rem}}
+@media(prefers-reduced-motion:reduce){.discovery-card,.discovery-card>img{transition:none!important}.discovery-card:hover,.discovery-card:hover>img{transform:none!important}}
+
 </style>
 </head>
 <body>
@@ -216,6 +245,28 @@ footer{margin-top:30px}
 <main id="main" class="wrap">
 <section class="hero" aria-labelledby="hero-title"><img class="hero-photo" src="assets/lake-dardanelle-sunset.jpg" alt="Sunset over the covered docks at Lake Dardanelle State Park, reflected in the still water" width="1920" height="910" fetchpriority="high"><h1 id="hero-title">Rent what you need.<br><em>Right here at home.</em></h1><p class="intro">From a place near Tech to a weekend on Lake Dardanelle. Find what you need from the people who call this place home.</p><div class="actions"><a class="button primary" href="#browse">Explore rentals <span aria-hidden="true">&nbsp; ↗</span></a><a class="button secondary" href="#list">Have something to rent?</a></div><div class="hero-note"><span>Local businesses & owners</span><span>Everyday needs to weekend plans</span><span>Connect directly</span></div></section>
 <section class="hometown" aria-labelledby="hometown-title"><div class="hometown-copy"><p class="eyebrow">This is our kind of place</p><h2 id="hometown-title">A little lake time.<br>A whole lot of hometown.</h2><p>Lake days, Tech green and gold, and the familiar sights on the way home.</p></div><figure class="landmark downtown"><img src="assets/downtown-russellville-sunset.jpg" alt="Downtown Russellville beneath a vivid orange and pink sunset" width="1200" height="544" loading="lazy"><figcaption>Downtown Russellville<span>Home looks good from here</span></figcaption></figure><figure class="landmark tech"><img src="assets/arkansas-tech-wilson-hall.jpg" alt="The red brick buildings and white cupola of Wilson Hall at Arkansas Tech University" width="1280" height="848" loading="lazy"><figcaption>Arkansas Tech University<span>Wilson Hall · Russellville</span></figcaption></figure><figure class="landmark tower"><img src="water%20tower.jpg" alt="The I love Russellville water tower above the trees" width="900" height="486" loading="lazy"><figcaption>A familiar welcome home<span>The I ♥ Russellville water tower</span></figcaption></figure></section>
+
+<section class="discovery" aria-labelledby="discovery-title">
+  <div class="discovery-heading"><div><p class="eyebrow">MADE FOR THE RIVER VALLEY</p><h2 id="discovery-title">Whatever your next chapter looks like.</h2></div><p>Start with what you have in mind. We'll take you to the right rental category.</p></div>
+  <div class="discovery-grid">
+    <a class="discovery-card discovery-card--home" href="#browse" data-discovery-category="homes">
+      <img src="assets/downtown-russellville-sunset.jpg" alt="" width="1200" height="544" loading="lazy">
+      <span class="path-kicker">01 / Settle in</span>
+      <div class="path-content"><div><h3>Find your place.</h3><span class="path-description">Browse homes &amp; apartments</span></div><span class="path-arrow" aria-hidden="true">↗</span></div>
+    </a>
+    <a class="discovery-card discovery-card--water" href="#browse" data-discovery-category="paddling">
+      <img src="assets/lake-dardanelle-sunset.jpg" alt="" width="1920" height="910" loading="lazy">
+      <span class="path-kicker">02 / Get outside</span>
+      <div class="path-content"><div><h3>Make a splash.</h3><span class="path-description">Browse kayaks &amp; paddling</span></div><span class="path-arrow" aria-hidden="true">↗</span></div>
+    </a>
+    <a class="discovery-card discovery-card--gear" href="#browse" data-discovery-category="tools">
+      <span class="path-glyph" aria-hidden="true">✳</span>
+      <span class="path-kicker">03 / Get to work</span>
+      <div class="path-content"><div><h3>Bring the tools.</h3><span class="path-description">Browse equipment rentals</span></div><span class="path-arrow" aria-hidden="true">↗</span></div>
+    </a>
+  </div>
+</section>
+
 <section id="browse" aria-labelledby="browse-title"><div class="section-head"><div><p class="eyebrow">Find it around here</p><h2 id="browse-title">What are you looking for?</h2><p>Explore rental options, or ask us about a category we’re building.</p></div><span class="browse-label">31 categories. One local hub.</span></div>
 <form class="filters" id="filters" role="search" hidden><div><label for="search">Search rentals</label><input type="search" id="search" placeholder="Try houses, cars, kayaks, storage…" autocomplete="off"></div><div><label for="category">Category</label><select id="category"><option value="all">All categories</option><option value="homes">Long-term rentals</option><option value="storage">Storage</option><option value="tools">Tools &amp; equipment</option><option value="paddling">Kayaks, canoes &amp; paddleboards</option><option value="bicycles">Bicycles &amp; e-bikes</option><option value="rvs">RV site rentals</option><option value="cars">Car rentals</option><option value="boats">Boats</option><option value="party">Party &amp; event rentals</option><option value="commercial">Commercial spaces</option><option value="stays">Short-term stays</option><option value="camping">Camping &amp; RV sites</option><option value="trailers">Trailer rentals</option><option value="mobile-storage">Portable storage</option><option value="dumpsters">Dumpster rentals</option><option value="venues">Event venues</option><option value="moving">Moving trucks</option><option value="restrooms">Portable restroom rentals</option><option value="photo-booths">Photo booth rentals</option><option value="temporary-fencing">Temporary fencing rentals</option><option value="formalwear">Formalwear rentals</option><option value="sheds">Portable building rentals</option><option value="household-rentals">Furniture &amp; appliance rentals</option><option value="audio-visual">Audio &amp; visual rentals</option><option value="instruments">Band instrument rentals</option><option value="yard-signs">Yard sign rentals</option><option value="golf-carts">Golf cart rentals</option><option value="stages">Stage &amp; platform rentals</option><option value="golf-simulators">Golf simulator rentals</option><option value="medical-equipment-loans">Medical equipment loans</option><option value="other">Other local rentals</option></select></div><button type="reset" class="button reset">Clear filters</button></form>
 
@@ -445,6 +496,13 @@ quickPickButtons.forEach(button => button.addEventListener("click", () => {
   category.value = chosen;
   filterRentals();
 }));
+
+document.querySelectorAll("[data-discovery-category]").forEach(link => link.addEventListener("click", () => {
+  search.value = "";
+  category.value = link.dataset.discoveryCategory;
+  filterRentals();
+}));
+
 form.addEventListener("submit",event=>event.preventDefault());
 search.addEventListener("input",filterRentals);
 category.addEventListener("change",filterRentals);
