@@ -327,6 +327,19 @@ footer{margin-top:30px}
 @media(max-width:600px){.empty-discovery{padding:31px 16px;border-radius:17px}.empty-discovery-actions{gap:8px}.empty-suggestion{flex:1 1 calc(50% - 8px);padding:9px 12px}.empty-discovery-footer{flex-direction:column;gap:7px}.empty-reset{width:100%;justify-content:center}.empty-contact{justify-content:center}}
 @media(prefers-reduced-motion:reduce){.empty-suggestion{transition:none}.empty-suggestion:hover{transform:none}}
 
+
+/* Directory compass: return to filtering without retracing a long card grid. */
+.browse-return{position:fixed;z-index:25;right:clamp(18px,3vw,46px);bottom:26px;display:inline-flex;align-items:center;gap:12px;min-height:62px;padding:9px 12px 9px 13px;border:1px solid #d9e6d5;border-radius:17px;background:#153d32;color:#fffdf2;text-decoration:none;box-shadow:0 12px 34px #0d2d2580,0 2px 8px #0d2d2529;transition:transform .2s ease,background-color .2s ease;max-width:calc(100vw - 36px)}
+.browse-return:hover{background:#265b48;transform:translateY(-3px)}
+.browse-return svg{width:23px;height:23px;flex:none;fill:none;stroke:#f0d58d;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.browse-return-copy{display:flex;flex-direction:column;line-height:1.18}
+.browse-return-copy small{font-size:.59rem;letter-spacing:.16em;font-weight:800;color:#d6dcbc}
+.browse-return-copy strong{font-size:.89rem;letter-spacing:-.01em}
+.browse-return-arrow{display:grid;place-items:center;flex:none;width:32px;height:32px;margin-left:5px;border-radius:10px;background:#ffffff1e;color:#f0d58d;font-size:1.3rem;line-height:1}
+.browse-return:focus-visible{outline:3px solid #a86816;outline-offset:4px}
+@media(max-width:600px){.browse-return:not([hidden]){display:none}}
+@media(prefers-reduced-motion:reduce){.browse-return{transition:none!important}.browse-return:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -576,6 +589,13 @@ footer{margin-top:30px}
 <details class="photo-credits"><summary>Local photo credits</summary><p>Lake Dardanelle sunset and downtown sunset photographs supplied for Russellville.Rent. Wilson Hall: <a href="https://commons.wikimedia.org/wiki/File:Wilson_Hall%E2%80%94Arkansas_Tech_University.JPG">Valis55, Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. Photos cropped for the layout; the Wilson Hall crop is shared under the same license. Water-tower photo from the existing Russellville.Rent collection.</p></details>
 </main>
 
+
+<a class="browse-return" id="browse-return" href="#search" aria-label="Return to rental search filters" hidden>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4"/><circle cx="8" cy="7" r="2" fill="#153d32"/><circle cx="15" cy="12" r="2" fill="#153d32"/></svg>
+  <span class="browse-return-copy"><small>BACK TO BROWSING</small><strong>Refine your search</strong></span>
+  <span class="browse-return-arrow" aria-hidden="true">↑</span>
+</a>
+
 <nav class="mobile-dock" id="mobile-dock" aria-label="Quick mobile navigation" hidden>
   <a href="#browse" aria-label="Browse rental categories"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Browse</a>
   <a class="mobile-dock-search" href="#search" aria-label="Search rentals"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 5 5"/></svg>Search</a>
@@ -695,6 +715,34 @@ document.querySelectorAll("[data-empty-category]").forEach(button=>{
   button.addEventListener("click",()=>showRecoveredResults(button.dataset.emptyCategory));
 });
 document.getElementById("empty-reset").addEventListener("click",()=>showRecoveredResults("all"));
+
+
+/* Show the directory compass only after its filters scroll out of view. */
+const browseReturn = document.getElementById("browse-return");
+let browseReturnTicking = false;
+function updateBrowseReturn(){
+  browseReturnTicking = false;
+  const directory = document.getElementById("browse").getBoundingClientRect();
+  const filtersRect = form.getBoundingClientRect();
+  const resultsRect = rentalGrid.getBoundingClientRect();
+  browseReturn.hidden = !(window.innerWidth > 600 &&
+    filtersRect.bottom < 24 &&
+    resultsRect.top < window.innerHeight * .75 &&
+    directory.bottom > window.innerHeight * .35);
+}
+function queueBrowseReturn(){
+  if(browseReturnTicking) return;
+  browseReturnTicking = true;
+  window.requestAnimationFrame(updateBrowseReturn);
+}
+window.addEventListener("scroll",queueBrowseReturn,{passive:true});
+window.addEventListener("resize",queueBrowseReturn,{passive:true});
+browseReturn.addEventListener("click",event=>{
+  event.preventDefault();
+  search.focus({preventScroll:true});
+  search.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",block:"center"});
+});
+queueBrowseReturn();
 
 form.addEventListener("submit",event=>event.preventDefault());
 search.addEventListener("input",filterRentals);
