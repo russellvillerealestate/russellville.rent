@@ -62,7 +62,7 @@ const venueCards = Array.from(document.querySelectorAll("#venue-grid article"));
 const venueCount = document.getElementById("venue-count");
 const venueEmpty = document.getElementById("venue-empty");
 function filterVenues(){
-  const terms = venueSearch.value.toLocaleLowerCase().trim().split(/\\s+/).filter(Boolean);
+  const terms = venueSearch.value.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
   let visible = 0;
   venueCards.forEach(card => {
     const matches = terms.every(term => card.textContent.toLocaleLowerCase().includes(term));
