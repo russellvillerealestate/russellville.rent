@@ -340,6 +340,24 @@ footer{margin-top:30px}
 @media(max-width:600px){.browse-return:not([hidden]){display:none}}
 @media(prefers-reduced-motion:reduce){.browse-return{transition:none!important}.browse-return:hover{transform:none}}
 
+
+
+/* Shareable rental discovery: useful actions without crowding the directory. */
+.browse-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.share-view{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:10px 15px;border:1px solid #c6d8c8;border-radius:12px;background:#fffdf6;color:#1d4b39;font-size:.8rem;font-weight:800;line-height:1.2;cursor:pointer;box-shadow:0 3px 12px #173f3510;transition:background-color .18s ease,border-color .18s ease,transform .18s ease}
+.share-view svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.share-view:hover{background:#eaf3e9;border-color:#7caa89;transform:translateY(-1px)}
+.share-view:focus-visible{outline:3px solid #a86816;outline-offset:3px}
+.share-view[data-copied="true"]{background:#e4f1e2;border-color:#8eb99b}
+.share-feedback{flex-basis:100%;margin:0;color:#305c45;font-size:.76rem;font-weight:700}
+.share-feedback:empty{display:none}
+.share-fallback{margin:-7px 0 19px;padding:14px 16px;border:1px solid #c7d9c9;border-radius:12px;background:#f0f5ec}
+.share-fallback label{margin-bottom:7px;color:#365b45}
+.share-fallback input{font-size:.82rem}
+@media(max-width:600px){.browse-actions{width:100%;justify-content:space-between}.browse-actions .view-switch{margin-left:0}.share-view{flex:1;min-height:48px;padding:9px 12px}.share-feedback{font-size:.73rem}}
+@media(max-width:380px){.share-view{font-size:.73rem;gap:6px}.share-view svg{width:16px;height:16px}}
+@media(prefers-reduced-motion:reduce){.share-view{transition:none!important}.share-view:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -396,11 +414,16 @@ footer{margin-top:30px}
 
 <div class="browse-toolbar" id="browse-toolbar" hidden>
 <p id="result-count" role="status" aria-live="polite" tabindex="-1"></p>
+<div class="browse-actions">
 <div class="view-switch" role="group" aria-label="Rental directory layout">
 <button type="button" data-view-choice="grid" aria-pressed="true" aria-controls="rental-results"><span class="view-icon" aria-hidden="true">▦</span> Grid</button>
 <button type="button" data-view-choice="list" aria-pressed="false" aria-controls="rental-results"><span class="view-icon" aria-hidden="true">☷</span> List</button>
 </div>
+<button type="button" class="share-view" id="share-view" aria-label="Copy a link to this rental search"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12h6M8.3 15.7H6a4 4 0 0 1 0-8h4M15.7 8.3H18a4 4 0 0 1 0 8h-4"/></svg><span id="share-view-label">Share this search</span></button>
 </div>
+<p class="share-feedback" id="share-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
+</div>
+<div class="share-fallback" id="share-fallback" hidden><label for="share-link">Select and copy your search link</label><input id="share-link" type="text" readonly aria-label="Link to current rental search"></div>
 <div class="active-filters" id="active-filters" role="group" aria-label="Applied rental filters" hidden><span class="active-filters-label">Your filters</span></div>
 <div class="rentals-grid" id="rental-results" data-view="grid"><article class="rental-card" data-category="homes">
 <div class="image-wrap"><img src="https://images.unsplash.com/photo-1768941124460-6fa7161715ff?auto=format&amp;fit=crop&amp;fm=jpg&amp;ixlib=rb-4.1.0&amp;q=82&amp;w=1600" alt="Illustrative photograph of residential houses" loading="lazy" width="640" height="380"></div>
@@ -614,6 +637,47 @@ const quickPaths = document.getElementById("quick-paths");
 const quickPickButtons = Array.from(quickPaths.querySelectorAll(".quick-pick"));
 const rentalGrid = document.getElementById("rental-results");
 
+const shareButton = document.getElementById("share-view");
+const shareLabel = document.getElementById("share-view-label");
+const shareFeedback = document.getElementById("share-feedback");
+const shareFallback = document.getElementById("share-fallback");
+const shareLink = document.getElementById("share-link");
+function clearShareFeedback(){
+  shareButton.removeAttribute("data-copied");
+  shareLabel.textContent = "Share this search";
+  shareFeedback.textContent = "";
+  shareFallback.hidden = true;
+}
+function currentSearchLink(){
+  const url = new URL(window.location.pathname, window.location.origin);
+  const query = search.value.trim();
+  if(query) url.searchParams.set("q",query);
+  if(category.value !== "all") url.searchParams.set("category",category.value);
+  if(rentalGrid.dataset.view === "list") url.searchParams.set("view","list");
+  url.hash = "browse";
+  return url.toString();
+}
+shareButton.addEventListener("click", async () => {
+  const link = currentSearchLink();
+  try {
+    if(!navigator.clipboard || !navigator.clipboard.writeText) throw new Error("Clipboard unavailable");
+    await navigator.clipboard.writeText(link);
+    shareFallback.hidden = true;
+    shareButton.dataset.copied = "true";
+    shareLabel.textContent = "Link copied";
+    shareFeedback.textContent = "A link to this rental search was copied.";
+  } catch {
+    shareButton.removeAttribute("data-copied");
+    shareLabel.textContent = "Share this search";
+    shareLink.value = link;
+    shareFallback.hidden = false;
+    shareFeedback.textContent = "Select and copy the link below.";
+    shareLink.focus();
+    shareLink.select();
+  }
+});
+
+
 const activeFilters = document.getElementById("active-filters");
 function updateActiveFilters(){
   activeFilters.replaceChildren();
@@ -659,6 +723,7 @@ const viewButtons = Array.from(document.querySelectorAll("[data-view-choice]"));
 viewButtons.forEach(button => button.addEventListener("click", () => {
   rentalGrid.dataset.view = button.dataset.viewChoice;
   viewButtons.forEach(choice => choice.setAttribute("aria-pressed", String(choice === button)));
+  clearShareFeedback();
 }));
 const aliases = {homes:"house houses apartment apartments home housing long term monthly spring lake springlake lindsey management river valley realty natural state property management leasing",storage:"self storage unit units",tools:"tool equipment machinery trailer trailers central rental central rental supply united rentals excavators skid steers skidsteer skid-steer attachments brush cutter harley rake jackhammer pickup broom post hole auger grapple bucket post driver pallet forks hay spikes padfoot roller tree puller backhoe kubota b26 nifty lifts scissor lift boom lift generators resilient energy industrial power climate hvac ridout lumber hardware tool rentals automotive specialty loaner loan-a-tool borrow tool autozone advance auto parts o'reilly oreilly brakes suspension puller",paddling:"kayak kayaks canoe canoes paddleboard paddleboards sup adventure water",bicycles:"bicycle bicycles bike bikes cycling mountain road gravel hardtail full suspension electric ebike e-bike commuter jackalope jackalope cycling rent rental downtown commerce",rvs:"rv rvs recreational vehicle camper motorhome camping site sites hookups monthly lake atkins adventure rv park",cars:"car cars vehicle vehicles auto automobile sedan suv truck passenger rental rent a ride enterprise cogswell",boats:"boat boats boating lake",party:"party parties event events tent tents table tables chair chairs",commercial:"commercial office offices retail shop shops warehouse coworking shared workspace desk desks conference room meeting room co create cocreate innovation hub hidden gem suites",stays:"airbnb vacation short term lodging furnished",camping:"camp camping campground campgrounds rv rvs recreational vehicle sites hookups overnight monthly ivys cove ivy edens rv resort lake dardanelle state park pottsville london",trailers:"trailer trailers car hauler cargo utility enclosed rent to own grace pro", "mobile-storage":"portable mobile storage container office trailer",dumpsters:"dumpster dumpsters roll off rolloff trash waste bin",venues:"venue venues event hall room meeting space depot wedding weddings reception barn welcome hill brookstock potts inn museum outdoor courtyard orenwood oren wood morrilton chamber commerce community board classroom",moving:"moving truck trucks van boxes uhaul u haul penske space world dardanelle old bank gun pawn union street","restrooms":"portable toilet toilets sanitation restroom bathroom handwashing jobsite septic","photo-booths":"photo booth booths camera 360 video wedding selfie rental","temporary-fencing":"temporary fencing fence panel panels barrier construction chain link","formalwear":"formal formalwear tuxedo tuxedos suit suits wedding prom clothes","sheds":"shed sheds portable building buildings rent to own lease storage","household-rentals":"furniture appliance appliances electronics couch sofa washer dryer television rent to own","audio-visual":"audio visual av microphone speakers sound lighting projector event equipment","instruments":"band musical instrument instruments music trumpet trombone saxophone flute clarinet student school orchestra rent to own cooper music","yard-signs":"yard sign signs greeting birthday celebration lawn sign gypsies","golf-carts":"golf cart carts buggy event vehicle transport mobility rental",stages:"stage stages staging portable mobile concert platform platforms riser risers festival performance production truss","golf-simulators":"golf simulator simulators indoor golf golf bay virtual golf tee time mobile golf event games","medical-equipment-loans":"medical equipment loan loans wheelchair walker crutches shower chair assistive technology free goodwill ican mobility reuse borrow",other:"other services miscellaneous"};
 function filterRentals(){
@@ -672,11 +737,24 @@ function filterRentals(){
     if(matches) visible++;
   });
   count.textContent = visible + " of " + cards.length + " rental categories shown";
+  clearShareFeedback();
   heroQuery.value = search.value;
   updateActiveFilters();
   quickPickButtons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.quickCategory === category.value)));
   document.getElementById("empty").hidden = visible !== 0;
 }
+
+/* Restore a shared search using only recognized categories and layout choices. */
+const sharedSearch = new URLSearchParams(window.location.search);
+const sharedQuery = sharedSearch.get("q");
+const sharedCategory = sharedSearch.get("category");
+if(sharedQuery) search.value = sharedQuery.slice(0,160);
+if(sharedCategory && Array.from(category.options).some(option => option.value === sharedCategory)) category.value = sharedCategory;
+if(sharedSearch.get("view") === "list"){
+  rentalGrid.dataset.view = "list";
+  viewButtons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.viewChoice === "list")));
+}
+
 form.hidden=false;document.getElementById("browse-toolbar").hidden=false;quickPaths.hidden=false;document.getElementById("mobile-dock").hidden=false;
 document.getElementById("hero-find").hidden=false;
 heroSearchForm.addEventListener("submit", event => {
