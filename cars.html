@@ -6,35 +6,160 @@
 <title>Car Rentals in Russellville, AR | Russellville.Rent</title>
 <meta name="description" content="Find car rental options in Russellville, Arkansas. Compare local contacts for 24/7 Rent-A-Ride, Cogswell Motors Rental Department, and Enterprise Rent-A-Car.">
 <link rel="canonical" href="https://russellville.rent/cars.html">
-<meta name="theme-color" content="#173f35">
+<meta name="theme-color" content="#102f2b">
 <style>
-:root{--ink:#183e34;--text:#243d35;--muted:#586b62;--paper:#f6f5ef;--line:#d7ded5;--gold:#edcb79}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
-a{color:inherit}a:focus-visible{outline:3px solid #a86816;outline-offset:4px} .wrap{max-width:1100px;margin:auto;padding:0 28px}
-header{background:var(--paper);border-bottom:1px solid var(--line)}header .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:21px;padding-bottom:21px}
-.brand{text-decoration:none;font-weight:800;font-size:1.3rem;letter-spacing:-.055em;color:var(--ink)}.brand span{color:#728674}.back{font-size:.85rem;font-weight:700;text-decoration:none}.back:hover{text-decoration:underline}
-.hero{background:var(--ink);color:#fffef5;border-radius:18px;padding:52px 55px;margin-top:28px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;border:1px solid #ffffff18;border-radius:50%;width:370px;height:370px;right:-120px;top:-180px;pointer-events:none}.eyebrow{font-size:.7rem;font-weight:750;text-transform:uppercase;letter-spacing:.13em;margin:0 0 12px;color:var(--gold)}h1{font-size:clamp(2.45rem,5.2vw,4.3rem);letter-spacing:-.055em;line-height:1.07;margin:0 0 16px;font-weight:650}.hero p:last-child{margin:0;max-width:670px;color:#e1ebe2}
-.section-head{margin:43px 0 20px}h2{letter-spacing:-.035em}.section-head h2{margin:0 0 6px;font-size:1.7rem}.section-head p{color:var(--muted);margin:0;font-size:.91rem}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.card{display:flex;flex-direction:column;min-width:0;background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden}.card-top{padding:24px 24px 12px;background:linear-gradient(130deg,#dfe8d5,#edf0e7);border-bottom:1px solid var(--line)}.card-top .eyebrow{color:#617b62;font-size:.6rem}.card-top h3{margin:0 0 7px;font-size:1.3rem;letter-spacing:-.025em;line-height:1.25}.card-body{padding:20px 24px 25px;flex:1;display:flex;flex-direction:column}.card-body p{margin:0 0 15px;color:var(--muted);font-size:.89rem}.details{margin-top:auto}.details p{margin:0 0 10px}.label{display:block;text-transform:uppercase;letter-spacing:.07em;color:#617b62;font-size:.66rem;font-weight:750}.details a{font-weight:700;color:var(--ink)}.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}.button{border-radius:8px;display:inline-flex;justify-content:center;align-items:center;padding:11px 16px;min-height:43px;text-decoration:none;font-size:.84rem;font-weight:750;border:1px solid #a5b8a7}.button.primary{background:var(--ink);border-color:var(--ink);color:#fff}.button:hover{text-decoration:underline}
-.note{margin:26px 0 40px;font-size:.86rem;color:var(--muted);max-width:860px}.contact{background:#e8ecdf;border-radius:14px;padding:27px 31px;margin-bottom:42px}.contact h2{margin:0 0 6px}.contact p{margin:0 0 15px;color:var(--muted)}footer{border-top:1px solid var(--line);display:flex;gap:18px;justify-content:space-between;flex-wrap:wrap;padding:22px 0 35px;font-size:.76rem;color:var(--muted)}
-@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.wrap{padding:0 22px}}
-@media(max-width:620px){.wrap{padding:0 16px}header .wrap{gap:12px}.brand{font-size:1.08rem}.back{font-size:.76rem}.hero{margin-top:16px;padding:34px 25px}.grid{grid-template-columns:1fr}.section-head{margin-top:29px}}
+:root{--pine:#102f2b;--green:#285b4b;--gold:#f0ca79;--cream:#f8f7f2;--ink:#203b35;--muted:#53665d;--line:#d9e3d9}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit;text-underline-offset:3px}
+a:focus-visible{outline:3px solid #b97820;outline-offset:4px;border-radius:3px}
+.wrap{width:min(1100px,calc(100% - 40px));margin-inline:auto}
+.skip{position:absolute;left:15px;top:-100px;background:#fff;color:var(--pine);z-index:10;padding:12px 18px}
+.skip:focus{top:10px}
+.site-header{background:var(--pine);color:white}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:76px}
+.brand{text-decoration:none;font-size:1.34rem;font-weight:850;letter-spacing:-.055em}
+.brand span{color:#d6c99f}
+.back{font-size:.84rem;font-weight:700;text-decoration:none;border:1px solid #ffffff58;border-radius:100px;padding:10px 16px}
+.back:hover{background:#ffffff1b}
+.hero{position:relative;isolation:isolate;overflow:hidden;background:var(--pine);color:#fffef6;border-radius:0 0 27px 27px}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 76% 30%,#39736377,transparent 47%),linear-gradient(125deg,#102f2b,#163f35);z-index:-2}
+.hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:center;min-height:480px;padding-block:64px 72px}
+.eyebrow{margin:0 0 15px;color:var(--gold);font-size:.69rem;font-weight:850;letter-spacing:.19em;text-transform:uppercase}
+.hero h1{font:400 clamp(3.2rem,5.6vw,5.2rem)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.065em;margin:0;max-width:620px;text-wrap:balance}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-copy{font-size:1.05rem;color:#e3ece4;max-width:510px;margin:23px 0 27px}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:11px 20px;border-radius:100px;text-decoration:none;font-weight:750;font-size:.87rem;border:1px solid transparent;transition:transform .2s,background .2s,box-shadow .2s}
+.button:hover{transform:translateY(-2px);box-shadow:0 9px 20px #0000001c}
+.button.gold{background:var(--gold);color:var(--pine)}
+.button.gold:hover{background:#f9dda0}
+.button.dark{background:var(--pine);color:white}
+.button.dark:hover{background:#285b4b}
+.button.outline{background:white;color:var(--pine);border-color:#b8c9bc}
+.hero-art{position:relative;align-self:stretch;min-height:290px;display:flex;align-items:center;justify-content:center}
+.hero-art:before{content:"";position:absolute;width:360px;height:360px;border-radius:50%;border:1px solid #f0ca7938;box-shadow:0 0 0 38px #f0ca7909,0 0 0 76px #f0ca7906}
+.hero-art svg{position:relative;width:100%;max-width:500px;height:auto;filter:drop-shadow(0 28px 28px #071f1d88)}
+.route-label{position:absolute;bottom:9px;right:0;border:1px solid #ffffff4d;background:#102f2bcc;border-radius:100px;padding:8px 14px;color:#e6eadf;font-size:.69rem;font-weight:750;letter-spacing:.09em;text-transform:uppercase}
+.intro-strip{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:23px 0;border-bottom:1px solid var(--line)}
+.intro-strip strong{font-size:.88rem;color:var(--pine)}
+.intro-strip span{font-size:.82rem;color:var(--muted);max-width:660px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:22px;margin:55px 0 24px}
+.section-head h2,.checklist h2,.contact h2{font:400 clamp(2rem,3.4vw,3rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.045em;margin:0 0 10px;color:var(--pine)}
+.section-head p{margin:0;color:var(--muted);font-size:.92rem;max-width:670px}
+.section-number{color:#927137;font-size:.73rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;padding-bottom:10px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px}
+.card{display:flex;flex-direction:column;min-width:0;background:white;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 8px 26px #143d3210;transition:transform .22s,box-shadow .22s}
+.card:hover{transform:translateY(-4px);box-shadow:0 20px 38px #143d3220}
+.card-top{position:relative;min-height:160px;padding:23px 23px 22px;background:linear-gradient(135deg,#dfeae1,#f1f3e8);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.card:nth-child(2) .card-top{background:linear-gradient(135deg,#e9e6d7,#f5f0e2)}
+.card:nth-child(3) .card-top{background:linear-gradient(135deg,#dce9e8,#eef4ef)}
+.card-top:after{content:"";position:absolute;width:190px;height:190px;right:-85px;top:-86px;border:1px solid #3562512c;border-radius:50%;box-shadow:0 0 0 27px #3562510c,0 0 0 55px #35625108}
+.card-index{font:400 2.3rem/1 Georgia,serif;color:#4e7967}
+.card-top .eyebrow{position:relative;z-index:1;color:#426451;font-size:.61rem;letter-spacing:.11em;margin:0}
+.card-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.card h3{font:400 1.63rem/1.16 Georgia,"Times New Roman",serif;letter-spacing:-.035em;margin:0 0 13px;color:var(--pine)}
+.card-description{font-size:.88rem;color:var(--muted);margin:0 0 21px;min-height:110px}
+.details{margin-top:auto;border-top:1px solid #e7eee6;padding-top:15px}
+.details p{font-size:.86rem;margin:0 0 14px}
+.label{display:block;color:#5c7665;text-transform:uppercase;letter-spacing:.1em;font-size:.64rem;font-weight:850;margin-bottom:3px}
+.details a{font-weight:750;color:#155a43}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.actions .button{font-size:.78rem;padding-inline:15px;min-height:44px}
+.note{font-size:.83rem;line-height:1.7;color:#5d634c;background:#f5edda;border:1px solid #e6d8b8;border-radius:16px;padding:19px 23px;margin:26px 0 48px}
+.checklist{background:#e8efe7;border-radius:23px;padding:34px 38px;margin:0 0 45px}
+.checklist .eyebrow{color:#5c795f}
+.checklist h2{font-size:clamp(1.9rem,3vw,2.6rem)}
+.checklist p{margin:0 0 20px;color:var(--muted);font-size:.88rem}
+.check-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.check-item{background:white;border:1px solid #d9e5d9;border-radius:13px;padding:17px 18px}
+.check-item strong{display:block;color:var(--pine);font-size:.91rem;margin-bottom:4px}
+.check-item span{display:block;color:var(--muted);font-size:.81rem}
+.contact{background:var(--pine);color:white;border-radius:22px;padding:33px 38px;display:flex;justify-content:space-between;align-items:center;gap:25px;margin-bottom:45px}
+.contact h2{color:white;font-size:2.1rem}
+.contact p{margin:0;color:#dce7dd;font-size:.88rem;max-width:530px}
+.contact .button{flex-shrink:0}
+footer{border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:24px 0 34px;color:var(--muted);font-size:.76rem}
+footer a{font-weight:700}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr 1fr;min-height:400px}.hero h1{font-size:clamp(2.9rem,6vw,4.4rem)}.hero-art:before{width:250px;height:250px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card-description{min-height:0}}
+@media(max-width:650px){.wrap{width:min(100% - 32px,1100px)}.header-inner{min-height:66px}.brand{font-size:1.13rem}.back{font-size:.72rem;padding:9px 11px}.hero{border-radius:0 0 19px 19px}.hero-inner{grid-template-columns:1fr;gap:5px;padding:44px 0 34px}.hero h1{font-size:clamp(2.95rem,12vw,4.2rem)}.hero-copy{font-size:.95rem}.hero-art{min-height:215px;max-width:430px;width:100%;margin:auto}.hero-art svg{max-width:340px}.hero-art:before{width:190px;height:190px}.route-label{right:0;bottom:0;font-size:.58rem}.intro-strip{display:block;padding:18px 0}.intro-strip span{display:block;margin-top:5px}.section-head{margin:37px 0 18px;display:block}.section-number{display:block;margin-top:13px}.grid{grid-template-columns:1fr}.card-top{min-height:120px}.card-body{padding:22px}.checklist{padding:26px 22px}.check-grid{grid-template-columns:1fr}.contact{display:block;padding:27px 24px}.contact .button{margin-top:20px}.contact h2{font-size:1.9rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.card{transition:none}.button:hover,.card:hover{transform:none}}
 </style>
-<style>/* Consistent 2026 Russellville.Rent interior-page design */*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0!important;background:radial-gradient(ellipse at top right,#e5eee6,transparent 48%),#f7f8f4!important;color:#203b35!important;font:16px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif!important}header{background:#102f2b!important;color:white!important;padding:23px max(24px,calc((100vw - 1080px)/2))!important;box-shadow:0 5px 22px #123b3025}header a{color:#fff!important;text-decoration:none!important;font-weight:750;letter-spacing:-.02em}header a:hover{text-decoration:underline!important}main{max-width:1080px!important;margin:0 auto!important;padding:50px 24px 80px!important}main>p:first-child{font-size:.72rem;letter-spacing:.16em;font-weight:800;text-transform:uppercase;color:#64806e}h1{font-family:Georgia,"Times New Roman",serif!important;font-size:clamp(2.7rem,6vw,4.6rem)!important;line-height:1.08!important;letter-spacing:-.055em;font-weight:400;margin:14px 0 20px!important;color:#143c32}main>h1+p{font-size:1.08rem;color:#586b62;max-width:740px;margin-bottom:35px}article{background:#fff!important;border:1px solid #dfe7df!important;border-radius:19px!important;padding:27px!important;box-shadow:0 8px 26px #183e340c;transition:transform .22s,box-shadow .22s}article:hover{transform:translateY(-3px);box-shadow:0 18px 35px #183e3420}article h2{font-size:1.27rem!important;letter-spacing:-.025em;line-height:1.3;color:#163d32}article p{color:#53665d}article a{color:#17634d!important;font-weight:700;text-underline-offset:3px}a:focus-visible{outline:3px solid #bc842d;outline-offset:4px}.grid{gap:22px!important}.detail{font-size:.85rem;color:#66796d!important}.note{background:#e4eddf!important;border:1px solid #d0dfcd;border-radius:17px!important;padding:24px!important;margin-top:38px!important}footer{border-top:1px solid #d8e2d8;padding-top:22px!important;color:#66796d!important} @media(max-width:650px){main{padding:34px 17px 55px!important}article{padding:23px!important}article:hover{transform:none}.grid{grid-template-columns:1fr!important}h1{font-size:2.7rem!important}}@media(prefers-reduced-motion:reduce){article{transition:none!important}}</style></head>
+</head>
 <body>
-<header><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
-<main class="wrap">
-<section class="hero"><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1>Car rentals.<br>Right here at home.</h1><p>Need a car for a trip, while yours is being repaired, or for a visit to the River Valley? Contact these Russellville-area rental providers directly.</p></section>
-<section aria-labelledby="providers-title"><div class="section-head"><h2 id="providers-title">Local rental car options</h2><p>Three providers serving Russellville. Ask each one about current vehicles, availability, rates, insurance, and pickup arrangements.</p></div>
-<div class="grid">
-<article class="card"><div class="card-top"><p class="eyebrow">Locally based</p><h3>24/7 Rent-A-Ride</h3></div><div class="card-body"><p>A Russellville car-rental business offering vehicle rentals for local drivers and visitors.</p><div class="details"><p><span class="label">Location</span>111 S Arkansas Ave<br>Russellville, AR 72801</p><p><span class="label">Phone</span><a href="tel:+14795672470">(479) 567-2470</a></p></div><div class="actions"><a class="button primary" href="tel:+14795672470">Call about a rental ↗</a></div></div></article>
-<article class="card"><div class="card-top"><p class="eyebrow">Local dealership rental desk</p><h3>Cogswell Motors Rentals</h3></div><div class="card-body"><p>Cars, trucks, minivans, sport utility vehicles, and 15-passenger vans. See the rental department for terms and available vehicles.</p><div class="details"><p><span class="label">Location</span>1900 E Main St<br>Russellville, AR 72801</p><p><span class="label">Rental phone</span><a href="tel:+14794982530">(479) 498-2530</a></p></div><div class="actions"><a class="button primary" href="https://www.cogswellford.com/rental-department.html" target="_blank" rel="noopener noreferrer">Rental details ↗</a><a class="button" href="tel:+14794982530">Call</a></div></div></article>
-<article class="card"><div class="card-top"><p class="eyebrow">National rental company, local branch</p><h3>Enterprise Rent-A-Car</h3></div><div class="card-body"><p>Russellville Sorells Body Shop branch. Contact the local office for rental availability and pickup arrangements.</p><div class="details"><p><span class="label">Location</span>1903 S Arkansas Ave<br>Russellville, AR 72801</p><p><span class="label">Phone</span><a href="tel:+14799682779">(479) 968-2779</a></p></div><div class="actions"><a class="button primary" href="https://www.enterprise.com/en/car-rental-locations/us/ar/russellville-sorells-body-shop-517g.html" target="_blank" rel="noopener noreferrer">View local branch ↗</a><a class="button" href="tel:+14799682779">Call</a></div></div></article>
-</div></section>
-<p class="note">Directory information was checked in October 2026. Russellville.Rent does not book or operate these rental vehicles. Pricing, vehicle selection, rental requirements, hours, and services may change; confirm details directly with each provider.</p>
-<section class="contact"><h2>Need something else to rent?</h2><p>We’re building a practical local directory for Russellville and the surrounding River Valley.</p><a class="button primary" href="/#browse">Explore more rentals ↗</a></section>
-<footer><span>© 2026 Russellville.Rent</span><span>Local rentals. Local connections. Russellville, Arkansas.</span><a href="/#contact">Request a listing or correction</a></footer>
+<a class="skip" href="#main">Skip to car rental options</a>
+<header class="site-header"><div class="wrap header-inner"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
+<div class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-copy-block">
+      <p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p>
+      <h1>Find your <em>next ride.</em></h1>
+      <p class="hero-copy">Need a car for a trip, while yours is being repaired, or for a visit to the River Valley? Contact these Russellville-area rental providers directly.</p>
+      <a class="button gold" href="#providers-title">Compare local options <span aria-hidden="true">↘</span></a>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 560 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-20 315C123 244 249 306 368 231C435 189 497 184 581 212" stroke="#f0ca79" stroke-opacity=".33" stroke-width="3" stroke-dasharray="12 15"/>
+        <ellipse cx="286" cy="282" rx="220" ry="25" fill="#071e19" opacity=".5"/>
+        <path d="M81 206C103 196 137 191 174 187L235 119C245 108 261 104 278 104H363C380 104 394 110 406 125L457 189C480 191 499 199 508 218L514 245C516 255 510 263 498 263H71C60 263 54 257 56 247L63 225C65 217 70 211 81 206Z" fill="#f0ca79" stroke="#f8e4b0" stroke-width="5"/>
+        <path d="M188 187L245 127C252 120 262 117 274 117H313V187H188Z" fill="#173f37"/>
+        <path d="M328 117H361C374 117 383 122 393 133L436 187H328V117Z" fill="#173f37"/>
+        <path d="M312 119V187" stroke="#7ea391" stroke-width="4"/>
+        <path d="M70 221H502" stroke="#d4a753" stroke-width="4"/>
+        <path d="M77 247H499" stroke="#d4a753" stroke-width="4"/>
+        <path d="M77 210L105 203" stroke="#fff6da" stroke-width="6" stroke-linecap="round"/>
+        <path d="M464 206L490 212" stroke="#fff6da" stroke-width="6" stroke-linecap="round"/>
+        <rect x="68" y="226" width="28" height="13" rx="5" fill="#fff7df"/>
+        <rect x="484" y="226" width="25" height="13" rx="5" fill="#f2a876"/>
+        <circle cx="160" cy="258" r="40" fill="#0e2924" stroke="#e4ba69" stroke-width="7"/>
+        <circle cx="160" cy="258" r="18" fill="#b6c8b8"/>
+        <circle cx="425" cy="258" r="40" fill="#0e2924" stroke="#e4ba69" stroke-width="7"/>
+        <circle cx="425" cy="258" r="18" fill="#b6c8b8"/>
+        <path d="M253 207H286M351 207H379" stroke="#b98537" stroke-width="5" stroke-linecap="round"/>
+        <path d="M121 150L143 138M105 167L125 156M448 135L467 146" stroke="#f0ca79" stroke-opacity=".55" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <span class="route-label">Local roads · Local options</span>
+    </div>
+  </div>
+</div>
+<main id="main" class="wrap">
+  <div class="intro-strip"><strong>Three rental providers serving Russellville</strong><span>Compare local contacts and ask each provider about current vehicles, availability, rates, insurance, and pickup arrangements.</span></div>
+  <section aria-labelledby="providers-title">
+    <div class="section-head"><div><p class="eyebrow" style="color:#698167">Find a vehicle</p><h2 id="providers-title">Your rental options</h2><p>Start with a local provider and confirm the details directly before making plans.</p></div><span class="section-number">01 / Compare</span></div>
+    <div class="grid">
+      <article class="card">
+        <div class="card-top"><span class="card-index" aria-hidden="true">01</span><p class="eyebrow">Locally based</p></div>
+        <div class="card-body"><h3>24/7 Rent-A-Ride</h3><p class="card-description">A Russellville car-rental business offering vehicle rentals for local drivers and visitors.</p>
+          <div class="details"><p><span class="label">Location</span>111 S Arkansas Ave<br>Russellville, AR 72801</p><p><span class="label">Phone</span><a href="tel:+14795672470">(479) 567-2470</a></p></div>
+          <div class="actions"><a class="button dark" href="tel:+14795672470">Call about a rental <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-top"><span class="card-index" aria-hidden="true">02</span><p class="eyebrow">Local dealership rental desk</p></div>
+        <div class="card-body"><h3>Cogswell Motors Rentals</h3><p class="card-description">Cars, trucks, minivans, sport utility vehicles, and 15-passenger vans. See the rental department for terms and available vehicles.</p>
+          <div class="details"><p><span class="label">Location</span>1900 E Main St<br>Russellville, AR 72801</p><p><span class="label">Rental phone</span><a href="tel:+14794982530">(479) 498-2530</a></p></div>
+          <div class="actions"><a class="button dark" href="https://www.cogswellford.com/rental-department.html" target="_blank" rel="noopener noreferrer">Rental details <span aria-hidden="true">↗</span></a><a class="button outline" href="tel:+14794982530">Call</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-top"><span class="card-index" aria-hidden="true">03</span><p class="eyebrow">National rental company, local branch</p></div>
+        <div class="card-body"><h3>Enterprise Rent-A-Car</h3><p class="card-description">Russellville Sorells Body Shop branch. Contact the local office for rental availability and pickup arrangements.</p>
+          <div class="details"><p><span class="label">Location</span>1903 S Arkansas Ave<br>Russellville, AR 72801</p><p><span class="label">Phone</span><a href="tel:+14799682779">(479) 968-2779</a></p></div>
+          <div class="actions"><a class="button dark" href="https://www.enterprise.com/en/car-rental-locations/us/ar/russellville-sorells-body-shop-517g.html" target="_blank" rel="noopener noreferrer">View local branch <span aria-hidden="true">↗</span></a><a class="button outline" href="tel:+14799682779">Call</a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+  <p class="note">Directory information was checked in October 2026. Russellville.Rent does not book or operate these rental vehicles. Pricing, vehicle selection, rental requirements, hours, and services may change; confirm details directly with each provider.</p>
+  <section class="checklist" aria-labelledby="checklist-title"><p class="eyebrow">Before you book</p><h2 id="checklist-title">Three things to confirm.</h2><p>A quick conversation with the rental desk can help you choose the right option.</p>
+    <div class="check-grid">
+      <div class="check-item"><strong>Vehicle &amp; dates</strong><span>Ask which vehicles are available for your trip.</span></div>
+      <div class="check-item"><strong>Total cost</strong><span>Confirm the current rate, fees, and deposit.</span></div>
+      <div class="check-item"><strong>Pickup &amp; requirements</strong><span>Check insurance, driver requirements, and return arrangements.</span></div>
+    </div>
+  </section>
+  <section class="contact" aria-labelledby="more-title"><div><h2 id="more-title">Need something else to rent?</h2><p>We’re building a practical local directory for Russellville and the surrounding River Valley.</p></div><a class="button gold" href="/#browse">Explore more rentals <span aria-hidden="true">↗</span></a></section>
+  <footer><span>© 2026 Russellville.Rent</span><span>Local rentals. Local connections. Russellville, Arkansas.</span><a href="/#contact">Request a listing or correction</a></footer>
 </main>
 </body>
 </html>
