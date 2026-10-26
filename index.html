@@ -358,6 +358,30 @@ footer{margin-top:30px}
 @media(max-width:380px){.share-view{font-size:.73rem;gap:6px}.share-view svg{width:16px;height:16px}}
 @media(prefers-reduced-motion:reduce){.share-view{transition:none!important}.share-view:hover{transform:none}}
 
+
+/* A visual three-step journey: the existing process becomes a readable, connected timeline. */
+.journey{position:relative;isolation:isolate;overflow:hidden;margin:46px 0 38px;padding:clamp(26px,4.6vw,54px);border:1px solid #d8e1d5;border-radius:25px;background:linear-gradient(125deg,#f0f4ea 0%,#f9f4e9 68%,#f2e8d4 100%)}
+.journey::before{content:"";position:absolute;z-index:-1;right:-145px;top:-220px;width:420px;height:420px;border:1px solid #a9c1ac45;border-radius:50%;box-shadow:0 0 0 54px #a9c1ac18,0 0 0 108px #a9c1ac0b;pointer-events:none}
+.journey-heading{display:flex;align-items:end;justify-content:space-between;gap:28px;margin:0 0 30px}
+.journey-heading .eyebrow{color:#59755f;font-size:.69rem;letter-spacing:.16em;margin:0 0 12px}
+.journey h2{margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,3.5vw,3.1rem);font-weight:400;line-height:1.13;letter-spacing:-.045em;color:#173f35}
+.journey h2 em{font-style:italic;color:#94712f}
+.journey-intro{max-width:275px;margin:0 0 3px;font-size:.88rem;line-height:1.6;color:#5c6e5f}
+.journey .how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;list-style:none;margin:0;padding:0;border:0}
+.journey .how>li{position:relative;min-width:0;min-height:255px;padding:25px 24px 27px;border:1px solid #d7e0d5;border-radius:19px;background:#fffefa;box-shadow:0 7px 24px #173f350a}
+.journey .how>li:not(:last-child)::after{content:"→";position:absolute;z-index:2;top:50px;right:-24px;display:grid;place-items:center;width:30px;height:30px;border:1px solid #c6d6c6;border-radius:50%;background:#eaf2e7;color:#285540;font-size:1.1rem;line-height:1}
+.how-step-top{display:flex;align-items:start;justify-content:space-between;gap:12px;margin-bottom:22px}
+.how-step-icon{display:grid;place-items:center;width:65px;height:65px;flex:none;border-radius:19px;background:#e7f0e6;color:#1f5a43}
+.journey .how>li:nth-child(2) .how-step-icon{background:#e5eae4;color:#295c55}
+.journey .how>li:nth-child(3) .how-step-icon{background:#f4e7cb;color:#88622c}
+.how-step-icon svg{display:block;width:39px;height:39px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.how-step-index{font-family:Georgia,"Times New Roman",serif;font-size:3.35rem;line-height:1;color:#d5dfd3;letter-spacing:-.08em}
+.journey .step-number{display:block;color:#52755b;font-size:.67rem;font-weight:850;letter-spacing:.14em}
+.journey .how h3{margin:9px 0 10px;font-size:clamp(1.05rem,1.55vw,1.27rem);line-height:1.28;letter-spacing:-.03em;color:#183e34}
+.journey .how p{margin:0;font-size:.88rem;line-height:1.62;color:#53695c}
+@media(max-width:900px){.journey{padding:30px 23px}.journey .how{gap:12px}.journey .how>li{padding:20px 17px 23px;min-height:250px}.journey .how>li:not(:last-child)::after{right:-21px}.how-step-index{font-size:2.75rem}.how-step-icon{width:56px;height:56px}.how-step-icon svg{width:33px;height:33px}}
+@media(max-width:650px){.journey{margin:34px 0 28px;padding:27px 20px;border-radius:20px}.journey-heading{display:block;margin-bottom:24px}.journey-intro{max-width:46ch;margin:15px 0 0}.journey .how{grid-template-columns:1fr;gap:16px}.journey .how>li{min-height:0;padding:19px 20px 22px}.journey .how>li:not(:last-child)::after{top:auto;bottom:-23px;right:calc(50% - 15px);content:"↓"}.how-step-top{margin-bottom:12px}.how-step-index{font-size:3rem}.journey .how h3{font-size:1.15rem}.journey .how p{max-width:45ch}}
+
 </style>
 </head>
 <body>
@@ -605,7 +629,14 @@ footer{margin-top:30px}
 </div>
 <p class="directory-note">This is a growing local directory. Categories marked “Listings welcome” do not have published providers yet. Contact the provider or our hub to confirm availability, pricing, and rental terms.</p>
 </section>
-<section aria-labelledby="how-title"><div class="section-head"><h2 id="how-title">Find it. Ask about it. Make it happen.</h2></div><div class="how"><div><span class="step-number">01 / EXPLORE</span><h3>Start with what you need</h3><p>Browse local rental businesses and the categories we’re adding.</p></div><div><span class="step-number">02 / CONNECT</span><h3>Talk to a real person</h3><p>Visit a provider’s site or call or text our hub for more information.</p></div><div><span class="step-number">03 / ARRANGE</span><h3>Work out the details</h3><p>Confirm rates, dates, pickup, and any agreement directly with the rental provider.</p></div></div></section>
+<section class="journey" aria-labelledby="how-title">
+  <div class="journey-heading"><div><p class="eyebrow">HOW IT WORKS</p><h2 id="how-title">Find it. Ask about it.<br><em>Make it happen.</em></h2></div><p class="journey-intro">Your next rental starts with a local connection. Here's how to get from looking to arranging.</p></div>
+  <ol class="how">
+    <li><div class="how-step-top"><span class="how-step-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="21" cy="21" r="10"/><path d="m29 29 9 9"/><path d="M17 21h8M21 17v8"/></svg></span><span class="how-step-index" aria-hidden="true">01</span></div><span class="step-number">01 / EXPLORE</span><h3>Start with what you need</h3><p>Browse local rental businesses and the categories we’re adding.</p></li>
+    <li><div class="how-step-top"><span class="how-step-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 12h28a4 4 0 0 1 4 4v15a4 4 0 0 1-4 4H20l-9 6v-6H8a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4Z"/><path d="M14 21h16M14 27h11"/></svg></span><span class="how-step-index" aria-hidden="true">02</span></div><span class="step-number">02 / CONNECT</span><h3>Talk to a real person</h3><p>Visit a provider’s site or call or text our hub for more information.</p></li>
+    <li><div class="how-step-top"><span class="how-step-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="9" y="9" width="30" height="30" rx="5"/><path d="m16 24 6 6 11-13"/></svg></span><span class="how-step-index" aria-hidden="true">03</span></div><span class="step-number">03 / ARRANGE</span><h3>Work out the details</h3><p>Confirm rates, dates, pickup, and any agreement directly with the rental provider.</p></li>
+  </ol>
+</section>
 <section id="list" class="owner" aria-labelledby="owner-title"><div><p class="eyebrow">For local businesses & rental owners</p><h2 id="owner-title">Your rental belongs<br>in the neighborhood.</h2><p>Manage homes? Rent out tools, boats, storage, or event equipment? Help neighbors find what you offer.</p><a class="button" href="sms:+14799707301">Text us to request a listing ↗</a></div><div class="owner-details"><strong>Let’s build the local directory.</strong><p>Send your business or rental name, category, service area, website, and the best public contact details. We’ll review the information with you before adding a listing.</p><p>Ask about a basic listing or future featured placement. Any paid placement will be clearly labeled “Sponsored.”</p></div></section>
 <section id="contact" class="contact" aria-labelledby="contact-title"><div><p class="eyebrow">A little local help</p><h2 id="contact-title">Can’t find what you need?</h2><p>Tell us what you’re looking for, when you need it, and your budget. For listing requests or corrections, get in touch here too.</p><p class="phone">Russellville.Rent · <a href="tel:+14799707301">479-970-7301</a></p></div><div class="actions"><a class="button primary" href="sms:+14799707301">Text us ↗</a><a class="button secondary" href="tel:+14799707301">Call the hub</a></div></section>
 <footer><span>© <span id="year">2026</span> Russellville.Rent</span><span>Local rentals. Local connections. Russellville, Arkansas.</span><a href="#list">Request a listing</a></footer>
