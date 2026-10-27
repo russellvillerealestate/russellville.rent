@@ -45,6 +45,7 @@ h1 em{font-style:normal;color:var(--gold)}
 .program-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .program-card{min-width:0;scroll-margin-top:28px;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-top:5px solid #397d69;border-radius:18px;padding:clamp(24px,3vw,33px);box-shadow:0 12px 34px #173b3110}
 .program-card--ican{border-top-color:#b68c55}
+.program-card--ascc{grid-column:1/-1;border-top-color:#537f91}
 .program-card:target{outline:3px solid #a9660d;outline-offset:5px}
 .program-top{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:17px}
 .program-index{font-size:.69rem;letter-spacing:.11em;color:#4e7162;font-weight:850}
@@ -82,13 +83,13 @@ footer a{font-weight:700}
 <section class="hero" aria-labelledby="page-title"><div class="wrap">
 <div><p class="eyebrow">Russellville, Arkansas · Community resources</p><h1 id="page-title">Equipment support, <em>within reach.</em></h1>
 <p class="hero-intro">Free equipment lending and statewide assistive-technology device loans for Arkansas residents. These programs are <strong>not commercial equipment rentals</strong>. Ask about eligibility, available equipment, pickup, loan duration and safe fit before traveling.</p>
-<div class="hero-actions"><a class="button primary" href="#programs">Compare two programs ↓</a><a class="button secondary" href="#before-you-go">What to confirm ↗</a></div></div>
+<div class="hero-actions"><a class="button primary" href="#programs">Compare three programs ↓</a><a class="button secondary" href="#before-you-go">What to confirm ↗</a></div></div>
 <div class="hero-art" aria-hidden="true">
 <svg viewBox="0 0 370 300" xmlns="http://www.w3.org/2000/svg"><rect x="58" y="46" width="254" height="207" rx="26" fill="#e6efe2"/><rect x="79" y="67" width="212" height="165" rx="18" fill="#f9f6e9"/><circle cx="185" cy="125" r="33" fill="#c7e2d0"/><path d="M185 108v34m-17-17h34" stroke="#24634e" stroke-width="8" stroke-linecap="round"/><path d="M125 189h120" stroke="#a3c4af" stroke-width="8" stroke-linecap="round"/><path d="M144 209h82" stroke="#d6e3d7" stroke-width="7" stroke-linecap="round"/><circle cx="58" cy="46" r="13" fill="#f0cf92"/><circle cx="312" cy="253" r="13" fill="#f0cf92"/><path d="M35 165q-25 0-25 25v55" fill="none" stroke="#b5d5c4" stroke-width="4" stroke-dasharray="5 11" stroke-linecap="round"/><path d="M335 135q25 0 25-25V62" fill="none" stroke="#b5d5c4" stroke-width="4" stroke-dasharray="5 11" stroke-linecap="round"/></svg>
 <span class="art-caption">Community lending guide</span></div>
 </div></section>
 <div class="wrap">
-<aside class="explainer"><div><strong>Two different ways to access equipment.</strong><p>Goodwill's program provides donated health equipment free of charge. The Increasing Capabilities Access Network (iCAN) offers assistive-technology device loans and demonstrations statewide. Neither listing guarantees an item is in stock locally.</p></div><span class="explainer-mark">Not retail rentals</span></aside>
+<aside class="explainer"><div><strong>Three ways to access equipment.</strong><p>Goodwill's program provides donated health equipment free of charge. The Increasing Capabilities Access Network (iCAN) offers assistive-technology device loans and demonstrations statewide. The Arkansas Spinal Cord Commission lends emergency or temporary equipment to its eligible clients through regional loan closets. None guarantees local inventory.</p></div><span class="explainer-mark">Not retail rentals</span></aside>
 <section id="programs" aria-labelledby="programs-title"><div class="section-head"><div><p class="eyebrow" style="color:#52705e">01 / Available programs</p><h2 id="programs-title">Start with the right resource.</h2></div><p>Call first to confirm eligibility, current inventory and where to collect equipment.</p></div>
 <div class="program-grid">
 <article class="program-card program-card--goodwill" id="goodwill" aria-labelledby="program-1">
@@ -99,9 +100,16 @@ footer a{font-weight:700}
 <div class="program-top"><span class="program-index">02 / STATEWIDE PROGRAM</span><span class="program-symbol" aria-hidden="true">↗</span></div>
 <h3 id="program-2">Increasing Capabilities Access Network (iCAN) — Arkansas statewide</h3><p>Arkansas's statewide assistive-technology program offers device loans, demonstrations, reuse and exchange services. The official program states its services are available to Arkansans regardless of geographic area, age, disability or income. <strong>Device loans are distinct from cash loans or retail rentals.</strong> Confirm whether the specific device is loanable, any requirements, and pickup or return arrangements; Russellville delivery is <strong>UNCONFIRMED</strong>.</p><p class="detail">5401 S University Ave, Little Rock, AR 72209 · Statewide service confirmed; Russellville pickup or delivery unconfirmed</p><p class="program-actions"><a href="tel:+18008282799">800-828-2799</a> (outside Little Rock) · <a href="tel:+15016668868">501-666-8868</a> · <a href="https://ar-ican.org/about-ican/" target="_blank" rel="noopener noreferrer">Official program and device-loan information ↗</a></p>
 </article>
+<article class="program-card program-card--ascc" id="ascc" aria-labelledby="program-3">
+<div class="program-top"><span class="program-index">03 / ELIGIBILITY-RESTRICTED STATE PROGRAM</span><span class="program-symbol" aria-hidden="true">＋</span></div>
+<h3 id="program-3">Arkansas Spinal Cord Commission — Regional Loan Closets</h3>
+<p>The Arkansas Spinal Cord Commission operates regional equipment loan closets for <strong>its eligible clients with spinal cord disabilities</strong>, not the general public. Case managers can arrange short-term loans for emergencies, while equipment is being repaired or purchased, or to try a suitable device. Potential items include manual or power wheelchairs, walkers, portable ramps, therapeutic cushions and adaptive bathroom equipment. The agency states that all of its clients may use the loan program regardless of income. <strong>Current inventory, a Russellville pickup location and delivery to Russellville are UNCONFIRMED.</strong> Contact the commission for eligibility and a case-manager referral before traveling.</p>
+<p class="detail">Arkansas statewide client program · Regional loan closet access and local availability must be confirmed with a case manager</p>
+<p class="program-actions"><a href="tel:+18004591517">800-459-1517</a> · <a href="tel:+15012961788">501-296-1788</a> · <a href="https://healthy.arkansas.gov/wp-content/uploads/ASCC_Equipment_Loan_Program.pdf" target="_blank" rel="noopener noreferrer">Official equipment loan policy ↗</a> · <a href="https://healthy.arkansas.gov/wp-content/uploads/ASCC_Referral_Information.pdf" target="_blank" rel="noopener noreferrer">Official eligibility and referral details ↗</a></p>
+</article>
 </div></section>
 <section class="steps" id="before-you-go" aria-labelledby="steps-title"><p class="eyebrow">02 / Before you travel</p><h2 id="steps-title">Three things to ask first.</h2><div class="steps-grid"><div><strong>01 · Is the item available?</strong><span>Ask about the exact equipment, size and condition. Local inventory may be limited.</span></div><div><strong>02 · How does the loan work?</strong><span>Confirm eligibility, loan duration and any pickup or return requirements.</span></div><div><strong>03 · Will it fit the user?</strong><span>Confirm safe fit and suitability with the program before using equipment.</span></div></div></section>
-<p class="note">Independent directory. Program inventory and terms can change. Verify equipment condition, size, safe fit, loan requirements, and pickup or delivery with each program. Neither listing guarantees availability. <a href="sms:+14799707301">Suggest a correction</a>.</p>
+<p class="note">Independent directory. Program inventory and terms can change. Verify equipment condition, size, safe fit, loan requirements, and pickup or delivery with each program. No program guarantees availability. <a href="sms:+14799707301">Suggest a correction</a>.</p>
 <footer><span>© 2026 Russellville.Rent · Independent rental directory</span><a href="/">Return to homepage ↗</a></footer>
 </div></main>
 </body></html>
