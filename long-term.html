@@ -12,7 +12,55 @@
   <meta property="og:url" content="https://russellville.rent/long-term.html">
   <meta name="theme-color" content="#102a24">
   <link rel="stylesheet" href="assets/site.css">
-<style>/* Consistent 2026 Russellville.Rent interior-page design */*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0!important;background:radial-gradient(ellipse at top right,#e5eee6,transparent 48%),#f7f8f4!important;color:#203b35!important;font:16px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif!important}header{background:#102f2b!important;color:white!important;padding:23px max(24px,calc((100vw - 1080px)/2))!important;box-shadow:0 5px 22px #123b3025}header a{color:#fff!important;text-decoration:none!important;font-weight:750;letter-spacing:-.02em}header a:hover{text-decoration:underline!important}main{max-width:1080px!important;margin:0 auto!important;padding:50px 24px 80px!important}main>p:first-child{font-size:.72rem;letter-spacing:.16em;font-weight:800;text-transform:uppercase;color:#64806e}h1{font-family:Georgia,"Times New Roman",serif!important;font-size:clamp(2.7rem,6vw,4.6rem)!important;line-height:1.08!important;letter-spacing:-.055em;font-weight:400;margin:14px 0 20px!important;color:#143c32}main>h1+p{font-size:1.08rem;color:#586b62;max-width:740px;margin-bottom:35px}article{background:#fff!important;border:1px solid #dfe7df!important;border-radius:19px!important;padding:27px!important;box-shadow:0 8px 26px #183e340c;transition:transform .22s,box-shadow .22s}article:hover{transform:translateY(-3px);box-shadow:0 18px 35px #183e3420}article h2{font-size:1.27rem!important;letter-spacing:-.025em;line-height:1.3;color:#163d32}article p{color:#53665d}article a{color:#17634d!important;font-weight:700;text-underline-offset:3px}a:focus-visible{outline:3px solid #bc842d;outline-offset:4px}.grid{gap:22px!important}.detail{font-size:.85rem;color:#66796d!important}.note{background:#e4eddf!important;border:1px solid #d0dfcd;border-radius:17px!important;padding:24px!important;margin-top:38px!important}footer{border-top:1px solid #d8e2d8;padding-top:22px!important;color:#66796d!important} @media(max-width:650px){main{padding:34px 17px 55px!important}article{padding:23px!important}article:hover{transform:none}.grid{grid-template-columns:1fr!important}h1{font-size:2.7rem!important}}@media(prefers-reduced-motion:reduce){article{transition:none!important}}</style></head>
+<style>
+/* Long-term rental search: warm editorial identity and accessible quick filters. */
+html{scroll-padding-top:90px}body{background:radial-gradient(circle at 95% 36%,#e7eee5,transparent 36%),#f8f8f3}
+.site-header{box-shadow:0 4px 24px #102a2410}
+.hero{min-height:480px;border-radius:0 0 30px 30px}
+.hero::after{background:linear-gradient(90deg,#081e18ed,#081e18b8 57%,#081e1840)}
+.hero-content{padding:83px 0 100px}
+.hero h1{font:400 clamp(3rem,6.3vw,5.7rem)/1.03 Georgia,"Times New Roman",serif;letter-spacing:-.058em;text-wrap:balance}
+.hero .hero-copy{font-size:1.08rem;line-height:1.7}
+.hero-actions .button{border-radius:100px;min-height:48px}
+.market-box{border-radius:18px;box-shadow:0 18px 48px #173e3420}
+.market-stat strong{font:400 1.65rem/1.15 Georgia,serif;letter-spacing:-.025em;color:#153e32}
+.search-section{padding-top:38px}
+.renter-shortcuts{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(220px,.72fr) minmax(0,1.28fr);gap:32px;align-items:center;padding:29px 32px;margin-bottom:38px;background:linear-gradient(120deg,#143e34,#245d4b);color:white;border-radius:22px;box-shadow:0 18px 40px #173e341a}
+.renter-shortcuts:after{content:"";position:absolute;right:-95px;top:-145px;width:360px;height:360px;border:1px solid #f2cf8745;border-radius:50%;box-shadow:0 0 0 38px #f2cf870d,0 0 0 78px #f2cf8709;pointer-events:none}
+.shortcut-intro,.shortcut-controls{position:relative;z-index:1}
+.shortcut-intro .eyebrow{color:#f2d49a;margin-bottom:8px}
+.shortcut-intro h3{font:400 clamp(1.6rem,2.8vw,2.2rem)/1.13 Georgia,"Times New Roman",serif;letter-spacing:-.035em;margin:0 0 10px}
+.shortcut-intro p:last-child{font-size:.83rem;line-height:1.65;color:#dbe9df;margin:0;max-width:340px}
+.shortcut-controls{display:grid;gap:17px}
+.shortcut-label{display:block;margin-bottom:8px;color:#e6d7b2;font-size:.67rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
+.shortcut-pills{display:flex;flex-wrap:wrap;gap:8px}
+.shortcut-pills button{font:750 .78rem/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;min-height:44px;padding:10px 14px;border:1px solid #ffffff62;border-radius:100px;background:#ffffff12;color:white;cursor:pointer;transition:background .2s,transform .2s}
+.shortcut-pills button:hover{background:#ffffff2b;transform:translateY(-1px)}
+.shortcut-pills button[aria-pressed="true"]{background:#f3ce89;border-color:#f3ce89;color:#173b30}
+.shortcut-pills button:focus-visible{outline:3px solid white;outline-offset:3px}
+.filters{grid-template-columns:minmax(210px,1.4fr) repeat(5,minmax(100px,1fr)) auto;background:#e7eee7;border-color:#d4e1d5;border-radius:18px;padding:17px;gap:11px}
+.field input,.field select,.reset{min-height:47px;border-radius:10px}
+.section-head h2{font:400 clamp(2.1rem,3.5vw,3.1rem)/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.045em;color:#173f33}
+.toolbar{padding:24px 3px 15px}.results-count{font-weight:800;color:#315c49}
+.sort{min-height:44px;padding:7px 12px;border:1px solid #d4e0d7;border-radius:10px;background:white;color:#254737}
+.listings{gap:21px}
+.listings .card{padding:0;border-radius:19px;box-shadow:0 8px 26px #123d3010;transition:box-shadow .22s,transform .22s;min-width:0}
+.listings .card:hover{transform:translateY(-3px);box-shadow:0 19px 42px #123d3020}
+.property-art{height:218px}.card-body{padding:21px}
+.price{font:400 1.9rem/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.045em;color:#123f31}
+.price small{font:750 .69rem/1.4 system-ui,sans-serif;letter-spacing:0}
+.specs{gap:7px;flex-wrap:wrap;margin:12px 0}.specs span{padding:5px 9px;border:1px solid #dce8db;background:#f1f6ef;border-radius:100px;font-size:.72rem}
+.address{font-size:1.06rem;letter-spacing:-.02em}
+.card-actions a{display:grid;place-items:center;min-height:46px}.inquire{background:#174f3d}.source-link{border-color:#b6cbbb}
+.source-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.source-card{border-radius:16px;padding:23px}
+.owner-band{border-radius:23px}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #a76c19;outline-offset:3px}
+@media(max-width:1100px){.filters{grid-template-columns:repeat(3,minmax(0,1fr))}.field-search{grid-column:1/-1}.reset{width:100%}}
+@media(max-width:850px){.renter-shortcuts{grid-template-columns:1fr;gap:21px}.shortcut-intro p:last-child{max-width:650px}}
+@media(max-width:650px){.hero{min-height:440px;border-radius:0 0 20px 20px}.hero-content{padding:58px 0 85px}.hero h1{font-size:clamp(2.8rem,11vw,4.2rem)}.market-stat strong{font-size:1.4rem}.renter-shortcuts{padding:25px 21px;border-radius:18px;margin-bottom:30px}.filters{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:12px}.field-search{grid-column:1/-1}.listings{grid-template-columns:1fr}.property-art{height:220px}.source-grid{grid-template-columns:1fr}.card-actions{grid-template-columns:1fr 1fr}.card-actions a{font-size:.72rem}.toolbar{flex-wrap:wrap}}
+@media(max-width:380px){.card-actions{grid-template-columns:1fr}.hero h1{font-size:2.7rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.listings .card,.shortcut-pills button{transition:none}.listings .card:hover,.shortcut-pills button:hover{transform:none}}
+</style></head>
 <body>
 <a class="skip" href="#main">Skip to listings</a>
 
@@ -51,6 +99,20 @@
 
 <main id="main" class="wrap">
   <section class="search-section" aria-labelledby="search-title">
+<section class="renter-shortcuts" aria-labelledby="shortcuts-title">
+<div class="shortcut-intro"><p class="eyebrow">Your search, your priorities</p><h3 id="shortcuts-title">Start with what matters.</h3><p>Choose a budget or bedroom starting point. Refine every detail with the filters below.</p></div>
+<div class="shortcut-controls">
+<div role="group" aria-label="Monthly budget shortcuts"><span class="shortcut-label">Monthly budget</span><div class="shortcut-pills">
+<button type="button" data-quick-budget="any" aria-pressed="true">Any price</button>
+<button type="button" data-quick-budget="under1000" aria-pressed="false">Up to $1,000</button>
+<button type="button" data-quick-budget="mid" aria-pressed="false">$1,000–$1,500</button>
+<button type="button" data-quick-budget="high" aria-pressed="false">$1,500+</button>
+</div></div>
+<div role="group" aria-label="Bedroom shortcuts"><span class="shortcut-label">Bedrooms</span><div class="shortcut-pills">
+<button type="button" data-quick-beds="any" aria-pressed="true">Any bedrooms</button>
+<button type="button" data-quick-beds="two" aria-pressed="false">2+ bedrooms</button>
+<button type="button" data-quick-beds="three" aria-pressed="false">3+ bedrooms</button>
+</div></div></div></section>
     <div class="section-head">
       <div>
         <p class="eyebrow">Residential rentals</p>
@@ -143,7 +205,12 @@
     </div>
   </section>
 
-  <section class="more-rentals" aria-labelledby="more-title">\n    <p class="eyebrow">Russellville.Rent</p>\n    <h2 id="more-title">Looking for another kind of rental?</h2>\n    <div class="more-links"><a href="/">Back to all rental categories ↗</a></div>\n  </section>\n</main>
+  <section class="more-rentals" aria-labelledby="more-title">
+    <p class="eyebrow">Russellville.Rent</p>
+    <h2 id="more-title">Looking for another kind of rental?</h2>
+    <div class="more-links"><a href="/">Back to all rental categories ↗</a></div>
+  </section>
+</main>
 
 <footer>
   <div class="wrap footer-inner">
@@ -153,6 +220,21 @@
   </div>
 </footer>
 
+<script>
+/* Presets synchronize with the existing live filters, without changing listings. */
+(() => {
+const form=document.getElementById('filters'),min=document.getElementById('minRent'),max=document.getElementById('maxRent'),beds=document.getElementById('beds');
+const budget={any:['',''],under1000:['','1000'],mid:['1000','1500'],high:['1500','']},bedrooms={any:'',two:'2',three:'3'};
+const budgetButtons=Array.from(document.querySelectorAll('[data-quick-budget]')),bedButtons=Array.from(document.querySelectorAll('[data-quick-beds]'));
+function sync(){
+budgetButtons.forEach(b=>{const pair=budget[b.dataset.quickBudget];b.setAttribute('aria-pressed',String(min.value===pair[0]&&max.value===pair[1]));});
+bedButtons.forEach(b=>b.setAttribute('aria-pressed',String(beds.value===bedrooms[b.dataset.quickBeds])));
+}
+budgetButtons.forEach(b=>b.addEventListener('click',()=>{[min.value,max.value]=budget[b.dataset.quickBudget];form.dispatchEvent(new Event('change',{bubbles:true}));sync();}));
+bedButtons.forEach(b=>b.addEventListener('click',()=>{beds.value=bedrooms[b.dataset.quickBeds];form.dispatchEvent(new Event('change',{bubbles:true}));sync();}));
+form.addEventListener('input',sync);form.addEventListener('change',sync);form.addEventListener('reset',()=>setTimeout(sync,0));sync();
+})();
+</script>
 <script src="assets/app.js" defer></script>
 </body>
 </html>
