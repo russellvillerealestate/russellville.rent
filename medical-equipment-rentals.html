@@ -16,24 +16,118 @@
 .steps{margin:54px 0 24px;padding:30px;background:#e8f0e8;border-radius:17px}.steps h2{font-size:2rem;margin:0 0 17px}.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.steps-grid strong{display:block;margin-bottom:5px}.steps-grid span{font-size:.89rem;color:#425e52}.note{font-size:.85rem;color:#496357;margin:28px 0 34px}footer{border-top:1px solid var(--line);padding:25px 0 36px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:.81rem;color:#52695d}
 @media(max-width:760px){.section-head{display:block}.section-head p:last-child{margin-top:10px}.grid,.steps-grid{grid-template-columns:1fr}.card:nth-child(3){grid-column:auto}.hero .wrap{padding:46px 0 52px}.steps{padding:23px}.site-header .wrap{min-height:68px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media print{.hero{background:#fff;color:#173d34}.hero-intro,.hero .eyebrow{color:#173d34}.card{box-shadow:none;break-inside:avoid}}
+
+/* Illustrated regional-equipment finder. Filtering reflects only the advertised categories. */
+.hero{position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.16;background:linear-gradient(90deg,transparent 49%,#c6e1d4 50%,transparent 51%) 0 0/65px 65px}
+.hero-layout{position:relative;display:grid;grid-template-columns:minmax(0,1.13fr) minmax(300px,.87fr);align-items:center;gap:clamp(24px,4vw,55px)}
+.hero-content{min-width:0}
+.hero-art{min-width:0;align-self:center}
+.hero-art svg{display:block;width:100%;height:auto;filter:drop-shadow(0 20px 28px #061f1c50)}
+.art-caption{margin:4px 0 0;color:#d7e8da;font-size:.72rem;text-align:center;letter-spacing:.03em}
+.equipment-finder{display:none;margin:38px 0 0;padding:clamp(22px,3.4vw,36px);background:#fff;border:1px solid var(--line);border-radius:23px;box-shadow:0 16px 45px #143b3110}
+.has-js .equipment-finder{display:block}
+.finder-heading{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:24px}
+.finder-heading h2{font-size:clamp(1.8rem,3.3vw,2.6rem);margin:0}
+.finder-heading>p{margin:0;max-width:36ch;font-size:.89rem;color:var(--muted)}
+.finder-eyebrow{margin:0 0 7px;color:#805927;font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;font-weight:850}
+.equipment-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+.equipment-choice{display:flex;align-items:flex-start;gap:12px;min-width:0;min-height:110px;padding:18px 16px;text-align:left;cursor:pointer;border:1px solid #d3e1d7;border-radius:14px;background:#f7faf6;color:var(--forest);font:inherit;transition:border-color .2s,background .2s,transform .2s,box-shadow .2s}
+.equipment-choice strong{display:block;font-size:.9rem;line-height:1.3}
+.equipment-choice small{display:block;margin-top:6px;font-size:.75rem;line-height:1.4;color:#536c60}
+.choice-number{display:grid;place-items:center;flex:0 0 31px;width:31px;height:31px;border-radius:9px;background:#e1ede4;color:#315f4d;font-size:.72rem;font-weight:850}
+.equipment-choice[aria-pressed="true"]{border-color:#235b4b;background:#e6f1e8;box-shadow:inset 0 0 0 1px #235b4b}
+.equipment-choice[aria-pressed="true"] .choice-number{background:#235b4b;color:white}
+.equipment-choice:hover{border-color:#5b8a70;background:#edf4ec}
+.equipment-choice:focus-visible,.clear-filter:focus-visible{outline:3px solid #a9660d;outline-offset:3px}
+.finder-footer{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:18px}
+.finder-footer p{margin:0;color:#3c5e50;font-size:.85rem;font-weight:750}
+.clear-filter{min-height:44px;padding:9px 14px;border:1px solid #b5cbb9;border-radius:10px;background:#f1f6ef;color:#174b3c;font:750 .83rem system-ui,sans-serif;cursor:pointer}
+.clear-filter[hidden],.card[hidden],.jump a[hidden]{display:none!important}
+.grid.is-filtered .card:nth-child(3){grid-column:auto}
+@media(max-width:900px){.hero-layout{grid-template-columns:1fr}.hero-art{max-width:440px;justify-self:center}.hero .wrap{padding-bottom:45px}.equipment-choices{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.hero-art{max-width:310px}.hero .wrap{padding-top:38px}.finder-heading{display:block}.finder-heading>p{margin-top:12px}.equipment-choices{grid-template-columns:1fr;gap:9px}.equipment-choice{min-height:0;padding:14px}.equipment-finder{margin-top:23px}.finder-footer{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){.equipment-choice{transition:none}.equipment-choice:hover{transform:none}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to providers</a>
 <header class="site-header"><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
 <main id="main">
-<section class="hero" aria-labelledby="page-title"><div class="wrap"><p class="eyebrow">Russellville, Arkansas &amp; regional rental options</p><h1 id="page-title">Medical equipment <em>rentals.</em></h1><p class="hero-intro">Compare companies that advertise paid rentals of wheelchairs, scooters, hospital beds, ramps and related equipment. These are <strong>regional operators, not verified Russellville storefronts</strong>. Confirm inventory, eligibility, safe fit, delivery costs and final terms directly.</p><div class="hero-actions"><a class="button primary" href="#providers">Compare three operators ↓</a><a class="button secondary" href="medical-equipment-loans.html">See free lending programs ↗</a></div></div></section>
+<section class="hero" aria-labelledby="page-title"><div class="wrap hero-layout"><div class="hero-content"><p class="eyebrow">Russellville, Arkansas &amp; regional rental options</p><h1 id="page-title">Medical equipment <em>rentals.</em></h1><p class="hero-intro">Compare companies that advertise paid rentals of wheelchairs, scooters, hospital beds, ramps and related equipment. These are <strong>regional operators, not verified Russellville storefronts</strong>. Confirm inventory, eligibility, safe fit, delivery costs and final terms directly.</p><div class="hero-actions"><a class="button primary" href="#providers">Compare three operators ↓</a><a class="button secondary" href="medical-equipment-loans.html">See free lending programs ↗</a></div><div class="hero-art" aria-hidden="true">
+<svg viewBox="0 0 520 400" xmlns="http://www.w3.org/2000/svg" focusable="false">
+<defs><linearGradient id="hero-card" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f3e4c8"/><stop offset="1" stop-color="#d7e8da"/></linearGradient></defs>
+<circle cx="270" cy="197" r="170" fill="#f0d7a4" opacity=".09"/><circle cx="270" cy="197" r="145" fill="none" stroke="#d8e8d3" stroke-opacity=".3" stroke-width="2"/>
+<rect x="68" y="50" width="383" height="288" rx="24" fill="url(#hero-card)" stroke="#fff3d7" stroke-width="3"/>
+<path d="M88 288h343" stroke="#9eb6a4" stroke-width="3" stroke-linecap="round"/>
+<rect x="99" y="78" width="180" height="176" rx="16" fill="#f9f7ee" stroke="#c6d7c9" stroke-width="2"/>
+<g fill="none" stroke="#245b4e" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+<path d="M151 115v65q0 17 17 17h52l19 36"/><path d="M148 111h-19"/><path d="M166 155h60l20 27"/><path d="M224 180h27"/>
+</g>
+<circle cx="172" cy="221" r="31" fill="#e2eee4" stroke="#245b4e" stroke-width="8"/><circle cx="172" cy="221" r="9" fill="#245b4e"/><circle cx="248" cy="236" r="12" fill="#e2eee4" stroke="#245b4e" stroke-width="6"/>
+<rect x="300" y="78" width="124" height="88" rx="13" fill="#d4e7db" stroke="#a7c5b3" stroke-width="2"/>
+<g fill="none" stroke="#245b4e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path d="M313 135h96M319 130V97M406 130V97M320 111h82"/><path d="M322 135v14M402 135v14"/></g>
+<rect x="300" y="185" width="124" height="69" rx="13" fill="#f6e5c5" stroke="#dbc49b" stroke-width="2"/>
+<path d="M319 236l29-33h51M320 236h82" fill="none" stroke="#88693f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="107" cy="310" r="4" fill="#598b72"/><path d="M121 310h164" stroke="#9eb6a4" stroke-width="3" stroke-linecap="round"/>
+<path d="M302 310h102" stroke="#9eb6a4" stroke-width="3" stroke-linecap="round"/><circle cx="414" cy="310" r="4" fill="#598b72"/>
+<rect x="343" y="277" width="90" height="20" rx="10" fill="#245b4e"/><path d="M357 287h61" stroke="#f6e7c8" stroke-width="3" stroke-linecap="round" stroke-dasharray="3 7"/>
+</svg>
+<p class="art-caption">Illustrated equipment guide · Availability unconfirmed</p>
+</div></div></section>
 <div class="wrap">
 <aside class="notice"><strong>Russellville delivery: UNCONFIRMED for all three operators.</strong><p>The providers publish rentals and their own branch locations, but none of the cited rental pages explicitly confirms delivery to Russellville. Do not assume local inventory or same-day service. Request a location-specific quote before making plans.</p></aside>
+<section class="equipment-finder" aria-labelledby="finder-title">
+<div class="finder-heading"><div><p class="finder-eyebrow">Explore by equipment</p><h2 id="finder-title">What are you looking for?</h2></div><p>Choose a product type to see providers that advertise it. This is not a live inventory or delivery check.</p></div>
+<div class="equipment-choices" role="group" aria-label="Filter providers by advertised equipment">
+<button type="button" class="equipment-choice" data-category="all" aria-pressed="true"><span class="choice-number" aria-hidden="true">00</span><span><strong>All equipment</strong><small>Compare every operator</small></span></button>
+<button type="button" class="equipment-choice" data-category="mobility" aria-pressed="false"><span class="choice-number" aria-hidden="true">01</span><span><strong>Wheelchairs &amp; scooters</strong><small>Manual and powered mobility</small></span></button>
+<button type="button" class="equipment-choice" data-category="beds" aria-pressed="false"><span class="choice-number" aria-hidden="true">02</span><span><strong>Hospital beds</strong><small>Published hospital bed rentals</small></span></button>
+<button type="button" class="equipment-choice" data-category="ramps" aria-pressed="false"><span class="choice-number" aria-hidden="true">03</span><span><strong>Ramps &amp; knee walkers</strong><small>Access and recovery equipment</small></span></button>
+<button type="button" class="equipment-choice" data-category="lifts" aria-pressed="false"><span class="choice-number" aria-hidden="true">04</span><span><strong>Patient lifts</strong><small>Published patient lift rentals</small></span></button>
+<button type="button" class="equipment-choice" data-category="chairs" aria-pressed="false"><span class="choice-number" aria-hidden="true">05</span><span><strong>Lift chairs</strong><small>Seated lift-assist furniture</small></span></button>
+</div>
+<div class="finder-footer"><p id="filter-status" role="status" aria-live="polite" aria-atomic="true">Showing all 3 regional providers.</p><button type="button" id="clear-filter" class="clear-filter" hidden>Show all providers ↗</button></div>
+</section>
 <section id="providers" aria-labelledby="providers-title"><div class="section-head"><div><p class="eyebrow" style="color:#52705e">01 / Verified rental offerings</p><h2 id="providers-title">Compare regional providers.</h2></div><p>Three distinct rental operators. Published examples are not real-time inventory or binding quotes.</p></div>
 <nav class="jump" aria-label="Jump to rental providers"><a href="#attention">ATTENTION Medical Supply</a><a href="#diamond">Diamond Medical</a><a href="#trumotion">TruMotion Medical</a></nav>
 <div class="grid">
-<article class="card" id="attention"><span class="kicker">01 / HEBER SPRINGS, ARKANSAS</span><h3>ATTENTION Medical Supply</h3><span class="badge">Regional rental branch</span><p>Official rental page advertises mobility scooters, manual and power wheelchairs, ramps, hospital beds, knee walkers and rollators. Offers weekly, monthly and short-term rentals, with delivery and pickup on most items. <strong>Russellville delivery and current inventory are UNCONFIRMED.</strong> Ask the Heber Springs branch whether it serves your address.</p><p class="detail">2102 Highway 25B, Heber Springs, AR 72543-6405 · Heber Springs location verified; no Russellville branch verified</p><p class="links"><a href="tel:+15013622441">501-362-2441</a> · <a href="https://www.attentionmedical.com/rentals" target="_blank" rel="noopener noreferrer">Official rentals ↗</a> · <a href="https://www.attentionmedical.com/locations" target="_blank" rel="noopener noreferrer">Official locations ↗</a></p></article>
-<article class="card" id="diamond"><span class="kicker">02 / LITTLE ROCK, ARKANSAS</span><h3>Diamond Medical Equipment &amp; Supplies</h3><span class="badge">Regional showroom &amp; rentals</span><p>Official rental catalog lists knee walkers, manual wheelchairs, ramps, electric hospital beds, patient lifts, lift chairs and mobility scooters. Published examples include manual wheelchairs at $75/month or $50/weekend, ramps at $75/month and scooters at $150/week or $400/month. These are <strong>operator-posted examples, not confirmed current quotes</strong>. The company advertises delivery within central Arkansas; <strong>Russellville delivery is UNCONFIRMED.</strong></p><p class="detail">300 South Rodney Parham, Suite 16, Little Rock, AR 72205 · Confirm delivery charges and equipment availability</p><p class="links"><a href="tel:+15012253106">501-225-3106</a> · <a href="https://www.diamondmedical-ar.com/rentals" target="_blank" rel="noopener noreferrer">Official rental catalog ↗</a> · <a href="https://www.diamondmedical-ar.com/contact" target="_blank" rel="noopener noreferrer">Official contact ↗</a></p></article>
-<article class="card" id="trumotion"><span class="kicker">03 / LITTLE ROCK, ARKANSAS</span><h3>TruMotion Medical</h3><span class="badge">Regional rental provider</span><p>Official rental information advertises power and manual wheelchairs, mobility scooters, adjustable beds, lift chairs and other home medical equipment. Its rental page publishes daily, weekend, weekly and monthly options for selected items, with setup and delivery fees separately listed. <strong>Russellville delivery, final fees and availability are UNCONFIRMED.</strong> TruMotion is associated with American Medical Rentals; do not count the two names as independent operators or assume either has a Russellville branch.</p><p class="detail">6701 West 12th Street, Suite 5, Little Rock, AR 72204 · Little Rock storefront verified</p><p class="links"><a href="tel:+15019752557">501-975-2557</a> · <a href="https://trumotionmedical.com/rentals-2/" target="_blank" rel="noopener noreferrer">Official rentals ↗</a> · <a href="https://trumotionmedical.com/about-us/" target="_blank" rel="noopener noreferrer">Official address &amp; operator background ↗</a></p></article>
+<article class="card" id="attention" data-equipment="mobility beds ramps"><span class="kicker">01 / HEBER SPRINGS, ARKANSAS</span><h3>ATTENTION Medical Supply</h3><span class="badge">Regional rental branch</span><p>Official rental page advertises mobility scooters, manual and power wheelchairs, ramps, hospital beds, knee walkers and rollators. Offers weekly, monthly and short-term rentals, with delivery and pickup on most items. <strong>Russellville delivery and current inventory are UNCONFIRMED.</strong> Ask the Heber Springs branch whether it serves your address.</p><p class="detail">2102 Highway 25B, Heber Springs, AR 72543-6405 · Heber Springs location verified; no Russellville branch verified</p><p class="links"><a href="tel:+15013622441">501-362-2441</a> · <a href="https://www.attentionmedical.com/rentals" target="_blank" rel="noopener noreferrer">Official rentals ↗</a> · <a href="https://www.attentionmedical.com/locations" target="_blank" rel="noopener noreferrer">Official locations ↗</a></p></article>
+<article class="card" id="diamond" data-equipment="mobility beds ramps lifts chairs"><span class="kicker">02 / LITTLE ROCK, ARKANSAS</span><h3>Diamond Medical Equipment &amp; Supplies</h3><span class="badge">Regional showroom &amp; rentals</span><p>Official rental catalog lists knee walkers, manual wheelchairs, ramps, electric hospital beds, patient lifts, lift chairs and mobility scooters. Published examples include manual wheelchairs at $75/month or $50/weekend, ramps at $75/month and scooters at $150/week or $400/month. These are <strong>operator-posted examples, not confirmed current quotes</strong>. The company advertises delivery within central Arkansas; <strong>Russellville delivery is UNCONFIRMED.</strong></p><p class="detail">300 South Rodney Parham, Suite 16, Little Rock, AR 72205 · Confirm delivery charges and equipment availability</p><p class="links"><a href="tel:+15012253106">501-225-3106</a> · <a href="https://www.diamondmedical-ar.com/rentals" target="_blank" rel="noopener noreferrer">Official rental catalog ↗</a> · <a href="https://www.diamondmedical-ar.com/contact" target="_blank" rel="noopener noreferrer">Official contact ↗</a></p></article>
+<article class="card" id="trumotion" data-equipment="mobility chairs"><span class="kicker">03 / LITTLE ROCK, ARKANSAS</span><h3>TruMotion Medical</h3><span class="badge">Regional rental provider</span><p>Official rental information advertises power and manual wheelchairs, mobility scooters, adjustable beds, lift chairs and other home medical equipment. Its rental page publishes daily, weekend, weekly and monthly options for selected items, with setup and delivery fees separately listed. <strong>Russellville delivery, final fees and availability are UNCONFIRMED.</strong> TruMotion is associated with American Medical Rentals; do not count the two names as independent operators or assume either has a Russellville branch.</p><p class="detail">6701 West 12th Street, Suite 5, Little Rock, AR 72204 · Little Rock storefront verified</p><p class="links"><a href="tel:+15019752557">501-975-2557</a> · <a href="https://trumotionmedical.com/rentals-2/" target="_blank" rel="noopener noreferrer">Official rentals ↗</a> · <a href="https://trumotionmedical.com/about-us/" target="_blank" rel="noopener noreferrer">Official address &amp; operator background ↗</a></p></article>
 </div></section>
 <section class="steps" id="before-you-go" aria-labelledby="steps-title"><p class="eyebrow" style="color:#52705e">02 / Before booking</p><h2 id="steps-title">Confirm these details.</h2><div class="steps-grid"><div><strong>01 · Exact equipment</strong><span>Ask about dimensions, capacity, condition, accessories and current stock.</span></div><div><strong>02 · Delivery to Russellville</strong><span>Ask whether your specific address is served, and request the full pickup, setup and delivery quote.</span></div><div><strong>03 · Terms &amp; safe use</strong><span>Confirm rental duration, deposit, return policy and training or fitting requirements.</span></div></div></section>
 <p class="note">Independent directory, reviewed October 27, 2026. Listings describe operator-advertised rental services, not guaranteed local delivery or availability. For no-cost alternatives, see <a href="medical-equipment-loans.html">medical equipment lending programs</a>. <a href="sms:+14799707301">Suggest a correction</a>.</p>
 <footer><span>© 2026 Russellville.Rent · Independent rental directory</span><a href="/">Return to homepage ↗</a></footer>
 </div></main>
+<script>
+(function(){
+  document.documentElement.classList.add('has-js');
+  const buttons=Array.from(document.querySelectorAll('.equipment-choice'));
+  const cards=Array.from(document.querySelectorAll('.card[data-equipment]'));
+  const links=Array.from(document.querySelectorAll('.jump a'));
+  const status=document.getElementById('filter-status');
+  const clear=document.getElementById('clear-filter');
+  const grid=document.querySelector('#providers .grid');
+  function selectCategory(category){
+    buttons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.category===category)));
+    let visible=0;
+    cards.forEach(card=>{
+      const matches=category==='all'||card.dataset.equipment.split(' ').includes(category);
+      card.hidden=!matches;
+      if(matches)visible++;
+    });
+    links.forEach(link=>{
+      const card=document.getElementById(link.getAttribute('href').slice(1));
+      link.hidden=Boolean(card&&card.hidden);
+    });
+    grid.classList.toggle('is-filtered',category!=='all');
+    const label=buttons.find(button=>button.dataset.category===category)?.querySelector('strong')?.textContent||'equipment';
+    status.textContent=category==='all'?'Showing all '+visible+' regional providers.':'Showing '+visible+' '+(visible===1?'provider':'providers')+' advertising '+label.toLowerCase()+'.';
+    clear.hidden=category==='all';
+  }
+  buttons.forEach(button=>button.addEventListener('click',()=>selectCategory(button.dataset.category)));
+  clear.addEventListener('click',()=>selectCategory('all'));
+})();
+</script>
 </body></html>
