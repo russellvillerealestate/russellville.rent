@@ -71,6 +71,42 @@ main{padding:57px 0 67px}
 .note a{font-weight:850;text-underline-offset:3px}
 footer{border-top:1px solid var(--line);padding:24px 0 36px;color:#5a6d70;font-size:.81rem}
 footer a{text-underline-offset:3px}
+
+/* Stage brief studio: visual planning aid, not a provider inventory or engineering tool. */
+.studio{margin-top:35px;border-radius:22px;overflow:hidden;background:#122d36;color:#f5f8f5;border:1px solid #33525b;box-shadow:0 22px 45px #142e381c}
+.studio-head{padding:29px 32px 22px;display:flex;align-items:end;justify-content:space-between;gap:24px;border-bottom:1px solid #ffffff20}
+.studio-head .eyebrow{color:#f3c68b}
+.studio-head h2{font:700 clamp(2rem,3.8vw,3.1rem)/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.04em;margin:0}
+.studio-head p:last-child{font-size:.86rem;color:#d1e2df;max-width:34ch;margin:0}
+.studio-layout{display:grid;grid-template-columns:minmax(0,.83fr) minmax(0,1.17fr)}
+.studio-form{padding:29px 31px 33px;border-right:1px solid #ffffff23}
+.studio-form fieldset{border:0;margin:0;padding:0;min-width:0}
+.studio-form legend{font-size:.76rem;text-transform:uppercase;letter-spacing:.15em;color:#f1c992;font-weight:850;margin-bottom:20px}
+.studio-fields{display:grid;grid-template-columns:1fr 1fr;gap:16px 12px}
+.studio-field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.studio-field.full{grid-column:1/-1}
+.studio-field label{font-size:.8rem;font-weight:800;color:#f0f6f2}
+.studio-field select,.studio-field input{width:100%;min-height:46px;padding:10px 11px;border:1px solid #78979c;border-radius:8px;background:#f8fbf8;color:#1b323a;font:inherit;font-size:.92rem}
+.studio-field select:focus-visible,.studio-field input:focus-visible,.studio-copy:focus-visible{outline:3px solid #f3c27b;outline-offset:3px}
+.studio-helper{font-size:.79rem;line-height:1.5;color:#d1e2df;margin:18px 0 0}
+.studio-output{padding:23px 29px 30px;background:linear-gradient(145deg,#23444b,#19343e)}
+.stage-board{position:relative;overflow:hidden;border-radius:13px;min-height:245px;background-color:#12313b;background-image:linear-gradient(#9ac2bf1a 1px,transparent 1px),linear-gradient(90deg,#9ac2bf1a 1px,transparent 1px);background-size:20px 20px;border:1px solid #7baba666}
+.stage-board svg{width:100%;height:245px;display:block}
+.board-label{position:absolute;left:15px;top:12px;color:#d6e7e2;font-size:.68rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
+.board-badge{position:absolute;right:12px;top:12px;background:#f2c78a;color:#20343a;border-radius:5px;padding:5px 8px;font-size:.67rem;font-weight:900;text-transform:uppercase}
+.stage-stats{display:flex;flex-wrap:wrap;gap:12px;margin:17px 0 15px}
+.stage-stat{flex:1 1 120px;border:1px solid #ffffff30;border-radius:9px;padding:11px 13px;background:#ffffff0a}
+.stage-stat small{display:block;color:#c5d9d5;font-size:.72rem;margin-bottom:2px}
+.stage-stat strong{font:700 1.45rem/1.25 Georgia,"Times New Roman",serif;color:#ffe0ac}
+.studio-output h3{font-size:.89rem;letter-spacing:.02em;margin:0 0 9px}
+.studio-brief{white-space:pre-wrap;overflow-wrap:anywhere;font: .81rem/1.65 system-ui,-apple-system,"Segoe UI",sans-serif;color:#e0efeb;background:#102c34;border:1px solid #63838a;padding:14px 15px;border-radius:9px;margin:0}
+.studio-copy{display:inline-flex;align-items:center;justify-content:center;min-height:46px;margin-top:13px;padding:10px 18px;border:0;border-radius:8px;background:#f2c78a;color:#17323b;font:800 .88rem system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer}
+.studio-copy:hover{background:#ffdb9f}
+.studio-status{font-size:.81rem;color:#e4f3e8;min-height:1.5em;margin:8px 0 0}
+.studio-foot{border-top:1px solid #ffffff25;padding:15px 30px;color:#d4e5e0;font-size:.78rem;line-height:1.55}
+@media(max-width:750px){.studio-head{display:block}.studio-head p:last-child{margin-top:12px;max-width:60ch}.studio-layout{grid-template-columns:1fr}.studio-form{border-right:0;border-bottom:1px solid #ffffff23}}
+@media(max-width:520px){.studio-head{padding:24px 21px 19px}.studio-form{padding:23px 21px}.studio-output{padding:20px}.studio-fields{grid-template-columns:1fr}.stage-board,.stage-board svg{min-height:215px;height:215px}.studio-foot{padding:15px 21px}}
+
 @media(max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-inner{gap:25px}.hero h1{font-size:clamp(3rem,6vw,4.4rem)}}
 @media(max-width:750px){.hero-inner{grid-template-columns:1fr;padding:53px 0 58px}.art{max-width:570px;min-height:0}.art svg{max-height:280px}.grid{grid-template-columns:1fr}.plan{grid-template-columns:1fr;gap:20px}.section-top{display:block}.section-top>p{margin-top:12px}}
 @media(max-width:520px){.wrap{width:min(100% - 30px,1120px)}.header-inner{min-height:65px}.brand{font-size:1.04rem}.back{font-size:.74rem}.hero-inner{padding:43px 0 48px}.hero h1{font-size:clamp(2.7rem,12vw,4rem)}.lead{font-size:1rem}.art{display:none}.card{padding:23px}.actions a{flex:1 1 100%}.plan{padding:22px}.plan ul{grid-template-columns:1fr}main{padding:40px 0 48px}}
@@ -87,7 +123,7 @@ footer a{text-underline-offset:3px}
 <h1 id="page-title">Set the <em>stage.</em><br>Make it memorable.</h1>
 <p class="lead">Portable stages, concert platforms and professional event structures. Compare Arkansas staging providers for your next event.</p>
 <p class="warning"><strong>Important:</strong> These companies are based outside Russellville. <strong>Delivery and setup in Russellville are UNCONFIRMED for every provider below.</strong></p>
-<div class="hero-actions"><a class="btn btn-primary" href="#providers">Explore stage providers ↓</a><a class="btn btn-secondary" href="#planning">Plan your event ↗</a></div>
+<div class="hero-actions"><a class="btn btn-primary" href="#providers">Explore stage providers ↓</a><a class="btn btn-secondary" href="#stage-studio">Sketch a stage brief ↗</a></div>
 </div>
 <div class="art" aria-hidden="true">
 <span class="art-tag">Event production</span>
@@ -141,12 +177,107 @@ footer a{text-underline-offset:3px}
 <div class="actions"><a href="tel:+14792518368" aria-label="Call Intents Party Rentals at 479-251-8368">Call 479-251-8368</a><a href="https://party-intents.com/category/products/staging/116" target="_blank" rel="noopener noreferrer">Official staging inventory and prices ↗</a></div>
 </article>
 </div>
+
+<section class="studio" id="stage-studio" aria-labelledby="studio-title" hidden>
+  <div class="studio-head"><div><p class="eyebrow">02 / Design your inquiry</p><h2 id="studio-title">The stage brief studio.</h2></div><p>Sketch a planning footprint and take the same clear questions to each provider.</p></div>
+  <div class="studio-layout">
+    <div class="studio-form">
+      <fieldset><legend>Event details</legend>
+        <div class="studio-fields">
+          <div class="studio-field full"><label for="stage-event">Event type</label><select id="stage-event"><option>Community event</option><option>Concert or performance</option><option>Wedding or celebration</option><option>School or corporate event</option><option>Other event</option></select></div>
+          <div class="studio-field"><label for="stage-width">Approximate width</label><select id="stage-width"><option value="12">12 feet</option><option value="16" selected>16 feet</option><option value="20">20 feet</option><option value="24">24 feet</option><option value="32">32 feet</option></select></div>
+          <div class="studio-field"><label for="stage-depth">Approximate depth</label><select id="stage-depth"><option value="8">8 feet</option><option value="12" selected>12 feet</option><option value="16">16 feet</option><option value="20">20 feet</option><option value="24">24 feet</option></select></div>
+          <div class="studio-field full"><label for="stage-setting">Venue setting</label><select id="stage-setting"><option>Outdoor venue</option><option>Indoor venue</option><option>Setting not yet decided</option></select></div>
+          <div class="studio-field full"><label for="stage-date">Event date (optional)</label><input id="stage-date" type="date"></div>
+        </div>
+      </fieldset>
+      <p class="studio-helper">Choose an approximate size for discussion—not a quoted product or recommended safe configuration. Ask providers to determine actual dimensions, load capacity, access, permits and installation requirements.</p>
+    </div>
+    <div class="studio-output">
+      <div class="stage-board">
+        <span class="board-label">Top-view concept / not to scale</span><span class="board-badge">Planning only</span>
+        <svg viewBox="0 0 400 270" aria-hidden="true" focusable="false">
+          <defs><linearGradient id="stage-surface" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#628e92"/><stop offset="1" stop-color="#315965"/></linearGradient></defs>
+          <rect id="stage-shape" x="125" y="80" width="150" height="80" rx="4" fill="url(#stage-surface)" stroke="#f6ce92" stroke-width="3"/>
+          <path d="M200 173V208 M193 199L200 208L207 199" fill="none" stroke="#f3c88b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="200" y="226" text-anchor="middle" font-size="11" letter-spacing="2" fill="#dcebe8">AUDIENCE SIDE</text>
+          <text x="200" y="45" text-anchor="middle" font-size="11" letter-spacing="2" fill="#dcebe8">BACK OF STAGE</text>
+        </svg>
+      </div>
+      <div class="stage-stats"><div class="stage-stat"><small>Approximate footprint</small><strong id="stage-dimensions">16 × 12 ft</strong></div><div class="stage-stat"><small>Planning area</small><strong id="stage-area">192 sq ft</strong></div></div>
+      <h3>Copy-ready provider inquiry</h3><pre class="studio-brief" id="stage-brief">Stage rental inquiry — Russellville area</pre>
+      <button class="studio-copy" id="stage-copy" type="button">Copy inquiry details ↗</button>
+      <p class="studio-status" id="stage-status" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+  <div class="studio-foot">Illustrative planning tool only. These dimensions do not represent confirmed inventory or an engineered stage design. Provider availability, delivery to Russellville, pricing and suitability remain unverified.</div>
+</section>
+
 <section class="plan" id="planning" aria-labelledby="planning-title">
-<div><p class="eyebrow">02 / Before you book</p><h2 id="planning-title">Plan for the full production.</h2><p>Confirm dates, site access, engineering requirements, crew and total delivered cost before booking.</p></div>
+<div><p class="eyebrow">03 / Before you book</p><h2 id="planning-title">Plan for the full production.</h2><p>Confirm dates, site access, engineering requirements, crew and total delivered cost before booking.</p></div>
 <ul><li>Confirm Russellville delivery and transportation cost</li><li>Ask about stage dimensions and site access</li><li>Confirm crew setup, teardown and timing</li><li>Request insurance and safety requirements in writing</li></ul>
 </section>
 <p class="note">Independent directory; listings are not endorsements or guarantees of operating status, inventory or availability. Request a written quote covering transportation, setup, insurance, safety and site requirements. <a href="sms:+14799707301">Suggest a correction</a>.</p>
 </main>
 <footer><div class="wrap">Russellville.Rent · <a href="/">Return to homepage</a></div></footer>
+
+<script>
+(() => {
+  const byId = id => document.getElementById(id);
+  const studio = byId('stage-studio');
+  if (!studio) return;
+  const width = byId('stage-width'), depth = byId('stage-depth');
+  const event = byId('stage-event'), setting = byId('stage-setting'), date = byId('stage-date');
+  const shape = byId('stage-shape'), dimensions = byId('stage-dimensions');
+  const area = byId('stage-area'), brief = byId('stage-brief');
+  const status = byId('stage-status'), copy = byId('stage-copy');
+  const inquiry = () => [
+    'Stage rental inquiry — Russellville area',
+    'Event: ' + event.value,
+    'Event date: ' + (date.value || 'To be confirmed'),
+    'Approximate planning footprint: ' + width.value + ' ft wide × ' + depth.value + ' ft deep (' + (Number(width.value) * Number(depth.value)) + ' sq ft)',
+    'Venue setting: ' + setting.value,
+    'Please confirm Russellville delivery, available stage dimensions, total price, setup and teardown, site access, load capacity, permits, insurance and safety requirements.'
+  ].join('\n');
+  const update = () => {
+    const w = Number(width.value), d = Number(depth.value);
+    dimensions.textContent = w + ' × ' + d + ' ft';
+    area.textContent = (w * d) + ' sq ft';
+    const drawnWidth = w / 32 * 300, drawnDepth = d / 24 * 160;
+    shape.setAttribute('x', String(200 - drawnWidth / 2));
+    shape.setAttribute('y', String(120 - drawnDepth / 2));
+    shape.setAttribute('width', String(drawnWidth));
+    shape.setAttribute('height', String(drawnDepth));
+    brief.textContent = inquiry();
+    status.textContent = '';
+  };
+  [width, depth, event, setting, date].forEach(field => field.addEventListener('change', update));
+  copy.addEventListener('click', async () => {
+    const value = inquiry();
+    let copied = false;
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(value);
+        copied = true;
+      }
+    } catch (_) { /* Continue to legacy fallback. */ }
+    if (!copied) {
+      const temporary = document.createElement('textarea');
+      temporary.value = value;
+      temporary.setAttribute('readonly', '');
+      temporary.style.position = 'fixed';
+      temporary.style.opacity = '0';
+      document.body.appendChild(temporary);
+      temporary.select();
+      try { copied = document.execCommand('copy'); } catch (_) { copied = false; }
+      temporary.remove();
+    }
+    status.textContent = copied ? 'Inquiry copied. Paste it into a message to a provider.' : 'Copy unavailable. Select the inquiry text above to copy manually.';
+  });
+  studio.hidden = false;
+  update();
+})();
+</script>
+
 </body>
 </html>
