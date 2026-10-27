@@ -61,6 +61,28 @@ footer{border-top:1px solid var(--line);padding:22px 0;margin-top:35px;font-size
 @media(max-width:850px){.hero{grid-template-columns:1fr;gap:23px}.status-panel{display:grid;grid-template-columns:1fr 1fr;gap:0 22px}.status-panel h2{grid-column:1/-1}.notice-grid{grid-template-columns:1fr}.availability{grid-template-columns:1fr}.alt-link{justify-self:start}}
 @media(max-width:600px){.header-inner{padding:18px 17px}.brand{font-size:1.03rem}.back{font-size:.73rem}main{padding:18px 16px 50px}.hero{padding:31px 24px;border-radius:19px}.status-panel{display:block;padding:19px}.section-head{display:block;margin-top:32px}.section-head p{margin-top:6px}.notice{padding:23px}.availability{padding:25px 23px}.alt-link{width:100%;white-space:normal}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.alt-link{transition:none}.alt-link:hover{transform:none}}
+
+/* Lake Dardanelle editorial wayfinding: scenic imagery never implies marina access. */
+.hero{background:linear-gradient(105deg,rgba(8,33,29,.97) 0%,rgba(8,33,29,.89) 44%,rgba(8,33,29,.59) 100%),url("assets/lake-dardanelle-sunset.jpg") center 55%/cover no-repeat}
+.hero:after{display:none}
+.status-panel{background:rgba(9,37,31,.88);border-color:#ffffff5c;box-shadow:0 18px 40px #001b1740}
+.scene-caption{margin:10px 3px 0;color:#53685e;font-size:.75rem;line-height:1.5}
+.decision-rail{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:24px 0 5px}
+.decision-link{position:relative;display:flex;flex-direction:column;gap:7px;min-width:0;min-height:151px;padding:23px 22px 18px;background:#fff;border:1px solid var(--line);border-radius:17px;text-decoration:none;box-shadow:0 8px 22px #14382d0b;transition:transform .2s,box-shadow .2s,border-color .2s}
+.decision-link:before{content:"";position:absolute;top:0;left:22px;right:22px;height:4px;background:#bb7637;border-radius:0 0 5px 5px}
+.decision-link:nth-child(2):before{background:#4b7b72}
+.decision-link:nth-child(3):before{background:#608f9c}
+.decision-kicker{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;font-weight:850;color:#82501c}
+.decision-link:nth-child(2) .decision-kicker{color:#37675b}
+.decision-link:nth-child(3) .decision-kicker{color:#3e6e7b}
+.decision-link strong{font:400 clamp(1.24rem,2vw,1.5rem)/1.18 Georgia,"Times New Roman",serif;letter-spacing:-.03em;color:var(--pine)}
+.decision-link small{font-size:.78rem;color:var(--muted);line-height:1.45}
+.decision-link:hover{transform:translateY(-3px);border-color:#8eafa0;box-shadow:0 15px 30px #14382d1c}
+.decision-link:focus-visible{outline:3px solid #a66a17;outline-offset:4px}
+#closure-details,#property-access,#alternatives{scroll-margin-top:24px}
+@media(max-width:850px){.decision-rail{grid-template-columns:repeat(2,minmax(0,1fr))}.decision-link:last-child{grid-column:1/-1}}
+@media(max-width:600px){.hero{background-position:62% center}.decision-rail{grid-template-columns:1fr;gap:10px;margin-top:19px}.decision-link,.decision-link:last-child{grid-column:auto;min-height:0;padding:20px 20px 18px}.decision-link:before{left:20px;right:20px}.scene-caption{font-size:.72rem}}
+@media(prefers-reduced-motion:reduce){.decision-link{transition:none}.decision-link:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -74,15 +96,21 @@ footer{border-top:1px solid var(--line);padding:22px 0;margin-top:35px;font-size
 <div class="status-row"><span class="status-dot" aria-hidden="true"></span><div><strong>Dardanelle Marina</strong><small>Closed · December 31, 2025</small></div></div>
 </aside>
 </section>
-<section aria-labelledby="closures-title">
+<p class="scene-caption">Lake Dardanelle scenery is illustrative; it does not indicate that either marina is open or accessible.</p>
+<nav class="decision-rail" aria-label="Find the information you need">
+<a class="decision-link" href="#closure-details"><span class="decision-kicker">01 · Safety first</span><strong>Check marina closures ↗</strong><small>Read the federal closure information before visiting.</small></a>
+<a class="decision-link" href="#property-access"><span class="decision-kicker">02 · For boat owners</span><strong>Understand property access ↗</strong><small>Review the October 30 deadline and official contact numbers.</small></a>
+<a class="decision-link" href="#alternatives"><span class="decision-kicker">03 · Explore alternatives</span><strong>Find another way on the water ↗</strong><small>See separately listed kayak rental opportunities.</small></a>
+</nav>
+<section id="closure-details" aria-labelledby="closures-title">
 <div class="section-head"><h2 id="closures-title">Know before you go</h2><p>Federal marina closure notices</p></div>
 <div class="notice notice--critical"><div class="notice-label">Full closure · Russellville Marina</div><p><strong>Important closure notice — October 23, 2026:</strong> The U.S. Army Corps of Engineers ordered a full closure of Russellville Marina, including its grounds, docks, cabins, store, repair shop and all commercial operations. <strong>Boat and cabin rentals at this marina are not available.</strong> The operator website may still advertise rentals, but the federal closure supersedes that information. Do not attempt to access closed facilities.</p></div>
 <div class="notice-grid">
-<div class="notice notice--access"><div class="notice-label">Personal property access</div><p><strong>Boat owners and marina patrons:</strong> The Corps permits removal of personal property from nonhazardous lease areas through <strong>October 30, 2026</strong>. Previously closed docks must not be entered without coordination. After October 30, removal from open marina areas is by appointment only. For access instructions, contact the <strong>Russellville Site Office at <a href="tel:+15013401762">501-340-1762</a></strong> or the <strong>Corps Real Estate Division at <a href="tel:+15013245716">501-324-5716</a></strong> (weekdays, 8 a.m.–4 p.m.). Do not enter closed or unsafe facilities. <a href="https://www.arkansasbusiness.com/article/russellville-marina-closed-due-to-safety-violations-lease-default/" target="_blank" rel="noopener noreferrer">October 23 closure report ↗</a> · <a href="https://www.swl.usace.army.mil/Media/News-Releases/Article/4538674/russellville-marina-docks-temporarily-closed-as-of-july-8-2026/" target="_blank" rel="noopener noreferrer">Official Corps site-office contacts ↗</a></p></div>
+<div class="notice notice--access" id="property-access"><div class="notice-label">Personal property access</div><p><strong>Boat owners and marina patrons:</strong> The Corps permits removal of personal property from nonhazardous lease areas through <strong>October 30, 2026</strong>. Previously closed docks must not be entered without coordination. After October 30, removal from open marina areas is by appointment only. For access instructions, contact the <strong>Russellville Site Office at <a href="tel:+15013401762">501-340-1762</a></strong> or the <strong>Corps Real Estate Division at <a href="tel:+15013245716">501-324-5716</a></strong> (weekdays, 8 a.m.–4 p.m.). Do not enter closed or unsafe facilities. <a href="https://www.arkansasbusiness.com/article/russellville-marina-closed-due-to-safety-violations-lease-default/" target="_blank" rel="noopener noreferrer">October 23 closure report ↗</a> · <a href="https://www.swl.usace.army.mil/Media/News-Releases/Article/4538674/russellville-marina-docks-temporarily-closed-as-of-july-8-2026/" target="_blank" rel="noopener noreferrer">Official Corps site-office contacts ↗</a></p></div>
 <div class="notice notice--secondary"><div class="notice-label">Separate closure · Dardanelle Marina</div><p><strong>Separate Dardanelle Marina closure:</strong> The U.S. Army Corps of Engineers also closed Dardanelle Marina (Theriot Marina) on December 31, 2025 after its lease was not renewed because of public-safety and lease-compliance issues. It is <strong>not an active boat-rental option</strong>. <a href="https://www.swl.usace.army.mil/Media/News-Releases/Article/4373614/public-notice-dardanelle-marina-closed-as-of-dec-31-2025/" target="_blank" rel="noopener noreferrer">Official Corps closure notice, January 8, 2026 ↗</a>.</p></div>
 </div>
 </section>
-<section class="availability" aria-labelledby="availability-title">
+<section class="availability" id="alternatives" aria-labelledby="availability-title">
 <div><article><h2 id="availability-title">No verified active boat or marina rental providers listed</h2><p>Russellville Marina &amp; Boat Repair is excluded from active rental recommendations while the full federal closure remains in effect. This page will be updated when another provider is independently verified or the Corps confirms reopening.</p></article><p style="margin-top:12px">Looking for a different way onto the water? Kayak rentals are listed separately, with operator details and availability caveats.</p></div>
 <a class="alt-link" href="/paddling.html">Explore kayak rentals →</a>
 </section>
