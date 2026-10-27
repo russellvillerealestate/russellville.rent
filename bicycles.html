@@ -48,6 +48,35 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.82rem;col
 @media(max-width:760px){.hero .wrap{grid-template-columns:1fr;gap:12px;padding-top:52px;padding-bottom:42px}.bike-art{min-height:220px}.bike-art svg{max-width:375px}.section-head{display:block}.section-head p:last-child{margin-top:15px}.shop .wrap{grid-template-columns:1fr;gap:22px}.rate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:470px){header .wrap{min-height:70px}.brand{font-size:1.08rem}.back{font-size:.77rem}.hero .wrap{padding-top:40px}.bike-art{min-height:170px}.bike-art svg{max-width:295px}.rates{padding-top:45px;padding-bottom:49px}.rate-grid{grid-template-columns:1fr}.rate-card{min-height:0}.rate-card h3{margin:12px 0 17px}.shop .wrap{padding-top:43px;padding-bottom:43px}.shop-card{padding:22px}footer .wrap{display:block}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.rate-card{transition:none}.button:hover,.rate-card:hover{transform:none}}
+
+/* Ride-style explorer: all posted rates remain visible without JavaScript. */
+.ride-finder{background:linear-gradient(135deg,#e0ece1,#f0f4e9 70%,#e7eedd);border-block:1px solid #cbdccf}
+.ride-finder .wrap{padding-top:42px;padding-bottom:44px}
+.ride-finder-head{display:flex;align-items:end;justify-content:space-between;gap:22px;margin-bottom:22px}
+.ride-finder-head .eyebrow{color:#47705b;margin-bottom:9px}
+.ride-finder-head h2{font-size:clamp(1.8rem,3.2vw,2.7rem)}
+.ride-finder-head p:last-child{max-width:48ch;margin:10px 0 0;color:#425d51;font-size:.93rem}
+.ride-reset{appearance:none;border:1px solid #a9c2b1;background:#fff;color:var(--pine);border-radius:999px;padding:11px 18px;min-height:46px;font:800 .83rem/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer;white-space:nowrap}
+.ride-reset[aria-pressed="true"]{background:var(--pine);border-color:var(--pine);color:#fff}
+.ride-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.ride-option{appearance:none;position:relative;overflow:hidden;display:grid;grid-template-columns:78px 1fr;align-items:center;gap:16px;min-width:0;min-height:138px;padding:21px 19px;text-align:left;background:#fff;border:2px solid #d0dfd2;border-radius:18px;color:var(--ink);box-shadow:0 8px 24px #123c320b;cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s}
+.ride-option:hover{transform:translateY(-3px);box-shadow:0 14px 28px #123c3218}
+.ride-option[aria-pressed="true"]{border-color:#1b624d;background:#f9fcf8;box-shadow:0 0 0 2px #1b624d22,0 14px 28px #123c3214}
+.ride-option[aria-pressed="true"]:after{content:"Selected";position:absolute;right:13px;top:10px;color:#1c624d;font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;font-weight:900}
+.ride-symbol{width:76px;height:76px;display:grid;place-items:center;border-radius:15px;background:#e7f0e5;color:#1d624c}
+.ride-option:nth-child(2) .ride-symbol{background:#f9edcb;color:#8c621c}
+.ride-option:nth-child(3) .ride-symbol{background:#e0ebf1;color:#2e657e}
+.ride-symbol svg{width:61px;height:61px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.ride-copy strong{display:block;margin-bottom:6px;font:400 1.38rem/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.03em}
+.ride-copy small{display:block;font-size:.79rem;line-height:1.48;color:#526b5f}
+.ride-copy em{display:block;margin-top:8px;color:#306b52;font-size:.7rem;font-style:normal;font-weight:800;letter-spacing:.035em}
+.ride-result{margin:17px 0 0;color:#365849;font-size:.86rem;font-weight:750}
+.ride-reset:focus-visible,.ride-option:focus-visible{outline:3px solid #a96b16;outline-offset:4px}
+.rate-card[hidden]{display:none}
+#rates{scroll-margin-top:18px}
+@media(max-width:970px){.ride-option{grid-template-columns:1fr;gap:12px}.ride-symbol{width:64px;height:64px}.ride-symbol svg{width:52px;height:52px}}
+@media(max-width:700px){.ride-finder .wrap{padding-top:33px;padding-bottom:33px}.ride-finder-head{display:block}.ride-reset{margin-top:16px}.ride-options{grid-template-columns:1fr;gap:11px}.ride-option{grid-template-columns:65px 1fr;min-height:112px;padding:17px 18px}.ride-option[aria-pressed="true"]:after{top:7px}.ride-copy strong{font-size:1.3rem}}
+@media(prefers-reduced-motion:reduce){.ride-option{transition:none}.ride-option:hover{transform:none}}
 </style></head><body>
 <a class="skip" href="#main">Skip to rental rates</a>
 <header><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
@@ -56,12 +85,20 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.82rem;col
 <div><p class="eyebrow">Russellville, Arkansas · Ride local</p><h1 id="page-title">Find your next ride.</h1><p class="lead">Mountain trails, city streets or a gravel-road outing: compare bicycle rental styles and posted daily prices from a local Russellville shop.</p><div class="actions"><a class="button gold" href="#rates">Compare daily rates ↓</a><a class="button ghost" href="tel:+14798904950">Call the bike shop ↗</a></div></div>
 <div class="bike-art" aria-hidden="true"><svg viewBox="0 0 500 360" xmlns="http://www.w3.org/2000/svg"><circle class="wheel" cx="111" cy="264" r="79"/><circle class="wheel" cx="389" cy="264" r="79"/><path class="frame" d="M111 264 L205 132 L285 264 Z M205 132 L389 264 L285 264 M205 132 L195 113"/><path class="detail" d="M165 111 H224 M373 150 L389 264 M348 150 H385 M285 264 L302 283"/><circle class="hub" cx="111" cy="264" r="8"/><circle class="hub" cx="285" cy="264" r="8"/><circle class="hub" cx="389" cy="264" r="8"/></svg></div>
 </div></section>
+
+<section class="ride-finder" aria-labelledby="ride-finder-title"><div class="wrap">
+<div class="ride-finder-head"><div><p class="eyebrow">A quicker way to compare</p><h2 id="ride-finder-title">What kind of ride?</h2><p>Choose a riding style to narrow the five advertised daily rates. These groupings describe bike types, not trail suitability or confirmed availability.</p></div><button class="ride-reset" type="button" data-ride-filter="all" aria-controls="rate-grid" aria-pressed="true">Show all five rates</button></div>
+<div class="ride-options" role="group" aria-label="Filter bicycle rates by riding style">
+<button class="ride-option" type="button" data-ride-filter="mountain" aria-controls="rate-grid" aria-pressed="false"><span class="ride-symbol" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M5 49 23 17l10 16 8-12 18 28H5Z"/><path d="m16 29 7 6 7-6M38 31l3 5 5-4"/></svg></span><span class="ride-copy"><strong>Mountain trails</strong><small>Hardtail and full-suspension options</small><em>3 advertised bike types →</em></span></button>
+<button class="ride-option" type="button" data-ride-filter="electric" aria-controls="rate-grid" aria-pressed="false"><span class="ride-symbol" aria-hidden="true"><svg viewBox="0 0 64 64"><rect x="9" y="17" width="43" height="30" rx="6"/><path d="M52 27h4v10h-4M34 21 24 34h9l-4 10"/></svg></span><span class="ride-copy"><strong>Electric commuting</strong><small>Electric commuter bicycle</small><em>1 advertised bike type →</em></span></button>
+<button class="ride-option" type="button" data-ride-filter="road" aria-controls="rate-grid" aria-pressed="false"><span class="ride-symbol" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M9 51c9-18 35-9 45-36"/><path d="M19 51c10-12 29-8 35-24"/><path d="M29 39v-5m11-2v-5m10-8v-4"/></svg></span><span class="ride-copy"><strong>Road &amp; gravel</strong><small>Road or gravel bicycle</small><em>1 advertised bike type →</em></span></button>
+</div><p class="ride-result" id="ride-results" role="status" aria-live="polite" aria-atomic="true">Showing all 5 advertised bike types.</p></div></section>
 <section class="rates wrap" id="rates" aria-labelledby="rates-title"><div class="section-head"><div><p class="eyebrow">Five advertised rental categories</p><h2 id="rates-title">Pick the bike. See the price.</h2></div><p>These are <strong>Jackalope Cycling's advertised daily rates</strong>, not guaranteed quotes. Confirm current prices, bicycle fit and availability directly with the shop.</p></div>
-<div class="rate-grid"><article class="rate-card"><span class="index">01 · MOUNTAIN</span><h3>Carbon full-suspension mountain bike</h3><div class="price"><strong><data value="80">$80</data></strong><span>/ day</span></div></article>
-<article class="rate-card"><span class="index">02 · MOUNTAIN</span><h3>Aluminum full-suspension mountain bike</h3><div class="price"><strong><data value="60">$60</data></strong><span>/ day</span></div></article>
-<article class="rate-card"><span class="index">03 · MOUNTAIN</span><h3>Hardtail mountain bike</h3><div class="price"><strong><data value="50">$50</data></strong><span>/ day</span></div></article>
-<article class="rate-card"><span class="index">04 · ELECTRIC</span><h3>Electric commuter bike</h3><div class="price"><strong><data value="50">$50</data></strong><span>/ day</span></div></article>
-<article class="rate-card"><span class="index">05 · ROAD + GRAVEL</span><h3>Road or gravel bike</h3><div class="price"><strong><data value="50">$50</data></strong><span>/ day</span></div></article></div>
+<div class="rate-grid" id="rate-grid"><article class="rate-card" data-ride="mountain"><span class="index">01 · MOUNTAIN</span><h3>Carbon full-suspension mountain bike</h3><div class="price"><strong><data value="80">$80</data></strong><span>/ day</span></div></article>
+<article class="rate-card" data-ride="mountain"><span class="index">02 · MOUNTAIN</span><h3>Aluminum full-suspension mountain bike</h3><div class="price"><strong><data value="60">$60</data></strong><span>/ day</span></div></article>
+<article class="rate-card" data-ride="mountain"><span class="index">03 · MOUNTAIN</span><h3>Hardtail mountain bike</h3><div class="price"><strong><data value="50">$50</data></strong><span>/ day</span></div></article>
+<article class="rate-card" data-ride="electric"><span class="index">04 · ELECTRIC</span><h3>Electric commuter bike</h3><div class="price"><strong><data value="50">$50</data></strong><span>/ day</span></div></article>
+<article class="rate-card" data-ride="road"><span class="index">05 · ROAD + GRAVEL</span><h3>Road or gravel bike</h3><div class="price"><strong><data value="50">$50</data></strong><span>/ day</span></div></article></div>
 <p class="small-note">Rental fleet sizes, specific models, available dates and delivery are not confirmed.</p></section>
 <section class="shop" aria-labelledby="shop-title"><div class="wrap">
 <div><p class="eyebrow">One local rental provider</p><h2 id="shop-title">Jackalope Cycling<br>Russellville</h2><p>Locally operated bicycle shop. The shop asks customers to telephone to reserve. Confirm bike size, pickup, helmet and accessory policies, deposits and final rental terms directly.</p><div class="actions"><a class="button dark" href="tel:+14798904950">Call (479) 890-4950 ↗</a><a class="button light" href="https://jackalopecycling.com/pages/services" target="_blank" rel="noopener noreferrer">Official bike rentals and posted rates ↗</a></div></div>
@@ -70,4 +107,25 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.82rem;col
 <section class="student-checkout wrap" aria-labelledby="student-title"><div class="student-panel"><p class="eyebrow">Student-only · No-cost equipment checkout</p><h2 id="student-title">Arkansas Tech University Outdoor Recreation</h2><p>Arkansas Tech University officially offers <strong>free bicycle checkouts for currently enrolled students</strong>, alongside kayaks, canoes, tents, hammocks and other outdoor gear. This is a university equipment-lending program, <strong>not a public bike-rental shop</strong>. A valid Arkansas Tech student identification card is required; students must complete applicable waivers and safety orientations, return equipment on time, and may be charged for late, lost or damaged items. Confirm available bicycles and checkout periods with campus staff.</p><p class="student-detail"><strong>Location:</strong> 215 West O Street, Russellville, Arkansas 72801 · <strong>Regular hours:</strong> Monday–Friday, 10 a.m.–6 p.m.; summer hours differ. Equipment availability unconfirmed.</p><a class="button light" href="https://www.atu.edu/campuslife/campusrecreation/outdoorrecreation.php" target="_blank" rel="noopener noreferrer">Official student checkout guidelines ↗</a></div></section>
 <aside class="notice wrap"><p><strong>Before you go:</strong> Russellville.Rent is an independent local directory, not the rental operator. Rental inventory, advertised prices, bicycle fit, equipment condition and availability must be confirmed with Jackalope Cycling. <a href="sms:+14799707301">Suggest a correction</a>.</p></aside>
 </main><footer><div class="wrap"><span>© 2026 Russellville.Rent · Local rentals. Local connections.</span><a href="/">Return to homepage ↗</a></div></footer>
+<script>
+(function(){
+  const cards=Array.from(document.querySelectorAll('#rate-grid .rate-card'));
+  const filters=Array.from(document.querySelectorAll('[data-ride-filter]'));
+  const result=document.getElementById('ride-results');
+  const labels={all:'advertised bike types',mountain:'mountain bike types',electric:'electric commuter bike types',road:'road and gravel bike types'};
+  filters.forEach(function(button){
+    button.addEventListener('click',function(){
+      const choice=button.dataset.rideFilter;
+      let visible=0;
+      cards.forEach(function(card){
+        const show=choice==='all'||card.dataset.ride===choice;
+        card.hidden=!show;
+        if(show)visible++;
+      });
+      filters.forEach(function(filter){filter.setAttribute('aria-pressed',String(filter===button));});
+      result.textContent='Showing '+visible+' '+labels[choice]+'.';
+    });
+  });
+})();
+</script>
 </body></html>
