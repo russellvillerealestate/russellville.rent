@@ -80,6 +80,54 @@ footer a{font-weight:800}
 @media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:28px;padding-block:52px 62px}.sound-art{min-height:180px}.wave{height:130px}.wave i{max-height:100px}.guide-box{grid-template-columns:1fr}.guide-item+.guide-item{border-left:0;border-top:1px solid var(--line)}.section-heading{display:block}.section-intro{margin-top:10px}.provider-grid{grid-template-columns:1fr}.provider-grid .provider:last-child{grid-column:auto}.plan ul{grid-template-columns:1fr;gap:10px}}
 @media(max-width:520px){.shell{width:min(100% - 28px,1120px)}.hero-grid{padding-block:42px 57px}.sound-art{min-height:155px}.sound-art:after{width:145px;height:145px}.wave{gap:5px}.wave i{width:7px}.art-label{left:22px;bottom:14px}.hero-copy{font-size:.96rem}.section{padding-top:47px}.provider-content,.provider.featured .provider-content{padding:21px 19px}.card-top{padding:12px 17px}.status{font-size:.65rem}.plan{padding:22px 20px}.site-head .shell{gap:5px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Private event brief studio: an actionable companion to the provider directory. */
+.brief-builder[hidden]{display:none}
+.brief-builder{position:relative;isolation:isolate;overflow:hidden;margin-top:62px;padding:clamp(24px,4vw,43px);border-radius:25px;background:linear-gradient(135deg,#e9eee5 0%,#f7f1e4 100%);border:1px solid #d2decf}
+.brief-builder:before{content:"";position:absolute;z-index:-1;right:-130px;top:-180px;width:400px;height:400px;border:1px solid #73927a30;border-radius:50%;box-shadow:0 0 0 45px #73927a0c,0 0 0 90px #73927a09;pointer-events:none}
+.brief-header{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:25px}
+.brief-header .kicker{color:#4c6c56}
+.brief-header h2{font:400 clamp(2rem,3.5vw,3.15rem)/1.09 Georgia,"Times New Roman",serif;letter-spacing:-.05em;color:#173e33;margin:0 0 13px}
+.brief-header p:last-child{margin:0;max-width:650px;font-size:.92rem;color:#52685c}
+.brief-stages{flex:none;display:flex;gap:7px;align-items:center;padding:10px 13px;border:1px solid #c5d5c4;border-radius:100px;background:#ffffffb5;color:#365f49;font-size:.65rem;font-weight:850;letter-spacing:.09em;white-space:nowrap}
+.brief-stages span{color:#a06d28}
+.brief-layout{display:grid;grid-template-columns:minmax(0,1.13fr) minmax(0,.87fr);gap:17px;align-items:stretch}
+.brief-form,.brief-preview{min-width:0;border-radius:19px;padding:clamp(21px,2.6vw,29px)}
+.brief-form{background:#fff;border:1px solid #d6e2d7;box-shadow:0 9px 25px #173e330b}
+.brief-form-top{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:20px}
+.brief-index{font-size:.69rem;font-weight:850;letter-spacing:.15em;color:#38644e}
+.brief-optional{font-size:.72rem;color:#63766b}
+.brief-fields{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.brief-field{display:block;margin:0 0 17px;color:#24493b;font-size:.79rem;font-weight:750}
+.brief-field input,.brief-field select,.brief-field textarea{display:block;width:100%;min-width:0;min-height:48px;margin-top:6px;padding:11px 12px;border:1px solid #bccdc0;border-radius:10px;background:#fbfdf9;color:#183c30;font:400 .91rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif}
+.brief-field textarea{min-height:86px;resize:vertical}
+.brief-field input:focus,.brief-field select:focus,.brief-field textarea:focus{background:#fff}
+.brief-location{grid-column:1/-1}
+.brief-needs{margin:0 0 18px;padding:0;border:0;min-width:0}
+.brief-needs legend{padding:0;margin-bottom:10px;font-size:.79rem;font-weight:750;color:#24493b}
+.brief-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.brief-options label{display:flex;align-items:center;gap:9px;min-height:46px;padding:9px 11px;border:1px solid #d4e0d4;border-radius:10px;background:#f7faf5;font-size:.78rem;font-weight:650;color:#315241;cursor:pointer}
+.brief-options label:has(input:checked){border-color:#6d9b7c;background:#e4f0e5}
+.brief-options input{width:17px;height:17px;flex:none;accent-color:#225f48}
+.brief-reset{min-height:44px;padding:9px 14px;border:1px solid #cbd8ca;border-radius:9px;background:#f5f8f2;color:#315b44;font-weight:800;font-size:.79rem;cursor:pointer}
+.brief-reset:hover{background:#e9f1e6}
+.brief-preview{display:flex;flex-direction:column;position:relative;overflow:hidden;background:linear-gradient(155deg,#123d34,#102a27);color:#fff;border:1px solid #2d594b;box-shadow:0 15px 34px #102f2b25}
+.brief-preview:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.13;background:repeating-linear-gradient(0deg,transparent 0 29px,#c7e6d1 30px 31px),repeating-linear-gradient(90deg,transparent 0 29px,#c7e6d1 30px 31px)}
+.brief-preview>*{position:relative}
+.brief-preview-top{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:.65rem;font-weight:850;letter-spacing:.18em;color:#e4cb91}
+.brief-led{width:10px;height:10px;flex:none;border-radius:50%;background:#e4c17d;box-shadow:0 0 0 5px #e4c17d26}
+.brief-preview h3{margin:26px 0 9px;font:400 clamp(1.55rem,2.4vw,2.15rem)/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.045em}
+.brief-preview-hint{margin:0 0 17px;font-size:.82rem;color:#d3e4da}
+.brief-output{width:100%;min-height:245px;flex:1;resize:vertical;padding:17px;border:1px solid #92afa2;border-radius:11px;background:#f9fcf8;color:#213e32;font:400 .79rem/1.6 ui-monospace,SFMono-Regular,Consolas,monospace}
+.brief-copy{display:inline-flex;align-items:center;justify-content:center;min-height:49px;width:100%;margin-top:13px;padding:11px 16px;border:0;border-radius:10px;background:#edc982;color:#19382e;font-weight:850;font-size:.87rem;cursor:pointer;transition:background-color .18s,transform .18s}
+.brief-copy:hover{background:#f8da9d;transform:translateY(-2px)}
+.brief-feedback{min-height:1.5em;margin:9px 0 0;font-size:.77rem;font-weight:700;color:#f5e0b4}
+.brief-privacy{margin:auto 0 0;padding-top:17px;border-top:1px solid #ffffff32;color:#c8ded2;font-size:.73rem;line-height:1.55}
+.brief-builder :is(button,input,select,textarea):focus-visible{outline:3px solid #b77622;outline-offset:3px}
+@media(max-width:900px){.brief-header{display:block}.brief-stages{display:inline-flex;margin-top:17px}.brief-layout{grid-template-columns:1fr}.brief-output{min-height:210px}}
+@media(max-width:520px){.brief-builder{padding:23px 15px;border-radius:19px;margin-top:43px}.brief-form,.brief-preview{padding:21px 17px}.brief-header h2{font-size:2rem}.brief-fields,.brief-options{grid-template-columns:1fr}.brief-location{grid-column:auto}.brief-stages{white-space:normal;font-size:.61rem}.brief-output{min-height:230px}}
+@media(prefers-reduced-motion:reduce){.brief-copy{transition:none}.brief-copy:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -113,8 +161,88 @@ footer a{font-weight:800}
 <div class="provider-content"><h2>CWP Productions — Professional Event Audio &amp; Video (Regional)</h2><p>Little Rock-based full-service event production provider advertising professional sound-system rentals (speakers, line arrays, microphones and mixers), video production, live streaming, projection, video walls and event lighting. Its rentals include professional setup and on-site technical support; <strong>equipment-only pickup is not confirmed</strong>. The company lists Central and Northwest Arkansas service, but <strong>Russellville delivery is UNCONFIRMED</strong>; request a site-specific quote and verify travel charges, inventory and event dates. Also listed in the <a href="stages.html">stage rental directory</a>.</p><p class="area">Little Rock, Arkansas — Russellville delivery UNCONFIRMED</p><p><a href="tel:+15019528885">501-952-8885</a> · <a href="mailto:events@cwpproductions.com">events@cwpproductions.com</a> · <a href="https://cwpproductions.com/services/professional-audio-rentals-and-video-production-services/" target="_blank" rel="noopener noreferrer">Official audio and video rental services ↗</a> · <a href="https://cwpproductions.com/services/professional-lighting-rentals-design-services/" target="_blank" rel="noopener noreferrer">Official lighting rental services ↗</a></p></div>
 </article></div>
 </section>
+<section class="brief-builder" id="event-brief" aria-labelledby="brief-title" hidden>
+<div class="brief-header">
+  <div><p class="kicker">03 / Plan your production</p><h2 id="brief-title">Build a better rental request.</h2><p>Collect the essentials in one reusable event brief, then share it directly with the providers you choose. No booking or quote is created here.</p></div>
+  <div class="brief-stages" aria-label="Three steps: plan, copy, contact">PLAN <span aria-hidden="true">→</span> COPY <span aria-hidden="true">→</span> CONTACT</div>
+</div>
+<div class="brief-layout">
+<form class="brief-form" id="brief-form" aria-label="Draft an event equipment inquiry">
+  <div class="brief-form-top"><span class="brief-index">01 / YOUR EVENT</span><span class="brief-optional">All fields optional</span></div>
+  <div class="brief-fields">
+    <label class="brief-field" for="brief-date">Event date<input id="brief-date" type="date"></label>
+    <label class="brief-field" for="brief-guests">Approximate guests<input id="brief-guests" type="number" min="1" max="100000" inputmode="numeric" placeholder="e.g., 100"></label>
+    <label class="brief-field brief-location" for="brief-location">Event location<input id="brief-location" type="text" maxlength="100" placeholder="e.g., Russellville, Arkansas" autocomplete="off"></label>
+  </div>
+  <fieldset class="brief-needs"><legend>What might you need?</legend>
+    <div class="brief-options">
+      <label><input type="checkbox" name="brief-need" value="Sound and microphones"> Sound &amp; microphones</label>
+      <label><input type="checkbox" name="brief-need" value="Lighting"> Lighting</label>
+      <label><input type="checkbox" name="brief-need" value="Video and projection"> Video &amp; projection</label>
+      <label><input type="checkbox" name="brief-need" value="Live streaming"> Live streaming</label>
+    </div>
+  </fieldset>
+  <label class="brief-field" for="brief-service">Setup preference<select id="brief-service"><option value="">Not sure yet</option><option value="Equipment only">Equipment only</option><option value="Delivery and setup">Delivery and setup</option><option value="Full production support">Full production support</option></select></label>
+  <label class="brief-field" for="brief-notes">Other details (optional)<textarea id="brief-notes" rows="3" maxlength="400" placeholder="Indoor or outdoor? Venue details? Timing?"></textarea></label>
+  <button class="brief-reset" type="reset">Clear brief ↺</button>
+</form>
+<div class="brief-preview" aria-label="Draft inquiry preview">
+  <div class="brief-preview-top"><span>EVENT BRIEF / DRAFT</span><span class="brief-led" aria-hidden="true"></span></div>
+  <h3>Your event, in a few lines.</h3><p class="brief-preview-hint">Copy these notes into an email or message when contacting a provider.</p>
+  <label class="sr-only" for="brief-output">Draft event inquiry text</label>
+  <textarea class="brief-output" id="brief-output" rows="10" readonly>Hello, I'm looking into audio, visual, or event equipment for an upcoming event.</textarea>
+  <button class="brief-copy" id="brief-copy" type="button">Copy inquiry ↗</button>
+  <p class="brief-feedback" id="brief-feedback" role="status"></p>
+  <p class="brief-privacy">Planning notes only. Equipment, delivery, pricing and availability require provider confirmation. Your entries stay on this page and are not submitted to Russellville.Rent.</p>
+</div>
+</div>
+</section>
 <section class="plan" aria-labelledby="plan-title"><h2 id="plan-title">Before requesting a quote</h2><ul><li>Share the event date, location, audience size and indoor or outdoor setup.</li><li>Ask whether equipment-only rental, delivery, setup and technical support are available.</li><li>Confirm the complete price, deposit, insurance requirements and cancellation terms.</li></ul></section>
 <p class="note">Russellville.Rent is an independent directory. Some businesses are based outside Russellville, and delivery or business status may be unconfirmed. Please confirm operating status, service area, availability, pricing and terms directly with each provider. <a href="sms:+14799707301">Submit corrections</a>.</p>
 </main>
 <footer><div class="shell">Russellville.Rent · <a href="/">Return to all rental categories</a></div></footer>
+<script>
+(function(){
+  "use strict";
+  const section=document.getElementById("event-brief");
+  const form=document.getElementById("brief-form");
+  const output=document.getElementById("brief-output");
+  const feedback=document.getElementById("brief-feedback");
+  const copy=document.getElementById("brief-copy");
+  const value=id=>document.getElementById(id).value.trim();
+  function buildBrief(){
+    const needs=Array.from(document.querySelectorAll('input[name="brief-need"]:checked')).map(el=>el.value);
+    const notes=value("brief-notes");
+    return [
+      "Hello, I'm looking into audio, visual, or event equipment for an upcoming event.",
+      "",
+      "Event date: "+(value("brief-date")||"To be confirmed"),
+      "Event location: "+(value("brief-location")||"To be confirmed"),
+      "Approximate guests: "+(value("brief-guests")||"To be confirmed"),
+      "Equipment interests: "+(needs.length?needs.join(", "):"Open to recommendations"),
+      "Service preference: "+(value("brief-service")||"Not sure yet"),
+      ...(notes?["Other details: "+notes]:[]),
+      "",
+      "Could you confirm availability, equipment options, delivery/setup, total charges and rental terms?",
+      "Thank you."
+    ].join("\n");
+  }
+  function refresh(){output.value=buildBrief();feedback.textContent="";}
+  form.addEventListener("input",refresh);
+  form.addEventListener("change",refresh);
+  form.addEventListener("reset",()=>setTimeout(refresh,0));
+  copy.addEventListener("click",async function(){
+    try{
+      if(!navigator.clipboard||!navigator.clipboard.writeText)throw new Error("Clipboard unavailable");
+      await navigator.clipboard.writeText(output.value);
+      feedback.textContent="Copied. Paste this inquiry into your message to a provider.";
+    }catch(error){
+      output.focus();output.select();
+      feedback.textContent="Copy the highlighted text manually to share your inquiry.";
+    }
+  });
+  refresh();
+  section.hidden=false;
+})();
+</script>
 </body></html>
