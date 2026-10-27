@@ -12,12 +12,93 @@ header{background:var(--pine);color:#fff}header .wrap{display:flex;justify-conte
 @media(max-width:730px){.hero-inner{grid-template-columns:1fr;gap:4px;padding:48px 0 62px}.art{max-width:480px;margin:auto}.section-head{flex-direction:column;align-items:flex-start;gap:6px}.check-grid{grid-template-columns:1fr}}
 @media(max-width:490px){.wrap{width:calc(100% - 30px)}header .wrap{min-height:66px}.brand{font-size:1.1rem}.back{font-size:.74rem;padding:8px 11px}.hero{border-radius:0 0 20px 20px}.hero h1{font-size:clamp(2.55rem,11vw,3.55rem)}.hero-copy{font-size:1rem}.quick{grid-template-columns:1fr;margin-top:-18px}.quick a{min-height:72px;padding:14px 18px}.quick a+a{border-left:0;border-top:1px solid var(--line)}.section-head{margin-top:43px}.provider{grid-template-columns:1fr}.number{font-size:1.5rem;padding:13px 20px}.provider-body{padding:20px}.provider p:last-child a{width:100%}.checklist{padding:25px 20px;margin-top:43px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.provider{transition:none}.btn:hover,.provider:hover{transform:none}}
+
+/* Moving-day ticket: progress, print and provider-confirmation workflow. */
+.checklist{padding:0;overflow:hidden;border:1px solid #c8d9cb;background:#f5f8f1;box-shadow:0 20px 42px #163c2e12}
+.move-ticket{display:grid;grid-template-columns:minmax(250px,.83fr) minmax(0,1.55fr)}
+.ticket-summary{position:relative;isolation:isolate;display:flex;flex-direction:column;padding:clamp(26px,4vw,42px);color:#fff;background:linear-gradient(155deg,#10372e,#245844);overflow:hidden}
+.ticket-summary:after{content:"";position:absolute;right:-110px;bottom:-155px;width:320px;height:320px;border:1px solid #e7d2a34d;border-radius:50%;box-shadow:0 0 0 45px #e7d2a311,0 0 0 90px #e7d2a308;z-index:-1}
+.ticket-summary .eyebrow{color:#f0ca8c;margin-bottom:15px}
+.ticket-summary h2{color:#fff;font:400 clamp(2.25rem,3.7vw,3.3rem)/1.08 Georgia,"Times New Roman",serif;letter-spacing:-.05em;margin:0 0 18px}
+.ticket-summary p:not(.eyebrow){color:#e0ece4;font-size:.9rem;line-height:1.7;margin:0 0 28px}
+.ticket-meter{display:flex;align-items:center;gap:19px;margin-top:auto}
+.ticket-ring{--ticket-progress:0%;width:106px;height:106px;flex:0 0 106px;position:relative;display:grid;place-items:center;border-radius:50%;background:conic-gradient(#f0ca8c var(--ticket-progress),#ffffff38 0)}
+.ticket-ring:before{content:"";position:absolute;inset:9px;border-radius:50%;background:#18483a}
+.ticket-ring strong{position:relative;color:#fff;font:400 2rem/1 Georgia,serif;letter-spacing:-.06em}
+.ticket-meter-copy{min-width:0;font-size:.79rem;line-height:1.5;color:#e3eae1}
+.ticket-meter-copy strong{display:block;color:#f0ca8c;font-size:.69rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.ticket-steps{padding:clamp(22px,3.6vw,38px)}
+.ticket-topline{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:14px}
+.ticket-topline .eyebrow{color:#855d33;margin:0}
+.ticket-topline>span{color:#587061;font-size:.75rem;font-weight:800}
+.ticket-step{display:block;background:#fff;border:1px solid #d5e1d6;border-radius:14px;margin-top:11px;cursor:pointer;transition:border-color .2s,background .2s,box-shadow .2s}
+.ticket-step:hover{border-color:#88aa93;box-shadow:0 7px 17px #163c2e0c}
+.ticket-step:focus-within{outline:3px solid #b57724;outline-offset:3px}
+.ticket-step-inner{display:grid;grid-template-columns:32px minmax(0,1fr);gap:16px;align-items:start;padding:19px 20px}
+.ticket-step input{appearance:none;width:30px;height:30px;margin:3px 0 0;border:2px solid #668774;border-radius:50%;display:grid;place-items:center;cursor:pointer;background:#fff}
+.ticket-step input:focus-visible{outline:none}
+.ticket-step input:checked{background:#205c45;border-color:#205c45}
+.ticket-step input:checked:before{content:"✓";font-size:1.1rem;font-weight:900;line-height:1;color:#fff}
+.ticket-step strong{display:block;color:#153e31;font-size:.98rem;line-height:1.4;margin-bottom:5px}
+.ticket-step small{display:block;color:#53695c;font-size:.82rem;line-height:1.55}
+.ticket-step.is-complete{background:#eaf3e9;border-color:#9abda4}
+.ticket-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:20px}
+.ticket-actions a,.ticket-actions button{display:inline-flex;justify-content:center;align-items:center;min-height:45px;border-radius:9px;padding:10px 15px;font-size:.82rem;font-weight:800;text-decoration:none;cursor:pointer}
+.ticket-actions a{background:#143e32;color:white}
+.ticket-actions button{background:#fff;color:#184537;border:1px solid #b9ccbc}
+.ticket-actions a:hover{background:#27624b}.ticket-actions button:hover{background:#e7f0e6}
+.ticket-fine{font-size:.75rem;color:#5b6d60;line-height:1.55;margin:15px 0 0}
+[hidden]{display:none!important}
+@media(max-width:800px){.move-ticket{grid-template-columns:1fr}.ticket-summary p:not(.eyebrow){max-width:58ch}.ticket-ring{width:84px;height:84px;flex-basis:84px}.ticket-ring strong{font-size:1.65rem}}
+@media(max-width:490px){.ticket-summary{padding:26px 23px}.ticket-summary h2{font-size:2.45rem}.ticket-steps{padding:23px 17px}.ticket-step-inner{padding:17px 15px;gap:12px}.ticket-actions a,.ticket-actions button{flex:1 1 130px}.ticket-topline{align-items:flex-start;flex-direction:column;gap:4px}}
+@media(prefers-reduced-motion:reduce){.ticket-step{transition:none}}
+@media print{body{background:white!important}body>header,body>.hero,main>.quick,main>section:not(#checklist),main>.note,main>footer{display:none!important}main.wrap{width:100%;max-width:none}.checklist{margin:0;border:1px solid #777;box-shadow:none;break-inside:avoid}.move-ticket{display:block}.ticket-summary{background:white!important;color:#111!important;padding:18px 24px 0}.ticket-summary h2,.ticket-summary p:not(.eyebrow),.ticket-summary .eyebrow,.ticket-meter-copy,.ticket-meter-copy strong,.ticket-ring strong{color:#111!important}.ticket-summary:after,.ticket-actions{display:none!important}.ticket-ring{background:none!important;border:2px solid #555}.ticket-ring:before{background:white!important}.ticket-steps{padding:10px 24px 20px}.ticket-step{break-inside:avoid}.ticket-step input{appearance:auto}.ticket-fine{color:#222}}
 </style></head>
 <body><a class="skip" href="#main">Skip to rental options</a><header><div class="wrap"><a class="brand" href="/">Russellville<span>.Rent</span></a><a class="back" href="/">← Browse all rentals</a></div></header>
 <section class="hero" aria-labelledby="title"><div class="wrap hero-inner"><div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="title">Move with <em>a plan.</em></h1><p class="hero-copy">Moving truck &amp; equipment rentals. Find local moving-truck and trailer rental options, then confirm your pickup details directly with each provider.</p><div class="hero-actions"><a class="btn primary" href="#local">Explore local options ↓</a><a class="btn secondary" href="#checklist">Before you book ↗</a></div></div><div class="art" aria-hidden="true"><svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" role="presentation"><defs><linearGradient id="box" x2="1" y2="1"><stop stop-color="#f2d6ad"/><stop offset="1" stop-color="#d89b61"/></linearGradient></defs><ellipse cx="280" cy="335" rx="252" ry="20" fill="#061d16" opacity=".55"/><path d="M54 117h293q16 0 16 16v154H38V134q0-17 16-17Z" fill="url(#box)"/><path d="M60 134h277v128H60Z" fill="#f6e5c9" opacity=".5" stroke="#c18c57" stroke-width="4"/><path d="M198 134v128M60 197h277" stroke="#c18c57" stroke-width="2" opacity=".7"/><path d="M363 187h69q20 0 31 20l44 67v15H363Z" fill="#e9dcc4"/><path d="M390 201h40q10 0 17 12l19 34h-76Z" fill="#78a59b"/><path d="M30 280h480v23H30Z" fill="#193b32"/><circle cx="112" cy="301" r="31" fill="#112d28" stroke="#f1d8b5" stroke-width="7"/><circle cx="112" cy="301" r="10" fill="#b7c4b9"/><circle cx="428" cy="301" r="31" fill="#112d28" stroke="#f1d8b5" stroke-width="7"/><circle cx="428" cy="301" r="10" fill="#b7c4b9"/><path d="M92 168h160M92 181h107" stroke="#b98050" stroke-width="5" stroke-linecap="round" opacity=".6"/><path d="M15 269 45 252l31 17v53H15Z" fill="#b87e4f"/><path d="M15 269h61M45 252v70" stroke="#efc28c" stroke-width="3"/><circle cx="500" cy="99" r="5" fill="#f0c58e"/></svg><span class="art-caption">Your next move starts here</span></div></div></section>
 <main id="main" class="wrap"><nav class="quick" aria-label="Pickup location sections"><a href="#local"><b>02</b><span><strong>Russellville pickup locations</strong><small>Compare local rental agents</small></span></a><a href="#nearby"><b>01</b><span><strong>Nearby Dardanelle option</strong><small>Another pickup location</small></span></a></nav>
 <section id="local" aria-labelledby="local-title"><div class="section-head"><div><h2 id="local-title">Start close to home.</h2><p>Two Russellville locations to contact about moving trucks or trailers. Confirm inventory and reservation terms with each provider.</p></div><span class="section-label">01 / Russellville</span></div><div class="provider-list"><article class="provider"><div class="number" aria-hidden="true">01</div><div class="provider-body"><span class="tag">Russellville pickup</span><h3>U-Haul Moving &amp; Storage of Russellville</h3><p>Moving trucks, trailers and portable moving containers.</p><p class="detail">2821 E Main St, Russellville, AR 72802</p><p><a href="tel:+14794980933">479-498-0933</a> &nbsp; · &nbsp; <a href="https://www.uhaul.com/Locations/Truck-Rentals-near-Russellville-AR-72802/742075/" target="_blank" rel="noopener noreferrer">Provider website ↗</a></p></div></article><article class="provider"><div class="number" aria-hidden="true">02</div><div class="provider-body"><span class="tag">Russellville pickup</span><h3>Penske Truck Rental — Space World Agent</h3><p>Penske officially lists a Russellville moving-truck rental agent at this location. The operator offers moving-truck reservations; confirm the truck sizes actually available locally, rental dates, rates, one-way eligibility and pickup arrangements directly with Penske. This is a Penske rental-agent location, not an assertion that every nationally advertised truck model is stocked here.</p><p class="detail">303 E Harrell Dr, Russellville, AR 72801</p><p><a href="tel:+14798800049">479-880-0049</a> &nbsp; · &nbsp; <a href="https://www.pensketruckrental.com/locations/us/arkansas/russellville/783020/" target="_blank" rel="noopener noreferrer">Official Penske Russellville location ↗</a></p></div></article></div></section>
 <section id="nearby" class="nearby" aria-labelledby="nearby-title"><div class="section-head"><div><h2 id="nearby-title">A nearby alternative.</h2><p>Another official pickup option in Dardanelle. This is not a Russellville branch.</p></div><span class="section-label">02 / Dardanelle</span></div><div class="provider-list"><article class="provider"><div class="number" aria-hidden="true">03</div><div class="provider-body"><span class="tag">Dardanelle pickup</span><h3>U-Haul Neighborhood Dealer — Old Bank Gun &amp; Pawn (Dardanelle)</h3><p>Official U-Haul location offering moving-truck rentals and trailers/towing equipment. This is a Dardanelle pickup location, not a separate Russellville branch. Confirm specific truck sizes, reservation dates, pickup arrangements and pricing directly with U-Haul.</p><p class="detail">310 Union St, Dardanelle, AR 72834 · Mon–Fri 8:30 AM–5 PM; Sat 8:30 AM–noon; Sun closed (listed office hours)</p><p><a href="tel:+14792293223">479-229-3223</a> &nbsp; · &nbsp; <a href="https://www.uhaul.com/Locations/Truck-Rentals-near-Dardanelle-AR-72834/047231/" target="_blank" rel="noopener noreferrer">Official Dardanelle U-Haul dealer ↗</a></p></div></article></div></section>
-<section id="checklist" class="checklist" aria-labelledby="check-title"><p class="eyebrow">The moving-day checklist</p><h2 id="check-title">Three questions before you reserve.</h2><p>Rates and availability can vary. A quick call can help prevent surprises at pickup.</p><div class="check-grid"><div><strong>01 / Right vehicle?</strong><span>Ask which truck sizes and towing equipment are available for your date.</span></div><div><strong>02 / Right pickup?</strong><span>Confirm location, office hours, return requirements and one-way eligibility.</span></div><div><strong>03 / Full price?</strong><span>Ask about mileage, fuel, insurance, deposits and the total estimated charge.</span></div></div></section>
+<section id="checklist" class="checklist" aria-labelledby="check-title">
+<div class="move-ticket">
+<div class="ticket-summary"><p class="eyebrow">The moving-day checklist / Your call sheet</p><h2 id="check-title">Three questions before you reserve.</h2><p>Rates and availability can vary. A quick call can help prevent surprises at pickup. Mark each item after a provider confirms it.</p>
+<div class="ticket-meter"><div class="ticket-ring" id="ticket-ring" aria-hidden="true"><strong id="ticket-number">0/3</strong></div><div class="ticket-meter-copy"><strong>Confirmation progress</strong><span id="ticket-status" role="status" aria-live="polite" aria-atomic="true">0 of 3 confirmed</span></div></div></div>
+<div class="ticket-steps"><div class="ticket-topline"><p class="eyebrow">Your rental readiness ticket</p><span>01 — 03 / CHECK AS YOU CALL</span></div>
+<label class="ticket-step"><span class="ticket-step-inner"><input type="checkbox" data-move-check value="vehicle"><span><strong>01 / Right vehicle?</strong><small>Ask which truck sizes and towing equipment are available for your date.</small></span></span></label>
+<label class="ticket-step"><span class="ticket-step-inner"><input type="checkbox" data-move-check value="pickup"><span><strong>02 / Right pickup?</strong><small>Confirm location, office hours, return requirements and one-way eligibility.</small></span></span></label>
+<label class="ticket-step"><span class="ticket-step-inner"><input type="checkbox" data-move-check value="price"><span><strong>03 / Full price?</strong><small>Ask about mileage, fuel, insurance, deposits and the total estimated charge.</small></span></span></label>
+<div class="ticket-actions"><a href="#local">Compare pickup locations ↑</a><button type="button" id="ticket-print" hidden>Print checklist</button><button type="button" id="ticket-reset" hidden>Start over</button></div>
+<p class="ticket-fine">This is a personal planning checklist, not a booking or a provider confirmation. Your checked items are saved only in this browser.</p><noscript><p class="ticket-fine">You can still use the checklist and print this page with your browser. Automatic progress tracking requires JavaScript.</p></noscript>
+</div></div></section>
 <p class="note">Independent local directory. Information is drawn from public listings and may change. Some business services and contact details are not independently confirmed. Please confirm pricing, availability and terms directly with each provider. <a href="sms:+14799707301">Submit corrections</a>.</p>
-<footer><span>Russellville.Rent · Moving truck &amp; equipment rentals</span><a href="/">Return to homepage</a></footer></main></body></html>
+<footer><span>Russellville.Rent · Moving truck &amp; equipment rentals</span><a href="/">Return to homepage</a></footer></main><script>
+(() => {
+  const panel = document.getElementById('checklist');
+  if (!panel) return;
+  const boxes = Array.from(panel.querySelectorAll('input[data-move-check]'));
+  const status = document.getElementById('ticket-status');
+  const ring = document.getElementById('ticket-ring');
+  const number = document.getElementById('ticket-number');
+  const reset = document.getElementById('ticket-reset');
+  const print = document.getElementById('ticket-print');
+  const key = 'russellville-move-checks-v1';
+  try {
+    const saved = JSON.parse(localStorage.getItem(key) || '[]');
+    if (Array.isArray(saved)) boxes.forEach(box => { box.checked = saved.includes(box.value); });
+  } catch (error) { /* Private browsing may block storage. */ }
+  function update() {
+    const complete = boxes.filter(box => box.checked).length;
+    number.textContent = complete + '/' + boxes.length;
+    status.textContent = complete === boxes.length ? '3 of 3 confirmed — ready to compare offers' : complete + ' of ' + boxes.length + ' confirmed';
+    ring.style.setProperty('--ticket-progress', Math.round(complete / boxes.length * 100) + '%');
+    boxes.forEach(box => box.closest('.ticket-step').classList.toggle('is-complete', box.checked));
+    try { localStorage.setItem(key, JSON.stringify(boxes.filter(box => box.checked).map(box => box.value))); } catch (error) { /* Storage is optional. */ }
+  }
+  boxes.forEach(box => box.addEventListener('change', update));
+  reset.hidden = false;
+  print.hidden = false;
+  reset.addEventListener('click', () => { boxes.forEach(box => { box.checked = false; }); update(); boxes[0].focus(); });
+  print.addEventListener('click', () => window.print());
+  update();
+})();
+</script></body></html>
