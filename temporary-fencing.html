@@ -17,6 +17,53 @@ main{padding-block:58px 66px}.section-head{display:flex;align-items:end;justify-
 @media(max-width:820px){.hero-inner{grid-template-columns:1fr;padding-block:50px 55px;gap:26px}.drawing{min-height:0;max-width:570px}.drawing svg{max-height:260px}.grid{grid-template-columns:1fr}.check{grid-template-columns:1fr;gap:20px}}
 @media(max-width:520px){.wrap{width:min(100% - 30px,1100px)}.header-inner{min-height:65px}.brand{font-size:1.05rem}.back{font-size:.74rem}.hero h1{font-size:clamp(2.75rem,13vw,4rem)}.hero-inner{padding-block:41px 48px}.lead{font-size:1rem}.drawing{display:none}.section-head{display:block}.section-head p{margin-top:12px}.grid article{padding:22px}.grid article p:last-child{align-items:stretch}.grid article p:last-child a{flex:1 1 100%}.check{padding:22px}.check ul{grid-template-columns:1fr}main{padding-block:40px 48px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}.btn:hover{transform:none}}
+
+/* Quote brief: a field notebook, not an estimate or a provider reservation. */
+.fence-planner{margin:56px 0 0;background:#0f2c35;color:#f9f7ef;border-radius:24px;overflow:hidden;box-shadow:0 22px 52px #142d3622}
+.fence-planner[hidden],.fence-planner [hidden]{display:none!important}
+.planner-heading{padding:31px clamp(23px,4vw,44px);border-bottom:1px solid #ffffff26;display:flex;align-items:end;justify-content:space-between;gap:25px;background:linear-gradient(115deg,#123642,#183f47)}
+.planner-heading .section-label{color:#ffc68b}
+.planner-heading h2{font:700 clamp(2rem,3.5vw,3rem)/1.08 Georgia,"Times New Roman",serif;letter-spacing:-.04em;margin:0}
+.planner-heading p:last-child{font-size:.85rem;line-height:1.6;color:#d5e7e4;max-width:37ch;margin:0}
+.planner-layout{display:grid;grid-template-columns:1.08fr .92fr;align-items:stretch}
+.planner-form{padding:34px clamp(23px,4vw,44px) 38px;min-width:0}
+.planner-form fieldset{border:0;padding:0;margin:0 0 26px;min-width:0}
+.planner-form legend,.planner-field label{display:block;font-size:.77rem;font-weight:800;letter-spacing:.02em;color:#f4e9d5;margin:0 0 10px}
+.purpose-options{display:flex;flex-wrap:wrap;gap:8px}
+.purpose-option{display:inline-flex;align-items:center;gap:9px;min-height:46px;padding:9px 13px;border:1px solid #8ba8a7;border-radius:9px;background:#173c45;color:#fff;font-size:.83rem;font-weight:700;cursor:pointer}
+.purpose-option:has(input:checked){background:#f4c58c;color:#172f36;border-color:#f4c58c}
+.purpose-option input{accent-color:#245b4d;width:17px;height:17px;margin:0;flex:none}
+.purpose-option:focus-within{outline:3px solid #f4c58c;outline-offset:3px}
+.planner-fields{display:grid;grid-template-columns:1fr 1fr;gap:17px 14px}
+.planner-field{min-width:0}
+.planner-field input,.planner-field select{display:block;width:100%;min-width:0;min-height:48px;border:1px solid #b4c7c5;border-radius:8px;background:#fffefa;color:#1c353c;padding:10px 12px;font:inherit;font-size:.92rem}
+.planner-field input:focus-visible,.planner-field select:focus-visible,.planner-actions button:focus-visible{outline:3px solid #f5c384;outline-offset:3px}
+.planner-field small{display:block;margin-top:5px;font-size:.73rem;color:#d0e1de}
+.planner-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:27px}
+.planner-actions button{border:1px solid transparent;border-radius:9px;min-height:48px;padding:11px 18px;font:inherit;font-size:.87rem;font-weight:850;cursor:pointer}
+#fence-copy{background:#f3ad68;color:#142d36}
+#fence-copy:hover{background:#ffc58d}
+#fence-reset{background:transparent;border-color:#a2c0bd;color:#fff}
+#fence-reset:hover{background:#ffffff13}
+.planner-help{font-size:.79rem;line-height:1.55;color:#d1e2de;margin:17px 0 0}
+.planner-feedback{min-height:1.5em;color:#ffe0ae;font-size:.83rem;font-weight:750;margin:11px 0 0}
+#fence-copy-fallback{display:block;width:100%;min-height:132px;margin-top:12px;border-radius:8px;padding:12px;font:13px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;color:#1c353c}
+.planner-preview{background:linear-gradient(145deg,#1e4650,#15323c);padding:20px;display:flex;align-items:stretch;min-width:0}
+.planner-sheet{position:relative;flex:1;background:#f9f4e9;color:#1e353c;border-radius:8px;padding:clamp(25px,3vw,39px);box-shadow:0 16px 35px #061d2760;overflow:hidden}
+.planner-sheet:before{content:"";position:absolute;inset:0 auto 0 0;width:7px;background:repeating-linear-gradient(180deg,#efac65 0 19px,#d98d51 19px 38px)}
+.sheet-overline{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:2px solid #244a50;padding-bottom:13px;color:#4d696c;font-size:.68rem;font-weight:850;letter-spacing:.13em;text-transform:uppercase}
+.planner-sheet h3{font:700 clamp(1.75rem,2.7vw,2.4rem)/1.13 Georgia,"Times New Roman",serif;letter-spacing:-.04em;margin:24px 0 20px}
+.site-sketch{position:relative;display:grid;place-items:center;min-height:130px;margin:0 0 21px;border:1px solid #cad9d3;border-radius:9px;background-color:#edf0e8;background-image:linear-gradient(#dae3dc 1px,transparent 1px),linear-gradient(90deg,#dae3dc 1px,transparent 1px);background-size:19px 19px}
+.site-sketch:before{content:"";width:62%;height:65px;border:6px dashed #547c78;border-radius:4px;transform:skewY(-5deg)}
+.site-sketch:after{content:"SITE SKETCH · NOT TO SCALE";position:absolute;bottom:8px;right:10px;background:#edf0e8;padding:2px 5px;font-size:.58rem;font-weight:850;letter-spacing:.08em;color:#526d6c}
+.sheet-details{margin:0}
+.sheet-details div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:12px;padding:11px 0;border-bottom:1px solid #d9e0d6}
+.sheet-details dt{font-size:.69rem;font-weight:850;letter-spacing:.09em;text-transform:uppercase;color:#617674}
+.sheet-details dd{margin:0;font-size:.87rem;font-weight:750;color:#233e43;overflow-wrap:anywhere}
+.sheet-footer{margin:22px 0 0;color:#4e6666;font-size:.77rem;line-height:1.6}
+@media(max-width:850px){.planner-layout{grid-template-columns:1fr}.planner-preview{padding:18px}.planner-heading{display:block}.planner-heading p:last-child{margin-top:12px;max-width:60ch}.planner-sheet{max-width:none}}
+@media(max-width:550px){.fence-planner{margin-top:39px;border-radius:16px}.planner-heading{padding:26px 22px}.planner-form{padding:27px 21px}.planner-fields{grid-template-columns:1fr}.planner-preview{padding:12px}.planner-sheet{padding:26px 22px}.sheet-details div{grid-template-columns:95px minmax(0,1fr)}.planner-actions button{flex:1}}
+@media(prefers-reduced-motion:reduce){.fence-planner *{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -31,7 +78,112 @@ main{padding-block:58px 66px}.section-head{display:flex;align-items:end;justify-
 <div class="section-head"><div><p class="section-label">01 / Explore providers</p><h2>Find the right fence supplier</h2></div><p>Compare published service details, then confirm the delivery area and final quote directly.</p></div>
 <div class="grid"><article><div class="card-top"><span class="number">PROVIDER 01</span><span class="tag ">Arkansas-wide service advertised</span></div><h3>AF&amp;G LLC</h3><p>Temporary fence panels and chain-link fencing rentals; advertises Arkansas-wide service.</p><p class="area">Conway, Arkansas — statewide service</p><p><a href="tel:+15017719929">501-771-9929</a> · <a href="https://arfence.com/services/temporary-fencing/" target="_blank" rel="noopener noreferrer">Public provider information ↗</a></p></article>
 <article><div class="card-top"><span class="number">PROVIDER 02</span><span class="tag tag-caution">Russellville delivery unconfirmed</span></div><h3>National Rent-A-Fence — Arkansas regional service</h3><p>Official Arkansas service pages advertise temporary chain-link fencing, freestanding fence panels, pedestrian barricades, windscreens and fence gates for construction and events. The provider describes service across much of Arkansas, but <strong>delivery to Russellville is UNCONFIRMED</strong>. Ask for a written quote covering delivery, installation, removal, rental period and site requirements.</p><p class="area">Arkansas regional provider · No Russellville office verified · Russellville delivery UNCONFIRMED</p><p><a href="tel:+18003525675">800-352-5675</a> · <a href="https://www.rentnational.com/fort-smith" target="_blank" rel="noopener noreferrer">Official Arkansas rental and service information ↗</a></p></article></div>
+
+<section class="fence-planner" id="fence-planner" aria-labelledby="planner-title" hidden>
+  <div class="planner-heading"><div><p class="section-label">02 / Your field notes</p><h2 id="planner-title">Plan the perimeter.</h2></div><p>Build a concise inquiry for a fence supplier. No estimates, reservations or messages are sent from this page.</p></div>
+  <div class="planner-layout">
+    <form class="planner-form" id="fence-form">
+      <fieldset><legend>What are you fencing?</legend><div class="purpose-options">
+        <label class="purpose-option"><input type="radio" name="fence-purpose" value="Construction site" checked> Construction site</label>
+        <label class="purpose-option"><input type="radio" name="fence-purpose" value="Event"> Event</label>
+        <label class="purpose-option"><input type="radio" name="fence-purpose" value="Crowd control"> Crowd control</label>
+        <label class="purpose-option"><input type="radio" name="fence-purpose" value="Other"> Other</label>
+      </div></fieldset>
+      <div class="planner-fields">
+        <div class="planner-field"><label for="fence-town">Project city or location</label><input id="fence-town" type="text" maxlength="100" autocomplete="address-level2" placeholder="e.g., Russellville, Arkansas"></div>
+        <div class="planner-field"><label for="fence-length">Approximate fence length (feet)</label><input id="fence-length" type="number" inputmode="numeric" min="1" max="999999" step="1" placeholder="If known"><small>Use your estimate; panel sizes vary by provider.</small></div>
+        <div class="planner-field"><label for="fence-gates">Gate needs</label><select id="fence-gates"><option value="To be confirmed">Not sure yet</option><option value="No gates requested">No gates</option><option value="1 gate requested">1 gate</option><option value="2 or more gates requested">2 or more gates</option></select></div>
+        <div class="planner-field"><label for="fence-dates">Dates or rental duration</label><input id="fence-dates" type="text" maxlength="100" placeholder="e.g., 3 weeks in November"></div>
+      </div>
+      <div class="planner-actions"><button type="button" id="fence-copy">Copy inquiry notes ↗</button><button type="reset" id="fence-reset">Start over</button></div>
+      <p class="planner-help">Copy your notes, then contact a listed provider yourself. Ask about delivery, installation, removal and total cost.</p>
+      <p class="planner-feedback" id="fence-feedback" role="status" aria-live="polite"></p>
+      <textarea id="fence-copy-fallback" readonly hidden aria-label="Inquiry notes to select and copy"></textarea>
+    </form>
+    <div class="planner-preview"><div class="planner-sheet" aria-label="Preview of your inquiry notes">
+      <div class="sheet-overline"><span>Russellville.Rent / Field notes</span><span>Inquiry · Not a quote</span></div>
+      <h3>Your fence brief</h3>
+      <div class="site-sketch" aria-hidden="true"></div>
+      <dl class="sheet-details">
+        <div><dt>Project</dt><dd id="fence-preview-purpose">Construction site</dd></div>
+        <div><dt>Location</dt><dd id="fence-preview-town">To be confirmed</dd></div>
+        <div><dt>Length</dt><dd id="fence-preview-length">To be confirmed</dd></div>
+        <div><dt>Gates</dt><dd id="fence-preview-gates">To be confirmed</dd></div>
+        <div><dt>Timing</dt><dd id="fence-preview-dates">To be confirmed</dd></div>
+      </dl>
+      <p class="sheet-footer">Planning reference only. Confirm actual dimensions, fencing type, delivery coverage and all terms directly with the provider.</p>
+    </div></div>
+  </div>
+</section>
+
 <section class="check" id="quote-checklist" aria-labelledby="quote-title"><div><p class="section-label">02 / Before you book</p><h2 id="quote-title">A clearer quote starts here.</h2><p>Have these details ready when you contact a provider. Availability and delivery to your address must be confirmed.</p></div><ul><li>Approximate fence length</li><li>Rental start date &amp; duration</li><li>Gates, barricades or screens needed</li><li>Delivery, installation &amp; removal</li></ul></section>
 <p class="note">Russellville.Rent is an independent directory. Some businesses are based outside Russellville, and delivery or business status may be unconfirmed. Please confirm operating status, service area, availability, pricing and terms directly with each provider. <a href="sms:+14799707301">Submit corrections</a>.</p>
 </main><footer><div class="wrap"><a href="/">Return to all rental categories</a> · Russellville.Rent</div></footer>
+
+<script>
+(() => {
+  const planner = document.getElementById("fence-planner");
+  const form = document.getElementById("fence-form");
+  const town = document.getElementById("fence-town");
+  const length = document.getElementById("fence-length");
+  const gates = document.getElementById("fence-gates");
+  const dates = document.getElementById("fence-dates");
+  const feedback = document.getElementById("fence-feedback");
+  const fallback = document.getElementById("fence-copy-fallback");
+  const preview = {
+    purpose: document.getElementById("fence-preview-purpose"),
+    town: document.getElementById("fence-preview-town"),
+    length: document.getElementById("fence-preview-length"),
+    gates: document.getElementById("fence-preview-gates"),
+    dates: document.getElementById("fence-preview-dates")
+  };
+  const purpose = () => form.querySelector('input[name="fence-purpose"]:checked').value;
+  const fenceLength = () => {
+    const value = Number(length.value);
+    return length.value !== "" && Number.isInteger(value) && value > 0 && value <= 999999
+      ? value.toLocaleString("en-US") + " feet" : "To be confirmed";
+  };
+  function inquiryNotes(){
+    return [
+      "Temporary fencing rental inquiry",
+      "Project type: " + purpose(),
+      "Project location: " + (town.value.trim() || "To be confirmed"),
+      "Approximate fence length: " + fenceLength(),
+      "Gates: " + gates.value,
+      "Rental dates or duration: " + (dates.value.trim() || "To be confirmed"),
+      "",
+      "Please confirm delivery to this location, available fencing and gate options, installation/removal, and the full rental price and terms."
+    ].join("\n");
+  }
+  function render(){
+    preview.purpose.textContent = purpose();
+    preview.town.textContent = town.value.trim() || "To be confirmed";
+    preview.length.textContent = fenceLength();
+    preview.gates.textContent = gates.value;
+    preview.dates.textContent = dates.value.trim() || "To be confirmed";
+    feedback.textContent = "";
+    fallback.hidden = true;
+  }
+  form.addEventListener("input", render);
+  form.addEventListener("change", render);
+  form.addEventListener("reset", () => window.requestAnimationFrame(render));
+  document.getElementById("fence-copy").addEventListener("click", async () => {
+    const notes = inquiryNotes();
+    try {
+      if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error("Clipboard unavailable");
+      await navigator.clipboard.writeText(notes);
+      fallback.hidden = true;
+      feedback.textContent = "Inquiry notes copied. Paste them into a message to a provider.";
+    } catch {
+      fallback.value = notes;
+      fallback.hidden = false;
+      feedback.textContent = "Select and copy the inquiry notes below.";
+      fallback.focus();
+      fallback.select();
+    }
+  });
+  planner.hidden = false;
+  render();
+})();
+</script>
 </body></html>
