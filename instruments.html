@@ -154,6 +154,36 @@
     @media(max-width:760px){.compare-heading{grid-template-columns:1fr;gap:10px}.compare-grid{grid-template-columns:1fr}.compare{margin-top:43px}}
     @media(max-width:420px){.compare-card{padding:23px 20px}.compare-facts>div{grid-template-columns:1fr;gap:4px;padding:13px 0}.compare-emblem{width:48px;height:48px;flex-basis:48px;font-size:1.6rem}}
     @media(prefers-reduced-motion:reduce){.compare-cta{transition:none}.compare-cta:hover{transform:none}}
+
+    /* Sheet-music-inspired student band inquiry: a planning aid, not a booking form. */
+    .band-desk{position:relative;isolation:isolate;overflow:hidden;margin:62px 0 8px;padding:clamp(24px,4vw,42px);border:1px solid #cfdccf;border-radius:24px;background:linear-gradient(120deg,#e3eee6,#fbf7ec 76%);box-shadow:0 16px 40px #183d3410;scroll-margin-top:28px}
+    .band-desk:before{content:"";position:absolute;inset:14px 16px auto auto;width:250px;height:90px;z-index:-1;opacity:.35;background:repeating-linear-gradient(180deg,transparent 0 15px,#b1be9d 15px 17px,transparent 17px 23px);transform:rotate(-7deg)}
+    .band-desk .eyebrow{color:#496f55;margin-bottom:10px}
+    .desk-header{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:25px}
+    .desk-header h2{font:400 clamp(2rem,3.9vw,3.3rem)/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.05em;margin:0;max-width:17ch}
+    .desk-header>p{max-width:40ch;color:#475f50;font-size:.9rem;margin:0 0 5px}
+    .desk-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:18px;align-items:stretch}
+    .desk-fields,.desk-preview{border-radius:18px;padding:clamp(20px,3vw,29px)}
+    .desk-fields{background:#fffdf8;border:1px solid #d7dfcf}
+    .desk-fields h3{margin:0 0 21px;font-size:1rem;letter-spacing:-.02em;color:#214a38}
+    .desk-field{display:block;margin:0 0 18px}
+    .desk-field span{display:block;font-size:.75rem;letter-spacing:.02em;font-weight:800;color:#334d40;margin-bottom:6px}
+    .desk-field input{display:block;width:100%;min-height:48px;padding:11px 13px;border:1px solid #a9bda9;background:#fff;border-radius:9px;color:#1d3e31;font:inherit}
+    .desk-field input:focus-visible,.desk-preview textarea:focus-visible,.desk-copy:focus-visible{outline:3px solid #a66b1c;outline-offset:3px}
+    .desk-hint{margin:2px 0 0;font-size:.75rem;line-height:1.55;color:#576e60}
+    .desk-preview{position:relative;background:#153e34;color:#fffdf5;border:1px solid #153e34;display:flex;flex-direction:column}
+    .desk-preview:before{content:"";position:absolute;right:23px;top:21px;width:34px;height:34px;border:1px solid #f1ce855c;border-radius:50%;pointer-events:none}
+    .desk-preview .desk-overline{color:#f1d18b;font-size:.7rem;font-weight:850;letter-spacing:.15em;text-transform:uppercase;margin:0 0 8px}
+    .desk-preview h3{font:400 1.75rem/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.04em;margin:0 0 17px}
+    .desk-preview textarea{display:block;width:100%;flex:1;min-height:230px;padding:17px 18px;border:1px solid #d4ddc8;border-radius:10px;resize:vertical;background:repeating-linear-gradient(180deg,#fffdf4 0,#fffdf4 31px,#dfe7d9 32px);color:#1e3d30;font:400 .87rem/1.85 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    .desk-copy{appearance:none;cursor:pointer;border:0;border-radius:9px;background:#f0ca79;color:#153a30;min-height:48px;margin-top:15px;padding:12px 18px;text-align:center;font:850 .85rem/1.3 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;transition:transform .2s,background .2s}
+    .desk-copy:hover{transform:translateY(-2px);background:#ffdc9d}
+    .desk-status{min-height:1.5em;margin:9px 0 0;font-size:.8rem;color:#f5deae}
+    .desk-footnote{font-size:.78rem;line-height:1.55;color:#e0eadf;margin:10px 0 0}
+    .desk-footnote a{color:#ffe0a2;font-weight:800}
+    @media(max-width:780px){.desk-header{display:block}.desk-header>p{margin:11px 0 0}.desk-layout{grid-template-columns:1fr}.desk-preview textarea{min-height:190px}}
+    @media(max-width:480px){.band-desk{margin-top:42px;border-radius:17px;padding:20px 16px}.desk-fields,.desk-preview{padding:21px 18px}.desk-header h2{font-size:2.15rem}}
+    @media(prefers-reduced-motion:reduce){.desk-copy{transition:none}.desk-copy:hover{transform:none}}
   </style>
 </head>
 <body>
@@ -257,6 +287,37 @@
       <p class="compare-note">Summary of advertised programs, not a quote or guarantee. Confirm current instrument selection, availability, prices, eligibility and contract terms with each provider.</p>
     </section>
 
+
+    <section class="band-desk" id="inquiry-desk" aria-labelledby="desk-title">
+      <p class="eyebrow">The band-room desk / Ready for your first call</p>
+      <div class="desk-header">
+        <h2 id="desk-title">Turn questions into <em>one clear note.</em></h2>
+        <p>Keep the details together when contacting either school-band rental provider. This is a planning note, not a reservation or quote.</p>
+      </div>
+      <div class="desk-layout">
+        <div class="desk-fields" id="band-inquiry-fields">
+          <h3>01 / Add what you know</h3>
+          <label class="desk-field" for="band-instrument"><span>Instrument (optional)</span><input id="band-instrument" type="text" maxlength="70" placeholder="Example: clarinet"></label>
+          <label class="desk-field" for="band-school"><span>Student's school (optional)</span><input id="band-school" type="text" maxlength="80" placeholder="Example: Russellville Middle School"></label>
+          <label class="desk-field" for="band-date"><span>When is it needed? (optional)</span><input id="band-date" type="date"></label>
+          <p class="desk-hint">Not sure about a detail? Leave it blank and ask the provider. No information is sent or stored by this page.</p>
+        </div>
+        <aside class="desk-preview" aria-labelledby="desk-preview-title">
+          <p class="desk-overline">02 / Your copy-ready inquiry</p>
+          <h3 id="desk-preview-title">A better starting conversation.</h3>
+          <label class="desk-hint" for="band-inquiry-message" style="color:#e4eee4;margin:0 0 8px">Inquiry text — select to copy</label>
+          <textarea id="band-inquiry-message" rows="8" readonly>Hello, I'm comparing student band instrument rentals.
+Instrument: I need guidance on the right one.
+Student's school: not specified.
+Start date: flexible.
+Could you confirm current availability, the monthly price and all fees, how payments count toward ownership, repair or replacement coverage, school delivery or pickup, and return terms?</textarea>
+          <button id="band-inquiry-copy" class="desk-copy" type="button" hidden>Copy inquiry to clipboard ↗</button>
+          <p id="band-inquiry-status" class="desk-status" role="status" aria-live="polite" aria-atomic="true"></p>
+          <p class="desk-footnote">Nothing is booked or submitted. <a href="#providers">Find provider contacts ↓</a></p>
+        </aside>
+      </div>
+    </section>
+
     <section id="providers" aria-labelledby="providers-title">
       <div class="section-heading">
         <div><p class="eyebrow">Find your starting point</p><h2 id="providers-title">Compare band programs</h2></div>
@@ -306,5 +367,52 @@
     <aside class="note">Independent directory. Rent-to-own plans differ from temporary instrument rentals; ask about total cost, fees, repairs, return policies and school compatibility. <a href="sms:+14799707301">Suggest a correction</a>.</aside>
   </main>
   <footer class="wrap"><span>Russellville.Rent · Independent local rental directory</span><a href="/">Return to homepage</a></footer>
+
+<script>
+(() => {
+  const fields=document.getElementById("band-inquiry-fields");
+  const output=document.getElementById("band-inquiry-message");
+  const copy=document.getElementById("band-inquiry-copy");
+  const status=document.getElementById("band-inquiry-status");
+  if(!fields||!output||!copy||!status)return;
+  function makeInquiry(){
+    const instrument=document.getElementById("band-instrument").value.trim();
+    const school=document.getElementById("band-school").value.trim();
+    const dateValue=document.getElementById("band-date").value;
+    let start="flexible";
+    if(dateValue){
+      const parts=dateValue.split("-").map(Number);
+      const date=new Date(parts[0],parts[1]-1,parts[2],12);
+      if(parts.length===3&&date.getFullYear()===parts[0]&&date.getMonth()===parts[1]-1&&date.getDate()===parts[2]){
+        start=date.toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"});
+      }
+    }
+    return "Hello, I'm comparing student band instrument rentals.\n"+
+      "Instrument: "+(instrument||"I need guidance on the right one")+".\n"+
+      "Student's school: "+(school||"not specified")+".\n"+
+      "Start date: "+start+".\n"+
+      "Could you confirm current availability, the monthly price and all fees, how payments count toward ownership, repair or replacement coverage, school delivery or pickup, and return terms?";
+  }
+  function render(){output.value=makeInquiry();status.textContent="";}
+  fields.addEventListener("input",render);
+  fields.addEventListener("change",render);
+  copy.hidden=false;
+  copy.addEventListener("click",async()=>{
+    try{
+      if(navigator.clipboard&&window.isSecureContext){
+        await navigator.clipboard.writeText(output.value);
+      }else{
+        output.focus();output.select();
+        if(!document.execCommand("copy"))throw new Error("Clipboard unavailable");
+      }
+      status.textContent="Inquiry copied. Paste it when contacting the provider.";
+    }catch(error){
+      output.focus();output.select();
+      status.textContent="Automatic copy unavailable. The inquiry is selected; copy it manually.";
+    }
+  });
+  render();
+})();
+</script>
 </body>
 </html>
