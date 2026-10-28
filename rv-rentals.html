@@ -43,6 +43,34 @@ main{max-width:1160px;margin:0 auto;padding:0 28px}.hero{position:relative;isola
 @media(max-width:800px){.hero-visual{width:min(100%,460px);justify-self:center}.hero-art-caption{margin-top:-20px}}
 @media(max-width:650px){.hero-visual{width:min(100%,365px);margin-top:8px}.hero-art-caption{font-size:.59rem;margin-top:-16px}.hero-actions{display:grid;grid-template-columns:1fr}.hero-button{width:100%}.path-guide{display:block}.path-guide span{display:block;margin-top:5px}.path-filters{display:grid;grid-template-columns:1fr}.path-filters button{width:100%}.grid article p:last-child{line-height:2.6}}
 @media(prefers-reduced-motion:reduce){.hero-button,.path-filters button{transition:none}.hero-button:hover{transform:none}}
+
+/* A scenic four-stop planning guide; not an availability or delivery claim. */
+.trip-map{position:relative;isolation:isolate;overflow:hidden;margin-top:44px;padding:clamp(25px,4vw,43px);border-radius:25px;background:linear-gradient(135deg,#103b35 0%,#1a5146 61%,#1d594a 100%);color:#fff;box-shadow:0 18px 40px #0e382f1c}
+.trip-map:before{content:"";position:absolute;z-index:-1;right:-145px;top:-175px;width:460px;height:460px;border:1px solid #d8edcf42;border-radius:50%;box-shadow:0 0 0 45px #d8edcf10,0 0 0 90px #d8edcf0b,0 0 0 135px #d8edcf08;pointer-events:none}
+.trip-map-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:31px}
+.trip-map-eyebrow{margin:0 0 9px;font-size:.7rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase;color:#f2d79c}
+.trip-map h2{margin:0;font:400 clamp(1.9rem,3.5vw,2.9rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.045em;text-wrap:balance}
+.trip-map-head>p{max-width:290px;margin:0;color:#e0eee5;font-size:.88rem;line-height:1.55}
+.trip-map-steps{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;list-style:none;padding:0;margin:0;counter-reset:trip-step}
+.trip-map-steps:before{content:"";position:absolute;top:49px;left:3%;right:3%;border-top:2px dashed #f0d6a2b0;pointer-events:none}
+.trip-map-step{position:relative;min-width:0;padding:19px 17px 20px;border:1px solid #dbe9dc8f;border-radius:17px;background:#f7f8f1;color:#203d33;box-shadow:0 7px 22px #09261b26}
+.trip-map-step:before{counter-increment:trip-step;content:counter(trip-step,decimal-leading-zero);display:block;margin-bottom:17px;color:#527763;font-size:.69rem;font-weight:900;letter-spacing:.13em}
+.trip-map-icon{position:absolute;right:14px;top:14px;display:grid;place-items:center;width:48px;height:48px;border-radius:13px;background:#e5eee1;color:#245d4b}
+.trip-map-step:nth-child(2) .trip-map-icon{background:#f8ebd3;color:#946a2b}
+.trip-map-step:nth-child(3) .trip-map-icon{background:#e1eef0;color:#376d78}
+.trip-map-step:nth-child(4) .trip-map-icon{background:#ece8f2;color:#665d88}
+.trip-map-icon svg{width:29px;height:29px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.trip-map-step h3{font:400 1.28rem/1.2 Georgia,"Times New Roman",serif;letter-spacing:-.025em;margin:15px 0 9px;max-width:13ch}
+.trip-map-step p{margin:0;color:#456055;font-size:.81rem;line-height:1.52}
+.trip-map-end{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:23px}
+.trip-map-end p{max-width:540px;margin:0;color:#d7e7dc;font-size:.78rem;line-height:1.5}
+.trip-map-link{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 18px;background:#f2d495;color:#18372d;border-radius:999px;text-decoration:none;font-size:.84rem;font-weight:850;white-space:nowrap;transition:background-color .18s,transform .18s}
+.trip-map-link:hover{background:#ffe6b1;transform:translateY(-2px)}
+.trip-map-link:focus-visible{outline:3px solid #fff;outline-offset:4px}
+@media(max-width:950px){.trip-map-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.trip-map-steps:before{display:none}.trip-map-step h3{max-width:none}}
+@media(max-width:680px){.trip-map{margin-top:32px;padding:28px 19px;border-radius:19px}.trip-map-head{display:block;margin-bottom:20px}.trip-map-head>p{max-width:none;margin-top:12px}.trip-map-steps{gap:10px}.trip-map-step{padding:16px 14px}.trip-map-step h3{font-size:1.17rem}.trip-map-end{align-items:stretch;flex-direction:column}.trip-map-link{width:100%;white-space:normal}}
+@media(max-width:460px){.trip-map-steps{grid-template-columns:1fr}.trip-map-step{min-height:125px;padding:17px 17px 17px 75px}.trip-map-step:before{position:absolute;left:18px;top:24px}.trip-map-icon{top:42px;left:15px;right:auto;width:43px;height:43px}.trip-map-step h3{margin:0 0 5px}.trip-map-step p{font-size:.84rem}}
+@media(prefers-reduced-motion:reduce){.trip-map-link{transition:none}.trip-map-link:hover{transform:none}}
 </style></head><body>
 <a class="skip-link" href="#providers">Skip to rental listings</a><header><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back-link" href="/">← All rental categories</a></div></header>
 <main><section class="hero" aria-labelledby="page-title"><div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Bring your <em>own adventure.</em></h1><p class="hero-intro">Find a recreational vehicle (RV) or camper to rent for a trip, tailgate or campground stay. Compare direct Arkansas operators and rental marketplaces. These are vehicle rentals, not campsite reservations.</p><div class="hero-actions"><a class="hero-button primary" href="#rental-finder">Compare rental paths <span aria-hidden="true">↓</span></a><a class="hero-button secondary" href="/camping.html">Find a campsite <span aria-hidden="true">↗</span></a></div></div><div class="hero-visual" aria-hidden="true"><svg viewBox="0 0 600 430" xmlns="http://www.w3.org/2000/svg" focusable="false">
@@ -78,6 +106,17 @@ main{max-width:1160px;margin:0 auto;padding:0 28px}.hero{position:relative;isola
 <article data-type="marketplace"><span class="tag market">Rental marketplace — not one operator</span><h3>RVshare — Russellville search</h3><p>Peer-to-peer marketplace with a Russellville search page showing motorhomes, camper vans and travel trailers from individual hosts. Some listings advertise delivery; each host's location, current inventory, booking terms, insurance and delivery eligibility vary. <strong>A Russellville search result does not establish a Russellville-based operator or confirmed delivery.</strong></p><p class="detail">Online marketplace · Verify the individual host and exact pickup or delivery location</p><p><a href="https://rvshare.com/rv-rental/russellville/ar" target="_blank" rel="noopener noreferrer">Browse Russellville-area rental listings ↗</a></p></article>
 <article data-type="marketplace"><span class="tag market">Rental marketplace — not one operator</span><h3>RVezy — Russellville search</h3><p>Peer-to-peer RV rental marketplace with a Russellville-area search for towable campers and motorhomes. Results can include hosts based in other Arkansas cities, so proximity and delivery must be checked on each individual listing. <strong>Current availability, price, and Russellville delivery are not guaranteed by a search result.</strong></p><p class="detail">Online marketplace · Host-specific pickup, delivery and campsite terms</p><p><a href="https://www.rvezy.com/rv-rentals/destination/united-states/arkansas/russellville" target="_blank" rel="noopener noreferrer">Browse Russellville-area rental listings ↗</a></p></article>
 </div><div class="empty-state" id="rv-empty" hidden><h3>No matching options</h3><p>Try another provider, rental type or delivery keyword.</p><button id="rv-reset" type="button">Show all options</button></div></section>
+
+<section class="trip-map" aria-labelledby="trip-map-title">
+  <div class="trip-map-head"><div><p class="trip-map-eyebrow">Your camper trip / four planning checks</p><h2 id="trip-map-title">From rental search to campsite.</h2></div><p>A camper and a campsite are two separate arrangements. Use these checkpoints before committing to either one.</p></div>
+  <ol class="trip-map-steps">
+    <li class="trip-map-step"><span class="trip-map-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 10h17a3 3 0 0 1 3 3v10H4zM24 16h4l3 4v3h-7M9 14h9M9 18h9"/><circle cx="11" cy="24" r="3"/><circle cx="26" cy="24" r="3"/></svg></span><h3>Choose the camper</h3><p>Confirm the model, sleeping capacity and rental dates with its operator or host.</p></li>
+    <li class="trip-map-step"><span class="trip-map-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M3 25 16 6l13 19H3ZM16 6v19M5 25h23"/><path d="m11 25 5-8 5 8"/></svg></span><h3>Match the campsite</h3><p>Reserve a suitable site separately. Ask whether the campground permits rental delivery and setup.</p></li>
+    <li class="trip-map-step"><span class="trip-map-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M12 4v8M20 4v8M9 12h14v4a7 7 0 0 1-7 7v5M10 18h12"/></svg></span><h3>Check hookups</h3><p>Verify site length, electrical service, water and sewer requirements with both parties.</p></li>
+    <li class="trip-map-step"><span class="trip-map-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M7 3h18v26l-4-3-5 3-5-3-4 3V3ZM11 10h10M11 15h10M11 20h6"/></svg></span><h3>Confirm the total</h3><p>Get the full quote for delivery, pickup, insurance, deposits, cleaning and return terms.</p></li>
+  </ol>
+  <div class="trip-map-end"><p>Planning guide only. No campsite reservation, rental inventory or delivery to Russellville is confirmed by this directory.</p><a class="trip-map-link" href="/camping.html">Explore River Valley campgrounds ↗</a></div>
+</section>
 <p class="note"><strong>Before booking:</strong> reserve a compatible campsite separately, and confirm the park permits a delivered rental camper. Ask about electric hookups, water and sewer, required arrival windows, insurance, damage deposits, cleaning charges, delivery and pickup. Regional delivery to Russellville is <strong>UNCONFIRMED</strong> unless an operator accepts your exact destination. This directory does not represent rental inventory or real-time availability. For campground listings, <a href="/camping.html">browse RV sites and campgrounds ↗</a>.</p>
 <footer>Russellville.Rent · Independent Arkansas River Valley rental directory · <a href="/">Return to all rentals</a></footer></main>
 <script>
