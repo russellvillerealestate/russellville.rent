@@ -111,6 +111,34 @@ footer a{font-weight:700}
 #rental-ride,#cogswell-rentals,#enterprise-rentals{scroll-margin-top:26px}
 .card:target{outline:3px solid #a96b16;outline-offset:5px;box-shadow:0 16px 32px #143d3227}
 @media(max-width:750px){.compare-head{display:block}.compare-head p{margin-top:9px}.compare-hint{display:block}.compare-board{margin-top:27px;padding:23px 17px}.compare-table{min-width:720px}}
+
+/* Mobile rental-desk passes replace an off-screen 720px comparison table. */
+.mobile-compare{display:none;list-style:none;margin:0;padding:0}
+@media(max-width:750px){
+ .compare-scroll,.compare-hint{display:none}
+ .mobile-compare{display:grid;grid-template-columns:minmax(0,1fr);gap:13px}
+ .mobile-compare li{min-width:0}
+ .mobile-pass{position:relative;overflow:hidden;background:#fffdf8;border:1px solid #d7e2d7;border-radius:17px;box-shadow:0 7px 20px #183e310c}
+ .mobile-pass:before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:#c69554}
+ .mobile-compare li:nth-child(2) .mobile-pass:before{background:#40775d}
+ .mobile-compare li:nth-child(3) .mobile-pass:before{background:#507f88}
+ .pass-head{display:flex;align-items:start;gap:13px;padding:18px 18px 15px 22px;border-bottom:1px dashed #cbd9cd}
+ .pass-number{flex:none;display:grid;place-items:center;width:37px;height:37px;border:1px solid #b5cbb9;border-radius:10px;background:#e9f1e7;color:#315745;font:400 1.17rem Georgia,serif}
+ .pass-head h3{margin:2px 0 4px;font:400 clamp(1.34rem,5.6vw,1.65rem)/1.16 Georgia,serif;letter-spacing:-.035em;color:#163a30}
+ .pass-head p{margin:0;font-size:.72rem;color:#5c705d;line-height:1.35}
+ .pass-facts{margin:0;padding:3px 18px 5px 22px}
+ .pass-facts>div{display:grid;grid-template-columns:minmax(94px,.72fr) minmax(0,1.55fr);gap:12px;padding:12px 0;border-bottom:1px solid #edf0e9;align-items:baseline}
+ .pass-facts>div:last-child{border-bottom:0}
+ .pass-facts dt{font-size:.68rem;text-transform:uppercase;letter-spacing:.07em;font-weight:850;color:#557264;line-height:1.5}
+ .pass-facts dd{margin:0;font-size:.81rem;line-height:1.5;color:#304a3e;overflow-wrap:anywhere}
+ .pass-unconfirmed{color:#677167;font-style:italic}
+ .pass-action{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:8px 15px 16px 20px;padding:13px 15px;min-height:48px;background:#173f35;border-radius:11px;color:#fff;text-decoration:none;font-size:.8rem;font-weight:800}
+ .pass-action:hover{background:#27634e}
+ .pass-action:focus-visible{outline:3px solid #a66a17;outline-offset:4px}
+ .pass-action span{font-size:1.15rem;line-height:1}
+}
+@media(max-width:355px){.pass-facts>div{grid-template-columns:minmax(0,1fr);gap:4px}.pass-facts{padding-right:15px}}
+
 </style>
 </head>
 <body>
@@ -156,6 +184,11 @@ footer a{font-weight:700}
     <div class="compare-head"><div><p class="eyebrow">Rental desk / At a glance</p><h2 id="compare-title">Compare before you call.</h2></div><p>Three local contacts, one clear view of the details currently listed.</p></div>
     <p class="compare-hint" id="compare-scroll-hint">Scroll sideways to compare all three providers →</p>
     <div class="compare-scroll" role="region" tabindex="0" aria-label="Rental provider comparison, horizontally scrollable on small screens" aria-describedby="compare-scroll-hint"><table class="compare-table"><caption class="sr-only">Published car rental information for three Russellville providers. Unlisted terms require confirmation.</caption><thead><tr><th scope="col">What matters</th><th scope="col">24/7 Rent-A-Ride</th><th scope="col">Cogswell Motors Rentals</th><th scope="col">Enterprise Rent-A-Car</th></tr></thead><tbody><tr><th scope="row">Rental offering</th><td>Car rentals; specific vehicle classes not listed here.</td><td><span class="known">Vehicle types listed</span><br>Cars, trucks, minivans, sport utility vehicles and 15-passenger vans.</td><td>Local rental branch; specific vehicle classes not listed here.</td></tr><tr><th scope="row">Driver requirements</th><td class="unknown">Confirm directly</td><td><span class="known">Published terms</span><br>At least 21; valid driver's license and major credit card.</td><td class="unknown">Confirm directly</td></tr><tr><th scope="row">Included mileage</th><td class="unknown">Confirm directly</td><td><span class="known">Published standard allowance</span><br>200 miles/day, 1,400/week or 3,000/month, unless otherwise specified.</td><td class="unknown">Confirm directly</td></tr><tr><th scope="row">Russellville location</th><td>111 S Arkansas Ave</td><td>1900 E Main St</td><td>1903 S Arkansas Ave</td></tr><tr><th scope="row">Next step</th><td><a href="#rental-ride">View contact details ↗</a></td><td><a href="#cogswell-rentals">View rental terms &amp; contact ↗</a></td><td><a href="#enterprise-rentals">View branch details ↗</a></td></tr></tbody></table></div>
+    <ol class="mobile-compare" aria-label="Car rental provider comparison">
+      <li><article class="mobile-pass"><div class="pass-head"><span class="pass-number" aria-hidden="true">01</span><div><h3>24/7 Rent-A-Ride</h3><p>Russellville · Local rental contact</p></div></div><dl class="pass-facts"><div><dt>Vehicles</dt><dd>Car rentals; specific vehicle classes not listed here.</dd></div><div><dt>Driver rules</dt><dd class="pass-unconfirmed">Confirm directly</dd></div><div><dt>Mileage</dt><dd class="pass-unconfirmed">Confirm directly</dd></div><div><dt>Location</dt><dd>111 S Arkansas Ave</dd></div></dl><a class="pass-action" href="#rental-ride">Contact and rental details <span aria-hidden="true">↗</span></a></article></li>
+      <li><article class="mobile-pass"><div class="pass-head"><span class="pass-number" aria-hidden="true">02</span><div><h3>Cogswell Motors Rentals</h3><p>Russellville · Local dealership rental desk</p></div></div><dl class="pass-facts"><div><dt>Vehicles</dt><dd>Cars, trucks, minivans, sport utility vehicles and 15-passenger vans.</dd></div><div><dt>Driver rules</dt><dd>Published terms: at least 21, valid driver's license and major credit card.</dd></div><div><dt>Mileage</dt><dd>Published standard allowance: 200 miles/day, 1,400/week or 3,000/month unless otherwise specified.</dd></div><div><dt>Location</dt><dd>1900 E Main St</dd></div></dl><a class="pass-action" href="#cogswell-rentals">Terms and contact details <span aria-hidden="true">↗</span></a></article></li>
+      <li><article class="mobile-pass"><div class="pass-head"><span class="pass-number" aria-hidden="true">03</span><div><h3>Enterprise Rent-A-Car</h3><p>Russellville · Local branch</p></div></div><dl class="pass-facts"><div><dt>Vehicles</dt><dd>Local rental branch; specific vehicle classes not listed here.</dd></div><div><dt>Driver rules</dt><dd class="pass-unconfirmed">Confirm directly</dd></div><div><dt>Mileage</dt><dd class="pass-unconfirmed">Confirm directly</dd></div><div><dt>Location</dt><dd>1903 S Arkansas Ave</dd></div></dl><a class="pass-action" href="#enterprise-rentals">Branch and contact details <span aria-hidden="true">↗</span></a></article></li>
+    </ol>
     <p class="compare-footnote"><strong>“Confirm directly” means not specified in this directory, not that the provider lacks the service.</strong> This is not a live inventory or price comparison. Ask each provider for availability, total charges, insurance, pickup arrangements and current terms.</p>
   </section>
   <section aria-labelledby="providers-title">
