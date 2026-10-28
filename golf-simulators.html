@@ -60,6 +60,42 @@ footer{margin-top:35px;padding:22px 0;border-top:1px solid var(--line);font-size
 @media(max-width:830px){.hero{grid-template-columns:1fr}.hero-art{max-width:420px;margin:auto}.local-card{grid-template-columns:1fr}.local-art{min-height:125px;flex-direction:row;align-items:center}.planning{grid-template-columns:1fr}}
 @media(max-width:650px){.header-inner{padding:18px 17px}.brand{font-size:1.02rem}.back{font-size:.72rem}main{padding:18px 16px 50px}.hero{padding:30px 24px;min-height:0;border-radius:19px}.hero-art{max-width:315px}.choice,.mobile-grid{grid-template-columns:1fr}.choice a{min-height:88px;padding:16px}.section-head{display:block;margin:37px 0 17px}.section-head p{margin-top:7px}.card-content{padding:24px}.local-art{padding:22px}.planning{padding:25px 22px}.planning ul{grid-template-columns:1fr}.card .links a{flex:1 1 155px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-actions a,.choice a,.card .links a{transition:none}.hero-actions a:hover,.choice a:hover,.card .links a:hover{transform:none}}
+
+/* Event-hour scorecard: a sample base-cost preview, not a reservation quote. */
+.quote-estimator{position:relative;isolation:isolate;overflow:hidden;margin:36px 0 0;padding:clamp(24px,4vw,38px);border:1px solid #b6d0b0;border-radius:22px;background:linear-gradient(125deg,#eff6e8,#e1eddb 70%,#d4e5d0);color:#173e2d}
+.quote-estimator:before{content:"";position:absolute;z-index:-1;width:350px;height:350px;right:-115px;top:-155px;border:1px solid #5c916240;border-radius:50%;box-shadow:0 0 0 42px #5c916215,0 0 0 84px #5c916210}
+.quote-header{display:flex;justify-content:space-between;align-items:start;gap:24px;margin-bottom:23px}
+.quote-header .kicker{display:block;margin:0 0 9px;color:#426b4d}
+.quote-header h2{font:400 clamp(1.75rem,3.1vw,2.4rem)/1.14 Georgia,serif;letter-spacing:-.035em;margin:0 0 11px;color:#153b2b}
+.quote-header p{font-size:.89rem;max-width:63ch;margin:0;color:#435e4c}
+.quote-stamp{flex:0 0 auto;display:grid;place-items:center;width:88px;height:88px;border:2px dashed #71977b;border-radius:50%;font:800 .65rem/1.5 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;text-align:center;transform:rotate(9deg);color:#285b40}
+.quote-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(270px,.95fr);gap:18px;align-items:stretch}
+.quote-input,.quote-receipt{border-radius:16px;padding:24px;background:#fff;border:1px solid #c9dbc6;box-shadow:0 10px 22px #153b2b0a}
+.quote-label{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.11em;font-weight:850;color:#41674d;margin-bottom:10px}
+.quote-options{display:none;flex-wrap:wrap;gap:9px}
+.quote-estimator[data-ready="true"] .quote-options{display:flex}
+.quote-options button{appearance:none;min-width:65px;min-height:48px;border:1px solid #a8c5ac;border-radius:9px;background:#f4f8f1;color:#1e4934;font:800 .93rem system-ui,sans-serif;cursor:pointer;transition:background .15s,border-color .15s,transform .15s}
+.quote-options button:hover{background:#e4f0dd;transform:translateY(-1px)}
+.quote-options button[aria-pressed="true"]{background:#153f30;color:#fff;border-color:#153f30}
+.quote-options button:focus-visible,.quote-receipt a:focus-visible{outline:3px solid #a96b16;outline-offset:4px}
+.quote-hint{font-size:.8rem;color:#506d58;line-height:1.55;margin:13px 0 0}
+.quote-track{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px;margin:24px 0 12px}
+.quote-track span{height:13px;background:#e0eadc;border-radius:4px;box-shadow:inset 0 0 0 1px #c5d7c0}
+.quote-track span.active{background:#4b855e;box-shadow:none}
+.quote-track-labels{display:flex;justify-content:space-between;gap:12px;font-size:.69rem;font-weight:750;color:#53715d}
+.quote-receipt{background:#173e30;color:#fff;border-color:#173e30}
+.quote-receipt .quote-label{color:#c7dfb9}
+.quote-line{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px dashed #ffffff55;font-size:.84rem}
+.quote-line strong{white-space:nowrap}
+.quote-total{display:block;font:400 clamp(2.6rem,5vw,3.8rem)/1.05 Georgia,serif;letter-spacing:-.05em;color:#f0d28b;margin:17px 0 4px}
+.quote-receipt .quote-caption{font-size:.77rem;color:#d5e6d5;margin:0 0 17px;line-height:1.55}
+.quote-receipt a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 15px;border-radius:9px;background:#f0d28b;color:#173b2d;text-decoration:none;font-size:.81rem;font-weight:850}
+.quote-receipt a:hover{background:#fff0bc}
+.quote-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:740px){.quote-grid{grid-template-columns:1fr}.quote-stamp{width:70px;height:70px;font-size:.55rem}.quote-header{gap:10px}.quote-input,.quote-receipt{padding:21px}}
+@media(max-width:410px){.quote-stamp{display:none}.quote-estimator{padding:20px}.quote-options button{flex:1 1 27%}}
+@media(prefers-reduced-motion:reduce){.quote-options button{transition:none}.quote-options button:hover{transform:none}}
+
 </style></head>
 <body><a class="skip" href="#main">Skip to rental options</a><header><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back" href="/">← Browse all rentals</a></div></header>
 <main id="main">
@@ -67,6 +103,47 @@ footer{margin-top:35px;padding:22px 0;border-top:1px solid var(--line);font-size
 <nav class="choice" aria-label="Choose a simulator rental type"><a href="#local"><span class="num" aria-hidden="true">01</span><span><strong>Play in Russellville</strong><small>Book a bay at a downtown location</small></span><span class="arrow" aria-hidden="true">↗</span></a><a href="#mobile"><span class="num" aria-hidden="true">02</span><span><strong>Bring golf to an event</strong><small>Ask regional operators about delivery</small></span><span class="arrow" aria-hidden="true">↗</span></a></nav>
 <section id="local" aria-labelledby="local-title"><div class="section-head"><div><span class="kicker">01 / Play on-site</span><h2 id="local-title">The Russellville option</h2></div><p>Permanent indoor simulator location</p></div><article class="card local-card"><div class="card-content"><span class="label">Local on-site experience</span><h3>Old Bank Golf — Russellville</h3><p>Book a golf simulator bay at its permanent downtown location, with courses, games and swing analysis. <strong>On-site bay reservations only; off-site simulator rentals are not advertised.</strong></p><p class="detail">216 W Main St, Russellville, AR · Local on-site experience</p><p class="links"><a href="tel:+14792195181">479-219-5181</a> · <a href="https://oldbankgolf.com/" target="_blank" rel="noopener noreferrer">Official reservations ↗</a></p></div><div class="local-art" aria-hidden="true"><span class="icon">◎</span><p>A round without leaving town.</p></div></article></section>
 <section id="mobile" aria-labelledby="mobile-title"><div class="section-head"><div><span class="kicker">02 / Bring the experience to you</span><h2 id="mobile-title">Mobile event simulators</h2></div><p>Russellville delivery not yet verified</p></div><div class="mobile-grid"><article class="card"><div class="card-top"><span>Central Arkansas · Mobile events</span><b aria-hidden="true">02</b></div><div class="card-content"><h3>Tee Time Willy's — Central Arkansas</h3><p>Officially offers a mobile golf simulator for private parties, corporate events and fundraisers, including on-site event support. Confirm its current quote and travel coverage.</p><div class="warning">Russellville delivery UNCONFIRMED. Ask about travel charges, setup space and dates.</div><p class="detail">Central Arkansas · Russellville delivery UNCONFIRMED</p><p class="links"><a href="https://teetimewillys.com/" target="_blank" rel="noopener noreferrer">Official event rental information ↗</a></p></div></article><article class="card"><div class="card-top"><span>Searcy · Mobile events</span><b aria-hidden="true">03</b></div><div class="card-content"><h3>Puttees — Searcy</h3><div class="rate"><strong>$100 / hour</strong><small>Three-hour minimum; mileage and setup fees extra</small></div><p>Mobile golf simulator and optional yard games for events. Official site lists $100 per hour with a three-hour minimum, plus mileage and applicable setup fees; confirm current pricing directly.</p><div class="warning">Russellville delivery UNCONFIRMED. Confirm total delivered cost.</div><p class="detail">Searcy, Arkansas · Russellville delivery UNCONFIRMED</p><p class="links"><a href="tel:+15018587136">501-858-7136</a> · <a href="https://puttees.org/" target="_blank" rel="noopener noreferrer">Official booking and rates ↗</a></p></div></article></div></section>
+
+<section class="quote-estimator" id="sample-budget" aria-labelledby="quote-title">
+<div class="quote-header"><div><span class="kicker">03 / Event budget preview</span><h2 id="quote-title">The event-hour scorecard.</h2><p>One mobile provider, Puttees, publishes an hourly starting rate. Explore example event lengths before asking for a delivered quote. <strong>This is not a booking tool or a confirmed total.</strong></p></div><div class="quote-stamp" aria-hidden="true">Sample<br>math<br>only</div></div>
+<div class="quote-grid">
+<div class="quote-input"><span class="quote-label" id="quote-length-label">Example event duration</span>
+<div class="quote-options" role="group" aria-labelledby="quote-length-label" aria-describedby="quote-instructions">
+<button type="button" data-hours="3" aria-pressed="true">3 hr</button><button type="button" data-hours="4" aria-pressed="false">4 hr</button><button type="button" data-hours="5" aria-pressed="false">5 hr</button><button type="button" data-hours="6" aria-pressed="false">6 hr</button>
+</div><p class="quote-hint" id="quote-instructions">Published three-hour minimum. These are illustrative durations, not confirmed available packages.</p>
+<div class="quote-track" aria-hidden="true"><span class="active"></span><span class="active"></span><span class="active"></span><span></span><span></span><span></span></div>
+<div class="quote-track-labels"><span>3-hour minimum</span><span>6-hour example</span></div></div>
+<div class="quote-receipt" aria-label="Illustrative Puttees base-price calculation">
+<span class="quote-label">Puttees · Published base rate</span>
+<div class="quote-line"><span>Advertised hourly rate</span><strong>$100 / hour</strong></div>
+<div class="quote-line"><span>Example duration</span><strong id="quote-hours">3 hours</strong></div>
+<strong class="quote-total" id="quote-total">$300</strong>
+<p class="quote-caption">Illustrative base amount <strong>before mileage, setup fees and any other applicable charges</strong>. Russellville delivery and availability are unconfirmed. Verify current pricing with Puttees.</p>
+<a href="https://puttees.org/" target="_blank" rel="noopener noreferrer">Request the actual quote ↗</a></div></div>
+<p class="quote-sr" id="quote-status" role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+
 <section class="planning" aria-labelledby="planning-title"><div><h2 id="planning-title">Before you book</h2><p>Check these details before reserving a bay or arranging an event.</p></div><ul><li>Is the experience on-site or delivered?</li><li>Is your date available?</li><li>What space and power are needed for mobile setup?</li><li>What is the total price including travel, minimum hours and setup?</li></ul></section>
 <p class="note">Independent directory. Verify current operating status, dates, rates, minimums, travel distance and delivery with each operator. <a href="sms:+14799707301">Suggest a correction</a>.</p><footer>Russellville.Rent · <a href="/">Return to homepage</a></footer>
-</main></body></html>
+</main>
+<script>
+(function(){
+var section=document.getElementById('sample-budget');if(!section)return;
+var buttons=Array.from(section.querySelectorAll('[data-hours]'));
+var total=section.querySelector('#quote-total');
+var hoursLabel=section.querySelector('#quote-hours');
+var status=section.querySelector('#quote-status');
+var bars=Array.from(section.querySelectorAll('.quote-track span'));
+function setHours(hours){
+buttons.forEach(function(button){button.setAttribute('aria-pressed',String(Number(button.dataset.hours)===hours));});
+hoursLabel.textContent=hours+' hours';
+total.textContent='</html>+(hours*100).toLocaleString('en-US');
+bars.forEach(function(bar,index){bar.classList.toggle('active',index<hours);});
+status.textContent=hours+'-hour example: </html>+(hours*100).toLocaleString('en-US')+' before additional fees. Not a quote.';
+}
+buttons.forEach(function(button){button.addEventListener('click',function(){setHours(Number(button.dataset.hours));});});
+section.setAttribute('data-ready','true');
+})();
+</script>
+
+</body></html>
