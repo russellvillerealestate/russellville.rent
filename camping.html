@@ -53,6 +53,40 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.79rem;col
 @media(max-width:860px){.stay-filters{grid-template-columns:repeat(2,minmax(0,1fr))}.stay-filter{min-height:122px}}
 @media(max-width:560px){.stay-filter-header{display:block}.stay-filter-note{display:block;margin-top:7px}.stay-filters{gap:8px}.stay-filter{padding:14px 12px;min-height:132px}.stay-number{font-size:1.8rem}.stay-filter strong{font-size:.82rem}.stay-filter small{font-size:.68rem}.listing-grid h2{font-size:1.38rem}}
 @media(prefers-reduced-motion:reduce){.stay-filter{transition:none}.stay-filter:hover{transform:none}}
+
+/* Campground planning board: optional in-browser saved destinations. */
+.trip-board[hidden],.trip-board-items[hidden],.trip-board-empty[hidden],.trip-board-fallback[hidden]{display:none!important}
+.trip-board{margin:22px 0 5px;padding:clamp(22px,4vw,35px);border:1px solid #d3dabb;border-radius:24px;background:radial-gradient(circle at 98% 0%,#f5d897a1,transparent 42%),linear-gradient(120deg,#fffdf4,#eef5eb);box-shadow:0 15px 35px #143d3312}
+.trip-board-top{display:flex;align-items:flex-start;justify-content:space-between;gap:22px}
+.trip-board-kicker{margin:0 0 7px;color:#765b2f;letter-spacing:.17em;text-transform:uppercase;font-size:.68rem;font-weight:850}
+.trip-board h2{margin:0;font:400 clamp(1.7rem,3vw,2.4rem)/1.12 Georgia,serif;color:#153a30;letter-spacing:-.04em}
+.trip-board-description{margin:10px 0 0;max-width:670px;color:#50675a;font-size:.87rem}
+.trip-board-meta{display:flex;flex-direction:column;align-items:flex-end;gap:10px;flex-shrink:0}
+.trip-board-count{font:400 1.3rem Georgia,serif;color:#1e4a37}
+.trip-board button{font-weight:800;cursor:pointer}
+.trip-board button:disabled{opacity:.5;cursor:default}
+.trip-board-meta button,.trip-board-copy{min-height:44px;padding:10px 15px;border-radius:9px;border:1px solid #afc5b4;background:#fff;color:#24543f}
+.trip-board-items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:21px}
+.trip-board-item{display:flex;flex-direction:column;min-width:0;padding:18px;border:1px solid #d5e2d3;border-radius:14px;background:#fff}
+.trip-board-item-label{font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#5b7564}
+.trip-board-item h3{font:400 1.23rem/1.28 Georgia,serif;letter-spacing:-.02em;margin:7px 0 17px;color:#173d33;overflow-wrap:anywhere}
+.trip-board-item-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:auto}
+.trip-board-item-actions a,.trip-board-item-actions button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 13px;border-radius:9px;border:1px solid #ccdfcf;background:#e9f2e7;color:#1b5941;text-decoration:none;font-size:.79rem;font-weight:800}
+.trip-board-item-actions button{background:white;border-color:#d7dacc;color:#5b6556}
+.trip-board-empty{margin:20px 0 0;padding:16px 19px;border:1px dashed #b5c8b2;border-radius:12px;background:#fffefa;color:#546a5c;font-size:.86rem}
+.trip-board-tools{display:flex;align-items:center;flex-wrap:wrap;gap:14px;margin-top:18px}
+.trip-board-copy{background:#194b3a;color:white;border-color:#194b3a}
+.trip-board-status{margin:0;color:#245842;font-size:.8rem;font-weight:700}
+.trip-board-fallback{width:100%;min-height:110px;margin-top:12px;padding:13px;border:1px solid #a9c3b0;border-radius:9px;background:white;color:#244837}
+.trip-save{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;min-height:44px;padding:9px 15px;margin:0 0 17px;border-radius:10px;border:1px solid #b4ceb8;background:#eaf4ea;color:#205b40;font-size:.79rem;font-weight:850;cursor:pointer;transition:background .2s}
+.trip-save:hover{background:#dbeedb}.trip-save[aria-pressed="true"]{background:#174b39;border-color:#174b39;color:white}
+.listing-grid article.is-trip-saved{border-color:#b59a5c;box-shadow:0 7px 29px #8e773e30}
+.trip-board a:focus-visible,.trip-board button:focus-visible,.trip-save:focus-visible{outline:3px solid #a5671b;outline-offset:4px}
+.trip-board h2:focus{outline:none}
+@media(max-width:700px){.trip-board-top{flex-direction:column}.trip-board-meta{width:100%;flex-direction:row;align-items:center;justify-content:space-between}.trip-board-items{grid-template-columns:1fr}}
+@media(max-width:380px){.trip-board-meta{flex-direction:column;align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){.trip-save{transition:none}}
+
 </style>
 </head>
 <body>
@@ -73,6 +107,15 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.79rem;col
     </div>
     <div class="finder-row"><div class="search-field"><label for="camp-search">Search campgrounds, towns, or amenities</label><input id="camp-search" type="search" placeholder="Try Pottsville, showers, or first-come" autocomplete="off"></div><button class="clear" id="clear-search" type="button">Show all places</button></div>
     <div class="suggestions" aria-label="Suggested searches"><span>EXPLORE</span><button type="button" data-search="Russellville" aria-pressed="false">Russellville</button><button type="button" data-search="Pottsville" aria-pressed="false">Pottsville</button><button type="button" data-search="State Park" aria-pressed="false">State parks</button><button type="button" data-search="first-come" aria-pressed="false">First-come sites</button></div>
+  </section>
+
+  <section id="camp-trip-board" class="trip-board" aria-labelledby="camp-trip-title" hidden>
+    <div class="trip-board-top"><div><p class="trip-board-kicker">Field notes / Your private trip board</p><h2 id="camp-trip-title" tabindex="-1">Make a weekend shortlist.</h2><p class="trip-board-description">Pin up to four places as you browse. Saved locally in this browser. This is a planning tool, not a reservation or availability check.</p></div>
+    <div class="trip-board-meta"><strong class="trip-board-count" id="camp-trip-count">0 / 4 saved</strong><button id="camp-trip-clear" type="button" disabled>Clear all</button></div></div>
+    <div id="camp-trip-items" class="trip-board-items" role="list" aria-label="Saved campground options" hidden></div>
+    <p id="camp-trip-empty" class="trip-board-empty">Choose “Save to trip plan” on any campground to collect your favorites here.</p>
+    <div class="trip-board-tools"><button id="camp-trip-copy" class="trip-board-copy" type="button" disabled>Copy trip list ↗</button><p id="camp-trip-status" class="trip-board-status" role="status" aria-live="polite"></p></div>
+    <textarea id="camp-trip-fallback" class="trip-board-fallback" readonly aria-label="Select and copy trip list" hidden></textarea>
   </section>
   <div class="directory-head"><div><p class="eyebrow" style="color:#7b693e">Explore the directory</p><h2>Find a place to stay</h2><p>Compare details and contact each operator to confirm availability.</p></div><span class="count" id="result-count" role="status" aria-live="polite">Showing 31 of 31 places</span></div>
   <div class="listing-grid" id="camp-list">
@@ -155,6 +198,81 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.79rem;col
   suggestions.forEach(button=>button.addEventListener('click',()=>{input.value=button.dataset.search;update();input.focus();}));
   typeButtons.forEach(button=>button.addEventListener('click',()=>{activeType=button.dataset.typeFilter;update();}));
   update();
+})();
+</script>
+<script>
+(function(){
+const board=document.getElementById('camp-trip-board');
+if(!board)return;
+const cards=Array.from(document.querySelectorAll('#camp-list article'));
+const get=id=>document.getElementById(id);
+const items=get('camp-trip-items'),count=get('camp-trip-count'),empty=get('camp-trip-empty');
+const clear=get('camp-trip-clear'),copy=get('camp-trip-copy'),status=get('camp-trip-status');
+const fallback=get('camp-trip-fallback'),title=get('camp-trip-title');
+const typeName={independent:'Independent stay',state:'State park',federal:'Federal campground'};
+const KEY='russellville.rent.camping.trip-board.v1',MAX=4,entries=new Map();
+let saved=[];
+function persist(){try{window.localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){/* Local storage optional. */}}
+function removeName(name){
+  saved=saved.filter(value=>value!==name);
+  persist();render('Removed '+name+'.');
+}
+function render(message){
+  items.replaceChildren();
+  for(const name of saved){
+    const entry=entries.get(name);if(!entry)continue;
+    const item=document.createElement('div'),label=document.createElement('span'),heading=document.createElement('h3');
+    const actions=document.createElement('div'),link=document.createElement('a'),remove=document.createElement('button');
+    item.className='trip-board-item';item.setAttribute('role','listitem');
+    label.className='trip-board-item-label';label.textContent=typeName[entry.card.dataset.type]||'Campground';
+    heading.textContent=name;actions.className='trip-board-item-actions';
+    link.href='#'+entry.card.id;link.textContent='View details ↗';
+    remove.type='button';remove.textContent='Remove';remove.setAttribute('aria-label','Remove '+name+' from trip plan');
+    remove.addEventListener('click',()=>{removeName(name);title.focus({preventScroll:true});});
+    actions.append(link,remove);item.append(label,heading,actions);items.append(item);
+  }
+  for(const [name,entry] of entries){
+    const active=saved.includes(name);
+    entry.button.setAttribute('aria-pressed',String(active));
+    entry.button.setAttribute('aria-label',(active?'Remove ':'Save ')+name+(active?' from':' to')+' trip plan');
+    entry.button.textContent=active?'✓ Saved to trip plan':'+ Save to trip plan';
+    entry.card.classList.toggle('is-trip-saved',active);
+  }
+  count.textContent=saved.length+' / '+MAX+' saved';
+  items.hidden=!saved.length;empty.hidden=!!saved.length;
+  clear.disabled=copy.disabled=!saved.length;fallback.hidden=true;
+  if(message!==undefined)status.textContent=message;
+}
+cards.forEach((card,index)=>{
+  const heading=card.querySelector('h2');if(!heading)return;
+  const name=heading.textContent.trim();if(!name||entries.has(name))return;
+  if(!card.id)card.id='camp-destination-'+(index+1);
+  const button=document.createElement('button');
+  button.type='button';button.className='trip-save';button.setAttribute('aria-pressed','false');
+  heading.insertAdjacentElement('afterend',button);
+  entries.set(name,{card,button});
+  button.addEventListener('click',()=>{
+    if(saved.includes(name))removeName(name);
+    else if(saved.length>=MAX)status.textContent='Your trip board holds four places. Remove one before saving another.';
+    else{saved.push(name);persist();render('Saved '+name+'.');}
+  });
+});
+try{
+  const old=JSON.parse(window.localStorage.getItem(KEY)||'[]');
+  if(Array.isArray(old))saved=[...new Set(old.filter(v=>typeof v==='string'&&entries.has(v)))].slice(0,MAX);
+}catch(e){/* Continue with empty shortlist. */}
+clear.addEventListener('click',()=>{saved=[];persist();render('Trip board cleared.');title.focus({preventScroll:true});});
+copy.addEventListener('click',async()=>{
+  const lines=['Russellville.Rent camping shortlist','Confirm fees, availability, access and booking terms with each operator.',''];
+  saved.forEach((name,i)=>lines.push((i+1)+'. '+name+' — '+(typeName[entries.get(name).card.dataset.type]||'Campground')));
+  lines.push('','Full listings: https://russellville.rent/camping.html');
+  const text=lines.join('\n');
+  try{
+    if(!navigator.clipboard?.writeText)throw new Error('Clipboard unavailable');
+    await navigator.clipboard.writeText(text);status.textContent='Trip list copied.';fallback.hidden=true;
+  }catch(e){fallback.hidden=false;fallback.value=text;fallback.focus();fallback.select();status.textContent='Select and copy the list shown below.';}
+});
+board.hidden=false;render();
 })();
 </script>
 </body>
