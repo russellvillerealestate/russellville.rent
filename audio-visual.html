@@ -128,6 +128,39 @@ footer a{font-weight:800}
 @media(max-width:520px){.brief-builder{padding:23px 15px;border-radius:19px;margin-top:43px}.brief-form,.brief-preview{padding:21px 17px}.brief-header h2{font-size:2rem}.brief-fields,.brief-options{grid-template-columns:1fr}.brief-location{grid-column:auto}.brief-stages{white-space:normal;font-size:.61rem}.brief-output{min-height:230px}}
 @media(prefers-reduced-motion:reduce){.brief-copy{transition:none}.brief-copy:hover{transform:none}}
 
+
+/* Task-first production signal board; original directory remains the source of detail. */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.service-map{padding-top:57px;scroll-margin-top:24px}
+.service-map-head{display:flex;justify-content:space-between;align-items:end;gap:28px}
+.service-map-head h2{font:400 clamp(2rem,4vw,3.2rem)/1.08 Georgia,"Times New Roman",serif;letter-spacing:-.05em;color:#173e33;margin:0}
+.service-map-head>p{max-width:39ch;margin:0 0 3px;color:#52685c;font-size:.9rem}
+.route-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;list-style:none;margin:25px 0 0;padding:0}
+.route-grid li{min-width:0}
+.route-card{display:flex;flex-direction:column;height:100%;min-height:273px;padding:21px;border:1px solid #cbd9cf;border-radius:17px;background:#fff;color:#173e33;text-decoration:none;box-shadow:0 8px 22px #12382c0b;transition:transform .2s,border-color .2s,box-shadow .2s}
+.route-card:hover{transform:translateY(-3px);border-color:#719781;box-shadow:0 16px 30px #12382c1c}
+.route-card:focus-visible{outline:3px solid #ad6114;outline-offset:4px}
+.route-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:22px}
+.route-number{font-size:.69rem;font-weight:850;letter-spacing:.14em;color:#537361}
+.route-led{display:inline-flex;gap:5px;align-items:center}
+.route-led i{display:block;width:7px;height:7px;border-radius:50%;background:#b8cdbd}
+.route-led i:first-child{background:#d5a75e}
+.route-card h3{font:400 1.42rem/1.17 Georgia,"Times New Roman",serif;letter-spacing:-.03em;margin:0 0 12px;color:inherit}
+.route-card p{font-size:.8rem;line-height:1.55;color:#52685c;margin:0 0 13px}
+.route-card .route-provider{font-size:.78rem;font-weight:850;color:#245741;margin:0 0 9px}
+.route-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:auto;padding-top:13px;border-top:1px solid #dce6dc;font-size:.72rem;line-height:1.4;font-weight:800;color:#285943}
+.route-foot span:last-child{font-size:1.18rem}
+.route-card.route-confirmed{background:linear-gradient(155deg,#1b4e3f,#12372e);border-color:#1b4e3f;color:#fff}
+.route-confirmed .route-number,.route-confirmed .route-provider,.route-confirmed .route-foot{color:#f0d39a}
+.route-confirmed p{color:#e2eee5}
+.route-confirmed .route-foot{border-color:#ffffff40}
+.route-confirmed .route-led i{background:#82a98d}
+.route-confirmed .route-led i:first-child{background:#f0d39a;box-shadow:0 0 0 4px #f0d39a24}
+.route-disclaimer{margin:14px 0 0;color:#52685c;font-size:.78rem}
+@media(max-width:1050px){.route-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.route-card{min-height:235px}}
+@media(max-width:650px){.service-map{padding-top:43px}.service-map-head{display:block}.service-map-head>p{margin-top:12px}.route-grid{grid-template-columns:1fr;gap:10px;margin-top:18px}.route-card{min-height:0;padding:20px}.route-top{margin-bottom:12px}.route-card h3{font-size:1.4rem}.route-card p{max-width:55ch}}
+@media(prefers-reduced-motion:reduce){.route-card{transition:none}.route-card:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -143,6 +176,34 @@ footer a{font-weight:800}
 <div class="guide-item"><strong>Verify before booking</strong><span>Equipment, dates, delivery and total cost</span></div>
 </div></div>
 <main class="shell" id="main">
+
+<section class="service-map" id="service-map" aria-labelledby="service-map-title">
+  <div class="service-map-head"><div><p class="kicker">The production signal board / Start with your need</p><h2 id="service-map-title">What kind of event support?</h2></div><p>Four service paths, based on what each provider advertises. Select a card to review its details and confirmation status.</p></div>
+  <ol class="route-grid" aria-label="Explore event equipment and production service types">
+    <li><a class="route-card route-confirmed" href="#provider-1">
+      <span class="route-top"><span class="route-number">CHANNEL 01</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
+      <h3>Equipment without a DJ</h3><p class="route-provider">Roots &amp; Rhythm Rentals</p><p>Speakers, microphones and lighting available as equipment-only rentals. Russellville delivery and setup advertised for an extra fee.</p>
+      <span class="route-foot"><span>Russellville delivery advertised</span><span aria-hidden="true">↗</span></span>
+    </a></li>
+    <li><a class="route-card " href="#provider-2">
+      <span class="route-top"><span class="route-number">CHANNEL 02</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
+      <h3>Projection &amp; event gear</h3><p class="route-provider">A/V Arkansas</p><p>Projectors, screens, sound and event production advertised. Confirm equipment-only options and location-specific delivery.</p>
+      <span class="route-foot"><span>Russellville delivery unconfirmed</span><span aria-hidden="true">↗</span></span>
+    </a></li>
+    <li><a class="route-card " href="#provider-3">
+      <span class="route-top"><span class="route-number">CHANNEL 03</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
+      <h3>Wedding entertainment</h3><p class="route-provider">636 Entertainment</p><p>DJ-led packages with sound and event lighting advertised. Standalone equipment-only rental remains unconfirmed.</p>
+      <span class="route-foot"><span>Ask about package details</span><span aria-hidden="true">↗</span></span>
+    </a></li>
+    <li><a class="route-card " href="#provider-4">
+      <span class="route-top"><span class="route-number">CHANNEL 04</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
+      <h3>Full technical production</h3><p class="route-provider">CWP Productions</p><p>Professional setup and on-site technical support advertised. Equipment-only pickup and Russellville delivery are unconfirmed.</p>
+      <span class="route-foot"><span>Russellville delivery unconfirmed</span><span aria-hidden="true">↗</span></span>
+    </a></li>
+  </ol>
+  <p class="route-disclaimer">These are navigation suggestions, not recommendations of equipment suitability or confirmed inventory. Verify dates, delivery, total charges and rental terms with each provider.</p>
+</section>
+
 <section class="section" id="confirmed" aria-labelledby="confirmed-title"><div class="section-heading"><div><p class="kicker">01 / Start here</p><h2 class="section-title" id="confirmed-title">Russellville delivery advertised</h2></div><p class="section-intro">This provider explicitly offers delivery and setup to Russellville. Confirm your equipment list and final charges directly.</p></div>
 <article class="provider featured" id="provider-1">
 <div class="card-top"><span class="index" aria-hidden="true">01</span><span class="status confirmed">Russellville delivery confirmed</span></div>
