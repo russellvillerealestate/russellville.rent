@@ -28,7 +28,41 @@ h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing
 @media(max-width:850px){.hero-grid{grid-template-columns:1fr;padding-block:50px}.illustration{max-width:460px;margin-inline:auto}.jump-links{grid-template-columns:repeat(2,minmax(0,1fr))}.category-heading{display:block}.category-heading>p{margin-top:12px}}
 @media(max-width:640px){.wrap{width:min(100% - 32px,1140px)}.header-inner{min-height:68px}.brand{font-size:1.08rem}.back{font-size:.75rem}.hero-grid{padding-block:45px 36px;gap:20px}.illustration{max-width:350px}.jump-links{grid-template-columns:1fr 1fr}.jump-links a{font-size:.8rem;padding:12px;min-height:72px}.category{padding-top:46px}.cards,.cards--solo{grid-template-columns:1fr}.listing-card{padding:22px}.finder-inner{grid-template-columns:1fr}.finder button{justify-self:start}.search-status{grid-column:1}.directory-note{margin-top:40px}}
 @media(max-width:390px){.jump-links{grid-template-columns:1fr}.hero-actions .button{width:100%}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.listing-card{transition:none}.button:hover,.listing-card:hover{transform:none}}</style>
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.listing-card{transition:none}.button:hover,.listing-card:hover{transform:none}}
+/* Workspace rate gallery: a scan-friendly overview of one operator's published rates. */
+.workspace-menu{background:#eaf0ea;border-block:1px solid #d3e0d8;padding:clamp(38px,5vw,68px) 0 44px}
+.workspace-menu .wrap{width:min(1140px,calc(100% - 40px))}
+.workspace-menu-head{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(230px,.85fr);align-items:end;gap:24px;margin-bottom:25px}
+.workspace-menu-overline{margin:0 0 12px;color:#376559;font-size:.72rem;font-weight:850;letter-spacing:.15em;text-transform:uppercase}
+.workspace-menu h2{font:400 clamp(2rem,3.8vw,3.25rem)/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.045em;margin:0;max-width:17ch;color:#143b37}
+.workspace-menu-head>p{max-width:44ch;color:#47645b;font-size:.94rem;margin:0 0 3px}
+.workspace-menu-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;padding:0;margin:0;list-style:none;counter-reset:workspace}
+.workspace-menu-grid>li{min-width:0}
+.workspace-menu-card{position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:306px;height:100%;padding:23px 21px 19px;border:1px solid #d0ddd3;border-radius:17px;background:#fffdf7;color:#1d433a;text-decoration:none;box-shadow:0 12px 27px #133a3310;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.workspace-menu-card:hover{transform:translateY(-4px);box-shadow:0 18px 34px #133a3320;border-color:#83a99b}
+.workspace-menu-card:focus-visible{outline:3px solid #a65b20;outline-offset:4px}
+.workspace-menu-top{display:flex;justify-content:space-between;align-items:center;gap:8px;color:#53766a;font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;font-weight:850}
+.workspace-menu-mark{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:#e5efe5;color:#285a4a;font:400 1.65rem/1 Georgia,serif;letter-spacing:0}
+.workspace-menu-price{display:block;margin:29px 0 8px;color:#143c33;font:400 clamp(2.15rem,3vw,2.8rem)/1 Georgia,"Times New Roman",serif;letter-spacing:-.055em}
+.workspace-menu-price small{font:700 .78rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:0;color:#61756a}
+.workspace-menu-name{display:block;font-size:1.04rem;line-height:1.3;font-weight:850;letter-spacing:-.025em}
+.workspace-menu-detail{display:block;margin:9px 0 21px;color:#52695e;font-size:.79rem;line-height:1.55}
+.workspace-menu-link{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;border-top:1px solid #e2e8df;padding-top:13px;color:#245b4b;font-size:.77rem;font-weight:850}
+.workspace-menu-card--office{background:linear-gradient(145deg,#153e3b,#0d2e34);border-color:#1d5550;color:#fff}
+.workspace-menu-card--office .workspace-menu-top{color:#c8ded3}
+.workspace-menu-card--office .workspace-menu-mark{background:#f1cc8f;color:#193b35}
+.workspace-menu-card--office .workspace-menu-price{color:#f7d59a}
+.workspace-menu-card--office .workspace-menu-price small{color:#d7e7dc}
+.workspace-menu-card--office .workspace-menu-detail{color:#d8e8df}
+.workspace-menu-card--office .workspace-menu-link{color:#f8dba7;border-color:#ffffff35}
+.workspace-menu-note{margin:18px 0 0;color:#4b6459;font-size:.82rem;max-width:104ch}
+.workspace-menu-note strong{color:#1c463b}
+@media(max-width:940px){.workspace-menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.workspace-menu-card{min-height:270px}.workspace-menu-price{margin-top:19px}}
+@media(max-width:600px){.workspace-menu{padding:36px 0 35px}.workspace-menu-head{grid-template-columns:1fr;gap:14px}.workspace-menu h2{max-width:20ch}.workspace-menu-grid{gap:11px}.workspace-menu-card{padding:19px 16px 16px;min-height:265px}.workspace-menu-price{font-size:2.1rem}.workspace-menu-mark{width:35px;height:35px;font-size:1.4rem}.workspace-menu-detail{font-size:.75rem}}
+@media(max-width:420px){.workspace-menu-grid{grid-template-columns:1fr}.workspace-menu-card{min-height:0;padding:19px 21px}.workspace-menu-price{margin:17px 0 8px}.workspace-menu-detail{margin-bottom:14px}}
+@media(prefers-reduced-motion:reduce){.workspace-menu-card{transition:none}.workspace-menu-card:hover{transform:none}}
+
+</style>
 </head>
 <body>
 <a class="skip" href="#coworking">Skip to rental listings</a>
@@ -43,6 +77,22 @@ h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing
 <rect x="361" y="242" width="40" height="46" rx="5" fill="#fff9ed"/><path d="M401 249c23 0 20 31 0 31" stroke="#fff9ed" stroke-width="8" fill="none"/><path d="M139 290v-62" stroke="#2f6758" stroke-width="6"/><path d="M139 248c-53-6-44-49 0-37 38-41 70-6 20 29 36 13 18 44-20 8z" fill="#3d8369"/>
 <ellipse cx="270" cy="373" rx="210" ry="9" fill="#071b24" opacity=".18"/></svg></div></div></section>
 <nav class="quick-nav" id="workspace-types" aria-label="Workspace types"><div class="wrap"><p class="quick-nav-title">What kind of space do you need?</p><div class="jump-links"><a href="#coworking">Coworking & flexible desks<span aria-hidden="true">↗</span></a><a href="#offices">Private offices & suites<span aria-hidden="true">↗</span></a><a href="#meetings">Meeting & conference rooms<span aria-hidden="true">↗</span></a><a href="#mobile">Mobile jobsite offices<span aria-hidden="true">↗</span></a></div></div></nav>
+
+<section class="workspace-menu" aria-labelledby="workspace-menu-title">
+  <div class="wrap">
+    <div class="workspace-menu-head">
+      <div><p class="workspace-menu-overline">The workspace menu / Published local rates</p><h2 id="workspace-menu-title">From one workday to a room of your own.</h2></div>
+      <p>Four ways to work, shown using <strong>Co-Create Innovation Hub's advertised prices</strong>. Browse by commitment, then check the provider details and current availability.</p>
+    </div>
+    <ol class="workspace-menu-grid" aria-label="Co-Create published workspace options">
+      <li><a class="workspace-menu-card" href="#coworking"><span class="workspace-menu-top">01 / Drop in <span class="workspace-menu-mark" aria-hidden="true">☼</span></span><strong class="workspace-menu-price">$25 <small>/ day</small></strong><span class="workspace-menu-name">Coworking day pass</span><span class="workspace-menu-detail">A single workday without a monthly commitment.</span><span class="workspace-menu-link">See provider details <span aria-hidden="true">↗</span></span></a></li>
+      <li><a class="workspace-menu-card" href="#coworking"><span class="workspace-menu-top">02 / Join in <span class="workspace-menu-mark" aria-hidden="true">✳</span></span><strong class="workspace-menu-price">$100 <small>/ month</small></strong><span class="workspace-menu-name">Coworking membership</span><span class="workspace-menu-detail">A published monthly coworking option; confirm included access.</span><span class="workspace-menu-link">See provider details <span aria-hidden="true">↗</span></span></a></li>
+      <li><a class="workspace-menu-card" href="#coworking"><span class="workspace-menu-top">03 / Settle in <span class="workspace-menu-mark" aria-hidden="true">▤</span></span><strong class="workspace-menu-price">$250 <small>/ month</small></strong><span class="workspace-menu-name">Dedicated desk</span><span class="workspace-menu-detail">A dedicated workspace at the operator's published monthly rate.</span><span class="workspace-menu-link">See provider details <span aria-hidden="true">↗</span></span></a></li>
+      <li><a class="workspace-menu-card workspace-menu-card--office" href="#coworking"><span class="workspace-menu-top">04 / Close the door <span class="workspace-menu-mark" aria-hidden="true">▣</span></span><strong class="workspace-menu-price">$550 <small>/ month starting</small></strong><span class="workspace-menu-name">Private furnished office</span><span class="workspace-menu-detail">Small (1–2 people) $550; medium (2–4) $750; large (4+) $950 per month.</span><span class="workspace-menu-link">See provider details <span aria-hidden="true">↗</span></span></a></li>
+    </ol>
+    <p class="workspace-menu-note"><strong>Price guide, not a booking offer.</strong> These are published rates for Co-Create only, not prices for every provider on this page. Availability, eligibility, fees and final terms must be confirmed with the operator. Meeting-room options and other office listings appear below.</p>
+  </div>
+</section>
 <div class="finder" role="search"><div class="wrap finder-inner"><div><label for="space-search">Search these workspace listings</label><input type="search" id="space-search" placeholder="Try “conference”, “downtown” or a provider" autocomplete="off"></div><button id="clear-search" type="button" hidden>Clear search</button><p id="search-status" class="search-status" role="status" aria-live="polite"></p></div></div>
 <section class="category wrap" id="coworking" aria-labelledby="coworking-title">
 <div class="category-heading"><div><p class="section-kicker">01 / Flexible workspace</p><h2 id="coworking-title">Coworking & flexible desks</h2></div><p>Drop-in workdays, dedicated desks and flexible spaces.</p></div>
