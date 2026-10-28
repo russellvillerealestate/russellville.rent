@@ -84,6 +84,33 @@ footer a{font-weight:700}
 @media(max-width:900px){.hero-inner{grid-template-columns:1fr 1fr;min-height:400px}.hero h1{font-size:clamp(2.9rem,6vw,4.4rem)}.hero-art:before{width:250px;height:250px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card-description{min-height:0}}
 @media(max-width:650px){.wrap{width:min(100% - 32px,1100px)}.header-inner{min-height:66px}.brand{font-size:1.13rem}.back{font-size:.72rem;padding:9px 11px}.hero{border-radius:0 0 19px 19px}.hero-inner{grid-template-columns:1fr;gap:5px;padding:44px 0 34px}.hero h1{font-size:clamp(2.95rem,12vw,4.2rem)}.hero-copy{font-size:.95rem}.hero-art{min-height:215px;max-width:430px;width:100%;margin:auto}.hero-art svg{max-width:340px}.hero-art:before{width:190px;height:190px}.route-label{right:0;bottom:0;font-size:.58rem}.intro-strip{display:block;padding:18px 0}.intro-strip span{display:block;margin-top:5px}.section-head{margin:37px 0 18px;display:block}.section-number{display:block;margin-top:13px}.grid{grid-template-columns:1fr}.card-top{min-height:120px}.card-body{padding:22px}.checklist{padding:26px 22px}.check-grid{grid-template-columns:1fr}.contact{display:block;padding:27px 24px}.contact .button{margin-top:20px}.contact h2{font-size:1.9rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.card{transition:none}.button:hover,.card:hover{transform:none}}
+
+/* Editorial rental desk: transparent facts rather than assumed inventory. */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.compare-board{margin:38px 0 12px;padding:clamp(24px,4vw,40px);border:1px solid #cbd9cf;border-radius:23px;background:linear-gradient(145deg,#e5eee5,#f3f3e9 64%,#f9f5e9);box-shadow:0 17px 35px #153d3210}
+.compare-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:19px}
+.compare-head .eyebrow{color:#436b52;margin-bottom:8px}
+.compare-head h2{font:400 clamp(1.85rem,3.2vw,2.75rem)/1.13 Georgia,"Times New Roman",serif;letter-spacing:-.04em;color:var(--pine);margin:0}
+.compare-head p{font-size:.85rem;color:#4a6256;max-width:38ch;margin:0}
+.compare-hint{display:none;font-size:.76rem;font-weight:750;color:#285b4b;margin:0 0 10px}
+.compare-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;border:1px solid #cfdbd0;border-radius:14px;background:#fff;scrollbar-color:#789f86 #e5eee5}
+.compare-scroll:focus-visible{outline:3px solid #a96b16;outline-offset:4px}
+.compare-table{border-collapse:separate;border-spacing:0;width:100%;min-width:750px;text-align:left;line-height:1.45;font-size:.83rem}
+.compare-table th,.compare-table td{padding:15px 17px;vertical-align:top;border-bottom:1px solid #e1e9e1}
+.compare-table thead th{background:#153d33;color:#fff;font-size:.86rem;line-height:1.35;font-weight:800}
+.compare-table thead th:first-child{background:#102f2b;color:#f0ca79}
+.compare-table tbody th{width:18%;min-width:130px;background:#f0f4ee;color:#315a48;font-size:.78rem;font-weight:800}
+.compare-table tbody tr:nth-child(even) td{background:#f8faf7}
+.compare-table tr:last-child th,.compare-table tr:last-child td{border-bottom:0}
+.compare-table th:not(:last-child),.compare-table td:not(:last-child){border-right:1px solid #e1e9e1}
+.compare-table a{color:#16573e;font-weight:800;text-underline-offset:4px}
+.compare-table .unknown{color:#59695e;font-style:italic}
+.compare-table .known{display:inline-block;border-radius:999px;background:#e4efe3;color:#225b3f;font-size:.68rem;font-weight:850;letter-spacing:.04em;padding:3px 9px;margin-bottom:5px}
+.compare-footnote{font-size:.79rem;color:#53665d;line-height:1.6;margin:15px 0 0}
+.compare-footnote strong{color:#21483b}
+#rental-ride,#cogswell-rentals,#enterprise-rentals{scroll-margin-top:26px}
+.card:target{outline:3px solid #a96b16;outline-offset:5px;box-shadow:0 16px 32px #143d3227}
+@media(max-width:750px){.compare-head{display:block}.compare-head p{margin-top:9px}.compare-hint{display:block}.compare-board{margin-top:27px;padding:23px 17px}.compare-table{min-width:720px}}
 </style>
 </head>
 <body>
@@ -124,24 +151,31 @@ footer a{font-weight:700}
 </div>
 <main id="main" class="wrap">
   <div class="intro-strip"><strong>Three rental providers serving Russellville</strong><span>Compare local contacts and ask each provider about current vehicles, availability, rates, insurance, and pickup arrangements.</span></div>
+
+  <section class="compare-board" aria-labelledby="compare-title">
+    <div class="compare-head"><div><p class="eyebrow">Rental desk / At a glance</p><h2 id="compare-title">Compare before you call.</h2></div><p>Three local contacts, one clear view of the details currently listed.</p></div>
+    <p class="compare-hint" id="compare-scroll-hint">Scroll sideways to compare all three providers →</p>
+    <div class="compare-scroll" role="region" tabindex="0" aria-label="Rental provider comparison, horizontally scrollable on small screens" aria-describedby="compare-scroll-hint"><table class="compare-table"><caption class="sr-only">Published car rental information for three Russellville providers. Unlisted terms require confirmation.</caption><thead><tr><th scope="col">What matters</th><th scope="col">24/7 Rent-A-Ride</th><th scope="col">Cogswell Motors Rentals</th><th scope="col">Enterprise Rent-A-Car</th></tr></thead><tbody><tr><th scope="row">Rental offering</th><td>Car rentals; specific vehicle classes not listed here.</td><td><span class="known">Vehicle types listed</span><br>Cars, trucks, minivans, sport utility vehicles and 15-passenger vans.</td><td>Local rental branch; specific vehicle classes not listed here.</td></tr><tr><th scope="row">Driver requirements</th><td class="unknown">Confirm directly</td><td><span class="known">Published terms</span><br>At least 21; valid driver's license and major credit card.</td><td class="unknown">Confirm directly</td></tr><tr><th scope="row">Included mileage</th><td class="unknown">Confirm directly</td><td><span class="known">Published standard allowance</span><br>200 miles/day, 1,400/week or 3,000/month, unless otherwise specified.</td><td class="unknown">Confirm directly</td></tr><tr><th scope="row">Russellville location</th><td>111 S Arkansas Ave</td><td>1900 E Main St</td><td>1903 S Arkansas Ave</td></tr><tr><th scope="row">Next step</th><td><a href="#rental-ride">View contact details ↗</a></td><td><a href="#cogswell-rentals">View rental terms &amp; contact ↗</a></td><td><a href="#enterprise-rentals">View branch details ↗</a></td></tr></tbody></table></div>
+    <p class="compare-footnote"><strong>“Confirm directly” means not specified in this directory, not that the provider lacks the service.</strong> This is not a live inventory or price comparison. Ask each provider for availability, total charges, insurance, pickup arrangements and current terms.</p>
+  </section>
   <section aria-labelledby="providers-title">
     <div class="section-head"><div><p class="eyebrow" style="color:#698167">Find a vehicle</p><h2 id="providers-title">Your rental options</h2><p>Start with a local provider and confirm the details directly before making plans.</p></div><span class="section-number">01 / Compare</span></div>
     <div class="grid">
-      <article class="card">
+      <article class="card" id="rental-ride">
         <div class="card-top"><span class="card-index" aria-hidden="true">01</span><p class="eyebrow">Locally based</p></div>
         <div class="card-body"><h3>24/7 Rent-A-Ride</h3><p class="card-description">A Russellville car-rental business offering vehicle rentals for local drivers and visitors.</p>
           <div class="details"><p><span class="label">Location</span>111 S Arkansas Ave<br>Russellville, AR 72801</p><p><span class="label">Phone</span><a href="tel:+14795672470">(479) 567-2470</a></p></div>
           <div class="actions"><a class="button dark" href="tel:+14795672470">Call about a rental <span aria-hidden="true">↗</span></a></div>
         </div>
       </article>
-      <article class="card">
+      <article class="card" id="cogswell-rentals">
         <div class="card-top"><span class="card-index" aria-hidden="true">02</span><p class="eyebrow">Local dealership rental desk</p></div>
         <div class="card-body"><h3>Cogswell Motors Rentals</h3><p class="card-description">Cars, trucks, minivans, sport utility vehicles, and 15-passenger vans. Official rental terms require drivers to be at least 21 with a valid driver&#39;s license and a major credit card. Standard included mileage is 200 miles/day, 1,400 miles/week or 3,000 miles/month unless otherwise specified. The operator advertises a 10% discount for corporate customers and nonprofit organizations (not combinable with other discounts) and after-hours service for an additional fee. Confirm the vehicle, final quote, insurance, mileage exceptions and availability directly.</p>
           <div class="details"><p><span class="label">Location</span>1900 E Main St<br>Russellville, AR 72801</p><p><span class="label">Rental phone</span><a href="tel:+14794982530">(479) 498-2530</a></p></div>
           <div class="actions"><a class="button dark" href="https://www.cogswellford.com/rental-department.html" target="_blank" rel="noopener noreferrer">Rental details <span aria-hidden="true">↗</span></a><a class="button outline" href="tel:+14794982530">Call</a></div>
         </div>
       </article>
-      <article class="card">
+      <article class="card" id="enterprise-rentals">
         <div class="card-top"><span class="card-index" aria-hidden="true">03</span><p class="eyebrow">National rental company, local branch</p></div>
         <div class="card-body"><h3>Enterprise Rent-A-Car</h3><p class="card-description">Russellville Sorells Body Shop branch. Contact the local office for rental availability and pickup arrangements.</p>
           <div class="details"><p><span class="label">Location</span>1903 S Arkansas Ave<br>Russellville, AR 72801</p><p><span class="label">Phone</span><a href="tel:+14799682779">(479) 968-2779</a></p></div>
