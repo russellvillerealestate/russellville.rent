@@ -70,6 +70,37 @@ footer{border-top:1px solid var(--line);padding-top:22px;margin-top:33px;color:v
 @media(max-width:850px){.hero{grid-template-columns:1fr;padding:35px}.hero-art{max-width:450px;justify-self:center;width:100%}.planning{grid-template-columns:1fr;gap:20px}}
 @media(max-width:620px){.header-inner{padding:17px 18px}.brand{font-size:1rem}.back{font-size:.72rem}main{padding:17px 16px 50px}.hero{padding:30px 23px;border-radius:19px;gap:5px}.hero-art svg{max-width:350px}.quick-facts{grid-template-columns:1fr}.quick-fact{padding:12px 17px}.quick-fact strong,.quick-fact span{display:inline}.quick-fact span{margin-left:9px}.section-head{display:block;margin-top:36px}.section-head p{margin-top:6px}.provider-grid{grid-template-columns:1fr}.provider-body{padding:22px}.provider-top{padding:15px 22px}.provider-actions{flex-direction:column}.action{width:100%}.planning{margin-top:33px;padding:24px 20px}.checklist{grid-template-columns:1fr}.note{padding:20px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-link,.action{transition:none}.hero-link:hover,.action:hover{transform:none}}
+
+/* Schematic service inquiry paths; no delivery routes or service areas are implied. */
+.delivery-board{margin-top:34px;padding:clamp(24px,4vw,40px);border-radius:23px;background:#102f2b;color:white;box-shadow:0 18px 38px #0d2d2920;position:relative;isolation:isolate;overflow:hidden}
+.delivery-board:before{content:"";position:absolute;right:-110px;top:-120px;width:400px;height:400px;border:1px solid #f0cc8235;border-radius:50%;box-shadow:0 0 0 55px #f0cc820a,0 0 0 110px #f0cc8208;z-index:-1;pointer-events:none}
+.delivery-heading{display:flex;justify-content:space-between;align-items:start;gap:22px;margin-bottom:24px}
+.delivery-heading .eyebrow{margin-bottom:9px}
+.delivery-heading h2{font:400 clamp(1.85rem,3.3vw,2.65rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.045em;margin:0 0 11px;text-wrap:balance}
+.delivery-heading p:not(.eyebrow){margin:0;max-width:690px;font-size:.9rem;color:#e3eee6}
+.delivery-flag{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;border:1px solid #f0cc8290;border-radius:30px;background:#f0cc821a;color:#ffe4b1;padding:10px 13px;font-size:.72rem;font-weight:800}
+.delivery-flag:before{content:"?";width:20px;height:20px;display:grid;place-items:center;border-radius:50%;background:#f0cc82;color:#102f2b}
+.delivery-diagram{display:grid;grid-template-columns:minmax(0,1.35fr) 92px minmax(180px,.7fr);gap:13px;align-items:center}
+.delivery-origins{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.delivery-origin{min-width:0;min-height:106px;display:flex;align-items:flex-start;gap:11px;padding:15px;border:1px solid #ffffff55;border-radius:13px;background:#ffffff12;color:white;text-decoration:none;transition:background .2s,border-color .2s,transform .2s}
+.delivery-origin:hover{background:#ffffff25;border-color:#f0cc82;transform:translateY(-2px)}
+.delivery-origin:focus-visible{outline:3px solid #f0cc82;outline-offset:4px}
+.delivery-index{flex:0 0 29px;display:grid;place-items:center;width:29px;height:29px;border-radius:50%;border:1px solid #f0cc82b0;color:#ffe4b1;font-size:.7rem;font-weight:800}
+.delivery-origin-text{min-width:0}
+.delivery-origin strong{display:block;font:400 clamp(1.1rem,1.8vw,1.4rem)/1.18 Georgia,serif;letter-spacing:-.02em}
+.delivery-origin small{display:block;color:#dce9de;font-size:.72rem;line-height:1.5;margin-top:7px}
+.delivery-gate{position:relative;display:grid;place-items:center;min-height:230px;text-align:center}
+.delivery-gate:before{content:"";position:absolute;left:0;right:0;top:50%;border-top:2px dashed #f0cc82ad}
+.delivery-gate span{position:relative;z-index:1;display:grid;place-items:center;width:79px;height:79px;border:2px solid #f0cc82;border-radius:50%;background:#244a3e;color:#ffe4b1;font-size:.72rem;font-weight:800;line-height:1.35}
+.delivery-destination{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:178px;padding:22px 15px;border-radius:17px;background:#f2e2bc;color:#173b32;text-align:center;box-shadow:inset 0 0 0 1px #ffffffa8}
+.delivery-pin{color:#326a51;font-size:2.1rem;line-height:1;margin-bottom:12px}
+.delivery-destination strong{font:400 clamp(1.35rem,2.3vw,1.75rem)/1.2 Georgia,serif}
+.delivery-destination small{font-size:.75rem;font-weight:800;color:#72431d;margin-top:8px}
+.delivery-caption{margin:16px 0 0;color:#d4e4d8;font-size:.75rem;line-height:1.55}
+.provider[id]{scroll-margin-top:22px}
+@media(max-width:850px){.delivery-heading{display:block}.delivery-flag{margin-top:17px}.delivery-diagram{grid-template-columns:minmax(0,1fr) 70px minmax(150px,.7fr);gap:8px}.delivery-origins{grid-template-columns:1fr}.delivery-origin{min-height:0}.delivery-gate span{width:66px;height:66px;font-size:.65rem}}
+@media(max-width:620px){.delivery-board{margin-top:22px;padding:26px 19px;border-radius:19px}.delivery-diagram{grid-template-columns:1fr;gap:0}.delivery-origin{padding:13px}.delivery-gate{min-height:72px}.delivery-gate:before{top:0;bottom:0;left:50%;right:auto;border-top:0;border-left:2px dashed #f0cc82ad}.delivery-gate span{width:88px;height:52px;border-radius:12px}.delivery-destination{min-height:122px}.delivery-caption{margin-top:13px}}
+@media(prefers-reduced-motion:reduce){.delivery-origin{transition:none}.delivery-origin:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -119,10 +150,25 @@ footer{border-top:1px solid var(--line);padding-top:22px;margin-top:33px;color:v
 <div class="quick-fact"><strong>Outside Russellville</strong><span>Conway, North Little Rock &amp; Hot Springs area</span></div>
 <div class="quick-fact"><strong>Delivery unconfirmed</strong><span>Ask before making plans</span></div>
 </div>
+
+<section class="delivery-board" aria-labelledby="delivery-title">
+<div class="delivery-heading"><div><p class="eyebrow">Delivery first · Four inquiry paths</p><h2 id="delivery-title">Start with the service-area question.</h2><p>These four providers are outside Russellville. Before choosing a cart, ask whether delivery or pickup works for your location. Select a starting point to jump to its provider contact.</p></div><span class="delivery-flag">Russellville delivery unconfirmed</span></div>
+<div class="delivery-diagram">
+<nav class="delivery-origins" aria-label="Jump to golf cart rental providers">
+<a class="delivery-origin" href="#provider-river-valley"><span class="delivery-index" aria-hidden="true">01</span><span class="delivery-origin-text"><strong>Conway</strong><small>River Valley Golf Carts · Contact details ↗</small></span></a>
+<a class="delivery-origin" href="#provider-arkansas-powersports"><span class="delivery-index" aria-hidden="true">02</span><span class="delivery-origin-text"><strong>North Little Rock</strong><small>Arkansas Golf &amp; Powersports · Contact details ↗</small></span></a>
+<a class="delivery-origin" href="#provider-clear-creek"><span class="delivery-index" aria-hidden="true">03</span><span class="delivery-origin-text"><strong>Hot Springs Village</strong><small>Clear Creek Golf Car · Contact details ↗</small></span></a>
+<a class="delivery-origin" href="#provider-kaptain-chris"><span class="delivery-index" aria-hidden="true">04</span><span class="delivery-origin-text"><strong>Hot Springs</strong><small>Kaptain Chris &amp; Pup's · Contact details ↗</small></span></a>
+</nav>
+<div class="delivery-gate" aria-hidden="true"><span>Ask about<br>delivery</span></div>
+<div class="delivery-destination"><span class="delivery-pin" aria-hidden="true">◎</span><strong>Russellville</strong><small>Service not verified</small></div>
+</div>
+<p class="delivery-caption">Conceptual inquiry diagram only—not a map, route, travel estimate or service-area guarantee. Confirm rental inventory, transport fees and terms with each provider.</p>
+</section>
 <section id="providers" aria-labelledby="providers-title">
 <div class="section-head"><h2 id="providers-title">Explore rental providers</h2><p>Contact providers to verify service in Russellville.</p></div>
 <div class="provider-grid">
-<article class="provider">
+<article class="provider" id="provider-river-valley">
 <div class="provider-top"><span class="location">Conway, Arkansas</span><span class="number" aria-hidden="true">01</span></div>
 <div class="provider-body">
 <h3>River Valley Golf Carts — Conway</h3>
@@ -132,7 +178,7 @@ footer{border-top:1px solid var(--line);padding-top:22px;margin-top:33px;color:v
 <div class="provider-actions"><a class="action action-primary" href="tel:+15012058000" aria-label="Call River Valley Golf Carts at 501-205-8000">Call 501-205-8000</a><a class="action action-secondary" href="https://rivervalleygolfcarts.com/golf-cart-rentals/" target="_blank" rel="noopener noreferrer">Official rental request ↗</a></div>
 </div>
 </article>
-<article class="provider">
+<article class="provider" id="provider-arkansas-powersports">
 <div class="provider-top"><span class="location">North Little Rock, Arkansas</span><span class="number" aria-hidden="true">02</span></div>
 <div class="provider-body">
 <h3>Arkansas Golf &amp; Powersports — North Little Rock</h3>
@@ -142,7 +188,7 @@ footer{border-top:1px solid var(--line);padding-top:22px;margin-top:33px;color:v
 <div class="provider-actions"><a class="action action-primary" href="tel:+15016900868" aria-label="Call Arkansas Golf and Powersports at 501-690-0868">Call 501-690-0868</a><a class="action action-secondary" href="https://www.arpowersports.com/rent-a-make--xrentals" target="_blank" rel="noopener noreferrer">Official rental inquiry ↗</a></div>
 </div>
 </article>
-<article class="provider">
+<article class="provider" id="provider-clear-creek">
 <div class="provider-top"><span class="location">Hot Springs Village, Arkansas</span><span class="number" aria-hidden="true">03</span></div>
 <div class="provider-body">
 <h3>Clear Creek Golf Car &amp; Utility Vehicles — Hot Springs Village</h3>
@@ -152,7 +198,7 @@ footer{border-top:1px solid var(--line);padding-top:22px;margin-top:33px;color:v
 <div class="provider-actions"><a class="action action-primary" href="tel:+15012424129" aria-label="Call Clear Creek Golf Car Hot Springs Village at 501-242-4129">Call 501-242-4129</a><a class="action action-secondary" href="https://www.clearcreekgolfcar.com/check-out-our--rental" target="_blank" rel="noopener noreferrer">Official rental program ↗</a><a class="action action-secondary" href="https://www.clearcreekgolfcar.com/map-hours-directions-golf-cars-dealership--hours-hot-springs-village" target="_blank" rel="noopener noreferrer">Official branch contact ↗</a></div>
 </div>
 </article>
-<article class="provider">
+<article class="provider" id="provider-kaptain-chris">
 <div class="provider-top"><span class="location">Hot Springs, Arkansas</span><span class="number" aria-hidden="true">04</span></div>
 <div class="provider-body">
 <h3>Kaptain Chris &amp; Pup's Family Outdoor Store — Hot Springs</h3>
