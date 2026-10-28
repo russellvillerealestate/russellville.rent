@@ -86,6 +86,45 @@ footer a{font-weight:750}
 @media(max-width:700px){.hero-inner{grid-template-columns:1fr;gap:10px;padding-block:47px 40px}.blueprint{max-width:470px;margin:auto}.truth-strip{grid-template-columns:1fr}.truth+.truth{border-left:0;border-top:1px solid var(--line)}.section-heading{display:block}.section-heading p:last-child{margin-top:13px}.providers{padding-block:49px 43px}}
 @media(max-width:540px){.wrap{width:min(100% - 30px,1120px)}header .wrap{min-height:68px}.brand{font-size:1.08rem}.back{font-size:.72rem;padding:8px 11px}.hero-inner{padding-top:39px}.blueprint{padding:4px 8px}.cards,.questions{grid-template-columns:1fr}.truth{padding:17px}.card-content{padding:23px}.checklist .wrap{padding-block:43px}footer .wrap{display:block}footer a{display:inline-block;margin-top:10px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.provider{transition:none}.button:hover,.provider:hover{transform:none}}
+
+/* Shed footprint studio: illustrative dimensions, never represented as dealer inventory. */
+.footprint-studio{padding:45px 0 12px;scroll-margin-top:24px}
+.studio-shell{overflow:hidden;border-radius:24px;background:#102f2b;color:#fff;box-shadow:0 20px 45px #0d292422}
+.studio-intro{padding:35px clamp(22px,4vw,45px) 24px;display:flex;align-items:end;justify-content:space-between;gap:25px}
+.studio-intro .eyebrow{margin-bottom:8px}
+.studio-intro h2{font-size:clamp(2rem,3.7vw,3.3rem);line-height:1.08;margin:0}
+.studio-intro p:last-child{max-width:43ch;color:#d5e7dd;font-size:.92rem;margin:0}
+.studio-workspace{display:grid;grid-template-columns:minmax(260px,.83fr) minmax(0,1.17fr);border-top:1px solid #ffffff24}
+.studio-controls{padding:28px clamp(22px,3vw,35px) 34px;border-right:1px solid #ffffff24}
+.studio-controls h3{font:400 1.38rem/1.25 Georgia,serif;letter-spacing:-.025em;margin:0 0 6px;color:#fff}
+.studio-controls>p{font-size:.84rem;color:#c7dbd0;margin:0 0 19px}
+.studio-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.studio-option{appearance:none;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:3px;min-width:0;min-height:90px;padding:14px 16px;background:#1c483d;color:#fff;border:2px solid #6a9582;border-radius:13px;text-align:left;cursor:pointer;font:inherit;transition:background .18s,border-color .18s,transform .18s}
+.studio-option strong{font-size:1.15rem;letter-spacing:-.035em;line-height:1.2}
+.studio-option small{font-size:.76rem;color:#d6e5d9}
+.studio-option:hover{background:#275d4d;transform:translateY(-2px)}
+.studio-option[aria-pressed="true"]{background:#f0d4a3;border-color:#f0d4a3;color:#16372c}
+.studio-option[aria-pressed="true"] small{color:#3d5b49}
+.studio-option:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.studio-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:21px}
+.studio-stat{padding:15px 16px;border:1px solid #ffffff30;border-radius:12px;background:#ffffff0b}
+.studio-stat span{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:#d0e4d7;font-weight:800}
+.studio-stat strong{display:block;font:400 clamp(1.45rem,2.5vw,2rem)/1.2 Georgia,serif;margin-top:7px;color:#f7dfb2}
+.studio-stat small{font-size:.76rem;color:#d6e5d9}
+.studio-cta{display:inline-flex;align-items:center;min-height:45px;margin-top:21px;padding:10px 16px;border-radius:9px;background:#f0d4a3;color:#16372c;text-decoration:none;font-size:.83rem;font-weight:850}
+.studio-cta:hover{background:#fff0cc}
+.studio-visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;white-space:nowrap;clip-path:inset(50%)}
+.studio-drawing{position:relative;min-width:0;display:grid;place-items:center;margin:0;padding:18px clamp(16px,3vw,34px) 25px;background:radial-gradient(circle at 50% 45%,#315e50,#21463d 70%)}
+.studio-drawing svg{display:block;width:min(100%,520px);height:auto}
+.studio-drawing .grid-label{font:700 15px system-ui,sans-serif;fill:#e4f0e7;letter-spacing:.04em}
+.studio-drawing .shed-label{font:800 18px system-ui,sans-serif;fill:#16372c}
+.studio-drawing .plot-label{font:600 12px system-ui,sans-serif;fill:#d1e3d8}
+.studio-drawing figcaption{max-width:54ch;text-align:center;font-size:.78rem;color:#d9e8dd;margin:0 auto}
+.studio-disclaimer{padding:17px clamp(22px,4vw,45px) 21px;border-top:1px solid #ffffff24;background:#0b2925;color:#d9e8dc;font-size:.8rem}
+.studio-disclaimer strong{color:#ffe3b0}
+@media(max-width:850px){.studio-intro{display:block}.studio-intro p:last-child{margin-top:12px}.studio-workspace{grid-template-columns:1fr}.studio-controls{border-right:0;border-bottom:1px solid #ffffff24}.studio-drawing{padding-top:8px}}
+@media(max-width:520px){.footprint-studio{padding-top:29px}.studio-shell{border-radius:18px}.studio-intro{padding:27px 22px 20px}.studio-controls{padding:22px}.studio-option{min-height:84px;padding:12px}.studio-stats{gap:9px}.studio-stat{padding:13px 11px}.studio-drawing{padding:8px 9px 20px}.studio-disclaimer{padding:16px 22px}}
+@media(prefers-reduced-motion:reduce){.studio-option{transition:none}.studio-option:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -112,6 +151,46 @@ footer a{font-weight:750}
 </svg><figcaption>Portable buildings · Rent-to-own options</figcaption></figure>
 </div></section>
 <div class="wrap truth-strip" aria-label="Important rental distinctions"><div class="truth"><span class="truth-icon" aria-hidden="true">01</span><div><strong>Rent-to-own arrangements</strong><small>Review ownership terms and total cost with the provider.</small></div></div><div class="truth"><span class="truth-icon" aria-hidden="true">02</span><div><strong>Not a self-storage facility</strong><small>Looking for a storage unit instead? <a href="/storage.html">Browse self-storage options ↗</a></small></div></div></div>
+
+<section class="footprint-studio wrap" id="footprint-studio" aria-labelledby="footprint-title">
+<div class="studio-shell">
+<div class="studio-intro"><div><p class="eyebrow">A visual planning tool · Example sizes</p><h2 id="footprint-title">Find your footprint.</h2></div><p>Compare how different shed dimensions change floor space, using one consistent scale. Then ask local dealers what they actually carry.</p></div>
+<div class="studio-workspace">
+<div class="studio-controls">
+<h3>Choose an example size</h3><p>All measurements are in feet. These are planning examples, not confirmed inventory.</p>
+<div class="studio-options" role="group" aria-label="Example shed footprints">
+<button type="button" class="studio-option" data-shed-size="8x10" aria-pressed="false"><strong>8 × 10 ft</strong><small>80 square feet</small></button>
+<button type="button" class="studio-option" data-shed-size="10x12" aria-pressed="true"><strong>10 × 12 ft</strong><small>120 square feet</small></button>
+<button type="button" class="studio-option" data-shed-size="12x16" aria-pressed="false"><strong>12 × 16 ft</strong><small>192 square feet</small></button>
+<button type="button" class="studio-option" data-shed-size="12x20" aria-pressed="false"><strong>12 × 20 ft</strong><small>240 square feet</small></button>
+</div>
+<div class="studio-stats">
+<div class="studio-stat"><span>Example floor area</span><strong id="shed-area">120 sq ft</strong><small>Exterior footprint</small></div>
+<div class="studio-stat"><span>Versus 8 × 10 ft</span><strong id="shed-difference">+40 sq ft</strong><small>Additional floor area</small></div>
+</div>
+<p id="shed-status" class="studio-visually-hidden" role="status" aria-live="polite">Selected example: 10 by 12 feet, 120 square feet.</p>
+<a class="studio-cta" href="#providers">Compare local shed dealers ↓</a>
+</div>
+<figure class="studio-drawing">
+<svg id="shed-diagram" viewBox="0 0 480 420" role="img" aria-labelledby="shed-diagram-title shed-diagram-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="shed-diagram-title">Scaled shed footprint comparison</title>
+<desc id="shed-diagram-desc">A 10 by 12 foot shed centered in an illustrative 20 by 24 foot reference grid. Each grid square represents one square foot.</desc>
+<defs><pattern id="shed-square-grid" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0H0V14" fill="none" stroke="#ffffff2b" stroke-width="1"/></pattern></defs>
+<text class="grid-label" x="240" y="28" text-anchor="middle">20 ft reference width</text>
+<text class="grid-label" x="62" y="210" text-anchor="middle" transform="rotate(-90 62 210)">24 ft reference depth</text>
+<rect x="100" y="42" width="280" height="336" rx="2" fill="url(#shed-square-grid)" stroke="#d7e6d5" stroke-width="2" stroke-dasharray="7 5"/>
+<rect id="shed-outline" x="170" y="126" width="140" height="168" rx="3" fill="#f0d4a3" stroke="#fff5db" stroke-width="3"/>
+<path id="shed-door" d="M220 294h40" stroke="#16372c" stroke-width="5" stroke-linecap="round"/>
+<text id="shed-size-label" class="shed-label" x="240" y="216" text-anchor="middle">10 × 12 ft</text>
+<text class="plot-label" x="240" y="400" text-anchor="middle">Each small square = 1 square foot</text>
+</svg>
+<figcaption>Scaled against the same 20 × 24 ft reference canvas; not a property survey or required clearance diagram.</figcaption>
+</figure>
+</div>
+<div class="studio-disclaimer"><strong>Before ordering:</strong> Confirm exact exterior dimensions, usable interior space, building availability, delivery access, foundation needs, setbacks and local requirements with the dealer and relevant authorities.</div>
+</div>
+</section>
+
 <section class="providers wrap" id="providers" aria-labelledby="providers-title"><div class="section-heading"><div><p class="eyebrow">Four dealer options serving the area</p><h2 id="providers-title">Compare portable building providers.</h2></div><p>Ask each provider about building availability, monthly payment terms, delivery, and the total cost to own.</p></div>
 <div class="cards">
 <article class="provider"><div class="card-top"><span class="card-index" aria-hidden="true">01</span><span class="card-area">Russellville storefront</span></div><div class="card-content"><h3>Derksen of Russellville – Sam's</h3><p class="description">Portable buildings available through month-to-month rent-to-own plans.</p><p class="address"><strong>Location</strong>3525 E Main St, Russellville, AR</p><div class="card-actions"><a class="button dark" href="tel:+14798806495">Call 479-880-6495 ↗</a><a class="button light" href="https://duvallsrusselville-east.com/rent-to-own/" target="_blank" rel="noopener noreferrer">Public provider information ↗</a></div></div></article>
@@ -122,4 +201,40 @@ footer a{font-weight:750}
 <section class="checklist" id="questions" aria-labelledby="questions-title"><div class="wrap"><div><p class="eyebrow">Before you commit</p><h2 id="questions-title">Four questions worth asking.</h2><p>Rent-to-own agreements can differ. Confirm the details directly before arranging a building or delivery.</p></div><div class="questions"><div class="question"><b>01 · TOTAL COST</b><strong>What will I pay in total if I complete the agreement?</strong></div><div class="question"><b>02 · DELIVERY</b><strong>Is delivery to my address available, and what does it cost?</strong></div><div class="question"><b>03 · OWNERSHIP</b><strong>When does ownership transfer, and what happens if I stop paying?</strong></div><div class="question"><b>04 · SITE READINESS</b><strong>What access, foundation, and site preparation are required?</strong></div></div></div></section>
 <aside class="notice wrap"><p><strong>Independent directory:</strong> Russellville.Rent is an independent directory. Some businesses are based outside Russellville, and delivery or business status may be unconfirmed. Please confirm operating status, service area, availability, pricing and terms directly with each provider. <a href="sms:+14799707301">Submit corrections</a>.</p></aside>
 </main><footer><div class="wrap"><span>© 2026 Russellville.Rent · Local rentals. Local connections.</span><a href="/">Return to all rental categories ↗</a></div></footer>
+
+<script>
+(() => {
+  const buttons = Array.from(document.querySelectorAll('[data-shed-size]'));
+  const outline = document.getElementById('shed-outline');
+  const door = document.getElementById('shed-door');
+  const label = document.getElementById('shed-size-label');
+  const area = document.getElementById('shed-area');
+  const difference = document.getElementById('shed-difference');
+  const status = document.getElementById('shed-status');
+  const description = document.getElementById('shed-diagram-desc');
+  const sizes = {'8x10':[8,10], '10x12':[10,12], '12x16':[12,16], '12x20':[12,20]};
+  function selectSize(key) {
+    if (!Object.prototype.hasOwnProperty.call(sizes, key)) return;
+    const [width, depth] = sizes[key];
+    const left = 100 + (20 - width) * 7;
+    const top = 42 + (24 - depth) * 7;
+    const bottom = top + depth * 14;
+    const squareFeet = width * depth;
+    outline.setAttribute('x', left);
+    outline.setAttribute('y', top);
+    outline.setAttribute('width', width * 14);
+    outline.setAttribute('height', depth * 14);
+    door.setAttribute('d', 'M' + (left + width * 5) + ' ' + bottom + 'h' + (width * 4));
+    label.setAttribute('x', left + width * 7);
+    label.setAttribute('y', top + depth * 7 + 6);
+    label.textContent = width + ' × ' + depth + ' ft';
+    area.textContent = squareFeet + ' sq ft';
+    difference.textContent = (squareFeet === 80 ? 'Same area' : '+' + (squareFeet - 80) + ' sq ft');
+    status.textContent = 'Selected example: ' + width + ' by ' + depth + ' feet, ' + squareFeet + ' square feet.';
+    description.textContent = 'A ' + width + ' by ' + depth + ' foot shed centered in an illustrative 20 by 24 foot reference grid. Each grid square represents one square foot.';
+    buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.shedSize === key)));
+  }
+  buttons.forEach(button => button.addEventListener('click', () => selectSize(button.dataset.shedSize)));
+})();
+</script>
 </body></html>
