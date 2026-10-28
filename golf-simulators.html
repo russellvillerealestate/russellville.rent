@@ -137,9 +137,9 @@ var bars=Array.from(section.querySelectorAll('.quote-track span'));
 function setHours(hours){
 buttons.forEach(function(button){button.setAttribute('aria-pressed',String(Number(button.dataset.hours)===hours));});
 hoursLabel.textContent=hours+' hours';
-total.textContent='</html>+(hours*100).toLocaleString('en-US');
+total.textContent='$'+(hours*100).toLocaleString('en-US');
 bars.forEach(function(bar,index){bar.classList.toggle('active',index<hours);});
-status.textContent=hours+'-hour example: </html>+(hours*100).toLocaleString('en-US')+' before additional fees. Not a quote.';
+status.textContent=hours+'-hour example: $'+(hours*100).toLocaleString('en-US')+' before additional fees. Not a quote.';
 }
 buttons.forEach(function(button){button.addEventListener('click',function(){setHours(Number(button.dataset.hours));});});
 section.setAttribute('data-ready','true');
