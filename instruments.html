@@ -113,6 +113,47 @@
       .note{padding:19px}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}.button:hover{transform:none}}
+
+    /* Program comparison: consistent, self-explanatory facts without unverified prices. */
+    .compare{margin:58px 0 12px;scroll-margin-top:30px}
+    .compare-heading{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(220px,.8fr);align-items:end;gap:24px;margin-bottom:24px}
+    .compare-heading .eyebrow{color:#526c55;margin-bottom:10px}
+    .compare-heading h2{margin:0;font:400 clamp(2.1rem,4.5vw,3.55rem)/1.08 Georgia,"Times New Roman",serif;letter-spacing:-.055em;text-wrap:balance}
+    .compare-heading h2 em{font-style:italic;color:#4b7259}
+    .compare-heading>p{margin:0 0 4px;color:var(--muted);font-size:.91rem;max-width:43ch}
+    .compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .compare-card{display:flex;flex-direction:column;min-width:0;border-radius:22px;padding:clamp(22px,3.4vw,36px);border:1px solid #cbd9ca;box-shadow:0 14px 32px #183d3410}
+    .compare-card--local{background:#123d34;color:#f9f7ee;border-color:#123d34}
+    .compare-card--regional{background:#fffdf7;color:#203d34}
+    .compare-top{display:flex;justify-content:space-between;align-items:start;gap:14px;margin-bottom:25px}
+    .compare-index{font-size:.69rem;letter-spacing:.15em;text-transform:uppercase;font-weight:850}
+    .compare-card--local .compare-index{color:#f1d18d}
+    .compare-card--regional .compare-index{color:#486c52}
+    .compare-emblem{display:grid;place-items:center;width:58px;height:58px;flex:0 0 58px;border:1px solid currentColor;border-radius:50%;font:400 2rem/1 Georgia,serif;opacity:.85}
+    .compare-card h3{font:400 clamp(1.65rem,2.6vw,2.15rem)/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.045em;margin:0 0 8px}
+    .compare-subtitle{font-size:.83rem;margin:0 0 22px;line-height:1.5}
+    .compare-card--local .compare-subtitle{color:#d7e7da}
+    .compare-card--regional .compare-subtitle{color:#536b5d}
+    .compare-facts{margin:0 0 26px}
+    .compare-facts>div{display:grid;grid-template-columns:minmax(112px,.43fr) minmax(0,1fr);gap:12px;padding:15px 0;border-top:1px solid}
+    .compare-card--local .compare-facts>div{border-color:#ffffff35}
+    .compare-card--regional .compare-facts>div{border-color:#dce6da}
+    .compare-facts dt{font-size:.7rem;font-weight:850;letter-spacing:.035em}
+    .compare-card--local .compare-facts dt{color:#f1d18d}
+    .compare-card--regional .compare-facts dt{color:#315e45}
+    .compare-facts dd{margin:0;font-size:.84rem;line-height:1.55}
+    .compare-cta{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:48px;margin-top:auto;padding:11px 16px;border-radius:10px;text-decoration:none;font-size:.84rem;font-weight:850;transition:transform .2s,background .2s}
+    .compare-card--local .compare-cta{background:#f0ca79;color:#12352d}
+    .compare-card--regional .compare-cta{background:#173f35;color:white}
+    .compare-cta:hover{transform:translateY(-2px)}
+    .compare-cta:focus-visible{outline:3px solid #b57517;outline-offset:4px}
+    .compare-card--local .compare-cta:focus-visible{outline-color:#fff}
+    .compare-note{margin:16px 0 0;color:#53695d;font-size:.79rem;line-height:1.6}
+    #cooper-music,#school-band-service{scroll-margin-top:30px}
+    #cooper-music:target,#school-band-service:target{outline:3px solid #aa6a19;outline-offset:5px}
+    @media(max-width:760px){.compare-heading{grid-template-columns:1fr;gap:10px}.compare-grid{grid-template-columns:1fr}.compare{margin-top:43px}}
+    @media(max-width:420px){.compare-card{padding:23px 20px}.compare-facts>div{grid-template-columns:1fr;gap:4px;padding:13px 0}.compare-emblem{width:48px;height:48px;flex-basis:48px;font-size:1.6rem}}
+    @media(prefers-reduced-motion:reduce){.compare-cta{transition:none}.compare-cta:hover{transform:none}}
   </style>
 </head>
 <body>
@@ -130,7 +171,7 @@
         <h1 id="page-title">A first note. <em>A lifelong sound.</em></h1>
         <p class="hero-lead">Explore band instrument rentals and rent-to-own programs for students. Compare a Russellville music store with a regional school-band provider, then confirm the terms before you commit.</p>
         <div class="hero-actions">
-          <a class="button button-gold" href="#providers">Compare programs <span aria-hidden="true">↘</span></a>
+          <a class="button button-gold" href="#compare-programs">Compare programs <span aria-hidden="true">↘</span></a>
           <a class="button button-outline" href="#questions">What to ask first <span aria-hidden="true">↗</span></a>
         </div>
       </div>
@@ -179,13 +220,50 @@
       <div><span class="mark" aria-hidden="true">03</span><span><strong>Know the difference</strong>Rent-to-own, not event audio</span></div>
     </div>
 
+
+    <section class="compare" id="compare-programs" aria-labelledby="compare-title">
+      <div class="compare-heading">
+        <div><p class="eyebrow">The program scorecard / Two options</p><h2 id="compare-title">Two paths to<br><em>the first note.</em></h2></div>
+        <p>Compare the practical differences before calling. Details marked “ask” are not confirmed, and neither program's live inventory or prices are shown here.</p>
+      </div>
+      <div class="compare-grid">
+        <article class="compare-card compare-card--local" aria-labelledby="compare-local-title">
+          <div class="compare-top"><span class="compare-index">01 / Russellville storefront</span><span class="compare-emblem" aria-hidden="true">♪</span></div>
+          <h3 id="compare-local-title">Cooper Music</h3>
+          <p class="compare-subtitle">A local place to begin your school-band rental conversation.</p>
+          <dl class="compare-facts">
+            <div><dt>Visit</dt><dd>Russellville storefront on West Main Street.</dd></div>
+            <div><dt>Program</dt><dd>Student and step-up rent-to-own options advertised.</dd></div>
+            <div><dt>School delivery</dt><dd>Published route includes Russellville, Pottsville and Dardanelle.</dd></div>
+            <div><dt>Repairs &amp; returns</dt><dd>Ask about coverage and return terms.</dd></div>
+            <div><dt>Ownership cost</dt><dd>Ask how payments count toward purchase and the total cost.</dd></div>
+          </dl>
+          <a class="compare-cta" href="#cooper-music">See local provider details <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="compare-card compare-card--regional" aria-labelledby="compare-regional-title">
+          <div class="compare-top"><span class="compare-index">02 / Regional school-band program</span><span class="compare-emblem" aria-hidden="true">♫</span></div>
+          <h3 id="compare-regional-title">Arkansas School Band Service</h3>
+          <p class="compare-subtitle">A regional program that explicitly advertises service to Russellville.</p>
+          <dl class="compare-facts">
+            <div><dt>Visit</dt><dd>Russellville storefront not verified; ask about pickup or delivery.</dd></div>
+            <div><dt>Program</dt><dd>Instrument rentals with payments credited toward purchase advertised.</dd></div>
+            <div><dt>School delivery</dt><dd>Russellville service advertised; confirm arrangements.</dd></div>
+            <div><dt>Repairs &amp; returns</dt><dd>Repair and replacement coverage and a return option advertised.</dd></div>
+            <div><dt>Ownership cost</dt><dd>Ask for the full cost, fees and purchase-credit terms.</dd></div>
+          </dl>
+          <a class="compare-cta" href="#school-band-service">See regional provider details <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+      <p class="compare-note">Summary of advertised programs, not a quote or guarantee. Confirm current instrument selection, availability, prices, eligibility and contract terms with each provider.</p>
+    </section>
+
     <section id="providers" aria-labelledby="providers-title">
       <div class="section-heading">
         <div><p class="eyebrow">Find your starting point</p><h2 id="providers-title">Compare band programs</h2></div>
         <p>Ask each provider about instrument availability and the exact payment agreement.</p>
       </div>
       <div class="provider-grid">
-        <article class="provider">
+        <article class="provider" id="cooper-music">
           <div class="provider-top"><span>01 / Local store</span><b>Russellville</b></div>
           <div class="provider-body">
             <h3>Cooper Music — Russellville</h3>
@@ -197,7 +275,7 @@
             <a class="button visit" href="https://coopermusic.com/instruments/" target="_blank" rel="noopener noreferrer">Official instruments and rental options <span aria-hidden="true">↗</span></a>
           </div>
         </article>
-        <article class="provider">
+        <article class="provider" id="school-band-service">
           <div class="provider-top"><span>02 / Regional program</span><b>Russellville served</b></div>
           <div class="provider-body">
             <h3>Arkansas School Band Service — Russellville service advertised</h3>
