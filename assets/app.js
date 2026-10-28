@@ -54,6 +54,7 @@ function apply(){
   if(sort==="beds")list.sort((a,b)=>(b.beds??0)-(a.beds??0));
   state.filtered=list;
   render();
+  renderSearchSummary();
 }
 function render(){
   $("listings").innerHTML=state.filtered.map(card).join("");
@@ -64,6 +65,102 @@ function render(){
   const managers=new Set(state.listings.map(x=>x.manager));
   $("managerCount").textContent=managers.size;
 }
+
+/* Shareable, removable search criteria. The existing listing index is unchanged. */
+const SEARCH_KEYS=["q","minRent","maxRent","beds","type","manager","sort"];
+function restoreSharedSearch(){
+  const params=new URLSearchParams(window.location.search);
+  SEARCH_KEYS.forEach(id=>{
+    if(!params.has(id))return;
+    const field=$(id),value=params.get(id);
+    if(id==="q"){field.value=value.slice(0,120);return;}
+    if(Array.from(field.options).some(option=>option.value===value))field.value=value;
+  });
+}
+function searchShareUrl(){
+  const url=new URL(window.location.href);
+  SEARCH_KEYS.forEach(id=>url.searchParams.delete(id));
+  SEARCH_KEYS.forEach(id=>{
+    const value=$(id).value.trim();
+    if(value && !(id==="sort" && value==="rent-asc"))url.searchParams.set(id,value);
+  });
+  url.hash="main";
+  return url.href;
+}
+function renderSearchSummary(){
+  const container=$("activeFilters");
+  if(!container)return;
+  const chips=[];
+  const q=$("q").value.trim(),min=$("minRent").value,max=$("maxRent").value;
+  if(q)chips.push({label:"Search: “"+q+"”",key:"q"});
+  if(min||max){
+    const price=min&&max?money(Number(min))+"–"+money(Number(max))+" / month":min?"From "+money(Number(min))+" / month":"Up to "+money(Number(max))+" / month";
+    chips.push({label:price,key:"rent"});
+  }
+  if($("beds").value)chips.push({label:$("beds").value+"+ bedrooms",key:"beds"});
+  for(const id of ["type","manager"]){
+    const field=$(id);
+    if(field.value)chips.push({label:(id==="type"?"Type: ":"Manager: ")+field.selectedOptions[0].textContent,key:id});
+  }
+  if($("sort").value!=="rent-asc")chips.push({label:"Sorted: "+$("sort").selectedOptions[0].textContent,key:"sort"});
+  const fragment=document.createDocumentFragment();
+  if(!chips.length){
+    const span=document.createElement("span");
+    span.className="search-chip search-chip--default";
+    span.textContent="All Russellville rentals";
+    fragment.appendChild(span);
+  }
+  chips.forEach(({label,key})=>{
+    const button=document.createElement("button");
+    button.type="button";
+    button.className="search-chip";
+    button.dataset.clear=key;
+    button.setAttribute("aria-label","Remove "+label+" filter");
+    const text=document.createElement("span");
+    text.textContent=label;
+    const close=document.createElement("span");
+    close.className="chip-close";
+    close.setAttribute("aria-hidden","true");
+    close.textContent="×";
+    button.append(text,close);
+    fragment.appendChild(button);
+  });
+  container.replaceChildren(fragment);
+}
+function bindSearchSummary(){
+  const copy=$("copySearch"),status=$("shareStatus"),fallback=$("shareFallbackWrap"),input=$("shareFallback"),chips=$("activeFilters");
+  if(!copy||!status||!fallback||!input||!chips)return;
+  copy.hidden=false;
+  chips.addEventListener("click",event=>{
+    const button=event.target.closest("button[data-clear]");
+    if(!button)return;
+    const key=button.dataset.clear;
+    if(key==="rent"){$("minRent").value="";$("maxRent").value="";}
+    else if(key==="sort")$("sort").value="rent-asc";
+    else if(SEARCH_KEYS.includes(key))$(key).value="";
+    else return;
+    const changed=key==="sort"?$("sort"):$("filters");
+    changed.dispatchEvent(new Event("change",{bubbles:true}));
+    status.textContent="";
+    fallback.hidden=true;
+  });
+  copy.addEventListener("click",async()=>{
+    const url=searchShareUrl();
+    try{
+      if(!navigator.clipboard||!navigator.clipboard.writeText)throw new Error("Clipboard unavailable");
+      await navigator.clipboard.writeText(url);
+      status.textContent="Search link copied. Share it to reopen these filters.";
+      fallback.hidden=true;
+    }catch(error){
+      input.value=url;
+      fallback.hidden=false;
+      input.focus();
+      input.select();
+      status.textContent="Copy the selected link manually.";
+    }
+  });
+}
+
 async function load(){
   try{
     const res=await fetch("data/listings.json",{cache:"no-store"});
@@ -72,6 +169,7 @@ async function load(){
     const managerSel=$("manager"), typeSel=$("type");
     [...new Set(state.listings.map(x=>x.manager))].sort().forEach(v=>managerSel.insertAdjacentHTML("beforeend",`<option value="${safe(v)}">${safe(v)}</option>`));
     [...new Set(state.listings.map(x=>x.type).filter(Boolean))].sort().forEach(v=>typeSel.insertAdjacentHTML("beforeend",`<option value="${safe(v)}">${safe(v)}</option>`));
+    restoreSharedSearch();
     state.filtered=[...state.listings];
     render();
     apply();
@@ -87,4 +185,5 @@ $("filters").addEventListener("change",apply);
 $("filters").addEventListener("reset",()=>setTimeout(apply,0));
 $("sort").addEventListener("change",apply);
 $("year").textContent=new Date().getFullYear();
+bindSearchSummary();
 load();
