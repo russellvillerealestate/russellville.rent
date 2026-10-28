@@ -41,6 +41,44 @@ h1{font:400 clamp(2.8rem,5.5vw,4.8rem)/1.08 Georgia,"Times New Roman",serif;lett
 @media(max-width:880px){.hero{grid-template-columns:1fr}.art{max-width:360px;justify-self:end;margin-top:-15px}.section-heading{display:block}.section-heading p{margin-top:9px}}
 @media(max-width:650px){main{padding:0 16px 45px}.nav{padding:18px 16px}.logo{font-size:1.05rem}.back{font-size:.73rem}.hero{padding:37px 23px 25px;border-radius:0 0 18px 18px}.hero-copy{font-size:.95rem}.art{max-width:290px}.overview{grid-template-columns:1fr;margin:17px 0 36px}.overview div{padding:13px 20px}.overview strong{display:inline;font-size:1.35rem;margin-right:8px}.overview span{display:inline}.grid,.guide ul{grid-template-columns:1fr}.number{flex-basis:48px;font-size:1.16rem}.card-content{padding:22px 17px}.group{margin-bottom:38px}.guide{padding:23px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.provider{transition:none}.provider:hover{transform:none}}
+
+/* A practical preflight call sheet, visually separate from the provider directory. */
+.preflight{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);overflow:hidden;border-radius:23px;background:#12392f;color:#f9f6e9;margin:12px 0 35px;box-shadow:0 18px 42px #12372b18}
+.preflight-intro{position:relative;isolation:isolate;padding:37px 34px;background:radial-gradient(circle at 85% 90%,#366a53 0,transparent 50%),#12392f}
+.preflight-intro:after{content:"";position:absolute;right:-75px;bottom:-100px;width:250px;height:250px;border:1px solid #d6e6c842;border-radius:50%;box-shadow:0 0 0 35px #d6e6c810,0 0 0 70px #d6e6c80b;z-index:-1}
+.preflight-intro .eyebrow{color:var(--gold)}
+.preflight h2{font:400 clamp(2rem,3.5vw,2.85rem)/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.045em;margin:0 0 19px}
+.preflight-intro p{color:#d5e4d9;font-size:.93rem;max-width:34ch;margin:0 0 23px}
+.preflight-stamp{display:inline-flex;align-items:center;gap:9px;border:1px solid #d8e9ce59;border-radius:999px;padding:9px 14px;color:#f4dc9e;font-size:.73rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.preflight-stamp svg{width:23px;height:23px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.preflight-panel{background:#fbfaf4;color:var(--ink);padding:30px 33px 29px}
+.preflight-progress-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:10px;font-size:.8rem;font-weight:800;color:#3e5b4d}
+.preflight-progress-head strong{color:#17553e}
+.preflight progress{display:block;appearance:none;width:100%;height:8px;border:0;border-radius:99px;overflow:hidden;background:#dbe7d9;margin:0 0 23px}
+.preflight progress::-webkit-progress-bar{background:#dbe7d9;border-radius:99px}
+.preflight progress::-webkit-progress-value{background:#297653;border-radius:99px;transition:width .2s}
+.preflight progress::-moz-progress-bar{background:#297653;border-radius:99px}
+.preflight fieldset{margin:0;padding:0;border:0;min-width:0}
+.preflight legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.preflight-check{display:grid;grid-template-columns:30px minmax(0,1fr);align-items:start;gap:14px;min-height:77px;padding:14px 0;border-top:1px solid #dce6d9;cursor:pointer}
+.preflight-check input{appearance:none;width:26px;height:26px;border:2px solid #739481;border-radius:7px;background:#fff;cursor:pointer;margin:2px 0 0;display:grid;place-items:center}
+.preflight-check input:checked{background:#206046;border-color:#206046}
+.preflight-check input:checked:after{content:"✓";color:#fff;font-size:18px;line-height:1;font-weight:900}
+.preflight-check input:focus-visible{outline:3px solid #ad6b14;outline-offset:4px}
+.preflight-check strong{display:block;font-size:.93rem;line-height:1.35;color:#174a37}
+.preflight-check small{display:block;color:#50675a;font-size:.81rem;line-height:1.5;margin-top:3px}
+.preflight-check input:checked+.preflight-check-text strong{color:#567467}
+.preflight-check input:checked+.preflight-check-text small{color:#66796e}
+.preflight-actions{display:flex;align-items:center;flex-wrap:wrap;gap:11px;margin-top:18px}
+.preflight-copy{border:0;background:#174b38;color:#fff;border-radius:9px;min-height:46px;padding:12px 17px;font:800 .83rem/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer}
+.preflight-copy:hover{background:#23664a}
+.preflight-copy:focus-visible{outline:3px solid #ad6b14;outline-offset:4px}
+.preflight-copy[hidden]{display:none}
+.preflight-feedback{font-size:.78rem;color:#496354;margin:0;min-height:1.4em}
+.preflight-fine{font-size:.76rem;color:#5c7063;margin:16px 0 0}
+@media(max-width:740px){.preflight{grid-template-columns:1fr}.preflight-intro{padding:29px 27px}.preflight-intro p{max-width:55ch}.preflight-panel{padding:23px 27px}}
+@media(max-width:440px){.preflight-intro,.preflight-panel{padding:24px 20px}.preflight h2{font-size:2rem}.preflight-progress-head{align-items:start}}
+@media(prefers-reduced-motion:reduce){.preflight progress::-webkit-progress-value{transition:none}}
 </style></head><body>
 <a class="skip-link" href="#main">Skip to trailer rentals</a>
 <header><nav class="nav" aria-label="Site navigation"><a class="logo" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← Browse all rentals</a></nav></header>
@@ -67,5 +105,58 @@ h1{font:400 clamp(2.8rem,5.5vw,4.8rem)/1.08 Georgia,"Times New Roman",serif;lett
 <section class="group" id="local" aria-labelledby="local-title"><div class="section-heading"><div><span class="eyebrow">01 / In Russellville</span><h2 id="local-title">Short-term trailer rentals</h2></div><p>Check the specific trailer type, pickup location, and towing requirements with each provider.</p></div><div class="grid"><article class="provider" id="provider-hauling"><div class="number" aria-hidden="true">01</div><div class="card-content"><p class="card-label">Russellville · Equipment rental</p><h3>White Trailer Rental</h3><p>Official rental inventory includes 20-foot car haulers (including a winch-equipped option), a 24-foot enclosed car hauler with winch, a 14-foot utility trailer, a 14-foot dump trailer, a 33-foot gooseneck, a 26-foot power-tilt deckover with winch, and a horse/stock trailer. Online booking and one-day, multiday and weekly rentals are advertised. Verify each trailer’s current availability, capacity, towing requirements, rates and booking terms with the operator.</p><p class="detail">Russellville, AR — pickup address UNCONFIRMED: the official site footer lists 3845 E Main St, while its contact page also lists 254 Park Rd. Confirm the correct pickup location before traveling.</p><p><a href="tel:+14795526080">479-552-6080</a> &nbsp; · &nbsp; <a href="https://whitetrailerrental.com/" target="_blank" rel="noopener noreferrer">Provider website ↗</a></p></div></article><article class="provider" id="provider-moving"><div class="number" aria-hidden="true">02</div><div class="card-content"><p class="card-label">Russellville · Moving and utility</p><h3>U-Haul Moving &amp; Storage of Russellville</h3><p>Moving and utility trailer rentals.</p><p class="detail">2821 E Main St, Russellville, AR 72802</p><p><a href="tel:+14794980933">479-498-0933</a> &nbsp; · &nbsp; <a href="https://www.uhaul.com/Locations/Trailer-Rentals-near-Russellville-AR-72802/742075/" target="_blank" rel="noopener noreferrer">Provider website ↗</a></p></div></article><article class="provider" id="provider-dump"><div class="number" aria-hidden="true">03</div><div class="card-content"><p class="card-label">Russellville · Equipment rental</p><h3>Central Rental &amp; Supply</h3><p>Official trailer catalog advertises 14-foot dump trailers, flatbed trailers from 10 to 20 feet (tilt options on some larger models), and tow/car dollies. The operator serves Russellville and Harrison; confirm which trailer models are available at the Russellville yard, along with towing requirements, rates and dates.</p><p class="detail">105 N Sidney Ave, Russellville, AR 72801</p><p><a href="tel:+14798907400">479-890-7400</a> &nbsp; · &nbsp; <a href="https://www.centralrentalandsupply.com/trailers" target="_blank" rel="noopener noreferrer">Official trailer catalog ↗</a></p></div></article></div></section>
 <section class="group" id="nearby" aria-labelledby="nearby-title"><div class="section-heading"><div><span class="eyebrow">02 / Across the river</span><h2 id="nearby-title">Dardanelle rental option</h2></div><p>Listed as a separate pickup location. Inventory at this dealer is not guaranteed.</p></div><div class="grid single"><article class="provider"><div class="number" aria-hidden="true">05</div><div class="card-content"><p class="card-label">Dardanelle · Nearby dealer</p><h3>U-Haul Neighborhood Dealer — Old Bank Gun &amp; Pawn (Dardanelle)</h3><p>Official U-Haul dealer with trailers and towing rentals, including the U-Haul network’s cargo, utility, car-hauler and motorcycle-trailer options. Individual trailer types and inventory at this dealer are not guaranteed; check the booking page for the requested date.</p><p class="detail">310 Union St, Dardanelle, AR 72834 · Mon–Fri 8:30 AM–5 PM; Sat 8:30 AM–noon; Sun closed (listed office hours)</p><p><a href="tel:+14792293223">479-229-3223</a> &nbsp; · &nbsp; <a href="https://www.uhaul.com/Locations/Truck-Rentals-near-Dardanelle-AR-72834/047231/" target="_blank" rel="noopener noreferrer">Official U-Haul Dardanelle dealer ↗</a></p></div></article></div></section>
 <section class="group" id="rent-to-own" aria-labelledby="program-title"><div class="section-heading"><div><span class="eyebrow">03 / Different agreement</span><h2 id="program-title">Rent-to-own, not short-term</h2></div><p>This dealer advertises a rent-to-own program, not a conventional short-term trailer rental.</p></div><div class="grid single"><article class="provider program"><div class="number" aria-hidden="true">04</div><div class="card-content"><p class="card-label">Russellville · Rent-to-own only</p><h3>Grace Pro Trailers — Rent-to-Own</h3><p>Russellville trailer dealer advertising a rent-to-own program alongside traditional purchase financing. Its inventory includes enclosed, cargo, concession and other trailers for sale; ask which models qualify for rent-to-own and confirm contract length, total cost, payment requirements and current eligibility directly. <strong>Not advertised as a short-term trailer rental.</strong></p><p class="detail">215 W Tacoma Ave, Russellville, AR 72801 · Local dealer; rent-to-own terms require confirmation</p><p><a href="tel:+14792808690">479-280-8690</a> &nbsp; · &nbsp; <a href="https://www.graceprotrailers.com/rent-to-own/" target="_blank" rel="noopener noreferrer">Official rent-to-own program ↗</a></p></div></article></div></section>
-<section class="guide" aria-labelledby="guide-title"><h2 id="guide-title">Before you reserve</h2><ul><li><strong>Confirm the trailer</strong>Ask about the exact model, capacity, dates and rate.</li><li><strong>Check your tow setup</strong>Verify hitch, vehicle towing capacity, insurance and other requirements.</li><li><strong>Verify the pickup</strong>Confirm the address and any deposit, return or delivery terms.</li></ul></section>
-<p class="note">Independent local directory. Information is drawn from public listings and may change. Some business services and contact details are not independently confirmed. Please confirm pricing, availability and terms directly with each provider. <a href="sms:+14799707301">Submit corrections</a>.</p><footer>Russellville.Rent · <a href="/">Return to homepage</a></footer></main></body></html>
+<section class="preflight" aria-labelledby="preflight-title">
+<div class="preflight-intro"><span class="eyebrow">Take the right questions with you</span><h2 id="preflight-title">Your trailer<br>rental call sheet.</h2><p>Four details worth confirming before you drive to a pickup location. Check off each question as the rental provider answers it.</p><span class="preflight-stamp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18M5 15h14l-2-6H7l-2 6ZM8 9V6h8v3M7 18a2 2 0 0 0 4 0m4 0a2 2 0 0 0 4 0"/></svg> Confirm before towing</span></div>
+<div class="preflight-panel"><div class="preflight-progress-head"><span>Questions addressed</span><strong id="preflight-count" role="status" aria-live="polite" aria-atomic="true">0 of 4</strong></div><progress id="preflight-meter" max="4" value="0" aria-label="Trailer rental questions addressed">0 of 4</progress>
+<fieldset id="preflight-questions"><legend>Trailer rental questions to ask</legend>
+<label class="preflight-check"><input type="checkbox" data-preflight><span class="preflight-check-text"><strong>Exact trailer &amp; rate</strong><small>Ask about model, load capacity, available dates and the complete rental price.</small></span></label>
+<label class="preflight-check"><input type="checkbox" data-preflight><span class="preflight-check-text"><strong>Tow vehicle compatibility</strong><small>Verify tow rating, hitch, ball, wiring, brakes and any provider requirements.</small></span></label>
+<label class="preflight-check"><input type="checkbox" data-preflight><span class="preflight-check-text"><strong>Correct pickup location</strong><small>Confirm the address and pickup window before traveling; online addresses can differ.</small></span></label>
+<label class="preflight-check"><input type="checkbox" data-preflight><span class="preflight-check-text"><strong>Insurance &amp; return terms</strong><small>Ask about deposits, insurance, return deadlines, cancellation and delivery charges.</small></span></label>
+</fieldset><div class="preflight-actions"><button class="preflight-copy" id="preflight-copy" type="button" hidden>Copy all four questions ↗</button><p class="preflight-feedback" id="preflight-feedback" role="status" aria-live="polite"></p></div><p class="preflight-fine">A planning aid, not a safety certification or reservation. Confirm your setup with the rental provider.</p></div></section>
+<p class="note">Independent local directory. Information is drawn from public listings and may change. Some business services and contact details are not independently confirmed. Please confirm pricing, availability and terms directly with each provider. <a href="sms:+14799707301">Submit corrections</a>.</p><footer>Russellville.Rent · <a href="/">Return to homepage</a></footer></main><script>
+(function(){
+  const boxes=Array.from(document.querySelectorAll('[data-preflight]'));
+  const count=document.getElementById('preflight-count');
+  const meter=document.getElementById('preflight-meter');
+  const copy=document.getElementById('preflight-copy');
+  const feedback=document.getElementById('preflight-feedback');
+  function update(){
+    const checked=boxes.filter(function(box){return box.checked;}).length;
+    count.textContent=checked+' of '+boxes.length;
+    meter.value=checked;
+    meter.textContent=checked+' of '+boxes.length;
+  }
+  boxes.forEach(function(box){box.addEventListener('change',update);});
+  const questions=[
+    'Which exact trailer model is available for my dates, what is its load capacity, and what is the complete rental price?',
+    'What tow vehicle rating, hitch, ball, wiring, brakes, and other towing requirements apply?',
+    'What is the correct pickup address and pickup window?',
+    'What are the insurance, deposit, return, cancellation, and delivery terms?'
+  ];
+  copy.hidden=false;
+  copy.addEventListener('click',async function(){
+    const message='Trailer rental questions:\n'+questions.map(function(q,i){return (i+1)+'. '+q;}).join('\n')+'\n\nConfirm all details directly with the rental provider.';
+    try{
+      if(navigator.clipboard && window.isSecureContext){
+        await navigator.clipboard.writeText(message);
+      }else{
+        const temp=document.createElement('textarea');
+        temp.value=message;
+        temp.setAttribute('readonly','');
+        temp.style.position='fixed';
+        temp.style.opacity='0';
+        document.body.appendChild(temp);
+        temp.select();
+        const copied=document.execCommand('copy');
+        temp.remove();
+        if(!copied)throw new Error('Copy unavailable');
+      }
+      feedback.textContent='Questions copied. Ready to paste into a message.';
+    }catch(error){
+      feedback.textContent='Copy unavailable here. You can use the questions above.';
+    }
+  });
+  update();
+})();
+</script></body></html>
