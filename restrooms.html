@@ -79,6 +79,38 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
 @media(max-width:580px){.wrap{width:min(100% - 28px,1110px)}.site-header .wrap{min-height:68px}.brand{font-size:1.13rem}.all-rentals{font-size:.76rem;padding:8px 12px}.hero-grid{padding:44px 0 60px}.hero h1{font-size:clamp(2.7rem,11vw,4rem)}.hero-intro{font-size:1rem}.jump-panel{grid-template-columns:1fr;margin-top:-21px}.jump-panel a{min-height:77px;padding:14px 20px}.jump-panel a+a{border-left:0;border-top:1px solid var(--line)}.section-head{align-items:start}.section-index{display:none}.provider{grid-template-columns:1fr}.provider-index{padding:11px 20px;font-size:1.2rem}.provider-content{padding:22px 20px}.provider-actions a{width:100%}.guide{padding:25px 20px;margin-top:48px}.guide-grid{grid-template-columns:1fr}.hero-art{width:min(390px,92%)}}
 @media(prefers-reduced-motion:no-preference){.hero-button,.provider,.provider-actions a,.jump-panel a{transition:transform .2s ease,background .2s ease,box-shadow .2s ease}.provider:hover{transform:translateY(-2px);box-shadow:0 14px 35px #163c2e1a}.hero-button:hover{transform:translateY(-2px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Event and jobsite planning board: an illustration, not a site specification. */
+.site-planner{margin:27px 0 10px;padding:clamp(24px,4vw,42px);background:#153c32;color:#f4f8ef;border-radius:23px;box-shadow:0 18px 40px #14382d18}
+.planner-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:25px}
+.planner-kicker{display:block;margin-bottom:9px;color:#f0d58e;font-size:.7rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
+.site-planner h2{font:400 clamp(1.85rem,3.4vw,2.7rem)/1.12 Georgia,serif;letter-spacing:-.04em;margin:0 0 10px}
+.site-planner h2 em{color:#f0d58e;font-weight:400}
+.planner-head p{margin:0;max-width:65ch;color:#d9e8da;font-size:.87rem;line-height:1.65}
+.planner-switch{display:flex;flex:0 0 auto;gap:6px;padding:6px;border:1px solid #a6c5ac55;border-radius:13px;background:#092e27}
+.planner-switch button{min-height:44px;padding:10px 16px;border:1px solid transparent;border-radius:9px;background:transparent;color:#f1f6ed;font:800 .8rem/1.2 system-ui,sans-serif;cursor:pointer}
+.planner-switch button[aria-pressed="true"]{background:#f0d58e;color:#16382d}
+.planner-switch button:hover:not([aria-pressed="true"]){background:#ffffff1b}
+.planner-switch button:focus-visible,.planner-link:focus-visible{outline:3px solid #f5d789;outline-offset:3px}
+.planner-body{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);gap:22px}
+.planner-map{min-width:0;margin:0}
+.planner-map-frame{overflow:hidden;border-radius:17px;border:1px solid #b7ceb8;background:#eaf0e4;box-shadow:inset 0 0 0 7px #ffffff50}
+.planner-map svg{display:block;width:100%;height:auto}
+.planner-map figcaption{margin:11px 2px 0;color:#d4e5d5;font-size:.75rem;line-height:1.55}
+.planner-notes{min-width:0;display:flex;flex-direction:column;padding:24px;border:1px solid #ffffff35;border-radius:17px;background:#ffffff0b}
+.planner-notes-head{margin:0 0 17px}
+.planner-notes-head span{display:block;margin-bottom:6px;font-size:.65rem;letter-spacing:.13em;font-weight:850;color:#f0d58e}
+.planner-notes-head strong{font:400 1.45rem/1.2 Georgia,serif;color:#fff}
+.planner-list{list-style:none;display:grid;gap:17px;margin:0 0 23px;padding:0}
+.planner-list li{display:grid;grid-template-columns:31px minmax(0,1fr);gap:12px}
+.planner-step{display:grid;place-items:center;width:31px;height:31px;border:1px solid #c6dfc275;border-radius:50%;color:#f0d58e;font-size:.7rem;font-weight:850}
+.planner-list strong{display:block;color:#fff;font-size:.91rem;line-height:1.35}
+.planner-list p{margin:4px 0 0;color:#d7e8da;font-size:.8rem;line-height:1.6}
+.planner-link{display:inline-flex;align-items:center;justify-content:center;min-height:47px;margin-top:auto;padding:11px 16px;border-radius:10px;background:#f0d58e;color:#173b30;text-decoration:none;font-size:.82rem;font-weight:850;text-align:center}
+.planner-link:hover{background:#ffe6a5}
+@media(max-width:850px){.planner-head{display:block}.planner-switch{display:inline-flex;margin-top:20px}.planner-body{grid-template-columns:1fr}.planner-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.planner-list li{grid-template-columns:1fr}}
+@media(max-width:580px){.site-planner{padding:23px 17px;margin-top:21px;border-radius:18px}.planner-switch{display:grid;grid-template-columns:1fr 1fr;width:100%}.planner-switch button{padding:10px 8px}.planner-body{gap:15px}.planner-notes{padding:22px}.planner-list{grid-template-columns:1fr}.planner-list li{grid-template-columns:31px 1fr}}
+
 </style>
 </head>
 <body>
@@ -126,6 +158,41 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
 <a href="#local"><span class="jump-count">01</span><span><strong>Russellville &amp; nearby</strong><small>Local listings and stated delivery</small></span></a>
 <a href="#regional"><span class="jump-count">02</span><span><strong>Regional options</strong><small>Confirm delivery and availability</small></span></a>
 </nav>
+
+<section class="site-planner" id="site-planner" aria-labelledby="site-planner-title">
+<div class="planner-head"><div><span class="planner-kicker">Field guide / Plan before delivery</span><h2 id="site-planner-title">Picture the setup <em>before you call.</em></h2><p>Choose an event or jobsite to explore placement questions. This sketch is illustrative, not a measured layout, accessibility certification, or equipment-count recommendation.</p></div>
+<div class="planner-switch" role="group" aria-label="Site planning scenario"><button type="button" data-site-mode="event" aria-pressed="true" aria-controls="planner-notes">Outdoor event</button><button type="button" data-site-mode="worksite" aria-pressed="false" aria-controls="planner-notes">Jobsite</button></div></div>
+<div class="planner-body">
+<figure class="planner-map"><div class="planner-map-frame">
+<svg viewBox="0 0 600 390" role="img" aria-labelledby="rr-plan-title rr-plan-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="rr-plan-title">Conceptual portable restroom site plan</title><desc id="rr-plan-desc">Overhead sketch showing an activity area, a path, portable restrooms, a handwashing station, and a service-vehicle approach. Not to scale.</desc>
+<defs><pattern id="rr-grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#c6d8c5" stroke-width="1"/></pattern></defs>
+<rect width="600" height="390" fill="#eaf0e4"/><rect width="600" height="390" fill="url(#rr-grid)"/>
+<text x="30" y="22" fill="#4b705a" font-family="system-ui,sans-serif" font-size="11" font-weight="850" letter-spacing="2">SITE SKETCH / NOT TO SCALE</text>
+<rect x="35" y="35" width="307" height="210" rx="22" fill="#d5e5d1" stroke="#87aa8c" stroke-width="3"/>
+<path d="M56 198Q128 113 205 151T320 91" fill="none" stroke="#a4c6a5" stroke-width="23" stroke-linecap="round"/>
+<circle cx="97" cy="92" r="18" fill="#b3d2b1"/><circle cx="278" cy="191" r="25" fill="#b3d2b1"/>
+<text id="rr-plan-area" x="185" y="77" text-anchor="middle" fill="#24523c" font-family="system-ui,sans-serif" font-size="17" font-weight="850" letter-spacing="1">GUEST AREA</text>
+<text x="185" y="101" text-anchor="middle" fill="#456d51" font-family="system-ui,sans-serif" font-size="12">Illustrative activity zone</text>
+<path d="M341 170H383V187H409" fill="none" stroke="#9c773d" stroke-width="6" stroke-dasharray="7 8" stroke-linecap="round"/>
+<text x="370" y="152" text-anchor="middle" fill="#77542c" font-family="system-ui,sans-serif" font-size="12" font-weight="800">PATH</text>
+<rect x="406" y="36" width="161" height="215" rx="18" fill="#fffaf0" stroke="#b8c9b5" stroke-width="2"/>
+<text x="486" y="63" text-anchor="middle" fill="#255442" font-family="system-ui,sans-serif" font-size="14" font-weight="850">RESTROOMS</text>
+<rect x="423" y="79" width="42" height="91" rx="7" fill="#2c7257"/><rect x="473" y="79" width="42" height="91" rx="7" fill="#2c7257"/><rect x="523" y="79" width="28" height="91" rx="7" fill="#2c7257"/>
+<path d="M435 92h18m-18 7h18m50-7h-18m18 7h-18" stroke="#c9e1cd" stroke-width="3" stroke-linecap="round"/>
+<rect x="424" y="188" width="128" height="45" rx="9" fill="#d7e8ed" stroke="#83aab1" stroke-width="2"/><circle cx="449" cy="210" r="8" fill="#6e9ea5"/><circle cx="476" cy="210" r="8" fill="#6e9ea5"/><text x="514" y="214" text-anchor="middle" fill="#2e6065" font-family="system-ui,sans-serif" font-size="11" font-weight="800">WASH</text>
+<path d="M486 251V292" stroke="#8b9c85" stroke-width="5" stroke-dasharray="6 7"/>
+<rect x="26" y="294" width="548" height="71" rx="4" fill="#c3d0c0" stroke="#8da78e" stroke-width="2"/><path d="M45 328H554" stroke="#fffdf0" stroke-width="4" stroke-dasharray="18 14"/>
+<text x="300" y="353" text-anchor="middle" fill="#2b5543" font-family="system-ui,sans-serif" font-size="13" font-weight="800" letter-spacing="1.5">SERVICE VEHICLE APPROACH</text>
+</svg></div><figcaption id="rr-plan-caption">Outdoor event example. Confirm placement, accessible access, ground conditions and servicing with the venue and provider.</figcaption></figure>
+<div class="planner-notes" id="planner-notes"><p class="planner-notes-head"><span>DISCUSS WITH THE PROVIDER</span><strong id="rr-plan-mode-title">Outdoor event</strong></p>
+<ol class="planner-list">
+<li><span class="planner-step" aria-hidden="true">01</span><div><strong id="rr-plan-q1">Guest access</strong><p id="rr-plan-a1">Discuss a convenient location that keeps circulation paths clear.</p></div></li>
+<li><span class="planner-step" aria-hidden="true">02</span><div><strong id="rr-plan-q2">Handwashing</strong><p id="rr-plan-a2">Ask about station availability and placement near the restroom area.</p></div></li>
+<li><span class="planner-step" aria-hidden="true">03</span><div><strong id="rr-plan-q3">Service approach</strong><p id="rr-plan-a3">Confirm delivery, pickup and servicing access before event day.</p></div></li>
+</ol><a class="planner-link" href="#local">Find nearby rental providers ↓</a></div></div>
+</section>
+
 <section class="section" id="local" aria-labelledby="local-title">
 <div class="section-head"><div><p class="section-kicker">Start close to home</p><h2 id="local-title">Russellville &amp; nearby</h2><p>Two Russellville-based listings plus a Dardanelle event-rental provider advertising Russellville service. Confirm each business’s current availability.</p></div><span class="section-index" aria-hidden="true">01</span></div>
 <div class="provider-list"><article class="provider"><div class="provider-index" aria-hidden="true">01</div><div class="provider-content"><p class="provider-tag">Russellville based</p><h3>Murdock Portable Toilets, Septic &amp; Storage</h3><p class="provider-description">Portable toilets, washing stations and storage containers.</p><p class="provider-area">Russellville, Arkansas</p><p class="provider-actions"><a href="tel:+14799681282">479-968-1282</a> · <a href="https://murdockportable.com/" target="_blank" rel="noopener noreferrer">Public provider information ↗</a></p></div></article>
@@ -148,5 +215,33 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
 <p class="note">Russellville.Rent is an independent directory. Some businesses are based outside Russellville, and delivery or business status may be unconfirmed. Please confirm operating status, service area, availability, pricing and terms directly with each provider. <a href="sms:+14799707301">Submit corrections</a>.</p>
 <footer class="site-footer"><span>Russellville.Rent · Independent rental directory</span><a href="/">Return to all rental categories</a></footer>
 </main>
+<script>
+
+(()=>{
+  const modes={
+    event:{area:"GUEST AREA",caption:"Outdoor event example. Confirm placement, accessible access, ground conditions and servicing with the venue and provider.",title:"Outdoor event",items:[
+      ["Guest access","Discuss a convenient location that keeps circulation paths clear."],
+      ["Handwashing","Ask about station availability and placement near the restroom area."],
+      ["Service approach","Confirm delivery, pickup and servicing access before event day."]]},
+    worksite:{area:"CREW AREA",caption:"Jobsite example. Confirm a safe location, ground conditions, crew access and service-vehicle approach with the operator.",title:"Jobsite",items:[
+      ["Crew access","Discuss a practical location that does not obstruct work or traffic."],
+      ["Site conditions","Ask about level ground, placement limits and servicing frequency."],
+      ["Truck approach","Confirm that delivery and service vehicles can reach the chosen area."]]}
+  };
+  const buttons=[...document.querySelectorAll("[data-site-mode]")];
+  function show(mode){
+    const content=modes[mode];if(!content)return;
+    document.getElementById("rr-plan-area").textContent=content.area;
+    document.getElementById("rr-plan-caption").textContent=content.caption;
+    document.getElementById("rr-plan-mode-title").textContent=content.title;
+    content.items.forEach((item,i)=>{
+      document.getElementById("rr-plan-q"+(i+1)).textContent=item[0];
+      document.getElementById("rr-plan-a"+(i+1)).textContent=item[1];
+    });
+    buttons.forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.siteMode===mode)));
+  }
+  buttons.forEach(button=>button.addEventListener("click",()=>show(button.dataset.siteMode)));
+})();
+</script>
 </body>
 </html>
