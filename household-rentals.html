@@ -83,6 +83,58 @@ h2{font-size:clamp(2.15rem,3.8vw,3.55rem);margin:0}
 footer{border-top:1px solid var(--line);padding:25px 0 37px;color:var(--muted);font-size:.83rem}
 footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
 footer a{font-weight:750;color:var(--forest)}
+
+/* Independent total-cost receipt worksheet */
+.cost-studio{padding-block:clamp(62px,8vw,100px);background:#f7f2e8;border-top:1px solid #e8dfd2}
+.cost-intro{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}
+.cost-intro .eyebrow{color:var(--clay-dark);margin-bottom:10px}
+.cost-intro h2{max-width:16ch}
+.cost-intro p:last-child{max-width:44ch;margin:0;color:#57675d;font-size:.94rem}
+.cost-workbench{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);align-items:stretch;border:1px solid #d6d8cc;border-radius:22px;overflow:hidden;background:#fffdf8;box-shadow:0 22px 55px #203d3015}
+.cost-entry{padding:clamp(26px,4vw,48px)}
+.cost-entry fieldset{border:0;margin:0;padding:0;min-width:0}
+.cost-entry legend{font-size:1.03rem;font-weight:850;color:#27453a;margin-bottom:22px}
+.cost-field{display:block;margin-bottom:19px}
+.cost-field label{display:block;font-size:.86rem;font-weight:800;line-height:1.4;margin-bottom:7px;color:#263f34}
+.cost-field label span{font-weight:500;color:#657569}
+.cost-field input{display:block;width:100%;min-height:50px;padding:11px 14px;background:white;border:1.5px solid #aab8aa;border-radius:9px;color:#173b2d;font:700 1.03rem/1.4 system-ui,sans-serif;font-variant-numeric:tabular-nums}
+.cost-field input:focus-visible,.cost-copy:focus-visible{outline:3px solid #a65e31;outline-offset:3px}
+.cost-field input[aria-invalid="true"]{border-color:#a54630;background:#fff6f2}
+.cost-field small{display:block;color:#5b6b60;font-size:.77rem;line-height:1.45;margin-top:5px}
+.cost-entry-note{margin:13px 0 0;color:#5d6e61;font-size:.8rem;line-height:1.6}
+.cost-receipt{position:relative;display:flex;flex-direction:column;min-width:0;padding:clamp(28px,4vw,48px);background:#173c33;color:#f8f7eb;isolation:isolate}
+.cost-receipt:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.2;z-index:-1;background:repeating-linear-gradient(0deg,transparent 0 32px,#a5c0aa20 32px 33px)}
+.cost-receipt:after{content:"";position:absolute;top:0;bottom:0;left:-7px;width:14px;background:radial-gradient(circle at 7px 10px,#fffdf8 0 6px,transparent 6.5px) 0 0/14px 24px repeat-y}
+.cost-receipt-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:19px;border-bottom:1px dashed #a8b8a77d;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:850;color:#c7dfca}
+.cost-receipt-top .cost-stamp{padding:5px 9px;border:1px solid #d2c7a17a;border-radius:4px;color:#f4d69d;transform:rotate(-3deg);white-space:nowrap}
+.cost-receipt h3{font:400 clamp(1.5rem,2.5vw,2.05rem)/1.15 Georgia,serif;letter-spacing:-.04em;margin:27px 0 8px}
+.cost-receipt .cost-caption{font-size:.84rem;color:#d4e2d6;margin:0 0 26px}
+.cost-receipt dl{margin:0}
+.cost-receipt .cost-row{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin:0 0 12px;font-size:.86rem}
+.cost-receipt dt{color:#d6e4d9}
+.cost-receipt dd{margin:0;font-weight:800;text-align:right;font-variant-numeric:tabular-nums}
+.cost-total-wrap{margin:18px 0 15px;padding:21px 0 22px;border-block:1px dashed #a8b8a77d}
+.cost-total-label{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#f3d5a0;font-weight:850;margin-bottom:6px}
+.cost-total{display:block;font:400 clamp(2.8rem,5vw,4.25rem)/1.05 Georgia,serif;letter-spacing:-.055em;color:#fff3d7;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.cost-total-hint{margin:11px 0 0;font-size:.79rem;color:#d9e5d9}
+.cost-compare{padding:7px 0 18px}
+.cost-compare h4{font-size:.83rem;margin:0 0 10px;color:#fff1d2}
+.cost-compare .cost-compare-line{display:flex;justify-content:space-between;gap:12px;font-size:.79rem;margin:11px 0 5px;color:#e0e8df}
+.cost-track{height:10px;border-radius:999px;background:#ffffff20;overflow:hidden}
+.cost-fill{height:100%;width:0;border-radius:999px;background:#f3d5a0;transition:width .2s}
+.cost-fill.cash{background:#94c4aa}
+.cost-difference{font-weight:800;font-size:.86rem;color:#fff0c9;margin:15px 0 0}
+.cost-compare-prompt{font-size:.81rem;color:#d2e0d5;margin:0 0 18px}
+.cost-copy{margin-top:auto;min-height:49px;width:100%;border:1px solid #f2d5a0;border-radius:8px;background:#f3d5a0;color:#17372d;padding:11px 18px;font:800 .89rem/1.3 system-ui,sans-serif;cursor:pointer}
+.cost-copy:hover:not(:disabled){background:#ffe2b0}
+.cost-copy:disabled{cursor:not-allowed;opacity:.6}
+.cost-fineprint{font-size:.73rem;line-height:1.6;color:#d0e0d2;margin:15px 0 0}
+.cost-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+[hidden]{display:none!important}
+@media(max-width:850px){.cost-intro{display:block}.cost-intro p:last-child{margin-top:14px}.cost-workbench{grid-template-columns:1fr}.cost-receipt:after{inset:-7px 0 auto;width:auto;height:14px;background:radial-gradient(circle at 10px 7px,#fffdf8 0 6px,transparent 6.5px) 0 0/24px 14px repeat-x}}
+@media(max-width:470px){.cost-studio{padding-block:54px}.cost-entry,.cost-receipt{padding:25px 22px}.cost-receipt-top{letter-spacing:.08em}.cost-total{font-size:clamp(2.4rem,11vw,3.4rem)}}
+@media(prefers-reduced-motion:reduce){.cost-fill{transition:none}}
+
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr .85fr}.cards{grid-template-columns:1fr 1fr}.card:last-child{grid-column:1/-1}.card:last-child .card-inner{display:grid;grid-template-columns:1fr 1fr;column-gap:25px}.card:last-child .card-index,.card:last-child h3,.card:last-child .description{grid-column:1}.card:last-child .address,.card:last-child .card-actions{grid-column:2}.card:last-child .address{grid-row:1/4;margin:0 0 20px;align-self:end}.card:last-child .card-actions{grid-row:4}.planning .wrap{grid-template-columns:1fr}}
 @media(max-width:690px){.hero-grid{grid-template-columns:1fr;padding-block:55px 47px;gap:16px}.room{max-width:470px;width:100%;margin:auto}.intro-band .wrap{grid-template-columns:1fr;gap:7px}.section-top{display:block}.section-top>p{margin-top:17px}.cards{grid-template-columns:1fr}.card:last-child{grid-column:auto}.card:last-child .card-inner{display:flex}.card:last-child .address{margin:auto 0 22px;padding-top:18px}.questions{grid-template-columns:1fr 1fr}}
 @media(max-width:470px){.brand{font-size:1.06rem}.home-link{font-size:.78rem}.site-header .wrap{min-height:68px}.hero-grid{padding-top:46px}.room{padding:0}.hero-caption{font-size:.67rem}.questions{grid-template-columns:1fr}.question{padding:20px}footer .wrap{display:block}footer a{display:inline-block;margin-top:8px}}
@@ -128,6 +180,41 @@ footer a{font-weight:750;color:var(--forest)}
 <article class="card"><div class="card-inner"><p class="card-index">02 / Address needs confirmation</p><h3>Aaron's — Russellville</h3><p class="description">Lease-to-own furniture and household products.</p><div class="address"><span class="address-label">Listed address</span><p>1005 E Main St, Russellville, AR (confirm address)</p><span class="caution">Confirm address before visiting</span></div><div class="card-actions"><a class="button call" href="tel:+14799672741">Call 479-967-2741 ↗</a><a class="button provider" href="https://www.aarons.com/" target="_blank" rel="noopener noreferrer">Public provider information ↗</a></div></div></article>
 <article class="card"><div class="card-inner"><p class="card-index">03 / Location needs confirmation</p><h3>Bestway Rent to Own — Russellville</h3><p class="description">Rent-to-own furniture, electronics and appliances; published street addresses differ.</p><div class="address"><span class="address-label">Location</span><p>Russellville, Arkansas — confirm location</p><span class="caution">Confirm location before visiting</span></div><div class="card-actions"><a class="button call" href="tel:+14798905941">Call 479-890-5941 ↗</a><a class="button provider" href="https://bestwayrto.com/" target="_blank" rel="noopener noreferrer">Public provider information ↗</a></div></div></article>
 </div></section>
+
+<section class="cost-studio" id="cost-estimator" aria-labelledby="cost-title">
+<div class="wrap">
+<div class="cost-intro"><div><p class="eyebrow">The price beyond the payment</p><h2 id="cost-title">See the whole number.</h2></div><p>Have a written rent-to-own offer? Enter its figures to see how recurring payments add up. This independent worksheet uses <strong>your numbers</strong>, not retailer quotes.</p></div>
+<div class="cost-workbench">
+<div class="cost-entry">
+<fieldset aria-describedby="cost-instructions"><legend>Build your total-cost estimate</legend>
+<p id="cost-instructions" class="cost-entry-note" style="margin:-12px 0 24px">Start with the payment amount and number of payments from the agreement. Nothing is sent or saved.</p>
+<div class="cost-field"><label for="cost-payment">Amount per payment ($)</label><input id="cost-payment" type="number" inputmode="decimal" min="0.01" max="100000" step="0.01" autocomplete="off" aria-describedby="cost-payment-help"><small id="cost-payment-help">Enter the amount due each time, not a monthly equivalent.</small></div>
+<div class="cost-field"><label for="cost-count">Total number of payments</label><input id="cost-count" type="number" inputmode="numeric" min="1" max="1000" step="1" autocomplete="off" aria-describedby="cost-count-help"><small id="cost-count-help">Count all scheduled payments, whether weekly, biweekly or monthly.</small></div>
+<div class="cost-field"><label for="cost-fees">Known additional fees ($) <span>· optional</span></label><input id="cost-fees" type="number" inputmode="decimal" min="0" max="1000000" step="0.01" autocomplete="off" aria-describedby="cost-fees-help"><small id="cost-fees-help">Add any known charges not included in the payments. Blank does not mean fee-free.</small></div>
+<div class="cost-field"><label for="cost-cash">Cash purchase price ($) <span>· optional</span></label><input id="cost-cash" type="number" inputmode="decimal" min="0.01" max="1000000" step="0.01" autocomplete="off" aria-describedby="cost-cash-help"><small id="cost-cash-help">If you know the same item's cash price, compare it below.</small></div>
+</fieldset>
+<p class="cost-entry-note">Use the same item and included services when comparing offers. Ask the retailer for the full written total.</p>
+</div>
+<aside class="cost-receipt" aria-labelledby="cost-receipt-title">
+<div class="cost-receipt-top"><span>Russellville.Rent / Worksheet</span><span class="cost-stamp">Not a quote</span></div>
+<h3 id="cost-receipt-title">Your cost snapshot</h3><p class="cost-caption">An estimate based only on the figures you enter.</p>
+<dl><div class="cost-row"><dt>Scheduled payments</dt><dd id="cost-scheduled">—</dd></div><div class="cost-row"><dt>Known extra fees entered</dt><dd id="cost-fees-display">Not entered</dd></div></dl>
+<div class="cost-total-wrap"><span class="cost-total-label">Estimated agreement total</span><output class="cost-total" id="cost-total" for="cost-payment cost-count cost-fees">—</output><p class="cost-total-hint" id="cost-hint">Enter a payment amount and payment count to begin.</p></div>
+<div class="cost-compare" id="cost-compare" hidden>
+<h4>Compare with a cash purchase</h4>
+<div class="cost-compare-line"><span>Estimated agreement total</span><strong id="cost-compare-total">—</strong></div><div class="cost-track" aria-hidden="true"><div class="cost-fill" id="cost-total-bar"></div></div>
+<div class="cost-compare-line"><span>Cash price entered</span><strong id="cost-compare-cash">—</strong></div><div class="cost-track" aria-hidden="true"><div class="cost-fill cash" id="cost-cash-bar"></div></div>
+<p class="cost-difference" id="cost-difference"></p>
+</div>
+<p class="cost-compare-prompt" id="cost-compare-prompt">Add a cash price to see a side-by-side comparison.</p>
+<button class="cost-copy" id="cost-copy" type="button" disabled>Copy my estimate ↗</button>
+<p class="cost-fineprint">This is arithmetic, not a provider quote or ownership guarantee. Taxes, delivery, services, missed-payment charges and any fees you have not entered are excluded. Confirm all terms directly.</p>
+<p class="cost-sr-only" id="cost-status" role="status" aria-live="polite" aria-atomic="true"></p>
+</aside>
+</div>
+</div>
+</section>
+
 <section class="planning" id="questions" aria-labelledby="questions-title"><div class="wrap"><div><p class="eyebrow">A clearer comparison</p><h2 id="questions-title">Four questions before you sign.</h2><p class="summary">A lower periodic payment does not always mean a lower total cost. Ask for the complete agreement and compare like for like.</p></div><div class="questions">
 <div class="question"><span class="number">01 / TOTAL COST</span><h3>What will I pay in all?</h3><p>Ask about the total of payments, fees and any taxes.</p></div>
 <div class="question"><span class="number">02 / OWNERSHIP</span><h3>When would I own it?</h3><p>Clarify the ownership conditions and any early-purchase options.</p></div>
@@ -137,5 +224,86 @@ footer a{font-weight:750;color:var(--forest)}
 <aside class="notice wrap" aria-labelledby="notice-title"><div class="notice-box"><h2 id="notice-title">Independent directory · Verify before you visit</h2><p>Russellville.Rent is an independent directory. Some businesses are based outside Russellville, and delivery or business status may be unconfirmed. Please confirm operating status, service area, availability, pricing and terms directly with each provider. <a href="sms:+14799707301">Submit corrections</a>.</p></div></aside>
 </main>
 <footer><div class="wrap"><span>© 2026 Russellville.Rent · Local rentals. Local connections.</span><a href="/">Return to all rental categories ↗</a></div></footer>
+<script>
+
+(function(){
+"use strict";
+const ids=["cost-payment","cost-count","cost-fees","cost-cash"];
+const byId=(id)=>document.getElementById(id);
+const money=(cents)=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"}).format(cents/100);
+const fields=ids.map(byId);
+const totalNode=byId("cost-total"),hint=byId("cost-hint"),copyButton=byId("cost-copy");
+const comparison=byId("cost-compare"),comparisonPrompt=byId("cost-compare-prompt");
+let currentText="",timer;
+function readAmount(id,emptyValue){
+  const el=byId(id),raw=el.value.trim();
+  if(raw===""){el.removeAttribute("aria-invalid");return emptyValue;}
+  const value=Number(raw),maximum=Number(el.max);
+  const valid=/^\d+(?:\.\d{1,2})?$/.test(raw)&&Number.isFinite(value)&&value>=Number(el.min)&&value<=maximum;
+  el.setAttribute("aria-invalid",valid?"false":"true");
+  return valid?Math.round(value*100):NaN;
+}
+function readCount(){
+  const el=byId("cost-count"),raw=el.value.trim();
+  if(raw===""){el.removeAttribute("aria-invalid");return null;}
+  const count=Number(raw),valid=/^\d+$/.test(raw)&&Number.isInteger(count)&&count>=1&&count<=1000;
+  el.setAttribute("aria-invalid",valid?"false":"true");
+  return valid?count:NaN;
+}
+function announce(message){
+  clearTimeout(timer);
+  timer=setTimeout(function(){byId("cost-status").textContent=message;},550);
+}
+function update(){
+  const payment=readAmount("cost-payment",null),count=readCount();
+  const fees=readAmount("cost-fees",0),cash=readAmount("cost-cash",null);
+  const valid=Number.isInteger(payment)&&payment>0&&Number.isInteger(count)&&count>0&&Number.isInteger(fees)&&(cash===null||(Number.isInteger(cash)&&cash>0));
+  byId("cost-fees-display").textContent=byId("cost-fees").value.trim()===""?"Not entered":Number.isInteger(fees)?money(fees):"Check entry";
+  if(!valid){
+    totalNode.textContent="—";
+    byId("cost-scheduled").textContent="—";
+    hint.textContent=fields.every(function(el){return el.value.trim()==="";})?"Enter a payment amount and payment count to begin.":"Check the fields above. Use positive amounts, up to two decimal places, and a whole payment count.";
+    comparison.hidden=true;comparisonPrompt.hidden=false;copyButton.disabled=true;currentText="";
+    announce("Complete the payment amount and number of payments with valid figures.");
+    return;
+  }
+  const scheduled=payment*count,total=scheduled+fees;
+  totalNode.textContent=money(total);
+  byId("cost-scheduled").textContent=money(scheduled);
+  hint.textContent=count+" payment"+(count===1?"":"s")+" of "+money(payment)+(fees?" plus known fees.":". Unentered fees are not included.");
+  copyButton.disabled=false;
+  comparison.hidden=cash===null;comparisonPrompt.hidden=cash!==null;
+  if(cash!==null){
+    byId("cost-compare-total").textContent=money(total);
+    byId("cost-compare-cash").textContent=money(cash);
+    const largest=Math.max(total,cash,1);
+    byId("cost-total-bar").style.width=(100*total/largest).toFixed(2)+"%";
+    byId("cost-cash-bar").style.width=(100*cash/largest).toFixed(2)+"%";
+    const delta=total-cash;
+    byId("cost-difference").textContent=delta===0?"Same as the entered cash price.":money(Math.abs(delta))+(delta>0?" more":" less")+" than the entered cash price.";
+  }
+  currentText="Russellville.Rent independent cost worksheet\nPayment: "+money(payment)+" x "+count+"\nScheduled payments: "+money(scheduled)+"\nKnown extra fees entered: "+(byId("cost-fees").value.trim()===""?"not entered":money(fees))+"\nEstimated total: "+money(total)+(cash===null?"":"\nCash price entered: "+money(cash)+"\nDifference: "+money(Math.abs(total-cash))+(total===cash?" equal to":total>cash?" more than":" less than")+" cash")+"\nEstimate only; taxes and unentered fees excluded. Confirm written terms with the retailer.";
+  announce("Estimated agreement total "+money(total)+(cash===null?"":". Comparison with cash price available."));
+}
+fields.forEach(function(el){el.addEventListener("input",update);el.addEventListener("change",update);});
+copyButton.addEventListener("click",async function(){
+  if(!currentText)return;
+  try{
+    if(!navigator.clipboard||!navigator.clipboard.writeText)throw new Error("Clipboard unavailable");
+    await navigator.clipboard.writeText(currentText);announce("Cost estimate copied.");
+  }catch(error){
+    const helper=document.createElement("textarea");
+    helper.value=currentText;helper.style.position="fixed";helper.style.opacity="0";
+    document.body.appendChild(helper);helper.select();
+    let success=false;
+    try{success=document.execCommand("copy");}catch(ignored){}
+    helper.remove();
+    announce(success?"Cost estimate copied.":"Copy unavailable. Select the figures in your cost snapshot.");
+  }
+});
+update();
+})();
+
+</script>
 </body>
 </html>
