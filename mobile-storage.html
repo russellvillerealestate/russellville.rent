@@ -108,6 +108,48 @@ footer a{font-weight:750}
 .size-footer a:hover{background:#ffe0ad}
 .size-footer a:focus-visible{outline:3px solid #fff;outline-offset:4px}
 @media(max-width:760px){.size-head{display:block}.size-head p{margin-top:12px;max-width:60ch}.size-row{grid-template-columns:minmax(0,1fr) auto;gap:10px 14px;padding:17px 0}.size-visual{grid-column:1/-1;grid-row:2;min-height:56px}.size-container{height:46px}.size-price{grid-column:2;grid-row:1}.size-footer{display:block}.size-footer a{margin-top:15px}.size-label strong{font-size:1.3rem}.size-price strong{font-size:1.7rem}}
+
+/* Storage budget: published prices only, with an explicitly incomplete subtotal. */
+.storage-budget[hidden],.budget-fee[hidden]{display:none!important}
+.storage-budget{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;margin:30px 0 0;padding:clamp(24px,4vw,43px);border:1px solid #cddfce;border-radius:24px;background:linear-gradient(130deg,#e9f1e7,#f7efe1);box-shadow:0 14px 34px #153b2e12}
+.storage-budget .budget-kicker{margin:0 0 10px;color:#8d6947;font-size:.69rem;letter-spacing:.16em;font-weight:850;text-transform:uppercase}
+.storage-budget h2{margin:0 0 15px;font:400 clamp(2rem,3.5vw,3.1rem)/1.1 Georgia,serif;letter-spacing:-.045em;color:#143a30;text-wrap:balance}
+.storage-budget h2 em{font-weight:400;color:#a07047}
+.budget-intro{font-size:.89rem;color:#53695a;line-height:1.7;margin:0 0 24px}
+.storage-budget fieldset{border:0;margin:0 0 18px;padding:0;min-width:0}
+.storage-budget legend,.storage-budget label.budget-label{display:block;margin:0 0 9px;font-size:.78rem;font-weight:850;color:#254b38}
+.budget-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.budget-option{position:relative;min-width:0;cursor:pointer}
+.budget-option input{position:absolute;width:1px;height:1px;opacity:0;left:50%;top:50%}
+.budget-option span{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:80px;padding:10px 4px;border:2px solid #c8d8c8;border-radius:12px;background:#fffefa;transition:border-color .18s,background-color .18s,transform .18s}
+.budget-option strong{font:400 1.4rem/1.2 Georgia,serif;color:#173d31}.budget-option small{margin-top:4px;font-size:.64rem;color:#5e7265;font-weight:750}
+.budget-option input:checked+span{background:#dcebdd;border-color:#2d684b;box-shadow:inset 0 0 0 1px #2d684b}
+.budget-option input:focus-visible+span{outline:3px solid #ae671d;outline-offset:3px}
+.budget-option:hover span{transform:translateY(-2px);border-color:#769f7c}
+.budget-fields{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:12px}
+.budget-fields>div{min-width:0}.storage-budget select{display:block;width:100%;min-width:0;min-height:50px;padding:10px 8px;border:1px solid #adbeae;border-radius:9px;background:#fffefa;color:#173c31;font:inherit;font-size:.83rem}
+.storage-budget select:focus-visible{outline:3px solid #ae671d;outline-offset:3px}
+.budget-note{font-size:.75rem;line-height:1.65;color:#5e7263;margin:15px 0 0}
+.budget-sheet{position:relative;overflow:hidden;min-width:0;padding:clamp(20px,3vw,30px);border:1px solid #d4dfd1;border-radius:17px;background:#fffefa;box-shadow:0 18px 30px #143c2e18}
+.budget-sheet:before{content:"";position:absolute;inset:0 0 auto;height:6px;background:repeating-linear-gradient(90deg,#245b43 0 33px,#e0b27e 33px 50px)}
+.budget-sheet-head{display:flex;align-items:start;justify-content:space-between;gap:12px;margin:5px 0 24px}
+.budget-sheet-head small{display:block;font-size:.67rem;font-weight:850;letter-spacing:.13em;color:#5c7666;text-transform:uppercase}
+.budget-sheet-head strong{display:block;margin-top:6px;font:400 1.5rem/1.2 Georgia,serif;color:#173e32}
+.budget-box{display:grid;place-items:center;flex:none;width:58px;height:50px;background:repeating-linear-gradient(90deg,#ecc69a 0 7px,#d8ad7e 7px 9px);border:2px solid #cba577;border-radius:5px;box-shadow:4px 5px 0 #e7ebdf;color:#1b4735;font-size:.63rem;font-weight:900}
+.budget-rows{margin:0;border-top:1px dashed #c2d0c0}
+.budget-rows>div{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px dashed #c2d0c0;font-size:.85rem}
+.budget-rows dt{color:#5c6d60}.budget-rows dd{margin:0;color:#184734;font-weight:850;text-align:right}
+.budget-bar{display:flex;overflow:hidden;height:13px;margin:21px 0 7px;border-radius:99px;background:#e4e9df}
+.budget-rent{background:#286c4e;transition:width .2s}.budget-fee{background:#d4a16d;transition:width .2s}
+.budget-legend{font-size:.69rem;color:#657669;margin:0 0 22px}.budget-legend b{display:inline-block;width:9px;height:9px;background:#286c4e;border-radius:3px;margin-right:5px}.budget-legend span b{background:#d4a16d;margin-left:10px}
+.budget-bottom{display:flex;justify-content:space-between;align-items:end;gap:10px;border-top:2px solid #244d3d;padding-top:17px}
+.budget-bottom span{font-size:.78rem;font-weight:850;color:#254a39}.budget-bottom strong{font:400 clamp(2.2rem,4vw,3.1rem)/1 Georgia,serif;color:#173f35;white-space:nowrap;letter-spacing:-.05em}
+.budget-warning{font-size:.75rem;line-height:1.65;color:#647365;margin:13px 0 18px}
+.budget-sheet a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 16px;background:#173f35;color:#fff;border-radius:9px;font-size:.8rem;font-weight:850;text-decoration:none}.budget-sheet a:hover{background:#2b5d48}
+.budget-sheet a:focus-visible{outline:3px solid #ae671d;outline-offset:3px}
+@media(max-width:800px){.storage-budget{grid-template-columns:1fr;gap:22px}.budget-sheet{max-width:630px;width:100%}}
+@media(max-width:470px){.storage-budget{padding:23px 16px;border-radius:18px}.budget-fields{grid-template-columns:1fr}.budget-option strong{font-size:1.2rem}.budget-option small{font-size:.61rem}.budget-sheet{padding:20px 16px}}
+@media(prefers-reduced-motion:reduce){.budget-option span,.budget-rent,.budget-fee{transition:none}.budget-option:hover span{transform:none}}
 </style>
 </head>
 <body>
@@ -128,9 +170,76 @@ footer a{font-weight:750}
   </ol>
   <div class="size-footer"><p>Illustrations show <strong>relative advertised lengths only</strong>—not actual width, height, usable capacity or inventory. Rates are advertised monthly base prices, checked October 26, 2026. Delivery, pickup, taxes and other terms may add to the total. Confirm unit dimensions and access requirements directly.</p><a href="#provider-1">Contact the listed provider <span aria-hidden="true">↗</span></a></div>
 </section>
+<section class="storage-budget" id="storage-budget" aria-labelledby="budget-title" hidden>
+  <div>
+    <p class="budget-kicker">The container budget studio / Advertised rates</p>
+    <h2 id="budget-title">Know the base. <em>Ask about the rest.</em></h2>
+    <p class="budget-intro">Compare illustrative rental subtotals using Scotty's published container rates. This is a planning aid, not a quote, reservation or confirmation of inventory.</p>
+    <form id="budget-form">
+      <fieldset><legend>Choose a container length</legend><div class="budget-options">
+        <label class="budget-option"><input type="radio" name="budget-size" value="10" checked><span><strong>10 ft</strong><small>$75 / month</small></span></label>
+        <label class="budget-option"><input type="radio" name="budget-size" value="20"><span><strong>20 ft</strong><small>$100 / month</small></span></label>
+        <label class="budget-option"><input type="radio" name="budget-size" value="40"><span><strong>40 ft</strong><small>$130 / month</small></span></label>
+      </div></fieldset>
+      <div class="budget-fields">
+        <div><label class="budget-label" for="budget-months">Rental duration</label><select id="budget-months"><option value="1">1 month</option><option value="2">2 months</option><option value="3">3 months</option><option value="6">6 months</option><option value="12">12 months</option></select></div>
+        <div><label class="budget-label" for="budget-area">Delivery destination</label><select id="budget-area"><option value="local">Russellville, Dardanelle, Atkins or Pottsville</option><option value="other">Elsewhere — request a delivery quote</option></select></div>
+      </div>
+      <p class="budget-note">The $150 delivery charge is advertised for these three container lengths in the four named cities. Confirm your exact address and site access with the provider.</p>
+    </form>
+  </div>
+  <aside class="budget-sheet" aria-label="Illustrative storage rental cost breakdown">
+    <div class="budget-sheet-head"><div><small>Scotty's / Planning sheet</small><strong><span id="budget-size-display">10</span>-foot container</strong></div><div class="budget-box" aria-hidden="true">STORAGE</div></div>
+    <dl class="budget-rows"><div><dt>Base rent × <span id="budget-count">1</span> month<span id="budget-plural"></span></dt><dd id="budget-base">$75</dd></div><div><dt>Advertised delivery</dt><dd id="budget-delivery">$150</dd></div></dl>
+    <div class="budget-bar" aria-hidden="true"><span class="budget-rent" id="budget-rent" style="width:33.33%"></span><span class="budget-fee" id="budget-fee" style="width:66.67%"></span></div>
+    <p class="budget-legend" aria-hidden="true"><b></b> Base rent <span id="budget-fee-key"><b></b> Advertised delivery</span></p>
+    <div class="budget-bottom"><span id="budget-label">Illustrative subtotal</span><strong id="budget-total">$225</strong></div>
+    <p class="budget-warning" id="budget-warning">Not a final quote. Excludes pickup, taxes, minimum terms and special site-access charges.</p>
+    <a href="#provider-1">See provider &amp; contact details →</a>
+  </aside>
+</section>
+
 <section id="providers" aria-labelledby="providers-title"><div class="section-head"><div><p class="eyebrow" style="color:#956a45">02 / Find a provider</p><h2 id="providers-title">Service around Russellville.</h2><p>Start with providers whose Russellville operations or service area are documented. Call to confirm the unit, dates and delivery details.</p></div><span class="section-number">3 documented options</span></div><div class="provider-grid"><article class="provider featured" aria-labelledby="provider-1"><div class="provider-head"><span class="provider-number">01</span><span class="provider-tag">Russellville operator · Published rates</span></div><div class="provider-content"><h3 id="provider-1">Scotty&#39;s Storage Trailer Rentals</h3><p>Russellville-based portable storage container, dry-van storage trailer and ground-level mobile office rentals. <strong>Officially posted monthly rental rates (checked October 26, 2026):</strong> 10-foot standard container $75, 20-foot standard $100, 40-foot standard or high-cube $130; 20-foot mobile office $250 and 40-foot combination office/storage unit $350. Double-door and side-access containers, plus 48- and 53-foot dry-van storage trailers, are also advertised. Its Russellville-specific official page quotes <strong>$150 delivery for 10-, 20- or 40-foot containers to Russellville, Dardanelle, Atkins and Pottsville</strong>; delivery to other destinations and special site-access conditions require a direct quote. These are advertised rates, <strong>not a confirmed total</strong>; verify inventory, delivery and pickup charges, taxes, minimum terms and current pricing directly.</p><p class="detail">2720 Bernard Way, Russellville, AR 72802 · Local operator; statewide delivery advertised</p><p><a href="tel:+14798582550">479-858-2550</a> &nbsp; · &nbsp; <a href="https://www.scottysstorage.com/russellvillearkansas" target="_blank" rel="noopener noreferrer">Official Russellville rental and delivery rates ↗</a></p></div></article><article class="provider" aria-labelledby="provider-2"><div class="provider-head"><span class="provider-number">02</span><span class="provider-tag">Russellville pickup & delivery</span></div><div class="provider-content"><h3 id="provider-2">U-Haul U-Box — Russellville</h3><p>Portable U-Box containers for moving and storage; the official Russellville location advertises container delivery, pickup and storage. Confirm availability, rates and exact delivery address with U-Haul.</p><p class="detail">2821 E Main St, Russellville, AR 72802 · Local U-Box service confirmed</p><p><a href="tel:+14794980933">479-498-0933</a> · <a href="https://www.uhaul.com/Locations/UBox-Containers-near-Russellville-AR-72802/742075/" target="_blank" rel="noopener noreferrer">Official Russellville U-Box information ↗</a></p></div></article><article class="provider" aria-labelledby="provider-3"><div class="provider-head"><span class="provider-number">03</span><span class="provider-tag">Russellville service listed</span></div><div class="provider-content"><h3 id="provider-3">Mobile Container Solutions — Benton</h3><p>Portable storage container rental and delivery. The operator explicitly names Russellville among its service cities; confirm container sizes, rates and scheduling directly.</p><p class="detail">Based in Benton, AR · Russellville service confirmed by provider</p><p><a href="https://www.mobilecontainersolutions.com/areas-we-serve" target="_blank" rel="noopener noreferrer">Official service-area information ↗</a></p></div></article></div></section>
 <section aria-labelledby="confirm-title"><div class="section-head"><div><p class="eyebrow" style="color:#956a45">03 / Check before booking</p><h2 id="confirm-title">Ask about availability.</h2><p>These providers may be useful, but current container availability or Russellville delivery has not been independently confirmed.</p></div><span class="section-number">2 options to verify</span></div><div class="provider-grid"><article class="provider" aria-labelledby="provider-4"><div class="provider-head"><span class="provider-number">04</span><span class="provider-tag">Local · Availability unconfirmed</span></div><div class="provider-content"><h3 id="provider-4">Murdock Portable Toilets, Septic &amp; Storage — Russellville</h3><p>The company&#39;s public business profile advertises portable storage containers for jobsites and other temporary storage needs. Confirm that container rentals are currently available, along with sizes, delivery terms and pricing; its primary website could not be independently retrieved.</p><p class="detail">1908 West C Place, Russellville, AR 72801 · Local company; current container availability unconfirmed</p><p><a href="tel:+14799681282">479-968-1282</a> · <a href="https://www.linkedin.com/company/murdock-portable-toilets-septic-%26-storage" target="_blank" rel="noopener noreferrer">Company business profile ↗</a></p></div></article><article class="provider" aria-labelledby="provider-5"><div class="provider-head"><span class="provider-number">05</span><span class="provider-tag">Regional · Delivery unconfirmed</span></div><div class="provider-content"><h3 id="provider-5">HOGBOX — Fayetteville (Regional)</h3><p>Fayetteville-based container rental company advertising 10-, 20- and 40-foot ground-level storage containers for construction, events and business storage, with rental terms beginning at 28 days. The operator advertises Arkansas service, but <strong>delivery to Russellville is UNCONFIRMED</strong>; request a location-specific quote, delivery schedule and availability.</p><p class="detail">2900 S City Lake Rd, Fayetteville, AR 72701 · Regional provider · Russellville delivery UNCONFIRMED</p><p><a href="tel:+14794456611">479-445-6611</a> · <a href="https://hogbox.com/" target="_blank" rel="noopener noreferrer">Official container rental details ↗</a></p></div></article></div><p class="caution"><strong>Before paying:</strong> ask for a written total covering delivery, pickup, site-access requirements, rental duration, taxes and any additional fees.</p></section>
 <section class="checklist" aria-labelledby="checklist-title"><p class="eyebrow">Make a confident inquiry</p><h2 id="checklist-title">Three questions worth asking.</h2><p>A quick checklist before you reserve a container, trailer or jobsite office.</p><div class="check-grid"><div class="check-item"><strong>What fits the site?</strong><span>Confirm dimensions, door clearance, ground conditions and delivery-truck access.</span></div><div class="check-item"><strong>What is the full cost?</strong><span>Ask about the monthly rate, minimum rental, delivery, pickup, taxes and extra charges.</span></div><div class="check-item"><strong>When can it arrive?</strong><span>Confirm the specific unit, delivery date and return or pickup process.</span></div></div></section>
 <p class="note">Independent local directory. Information is drawn from public listings and may change. Some business services and contact details are not independently confirmed. Please confirm pricing, availability and terms directly with each provider. <a href="sms:+14799707301">Submit corrections</a>.</p>
 </main><footer class="wrap"><span>Russellville.Rent · Independent rental directory</span><a href="/">Return to homepage</a></footer>
+
+<script>
+(() => {
+  const section=document.getElementById('storage-budget'),form=document.getElementById('budget-form');
+  if(!section||!form)return;
+  const choices=Array.from(form.querySelectorAll('input[name="budget-size"]'));
+  const months=document.getElementById('budget-months'),area=document.getElementById('budget-area');
+  const ids=['budget-size-display','budget-count','budget-plural','budget-base','budget-delivery','budget-rent','budget-fee','budget-fee-key','budget-label','budget-total','budget-warning'];
+  const el=Object.fromEntries(ids.map(id=>[id,document.getElementById(id)]));
+  if(!choices.length||!months||!area||Object.values(el).some(node=>!node))return;
+  const rates={10:75,20:100,40:130};
+  const money=n=>'$'+n.toLocaleString('en-US');
+  function render(){
+    const selected=choices.find(choice=>choice.checked);
+    if(!selected)return;
+    const size=Number(selected.value),count=Number(months.value),local=area.value==='local';
+    if(!Object.prototype.hasOwnProperty.call(rates,size)||![1,2,3,6,12].includes(count))return;
+    const rent=rates[size]*count,delivery=local?150:0,subtotal=rent+delivery;
+    el['budget-size-display'].textContent=String(size);
+    el['budget-count'].textContent=String(count);
+    el['budget-plural'].textContent=count===1?'':'s';
+    el['budget-base'].textContent=money(rent);
+    el['budget-delivery'].textContent=local?money(delivery):'Quote required';
+    el['budget-label'].textContent=local?'Illustrative subtotal':'Base rent only';
+    el['budget-total'].textContent=money(subtotal);
+    el['budget-warning'].textContent=local
+      ?'Not a final quote. Excludes pickup, taxes, minimum terms and special site-access charges.'
+      :'Delivery requires a quote and is NOT included above. Pickup, taxes, minimum terms and site charges are also excluded.';
+    el['budget-rent'].style.width=(100*rent/subtotal).toFixed(2)+'%';
+    el['budget-fee'].style.width=local?(100*delivery/subtotal).toFixed(2)+'%':'0%';
+    el['budget-fee'].hidden=!local;
+    el['budget-fee-key'].hidden=!local;
+  }
+  form.addEventListener('change',render);
+  section.hidden=false;
+  render();
+})();
+</script>
 </body></html>
