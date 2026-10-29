@@ -111,6 +111,43 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
 @media(max-width:850px){.planner-head{display:block}.planner-switch{display:inline-flex;margin-top:20px}.planner-body{grid-template-columns:1fr}.planner-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.planner-list li{grid-template-columns:1fr}}
 @media(max-width:580px){.site-planner{padding:23px 17px;margin-top:21px;border-radius:18px}.planner-switch{display:grid;grid-template-columns:1fr 1fr;width:100%}.planner-switch button{padding:10px 8px}.planner-body{gap:15px}.planner-notes{padding:22px}.planner-list{grid-template-columns:1fr}.planner-list li{grid-template-columns:31px 1fr}}
 
+
+/* Rental-call shortlist: designed as a compact field ledger, not another provider source. */
+.call-plan[hidden],.call-plan textarea[hidden],.call-plan label[hidden]{display:none!important}
+.call-plan{position:relative;overflow:hidden;scroll-margin-top:24px;margin:65px 0 0;padding:clamp(24px,4vw,40px);border-radius:25px;background:radial-gradient(circle at 95% 0%,#366b52,transparent 40%),#113c31;color:white;box-shadow:0 20px 40px #102d2726}
+.call-plan:before{content:"";position:absolute;width:260px;height:260px;right:-100px;top:-150px;border:1px solid #f4d39444;border-radius:50%;box-shadow:0 0 0 38px #f4d3940c,0 0 0 75px #f4d39409;pointer-events:none}
+.call-plan-top{display:flex;justify-content:space-between;align-items:end;gap:23px;position:relative}
+.call-plan-eyebrow{display:block;font-size:.69rem;letter-spacing:.17em;text-transform:uppercase;font-weight:850;color:#f4d394;margin-bottom:9px}
+.call-plan h2{font:400 clamp(2rem,4vw,3rem)/1.1 Georgia,serif;letter-spacing:-.04em;margin:0 0 10px}
+.call-plan-top p{max-width:61ch;font-size:.9rem;color:#dbe8df;margin:0 0 23px}
+.call-plan-count{flex:none;min-width:92px;padding:13px 15px;border:1px solid #ffffff56;border-radius:16px;background:#ffffff16;color:#f3d18d;font:400 2.25rem/1 Georgia,serif;text-align:center}
+.call-plan-count small{font:750 .77rem system-ui,sans-serif;color:#e1ede3}
+.call-plan-paper{position:relative;background:#fafbf7;color:#193e33;border:1px solid #d0e0ce;border-radius:17px;padding:clamp(18px,3vw,28px)}
+.call-plan-empty{margin:5px 0 22px;color:#5a6e5f}
+.call-plan-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));list-style:none;padding:0;margin:0;gap:12px}
+.call-plan-list:empty{display:none}
+.call-plan-list li{display:flex;flex-direction:column;min-width:0;padding:19px;border-radius:13px;border:1px solid #d7e3d6;background:#fff;box-shadow:0 5px 14px #1645320d}
+.call-plan-list strong{font-size:.98rem;line-height:1.35}
+.call-plan-list span{font-size:.79rem;color:#536d5d;margin:6px 0 0;line-height:1.5}
+.call-plan-list .call-plan-tag{color:#875b2e;font-weight:800}
+.call-plan-list a{display:inline-flex;align-items:center;align-self:start;min-height:44px;margin-top:auto;padding:8px 14px;border:1px solid #bbd2c0;border-radius:9px;color:#15563f;text-decoration:none;font-weight:800;font-size:.84rem}
+.call-plan-list a:hover{background:#e9f4ea}
+.call-plan-tools{display:flex;flex-wrap:wrap;gap:11px;margin-top:22px}
+.call-plan-tools button{min-height:46px;padding:10px 17px;border:1px solid #aac7af;border-radius:9px;background:#fff;color:#194c39;font:800 .85rem/1.3 system-ui,sans-serif;cursor:pointer}
+.call-plan-tools .call-plan-copy{background:#1d5843;color:#fff;border-color:#1d5843}
+.call-plan-tools button:disabled{opacity:.45;cursor:not-allowed}
+.call-plan-tools button:not(:disabled):hover{filter:brightness(.92)}
+.call-plan button:focus-visible,.call-add:focus-visible,.call-plan a:focus-visible{outline:3px solid #c38223;outline-offset:4px}
+.call-plan-feedback{min-height:1.3em;margin:13px 0 0;color:#436450;font-size:.84rem}
+.call-plan-fine{margin:17px 0 0;color:#d5e7d8;font-size:.79rem}
+.call-plan textarea{display:block;width:100%;min-height:160px;margin-top:11px;padding:11px;border:2px solid #7fac8c;border-radius:9px;font:14px/1.5 monospace}
+.call-add{display:inline-flex;align-items:center;justify-content:center;min-height:46px;margin-top:16px;padding:10px 17px;border:1px solid #9ebc9d;border-radius:10px;background:#eaf3e7;color:#20523b;font:800 .83rem/1.3 system-ui,sans-serif;cursor:pointer}
+.call-add[aria-pressed=true]{background:#215b46;border-color:#215b46;color:#fff}
+.call-add:hover{filter:brightness(.94)}
+.call-view{display:inline-flex;align-items:center;min-height:44px;margin:10px 0 0 13px;font-size:.81rem;font-weight:800}
+@media(max-width:700px){.call-plan-list{grid-template-columns:1fr}.call-plan{margin-top:48px}}
+@media(max-width:470px){.call-plan-top{align-items:start;flex-direction:column}.call-plan-top p{margin-bottom:14px}.call-plan-count{font-size:1.7rem;padding:10px 14px}.call-plan-tools button{flex:1 1 100%}.call-add{width:100%}.call-view{margin-left:0}}
+
 </style>
 </head>
 <body>
@@ -206,6 +243,16 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
 <article class="provider"><div class="provider-index" aria-hidden="true">06</div><div class="provider-content"><p class="provider-tag">River Valley · delivery unconfirmed</p><h3>Peerless Potty — Arkansas River Valley (Regional)</h3><p class="provider-description">Portable toilet rentals for construction projects and special events; the operator also advertises recreational vehicle holding-tank pump-out service. Its official website describes service across the Arkansas River Valley and eastern Oklahoma. <strong>Russellville delivery is UNCONFIRMED</strong>; verify coverage, current operating status, equipment options and fees directly.</p><p class="provider-area">Arkansas River Valley regional provider — Russellville delivery UNCONFIRMED</p><p class="provider-actions"><a href="tel:+14792593650">479-259-3650</a> · <a href="https://peerlesspotty.com/" target="_blank" rel="noopener noreferrer">Official provider website ↗</a></p></div></article>
 <article class="provider"><div class="provider-index" aria-hidden="true">07</div><div class="provider-content"><p class="provider-tag">Morrilton service verified · Russellville unconfirmed</p><h3>Dependable Waste Solutions — Central Arkansas</h3><p class="provider-description">Officially advertises portable restroom rentals for events and jobsites, including standard, event, mobile and accessible units, plus portable sinks and holding tanks. Weekend and monthly rental terms are listed; monthly rentals include weekly cleaning. The operator explicitly names <strong>Morrilton</strong> in its service area, but <strong>Russellville delivery is UNCONFIRMED</strong>. Confirm delivery, equipment, servicing, rates and availability directly.</p><p class="provider-area">Cabot-based provider · Morrilton service verified · Russellville delivery UNCONFIRMED</p><p class="provider-actions"><a href="tel:+15012411690">501-241-1690</a> · <a href="https://www.dependablewastesolutions.com/rentals/porta-potty-rentals/" target="_blank" rel="noopener noreferrer">Official restroom rentals ↗</a> · <a href="https://www.dependablewastesolutions.com/" target="_blank" rel="noopener noreferrer">Official service areas ↗</a></p></div></article><article class="provider"><div class="provider-index" aria-hidden="true">08</div><div class="provider-content"><p class="provider-tag">Regional · statewide restroom trailers advertised</p><h3>Arkansas Portable Toilets — North Little Rock (Regional)</h3><p class="provider-description">Established Arkansas provider officially advertising portable toilets, handwashing stations, accessible units and climate-controlled restroom trailers. The operator describes standard portable-toilet service around Central and Northwest Arkansas and explicitly advertises restroom-trailer service statewide. <strong>Russellville delivery is UNCONFIRMED</strong> for any equipment; request a location-specific quote and confirm inventory, setup, servicing and rental terms.</p><p class="provider-area">North Little Rock, AR · regional operator · Russellville delivery UNCONFIRMED</p><p class="provider-actions"><a href="tel:+15017537140">501-753-7140</a> · <a href="https://arportabletoilets.com/" target="_blank" rel="noopener noreferrer">Official equipment and service information ↗</a> · <a href="https://arportabletoilets.com/locations/" target="_blank" rel="noopener noreferrer">Official service-area limitations ↗</a></p></div></article></div>
 </section>
+
+<section id="restroom-call-plan" class="call-plan" aria-labelledby="call-plan-title" hidden>
+<div class="call-plan-top"><div><span class="call-plan-eyebrow">Field notes / Provider comparison</span><h2 id="call-plan-title">Your restroom rental call plan.</h2><p>Select up to four listings to compare service-area notes and keep contact numbers together. No request is sent to a provider.</p></div><div class="call-plan-count" aria-label="Providers in call plan"><span id="call-plan-number">0</span><small> / 4</small></div></div>
+<div class="call-plan-paper"><p id="call-plan-empty" class="call-plan-empty">Nothing saved yet. Choose “Add to call plan” on a provider listing above.</p><ol id="call-plan-list" class="call-plan-list" aria-label="Saved restroom providers"></ol>
+<div class="call-plan-tools"><button type="button" class="call-plan-copy" id="call-plan-copy" disabled>Copy call plan</button><button type="button" id="call-plan-clear" disabled>Clear selections</button></div>
+<p id="call-plan-feedback" class="call-plan-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
+<label id="call-plan-fallback-label" for="call-plan-fallback" hidden>Copy this call plan manually</label><textarea id="call-plan-fallback" readonly hidden></textarea></div>
+<p class="call-plan-fine">Provider details are taken from the existing listings. Confirm operating status, equipment, delivery coverage, availability, price and servicing directly.</p>
+</section>
+
 <section class="guide" aria-labelledby="guide-title"><p class="section-kicker">Before you book</p><h2 id="guide-title">Three things to confirm.</h2><p class="guide-intro">A quick checklist for events, construction sites and temporary facilities.</p>
 <div class="guide-grid">
 <div class="guide-item"><strong>01 / Right equipment</strong><p>Ask about standard units, handwashing stations, accessible units or restroom trailers as needed.</p></div>
@@ -243,5 +290,90 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
   buttons.forEach(button=>button.addEventListener("click",()=>show(button.dataset.siteMode)));
 })();
 </script>
+
+<script>
+(() => {
+  const board = document.getElementById("restroom-call-plan");
+  if (!board) return;
+  const providers = [...document.querySelectorAll(".provider-list .provider")].map(card => {
+    const name = card.querySelector("h3")?.textContent.trim();
+    const telephone = card.querySelector('a[href^="tel:"]');
+    return {card,name,tag:card.querySelector(".provider-tag")?.textContent.trim()||"",
+      area:card.querySelector(".provider-area")?.textContent.trim()||"",
+      phone:telephone?.textContent.trim()||"Phone not listed",
+      href:telephone?.getAttribute("href")||""};
+  });
+  if (providers.length !== 8 || providers.some(p => !p.name) || new Set(providers.map(p => p.name)).size !== 8) return;
+  const id = name => document.getElementById(name);
+  const list=id("call-plan-list"),count=id("call-plan-number"),empty=id("call-plan-empty"),
+    copy=id("call-plan-copy"),clear=id("call-plan-clear"),feedback=id("call-plan-feedback"),
+    fallback=id("call-plan-fallback"),fallbackLabel=id("call-plan-fallback-label");
+  const storageKey="russellville-restroom-call-plan-v1";
+  let chosen=[];
+  try {
+    const stored=JSON.parse(localStorage.getItem(storageKey)||"[]");
+    if(Array.isArray(stored)) chosen=[...new Set(stored)].filter(name=>providers.some(p=>p.name===name)).slice(0,4);
+  } catch (_) { /* Browsing still works without storage. */ }
+  function render(){
+    count.textContent=chosen.length;
+    empty.hidden=chosen.length>0;
+    copy.disabled=clear.disabled=chosen.length===0;
+    list.replaceChildren();
+    chosen.forEach(name=>{
+      const provider=providers.find(p=>p.name===name);
+      const li=document.createElement("li"),title=document.createElement("strong"),
+        tag=document.createElement("span"),area=document.createElement("span");
+      title.textContent=provider.name;tag.className="call-plan-tag";tag.textContent=provider.tag;
+      area.textContent=provider.area;li.append(title,tag,area);
+      if(provider.href){
+        const phone=document.createElement("a");phone.href=provider.href;
+        phone.textContent="Call "+provider.phone;li.append(phone);
+      }
+      list.append(li);
+    });
+    providers.forEach(p=>{
+      const active=chosen.includes(p.name);
+      p.button.setAttribute("aria-pressed",String(active));
+      p.button.textContent=active?"Saved — Remove from call plan":"+ Add to call plan";
+    });
+    fallback.hidden=fallbackLabel.hidden=true;
+    try { localStorage.setItem(storageKey,JSON.stringify(chosen)); } catch (_) {}
+  }
+  providers.forEach(provider=>{
+    const button=document.createElement("button"),jump=document.createElement("a");
+    button.type="button";button.className="call-add";button.setAttribute("aria-controls","restroom-call-plan");
+    jump.className="call-view";jump.href="#restroom-call-plan";jump.textContent="View call plan ↗";
+    provider.card.querySelector(".provider-content").append(button,jump);
+    provider.button=button;
+    button.addEventListener("click",()=>{
+      if(chosen.includes(provider.name))chosen=chosen.filter(name=>name!==provider.name);
+      else if(chosen.length<4)chosen.push(provider.name);
+      else {feedback.textContent="Your call plan holds four providers. Remove one to add another.";return;}
+      render();feedback.textContent=chosen.length+" of 4 providers selected.";
+    });
+  });
+  clear.addEventListener("click",()=>{chosen=[];render();feedback.textContent="Call plan cleared.";});
+  copy.addEventListener("click",async()=>{
+    const lines=["Portable restroom provider call plan — Russellville.Rent",""];
+    chosen.forEach((name,index)=>{
+      const p=providers.find(item=>item.name===name);
+      lines.push((index+1)+". "+p.name,"   "+p.tag,"   "+p.area,"   Phone: "+p.phone,"");
+    });
+    lines.push("Confirm operating status, service area, equipment, fees and availability directly.");
+    const message=lines.join("\n");
+    try{
+      if(!navigator.clipboard?.writeText)throw Error("Clipboard not available");
+      await navigator.clipboard.writeText(message);
+      fallback.hidden=fallbackLabel.hidden=true;
+      feedback.textContent="Call plan copied. Paste it into notes or a message.";
+    }catch(_){
+      fallback.value=message;fallback.hidden=fallbackLabel.hidden=false;fallback.focus();fallback.select();
+      feedback.textContent="Copy the selected text manually.";
+    }
+  });
+  board.hidden=false;render();
+})();
+</script>
+
 </body>
 </html>
