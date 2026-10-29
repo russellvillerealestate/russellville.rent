@@ -139,6 +139,28 @@ footer a{font-weight:700}
 }
 @media(max-width:355px){.pass-facts>div{grid-template-columns:minmax(0,1fr);gap:4px}.pass-facts{padding-right:15px}}
 
+
+/* Rental inquiry studio: visual travel brief, not a booking form. */
+.trip-studio{isolation:isolate;position:relative;overflow:hidden;margin:58px 0 12px;padding:clamp(24px,4vw,42px);border-radius:24px;color:#fffdf2;background:radial-gradient(circle at 94% 3%,#3a7460 0,transparent 42%),linear-gradient(125deg,#102f2b,#1b4c3e);box-shadow:0 22px 50px #153a2e20}
+.trip-studio:before{content:"";position:absolute;right:-130px;top:-230px;width:500px;height:500px;border:1px solid #f0ca7944;border-radius:50%;box-shadow:0 0 0 50px #ffffff08,0 0 0 100px #ffffff05;z-index:-1;pointer-events:none}
+.trip-intro{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:24px}.trip-intro .eyebrow{color:#f0ca79}.trip-intro h2{font:400 clamp(2.1rem,4.8vw,3.6rem)/1.08 Georgia,serif;letter-spacing:-.05em;margin:0}.trip-intro h2 em{font-weight:400;color:#f0ca79}.trip-intro>p{max-width:320px;margin:0;color:#d7e9dd;font-size:.88rem}
+.trip-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:stretch}
+.trip-form{padding:24px;background:#ffffff12;border:1px solid #ffffff3e;border-radius:17px}.trip-form fieldset{border:0;padding:0;margin:0 0 18px;min-width:0}.trip-form legend,.trip-field{font-size:.8rem;font-weight:800;color:#f6edda}
+.trip-reasons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:11px}
+.trip-reasons label{position:relative;cursor:pointer;min-width:0}.trip-reasons input{position:absolute;top:11px;left:11px;width:17px;height:17px;accent-color:#f0ca79}.trip-reasons span{display:flex;align-items:end;min-height:82px;padding:33px 10px 10px;background:#ffffff12;border:1px solid #97b6a0a0;border-radius:10px;color:#f4f8f0;font-size:.79rem;font-weight:800;line-height:1.25}
+.trip-reasons input:checked+span{background:#f0d5a0;color:#203d32;border-color:#f0d5a0}.trip-reasons input:focus-visible+span{outline:3px solid #fff;outline-offset:3px}
+.trip-dates{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}.trip-field{display:block}.trip-field small{font-weight:500;color:#d3e2d4}.trip-field input,.trip-field select{display:block;width:100%;min-width:0;min-height:48px;margin-top:6px;padding:10px 11px;border:1px solid #9fbaaa;border-radius:9px;background:#fffdfa;color:#213e34;font:inherit;font-size:.9rem}
+.trip-fine{font-size:.73rem;color:#d9e8da;line-height:1.55;margin:14px 0 0}
+.trip-preview{background:#f5eee0;color:#1e3c30;border-radius:17px;padding:25px;display:flex;flex-direction:column;min-width:0}.trip-preview .eyebrow{color:#8d602a;margin-bottom:6px}.trip-preview h3{font:400 1.9rem/1.2 Georgia,serif;letter-spacing:-.04em;margin:0 0 14px}
+.trip-route{display:flex;align-items:center;gap:9px;color:#42614f;font-size:.7rem;font-weight:850;letter-spacing:.04em;margin-bottom:13px}.trip-route:before,.trip-route:after{content:"";width:12px;height:12px;border:3px solid #4f8263;border-radius:50%;flex:none}.trip-route:after{background:#4f8263}.trip-route i{flex:1;border-top:2px dashed #7fa788}
+.trip-message{background:#fffefa;border:1px solid #e0dacc;border-radius:12px;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.7;font-size:.85rem;padding:15px;margin:0 0 14px;flex:1}
+.trip-copy{width:100%;min-height:48px;background:#173e32;color:white;border:0;border-radius:9px;padding:12px 16px;font:inherit;font-weight:800;cursor:pointer}.trip-copy:hover{background:#2b634b}.trip-copy:disabled{opacity:.5;cursor:not-allowed}
+.trip-status{font-size:.78rem;color:#315d45;font-weight:750;min-height:1.4em;margin:8px 0}.trip-fallback label{display:block;font-size:.76rem;font-weight:800}.trip-fallback textarea{width:100%;min-height:115px;border:1px solid #adbbae;border-radius:8px;background:white;color:#203b35}
+.trip-contacts{border-top:1px solid #d9d4c4;padding-top:12px;margin-top:auto}.trip-contacts strong{display:block;font-size:.75rem;margin-bottom:8px}.trip-contacts a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;font-weight:800;font-size:.75rem;color:#24573f;border:1px solid #dbddcd;border-radius:100px;background:#fffdf8;padding:8px 12px;margin:0 7px 8px 0}
+.trip-studio :is(button,input,select,textarea,a):focus-visible{outline:3px solid #efb960;outline-offset:3px}
+@media(max-width:830px){.trip-intro{display:block}.trip-intro>p{max-width:580px;margin-top:12px}.trip-layout{grid-template-columns:1fr}}
+@media(max-width:470px){.trip-studio{padding:18px;border-radius:17px}.trip-form,.trip-preview{padding:16px}.trip-reasons{grid-template-columns:1fr}.trip-reasons span{min-height:48px;padding:12px 12px 12px 38px;align-items:center}.trip-reasons input{top:15px}.trip-dates{grid-template-columns:1fr}.trip-intro h2{font-size:2.25rem}}
+
 </style>
 </head>
 <body>
@@ -191,6 +213,29 @@ footer a{font-weight:700}
     </ol>
     <p class="compare-footnote"><strong>“Confirm directly” means not specified in this directory, not that the provider lacks the service.</strong> This is not a live inventory or price comparison. Ask each provider for availability, total charges, insurance, pickup arrangements and current terms.</p>
   </section>
+
+  <section class="trip-studio" id="trip-studio" aria-labelledby="trip-title" hidden>
+    <div class="trip-intro"><div><p class="eyebrow">02 / Prepare your call</p><h2 id="trip-title">Your trip, <em>in a few lines.</em></h2></div><p>Create a clear inquiry for a rental desk. This is a planning tool—not a reservation or price quote.</p></div>
+    <div class="trip-layout">
+      <form class="trip-form" id="trip-form" autocomplete="off">
+        <fieldset><legend>What is the rental for?</legend><div class="trip-reasons">
+          <label><input type="radio" name="trip-reason" value="a local trip" checked><span>Getting around town</span></label>
+          <label><input type="radio" name="trip-reason" value="an out-of-town trip"><span>A trip out of town</span></label>
+          <label><input type="radio" name="trip-reason" value="temporary transportation while my own vehicle is unavailable"><span>While my car is in the shop</span></label>
+        </div></fieldset>
+        <div class="trip-dates"><label class="trip-field" for="trip-pickup">Pickup date <small>(optional)</small><input id="trip-pickup" type="date"></label><label class="trip-field" for="trip-return">Return date <small>(optional)</small><input id="trip-return" type="date"></label></div>
+        <label class="trip-field" for="trip-vehicle">Preferred vehicle <small>(optional)</small><select id="trip-vehicle"><option value="Open to available options">Open to options</option><option value="Car">Car</option><option value="Truck">Truck</option><option value="Sport utility vehicle">Sport utility vehicle</option><option value="Minivan">Minivan</option><option value="Passenger van">Passenger van</option></select></label>
+        <p class="trip-fine">Vehicle types and dates are preferences, not verified inventory. Nothing entered here is submitted or saved by the page.</p>
+      </form>
+      <aside class="trip-preview" aria-labelledby="trip-preview-title"><p class="eyebrow">Ready-to-use / Inquiry note</p><h3 id="trip-preview-title">Know what to ask.</h3>
+        <div class="trip-route" aria-hidden="true"><span>RUSSELLVILLE</span><i></i><span>YOUR NEXT STOP</span></div>
+        <p class="trip-message" id="trip-message">Choose your details to prepare an inquiry.</p>
+        <button class="trip-copy" id="trip-copy" type="button">Copy rental inquiry ↗</button><p class="trip-status" id="trip-status" role="status" aria-live="polite"></p>
+        <div class="trip-fallback" id="trip-fallback" hidden><label for="trip-fallback-text">Select and copy this text</label><textarea id="trip-fallback-text" readonly></textarea></div>
+        <div class="trip-contacts"><strong>Call a local rental desk</strong><a href="tel:+14795672470">24/7 Rent-A-Ride ↗</a><a href="tel:+14794982530">Cogswell ↗</a><a href="tel:+14799682779">Enterprise ↗</a></div>
+      </aside>
+    </div>
+  </section>
   <section aria-labelledby="providers-title">
     <div class="section-head"><div><p class="eyebrow" style="color:#698167">Find a vehicle</p><h2 id="providers-title">Your rental options</h2><p>Start with a local provider and confirm the details directly before making plans.</p></div><span class="section-number">01 / Compare</span></div>
     <div class="grid">
@@ -228,5 +273,57 @@ footer a{font-weight:700}
   <section class="contact" aria-labelledby="more-title"><div><h2 id="more-title">Need something else to rent?</h2><p>We’re building a practical local directory for Russellville and the surrounding River Valley.</p></div><a class="button gold" href="/#browse">Explore more rentals <span aria-hidden="true">↗</span></a></section>
   <footer><span>© 2026 Russellville.Rent</span><span>Local rentals. Local connections. Russellville, Arkansas.</span><a href="/#contact">Request a listing or correction</a></footer>
 </main>
+
+<script>
+(() => {
+  const studio = document.getElementById('trip-studio');
+  if (!studio) return;
+  const ids = ['trip-form','trip-pickup','trip-return','trip-vehicle','trip-message','trip-copy','trip-status','trip-fallback','trip-fallback-text'];
+  const [form,pickup,returning,vehicle,preview,copy,status,fallback,fallbackText] = ids.map(id => document.getElementById(id));
+  function format(value) {
+    return value ? new Date(value + 'T12:00:00Z').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'}) : '';
+  }
+  function compose() {
+    const selected = form.querySelector('input[name="trip-reason"]:checked');
+    const reason = selected ? selected.value : 'a trip';
+    const dates = pickup.value && returning.value ? format(pickup.value) + ' through ' + format(returning.value)
+      : pickup.value ? 'Pickup ' + format(pickup.value) + ', return to confirm'
+      : returning.value ? 'Return ' + format(returning.value) + ', pickup to confirm'
+      : 'To confirm';
+    return {valid: !(pickup.value && returning.value && returning.value < pickup.value),
+      message: ['Hello, I am looking for a vehicle rental in Russellville.',
+        'Purpose: ' + reason + '.','Dates: ' + dates + '.',
+        'Vehicle preference: ' + vehicle.value + '.',
+        'Could you confirm availability, total price, insurance and driver requirements, included mileage, deposit, and pickup/return arrangements?'].join('\n')};
+  }
+  function render() {
+    const result = compose();
+    preview.textContent = result.message;
+    copy.disabled = !result.valid;
+    status.textContent = result.valid ? '' : 'Return date must be on or after pickup.';
+    fallback.hidden = true;
+  }
+  form.addEventListener('input',render);
+  form.addEventListener('change',render);
+  copy.addEventListener('click',async () => {
+    const result = compose();
+    if (!result.valid) return;
+    try {
+      if (!navigator.clipboard || !navigator.clipboard.writeText) throw Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(result.message);
+      status.textContent = 'Inquiry copied. Paste it into a message to a rental provider.';
+      fallback.hidden = true;
+    } catch (_) {
+      fallbackText.value = result.message;
+      fallback.hidden = false;
+      fallbackText.focus();
+      fallbackText.select();
+      status.textContent = 'Clipboard unavailable. Copy the selected text manually.';
+    }
+  });
+  studio.hidden = false;
+  render();
+})();
+</script>
 </body>
 </html>
