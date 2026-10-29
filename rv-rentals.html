@@ -71,6 +71,35 @@ main{max-width:1160px;margin:0 auto;padding:0 28px}.hero{position:relative;isola
 @media(max-width:680px){.trip-map{margin-top:32px;padding:28px 19px;border-radius:19px}.trip-map-head{display:block;margin-bottom:20px}.trip-map-head>p{max-width:none;margin-top:12px}.trip-map-steps{gap:10px}.trip-map-step{padding:16px 14px}.trip-map-step h3{font-size:1.17rem}.trip-map-end{align-items:stretch;flex-direction:column}.trip-map-link{width:100%;white-space:normal}}
 @media(max-width:460px){.trip-map-steps{grid-template-columns:1fr}.trip-map-step{min-height:125px;padding:17px 17px 17px 75px}.trip-map-step:before{position:absolute;left:18px;top:24px}.trip-map-icon{top:42px;left:15px;right:auto;width:43px;height:43px}.trip-map-step h3{margin:0 0 5px}.trip-map-step p{font-size:.84rem}}
 @media(prefers-reduced-motion:reduce){.trip-map-link{transition:none}.trip-map-link:hover{transform:none}}
+
+/* Booking compass: make the direct-operator vs marketplace decision visible at a glance. */
+.path-guide{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:22px;align-items:end;margin-top:25px;padding-top:24px;border-top:1px solid #e0e8de}
+.path-guide-kicker{display:block;margin-bottom:9px;color:#64836e;font-size:.66rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
+.path-guide strong{display:block;font:400 clamp(1.55rem,2.8vw,2.1rem)/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.045em;color:#1c4938}
+.path-guide>span{font-size:.85rem;line-height:1.6;color:#496358}
+.path-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:19px;align-items:stretch}
+.path-filters .path-choice{position:relative;display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;gap:16px;min-height:235px;padding:21px 23px;overflow:hidden;text-align:left;white-space:normal;border:1px solid #c4d6c6;border-radius:20px;background:linear-gradient(140deg,#edf4eb,#f8f7ee);color:#1b4938;box-shadow:0 10px 25px #143e3110;transition:background-color .2s,border-color .2s,box-shadow .2s,transform .2s}
+.path-filters .path-market{background:linear-gradient(140deg,#f2efe5,#f8f7f0);border-color:#d9d4bf}
+.path-filters .path-choice:after{content:"";pointer-events:none;position:absolute;width:165px;height:165px;border:1px solid currentColor;border-radius:50%;opacity:.11;right:-77px;top:-86px;box-shadow:0 0 0 23px #67846e13,0 0 0 46px #67846e08}
+.path-choice-top,.path-choice-foot{display:flex;align-items:center;justify-content:space-between;gap:15px;position:relative;z-index:1}
+.path-choice-top>span{font-size:.65rem;text-transform:uppercase;letter-spacing:.13em;font-weight:850}
+.path-choice-top svg{flex:none;width:70px;max-width:28%;height:54px}
+.path-choice-main{display:block;position:relative;z-index:1}
+.path-choice-main strong{display:block;font:400 clamp(1.4rem,2.5vw,1.74rem)/1.13 Georgia,"Times New Roman",serif;letter-spacing:-.035em}
+.path-choice-main small{display:block;font-size:.79rem;line-height:1.52;font-weight:500;margin-top:8px;color:#4f665b}
+.path-choice-foot{border-top:1px solid #c8d9c9;padding-top:12px;font-size:.78rem;font-weight:850}
+.path-choice-foot span{font-size:1rem;line-height:1}
+.path-filters .path-choice:hover{transform:translateY(-2px);box-shadow:0 15px 32px #173e341a;border-color:#8eae93;background:#e6f0e4}
+.path-filters .path-choice[aria-pressed="true"]{background:linear-gradient(135deg,#143e33,#27634d);border-color:#143e33;color:#fffdf2;box-shadow:0 15px 35px #143e3330}
+.path-choice[aria-pressed="true"] .path-choice-main small{color:#e0ede2}
+.path-choice[aria-pressed="true"] .path-choice-foot{border-top-color:#ffffff50}
+.path-filters .path-show-all{grid-column:1/-1;justify-self:start;display:inline-flex;align-items:center;gap:11px;min-height:45px;border-radius:999px;padding:10px 17px;font-size:.79rem;background:#f2f6ef;color:#285743}
+.path-filters .path-show-all[aria-pressed="true"]{background:#164537;color:white;border-color:#164537}
+.path-filters .path-show-all span{font-size:1rem}
+@media(max-width:740px){.path-guide{grid-template-columns:1fr;gap:9px}.path-filters{grid-template-columns:1fr}.path-filters .path-choice{min-height:185px}.path-filters .path-show-all{justify-self:stretch;justify-content:center}}
+@media(max-width:430px){.path-filters .path-choice{padding:19px 18px;gap:13px}.path-choice-top svg{width:54px;height:43px}.path-choice-main strong{font-size:1.48rem}}
+@media(prefers-reduced-motion:reduce){.path-filters .path-choice{transition:none}.path-filters .path-choice:hover{transform:none}}
+
 </style></head><body>
 <a class="skip-link" href="#providers">Skip to rental listings</a><header><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back-link" href="/">← All rental categories</a></div></header>
 <main><section class="hero" aria-labelledby="page-title"><div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Bring your <em>own adventure.</em></h1><p class="hero-intro">Find a recreational vehicle (RV) or camper to rent for a trip, tailgate or campground stay. Compare direct Arkansas operators and rental marketplaces. These are vehicle rentals, not campsite reservations.</p><div class="hero-actions"><a class="hero-button primary" href="#rental-finder">Compare rental paths <span aria-hidden="true">↓</span></a><a class="hero-button secondary" href="/camping.html">Find a campsite <span aria-hidden="true">↗</span></a></div></div><div class="hero-visual" aria-hidden="true"><svg viewBox="0 0 600 430" xmlns="http://www.w3.org/2000/svg" focusable="false">
@@ -94,11 +123,19 @@ main{max-width:1160px;margin:0 auto;padding:0 28px}.hero{position:relative;isola
 <path d="M110 325h35m304 0h30" stroke="#f9e7c4" stroke-width="6" stroke-linecap="round"/>
 </svg><span class="hero-art-caption">Your trip · Your pace · Arkansas</span></div></section>
 <section class="finder" id="rental-finder" aria-label="Search recreational vehicle rentals"><div class="finder-head"><label for="rv-search">Search rental options</label><p class="finder-hint">Try “delivery”, “camper”, “marketplace” or a provider name.</p></div><div class="finder-row"><input id="rv-search" type="search" autocomplete="off" placeholder="Search campers, motorhomes, delivery…" aria-controls="rv-grid"><button id="rv-clear" type="button">Clear search</button></div>
-<div class="path-guide"><strong>Choose how to rent</strong><span>Direct operators rent their own campers. Marketplaces connect you with individual hosts.</span></div>
+<div class="path-guide"><div><span class="path-guide-kicker">The booking compass / Two routes</span><strong>Choose your way to wander.</strong></div><span>Rent from an operator's own fleet or browse campers offered by individual hosts. Either way, confirm your dates and Russellville-area pickup or delivery.</span></div>
 <div class="path-filters" id="rv-paths" role="group" aria-label="Filter by rental path" hidden>
-<button type="button" data-rv-filter="all" aria-controls="rv-grid" aria-pressed="true">All options</button>
-<button type="button" data-rv-filter="direct" aria-controls="rv-grid" aria-pressed="false">Direct operators</button>
-<button type="button" data-rv-filter="marketplace" aria-controls="rv-grid" aria-pressed="false">Rental marketplaces</button>
+<button type="button" class="path-choice path-direct" data-rv-filter="direct" aria-controls="rv-grid" aria-pressed="false">
+<span class="path-choice-top"><span>01 / Direct operator</span><svg viewBox="0 0 80 60" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 19h52a6 6 0 0 1 6 6v21H8V19Z"/><path d="M16 25h15v12H16zM38 25h16v12H38zM66 38h7l5 8H66"/><circle cx="24" cy="47" r="6"/><circle cx="56" cy="47" r="6"/><path d="M8 47H4m69 0h5"/></svg></span>
+<span class="path-choice-main"><strong>Rent from a business.</strong><small>Contact an Arkansas rental operator about its advertised camper fleet and delivery options.</small></span>
+<span class="path-choice-foot">Explore direct operators <span aria-hidden="true">↗</span></span>
+</button>
+<button type="button" class="path-choice path-market" data-rv-filter="marketplace" aria-controls="rv-grid" aria-pressed="false">
+<span class="path-choice-top"><span>02 / Rental marketplace</span><svg viewBox="0 0 80 60" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="11" y="18" width="36" height="30" rx="5"/><path d="M26 18V12a5 5 0 0 1 5-5h32a5 5 0 0 1 5 5v28a5 5 0 0 1-5 5H47"/><path d="M19 31h20M19 37h12M38 17h20M38 25h20"/></svg></span>
+<span class="path-choice-main"><strong>Browse individual hosts.</strong><small>Explore marketplace listings, then check each host's location, terms and delivery eligibility.</small></span>
+<span class="path-choice-foot">Explore marketplaces <span aria-hidden="true">↗</span></span>
+</button>
+<button type="button" class="path-show-all" data-rv-filter="all" aria-controls="rv-grid" aria-pressed="true">Show both rental paths <span aria-hidden="true">↗</span></button>
 </div><p class="path-caveat">All options require confirmation of dates, total cost and delivery to your specific location.</p></section>
 <section id="providers" aria-labelledby="providers-title"><div class="results-heading"><h2 id="providers-title">Compare RV rental options</h2><p id="rv-count" role="status" aria-live="polite" aria-atomic="true">Browse provider information below.</p></div><div class="grid" id="rv-grid">
 <article data-type="direct"><span class="tag">Direct rental operator</span><h3>Huddleston RV Rentals — Hot Springs</h3><p>Arkansas-based operator advertising camper and travel-trailer rentals with delivery, campsite setup and pickup. The official site says delivery is offered anywhere in Arkansas, but <strong>delivery to a particular Russellville address or campground remains UNCONFIRMED</strong> until the operator accepts the booking. Confirm the specific camper, delivery charge, minimum stay, site requirements and dates directly.</p><p class="detail">4946 Malvern Road, Hot Springs, AR 71901 · Regional operator; Russellville delivery UNCONFIRMED</p><p><a href="tel:+15012265599">501-226-5599</a> · <a href="https://huddlestonrvrental.com/" target="_blank" rel="noopener noreferrer">Official rental and delivery information ↗</a> · <a href="https://huddlestonrvrental.com/what-to-expect/" target="_blank" rel="noopener noreferrer">Official booking policies ↗</a></p></article>
