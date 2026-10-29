@@ -77,6 +77,25 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.82rem;col
 @media(max-width:970px){.ride-option{grid-template-columns:1fr;gap:12px}.ride-symbol{width:64px;height:64px}.ride-symbol svg{width:52px;height:52px}}
 @media(max-width:700px){.ride-finder .wrap{padding-top:33px;padding-bottom:33px}.ride-finder-head{display:block}.ride-reset{margin-top:16px}.ride-options{grid-template-columns:1fr;gap:11px}.ride-option{grid-template-columns:65px 1fr;min-height:112px;padding:17px 18px}.ride-option[aria-pressed="true"]:after{top:7px}.ride-copy strong{font-size:1.3rem}}
 @media(prefers-reduced-motion:reduce){.ride-option{transition:none}.ride-option:hover{transform:none}}
+
+/* Editorial daily-rate comparison, progressively enhanced from the published rate cards. */
+.rate-snapshot{background:radial-gradient(circle at 100% 0,#326b51 0,transparent 48%),linear-gradient(135deg,#102f2b,#184737);color:#fff;border-radius:22px;padding:clamp(23px,4.2vw,43px);margin:0 0 30px;box-shadow:0 20px 44px #123c321e;overflow:hidden}
+.snapshot-intro{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:25px}
+.snapshot-eyebrow{margin:0 0 9px;color:#e9ca82;font-size:.67rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
+.snapshot-intro h3{font:400 clamp(1.75rem,3.1vw,2.7rem)/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.05em;margin:0}
+.snapshot-intro p:last-child{font-size:.82rem;color:#dcebe0;max-width:40ch;margin:0}
+.snapshot-bars{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.snapshot-link{display:grid;grid-template-columns:minmax(220px,1.12fr) minmax(100px,.95fr) 69px;gap:22px;align-items:center;min-height:59px;padding:10px 15px;border:1px solid #ffffff17;border-radius:11px;text-decoration:none;color:#fff;transition:background .2s,border-color .2s}
+.snapshot-link:hover{background:#ffffff12;border-color:#ffffff52}
+.snapshot-link:focus-visible{outline:3px solid #f2d18e;outline-offset:2px}
+.snapshot-name{font-size:.85rem;font-weight:700;line-height:1.35}
+.snapshot-track{display:block;height:13px;background:#ffffff20;border:1px solid #ffffff25;border-radius:99px;overflow:hidden}
+.snapshot-fill{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#c0dda9,#eed08e);width:var(--rate-fill)}
+.snapshot-amount{font:400 1.36rem/1 Georgia,serif;letter-spacing:-.04em;color:#ffe7b6;text-align:right;white-space:nowrap}
+.snapshot-foot{font-size:.73rem;color:#d4e4d7;margin:19px 0 0}
+@media(max-width:700px){.snapshot-intro{display:block}.snapshot-intro p:last-child{max-width:60ch;margin:12px 0 0}.snapshot-link{grid-template-columns:minmax(0,1fr) 65px;gap:7px 12px;padding:13px}.snapshot-name{font-size:.84rem}.snapshot-track{grid-column:1/-1;grid-row:2;height:12px}.snapshot-amount{font-size:1.25rem}}
+@media(prefers-reduced-motion:reduce){.snapshot-link{transition:none}}
+
 </style></head><body>
 <a class="skip" href="#main">Skip to rental rates</a>
 <header><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
@@ -94,6 +113,12 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.82rem;col
 <button class="ride-option" type="button" data-ride-filter="road" aria-controls="rate-grid" aria-pressed="false"><span class="ride-symbol" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M9 51c9-18 35-9 45-36"/><path d="M19 51c10-12 29-8 35-24"/><path d="M29 39v-5m11-2v-5m10-8v-4"/></svg></span><span class="ride-copy"><strong>Road &amp; gravel</strong><small>Road or gravel bicycle</small><em>1 advertised bike type →</em></span></button>
 </div><p class="ride-result" id="ride-results" role="status" aria-live="polite" aria-atomic="true">Showing all 5 advertised bike types.</p></div></section>
 <section class="rates wrap" id="rates" aria-labelledby="rates-title"><div class="section-head"><div><p class="eyebrow">Five advertised rental categories</p><h2 id="rates-title">Pick the bike. See the price.</h2></div><p>These are <strong>Jackalope Cycling's advertised daily rates</strong>, not guaranteed quotes. Confirm current prices, bicycle fit and availability directly with the shop.</p></div>
+
+<div class="rate-snapshot" id="rate-snapshot" aria-labelledby="rate-snapshot-title" hidden>
+<div class="snapshot-intro"><div><p class="snapshot-eyebrow">The daily-rate lineup / Published prices</p><h3 id="rate-snapshot-title">See the price spread.</h3></div><p>Five posted day rates on one scale. Tap a row to view its rental card. Bars start at zero and are scaled to the highest rate shown.</p></div>
+<ol class="snapshot-bars" id="snapshot-bars" aria-label="Bicycle daily-rate comparison"></ol>
+<p class="snapshot-foot">Published daily rates only, not live quotes. Final pricing, bicycle sizes, deposits and availability must be confirmed with Jackalope Cycling.</p>
+</div>
 <div class="rate-grid" id="rate-grid"><article class="rate-card" data-ride="mountain"><span class="index">01 · MOUNTAIN</span><h3>Carbon full-suspension mountain bike</h3><div class="price"><strong><data value="80">$80</data></strong><span>/ day</span></div></article>
 <article class="rate-card" data-ride="mountain"><span class="index">02 · MOUNTAIN</span><h3>Aluminum full-suspension mountain bike</h3><div class="price"><strong><data value="60">$60</data></strong><span>/ day</span></div></article>
 <article class="rate-card" data-ride="mountain"><span class="index">03 · MOUNTAIN</span><h3>Hardtail mountain bike</h3><div class="price"><strong><data value="50">$50</data></strong><span>/ day</span></div></article>
@@ -113,6 +138,40 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.82rem;col
   const filters=Array.from(document.querySelectorAll('[data-ride-filter]'));
   const result=document.getElementById('ride-results');
   const labels={all:'advertised bike types',mountain:'mountain bike types',electric:'electric commuter bike types',road:'road and gravel bike types'};
+
+  // Read prices from existing cards to avoid duplicate rate data.
+  const snapshot=document.getElementById('rate-snapshot');
+  const bars=document.getElementById('snapshot-bars');
+  const amounts=cards.map(card=>Number(card.querySelector('.price data')?.value));
+  if(cards.length && amounts.every(amount=>Number.isFinite(amount)&&amount>0)){
+    const highest=Math.max(...amounts);
+    cards.forEach(function(card,index){
+      card.id='bike-rate-'+(index+1);
+      const entry=document.createElement('li');
+      entry.dataset.ride=card.dataset.ride;
+      const link=document.createElement('a');
+      link.className='snapshot-link';
+      link.href='#'+card.id;
+      link.setAttribute('aria-label',card.querySelector('h3').textContent.trim()+', '+card.querySelector('.price data').textContent.trim()+' per day; jump to rate card');
+      const name=document.createElement('span');
+      name.className='snapshot-name';
+      name.textContent=card.querySelector('h3').textContent.trim();
+      const track=document.createElement('span');
+      track.className='snapshot-track';
+      track.setAttribute('aria-hidden','true');
+      const fill=document.createElement('span');
+      fill.className='snapshot-fill';
+      fill.style.setProperty('--rate-fill',(amounts[index]/highest*100).toFixed(2)+'%');
+      track.appendChild(fill);
+      const amount=document.createElement('span');
+      amount.className='snapshot-amount';
+      amount.textContent=card.querySelector('.price data').textContent.trim();
+      link.append(name,track,amount);
+      entry.appendChild(link);
+      bars.appendChild(entry);
+    });
+    snapshot.hidden=false;
+  }
   filters.forEach(function(button){
     button.addEventListener('click',function(){
       const choice=button.dataset.rideFilter;
@@ -122,6 +181,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.82rem;col
         card.hidden=!show;
         if(show)visible++;
       });
+      bars.querySelectorAll('li').forEach(function(entry){entry.hidden=choice!=='all'&&entry.dataset.ride!==choice;});
       filters.forEach(function(filter){filter.setAttribute('aria-pressed',String(filter===button));});
       result.textContent='Showing '+visible+' '+labels[choice]+'.';
     });
