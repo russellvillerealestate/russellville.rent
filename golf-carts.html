@@ -101,6 +101,32 @@ footer{border-top:1px solid var(--line);padding-top:22px;margin-top:33px;color:v
 @media(max-width:850px){.delivery-heading{display:block}.delivery-flag{margin-top:17px}.delivery-diagram{grid-template-columns:minmax(0,1fr) 70px minmax(150px,.7fr);gap:8px}.delivery-origins{grid-template-columns:1fr}.delivery-origin{min-height:0}.delivery-gate span{width:66px;height:66px;font-size:.65rem}}
 @media(max-width:620px){.delivery-board{margin-top:22px;padding:26px 19px;border-radius:19px}.delivery-diagram{grid-template-columns:1fr;gap:0}.delivery-origin{padding:13px}.delivery-gate{min-height:72px}.delivery-gate:before{top:0;bottom:0;left:50%;right:auto;border-top:0;border-left:2px dashed #f0cc82ad}.delivery-gate span{width:88px;height:52px;border-radius:12px}.delivery-destination{min-height:122px}.delivery-caption{margin-top:13px}}
 @media(prefers-reduced-motion:reduce){.delivery-origin{transition:none}.delivery-origin:hover{transform:none}}
+
+/* Copy-ready local inquiry: accessible labels, no claimed delivery coverage. */
+.request-studio{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);margin:48px 0 0;border:1px solid #d2dfcf;border-radius:25px;background:white;box-shadow:0 18px 48px #153d3115;overflow:hidden}
+.request-intro{position:relative;isolation:isolate;overflow:hidden;padding:clamp(28px,4vw,43px);background:linear-gradient(145deg,#e4eddf,#f8f1df)}
+.request-intro:before{content:"";position:absolute;z-index:-1;width:390px;height:390px;right:-235px;top:-180px;border:2px solid #38745b45;border-radius:50%;box-shadow:0 0 0 44px #39745b10,0 0 0 89px #39745b0a}
+.request-intro .eyebrow{color:#4b735b;margin:0 0 12px}
+.request-intro h2{font:400 clamp(2rem,3.6vw,3.05rem)/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.045em;margin:0 0 17px;text-wrap:balance;color:#143d34}
+.request-intro>p:not(.eyebrow){max-width:38ch;font-size:.91rem;color:#36584a;margin:0}
+.request-route{position:relative;margin-top:32px;padding:21px;border-radius:17px;background:#143d34;color:#f7f6e8;box-shadow:0 11px 24px #143d3420}
+.request-route:before{content:"";position:absolute;left:29px;top:31px;bottom:36px;border-left:2px dashed #f0cc827f}
+.request-route div{position:relative;padding-left:29px}.request-route div+div{margin-top:21px}
+.request-route div:before{content:"";position:absolute;top:8px;left:4px;width:9px;height:9px;border:2px solid #f0cc82;background:#143d34;border-radius:50%}
+.request-route strong{display:block;font-size:.91rem;line-height:1.3}.request-route span{display:block;color:#d4e8dc;font-size:.75rem;margin-top:5px}
+.request-form{padding:clamp(25px,3.6vw,39px);min-width:0}.request-form h3{margin:0 0 5px;font:400 1.6rem/1.2 Georgia,serif;letter-spacing:-.03em}.request-form>p{margin:0 0 23px;color:#506c5b;font-size:.84rem}
+.request-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px 14px}.request-field{min-width:0}
+.request-field label,.request-draft label{display:block;margin:0 0 6px;color:#294d3d;font-size:.76rem;font-weight:800}
+.request-field input,.request-field select,.request-draft textarea{display:block;width:100%;min-width:0;border:1px solid #b5ccba;border-radius:10px;background:#f8faf6;color:#173b32;font:inherit;font-size:.87rem;padding:11px 12px;min-height:46px}
+.request-field input:focus,.request-field select:focus,.request-draft textarea:focus{background:white}
+.request-field input:focus-visible,.request-field select:focus-visible,.request-draft textarea:focus-visible,.request-copy:focus-visible{outline:3px solid #af7521;outline-offset:3px}
+.request-field small{display:block;margin-top:6px;color:#587060;font-size:.72rem;line-height:1.5}
+.request-draft{margin-top:23px;padding-top:22px;border-top:1px dashed #b8cdbd}.request-draft textarea{height:154px;resize:vertical;line-height:1.55;background:#f2f6ee}
+.request-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:13px}.request-copy{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 20px;border:0;border-radius:10px;background:#143d34;color:white;font:800 .85rem/1.3 system-ui,sans-serif;cursor:pointer}.request-copy:hover{background:#27634d}.request-actions a{font-size:.82rem;font-weight:800}
+.request-status{margin:11px 0 0!important;font-size:.76rem!important;color:#215f45!important;min-height:1.3em}
+@media(max-width:850px){.request-studio{grid-template-columns:1fr}.request-intro{padding:31px}.request-route{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}.request-route:before{display:none}.request-route div{padding-left:20px}.request-route div+div{margin-top:0}.request-route div:before{left:0}.request-form{padding:30px}}
+@media(max-width:530px){.request-studio{margin-top:34px;border-radius:19px}.request-intro,.request-form{padding:24px 20px}.request-intro h2{font-size:2.2rem}.request-fields{grid-template-columns:1fr;gap:13px}.request-route{display:block}.request-route div+div{margin-top:16px}.request-actions{align-items:stretch;flex-direction:column}.request-copy,.request-actions a{width:100%;text-align:center}.request-draft textarea{height:188px}}
+
 </style>
 </head>
 <body>
@@ -165,6 +191,34 @@ footer{border-top:1px solid var(--line);padding-top:22px;margin-top:33px;color:v
 </div>
 <p class="delivery-caption">Conceptual inquiry diagram only—not a map, route, travel estimate or service-area guarantee. Confirm rental inventory, transport fees and terms with each provider.</p>
 </section>
+
+<section class="request-studio" aria-labelledby="request-title">
+  <div class="request-intro">
+    <p class="eyebrow">A more useful first conversation</p>
+    <h2 id="request-title">Make the first call count.</h2>
+    <p>Share the basics once, then ask the providers listed below whether a cart, pickup or delivery is actually available.</p>
+    <div class="request-route" aria-label="How this inquiry works">
+      <div><strong>01 / Describe the event</strong><span>Dates, passengers and where the cart would be used.</span></div>
+      <div><strong>02 / Copy your message</strong><span>Paste it into a provider's official inquiry form.</span></div>
+    </div>
+  </div>
+  <div class="request-form">
+    <h3>Build a rental inquiry</h3>
+    <p>Everything stays in this browser. Nothing is submitted, saved or reserved here.</p>
+    <form id="cart-inquiry-form">
+      <div class="request-fields">
+        <div class="request-field"><label for="cart-purpose">Event or intended use</label><input id="cart-purpose" type="text" maxlength="80" placeholder="e.g. outdoor wedding" autocomplete="off"></div>
+        <div class="request-field"><label for="cart-dates">Dates needed</label><input id="cart-dates" type="text" maxlength="80" placeholder="e.g. Nov 15–16" autocomplete="off"></div>
+        <div class="request-field"><label for="cart-seats">Passenger capacity</label><select id="cart-seats"><option value="">Not sure yet</option><option value="2">2 people</option><option value="4">4 people</option><option value="6">6 people</option><option value="6 or more">6 or more people</option></select></div>
+        <div class="request-field"><label for="cart-transport">Pickup or delivery</label><select id="cart-transport"><option value="check">Ask about delivery</option><option value="pickup">I could pick up</option><option value="both">Discuss both options</option></select><small>Delivery to Russellville is unconfirmed for every listed provider.</small></div>
+        <div class="request-field" style="grid-column:1/-1"><label for="cart-location">Where would you use the cart?</label><input id="cart-location" type="text" maxlength="85" placeholder="e.g. Russellville, Arkansas" autocomplete="off"></div>
+      </div>
+    </form>
+    <div class="request-draft"><label for="cart-message">Your copy-ready message</label><textarea id="cart-message" readonly spellcheck="false" aria-describedby="cart-message-help">Hello, I am looking for a golf cart rental. Could you confirm availability, pickup or delivery options, total rental and transportation costs, deposit, insurance and return terms? Thank you.</textarea><small id="cart-message-help">You can select and copy the text manually at any time. Confirm all details with the provider.</small></div>
+    <div class="request-actions"><button class="request-copy" type="button" id="cart-copy">Copy inquiry ↗</button><a href="#providers">Browse the four providers ↓</a></div>
+    <p class="request-status" id="cart-copy-status" role="status" aria-live="polite"></p>
+  </div>
+</section>
 <section id="providers" aria-labelledby="providers-title">
 <div class="section-head"><h2 id="providers-title">Explore rental providers</h2><p>Contact providers to verify service in Russellville.</p></div>
 <div class="provider-grid">
@@ -217,5 +271,52 @@ footer{border-top:1px solid var(--line);padding-top:22px;margin-top:33px;color:v
 <p class="note">Independent local directory. Rental service and Russellville delivery are not guaranteed. Confirm current inventory, transport coverage, pricing, availability and terms directly with each provider. <a href="sms:+14799707301">Suggest a correction</a>.</p>
 <footer>Russellville.Rent · <a href="/">Return to homepage</a></footer>
 </main>
+<script>
+
+(function () {
+  "use strict";
+  const byId = id => document.getElementById(id);
+  const form = byId("cart-inquiry-form");
+  const message = byId("cart-message");
+  const status = byId("cart-copy-status");
+  const fields = ["cart-purpose", "cart-dates", "cart-seats", "cart-transport", "cart-location"].map(byId);
+  function clean(value) { return value.trim().replace(/\s+/g, " "); }
+  function render() {
+    const purpose = clean(byId("cart-purpose").value);
+    const dates = clean(byId("cart-dates").value);
+    const seats = byId("cart-seats").value;
+    const location = clean(byId("cart-location").value);
+    const transport = byId("cart-transport").value;
+    const parts = [
+      "Hello, I'm looking for a golf cart rental" + (purpose ? " for " + purpose : "") + ".",
+      "Dates needed: " + (dates || "please discuss availability") + ".",
+      "Passenger capacity: " + (seats ? seats + " people" : "to be discussed") + ".",
+      "Location: " + (location || "Russellville area; please confirm service coverage") + ".",
+      transport === "pickup" ? "I may be able to pick up the cart; please confirm pickup requirements." :
+      transport === "both" ? "Please let me know whether pickup or delivery is possible." :
+      "Could you deliver to my location? I understand service coverage is not confirmed.",
+      "Please confirm available models, total rental price, transport charges, deposit, insurance, driver requirements and return terms. Thank you."
+    ];
+    message.value = parts.join("\n");
+    status.textContent = "";
+  }
+  fields.forEach(field => { field.addEventListener("input", render); field.addEventListener("change", render); });
+  form.addEventListener("submit", event => event.preventDefault());
+  byId("cart-copy").addEventListener("click", async () => {
+    try {
+      if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error("Clipboard unavailable");
+      await navigator.clipboard.writeText(message.value);
+      status.textContent = "Inquiry copied. Paste it into a provider's inquiry form.";
+    } catch (error) {
+      message.focus();
+      message.select();
+      let copied = false;
+      try { copied = document.execCommand("copy"); } catch (ignored) {}
+      status.textContent = copied ? "Inquiry copied. Paste it into a provider's inquiry form." : "Text selected. Copy it manually, then contact a provider.";
+    }
+  });
+  render();
+}());
+</script>
 </body>
 </html>
