@@ -473,6 +473,34 @@ footer{margin-top:30px}
 @media(max-width:380px){.intent-grid{grid-template-columns:1fr}.intent-card{min-height:111px}.intent-symbol{margin-bottom:6px}}
 @media(prefers-reduced-motion:reduce){.intent-card{transition:none}.intent-card:hover{transform:none}}
 
+
+/* Mobile search studio: an accessible bottom sheet over the existing live directory. */
+.mobile-search-sheet{width:100%;max-width:none;max-height:min(84dvh,680px);margin:auto 0 0;padding:0;border:0;border-radius:25px 25px 0 0;background:#f8faf6;color:#193b32;box-shadow:0 -20px 65px #041f1a66;overflow:auto;overscroll-behavior:contain}
+.mobile-search-sheet::backdrop{background:#082d26a8;backdrop-filter:blur(2px)}
+.mobile-sheet-top{padding:13px clamp(20px,5vw,34px) 22px;background:radial-gradient(circle at 90% 0,#386e58,transparent 50%),linear-gradient(135deg,#103a31,#1a4e3c);color:#fff}
+.mobile-sheet-handle{width:48px;height:5px;border-radius:99px;background:#c8daca80;margin:0 auto 17px}
+.mobile-sheet-heading{display:flex;align-items:start;justify-content:space-between;gap:16px}
+.mobile-sheet-heading .sheet-kicker{display:block;font-size:.68rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase;color:#f4d394;margin-bottom:8px}
+.mobile-sheet-heading h2{margin:0;color:#fff;font:400 clamp(1.85rem,7vw,2.45rem)/1.11 Georgia,"Times New Roman",serif;letter-spacing:-.045em}
+.mobile-sheet-heading p{margin:10px 0 0;font-size:.82rem;line-height:1.55;color:#dcece2;max-width:45ch}
+.mobile-sheet-close{display:grid;place-items:center;flex:none;width:45px;height:45px;border:1px solid #ffffff65;border-radius:13px;background:#ffffff14;color:#fff;cursor:pointer;font-size:1.5rem;line-height:1}
+.mobile-sheet-fields{display:grid;gap:14px;padding:22px clamp(20px,5vw,34px) 0}
+.mobile-sheet-fields label{display:block;margin:0;font-size:.75rem;font-weight:850;color:#375b4a}
+.mobile-sheet-fields :is(input,select){width:100%;min-height:50px;margin-top:7px;border:1px solid #9ab6a3;border-radius:11px;background:#fff;color:#183d32;padding:11px 14px;font-size:1rem}
+.mobile-sheet-context{font-size:.77rem;color:#566d60;line-height:1.5;margin:12px clamp(20px,5vw,34px) 0}
+.mobile-sheet-summary{display:flex;gap:13px;align-items:center;margin:20px clamp(20px,5vw,34px) 0;padding:15px 18px;border-radius:14px;background:#e4eee6;border:1px solid #cfe0d2}
+.mobile-sheet-summary strong{font:400 2.35rem/1 Georgia,"Times New Roman",serif;color:#174b3a}
+.mobile-sheet-summary span{font-size:.78rem;font-weight:750;color:#3c604d}
+.mobile-sheet-actions{display:grid;grid-template-columns:1fr 1.65fr;gap:10px;padding:15px clamp(20px,5vw,34px) calc(18px + env(safe-area-inset-bottom,0px))}
+.mobile-sheet-actions button{min-height:52px;border-radius:11px;padding:11px;font-size:.83rem;font-weight:850;cursor:pointer}
+.mobile-sheet-reset{border:1px solid #afc5b6;background:#fff;color:#285340}
+.mobile-sheet-apply{border:1px solid #173f35;background:#173f35;color:#fff}
+.mobile-sheet-apply:hover{background:#2a604f}
+.mobile-search-sheet :is(button,input,select):focus-visible{outline:3px solid #c67c19;outline-offset:3px}
+@media(min-width:601px){.mobile-search-sheet{max-width:550px;margin:auto;border-radius:23px}}
+@media(max-width:360px){.mobile-sheet-actions{grid-template-columns:1fr}.mobile-sheet-heading h2{font-size:1.75rem}}
+@media(prefers-reduced-motion:reduce){.mobile-search-sheet::backdrop{backdrop-filter:none}}
+
 </style>
 </head>
 <body>
@@ -783,6 +811,21 @@ footer{margin-top:30px}
   <a class="mobile-dock-search" href="#search" aria-label="Search rentals"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 5 5"/></svg>Search</a>
   <a href="#list" aria-label="List your rental"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/><circle cx="12" cy="12" r="10"/></svg>List yours</a>
 </nav>
+
+<dialog class="mobile-search-sheet" id="mobile-search-sheet" aria-labelledby="mobile-sheet-title" aria-describedby="mobile-sheet-description">
+  <div class="mobile-sheet-top">
+    <div class="mobile-sheet-handle" aria-hidden="true"></div>
+    <div class="mobile-sheet-heading"><div><span class="sheet-kicker">River Valley / Quick search</span><h2 id="mobile-sheet-title">Find your kind of rental.</h2><p id="mobile-sheet-description">Refine the directory without losing your place. Results update as you type.</p></div><button class="mobile-sheet-close" id="mobile-sheet-close" type="button" aria-label="Close rental search">×</button></div>
+  </div>
+  <div class="mobile-sheet-fields">
+    <label for="mobile-sheet-query">What are you looking for?<input id="mobile-sheet-query" type="search" placeholder="Homes, trailers, kayaks…" autocomplete="off"></label>
+    <label for="mobile-sheet-category">Rental category<select id="mobile-sheet-category"></select></label>
+  </div>
+  <p class="mobile-sheet-context" id="mobile-sheet-context">Search across local rental categories.</p>
+  <div class="mobile-sheet-summary" role="status" aria-live="polite" aria-atomic="true"><strong id="mobile-sheet-count">33</strong><span id="mobile-sheet-count-label">matching rental categories</span></div>
+  <div class="mobile-sheet-actions"><button class="mobile-sheet-reset" id="mobile-sheet-reset" type="button">Clear filters</button><button class="mobile-sheet-apply" id="mobile-sheet-show" type="button">View matching categories ↗</button></div>
+</dialog>
+
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 const form = document.getElementById("filters");
@@ -1151,6 +1194,60 @@ search.addEventListener("input",()=>{setIntent("all");filterRentals();});
 category.addEventListener("change",()=>{setIntent("all");filterRentals();});
 form.addEventListener("reset",()=>{search.value="";category.value="all";setIntent("all");filterRentals();});
 filterRentals();
+
+
+/* Mobile-only live filter tray. Uses the existing search logic and category options. */
+(function(){
+  const sheet=document.getElementById("mobile-search-sheet");
+  const launch=document.querySelector(".mobile-dock-search");
+  if(!sheet || !launch || typeof sheet.showModal!=="function") return;
+  const query=document.getElementById("mobile-sheet-query");
+  const type=document.getElementById("mobile-sheet-category");
+  const total=document.getElementById("mobile-sheet-count");
+  const totalLabel=document.getElementById("mobile-sheet-count-label");
+  const context=document.getElementById("mobile-sheet-context");
+  const show=document.getElementById("mobile-sheet-show");
+  function syncSheet(){
+    query.value=search.value;
+    type.value=category.value;
+    const matches=cards.filter(card=>!card.hidden).length;
+    total.textContent=String(matches);
+    totalLabel.textContent=matches===1?"matching rental category":"matching rental categories";
+    context.textContent=activeIntent==="all"
+      ?"Search terms and categories filter the directory instantly."
+      :"Currently exploring “"+intentLabels[activeIntent]+"”. Editing either field searches all pathways.";
+    show.textContent="View "+matches+" "+(matches===1?"category":"categories")+" ↗";
+  }
+  function updateFromSheet(){
+    search.value=query.value;
+    category.value=type.value;
+    setIntent("all");
+    filterRentals();
+    syncSheet();
+  }
+  launch.addEventListener("click",event=>{
+    if(!window.matchMedia("(max-width: 600px)").matches) return;
+    event.preventDefault();
+    type.replaceChildren(...Array.from(category.options,option=>option.cloneNode(true)));
+    syncSheet();
+    sheet.showModal();
+    query.focus({preventScroll:true});
+  });
+  query.addEventListener("input",updateFromSheet);
+  type.addEventListener("change",updateFromSheet);
+  document.getElementById("mobile-sheet-reset").addEventListener("click",()=>{
+    query.value="";
+    type.value="all";
+    updateFromSheet();
+    query.focus();
+  });
+  document.getElementById("mobile-sheet-close").addEventListener("click",()=>sheet.close());
+  show.addEventListener("click",()=>{
+    sheet.close();
+    count.focus({preventScroll:true});
+    count.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+  });
+})();
 
 /* A broken third-party image should never leave an empty directory card. */
 (function(){
