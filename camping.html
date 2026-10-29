@@ -87,6 +87,54 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.79rem;col
 @media(max-width:380px){.trip-board-meta{flex-direction:column;align-items:flex-start}}
 @media(prefers-reduced-motion:reduce){.trip-save{transition:none}}
 
+
+/* Camping directory: an accessible quick-scan alternative to full cards. */
+.camp-view-bar{display:flex;justify-content:space-between;align-items:center;gap:20px;margin:0 0 17px;padding:17px 20px;background:linear-gradient(115deg,#edf2e8,#f8f2df);border:1px solid #d7e0cf;border-radius:16px}
+.camp-view-copy{min-width:0}
+.camp-view-kicker{display:block;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;color:#526d55;font-weight:850}
+.camp-view-copy p{font-size:.8rem;color:#4b6455;line-height:1.45;margin:4px 0 0}
+.camp-view-actions{display:flex;flex:0 0 auto;gap:5px;padding:5px;border:1px solid #c8d8c6;border-radius:12px;background:#fff}
+.camp-view-actions button{min-height:44px;border:0;border-radius:8px;background:transparent;color:#355746;font-size:.81rem;font-weight:800;padding:10px 15px;cursor:pointer;white-space:nowrap}
+.camp-view-actions button[aria-pressed="true"]{background:#164837;color:#fff;box-shadow:0 4px 12px #163d3224}
+.camp-view-actions button:hover:not([aria-pressed="true"]){background:#e7f0e4}
+.camp-view-actions button:focus-visible,.camp-scan-details summary:focus-visible{outline:3px solid #a56818;outline-offset:3px}
+.camp-scan-details{flex:1;min-width:0}
+.camp-scan-content{display:flex;flex-direction:column;min-height:100%}
+.listing-grid .camp-scan-content>p:last-child{margin-top:auto;margin-bottom:0;padding-top:15px;border-top:1px solid #e5ece4}
+.camp-scan-details summary[hidden]{display:none!important}
+.listing-grid.is-scan{grid-template-columns:1fr;gap:11px}
+.listing-grid.is-scan article{display:grid;grid-template-columns:34px minmax(0,1fr) auto;grid-template-rows:auto auto auto;gap:4px 18px;align-items:center;padding:19px 24px;border-radius:15px;box-shadow:0 5px 17px #183e340a}
+.listing-grid.is-scan article:hover{transform:none;box-shadow:0 8px 23px #183e3416}
+.listing-grid.is-scan article:before{grid-column:1;grid-row:1/4;align-self:start;padding-top:8px;margin:0;font-size:.74rem}
+.listing-grid.is-scan article>.camp-type-label{grid-column:2;grid-row:1;justify-self:start;margin:0}
+.listing-grid.is-scan article>h2{grid-column:2;grid-row:2;font-size:clamp(1.15rem,2.1vw,1.47rem);margin:1px 0 0;overflow-wrap:anywhere}
+.listing-grid.is-scan article>.trip-save{grid-column:3;grid-row:1/3;justify-self:end;align-self:center;margin:0}
+.listing-grid.is-scan article>.camp-scan-details{grid-column:2/-1;grid-row:3;align-self:stretch;padding-top:3px}
+.listing-grid.is-scan .camp-scan-details summary{display:inline-flex;align-items:center;min-height:44px;padding:8px 13px;border:1px solid #c4d6c7;border-radius:9px;background:#edf4ec;color:#195541;font-size:.78rem;font-weight:800;cursor:pointer;list-style:none}
+.listing-grid.is-scan .camp-scan-details summary::-webkit-details-marker{display:none}
+.listing-grid.is-scan .camp-scan-details summary:after{content:" ＋";font-size:1rem;margin-left:7px}
+.listing-grid.is-scan .camp-scan-details[open] summary:after{content:" −"}
+.listing-grid.is-scan .camp-scan-details summary:hover{background:#dfeedd}
+.listing-grid.is-scan .camp-scan-details[open] .camp-scan-content{margin-top:12px;padding-top:15px;border-top:1px solid #e2eae2}
+@media(max-width:680px){
+ .camp-view-bar{flex-direction:column;align-items:stretch;padding:16px}
+ .camp-view-actions{display:grid;grid-template-columns:1fr 1fr}
+ .camp-view-actions button{white-space:normal}
+ .listing-grid.is-scan article{grid-template-columns:27px minmax(0,1fr);gap:5px 12px;padding:17px 16px}
+ .listing-grid.is-scan article:before{grid-row:1/5}
+ .listing-grid.is-scan article>.camp-type-label{grid-column:2;grid-row:1}
+ .listing-grid.is-scan article>h2{grid-column:2;grid-row:2;font-size:1.28rem}
+ .listing-grid.is-scan article>.trip-save{grid-column:2;grid-row:3;justify-self:start;margin-top:7px}
+ .listing-grid.is-scan article>.camp-scan-details{grid-column:2;grid-row:4}
+}
+@media print{
+ .camp-view-bar{display:none!important}
+ .listing-grid.is-scan{grid-template-columns:1fr}
+ .listing-grid.is-scan article{break-inside:avoid}
+ .listing-grid.is-scan .camp-scan-details summary{display:none!important}
+ .listing-grid.is-scan .camp-scan-content{display:flex!important}
+}
+
 </style>
 </head>
 <body>
@@ -118,6 +166,14 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.79rem;col
     <textarea id="camp-trip-fallback" class="trip-board-fallback" readonly aria-label="Select and copy trip list" hidden></textarea>
   </section>
   <div class="directory-head"><div><p class="eyebrow" style="color:#7b693e">Explore the directory</p><h2>Find a place to stay</h2><p>Compare details and contact each operator to confirm availability.</p></div><span class="count" id="result-count" role="status" aria-live="polite">Showing 48 of 48 places</span></div>
+
+  <div class="camp-view-bar" id="camp-view-bar" hidden>
+    <div class="camp-view-copy"><span class="camp-view-kicker">Your directory / Your pace</span><p>Read every listing, or scan names first and expand details as needed. Search, filters and saved trip plans work in either view.</p></div>
+    <div class="camp-view-actions" role="group" aria-label="Campground directory display">
+      <button type="button" data-camp-view="full" aria-controls="camp-list" aria-pressed="true">▦ Full details</button>
+      <button type="button" data-camp-view="scan" aria-controls="camp-list" aria-pressed="false">☷ Quick scan</button>
+    </div>
+  </div>
   <div class="listing-grid" id="camp-list">
 <article data-type="independent"><span class="camp-type-label">Independent stay</span><h2>Adventure RV Park — Lake Atkins (Atkins)</h2><p>Officially advertises monthly recreational vehicle (RV) site rentals at $425/month with water, sewer, electricity and Wi-Fi included. Sites offer 30- or 50-amp service; the park also lists showers, a boat launch and optional laundromat use for $25 more. This is a stationary RV-site rental, not a drivable RV rental. The operator offers an application/waitlist; confirm current availability, rates and terms directly.</p><p>152 Launch Road, Atkins, AR 72823 · <a href="tel:+14796410032">479-641-0032</a> · <a href="https://stayarv.com/" target="_blank" rel="noopener noreferrer">Official rates and waitlist ↗</a></p></article>
 <article data-type="independent"><span class="camp-type-label">Independent stay</span><h2>Ivy's Cove RV Retreat — Russellville</h2><p>Open year-round, with full-hookup RV sites. Official posted rates: $52/night, $312/week or $500/month plus electricity (taxes and fees extra; monthly electrical deposit required). Confirm current pricing and availability with the operator.</p><p>321 Bradley Cove Road, Russellville, AR 72802 · <a href="tel:+14792801662">479-280-1662</a> · <a href="https://www.ivyscove.com/" target="_blank" rel="noopener noreferrer">Official rates and reservations ↗</a></p></article>
@@ -296,5 +352,53 @@ copy.addEventListener('click',async()=>{
 board.hidden=false;render();
 })();
 </script>
+
+<script>
+/* Native disclosure keeps contact information reachable in compact view. */
+(function(){
+  'use strict';
+  const grid=document.getElementById('camp-list');
+  const toolbar=document.getElementById('camp-view-bar');
+  if(!grid||!toolbar)return;
+  const cards=Array.from(grid.querySelectorAll(':scope > article'));
+  const buttons=Array.from(toolbar.querySelectorAll('[data-camp-view]'));
+  if(!cards.length||buttons.length!==2)return;
+  const disclosures=[];
+  cards.forEach(card=>{
+    const paragraphs=Array.from(card.querySelectorAll(':scope > p'));
+    if(!paragraphs.length)return;
+    const details=document.createElement('details');
+    const summary=document.createElement('summary');
+    const content=document.createElement('div');
+    details.className='camp-scan-details';
+    content.className='camp-scan-content';
+    summary.textContent='Read description, contact & booking details';
+    summary.hidden=true;
+    paragraphs.forEach(paragraph=>content.appendChild(paragraph));
+    details.append(summary,content);
+    details.open=true;
+    card.appendChild(details);
+    disclosures.push({details,summary});
+  });
+  if(disclosures.length!==cards.length)return;
+  const key='russellville.rent.camping.display.v1';
+  function setView(view,save){
+    const scan=view==='scan';
+    grid.classList.toggle('is-scan',scan);
+    disclosures.forEach(({details,summary})=>{
+      summary.hidden=!scan;
+      details.open=!scan;
+    });
+    buttons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.campView===(scan?'scan':'full'))));
+    if(save){try{localStorage.setItem(key,scan?'scan':'full');}catch(error){/* Storage is optional. */}}
+  }
+  buttons.forEach(button=>button.addEventListener('click',()=>setView(button.dataset.campView,true)));
+  let preferred='full';
+  try{if(localStorage.getItem(key)==='scan')preferred='scan';}catch(error){/* Use default. */}
+  setView(preferred,false);
+  toolbar.hidden=false;
+})();
+</script>
+
 </body>
 </html>
