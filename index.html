@@ -389,6 +389,40 @@ footer{margin-top:30px}
 .rental-card:hover .icon-tile .directory-pictogram{transform:rotate(0deg) translateY(-2px) scale(1.045)}
 .quick-pick-icon .quick-pictogram{display:block;width:19px;height:19px;color:#254937}
 @media(prefers-reduced-motion:reduce){.icon-tile .directory-pictogram{transition:none!important}.rental-card:hover .icon-tile .directory-pictogram{transform:none}}
+
+/* Saved category shortcuts: a calm, opt-in personal layer over the existing directory. */
+.saved-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:9px 13px;border:1px solid #c7d7c5;border-radius:12px;background:#fff;color:#1c4b38;font-size:.8rem;font-weight:800;cursor:pointer;transition:background-color .18s,border-color .18s}
+.saved-toggle:hover,.saved-toggle[aria-expanded="true"]{background:#ecf4e9;border-color:#83a68c}
+.saved-toggle svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.saved-total{display:grid;place-items:center;min-width:25px;height:25px;padding:0 5px;border-radius:8px;background:#173f35;color:#fff;font-size:.72rem;line-height:1}
+.saved-panel{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,.76fr) minmax(0,1.24fr);gap:clamp(22px,4vw,50px);margin:2px 0 23px;padding:clamp(22px,3.5vw,38px);border:1px solid #a9bfae;border-radius:20px;background:radial-gradient(circle at 92% 8%,#f7e9c6 0,transparent 38%),linear-gradient(125deg,#e8f0e5,#f7f8f0);box-shadow:0 12px 30px #173f3512}
+.saved-panel:before{content:"";position:absolute;z-index:-1;right:-105px;bottom:-172px;width:315px;height:315px;border:1px solid #a9c6ab78;border-radius:50%;box-shadow:0 0 0 40px #a9c6ab20;pointer-events:none}
+.saved-panel-kicker{margin:0 0 10px;font-size:.66rem;letter-spacing:.16em;color:#4b6b4e;font-weight:850}
+.saved-panel h3{margin:0 0 9px;font:400 clamp(1.55rem,2.7vw,2.3rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.04em;color:#173f35}
+.saved-panel-intro>p:last-child{margin:0;max-width:41ch;color:#4c6455;font-size:.82rem;line-height:1.6}
+.saved-panel-content{min-width:0;align-self:center}
+.saved-links{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.saved-item{display:inline-flex;align-items:stretch;max-width:100%;min-height:46px;border:1px solid #bfd2c0;border-radius:11px;background:#fff;box-shadow:0 4px 12px #173f350d;overflow:hidden}
+.saved-item>a{display:inline-flex;align-items:center;min-height:46px;padding:9px 12px 9px 15px;color:#1c4c39;font-size:.82rem;line-height:1.3;font-weight:750;text-decoration:none}
+.saved-item>a:hover{text-decoration:underline}
+.saved-item>button{display:grid;place-items:center;flex:0 0 44px;width:44px;min-height:46px;border:0;border-left:1px solid #d7e4d5;background:#f7f9f4;color:#37604b;font-size:1.2rem;cursor:pointer}
+.saved-item>button:hover{background:#e7efe3;color:#173f35}
+.saved-empty{margin:0;color:#55705c;font-size:.89rem}
+.saved-panel-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:15px}
+.saved-panel-footer small{color:#516c5a;font-size:.72rem;line-height:1.4}
+.saved-clear{min-height:44px;padding:8px 13px;border:1px solid #b8cbb8;border-radius:9px;background:#fff;color:#244f3b;font-size:.79rem;font-weight:750;cursor:pointer}
+.saved-clear:hover{background:#ebf2e9}
+.card-actions{display:flex;align-items:center;gap:10px;min-width:0;margin-top:auto;padding-top:12px;border-top:1px solid #e7eae3}
+.card-actions .card-link{flex:1 1 auto;min-width:0;margin:0;padding:8px 0;border:0;align-items:center}
+.save-category{display:inline-flex;align-items:center;justify-content:center;gap:6px;flex:0 0 auto;min-height:44px;padding:8px 12px;border:1px solid #c4d5c6;border-radius:10px;background:#f6f9f3;color:#315943;font-size:.77rem;font-weight:800;line-height:1.1;cursor:pointer;transition:background-color .18s,border-color .18s}
+.save-category:hover{border-color:#7ca88a;background:#e7f0e4}
+.save-category[aria-pressed="true"]{background:#173f35;border-color:#173f35;color:#fff}
+.save-star{font-size:1.15rem;line-height:1}
+.rentals-grid[data-view="list"] .card-actions .card-link{padding:7px 0}
+@media(max-width:900px){.saved-panel{grid-template-columns:1fr;gap:18px}}
+@media(max-width:600px){.saved-toggle{padding:9px 11px}.saved-panel{margin-bottom:19px;border-radius:16px}.saved-item{max-width:100%}.saved-item>a{font-size:.78rem}.card-actions{gap:7px;flex-wrap:wrap}.save-category{min-height:44px;padding:8px 11px}.rentals-grid[data-view="list"] .card-actions{align-items:flex-start}.rentals-grid[data-view="list"] .card-actions .card-link{flex-basis:100%;padding:2px 0}}
+@media(prefers-reduced-motion:reduce){.saved-toggle,.save-category{transition:none!important}}
+
 </style>
 </head>
 <body>
@@ -452,11 +486,20 @@ footer{margin-top:30px}
 <button type="button" data-view-choice="list" aria-pressed="false" aria-controls="rental-results"><span class="view-icon" aria-hidden="true">☷</span> List</button>
 </div>
 <button type="button" class="share-view" id="share-view" aria-label="Copy a link to this rental search"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12h6M8.3 15.7H6a4 4 0 0 1 0-8h4M15.7 8.3H18a4 4 0 0 1 0 8h-4"/></svg><span id="share-view-label">Share this search</span></button>
+
+<button type="button" class="saved-toggle" id="saved-toggle" aria-controls="saved-panel" aria-expanded="false" aria-label="Show saved rental categories" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 15 9l7 .9-5.1 5 1.2 6.9L12 18.5l-6.1 3.3 1.2-6.9L2 9.9 9 9z"/></svg><span>Saved</span><span class="saved-total" id="saved-total">0</span></button>
 </div>
 <p class="share-feedback" id="share-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
 </div>
 <div class="share-fallback" id="share-fallback" hidden><label for="share-link">Select and copy your search link</label><input id="share-link" type="text" readonly aria-label="Link to current rental search"></div>
 <div class="active-filters" id="active-filters" role="group" aria-label="Applied rental filters" hidden><span class="active-filters-label">Your filters</span></div>
+
+<p class="sr-only" id="saved-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
+<section class="saved-panel" id="saved-panel" aria-labelledby="saved-panel-title" hidden>
+  <div class="saved-panel-intro"><p class="saved-panel-kicker">YOUR RIVER VALLEY SHORTLIST</p><h3 id="saved-panel-title">Keep your favorites close.</h3><p>Save up to eight rental categories for quick return visits. No account or booking request is created.</p></div>
+  <div class="saved-panel-content"><div class="saved-links" id="saved-links"></div><p class="saved-empty" id="saved-empty">No categories saved yet. Use the Save buttons on any rental card.</p><div class="saved-panel-footer"><small id="saved-storage-note">Saved in this browser when storage is available.</small><button class="saved-clear" id="saved-clear" type="button" hidden>Clear all saved</button></div></div>
+</section>
+
 <div class="rentals-grid" id="rental-results" data-view="grid"><article class="rental-card" data-category="homes">
 <div class="image-wrap"><img src="https://images.unsplash.com/photo-1768941124460-6fa7161715ff?auto=format&amp;fit=crop&amp;fm=jpg&amp;ixlib=rb-4.1.0&amp;q=82&amp;w=1600" alt="Illustrative photograph of residential houses" loading="lazy" width="640" height="380"></div>
 <div class="card-body"><p class="eyebrow">Long-term rentals</p><h3>Long-term rentals</h3>
@@ -685,6 +728,130 @@ const quickPaths = document.getElementById("quick-paths");
 const quickPickButtons = Array.from(quickPaths.querySelectorAll(".quick-pick"));
 const rentalGrid = document.getElementById("rental-results");
 
+/* Optional saved categories. This does not change search matches or rental data. */
+const categorySearchText = new Map(cards.map(card => [card, card.textContent.toLowerCase()]));
+const savedToggle = document.getElementById("saved-toggle");
+const savedPanel = document.getElementById("saved-panel");
+const savedCount = document.getElementById("saved-total");
+const savedLinks = document.getElementById("saved-links");
+const savedEmpty = document.getElementById("saved-empty");
+const savedClear = document.getElementById("saved-clear");
+const savedFeedback = document.getElementById("saved-feedback");
+const savedStorageNote = document.getElementById("saved-storage-note");
+const savedKey = "russellville-rent-saved-categories-v1";
+const categoryCards = new Map(cards.map(card => [card.dataset.category, card]));
+let browserStorageAvailable = true;
+let savedCategories = [];
+try {
+  const stored = JSON.parse(localStorage.getItem(savedKey) || "[]");
+  if (Array.isArray(stored)) savedCategories = [...new Set(stored.filter(key => typeof key === "string" && categoryCards.has(key)))].slice(0, 8);
+} catch (error) {
+  browserStorageAvailable = false;
+}
+if (!browserStorageAvailable) savedStorageNote.textContent = "Browser storage is unavailable; saves last only for this visit.";
+function rememberSavedCategories(){
+  if(!browserStorageAvailable) return;
+  try { localStorage.setItem(savedKey, JSON.stringify(savedCategories)); }
+  catch(error){
+    browserStorageAvailable = false;
+    savedStorageNote.textContent = "Browser storage is unavailable; saves last only for this visit.";
+  }
+}
+function renderSavedCategories(){
+  savedCount.textContent = String(savedCategories.length);
+  savedToggle.setAttribute("aria-label", (savedPanel.hidden ? "Show " : "Hide ") + savedCategories.length + " saved rental categories");
+  savedLinks.replaceChildren();
+  savedCategories.forEach((key, index) => {
+    const card = categoryCards.get(key);
+    const source = card.querySelector(".card-link");
+    const name = card.querySelector("h3").textContent.trim();
+    const item = document.createElement("span");
+    item.className = "saved-item";
+    const link = document.createElement("a");
+    link.href = source.getAttribute("href");
+    link.textContent = name + " ↗";
+    if (source.target === "_blank") {
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.setAttribute("aria-label", name + " (opens in a new tab)");
+    }
+    const remove = document.createElement("button");
+    remove.type = "button";
+    remove.className = "saved-remove";
+    remove.textContent = "×";
+    remove.setAttribute("aria-label", "Remove " + name + " from saved categories");
+    remove.addEventListener("click", () => {
+      savedCategories.splice(savedCategories.indexOf(key), 1);
+      rememberSavedCategories();
+      renderSavedCategories();
+      const remaining = savedLinks.querySelectorAll(".saved-remove");
+      (remaining[Math.min(index, remaining.length - 1)] || savedToggle).focus();
+      savedFeedback.textContent = name + " removed from your saved categories.";
+    });
+    item.append(link, remove);
+    savedLinks.appendChild(item);
+  });
+  savedEmpty.hidden = savedCategories.length > 0;
+  savedClear.hidden = savedCategories.length === 0;
+  cards.forEach(card => {
+    const button = card.querySelector(".save-category");
+    const isSaved = savedCategories.includes(card.dataset.category);
+    const name = card.querySelector("h3").textContent.trim();
+    button.setAttribute("aria-pressed", String(isSaved));
+    button.setAttribute("aria-label", (isSaved ? "Remove " + name + " from" : "Save " + name + " to") + " saved categories");
+    button.querySelector(".save-star").textContent = isSaved ? "★" : "☆";
+    button.querySelector(".save-word").textContent = isSaved ? "Saved" : "Save";
+  });
+}
+cards.forEach(card => {
+  const originalLink = card.querySelector(".card-link");
+  const actions = document.createElement("div");
+  actions.className = "card-actions";
+  originalLink.before(actions);
+  actions.appendChild(originalLink);
+  const saveButton = document.createElement("button");
+  saveButton.type = "button";
+  saveButton.className = "save-category";
+  const star = document.createElement("span");
+  star.className = "save-star";
+  star.setAttribute("aria-hidden", "true");
+  const word = document.createElement("span");
+  word.className = "save-word";
+  saveButton.append(star, word);
+  actions.appendChild(saveButton);
+  saveButton.addEventListener("click", () => {
+    const key = card.dataset.category;
+    const name = card.querySelector("h3").textContent.trim();
+    if (savedCategories.includes(key)) {
+      savedCategories = savedCategories.filter(item => item !== key);
+      savedFeedback.textContent = name + " removed from saved categories.";
+    } else if (savedCategories.length >= 8) {
+      savedFeedback.textContent = "You can save up to eight rental categories. Remove one to add another.";
+      return;
+    } else {
+      savedCategories.push(key);
+      savedFeedback.textContent = name + " saved. Open Saved above the directory to view your shortcuts.";
+    }
+    rememberSavedCategories();
+    renderSavedCategories();
+  });
+});
+savedToggle.addEventListener("click", () => {
+  savedPanel.hidden = !savedPanel.hidden;
+  savedToggle.setAttribute("aria-expanded", String(!savedPanel.hidden));
+  renderSavedCategories();
+});
+savedClear.addEventListener("click", () => {
+  savedCategories = [];
+  rememberSavedCategories();
+  renderSavedCategories();
+  savedToggle.focus();
+  savedFeedback.textContent = "All saved rental categories cleared.";
+});
+renderSavedCategories();
+savedToggle.hidden = false;
+
+
 const shareButton = document.getElementById("share-view");
 const shareLabel = document.getElementById("share-view-label");
 const shareFeedback = document.getElementById("share-feedback");
@@ -779,7 +946,7 @@ function filterRentals(){
   let visible = 0;
   cards.forEach(card=>{
     const key = card.dataset.category;
-    const text = (card.textContent + " " + aliases[key]).toLowerCase();
+    const text = categorySearchText.get(card) + " " + aliases[key];
     const matches = (category.value === "all" || category.value === key) && terms.every(term=>text.includes(term));
     card.hidden = !matches;
     if(matches) visible++;
