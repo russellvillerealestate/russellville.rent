@@ -445,6 +445,34 @@ footer{margin-top:30px}
  .rentals-grid[data-view="list"] .brand-feature.has-logo-fallback span{font-size:.68rem;line-height:1.25}
 }
 
+
+/* Purpose-led discovery: four scannable pathways through the existing directory. */
+.intent-explorer{margin:3px 0 22px;padding:23px;background:linear-gradient(125deg,#e8efe6 0%,#f5f3e9 55%,#eef1e9 100%);border:1px solid #ceddcf;border-radius:20px}
+.intent-heading{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:18px}
+.intent-heading .eyebrow{color:#496f57;margin-bottom:5px}
+.intent-heading h3{font:400 clamp(1.45rem,2.5vw,2.12rem)/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.045em;color:#173f35;margin:0 0 6px}
+.intent-heading p:last-child{color:#50675a;font-size:.82rem;line-height:1.45;margin:0;max-width:63ch}
+.intent-all{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:46px;padding:10px 16px;background:#fff;color:#285744;border:1px solid #b8cdbb;border-radius:999px;font-weight:800;font-size:.79rem;white-space:nowrap;cursor:pointer}
+.intent-all[aria-pressed="true"]{background:#173f35;color:#fff;border-color:#173f35}
+.intent-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}
+.intent-card{appearance:none;position:relative;display:flex;flex-direction:column;min-width:0;min-height:167px;overflow:hidden;padding:17px 18px 15px;border:2px solid #d2ded2;border-radius:15px;background:#fff;color:#1c4235;text-align:left;cursor:pointer;box-shadow:0 6px 19px #153d3210;transition:transform .18s,border-color .18s,box-shadow .18s}
+.intent-card:hover{transform:translateY(-3px);box-shadow:0 12px 27px #153d321b}
+.intent-card[aria-pressed="true"]{border-color:#216547;box-shadow:0 0 0 2px #21654725,0 10px 25px #153d3217}
+.intent-card[aria-pressed="true"]::after{content:"✓";position:absolute;right:13px;top:12px;display:grid;place-items:center;width:24px;height:24px;background:#215b46;color:white;border-radius:50%;font-weight:800;font-size:.77rem}
+.intent-symbol{display:grid;place-items:center;width:46px;height:46px;margin-bottom:12px;background:#e8f0e6;color:#285b43;border-radius:12px}
+.intent-symbol svg{width:31px;height:31px}
+.intent-card--projects .intent-symbol{background:#f7e8cd;color:#865b25}
+.intent-card--outdoors .intent-symbol{background:#def0eb;color:#1c7070}
+.intent-card--events .intent-symbol{background:#f7e7e2;color:#95554e}
+.intent-title{font:400 1.24rem/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.03em;display:block}
+.intent-detail{font-size:.72rem;line-height:1.4;color:#5c7162;margin:6px 0 12px;display:block}
+.intent-foot{display:flex;justify-content:space-between;gap:8px;align-items:center;border-top:1px solid #e0e9dd;padding-top:9px;margin-top:auto;font-size:.69rem;font-weight:800;letter-spacing:.02em;color:#32604b}
+.intent-all:focus-visible,.intent-card:focus-visible{outline:3px solid #a86816;outline-offset:4px}
+@media(max-width:930px){.intent-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.intent-card{min-height:155px}}
+@media(max-width:600px){.intent-explorer{padding:17px 14px;border-radius:15px}.intent-heading{display:block}.intent-all{margin-top:13px}.intent-grid{gap:9px}.intent-card{min-height:145px;padding:14px 12px}.intent-title{font-size:1.05rem}.intent-symbol{width:39px;height:39px;margin-bottom:10px}.intent-symbol svg{width:27px;height:27px}.intent-detail{font-size:.69rem}.intent-foot{font-size:.64rem}}
+@media(max-width:380px){.intent-grid{grid-template-columns:1fr}.intent-card{min-height:111px}.intent-symbol{margin-bottom:6px}}
+@media(prefers-reduced-motion:reduce){.intent-card{transition:none}.intent-card:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -507,6 +535,16 @@ footer{margin-top:30px}
   <button type="button" class="quick-pick" data-quick-category="cars" aria-pressed="false" style="--pick-tint:#e0e8ef"><span class="quick-pick-icon" aria-hidden="true"><svg class="quick-pictogram" viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-cars"></use></svg></span>Cars</button>
   <button type="button" class="quick-pick" data-quick-category="party" aria-pressed="false" style="--pick-tint:#f6e2d7"><span class="quick-pick-icon" aria-hidden="true"><svg class="quick-pictogram" viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-party"></use></svg></span>Events</button>
 </div>
+
+<section class="intent-explorer" id="intent-explorer" aria-labelledby="intent-heading" hidden>
+  <div class="intent-heading"><div><p class="eyebrow">EXPLORE BY YOUR PLANS</p><h3 id="intent-heading">Start with the reason.</h3><p>Not sure what to search for? Pick a path to see related rental categories. Every category remains available in the full directory.</p></div><button class="intent-all" type="button" data-intent-choice="all" aria-controls="rental-results" aria-pressed="true"><span data-intent-count="all">All categories</span> <span aria-hidden="true">↗</span></button></div>
+  <div class="intent-grid" role="group" aria-label="Explore rental categories by purpose">
+    <button type="button" class="intent-card intent-card--space" data-intent-choice="space" aria-pressed="false" aria-controls="rental-results"><span class="intent-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-homes"></use></svg></span><span class="intent-title">Settle & stay</span><span class="intent-detail">Homes, space, storage and everyday essentials</span><span class="intent-foot"><span data-intent-count="space">Explore categories</span><span aria-hidden="true">↗</span></span></button>
+    <button type="button" class="intent-card intent-card--projects" data-intent-choice="projects" aria-pressed="false" aria-controls="rental-results"><span class="intent-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-tools"></use></svg></span><span class="intent-title">Build & move</span><span class="intent-detail">Equipment, hauling, jobsites and workspace</span><span class="intent-foot"><span data-intent-count="projects">Explore categories</span><span aria-hidden="true">↗</span></span></button>
+    <button type="button" class="intent-card intent-card--outdoors" data-intent-choice="outdoors" aria-pressed="false" aria-controls="rental-results"><span class="intent-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-paddling"></use></svg></span><span class="intent-title">Explore & travel</span><span class="intent-detail">Lake days, recreation, trips and vehicles</span><span class="intent-foot"><span data-intent-count="outdoors">Explore categories</span><span aria-hidden="true">↗</span></span></button>
+    <button type="button" class="intent-card intent-card--events" data-intent-choice="events" aria-pressed="false" aria-controls="rental-results"><span class="intent-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-party"></use></svg></span><span class="intent-title">Celebrate & create</span><span class="intent-detail">Gatherings, special occasions and events</span><span class="intent-foot"><span data-intent-count="events">Explore categories</span><span aria-hidden="true">↗</span></span></button>
+  </div>
+</section>
 
 <div class="browse-toolbar" id="browse-toolbar" hidden>
 <p id="result-count" role="status" aria-live="polite" tabindex="-1"></p>
@@ -758,6 +796,29 @@ const quickPaths = document.getElementById("quick-paths");
 const quickPickButtons = Array.from(quickPaths.querySelectorAll(".quick-pick"));
 const rentalGrid = document.getElementById("rental-results");
 
+// Each existing directory category belongs to one browsing pathway; no provider data changes.
+const intentExplorer=document.getElementById("intent-explorer");
+const intentButtons=Array.from(intentExplorer.querySelectorAll("[data-intent-choice]"));
+const intentGroups={
+  space:["homes","stays","storage","household-rentals","medical-equipment-rentals","medical-equipment-loans","other"],
+  projects:["tools","trailers","mobile-storage","dumpsters","moving","restrooms","temporary-fencing","commercial","sheds"],
+  outdoors:["paddling","bicycles","rvs","rv-rentals","cars","boats","camping","golf-carts","golf-simulators"],
+  events:["party","venues","photo-booths","formalwear","audio-visual","instruments","yard-signs","stages"]
+};
+const intentLabels={space:"Settle & stay",projects:"Build & move",outdoors:"Explore & travel",events:"Celebrate & create"};
+let activeIntent="all";
+const intentSets=Object.fromEntries(Object.entries(intentGroups).map(([key,values])=>[key,new Set(values)]));
+function setIntent(next){
+  activeIntent=next in intentSets ? next : "all";
+  intentButtons.forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.intentChoice===activeIntent)));
+}
+intentExplorer.querySelectorAll("[data-intent-count]").forEach(label=>{
+  const key=label.dataset.intentCount;
+  const n=key==="all" ? cards.length : cards.filter(card=>intentSets[key].has(card.dataset.category)).length;
+  label.textContent=key==="all" ? "Show all "+n+" categories" : n+" categories";
+});
+
+
 /* Optional saved categories. This does not change search matches or rental data. */
 const categorySearchText = new Map(cards.map(card => [card, card.textContent.toLowerCase()]));
 const savedToggle = document.getElementById("saved-toggle");
@@ -898,6 +959,7 @@ function currentSearchLink(){
   const query = search.value.trim();
   if(query) url.searchParams.set("q",query);
   if(category.value !== "all") url.searchParams.set("category",category.value);
+  if(activeIntent !== "all") url.searchParams.set("intent",activeIntent);
   if(rentalGrid.dataset.view === "list") url.searchParams.set("view","list");
   url.hash = "browse";
   return url.toString();
@@ -928,7 +990,7 @@ function updateActiveFilters(){
   activeFilters.replaceChildren();
   const searchTerm = search.value.trim();
   const chosenCategory = category.value;
-  if(!searchTerm && chosenCategory === "all"){
+  if(!searchTerm && chosenCategory === "all" && activeIntent === "all"){
     activeFilters.hidden = true;
     return;
   }
@@ -961,6 +1023,7 @@ function updateActiveFilters(){
     const selectedLabel = category.options[category.selectedIndex].textContent;
     addFilterChip("Category", selectedLabel, category, () => { category.value = "all"; });
   }
+  if(activeIntent !== "all") addFilterChip("Path",intentLabels[activeIntent],intentExplorer.querySelector('[data-intent-choice="all"]'),()=>{setIntent("all");});
   activeFilters.hidden = false;
 }
 
@@ -977,11 +1040,11 @@ function filterRentals(){
   cards.forEach(card=>{
     const key = card.dataset.category;
     const text = categorySearchText.get(card) + " " + aliases[key];
-    const matches = (category.value === "all" || category.value === key) && terms.every(term=>text.includes(term));
+    const matches = (activeIntent === "all" || intentSets[activeIntent].has(key)) && (category.value === "all" || category.value === key) && terms.every(term=>text.includes(term));
     card.hidden = !matches;
     if(matches) visible++;
   });
-  count.textContent = visible + " of " + cards.length + " rental categories shown";
+  count.textContent = visible + " of " + cards.length + " rental categories shown" + (activeIntent === "all" ? "" : " · "+intentLabels[activeIntent]);
   clearShareFeedback();
   heroQuery.value = search.value;
   updateActiveFilters();
@@ -993,6 +1056,8 @@ function filterRentals(){
 const sharedSearch = new URLSearchParams(window.location.search);
 const sharedQuery = sharedSearch.get("q");
 const sharedCategory = sharedSearch.get("category");
+const sharedIntent = sharedSearch.get("intent");
+if(sharedIntent && Object.hasOwn(intentGroups,sharedIntent)) setIntent(sharedIntent);
 if(sharedQuery) search.value = sharedQuery.slice(0,160);
 if(sharedCategory && Array.from(category.options).some(option => option.value === sharedCategory)) category.value = sharedCategory;
 if(sharedSearch.get("view") === "list"){
@@ -1000,28 +1065,41 @@ if(sharedSearch.get("view") === "list"){
   viewButtons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.viewChoice === "list")));
 }
 
-form.hidden=false;document.getElementById("browse-toolbar").hidden=false;quickPaths.hidden=false;document.getElementById("mobile-dock").hidden=false;
+form.hidden=false;document.getElementById("browse-toolbar").hidden=false;quickPaths.hidden=false;intentExplorer.hidden=false;document.getElementById("mobile-dock").hidden=false;
 document.getElementById("hero-find").hidden=false;
 heroSearchForm.addEventListener("submit", event => {
   event.preventDefault();
   search.value = heroQuery.value.trim();
   category.value = "all";
+  setIntent("all");
   filterRentals();
   heroQuery.blur();
   count.focus({preventScroll:true});
   count.scrollIntoView({behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"});
 });
 
+intentButtons.forEach(button=>button.addEventListener("click",()=>{
+  const key=button.dataset.intentChoice;
+  setIntent(key===activeIntent && key!=="all" ? "all" : key);
+  search.value="";
+  category.value="all";
+  filterRentals();
+  count.focus({preventScroll:true});
+  count.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",block:"start"});
+}));
+
 quickPickButtons.forEach(button => button.addEventListener("click", () => {
   const chosen = category.value === button.dataset.quickCategory ? "all" : button.dataset.quickCategory;
   search.value = "";
   category.value = chosen;
+  setIntent("all");
   filterRentals();
 }));
 
 document.querySelectorAll("[data-discovery-category]").forEach(link => link.addEventListener("click", () => {
   search.value = "";
   category.value = link.dataset.discoveryCategory;
+  setIntent("all");
   filterRentals();
 }));
 
@@ -1030,6 +1108,7 @@ document.querySelectorAll("[data-discovery-category]").forEach(link => link.addE
 function showRecoveredResults(nextCategory){
   search.value = "";
   category.value = nextCategory;
+  setIntent("all");
   filterRentals();
   count.focus({preventScroll:true});
   count.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",block:"start"});
@@ -1068,9 +1147,9 @@ browseReturn.addEventListener("click",event=>{
 queueBrowseReturn();
 
 form.addEventListener("submit",event=>event.preventDefault());
-search.addEventListener("input",filterRentals);
-category.addEventListener("change",filterRentals);
-form.addEventListener("reset",()=>{search.value="";category.value="all";filterRentals();});
+search.addEventListener("input",()=>{setIntent("all");filterRentals();});
+category.addEventListener("change",()=>{setIntent("all");filterRentals();});
+form.addEventListener("reset",()=>{search.value="";category.value="all";setIntent("all");filterRentals();});
 filterRentals();
 
 /* A broken third-party image should never leave an empty directory card. */
