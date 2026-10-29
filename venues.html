@@ -98,6 +98,42 @@ footer{font-size:.82rem;color:var(--muted);margin:35px 0 45px}
   .grid.view-rows article > p:last-child{margin:9px 0 0}
 }
 @media(max-width:430px){.results-meta{align-items:flex-start;gap:8px}.view-switch{width:100%}.view-switch button{flex:1}}
+
+/* Venue shortlist notebook: lightweight browser-only comparison, no listing edits. */
+.venue-notebook{position:relative;isolation:isolate;overflow:hidden;margin:24px 28px 0;padding:25px 28px 26px;border-radius:19px;background:linear-gradient(126deg,#143e34,#215644);color:#f8f9ee;box-shadow:0 16px 34px #163b3021}
+.venue-notebook:before{content:"";position:absolute;z-index:-1;right:-85px;top:-115px;width:285px;height:285px;border:1px solid #d9e8d137;border-radius:50%;box-shadow:0 0 0 32px #d9e8d10b,0 0 0 64px #d9e8d108;pointer-events:none}
+.notebook-header{display:flex;align-items:center;justify-content:space-between;gap:22px}
+.notebook-kicker{margin:0 0 6px;color:#f4d69b;font-size:.68rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
+.notebook-header h2{margin:0;font:400 clamp(1.65rem,3vw,2.3rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.045em}
+.notebook-description{margin:9px 0 0;color:#d8e8dc;font-size:.84rem;max-width:58ch}
+.notebook-count{display:grid;place-items:center;min-width:82px;min-height:82px;border:1px solid #f6dba77d;border-radius:50%;color:#f5dcaa;flex-shrink:0}
+.notebook-count strong{font:400 2.1rem/1 Georgia,"Times New Roman",serif}
+.notebook-count span{font-size:.65rem;letter-spacing:.08em;text-transform:uppercase}
+.notebook-empty{margin:20px 0 0;padding:15px 18px;border:1px dashed #bad4c18c;border-radius:10px;color:#e9f2e9;font-size:.84rem}
+.notebook-list{list-style:none;padding:0;margin:23px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.notebook-list li{display:grid;grid-template-columns:29px minmax(0,1fr);gap:8px 12px;align-items:start;border:1px solid #d9e7d750;border-radius:12px;background:#fafbf5;color:#1d4034;padding:15px}
+.notebook-index{color:#8b6430;font-size:.7rem;letter-spacing:.07em;font-weight:850;margin-top:4px}
+.notebook-entry strong{display:block;font-size:.87rem;line-height:1.36}
+.notebook-entry small{display:block;margin-top:5px;color:#5b6e60;font-size:.68rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.notebook-item-actions{grid-column:2;display:flex;gap:7px;flex-wrap:wrap}
+.notebook-item-actions button{min-height:40px;padding:8px 12px;border-radius:8px;border:1px solid #b9cfbe;background:#e8f0e7;color:#194435;font-size:.77rem;font-weight:800;cursor:pointer}
+.notebook-item-actions button:last-child{background:#fff;color:#4b6355}
+.notebook-item-actions button:hover{background:#d7e7d9}
+.notebook-tools{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:15px}
+.notebook-tools button{min-height:44px;border:1px solid #d9e7d7a6;border-radius:8px;padding:9px 15px;font-size:.8rem;font-weight:800;cursor:pointer;background:#f4d69b;color:#203c30}
+.notebook-tools button:last-child{background:transparent;color:#fff}
+.notebook-tools button:hover{filter:brightness(1.08)}
+.notebook-feedback{font-size:.79rem;color:#f4dca6;margin:12px 0 0;min-height:1.3em}
+.notebook-storage{font-size:.73rem;color:#d8e7dc;margin:9px 0 0}
+.notebook-fallback{display:block;width:100%;min-height:115px;margin-top:12px;padding:12px;border-radius:8px;border:2px solid #f4d69b;background:#fff;color:#183c31;font: .82rem/1.5 system-ui,sans-serif}
+.venue-save{display:inline-flex;align-items:center;justify-content:center;min-height:43px;min-width:124px;margin:0 0 15px;padding:9px 15px;border:1px solid #a9c7b1;border-radius:999px;background:#e7f1e7;color:#17513a;font-size:.79rem;font-weight:850;cursor:pointer}
+.venue-save:hover{background:#d9e9d8}
+.venue-save[aria-pressed="true"]{background:#1a5640;color:#fff;border-color:#1a5640}
+.venue-save[aria-pressed="true"]:hover{background:#277453}
+.venue-save:focus-visible,.notebook-item-actions button:focus-visible,.notebook-tools button:focus-visible{outline:3px solid #f3c278;outline-offset:3px}
+@media(max-width:750px){.venue-notebook{margin:19px 0 0;padding:24px 20px}.notebook-list{grid-template-columns:1fr}.notebook-count{min-width:67px;min-height:67px}}
+@media(max-width:450px){.notebook-header{align-items:start}.notebook-count{min-width:58px;min-height:58px}.notebook-count strong{font-size:1.6rem}.notebook-count span{font-size:.56rem}.notebook-item-actions button{min-height:44px}}
+
 </style></head><body><a class="skip-link" href="#venues">Skip to venue listings</a><header><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back-link" href="/">← All rental categories</a></div></header><main>
 <section class="venue-hero" aria-labelledby="page-title"><div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Spaces to <em>come together.</em></h1><p class="hero-intro">Find a place for the moments that matter—from community meetings to celebrations, parties and gatherings. Explore local venues and connect directly with each provider.</p></div><div class="hero-stamp" aria-hidden="true"><div><span>THE RIVER VALLEY</span>Gather<br>here. ✳</div></div></section>
 <section class="finder" aria-label="Find a venue"><div class="finder-head"><label for="venue-search">Search event spaces</label><p class="finder-hint">Try “wedding”, “meeting”, “Dardanelle”, or a venue name.</p></div><div class="finder-row"><input id="venue-search" type="search" autocomplete="off" placeholder="Search venues, locations, amenities…" aria-controls="venue-grid"><button id="venue-clear" type="button">Clear search</button></div>
@@ -113,6 +149,19 @@ footer{font-size:.82rem;color:var(--muted);margin:35px 0 45px}
   </div>
   <p class="occasion-footnote">Groups reflect uses described in the listings, not confirmed availability. Contact venues directly about your event.</p>
 </div></section>
+
+<section class="venue-notebook" id="venue-notebook" aria-labelledby="notebook-title" hidden>
+  <div class="notebook-header">
+    <div><p class="notebook-kicker">A personal event-planning notebook</p><h2 id="notebook-title">Your venue shortlist.</h2><p class="notebook-description">Save up to five spaces while you browse, then return to each listing or copy their names to plan your calls.</p></div>
+    <div class="notebook-count" aria-label="Shortlisted venue count"><strong id="notebook-number">0</strong><span>of five</span></div>
+  </div>
+  <p class="notebook-empty" id="notebook-empty">No venues saved yet. Use the “Save venue” button on a listing to keep it here.</p>
+  <ol class="notebook-list" id="notebook-list" aria-label="Saved event venues" hidden></ol>
+  <div class="notebook-tools"><button type="button" id="notebook-copy" hidden>Copy venue names ↗</button><button type="button" id="notebook-clear" hidden>Clear shortlist</button></div>
+  <p class="notebook-feedback" id="notebook-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
+  <p class="notebook-storage" id="notebook-storage">This shortlist stays in your browser when local storage is available. Saving does not contact or reserve a venue.</p>
+  <textarea class="notebook-fallback" id="notebook-fallback" aria-label="Shortlist text for manual copying" readonly hidden></textarea>
+</section>
 <section id="venues" aria-labelledby="venues-title"><div class="results-heading"><h2 id="venues-title">Explore local venues</h2><div class="results-meta"><p id="venue-count" role="status" aria-live="polite" aria-atomic="true">Browse available venue information below.</p><div class="view-switch" id="venue-view-switch" role="group" aria-label="Venue display style" hidden>
 <button type="button" data-venue-view="cards" aria-controls="venue-grid" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="9" height="8" rx="1.5"/><rect x="13" y="3" width="9" height="8" rx="1.5"/><rect x="2" y="13" width="9" height="8" rx="1.5"/><rect x="13" y="13" width="9" height="8" rx="1.5"/></svg>Cards</button>
 <button type="button" data-venue-view="rows" aria-controls="venue-grid" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="5" height="5" rx="1"/><path d="M11 5.5h11"/><rect x="2" y="10" width="5" height="5" rx="1"/><path d="M11 12.5h11"/><rect x="2" y="17" width="5" height="5" rx="1"/><path d="M11 19.5h11"/></svg>Directory</button>
@@ -171,4 +220,149 @@ venueViewButtons.forEach(button => button.addEventListener("click", () => {
 }));
 venueViewSwitch.hidden = false;
 filterVenues();
-</script></body></html>
+</script><script>
+
+/* Progressive enhancement: preserve all venue data and filters if scripts or storage fail. */
+(() => {
+  const panel = document.getElementById("venue-notebook");
+  const list = document.getElementById("notebook-list");
+  const empty = document.getElementById("notebook-empty");
+  const total = document.getElementById("notebook-number");
+  const feedback = document.getElementById("notebook-feedback");
+  const copy = document.getElementById("notebook-copy");
+  const clear = document.getElementById("notebook-clear");
+  const storageNote = document.getElementById("notebook-storage");
+  const fallback = document.getElementById("notebook-fallback");
+  const cards = Array.from(document.querySelectorAll("#venue-grid article"));
+  if (!panel || !list || !cards.length) return;
+  const key = "russellville-venue-shortlist-v1";
+  const limit = 5;
+  const catalog = new Map();
+  let stored = [];
+  let storageReady = true;
+  try {
+    const raw = JSON.parse(localStorage.getItem(key) || "[]");
+    if (Array.isArray(raw)) stored = raw.filter(value => typeof value === "string");
+  } catch (error) { storageReady = false; }
+  const saved = new Set(stored.slice(0,limit));
+  const buttons = new Map();
+  cards.forEach((card, index) => {
+    const heading = card.querySelector("h2");
+    if (!heading) return;
+    const name = heading.textContent.trim();
+    if (catalog.has(name)) return; // One saved entry per operator.
+    catalog.set(name, card);
+    card.id = "venue-bookmark-" + (index + 1);
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "venue-save";
+    button.setAttribute("aria-pressed", "false");
+    button.setAttribute("aria-label", "Save " + name + " to your shortlist");
+    heading.insertAdjacentElement("afterend", button);
+    buttons.set(name, button);
+    button.addEventListener("click", () => {
+      if (saved.has(name)) {
+        saved.delete(name);
+        render("Removed " + name + " from your shortlist.");
+      } else if (saved.size >= limit) {
+        feedback.textContent = "You can save up to five venues. Remove one to make room.";
+      } else {
+        saved.add(name);
+        render("Saved " + name + " to your shortlist.");
+      }
+    });
+  });
+  for (const name of [...saved]) if (!catalog.has(name)) saved.delete(name);
+  function persist() {
+    if (!storageReady) return;
+    try { localStorage.setItem(key, JSON.stringify([...saved])); }
+    catch (error) { storageReady = false; }
+    if (!storageReady) storageNote.textContent = "Browser storage is unavailable; your shortlist is kept only until this page closes.";
+  }
+  function reveal(name) {
+    const card = catalog.get(name);
+    if (!card) return;
+    document.getElementById("venue-search").value = "";
+    document.querySelector('#venue-occasions button[data-occasion="all"]').click();
+    window.requestAnimationFrame(() => {
+      const heading = card.querySelector("h2");
+      heading.setAttribute("tabindex", "-1");
+      heading.focus({preventScroll:true});
+      card.scrollIntoView({block:"center",behavior:"auto"});
+    });
+  }
+  function render(message = "") {
+    for (const [name, button] of buttons) {
+      const active = saved.has(name);
+      button.setAttribute("aria-pressed", String(active));
+      button.textContent = active ? "✓ Saved venue" : "＋ Save venue";
+      button.setAttribute("aria-label", (active ? "Remove " : "Save ") + name + (active ? " from" : " to") + " your shortlist");
+    }
+    list.replaceChildren();
+    let index = 0;
+    for (const name of saved) {
+      const card = catalog.get(name);
+      if (!card) continue;
+      const item = document.createElement("li");
+      const number = document.createElement("span");
+      number.className = "notebook-index";
+      number.textContent = String(++index).padStart(2, "0");
+      const entry = document.createElement("div");
+      entry.className = "notebook-entry";
+      const title = document.createElement("strong");
+      title.textContent = name;
+      const kind = document.createElement("small");
+      kind.textContent = card.dataset.venueKind || "Event venue";
+      entry.append(title, kind);
+      const actions = document.createElement("div");
+      actions.className = "notebook-item-actions";
+      const view = document.createElement("button");
+      view.type = "button";
+      view.textContent = "View listing ↗";
+      view.setAttribute("aria-label", "View " + name + " in the directory");
+      view.addEventListener("click", () => reveal(name));
+      const remove = document.createElement("button");
+      remove.type = "button";
+      remove.textContent = "Remove";
+      remove.setAttribute("aria-label", "Remove " + name + " from your shortlist");
+      remove.addEventListener("click", () => { saved.delete(name); render("Removed " + name + "."); });
+      actions.append(view, remove);
+      item.append(number, entry, actions);
+      list.appendChild(item);
+    }
+    total.textContent = String(saved.size);
+    const hasSaved = saved.size > 0;
+    empty.hidden = hasSaved;
+    list.hidden = !hasSaved;
+    copy.hidden = !hasSaved;
+    clear.hidden = !hasSaved;
+    fallback.hidden = true;
+    feedback.textContent = message;
+    persist();
+  }
+  function exportText() {
+    return "Venue shortlist — Russellville.Rent\n" +
+      [...saved].map((name, index) => (index+1) + ". " + name).join("\n") +
+      "\n\nConfirm prices, dates, capacity and booking terms directly with each venue.";
+  }
+  copy.addEventListener("click", async () => {
+    const text = exportText();
+    try {
+      if (!navigator.clipboard || !navigator.clipboard.writeText) throw Error("Clipboard unavailable");
+      await navigator.clipboard.writeText(text);
+      feedback.textContent = "Venue names copied. Paste them into your notes or a message.";
+    } catch (error) {
+      fallback.value = text;
+      fallback.hidden = false;
+      fallback.focus();
+      fallback.select();
+      feedback.textContent = "Automatic copying is unavailable. The text is selected below for manual copying.";
+    }
+  });
+  clear.addEventListener("click", () => { saved.clear(); render("Shortlist cleared."); });
+  panel.hidden = false;
+  render();
+})();
+
+</script>
+</body></html>
