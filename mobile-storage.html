@@ -150,12 +150,49 @@ footer a{font-weight:750}
 @media(max-width:800px){.storage-budget{grid-template-columns:1fr;gap:22px}.budget-sheet{max-width:630px;width:100%}}
 @media(max-width:470px){.storage-budget{padding:23px 16px;border-radius:18px}.budget-fields{grid-template-columns:1fr}.budget-option strong{font-size:1.2rem}.budget-option small{font-size:.61rem}.budget-sheet{padding:20px 16px}}
 @media(prefers-reduced-motion:reduce){.budget-option span,.budget-rent,.budget-fee{transition:none}.budget-option:hover span{transform:none}}
+
+/* Illustrated delivery-access planner; selections never certify that a site is suitable. */
+.access-planner{margin:34px 0 58px;background:#fffefa;border:1px solid #cbdacd;border-radius:24px;overflow:hidden;box-shadow:0 14px 35px #153d3210;scroll-margin-top:20px}
+.access-intro{display:flex;justify-content:space-between;align-items:end;gap:20px;padding:29px 34px;background:#edf0e9}
+.access-intro .eyebrow{margin:0 0 9px;color:#91653d}
+.access-intro h2{margin:0;color:#123b2e;font:400 clamp(2rem,3.6vw,3rem)/1.12 Georgia,serif;letter-spacing:-.045em}
+.access-intro>p{margin:0;max-width:42ch;font-size:.87rem;color:#516958}
+.access-body{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr)}
+.access-scene{position:relative;isolation:isolate;background:#173f34;color:#eaf1e6;padding:28px}
+.access-scene:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(#ffffff0b 1px,transparent 1px),linear-gradient(90deg,#ffffff0b 1px,transparent 1px);background-size:25px 25px}
+.access-scene svg{display:block;width:100%;max-height:310px;margin:auto}
+.access-scene small{display:block;margin:8px 0 20px;color:#c8d9ca;font-size:.73rem}
+.access-legend{list-style:none;padding:0;margin:0;display:grid;gap:11px}
+.access-legend li{display:flex;gap:13px;align-items:start;border-top:1px solid #ffffff30;padding-top:12px;font-size:.81rem;line-height:1.5}
+.access-legend strong{color:#ecc58f;font:400 1.23rem Georgia,serif}
+.access-form-wrap{padding:28px 33px 31px;min-width:0}
+.access-form-wrap>p{margin:0 0 22px;color:#4b6757;font-size:.86rem}
+.access-input{margin:0 0 16px}
+.access-input label{display:block;margin:0 0 7px;font-weight:800;font-size:.86rem;color:#1d4836}
+.access-input label span{font-size:.71rem;color:#99704e;margin-right:9px}
+.access-input select{display:block;width:100%;min-height:48px;padding:10px 13px;border-radius:9px;border:1px solid #9cb5a1;background:#fff;color:#1f4334;font:inherit;font-size:.84rem}
+.access-input select:focus-visible,.access-copy:focus-visible,.access-fallback textarea:focus-visible{outline:3px solid #b86a22;outline-offset:3px}
+.access-result{margin-top:25px;padding:19px 20px;border:1px solid #c9dcc9;border-radius:14px;background:#eaf2e9}
+.access-result h3{font-size:.91rem;color:#164b36;margin:0 0 10px}
+.access-result ul{margin:0;padding-left:20px;font-size:.8rem;color:#3d5e4b;line-height:1.7}
+.access-result p{margin:11px 0 0;color:#506757;font-size:.76rem}
+.access-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:15px}
+.access-copy{border:0;border-radius:9px;background:#174b36;color:#fff;min-height:46px;padding:11px 18px;font:800 .83rem system-ui,sans-serif;cursor:pointer}
+.access-copy:hover{background:#2b6849}
+.access-copy[hidden],.access-fallback[hidden]{display:none!important}
+.access-status{font-size:.78rem;color:#365f45;margin:0}
+.access-fallback{margin-top:12px}
+.access-fallback label{display:block;font-size:.8rem;font-weight:800;color:#315b46;margin-bottom:7px}
+.access-fallback textarea{display:block;width:100%;min-height:120px;padding:12px;border:1px solid #9db9a0;border-radius:8px;resize:vertical;font:inherit;font-size:.82rem}
+@media(max-width:840px){.access-body{grid-template-columns:1fr}.access-scene{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center}.access-scene svg{max-height:250px}}
+@media(max-width:590px){.access-planner{margin:26px 0 45px;border-radius:18px}.access-intro{display:block;padding:23px 21px}.access-intro>p{margin-top:12px}.access-scene{display:block;padding:23px}.access-scene svg{max-height:210px}.access-form-wrap{padding:22px 20px}.access-intro h2{font-size:2.1rem}}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
 <header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">Russellville<span>.Rent</span></a><a class="back" href="/">← All rentals</a></div></header>
-<section class="hero" aria-labelledby="page-title"><div class="wrap hero-inner"><div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Portable storage, <em>room to work.</em></h1><p class="hero-copy">Rent portable storage containers, trailers and jobsite offices. Compare documented local service, published rates and options that still need a direct quote.</p><div class="hero-actions"><a class="button primary" href="#providers">Explore providers ↓</a><a class="button ghost" href="#rates">See published rates</a></div></div><div class="hero-visual" aria-hidden="true"><svg viewBox="0 0 600 440" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="container" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#df9d69"/><stop offset="1" stop-color="#ac6047"/></linearGradient><linearGradient id="office" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c4d4bc"/><stop offset="1" stop-color="#729b8c"/></linearGradient></defs><ellipse cx="300" cy="388" rx="252" ry="23" fill="#071d1a" opacity=".55"/><path d="M154 103 380 51 526 103 302 158Z" fill="#bed2bf"/><path d="M154 103 302 158 302 284 154 226Z" fill="#6f9486"/><path d="M302 158 526 103 526 227 302 284Z" fill="url(#office)"/><g stroke="#4c7567" stroke-width="5"><path d="M335 157v120M365 149v121M395 142v120M425 134v121M455 127v121M485 119v120"/></g><path d="M170 124v96M193 133v96M216 141v96M239 150v96M262 158v96" stroke="#527d70" stroke-width="4"/><path d="M61 224 323 167 552 237 286 300Z" fill="#f3c28c"/><path d="M61 224 286 300 286 392 61 319Z" fill="#a75c42"/><path d="M286 300 552 237 552 329 286 392Z" fill="url(#container)"/><g stroke="#98513e" stroke-width="5"><path d="M312 299v87M341 292v87M370 285v88M399 278v88M428 271v88M457 264v88M486 257v87M515 249v88"/></g><g stroke="#874934" stroke-width="4"><path d="M82 237v88M109 246v88M136 254v88M163 263v88M190 272v88M217 281v88M244 289v88"/></g><path d="M286 300 552 237" stroke="#ffe2b3" stroke-width="6"/><rect x="315" y="315" width="76" height="28" rx="3" fill="#183e34"/><text x="353" y="333" text-anchor="middle" font-size="13" font-weight="700" font-family="system-ui" fill="#fff3d9">STORAGE</text></svg><span class="art-caption">Store · Move · Work</span></div></div></section>
+<section class="hero" aria-labelledby="page-title"><div class="wrap hero-inner"><div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Portable storage, <em>room to work.</em></h1><p class="hero-copy">Rent portable storage containers, trailers and jobsite offices. Compare documented local service, published rates and options that still need a direct quote.</p><div class="hero-actions"><a class="button primary" href="#providers">Explore providers ↓</a><a class="button ghost" href="#rates">See published rates</a><a class="button ghost" href="#delivery-check">Plan delivery access ↓</a></div></div><div class="hero-visual" aria-hidden="true"><svg viewBox="0 0 600 440" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="container" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#df9d69"/><stop offset="1" stop-color="#ac6047"/></linearGradient><linearGradient id="office" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c4d4bc"/><stop offset="1" stop-color="#729b8c"/></linearGradient></defs><ellipse cx="300" cy="388" rx="252" ry="23" fill="#071d1a" opacity=".55"/><path d="M154 103 380 51 526 103 302 158Z" fill="#bed2bf"/><path d="M154 103 302 158 302 284 154 226Z" fill="#6f9486"/><path d="M302 158 526 103 526 227 302 284Z" fill="url(#office)"/><g stroke="#4c7567" stroke-width="5"><path d="M335 157v120M365 149v121M395 142v120M425 134v121M455 127v121M485 119v120"/></g><path d="M170 124v96M193 133v96M216 141v96M239 150v96M262 158v96" stroke="#527d70" stroke-width="4"/><path d="M61 224 323 167 552 237 286 300Z" fill="#f3c28c"/><path d="M61 224 286 300 286 392 61 319Z" fill="#a75c42"/><path d="M286 300 552 237 552 329 286 392Z" fill="url(#container)"/><g stroke="#98513e" stroke-width="5"><path d="M312 299v87M341 292v87M370 285v88M399 278v88M428 271v88M457 264v88M486 257v87M515 249v88"/></g><g stroke="#874934" stroke-width="4"><path d="M82 237v88M109 246v88M136 254v88M163 263v88M190 272v88M217 281v88M244 289v88"/></g><path d="M286 300 552 237" stroke="#ffe2b3" stroke-width="6"/><rect x="315" y="315" width="76" height="28" rx="3" fill="#183e34"/><text x="353" y="333" text-anchor="middle" font-size="13" font-weight="700" font-family="system-ui" fill="#fff3d9">STORAGE</text></svg><span class="art-caption">Store · Move · Work</span></div></div></section>
 <main id="main" class="wrap">
 <div class="intro"><strong>Local-first, independently compiled</strong><span>Service areas and pricing are labeled by what providers publicly advertise—not by assumed availability. Confirm the total with each business.</span></div>
 <section id="rates" aria-labelledby="rates-title"><div class="section-head"><div><p class="eyebrow" style="color:#956a45">01 / Published prices</p><h2 id="rates-title">A useful starting point.</h2><p>Scotty&#39;s Storage Trailer Rentals’ advertised monthly rates, checked October 26, 2026. These are not guaranteed totals.</p></div><span class="section-number">One provider · Five options</span></div>
@@ -199,6 +236,42 @@ footer a{font-weight:750}
   </aside>
 </section>
 
+
+<section class="access-planner" id="delivery-check" aria-labelledby="access-title">
+  <div class="access-intro"><div><p class="eyebrow">Delivery field guide / 03 checkpoints</p><h2 id="access-title">From street to storage.</h2></div><p>Plan a delivery conversation in three steps. Only the operator can confirm truck access, safe placement, measurements and additional charges.</p></div>
+  <div class="access-body">
+    <div class="access-scene"><div>
+      <svg viewBox="0 0 440 290" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <rect x="10" y="10" width="420" height="270" rx="18" fill="#315b48"/>
+        <path d="M20 209H420" stroke="#b5c8ba" stroke-width="60" stroke-linecap="round"/>
+        <path d="M20 209H420" stroke="#fff7d6" stroke-width="3" stroke-dasharray="13 13"/>
+        <path d="M105 208V100Q105 78 130 78H314" stroke="#cbbba3" stroke-width="58" fill="none" stroke-linecap="round"/>
+        <path d="M105 208V100Q105 78 130 78H314" stroke="#fff2d4" stroke-width="3" stroke-dasharray="8 11" fill="none"/>
+        <rect x="280" y="40" width="138" height="75" rx="7" fill="#dca374" stroke="#f6dbb7" stroke-width="3"/>
+        <g stroke="#8c6046" stroke-width="4"><path d="M299 43V111M320 43V111M341 43V111M362 43V111M383 43V111M404 43V111"/></g>
+        <rect x="145" y="187" width="70" height="39" rx="6" fill="#f8edda" stroke="#285143" stroke-width="3"/>
+        <rect x="159" y="177" width="42" height="14" rx="4" fill="#f8edda"/>
+        <circle cx="162" cy="229" r="8" fill="#245143" stroke="#f2c995" stroke-width="4"/>
+        <circle cx="201" cy="229" r="8" fill="#245143" stroke="#f2c995" stroke-width="4"/>
+        <g fill="#f1c993" stroke="#163e32" stroke-width="2"><circle cx="105" cy="145" r="18"/><circle cx="233" cy="78" r="18"/><circle cx="345" cy="144" r="18"/></g>
+        <g font-family="system-ui,sans-serif" font-size="16" font-weight="900" text-anchor="middle" fill="#163e32"><text x="105" y="151">1</text><text x="233" y="84">2</text><text x="345" y="150">3</text></g>
+        <text x="32" y="263" fill="#27523f" font-size="13" font-family="system-ui,sans-serif" font-weight="900">ROAD</text>
+      </svg><small>Concept only · Not to scale · No clearances implied</small></div>
+      <ol class="access-legend"><li><strong>01</strong><span>Approach: road, driveway, turns and gate.</span></li><li><strong>02</strong><span>Ground: slope and the proposed placement surface.</span></li><li><strong>03</strong><span>Overhead: trees, utility lines and roof edges.</span></li></ol>
+    </div>
+    <div class="access-form-wrap"><p>Pick what you know. “Not checked” is fine; these observations are not a safety inspection or delivery approval.</p>
+      <form id="access-form">
+        <div class="access-input"><label for="access-route"><span>01 / APPROACH</span> Delivery-truck route</label><select id="access-route" name="route"><option value="unchecked">Not checked yet</option><option value="clear">Appears wide with room to turn</option><option value="issue">Tight turn, narrow gate or restricted access</option><option value="unsure">Unsure — ask the provider</option></select></div>
+        <div class="access-input"><label for="access-ground"><span>02 / GROUND</span> Placement surface</label><select id="access-ground" name="ground"><option value="unchecked">Not checked yet</option><option value="clear">Appears firm and level</option><option value="issue">Soft, uneven or sloped</option><option value="unsure">Unsure — ask the provider</option></select></div>
+        <div class="access-input"><label for="access-overhead"><span>03 / OVERHEAD</span> Obstructions above the site</label><select id="access-overhead" name="overhead"><option value="unchecked">Not checked yet</option><option value="clear">No obvious overhead obstructions</option><option value="issue">Trees, wires, rooflines or other obstacles</option><option value="unsure">Unsure — ask the provider</option></select></div>
+      </form>
+      <div class="access-result" aria-labelledby="access-summary-title"><h3 id="access-summary-title">Notes for the rental provider</h3><ul aria-live="polite"><li id="access-note-route">Approach: Not checked yet</li><li id="access-note-ground">Ground: Not checked yet</li><li id="access-note-overhead">Overhead: Not checked yet</li></ul><p>Ask for actual truck turning space, container footprint and door clearance, ground requirements, pickup access and the complete delivery price.</p></div>
+      <div class="access-actions"><button class="access-copy" type="button" id="access-copy" hidden>Copy site notes ↗</button><p class="access-status" id="access-status" role="status" aria-live="polite"></p></div>
+      <div class="access-fallback" id="access-fallback" hidden><label for="access-fallback-text">Select and copy your notes manually</label><textarea id="access-fallback-text" readonly></textarea></div>
+    </div>
+  </div>
+</section>
+
 <section id="providers" aria-labelledby="providers-title"><div class="section-head"><div><p class="eyebrow" style="color:#956a45">02 / Find a provider</p><h2 id="providers-title">Service around Russellville.</h2><p>Start with providers whose Russellville operations or service area are documented. Call to confirm the unit, dates and delivery details.</p></div><span class="section-number">3 documented options</span></div><div class="provider-grid"><article class="provider featured" aria-labelledby="provider-1"><div class="provider-head"><span class="provider-number">01</span><span class="provider-tag">Russellville operator · Published rates</span></div><div class="provider-content"><h3 id="provider-1">Scotty&#39;s Storage Trailer Rentals</h3><p>Russellville-based portable storage container, dry-van storage trailer and ground-level mobile office rentals. <strong>Officially posted monthly rental rates (checked October 26, 2026):</strong> 10-foot standard container $75, 20-foot standard $100, 40-foot standard or high-cube $130; 20-foot mobile office $250 and 40-foot combination office/storage unit $350. Double-door and side-access containers, plus 48- and 53-foot dry-van storage trailers, are also advertised. Its Russellville-specific official page quotes <strong>$150 delivery for 10-, 20- or 40-foot containers to Russellville, Dardanelle, Atkins and Pottsville</strong>; delivery to other destinations and special site-access conditions require a direct quote. These are advertised rates, <strong>not a confirmed total</strong>; verify inventory, delivery and pickup charges, taxes, minimum terms and current pricing directly.</p><p class="detail">2720 Bernard Way, Russellville, AR 72802 · Local operator; statewide delivery advertised</p><p><a href="tel:+14798582550">479-858-2550</a> &nbsp; · &nbsp; <a href="https://www.scottysstorage.com/russellvillearkansas" target="_blank" rel="noopener noreferrer">Official Russellville rental and delivery rates ↗</a></p></div></article><article class="provider" aria-labelledby="provider-2"><div class="provider-head"><span class="provider-number">02</span><span class="provider-tag">Russellville pickup & delivery</span></div><div class="provider-content"><h3 id="provider-2">U-Haul U-Box — Russellville</h3><p>Portable U-Box containers for moving and storage; the official Russellville location advertises container delivery, pickup and storage. Confirm availability, rates and exact delivery address with U-Haul.</p><p class="detail">2821 E Main St, Russellville, AR 72802 · Local U-Box service confirmed</p><p><a href="tel:+14794980933">479-498-0933</a> · <a href="https://www.uhaul.com/Locations/UBox-Containers-near-Russellville-AR-72802/742075/" target="_blank" rel="noopener noreferrer">Official Russellville U-Box information ↗</a></p></div></article><article class="provider" aria-labelledby="provider-3"><div class="provider-head"><span class="provider-number">03</span><span class="provider-tag">Russellville service listed</span></div><div class="provider-content"><h3 id="provider-3">Mobile Container Solutions — Benton</h3><p>Portable storage container rental and delivery. The operator explicitly names Russellville among its service cities; confirm container sizes, rates and scheduling directly.</p><p class="detail">Based in Benton, AR · Russellville service confirmed by provider</p><p><a href="https://www.mobilecontainersolutions.com/areas-we-serve" target="_blank" rel="noopener noreferrer">Official service-area information ↗</a></p></div></article></div></section>
 <section aria-labelledby="confirm-title"><div class="section-head"><div><p class="eyebrow" style="color:#956a45">03 / Check before booking</p><h2 id="confirm-title">Ask about availability.</h2><p>These providers may be useful, but current container availability or Russellville delivery has not been independently confirmed.</p></div><span class="section-number">2 options to verify</span></div><div class="provider-grid"><article class="provider" aria-labelledby="provider-4"><div class="provider-head"><span class="provider-number">04</span><span class="provider-tag">Local · Availability unconfirmed</span></div><div class="provider-content"><h3 id="provider-4">Murdock Portable Toilets, Septic &amp; Storage — Russellville</h3><p>The company&#39;s public business profile advertises portable storage containers for jobsites and other temporary storage needs. Confirm that container rentals are currently available, along with sizes, delivery terms and pricing; its primary website could not be independently retrieved.</p><p class="detail">1908 West C Place, Russellville, AR 72801 · Local company; current container availability unconfirmed</p><p><a href="tel:+14799681282">479-968-1282</a> · <a href="https://www.linkedin.com/company/murdock-portable-toilets-septic-%26-storage" target="_blank" rel="noopener noreferrer">Company business profile ↗</a></p></div></article><article class="provider" aria-labelledby="provider-5"><div class="provider-head"><span class="provider-number">05</span><span class="provider-tag">Regional · Delivery unconfirmed</span></div><div class="provider-content"><h3 id="provider-5">HOGBOX — Fayetteville (Regional)</h3><p>Fayetteville-based container rental company advertising 10-, 20- and 40-foot ground-level storage containers for construction, events and business storage, with rental terms beginning at 28 days. The operator advertises Arkansas service, but <strong>delivery to Russellville is UNCONFIRMED</strong>; request a location-specific quote, delivery schedule and availability.</p><p class="detail">2900 S City Lake Rd, Fayetteville, AR 72701 · Regional provider · Russellville delivery UNCONFIRMED</p><p><a href="tel:+14794456611">479-445-6611</a> · <a href="https://hogbox.com/" target="_blank" rel="noopener noreferrer">Official container rental details ↗</a></p></div></article></div><p class="caution"><strong>Before paying:</strong> ask for a written total covering delivery, pickup, site-access requirements, rental duration, taxes and any additional fees.</p></section>
 <section class="checklist" aria-labelledby="checklist-title"><p class="eyebrow">Make a confident inquiry</p><h2 id="checklist-title">Three questions worth asking.</h2><p>A quick checklist before you reserve a container, trailer or jobsite office.</p><div class="check-grid"><div class="check-item"><strong>What fits the site?</strong><span>Confirm dimensions, door clearance, ground conditions and delivery-truck access.</span></div><div class="check-item"><strong>What is the full cost?</strong><span>Ask about the monthly rate, minimum rental, delivery, pickup, taxes and extra charges.</span></div><div class="check-item"><strong>When can it arrive?</strong><span>Confirm the specific unit, delivery date and return or pickup process.</span></div></div></section>
@@ -239,6 +312,51 @@ footer a{font-weight:750}
   }
   form.addEventListener('change',render);
   section.hidden=false;
+  render();
+})();
+</script>
+<script>
+(() => {
+  const form=document.getElementById('access-form');
+  const copy=document.getElementById('access-copy');
+  const status=document.getElementById('access-status');
+  const fallback=document.getElementById('access-fallback');
+  const fallbackText=document.getElementById('access-fallback-text');
+  const fields=[
+    ['access-route','access-note-route','Approach'],
+    ['access-ground','access-note-ground','Ground'],
+    ['access-overhead','access-note-overhead','Overhead']
+  ].map(([id,noteId,label])=>({field:document.getElementById(id),note:document.getElementById(noteId),label}));
+  if(!form||!copy||!status||!fallback||!fallbackText||fields.some(x=>!x.field||!x.note))return;
+  const lines=()=>fields.map(x=>x.label+': '+x.field.options[x.field.selectedIndex].text);
+  function render(){
+    lines().forEach((line,index)=>{fields[index].note.textContent=line;});
+    fallback.hidden=true;
+    status.textContent='';
+  }
+  form.addEventListener('change',render);
+  copy.addEventListener('click',async()=>{
+    const message=[
+      'Hello, I am considering a portable storage rental around Russellville.',
+      'Site observations (not independently verified):',
+      ...lines().map(line=>'- '+line),
+      'Please confirm delivery-truck turning and access requirements, container footprint and door clearance, suitable ground, overhead space, pickup access, and any site-related charges.',
+      'I can provide measurements or photos if needed. Thank you.'
+    ].join('\n');
+    try{
+      if(!navigator.clipboard||!navigator.clipboard.writeText)throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(message);
+      fallback.hidden=true;
+      status.textContent='Site notes copied. Paste them into your provider inquiry.';
+    }catch(error){
+      fallbackText.value=message;
+      fallback.hidden=false;
+      fallbackText.focus();
+      fallbackText.select();
+      status.textContent='Select and copy the site notes manually.';
+    }
+  });
+  copy.hidden=false;
   render();
 })();
 </script>
