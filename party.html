@@ -87,6 +87,28 @@ footer a{font-weight:800}
 @media(max-width:860px){.hero-inner{grid-template-columns:1fr;gap:0;padding-top:54px}.hero-art{min-height:250px;margin-top:10px}.ticket{max-width:300px}.guide{grid-template-columns:1fr}}
 @media(max-width:650px){.shell{width:min(100% - 28px,1160px)}.header-inner{min-height:66px}.brand{font-size:1.07rem}.back{font-size:.72rem;padding:8px 11px}.hero-inner{padding-top:43px;padding-bottom:37px}.hero-art{min-height:210px}.ticket.back-ticket{height:160px}.ticket.front-ticket{min-height:177px;padding:18px 22px}.ticket .big{font-size:2.35rem}.hero-art:before{width:180px;height:180px}.finder{padding-top:28px}.finder-heading{display:block}.finder-heading p{margin-top:12px}.search-row{flex-wrap:wrap}.search-field{flex-basis:100%}.reset{width:100%}.directory{grid-template-columns:1fr}.card-heading{padding:13px 18px}.card-content{padding:20px}.guide{padding:26px 22px}.guide ul{grid-template-columns:1fr}.summary{align-items:flex-start}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.provider,.button{transition:none}.provider:hover,.button:hover{transform:none}}
+
+/* A deliberately condensed, accessible way to scan 31 event providers. */
+.party-view-toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:0 0 16px;padding:13px 17px;background:#f4eee7;border:1px solid #e6dacf;border-radius:16px}
+.party-view-toolbar .view-label{display:block;font-size:.69rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#734357}
+.party-view-toolbar .view-help{display:block;max-width:65ch;margin:4px 0 0;color:#56666a;font-size:.79rem;line-height:1.45}
+.party-view-group{display:inline-flex;gap:4px;padding:4px;background:#e7e1da;border-radius:999px}
+.party-view-group button{min-height:44px;padding:9px 17px;border:0;border-radius:999px;background:transparent;color:#30464b;font-size:.82rem;font-weight:850;cursor:pointer}
+.party-view-group button[aria-pressed="true"]{background:var(--midnight);color:#fff;box-shadow:0 4px 12px #172c3526}
+.party-view-group button:not([aria-pressed="true"]):hover{background:#fff}
+.directory.quick-scan{grid-template-columns:minmax(0,1fr);gap:10px}
+.quick-scan .provider{display:grid;grid-template-columns:170px minmax(0,1fr);box-shadow:none}
+.quick-scan .provider:hover{transform:none;box-shadow:0 6px 20px #1c333615}
+.quick-scan .card-heading{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:12px;border-right:1px solid var(--line);border-bottom:0;padding:17px 19px;background:#f7f0e9}
+.quick-scan .card-content{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;padding:17px 21px}
+.quick-scan .card-content h2{flex:1 1 205px;margin:0;font-size:1.13rem}
+.quick-scan .card-content>p:last-child{flex:1 1 260px;order:2;margin:0;padding:0;border:0;font-size:.82rem;line-height:1.5;overflow-wrap:anywhere}
+.party-details-toggle{display:none}
+.quick-scan .party-details-toggle{order:3;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 15px;border-radius:999px;border:1px solid #c2d3c9;background:#e6f0e9;color:#174e41;font-size:.79rem;font-weight:850;cursor:pointer}
+.quick-scan .party-details-toggle:hover{background:#d6e8dc}
+.quick-scan .card-content>p:not(:last-child){flex:1 1 100%;order:4;margin:0;padding:12px 0 0;border-top:1px solid var(--line)}
+@media(max-width:720px){.quick-scan .provider{grid-template-columns:1fr}.quick-scan .card-heading{flex-direction:row;align-items:center;justify-content:space-between;border-right:0;border-bottom:1px solid var(--line);padding:11px 17px}.quick-scan .card-content{padding:17px}.party-view-toolbar{padding:13px}.party-view-group{width:100%}.party-view-group button{flex:1}}
+@media(prefers-reduced-motion:reduce){.quick-scan .provider{transition:none}}
 </style>
 </head>
 <body>
@@ -101,6 +123,10 @@ footer a{font-weight:800}
 <section class="finder" id="finder" aria-labelledby="finder-title" hidden><div class="finder-heading"><div><p class="eyebrow" style="color:#85506a">Plan by what you need</p><h2 id="finder-title">Find your kind of celebration.</h2></div><p>Search provider names, towns or equipment. Choose a category to narrow the directory.</p></div>
 <div class="finder-controls"><div class="search-row"><div class="search-field"><label for="party-search">Search party rentals</label><input type="search" id="party-search" placeholder="Try “chairs”, “bounce house”, “Russellville”…" autocomplete="off" aria-controls="provider-grid"></div><button type="button" class="reset" id="reset">Clear filters</button></div><div class="filters" role="group" aria-label="Filter by party rental type"><button type="button" data-filter="all" aria-pressed="true">All options <span class="count" data-count-for="all" aria-hidden="true"></span></button><button type="button" data-filter="inflatables" aria-pressed="false">Inflatables & games <span class="count" data-count-for="inflatables" aria-hidden="true"></span></button><button type="button" data-filter="tables" aria-pressed="false">Tents & tables <span class="count" data-count-for="tables" aria-hidden="true"></span></button><button type="button" data-filter="decor" aria-pressed="false">Décor & photo <span class="count" data-count-for="decor" aria-hidden="true"></span></button><button type="button" data-filter="onsite" aria-pressed="false">On-site parties <span class="count" data-count-for="onsite" aria-hidden="true"></span></button><button type="button" data-filter="activities" aria-pressed="false">Activities <span class="count" data-count-for="activities" aria-hidden="true"></span></button><button type="button" data-filter="supplies" aria-pressed="false">Party supplies <span class="count" data-count-for="supplies" aria-hidden="true"></span></button></div></div></section>
 <section id="providers" aria-labelledby="providers-title"><div class="results-line"><h2 id="providers-title">Explore rental providers</h2><p id="result-count" role="status" aria-live="polite" aria-atomic="true">31 providers shown</p></div>
+<div class="party-view-toolbar" id="party-view-toolbar" hidden>
+<div><span class="view-label">How to explore</span><span class="view-help" id="party-view-help">Full descriptions and booking caveats are visible.</span></div>
+<div class="party-view-group" role="group" aria-label="Provider display"><button type="button" id="party-view-details" aria-controls="provider-grid" aria-pressed="true">Full details</button><button type="button" id="party-view-scan" aria-controls="provider-grid" aria-pressed="false">Quick scan</button></div>
+</div>
 <div class="directory" id="provider-grid"><article class="provider" data-categories="inflatables tables"><div class="card-heading"><span class="card-index">01 / 31</span><span class="card-category">Inflatables & games</span></div><div class="card-content"><h2>NSaNe Inflatables</h2><p>Bounce houses, water slides, games, tents, tables and chairs. Official catalog advertises 20 × 20-foot tents at $250, 20 × 40-foot tents at $500, 6-foot tables at $8.50 and chairs at $1.50; posted item prices are not confirmed all-in quotes. The operator says standard inflatable rentals cover five hours; an overnight extension may be available for an additional fee if the unit is not booked the next day and the location is safe. Its official service-area list includes Russellville, Dover, Hector, London, Pottsville, Atkins, Dardanelle, Danville, Ola and Morrilton. <strong>Seasonal restriction:</strong> The operator says water rentals stop after October 1 and usually resume in May around Memorial Day. Confirm current non-water inventory, dates, delivery/setup fees and weather-dependent setup. <a href="https://www.nsaneinflatables.com/category/tent-tables-and-chairs" target="_blank" rel="noopener noreferrer">Official tent, table and chair prices ↗</a></p><p>Russellville area · <a href="tel:+14798577470">479-857-7470</a> · <a href="https://www.nsaneinflatables.com/">Website ↗</a></p></div></article>
 <article class="provider" data-categories="inflatables tables"><div class="card-heading"><span class="card-index">02 / 31</span><span class="card-category">Inflatables & games</span></div><div class="card-content"><h2>Happy Jumpers Inflatables &amp; Party Supplies</h2><p>Bounce houses, slides, tents, chairs, tables, carnival games and concession equipment. Its official rental catalog advertises a 10 × 20-foot tent at $125, chairs at $3 each, 8-foot banquet tables at $11 each, and a dunk tank at $300. Posted item prices are not confirmed all-in quotes; verify delivery, setup, taxes, dates and current pricing. The operator advertises 10% discounts for school, church and military events; confirm eligibility and terms.</p><p>Russellville and surrounding Pope County communities · <a href="tel:+14792801015">479-280-1015</a> · <a href="https://www.happy-jumpers.com/" target="_blank" rel="noopener noreferrer">Official rentals and prices ↗</a></p></div></article>
 <article class="provider" data-categories="inflatables"><div class="card-heading"><span class="card-index">03 / 31</span><span class="card-category">Inflatables & games</span></div><div class="card-content"><h2>Space Walk of the River Valley</h2><p>Russellville-based inflatable rental branch offering bounce houses, wet and dry slides, obstacle courses, combo units and concession equipment for birthdays, school events and community gatherings. The operator explicitly lists Russellville ZIP codes <strong>72801 and 72802</strong> among its delivery areas. Advertised delivery-only hours are Monday–Saturday, 9 a.m.–7 p.m.; closed Sundays. Confirm specific inventory, setup requirements, rental dates and final charges directly.</p><p class="detail">Russellville, AR · Local delivery verified by official branch page</p><p><a href="tel:+14799795988">479-979-5988</a> · <a href="mailto:spacewalkrvy@herecomesfun.com">Email branch</a> · <a href="https://herecomesfun.com/branches/Arkansas/the-river-valley/profile" target="_blank" rel="noopener noreferrer">Official inventory and service ZIP codes ↗</a></p></div></article>
@@ -149,7 +175,7 @@ footer a{font-weight:800}
   function matchesCategory(card,category){return category==="all"||card.dataset.categories.split(" ").includes(category)}
   function update(){
     const query=search.value.trim().toLocaleLowerCase();
-    const searchMatches=cards.filter(card=>card.textContent.toLocaleLowerCase().includes(query));
+    const searchMatches=cards.filter(card=>(card.dataset.searchText||card.textContent.toLocaleLowerCase()).includes(query));
     let visible=0;
     cards.forEach(card=>{
       const show=searchMatches.includes(card)&&matchesCategory(card,active);
@@ -166,6 +192,61 @@ footer a{font-weight:800}
   reset.addEventListener("click",()=>{active="all";search.value="";update();search.focus()});
   finder.hidden=false;
   update();
+})();
+</script>
+<script>
+(function(){
+  const toolbar=document.getElementById('party-view-toolbar');
+  const directory=document.getElementById('provider-grid');
+  const fullButton=document.getElementById('party-view-details');
+  const scanButton=document.getElementById('party-view-scan');
+  const help=document.getElementById('party-view-help');
+  if(!toolbar||!directory||!fullButton||!scanButton||!help)return;
+  const entries=Array.from(directory.querySelectorAll('.provider')).map(function(card,index){
+    const content=card.querySelector('.card-content');
+    if(!content)return null;
+    const paragraphs=Array.from(content.children).filter(function(child){return child.tagName==='P'});
+    if(paragraphs.length<2)return null;
+    const name=(card.querySelector('h2,h3')||{textContent:'Provider'}).textContent.trim();
+    card.dataset.searchText=card.textContent.toLocaleLowerCase();
+    const descriptions=paragraphs.slice(0,-1);
+    descriptions.forEach(function(p,i){if(!p.id)p.id='party-provider-details-'+(index+1)+'-'+(i+1)});
+    const toggle=document.createElement('button');
+    toggle.type='button';
+    toggle.className='party-details-toggle';
+    toggle.hidden=true;
+    toggle.setAttribute('aria-controls',descriptions.map(function(p){return p.id}).join(' '));
+    toggle.setAttribute('aria-expanded','false');
+    function setExpanded(expanded){
+      descriptions.forEach(function(p){p.hidden=!expanded});
+      toggle.setAttribute('aria-expanded',String(expanded));
+      toggle.textContent=expanded?'Hide details':'Read details & restrictions';
+      toggle.setAttribute('aria-label',(expanded?'Hide details for ':'Read details and restrictions for ')+name);
+    }
+    toggle.addEventListener('click',function(){setExpanded(toggle.getAttribute('aria-expanded')!=='true')});
+    content.insertBefore(toggle,paragraphs[paragraphs.length-1]);
+    return {descriptions:descriptions,toggle:toggle,setExpanded:setExpanded};
+  }).filter(Boolean);
+  if(!entries.length)return;
+  function setView(mode){
+    const scanning=mode==='scan';
+    directory.classList.toggle('quick-scan',scanning);
+    fullButton.setAttribute('aria-pressed',String(!scanning));
+    scanButton.setAttribute('aria-pressed',String(scanning));
+    help.textContent=scanning
+      ?'Scan names and public contacts. Open each provider’s details to review pricing, availability and delivery caveats.'
+      :'Full descriptions and booking caveats are visible.';
+    entries.forEach(function(entry){
+      if(scanning)entry.setExpanded(false);
+      else entry.descriptions.forEach(function(p){p.hidden=false});
+      entry.toggle.hidden=!scanning;
+      if(!scanning)entry.toggle.setAttribute('aria-expanded','false');
+    });
+  }
+  fullButton.addEventListener('click',function(){setView('full')});
+  scanButton.addEventListener('click',function(){setView('scan')});
+  setView('full');
+  toolbar.hidden=false;
 })();
 </script>
 </body>
