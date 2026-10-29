@@ -130,6 +130,36 @@ main#main{padding:0 16px 54px!important}
 @media(max-width:450px){.storage-size-lab{padding:21px 18px;border-radius:19px}.size-lab-choices{gap:8px}.size-lab-choice{padding:10px;min-height:62px}.size-lab-graphic{padding:15px 12px}}
 @media(prefers-reduced-motion:reduce){.size-lab-choice{transition:none}.size-lab-choice:hover{transform:none}}
 </style>
+
+<style>
+/* River Valley location compass, combined with the existing directory filters. */
+.storage-locations{margin-top:24px;padding-top:21px;border-top:1px solid #dce7df}
+.storage-locations-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:18px}
+.storage-locations-kicker{margin:0 0 5px;color:#8b652b;font-size:.65rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
+.storage-locations h3{font:400 clamp(1.35rem,2.5vw,1.75rem)/1.2 Georgia,serif;letter-spacing:-.035em;color:#153f33;margin:0}
+.storage-locations-intro{font-size:.81rem;color:#586f61;margin:7px 0 0;max-width:61ch;line-height:1.55}
+.storage-city-all{min-height:44px;flex:0 0 auto;background:#f5f9f4;color:#275741;border:1px solid #bdd2c1;border-radius:999px;padding:9px 15px;font-size:.79rem;font-weight:850;cursor:pointer}
+.storage-city-all[aria-pressed="true"]{background:#153f33;color:#fff;border-color:#153f33}
+.storage-city-all span{font-size:.7rem;opacity:.84;margin-left:4px}
+.storage-location-rail{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin-top:17px}
+.storage-city{position:relative;display:flex;flex-direction:column;align-items:flex-start;min-width:0;min-height:120px;overflow:hidden;text-align:left;border:1px solid #d0dfd3;border-radius:15px;padding:17px 15px 14px;background:radial-gradient(circle at 92% 15%,#e4efe4 0,transparent 43%),#f9fbf8;color:#214f3b;cursor:pointer;transition:transform .18s,box-shadow .18s,border-color .18s,background .18s}
+.storage-city::after{content:"";position:absolute;width:90px;height:90px;right:-43px;bottom:-48px;border:1px solid #81ab904a;border-radius:50%;box-shadow:0 0 0 17px #81ab9015;pointer-events:none}
+.storage-city-marker{display:inline-flex;align-items:center;gap:7px;font-size:.63rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase;color:#577d65;margin-bottom:9px}
+.storage-city-marker::before{content:"";width:10px;height:10px;border:2px solid #54876b;background:#eff6ee;border-radius:50%;box-shadow:0 0 0 4px #deecdf}
+.storage-city strong{font:400 clamp(1.05rem,2vw,1.28rem)/1.2 Georgia,serif;letter-spacing:-.025em;position:relative;z-index:1}
+.storage-city-count{font-size:.73rem;color:#587364;font-weight:750;margin-top:7px;position:relative;z-index:1}
+.storage-city:hover{transform:translateY(-2px);border-color:#87ad94;box-shadow:0 9px 20px #163f3315}
+.storage-city[aria-pressed="true"]{background:linear-gradient(135deg,#164538,#29634b);color:#fff;border-color:#164538;box-shadow:0 12px 24px #143e3326}
+.storage-city[aria-pressed="true"] .storage-city-marker,.storage-city[aria-pressed="true"] .storage-city-count{color:#e7efd9}
+.storage-city[aria-pressed="true"] .storage-city-marker::before{border-color:#f0cc83;background:#f0cc83;box-shadow:0 0 0 4px #ffffff21}
+.storage-city[aria-pressed="true"]::after{border-color:#ffffff43;box-shadow:0 0 0 17px #ffffff0a}
+.storage-locations button:focus-visible{outline:3px solid #ad671a;outline-offset:3px}
+.storage-locations-note{font-size:.72rem;color:#60786b;line-height:1.5;margin:12px 0 0}
+@media(max-width:760px){.storage-location-rail{grid-template-columns:repeat(2,minmax(0,1fr))}.storage-city{min-height:104px}.storage-locations-heading{align-items:flex-start}}
+@media(max-width:480px){.storage-locations-heading{display:block}.storage-city-all{margin-top:14px;width:100%}.storage-location-rail{gap:9px}.storage-city{padding:15px 12px;min-height:108px}.storage-city strong{font-size:1.08rem}}
+@media(max-width:340px){.storage-location-rail{grid-template-columns:1fr}.storage-city{min-height:94px}}
+@media(prefers-reduced-motion:reduce){.storage-city{transition:none}.storage-city:hover{transform:none}}
+</style>
 </head><body><a class="storage-skip" href="#storage-grid">Skip to storage providers</a><header class="storage-topbar"><div class="storage-topbar-inner"><a class="storage-brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="storage-back" href="/">← All rental categories</a></div></header><main id="main"><section class="storage-hero" aria-labelledby="storage-title">
 <div class="storage-hero-content">
 <p class="storage-eyebrow">Russellville · Arkansas River Valley</p>
@@ -166,7 +196,20 @@ main#main{padding:0 16px 54px!important}
 <button type="button" data-storage-filter="units" aria-pressed="false"><span class="storage-filter-icon" aria-hidden="true"><svg viewBox="0 0 72 58" focusable="false"><path d="M7 20 36 7l29 13v31H7z"/><path d="M17 25h38v26H17z"/><path d="M21 32h30M21 39h30M21 46h30"/></svg></span><strong>Storage units</strong><small>Traditional unit space</small></button>
 <button type="button" data-storage-filter="vehicles" aria-pressed="false"><span class="storage-filter-icon" aria-hidden="true"><svg viewBox="0 0 72 58" focusable="false"><path d="M6 37h59v12H6zM15 37l8-17h26l10 17"/><path d="M28 20v17M18 27h35"/><circle cx="19" cy="49" r="5"/><circle cx="53" cy="49" r="5"/></svg></span><strong>Boat &amp; RV parking</strong><small>Vehicle storage options</small></button>
 <button type="button" data-storage-filter="climate" aria-pressed="false"><span class="storage-filter-icon" aria-hidden="true"><svg viewBox="0 0 72 58" focusable="false"><circle cx="36" cy="29" r="20"/><path d="M36 10v38M17 29h38M23 16l26 26M49 16 23 42"/></svg></span><strong>Climate-controlled</strong><small>Temperature-managed units</small></button>
-</div></fieldset></section>
+</div></fieldset>
+<div class="storage-locations" role="group" aria-labelledby="storage-locations-title">
+ <div class="storage-locations-heading">
+  <div><p class="storage-locations-kicker">02 / Explore nearby</p><h3 id="storage-locations-title">Where should your space be?</h3><p class="storage-locations-intro">Choose a town to focus the directory. Location, storage type and keyword filters work together.</p></div>
+  <button type="button" class="storage-city-all" data-storage-city="all" aria-pressed="true">All locations <span data-city-count="all"></span></button>
+ </div>
+ <div class="storage-location-rail" aria-label="Listed facility locations">
+  <button type="button" class="storage-city" data-storage-city="russellville" aria-pressed="false"><span class="storage-city-marker">Local hub</span><strong>Russellville</strong><span class="storage-city-count" data-city-count="russellville"></span></button>
+  <button type="button" class="storage-city" data-storage-city="pottsville" aria-pressed="false"><span class="storage-city-marker">Nearby</span><strong>Pottsville</strong><span class="storage-city-count" data-city-count="pottsville"></span></button>
+  <button type="button" class="storage-city" data-storage-city="dardanelle" aria-pressed="false"><span class="storage-city-marker">Across the river</span><strong>Dardanelle</strong><span class="storage-city-count" data-city-count="dardanelle"></span></button>
+  <button type="button" class="storage-city" data-storage-city="dover" aria-pressed="false"><span class="storage-city-marker">Nearby</span><strong>Dover</strong><span class="storage-city-count" data-city-count="dover"></span></button>
+ </div>
+ <p class="storage-locations-note">Grouped by towns mentioned in published facility details, not by guaranteed unit availability. A provider advertising multiple locations can appear in more than one town.</p>
+</div></section>
 <section class="storage-size-lab" id="storage-size-lab" aria-labelledby="size-lab-title" hidden>
  <div class="size-lab-heading"><div><p class="size-lab-kicker">Visual guide / Storage planning</p><h2 id="size-lab-title">See the difference in floor space.</h2></div><p>Four illustrative dimensions, drawn to the same scale. Compare space before you call a rental provider.</p></div>
  <div class="size-lab-layout">
@@ -200,30 +243,46 @@ main#main{padding:0 16px 54px!important}
   const finder = document.getElementById('storage-finder');
   const input = document.getElementById('storage-search');
   const buttons = Array.from(document.querySelectorAll('[data-storage-filter]'));
+  const cityButtons = Array.from(document.querySelectorAll('[data-storage-city]'));
+  const cityLabels = {russellville:'Russellville',pottsville:'Pottsville',dardanelle:'Dardanelle',dover:'Dover'};
+  // Classify published facility locations, including additional advertised towns.
+  cards.forEach(card => {
+    const location = (card.querySelector('.detail')?.textContent || '').toLocaleLowerCase();
+    card.dataset.storageCities = Object.keys(cityLabels).filter(city => location.includes(city)).join(' ');
+  });
+  cityButtons.forEach(button => {
+    const key = button.dataset.storageCity;
+    const number = key === 'all' ? cards.length : cards.filter(card => card.dataset.storageCities.split(' ').includes(key)).length;
+    button.querySelector('[data-city-count]').textContent = number + (number === 1 ? ' listing' : ' listings');
+  });
   const results = document.getElementById('storage-results');
   const empty = document.getElementById('storage-empty');
   let active = 'all';
+  let activeCity = 'all';
   const update = () => {
     const query = input.value.trim().toLocaleLowerCase();
     let visible = 0;
     cards.forEach(card => {
       const matchesText = card.textContent.toLocaleLowerCase().includes(query);
       const matchesType = active === 'all' || card.dataset.storageTypes.split(' ').includes(active);
-      const show = matchesText && matchesType;
+      const matchesCity = activeCity === 'all' || card.dataset.storageCities.split(' ').includes(activeCity);
+      const show = matchesText && matchesType && matchesCity;
       card.hidden = !show;
       if (show) visible++;
     });
     buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.storageFilter === active)));
-    results.textContent = visible === cards.length && !query && active === 'all'
+    cityButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.storageCity === activeCity)));
+    results.textContent = visible === cards.length && !query && active === 'all' && activeCity === 'all'
       ? cards.length + ' storage providers'
-      : visible + ' of ' + cards.length + ' providers shown';
+      : visible + ' of ' + cards.length + ' providers shown' + (activeCity === 'all' ? '' : ' for ' + cityLabels[activeCity]);
     empty.hidden = visible !== 0;
   };
-  const reset = () => { input.value = ''; active = 'all'; update(); };
+  const reset = () => { input.value = ''; active = 'all'; activeCity = 'all'; update(); };
   finder.hidden = false;
   document.getElementById('storage-search-form').addEventListener('submit', event => event.preventDefault());
   input.addEventListener('input', update);
   buttons.forEach(button => button.addEventListener('click', () => { active = button.dataset.storageFilter; update(); }));
+  cityButtons.forEach(button => button.addEventListener('click', () => { activeCity = button.dataset.storageCity; update(); }));
   document.getElementById('storage-reset').addEventListener('click', reset);
   document.getElementById('storage-empty-reset').addEventListener('click', () => { reset(); input.focus(); });
   update();
