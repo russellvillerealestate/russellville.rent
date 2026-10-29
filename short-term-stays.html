@@ -61,6 +61,37 @@ main{padding:42px 0 82px}.section-heading{display:flex;justify-content:space-bet
 @media(prefers-reduced-motion:reduce){.region-card{transition:none}.region-card:hover{transform:none}}
 @media(max-width:740px){.hero-inner{padding:55px 0 60px}.grid{grid-template-columns:1fr}.stay-inner{padding:22px}.head{min-height:68px}.back{font-size:.78rem}.controls{padding:15px}.filters{width:100%}.filter{flex:1 1 auto}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Stay index: scannable, filter-aware provider navigation; no invented rental facts. */
+.stay-index{margin:0 0 25px;border:1px solid #315849;border-radius:22px;overflow:hidden;background:radial-gradient(circle at 95% 0%,#356c53 0%,transparent 43%),#12382f;color:#f8f8ed;box-shadow:0 15px 32px #12382f17}
+.stay-index>summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:23px clamp(19px,3vw,31px);min-height:105px}
+.stay-index>summary::-webkit-details-marker{display:none}
+.stay-index>summary:focus-visible{outline:3px solid #efd48b;outline-offset:-6px}
+.stay-index-intro{min-width:0;display:block}
+.stay-index-eyebrow{display:block;font-size:.67rem;letter-spacing:.15em;font-weight:850;text-transform:uppercase;color:#f0d18c;margin-bottom:5px}
+.stay-index-title{display:block;font:400 clamp(1.32rem,2.7vw,1.94rem)/1.16 Georgia,"Times New Roman",serif;letter-spacing:-.037em}
+.stay-index-title em{font-style:italic;color:#f1d393}
+.stay-index-help{max-width:27ch;font-size:.81rem;line-height:1.45;color:#dfebdd}
+.stay-index-toggle{display:inline-flex;align-items:center;justify-content:center;flex:none;border:1px solid #ffffff69;border-radius:100px;min-width:96px;min-height:45px;padding:9px 13px;color:#f9ecc9;font-size:.75rem;font-weight:800}
+.stay-index-toggle:after{content:" +";font-size:1.15rem;margin-left:7px;line-height:1}
+.stay-index[open] .stay-index-toggle:after{content:" −"}
+.stay-index-nav{padding:0 clamp(19px,3vw,31px) 26px}
+.stay-index-nav>p{font-size:.75rem;color:#deeadf;margin:0 0 14px;border-top:1px solid #ffffff30;padding-top:12px}
+.stay-index-list{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:0;padding:0}
+.stay-index-list li{min-width:0}
+.stay-index-list li[hidden]{display:none}
+.stay-index-list a{min-height:75px;display:grid;grid-template-columns:27px minmax(0,1fr) 16px;align-items:center;gap:10px;padding:12px 13px;background:#ffffff10;border:1px solid #ffffff31;border-radius:12px;color:#fffdf5;text-decoration:none;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+.stay-index-list a:hover{background:#ffffff23;border-color:#eccb88;transform:translateY(-2px)}
+.stay-index-list a:focus-visible{outline:3px solid #efd48b;outline-offset:3px}
+.stay-index-number{color:#f2d28e;align-self:start;font:400 1.13rem/1.3 Georgia,serif}
+.stay-index-copy{min-width:0}
+.stay-index-name{display:block;font-size:.83rem;font-weight:800;line-height:1.25;overflow-wrap:anywhere}
+.stay-index-meta{display:block;margin-top:5px;font-size:.69rem;color:#d5e9db;line-height:1.3}
+.stay-index-arrow{font-size:1.08rem;color:#f1cf87;align-self:center}
+.stay:target{outline:3px solid #c99143;outline-offset:4px;scroll-margin-top:20px}
+@media(max-width:870px){.stay-index-list{grid-template-columns:repeat(2,minmax(0,1fr))}.stay-index-help{max-width:21ch}}
+@media(max-width:600px){.stay-index>summary{gap:13px;flex-wrap:wrap}.stay-index-help{order:3;max-width:none;flex-basis:100%}.stay-index-toggle{margin-left:auto}.stay-index-list{grid-template-columns:1fr}.stay-index-list a{min-height:66px}}
+@media(prefers-reduced-motion:reduce){.stay-index-list a{transition:none}.stay-index-list a:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -81,6 +112,10 @@ main{padding:42px 0 82px}.section-heading{display:flex;justify-content:space-bet
 </section>
 <div class="controls"><div class="search-wrap"><label for="search">Search stays or towns</label><input id="search" type="search" autocomplete="off" placeholder="Try Dover, tiny cabin, pet friendly…"></div><div class="filters" role="group" aria-label="Filter by lodging type"><button class="filter" data-filter="all" aria-pressed="true">All stays</button><button class="filter" data-filter="private" aria-pressed="false">Private operators</button><button class="filter" data-filter="park" aria-pressed="false">State parks</button></div></div>
 <p class="count" id="count" role="status" aria-live="polite">Showing 11 of 11 operators</p>
+<details class="stay-index" id="stay-index" hidden>
+ <summary><span class="stay-index-intro"><span class="stay-index-eyebrow">The River Valley stay index · <span id="stay-index-count">11 operators</span></span><span class="stay-index-title">Find the name. <em>Open the details.</em></span></span><span class="stay-index-help">Jump directly to a provider while keeping all terms, cautions and contact links in its full listing.</span><span class="stay-index-toggle" aria-hidden="true">View index</span></summary>
+ <nav class="stay-index-nav" aria-label="Jump to a stay operator"><p>Choose a name to go to its complete directory entry. These links do not book a reservation.</p><ol class="stay-index-list" id="stay-index-list"></ol></nav>
+</details>
 <div class="grid" id="stay-grid">
 <article class="stay" data-kind="private" data-region="dover" data-search="laben properties the hobbit house russellville tolkien themed guest suite furnished vacation short term mid term rental family pets kitchen wifi"><div class="stay-top"></div><div class="stay-inner"><div class="stay-label">Furnished stays · Russellville</div><h3>LABEN Properties — The Hobbit House</h3><p class="place">Russellville, Arkansas · Exact street address not publicly confirmed</p><p>Operator-listed Tolkien-themed furnished guest suite in Russellville, with two bedrooms, one bathroom and space for up to eight guests. The official booking page lists a kitchen, Wi-Fi and pets allowed. LABEN also advertises other vacation and mid-term rentals across Arkansas, including partner-managed properties; these are one operator listing, not claims that all properties are in Russellville. Confirm dates, total pricing, pet terms and arrival details directly.</p><div class="details"><div class="terms">Guest suite · 2 bedrooms · Up to 8 guests · Availability unconfirmed</div><div class="stay-links"><a class="primary" href="https://laben.holidayfuture.com/listings/152461" target="_blank" rel="noopener noreferrer">Official Hobbit House booking ↗</a><a class="secondary" href="https://laben.holidayfuture.com/" target="_blank" rel="noopener noreferrer">Operator's other stays ↗</a></div></div></div></article>
 <article class="stay" data-kind="private" data-region="dover" data-search="ozark piney cabins dover bear whitetail big piney 2 night pet friendly"><div class="stay-top"></div><div class="stay-inner"><div class="stay-label">Private cabins</div><h3>Ozark Piney Cabins</h3><p class="place">108 AR-164, Dover, AR 72837</p><p>Two furnished cabins, The Bear and The Whitetail, near Big Piney Creek. The operator advertises $205/night for 1–4 guests, a two-night minimum (three nights on holidays), and pet stays with a fee. Posted prices are not guaranteed quotes.</p><div class="details"><div class="terms">Official rates: $205/night base · 2-night minimum · 501-499-1109</div><div class="stay-links"><a class="primary" href="https://ozarkpineycabins.com/rates-rules/" target="_blank" rel="noopener noreferrer">Official rates &amp; booking ↗</a><a class="secondary" href="tel:+15014991109">Call operator</a></div></div></div></article>
@@ -108,6 +143,42 @@ const regionButtons = Array.from(document.querySelectorAll("#region-explorer [da
 const count = document.getElementById("count");
 const empty = document.getElementById("empty");
 const clearFilters = document.getElementById("clear-filters");
+
+const stayIndex = document.getElementById("stay-index");
+const stayIndexList = document.getElementById("stay-index-list");
+const stayIndexCount = document.getElementById("stay-index-count");
+const stayIndexEntries = cards.map((card, index) => {
+  const label = card.querySelector(".stay-label").textContent.trim();
+  const name = card.querySelector("h3").textContent.trim();
+  card.id = "stay-" + (index + 1);
+  card.tabIndex = -1;
+  const item = document.createElement("li");
+  const link = document.createElement("a");
+  link.href = "#" + card.id;
+  link.setAttribute("aria-label", "View full directory details for " + name);
+  const number = document.createElement("span");
+  number.className = "stay-index-number";
+  number.textContent = String(index + 1).padStart(2, "0");
+  const copy = document.createElement("span");
+  copy.className = "stay-index-copy";
+  const title = document.createElement("span");
+  title.className = "stay-index-name";
+  title.textContent = name;
+  const meta = document.createElement("span");
+  meta.className = "stay-index-meta";
+  meta.textContent = label;
+  const arrow = document.createElement("span");
+  arrow.className = "stay-index-arrow";
+  arrow.setAttribute("aria-hidden", "true");
+  arrow.textContent = "↗";
+  copy.append(title, meta);
+  link.append(number, copy, arrow);
+  item.append(link);
+  stayIndexList.append(item);
+  return item;
+});
+stayIndex.open = window.matchMedia("(min-width: 760px)").matches;
+
 let kind = "all";
 let region = "all";
 function refresh() {
@@ -131,6 +202,9 @@ function refresh() {
     button.setAttribute("aria-pressed", String(candidate === region));
   }
   count.textContent = "Showing " + visible + " of " + cards.length + " operators";
+  for (let i = 0; i < cards.length; i++) stayIndexEntries[i].hidden = cards[i].hidden;
+  stayIndexCount.textContent = visible + (visible === 1 ? " operator" : " operators");
+  stayIndex.hidden = visible === 0;
   empty.hidden = visible !== 0;
   clearFilters.hidden = visible !== 0;
 }
