@@ -129,6 +129,94 @@ a:focus-visible{outline:3px solid #a66a17;outline-offset:4px;border-radius:3px}
 @media(max-width:920px){.atelier-layout{grid-template-columns:1fr}.atelier-copy{margin-top:22px}}
 @media(max-width:650px){.atelier{padding:46px 0 52px}.atelier-head{display:block}.atelier-head p:last-child{margin-top:13px}.look-grid{grid-template-columns:1fr}.look-card{min-height:0;flex-direction:row}.look-art{flex:0 0 110px;min-height:115px}.look-art svg{width:95px;height:105px}.look-copy{align-self:center}.atelier-fields{grid-template-columns:1fr}.atelier-preview{padding:24px 22px}}
 @media(prefers-reduced-motion:reduce){.look-card{transition:none}.look-card:hover{transform:none}}
+
+/* 2026-10-30 · Occasion editorial: StayARV-inspired immersive local hero and practical occasion paths.
+   Research: nngroup.com/articles/visual-design-principles/ ; web.dev/learn/design/responsive-images ;
+   web.dev/articles/prefers-reduced-motion ; w3.org/TR/WCAG22/ . */
+.visually-hidden{position:absolute!important;clip-path:inset(50%);width:1px;height:1px;overflow:hidden;white-space:nowrap}
+.hero{position:relative;isolation:isolate;background:#102923;background-image:linear-gradient(90deg,rgba(6,25,23,.96) 0%,rgba(12,37,31,.89) 47%,rgba(13,40,36,.66) 100%),url("/assets/downtown-russellville-sunset.jpg");background-size:cover;background-position:center 41%}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:160px;background:linear-gradient(0deg,rgba(8,25,22,.68),transparent);z-index:-1;pointer-events:none}
+.hero-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);min-height:690px;gap:clamp(20px,4vw,62px);padding-block:76px 158px}
+.hero h1{font-size:clamp(4rem,7.4vw,7.8rem);line-height:.96;letter-spacing:-.071em;max-width:10ch;margin-bottom:28px;text-wrap:balance}
+.hero h1 em{color:#f2c487}
+.hero-lead{font-size:clamp(1.04rem,1.6vw,1.22rem);line-height:1.68;max-width:46ch;color:#f2f1e9}
+.hero-caption{color:#eee0c9;max-width:48ch;font-size:.67rem;letter-spacing:.115em;line-height:1.6}
+.hero .eyebrow{color:#f2c487}
+.hero-actions{gap:11px}
+.hero-actions .button{border-radius:6px;min-height:54px}
+.art-frame{min-height:478px;padding:30px 18px;border:1px solid rgba(252,225,182,.33);border-radius:210px 210px 20px 20px;background:linear-gradient(140deg,rgba(229,194,139,.15),rgba(12,36,30,.78));box-shadow:0 35px 75px rgba(0,0,0,.27),inset 0 0 0 11px rgba(255,255,255,.035);backdrop-filter:blur(4px)}
+.art-frame:after{inset:8% 4%}
+.art-frame:before{border-color:#f7d9a356}
+.suit-art{width:min(100%,430px);filter:drop-shadow(0 26px 31px rgba(0,0,0,.62))}
+.art-stamp{bottom:30px;right:-10px;background:#182f29;color:#f4d7a6;border-color:#e0b882}
+.occasion-routes{position:relative;z-index:2;margin-top:-100px;padding-bottom:76px;background:linear-gradient(180deg,transparent 0 100px,#f8f5ee 100px)}
+.occasion-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.occasion-card{position:relative;display:flex;flex-direction:column;min-width:0;min-height:296px;padding:clamp(24px,3vw,35px);overflow:hidden;border:1px solid rgba(20,51,42,.18);border-radius:15px;text-decoration:none;color:#20382d;box-shadow:0 18px 48px rgba(7,28,25,.22);transition:transform .22s ease,box-shadow .22s ease}
+.occasion-card:hover{transform:translateY(-5px);box-shadow:0 27px 51px rgba(7,28,25,.26)}
+.occasion-card:focus-visible{outline:3px solid #f0b654;outline-offset:5px}
+.occasion-wedding{background:linear-gradient(137deg,#e7c48e,#f6ead2)}
+.occasion-prom{background:linear-gradient(135deg,#fffdf6,#e9ede5)}
+.occasion-event{background:linear-gradient(133deg,#2d5349,#16372f);color:#fff9ed;border-color:#2d574a}
+.route-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:22px;font-size:.66rem;font-weight:900;letter-spacing:.15em}
+.route-mark{font:400 3.3rem/1 Georgia,serif;opacity:.42}
+.occasion-card strong{display:block;font:400 clamp(2.1rem,3.2vw,3.25rem)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.055em;max-width:9ch;margin-bottom:18px}
+.occasion-card strong i{display:block;font-weight:400;color:inherit}
+.route-desc{max-width:29ch;font-size:.89rem;line-height:1.6;opacity:.86}
+.route-go{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:auto;padding-top:26px;font-size:.79rem;font-weight:850;letter-spacing:.02em}
+.route-go span{font-size:1.3rem;line-height:1}
+.occasion-note{display:flex;gap:12px;margin:22px 4px 0;color:#58685d;font-size:.83rem;line-height:1.6}
+.occasion-note span{color:#9e6a36;font-size:1.35rem}
+.atelier{background:linear-gradient(148deg,#e8e8dc,#f3ebdc);padding-block:84px 91px}
+.atelier-head h2{max-width:13ch;font-size:clamp(2.65rem,5vw,5.15rem);line-height:1.03}
+.atelier-head p:last-child{max-width:40ch}
+.atelier-preview{background:linear-gradient(145deg,#234b3e,#112e27);border:1px solid #4f705e}
+.look-card{border-radius:13px}
+.provider-section{padding-block:100px 104px}
+.provider-card{border-radius:15px;box-shadow:0 25px 65px rgba(21,50,38,.1)}
+.provider-details{background:linear-gradient(140deg,#e0e8dc,#f0ede3)}
+.guide{background:#203f36;border-color:#3c5748;color:#fff9ee}
+.guide-heading .eyebrow{color:#e8be89}
+.guide-heading p{color:#dbe6da}
+.guide-item{background:#f6f1e8;border:1px solid #ece5d8}
+@media(max-width:1000px){
+ .occasion-grid{gap:12px}
+ .occasion-card{padding:24px;min-height:280px}
+ .occasion-card strong{font-size:clamp(2.15rem,3.5vw,2.9rem)}
+}
+@media(max-width:850px){
+ .hero-grid{grid-template-columns:1fr;gap:36px;min-height:0;padding-block:66px 155px}
+ .hero h1{max-width:13ch;font-size:clamp(3.9rem,9.8vw,6.6rem)}
+ .art-frame{max-width:480px;width:100%;min-height:350px;margin-inline:auto;border-radius:185px 185px 18px 18px}
+ .suit-art{max-width:330px}
+ .occasion-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .occasion-card:last-child{grid-column:1/-1;min-height:230px}
+ .occasion-card:last-child strong i{display:inline}
+ .art-stamp{right:0}
+}
+@media(max-width:620px){
+ .hero{background-position:62% center}
+ .hero-grid{padding-block:52px 132px;gap:30px}
+ .hero h1{font-size:clamp(3.5rem,12.6vw,5rem);line-height:1}
+ .hero-lead{font-size:1rem}
+ .hero-actions .button{width:100%}
+ .art-frame{max-width:340px;min-height:295px;padding:12px;border-radius:160px 160px 15px 15px}
+ .suit-art{max-width:290px}
+ .art-stamp{font-size:.6rem;right:-7px;bottom:14px}
+ .occasion-routes{margin-top:-74px;padding-bottom:53px;background:linear-gradient(180deg,transparent 0 74px,#f8f5ee 74px)}
+ .occasion-grid{grid-template-columns:1fr;gap:12px}
+ .occasion-card,.occasion-card:last-child{min-height:218px;grid-column:auto;padding:23px}
+ .route-top{margin-bottom:10px}
+ .route-mark{font-size:2.35rem}
+ .occasion-card strong{font-size:2.5rem;max-width:none;margin-bottom:10px}
+ .occasion-card strong i{display:inline}
+ .route-go{padding-top:14px}
+ .occasion-note{font-size:.76rem}
+ .atelier{padding-block:57px 64px}
+ .atelier-head h2{font-size:clamp(2.5rem,10vw,3.9rem)}
+ .provider-section{padding-block:66px 73px}
+}
+@media(prefers-reduced-motion:reduce){.occasion-card{transition:none}.occasion-card:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -138,10 +226,10 @@ a:focus-visible{outline:3px solid #a66a17;outline-offset:4px;border-radius:3px}
 <section class="hero" aria-labelledby="page-title"><div class="shell hero-grid">
 <div>
 <p class="eyebrow">The occasion edit / Russellville, Arkansas</p>
-<h1 id="page-title">Dress for the <em>moment.</em></h1>
-<p class="hero-lead">Tuxedos and suits for weddings, proms and other events.</p>
+<h1 id="page-title">Dress for <em>what matters.</em></h1>
+<p class="hero-lead">Wedding day, prom night, or the next big invitation. Find a Russellville tuxedo or suit rental option, then make your fitting inquiry feel effortless.</p>
 <div class="hero-actions"><a class="button button-primary" href="#provider">View local rental option <span aria-hidden="true">↓</span></a><a class="button button-outline" href="tel:+14798909557">Call Formal Affairs <span aria-hidden="true">↗</span></a></div>
-<p class="hero-caption">Formalwear rentals · Russellville, AR</p>
+<p class="hero-caption">Downtown Russellville at sunset · Local scenery, not the provider storefront</p>
 </div>
 <div class="art-frame" aria-hidden="true">
 <svg class="suit-art" viewBox="0 0 460 470" xmlns="http://www.w3.org/2000/svg">
@@ -163,6 +251,16 @@ a:focus-visible{outline:3px solid #a66a17;outline-offset:4px;border-radius:3px}
 </div>
 </div></section>
 
+
+<section class="occasion-routes" aria-labelledby="occasion-routes-title"><div class="shell">
+<h2 class="visually-hidden" id="occasion-routes-title">Choose an occasion to start your fitting inquiry</h2>
+<div class="occasion-grid">
+<a class="occasion-card occasion-wedding" href="#atelier" data-occasion="a wedding"><span class="route-top"><span>01 / THE CEREMONY</span><span class="route-mark" aria-hidden="true">✳</span></span><strong>Wedding <i>day.</i></strong><span class="route-desc">Start with the occasion, then ask about tuxedos, suits and fitting appointments.</span><span class="route-go">Plan a wedding fitting <span aria-hidden="true">↗</span></span></a>
+<a class="occasion-card occasion-prom" href="#atelier" data-occasion="prom"><span class="route-top"><span>02 / THE CELEBRATION</span><span class="route-mark" aria-hidden="true">✦</span></span><strong>Prom <i>night.</i></strong><span class="route-desc">Find your direction, add your date and prepare the right questions.</span><span class="route-go">Plan a prom fitting <span aria-hidden="true">↗</span></span></a>
+<a class="occasion-card occasion-event" href="#atelier" data-occasion="a formal event"><span class="route-top"><span>03 / THE INVITATION</span><span class="route-mark" aria-hidden="true">◇</span></span><strong>Any big <i>moment.</i></strong><span class="route-desc">From a formal dinner to a special event, begin with a simple inquiry.</span><span class="route-go">Plan an event fitting <span aria-hidden="true">↗</span></span></a>
+</div>
+<p class="occasion-note"><span aria-hidden="true">↳</span> Choose a path to preselect your occasion in the fitting planner. Illustrations and styling are editorial inspiration—not confirmed inventory, pricing or a reservation.</p>
+</div></section>
 <section class="atelier" id="atelier" aria-labelledby="atelier-title"><div class="shell">
 <div class="atelier-head"><div><p class="eyebrow">The occasion edit / Plan before you call</p><h2 id="atelier-title">Start with a look. Leave with a plan.</h2></div><p>Choose a visual direction and prepare a fitting inquiry. Illustrations are inspiration only, not confirmed styles or rental inventory.</p></div>
 <div class="atelier-layout"><form class="atelier-form" id="atelier-form">
@@ -219,6 +317,16 @@ let ok=false;try{ok=document.execCommand("copy")}catch(ignore){}
 helper.remove();status.textContent=ok?"Inquiry copied. Paste it into a message.":"Copy unavailable. Select the preview text to copy manually.";
 }
 });
+document.querySelectorAll(".occasion-card[data-occasion]").forEach(link=>{
+  link.addEventListener("click",()=>{
+    const select=document.getElementById("atelier-occasion");
+    if([...select.options].some(option=>option.value===link.dataset.occasion)){
+      select.value=link.dataset.occasion;
+      update();
+    }
+  });
+});
+
 update();
 })();
 </script></body></html>
