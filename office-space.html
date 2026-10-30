@@ -86,21 +86,100 @@ body[data-workspace-view="ledger"] .listing-card .card-links{grid-column:2;grid-
 @media(max-width:420px){.workspace-view{padding:16px}.workspace-view-options{width:100%}.workspace-view-options button{flex:1;min-width:0;padding-inline:7px}}
 @media(prefers-reduced-motion:reduce){body[data-workspace-view="ledger"] .category .listing-card{transition:none}}
 
+
+/* 2026-10-30: River Valley workspace editorial.
+   Visual reference: stayarv.com immersive hero, adapted to a multi-provider directory.
+   Photo is an existing, locally hosted downtown Russellville asset—not a provider listing.
+   The four functional workspace anchors and all listing/filter scripts remain unchanged. */
+.hero{position:relative;isolation:isolate;background:#112c30;overflow:hidden}
+.hero-scene{position:absolute;inset:0;z-index:-2;display:block;width:100%;height:100%;object-fit:cover;object-position:center 57%}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(9,31,31,.96) 0%,rgba(9,31,31,.88) 33%,rgba(10,34,33,.55) 69%,rgba(10,34,33,.29) 100%),linear-gradient(0deg,rgba(9,31,31,.85),transparent 65%)}
+.hero-grid{min-height:660px;grid-template-columns:minmax(0,1.25fr) minmax(235px,.75fr);gap:34px;align-items:end;padding-block:98px 109px}
+.hero .eyebrow{color:#f4d49a;text-shadow:0 2px 10px #092620}
+.hero h1{max-width:11ch;font-size:clamp(3.7rem,6.6vw,6.8rem);line-height:1.01;letter-spacing:-.062em;text-wrap:balance;text-shadow:0 5px 30px #071b1c90}
+.hero h1 em{color:#f4d49a}
+.hero .lead{font-size:clamp(1.02rem,1.4vw,1.18rem);line-height:1.62;max-width:49ch;color:#f1f5ed;text-shadow:0 2px 8px #102f2f80}
+.hero .button.primary{background:#f4d49a;color:#14332f}
+.hero .button.primary:hover{background:#ffe4ae}
+.hero .button.secondary{background:#173b38b8;border-color:#e2efe6a3}
+.hero .illustration{width:min(100%,345px);justify-self:end;align-self:end;padding:12px;border:1px solid #e1e9d084;border-radius:23px;background:#153b37b8;backdrop-filter:blur(8px);box-shadow:0 24px 55px #071b1c80;transform:rotate(1.5deg)}
+.hero .illustration:before{display:none}
+.hero .illustration svg{filter:drop-shadow(0 12px 18px #061b1f55)}
+.hero-location{position:absolute;bottom:64px;right:max(22px,calc((100vw - 1140px)/2));margin:0;padding:8px 13px;border:1px solid #fff5;border-radius:999px;background:#102d2bc7;color:#fff;font-size:.72rem;letter-spacing:.015em}
+.quick-nav{position:relative;z-index:2;margin-top:-46px;padding-bottom:27px;border:0;background:transparent}
+.quick-nav .wrap{padding-block:0}
+.quick-nav-title{display:inline-flex;align-items:center;gap:14px;min-height:42px;margin:0;padding:0 16px;color:#fff;background:#143e37;border-radius:10px 10px 0 0;font-size:.68rem}
+.quick-nav-title span{font-size:1.25rem;color:#f4d49a}
+.jump-links{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.jump-links a{display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;min-width:0;min-height:224px;padding:22px 21px 19px;border-radius:0 0 19px 19px;border:1px solid #d4dfd8;background:#fff;text-decoration:none;box-shadow:0 17px 31px #17342e16;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;color:#183f36}
+.jump-links a:hover{transform:translateY(-5px);box-shadow:0 23px 36px #17342e25;border-color:#9eb8a4;background:inherit}
+.jump-links a:nth-child(1){background:#173f38;color:#fff;border-color:#173f38}
+.jump-links a:nth-child(2){background:#ead9bb;color:#183f36;border-color:#dcc9a9}
+.jump-links a:nth-child(3){background:#dce9df;color:#183f36;border-color:#ccdbcf}
+.jump-links a:nth-child(4){background:#183b46;color:#fff;border-color:#183b46}
+.jump-links a:nth-child(1):hover{background:#204d44}
+.jump-links a:nth-child(2):hover{background:#f0e1c7}
+.jump-links a:nth-child(3):hover{background:#e5f1e7}
+.jump-links a:nth-child(4):hover{background:#23515b}
+.jump-links .path-number{display:block;font:800 .65rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.13em;text-transform:uppercase;opacity:.85;color:inherit}
+.jump-links strong{display:block;max-width:16ch;margin:26px 0 16px;font:400 clamp(1.45rem,2.25vw,1.92rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.04em}
+.jump-links strong em{display:block;font-style:normal}
+.jump-links .path-bottom{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:13px;border-top:1px solid currentColor;color:inherit;font:750 .73rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif}
+.jump-links .path-bottom b{font-size:1.35rem;line-height:1}
+.jump-links a:focus-visible{outline:3px solid #ad5a1b;outline-offset:5px}
+@media(max-width:980px){
+ .hero-grid{grid-template-columns:minmax(0,1fr) minmax(175px,.55fr);min-height:605px;padding-block:78px 116px}
+ .hero h1{font-size:clamp(3.4rem,7.8vw,5.6rem)}
+ .hero .illustration{max-width:240px}
+ .jump-links{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .jump-links a{min-height:188px;border-radius:16px}
+ .jump-links strong{margin:16px 0;font-size:1.65rem}
+}
+@media(max-width:640px){
+ .hero-grid{grid-template-columns:1fr;min-height:0;padding-block:82px 108px}
+ .hero-scene{object-position:64% 50%}
+ .hero::before{background:linear-gradient(90deg,rgba(9,31,31,.94),rgba(9,31,31,.64)),linear-gradient(0deg,rgba(9,31,31,.85),transparent 78%)}
+ .hero h1{font-size:clamp(3.1rem,12vw,4.8rem);max-width:11ch}
+ .hero .lead{font-size:.98rem}
+ .hero .illustration{display:none}
+ .hero-location{right:16px;bottom:54px;font-size:.65rem}
+ .quick-nav{margin-top:-28px;padding-bottom:5px}
+ .jump-links{gap:10px}
+ .jump-links a{min-height:164px;padding:16px 15px 15px}
+ .jump-links .path-number{font-size:.58rem}
+ .jump-links strong{font-size:clamp(1.24rem,4.2vw,1.6rem);margin:17px 0 12px}
+ .jump-links .path-bottom{font-size:.66rem}
+ .quick-nav-title{font-size:.62rem;padding-inline:12px}
+}
+@media(max-width:390px){
+ .jump-links{grid-template-columns:1fr}
+ .jump-links a{min-height:130px}
+}
+@media(prefers-reduced-motion:reduce){
+ .jump-links a{transition:none}
+ .jump-links a:hover{transform:none}
+}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#coworking">Skip to rental listings</a>
 <header><div class="wrap header-inner"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
 <main>
-<section class="hero" aria-labelledby="page-title"><div class="wrap hero-grid"><div><p class="eyebrow">Russellville, Arkansas · Find your workspace</p><h1 id="page-title">Room for <em>your next idea.</em></h1><p class="lead">From a desk for the day to a private office, meeting room or jobsite workspace, explore local options and contact each provider for current terms.</p><div class="hero-actions"><a class="button primary" href="#workspace-types">Explore workspace types ↓</a><a class="button secondary" href="#offices">Browse office suites ↗</a></div></div><div class="illustration" aria-hidden="true"><svg viewBox="0 0 540 390" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false">
+<section class="hero" aria-labelledby="page-title"><img class="hero-scene" src="/assets/downtown-russellville-sunset.jpg" alt="" aria-hidden="true" fetchpriority="high" decoding="async"><div class="wrap hero-grid"><div><p class="eyebrow">Russellville, Arkansas · Find your workspace</p><h1 id="page-title">Room for <em>your next idea.</em></h1><p class="lead">From a desk for the day to a private office, meeting room or jobsite workspace, explore local options and contact each provider for current terms.</p><div class="hero-actions"><a class="button primary" href="#workspace-types">Explore workspace types ↓</a><a class="button secondary" href="#offices">Browse office suites ↗</a></div></div><div class="illustration" aria-hidden="true"><svg viewBox="0 0 540 390" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false">
 <defs><linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c5e0d9"/><stop offset="1" stop-color="#8bb8b5"/></linearGradient><linearGradient id="desk" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0c598"/><stop offset="1" stop-color="#b97656"/></linearGradient></defs>
 <rect x="61" y="30" width="418" height="304" rx="18" fill="#f5ead9"/><rect x="85" y="54" width="173" height="166" rx="8" fill="url(#sky)"/><path d="M172 54v166M85 137h173" stroke="#f5ead9" stroke-width="10"/><path d="M105 205c35-49 63-50 98-27s37 18 55-10v52H85z" fill="#8cae94"/>
 <rect x="291" y="73" width="145" height="94" rx="8" fill="#d8d7bd"/><path d="M313 119h102M363 95v48" stroke="#b4b69f" stroke-width="7" stroke-linecap="round"/>
 <path d="M83 291h377l-23 23H106z" fill="url(#desk)"/><path d="M121 314v46M418 314v46" stroke="#ba815c" stroke-width="14" stroke-linecap="round"/>
 <rect x="195" y="185" width="149" height="102" rx="9" fill="#183a43"/><rect x="205" y="195" width="129" height="80" rx="4" fill="#78aeb2"/><path d="M220 250l32-33 28 20 30-24" stroke="#dcefdc" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M267 287v12m-35 0h70" stroke="#183a43" stroke-width="8" stroke-linecap="round"/>
 <rect x="361" y="242" width="40" height="46" rx="5" fill="#fff9ed"/><path d="M401 249c23 0 20 31 0 31" stroke="#fff9ed" stroke-width="8" fill="none"/><path d="M139 290v-62" stroke="#2f6758" stroke-width="6"/><path d="M139 248c-53-6-44-49 0-37 38-41 70-6 20 29 36 13 18 44-20 8z" fill="#3d8369"/>
-<ellipse cx="270" cy="373" rx="210" ry="9" fill="#071b24" opacity=".18"/></svg></div></div></section>
-<nav class="quick-nav" id="workspace-types" aria-label="Workspace types"><div class="wrap"><p class="quick-nav-title">What kind of space do you need?</p><div class="jump-links"><a href="#coworking">Coworking & flexible desks<span aria-hidden="true">↗</span></a><a href="#offices">Private offices & suites<span aria-hidden="true">↗</span></a><a href="#meetings">Meeting & conference rooms<span aria-hidden="true">↗</span></a><a href="#mobile">Mobile jobsite offices<span aria-hidden="true">↗</span></a></div></div></nav>
+<ellipse cx="270" cy="373" rx="210" ry="9" fill="#071b24" opacity=".18"/></svg></div></div><p class="hero-location">Downtown Russellville · Arkansas</p></section>
+<nav class="quick-nav" id="workspace-types" aria-label="Workspace types"><div class="wrap"><p class="quick-nav-title">Find your kind of workspace <span aria-hidden="true">↘</span></p><div class="jump-links">
+<a href="#coworking"><span class="path-number">01 / Work flexibly</span><strong>Coworking <em>&amp; flexible desks</em></strong><span class="path-bottom">A desk when you need it <b aria-hidden="true">↗</b></span></a>
+<a href="#offices"><span class="path-number">02 / Make it yours</span><strong>Private offices <em>&amp; suites</em></strong><span class="path-bottom">Space to settle in <b aria-hidden="true">↗</b></span></a>
+<a href="#meetings"><span class="path-number">03 / Bring the team</span><strong>Meeting <em>&amp; conference rooms</em></strong><span class="path-bottom">Gather with purpose <b aria-hidden="true">↗</b></span></a>
+<a href="#mobile"><span class="path-number">04 / Go on-site</span><strong>Mobile <em>jobsite offices</em></strong><span class="path-bottom">Work where the job is <b aria-hidden="true">↗</b></span></a>
+</div></div></nav>
 
 <section class="workspace-menu" aria-labelledby="workspace-menu-title">
   <div class="wrap">
