@@ -96,12 +96,68 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.82rem;col
 @media(max-width:700px){.snapshot-intro{display:block}.snapshot-intro p:last-child{max-width:60ch;margin:12px 0 0}.snapshot-link{grid-template-columns:minmax(0,1fr) 65px;gap:7px 12px;padding:13px}.snapshot-name{font-size:.84rem}.snapshot-track{grid-column:1/-1;grid-row:2;height:12px}.snapshot-amount{font-size:1.25rem}}
 @media(prefers-reduced-motion:reduce){.snapshot-link{transition:none}}
 
+
+/* River Valley ride editorial — stayarv.com-inspired landscape, not borrowed artwork.
+   Layout only: the published rates, providers, filters and links are unchanged. */
+:root{--pine:#102f29;--gold:#f2d089;--paper:#f6f4ec;--ink:#173c32}
+body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:1420px;min-height:88px}
+.brand{font-size:clamp(1.23rem,1.75vw,1.65rem)}.back{border:1px solid #f5f2e473;border-radius:99px;padding:10px 18px}
+.back:hover{background:#ffffff20;text-decoration:none}.wrap{max-width:1320px}
+.hero{isolation:isolate;background:#0b2922;border-radius:0 0 34px 34px;box-shadow:0 24px 50px #0c332524}
+.ride-landscape{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 57%;opacity:.84;z-index:-2}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,#08221cf2 0%,#09271fe0 40%,#08231cc0 68%,#08251c72 100%),linear-gradient(0deg,#09271fe6,transparent 55%)}
+.hero .wrap{max-width:1420px;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);min-height:clamp(650px,79vh,880px);padding-top:clamp(70px,8vw,125px);padding-bottom:clamp(75px,8vw,125px);gap:50px}
+.hero h1{font-size:clamp(4rem,7.2vw,8.3rem);line-height:.97;letter-spacing:-.07em;max-width:10ch;text-wrap:balance;margin-bottom:28px}
+.hero p.lead{font-size:clamp(1.04rem,1.6vw,1.36rem);line-height:1.62;max-width:49ch;color:#eaf4e9}
+.hero .eyebrow{letter-spacing:.2em;color:#f7d99e}.hero .actions{margin-top:32px}
+.hero .button{min-height:57px;padding:14px 27px;border-radius:100px}
+.hero .button.gold{background:#f2d089;color:#153a2e}.hero .button.ghost{border-color:#f3f6edaa;background:#0b292278;color:white}
+.bike-art{min-height:340px;filter:drop-shadow(0 18px 30px #020e0baa)}.bike-art svg{max-width:565px}
+.bike-art:before{width:min(100%,480px);border-color:#f4e5c54a;box-shadow:0 0 0 48px #ffffff0a,0 0 0 96px #ffffff05}
+.bike-art .frame{stroke:#ffe0a0;stroke-width:9}.bike-art .wheel{stroke:#f1f6e9;stroke-width:7}
+.ride-facts{display:flex;align-items:center;gap:14px 26px;flex-wrap:wrap;margin-top:clamp(36px,6vw,75px);padding-top:21px;border-top:1px solid #f8f3df57;color:#f4f5e9;font-size:.82rem;line-height:1.4}
+.ride-facts span{display:flex;align-items:center;gap:10px}.ride-facts strong{font:400 1.65rem/1 Georgia,serif;color:#f9d892;letter-spacing:-.06em}
+.ride-finder{background:#eee9dc;border-block:1px solid #ddd9cc}
+.ride-finder .wrap{padding-top:clamp(52px,6vw,90px);padding-bottom:clamp(55px,6vw,96px)}
+.ride-finder-head{margin-bottom:33px}.ride-finder-head h2,.section-head h2,.shop h2{font-size:clamp(2.65rem,4.6vw,4.8rem);letter-spacing:-.055em}
+.ride-finder-head p:last-child{font-size:.99rem;max-width:57ch}
+.ride-options{grid-template-columns:repeat(3,minmax(0,1fr));gap:19px}
+.ride-option{display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;min-height:330px;gap:30px;padding:28px;border-radius:25px;border:1px solid #9cb8a7;background:#e1eae0;box-shadow:0 12px 28px #123c3215}
+.ride-option:first-child{background:linear-gradient(140deg,#123d33,#245847);border-color:#245847;color:white}
+.ride-option:nth-child(2){background:linear-gradient(135deg,#f7eac8,#f3deaa);border-color:#dfc88e}
+.ride-option:nth-child(3){background:linear-gradient(135deg,#dfebe7,#c9dfe3);border-color:#b5cfce}
+.ride-option .ride-symbol{width:104px;height:104px;border-radius:26px;background:#ffffff29;color:#fcdb98}
+.ride-option:nth-child(2) .ride-symbol{background:#ffffff85;color:#825c18}.ride-option:nth-child(3) .ride-symbol{background:#ffffff91;color:#24637a}
+.ride-symbol svg{width:76px;height:76px}
+.ride-copy strong{font:400 clamp(1.72rem,2.3vw,2.4rem)/1.11 Georgia,serif;letter-spacing:-.045em;margin-bottom:9px}
+.ride-copy small{font-size:.88rem;line-height:1.5;color:#365d4b}.ride-option:first-child .ride-copy small{color:#e5f0e8}
+.ride-copy em{font-size:.82rem;letter-spacing:0;margin-top:16px;color:#1e5842}.ride-option:first-child .ride-copy em{color:#ffe1a4}
+.ride-option[aria-pressed="true"]{outline:3px solid #bd842e;outline-offset:3px;border-color:#bd842e;box-shadow:0 16px 35px #123c3229}
+.ride-option:first-child[aria-pressed="true"]{background:#123d33}.ride-option:nth-child(2)[aria-pressed="true"]{background:#f7eac8}.ride-option:nth-child(3)[aria-pressed="true"]{background:#dfebe7}
+.ride-option:first-child[aria-pressed="true"]::after{color:#ffe2a8}
+.ride-result{margin-top:25px}
+.rates{padding-top:clamp(70px,8vw,115px);padding-bottom:clamp(75px,8vw,120px)}.rates .section-head{margin-bottom:35px}
+.rate-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.rate-card{min-height:260px;padding:29px 30px;border-radius:24px;border-color:#d3ded1}
+.rate-card:first-child{grid-column:span 2;background:#123f34;border-color:#123f34;color:white}
+.rate-card:first-child .index,.rate-card:first-child .price strong{color:#f7d998}
+.rate-card:first-child .price{border-color:#ffffff54}.rate-card:first-child .price span{color:#edf5ec}
+.rate-card h3{font:400 clamp(1.4rem,2.3vw,2.1rem)/1.17 Georgia,serif;letter-spacing:-.04em;max-width:25ch}
+.rate-card:first-child h3{font-size:clamp(2rem,3.1vw,3.4rem);max-width:18ch}
+.rate-card .price strong{font-size:clamp(2.3rem,3.5vw,3.5rem)}.rate-card .price{margin-top:auto;align-items:baseline}
+.shop{background:#e3eae0}.shop .wrap{padding-top:clamp(75px,7vw,110px);padding-bottom:clamp(75px,7vw,110px);gap:75px}
+.shop-card{padding:clamp(29px,4vw,55px);border-radius:25px}.student-checkout .student-panel{border-radius:23px;padding:clamp(30px,4vw,52px)}
+@media(max-width:1000px){.hero .wrap{grid-template-columns:1.1fr .9fr;gap:20px;min-height:660px;padding-top:70px;padding-bottom:70px}.hero h1{font-size:clamp(3.5rem,7.5vw,6rem)}.bike-art svg{max-width:415px}.ride-option{min-height:290px;padding:22px}.ride-copy strong{font-size:1.75rem}.rate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rate-card:first-child{grid-column:span 2}}
+@media(max-width:760px){header .wrap{min-height:72px}.hero{border-radius:0 0 22px 22px}.hero .wrap{grid-template-columns:1fr;gap:8px;min-height:0;padding-top:65px;padding-bottom:45px}.ride-landscape{object-position:48% center}.hero::before{background:linear-gradient(180deg,#08241cef 0%,#08241ccb 48%,#08241cf5 100%)}.hero h1{font-size:clamp(3.7rem,10.5vw,6.2rem);max-width:10ch}.hero p.lead{font-size:1.07rem}.bike-art{min-height:230px;margin-top:15px}.bike-art svg{max-width:380px}.ride-facts{margin-top:32px}.ride-options{grid-template-columns:1fr}.ride-option{min-height:175px;display:grid;grid-template-columns:90px minmax(0,1fr);align-items:center;gap:20px;padding:22px}.ride-option .ride-symbol{width:82px;height:82px}.ride-symbol svg{width:64px;height:64px}.ride-copy strong{font-size:1.85rem}.ride-option .ride-copy em{margin-top:8px}.rate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.shop .wrap{gap:28px}}
+@media(max-width:510px){.hero .wrap{padding-top:48px;padding-bottom:36px}.hero h1{font-size:clamp(3.4rem,13vw,5rem)}.hero .actions{gap:10px}.hero .button{min-height:51px;padding:12px 18px;font-size:.78rem}.ride-facts{gap:12px;padding-top:17px;font-size:.73rem}.ride-facts strong{font-size:1.3rem}.ride-finder .wrap{padding-top:42px;padding-bottom:54px}.ride-finder-head h2,.section-head h2{font-size:2.65rem}.ride-option{min-height:164px;grid-template-columns:70px 1fr;padding:18px;gap:13px}.ride-option .ride-symbol{width:66px;height:66px;border-radius:18px}.ride-symbol svg{width:52px;height:52px}.ride-copy strong{font-size:1.6rem}.ride-copy small{font-size:.78rem}.ride-copy em{font-size:.72rem}.rates{padding-top:58px;padding-bottom:65px}.rate-grid{grid-template-columns:1fr}.rate-card:first-child{grid-column:auto}.rate-card{min-height:195px;padding:25px}.rate-card:first-child h3{font-size:2rem}.shop h2{font-size:2.85rem}}
+@media(prefers-reduced-motion:reduce){.back,.hero .button,.ride-option{transition:none}.hero .button:hover,.ride-option:hover{transform:none}}
+
 </style></head><body>
-<a class="skip" href="#main">Skip to rental rates</a>
+<a class="skip" href="#rates">Skip to rental rates</a>
 <header><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
 <main id="main">
-<section class="hero" aria-labelledby="page-title"><div class="wrap">
-<div><p class="eyebrow">Russellville, Arkansas · Ride local</p><h1 id="page-title">Find your next ride.</h1><p class="lead">Mountain trails, city streets or a gravel-road outing: compare bicycle rental styles and posted daily prices from a local Russellville shop.</p><div class="actions"><a class="button gold" href="#rates">Compare daily rates ↓</a><a class="button ghost" href="tel:+14798904950">Call the bike shop ↗</a></div></div>
+<section class="hero" aria-labelledby="page-title"><img class="ride-landscape" src="assets/downtown-russellville-sunset.jpg" alt="" width="1200" height="544" fetchpriority="high"><div class="wrap">
+<div><p class="eyebrow">Russellville, Arkansas · Ride local</p><h1 id="page-title">Find your next ride.</h1><p class="lead">Mountain trails, city streets or a gravel-road outing: compare bicycle rental styles and posted daily prices from a local Russellville shop.</p><div class="actions"><a class="button gold" href="#rates">Compare daily rates ↓</a><a class="button ghost" href="tel:+14798904950">Call the bike shop ↗</a></div><div class="ride-facts" aria-label="Bicycle rental facts"><span><strong>05</strong> Published day rates</span><span><strong>01</strong> Russellville shop with posted rates</span><span><strong>↗</strong> Call to confirm availability</span></div></div>
 <div class="bike-art" aria-hidden="true"><svg viewBox="0 0 500 360" xmlns="http://www.w3.org/2000/svg"><circle class="wheel" cx="111" cy="264" r="79"/><circle class="wheel" cx="389" cy="264" r="79"/><path class="frame" d="M111 264 L205 132 L285 264 Z M205 132 L389 264 L285 264 M205 132 L195 113"/><path class="detail" d="M165 111 H224 M373 150 L389 264 M348 150 H385 M285 264 L302 283"/><circle class="hub" cx="111" cy="264" r="8"/><circle class="hub" cx="285" cy="264" r="8"/><circle class="hub" cx="389" cy="264" r="8"/></svg></div>
 </div></section>
 
