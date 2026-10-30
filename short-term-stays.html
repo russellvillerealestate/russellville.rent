@@ -92,12 +92,86 @@ main{padding:42px 0 82px}.section-heading{display:flex;justify-content:space-bet
 @media(max-width:870px){.stay-index-list{grid-template-columns:repeat(2,minmax(0,1fr))}.stay-index-help{max-width:21ch}}
 @media(max-width:600px){.stay-index>summary{gap:13px;flex-wrap:wrap}.stay-index-help{order:3;max-width:none;flex-basis:100%}.stay-index-toggle{margin-left:auto}.stay-index-list{grid-template-columns:1fr}.stay-index-list a{min-height:66px}}
 @media(prefers-reduced-motion:reduce){.stay-index-list a{transition:none}.stay-index-list a:hover{transform:none}}
+
+
+/* 2026-10-30 · Cinematic, local-photo stay guide; existing listings and filters untouched.
+   Inspiration: StayARV's scenic storytelling; NN/g visual hierarchy; web.dev image priority;
+   WCAG 2.2 focus visibility and reduced-motion principles. */
+.hero{position:relative;isolation:isolate;min-height:635px;background:#092a2a;overflow:hidden}
+.hero::after{display:none}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(5,29,30,.97) 0%,rgba(5,29,30,.88) 38%,rgba(5,29,30,.38) 100%),linear-gradient(0deg,rgba(5,29,30,.66) 0%,transparent 65%)}
+.stay-hero-photo{position:absolute;inset:0;z-index:0;display:block;width:100%;height:100%;object-fit:cover;object-position:62% 53%;filter:saturate(.98)}
+.hero-inner{display:grid;grid-template-columns:minmax(0,1.42fr) minmax(230px,.58fr);align-items:end;gap:clamp(30px,6vw,88px);padding:clamp(105px,11vw,151px) 0 142px}
+.hero-copy{max-width:770px}
+.hero .kicker{font-size:.75rem;letter-spacing:.21em;color:#f3d99e}
+.hero-overline{display:block;width:max-content;max-width:100%;margin:0 0 16px;padding:7px 0;border-bottom:1px solid #f3d99e73;color:#f6e5bd;text-transform:uppercase;letter-spacing:.16em;font-size:.63rem;font-weight:800}
+.hero h1{font:400 clamp(3.35rem,6.9vw,6.5rem)/.98 Georgia,"Times New Roman",serif;max-width:860px;letter-spacing:-.065em;margin:20px 0 26px;text-wrap:balance;text-shadow:0 5px 27px #051a1940}
+.hero h1 em{color:#f6d99d;font-style:italic}
+.hero .intro{max-width:580px;color:#edf5eb;font-size:clamp(1rem,1.6vw,1.12rem);line-height:1.7;margin-bottom:22px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 30px}
+.hero-action{display:inline-flex;align-items:center;justify-content:space-between;gap:20px;min-height:49px;border-radius:8px;padding:12px 17px;text-decoration:none;font-size:.85rem;font-weight:800;transition:background .18s,transform .18s}
+.hero-action-main{background:#f1d195;color:#14382d}
+.hero-action-main:hover{background:#ffdfaa;transform:translateY(-2px)}
+.hero-action-link{border:1px solid #f3f5e39c;color:white;background:#072b2a58}
+.hero-action-link:hover{background:#ffffff26;transform:translateY(-2px)}
+.hero-figures{gap:8px}
+.hero-figures span{padding:7px 12px;font-size:.75rem;background:#0a302d89;border-color:#fff7e275;color:#f8f6e9}
+.hero-guide{position:relative;align-self:end;padding:30px 26px 25px;border:1px solid #f3e8ce78;border-radius:3px 26px 3px 26px;background:linear-gradient(145deg,#133b349c,#082927b3);backdrop-filter:blur(9px);box-shadow:0 22px 45px #031b1940}
+.hero-guide-kicker{display:block;margin-bottom:17px;color:#f3d99e;text-transform:uppercase;letter-spacing:.17em;font-size:.64rem;font-weight:800}
+.hero-guide strong{display:block;font:400 clamp(1.45rem,2.3vw,2rem)/1.2 Georgia,"Times New Roman",serif;letter-spacing:-.025em;color:#fff}
+.hero-guide strong i{color:#f3d99e;font-weight:400}
+.hero-guide p{font-size:.85rem;line-height:1.6;color:#e5eee6;margin:16px 0 22px}
+.hero-guide-rule{display:block;padding-top:15px;border-top:1px solid #f2e3ca50;font-size:.69rem;font-weight:750;color:#f8e7c3;letter-spacing:.035em}
+.hero-photo-credit{position:absolute;right:24px;bottom:81px;z-index:2;margin:0;font-size:.67rem;line-height:1.3;color:#ebf1e9;text-shadow:0 2px 4px #092b2b;text-align:right}
+.stay-journey{position:relative;z-index:3;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:-53px 0 17px;background:#fffdf6;border:1px solid #d7decf;border-radius:20px;overflow:hidden;box-shadow:0 18px 40px #173f302b}
+.stay-journey a{display:flex;align-items:center;gap:15px;min-width:0;min-height:122px;padding:24px clamp(16px,2vw,29px);color:#143f32;text-decoration:none;transition:background .18s}
+.stay-journey a+a{border-left:1px solid #d9dfd5}
+.stay-journey a:hover{background:#ecf3e9}
+.stay-journey a:focus-visible{outline:3px solid #ad7522;outline-offset:-4px}
+.journey-number{flex:0 0 auto;font:400 1.6rem Georgia,serif;color:#a47b37;align-self:flex-start}
+.stay-journey strong{display:block;font-size:.96rem;line-height:1.3;letter-spacing:-.02em}
+.stay-journey small{display:block;margin-top:5px;font-size:.75rem;line-height:1.5;color:#597064}
+.journey-arrow{color:#527963;margin-left:auto;align-self:flex-start;font-weight:850}
+main.wrap{padding-top:28px}
+.grid{gap:23px;counter-reset:river-stays}
+.stay{position:relative;counter-increment:river-stays;border-radius:24px;box-shadow:0 16px 35px #123a2e13;transition:transform .2s,box-shadow .2s}
+.stay:hover{transform:translateY(-3px);box-shadow:0 23px 42px #123a2e26}
+.stay-top{position:relative;height:76px;overflow:hidden;background:radial-gradient(circle at 84% -30%,#8bac89 0,transparent 42%),linear-gradient(125deg,#113c35,#2d6758)}
+.stay-top::before{content:"RIVER VALLEY STAYS  /  " counter(river-stays,decimal-leading-zero);position:absolute;z-index:1;left:25px;bottom:18px;color:#f8e3b1;font-size:.7rem;font-weight:850;letter-spacing:.15em}
+.stay-top::after{content:"";position:absolute;inset:0 0 0 auto;width:46%;background:linear-gradient(146deg,transparent 0%,#a5c0a33d 45%,#63887849 100%);clip-path:polygon(10% 100%,49% 12%,100% 100%)}
+.stay h3{font:400 clamp(1.4rem,2.2vw,1.76rem)/1.21 Georgia,"Times New Roman",serif;letter-spacing:-.034em;color:#143e32;margin:13px 0 16px}
+.stay-inner{padding:27px 28px 29px}
+.stay .primary{border-radius:9px;background:#164d3e}
+.stay .primary:hover{background:#246d57}
+@media(max-width:980px){.hero-inner{grid-template-columns:minmax(0,1.2fr) minmax(220px,.8fr);gap:28px}.hero h1{font-size:clamp(3.2rem,6.2vw,5.3rem)}.hero-guide{padding:23px}.stay-journey a{gap:10px;padding:21px 15px}}
+@media(max-width:740px){.hero{min-height:0}.hero::before{background:linear-gradient(90deg,#072b2beb,#072b2b9e),linear-gradient(0deg,#062a2ac2,transparent)}.stay-hero-photo{object-position:69% center}.hero-inner{grid-template-columns:1fr;gap:29px;padding:76px 0 112px}.hero h1{font-size:clamp(3rem,10vw,4.65rem)}.hero-guide{max-width:520px;padding:21px 22px}.hero-guide strong{font-size:1.52rem}.hero-guide p{margin:10px 0 14px}.hero-photo-credit{bottom:59px;right:20px;left:20px}.stay-journey{grid-template-columns:1fr;margin-top:-41px;border-radius:16px}.stay-journey a{min-height:75px;padding:14px 20px}.stay-journey a+a{border-left:none;border-top:1px solid #d9dfd5}.journey-number{font-size:1.35rem}.stay-journey small{margin-top:2px}main.wrap{padding-top:20px}.stay-inner{padding:22px}.stay-top{height:68px}}
+@media(prefers-reduced-motion:reduce){.hero-action,.stay,.stay-journey a{transition:none}.hero-action:hover,.stay:hover{transform:none}}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#listings">Skip to cabin listings</a>
 <header><div class="wrap head"><a class="brand" href="/">Russellville<span>.Rent</span></a><a class="back" href="/">← All rental categories</a></div></header>
-<section class="hero"><div class="wrap hero-inner"><div class="kicker">The Arkansas River Valley · Local getaways</div><h1>A cabin. A weekend.<br><em>Somewhere close.</em></h1><p class="intro">Find private cabins and furnished stays around Russellville, Dover, Dardanelle, Plainview and Morrilton. These are real providers with public official sources—not a claim of current availability.</p><div class="hero-figures"><span>11 operators to explore</span><span>Private cabins &amp; state parks</span><span>Contact operators directly</span></div></div></section>
+<section class="hero" aria-labelledby="stays-hero-heading">
+<img class="stay-hero-photo" src="assets/lake-dardanelle-docks.jpg" alt="Sunset reflected across the covered docks at Lake Dardanelle" decoding="async" fetchpriority="high">
+<div class="wrap hero-inner">
+<div class="hero-copy">
+<div class="kicker">The Arkansas River Valley · Local getaways</div>
+<span class="hero-overline">The River Valley stay collection / 2026</span>
+<h1 id="stays-hero-heading">A cabin. A weekend.<br><em>Somewhere close.</em></h1>
+<p class="intro">Find private cabins and furnished stays around Russellville, Dover, Dardanelle, Plainview and Morrilton. These are real providers with public official sources—not a claim of current availability.</p>
+<div class="hero-actions"><a class="hero-action hero-action-main" href="#listings">Explore local stays <span aria-hidden="true">↘</span></a><a class="hero-action hero-action-link" href="#stay-controls">Search by town <span aria-hidden="true">↗</span></a></div>
+<div class="hero-figures"><span>11 operators to explore</span><span>Private cabins &amp; state parks</span><span>Contact operators directly</span></div>
+</div>
+<aside class="hero-guide" aria-label="How this directory works"><span class="hero-guide-kicker">A better way to get away</span><strong>Go somewhere close. <i>Know before you go.</i></strong><p>Start with a destination, compare operators and check the official source before you make plans.</p><span class="hero-guide-rule">No live booking or availability claims</span></aside>
+</div>
+<p class="hero-photo-credit">Lake Dardanelle scenery · Not a photograph of a listed rental</p>
+</section>
+<div class="wrap"><nav class="stay-journey" aria-label="Explore the cabin rental directory">
+<a href="#listings"><span class="journey-number" aria-hidden="true">01</span><span><strong>Choose your setting</strong><small>Browse the River Valley by destination</small></span><span class="journey-arrow" aria-hidden="true">↗</span></a>
+<a href="#stay-controls"><span class="journey-number" aria-hidden="true">02</span><span><strong>Find the right stay</strong><small>Search towns, amenities and stay types</small></span><span class="journey-arrow" aria-hidden="true">↗</span></a>
+<a href="#stay-grid"><span class="journey-number" aria-hidden="true">03</span><span><strong>Contact the operator</strong><small>Review details, terms and booking links</small></span><span class="journey-arrow" aria-hidden="true">↗</span></a>
+</nav></div>
 <main class="wrap" id="listings">
 <div class="section-heading"><div><div class="kicker" style="color:#45765b">Choose your next stay</div><h2>Cabins &amp; furnished getaways</h2></div><p class="muted">Each property is listed once per operator.</p></div>
 
@@ -110,7 +184,7 @@ main{padding:42px 0 82px}.section-heading{display:flex;justify-content:space-bet
  </div>
  <div class="region-footer"><button class="region-all" type="button" data-region-filter="all" aria-pressed="true" aria-controls="stay-grid">All destinations <span class="region-total">11 stays</span> ↗</button><small>Choose a setting, or search all operators below.</small></div>
 </section>
-<div class="controls"><div class="search-wrap"><label for="search">Search stays or towns</label><input id="search" type="search" autocomplete="off" placeholder="Try Dover, tiny cabin, pet friendly…"></div><div class="filters" role="group" aria-label="Filter by lodging type"><button class="filter" data-filter="all" aria-pressed="true">All stays</button><button class="filter" data-filter="private" aria-pressed="false">Private operators</button><button class="filter" data-filter="park" aria-pressed="false">State parks</button></div></div>
+<div class="controls" id="stay-controls"><div class="search-wrap"><label for="search">Search stays or towns</label><input id="search" type="search" autocomplete="off" placeholder="Try Dover, tiny cabin, pet friendly…"></div><div class="filters" role="group" aria-label="Filter by lodging type"><button class="filter" data-filter="all" aria-pressed="true">All stays</button><button class="filter" data-filter="private" aria-pressed="false">Private operators</button><button class="filter" data-filter="park" aria-pressed="false">State parks</button></div></div>
 <p class="count" id="count" role="status" aria-live="polite">Showing 11 of 11 operators</p>
 <details class="stay-index" id="stay-index" hidden>
  <summary><span class="stay-index-intro"><span class="stay-index-eyebrow">The River Valley stay index · <span id="stay-index-count">11 operators</span></span><span class="stay-index-title">Find the name. <em>Open the details.</em></span></span><span class="stay-index-help">Jump directly to a provider while keeping all terms, cautions and contact links in its full listing.</span><span class="stay-index-toggle" aria-hidden="true">View index</span></summary>
