@@ -125,6 +125,85 @@ footer a{font-weight:750}
 @media(max-width:850px){.studio-intro{display:block}.studio-intro p:last-child{margin-top:12px}.studio-workspace{grid-template-columns:1fr}.studio-controls{border-right:0;border-bottom:1px solid #ffffff24}.studio-drawing{padding-top:8px}}
 @media(max-width:520px){.footprint-studio{padding-top:29px}.studio-shell{border-radius:18px}.studio-intro{padding:27px 22px 20px}.studio-controls{padding:22px}.studio-option{min-height:84px;padding:12px}.studio-stats{gap:9px}.studio-stat{padding:13px 11px}.studio-drawing{padding:8px 9px 20px}.studio-disclaimer{padding:16px 22px}}
 @media(prefers-reduced-motion:reduce){.studio-option{transition:none}.studio-option:hover{transform:none}}
+
+/* Photo-led River Valley shed guide, with illustrative footprint shortcuts.
+   Scenic photograph is the existing 99 KB local asset; decorative only. */
+.hero{
+  isolation:isolate;
+  background:linear-gradient(97deg,rgba(5,29,25,.95) 0%,rgba(8,39,32,.87) 46%,rgba(11,42,34,.58) 100%),url("assets/downtown-russellville-sunset.jpg") center 52% / cover no-repeat;
+}
+.hero::before{content:"";position:absolute;inset:auto 0 0;height:32%;pointer-events:none;background:linear-gradient(transparent,#0a261f8c)}
+.hero::after{right:-200px;bottom:-360px;opacity:.47}
+.hero-inner{grid-template-columns:minmax(0,1.07fr) minmax(0,.93fr);min-height:625px;gap:clamp(28px,5vw,80px);padding-block:90px 106px}
+.hero h1{max-width:11ch;font-size:clamp(3.8rem,6.5vw,6.85rem);line-height:.99;letter-spacing:-.065em;text-wrap:balance}
+.hero .eyebrow{color:#fbe0b5;letter-spacing:.19em}
+.hero-copy{max-width:50ch;font-size:clamp(1.05rem,1.4vw,1.19rem);color:#f0f6ef}
+.blueprint{margin:0;padding:clamp(16px,3vw,32px);border:1px solid #ffffff61;border-radius:28px;background:linear-gradient(150deg,#123f32df,#0a2925bd);box-shadow:0 27px 70px #061b197a;backdrop-filter:blur(6px)}
+.blueprint::before{inset:10% 9%;border-radius:15px;transform:rotate(-4deg)}
+.blueprint figcaption{color:#f9e5c6;letter-spacing:.13em}
+.truth-strip{margin-top:-42px;box-shadow:0 22px 42px #0e302926}
+.rental-paths{padding-block:clamp(64px,8vw,104px) 4px;scroll-margin-top:20px}
+.paths-heading{display:grid;grid-template-columns:1fr minmax(0,.72fr);align-items:end;gap:30px;margin-bottom:31px}
+.paths-heading .eyebrow{color:#86633d;margin-bottom:12px}
+.paths-heading h2{font-size:clamp(2.5rem,4.9vw,4.75rem);line-height:1.02;max-width:15ch;margin:0;text-wrap:balance}
+.paths-heading>p{color:#536d60;max-width:42ch;margin:0 0 5px;font-size:1rem}
+.path-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.path-card{position:relative;isolation:isolate;min-height:310px;padding:clamp(23px,3.1vw,36px);display:flex;flex-direction:column;overflow:hidden;border-radius:21px;text-decoration:none;color:#163b32;background:#e7eee4;border:1px solid #cadbcd;box-shadow:0 10px 24px #173b2c0b;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.path-card::before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;border:1px solid currentColor;opacity:.13;right:-82px;top:-112px;box-shadow:0 0 0 27px #ffffff08,0 0 0 54px #ffffff12;pointer-events:none}
+.path-card:nth-child(2){background:#163b32;color:#fff;border-color:#163b32}
+.path-card:nth-child(3){background:#f1dcb8;color:#283e31;border-color:#e2c99f}
+.path-card:hover{transform:translateY(-5px);box-shadow:0 20px 36px #173b2c22}
+.path-card:focus-visible{outline:4px solid #ae6b23;outline-offset:5px}
+.path-index{font-size:.69rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase;opacity:.84}
+.path-label{display:block;font:400 clamp(1.43rem,2.2vw,2rem)/1.1 Georgia,serif;letter-spacing:-.035em;margin-top:24px}
+.path-size{display:block;margin-top:auto;padding-top:22px;font:400 clamp(2.7rem,4.3vw,4.65rem)/1 Georgia,serif;letter-spacing:-.08em;white-space:nowrap}
+.path-size span{font-size:.62em;opacity:.68}
+.path-size small{font:700 .8rem/1.2 system-ui,sans-serif;letter-spacing:0;margin-left:5px}
+.path-detail{display:block;font-size:.81rem;margin-top:10px;opacity:.83}
+.path-action{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid currentColor;margin-top:22px;padding-top:14px;font-size:.78rem;font-weight:850;opacity:.92}
+.path-action b{font-size:1.25rem;font-weight:400;line-height:1}
+.paths-note{font-size:.83rem;color:#586f61;margin:16px 0 0}
+.footprint-studio{padding-top:clamp(64px,8vw,98px)}
+.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.provider{border-radius:22px;box-shadow:0 13px 35px #15382c10}
+.card-top{padding:19px 27px;background:linear-gradient(115deg,#e2eddf,#f5f8ef)}
+.card-index{font-size:2.1rem;color:#416e53}
+.card-content{padding:29px 27px 27px}
+.provider h3{font-size:clamp(1.65rem,2.55vw,2.2rem);line-height:1.14}
+.card-actions{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card-actions .button{padding-inline:9px;min-height:50px}
+@media(max-width:900px){
+  .hero-inner{min-height:550px;gap:25px;padding-block:72px 85px}
+  .hero h1{font-size:clamp(3.1rem,6vw,5rem)}
+  .paths-heading{grid-template-columns:1fr}
+  .paths-heading>p{max-width:62ch}
+  .path-grid{gap:12px}
+  .path-card{min-height:288px;padding:22px}
+  .path-size{font-size:clamp(2.35rem,4vw,3.5rem)}
+  .card-actions{grid-template-columns:1fr}
+}
+@media(max-width:700px){
+  .hero-inner{grid-template-columns:1fr;min-height:0;gap:30px;padding-block:59px 77px}
+  .hero h1{font-size:clamp(3.5rem,11vw,5.8rem)}
+  .blueprint{width:min(100%,510px);margin-inline:auto;padding:19px}
+  .path-grid{grid-template-columns:1fr}
+  .path-card{min-height:235px}
+  .path-size{font-size:3.55rem;padding-top:10px}
+  .paths-heading h2{max-width:18ch}
+  .cards{grid-template-columns:1fr}
+  .card-actions{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:460px){
+  .hero-inner{padding-block:48px 66px}
+  .hero h1{font-size:clamp(3.1rem,12vw,4.4rem)}
+  .blueprint{padding:10px}
+  .truth-strip{margin-top:-29px}
+  .paths-heading h2{font-size:2.65rem}
+  .path-card{min-height:225px}
+  .card-actions{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){.path-card{transition:none}.path-card:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -151,6 +230,17 @@ footer a{font-weight:750}
 </svg><figcaption>Portable buildings · Rent-to-own options</figcaption></figure>
 </div></section>
 <div class="wrap truth-strip" aria-label="Important rental distinctions"><div class="truth"><span class="truth-icon" aria-hidden="true">01</span><div><strong>Rent-to-own arrangements</strong><small>Review ownership terms and total cost with the provider.</small></div></div><div class="truth"><span class="truth-icon" aria-hidden="true">02</span><div><strong>Not a self-storage facility</strong><small>Looking for a storage unit instead? <a href="/storage.html">Browse self-storage options ↗</a></small></div></div></div>
+
+
+<section class="rental-paths wrap" aria-labelledby="paths-title">
+  <div class="paths-heading"><div><p class="eyebrow">Three ways to start · Illustration only</p><h2 id="paths-title">Picture the space before you pick a building.</h2></div><p>Not sure what size to ask about? Preview three example footprints on the same scale, then compare the actual options offered by local dealers.</p></div>
+  <div class="path-grid">
+    <a class="path-card" href="#footprint-studio" data-shed-shortcut="8x10"><span class="path-index">01 / Small footprint</span><span class="path-label">A little extra room.</span><strong class="path-size">8 <span>×</span> 10 <small>ft</small></strong><span class="path-detail">80 square feet · example dimensions</span><span class="path-action">Preview this footprint <b aria-hidden="true">↗</b></span></a>
+    <a class="path-card" href="#footprint-studio" data-shed-shortcut="10x12"><span class="path-index">02 / Mid-size footprint</span><span class="path-label">Space for everyday plans.</span><strong class="path-size">10 <span>×</span> 12 <small>ft</small></strong><span class="path-detail">120 square feet · example dimensions</span><span class="path-action">Preview this footprint <b aria-hidden="true">↗</b></span></a>
+    <a class="path-card" href="#footprint-studio" data-shed-shortcut="12x20"><span class="path-index">03 / Larger footprint</span><span class="path-label">More room to imagine.</span><strong class="path-size">12 <span>×</span> 20 <small>ft</small></strong><span class="path-detail">240 square feet · example dimensions</span><span class="path-action">Preview this footprint <b aria-hidden="true">↗</b></span></a>
+  </div>
+  <p class="paths-note">Example footprints are not dealer inventory, quotes, usable interior measurements or building-placement guidance. All four example sizes remain available in the planning studio.</p>
+</section>
 
 <section class="footprint-studio wrap" id="footprint-studio" aria-labelledby="footprint-title">
 <div class="studio-shell">
@@ -235,6 +325,12 @@ footer a{font-weight:750}
     buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.shedSize === key)));
   }
   buttons.forEach(button => button.addEventListener('click', () => selectSize(button.dataset.shedSize)));
+
+  // Use-case cards are ordinary anchors without JavaScript; when available,
+  // preselect their illustrative size in the existing interactive studio.
+  document.querySelectorAll('[data-shed-shortcut]').forEach(link => {
+    link.addEventListener('click', () => selectSize(link.dataset.shedShortcut));
+  });
 })();
 </script>
 </body></html>
