@@ -83,6 +83,34 @@ footer{border-top:1px solid var(--line);padding:22px 0;margin-top:35px;font-size
 @media(max-width:850px){.decision-rail{grid-template-columns:repeat(2,minmax(0,1fr))}.decision-link:last-child{grid-column:1/-1}}
 @media(max-width:600px){.hero{background-position:62% center}.decision-rail{grid-template-columns:1fr;gap:10px;margin-top:19px}.decision-link,.decision-link:last-child{grid-column:auto;min-height:0;padding:20px 20px 18px}.decision-link:before{left:20px;right:20px}.scene-caption{font-size:.72rem}}
 @media(prefers-reduced-motion:reduce){.decision-link{transition:none}.decision-link:hover{transform:none}}
+
+/* Separate lake-day paths: category artwork is illustrative, not a claim of marina access. */
+.lake-pathways{margin:45px 0 0}
+.lake-pathways-heading{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:19px}
+.lake-pathways-heading .eyebrow{color:#506f5b;margin-bottom:10px}
+.lake-pathways-heading h2{font:400 clamp(1.85rem,3.5vw,2.65rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.045em;margin:0}
+.lake-pathways-heading p:last-child{font-size:.87rem;max-width:380px;color:var(--muted);line-height:1.6;margin:0}
+.lake-pathways-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.lake-path{--path-bg:#e1efe6;--path-accent:#3d796b;position:relative;display:flex;flex-direction:column;min-width:0;overflow:hidden;border-radius:20px;border:1px solid #ccdbd2;background:#fff;color:var(--ink);text-decoration:none;box-shadow:0 10px 26px #133b2d0c;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.lake-path--camp{--path-bg:#f4e9d9;--path-accent:#9a672f}
+.lake-path--stay{--path-bg:#e4e8f1;--path-accent:#516c89}
+.lake-path-scene{position:relative;display:grid;place-items:center;height:145px;overflow:hidden;background:var(--path-bg)}
+.lake-path-scene:before,.lake-path-scene:after{content:"";position:absolute;border:1px solid currentColor;border-radius:50%;color:var(--path-accent);opacity:.17;width:220px;height:220px;right:-70px;top:-150px}
+.lake-path-scene:after{width:135px;height:135px;right:-25px;top:-87px}
+.lake-path-scene svg{position:relative;z-index:1;width:min(80%,190px);height:115px;color:var(--path-accent)}
+.lake-path-body{display:flex;flex:1;flex-direction:column;gap:9px;padding:21px 22px 22px}
+.lake-path-kicker{font-size:.64rem;line-height:1.4;font-weight:850;letter-spacing:.15em;color:var(--path-accent);text-transform:uppercase}
+.lake-path-name{font:400 clamp(1.35rem,2.3vw,1.7rem)/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.035em;color:var(--pine)}
+.lake-path-description{font-size:.83rem;line-height:1.55;color:var(--muted)}
+.lake-path-action{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:auto;padding-top:13px;border-top:1px solid var(--line);font-size:.83rem;font-weight:800;color:#205946}
+.lake-path-action span:last-child{display:grid;place-items:center;width:31px;height:31px;border-radius:50%;background:#edf4ee;font-size:1.1rem}
+.lake-path:hover{transform:translateY(-4px);border-color:#7a9e89;box-shadow:0 18px 34px #133b2d1e}
+.lake-path:focus-visible{outline:3px solid #a66a17;outline-offset:4px}
+.lake-path:hover .lake-path-action span:last-child{background:#dbe9db}
+.lake-pathways-note{margin:13px 0 0;font-size:.77rem;line-height:1.6;color:#4d665b}
+@media(max-width:850px){.lake-pathways-heading{display:block}.lake-pathways-heading p:last-child{max-width:680px;margin-top:9px}.lake-pathways-grid{grid-template-columns:1fr 1fr}.lake-path:last-child{grid-column:1/-1}.lake-path:last-child .lake-path-scene{height:130px}}
+@media(max-width:600px){.lake-pathways{margin-top:34px}.lake-pathways-grid{grid-template-columns:1fr;gap:12px}.lake-path:last-child{grid-column:auto}.lake-path-scene,.lake-path:last-child .lake-path-scene{height:118px}.lake-path-scene svg{height:99px}.lake-path-body{padding:18px 20px}.lake-pathways-heading h2{font-size:2rem}}
+@media(prefers-reduced-motion:reduce){.lake-path{transition:none}.lake-path:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -113,6 +141,28 @@ footer{border-top:1px solid var(--line);padding:22px 0;margin-top:35px;font-size
 <section class="availability" id="alternatives" aria-labelledby="availability-title">
 <div><article><h2 id="availability-title">No verified active boat or marina rental providers listed</h2><p>Russellville Marina &amp; Boat Repair is excluded from active rental recommendations while the full federal closure remains in effect. This page will be updated when another provider is independently verified or the Corps confirms reopening.</p></article><p style="margin-top:12px">Looking for a different way onto the water? Kayak rentals are listed separately, with operator details and availability caveats.</p></div>
 <a class="alt-link" href="/paddling.html">Explore kayak rentals →</a>
+</section>
+
+<section class="lake-pathways" aria-labelledby="lake-pathways-title">
+  <div class="lake-pathways-heading">
+    <div><p class="eyebrow">Beyond the marina / River Valley experiences</p><h2 id="lake-pathways-title">Another way to enjoy the area.</h2></div>
+    <p>Boat rentals at the closed marinas are not available. Explore these independently listed options for a different outing.</p>
+  </div>
+  <div class="lake-pathways-grid">
+    <a class="lake-path lake-path--paddle" href="/paddling.html">
+      <span class="lake-path-scene" aria-hidden="true"><svg viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 99c16-7 29-7 45 0s29 7 45 0 29-7 45 0 29 7 59 0M13 113c16-7 29-7 45 0s29 7 45 0 29-7 45 0 29 7 59 0" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".45"/><path d="M23 70c34 19 134 19 175 0l-9 17c-47 14-112 14-158 0L23 70Z" fill="currentColor" opacity=".92"/><path d="M34 69c42 10 115 10 151 0" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".75"/><path d="m117 24-15 45m-12-57 22 9-7 14-22-9 7-14Zm18 54 20 10-7 14-20-10 7-14Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round" fill="#fff"/></svg></span>
+      <span class="lake-path-body"><span class="lake-path-kicker">01 / On the water</span><span class="lake-path-name">Kayaks &amp; paddleboards</span><span class="lake-path-description">Explore separately listed paddling operators and confirm current launch access.</span><span class="lake-path-action"><span>Explore paddling rentals</span><span aria-hidden="true">↗</span></span></span>
+    </a>
+    <a class="lake-path lake-path--camp" href="/camping.html">
+      <span class="lake-path-scene" aria-hidden="true"><svg viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="167" cy="26" r="13" fill="currentColor" opacity=".22"/><path d="M18 104h185M34 92l13-39 13 39M35 77h24M162 93l15-54 15 54M165 77h25" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M72 101 110 42l39 59H72Z" fill="currentColor" opacity=".95"/><path d="m110 42 1 59h38L110 42Z" fill="#fff" opacity=".48"/><path d="m110 76-16 25h32l-16-25Z" fill="#fff" opacity=".95"/><path d="M57 106h108" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span>
+      <span class="lake-path-body"><span class="lake-path-kicker">02 / Under the stars</span><span class="lake-path-name">Campgrounds &amp; RV sites</span><span class="lake-path-description">Compare independently operated campgrounds and recreational vehicle sites nearby.</span><span class="lake-path-action"><span>Explore campsites</span><span aria-hidden="true">↗</span></span></span>
+    </a>
+    <a class="lake-path lake-path--stay" href="/short-term-stays.html">
+      <span class="lake-path-scene" aria-hidden="true"><svg viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="165" cy="27" r="12" fill="currentColor" opacity=".2"/><path d="M28 105h168M38 100V42m0 2-18 27h36L38 44Zm0-18-13 26h26L38 26Zm144 73V38m0 2-18 30h36l-18-30Zm0-21-13 26h26l-13-26Z" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M72 66 116 33l44 33v42H72V66Z" fill="currentColor" opacity=".95"/><path d="m64 69 52-42 52 42" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M106 108V78h20v30M83 70h14v15H83zM134 70h14v15h-14z" fill="#fff" opacity=".9"/><path d="M104 108h24" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg></span>
+      <span class="lake-path-body"><span class="lake-path-kicker">03 / Make a weekend</span><span class="lake-path-name">Cabins &amp; short-term stays</span><span class="lake-path-description">Browse other lodging providers, separate from the closed marina cabins.</span><span class="lake-path-action"><span>Explore local stays</span><span aria-hidden="true">↗</span></span></span>
+    </a>
+  </div>
+  <p class="lake-pathways-note">These links are to separate directories, not facilities at either closed marina. Confirm availability, permitted access and any restrictions directly with the relevant operator.</p>
 </section>
 <p class="note">Independent local directory. Information is drawn from public listings and may change. Some business services and contact details are not independently confirmed. Please confirm pricing, availability and terms directly with each provider. <a href="sms:+14799707301">Submit corrections</a>.</p>
 <footer>Russellville.Rent · <a href="/">Return to homepage</a></footer>
