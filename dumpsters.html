@@ -150,6 +150,54 @@ footer a{font-weight:700;color:var(--forest)}
 @media(max-width:850px){.brief-studio{grid-template-columns:1fr}.brief-intro{padding:29px}.brief-art{max-width:240px;margin-top:20px}}
 @media(max-width:520px){.brief-studio{margin-top:42px;border-radius:17px}.brief-intro{padding:27px 22px}.brief-workspace{padding:23px 18px}.brief-fields{grid-template-columns:1fr}.brief-field--wide{grid-column:auto}.brief-preview{padding:15px}.brief-preview-head{display:block}.brief-preview-head span{display:block;text-align:left;margin-top:5px}.brief-controls button{flex:1}}
 
+
+/* 2026-10-30 / Immersive River Valley field guide; all imagery is a local asset. */
+.hero{background:linear-gradient(105deg,#081e19fa 0%,#102e28ee 48%,#11382b91 100%),url("assets/downtown-russellville-sunset.jpg") center 58%/cover}
+.hero::before{background:linear-gradient(180deg,transparent 63%,#071e1970)}
+.hero .container{grid-template-columns:minmax(0,1.22fr) minmax(265px,.78fr);min-height:625px;gap:clamp(22px,5vw,80px);padding-block:92px}
+.hero h1{font-size:clamp(3.6rem,6.7vw,6.8rem);line-height:.96;max-width:790px;margin-bottom:29px;text-shadow:0 4px 20px #081e1970}
+.hero .eyebrow{color:#ffe0a5;display:flex;gap:14px;align-items:center}
+.hero .eyebrow:before{content:"";width:33px;height:1px;background:#f7d493}
+.hero-intro{font-size:clamp(1.06rem,1.5vw,1.2rem);max-width:49ch;line-height:1.7;text-shadow:0 2px 12px #071d18}
+.hero .cta.primary{background:#f5d28e}.hero .cta.secondary{background:#112f2b94}
+.hero-visual{min-height:345px;background:linear-gradient(140deg,#f2d8a63b,#143c3291);border:1px solid #f7e0b766;border-radius:23px;box-shadow:0 25px 58px #071b159c;backdrop-filter:blur(3px)}
+.hero-visual::before{inset:13%;border-color:#f8eac938;box-shadow:none}
+.hero-visual svg{filter:drop-shadow(0 20px 25px #091d1899)}
+.hero-attribution{display:block;margin-top:25px;font-size:.7rem;color:#f5e0bd;letter-spacing:.13em;font-weight:800;text-transform:uppercase}
+.visual-caption{color:#fff6e5;font-weight:800;bottom:13px}
+.stats{background:#163e34;border-color:#315646}
+.stats .container{padding-block:24px}.stats .stat{color:#f4f2e9}.stats .stat strong{color:#f6d491}
+.stats .stat-note{color:#e4ebe4}
+.project-chooser{background:#f3f0e7;border-bottom:1px solid #ded9cb;padding:clamp(55px,7vw,91px) 0 clamp(57px,7vw,87px)}
+.project-eyebrow{margin:0 0 12px;color:#8a5b26;font-weight:900;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase}
+.project-heading{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:28px}
+.project-heading h2{font:400 clamp(2.6rem,5.1vw,4.3rem)/1.07 Georgia,serif;color:#143d32;letter-spacing:-.06em;margin:0;text-wrap:balance}
+.project-heading p{max-width:330px;margin:0 0 7px;color:#54685e;font-size:.94rem;line-height:1.65}
+.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.project-path{min-width:0;min-height:313px;display:flex;flex-direction:column;position:relative;overflow:hidden;padding:27px;border-radius:21px;border:1px solid #dce3d9;background:#fff;color:#173f33;text-decoration:none;box-shadow:0 16px 35px #153a3012;transition:transform .22s,box-shadow .22s,border-color .22s}
+.project-path--gold{background:linear-gradient(145deg,#fffbf2,#f3e0bf);border-color:#e9cfa4}
+.project-path--green{background:linear-gradient(135deg,#225444,#102f2b);color:#fff;border-color:#214a3f}
+.project-path:hover{transform:translateY(-5px);box-shadow:0 21px 45px #133d3127;border-color:#9ab19f}
+.project-path:focus-visible{outline:4px solid #b97721;outline-offset:4px}
+.project-top{display:flex;align-items:center;justify-content:space-between;gap:13px;margin-bottom:29px}
+.project-top span{font-size:.69rem;letter-spacing:.15em;text-transform:uppercase;font-weight:900;opacity:.8}
+.project-top svg{width:62px;height:62px;flex:none}
+.project-path h3{font:400 clamp(1.58rem,2.45vw,2.15rem)/1.13 Georgia,serif;letter-spacing:-.05em;margin:0 0 12px}
+.project-path p{font-size:.87rem;line-height:1.55;opacity:.84;margin:0 0 24px}
+.project-action{margin-top:auto;display:inline-flex;align-items:center;gap:9px;font-size:.8rem;font-weight:900}
+.project-action::after{content:"↗";font-size:1.2rem}
+.provider-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:21px}
+.provider{padding:clamp(25px,3vw,34px);border-radius:21px}
+.provider h2{font-size:clamp(1.36rem,2.1vw,1.68rem)}
+.provider p{font-size:.93rem}
+.provider .detail{font-size:.8rem}
+.provider-grid .provider:last-child{grid-column:1 / -1}
+.provider-grid .provider:last-child p:not(.detail){max-width:86ch}
+main{padding-top:clamp(62px,8vw,104px)}
+@media(max-width:900px){.hero .container{grid-template-columns:1fr .75fr;min-height:530px;padding-block:65px}.hero h1{font-size:clamp(3.2rem,7vw,5.3rem)}.hero-visual{min-height:280px}.project-path{padding:22px;min-height:315px}.project-top svg{width:48px;height:48px}}
+@media(max-width:650px){.hero{background-position:center,60% 55%}.hero .container{grid-template-columns:1fr;gap:34px;min-height:0;padding-block:60px 39px}.hero h1{font-size:clamp(3rem,11.5vw,4.6rem)}.hero-visual{width:100%;max-width:460px;min-height:220px;margin:0}.hero-visual svg{max-height:235px}.project-chooser{padding-block:50px 58px}.project-heading{display:block}.project-heading h2{font-size:clamp(2.35rem,10vw,3.35rem)}.project-heading p{margin-top:16px;max-width:49ch}.project-grid,.provider-grid{grid-template-columns:1fr}.project-path{min-height:0;padding:26px}.project-top{margin-bottom:12px}.provider-grid .provider:last-child{grid-column:auto}main{padding-top:54px}}
+@media(prefers-reduced-motion:reduce){.project-path{transition:none}.project-path:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -161,7 +209,7 @@ footer a{font-weight:700;color:var(--forest)}
    <p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p>
    <h1 id="page-title">Make room for <em>what’s next.</em></h1>
    <p class="hero-intro">Waste containers and dumpster rental services for cleanups and construction projects.</p>
-   <div class="hero-actions"><a class="cta primary" href="#main">Compare providers ↘</a><a class="cta secondary" href="#questions">What to ask first ↗</a></div>
+   <div class="hero-actions"><a class="cta primary" href="#main">Compare providers ↘</a><a class="cta secondary" href="#questions">What to ask first ↗</a><a class="cta secondary" href="#project-chooser">Pick your project ↗</a></div><span class="hero-attribution">Russellville &amp; the River Valley · Independent local guide</span>
   </div>
   <div class="hero-visual" aria-hidden="true">
    <svg viewBox="0 0 470 310" xmlns="http://www.w3.org/2000/svg" fill="none">
@@ -183,6 +231,27 @@ footer a{font-weight:700;color:var(--forest)}
  </div>
 </section>
 <div class="stats"><div class="container"><div class="stat"><strong>07</strong><span>Russellville-area providers</span></div><div class="stat"><strong>02</strong><span>Regional options to verify</span></div><span class="stat-note">Contact providers directly for current container sizes, availability and delivery terms.</span></div></div>
+
+<section class="project-chooser" id="project-chooser" aria-labelledby="project-heading">
+ <div class="container">
+  <p class="project-eyebrow">Built around your project / 01</p>
+  <div class="project-heading"><h2 id="project-heading">Start with the job.<br>Know what to ask.</h2><p>Choose a project to prepare an inquiry. Compare providers below and confirm availability, size and final cost directly.</p></div>
+  <div class="project-grid">
+   <a href="#main" class="project-path project-path--gold" data-project-choice="Home cleanout">
+    <div class="project-top"><span>01 / Clear the space</span><svg viewBox="0 0 64 64" aria-hidden="true" fill="none"><path d="M7 29 32 9l25 20v27H7V29Z" stroke="#906029" stroke-width="3" stroke-linejoin="round"/><path d="M23 56V36h18v20M14 40h6m-6 7h6" stroke="#906029" stroke-width="3"/></svg></div>
+    <h3>Home cleanout</h3><p>Moving, downsizing or clearing out household items? Ask about size, materials and pickup.</p><span class="project-action">Compare &amp; plan</span>
+   </a>
+   <a href="#main" class="project-path" data-project-choice="Remodel or renovation">
+    <div class="project-top"><span>02 / Make it new</span><svg viewBox="0 0 64 64" aria-hidden="true" fill="none"><path d="m11 49 34-35 7 7-34 35-7-7ZM39 13l8-4 8 8-4 8M10 13l9 9" stroke="#47715b" stroke-width="3" stroke-linejoin="round"/><path d="m29 36 15 15" stroke="#bb8441" stroke-width="3"/></svg></div>
+    <h3>Remodel or renovation</h3><p>Replacing cabinets or remodeling rooms? Confirm acceptable debris, weight and rental period.</p><span class="project-action">Compare &amp; plan</span>
+   </a>
+   <a href="#main" class="project-path project-path--green" data-project-choice="Construction jobsite">
+    <div class="project-top"><span>03 / Keep it moving</span><svg viewBox="0 0 64 64" aria-hidden="true" fill="none"><path d="M8 38h48v17H8V38ZM17 38v-8c0-12 7-19 15-19s15 7 15 19v8M32 11v27M12 30h40" stroke="#f4d69e" stroke-width="3" stroke-linecap="round"/></svg></div>
+    <h3>Construction jobsite</h3><p>Managing a bigger project? Discuss container access, debris restrictions and scheduled hauling.</p><span class="project-action">Compare &amp; plan</span>
+   </a>
+  </div>
+ </div>
+</section>
 <main class="container" id="main">
  <section aria-labelledby="local-title">
   <div class="section-title"><div><p class="section-label">01 / Nearby options</p><h2 id="local-title">Start close to home.</h2><p>Seven providers explicitly advertising Russellville-area dumpster or waste-container services. Confirm the right container and delivery arrangements for your project.</p></div></div>
@@ -302,6 +371,22 @@ function formatDumpsterBrief(fields){
  });
  update();
  section.hidden=false;
+
+ // Progressive enhancement: project links still go to providers if scripts are unavailable.
+ document.querySelectorAll('[data-project-choice]').forEach(link=>{
+  link.addEventListener('click',event=>{
+   if(section.hidden)return;
+   const select=document.getElementById('brief-project');
+   if(!select)return;
+   const choice=link.getAttribute('data-project-choice');
+   if(!Array.from(select.options).some(option=>option.value===choice))return;
+   event.preventDefault();
+   select.value=choice;
+   select.dispatchEvent(new Event('change',{bubbles:true}));
+   section.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+   select.focus({preventScroll:true});
+  });
+ });
 })();
 </script>
 </body>
