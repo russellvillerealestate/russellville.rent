@@ -48,13 +48,105 @@
 @media(max-width:900px){.hero-layout{grid-template-columns:1fr}.hero-art{max-width:440px;justify-self:center}.hero .wrap{padding-bottom:45px}.equipment-choices{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.hero-art{max-width:310px}.hero .wrap{padding-top:38px}.finder-heading{display:block}.finder-heading>p{margin-top:12px}.equipment-choices{grid-template-columns:1fr;gap:9px}.equipment-choice{min-height:0;padding:14px}.equipment-finder{margin-top:23px}.finder-footer{align-items:flex-start;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){.equipment-choice{transition:none}.equipment-choice:hover{transform:none}}
+
+/* October 2026 visual edition: locally photographed River Valley hero and an accessible,
+   equipment-first directory. The landscape photo is scenery, not a provider facility. */
+.med-hero{
+  min-height:625px;
+  border-radius:0 0 38px 38px;
+  background-image:linear-gradient(94deg,rgba(5,32,31,.97) 0%,rgba(8,45,42,.91) 47%,rgba(13,48,40,.73) 100%),url("assets/downtown-russellville-sunset.jpg");
+  background-size:cover;background-position:center 55%;
+}
+.med-hero:before{opacity:.09;background:linear-gradient(90deg,transparent 49%,#ffeacb 50%,transparent 51%) 0 0/110px 110px}
+.med-hero .wrap{padding-top:clamp(68px,7vw,106px);padding-bottom:clamp(92px,9vw,134px)}
+.med-hero .hero-layout{grid-template-columns:minmax(0,1.15fr) minmax(290px,.85fr);gap:clamp(24px,5vw,74px);align-items:center}
+.med-hero .hero-content{position:relative;z-index:1}
+.med-hero .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.73rem;letter-spacing:.18em;color:#ffe0a7}
+.med-hero .eyebrow:before{content:"";width:31px;height:1px;background:#f0d39c}
+.med-hero h1{max-width:13ch;font-size:clamp(3.5rem,7.2vw,6.9rem);line-height:.99;text-wrap:balance;text-shadow:0 4px 26px #051e1c6e}
+.med-hero h1 em{color:#ffdb9b;font-style:italic}
+.med-hero .hero-intro{font-size:clamp(1rem,1.5vw,1.16rem);line-height:1.75;max-width:58ch;margin:29px 0 29px;color:#f2f6ef}
+.med-hero .hero-actions{gap:12px}
+.med-hero .button{min-height:53px;border-radius:999px;padding:13px 23px}
+.med-hero .button.primary{background:#f8dca6;color:#18382c}
+.med-hero .button.secondary{background:#0b2e2a60;border-color:#d5e1d6;color:#fff}
+.med-hero .button:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.med-hero .hero-art{position:relative;padding:20px 20px 14px;border:1px solid #f2e3c486;border-radius:27px;background:linear-gradient(165deg,#f4e9cb30,#123b3250);box-shadow:0 36px 70px #061f1e80;backdrop-filter:blur(5px);transform:rotate(1.5deg)}
+.med-hero .hero-art:before{content:"REGIONAL RENTAL GUIDE";display:block;font:800 .63rem/1.4 system-ui,sans-serif;letter-spacing:.19em;color:#fff2cb;text-align:center}
+.med-hero .hero-art svg{max-height:395px;filter:drop-shadow(0 14px 20px #06232060)}
+.med-hero .art-caption{margin-top:1px;color:#f4f0dc}
+.hero-rail{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:38px;padding-top:22px;border-top:1px solid #e9f5e965}
+.hero-rail span{display:flex;flex-direction:column;gap:4px;min-width:0}
+.hero-rail strong{color:#ffe0a7;font:400 clamp(1.55rem,2.4vw,2.35rem)/1 Georgia,serif}
+.hero-rail-status strong{font:850 .8rem/1.4 system-ui,sans-serif;letter-spacing:.1em;margin-top:6px}
+.hero-rail small{font-size:.7rem;line-height:1.45;color:#e3efe5}
+.wrap>.notice{position:relative;z-index:2;margin:-43px 0 0;padding:24px 30px 25px;border:1px solid #e8cb91;border-left:7px solid #9f6a21;border-radius:19px;background:#fff7e7;box-shadow:0 22px 45px #183b2a1b}
+.wrap>.notice strong{font-size:1.04rem;color:#5e4017}
+.rental-paths{padding:clamp(53px,7vw,91px) 0 22px}
+.rental-paths-heading{display:grid;grid-template-columns:1fr minmax(230px,.65fr);align-items:end;gap:30px;margin-bottom:27px}
+.paths-kicker{font-size:.7rem;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:#806134;margin:0 0 10px}
+.rental-paths-heading h2{font-size:clamp(2.65rem,5vw,4.6rem);line-height:1.04;max-width:15ch;margin:0;text-wrap:balance}
+.rental-paths-heading>p{max-width:41ch;margin:0 0 4px;color:#3f5b50;font-size:.94rem}
+.rental-path-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.rental-path{position:relative;isolation:isolate;display:flex;flex-direction:column;min-height:335px;padding:23px clamp(19px,2.2vw,29px) 24px;border-radius:19px;overflow:hidden;text-decoration:none;color:#193b34;background:#e5eee6;border:1px solid #cbded1;box-shadow:0 14px 30px #153b2a0d;transition:transform .2s ease,box-shadow .2s ease}
+.rental-path--home{background:#f4e9d4;border-color:#e4d1ae}
+.rental-path--access{background:#dceae9;border-color:#b9d4d0}
+.rental-path:after{content:"";position:absolute;z-index:-1;width:270px;height:270px;right:-84px;top:-135px;border:1px solid #315b4f24;border-radius:50%;box-shadow:0 0 0 30px #ecf1ed5c,0 0 0 65px #ecf1ed36}
+.rental-path:hover{transform:translateY(-5px);box-shadow:0 21px 39px #153b2a21}
+.rental-path:focus-visible{outline:3px solid #9c5908;outline-offset:4px}
+.path-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.path-index{font-weight:850;font-size:.67rem;letter-spacing:.14em;color:#386459}
+.path-mark{width:36px;height:36px;display:grid;place-items:center;border:1px solid #4c766754;border-radius:50%;font-size:1.23rem}
+.rental-path strong{font:400 clamp(1.58rem,2.5vw,2.23rem)/1.12 Georgia,serif;letter-spacing:-.05em;margin-top:auto;max-width:14ch}
+.path-description{font-size:.83rem;line-height:1.52;margin-top:10px;max-width:33ch;color:#385a50}
+.path-action{border-top:1px solid #41665742;padding-top:13px;margin-top:18px;font-size:.76rem;font-weight:850;letter-spacing:.02em;color:#175843}
+.path-art{position:relative;width:100px;height:82px;display:block;margin:11px 0 11px auto;opacity:.7}
+.path-art--wheel .path-wheel{position:absolute;left:20px;bottom:7px;width:44px;height:44px;border:7px solid #22564a;border-radius:50%}
+.path-art--wheel .path-wheel-sm{position:absolute;right:12px;bottom:9px;width:18px;height:18px;border:4px solid #22564a;border-radius:50%}
+.path-art--wheel .path-seat{position:absolute;left:43px;top:5px;width:43px;height:47px;border-left:7px solid #22564a;border-bottom:7px solid #22564a;transform:skew(10deg)}
+.path-art--bed .path-bed-head{position:absolute;left:8px;bottom:13px;width:11px;height:61px;border-radius:5px;background:#9c7647}
+.path-art--bed .path-bed-base{position:absolute;left:9px;bottom:13px;width:82px;height:24px;border-radius:5px;background:#b9945c;border-bottom:7px solid #775d3a}
+.path-art--bed .path-bed-pillow{position:absolute;left:23px;bottom:38px;width:28px;height:13px;border-radius:6px;background:#e6cfa9}
+.path-art--ramp .path-ramp-surface{position:absolute;left:5px;bottom:13px;width:88px;height:14px;background:#2c7167;transform:skewY(-17deg);border-radius:3px}
+.path-art--ramp .path-ramp-rail{position:absolute;left:24px;top:8px;width:67px;height:42px;border-top:6px solid #2c7167;border-right:6px solid #2c7167;transform:skewY(-17deg)}
+.rental-path-note{font-size:.78rem;line-height:1.65;color:#547066;margin:16px 0 0}
+.has-js .equipment-finder{margin-top:27px;background:#fff;padding:clamp(24px,4vw,45px);border-radius:22px;border:1px solid #d6e0d7}
+.finder-heading h2{font-size:clamp(2.3rem,4vw,3.8rem)}
+.equipment-choice{min-height:106px;border-radius:13px;background:#f5f8f3}
+.equipment-choice:hover{transform:translateY(-2px)}
+.equipment-choice[aria-pressed="true"]{background:#e0f0e4;border-color:#1b5b46;box-shadow:inset 0 0 0 1px #1b5b46}
+#providers{scroll-margin-top:30px}
+#providers .section-head{margin-top:78px}
+#providers .section-head h2{font-size:clamp(2.5rem,4.3vw,4.35rem)}
+.jump{margin-bottom:26px}
+.jump a{min-height:44px;align-items:center;display:inline-flex;padding:11px 18px;border-radius:11px;background:#e5eee5}
+#providers .grid{grid-template-columns:minmax(0,1fr);gap:18px}
+#providers .card{border:1px solid #d4e1d7;border-left:7px solid #277461;border-radius:19px;display:grid;grid-template-columns:minmax(200px,.72fr) minmax(0,1.28fr);grid-template-rows:auto auto 1fr auto;column-gap:clamp(25px,5vw,66px);row-gap:6px;min-height:280px;padding:clamp(24px,3.6vw,45px);box-shadow:0 15px 35px #173b3111}
+#providers .card:nth-child(2){border-left-color:#a77a3f}
+#providers .card:nth-child(3){border-left-color:#4f8d94;grid-column:1}
+#providers .card .kicker{grid-column:1;grid-row:1}
+#providers .card h3{grid-column:1;grid-row:2;font:400 clamp(1.6rem,2.7vw,2.6rem)/1.12 Georgia,serif;letter-spacing:-.035em;margin:10px 0 9px}
+#providers .card .badge{grid-column:1;grid-row:3;justify-self:start;align-self:start}
+#providers .card p:not(.detail):not(.links){grid-column:2;grid-row:1 / span 2;margin:0 0 8px;line-height:1.65}
+#providers .card .detail{grid-column:2;grid-row:3;margin:8px 0}
+#providers .card .links{grid-column:2;grid-row:4;padding-top:12px;margin:0;border-top:1px solid #d4e1d7}
+.steps{margin-top:74px;padding:clamp(25px,4vw,47px);background:#e7eee3;border:1px solid #d4dfd2;border-radius:22px}
+.steps h2{font-size:clamp(2.1rem,4vw,3.55rem);margin-bottom:28px}
+.steps-grid>div{border-top:2px solid #9fb9aa;padding-top:18px}
+.steps-grid strong{font:400 1.23rem/1.3 Georgia,serif;letter-spacing:-.03em}
+@media(max-width:900px){.med-hero .hero-layout{grid-template-columns:minmax(0,1fr) minmax(240px,.75fr)}.med-hero h1{font-size:clamp(3.4rem,7vw,5rem)}.med-hero .hero-art{transform:none}}
+@media(max-width:760px){.med-hero{min-height:auto}.med-hero .hero-layout{grid-template-columns:1fr}.med-hero .hero-art{max-width:410px;justify-self:center}.med-hero .wrap{padding:64px 0 100px}.med-hero h1{font-size:clamp(3.45rem,10vw,5.1rem)}.wrap>.notice{margin-top:-39px}.rental-paths-heading{grid-template-columns:1fr}.rental-path-grid{grid-template-columns:1fr}.rental-path{min-height:260px}.rental-path strong{margin-top:6px}.path-art{position:absolute;right:22px;top:44px;margin:0;opacity:.45}.rental-paths-heading h2{max-width:none}#providers .card{grid-template-columns:1fr;grid-template-rows:auto;row-gap:0}#providers .card .kicker,#providers .card h3,#providers .card .badge,#providers .card p:not(.detail):not(.links),#providers .card .detail,#providers .card .links{grid-column:1;grid-row:auto}#providers .card p:not(.detail):not(.links){margin-top:20px}#providers .section-head{margin-top:62px}}
+@media(max-width:480px){.hero-rail{gap:9px;margin-top:28px}.hero-rail strong{font-size:1.6rem}.hero-rail small{font-size:.66rem}.med-hero .hero-art{max-width:330px}.wrap>.notice{padding:20px}.rental-paths{padding-top:55px}.rental-paths-heading h2{font-size:2.6rem}}
+@media(prefers-reduced-motion:reduce){.rental-path,.equipment-choice{transition:none!important}.rental-path:hover,.equipment-choice:hover{transform:none}}
+@media print{.med-hero{background:#fff!important;color:#163b32}.med-hero h1,.med-hero h1 em,.med-hero .hero-intro,.med-hero .eyebrow,.hero-rail strong,.hero-rail small{color:#163b32!important;text-shadow:none}.med-hero .hero-art{display:none}.rental-path{min-height:0;box-shadow:none}.path-art{display:none}.wrap>.notice{box-shadow:none}}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to providers</a>
 <header class="site-header"><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
 <main id="main">
-<section class="hero" aria-labelledby="page-title"><div class="wrap hero-layout"><div class="hero-content"><p class="eyebrow">Russellville, Arkansas &amp; regional rental options</p><h1 id="page-title">Medical equipment <em>rentals.</em></h1><p class="hero-intro">Compare companies that advertise paid rentals of wheelchairs, scooters, hospital beds, ramps and related equipment. These are <strong>regional operators, not verified Russellville storefronts</strong>. Confirm inventory, eligibility, safe fit, delivery costs and final terms directly.</p><div class="hero-actions"><a class="button primary" href="#providers">Compare three operators ↓</a><a class="button secondary" href="medical-equipment-loans.html">See free lending programs ↗</a></div><div class="hero-art" aria-hidden="true">
+<section class="hero med-hero" aria-labelledby="page-title"><div class="wrap hero-layout"><div class="hero-content"><p class="eyebrow">Russellville, Arkansas &amp; regional rental options</p><h1 id="page-title">Medical equipment <em>rentals.</em></h1><p class="hero-intro">Compare companies that advertise paid rentals of wheelchairs, scooters, hospital beds, ramps and related equipment. These are <strong>regional operators, not verified Russellville storefronts</strong>. Confirm inventory, eligibility, safe fit, delivery costs and final terms directly.</p><div class="hero-actions"><a class="button primary" href="#providers">Compare three operators ↓</a><a class="button secondary" href="medical-equipment-loans.html">See free lending programs ↗</a></div><div class="hero-rail" aria-label="Directory overview"><span><strong>03</strong><small>Regional rental operators</small></span><span><strong>05</strong><small>Equipment groups to explore</small></span><span class="hero-rail-status"><strong>CHECK</strong><small>Russellville delivery first</small></span></div></div><div class="hero-art" aria-hidden="true">
 <svg viewBox="0 0 520 400" xmlns="http://www.w3.org/2000/svg" focusable="false">
 <defs><linearGradient id="hero-card" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f3e4c8"/><stop offset="1" stop-color="#d7e8da"/></linearGradient></defs>
 <circle cx="270" cy="197" r="170" fill="#f0d7a4" opacity=".09"/><circle cx="270" cy="197" r="145" fill="none" stroke="#d8e8d3" stroke-opacity=".3" stroke-width="2"/>
@@ -77,6 +169,34 @@
 </div></div></section>
 <div class="wrap">
 <aside class="notice"><strong>Russellville delivery: UNCONFIRMED for all three operators.</strong><p>The providers publish rentals and their own branch locations, but none of the cited rental pages explicitly confirms delivery to Russellville. Do not assume local inventory or same-day service. Request a location-specific quote before making plans.</p></aside>
+
+<section class="rental-paths" aria-labelledby="paths-title">
+  <div class="rental-paths-heading">
+    <div><p class="paths-kicker">A clearer way to compare</p><h2 id="paths-title">Start with what you need.</h2></div>
+    <p>Select an equipment group to narrow the regional directory, then contact each operator to confirm service to your address. These are advertised rental categories, not verified stock.</p>
+  </div>
+  <div class="rental-path-grid">
+    <a class="rental-path rental-path--mobility" href="#providers" data-quick-category="mobility">
+      <span class="path-top"><span class="path-index">01 / MOBILITY</span><span class="path-mark" aria-hidden="true">↗</span></span>
+      <span class="path-art path-art--wheel" aria-hidden="true"><span class="path-wheel"></span><span class="path-wheel-sm"></span><span class="path-seat"></span></span>
+      <strong>Wheelchairs &amp;<br>scooters</strong><span class="path-description">Browse operators advertising manual and powered mobility devices.</span>
+      <span class="path-action">Compare mobility listings <span aria-hidden="true">↗</span></span>
+    </a>
+    <a class="rental-path rental-path--home" href="#providers" data-quick-category="beds">
+      <span class="path-top"><span class="path-index">02 / AT HOME</span><span class="path-mark" aria-hidden="true">↗</span></span>
+      <span class="path-art path-art--bed" aria-hidden="true"><span class="path-bed-head"></span><span class="path-bed-base"></span><span class="path-bed-pillow"></span></span>
+      <strong>Hospital beds &amp;<br>home support</strong><span class="path-description">Find operators advertising hospital bed rentals and ask about setup.</span>
+      <span class="path-action">Compare bed listings <span aria-hidden="true">↗</span></span>
+    </a>
+    <a class="rental-path rental-path--access" href="#providers" data-quick-category="ramps">
+      <span class="path-top"><span class="path-index">03 / ACCESS</span><span class="path-mark" aria-hidden="true">↗</span></span>
+      <span class="path-art path-art--ramp" aria-hidden="true"><span class="path-ramp-rail"></span><span class="path-ramp-surface"></span></span>
+      <strong>Ramps &amp;<br>recovery gear</strong><span class="path-description">Compare advertised ramps and knee walkers without assuming local delivery.</span>
+      <span class="path-action">Compare access listings <span aria-hidden="true">↗</span></span>
+    </a>
+  </div>
+  <p class="rental-path-note">The category cards filter the directory when JavaScript is available; without it, they take you to all three provider listings. All delivery and availability details require direct confirmation.</p>
+</section>
 <section class="equipment-finder" aria-labelledby="finder-title">
 <div class="finder-heading"><div><p class="finder-eyebrow">Explore by equipment</p><h2 id="finder-title">What are you looking for?</h2></div><p>Choose a product type to see providers that advertise it. This is not a live inventory or delivery check.</p></div>
 <div class="equipment-choices" role="group" aria-label="Filter providers by advertised equipment">
@@ -129,5 +249,15 @@
   buttons.forEach(button=>button.addEventListener('click',()=>selectCategory(button.dataset.category)));
   clear.addEventListener('click',()=>selectCategory('all'));
 })();
+</script>
+<script>
+/* Quick paths reuse the existing pressed-button filtering. Without JavaScript,
+   each path remains a normal link to the complete provider directory. */
+document.querySelectorAll('[data-quick-category]').forEach(function(path){
+  path.addEventListener('click',function(){
+    var choice=document.querySelector('.equipment-choice[data-category="'+path.dataset.quickCategory+'"]');
+    if(choice)choice.click();
+  });
+});
 </script>
 </body></html>
