@@ -501,6 +501,46 @@ footer{margin-top:30px}
 @media(max-width:360px){.mobile-sheet-actions{grid-template-columns:1fr}.mobile-sheet-heading h2{font-size:1.75rem}}
 @media(prefers-reduced-motion:reduce){.mobile-search-sheet::backdrop{backdrop-filter:none}}
 
+
+/* Editorial landscape redesign — Adventure RV Park-inspired scale, contrast and space.
+   Presentation-only overrides: directory data, search, filters and behavior remain intact. */
+:root{--ink:#102e28;--text:#183b30;--paper:#f5f3ea;--line:#d7ded2;--gold:#f3cf83}
+body{background:var(--paper);color:var(--text)}
+.wrap{max-width:1500px;padding-left:clamp(20px,4vw,76px);padding-right:clamp(20px,4vw,76px)}
+header{background:#f5f3eaf5;border-bottom:1px solid #d6ded3}
+header .wrap{min-height:92px}
+.brand{font-size:clamp(1.4rem,2vw,1.9rem);letter-spacing:-.065em}
+nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
+.nav-list{background:var(--ink);color:#fff;border-color:var(--ink);border-radius:100px;padding:13px 23px}
+.hero{min-height:clamp(650px,78vh,940px);border-radius:0 0 34px 34px;padding:clamp(55px,7vw,110px);justify-content:center;box-shadow:0 24px 55px #163b2a19}
+.hero-photo{object-position:center 55%}
+.hero::before{display:block!important;background:linear-gradient(90deg,rgba(6,27,23,.88) 0%,rgba(6,27,23,.73) 37%,rgba(6,27,23,.22) 78%),linear-gradient(0deg,rgba(6,27,23,.35),transparent 55%)}
+.hero h1{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(4.1rem,7.6vw,8.3rem);line-height:.99;letter-spacing:-.065em;max-width:1050px;text-wrap:balance}
+.hero h1 em{color:#f5d998}
+.hero .intro{font-size:clamp(1.1rem,1.6vw,1.45rem);line-height:1.55;max-width:650px;margin:34px 0}
+.hero .button{min-height:58px;padding:16px 30px;border-radius:100px;font-size:.96rem}
+.hero .secondary{border:1px solid #f5f3eab8;background:#102e2870;color:white}
+.hero .hero-note{max-width:850px;margin-top:clamp(55px,7vw,110px);font-size:.84rem;gap:20px 35px}
+.hero-find{position:relative;z-index:2;margin-top:-32px;box-shadow:0 24px 65px #142e221a;border-radius:22px}
+.hometown{margin-top:90px;margin-bottom:90px;gap:22px}
+.hometown h2,.section-head h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(2.5rem,4vw,4.5rem);line-height:1.04;letter-spacing:-.05em}
+.landmark{min-height:280px;border-radius:18px}
+.section-head{margin-top:100px;margin-bottom:36px}
+.rentals-grid{gap:26px}
+.rental-card{border-radius:19px;border-color:#d9e1d5;box-shadow:0 9px 30px #142e220a;transition:transform .22s ease,box-shadow .22s ease}
+.rental-card:hover{transform:translateY(-5px);box-shadow:0 22px 50px #142e2220}
+.image-wrap,.category-art,.brand-feature{height:245px}
+.card-body{padding:27px}
+.card-body h3{font-family:Georgia,"Times New Roman",serif;font-size:1.48rem;font-weight:400;line-height:1.2}
+.card-body>p:not(.eyebrow){font-size:.91rem;line-height:1.65}
+.card-link{font-size:.86rem;padding-top:19px}
+.filters{border-radius:18px;padding:24px;gap:16px;background:#e8ede4}
+.owner{border-radius:24px;padding:clamp(35px,5vw,80px);margin-top:95px}
+.contact{padding:65px 0}
+@media(max-width:1000px){.hero{min-height:660px;padding:60px 45px}.hero h1{font-size:clamp(3.6rem,7vw,6.2rem)}.rentals-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hometown{margin-top:65px}.landmark{min-height:220px}}
+@media(max-width:600px){header .wrap{min-height:68px}.hero{display:flex;flex-direction:column;min-height:640px;padding:45px 23px 25px;border-radius:0 0 23px 23px}.hero-photo{position:absolute;inset:0;height:100%;width:100%;z-index:-2;object-position:57% center;margin:0}.hero::before{display:block!important;background:linear-gradient(180deg,#071d18c9 0%,#071d1899 48%,#071d18d9 100%)}.hero>h1,.hero>.intro,.hero>.actions,.hero>.hero-note{margin-left:0;margin-right:0}.hero h1{font-size:clamp(3.55rem,12vw,5.2rem);line-height:1.01}.hero .intro{font-size:1.03rem;margin-top:26px;margin-bottom:26px}.hero .actions{gap:10px}.hero .button{min-height:52px;padding:13px 19px;font-size:.82rem}.hero .hero-note{margin-top:auto;margin-bottom:0;padding-top:22px;font-size:.69rem;gap:8px 14px}.hero .location-caption{top:auto;bottom:85px;right:15px}.hero-find{margin-top:18px;border-radius:16px}.hometown{margin-top:45px;margin-bottom:48px}.hometown h2,.section-head h2{font-size:2.35rem}.section-head{margin-top:65px}.rentals-grid{grid-template-columns:1fr;gap:22px}.image-wrap,.category-art,.brand-feature{height:235px}.card-body{padding:24px}.owner{margin-top:65px;padding:28px}.rental-card:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.rental-card{transition:none}.rental-card:hover{transform:none}}
+
 </style>
 </head>
 <body>
