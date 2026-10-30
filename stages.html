@@ -22,11 +22,11 @@ a:focus-visible{outline:3px solid #c36a17;outline-offset:4px;border-radius:4px}
 .brand span{color:var(--gold)}
 .back{font-size:.84rem;color:#e1ebe8;font-weight:750;text-decoration:none;padding:12px 0}
 .back:hover{text-decoration:underline}
-.hero{background:radial-gradient(ellipse at 85% 18%,#4c5860 0,transparent 48%),linear-gradient(135deg,#162831,#253c45 68%,#172a32);color:#fff;overflow:hidden;position:relative}
-.hero:before{content:"";position:absolute;inset:0;opacity:.16;background-image:linear-gradient(90deg,transparent 49.7%,#fff 50%,transparent 50.3%);background-size:70px 70px;pointer-events:none}
-.hero-inner{position:relative;display:grid;grid-template-columns:minmax(0,1.07fr) minmax(0,.93fr);gap:42px;align-items:center;padding:75px 0 83px}
+.hero{background:linear-gradient(94deg,rgba(7,27,32,.96),rgba(8,30,36,.81) 49%,rgba(8,30,36,.39)),url("assets/downtown-russellville-sunset.jpg") center 46%/cover no-repeat #162831;color:#fff;overflow:hidden;position:relative;isolation:isolate}
+.hero:before{content:"";position:absolute;inset:0;opacity:.21;background:linear-gradient(90deg,transparent 0,transparent calc(100% - 1px),#edc28b calc(100% - 1px));background-size:25% 100%;pointer-events:none}
+.hero-inner{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:58px;align-items:center;padding:96px 0 116px;min-height:690px;width:min(1230px,calc(100% - 64px))}
 .kicker{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:#f6cb92;font-weight:850;margin:0 0 17px}
-.hero h1{font:700 clamp(3.15rem,6vw,5.4rem)/1.01 Georgia,"Times New Roman",serif;letter-spacing:-.055em;margin:0;max-width:660px}
+.hero h1{font:700 clamp(3.5rem,5.8vw,6.1rem)/1.01 Georgia,"Times New Roman",serif;letter-spacing:-.06em;margin:0;max-width:700px;text-wrap:balance;text-shadow:0 3px 25px #091e2288}
 .hero h1 em{font-weight:400;color:#f3c78b}
 .lead{max-width:570px;color:#e0e9e8;font-size:1.07rem;margin:25px 0 21px}
 .warning{border-left:3px solid var(--gold);padding:8px 0 8px 15px;color:#fff1dd;font-size:.89rem;max-width:560px;margin:0 0 26px}
@@ -35,21 +35,21 @@ a:focus-visible{outline:3px solid #c36a17;outline-offset:4px;border-radius:4px}
 .btn-primary{background:var(--gold);color:#182831}
 .btn-secondary{border:1px solid #b2c7c8;color:#fff}
 .btn:hover{transform:translateY(-2px)}
-.art{border:1px solid #d2e1de3d;border-radius:19px;min-height:335px;position:relative;overflow:hidden;background:linear-gradient(145deg,#3b525c,#1a303b);box-shadow:0 26px 50px #06182052}
+.art{border:1px solid #f1dcbd8a;border-radius:4px 40px 4px 40px;min-height:365px;position:relative;overflow:hidden;background:linear-gradient(145deg,#19353ae8,#0c2735f0);box-shadow:0 27px 80px #06182080;transform:rotate(1.3deg)}
 .art:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 27% 15%,#f1c47d55,transparent 36%),radial-gradient(circle at 76% 18%,#d8e5df38,transparent 35%)}
 .art svg{position:relative;display:block;width:100%;height:auto}
 .art-label{position:absolute;bottom:17px;left:21px;color:#e2ece9;font-size:.67rem;letter-spacing:.18em;text-transform:uppercase;font-weight:850}
 .art-tag{position:absolute;top:17px;right:18px;background:var(--gold);color:#20333b;font-size:.68rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;padding:7px 11px;border-radius:5px}
-.ribbon{background:#e8eee9;border-bottom:1px solid #d0dad5}
-.ribbon-inner{display:flex;flex-wrap:wrap;align-items:center;gap:10px 30px;padding:16px 0;color:#3b555b;font-size:.81rem}
-.ribbon strong{color:#20343b}
+.ribbon{background:#133b3c;border-bottom:1px solid #265655;color:#fff}
+.ribbon-inner{display:flex;flex-wrap:wrap;align-items:center;gap:10px 30px;padding:18px 0;color:#ecf1eb;font-size:.81rem}
+.ribbon strong{color:#f7d8aa}
 .ribbon span:before{content:"/";color:var(--amber);font-weight:900;margin-right:12px}
 main{padding:57px 0 67px}
 .section-top{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:25px}
 .eyebrow{color:#915021;font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;font-weight:900;margin:0 0 9px}
 .section-top h2,.plan h2{font:700 clamp(2.05rem,3.8vw,3rem)/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.04em;margin:0}
 .section-top>p{font-size:.86rem;color:var(--muted);max-width:310px;margin:0}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:21px}
 .card{display:flex;flex-direction:column;min-width:0;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:25px 23px;box-shadow:0 13px 30px #162a330a}
 .card-top{display:flex;align-items:center;justify-content:space-between;gap:9px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:20px}
 .index{font-size:.74rem;font-weight:900;letter-spacing:.18em;color:#6e8185}
@@ -111,6 +111,42 @@ footer a{text-underline-offset:3px}
 @media(max-width:750px){.hero-inner{grid-template-columns:1fr;padding:53px 0 58px}.art{max-width:570px;min-height:0}.art svg{max-height:280px}.grid{grid-template-columns:1fr}.plan{grid-template-columns:1fr;gap:20px}.section-top{display:block}.section-top>p{margin-top:12px}}
 @media(max-width:520px){.wrap{width:min(100% - 30px,1120px)}.header-inner{min-height:65px}.brand{font-size:1.04rem}.back{font-size:.74rem}.hero-inner{padding:43px 0 48px}.hero h1{font-size:clamp(2.7rem,12vw,4rem)}.lead{font-size:1rem}.art{display:none}.card{padding:23px}.actions a{flex:1 1 100%}.plan{padding:22px}.plan ul{grid-template-columns:1fr}main{padding:40px 0 48px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}.btn:hover{transform:none}}
+
+/* Photographic editorial design and purpose-led paths, not inferred inventory. */
+.hero-photo-credit{position:absolute;right:max(22px,calc((100vw - 1230px)/2));bottom:16px;font-size:.67rem;letter-spacing:.035em;color:#e8efec;text-shadow:0 2px 8px #071b20;margin:0;text-align:right}
+.warning{background:#102a2b9c;border-left:4px solid var(--gold);padding:11px 15px;border-radius:0 9px 9px 0;max-width:610px}
+.hero-actions .btn{border-radius:4px 16px 4px 16px}
+.art-tag{border-radius:2px 9px 2px 9px}
+main.wrap{width:min(1230px,calc(100% - 56px))}
+.routes{margin:5px 0 76px}
+.routes-intro{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);align-items:end;gap:42px;margin-bottom:27px}
+.routes-intro h2{font:700 clamp(2.7rem,4.8vw,4.6rem)/1.06 Georgia,"Times New Roman",serif;letter-spacing:-.055em;max-width:750px;margin:0;color:#153a3b;text-wrap:balance}
+.routes-intro h2 em{color:#9f633b;font-weight:400}
+.routes-intro>p{font-size:.95rem;color:#425a5d;max-width:38ch;margin:0 0 5px}
+.route-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.route{position:relative;display:flex;flex-direction:column;overflow:hidden;min-height:345px;padding:28px 28px 24px;border-radius:4px 28px 4px 28px;text-decoration:none;color:#fff;isolation:isolate;transition:transform .2s ease,box-shadow .2s ease;box-shadow:0 13px 30px #0f283120}
+.route:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 90% 15%,#ffffff24,transparent 56%)}
+.route-mobile{background:#1b4247}.route-modular{background:#385c53}.route-local{background:#815337}
+.route:hover{transform:translateY(-5px);box-shadow:0 25px 45px #0f283138}
+.route:focus-visible{outline:4px solid #c46b23;outline-offset:4px}
+.route-number{font-size:.73rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#f9dfb7;position:relative;z-index:1}
+.route-symbol{position:absolute;top:39px;right:20px;width:125px;height:96px;color:#f8d2a2;opacity:.63;pointer-events:none}
+.route-title{font:700 clamp(1.7rem,2.7vw,2.5rem)/1.09 Georgia,"Times New Roman",serif;letter-spacing:-.04em;max-width:11ch;margin-top:103px;position:relative;z-index:1}
+.route-title em{font-weight:400;color:#f8dbaf}
+.route-description{font-size:.85rem;line-height:1.55;color:#f5f4ec;max-width:33ch;margin-top:15px;position:relative;z-index:1}
+.route-link{font-size:.8rem;letter-spacing:.02em;font-weight:800;color:#ffe0b0;border-top:1px solid #ffffff52;margin-top:auto;padding-top:16px;position:relative;z-index:1}
+.route-link span{float:right;font-size:1.15rem;line-height:1}
+.routes-disclaimer{font-size:.77rem;color:#4d6061;margin:13px 0 0}
+.section-top{padding-top:10px}
+.grid>.card{transition:transform .2s ease,box-shadow .2s ease;scroll-margin-top:25px;border-radius:5px 21px 5px 21px}
+.grid>.card:hover{transform:translateY(-3px);box-shadow:0 19px 36px #162a3318}
+.grid>.card-local{grid-column:1/-1;background:linear-gradient(100deg,#f0e9da,#fffefa 67%);border:2px solid #d2bf9a;padding:31px 37px}
+.grid>.card-local h3{font-size:2rem;max-width:32ch}
+.grid>.card-local p:not(.detail){max-width:85ch}
+@media(max-width:980px){.hero-inner{gap:25px;min-height:0}.route-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.route-local{grid-column:1/-1;min-height:275px}.route-local .route-title{max-width:none;margin-top:50px}}
+@media(max-width:750px){.hero-inner{width:min(100% - 42px,620px);padding:68px 0 89px}.hero h1{font-size:clamp(3.45rem,10.5vw,5.2rem)}.hero-photo-credit{left:20px;right:20px;text-align:left;bottom:12px}.routes{margin-bottom:55px}.routes-intro{grid-template-columns:1fr;gap:14px}.route-grid{grid-template-columns:1fr}.route,.route-local{grid-column:auto;min-height:290px}.route-title,.route-local .route-title{margin-top:84px}.grid>.card-local{padding:25px 23px}}
+@media(max-width:520px){main.wrap{width:min(100% - 30px,1230px)}.hero-inner{width:min(100% - 30px,620px);padding:52px 0 80px}.hero h1{font-size:clamp(2.85rem,12vw,4rem)}.route{padding:23px;min-height:300px}.route-symbol{width:112px;right:14px}.grid>.card-local h3{font-size:1.6rem}}
+@media(prefers-reduced-motion:reduce){.route,.grid>.card{transition:none}.route:hover,.grid>.card:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -143,12 +179,40 @@ footer a{text-underline-offset:3px}
 <span class="art-label">A platform for the big moments</span>
 </div>
 </div>
+<p class="hero-photo-credit">Downtown Russellville photograph · Event-stage artwork is illustrative, not listed inventory</p>
 </section>
 <div class="ribbon"><div class="wrap ribbon-inner"><strong>Stage rental essentials</strong><span>6 regional stage providers + 1 local venue</span><span>Regional delivery unconfirmed</span><span>Request a written quote</span></div></div>
 <main class="wrap" id="providers">
+<section class="routes" aria-labelledby="routes-title">
+ <div class="routes-intro"><div><p class="eyebrow">Find the right starting point</p><h2 id="routes-title">An event looks different <em>from every stage.</em></h2></div><p>Explore the right kind of setup first. Portable-stage delivery to Russellville remains unconfirmed; the local Depot Park stage stays at its venue.</p></div>
+ <div class="route-grid">
+  <a class="route route-mobile" href="#mobile-stage">
+   <span class="route-number">01 / Mobile production</span>
+   <svg class="route-symbol" viewBox="0 0 120 92" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 65H106V77H14zM24 65V20H96V65M24 20L60 7L96 20M33 28H87M33 28L44 42L55 28L66 42L77 28L87 42"/><path d="M35 51L44 35L52 51M66 51L75 35L83 51M14 83H106"/></svg>
+   <span class="route-title">Bring the show <em>to the crowd.</em></span>
+   <span class="route-description">Regional production and mobile-stage providers. Confirm exact-address delivery, crews and costs.</span>
+   <span class="route-link">Browse mobile providers <span aria-hidden="true">↗</span></span>
+  </a>
+  <a class="route route-modular" href="#modular-staging">
+   <span class="route-number">02 / Modular platforms</span>
+   <svg class="route-symbol" viewBox="0 0 120 92" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 39L45 23L77 39L45 55zM45 55V76L13 59V39M45 76L77 59V39M77 39L102 27L116 35L88 48M77 59L90 66L116 52V35M102 27V14L89 7L77 15V39"/></svg>
+   <span class="route-title">Build your <em>footprint.</em></span>
+   <span class="route-description">Discuss modular sections, stairs, railings and assembly with a rental supplier.</span>
+   <span class="route-link">Explore modular staging <span aria-hidden="true">↗</span></span>
+  </a>
+  <a class="route route-local" href="#depot-stage">
+   <span class="route-number">03 / Local fixed venue</span>
+   <svg class="route-symbol" viewBox="0 0 120 92" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 76H108M23 70V31H97V70M17 31H103L60 10zM36 46H84V70H36zM44 46V70M76 46V70M31 76V83M89 76V83"/></svg>
+   <span class="route-title">Gather right <em>downtown.</em></span>
+   <span class="route-description">The existing Depot Park stage is part of an on-site rental—not a delivered platform.</span>
+   <span class="route-link">See the Russellville venue <span aria-hidden="true">↗</span></span>
+  </a>
+ </div>
+ <p class="routes-disclaimer">These pathways organize existing listings; they are not availability claims, quotes or booking requests.</p>
+</section>
 <div class="section-top"><div><p class="eyebrow">01 / Find a provider</p><h2>Stage rental options</h2></div><p>Compare delivered stages with a fixed Russellville venue. Confirm availability, event suitability and total charges directly.</p></div>
 <div class="grid">
-<article class="card">
+<article class="card" id="mobile-stage">
 <div class="card-top"><span class="index">PROVIDER 01</span><span class="tag">Delivery unconfirmed</span></div>
 <h3>CWP Productions — Little Rock</h3>
 <p>Officially offers mobile and modular stage rentals for concerts, festivals and corporate events, with optional sound, lighting and video production. Provides crew setup and teardown.</p>
@@ -169,7 +233,7 @@ footer a{text-underline-offset:3px}
 <p class="detail">4206 Division St, North Little Rock, AR 72118 · Russellville delivery UNCONFIRMED</p>
 <div class="actions"><a href="tel:+15017719277" aria-label="Call Rock City Staging at 501-771-9277">Call 501-771-9277</a><a href="https://www.rockcitystaging.com/" target="_blank" rel="noopener noreferrer">Official staging information ↗</a></div>
 </article>
-<article class="card">
+<article class="card" id="modular-staging">
 <div class="card-top"><span class="index">PROVIDER 04</span><span class="tag">Delivery unconfirmed</span></div>
 <h3>Intents Party Rentals — Fayetteville</h3>
 <p>Official rental catalog lists modular staging in 4-by-4-foot and 4-by-8-foot sections, along with stage stairs, guardrails and stage facades. Published item rates are $40 and $80 for the respective stage sections, before sales and rental taxes; prices can change. The operator lists Fort Smith among its regional service destinations but does not specifically confirm Russellville delivery. Ask about stage configuration, transportation, setup, current rates and dates.</p>
@@ -190,7 +254,7 @@ footer a{text-underline-offset:3px}
 <p class="detail">4630 Greene Rd 628, Paragould, AR 72450 · Regional provider; Russellville delivery UNCONFIRMED</p>
 <div class="actions"><a href="mailto:info@upsidesound.com" aria-label="Email Upside Sound at info at upsidesound dot com">Email rental provider ↗</a><a href="https://upsidesound.com/" target="_blank" rel="noopener noreferrer">Official mobile-stage and sound rentals ↗</a></div>
 </article>
-<article class="card">
+<article class="card card-local" id="depot-stage">
 <div class="card-top"><span class="index">LOCAL VENUE 07</span><span class="tag">On-site stage only</span></div>
 <h3>Historic Train Depot — Depot Park Stage (Russellville)</h3>
 <p>Main Street Russellville officially includes access to the existing Depot Park stage with a Depot Park event rental. Published park rental rates are $50 for seven hours or $100 for a full day; these are park-use rates, not a standalone stage rental. The stage stays at the venue: no portable stage, delivery or off-site installation is offered by this listing. Confirm event permits, stage suitability, dates and current total charges directly.</p>
