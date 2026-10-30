@@ -127,6 +127,122 @@ footer{border-top:1px solid var(--line);padding-top:22px;margin-top:33px;color:v
 @media(max-width:850px){.request-studio{grid-template-columns:1fr}.request-intro{padding:31px}.request-route{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}.request-route:before{display:none}.request-route div{padding-left:20px}.request-route div+div{margin-top:0}.request-route div:before{left:0}.request-form{padding:30px}}
 @media(max-width:530px){.request-studio{margin-top:34px;border-radius:19px}.request-intro,.request-form{padding:24px 20px}.request-intro h2{font-size:2.2rem}.request-fields{grid-template-columns:1fr;gap:13px}.request-route{display:block}.request-route div+div{margin-top:16px}.request-actions{align-items:stretch;flex-direction:column}.request-copy,.request-actions a{width:100%;text-align:center}.request-draft textarea{height:188px}}
 
+
+/* 2026-10-29 · Landscape field-guide visual direction.
+   Reference: stayarv.com for immersive local imagery, deep forest palette, and spatial rhythm.
+   Research: Nielsen Norman Group visual hierarchy & aligned scanning; web.dev responsive
+   images and reduced motion; WCAG 2.2 contrast and keyboard focus.
+   Informational listings, telephone numbers, URLs, and inquiry logic untouched. */
+body{background:#f5f3e9;color:#173b32}
+.site-header{background:#0a2822;border-bottom:1px solid #ffffff28}
+.header-inner{max-width:1400px;min-height:92px;padding:16px clamp(22px,4vw,66px)}
+.brand{font-size:clamp(1.25rem,2vw,1.7rem);letter-spacing:-.06em}
+.back{border:1px solid #ffffff6c;border-radius:100px;padding:10px 19px}
+.back:hover{background:#ffffff18;text-decoration:none}
+main{max-width:none;padding:0 0 92px}
+main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margin-right:auto}
+.hero{
+  background:#102f27;min-height:clamp(680px,84svh,940px);border-radius:0 0 38px 38px;
+  padding:clamp(78px,8vw,132px) max(28px,calc((100vw - 1320px)/2));
+  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(24px,4vw,72px);
+  box-shadow:0 22px 65px #102b2540
+}
+.hero-landscape{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center 51%}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#091f1bea 0%,#0b3029db 44%,#082d25ab 75%,#0e3825a3 100%)}
+.hero>div:first-of-type{position:relative;z-index:1;max-width:690px}
+.hero .eyebrow{font-size:.74rem;letter-spacing:.21em;margin-bottom:8px;color:#f1d79b}
+.hero-series{font-size:.68rem;letter-spacing:.16em;font-weight:700;color:#e2e8d5;margin:0 0 clamp(31px,5vw,66px)}
+.hero h1{font:400 clamp(4.6rem,8.9vw,9rem)/.89 Georgia,"Times New Roman",serif;letter-spacing:-.075em;max-width:850px;margin-bottom:34px;text-wrap:balance}
+.hero-copy{font-size:clamp(1.02rem,1.45vw,1.21rem);line-height:1.7;color:#f2f5e9;max-width:49ch;margin-bottom:29px}
+.hero-copy strong{color:#fff}
+.hero-link{border-radius:100px;padding:16px 28px;min-height:55px;box-shadow:0 12px 29px #001f173d}
+.hero-direct{margin:21px 0 0;font-size:.82rem;color:#f2e7cd;letter-spacing:.015em}
+.hero-direct span{padding:0 7px}
+.hero-art{position:relative;z-index:1;width:100%;max-width:640px;justify-self:end;align-self:center;min-height:440px;background:radial-gradient(ellipse at 49% 63%,#e5b87380,transparent 61%);filter:drop-shadow(0 18px 32px #061f1740)}
+.hero-art:before{content:"";position:absolute;inset:15% 10% 5%;border:1px solid #f7e9c36b;border-radius:50%;box-shadow:0 0 0 26px #ffffff0d,0 0 0 61px #ffffff09;pointer-events:none}
+.hero-art svg{position:relative;max-width:640px;filter:drop-shadow(0 35px 30px #021b1470)}
+.quick-facts{position:relative;z-index:2;margin-top:-54px!important;border-radius:24px;box-shadow:0 18px 48px #0d392520;border:1px solid #dbe1d3;gap:0;background:#d9e1d5}
+.quick-fact{padding:26px clamp(18px,3vw,42px);background:#fffdf7}
+.quick-fact:not(:last-child){border-right:1px solid #d9e1d5}
+.quick-fact strong{font:400 clamp(1.24rem,2.2vw,1.7rem)/1.2 Georgia,"Times New Roman",serif;color:#123d32}
+.quick-fact span{margin-top:10px;font-size:.8rem;color:#385a49}
+.jump-deck{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:30px;margin-bottom:54px}
+.jump-deck a{position:relative;display:grid;align-content:space-between;min-height:134px;padding:22px 22px 21px 23px;border:1px solid #d2dccf;border-radius:15px;background:#fffefa;color:#173b32;text-decoration:none;transition:background .2s,transform .2s,border-color .2s}
+.jump-deck a:hover{background:#e8f0e6;border-color:#9cb6a4;transform:translateY(-3px)}
+.jump-deck a:focus-visible{outline:3px solid #9b5c14;outline-offset:4px}
+.jump-index{display:block;color:#4c6c53;font-size:.66rem;font-weight:850;letter-spacing:.14em}
+.jump-deck strong{display:block;max-width:12ch;font:400 clamp(1.12rem,1.8vw,1.45rem)/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.03em;margin-top:13px}
+.jump-arrow{position:absolute;right:19px;bottom:16px;color:#32664e;font-size:1.3rem}
+.delivery-board{border-radius:32px;padding:clamp(28px,5vw,66px)!important;box-shadow:0 26px 60px #123c2d1e}
+.delivery-heading h2{font-size:clamp(2.15rem,4.5vw,3.8rem);line-height:1.06;letter-spacing:-.045em;text-wrap:balance;max-width:19ch}
+.delivery-origin{border-radius:14px}
+.request-studio{margin-top:69px;border-radius:30px}
+.request-intro{background:linear-gradient(135deg,#ecf2df,#f7e9cc)}
+.request-intro h2{font-size:clamp(2.5rem,4vw,4.1rem);line-height:1.04}
+.section-head{margin-top:78px;margin-bottom:27px}
+.section-head h2{font-size:clamp(2.3rem,4.4vw,3.65rem);letter-spacing:-.05em}
+.provider-grid{gap:24px}
+.provider{border-radius:22px;box-shadow:0 20px 45px #173b3210;border:1px solid #d8e3d7;transition:box-shadow .2s,transform .2s}
+.provider:hover{transform:translateY(-3px);box-shadow:0 27px 55px #173b3221}
+.provider-top{background:#183f34;padding:20px 28px;border-bottom-color:#173f34}
+.location{color:#f4e1b6;letter-spacing:.12em}
+.number{font-size:2.3rem;color:#eac788}
+.provider-body{padding:clamp(25px,3vw,39px)}
+.provider h3{font-size:clamp(1.7rem,2.4vw,2.35rem);letter-spacing:-.045em}
+.provider .status{border-left:4px solid #ab7a38}
+.planning{background:#ede5cf;border-radius:27px;margin-top:78px;padding:clamp(30px,4vw,52px)}
+.planning h2{font-size:clamp(2.1rem,3.5vw,3rem)}
+.checklist li{border-color:#dacbb0;border-radius:13px;padding:20px}
+@media(max-width:1000px){
+  .hero{min-height:0;grid-template-columns:1fr;gap:12px;padding:82px 44px 52px}
+  .hero>div:first-of-type{max-width:770px}
+  .hero h1{font-size:clamp(4.6rem,11vw,7.5rem)}
+  .hero-art{max-width:570px;min-height:240px;justify-self:center;align-self:center}
+  .hero-art svg{max-height:335px}
+  .jump-deck{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:650px){
+  .header-inner{min-height:72px;padding:13px 18px}
+  .brand{font-size:1.1rem}
+  .back{padding:9px 13px;font-size:.72rem}
+  main{padding-bottom:52px}
+  main>:not(.hero){width:calc(100% - 32px)}
+  .hero{padding:62px 24px 42px;gap:10px;border-radius:0 0 23px 23px}
+  .hero-series{margin-bottom:34px;font-size:.61rem}
+  .hero .eyebrow{font-size:.66rem}
+  .hero h1{font-size:clamp(3.7rem,15vw,5.5rem);margin-bottom:20px}
+  .hero-copy{font-size:.98rem;line-height:1.65}
+  .hero-art{max-width:420px;min-height:210px;margin-top:8px}
+  .hero-art svg{max-height:270px}
+  .hero-art:before{inset:15% 14%}
+  .hero-direct{font-size:.75rem}
+  .quick-facts{margin-top:-21px!important;border-radius:17px}
+  .quick-fact{padding:15px 18px}
+  .quick-fact:not(:last-child){border-right:0;border-bottom:1px solid #d9e1d5}
+  .quick-fact strong{display:block;font-size:1.24rem}
+  .quick-fact span{display:block;margin:4px 0 0;font-size:.76rem}
+  .jump-deck{grid-template-columns:1fr 1fr;gap:9px;margin-top:22px;margin-bottom:37px}
+  .jump-deck a{min-height:110px;padding:15px}
+  .jump-index{font-size:.58rem}
+  .jump-deck strong{font-size:1.06rem}
+  .jump-arrow{right:13px;bottom:12px}
+  .delivery-board{padding:27px 20px!important}
+  .request-studio{margin-top:38px}
+  .section-head{margin-top:49px}
+  .provider-body{padding:23px}
+  .provider h3{font-size:1.65rem}
+  .planning{margin-top:40px;padding:24px 20px}
+}
+@media(max-width:370px){
+  .jump-deck{grid-template-columns:1fr}
+  .jump-deck a{min-height:95px}
+  .hero h1{font-size:3.45rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .jump-deck a,.provider{transition:none}
+  .jump-deck a:hover,.provider:hover{transform:none}
+}
+
 </style>
 </head>
 <body>
@@ -134,11 +250,14 @@ footer{border-top:1px solid var(--line);padding-top:22px;margin-top:33px;color:v
 <header class="site-header"><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back" href="/">← Browse all rentals</a></div></header>
 <main id="main">
 <section class="hero" aria-labelledby="page-title">
+<img class="hero-landscape" src="assets/lake-dardanelle-sunset.jpg" alt="" width="1920" height="910" fetchpriority="high" decoding="async" aria-hidden="true">
 <div>
 <p class="eyebrow">Russellville, Arkansas · River Valley</p>
+<p class="hero-series">THE RIVER VALLEY / RENTAL FIELD GUIDE</p>
 <h1 id="page-title">Golf cart<br>rentals</h1>
 <p class="hero-copy">Planning an event, venue setup or short-term rental? Compare four Arkansas providers and inquire directly. <strong>All are based outside Russellville; delivery to Russellville is unconfirmed.</strong></p>
 <a class="hero-link" href="#providers">Explore rental providers ↓</a>
+<p class="hero-direct">Four Arkansas providers <span aria-hidden="true">·</span> Contact operators directly</p>
 </div>
 <div class="hero-art" aria-hidden="true">
 <svg viewBox="0 0 530 330" xmlns="http://www.w3.org/2000/svg" focusable="false">
@@ -177,7 +296,14 @@ footer{border-top:1px solid var(--line);padding-top:22px;margin-top:33px;color:v
 <div class="quick-fact"><strong>Delivery unconfirmed</strong><span>Ask before making plans</span></div>
 </div>
 
-<section class="delivery-board" aria-labelledby="delivery-title">
+<nav class="jump-deck" aria-label="Explore this golf cart rental guide">
+<a href="#delivery"><span class="jump-index">01 / SERVICE</span><strong>Check delivery</strong><span class="jump-arrow" aria-hidden="true">↗</span></a>
+<a href="#request-title"><span class="jump-index">02 / INQUIRY</span><strong>Prepare your request</strong><span class="jump-arrow" aria-hidden="true">↗</span></a>
+<a href="#providers"><span class="jump-index">03 / PROVIDERS</span><strong>Compare options</strong><span class="jump-arrow" aria-hidden="true">↗</span></a>
+<a href="#before-you-reserve"><span class="jump-index">04 / CHECKLIST</span><strong>Confirm the terms</strong><span class="jump-arrow" aria-hidden="true">↗</span></a>
+</nav>
+
+<section class="delivery-board" id="delivery" aria-labelledby="delivery-title">
 <div class="delivery-heading"><div><p class="eyebrow">Delivery first · Four inquiry paths</p><h2 id="delivery-title">Start with the service-area question.</h2><p>These four providers are outside Russellville. Before choosing a cart, ask whether delivery or pickup works for your location. Select a starting point to jump to its provider contact.</p></div><span class="delivery-flag">Russellville delivery unconfirmed</span></div>
 <div class="delivery-diagram">
 <nav class="delivery-origins" aria-label="Jump to golf cart rental providers">
@@ -264,7 +390,7 @@ footer{border-top:1px solid var(--line);padding-top:22px;margin-top:33px;color:v
 </article>
 </div>
 </section>
-<section class="planning" aria-labelledby="planning-title">
+<section class="planning" id="before-you-reserve" aria-labelledby="planning-title">
 <div><p class="eyebrow">Before you reserve</p><h2 id="planning-title">Four things to confirm</h2><p>Ask these questions before paying or arranging an event around a golf cart rental.</p></div>
 <ol class="checklist"><li>Can you deliver to Russellville or is pickup required?</li><li>Which models and quantities are available for my dates?</li><li>What are the rental price, transport fees and deposit?</li><li>What insurance, driver and return terms apply?</li></ol>
 </section>
