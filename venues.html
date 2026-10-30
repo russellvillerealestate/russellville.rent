@@ -134,8 +134,61 @@ footer{font-size:.82rem;color:var(--muted);margin:35px 0 45px}
 @media(max-width:750px){.venue-notebook{margin:19px 0 0;padding:24px 20px}.notebook-list{grid-template-columns:1fr}.notebook-count{min-width:67px;min-height:67px}}
 @media(max-width:450px){.notebook-header{align-items:start}.notebook-count{min-width:58px;min-height:58px}.notebook-count strong{font-size:1.6rem}.notebook-count span{font-size:.56rem}.notebook-item-actions button{min-height:44px}}
 
+
+/* Cinematic local venue explorer: immersive StayARV-inspired image and existing event filters.
+   NN/g information scent; web.dev responsive images; WCAG 2.2 focus & target sizes. */
+.venue-hero{min-height:640px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(290px,.9fr);gap:clamp(27px,5vw,65px);align-items:center;padding:clamp(45px,6vw,78px) clamp(28px,5vw,70px) 75px;background:#0b2b25;border-radius:0 0 28px 28px}
+.venue-hero-photo{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 54%;pointer-events:none}
+.venue-hero:before{z-index:-1;background:linear-gradient(90deg,#09231fe9 0%,#0c3129df 42%,#123f3488 72%,#081d19c4 100%)}
+.venue-hero:after{content:none}
+.venue-hero-story{position:relative;min-width:0}
+.venue-hero h1{font-size:clamp(3.45rem,6.2vw,6.5rem);line-height:1.01;letter-spacing:-.064em;max-width:12ch}
+.venue-hero h1 em{color:#ffdf9e}
+.venue-hero .eyebrow{margin-bottom:23px;font-size:.69rem;color:#f3d59e}
+.venue-hero .hero-intro{font-size:clamp(1rem,1.35vw,1.16rem);line-height:1.75;max-width:50ch;color:#f1f5ed}
+.hero-main-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:24px;margin-top:27px;padding:13px 23px;min-height:54px;border-radius:10px;background:#f4d294;color:#163b2e;text-decoration:none;font-size:.88rem;font-weight:850;transition:background .2s,transform .2s}
+.hero-main-cta:hover{background:#ffe2a9;transform:translateY(-2px)}
+.hero-main-cta:focus-visible,.hero-path:focus-visible{outline:3px solid #ffe9b5;outline-offset:4px}
+.hero-paths{position:relative;min-width:0;padding:clamp(22px,3vw,34px);border-radius:22px;border:1px solid #f4dfbb92;background:#fffdf3ed;color:#173e30;box-shadow:0 24px 65px #001b1888;backdrop-filter:blur(9px)}
+.hero-paths-kicker{font-size:.68rem;letter-spacing:.17em;text-transform:uppercase;color:#8b6134;font-weight:900;margin:0 0 7px}
+.hero-paths-title{font:400 clamp(1.8rem,2.8vw,2.35rem)/1.12 Georgia,serif;letter-spacing:-.05em;margin:0 0 23px}
+.hero-path{display:grid;grid-template-columns:34px minmax(0,1fr) 20px;gap:12px;align-items:center;min-height:83px;padding:14px 0;text-decoration:none;border-top:1px solid #d5dfd1;color:#1c4938;transition:background .2s,padding .2s}
+.hero-path:hover{padding-left:9px;background:#eaf2e7}
+.hero-path-index{display:grid;place-items:center;width:34px;height:34px;border:1px solid #b1c5b7;border-radius:50%;font-size:.7rem;font-weight:800;color:#476c52}
+.hero-path-copy strong,.hero-path-copy small{display:block}
+.hero-path-copy strong{font-size:.97rem;line-height:1.3}
+.hero-path-copy small{color:#536b5b;font-size:.77rem;margin-top:4px;line-height:1.42}
+.hero-path-arrow{color:#8c653e;font-size:1.2rem}
+.hero-paths-foot{font-size:.73rem;line-height:1.6;color:#5a6b5b;margin:18px 0 0}
+.hero-photo-caption{position:absolute;left:clamp(28px,5vw,70px);bottom:20px;font-size:.68rem;letter-spacing:.03em;color:#eff4e7;margin:0}
+.finder{margin-top:-30px;padding:clamp(22px,3vw,34px);box-shadow:0 24px 52px #153b3028}
+.occasion-explorer{padding-top:25px;margin-top:25px}
+.occasion-choices{gap:12px}
+.finder .occasion-choices button{min-height:78px;padding:14px;border-radius:15px;background:#f4f8f1}
+.occasion-name{font-size:.87rem;line-height:1.3}
+.occasion-index{width:34px;height:34px;flex-basis:34px;border-radius:10px}
+.occasion-total{min-width:30px;min-height:30px}
+@media(max-width:960px){.venue-hero{grid-template-columns:minmax(0,1fr) minmax(260px,.9fr);gap:24px;min-height:590px;padding:55px 35px 65px}.venue-hero h1{font-size:clamp(3.3rem,6.5vw,5.3rem)}.hero-photo-caption{left:35px}.hero-paths{padding:23px}}
+@media(max-width:740px){.venue-hero{grid-template-columns:1fr;gap:28px;min-height:0;padding:50px 28px 58px}.venue-hero:before{background:linear-gradient(180deg,#0b2e29ee,#0b352dc4 57%,#0b2a23e6)}.venue-hero h1{font-size:clamp(3.1rem,11vw,5.2rem)}.hero-paths{max-width:560px;width:100%}.hero-photo-caption{position:static;grid-column:1}.finder{margin:-15px 8px 0}.occasion-choices{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.venue-hero{padding:41px 22px 32px;border-radius:0 0 20px 20px}.venue-hero h1{font-size:clamp(3rem,12vw,4.4rem)}.venue-hero .eyebrow{font-size:.65rem}.venue-hero .hero-intro{font-size:.96rem;margin-top:18px}.hero-main-cta{width:100%;margin-top:19px}.hero-paths{padding:22px 19px;border-radius:16px}.hero-paths-title{font-size:1.9rem}.hero-path{grid-template-columns:30px minmax(0,1fr) 16px;gap:9px;padding:13px 0}.hero-path-index{width:30px;height:30px}.hero-path-copy strong{font-size:.88rem}.hero-path-copy small{font-size:.72rem}.finder{padding:20px 15px}.finder .occasion-choices button{min-height:72px;padding:12px 10px;gap:8px}.occasion-name{font-size:.81rem}.occasion-total{min-width:25px;min-height:25px}}
+@media(prefers-reduced-motion:reduce){.hero-main-cta,.hero-path{transition:none}.hero-main-cta:hover{transform:none}}
 </style></head><body><a class="skip-link" href="#venues">Skip to venue listings</a><header><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back-link" href="/">← All rental categories</a></div></header><main>
-<section class="venue-hero" aria-labelledby="page-title"><div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Spaces to <em>come together.</em></h1><p class="hero-intro">Find a place for the moments that matter—from community meetings to celebrations, parties and gatherings. Explore local venues and connect directly with each provider.</p></div><div class="hero-stamp" aria-hidden="true"><div><span>THE RIVER VALLEY</span>Gather<br>here. ✳</div></div></section>
+<section class="venue-hero" aria-labelledby="page-title">
+<img class="venue-hero-photo" src="assets/downtown-russellville-sunset.jpg" alt="" fetchpriority="high" decoding="async">
+<div class="venue-hero-story">
+<p class="eyebrow">The River Valley gathering guide / Russellville, Arkansas</p>
+<h1 id="page-title">Spaces to <em>come together.</em></h1>
+<p class="hero-intro">Find a place for the moments that matter—from community meetings to celebrations, parties and gatherings. Explore local venues and connect directly with each provider.</p>
+<a class="hero-main-cta" href="#venue-search">Explore all event spaces <span aria-hidden="true">↗</span></a>
+</div>
+<nav class="hero-paths" aria-label="Choose an event space by occasion">
+<p class="hero-paths-kicker">Find your kind of space</p><p class="hero-paths-title">Start with the occasion.</p>
+<a class="hero-path" href="#venue-occasions" data-venue-shortcut="celebrations"><span class="hero-path-index" aria-hidden="true">01</span><span class="hero-path-copy"><strong>Celebrate together</strong><small>Weddings, birthdays &amp; gatherings</small></span><span class="hero-path-arrow" aria-hidden="true">↗</span></a>
+<a class="hero-path" href="#venue-occasions" data-venue-shortcut="meetings"><span class="hero-path-index" aria-hidden="true">02</span><span class="hero-path-copy"><strong>Meet &amp; make plans</strong><small>Meetings, workshops &amp; events</small></span><span class="hero-path-arrow" aria-hidden="true">↗</span></a>
+<a class="hero-path" href="#venue-occasions" data-venue-shortcut="outdoors"><span class="hero-path-index" aria-hidden="true">03</span><span class="hero-path-copy"><strong>Gather outside</strong><small>Parks, shelters &amp; open-air venues</small></span><span class="hero-path-arrow" aria-hidden="true">↗</span></a>
+<p class="hero-paths-foot">Browse published venue information. Dates and availability must be confirmed directly.</p></nav>
+<p class="hero-photo-caption">Downtown Russellville · Scenic photograph, not a listed venue</p>
+</section>
 <section class="finder" aria-label="Find a venue"><div class="finder-head"><label for="venue-search">Search event spaces</label><p class="finder-hint">Try “wedding”, “meeting”, “Dardanelle”, or a venue name.</p></div><div class="finder-row"><input id="venue-search" type="search" autocomplete="off" placeholder="Search venues, locations, amenities…" aria-controls="venue-grid"><button id="venue-clear" type="button">Clear search</button></div>
 <div class="occasion-explorer" aria-label="Browse venues by occasion">
   <div class="occasion-heading"><strong>Explore by occasion</strong><span>Choose a type, then refine with search.</span></div>
@@ -364,5 +417,22 @@ filterVenues();
   render();
 })();
 
+</script>
+<script>
+/* Anchor fallback works without JavaScript; when available, reuse the existing filters. */
+(() => {
+  document.querySelectorAll("[data-venue-shortcut]").forEach(shortcut => {
+    shortcut.addEventListener("click", event => {
+      const existing = document.querySelector('#venue-occasions button[data-occasion="' + shortcut.dataset.venueShortcut + '"]');
+      if (!existing) return;
+      event.preventDefault();
+      existing.click();
+      const heading = document.getElementById("venues-title");
+      heading.setAttribute("tabindex", "-1");
+      heading.focus({preventScroll:true});
+      document.getElementById("venues").scrollIntoView({behavior:"auto",block:"start"});
+    });
+  });
+})();
 </script>
 </body></html>
