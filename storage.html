@@ -160,13 +160,104 @@ main#main{padding:0 16px 54px!important}
 @media(max-width:340px){.storage-location-rail{grid-template-columns:1fr}.storage-city{min-height:94px}}
 @media(prefers-reduced-motion:reduce){.storage-city{transition:none}.storage-city:hover{transform:none}}
 </style>
+
+<style id="storage-landmark-editorial">
+/* StayARV-inspired photo-led chapter. The actual local landmark image is decorative,
+   deliberately separated from verified provider/unit content. */
+.storage-hero{
+  display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+  align-items:stretch;gap:0;min-height:540px;margin-top:25px;padding:0;
+  border-radius:27px;background:#103229;
+  box-shadow:0 22px 46px #0d34272e;
+}
+.storage-hero::after{display:none}
+.storage-hero-content{
+  align-self:center;max-width:none;min-width:0;
+  padding:clamp(38px,5vw,70px) clamp(28px,4vw,55px) clamp(40px,5vw,69px) clamp(38px,5vw,68px);
+}
+.storage-hero .storage-eyebrow{color:#f3d392;letter-spacing:.18em;margin-bottom:20px}
+.storage-hero h1{font-size:clamp(3.05rem,5.6vw,5.6rem)!important;max-width:10ch;line-height:1.02!important;margin-bottom:23px!important}
+.storage-hero-copy{max-width:44ch;color:#ecf3ec;font-size:clamp(1rem,1.5vw,1.13rem);line-height:1.68;margin-bottom:22px}
+.storage-hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:0 0 27px}
+.storage-hero-primary{
+  display:inline-flex;align-items:center;justify-content:center;gap:15px;min-height:51px;
+  padding:11px 20px;border-radius:999px;background:#f0c980;border:2px solid #f0c980;
+  color:#11382b;text-decoration:none;font-size:.87rem;font-weight:850;
+  box-shadow:0 7px 18px #031b1340;transition:background .2s ease,transform .2s ease;
+}
+.storage-hero-primary:hover{background:#ffdda0;transform:translateY(-2px)}
+.storage-hero-primary:focus-visible{outline:3px solid white;outline-offset:4px}
+.storage-hero-actions p{margin:0;max-width:23ch;font-size:.75rem;line-height:1.5;color:#e0eee0}
+.storage-hero-meta{border-top:1px solid #f2e9d241;padding-top:20px;gap:13px}
+.storage-hero-meta strong{flex:0 0 47px;width:47px;height:47px;background:#e6c783;border:0;color:#133b2e}
+.storage-hero-meta span{max-width:25ch;line-height:1.4}
+.storage-hero-showcase{
+  position:relative;min-width:0;min-height:540px;overflow:hidden;
+  background:linear-gradient(180deg,#07281a12 0%,#0d35201a 45%,#0a2c24af 100%),
+    url("/water%20tower.jpg") 35% 48% / cover no-repeat;
+  border-left:1px solid #ffffff3d;
+}
+.storage-hero-showcase::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  box-shadow:inset 0 0 45px #08261c37;
+}
+.storage-landmark-caption{
+  position:absolute;top:20px;left:20px;right:20px;z-index:2;display:block;width:fit-content;
+  max-width:calc(100% - 40px);background:#10352bdc;border:1px solid #ffffff61;
+  color:#fdf7e8;padding:10px 13px;border-radius:10px;
+  font-size:.67rem;line-height:1.5;letter-spacing:.015em;font-weight:750;
+  box-shadow:0 6px 15px #051d1748;
+}
+.storage-hero-art{
+  position:absolute;bottom:29px;right:25px;z-index:1;min-width:0;
+  width:min(63%,265px);max-width:none;margin:0;
+  padding:9px 13px 13px;border:1px solid #e4d3a280;border-radius:17px;
+  background:linear-gradient(140deg,#133c30f0,#0b2a24ea);
+  box-shadow:0 15px 30px #021b146b;transform:rotate(-4deg);
+}
+.storage-hero-art svg{width:100%;height:auto;filter:drop-shadow(0 8px 11px #061c186b)}
+.storage-art-caption{color:#f6d99b;font-size:.62rem;margin:0 0 3px}
+.storage-finder{margin-top:-25px}
+@media(max-width:950px){
+ .storage-hero{grid-template-columns:minmax(0,1.1fr) minmax(275px,.9fr);min-height:480px}
+ .storage-hero-showcase{min-height:480px}
+ .storage-hero-content{padding:39px 30px}
+ .storage-hero h1{font-size:clamp(3rem,6vw,4.5rem)!important}
+ .storage-hero-actions p{max-width:37ch}
+}
+@media(max-width:690px){
+ .storage-hero{display:flex;flex-direction:column;min-height:0;border-radius:20px}
+ .storage-hero-content{padding:39px 27px 32px}
+ .storage-hero h1{font-size:clamp(2.85rem,10vw,4.6rem)!important;max-width:11ch}
+ .storage-hero-copy{margin-bottom:22px}
+ .storage-hero-showcase{min-height:275px;border-left:0;border-top:1px solid #ffffff48;background-position:37% 36%}
+ .storage-hero-art{width:170px;right:17px;bottom:13px;padding:4px 8px 8px}
+ .storage-art-caption{font-size:.52rem}
+ .storage-landmark-caption{top:13px;left:13px;right:13px;max-width:calc(100% - 26px);font-size:.61rem;padding:8px 10px}
+ .storage-finder{margin:-19px 8px 26px}
+}
+@media(max-width:380px){
+ .storage-hero-content{padding:34px 22px 29px}
+ .storage-hero h1{font-size:2.8rem!important}
+ .storage-hero-actions{gap:11px}
+ .storage-hero-actions p{max-width:100%}
+ .storage-hero-showcase{min-height:245px}
+ .storage-hero-art{width:147px}
+}
+@media(prefers-reduced-motion:reduce){
+ .storage-hero-primary{transition:none}
+ .storage-hero-primary:hover{transform:none}
+}
+</style>
 </head><body><a class="storage-skip" href="#storage-grid">Skip to storage providers</a><header class="storage-topbar"><div class="storage-topbar-inner"><a class="storage-brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="storage-back" href="/">← All rental categories</a></div></header><main id="main"><section class="storage-hero" aria-labelledby="storage-title">
 <div class="storage-hero-content">
 <p class="storage-eyebrow">Russellville · Arkansas River Valley</p>
 <h1 id="storage-title">Room for what<br>comes next.</h1>
 <p class="storage-hero-copy">Explore self-storage, climate-controlled units, and parking for boats and recreational vehicles. Compare local providers, then confirm rates and availability directly.</p>
+<div class="storage-hero-actions"><a class="storage-hero-primary" href="#storage-grid">Explore storage providers <span aria-hidden="true">↗</span></a><p>Browse the directory, or use the filters below to narrow by storage type and town.</p></div>
 <div class="storage-hero-meta"><strong>19</strong><span>Storage providers in and around Russellville</span></div>
 </div>
+<div class="storage-hero-showcase"><span class="storage-landmark-caption">The I ♥ Russellville water tower <span aria-hidden="true">·</span> Local scenery, not a storage facility</span>
 <div class="storage-hero-art" aria-hidden="true">
 <svg viewBox="0 0 480 345" xmlns="http://www.w3.org/2000/svg" focusable="false">
 <defs><linearGradient id="storage-unit" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0d6a1"/><stop offset="1" stop-color="#c69a62"/></linearGradient><linearGradient id="storage-side" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8eac9b"/><stop offset="1" stop-color="#467463"/></linearGradient></defs>
@@ -188,7 +279,7 @@ main#main{padding:0 16px 54px!important}
 <path d="M70 89h49M82 80v18M388 98h43M410 76v43" stroke="#e8c78a" stroke-width="2" opacity=".7"/>
 </svg>
 <span class="storage-art-caption">Space for every next chapter</span>
-</div>
+</div></div>
 </section><section class="storage-finder" id="storage-finder" aria-labelledby="storage-finder-title" hidden><div class="storage-finder-top"><div><h2 id="storage-finder-title">Find the right space</h2><p class="storage-finder-intro">Search providers or narrow by advertised storage options.</p></div><button type="button" class="storage-reset" id="storage-reset">Reset filters</button></div><form id="storage-search-form" role="search"><label class="storage-search-label" for="storage-search">Search by name, location, or feature</label><input class="storage-search" id="storage-search" type="search" autocomplete="off" placeholder="Try “boat”, “Main Street”, or “24-hour”"></form><fieldset class="storage-filter-fieldset"><legend>Choose your storage need</legend>
 <p class="storage-filter-hint">Browse by advertised storage type. Inventory and availability are not guaranteed.</p>
 <div class="storage-filter-list" role="group" aria-label="Storage type">
