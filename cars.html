@@ -161,6 +161,45 @@ footer a{font-weight:700}
 @media(max-width:830px){.trip-intro{display:block}.trip-intro>p{max-width:580px;margin-top:12px}.trip-layout{grid-template-columns:1fr}}
 @media(max-width:470px){.trip-studio{padding:18px;border-radius:17px}.trip-form,.trip-preview{padding:16px}.trip-reasons{grid-template-columns:1fr}.trip-reasons span{min-height:48px;padding:12px 12px 12px 38px;align-items:center}.trip-reasons input{top:15px}.trip-dates{grid-template-columns:1fr}.trip-intro h2{font-size:2.25rem}}
 
+
+/* Scenic car-rental wayfinding: the River Valley backdrop is decorative, not a vehicle listing. */
+.hero{border-radius:0 0 32px 32px;background:#102f2b}
+.hero:before{background:linear-gradient(100deg,rgba(8,30,28,.96) 0%,rgba(10,36,32,.91) 34%,rgba(10,36,32,.68) 63%,rgba(9,32,31,.38) 100%),url("/assets/downtown-russellville-sunset.jpg") center 54%/cover no-repeat}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#102f2b 0%,transparent 44%);z-index:-1;pointer-events:none}
+.hero-inner{min-height:620px;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(12px,4vw,60px);padding-block:85px 105px}
+.hero-copy-block{position:relative;z-index:1}
+.hero h1{font-size:clamp(4.3rem,7.25vw,7.35rem);max-width:820px;letter-spacing:-.075em}
+.hero h1 em{color:#f4d99a}
+.hero-copy{max-width:500px;font-size:clamp(1.05rem,1.7vw,1.21rem);line-height:1.72;text-shadow:0 2px 12px #071a17bb}
+.hero-art{align-self:center;min-height:380px}
+.hero-art:before{width:min(32vw,410px);height:min(32vw,410px);background:#1d4a3b45;backdrop-filter:blur(2px);border-color:#f0ca796a}
+.hero-art svg{max-width:550px;filter:drop-shadow(0 28px 26px #061a16dd)}
+.route-label{right:5px;bottom:2px;background:#102f2be8;padding:11px 17px;border-color:#e6d2a782}
+.scenic-caption{position:absolute;left:0;bottom:21px;font-size:.66rem;color:#f0e8d6;letter-spacing:.075em;text-transform:uppercase;font-weight:750;text-shadow:0 2px 8px #03110f}
+.journey{position:relative;z-index:2;margin:-49px 0 10px;padding:clamp(22px,3.7vw,42px);border-radius:27px;background:#fbfaf5;border:1px solid #e0e1d5;box-shadow:0 18px 48px #112f2930}
+.journey-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:22px}
+.journey-head .eyebrow{color:#416a54;margin-bottom:8px}
+.journey-head h2{font:400 clamp(2.1rem,4vw,3.6rem)/1.07 Georgia,"Times New Roman",serif;letter-spacing:-.055em;color:var(--pine);margin:0;text-wrap:balance}
+.journey-head>p{max-width:360px;color:#506558;font-size:.9rem;line-height:1.6;margin:0}
+.journey-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.journey-card{isolation:isolate;position:relative;display:flex;flex-direction:column;gap:8px;min-height:243px;overflow:hidden;border-radius:17px;padding:23px 24px;color:#173c31;background:#e1eee1;text-decoration:none;border:1px solid #c9d8c9;transition:transform .22s ease,box-shadow .22s ease}
+.journey-card:nth-child(2){background:#f3e7d1;border-color:#e5d4b6;color:#63412d}
+.journey-card:nth-child(3){background:#dfebed;border-color:#c3d9de;color:#254f57}
+.journey-card:before{content:"";position:absolute;z-index:-1;width:240px;height:240px;right:-113px;top:-100px;border:2px solid currentColor;opacity:.11;border-radius:50%;box-shadow:0 0 0 29px #ffffff66,0 0 0 55px #ffffff44}
+.journey-card:hover{transform:translateY(-5px);box-shadow:0 15px 25px #233c2d1f}
+.journey-card:focus-visible{outline:3px solid #a3650b;outline-offset:4px}
+.journey-index{font-size:.67rem;letter-spacing:.14em;font-weight:850;text-transform:uppercase;opacity:.85}
+.journey-icon{margin:12px 0 8px;display:grid;place-items:center;width:47px;height:47px;border:1px solid currentColor;border-radius:50%;font:400 1.5rem Georgia,serif;opacity:.82}
+.journey-title{display:block;max-width:250px;font:400 clamp(1.65rem,2.2vw,2.15rem)/1.09 Georgia,"Times New Roman",serif;letter-spacing:-.045em;margin-top:auto}
+.journey-description{font-size:.78rem;line-height:1.48;max-width:260px}
+.journey-action{display:inline-flex;align-items:center;gap:9px;margin-top:12px;font-size:.77rem;font-weight:850;text-decoration:underline;text-underline-offset:5px}
+.journey-note{font-size:.75rem;color:#607061;margin:15px 2px 0}
+.intro-strip{margin-bottom:5px}
+@media(max-width:900px){.hero-inner{min-height:540px;padding-block:65px 91px}.hero h1{font-size:clamp(3.65rem,7vw,5.5rem)}.hero-art{min-height:300px}.journey-card{padding:19px;min-height:240px}.journey-head>p{max-width:300px}}
+@media(max-width:700px){.hero-inner{grid-template-columns:1fr;min-height:auto;gap:0;padding:53px 0 90px}.hero h1{font-size:clamp(3.9rem,12vw,5.5rem)}.hero-art{max-width:460px;width:100%;min-height:230px;margin:16px auto 4px}.hero-art:before{width:240px;height:240px}.hero-art svg{max-width:370px}.route-label{bottom:0}.scenic-caption{bottom:55px;font-size:.58rem}.journey{margin:-44px 0 10px}.journey-head{display:block}.journey-head>p{margin-top:12px;max-width:600px}.journey-grid{grid-template-columns:1fr}.journey-card{min-height:0;padding:18px 22px;display:grid;grid-template-columns:47px 1fr;column-gap:16px;align-items:center}.journey-index{grid-column:1/-1}.journey-icon{grid-column:1;grid-row:2/5;margin:0}.journey-title,.journey-description,.journey-action{grid-column:2;margin:0}.journey-title{max-width:none;font-size:1.75rem}.journey-action{margin-top:7px}.journey-card:before{right:-150px}}
+@media(max-width:390px){.hero h1{font-size:3.35rem}.journey{padding:18px}.journey-card{grid-template-columns:40px minmax(0,1fr);column-gap:12px;padding:18px 15px}.journey-icon{width:39px;height:39px}.journey-title{font-size:1.55rem}}
+@media(prefers-reduced-motion:reduce){.journey-card{transition:none}.journey-card:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -196,10 +235,20 @@ footer a{font-weight:700}
         <path d="M121 150L143 138M105 167L125 156M448 135L467 146" stroke="#f0ca79" stroke-opacity=".55" stroke-width="4" stroke-linecap="round"/>
       </svg>
       <span class="route-label">Local roads · Local options</span>
+      <span class="scenic-caption">Russellville skyline · Scenic photo, not a rental vehicle</span>
     </div>
   </div>
 </div>
 <main id="main" class="wrap">
+  <section class="journey" aria-labelledby="journey-title">
+    <div class="journey-head"><div><p class="eyebrow">The River Valley road guide / 01</p><h2 id="journey-title">What brings you<br>behind the wheel?</h2></div><p>Choose what best describes your trip. We'll bring that purpose into a ready-to-copy rental inquiry—or you can browse the providers directly.</p></div>
+    <div class="journey-grid">
+      <a class="journey-card" href="#providers-title" data-trip-reason="a local trip"><span class="journey-index">01 / Around town</span><span class="journey-icon" aria-hidden="true">↗</span><strong class="journey-title">Everyday miles.</strong><span class="journey-description">Getting around Russellville and the River Valley.</span><span class="journey-action">Prepare an inquiry <span aria-hidden="true">↗</span></span></a>
+      <a class="journey-card" href="#providers-title" data-trip-reason="an out-of-town trip"><span class="journey-index">02 / On the road</span><span class="journey-icon" aria-hidden="true">→</span><strong class="journey-title">A longer way out.</strong><span class="journey-description">A weekend trip, a visit, or miles beyond town.</span><span class="journey-action">Prepare an inquiry <span aria-hidden="true">↗</span></span></a>
+      <a class="journey-card" href="#providers-title" data-trip-reason="temporary transportation while my own vehicle is unavailable"><span class="journey-index">03 / In between</span><span class="journey-icon" aria-hidden="true">✳</span><strong class="journey-title">Keep life moving.</strong><span class="journey-description">Transportation while your own vehicle is unavailable.</span><span class="journey-action">Prepare an inquiry <span aria-hidden="true">↗</span></span></a>
+    </div>
+    <p class="journey-note">These are planning shortcuts, not vehicle availability, eligibility or booking confirmations. You contact each provider directly.</p>
+  </section>
   <div class="intro-strip"><strong>Three rental providers serving Russellville</strong><span>Compare local contacts and ask each provider about current vehicles, availability, rates, insurance, and pickup arrangements.</span></div>
 
   <section class="compare-board" aria-labelledby="compare-title">
@@ -323,6 +372,13 @@ footer a{font-weight:700}
   });
   studio.hidden = false;
   render();
+  document.querySelectorAll('[data-trip-reason]').forEach(link => {
+    link.setAttribute('href', '#trip-studio');
+    link.addEventListener('click', () => {
+      const match = Array.from(form.querySelectorAll('input[name="trip-reason"]')).find(input => input.value === link.dataset.tripReason);
+      if (match) { match.checked = true; render(); }
+    });
+  });
 })();
 </script>
 </body>
