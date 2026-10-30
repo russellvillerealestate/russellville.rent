@@ -96,11 +96,102 @@ footer{margin-top:35px;padding:22px 0;border-top:1px solid var(--line);font-size
 @media(max-width:410px){.quote-stamp{display:none}.quote-estimator{padding:20px}.quote-options button{flex:1 1 27%}}
 @media(prefers-reduced-motion:reduce){.quote-options button{transition:none}.quote-options button:hover{transform:none}}
 
+
+/* Scenic golf discovery — hometown photography with a clear, three-path editorial entry.
+   Design basis: StayARV immersive hero; NN/g information scent; web.dev responsive visuals;
+   WCAG 2.2 focus, pointer targets, reduced-motion and readable text contrast. */
+.hero{
+  min-height:590px;
+  grid-template-columns:minmax(0,1.15fr) minmax(250px,.85fr);
+  align-items:center;
+  gap:clamp(20px,4.5vw,64px);
+  padding:clamp(36px,6.3vw,77px);
+  border:1px solid #d8e5d522;
+  border-radius:29px;
+  background:
+    linear-gradient(93deg,rgba(6,28,25,.98) 0%,rgba(10,35,29,.92) 37%,rgba(14,47,37,.69) 69%,rgba(13,43,33,.37) 100%),
+    url("assets/downtown-russellville-sunset.jpg") center 53%/cover no-repeat;
+  box-shadow:0 30px 65px #173a3050;
+}
+.hero:before{
+  inset:0;opacity:.6;
+  background:radial-gradient(ellipse at 83% 15%,#e8b86825,transparent 58%);
+  mask-image:none;
+}
+.hero:after{
+  content:"";position:absolute;z-index:-1;pointer-events:none;
+  inset:16px;border:1px solid #ffffff28;border-radius:19px;
+}
+.hero .eyebrow{font-size:.76rem;letter-spacing:.19em;color:#f2d99c}
+.hero h1{font-size:clamp(3.5rem,6.4vw,6.1rem);line-height:.98;letter-spacing:-.068em;max-width:700px;margin-bottom:26px;text-wrap:balance}
+.hero h1 em{font-weight:400;color:#f1d99d}
+.hero p.intro{font-size:clamp(.98rem,1.4vw,1.13rem);max-width:61ch;line-height:1.8;color:#f0f4ea}
+.hero-actions a:first-child{background:#f1d89b;color:#183b2e}
+.hero-actions a:first-child:hover{background:#ffe8ac}
+.hero-actions a:last-child{border-color:#e2efdd8c;background:#f0f6eb1a}
+.hero-art{
+  position:relative;align-self:center;
+  padding:clamp(13px,2.4vw,24px) clamp(8px,1.5vw,17px) 14px;
+  border:1px solid #ffffff4d;border-radius:23px;
+  background:linear-gradient(145deg,#e4f0d720,#123b2b75 90%);
+  backdrop-filter:blur(2px);
+  box-shadow:0 24px 60px #061c1d75,inset 0 1px #ffffff44;
+  transform:rotate(1.5deg);
+}
+.hero-art svg{max-width:485px;filter:drop-shadow(0 15px 20px #051d1c70)}
+.hero-art:after{
+  content:"PLAY YOUR WAY  /  RIVER VALLEY";
+  display:block;padding:6px 4px 1px;text-align:center;
+  color:#e4ebda;font-size:.61rem;font-weight:850;letter-spacing:.17em;
+}
+.hero-facts{display:flex;flex-wrap:wrap;gap:10px 21px;margin-top:31px;color:#eef5e6;font-size:.77rem;font-weight:730}
+.hero-facts span{display:inline-flex;align-items:center;gap:9px}
+.hero-facts b{display:grid;place-items:center;flex:none;width:30px;height:30px;border:1px solid #d4e8b18c;border-radius:50%;font-size:.64rem;color:#f2d89f}
+.choice{position:relative;z-index:2;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:-37px 23px 0}
+.choice a{align-items:flex-start;min-height:142px;padding:25px 20px;border:1px solid #d5e0d2;border-radius:16px;background:#fffefa;box-shadow:0 16px 34px #12352d1f}
+.choice a:nth-child(2){background:#f6f7f0}
+.choice a:nth-child(3){background:#edf3e7}
+.choice a:hover{transform:translateY(-5px);border-color:#63876a}
+.choice .num{border-radius:50%;flex-basis:37px;width:37px;height:37px;background:#dce9d9;font-size:1.14rem}
+.choice strong{font-size:.95rem;line-height:1.24;letter-spacing:-.02em}
+.choice small{margin-top:9px;line-height:1.48}
+.choice .arrow{font-size:1.04rem}
+.choice a:focus-visible{outline:3px solid #ad6816;outline-offset:4px}
+@media(max-width:900px){
+ .hero{grid-template-columns:minmax(0,1fr) minmax(200px,.7fr);padding:clamp(28px,4.5vw,49px);min-height:540px}
+ .hero h1{font-size:clamp(3.1rem,6vw,4.9rem)}
+ .hero-art{transform:none}
+ .choice{margin:-27px 10px 0}
+ .choice a{flex-wrap:wrap;gap:11px;padding:21px 17px}
+}
+@media(max-width:740px){
+ .hero{grid-template-columns:1fr;gap:22px;min-height:0;padding:36px 27px 31px;background-position:58% center}
+ .hero:after{inset:10px;border-radius:12px}
+ .hero h1{font-size:clamp(3.2rem,11vw,5.2rem)}
+ .hero-art{max-width:360px;width:100%;justify-self:center;padding:12px;transform:none}
+ .hero-art svg{max-width:340px}
+ .choice{grid-template-columns:1fr;gap:11px;margin:14px 0 0}
+ .choice a{align-items:center;min-height:82px;padding:17px 19px}
+ .choice .arrow{margin-left:auto}
+ .hero-facts{margin-top:26px}
+}
+@media(max-width:410px){
+ .hero{padding:32px 22px 24px}
+ .hero h1{font-size:clamp(2.85rem,12vw,3.6rem)}
+ .hero-facts{display:grid;gap:10px}
+ .hero-art{max-width:260px}
+ .choice strong{font-size:.9rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .choice a{transition:none}
+ .choice a:hover{transform:none}
+}
+
 </style></head>
 <body><a class="skip" href="#main">Skip to rental options</a><header><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back" href="/">← Browse all rentals</a></div></header>
 <main id="main">
-<section class="hero" aria-labelledby="page-title"><div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Your next round,<br>your way.</h1><p class="intro">Choose between an <strong>on-site simulator bay in Russellville</strong> and mobile simulators that come to an event. <strong>Mobile delivery to Russellville is UNCONFIRMED</strong>; ask providers about travel charges, setup space and available dates.</p><div class="hero-actions"><a href="#local">Find a local bay ↓</a><a href="#mobile">Explore mobile events ↗</a></div></div><div class="hero-art" aria-hidden="true"><svg viewBox="0 0 500 345" xmlns="http://www.w3.org/2000/svg" focusable="false"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#356e50"/><stop offset="1" stop-color="#123a30"/></linearGradient></defs><path d="M49 72 246 20 457 72 457 273 246 328 49 273Z" fill="#092722" opacity=".6"/><path d="M77 94 246 49 431 94 431 255 246 306 77 255Z" fill="#24523f" stroke="#b5d5a2" stroke-width="3"/><path d="M99 113 246 75 408 113 408 238 246 281 99 238Z" fill="url(#g)"/><path d="M99 210 246 183 408 210 408 238 246 281 99 238Z" fill="#387650"/><path d="M246 281V183M99 238 246 183 408 238" stroke="#e0f0c0" stroke-opacity=".22" stroke-width="2" fill="none"/><path d="M168 292 250 273 350 297 263 322Z" fill="#6c9e66" stroke="#b6d69c" stroke-width="3"/><path d="M228 287Q282 185 366 136" fill="none" stroke="#dcef9b" stroke-width="4" stroke-dasharray="7 10" stroke-linecap="round"/><circle cx="366" cy="136" r="7" fill="#e5f8b4"/><circle cx="260" cy="298" r="8" fill="white"/><path d="M280 296 318 223 335 215" stroke="#e4e8dc" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="142" cy="128" r="17" fill="none" stroke="#dcef9b" stroke-width="2"/><path d="M133 128h18m-9-9v18" stroke="#dcef9b" stroke-width="2"/></svg></div></section>
-<nav class="choice" aria-label="Choose a simulator rental type"><a href="#local"><span class="num" aria-hidden="true">01</span><span><strong>Play in Russellville</strong><small>Book a bay at a downtown location</small></span><span class="arrow" aria-hidden="true">↗</span></a><a href="#mobile"><span class="num" aria-hidden="true">02</span><span><strong>Bring golf to an event</strong><small>Ask regional operators about delivery</small></span><span class="arrow" aria-hidden="true">↗</span></a></nav>
+<section class="hero" aria-labelledby="page-title"><div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Your next round.<br><em>Your kind of day.</em></h1><p class="intro">Choose between an <strong>on-site simulator bay in Russellville</strong> and mobile simulators that come to an event. <strong>Mobile delivery to Russellville is UNCONFIRMED</strong>; ask providers about travel charges, setup space and available dates.</p><div class="hero-actions"><a href="#local">Find a local bay ↓</a><a href="#mobile">Explore mobile events ↗</a></div><div class="hero-facts" aria-label="Options at a glance"><span><b>01</b> Russellville indoor bay</span><span><b>02</b> Regional event providers · delivery unconfirmed</span></div></div><div class="hero-art" aria-hidden="true"><svg viewBox="0 0 500 345" xmlns="http://www.w3.org/2000/svg" focusable="false"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#356e50"/><stop offset="1" stop-color="#123a30"/></linearGradient></defs><path d="M49 72 246 20 457 72 457 273 246 328 49 273Z" fill="#092722" opacity=".6"/><path d="M77 94 246 49 431 94 431 255 246 306 77 255Z" fill="#24523f" stroke="#b5d5a2" stroke-width="3"/><path d="M99 113 246 75 408 113 408 238 246 281 99 238Z" fill="url(#g)"/><path d="M99 210 246 183 408 210 408 238 246 281 99 238Z" fill="#387650"/><path d="M246 281V183M99 238 246 183 408 238" stroke="#e0f0c0" stroke-opacity=".22" stroke-width="2" fill="none"/><path d="M168 292 250 273 350 297 263 322Z" fill="#6c9e66" stroke="#b6d69c" stroke-width="3"/><path d="M228 287Q282 185 366 136" fill="none" stroke="#dcef9b" stroke-width="4" stroke-dasharray="7 10" stroke-linecap="round"/><circle cx="366" cy="136" r="7" fill="#e5f8b4"/><circle cx="260" cy="298" r="8" fill="white"/><path d="M280 296 318 223 335 215" stroke="#e4e8dc" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="142" cy="128" r="17" fill="none" stroke="#dcef9b" stroke-width="2"/><path d="M133 128h18m-9-9v18" stroke="#dcef9b" stroke-width="2"/></svg></div></section>
+<nav class="choice" aria-label="Explore simulator rental options"><a href="#local"><span class="num" aria-hidden="true">01</span><span><strong>Play close to home</strong><small>See the downtown Russellville simulator bay</small></span><span class="arrow" aria-hidden="true">↗</span></a><a href="#mobile"><span class="num" aria-hidden="true">02</span><span><strong>Bring the game to an event</strong><small>Compare regional operators; confirm delivery</small></span><span class="arrow" aria-hidden="true">↗</span></a><a href="#sample-budget"><span class="num" aria-hidden="true">03</span><span><strong>Explore example event costs</strong><small>Use Puttees’ published base rate, before fees</small></span><span class="arrow" aria-hidden="true">↗</span></a></nav>
 <section id="local" aria-labelledby="local-title"><div class="section-head"><div><span class="kicker">01 / Play on-site</span><h2 id="local-title">The Russellville option</h2></div><p>Permanent indoor simulator location</p></div><article class="card local-card"><div class="card-content"><span class="label">Local on-site experience</span><h3>Old Bank Golf — Russellville</h3><p>Book a golf simulator bay at its permanent downtown location, with courses, games and swing analysis. <strong>On-site bay reservations only; off-site simulator rentals are not advertised.</strong></p><p class="detail">216 W Main St, Russellville, AR · Local on-site experience</p><p class="links"><a href="tel:+14792195181">479-219-5181</a> · <a href="https://oldbankgolf.com/" target="_blank" rel="noopener noreferrer">Official reservations ↗</a></p></div><div class="local-art" aria-hidden="true"><span class="icon">◎</span><p>A round without leaving town.</p></div></article></section>
 <section id="mobile" aria-labelledby="mobile-title"><div class="section-head"><div><span class="kicker">02 / Bring the experience to you</span><h2 id="mobile-title">Mobile event simulators</h2></div><p>Russellville delivery not yet verified</p></div><div class="mobile-grid"><article class="card"><div class="card-top"><span>Central Arkansas · Mobile events</span><b aria-hidden="true">02</b></div><div class="card-content"><h3>Tee Time Willy's — Central Arkansas</h3><p>Officially offers a mobile golf simulator for private parties, corporate events and fundraisers, including on-site event support. Confirm its current quote and travel coverage.</p><div class="warning">Russellville delivery UNCONFIRMED. Ask about travel charges, setup space and dates.</div><p class="detail">Central Arkansas · Russellville delivery UNCONFIRMED</p><p class="links"><a href="https://teetimewillys.com/" target="_blank" rel="noopener noreferrer">Official event rental information ↗</a></p></div></article><article class="card"><div class="card-top"><span>Searcy · Mobile events</span><b aria-hidden="true">03</b></div><div class="card-content"><h3>Puttees — Searcy</h3><div class="rate"><strong>$100 / hour</strong><small>Three-hour minimum; mileage and setup fees extra</small></div><p>Mobile golf simulator and optional yard games for events. Official site lists $100 per hour with a three-hour minimum, plus mileage and applicable setup fees; confirm current pricing directly.</p><div class="warning">Russellville delivery UNCONFIRMED. Confirm total delivered cost.</div><p class="detail">Searcy, Arkansas · Russellville delivery UNCONFIRMED</p><p class="links"><a href="tel:+15018587136">501-858-7136</a> · <a href="https://puttees.org/" target="_blank" rel="noopener noreferrer">Official booking and rates ↗</a></p></div></article></div></section>
 
