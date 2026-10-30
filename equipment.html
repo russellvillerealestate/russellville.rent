@@ -117,7 +117,51 @@
 @media(max-width:780px){.equipment-sheet-list{grid-template-columns:1fr}.equipment-sheet-bottom{flex-direction:column;align-items:stretch}}
 @media(max-width:510px){.equipment-sheet{padding:23px 18px}.equipment-sheet-top{grid-template-columns:1fr}.equipment-sheet-meter{display:flex;gap:11px;min-height:64px;width:155px}.equipment-sheet-meter strong{font-size:2rem}.equipment-sheet-actions button{flex:1 1 120px}}
 @media(prefers-reduced-motion:reduce){#equipment-results article .equipment-pick{transition:none}}
-</style></head><body><header><a href="/">Russellville.Rent ← Back to all rentals</a></header><main><section class="equipment-hero" aria-labelledby="equipment-heading"><div class="equipment-hero-copy"><p class="equipment-kicker">RUSSELLVILLE, ARKANSAS · THE RIVER VALLEY</p><h1 id="equipment-heading">Tools &amp; equipment <em>rentals.</em></h1><p>Local providers for construction projects, landscaping, hauling and repairs. Contact each business to confirm rental availability, pricing and terms.</p><a class="equipment-jump" href="#equipment-finder">Find a provider <span aria-hidden="true">↗</span></a></div><div class="equipment-hero-art" aria-hidden="true"><svg class="equipment-machine" viewBox="0 0 500 330" xmlns="http://www.w3.org/2000/svg" focusable="false">
+
+/* 2026 River Valley jobsite field guide. Existing photographs, providers and scripts preserved. */
+.equipment-hero{grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);min-height:495px;background:linear-gradient(104deg,#0a2929f8 0%,#0a2d2bef 42%,#103d35a6 100%),url('/assets/downtown-russellville-sunset.jpg') center 48%/cover;border-radius:0 0 28px 28px;margin-bottom:30px;box-shadow:0 25px 55px #103b352c}
+.equipment-hero-copy{padding:clamp(32px,5vw,64px);padding-bottom:38px}
+.equipment-hero h1{font-size:clamp(3.2rem,6vw,5.6rem)!important;line-height:1.02!important}
+.equipment-hero-copy>p:not(.equipment-kicker){font-size:1.08rem;color:#f1f4ed}
+.equipment-hero-actions{display:flex;flex-wrap:wrap;gap:11px}
+.equipment-hero-outline{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:48px;padding:11px 18px;border-radius:999px;border:1px solid #ffffffad;color:#fff!important;text-decoration:none;font-size:.83rem;font-weight:800;transition:transform .2s,background-color .2s}
+.equipment-hero-outline:hover{background:#ffffff21;transform:translateY(-2px)}
+.equipment-hero-art{border-left:1px solid #ffffff47;background-color:#0b312e77;background-image:linear-gradient(#ffffff15 1px,transparent 1px),linear-gradient(90deg,#ffffff15 1px,transparent 1px),radial-gradient(circle at 45% 42%,#4b8c7266,transparent 66%);background-size:30px 30px,30px 30px,auto}
+.equipment-machine{filter:drop-shadow(0 20px 16px #0527239a)}
+.equipment-hero-ribbon{grid-column:1/-1;position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:18px clamp(22px,4vw,44px);border-top:1px solid #ffffff40;background:#092f2bda;color:#e0ebe4;font-size:.77rem;line-height:1.45;backdrop-filter:blur(5px)}
+.equipment-hero-ribbon span{border-left:1px solid #ffffff47;padding:5px 17px}
+.equipment-hero-ribbon span:first-child{border:0;padding-left:0}
+.equipment-hero-ribbon b{display:block;margin-bottom:5px;color:#f3ce8f;font-size:.67rem;letter-spacing:.14em;text-transform:uppercase}
+.equipment-finder{padding:clamp(24px,3.5vw,40px);border-radius:23px;box-shadow:0 16px 36px #133c3212}
+.equipment-finder h2{font-size:clamp(1.8rem,3vw,2.45rem)}
+.equipment-types{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding-top:28px;margin-top:26px}
+.equipment-types-label{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin:0 0 7px;text-transform:none;letter-spacing:0}
+.equipment-types-label .equipment-type-kicker{font-size:.7rem;letter-spacing:.16em;font-weight:850;text-transform:uppercase;color:#92642a}
+.equipment-types-label strong{font:400 clamp(1.75rem,3.3vw,2.55rem)/1.13 Georgia,serif;letter-spacing:-.045em;color:#193f34}
+.equipment-types-label small:not(.equipment-type-kicker){font-size:.85rem;line-height:1.6;font-weight:500;color:#52685b}
+.equipment-types button[data-equipment-type]:not([data-equipment-type="all"]){position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:24px;min-height:205px;min-width:0;padding:23px;border-radius:20px;border:1px solid #c8dbce;background:radial-gradient(circle at 100% 0%,#dceee2,transparent 48%),#f6f9f4;color:#194636;text-align:left;white-space:normal;box-shadow:0 10px 28px #143b3010;transition:background .2s,border-color .2s,box-shadow .2s,transform .2s;font:400 clamp(1.37rem,2.5vw,1.7rem)/1.18 Georgia,serif;letter-spacing:-.035em}
+.equipment-types button[data-equipment-type="auto"]{background:radial-gradient(circle at 100% 0%,#f0e1c4,transparent 48%),#faf8f2;border-color:#e3d6bf}
+.equipment-types button[data-equipment-type="lift"]{background:radial-gradient(circle at 100% 0%,#dce8ef,transparent 48%),#f5f8f9;border-color:#d1e1e6}
+.equipment-types button[data-equipment-type="power"]{background:radial-gradient(circle at 100% 0%,#e9e4c7,transparent 48%),#f8f7ed;border-color:#e1debf}
+.equipment-types button:not([data-equipment-type="all"]):before{content:"01 / CONSTRUCTION";display:block;width:100%;padding-bottom:15px;border-bottom:1px solid #b6cbb9;color:#607c67;font:850 .65rem/1.4 system-ui,sans-serif;letter-spacing:.15em}
+.equipment-types button[data-equipment-type="auto"]:before{content:"02 / AUTOMOTIVE"}
+.equipment-types button[data-equipment-type="lift"]:before{content:"03 / MATERIAL HANDLING"}
+.equipment-types button[data-equipment-type="power"]:before{content:"04 / POWER & CLIMATE"}
+.equipment-types button:not([data-equipment-type="all"]):after{content:"Explore matching suppliers  ↗";display:block;width:100%;margin-top:auto;padding-top:15px;border-top:1px solid #b6cbb9;font:850 .72rem/1.4 system-ui,sans-serif;letter-spacing:0}
+.equipment-types button[data-equipment-type]:not([data-equipment-type="all"]):hover:not([aria-pressed="true"]){background-color:#e8f1e7;border-color:#85a993;box-shadow:0 17px 35px #143b301a;transform:translateY(-3px)}
+.equipment-types button[data-equipment-type]:not([data-equipment-type="all"])[aria-pressed="true"]{background:#164137;border-color:#164137;color:#fff;box-shadow:0 14px 31px #153b2e36}
+.equipment-types button[data-equipment-type][aria-pressed="true"]:before,.equipment-types button[data-equipment-type][aria-pressed="true"]:after{color:#f3d79f;border-color:#ffffff63}
+.equipment-types button[data-equipment-type="all"]{grid-column:1/-1;display:flex;justify-content:center;align-items:center;min-height:56px;border-radius:13px;border:1px solid #aac5b0;background:#e7f1e6;font:850 .87rem/1.4 system-ui,sans-serif;letter-spacing:0}
+.equipment-types button[data-equipment-type="all"][aria-pressed="true"]{background:#173f35;border-color:#173f35;color:#fff}
+.equipment-types button:focus-visible{outline:3px solid #ab762b;outline-offset:4px}
+.equipment-locality{margin-top:28px}
+#equipment-results article{box-shadow:0 10px 28px #173e3310}
+#equipment-results article h2{font:400 clamp(1.45rem,2.5vw,1.8rem)/1.22 Georgia,serif!important;letter-spacing:-.033em}
+@media(max-width:850px){.equipment-hero{grid-template-columns:minmax(0,1fr) minmax(225px,.8fr)}.equipment-hero-copy{padding:34px 27px}.equipment-hero-ribbon{grid-template-columns:1fr}.equipment-hero-ribbon span,.equipment-hero-ribbon span:first-child{padding:5px 0;border:0}}
+@media(max-width:760px){.equipment-hero{grid-template-columns:1fr;min-height:0}.equipment-hero-art{min-height:220px;border-left:0;border-top:1px solid #ffffff42}.equipment-machine{width:min(395px,95%);top:45%}.equipment-hero-ribbon{padding:20px 27px}}
+@media(max-width:600px){.equipment-hero{border-radius:0 0 19px 19px}.equipment-hero h1{font-size:clamp(2.8rem,11.3vw,4.1rem)!important}.equipment-hero-actions{display:grid;grid-template-columns:1fr}.equipment-hero-actions a{width:100%}.equipment-types{grid-template-columns:1fr}.equipment-types button[data-equipment-type]:not([data-equipment-type="all"]){min-height:172px;padding:20px;font-size:1.5rem;gap:14px}}
+@media(prefers-reduced-motion:reduce){.equipment-hero-outline,.equipment-types button[data-equipment-type]{transition:none}.equipment-hero-outline:hover,.equipment-types button[data-equipment-type]:hover:not([aria-pressed="true"]){transform:none}}
+</style></head><body><header><a href="/">Russellville.Rent ← Back to all rentals</a></header><main><section class="equipment-hero" aria-labelledby="equipment-heading"><div class="equipment-hero-copy"><p class="equipment-kicker">RUSSELLVILLE, ARKANSAS · THE RIVER VALLEY</p><h1 id="equipment-heading">Tools &amp; equipment <em>rentals.</em></h1><p>Local providers for construction projects, landscaping, hauling and repairs. Contact each business to confirm rental availability, pricing and terms.</p><div class="equipment-hero-actions"><a class="equipment-jump" href="#equipment-finder">Find a provider <span aria-hidden="true">↗</span></a><a class="equipment-hero-outline" href="#equipment-results">Browse all providers <span aria-hidden="true">↗</span></a></div></div><div class="equipment-hero-art" aria-hidden="true"><svg class="equipment-machine" viewBox="0 0 500 330" xmlns="http://www.w3.org/2000/svg" focusable="false">
 <path d="M36 289H470M75 72H428M75 123H428M75 174H428M75 225H428" stroke="#b7d5d0" stroke-width="1" stroke-dasharray="5 9" opacity=".26"/>
 <path d="M110 236h246l22 25-19 24H113l-20-24z" fill="#102b32" stroke="#e8b873" stroke-width="6" stroke-linejoin="round"/>
 <path d="M130 260h218" stroke="#a7c5b6" stroke-width="5" stroke-dasharray="13 11" stroke-linecap="round"/>
@@ -132,13 +176,13 @@
 <circle cx="371" cy="78" r="10" fill="#15343b" stroke="#f2c77f" stroke-width="5"/>
 <path d="M426 194l53 10-17 55-45-14-9-21z" fill="#e9b86b" stroke="#f8d99e" stroke-width="5" stroke-linejoin="round"/>
 <path d="M116 227h237" stroke="#fff0c6" stroke-width="5" opacity=".75"/>
-</svg><span class="equipment-hero-art-label">RIVER VALLEY / FIELD NOTES 01<br>BUILD · LIFT · POWER</span></div></section>
-<section class="equipment-finder" id="equipment-finder" aria-labelledby="equipment-finder-heading" hidden><div><p class="equipment-kicker">EXPLORE THE DIRECTORY</p><h2 id="equipment-finder-heading">Find the right equipment.</h2><p>Search business names, tools, and rental services.</p></div><form id="equipment-filter" role="search"><label for="equipment-query">Search equipment &amp; providers</label><div class="equipment-search-controls"><input id="equipment-query" type="search" placeholder="Try skid steer, forklift, generator…" autocomplete="off"><button type="reset">Clear</button></div></form><div class="equipment-types" role="group" aria-label="Browse equipment categories"><span class="equipment-types-label">Browse by equipment type <small>· Confirm exact inventory with each provider</small></span>
-<button type="button" data-equipment-type="all" aria-pressed="true">All equipment</button>
+</svg><span class="equipment-hero-art-label">RIVER VALLEY / FIELD NOTES 01<br>BUILD · LIFT · POWER</span></div><div class="equipment-hero-ribbon" aria-label="How to use the directory"><span><b>01 / Discover</b> Search by the job or tool</span><span><b>02 / Compare</b> Local addresses and regional options</span><span><b>03 / Connect</b> Confirm availability with operators</span></div></section>
+<section class="equipment-finder" id="equipment-finder" aria-labelledby="equipment-finder-heading" hidden><div><p class="equipment-kicker">EXPLORE THE DIRECTORY</p><h2 id="equipment-finder-heading">Find the right equipment.</h2><p>Search business names, tools, and rental services.</p></div><form id="equipment-filter" role="search"><label for="equipment-query">Search equipment &amp; providers</label><div class="equipment-search-controls"><input id="equipment-query" type="search" placeholder="Try skid steer, forklift, generator…" autocomplete="off"><button type="reset">Clear</button></div></form><div class="equipment-types" role="group" aria-label="Browse equipment categories"><span class="equipment-types-label"><small class="equipment-type-kicker">THE JOBSITE FIELD GUIDE / 4 WAYS TO START</small><strong>What are you working on?</strong><small>Explore by equipment type · Confirm exact stock with each supplier before arranging pickup or delivery.</small></span>
+
 <button type="button" data-equipment-type="earth" aria-pressed="false">Construction &amp; earthmoving</button>
 <button type="button" data-equipment-type="auto" aria-pressed="false">Automotive tools</button>
 <button type="button" data-equipment-type="lift" aria-pressed="false">Lifts &amp; material handling</button>
-<button type="button" data-equipment-type="power" aria-pressed="false">Power &amp; climate</button></div><section class="equipment-locality" aria-labelledby="equipment-locality-heading">
+<button type="button" data-equipment-type="power" aria-pressed="false">Power &amp; climate</button><button type="button" data-equipment-type="all" aria-pressed="true">All equipment</button></div><section class="equipment-locality" aria-labelledby="equipment-locality-heading">
 <div class="equipment-locality-copy"><p class="equipment-kicker">02 / Find your pickup</p><h3 id="equipment-locality-heading">Start close.<br><em>Then widen the search.</em></h3><p>Filter by a published Russellville street address. An address does not guarantee rental stock. Other providers may also serve the city—confirm directly.</p></div>
 <div class="equipment-area-options" role="group" aria-label="Filter by published provider location">
 <button type="button" data-equipment-area-filter="all" aria-pressed="true"><span class="equipment-area-index" aria-hidden="true">01</span><strong>Every provider</strong><small>See the full directory</small><span class="equipment-area-count"><span data-area-count-for="all">18</span> listings</span></button>
