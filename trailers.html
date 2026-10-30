@@ -79,11 +79,104 @@ h1{font:400 clamp(2.8rem,5.5vw,4.8rem)/1.08 Georgia,"Times New Roman",serif;lett
 @media(max-width:740px){.preflight{grid-template-columns:1fr}.preflight-intro{padding:29px 27px}.preflight-intro p{max-width:55ch}.preflight-panel{padding:23px 27px}}
 @media(max-width:440px){.preflight-intro,.preflight-panel{padding:24px 20px}.preflight h2{font-size:2rem}.preflight-progress-head{align-items:start}}
 @media(prefers-reduced-motion:reduce){.preflight progress::-webkit-progress-value{transition:none}}
+
+/* Photo-led River Valley trailer atlas: clear rental arrangements, responsive routing, keyboard-accessible navigation.
+   References: StayARV hero composition; NN/g proximity; web.dev responsive images; WCAG 2.2 focus and reflow. */
+.hero-editorial{position:relative;isolation:isolate;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);min-height:570px;gap:0;padding:0;border-radius:0 0 30px 30px;background:#102d2a;box-shadow:0 28px 55px #153b3222}
+.hero-editorial:before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(105deg,#092724f2 0%,#0c2d29e8 43%,#103c31bd 74%,#163d32c9 100%),url("assets/downtown-russellville-sunset.jpg") center 48%/cover no-repeat}
+.hero-editorial:after{content:"";position:absolute;inset:auto 0 0;height:6px;background:linear-gradient(90deg,#d99a65,#efd18c,#709c81);z-index:4}
+.hero-copy-wrap{position:relative;z-index:1;align-self:center;padding:clamp(40px,5vw,67px) clamp(28px,5vw,58px);min-width:0}
+.hero-overline{display:flex;align-items:center;gap:13px;flex-wrap:wrap;color:#dfc793;font-size:.64rem;letter-spacing:.2em;font-weight:850;margin:0 0 22px}
+.hero-overline:before{content:"";width:30px;height:1px;background:#dfc793}
+.hero-editorial h1{font-size:clamp(3.1rem,6.3vw,5.7rem);line-height:1.02;max-width:12ch;text-wrap:balance;margin:0 0 21px}
+.hero-editorial h1 em{font-weight:400;color:#f5d490;font-style:italic}
+.hero-editorial .hero-copy{color:#eef0e9;max-width:55ch;line-height:1.7}
+.hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:29px}
+.hero-actions a{display:inline-flex;gap:17px;align-items:center;justify-content:space-between;min-height:51px;padding:12px 18px;font-size:.83rem;font-weight:850;border-radius:9px;text-decoration:none;transition:transform .2s,background .2s}
+.hero-main-action{background:#efd18c;color:#153227}.hero-main-action:hover{background:#ffe4a7;transform:translateY(-2px)}
+.hero-sub-action{color:white;border:1px solid #d6e5d0ad;background:#092c2766}.hero-sub-action:hover{background:#ffffff24;transform:translateY(-2px)}
+.hero-proof{display:flex;gap:10px;align-items:start;margin:26px 0 0;font-size:.73rem;line-height:1.45;color:#d5e3d7;max-width:43ch}
+.hero-proof-dot{flex:0 0 7px;width:7px;height:7px;border-radius:50%;background:#e9c982;margin-top:5px}
+.hero-stage{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:space-between;min-width:0;overflow:hidden;background:radial-gradient(ellipse at 56% 48%,#d6b47630 0,transparent 55%),linear-gradient(155deg,#204c4173,#071f2099);border-left:1px solid #ffffff2c;padding:clamp(27px,3vw,38px)}
+.hero-stage:before{content:"";position:absolute;width:410px;height:410px;left:50%;top:48%;transform:translate(-50%,-50%);border:1px solid #f7db8f54;border-radius:50%;box-shadow:0 0 0 40px #f7db8f0b,0 0 0 85px #f7db8f0a}
+.hero-stage-top{position:relative;z-index:2;display:flex;justify-content:space-between;color:#f5ddaa;font-size:.65rem;letter-spacing:.18em;font-weight:850}.hero-stage-top span{font-size:1rem}
+.hero-stage-lines{position:absolute;inset:0;opacity:.25;background:repeating-linear-gradient(125deg,transparent 0 37px,#d1dacb4d 37px 38px);mask-image:linear-gradient(90deg,transparent,#000)}
+.hero-trailer-picture{position:relative;z-index:1;display:grid;place-items:center;min-height:240px;filter:drop-shadow(0 12px 22px #061e1c9e)}
+.hero-editorial .hero-trailer-picture .art{width:min(108%,530px);max-width:none;transform:scale(1.1)}
+.hero-stage-bottom{z-index:2;position:relative;display:flex;justify-content:space-between;align-items:end;gap:16px;border-top:1px solid #f7e0b448;padding-top:16px}
+.hero-stage-bottom span{font-size:.66rem;letter-spacing:.15em;font-weight:800;color:#edd5a0}
+.hero-stage-bottom strong{font:italic 400 clamp(1.08rem,2vw,1.45rem)/1.2 Georgia,serif;color:#fff4dc;text-align:right}
+.directory-jumps{display:flex;align-items:center;gap:17px;padding:16px 18px;border:1px solid #d4e2d5;border-top:0;border-radius:0 0 18px 18px;background:#fdfdf8;box-shadow:0 8px 19px #12372d0a}
+.directory-jumps-label{flex:0 0 auto;font-size:.61rem;letter-spacing:.13em;color:#4a6a58;font-weight:900}
+.directory-jumps .jump{margin:0;gap:8px;flex:1}.directory-jumps .jump a{min-height:40px;padding:7px 12px;border:1px solid #ccd9cd;color:#21503c;background:#f2f6ee;font-size:.73rem}
+.directory-jumps .jump a:first-child{background:#163e32;color:#fff;border-color:#163e32}.directory-jumps .jump a:hover{background:#e2ece0;color:#143e30}
+.overview{grid-template-columns:repeat(5,minmax(0,1fr));margin:22px 0 57px;border-radius:14px}.overview div{padding:20px 14px 20px 20px}
+.overview strong{font:400 clamp(2rem,3vw,2.9rem)/1 Georgia,serif;color:#174f39;margin-bottom:5px}.overview span{display:block;color:#50685c;line-height:1.4}
+.rental-lanes{margin:0 0 64px}.rental-lanes-intro{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:24px}
+.rental-lanes-intro h2{font:400 clamp(2.25rem,4.8vw,4rem)/1.07 Georgia,"Times New Roman",serif;letter-spacing:-.05em;margin:0;color:#173e31}
+.rental-lanes-intro h2 em{font-weight:400;color:#a36d3f}.rental-lanes-intro>p{max-width:36ch;color:#53675b;font-size:.91rem;margin:0 0 4px}
+.rental-lanes-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.rental-lane{display:flex;position:relative;isolation:isolate;overflow:hidden;flex-direction:column;min-width:0;min-height:359px;padding:25px 25px 21px;border:1px solid transparent;border-radius:19px;color:#fff;text-decoration:none;box-shadow:0 15px 30px #173b3216;transition:transform .22s,box-shadow .22s}
+.rental-lane:hover{transform:translateY(-4px);box-shadow:0 23px 40px #173b3225}
+.rental-lane-a{background:linear-gradient(145deg,#204d3c,#10372d)}.rental-lane-b{background:linear-gradient(145deg,#245968,#143942)}.rental-lane-c{background:linear-gradient(145deg,#77533b,#4c3c2f)}
+.rental-lane:after{content:"";position:absolute;width:280px;height:280px;border:1px solid #ffffff22;border-radius:50%;right:-105px;top:-128px;box-shadow:0 0 0 32px #ffffff08,0 0 0 60px #ffffff05;z-index:-1}
+.rental-lane .lane-art{display:grid;place-items:center;align-self:flex-end;width:95px;height:80px;border-radius:14px;color:#f6d993;background:#ffffff12;margin-bottom:7px}
+.rental-lane-b .lane-art{color:#b1e5e0}.rental-lane-c .lane-art{color:#f3d7b1}.rental-lane .lane-art svg{width:86px;height:69px}
+.lane-number{margin-bottom:9px;font-size:.67rem;letter-spacing:.16em;font-weight:850;color:#f4daac}
+.rental-lane strong{font:400 clamp(1.72rem,2.7vw,2.3rem)/1.13 Georgia,serif;letter-spacing:-.035em;color:#fff9ec}
+.lane-description{display:block;margin:13px 0 21px;color:#e0e9e0;font-size:.85rem;line-height:1.58}
+.lane-link{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-top:auto;padding-top:14px;border-top:1px solid #ffffff5b;font-size:.79rem;font-weight:850;color:#f8dfaa}.lane-link span{font-size:1.15rem}
+.lane-footnote{font-size:.79rem;color:#62776b;margin:17px 0 0}
+.haul-guide{margin-top:0}.haul-heading h2{font-size:clamp(2rem,3.8vw,3rem)}
+.haul-option{background:linear-gradient(160deg,#ffffff,#f1f6ed);border-color:#c1d3c5}
+.haul-option:nth-child(2){background:linear-gradient(160deg,#fffdf8,#f7eedb)}.haul-option:nth-child(3){background:linear-gradient(160deg,#f8fdfb,#e5f1f1)}
+.haul-option .haul-icon{width:76px;height:76px;border-radius:19px}
+.rental-lane:focus-visible,.hero-actions a:focus-visible,.directory-jumps a:focus-visible{outline:3px solid #e1a34e;outline-offset:4px}
+@media(max-width:1040px){.directory-jumps{display:block}.directory-jumps-label{display:block;margin-bottom:9px}.overview{grid-template-columns:repeat(3,minmax(0,1fr))}.overview div:nth-child(n+4){border-top:1px solid #d9e3d9}}
+@media(max-width:820px){.hero-editorial{grid-template-columns:1fr;min-height:0}.hero-copy-wrap{padding:45px 35px 28px}.hero-stage{min-height:285px;border-left:0;border-top:1px solid #ffffff2c;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:15px}.hero-stage-top{grid-column:1/-1}.hero-trailer-picture{min-height:180px}.hero-stage-bottom{align-self:end}.hero-stage:before{top:55%;left:38%}.rental-lanes-intro{display:block}.rental-lanes-intro>p{max-width:60ch;margin-top:14px}.rental-lanes-grid{grid-template-columns:1fr 1fr}.rental-lane:last-child{grid-column:1/-1;min-height:280px}}
+@media(max-width:650px){.hero-editorial{border-radius:0 0 20px 20px}.hero-copy-wrap{padding:36px 24px 26px}.hero-editorial h1{font-size:clamp(2.75rem,11vw,4.6rem)}.hero-stage{min-height:214px;padding:20px 23px;grid-template-columns:1fr}.hero-stage-top{grid-column:auto}.hero-trailer-picture{position:absolute;width:72%;right:2%;top:25%;min-height:0;opacity:.87}.hero-stage-bottom{align-self:end;max-width:100%;margin-top:95px}.directory-jumps{padding:15px;border-radius:0 0 14px 14px}.directory-jumps .jump a{flex:1 1 auto}.overview{grid-template-columns:1fr 1fr;margin:18px 0 46px}.overview div{padding:16px}.overview div:nth-child(n+3){border-top:1px solid #d9e3d9}.rental-lanes{margin-bottom:42px}.rental-lanes-grid{grid-template-columns:1fr}.rental-lane,.rental-lane:last-child{min-height:0;grid-column:auto;padding:21px}.rental-lane .lane-art{height:65px;margin-bottom:4px}.rental-lane .lane-art svg{height:58px}.lane-description{margin-bottom:16px}.rental-lane strong{font-size:1.95rem}}
+@media(max-width:390px){.hero-actions a{width:100%}.directory-jumps .jump{display:grid;grid-template-columns:1fr 1fr}.directory-jumps .jump a{justify-content:center;text-align:center}.overview{grid-template-columns:1fr}.overview div{border-top:1px solid #d9e3d9}.hero-stage-bottom strong{font-size:1.03rem}}
+@media(prefers-reduced-motion:reduce){.hero-actions a,.rental-lane{transition:none}.hero-actions a:hover,.rental-lane:hover{transform:none}}
 </style></head><body>
 <a class="skip-link" href="#main">Skip to trailer rentals</a>
 <header><nav class="nav" aria-label="Site navigation"><a class="logo" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← Browse all rentals</a></nav></header>
-<main id="main"><section class="hero" aria-labelledby="page-title"><div><p class="kicker">Russellville, Arkansas · The River Valley</p><h1 id="page-title">The right trailer<br>for the job.</h1><p class="hero-copy">Compare local trailer rentals and nearby Dardanelle options, plus specialized refrigerated and commercial freight trailers. Distinguish short-term rentals from rent-to-own agreements.</p><nav class="jump" aria-label="Jump to trailer options"><a href="#haul-guide">Choose by hauling job ↓</a><a href="#local">Russellville rentals ↓</a><a href="#nearby">Nearby option ↓</a><a href="#cold-storage">Refrigerated storage ↓</a><a href="#rent-to-own">Rent-to-own ↓</a><a href="#commercial-freight">Commercial freight ↓</a></nav></div><svg class="art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 260" role="img" aria-label="Line illustration of a utility trailer"><circle cx="405" cy="110" r="103" fill="none" stroke="#e8d49b" stroke-opacity=".24"/><circle cx="405" cy="110" r="73" fill="#ffffff" opacity=".05"/><path d="M27 207h505" stroke="#a5c2af" stroke-opacity=".5" stroke-width="2"/><path d="M68 175h45l34 26h26" fill="none" stroke="#f1d48d" stroke-width="7" stroke-linecap="round"/><path d="M167 77v111h318V77" fill="none" stroke="#f1d48d" stroke-width="8" stroke-linejoin="round"/><path d="M169 168h315v32H169z" fill="#f1d48d"/><path d="M185 86h281v74H185z" fill="#d5e4d7" opacity=".12"/><path d="M205 86v74m63-74v74m63-74v74m63-74v74m63-74v74" stroke="#d5e4d7" stroke-opacity=".6" stroke-width="4"/><circle cx="261" cy="205" r="30" fill="#0c2924" stroke="#f1d48d" stroke-width="7"/><circle cx="261" cy="205" r="10" fill="#f1d48d"/><circle cx="410" cy="205" r="30" fill="#0c2924" stroke="#f1d48d" stroke-width="7"/><circle cx="410" cy="205" r="10" fill="#f1d48d"/></svg></section>
+<main id="main"><section class="hero hero-editorial" aria-labelledby="page-title">
+  <div class="hero-copy-wrap">
+    <p class="kicker">Russellville, Arkansas · The River Valley</p>
+    <p class="hero-overline" aria-hidden="true"><span>RIVER VALLEY RENTAL FIELD GUIDE</span><span>/ 01</span></p>
+    <h1 id="page-title">The right trailer<br><em>for the job.</em></h1>
+    <p class="hero-copy">Compare local trailer rentals and nearby Dardanelle options, plus specialized refrigerated and commercial freight trailers. Distinguish short-term rentals from rent-to-own agreements.</p>
+    <div class="hero-actions"><a class="hero-main-action" href="#haul-guide">Choose by hauling job <span aria-hidden="true">↗</span></a><a class="hero-sub-action" href="#local">See Russellville rentals <span aria-hidden="true">↓</span></a></div>
+    <p class="hero-proof"><span class="hero-proof-dot" aria-hidden="true"></span>Independent directory · Contact operators to verify equipment and terms</p>
+  </div>
+  <div class="hero-stage">
+    <span class="hero-stage-top">THE RIVER VALLEY <span aria-hidden="true">↗</span></span>
+    <div class="hero-stage-lines" aria-hidden="true"></div>
+    <div class="hero-trailer-picture" aria-hidden="true"><svg class="art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 260" aria-hidden="true" focusable="false"><circle cx="405" cy="110" r="103" fill="none" stroke="#e8d49b" stroke-opacity=".24"/><circle cx="405" cy="110" r="73" fill="#ffffff" opacity=".05"/><path d="M27 207h505" stroke="#a5c2af" stroke-opacity=".5" stroke-width="2"/><path d="M68 175h45l34 26h26" fill="none" stroke="#f1d48d" stroke-width="7" stroke-linecap="round"/><path d="M167 77v111h318V77" fill="none" stroke="#f1d48d" stroke-width="8" stroke-linejoin="round"/><path d="M169 168h315v32H169z" fill="#f1d48d"/><path d="M185 86h281v74H185z" fill="#d5e4d7" opacity=".12"/><path d="M205 86v74m63-74v74m63-74v74m63-74v74m63-74v74" stroke="#d5e4d7" stroke-opacity=".6" stroke-width="4"/><circle cx="261" cy="205" r="30" fill="#0c2924" stroke="#f1d48d" stroke-width="7"/><circle cx="261" cy="205" r="10" fill="#f1d48d"/><circle cx="410" cy="205" r="30" fill="#0c2924" stroke="#f1d48d" stroke-width="7"/><circle cx="410" cy="205" r="10" fill="#f1d48d"/></svg></div>
+    <div class="hero-stage-bottom"><span>LOCAL HAULING</span><strong>Find a fit.<br>Then confirm it.</strong></div>
+  </div>
+</section>
+<div class="directory-jumps"><span class="directory-jumps-label">GO STRAIGHT TO</span><nav class="jump" aria-label="Jump to trailer options"><a href="#haul-guide">Choose by hauling job ↓</a><a href="#local">Russellville rentals ↓</a><a href="#nearby">Nearby option ↓</a><a href="#cold-storage">Refrigerated storage ↓</a><a href="#rent-to-own">Rent-to-own ↓</a><a href="#commercial-freight">Commercial freight ↓</a></nav></div>
 <div class="overview" aria-label="Directory overview"><div><strong>4</strong><span>Russellville short-term rental providers</span></div><div><strong>1</strong><span>Dardanelle rental dealer</span></div><div><strong>2</strong><span>Regional refrigerated-trailer inquiries</span></div><div><strong>1</strong><span>Separate rent-to-own program</span></div><div><strong>1</strong><span>Commercial freight-trailer inquiry</span></div></div>
+
+<section class="rental-lanes" aria-labelledby="rental-lanes-title">
+ <div class="rental-lanes-intro"><div><span class="eyebrow">The rental route / Know your agreement</span><h2 id="rental-lanes-title">One need.<br><em>Different ways to rent.</em></h2></div><p>Not every trailer listing works the same way. Start with the arrangement you need, then compare actual providers and their terms.</p></div>
+ <nav class="rental-lanes-grid" aria-label="Choose a trailer rental arrangement">
+  <a class="rental-lane rental-lane-a" href="#local">
+   <span class="lane-art" aria-hidden="true"><svg viewBox="0 0 112 78"><path d="M10 56h92M15 22h58v26H15zM17 28h54M23 48l-7 8M50 48l7 8M81 48l18 8M24 55a8 8 0 1 0 16 0M62 55a8 8 0 1 0 16 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg></span>
+   <span class="lane-number">ROUTE 01 / SHORT-TERM</span><strong>Rent. Haul.<br>Return.</strong><span class="lane-description">Start with Russellville short-term trailer providers. Confirm the exact unit, tow requirements and pickup address.</span><span class="lane-link">Compare local rentals <span aria-hidden="true">↗</span></span>
+  </a>
+  <a class="rental-lane rental-lane-b" href="#cold-storage">
+   <span class="lane-art" aria-hidden="true"><svg viewBox="0 0 112 78"><path d="M13 24h86v40H13zM22 24v40m68-40v40M22 32h68M22 56h68M56 38v13m-6-6h12m-10-5 8 10m0-10-8 10" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg></span>
+   <span class="lane-number">ROUTE 02 / SPECIALTY</span><strong>Cold storage<br>on site.</strong><span class="lane-description">Explore regional refrigerated-trailer inquiries. Delivery and availability in Russellville require confirmation.</span><span class="lane-link">Explore refrigeration <span aria-hidden="true">↗</span></span>
+  </a>
+  <a class="rental-lane rental-lane-c" href="#rent-to-own">
+   <span class="lane-art" aria-hidden="true"><svg viewBox="0 0 112 78"><path d="M15 52h50V22H15zM23 28h35M23 34h35M23 40h35M15 52l-6 7m56-7 6 7M26 60a7 7 0 1 0 14 0m40-15a13 13 0 1 0 26 0 13 13 0 0 0-26 0Zm13 0h13m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+   <span class="lane-number">ROUTE 03 / OWNERSHIP</span><strong>Work toward<br>ownership.</strong><span class="lane-description">A separate rent-to-own program, not a conventional short-term trailer booking. Ask for the full contract cost.</span><span class="lane-link">Review rent-to-own <span aria-hidden="true">↗</span></span>
+  </a>
+ </nav>
+ <p class="lane-footnote">These routes organize existing listings; they do not confirm inventory, safety suitability, delivery, pricing or approval.</p>
+</section>
 
 <section class="haul-guide" id="haul-guide" aria-labelledby="haul-title">
   <div class="haul-heading"><div><span class="eyebrow">Find your starting point / 03 hauling jobs</span><h2 id="haul-title">What are you hauling?</h2></div><p>Choose a job to jump to a listed Russellville provider. These are starting points, not confirmed reservations or equipment matches.</p></div>
