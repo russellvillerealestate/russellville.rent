@@ -139,15 +139,81 @@ footer a{font-weight:750;color:var(--forest)}
 @media(max-width:690px){.hero-grid{grid-template-columns:1fr;padding-block:55px 47px;gap:16px}.room{max-width:470px;width:100%;margin:auto}.intro-band .wrap{grid-template-columns:1fr;gap:7px}.section-top{display:block}.section-top>p{margin-top:17px}.cards{grid-template-columns:1fr}.card:last-child{grid-column:auto}.card:last-child .card-inner{display:flex}.card:last-child .address{margin:auto 0 22px;padding-top:18px}.questions{grid-template-columns:1fr 1fr}}
 @media(max-width:470px){.brand{font-size:1.06rem}.home-link{font-size:.78rem}.site-header .wrap{min-height:68px}.hero-grid{padding-top:46px}.room{padding:0}.hero-caption{font-size:.67rem}.questions{grid-template-columns:1fr}.question{padding:20px}footer .wrap{display:block}footer a{display:inline-block;margin-top:8px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}.button:hover{transform:none}}
+
+/* River Valley home edit: photo-backed editorial hierarchy plus functional planning routes.
+   References: StayARV's immersive hero; Nielsen Norman Group visual hierarchy;
+   Google web.dev responsive-image constraints; W3C WCAG 2.2 focus/reflow/reduced motion. */
+.household-editorial{background:#102e29;isolation:isolate;overflow:visible}
+.household-editorial::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(9,35,31,.97) 0%,rgba(12,43,37,.89) 47%,rgba(18,55,45,.73) 100%),url("/assets/downtown-russellville-sunset.jpg") center 53%/cover no-repeat}
+.household-editorial .hero-grid{min-height:620px;grid-template-columns:minmax(0,1.16fr) minmax(0,.84fr);gap:clamp(28px,4vw,65px);padding-block:clamp(90px,10vw,140px) clamp(148px,13vw,186px)}
+.household-editorial .hero-copy-block{position:relative;z-index:1}
+.household-editorial .hero-series{display:inline-flex;align-items:center;gap:12px;margin:0 0 24px;padding:9px 14px;border:1px solid #ffffff66;border-radius:999px;color:#fff1d4;letter-spacing:.15em;font-size:.68rem;line-height:1.4;font-weight:800}
+.household-editorial .hero-series span{color:#eaba81}
+.household-editorial h1{max-width:12.8ch;font-size:clamp(3.4rem,6.2vw,6.35rem);line-height:1.01;letter-spacing:-.058em;margin-bottom:25px;text-wrap:balance;text-shadow:0 4px 24px #071d1b33}
+.household-editorial h1 em{font-weight:400;font-style:italic;color:#f4d6a6}
+.household-editorial .lead{font-size:clamp(1rem,1.3vw,1.17rem);max-width:51ch;color:#f1f4e9;line-height:1.7}
+.household-editorial .button.primary{background:#f4d6a6}
+.household-editorial .button.outline{background:#102e2980;border-color:#e5ecdf}
+.household-editorial .room-framed{position:relative;transform:rotate(2deg);padding:clamp(15px,2.4vw,27px);background:linear-gradient(145deg,#2c5a4cde,#13372fef);border:1px solid #d8e5d06b;border-radius:28px;box-shadow:0 34px 75px #061b1b9e,0 0 0 9px #ffffff0a;filter:none}
+.household-editorial .room-framed:before{inset:12% 9%;border:0;border-radius:22px;box-shadow:none}
+.household-editorial .room-framed svg{max-inline-size:100%;block-size:auto;filter:drop-shadow(0 18px 22px #09251d4d)}
+.household-editorial .hero-caption{color:#e7e6d5;letter-spacing:.12em}
+.home-journey{position:relative;z-index:4;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:-97px;margin-bottom:43px}
+.home-journey .journey-card{min-width:0;position:relative;display:flex;flex-direction:column;gap:11px;min-height:244px;padding:clamp(23px,3vw,36px);background:#fffaf1;color:#193e34;text-decoration:none;border:1px solid #e2dfd4;box-shadow:0 20px 46px #102e2924;transition:transform .2s,background-color .2s,box-shadow .2s}
+.home-journey .journey-card:first-child{border-radius:22px 0 0 22px}
+.home-journey .journey-card:last-child{border-radius:0 22px 22px 0}
+.home-journey .journey-card:nth-child(2){background:#eff1e9;border-inline:0}
+.home-journey .journey-card:hover{z-index:1;transform:translateY(-6px);background:#fff;box-shadow:0 28px 55px #102e2934}
+.home-journey .journey-card:focus-visible{z-index:2;outline:3px solid #a4572b;outline-offset:3px}
+.home-journey .journey-kicker{font-size:.68rem;font-weight:850;letter-spacing:.17em;color:#89543e}
+.home-journey .journey-heading{max-width:13ch;font:400 clamp(1.55rem,2.3vw,2.2rem)/1.1 Georgia,serif;letter-spacing:-.045em}
+.home-journey .journey-detail{max-width:33ch;font-size:.87rem;line-height:1.5;color:#52675b;margin-top:auto;padding-right:15px}
+.home-journey .journey-arrow{position:absolute;right:26px;top:26px;font-size:1.3rem;color:#345c4c}
+.providers{scroll-margin-top:18px;padding-top:clamp(58px,7vw,94px)}
+.providers .card{border-radius:22px;box-shadow:0 18px 42px #102e2915;background:#fffdf8;transition:box-shadow .2s,transform .2s}
+.providers .card:nth-child(2){background:#f9f6ed}
+.providers .card:hover{transform:translateY(-5px);box-shadow:0 25px 45px #102e2926}
+.providers .card-index{align-self:flex-start;display:inline-block;padding:7px 11px;border-radius:999px;background:#e6eee6;color:#355847;font-size:.67rem;margin-bottom:26px}
+.providers .card h3{font-size:clamp(1.55rem,2.2vw,2.04rem)}
+#cost-estimator,#questions{scroll-margin-top:16px}
+@media(max-width:900px){
+ .household-editorial .hero-grid{min-height:560px;grid-template-columns:minmax(0,1fr) minmax(0,.82fr)}
+ .household-editorial h1{font-size:clamp(3rem,6.6vw,5.2rem)}
+ .home-journey .journey-card{padding:24px;min-height:255px}
+ .home-journey .journey-heading{font-size:clamp(1.35rem,2.7vw,1.75rem)}
+}
+@media(max-width:690px){
+ .household-editorial .hero-grid{grid-template-columns:1fr;min-height:unset;padding-block:72px 135px;gap:38px}
+ .household-editorial h1{max-width:13ch;font-size:clamp(2.9rem,10.2vw,5rem)}
+ .household-editorial .room-framed{max-width:470px;width:min(100%,470px);transform:none;margin-inline:auto}
+ .home-journey{grid-template-columns:1fr;margin-top:-82px;margin-bottom:35px}
+ .home-journey .journey-card{min-height:unset;padding:23px 27px 24px;gap:8px}
+ .home-journey .journey-card:first-child{border-radius:22px 22px 0 0}
+ .home-journey .journey-card:last-child{border-radius:0 0 22px 22px}
+ .home-journey .journey-card:nth-child(2){border:1px solid #e2dfd4;border-block:0}
+ .home-journey .journey-heading{max-width:unset;font-size:1.6rem}
+ .home-journey .journey-detail{margin-top:0;max-width:52ch}
+}
+@media(max-width:470px){
+ .household-editorial .hero-grid{padding-top:55px}
+ .household-editorial h1{font-size:clamp(2.75rem,11vw,4.05rem)}
+ .household-editorial .hero-series{font-size:.6rem;letter-spacing:.1em;padding:8px 11px}
+ .home-journey .journey-card{padding:23px 21px}
+}
+@media(prefers-reduced-motion:reduce){
+ .home-journey .journey-card,.providers .card{transition:none}
+ .home-journey .journey-card:hover,.providers .card:hover{transform:none}
+}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to rental providers</a>
 <header class="site-header"><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="home-link" href="/#browse">← All rental categories</a></div></header>
 <main id="main">
-<section class="hero" aria-labelledby="page-title"><div class="wrap hero-grid">
-<div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Furniture, appliance &amp; electronics rentals.</h1><p class="lead">Explore local rent-to-own options for the essentials at home. Compare providers first, then confirm payment and ownership terms directly with the retailer.</p><div class="actions"><a class="button primary" href="#providers">Explore local providers ↓</a><a class="button outline" href="#questions">Questions before you sign ↗</a></div></div>
-<div class="room" aria-hidden="true"><svg viewBox="0 0 520 420" xmlns="http://www.w3.org/2000/svg" role="presentation">
+<section class="hero household-editorial" aria-labelledby="page-title"><div class="wrap hero-grid">
+<div class="hero-copy-block"><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><p class="hero-series">THE HOME EDIT <span aria-hidden="true">/</span> LOCAL RENTAL GUIDE</p><h1 id="page-title">Furniture, appliance <em>&amp; electronics rentals.</em></h1><p class="lead">Explore local rent-to-own options for the essentials at home. Compare providers first, then confirm payment and ownership terms directly with the retailer.</p><div class="actions"><a class="button primary" href="#providers">Explore local providers ↓</a><a class="button outline" href="#questions">Questions before you sign ↗</a></div></div>
+<div class="room room-framed" aria-hidden="true"><svg viewBox="0 0 520 420" xmlns="http://www.w3.org/2000/svg" role="presentation">
 <rect x="35" y="42" width="450" height="329" rx="20" fill="#f6e8d2"/>
 <path d="M35 305h450v46a20 20 0 0 1-20 20H55a20 20 0 0 1-20-20z" fill="#d3b394"/>
 <path d="M260 42v263M35 305h450" stroke="#cdbba6" stroke-width="3"/>
@@ -172,6 +238,11 @@ footer a{font-weight:750;color:var(--forest)}
 <circle cx="466" cy="91" r="9" fill="#c87553"/><circle cx="464" cy="119" r="5" fill="#d9ad73"/>
 </svg><p class="hero-caption">Home essentials · Local options</p></div>
 </div></section>
+<nav class="home-journey wrap" aria-label="Choose your next step">
+  <a class="journey-card" href="#providers"><span class="journey-kicker">01 / DISCOVER</span><span class="journey-heading">Compare local retailers.</span><span class="journey-detail">Three Russellville options. Confirm current inventory and addresses.</span><span class="journey-arrow" aria-hidden="true">↗</span></a>
+  <a class="journey-card" href="#cost-estimator"><span class="journey-kicker">02 / CALCULATE</span><span class="journey-heading">See the full cost.</span><span class="journey-detail">Use your written offer in the independent payment worksheet.</span><span class="journey-arrow" aria-hidden="true">↗</span></a>
+  <a class="journey-card" href="#questions"><span class="journey-kicker">03 / PREPARE</span><span class="journey-heading">Know what to ask.</span><span class="journey-detail">Review ownership, return, delivery and fee questions.</span><span class="journey-arrow" aria-hidden="true">↗</span></a>
+</nav>
 <div class="intro-band"><div class="wrap"><strong>Know the difference</strong><p>Rent-to-own agreements are different from short-term rentals. Ask each retailer how payments, fees, returns and ownership work before agreeing to terms.</p></div></div>
 <section class="providers wrap" id="providers" aria-labelledby="providers-title">
 <div class="section-top"><div><p class="eyebrow">Three Russellville providers</p><h2 id="providers-title">Find a place to start.</h2></div><p>Contact retailers directly to verify inventory, current location, availability and agreement terms.</p></div>
