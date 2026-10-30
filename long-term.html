@@ -130,6 +130,31 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
   .mobile-nav summary:focus-visible,.mobile-nav-panel a:focus-visible,.mobile-nav .mobile-search-link:focus-visible{outline:3px solid #ad701b;outline-offset:3px}
 }
 @media(max-width:380px){.mobile-nav .mobile-search-link{display:none!important}}
+
+/* Local home-type discovery: immersive editorial wayfinding, not listing photography. */
+.rental-paths{position:relative;isolation:isolate;overflow:hidden;margin:24px 0 37px;padding:clamp(27px,4.7vw,54px);color:#fffef4;background:#102e29;border-radius:25px;box-shadow:0 20px 48px #153d3024}
+.rental-paths::before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(112deg,rgba(9,35,30,.98) 3%,rgba(9,35,30,.9) 55%,rgba(9,35,30,.82)),url("assets/downtown-russellville-sunset.jpg") center 38%/cover no-repeat}
+.rental-paths::after{content:"";position:absolute;inset:auto -110px -240px auto;width:430px;height:430px;z-index:-1;border:1px solid #f6ca7e36;border-radius:50%;box-shadow:0 0 0 55px #f6ca7e0b,0 0 0 120px #f6ca7e08;pointer-events:none}
+.rental-paths-heading{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:25px}
+.rental-paths-kicker{margin:0 0 8px;color:#f8d492;font-size:.69rem;font-weight:850;letter-spacing:.17em;text-transform:uppercase}
+.rental-paths h2{margin:0;font:400 clamp(2.25rem,4.3vw,3.8rem)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.055em;color:#fff;text-wrap:balance}
+.rental-paths-heading>p{max-width:260px;margin:0 0 4px;color:#e0eadf;font-size:.87rem;line-height:1.65}
+.rental-paths-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.rental-path{display:flex;flex-direction:column;justify-content:space-between;gap:24px;min-width:0;min-height:200px;padding:22px 23px;border:1px solid #ffffff5c;border-radius:16px;text-decoration:none;color:#fff!important;background:rgba(244,246,236,.105);transition:background .22s,transform .22s,border-color .22s;overflow:hidden}
+.rental-path:hover{background:rgba(244,246,236,.19);transform:translateY(-4px);border-color:#f2ce8b}
+.rental-path:focus-visible{outline:3px solid #ffe0a1;outline-offset:4px}
+.rental-path-header{display:flex;align-items:start;justify-content:space-between;gap:15px}
+.rental-path-index{font-size:.68rem;font-weight:900;letter-spacing:.16em;color:#f3d395}
+.rental-path svg{display:block;width:67px;height:56px;flex:none;fill:none;stroke:#f0d69f;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.rental-path h3{margin:0 0 5px;font:400 clamp(1.5rem,2.5vw,2rem)/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.04em;color:#fff}
+.rental-path p{margin:0;color:#d5e5dc;font-size:.78rem;line-height:1.5}
+.rental-path-action{display:block;margin-top:14px;color:#f5d18a;font-size:.75rem;font-weight:850}
+.rental-paths-foot{display:flex;justify-content:space-between;gap:15px;margin:18px 0 0;color:#d7e4d9;font-size:.72rem;line-height:1.5}
+.rental-paths-foot a{font-weight:800;color:#f5d291}
+@media(max-width:790px){.rental-paths{margin-top:15px;padding:30px 23px}.rental-paths-heading{display:block}.rental-paths-heading>p{max-width:530px;margin-top:13px}.rental-paths-grid{grid-template-columns:1fr;gap:10px}.rental-path{min-height:0;flex-direction:row;align-items:center;gap:20px;padding:19px 21px}.rental-path-header{align-self:stretch;flex-direction:column;justify-content:space-between}.rental-path svg{width:53px;height:43px}.rental-path-content{flex:1}.rental-path h3{font-size:1.65rem}.rental-paths-foot{flex-wrap:wrap}}
+@media(max-width:470px){.rental-paths{padding:28px 19px;border-radius:17px}.rental-path{padding:17px 16px}.rental-path-header{gap:16px}.rental-path h3{font-size:1.48rem}.rental-path svg{width:46px;height:40px}.rental-paths-foot{display:block}.rental-paths-foot span{display:block;margin-top:7px}}
+@media(prefers-reduced-motion:reduce){.rental-path{transition:none}.rental-path:hover{transform:none}}
+
 </style></head>
 <body>
 <a class="skip" href="#main">Skip to listings</a>
@@ -180,6 +205,9 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
 </div>
 
 <main id="main" class="wrap">
+  <section class="rental-paths" aria-labelledby="rental-paths-title"><div class="rental-paths-heading"><div><p class="rental-paths-kicker">The River Valley / Find your fit</p><h2 id="rental-paths-title">What feels like home?</h2></div><p>Start with a kind of place. We will open the existing rental search with that filter ready to explore.</p></div><div class="rental-paths-grid"><a class="rental-path" href="?type=House#filters"><div class="rental-path-header"><span class="rental-path-index">01 / HOUSES</span><svg viewBox="0 0 76 64" aria-hidden="true" focusable="false"><path d="M5 31 38 6 71 31 M13 28v30h50V28 M30 58V38h16v20 M19 32h8v9h-8 M49 32h8v9h-8"/></svg></div><div class="rental-path-content"><h3>Houses</h3><p>Start with standalone-home listings.</p><span class="rental-path-action">Browse houses ↗</span></div></a>
+<a class="rental-path" href="?type=Apartment#filters"><div class="rental-path-header"><span class="rental-path-index">02 / APARTMENTS</span><svg viewBox="0 0 76 64" aria-hidden="true" focusable="false"><path d="M14 58V10h48v48 M8 58h60 M23 20h9v10h-9z M44 20h9v10h-9z M23 37h9v10h-9z M44 37h9v10h-9z M34 58V43h8v15"/></svg></div><div class="rental-path-content"><h3>Apartments</h3><p>Browse units in apartment properties.</p><span class="rental-path-action">Browse apartments ↗</span></div></a>
+<a class="rental-path" href="?type=Townhouse#filters"><div class="rental-path-header"><span class="rental-path-index">03 / TOWNHOMES</span><svg viewBox="0 0 76 64" aria-hidden="true" focusable="false"><path d="M4 28 20 14 36 28 56 14 72 28 M8 26v32h64V26 M36 28v30 M18 37h9v9h-9z M48 37h9v9h-9z M14 58V47h8v11 M54 58V47h8v11"/></svg></div><div class="rental-path-content"><h3>Townhomes</h3><p>Explore townhome-style rental listings.</p><span class="rental-path-action">Browse townhomes ↗</span></div></a></div><p class="rental-paths-foot"><span>Photo: downtown Russellville. Decorative local backdrop, not a property listing.</span><span>All types and current vacancies remain subject to source verification. <a href="#filters">Use all filters ↗</a></span></p></section>
   <section class="search-section" aria-labelledby="search-title">
 <section class="renter-shortcuts" aria-labelledby="shortcuts-title">
 <div class="shortcut-intro"><p class="eyebrow">Your search, your priorities</p><h3 id="shortcuts-title">Start with what matters.</h3><p>Choose a budget or bedroom starting point. Refine every detail with the filters below.</p></div>
