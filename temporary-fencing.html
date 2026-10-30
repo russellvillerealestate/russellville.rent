@@ -65,6 +65,72 @@ main{padding-block:58px 66px}.section-head{display:flex;align-items:end;justify-
 @media(max-width:550px){.fence-planner{margin-top:39px;border-radius:16px}.planner-heading{padding:26px 22px}.planner-form{padding:27px 21px}.planner-fields{grid-template-columns:1fr}.planner-preview{padding:12px}.planner-sheet{padding:26px 22px}.sheet-details div{grid-template-columns:95px minmax(0,1fr)}.planner-actions button{flex:1}}
 @media(prefers-reduced-motion:reduce){.fence-planner *{scroll-behavior:auto}}
 </style>
+
+<style id="fence-field-guide-2026">
+/* Scenic, project-first editorial treatment. Scoped to the temporary-fencing directory. */
+:root{--navy:#153e34;--deep:#0b2c26;--orange:#f1c68d;--ground:#f6f7f1;--ink:#193e35;--line:#d5e2d7}
+body{background:linear-gradient(180deg,#f6f8f1 0,#eef3ec 65%,#f8f8f3 100%)}
+.site-header{background:#092c26}
+.hero{background:#143e34;isolation:isolate}
+.hero:before{opacity:1;background:radial-gradient(circle at 82% 37%,#dcae6370,transparent 25%),radial-gradient(ellipse at 83% 90%,#1d6b519c,transparent 54%),linear-gradient(112deg,#092922 8%,#164436 62%,#123d32);z-index:-2}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:24%;background:linear-gradient(170deg,transparent 25%,#0b2e28 70%);clip-path:polygon(0 70%,29% 76%,57% 30%,81% 62%,100% 22%,100% 100%,0 100%);opacity:.45;z-index:-1;pointer-events:none}
+.hero-inner{min-height:630px;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(26px,4vw,65px);padding-block:100px 116px}
+.hero h1{font:400 clamp(3.5rem,7vw,6.65rem)/.96 Georgia,"Times New Roman",serif;letter-spacing:-.075em;max-width:720px;text-wrap:balance}
+.hero h1 em{font-weight:400;color:#f5d6a0}
+.kicker{color:#f5d5a2;letter-spacing:.2em}
+.lead{font-size:clamp(1.04rem,1.5vw,1.24rem);line-height:1.65;max-width:480px;color:#e4efe8}
+.btn{border-radius:100px;padding-inline:22px}
+.btn-primary{background:#f1c68d;color:#13392f}
+.btn-secondary{border-color:#e3eee0ba}
+.drawing{min-height:380px;display:flex;align-items:center;justify-content:center;border:1px solid #e9f4da55;border-radius:27px;padding:24px;background:linear-gradient(140deg,#e7eedc1e,#0d3730ad);box-shadow:0 32px 74px #061b1769;transform:rotate(2deg)}
+.drawing:after{content:"";position:absolute;inset:13px;border:1px solid #e5efc02c;border-radius:20px;pointer-events:none}
+.drawing svg{max-height:380px}
+.drawing-badge{background:#f1c68d;border-radius:100px}
+.drawing-label{color:#e6f2dc}
+.quickline{background:#faf4e8;border-bottom:1px solid #dfdfd0}
+.quickline-inner{padding-block:23px;gap:14px 31px;color:#476154}
+.quickline strong{color:#174336}
+.quickline span:before{color:#b98040}
+main.wrap{padding-top:0}
+.project-paths{margin:0 0 62px;padding:clamp(35px,5vw,68px) 0 0}
+.path-heading{display:grid;grid-template-columns:1.25fr .75fr;gap:30px;align-items:end;margin-bottom:27px}
+.path-heading .section-label{color:#987044;font-size:.72rem}
+.path-heading h2{margin:0;font:400 clamp(2.25rem,4.5vw,4.25rem)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.065em;color:#143c31;max-width:620px;text-wrap:balance}
+.path-heading>p{color:#526b5e;font-size:.95rem;max-width:380px;margin:0 0 5px}
+.path-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.path-card{position:relative;display:flex;flex-direction:column;min-width:0;min-height:337px;overflow:hidden;background:#fffefa;border:1px solid #d8e5d9;border-radius:19px;padding:23px 24px 24px;text-decoration:none;color:#173f34;box-shadow:0 12px 32px #183e3412;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.path-card:first-child{background:#173e33;color:#fff;border-color:#173e33}
+.path-card:hover{transform:translateY(-5px);box-shadow:0 22px 36px #163f342a;border-color:#779b86}
+.path-card:focus-visible{outline:3px solid #ab641e;outline-offset:4px;border-radius:19px}
+.path-overline{font-size:.68rem;font-weight:900;letter-spacing:.17em;text-transform:uppercase;color:#a87945}
+.path-card:first-child .path-overline{color:#f5cf90}
+.path-art{display:grid;place-items:center;height:136px;margin:10px -10px 11px;background:radial-gradient(ellipse at center,#e0ece0 5%,transparent 72%);border-radius:16px;color:#37715e}
+.path-card:first-child .path-art{background:radial-gradient(ellipse at center,#ffffff26,transparent 72%);color:#f4d49c}
+.path-art svg{width:min(100%,260px);height:135px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.path-card strong{font:400 1.45rem/1.16 Georgia,serif;letter-spacing:-.03em;margin:0 0 9px}
+.path-card small{font-size:.79rem;line-height:1.55;color:#60756a}
+.path-card:first-child small{color:#d4e6d9}
+.path-cta{display:inline-flex;align-items:center;margin-top:auto;padding-top:18px;font-weight:850;font-size:.77rem;letter-spacing:.015em;color:#206349}
+.path-card:first-child .path-cta{color:#f5d49a}
+.section-head h2,.check h2{font-weight:400;letter-spacing:-.05em}
+.grid{gap:21px}
+.grid article{border-radius:20px;box-shadow:0 12px 35px #142d360c}
+.grid article:first-child{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);grid-template-rows:auto auto auto;column-gap:36px;align-items:start;padding:clamp(28px,4vw,40px);background:radial-gradient(circle at 92% 2%,#ecf3e9 0,transparent 48%),#fffefa;border-top:5px solid #1a6b4c}
+.grid article:first-child .card-top{grid-column:1/-1}
+.grid article:first-child h3{grid-column:1;grid-row:2;font-size:clamp(1.8rem,3vw,2.3rem)}
+.grid article:first-child>p:first-of-type{grid-column:1;grid-row:3;max-width:66ch;margin-bottom:0}
+.grid article:first-child .area{grid-column:2;grid-row:2;align-self:start;margin:0;background:#e8f0e7;border-left:3px solid #7aaa7e;border-radius:7px}
+.grid article:first-child>p:last-child{grid-column:2;grid-row:3;align-self:start;margin:0;align-content:start}
+.grid article .tag{font-size:.71rem}
+.grid article p:last-child a:first-child{background:#164e3b;border-color:#164e3b}
+.grid article p:last-child a:first-child:hover{background:#23664c}
+.check{background:#e8eee4}
+@media(max-width:950px){.hero-inner{min-height:560px;gap:22px}.drawing{min-height:320px}.path-card{padding:21px 18px}.path-card strong{font-size:1.3rem}}
+@media(max-width:820px){.hero-inner{min-height:0;grid-template-columns:1fr;padding-block:68px 75px}.hero h1{font-size:clamp(3.3rem,10vw,5.3rem)}.drawing{width:min(100%,650px);min-height:230px;transform:none}.drawing svg{max-height:255px}.path-heading{grid-template-columns:1fr;gap:11px}.path-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.path-card:last-child{grid-column:1/-1;min-height:255px}.grid article:first-child{column-gap:23px}}
+@media(max-width:650px){.grid article:first-child{display:flex;grid-column:auto;padding:24px;gap:0}.grid article:first-child>p:first-of-type{margin-bottom:16px}.grid article:first-child .area{margin:0 0 16px}.grid article:first-child>p:last-child{margin-top:auto}.path-grid{grid-template-columns:1fr}.path-card,.path-card:last-child{min-height:0;grid-column:auto}.path-art{height:104px;margin:0 -6px 9px}.path-art svg{height:105px}.path-card strong{font-size:1.5rem}.path-cta{padding-top:14px}.project-paths{margin-bottom:43px}}
+@media(max-width:520px){.hero-inner{padding-block:54px 52px}.hero h1{font-size:clamp(3rem,13vw,4.3rem)}.drawing{display:flex;min-height:175px;padding:10px;max-width:400px}.drawing svg{max-height:200px}.drawing-label{bottom:8px;font-size:.54rem}.drawing-badge{font-size:.52rem;top:9px;right:9px}.quickline-inner{gap:9px 20px}.project-paths{padding-top:35px}.path-heading h2{font-size:2.65rem}}
+@media(prefers-reduced-motion:reduce){.path-card{transition:none}.path-card:hover{transform:none}.drawing{transform:none}}
+</style>
 </head>
 <body>
 <a class="skip" href="#providers">Skip to rental providers</a>
@@ -75,6 +141,31 @@ main{padding-block:58px 66px}.section-head{display:flex;align-items:end;justify-
 </div></section>
 <div class="quickline"><div class="wrap quickline-inner"><strong>3 provider options</strong><span>AF&amp;G: Russellville service verified</span><span>Confirm other providers’ delivery</span></div></div>
 <main class="wrap" id="providers">
+
+<section class="project-paths" aria-labelledby="path-title">
+  <div class="path-heading">
+    <div><p class="section-label">Project-first / Fence planning</p><h2 id="path-title">A better perimeter starts with a plan.</h2></div>
+    <p>Choose the job in front of you. Each route prepares the matching project type in the inquiry worksheet; suppliers still confirm inventory, delivery and terms.</p>
+  </div>
+  <div class="path-grid">
+    <a class="path-card" href="#quote-checklist" data-fence-project="Construction site">
+      <span class="path-overline">01 / Build &amp; renovate</span>
+      <span class="path-art" aria-hidden="true"><svg viewBox="0 0 300 145" focusable="false"><path d="M18 124H282M33 112V60L87 35L141 60V112M49 112V74H126V112M67 74V112M107 74V112"/><path d="M167 116V49H274V116M167 68H274M167 88H274M192 49V116M219 49V116M247 49V116"/><path d="M160 124h121M152 115h28M256 115h28"/><path d="M50 36l31-18 31 18" stroke-width="5"/></svg></span>
+      <strong>Secure the jobsite.</strong><small>Plan temporary panels, gate access, dates and site protection for construction or renovation.</small><span class="path-cta">Prepare a construction inquiry ↗</span>
+    </a>
+    <a class="path-card" href="#quote-checklist" data-fence-project="Event">
+      <span class="path-overline">02 / Gather &amp; celebrate</span>
+      <span class="path-art" aria-hidden="true"><svg viewBox="0 0 300 145" focusable="false"><path d="M18 125H282M42 96L150 27 258 96M72 78V124M228 78V124M150 27V124M72 124H228" stroke-width="4"/><path d="M87 95H213M97 107H203M94 124V102M206 124V102"/><path d="M26 115V80H56V115M26 91H56M244 115V80H274V115M244 91H274"/><path d="M150 25V11M150 11l23 7-23 7"/></svg></span>
+      <strong>Shape your event.</strong><small>Organize guest areas and temporary boundaries; ask which panels or screens are available.</small><span class="path-cta">Prepare an event inquiry ↗</span>
+    </a>
+    <a class="path-card" href="#quote-checklist" data-fence-project="Crowd control">
+      <span class="path-overline">03 / Direct &amp; protect</span>
+      <span class="path-art" aria-hidden="true"><svg viewBox="0 0 300 145" focusable="false"><path d="M20 122H280M30 112V64H123V112M30 82H123M61 64V112M92 64V112M177 112V64H270V112M177 82H270M208 64V112M239 64V112" stroke-width="3"/><circle cx="151" cy="55" r="10"/><path d="M151 67v31m-18-17 18 8 18-8m-18 17-13 23m13-23 13 23"/><path d="M136 20h30m-7-7 7 7-7 7" stroke-width="3"/></svg></span>
+      <strong>Guide the crowd.</strong><small>Prepare a barricade and access-control inquiry without assuming any provider has stock.</small><span class="path-cta">Prepare a crowd-control inquiry ↗</span>
+    </a>
+  </div>
+</section>
+
 <div class="section-head"><div><p class="section-label">01 / Explore providers</p><h2>Find the right fence supplier</h2></div><p>Compare published service details, then confirm the delivery area and final quote directly.</p></div>
 <div class="grid"><article><div class="card-top"><span class="number">PROVIDER 01</span><span class="tag">Russellville service verified</span></div><h3>AF&amp;G LLC</h3><p>Temporary chain-link fence panels, portable privacy screens and event crowd-control barriers. The operator has an official Russellville service page confirming temporary fencing delivery, installation and removal in Russellville. Confirm available dates, equipment and the complete quote directly.</p><p class="area">Conway-based provider · Russellville service explicitly advertised</p><p><a href="tel:+15017719929">501-771-9929</a> · <a href="https://arfence.com/temporary-fence-rental-russellville-ar/" target="_blank" rel="noopener noreferrer">Official Russellville service confirmation ↗</a></p></article>
 <article><div class="card-top"><span class="number">PROVIDER 02</span><span class="tag tag-caution">Russellville delivery unconfirmed</span></div><h3>National Rent-A-Fence — Arkansas regional service</h3><p>Official Arkansas service pages advertise temporary chain-link fencing, freestanding fence panels, pedestrian barricades, windscreens and fence gates for construction and events. The provider describes service across much of Arkansas, but <strong>delivery to Russellville is UNCONFIRMED</strong>. Ask for a written quote covering delivery, installation, removal, rental period and site requirements.</p><p class="area">Arkansas regional provider · No Russellville office verified · Russellville delivery UNCONFIRMED</p><p><a href="tel:+18003525675">800-352-5675</a> · <a href="https://www.rentnational.com/fort-smith" target="_blank" rel="noopener noreferrer">Official Arkansas rental and service information ↗</a></p></article>
@@ -182,6 +273,21 @@ main{padding-block:58px 66px}.section-head{display:flex;align-items:end;justify-
       fallback.focus();
       fallback.select();
     }
+  });
+
+  // Project cards remain ordinary in-page links when scripting is unavailable.
+  // With the worksheet active, carry only the selected project type into the existing radio group.
+  document.querySelectorAll('[data-fence-project]').forEach(link => {
+    link.addEventListener("click", event => {
+      const value = link.getAttribute("data-fence-project");
+      const radio = [...form.querySelectorAll('input[name="fence-purpose"]')].find(input => input.value === value);
+      if (!radio || planner.hidden) return;
+      event.preventDefault();
+      radio.checked = true;
+      render();
+      planner.scrollIntoView({behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"});
+      radio.focus({preventScroll: true});
+    });
   });
   planner.hidden = false;
   render();
