@@ -15,7 +15,7 @@
     "availability": "Check source",
     "image_url": "https://images.cdn.appfolio.com/nspm/images/ebd6c578-2eb6-4edb-9e1c-763913289a32/medium.jpeg",
     "image_verified": true,
-    "updated_at": "2026-10-29T13:07:13.849Z",
+    "updated_at": "2026-10-30T05:53:28.019Z",
     "seeded": false
   },
   {
@@ -55,25 +55,6 @@
     "seeded": true,
     "image_url": "https://img.zumpercdn.com/843424441/1280x960?dpr=1&fit=crop&h=542&q=76&w=991",
     "image_verified": true
-  },
-  {
-    "id": "rvr-east-11th-st-112-e-11th-st-russellville-ar-72801",
-    "address": "East 11th St - 112 E 11th St",
-    "city": "Russellville",
-    "state": "AR",
-    "zip": "72801",
-    "rent": 900,
-    "beds": null,
-    "baths": null,
-    "type": "Apartment",
-    "manager": "River Valley Realty Management Service",
-    "source_name": "River Valley Realty",
-    "source_url": "https://www.rentrvr.com/listings/detail/b298222b-ed24-41aa-aa14-f0012c92f992",
-    "availability": "Check source",
-    "image_url": "https://images.cdn.appfolio.com/rivervalley/images/5df5a05f-5b2b-4206-b81d-3c3993a589d9/large.jpeg",
-    "image_verified": true,
-    "updated_at": "2026-10-29T13:07:13.849Z",
-    "seeded": false
   },
   {
     "id": "moore-304-elm",
@@ -148,7 +129,7 @@
     "availability": "Check source",
     "image_url": "https://images.cdn.appfolio.com/rivervalley/images/8bc65cba-1629-4d81-9d96-f261eafaa2cc/large.jpg",
     "image_verified": true,
-    "updated_at": "2026-10-29T13:07:13.849Z",
+    "updated_at": "2026-10-30T05:53:28.019Z",
     "seeded": false
   },
   {
@@ -167,7 +148,7 @@
     "availability": "Check source",
     "image_url": "https://images.cdn.appfolio.com/nspm/images/d4be8255-176c-4a72-97a3-bc5e70742251/medium.jpg",
     "image_verified": true,
-    "updated_at": "2026-10-29T13:07:13.849Z",
+    "updated_at": "2026-10-30T05:53:28.019Z",
     "seeded": false
   },
   {
@@ -186,7 +167,7 @@
     "availability": "Check source",
     "image_url": "https://images.cdn.appfolio.com/rivervalley/images/9bbdb5ef-e82d-4caa-bef8-0c50db79f143/large.jpg",
     "image_verified": true,
-    "updated_at": "2026-10-29T13:07:13.849Z",
+    "updated_at": "2026-10-30T05:53:28.019Z",
     "seeded": false
   }
 ]
