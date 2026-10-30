@@ -161,13 +161,129 @@ footer a{font-weight:800}
 @media(max-width:650px){.service-map{padding-top:43px}.service-map-head{display:block}.service-map-head>p{margin-top:12px}.route-grid{grid-template-columns:1fr;gap:10px;margin-top:18px}.route-card{min-height:0;padding:20px}.route-top{margin-bottom:12px}.route-card h3{font-size:1.4rem}.route-card p{max-width:55ch}}
 @media(prefers-reduced-motion:reduce){.route-card{transition:none}.route-card:hover{transform:none}}
 
+
+/* 2026-10-30: photo-led event-production field guide.
+   Reuse the site's optimized local downtown image. Editorial hierarchy inspired by
+   StayARV.com, adapted to a five-provider directory without inventory claims. */
+.site-head{background:#112d26;border-bottom-color:#ffffff2d}
+.site-head .shell{min-height:84px}
+.brand{font-size:1.3rem}
+.back{min-height:44px;display:inline-flex;align-items:center}
+.hero{position:relative;isolation:isolate;background:
+  linear-gradient(92deg,rgba(11,31,28,.96) 0%,rgba(12,39,33,.89) 43%,rgba(13,43,35,.58) 76%,rgba(12,38,33,.60) 100%),
+  url("assets/downtown-russellville-sunset.jpg") center 46%/cover no-repeat #193d34}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:135px;pointer-events:none;
+  background:linear-gradient(transparent,rgba(14,40,34,.42));z-index:-1}
+.hero-grid{grid-template-columns:minmax(0,1.36fr) minmax(245px,.64fr);
+  min-height:clamp(560px,57vw,690px);gap:clamp(24px,4vw,65px);padding-block:90px 132px}
+.eyebrow{display:inline-block;padding:9px 13px;border:1px solid #efd49777;border-radius:3px;
+  background:#112e28a1;color:#f9dfa4;font-size:.72rem;letter-spacing:.15em}
+.hero h1{font:400 clamp(3.1rem,6.1vw,6.7rem)/.98 Georgia,"Times New Roman",serif;
+  letter-spacing:-.064em;max-width:1040px;text-wrap:balance;text-shadow:0 2px 25px #0a251d6b}
+.hero h1 em{font-weight:400;color:#f7dca2;font-style:italic}
+.hero-copy{max-width:59ch;font-size:clamp(1rem,1.28vw,1.19rem);
+  line-height:1.7;color:#edf3ed;margin:28px 0 30px}
+.hero-actions{gap:13px}
+.action{min-height:52px;padding:13px 22px;border-radius:6px;transition:transform .2s,background .2s}
+.action:hover{transform:translateY(-2px)}
+.action.primary{background:#f3d58e}
+.action.secondary{background:#143a32b3;border-color:#d2e2d4}
+.sound-art{min-height:350px;max-width:390px;width:100%;justify-self:end;transform:rotate(2deg);
+  border:1px solid #f5daaa8c;border-radius:9px;
+  background:linear-gradient(150deg,#153d36e6,#193e36b9);backdrop-filter:blur(7px);
+  box-shadow:16px 25px 0 #e7c48130,0 30px 65px #071d19a0}
+.sound-art:before{inset:14px;border-color:#f4d69b5c;border-radius:2px}
+.sound-art:after{border-color:#efd8a45c;box-shadow:0 0 0 30px #e7c48116,0 0 0 62px #e7c4810b}
+.wave i{background:linear-gradient(#ffe6b2,#d4a65d);box-shadow:0 0 17px #f9dba278}
+.art-label{left:29px;bottom:27px;color:#f7dfad}
+.quick-guide{margin-top:-55px}
+.guide-box{border:1px solid #d7c8a5;border-radius:8px;box-shadow:0 24px 48px #10291c2e;
+  background:#fdfaf1;grid-template-columns:repeat(3,minmax(0,1fr))}
+.guide-item{padding:27px clamp(22px,3vw,38px);border-top:4px solid #d6ab58}
+.guide-item+.guide-item{border-left:1px solid #e0ddcc}
+.guide-item strong{font-size:1.09rem}
+.guide-item span{font-size:.84rem}
+main{padding-bottom:60px}
+.section,.service-map{scroll-margin-top:35px}
+.service-map{padding-top:85px}
+.service-map-head h2{font-size:clamp(2.5rem,5vw,4.3rem);letter-spacing:-.056em}
+.service-map-head>p{max-width:43ch;font-size:.95rem}
+.route-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:17px;margin-top:32px}
+.route-grid li{grid-column:span 2}
+.route-grid li:nth-child(-n+2){grid-column:span 3}
+.route-card{min-height:285px;padding:26px;border-radius:10px;border-color:#ced9cd;
+  box-shadow:0 11px 25px #153d2f13}
+.route-grid li:nth-child(-n+2) .route-card{min-height:320px}
+.route-card h3{font-size:clamp(1.6rem,2.7vw,2.25rem);line-height:1.12}
+.route-card .route-provider{font-size:.83rem;margin-top:4px}
+.route-top{margin-bottom:30px}
+.route-card p{font-size:.86rem}
+.route-card.route-confirmed{background:linear-gradient(145deg,#163b30 0%,#255b48 100%);border-color:#254d3b;
+  box-shadow:0 18px 28px #153d2f22}
+.route-grid li:nth-child(2) .route-card{background:linear-gradient(135deg,#285340 0%,#12392f 100%)}
+.route-card .route-foot{margin-top:auto}
+.route-card:focus-visible{outline:3px solid #b37428;outline-offset:4px}
+.section-heading{margin-bottom:28px}
+h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New Roman",serif;
+  letter-spacing:-.045em}
+.provider{border-radius:10px;box-shadow:0 14px 30px #153d2f0d}
+.provider.featured .provider-content{padding:33px clamp(25px,4vw,53px)}
+#confirmed>.provider+.provider{margin-top:19px}
+#provider-2{border-color:#d8c39b}
+#provider-2 .card-top{background:#f9efd8}
+#confirmed .provider h2{font:400 clamp(1.55rem,2.6vw,2.2rem)/1.13 Georgia,"Times New Roman",serif}
+#confirmed .provider p{max-width:95ch}
+.plan{border-radius:10px;margin-top:68px}
+@media(max-width:1040px){
+  .hero-grid{grid-template-columns:minmax(0,1fr) minmax(190px,.5fr)}
+  .sound-art{min-height:270px;max-width:280px}
+  .route-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .route-grid li,.route-grid li:nth-child(-n+2){grid-column:auto}
+  .route-grid li:last-child{grid-column:1/-1}
+  .route-grid li:last-child .route-card{min-height:210px}
+}
+@media(max-width:760px){
+  .hero-grid{grid-template-columns:1fr;min-height:0;gap:32px;padding-block:65px 106px}
+  .hero h1{font-size:clamp(2.9rem,9vw,5.1rem)}
+  .sound-art{justify-self:start;max-width:330px;min-height:155px;transform:rotate(0)}
+  .sound-art:after{width:155px;height:155px}
+  .wave{height:115px}.wave i{max-height:100px}
+  .quick-guide{margin-top:-38px}
+  .guide-box{grid-template-columns:1fr}
+  .guide-item{padding:17px 23px;border-top:0;border-left:4px solid #d6ab58}
+  .guide-item+.guide-item{border-left:4px solid #d6ab58;border-top:1px solid #dedfce}
+  .service-map{padding-top:56px}
+  .route-grid{grid-template-columns:1fr}
+  .route-grid li,.route-grid li:nth-child(-n+2),.route-grid li:last-child{grid-column:auto}
+  .route-grid li .route-card,.route-grid li:nth-child(-n+2) .route-card,.route-grid li:last-child .route-card{min-height:0}
+  .route-card{padding:24px}
+  .route-top{margin-bottom:14px}
+}
+@media(max-width:520px){
+  .site-head .shell{min-height:74px}
+  .hero-grid{padding-block:48px 92px}
+  .hero h1{font-size:clamp(2.65rem,10.6vw,4rem);letter-spacing:-.05em}
+  .eyebrow{font-size:.64rem}
+  .hero-copy{font-size:.96rem;margin:20px 0 24px}
+  .action{width:100%}
+  .sound-art{width:100%;max-width:none;min-height:142px}
+  .art-label{left:22px;bottom:14px}
+  .service-map-head h2{font-size:2.4rem}
+  .route-grid{gap:12px}
+  .section{padding-top:56px}
+}
+@media(prefers-reduced-motion:reduce){
+  .action{transition:none}
+  .action:hover{transform:none}
+}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to rental providers</a>
 <header class="site-head"><div class="shell"><a class="brand" href="/">Russellville<span>.Rent</span></a><a class="back" href="/">← Browse all rentals</a></div></header>
 <section class="hero" aria-labelledby="page-title"><div class="shell hero-grid">
-<div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley · Event rentals</p><h1 id="page-title">Audio, visual and event equipment rentals</h1><p class="hero-copy">Sound equipment, microphones, lighting, projectors and production gear for Russellville events. Compare what providers advertise—and what still needs to be confirmed.</p><div class="hero-actions"><a class="action primary" href="#confirmed">Explore confirmed delivery ↓</a><a class="action secondary" href="#more-options">Other providers ↓</a></div></div>
+<div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley · Event rentals</p><h1 id="page-title">Audio, visual <br><em>and event equipment</em> <br>rentals</h1><p class="hero-copy">Sound equipment, microphones, lighting, projectors and production gear for Russellville events. Compare what providers advertise—and what still needs to be confirmed.</p><div class="hero-actions"><a class="action primary" href="#confirmed">Explore confirmed delivery ↓</a><a class="action secondary" href="#more-options">Other providers ↓</a></div></div>
 <div class="sound-art" aria-hidden="true"><div class="wave"><i style="--h:34px"></i><i style="--h:62px"></i><i style="--h:94px"></i><i style="--h:49px"></i><i style="--h:126px"></i><i style="--h:76px"></i><i style="--h:154px"></i><i style="--h:92px"></i><i style="--h:120px"></i><i style="--h:48px"></i><i style="--h:90px"></i><i style="--h:60px"></i><i style="--h:36px"></i></div><span class="art-label">SOUND / LIGHT / PRODUCTION</span></div>
 </div></section>
 <div class="shell quick-guide" aria-label="Directory at a glance"><div class="guide-box">
@@ -185,18 +301,23 @@ footer a{font-weight:800}
       <h3>Equipment without a DJ</h3><p class="route-provider">Roots &amp; Rhythm Rentals</p><p>Speakers, microphones and lighting available as equipment-only rentals. Russellville delivery and setup advertised for an extra fee.</p>
       <span class="route-foot"><span>Russellville delivery advertised</span><span aria-hidden="true">↗</span></span>
     </a></li>
-    <li><a class="route-card " href="#provider-3">
+    <li><a class="route-card route-confirmed" href="#provider-2">
       <span class="route-top"><span class="route-number">CHANNEL 02</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
+      <h3>Outdoor movie screens</h3><p class="route-provider">FunFlicks — Arkansas</p><p>Inflatable movie screens with projection, sound, delivery, setup and on-site support. Russellville is included in the provider's advertised service area.</p>
+      <span class="route-foot"><span>Russellville service advertised</span><span aria-hidden="true">↗</span></span>
+    </a></li>
+    <li><a class="route-card " href="#provider-3">
+      <span class="route-top"><span class="route-number">CHANNEL 03</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
       <h3>Projection &amp; event gear</h3><p class="route-provider">A/V Arkansas</p><p>Projectors, screens, sound and event production advertised. Confirm equipment-only options and location-specific delivery.</p>
       <span class="route-foot"><span>Russellville delivery unconfirmed</span><span aria-hidden="true">↗</span></span>
     </a></li>
     <li><a class="route-card " href="#provider-4">
-      <span class="route-top"><span class="route-number">CHANNEL 03</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
+      <span class="route-top"><span class="route-number">CHANNEL 04</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
       <h3>Wedding entertainment</h3><p class="route-provider">636 Entertainment</p><p>DJ-led packages with sound and event lighting advertised. Standalone equipment-only rental remains unconfirmed.</p>
       <span class="route-foot"><span>Ask about package details</span><span aria-hidden="true">↗</span></span>
     </a></li>
     <li><a class="route-card " href="#provider-5">
-      <span class="route-top"><span class="route-number">CHANNEL 04</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
+      <span class="route-top"><span class="route-number">CHANNEL 05</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
       <h3>Full technical production</h3><p class="route-provider">CWP Productions</p><p>Professional setup and on-site technical support advertised. Equipment-only pickup and Russellville delivery are unconfirmed.</p>
       <span class="route-foot"><span>Russellville delivery unconfirmed</span><span aria-hidden="true">↗</span></span>
     </a></li>
