@@ -118,6 +118,75 @@ footer a{font-weight:750}
 @media(max-width:850px){.studio-grid{grid-template-columns:1fr}.studio-scene{min-height:390px}.studio-copy{max-width:670px}}
 @media(max-width:470px){.studio-grid{padding-block:43px}.studio-scene{min-height:360px;padding-inline:18px}.studio-sign{min-height:194px;padding:18px 13px}.studio-sign-name{font-size:clamp(1.75rem,8vw,2.5rem)}.studio-actions>*{width:100%}.studio-scene-caption{margin-top:86px}}
 @media(prefers-reduced-motion:reduce){.studio-sign{transform:none}}
+
+/* Immersive River Valley celebration landing and purpose-led occasion shortcuts.
+   Existing rates, provider details, illustrated studio, and form behavior are preserved. */
+.hero{
+  background:
+    linear-gradient(93deg,rgba(8,31,27,.97) 0%,rgba(10,41,34,.91) 42%,rgba(10,40,34,.73) 76%,rgba(11,43,35,.82) 100%),
+    url("assets/downtown-russellville-sunset.jpg") center 49%/cover no-repeat,
+    var(--deep);
+}
+.hero-grid{min-height:640px;gap:clamp(35px,5vw,76px);padding-block:83px 96px}
+.hero-grid>div:first-child{position:relative;z-index:1}
+.hero h1{font-size:clamp(3.5rem,6.8vw,6.5rem);max-width:11ch;line-height:1.01;text-wrap:balance}
+.hero-lead{font-size:1.09rem;max-width:49ch;color:#f2f5ec}
+.sign-art{
+  isolation:isolate;min-height:405px;padding:22px;
+  border:1px solid #f7e8c37a;border-radius:28px;
+  background:linear-gradient(155deg,#faf3df2e,#d5e5d210 63%,#e7c68b2b);
+  box-shadow:0 28px 76px #071d1966,inset 0 1px #ffffff44;
+}
+.sign-art:before{content:"AROUND HERE, WE CELEBRATE";position:absolute;top:21px;left:25px;color:#fff0d2;letter-spacing:.2em;font-size:.61rem;font-weight:850}
+.sign-art svg{margin-top:22px;max-width:485px}
+.occasion-pathways{background:#fffaf1;padding-block:clamp(65px,8vw,116px);border-bottom:1px solid #e7d9c7}
+.paths-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:34px}
+.paths-heading .eyebrow{color:#9e5639}
+.paths-heading h2{color:#163e34;font-size:clamp(2.65rem,4.9vw,4.85rem);margin:0;max-width:15ch;text-wrap:balance}
+.paths-heading p:last-child{max-width:39ch;color:#51645a;margin:0 0 6px;font-size:.98rem}
+.occasion-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+.occasion-path{
+  --card-bg:#173e34;--card-fg:#fff9ed;--card-accent:#f8d98c;
+  display:flex;position:relative;isolation:isolate;overflow:hidden;min-height:278px;flex-direction:column;align-items:flex-start;
+  padding:clamp(27px,3.5vw,43px);background:var(--card-bg);color:var(--card-fg);
+  border:1px solid #365749;border-radius:22px;text-decoration:none;
+  box-shadow:0 12px 35px #123d3610;
+  transition:transform .22s ease,box-shadow .22s ease;
+}
+.occasion-path:nth-child(2){--card-bg:#f4dfc4;--card-fg:#472f29;--card-accent:#a85135;border-color:#e0bd9e}
+.occasion-path:nth-child(3){--card-bg:#e3eadd;--card-fg:#24483b;--card-accent:#a26737;border-color:#cbdbca}
+.occasion-path:nth-child(4){--card-bg:#244b42;--card-fg:#fff9ed;--card-accent:#f1cc85}
+.occasion-path:after{content:"✳";position:absolute;z-index:-1;right:-22px;top:-49px;font:400 225px/1 Georgia,serif;color:var(--card-accent);opacity:.17;transform:rotate(-15deg)}
+.occasion-path:nth-child(2):after{content:"★";right:4px;top:-39px}
+.occasion-path:nth-child(3):after{content:"✦";right:-7px;top:-42px}
+.occasion-path:nth-child(4):after{content:"✳";right:5px;top:-53px}
+.occasion-path:hover{transform:translateY(-5px);box-shadow:0 22px 43px #123d3626}
+.occasion-path:focus-visible{outline:4px solid #a55720;outline-offset:5px}
+.path-index{font-size:.67rem;font-weight:850;letter-spacing:.17em;text-transform:uppercase;color:var(--card-accent)}
+.occasion-path h3{font:400 clamp(2.35rem,4vw,3.75rem)/1.08 Georgia,"Times New Roman",serif;letter-spacing:-.055em;margin:24px 0 12px}
+.occasion-path p{font-size:.91rem;line-height:1.65;max-width:33ch;margin:0 0 20px;opacity:.94}
+.path-action{font-size:.82rem;letter-spacing:.02em;font-weight:850;margin-top:auto;display:inline-flex;align-items:center;gap:12px;border-bottom:1px solid currentColor;padding-bottom:4px}
+@media(max-width:850px){
+  .hero-grid{min-height:0;gap:22px;padding-block:68px 76px}
+  .hero h1{max-width:13ch}
+  .sign-art{min-height:300px;max-width:590px;width:100%;margin-inline:auto}
+  .paths-heading{display:block}
+  .paths-heading p:last-child{margin-top:17px}
+}
+@media(max-width:620px){
+  .hero{background-position:center,65% center}
+  .hero-grid{padding-block:51px 65px}
+  .hero h1{font-size:clamp(3.1rem,13.3vw,4.7rem)}
+  .hero-lead{font-size:1rem}
+  .sign-art{min-height:235px;padding:11px;border-radius:18px}
+  .sign-art:before{font-size:.52rem;top:16px;left:16px}
+  .sign-art svg{margin-top:22px}
+  .occasion-grid{grid-template-columns:1fr}
+  .occasion-path{min-height:235px;padding:29px}
+  .paths-heading h2{font-size:clamp(2.5rem,10vw,3.6rem)}
+}
+@media(prefers-reduced-motion:reduce){.occasion-path{transition:none}.occasion-path:hover{transform:none}}
+@media print{.hero{background:#173e34!important}.occasion-path{box-shadow:none}.occasion-path:after{display:none}}
 </style>
 </head>
 <body>
@@ -145,6 +214,18 @@ footer a{font-weight:750}
 <g stroke="#c8e2ca" stroke-width="4" stroke-linecap="round"><path d="M46 159 l13 10 M57 150 l-10 14 M456 150 l13 10 M468 147 l-10 14 M278 31 l8 10"/></g>
 </svg></div></div></section>
 <div class="occasion-strip"><div class="wrap"><strong>Made for milestones</strong><span>Birthdays</span><span>Graduations</span><span>Birth announcements</span><span>School &amp; community events</span></div></div>
+
+<section class="occasion-pathways" aria-labelledby="paths-title">
+<div class="wrap">
+  <div class="paths-heading"><div><p class="eyebrow">Your occasion / Your starting point</p><h2 id="paths-title">Every milestone deserves a little fanfare.</h2></div><p>Choose what you’re celebrating. You can preview a greeting idea, then check the real options and dates with the local operator.</p></div>
+  <div class="occasion-grid" aria-label="Explore greeting ideas by occasion">
+    <a class="occasion-path" data-occasion="birthday" href="#provider"><span class="path-index">01 / Make a wish</span><h3>Birthdays</h3><p>Give the guest of honor a front-yard surprise worth remembering.</p><span class="path-action">Explore a birthday greeting <span aria-hidden="true">↗</span></span></a>
+    <a class="occasion-path" data-occasion="graduation" href="#provider"><span class="path-index">02 / Mark the moment</span><h3>Graduations</h3><p>Celebrate a hard-earned achievement with a big, joyful message.</p><span class="path-action">Explore a graduation greeting <span aria-hidden="true">↗</span></span></a>
+    <a class="occasion-path" data-occasion="baby" href="#provider"><span class="path-index">03 / A new beginning</span><h3>New arrivals</h3><p>Welcome someone new with a thoughtful greeting for the whole family.</p><span class="path-action">Explore a welcome greeting <span aria-hidden="true">↗</span></span></a>
+    <a class="occasion-path" data-occasion="school" href="#provider"><span class="path-index">04 / Rally together</span><h3>School spirit</h3><p>Make an event, team or community celebration feel extra special.</p><span class="path-action">Explore a school greeting <span aria-hidden="true">↗</span></span></a>
+  </div>
+</div>
+</section>
 
 <section class="greeting-studio" id="greeting-studio" aria-labelledby="studio-title" hidden>
 <div class="wrap studio-grid"><div class="studio-copy">
@@ -246,6 +327,20 @@ footer a{font-weight:750}
   });
   refresh();
   section.hidden = false;
+  // Occasion cards improve the concept studio when scripts are available.
+  // Their native links still reach the real provider without JavaScript.
+  document.querySelectorAll(".occasion-path[data-occasion]").forEach(path => {
+    path.addEventListener("click", event => {
+      const choice = choices.find(input => input.value === path.dataset.occasion);
+      if (!choice) return;
+      event.preventDefault();
+      choice.checked = true;
+      refresh();
+      const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      section.scrollIntoView({behavior: reducedMotion ? "auto" : "smooth", block: "start"});
+      choice.focus({preventScroll: true});
+    });
+  });
 })();
 </script>
 </body></html>
