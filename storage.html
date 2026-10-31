@@ -286,6 +286,7 @@ main#main{padding:0 16px 54px!important}
 .storage-compare button:disabled{opacity:.54;cursor:not-allowed}
 .storage-compare button:focus-visible,.storage-compare-add:focus-visible{outline:3px solid #f2bc62;outline-offset:3px}
 .storage-compare-manual-label{font-size:.78rem;font-weight:800;margin-top:21px;color:#f4dfae}
+.storage-compare-manual[hidden],.storage-compare-manual-label[hidden]{display:none!important}
 .storage-compare-manual{display:block;width:100%;min-height:150px;margin-top:8px;padding:13px;border-radius:10px;border:2px solid #e6d3a0;background:#fffef8;color:#153c30;font:400 .83rem/1.55 ui-monospace,monospace}
 .storage-compare-disclaimer{margin:24px 0 0;padding-top:17px;border-top:1px solid #ffffff2e;color:#d9e8dc;font-size:.73rem;line-height:1.6}
 #storage-grid .storage-compare-add{display:inline-flex;align-items:center;justify-content:center;gap:9px;width:100%;min-height:46px;margin-top:auto;padding:10px 14px;border:1px solid #afcdb8;border-radius:10px;background:#edf5ee;color:#1a513b;font-size:.78rem;font-weight:850;cursor:pointer;transition:background .17s,border-color .17s}
@@ -571,12 +572,13 @@ main#main{padding:0 16px 54px!important}
     button.type='button';
     button.setAttribute('aria-pressed','false');
     button.addEventListener('click',()=>toggle(index));
-    record.card.append(button);
+    record.card.insertBefore(button,record.card.lastElementChild);
     record.button=button;
   });
   clear.addEventListener('click',()=>{
     selected.length=0;render();
-    info[0]?.button.focus({preventScroll:true});
+    const firstVisible=info.find(record=>!record.card.hidden);
+    (firstVisible?.button||document.getElementById('storage-search'))?.focus({preventScroll:true});
   });
   copy.addEventListener('click',async()=>{
     if(!selected.length)return;
