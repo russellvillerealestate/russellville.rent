@@ -200,6 +200,45 @@ footer a{font-weight:700}
 @media(max-width:390px){.hero h1{font-size:3.35rem}.journey{padding:18px}.journey-card{grid-template-columns:40px minmax(0,1fr);column-gap:12px;padding:18px 15px}.journey-icon{width:39px;height:39px}.journey-title{font-size:1.55rem}}
 @media(prefers-reduced-motion:reduce){.journey-card{transition:none}.journey-card:hover{transform:none}}
 
+
+/* 2026-10-31: Location-first pickup atlas.
+   Reference: StayARV place-led scenery; Nielsen Norman Group visual hierarchy;
+   web.dev responsive macro layouts; W3C WCAG 2.2 focus visibility and non-color signifiers.
+   Existing operator names, addresses, comparison and inquiry scripts remain unchanged. */
+.pickup-atlas{isolation:isolate;display:grid;grid-template-columns:minmax(0,.93fr) minmax(0,1.07fr);min-height:520px;overflow:hidden;margin:clamp(40px,6vw,74px) 0 14px;border:1px solid #cad9ce;border-radius:29px;background:#f9f9f2;box-shadow:0 26px 55px #12372e20}
+.pickup-atlas-scene{position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:clamp(30px,4.4vw,57px) clamp(26px,4vw,53px);color:#fff;overflow:hidden}
+.pickup-atlas-scene:before{content:"";position:absolute;z-index:-2;inset:0;background:linear-gradient(180deg,#0b2d2be3 0%,#11382cce 42%,#0b2623ed 100%),url("/assets/downtown-russellville-sunset.jpg") center/cover no-repeat;transform:scale(1.01)}
+.pickup-atlas-scene:after{content:"";position:absolute;z-index:-1;left:30px;right:30px;top:30px;bottom:30px;border:1px solid #f5e8c653;border-radius:14px;pointer-events:none}
+.pickup-atlas-eyebrow{position:relative;z-index:1;margin:0 0 clamp(26px,5vw,66px);font-size:.69rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase;color:#f9d99e}
+.pickup-atlas-scene h2{position:relative;z-index:1;margin:0;max-width:10ch;font:400 clamp(2.75rem,4.6vw,5rem)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.065em;text-wrap:balance;color:#fff}
+.pickup-atlas-scene h2 em{font-weight:400;color:#f4d69c}
+.pickup-atlas-scene>p:not(.pickup-atlas-eyebrow){position:relative;z-index:1;max-width:440px;margin:25px 0 45px;font-size:.95rem;line-height:1.7;color:#edf6eb}
+.pickup-scene-caption{position:relative;z-index:1;display:block;margin-top:auto;padding:11px 0 0;border-top:1px solid #f3e2bb66;font-size:.7rem;font-weight:650;line-height:1.6;letter-spacing:.025em;color:#e9f0df}
+.pickup-atlas-board{display:flex;flex-direction:column;min-width:0;padding:clamp(25px,3.5vw,45px) clamp(22px,3.6vw,48px);background:radial-gradient(circle at 100% 0,#e6eee2 0,transparent 36%),#fafaf5}
+.pickup-board-kicker{margin:0 0 23px;color:#4a7059;text-transform:uppercase;letter-spacing:.14em;font-size:.68rem;line-height:1.5;font-weight:850}
+.pickup-stops{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:0;list-style:none;margin:0;padding:0}
+.pickup-stops:before{content:"";position:absolute;left:22px;top:44px;bottom:45px;width:2px;background:repeating-linear-gradient(to bottom,#83a28b 0 7px,transparent 7px 16px);pointer-events:none}
+.pickup-stop{position:relative;display:grid;grid-template-columns:44px minmax(0,1fr) auto;align-items:center;gap:17px;min-width:0;padding:19px 0;border-bottom:1px solid #d9e3d9}
+.pickup-stop:first-child{padding-top:5px}
+.pickup-stop:last-child{border-bottom:0}
+.pickup-stop-index{position:relative;z-index:1;display:grid;place-items:center;width:44px;height:44px;border:2px solid #6c9c79;border-radius:50%;background:#f8faf5;color:#28573f;font-size:.7rem;font-weight:900}
+.pickup-stop:nth-child(2) .pickup-stop-index{border-color:#ac8750;background:#fff5e5;color:#7c5427}
+.pickup-stop-copy{min-width:0}
+.pickup-stop-street{display:block;margin-bottom:4px;font-size:.64rem;line-height:1.5;font-weight:850;letter-spacing:.12em;text-transform:uppercase;color:#5a785e}
+.pickup-stop h3{margin:0;color:#183b30;font:400 clamp(1.22rem,2vw,1.65rem)/1.14 Georgia,serif;letter-spacing:-.035em}
+.pickup-stop p{margin:7px 0 0;color:#506457;line-height:1.45;font-size:.78rem}
+.pickup-stop-link{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:47px;padding:10px 13px;border-radius:11px;background:#143f34;color:#fff;font-size:.77rem;font-weight:850;text-decoration:none;white-space:nowrap;transition:background-color .2s,transform .2s}
+.pickup-stop-link:hover{background:#2c634e;transform:translateX(2px)}
+.pickup-stop-link:focus-visible{outline:3px solid #a66816;outline-offset:4px}
+.pickup-atlas-foot{display:flex;align-items:flex-start;gap:13px;margin-top:auto;padding-top:22px;border-top:1px solid #d9e3d9}
+.pickup-atlas-foot>span{flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:#e5eee5;color:#285f48;font-size:1.25rem}
+.pickup-atlas-foot p{margin:0;color:#476152;font-size:.77rem;line-height:1.65}
+.pickup-atlas-foot strong{color:#264f3b}
+@media(max-width:1050px){.pickup-atlas{grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr)}.pickup-stop{grid-template-columns:44px minmax(0,1fr);column-gap:12px}.pickup-stop-link{grid-column:2;justify-self:start;min-height:42px}.pickup-stop h3{font-size:1.3rem}}
+@media(max-width:760px){.pickup-atlas{grid-template-columns:1fr;min-height:0;border-radius:20px}.pickup-atlas-scene{min-height:350px;padding:32px}.pickup-atlas-scene h2{font-size:clamp(2.7rem,8vw,4rem)}.pickup-atlas-eyebrow{margin-bottom:30px}.pickup-atlas-scene>p:not(.pickup-atlas-eyebrow){margin-bottom:25px}.pickup-atlas-board{padding:29px 26px}.pickup-stop{grid-template-columns:44px minmax(0,1fr) auto}.pickup-stop-link{grid-column:3}.pickup-atlas-foot{margin-top:10px}}
+@media(max-width:570px){.pickup-atlas-scene{min-height:365px;padding:28px 24px}.pickup-atlas-scene:after{inset:13px}.pickup-atlas-board{padding:28px 21px}.pickup-stop{grid-template-columns:42px minmax(0,1fr);gap:10px 12px}.pickup-stops:before{left:21px}.pickup-stop-index{width:42px;height:42px}.pickup-stop-link{grid-column:2;justify-self:start;margin-top:0}.pickup-stop h3{font-size:1.38rem}.pickup-stop-street{font-size:.62rem}.pickup-stop p{font-size:.78rem}.pickup-atlas-foot{padding-top:18px}}
+@media(prefers-reduced-motion:reduce){.pickup-stop-link{transition:none}.pickup-stop-link:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -263,6 +302,37 @@ footer a{font-weight:700}
     <p class="compare-footnote"><strong>“Confirm directly” means not specified in this directory, not that the provider lacks the service.</strong> This is not a live inventory or price comparison. Ask each provider for availability, total charges, insurance, pickup arrangements and current terms.</p>
   </section>
 
+  <!-- Location-first pickup atlas: addresses repeat the verified comparison data above. -->
+  <section class="pickup-atlas" aria-labelledby="pickup-atlas-title">
+    <div class="pickup-atlas-scene">
+      <p class="pickup-atlas-eyebrow">The hometown pickup atlas / Russellville</p>
+      <h2 id="pickup-atlas-title">Three local contacts.<br><em>One hometown.</em></h2>
+      <p>All three rental listings have Russellville street addresses. Start with the location that works for your plans, then confirm pickup arrangements directly.</p>
+      <span class="pickup-scene-caption">Downtown Russellville at sunset · Local scenery, not a rental branch photograph</span>
+    </div>
+    <div class="pickup-atlas-board">
+      <p class="pickup-board-kicker">Russellville pickup research / three starting points</p>
+      <ol class="pickup-stops">
+        <li class="pickup-stop">
+          <span class="pickup-stop-index" aria-hidden="true">01</span>
+          <div class="pickup-stop-copy"><span class="pickup-stop-street">South Arkansas Avenue</span><h3>24/7 Rent-A-Ride</h3><p>111 S Arkansas Ave · Russellville, AR 72801</p></div>
+          <a class="pickup-stop-link" href="#rental-ride" aria-label="View 24/7 Rent-A-Ride contact details">Details <span aria-hidden="true">↗</span></a>
+        </li>
+        <li class="pickup-stop">
+          <span class="pickup-stop-index" aria-hidden="true">02</span>
+          <div class="pickup-stop-copy"><span class="pickup-stop-street">East Main Street</span><h3>Cogswell Motors Rentals</h3><p>1900 E Main St · Russellville, AR 72801</p></div>
+          <a class="pickup-stop-link" href="#cogswell-rentals" aria-label="View Cogswell Motors rental details">Details <span aria-hidden="true">↗</span></a>
+        </li>
+        <li class="pickup-stop">
+          <span class="pickup-stop-index" aria-hidden="true">03</span>
+          <div class="pickup-stop-copy"><span class="pickup-stop-street">South Arkansas Avenue</span><h3>Enterprise Rent-A-Car</h3><p>1903 S Arkansas Ave · Russellville, AR 72802</p></div>
+          <a class="pickup-stop-link" href="#enterprise-rentals" aria-label="View Enterprise Rent-A-Car branch details">Details <span aria-hidden="true">↗</span></a>
+        </li>
+      </ol>
+      <div class="pickup-atlas-foot"><span aria-hidden="true">↗</span><p><strong>Before you go:</strong> This is a contact guide, not a scaled map or pickup confirmation. Call each provider to verify vehicles, business hours, exact pickup arrangements and all charges.</p></div>
+    </div>
+  </section>
+  
   <section class="trip-studio" id="trip-studio" aria-labelledby="trip-title" hidden>
     <div class="trip-intro"><div><p class="eyebrow">02 / Prepare your call</p><h2 id="trip-title">Your trip, <em>in a few lines.</em></h2></div><p>Create a clear inquiry for a rental desk. This is a planning tool—not a reservation or price quote.</p></div>
     <div class="trip-layout">
