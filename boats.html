@@ -111,6 +111,36 @@ footer{border-top:1px solid var(--line);padding:22px 0;margin-top:35px;font-size
 @media(max-width:850px){.lake-pathways-heading{display:block}.lake-pathways-heading p:last-child{max-width:680px;margin-top:9px}.lake-pathways-grid{grid-template-columns:1fr 1fr}.lake-path:last-child{grid-column:1/-1}.lake-path:last-child .lake-path-scene{height:130px}}
 @media(max-width:600px){.lake-pathways{margin-top:34px}.lake-pathways-grid{grid-template-columns:1fr;gap:12px}.lake-path:last-child{grid-column:auto}.lake-path-scene,.lake-path:last-child .lake-path-scene{height:118px}.lake-path-scene svg{height:99px}.lake-path-body{padding:18px 20px}.lake-pathways-heading h2{font-size:2rem}}
 @media(prefers-reduced-motion:reduce){.lake-path{transition:none}.lake-path:hover{transform:none}}
+
+/* October 2026 marina access field guide: time-ordered, appointment-first wayfinding.
+   Scenic design retains a separate, clear closure warning above this section. */
+.boat-access-guide{margin:31px 0 0;padding:clamp(22px,3.5vw,39px);border-radius:22px;background:linear-gradient(130deg,#0d302e,#194b42 65%,#235952);color:#fff;box-shadow:0 22px 42px #0c392d24;scroll-margin-top:20px}
+.boat-access-top{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(210px,.95fr);gap:32px;align-items:end;padding-bottom:24px;border-bottom:1px solid #ffffff3d}
+.boat-access-kicker{margin:0 0 10px;color:#f3ce91;font-size:.68rem;font-weight:850;letter-spacing:.17em;text-transform:uppercase}
+.boat-access-guide h2{margin:0;color:#fffaf1;font:400 clamp(1.95rem,3.7vw,2.85rem)/1.11 Georgia,"Times New Roman",serif;letter-spacing:-.046em;text-wrap:balance}
+.boat-access-intro{margin:0;color:#dcebe3;font-size:.89rem;line-height:1.65}
+.boat-access-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;margin:23px 0 0;padding:0}
+.boat-access-steps li{position:relative;min-width:0;padding:20px 19px;display:flex;flex-direction:column;gap:9px;border:1px solid #ffffff39;border-radius:14px;background:#ffffff0a}
+.boat-access-steps li:last-child{background:#f5e4ba;color:#233d32;border-color:#f5e4ba;box-shadow:0 8px 24px #09282343}
+.boat-access-date{display:block;margin:0;color:#f6d9a8;font-size:.69rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
+.boat-access-steps li:last-child .boat-access-date{color:#77531f}
+.boat-access-steps strong{font:400 clamp(1.21rem,2vw,1.46rem)/1.2 Georgia,"Times New Roman",serif;letter-spacing:-.027em;color:inherit}
+.boat-access-steps small{font-size:.78rem;line-height:1.5;color:#d6e9e0}
+.boat-access-steps li:last-child small{color:#47584b}
+.boat-access-contact{display:flex;align-items:center;justify-content:space-between;gap:22px;margin-top:23px;padding-top:22px;border-top:1px solid #ffffff3d}
+.boat-access-contact p{margin:0;max-width:380px;font-size:.82rem;line-height:1.55;color:#dfebe4}
+.boat-access-contact p strong{display:block;font-size:.94rem;color:#fff}
+.boat-access-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px}
+.boat-access-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 15px;border:1px solid #ffffff72;border-radius:10px;color:#fff;text-decoration:none;font-size:.83rem;font-weight:850;text-align:center}
+.boat-access-actions a:first-child{background:#f6dfac;border-color:#f6dfac;color:#143a30}
+.boat-access-actions a:hover{background:#ffffff25}
+.boat-access-actions a:first-child:hover{background:#ffeac5}
+.boat-access-actions a:focus-visible{outline:3px solid #ffcf72;outline-offset:4px}
+.boat-access-foot{margin:17px 0 0;color:#c8dfd5;font-size:.73rem;line-height:1.5}
+.boat-access-foot a{color:#ffe1a8;font-weight:800}
+@media(max-width:760px){.boat-access-top{grid-template-columns:1fr;gap:12px}.boat-access-steps{grid-template-columns:1fr}.boat-access-steps li{display:grid;grid-template-columns:minmax(90px,.38fr) minmax(0,1fr);gap:7px 15px;align-items:center;min-height:88px}.boat-access-date{grid-row:1/3;align-self:center}.boat-access-steps strong,.boat-access-steps small{grid-column:2}.boat-access-contact{align-items:stretch;flex-direction:column}.boat-access-actions{justify-content:flex-start}}
+@media(max-width:480px){.boat-access-guide{padding:24px 19px;border-radius:18px}.boat-access-guide h2{font-size:2rem}.boat-access-steps li{grid-template-columns:1fr;padding:17px 18px}.boat-access-date{grid-row:auto}.boat-access-steps strong,.boat-access-steps small{grid-column:auto}.boat-access-actions{display:grid;grid-template-columns:1fr}.boat-access-actions a{min-height:48px}}
+
 </style>
 </head>
 <body>
@@ -138,6 +168,30 @@ footer{border-top:1px solid var(--line);padding:22px 0;margin-top:35px;font-size
 <div class="notice notice--secondary"><div class="notice-label">Separate closure · Dardanelle Marina</div><p><strong>Separate Dardanelle Marina closure:</strong> The U.S. Army Corps of Engineers also closed Dardanelle Marina (Theriot Marina) on December 31, 2025 after its lease was not renewed because of public-safety and lease-compliance issues. It is <strong>not an active boat-rental option</strong>. <a href="https://www.swl.usace.army.mil/Media/News-Releases/Article/4373614/public-notice-dardanelle-marina-closed-as-of-dec-31-2025/" target="_blank" rel="noopener noreferrer">Official Corps closure notice, January 8, 2026 ↗</a>.</p></div>
 </div>
 </section>
+
+<section class="boat-access-guide" id="boat-access-guide" aria-labelledby="boat-access-guide-title">
+  <div class="boat-access-top">
+    <div>
+      <p class="boat-access-kicker">Marina owner access / Important dates</p>
+      <h2 id="boat-access-guide-title">Have a boat or belongings at the marina?</h2>
+    </div>
+    <p class="boat-access-intro">Russellville Marina remains listed as closed. The general removal window ended October 30, 2026; coordinate an appointment with the U.S. Army Corps of Engineers before attempting access.</p>
+  </div>
+  <ol class="boat-access-steps" aria-label="Marina closure and access timeline">
+    <li><time class="boat-access-date" datetime="2026-10-23">October 23</time><strong>Full closure begins.</strong><small>All marina commercial operations and facilities were closed.</small></li>
+    <li><time class="boat-access-date" datetime="2026-10-30">October 30</time><strong>General removal window ends.</strong><small>Removal from nonhazardous areas was permitted through this date, subject to restrictions.</small></li>
+    <li><span class="boat-access-date">After October 30</span><strong>Arrange access first.</strong><small>Removal from open marina areas is by appointment only. Closed docks require coordination; do not enter unsafe facilities.</small></li>
+  </ol>
+  <div class="boat-access-contact">
+    <p><strong>Contact the Corps before visiting.</strong>Both offices are listed as available on weekdays, 8 a.m.–4 p.m. Confirm current instructions directly.</p>
+    <div class="boat-access-actions">
+      <a href="tel:+15013401762">Call Russellville Site Office ↗</a>
+      <a href="tel:+15013245716">Call Real Estate Division ↗</a>
+    </div>
+  </div>
+  <p class="boat-access-foot">This is an access summary, not permission to enter. <a href="#property-access">Read the full access restrictions and sources ↑</a></p>
+</section>
+
 <section class="availability" id="alternatives" aria-labelledby="availability-title">
 <div><article><h2 id="availability-title">No verified active boat or marina rental providers listed</h2><p>Russellville Marina &amp; Boat Repair is excluded from active rental recommendations while the full federal closure remains in effect. This page will be updated when another provider is independently verified or the Corps confirms reopening.</p></article><p style="margin-top:12px">Looking for a different way onto the water? Kayak rentals are listed separately, with operator details and availability caveats.</p></div>
 <a class="alt-link" href="/paddling.html">Explore kayak rentals →</a>
