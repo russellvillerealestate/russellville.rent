@@ -271,6 +271,40 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
  .hero-art{transform:none}
 }
 
+
+/* 2026-10-31 / River Valley event logistics companion.
+   Live reference: StayARV's immersive place photography, adapted to a multi-category
+   directory. NN/g: clear visual hierarchy and information scent. web.dev: reuse
+   local images. W3C WCAG 2.2: visible focus, robust target sizes, reduced motion.
+   Related categories only: no bundled availability or service claims. */
+.event-companion{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);overflow:hidden;margin-top:clamp(68px,8vw,112px);border:1px solid #b6cbbb;border-radius:26px;background:#113b31;box-shadow:0 23px 51px #11392e24}
+.event-companion-story{position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-width:0;min-height:475px;padding:clamp(31px,4.5vw,62px);background:linear-gradient(115deg,#092921ec,#0a352bd1 60%,#164d3c8f),url("assets/lake-dardanelle-sunset.jpg") center 54%/cover no-repeat;color:#fff}
+.event-companion-story:after{content:"";position:absolute;inset:16px;border:1px solid #e5d5a74d;border-radius:15px;pointer-events:none;z-index:-1}
+.event-companion-kicker{display:block;margin-bottom:24px;color:#f2d6a2;font-size:.7rem;font-weight:850;letter-spacing:.18em;text-transform:uppercase}
+.event-companion-story h2{max-width:540px;margin:0 0 25px;font:400 clamp(2.5rem,4.3vw,4.25rem)/1.03 Georgia,"Times New Roman",serif;letter-spacing:-.058em;text-wrap:balance}
+.event-companion-story h2 em{color:#f5d394;font-weight:400}
+.event-companion-story p{max-width:47ch;margin:0;color:#e5f0e5;font-size:.94rem;line-height:1.75}
+.event-companion-scene{margin-top:37px;padding-top:15px;border-top:1px solid #e1e7d47d;color:#f0ddbb;font-size:.68rem;font-weight:750;letter-spacing:.035em}
+.event-companion-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;min-width:0;background:#cddad0}
+.event-companion-card{display:flex;flex-direction:column;align-items:stretch;min-width:0;min-height:236px;padding:clamp(22px,2.7vw,32px);background:#fffdf6;color:#153d30;text-decoration:none;transition:background .2s,transform .2s}
+.event-companion-card:nth-child(2){background:#e8f0e7}
+.event-companion-card:nth-child(3){background:#f4ead6}
+.event-companion-card:nth-child(4){background:#e3ece8}
+.event-companion-card:hover{background:#f8e2b5}
+.event-companion-card:focus-visible{outline:4px solid #ae6a16;outline-offset:-5px;position:relative;z-index:1}
+.event-companion-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:16px}
+.event-companion-index{font-size:.67rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:#4d705a}
+.event-companion-icon{display:grid;place-items:center;flex:none;width:65px;height:65px;border:1px solid #d1ddce;border-radius:16px;background:#ffffffb6;color:#28654d}
+.event-companion-icon svg{width:49px;height:49px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+.event-companion-card strong{display:block;max-width:20ch;font:400 clamp(1.35rem,2.2vw,1.85rem)/1.13 Georgia,"Times New Roman",serif;letter-spacing:-.043em}
+.event-companion-card small{display:block;max-width:32ch;margin-top:10px;font-size:.82rem;line-height:1.55;color:#4e6657}
+.event-companion-arrow{margin-top:auto;padding-top:20px;font-size:.79rem;font-weight:850;color:#215b42}
+.event-companion-arrow:after{content:" ↗";font-size:1.05rem}
+.event-companion-footnote{grid-column:1/-1;padding:17px 30px;background:#0f332a;color:#e0eadb;font-size:.77rem;line-height:1.65}
+@media(max-width:930px){.event-companion{grid-template-columns:1fr}.event-companion-story{min-height:330px}.event-companion-card{min-height:205px}}
+@media(max-width:580px){.event-companion{margin-top:65px;border-radius:20px}.event-companion-story{min-height:0;padding:48px 27px 41px}.event-companion-story h2{font-size:clamp(2.5rem,11vw,3.5rem)}.event-companion-scene{margin-top:23px}.event-companion-choices{grid-template-columns:1fr}.event-companion-card{min-height:0;padding:23px 25px}.event-companion-card-top{margin-bottom:12px}.event-companion-icon{width:53px;height:53px}.event-companion-icon svg{width:39px;height:39px}.event-companion-card small{margin-top:7px}.event-companion-arrow{padding-top:14px}.event-companion-footnote{padding:18px 25px}}
+@media(prefers-reduced-motion:reduce){.event-companion-card{transition:none}}
+
 </style>
 </head>
 <body>
@@ -376,6 +410,35 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
 <p id="call-plan-feedback" class="call-plan-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
 <label id="call-plan-fallback-label" for="call-plan-fallback" hidden>Copy this call plan manually</label><textarea id="call-plan-fallback" readonly hidden></textarea></div>
 <p class="call-plan-fine">Provider details are taken from the existing listings. Confirm operating status, equipment, delivery coverage, availability, price and servicing directly.</p>
+</section>
+
+
+<section class="event-companion" aria-labelledby="event-companion-title">
+  <div class="event-companion-story">
+    <span class="event-companion-kicker">One site / The whole setup</span>
+    <h2 id="event-companion-title">There's more to the day <em>than restrooms.</em></h2>
+    <p>An event or jobsite can involve several separate rentals. Once you've compared restroom providers, explore the other parts of your setup without starting over.</p>
+    <span class="event-companion-scene">Lake Dardanelle scenery · Not a provider property</span>
+  </div>
+  <nav class="event-companion-choices" aria-label="Related event and jobsite rental categories">
+    <a class="event-companion-card" href="temporary-fencing.html">
+      <span class="event-companion-card-top"><span class="event-companion-index">01 / Site boundaries</span><span class="event-companion-icon" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><path d="M5 14h54v35H5zM5 14v44m27-44v44m27-44v44M5 24l27 22m0-22L5 46m27-22 27 22m0-22L32 46M3 58h58"/></svg></span></span>
+      <strong>Temporary fencing</strong><small>Compare fence panels for site boundaries and controlled access.</small><span class="event-companion-arrow">Explore fencing</span>
+    </a>
+    <a class="event-companion-card" href="stages.html">
+      <span class="event-companion-card-top"><span class="event-companion-index">02 / Event platforms</span><span class="event-companion-icon" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><path d="M6 13h52M12 13v36m40-36v36M8 49h48v7H8zM20 40h24v9H20zM27 31h10v9H27zM12 18l8 10-8 10m40-20-8 10 8 10"/></svg></span></span>
+      <strong>Stages &amp; platforms</strong><small>Find event stages and performance-platform rental contacts.</small><span class="event-companion-arrow">Explore stages</span>
+    </a>
+    <a class="event-companion-card" href="party.html">
+      <span class="event-companion-card-top"><span class="event-companion-index">03 / Gather the crowd</span><span class="event-companion-icon" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><path d="M6 31 32 9l26 22H6ZM11 31v25m42-25v25M11 56h42M32 9v47m-15-9h30M17 36v11m30-11v11"/></svg></span></span>
+      <strong>Party &amp; event gear</strong><small>Browse tents, tables, inflatables and other event rental options.</small><span class="event-companion-arrow">Explore event rentals</span>
+    </a>
+    <a class="event-companion-card" href="dumpsters.html">
+      <span class="event-companion-card-top"><span class="event-companion-index">04 / Finish the job</span><span class="event-companion-icon" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><path d="M7 22h50l-6 30H13L7 22ZM4 18h56M16 22l5 30m11-30v30m16-30-5 30M12 12h40v6M18 55h28"/></svg></span></span>
+      <strong>Dumpsters &amp; cleanup</strong><small>Explore waste-container providers for construction and cleanup.</small><span class="event-companion-arrow">Explore containers</span>
+    </a>
+  </nav>
+  <div class="event-companion-footnote">Separate rental categories, not a package or bundle. Confirm each provider's coverage, availability, pricing and terms independently.</div>
 </section>
 
 <section class="guide" aria-labelledby="guide-title"><p class="section-kicker">Before you book</p><h2 id="guide-title">Three things to confirm.</h2><p class="guide-intro">A quick checklist for events, construction sites and temporary facilities.</p>
