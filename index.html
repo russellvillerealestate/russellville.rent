@@ -675,6 +675,66 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 @media(max-width:365px){.search-preview-list{grid-template-columns:1fr}.search-match{min-height:105px;flex-direction:row;align-items:center}.search-match-top{width:auto;flex:none}.search-match-arrow{display:none}}
 @media(prefers-reduced-motion:reduce){.search-match{transition:none!important}.search-match:hover{transform:none}}
 
+
+/* Editorial rental atlas — a restrained bento rhythm for the unfiltered directory.
+   StayARV-inspired image scale, with existing category artwork and factual copy intact.
+   Search, category filters, saved cards and list view revert to uniform cards. */
+.rentals-grid[data-view="grid"][data-layout="editorial"]{grid-auto-flow:row dense;align-items:stretch}
+@media(min-width:601px){
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card:is([data-category="homes"],[data-category="paddling"],[data-category="party"]){
+    grid-column:span 2;min-width:0;border-radius:23px;overflow:hidden;
+    box-shadow:0 17px 44px #153b2f18;
+  }
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="homes"]{border-color:#acc4b4}
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="paddling"]{border-color:#a8c8c6}
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="party"]{border-color:#d4bd99}
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card:is([data-category="homes"],[data-category="paddling"],[data-category="party"]) .card-body{padding:clamp(24px,3.2vw,44px);justify-content:center}
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card:is([data-category="homes"],[data-category="paddling"],[data-category="party"]) .card-body h3{
+    font:400 clamp(1.9rem,2.9vw,2.7rem)/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.052em;margin-bottom:17px;
+  }
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card:is([data-category="homes"],[data-category="paddling"],[data-category="party"]) .card-body>p:not(.eyebrow){font-size:.94rem;line-height:1.58}
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="homes"] .card-body{background:#fffdf5}
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="paddling"] .card-body{background:#f1f7f3}
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="party"] .card-body{background:#fff9ef}
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card:is([data-category="homes"],[data-category="paddling"],[data-category="party"]) .card-actions .card-link{
+    min-height:48px;display:flex;align-items:center;gap:8px;padding:10px 14px;background:#194638;color:white;border-radius:11px;text-decoration:none;
+  }
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card:is([data-category="homes"],[data-category="paddling"],[data-category="party"]) .card-actions .card-link:hover{background:#28664e}
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card:is([data-category="homes"],[data-category="paddling"],[data-category="party"]) .card-actions .card-link span{color:#f3d18d}
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card:is([data-category="homes"],[data-category="paddling"],[data-category="party"]) .card-body>.card-link{
+    min-height:49px;align-items:center;margin-top:auto;padding:12px 15px;background:#194638;color:white;border-radius:11px;
+  }
+}
+@media(min-width:760px){
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card:is([data-category="homes"],[data-category="paddling"],[data-category="party"]){
+    display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);min-height:370px;
+  }
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card:is([data-category="homes"],[data-category="paddling"],[data-category="party"]) > :is(.image-wrap,.brand-feature){
+    height:100%;min-height:370px;
+  }
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="paddling"] > .brand-feature{grid-column:2;grid-row:1}
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="paddling"] > .card-body{grid-column:1;grid-row:1}
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="paddling"] .brand-feature img{max-width:310px;height:175px}
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="party"] .brand-feature img{max-width:310px;height:175px}
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="homes"] .image-wrap{position:relative;isolation:isolate}
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="homes"] .image-wrap::before{
+    content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,#0c2b269e,transparent 57%);pointer-events:none;
+  }
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="homes"] .image-wrap::after{
+    content:"FIND YOUR PLACE  /  RIVER VALLEY";position:absolute;z-index:2;left:27px;bottom:27px;right:15px;
+    color:#fff5d8;letter-spacing:.15em;font-size:.72rem;line-height:1.5;font-weight:850;text-shadow:0 2px 9px #061e18;pointer-events:none;
+  }
+}
+@media(min-width:601px) and (max-width:759px){
+  .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card:is([data-category="homes"],[data-category="paddling"],[data-category="party"]) > :is(.image-wrap,.brand-feature){height:260px}
+}
+@media(max-width:600px){
+  .rentals-grid[data-view="grid"][data-layout="editorial"]{grid-auto-flow:row}
+}
+@media(prefers-reduced-motion:reduce){
+  .rentals-grid[data-view="grid"][data-layout="editorial"] .rental-card{transition:none!important;transform:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -777,7 +837,7 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   <div class="saved-panel-content"><div class="saved-links" id="saved-links"></div><p class="saved-empty" id="saved-empty">No categories saved yet. Use the Save buttons on any rental card.</p><div class="saved-panel-footer"><small id="saved-storage-note">Saved in this browser when storage is available.</small><button class="saved-clear" id="saved-clear" type="button" hidden>Clear all saved</button></div></div>
 </section>
 
-<div class="rentals-grid" id="rental-results" data-view="grid"><article class="rental-card" data-category="homes">
+<div class="rentals-grid" id="rental-results" data-view="grid" data-layout="editorial"><article class="rental-card" data-category="homes">
 <div class="image-wrap"><img src="https://images.unsplash.com/photo-1768941124460-6fa7161715ff?auto=format&amp;fit=crop&amp;fm=jpg&amp;ixlib=rb-4.1.0&amp;q=82&amp;w=1600" alt="Illustrative photograph of residential houses" loading="lazy" width="640" height="380"></div>
 <div class="card-body"><p class="eyebrow">Long-term rentals</p><h3>Long-term rentals</h3>
 <p>Houses, apartments, and places to settle in.</p>
@@ -1329,6 +1389,7 @@ function filterRentals(){
     card.hidden = !matches;
     if(matches) visible++;
   });
+  rentalGrid.dataset.layout = visible === cards.length && activeIntent === "all" ? "editorial" : "uniform";
   count.textContent = visible + " of " + cards.length + " rental categories shown" + (activeIntent === "all" ? "" : " · "+intentLabels[activeIntent]);
   clearShareFeedback();
   heroQuery.value = search.value;
