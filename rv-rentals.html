@@ -100,6 +100,66 @@ main{max-width:1160px;margin:0 auto;padding:0 28px}.hero{position:relative;isola
 @media(max-width:430px){.path-filters .path-choice{padding:19px 18px;gap:13px}.path-choice-top svg{width:54px;height:43px}.path-choice-main strong{font-size:1.48rem}}
 @media(prefers-reduced-motion:reduce){.path-filters .path-choice{transition:none}.path-filters .path-choice:hover{transform:none}}
 
+
+/* River Valley roadbook redesign — 2026-10-30.
+   StayARV place-led photography; NN/g information scent; web.dev local-image performance;
+   WCAG 2.2 focus-visible, contrast, responsive layout and reduced motion. */
+.header-inner,main{max-width:1280px}
+.hero{grid-template-columns:minmax(0,1.08fr) minmax(260px,.92fr);min-height:645px;gap:clamp(24px,4.5vw,62px);padding:clamp(54px,6vw,85px) clamp(36px,6vw,76px) 106px;border-radius:0 0 34px 34px;background:linear-gradient(102deg,#082b27fa 0%,#092d29ef 37%,#103e33b5 74%,#0b312ba8 100%),url("assets/lake-dardanelle-sunset.jpg") center 54%/cover no-repeat;box-shadow:0 28px 54px #102f2b2b}
+.hero:before{background:radial-gradient(ellipse at 79% 21%,#e9b66825,transparent 48%)}
+.hero:after{inset:18px;right:18px;bottom:18px;width:auto;height:auto;border:1px solid #ffffff2e;border-radius:23px;box-shadow:none}
+.hero>div:first-child{position:relative;z-index:1}
+.hero .eyebrow{font-size:.76rem;letter-spacing:.19em;color:#f5dba4}
+.hero h1{font-size:clamp(3.65rem,6.7vw,6.8rem);line-height:.98;letter-spacing:-.068em;max-width:780px}
+.hero h1 em{color:#ffe0a3}
+.hero-intro{font-size:clamp(1rem,1.4vw,1.18rem);line-height:1.68;max-width:540px;color:#f1f4ed}
+.hero-actions{gap:12px;margin-top:30px}
+.hero-button{min-height:52px;padding:13px 21px;border-radius:12px}
+.hero-button.primary{background:#f4d99d;color:#112e2b}
+.hero-button.primary:hover{background:#ffeab9}
+.hero-button.secondary{background:#112f2da6;border-color:#ffffff98}
+.hero-visual{position:relative;z-index:1;align-self:center;padding:27px 15px 20px;border:1px solid #f7e9c882;border-radius:28px;background:linear-gradient(155deg,#fff7eae8,#f2ecd3e3 57%,#cdddc4e8);box-shadow:0 25px 70px #081e1a8a,0 0 0 8px #ffffff0c;filter:none;transform:rotate(-2deg) translateY(8px)}
+.hero-visual:before{content:"THE RIVER VALLEY ROADBOOK";position:absolute;top:15px;left:22px;color:#265744;font-size:.62rem;font-weight:900;letter-spacing:.17em}
+.hero-visual svg{width:100%;margin:12px auto 0;filter:drop-shadow(0 12px 12px #21403840)}
+.hero-art-caption{margin:-11px 0 0;color:#244d3c;letter-spacing:.13em}
+.hero-facts{position:relative;z-index:1;grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:-16px;border:1px solid #f1e6ca54;border-radius:15px;background:#082c29e8;box-shadow:0 10px 35px #061d1930}
+.hero-facts>div{min-width:0;padding:17px 22px}
+.hero-facts>div+div{border-left:1px solid #f1e6ca45}
+.hero-facts strong{display:block;color:#f7dca3;font:400 1.45rem/1.15 Georgia,serif;letter-spacing:-.035em}
+.hero-facts span{display:block;margin-top:5px;font-size:.77rem;line-height:1.5;color:#edf4ed}
+.finder{margin:-52px 42px 0;padding:30px 34px;border-radius:23px;box-shadow:0 24px 55px #102f2b2b}
+.finder label{font-size:.96rem}
+.finder input{min-height:56px;background:#fff;border-color:#a7beaa}
+.path-guide{margin-top:28px;padding-top:27px}
+.path-filters{gap:18px;margin-top:22px}
+.path-filters .path-choice{min-height:247px;padding:25px 28px;border-radius:23px}
+.path-filters .path-direct{background:linear-gradient(125deg,#e4f0e5,#f5f8ee)}
+.path-filters .path-market{background:linear-gradient(125deg,#f6eee0,#faf7ed)}
+.path-choice-top>span{font-size:.74rem}
+.path-choice-main strong{font-size:clamp(1.7rem,3vw,2.1rem)}
+.path-choice-main small{max-width:45ch;font-size:.86rem}
+.results-heading{margin-top:70px}
+.grid{gap:24px}
+.grid article{padding:35px 34px 31px;border-radius:23px;box-shadow:0 14px 30px #173e3410}
+.grid article:before{color:#596c57}
+.grid article h3{font-size:clamp(1.6rem,2.5vw,2.05rem)}
+.grid article[data-type="direct"]{border-top:6px solid #b48b4f}
+.grid article[data-type="marketplace"]{border-top:6px solid #327d77}
+.travel-bridge{display:grid;grid-template-columns:minmax(0,.93fr) minmax(0,1.07fr);margin-top:57px;overflow:hidden;border-radius:27px;background:#f0e9d7;border:1px solid #e0d5ba;box-shadow:0 18px 45px #152e2519}
+.travel-bridge-scene{position:relative;min-height:340px;background:linear-gradient(0deg,#092d2ba6,transparent 49%),url("assets/lake-dardanelle-sunset.jpg") center 58%/cover no-repeat}
+.travel-bridge-scene span{position:absolute;left:30px;bottom:26px;color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;text-shadow:0 2px 8px #112e2b}
+.travel-bridge-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:clamp(32px,4vw,58px)}
+.travel-bridge-kicker{display:block;margin-bottom:16px;color:#5d6c52;font-size:.7rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+.travel-bridge h2{margin:0;font:400 clamp(2rem,3.5vw,3.25rem)/1.08 Georgia,serif;letter-spacing:-.06em;color:#173d32;text-wrap:balance}
+.travel-bridge h2 em{color:#986e39;font-weight:400}
+.travel-bridge p{max-width:48ch;margin:22px 0 25px;font-size:.92rem;color:#4f6358}
+.travel-bridge a{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:13px 21px;border-radius:11px;background:#173e33;color:#fff;text-decoration:none;font-size:.87rem;font-weight:850}
+.travel-bridge a:hover{background:#275c48}
+.trip-map{margin-top:37px}
+@media(max-width:960px){.hero{grid-template-columns:1fr;min-height:0;padding:60px 44px 95px;gap:35px}.hero-visual{width:min(100%,490px);justify-self:center;transform:rotate(-1deg)}.hero-facts{margin-top:5px}.finder{margin:-42px 26px 0}}
+@media(max-width:700px){.hero{padding:44px 25px 66px;border-radius:0 0 22px 22px;gap:22px;background-position:center 48%}.hero:after{inset:10px;right:10px;bottom:10px;border-radius:16px}.hero h1{font-size:clamp(3.45rem,12vw,5rem)}.hero-visual{width:min(100%,370px);padding:24px 12px 15px}.hero-facts{grid-template-columns:1fr;margin-top:8px}.hero-facts>div{padding:11px 17px}.hero-facts>div+div{border-left:0;border-top:1px solid #f1e6ca45}.hero-facts strong{font-size:1.22rem}.hero-facts span{font-size:.77rem;margin-top:2px}.finder{margin:-29px 7px 0;padding:24px 19px}.path-filters .path-choice{padding:22px 20px;min-height:200px}.results-heading{margin-top:47px}.grid article{padding:25px 23px}.travel-bridge{grid-template-columns:1fr;margin-top:35px;border-radius:20px}.travel-bridge-scene{min-height:220px}.travel-bridge-copy{padding:29px 24px 34px}.travel-bridge h2{font-size:clamp(2rem,8vw,2.8rem)}}
+@media(prefers-reduced-motion:reduce){.hero-visual{transform:none}}
+
 </style></head><body>
 <a class="skip-link" href="#providers">Skip to rental listings</a><header><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back-link" href="/">← All rental categories</a></div></header>
 <main><section class="hero" aria-labelledby="page-title"><div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Bring your <em>own adventure.</em></h1><p class="hero-intro">Find a recreational vehicle (RV) or camper to rent for a trip, tailgate or campground stay. Compare direct Arkansas operators and rental marketplaces. These are vehicle rentals, not campsite reservations.</p><div class="hero-actions"><a class="hero-button primary" href="#rental-finder">Compare rental paths <span aria-hidden="true">↓</span></a><a class="hero-button secondary" href="/camping.html">Find a campsite <span aria-hidden="true">↗</span></a></div></div><div class="hero-visual" aria-hidden="true"><svg viewBox="0 0 600 430" xmlns="http://www.w3.org/2000/svg" focusable="false">
@@ -121,7 +181,7 @@ main{max-width:1160px;margin:0 auto;padding:0 28px}.hero{position:relative;isola
 <circle cx="192" cy="326" r="39" fill="#0e2928" stroke="#e8c98e" stroke-width="8"/><circle cx="192" cy="326" r="15" fill="#d8e5d5"/>
 <circle cx="414" cy="326" r="39" fill="#0e2928" stroke="#e8c98e" stroke-width="8"/><circle cx="414" cy="326" r="15" fill="#d8e5d5"/>
 <path d="M110 325h35m304 0h30" stroke="#f9e7c4" stroke-width="6" stroke-linecap="round"/>
-</svg><span class="hero-art-caption">Your trip · Your pace · Arkansas</span></div></section>
+</svg><span class="hero-art-caption">Your trip · Your pace · Arkansas</span></div><div class="hero-facts" aria-label="Rental directory at a glance"><div><strong>Two booking paths</strong><span>Direct Arkansas rental operators or individual marketplace hosts</span></div><div><strong>Four directory options</strong><span>Compare providers and marketplaces without claiming live inventory</span></div><div><strong>Delivery unconfirmed</strong><span>Confirm the destination and reserve your campsite separately</span></div></div></section>
 <section class="finder" id="rental-finder" aria-label="Search recreational vehicle rentals"><div class="finder-head"><label for="rv-search">Search rental options</label><p class="finder-hint">Try “delivery”, “camper”, “marketplace” or a provider name.</p></div><div class="finder-row"><input id="rv-search" type="search" autocomplete="off" placeholder="Search campers, motorhomes, delivery…" aria-controls="rv-grid"><button id="rv-clear" type="button">Clear search</button></div>
 <div class="path-guide"><div><span class="path-guide-kicker">The booking compass / Two routes</span><strong>Choose your way to wander.</strong></div><span>Rent from an operator's own fleet or browse campers offered by individual hosts. Either way, confirm your dates and Russellville-area pickup or delivery.</span></div>
 <div class="path-filters" id="rv-paths" role="group" aria-label="Filter by rental path" hidden>
@@ -144,6 +204,7 @@ main{max-width:1160px;margin:0 auto;padding:0 28px}.hero{position:relative;isola
 <article data-type="marketplace"><span class="tag market">Rental marketplace — not one operator</span><h3>RVezy — Russellville search</h3><p>Peer-to-peer RV rental marketplace with a Russellville-area search for towable campers and motorhomes. Results can include hosts based in other Arkansas cities, so proximity and delivery must be checked on each individual listing. <strong>Current availability, price, and Russellville delivery are not guaranteed by a search result.</strong></p><p class="detail">Online marketplace · Host-specific pickup, delivery and campsite terms</p><p><a href="https://www.rvezy.com/rv-rentals/destination/united-states/arkansas/russellville" target="_blank" rel="noopener noreferrer">Browse Russellville-area rental listings ↗</a></p></article>
 </div><div class="empty-state" id="rv-empty" hidden><h3>No matching options</h3><p>Try another provider, rental type or delivery keyword.</p><button id="rv-reset" type="button">Show all options</button></div></section>
 
+<aside class="travel-bridge" aria-labelledby="bridge-title"><div class="travel-bridge-scene" aria-hidden="true"><span>Lake Dardanelle / River Valley scenery</span></div><div class="travel-bridge-copy"><span class="travel-bridge-kicker">Plan the second reservation</span><h2 id="bridge-title">Your camper is one part.<br><em>Your campsite is another.</em></h2><p>A camper listing does not reserve a place to park it. Compare River Valley campgrounds, then confirm hookups, delivery permissions and arrival windows directly with each park.</p><a href="/camping.html">Browse campgrounds <span aria-hidden="true">↗</span></a></div></aside>
 <section class="trip-map" aria-labelledby="trip-map-title">
   <div class="trip-map-head"><div><p class="trip-map-eyebrow">Your camper trip / four planning checks</p><h2 id="trip-map-title">From rental search to campsite.</h2></div><p>A camper and a campsite are two separate arrangements. Use these checkpoints before committing to either one.</p></div>
   <ol class="trip-map-steps">
