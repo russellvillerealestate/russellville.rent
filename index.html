@@ -446,33 +446,136 @@ footer{margin-top:30px}
 }
 
 
-/* Purpose-led discovery: four scannable pathways through the existing directory. */
-.intent-explorer{margin:3px 0 22px;padding:23px;background:linear-gradient(125deg,#e8efe6 0%,#f5f3e9 55%,#eef1e9 100%);border:1px solid #ceddcf;border-radius:20px}
-.intent-heading{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:18px}
-.intent-heading .eyebrow{color:#496f57;margin-bottom:5px}
-.intent-heading h3{font:400 clamp(1.45rem,2.5vw,2.12rem)/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.045em;color:#173f35;margin:0 0 6px}
-.intent-heading p:last-child{color:#50675a;font-size:.82rem;line-height:1.45;margin:0;max-width:63ch}
-.intent-all{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:46px;padding:10px 16px;background:#fff;color:#285744;border:1px solid #b8cdbb;border-radius:999px;font-weight:800;font-size:.79rem;white-space:nowrap;cursor:pointer}
-.intent-all[aria-pressed="true"]{background:#173f35;color:#fff;border-color:#173f35}
-.intent-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}
-.intent-card{appearance:none;position:relative;display:flex;flex-direction:column;min-width:0;min-height:167px;overflow:hidden;padding:17px 18px 15px;border:2px solid #d2ded2;border-radius:15px;background:#fff;color:#1c4235;text-align:left;cursor:pointer;box-shadow:0 6px 19px #153d3210;transition:transform .18s,border-color .18s,box-shadow .18s}
-.intent-card:hover{transform:translateY(-3px);box-shadow:0 12px 27px #153d321b}
-.intent-card[aria-pressed="true"]{border-color:#216547;box-shadow:0 0 0 2px #21654725,0 10px 25px #153d3217}
-.intent-card[aria-pressed="true"]::after{content:"✓";position:absolute;right:13px;top:12px;display:grid;place-items:center;width:24px;height:24px;background:#215b46;color:white;border-radius:50%;font-weight:800;font-size:.77rem}
-.intent-symbol{display:grid;place-items:center;width:46px;height:46px;margin-bottom:12px;background:#e8f0e6;color:#285b43;border-radius:12px}
-.intent-symbol svg{width:31px;height:31px}
-.intent-card--projects .intent-symbol{background:#f7e8cd;color:#865b25}
-.intent-card--outdoors .intent-symbol{background:#def0eb;color:#1c7070}
-.intent-card--events .intent-symbol{background:#f7e7e2;color:#95554e}
-.intent-title{font:400 1.24rem/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.03em;display:block}
-.intent-detail{font-size:.72rem;line-height:1.4;color:#5c7162;margin:6px 0 12px;display:block}
-.intent-foot{display:flex;justify-content:space-between;gap:8px;align-items:center;border-top:1px solid #e0e9dd;padding-top:9px;margin-top:auto;font-size:.69rem;font-weight:800;letter-spacing:.02em;color:#32604b}
-.intent-all:focus-visible,.intent-card:focus-visible{outline:3px solid #a86816;outline-offset:4px}
-@media(max-width:930px){.intent-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.intent-card{min-height:155px}}
-@media(max-width:600px){.intent-explorer{padding:17px 14px;border-radius:15px}.intent-heading{display:block}.intent-all{margin-top:13px}.intent-grid{gap:9px}.intent-card{min-height:145px;padding:14px 12px}.intent-title{font-size:1.05rem}.intent-symbol{width:39px;height:39px;margin-bottom:10px}.intent-symbol svg{width:27px;height:27px}.intent-detail{font-size:.69rem}.intent-foot{font-size:.64rem}}
-@media(max-width:380px){.intent-grid{grid-template-columns:1fr}.intent-card{min-height:111px}.intent-symbol{margin-bottom:6px}}
-@media(prefers-reduced-motion:reduce){.intent-card{transition:none}.intent-card:hover{transform:none}}
-
+/* Editorial discovery atlas: four large, purposeful routes through the existing directory.
+   StayARV-inspired scale and photography; local images only; existing filtering semantics unchanged.
+   Nielsen Norman Group: hierarchy and grouping; web.dev: responsive images;
+   WCAG 2.2: keyboard focus, large targets, readable contrast, reduced motion. */
+.intent-explorer{
+  position:relative;isolation:isolate;overflow:hidden;margin:14px 0 30px;
+  padding:clamp(23px,4vw,43px);border:1px solid #476e60;border-radius:28px;
+  background:radial-gradient(ellipse at 90% 0%,#376c55 0%,transparent 49%),linear-gradient(135deg,#102f2b,#173f34 75%,#0d302a);
+  box-shadow:0 22px 47px #143a3025;
+}
+.intent-explorer::before{
+  content:"";position:absolute;z-index:-1;pointer-events:none;
+  width:530px;height:530px;right:-270px;top:-300px;border:1px solid #e8f5db25;
+  border-radius:50%;box-shadow:0 0 0 58px #e8f5db08,0 0 0 116px #e8f5db06;
+}
+.intent-heading{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:25px}
+.intent-heading .eyebrow{color:#f1d9a2;margin-bottom:9px;letter-spacing:.16em}
+.intent-heading h3{
+  font:400 clamp(2.05rem,4.1vw,3.45rem)/1.08 Georgia,"Times New Roman",serif;
+  letter-spacing:-.054em;color:#fffdf5;margin:0 0 10px;text-wrap:balance;
+}
+.intent-heading p:last-child{color:#e3ebe1;font-size:.91rem;line-height:1.65;margin:0;max-width:62ch}
+.intent-all{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;flex:none;
+  min-height:48px;padding:11px 20px;background:#fffdf3;color:#214639;
+  border:1px solid #f0dfbb;border-radius:100px;font-weight:850;font-size:.82rem;
+  white-space:nowrap;cursor:pointer;transition:background .18s,transform .18s;
+}
+.intent-all:hover{background:#f5dfaa;transform:translateY(-2px)}
+.intent-all[aria-pressed="true"]{background:#f1d79b;color:#183d32;border-color:#f1d79b}
+.intent-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:15px}
+.intent-card{
+  appearance:none;position:relative;isolation:isolate;display:flex;flex-direction:column;
+  grid-column:span 5;min-width:0;min-height:274px;overflow:hidden;
+  padding:clamp(22px,3vw,32px);border:2px solid #ffffff5c;border-radius:20px;
+  background:#1c4b3e;color:#fffef6;text-align:left;cursor:pointer;
+  box-shadow:0 12px 29px #051a1840;
+  transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease;
+}
+.intent-card--space,.intent-card--events{grid-column:span 7}
+.intent-card::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(130deg,#123d34,#214b3f);
+  transition:transform .5s ease;
+}
+.intent-card--space::before{
+  background:linear-gradient(90deg,#112c2beb 0%,#11372fc7 48%,#1c433b78 100%),
+    url("assets/downtown-russellville-sunset.jpg") center 51%/cover no-repeat;
+}
+.intent-card--projects::before{
+  background:
+    repeating-linear-gradient(0deg,transparent 0 39px,#ffe6b016 40px 41px),
+    repeating-linear-gradient(90deg,transparent 0 39px,#ffe6b016 40px 41px),
+    radial-gradient(circle at 90% 16%,#bd8d3d60,transparent 54%),
+    linear-gradient(125deg,#354b35,#615235);
+}
+.intent-card--outdoors::before{
+  background:linear-gradient(115deg,#092e35ed 0%,#104b4ba9 53%,#0d3e3691),
+    url("assets/lake-dardanelle-docks.jpg") center 58%/cover no-repeat;
+}
+.intent-card--events::before{
+  background:linear-gradient(110deg,#382b3cfa 0%,#453643d1 47%,#4f4b4085),
+    url("assets/downtown-russellville-sunset.jpg") center 37%/cover no-repeat;
+}
+.intent-card>span{position:relative;z-index:1}
+.intent-card:hover{transform:translateY(-4px);border-color:#f2d997;box-shadow:0 19px 36px #051a1855}
+.intent-card:hover::before{transform:scale(1.045)}
+.intent-card[aria-pressed="true"]{border-color:#f9d48b;box-shadow:0 0 0 3px #f7d48c59,0 17px 34px #071e1b55}
+.intent-card[aria-pressed="true"]::after{
+  content:"✓";position:absolute;z-index:3;right:20px;top:20px;
+  display:grid;place-items:center;width:34px;height:34px;
+  border:1px solid #ffedc2;background:#f9d997;color:#193d33;
+  border-radius:50%;font-weight:900;font-size:.85rem;
+}
+.intent-symbol{
+  display:grid;place-items:center;width:63px;height:63px;margin-bottom:auto;
+  background:#f9f5dd1e;color:#fff5d9;border:1px solid #fff3d178;border-radius:17px;
+  box-shadow:inset 0 1px #ffffff35;
+}
+.intent-symbol svg{display:block;width:38px;height:38px}
+.intent-card--projects .intent-symbol,.intent-card--outdoors .intent-symbol,.intent-card--events .intent-symbol{
+  background:#f9f5dd1e;color:#fff5d9;
+}
+.intent-title{
+  display:block;margin:26px 0 0;
+  font:400 clamp(1.9rem,3.1vw,2.5rem)/1.09 Georgia,"Times New Roman",serif;
+  letter-spacing:-.045em;text-wrap:balance;color:#fffdf4;
+}
+.intent-detail{
+  display:block;max-width:43ch;margin:10px 0 0;
+  color:#f0f3e8;font-size:.85rem;line-height:1.55;
+}
+.intent-foot{
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+  width:100%;border-top:1px solid #eaf2e169;padding-top:13px;margin-top:23px;
+  font-size:.77rem;line-height:1.35;font-weight:850;letter-spacing:.02em;color:#ffdf9d;
+}
+.intent-foot span:last-child{font-size:1.25rem;line-height:1;transition:transform .2s}
+.intent-card:hover .intent-foot span:last-child{transform:translate(3px,-3px)}
+.intent-all:focus-visible,.intent-card:focus-visible{outline:3px solid #ffe1a0;outline-offset:4px}
+@media(max-width:950px){
+  .intent-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .intent-card,.intent-card--space,.intent-card--events{grid-column:auto;min-height:254px}
+  .intent-title{font-size:clamp(1.85rem,3.5vw,2.4rem)}
+}
+@media(max-width:650px){
+  .intent-explorer{padding:24px 17px;border-radius:20px;margin-top:13px}
+  .intent-heading{display:block;margin-bottom:20px}
+  .intent-heading h3{font-size:clamp(2.1rem,8vw,2.75rem)}
+  .intent-heading p:last-child{font-size:.84rem}
+  .intent-all{margin-top:15px}
+  .intent-grid{grid-template-columns:1fr;gap:12px}
+  .intent-card,.intent-card--space,.intent-card--events{
+    grid-column:1/-1;min-height:218px;padding:22px;border-radius:17px;
+  }
+  .intent-symbol{width:51px;height:51px;border-radius:14px}
+  .intent-symbol svg{width:31px;height:31px}
+  .intent-title{font-size:2rem;margin-top:20px}
+  .intent-detail{font-size:.8rem;margin-top:7px}
+  .intent-foot{margin-top:17px;padding-top:11px}
+}
+@media(max-width:380px){
+  .intent-explorer{padding:20px 13px}
+  .intent-card{padding:18px;min-height:210px}
+  .intent-title{font-size:1.85rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .intent-card,.intent-card::before,.intent-all,.intent-foot span:last-child{transition:none!important}
+  .intent-card:hover,.intent-all:hover,.intent-card:hover .intent-foot span:last-child{transform:none!important}
+}
 
 /* Mobile search studio: an accessible bottom sheet over the existing live directory. */
 .mobile-search-sheet{width:100%;max-width:none;max-height:min(84dvh,680px);margin:auto 0 0;padding:0;border:0;border-radius:25px 25px 0 0;background:#f8faf6;color:#193b32;box-shadow:0 -20px 65px #041f1a66;overflow:auto;overscroll-behavior:contain}
