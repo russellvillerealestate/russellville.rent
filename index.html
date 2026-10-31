@@ -644,6 +644,37 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 @media(max-width:600px){header .wrap{min-height:68px}.hero{display:flex;flex-direction:column;min-height:640px;padding:45px 23px 25px;border-radius:0 0 23px 23px}.hero-photo{position:absolute;inset:0;height:100%;width:100%;z-index:-2;object-position:57% center;margin:0}.hero::before{display:block!important;background:linear-gradient(180deg,#071d18c9 0%,#071d1899 48%,#071d18d9 100%)}.hero>h1,.hero>.intro,.hero>.actions,.hero>.hero-note{margin-left:0;margin-right:0}.hero h1{font-size:clamp(3.55rem,12vw,5.2rem);line-height:1.01}.hero .intro{font-size:1.03rem;margin-top:26px;margin-bottom:26px}.hero .actions{gap:10px}.hero .button{min-height:52px;padding:13px 19px;font-size:.82rem}.hero .hero-note{margin-top:auto;margin-bottom:0;padding-top:22px;font-size:.69rem;gap:8px 14px}.hero .location-caption{top:auto;bottom:85px;right:15px}.hero-find{margin-top:18px;border-radius:16px}.hometown{margin-top:45px;margin-bottom:48px}.hometown h2,.section-head h2{font-size:2.35rem}.section-head{margin-top:65px}.rentals-grid{grid-template-columns:1fr;gap:22px}.image-wrap,.category-art,.brand-feature{height:235px}.card-body{padding:24px}.owner{margin-top:65px;padding:28px}.rental-card:hover{transform:none}}
 @media(prefers-reduced-motion:reduce){.rental-card{transition:none}.rental-card:hover{transform:none}}
 
+
+/* Live illustrated search shortcuts; StayARV-inspired cinematic panels.
+   NN/g recognition vs recall; web.dev responsive layout; WCAG 2.2 focus and targets. */
+.search-preview{position:relative;isolation:isolate;overflow:hidden;max-width:1120px;margin:0 auto 55px;padding:clamp(22px,3vw,35px);border:1px solid #54725a;border-radius:23px;background:#143b31;color:#fffdf4;box-shadow:0 17px 38px #13372a28}
+.search-preview::before{content:"";position:absolute;z-index:-2;inset:0;background:url("assets/downtown-russellville-sunset.jpg") center 48%/cover;opacity:.35;pointer-events:none}
+.search-preview::after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(105deg,#0c302bed 8%,#123d34dc 62%,#0c302ba8);pointer-events:none}
+.search-preview-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:21px}
+.search-preview-kicker{display:block;margin-bottom:8px;font-size:.66rem;font-weight:850;letter-spacing:.17em;text-transform:uppercase;color:#f7d99c}
+.search-preview h2{font:400 clamp(1.75rem,3vw,2.65rem)/1.08 Georgia,"Times New Roman",serif;letter-spacing:-.045em;color:#fffdf4;margin:0}
+.search-preview-status{font-size:.78rem;font-weight:700;color:#e5f0df;margin:0 0 4px;text-align:right}
+.search-preview-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.search-match{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:14px;min-width:0;min-height:158px;padding:17px 17px 14px;border:1px solid #e3e7d6;background:#fffdf5;color:#173d32;border-radius:15px;text-decoration:none;box-shadow:0 7px 18px #031a1422;transition:transform .22s,box-shadow .22s,border-color .22s}
+.search-match:hover{transform:translateY(-4px);box-shadow:0 15px 30px #031a143d;border-color:#f8d88b}
+.search-match:focus-visible{outline:3px solid #f8d88b;outline-offset:4px}
+.search-match-top{display:flex;justify-content:space-between;align-items:center;width:100%;gap:8px}
+.search-match-icon{display:grid;place-items:center;flex:none;width:49px;height:49px;border-radius:13px;background:#e4efe3;color:#2c674b}
+.search-match-icon svg{display:block;width:35px;height:35px}
+.search-match-arrow{font-size:1.4rem;line-height:1;color:#456b51}
+.search-match-copy{display:block;min-width:0}
+.search-match-copy strong{display:block;font:400 clamp(1.02rem,1.4vw,1.2rem)/1.2 Georgia,"Times New Roman",serif;letter-spacing:-.025em}
+.search-match-copy small{display:block;margin-top:6px;color:#526b59;font-size:.68rem;font-weight:750;line-height:1.3}
+.search-preview-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;border-top:1px solid #d9e7d747;padding-top:17px;font-size:.77rem;color:#e9f1e6}
+.search-preview-footer a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;color:#1d4334;background:#f6dca7;border:1px solid #f6e6c0;border-radius:999px;padding:9px 17px;font-weight:850;text-decoration:none}
+.search-preview-footer a:hover{background:#ffecbf}
+.search-preview-footer a:focus-visible{outline:3px solid #f8d88b;outline-offset:3px}
+.search-preview-empty{border:1px dashed #e1e6d598;border-radius:13px;padding:25px 20px;color:#fffdf4;font-size:.88rem;line-height:1.5}
+@media(max-width:950px){.search-preview-list{grid-template-columns:repeat(2,minmax(0,1fr))}.search-match{min-height:138px}}
+@media(max-width:600px){.search-preview{margin:8px 4px 38px;padding:19px 16px;border-radius:18px}.search-preview-head{display:block}.search-preview h2{font-size:2rem}.search-preview-status{text-align:left;margin-top:9px}.search-preview-list{gap:9px}.search-match{min-height:138px;padding:13px}.search-match-icon{width:43px;height:43px;border-radius:11px}.search-match-icon svg{width:30px;height:30px}.search-match-copy strong{font-size:1rem}.search-match-copy small{font-size:.63rem}.search-preview-footer{align-items:flex-start;flex-direction:column}}
+@media(max-width:365px){.search-preview-list{grid-template-columns:1fr}.search-match{min-height:105px;flex-direction:row;align-items:center}.search-match-top{width:auto;flex:none}.search-match-arrow{display:none}}
+@media(prefers-reduced-motion:reduce){.search-match{transition:none!important}.search-match:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -670,6 +701,13 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
     </div>
     <button class="hero-find-submit" type="submit">Find rentals ↗</button>
   </form>
+  <span class="sr-only" id="search-preview-help">Type to see direct links to matching rental categories. Press Down Arrow to focus the first match, or Enter to filter all categories.</span>
+</section>
+
+<section class="search-preview" id="search-preview" aria-label="Rental categories matching your search" hidden>
+  <div class="search-preview-head"><div><span class="search-preview-kicker">FIND YOUR WAY, FASTER</span><h2>Go straight to your rental.</h2></div><p class="search-preview-status" id="search-preview-status" role="status" aria-live="polite" aria-atomic="true"></p></div>
+  <div class="search-preview-list" id="search-preview-list"></div>
+  <div class="search-preview-footer"><span>Direct links to existing rental categories. Availability and prices remain with each provider.</span><a href="#browse" id="search-preview-all">Browse matching categories ↗</a></div>
 </section>
 <section class="hometown" aria-labelledby="hometown-title"><div class="hometown-copy"><p class="eyebrow">This is our kind of place</p><h2 id="hometown-title">A little lake time.<br>A whole lot of hometown.</h2><p>Lake days, Tech green and gold, and the familiar sights on the way home.</p></div><figure class="landmark downtown"><img src="assets/downtown-russellville-sunset.jpg" alt="Downtown Russellville beneath a vivid orange and pink sunset" width="1200" height="544" loading="lazy"><figcaption>Downtown Russellville<span>Home looks good from here</span></figcaption></figure><figure class="landmark tech"><img src="assets/arkansas-tech-wilson-hall.jpg" alt="The red brick buildings and white cupola of Wilson Hall at Arkansas Tech University" width="1280" height="848" loading="lazy"><figcaption>Arkansas Tech University<span>Wilson Hall · Russellville</span></figcaption></figure><figure class="landmark tower"><img src="water%20tower.jpg" alt="The I love Russellville water tower above the trees" width="900" height="486" loading="lazy"><figcaption>A familiar welcome home<span>The I ♥ Russellville water tower</span></figcaption></figure></section>
 
@@ -1220,6 +1258,67 @@ viewButtons.forEach(button => button.addEventListener("click", () => {
   clearShareFeedback();
 }));
 const aliases = {homes:"house houses apartment apartments home housing long term monthly spring lake springlake lindsey management river valley realty natural state property management leasing russellville housing authority public housing section 8 housing choice voucher glenwood urban loft urban loft co furnished apartments harrell drive",storage:"self storage unit units pottsville dardanelle arkansas storage centers pine ridge apache self storage river road bay meadows mini storage state highway 22 vehicle storage covered parking boat rv",tools:"tool equipment machinery trailer trailers yell county gin ycg rental dardanelle carrs carr\'s morrilton central rental central rental supply united rentals excavators skid steers skidsteer skid-steer attachments brush cutter harley rake jackhammer pickup broom post hole auger grapple bucket post driver pallet forks hay spikes padfoot roller tree puller backhoe kubota b26 nifty lifts scissor lift boom lift generators resilient energy industrial power climate hvac ridout lumber hardware tool rentals automotive specialty loaner loan-a-tool borrow tool autozone advance auto parts o'reilly oreilly brakes suspension puller",paddling:"kayak kayaks canoe canoes paddleboard paddleboards sup adventure water guided kayaking guided kayak tours park interpreter sunset kayaking lake dardanelle state park guided paddle outings weekender plainview fourche la fave river single tandem kayak",bicycles:"bicycle bicycles bike bikes cycling mountain road gravel hardtail full suspension electric ebike e-bike commuter jackalope jackalope cycling rent rental downtown commerce",rvs:"rv rvs recreational vehicle camper motorhome camping site sites hookups monthly lake atkins adventure rv park","rv-rentals":"rv rental rentals camper campers travel trailer motorhome motorhomes recreational vehicle vehicles rvshare rvezy huddleston jez delivered delivery campsite road trip",cars:"car cars vehicle vehicles auto automobile sedan suv truck passenger rental rent a ride enterprise cogswell",boats:"boat boats boating lake",party:"party parties event events tent tents table tables chair chairs mobile escape room escape rooms escape game axe throwing team building",commercial:"commercial office offices retail shop shops warehouse coworking shared workspace desk desks conference room meeting room co create cocreate innovation hub hidden gem suites",stays:"airbnb vacation short term lodging furnished cabin cabins cabin rental rentals getaways dover ozark piney cabins ozark mountain escape treat retreat dover treat road cabin moccasin gap indian creek weekender plainview mount nebo petit jean state park dardanelle tiny cabin mount magazine state park cabins paris logan county one two three bedroom cabin hot tub bluff cove creek supply cabin 61 cabin 63 magazine cabin mount magazine trail access paris laben properties hobbit house russellville tolkien themed furnished guest suite short term mid term",camping:"camp camping campground campgrounds rv rvs recreational vehicle sites hookups overnight monthly ivys cove ivy edens rv resort lake dardanelle state park pottsville london ozark ridge ozone side by side utv utility terrain vehicle trail riding weekender plainview fourche la fave river kayak cabins carter cove sunlight bay quarry cove river road nimrod lake nimrod dam plainview federal recreation campground blue mountain lake waveland park outlet area outlet campground near havana 2026 drawdown redding campground wolf pen campground mulberry river ozark national forest near ozark turner bend outfitter cass pig trail byrds byrd adventure center ozark mulberry river tent camping campground showers morrilton rv park deluca properties lakeview landing lake overcup kamper lane back in the ozarks rv park backintheozarks dover broomfield road full hookup tiny cabin the patch rv park patch rv clarksville palmer road contractor workforce lodging extended stays mount magazine state park paris arkansas mountaintop camping cameron bluff campground 18 campsites arkansas highest point aux arc campground ozark lake ozark arkansas clear creek campground alma frog bayou river camping federal corps of engineers haw creek falls campground hagarville highway 123 ozark highlands trail waterfall primitive camping brock creek lake campground jerusalem van buren county forest service campsite vault toilet pack it out free first come bayou bluff illinois bayou hector lower loop primitive free camping richland creek witts springs searcy county ozark highlands trail first come vault toilets cove creek supply rv spaces mount magazine paris state highway 309 store trail riding",trailers:"trailer trailers car hauler cargo utility enclosed dump equipment towing wattstheload watts the load rent to own grace pro refrigerated refrigeration cooler cold storage reefer keep it cool mobile generator festival catering northwest arkansas", "mobile-storage":"portable mobile storage container office trailer",dumpsters:"dumpster dumpsters roll off rolloff trash waste bin",venues:"venue venues event hall room meeting space depot wedding weddings reception barn welcome hill brookstock potts inn museum outdoor courtyard orenwood oren wood morrilton chamber commerce community board classroom pope county library public library room reservation carden point nimrod lake picnic shelter plainview day use group shelter no overnight byrds byrd adventure center ozark mulberry river outdoor event leasing pavilion covered bandstand reunion weddings picnics",moving:"moving truck trucks van boxes uhaul u haul penske space world dardanelle old bank gun pawn union street","restrooms":"portable toilet toilets sanitation restroom bathroom handwashing jobsite septic arkansas portable toilets luxury restroom trailer arportabletoilets","photo-booths":"photo booth booths camera 360 video wedding selfie rental photoboothsofarkansas photo booths of arkansas hot springs ntrusted touch central arkansas digital photo booth 360 booth audio guestbook inflatable movie screen projector","temporary-fencing":"temporary fencing fence panel panels barrier construction chain link afg af&g modern fence fort smith russellville temporary fence rental","formalwear":"formal formalwear tuxedo tuxedos suit suits wedding prom clothes","sheds":"shed sheds portable building buildings rent to own lease storage duvall duvalls duvall's derksen sams sam's affordable buildings frontier","household-rentals":"furniture appliance appliances electronics couch sofa washer dryer television rent to own","audio-visual":"audio visual av microphone speakers sound lighting projector event equipment","instruments":"band musical instrument instruments music trumpet trombone saxophone flute clarinet student school orchestra rent to own cooper music","yard-signs":"yard sign signs greeting birthday celebration lawn sign gypsies","golf-carts":"golf cart carts buggy event vehicle transport mobility rental river valley golf carts arkansas golf powersports clear creek golf car utility vehicles hot springs village kaptain chris pups hot springs",stages:"stage stages staging portable mobile concert platform platforms riser risers festival performance production truss","golf-simulators":"golf simulator simulators indoor golf golf bay virtual golf tee time mobile golf event games","medical-equipment-rentals":"medical equipment rental rentals wheelchair wheelchairs scooter scooters mobility hospital bed beds patient lift knee walker ramp attention medical supply diamond medical trumotion medical paid regional delivery","medical-equipment-loans":"medical equipment loan loans wheelchair walker crutches shower chair assistive technology free goodwill ican mobility reuse borrow spinal cord commission ascc regional loan closet loaner equipment",other:"other services miscellaneous"};
+
+/* Source category suggestions directly from existing cards/aliases. No duplicate inventory. */
+const searchPreview=document.getElementById("search-preview");
+const searchPreviewList=document.getElementById("search-preview-list");
+const searchPreviewStatus=document.getElementById("search-preview-status");
+const searchPreviewAll=document.getElementById("search-preview-all");
+function updateSearchPreview(){
+ const query=heroQuery.value.toLowerCase().trim().replace(/\s+/g," ");
+ if(!query){searchPreview.hidden=true;return;}
+ const terms=query.split(" ");
+ const matches=cards.map(card=>{
+   const title=card.querySelector(".card-body h3")?.textContent.trim()||"";
+   const label=card.querySelector(".card-body .eyebrow")?.textContent.trim()||"Rental category";
+   const key=card.dataset.category;
+   const searchable=categorySearchText.get(card)+" "+(aliases[key]||"");
+   if(!terms.every(term=>searchable.includes(term)))return null;
+   const lower=title.toLowerCase();
+   const labelLower=label.toLowerCase();
+   const score=(lower.startsWith(query)?5:0)+(labelLower.startsWith(query)?4:0)+(lower.includes(query)?2:0)+(key.startsWith(query)?3:0);
+   return {card,title,label,key,score};
+ }).filter(Boolean).sort((a,b)=>b.score-a.score);
+ searchPreviewList.replaceChildren();
+ matches.slice(0,4).forEach(item=>{
+   const source=item.card.querySelector(".card-link[href]");
+   if(!source)return;
+   const link=document.createElement("a");link.className="search-match";link.href=source.href;
+   if(source.target){link.target=source.target;link.rel=source.rel||"noopener noreferrer";}
+   const top=document.createElement("span");top.className="search-match-top";
+   const icon=document.createElement("span");icon.className="search-match-icon";icon.setAttribute("aria-hidden","true");
+   const svg=document.createElementNS("http://www.w3.org/2000/svg","svg");svg.setAttribute("viewBox","0 0 64 64");
+   const use=document.createElementNS("http://www.w3.org/2000/svg","use");
+   const replacement={rvs:"rv-rentals",stays:"homes"};
+   const symbol=document.getElementById("rental-pictogram-"+item.key)?item.key:(replacement[item.key]||"other");
+   use.setAttribute("href","#rental-pictogram-"+symbol);
+   svg.appendChild(use);icon.appendChild(svg);
+   const arrow=document.createElement("span");arrow.className="search-match-arrow";arrow.setAttribute("aria-hidden","true");arrow.textContent="↗";
+   top.append(icon,arrow);
+   const copy=document.createElement("span");copy.className="search-match-copy";
+   const heading=document.createElement("strong");heading.textContent=item.title;
+   const label=document.createElement("small");label.textContent=item.label;
+   copy.append(heading,label);link.append(top,copy);searchPreviewList.appendChild(link);
+ });
+ if(!matches.length){
+   const empty=document.createElement("p");empty.className="search-preview-empty";
+   empty.textContent="No direct category matches. Try a broader term, or browse the full directory below.";
+   searchPreviewList.appendChild(empty);
+ }
+ searchPreviewStatus.textContent=matches.length===0?"No matching categories":matches.length+" matching "+(matches.length===1?"category":"categories")+(matches.length>4?" · top four shown":"");
+ searchPreview.hidden=false;
+}
+heroQuery.setAttribute("aria-controls","search-preview");
+heroQuery.setAttribute("aria-describedby","search-preview-help");
+heroQuery.addEventListener("input",updateSearchPreview);
+heroQuery.addEventListener("keydown",event=>{
+ if(event.key==="Escape")searchPreview.hidden=true;
+ if(event.key==="ArrowDown"&&!searchPreview.hidden){const first=searchPreviewList.querySelector("a");if(first){event.preventDefault();first.focus();}}
+});
+searchPreview.addEventListener("keydown",event=>{if(event.key==="Escape"){searchPreview.hidden=true;heroQuery.focus();}});
+searchPreviewAll.addEventListener("click",event=>{event.preventDefault();searchPreview.hidden=true;heroSearchForm.requestSubmit();});
+heroSearchForm.addEventListener("submit",()=>{searchPreview.hidden=true;});
+
 function filterRentals(){
   const terms = search.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
   let visible = 0;
