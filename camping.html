@@ -135,16 +135,123 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.79rem;col
  .listing-grid.is-scan .camp-scan-content{display:flex!important}
 }
 
+
+/* 2026-10-30 / Destination-first camping arrival.
+   Live inspiration reviewed: StayARV.com and Russellville.Rent, October 30.
+   Evidence: nngroup.com/articles/information-scent/ ;
+   web.dev/learn/design/responsive-images ; w3.org/TR/WCAG22/ .
+   The photograph is local scenery, never a campground/property claim. */
+.hero{
+  min-height:650px;
+  padding:clamp(78px,9vw,122px) 0 166px;
+  background:
+    linear-gradient(95deg,rgba(6,28,24,.97) 0%,rgba(9,34,29,.94) 39%,rgba(10,40,33,.77) 72%,rgba(11,40,36,.6) 100%),
+    url("assets/lake-dardanelle-sunset.jpg") center 55%/cover no-repeat #12392f;
+}
+.hero:before,.hero:after{display:none}
+.hero-layout{grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);gap:clamp(25px,5vw,78px)}
+.hero .eyebrow{color:#f7d596;letter-spacing:.2em}
+.hero h1{max-width:12ch;font-size:clamp(4rem,7vw,7.6rem);line-height:.96;letter-spacing:-.075em;text-shadow:0 7px 30px #09271f80}
+.hero h1 em{color:#f9d394}
+.hero-copy{font-size:clamp(1.03rem,1.5vw,1.22rem);max-width:49ch;color:#f1f2e9}
+.hero-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero-link{display:inline-flex;align-items:center;justify-content:center;gap:13px;min-height:52px;padding:12px 21px;border:1px solid #f2d299;border-radius:7px;font-size:.86rem;font-weight:850;text-decoration:none;transition:transform .2s,background .2s}
+.hero-link:hover{transform:translateY(-2px)}
+.hero-link-primary{background:#f0d095;color:#15372c}
+.hero-link-primary:hover{background:#ffe3b4}
+.hero-link-secondary{background:#173d34b8;color:#fff6e6;border-color:#d8e5d5}
+.hero-link-secondary:hover{background:#285847}
+.hero-photo-note{margin:25px 0 0;color:#e3ebde;font-size:.72rem;letter-spacing:.06em;line-height:1.5}
+.hero-aside{position:relative;padding:32px 29px;border:1px solid #e9d5a18f;border-radius:160px 160px 16px 16px;background:linear-gradient(150deg,#143d33dd,#092c27e8);box-shadow:0 25px 65px #061d19a0,inset 0 0 0 9px #ffffff08;transform:rotate(2deg)}
+.hero-aside strong{font-size:clamp(4rem,7vw,6.4rem);color:#f3d49b}
+.hero-aside span{font-size:1.04rem}
+.hero-aside p{line-height:1.65;color:#e3eee4}
+.hero-scene svg{max-height:140px}
+.camp-journeys{position:relative;z-index:3;margin:-106px 0 0;padding:0 0 28px;scroll-margin-top:25px}
+.camp-journeys-header{display:flex;justify-content:space-between;align-items:end;gap:22px;margin:0 0 23px}
+.camp-journeys-label{margin:0 0 7px;color:#f2d49d;font-size:.72rem;font-weight:850;letter-spacing:.17em;text-transform:uppercase;text-shadow:0 2px 10px #06251d}
+.camp-journeys-header h2{margin:0;color:#fffaf0;font:400 clamp(2.15rem,4vw,3.7rem)/1.05 Georgia,serif;letter-spacing:-.055em;text-shadow:0 2px 18px #0a2e2380}
+.camp-journeys-header>p{max-width:33ch;color:#fff5dd;font-size:.85rem;line-height:1.5;margin:0 0 4px;text-shadow:0 2px 10px #09251b}
+.camp-journeys-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.camp-pathway{position:relative;isolation:isolate;display:flex;flex-direction:column;min-width:0;min-height:296px;padding:clamp(24px,3vw,36px);border-radius:15px;border:1px solid #afc5aa;text-decoration:none;overflow:hidden;color:#fefcf3;background:#1d4538;box-shadow:0 22px 48px #10271c37;transition:transform .22s,box-shadow .22s}
+.camp-pathway:hover{transform:translateY(-5px);box-shadow:0 30px 53px #10271c4b}
+.camp-pathway:focus-visible{outline:3px solid #f5cb75;outline-offset:5px}
+.camp-pathway:before{content:"";position:absolute;inset:auto -13% -52% 18%;height:82%;z-index:-1;border-radius:50%;border:1px solid #ffffff2c;box-shadow:0 0 0 30px #ffffff08,0 0 0 65px #ffffff05;pointer-events:none}
+.camp-pathway:first-child{background:linear-gradient(137deg,#254e3f,#123a31)}
+.camp-pathway:nth-child(2){background:linear-gradient(145deg,#e4cc93,#f4e6c5);color:#19392e;border-color:#cdb780}
+.camp-pathway:nth-child(2):before{border-color:#5a6d5e40;box-shadow:0 0 0 30px #536c5012,0 0 0 65px #536c5009}
+.camp-pathway:last-child{background:linear-gradient(140deg,#25586b,#133d4a);border-color:#487786}
+.camp-pathway-top{display:flex;justify-content:space-between;align-items:start;gap:12px;font-size:.69rem;font-weight:850;letter-spacing:.15em;text-transform:uppercase}
+.camp-pathway-icon{font:400 3rem/1 Georgia,serif;letter-spacing:-.1em;opacity:.55}
+.camp-pathway strong{display:block;margin:27px 0 13px;max-width:10ch;font:400 clamp(2.1rem,3.2vw,3.5rem)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.06em}
+.camp-pathway-copy{display:block;max-width:35ch;font-size:.84rem;line-height:1.6;opacity:.9}
+.camp-pathway-go{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:auto;padding-top:23px;font-size:.79rem;font-weight:850}
+.camp-pathway-go span{font-size:1.4rem;line-height:1}
+.camp-journeys-note{margin:20px 3px 0;color:#536b5b;font-size:.8rem;line-height:1.6}
+.finder{margin-top:32px;scroll-margin-top:24px}
+.directory-head{margin-top:67px}
+.listing-grid article{border-radius:14px;box-shadow:0 9px 27px #183e3410}
+@media(max-width:940px){
+  .hero{padding-block:80px 160px}
+  .hero-layout{grid-template-columns:minmax(0,1fr) 240px;gap:24px}
+  .hero h1{font-size:clamp(3.7rem,8.4vw,6.2rem)}
+  .camp-journeys-grid{gap:11px}
+  .camp-pathway{min-height:295px;padding:23px}
+  .camp-pathway strong{font-size:clamp(1.9rem,3.2vw,2.8rem)}
+}
+@media(max-width:760px){
+  .hero{min-height:0;padding:69px 0 126px;background-position:58% center}
+  .hero-layout{grid-template-columns:1fr;gap:31px}
+  .hero h1{font-size:clamp(3.75rem,10vw,6rem)}
+  .hero-aside{width:min(100%,360px);justify-self:start;transform:none;border-radius:130px 130px 16px 16px}
+  .camp-journeys{margin-top:-66px}
+  .camp-journeys-header{display:block}
+  .camp-journeys-label,.camp-journeys-header h2,.camp-journeys-header>p{color:#173c31;text-shadow:none}
+  .camp-journeys-header>p{margin-top:9px}
+  .camp-journeys-grid{grid-template-columns:1fr;gap:11px}
+  .camp-pathway{min-height:213px;padding:24px}
+  .camp-pathway strong{max-width:none;font-size:clamp(2.2rem,6.7vw,3.05rem);margin:9px 0 9px}
+  .camp-pathway-top{align-items:center}
+  .camp-pathway-icon{font-size:2.3rem}
+  .camp-pathway-go{padding-top:17px}
+  .finder{margin-top:23px}
+}
+@media(max-width:520px){
+  .hero{padding:53px 0 119px}
+  .hero h1{font-size:clamp(3.4rem,11.9vw,4.5rem)}
+  .hero-copy{font-size:1rem}
+  .hero-links{flex-direction:column}
+  .hero-link{width:100%}
+  .hero-aside{padding:25px}
+  .hero-aside strong{font-size:4.2rem}
+  .camp-journeys{margin-top:-56px}
+  .camp-pathway{min-height:210px}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-link,.camp-pathway{transition:none}
+  .hero-link:hover,.camp-pathway:hover{transform:none}
+}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#main-content">Skip to campground listings</a>
 <header class="site-head"><div class="shell"><a class="brand" href="/">Russellville<span>.Rent</span></a><a class="back" href="/">← All rentals</a></div></header>
 <section class="hero" aria-labelledby="page-title"><div class="shell hero-layout">
-  <div><p class="eyebrow">The Arkansas River Valley · Outdoor stays</p><h1 id="page-title">Campgrounds and <em>RV sites</em></h1><p class="hero-copy">Russellville and nearby Arkansas River Valley destinations. Confirm availability and booking requirements with each operator.</p></div>
+  <div><p class="eyebrow">The Arkansas River Valley · Outdoor stays</p><h1 id="page-title">Campgrounds and <em>RV sites</em></h1><p class="hero-copy">Russellville and nearby Arkansas River Valley destinations. Confirm availability and booking requirements with each operator.</p><div class="hero-links"><a class="hero-link hero-link-primary" href="#camp-journeys">Choose a camping style <span aria-hidden="true">↘</span></a><a class="hero-link hero-link-secondary" href="#camp-list">Browse all campgrounds <span aria-hidden="true">↗</span></a></div><p class="hero-photo-note">Lake Dardanelle scenery · Photograph is not a listed campground or live availability view</p></div>
   <aside class="hero-aside" aria-label="Directory overview"><div class="hero-scene" aria-hidden="true"><svg viewBox="0 0 260 118" xmlns="http://www.w3.org/2000/svg" focusable="false"><circle cx="200" cy="29" r="16" fill="#f1c879"/><circle cx="40" cy="23" r="2" fill="#e5f0dd"/><circle cx="113" cy="12" r="2" fill="#e5f0dd"/><circle cx="238" cy="60" r="2" fill="#e5f0dd"/><path d="M0 92 58 39 100 73 150 27 218 82 260 53V118H0Z" fill="#4e8567"/><path d="M0 105 65 72 109 96 174 62 260 101V118H0Z" fill="#2d654f"/><path d="M0 108Q65 96 130 109T260 106V118H0Z" fill="#153f37"/><path d="M53 107 79 76 105 107Z" fill="#f1c879"/><path d="M79 76V107" stroke="#8d6034" stroke-width="2"/><path d="M190 105V72m-13 19 13-25 13 25m-30 8 17-23 17 23" stroke="#dcebd9" stroke-width="3" stroke-linecap="round" fill="none"/></svg></div><strong>48</strong><span>places to explore</span><p>From private RV parks to lakeside campgrounds and forest recreation areas.</p></aside>
 </div></section>
 <main id="main-content" class="shell">
+
+  <section class="camp-journeys" id="camp-journeys" aria-labelledby="camp-journeys-title">
+    <div class="camp-journeys-header"><div><p class="camp-journeys-label">Choose your kind of stay / River Valley</p><h2 id="camp-journeys-title">A place for every kind of outside.</h2></div><p>Start with a campground type, then refine by town, amenities or the name you know.</p></div>
+    <div class="camp-journeys-grid">
+      <a class="camp-pathway" href="#camp-list" data-camp-route="independent"><span class="camp-pathway-top"><span>01 / INDEPENDENT STAYS</span><span class="camp-pathway-icon" aria-hidden="true">⌂</span></span><strong>Private parks &amp; RV sites.</strong><span class="camp-pathway-copy">Compare independent operators and ask about hookups, longer stays and their booking rules.</span><span class="camp-pathway-go">Explore independent stays <span aria-hidden="true">↗</span></span></a>
+      <a class="camp-pathway" href="#camp-list" data-camp-route="state"><span class="camp-pathway-top"><span>02 / ARKANSAS PARKS</span><span class="camp-pathway-icon" aria-hidden="true">✳</span></span><strong>State park campgrounds.</strong><span class="camp-pathway-copy">Find Arkansas State Park options, then verify campsite amenities, seasons and reservations.</span><span class="camp-pathway-go">Explore state parks <span aria-hidden="true">↗</span></span></a>
+      <a class="camp-pathway" href="#camp-list" data-camp-route="federal"><span class="camp-pathway-top"><span>03 / PUBLIC LANDS</span><span class="camp-pathway-icon" aria-hidden="true">≈</span></span><strong>Lakes &amp; forest sites.</strong><span class="camp-pathway-copy">Browse Army Corps of Engineers and Forest Service destinations and check access before driving.</span><span class="camp-pathway-go">Explore federal sites <span aria-hidden="true">↗</span></span></a>
+    </div>
+    <p class="camp-journeys-note">These paths filter the existing directory when scripting is available; otherwise they lead to all listings. They do not confirm availability, hookups, prices or reservations.</p>
+  </section>
   <section class="finder" aria-label="Find a campground">
     <div class="stay-filter-header"><div><span class="stay-kicker">Choose your camping style</span><p>Explore by operator type, then search for a town or amenity.</p></div><span class="stay-filter-note">48 places · 3 ways to explore</span></div>
     <div class="stay-filters" role="group" aria-label="Campground type">
@@ -397,6 +504,30 @@ board.hidden=false;render();
   try{if(localStorage.getItem(key)==='scan')preferred='scan';}catch(error){/* Use default. */}
   setView(preferred,false);
   toolbar.hidden=false;
+})();
+</script>
+
+<script>
+/* Connect editorial campground paths to the established type filters.
+   Native anchors still reach the directory when scripts are unavailable. */
+(function(){
+  'use strict';
+  document.querySelectorAll('.camp-pathway[data-camp-route]').forEach(link=>{
+    link.addEventListener('click',event=>{
+      const button=document.querySelector('.stay-filter[data-type-filter="'+link.dataset.campRoute+'"]');
+      const finder=document.querySelector('.finder');
+      if(!button||!finder||!document.documentElement.classList.contains('has-js'))return;
+      event.preventDefault();
+      const search=document.getElementById('camp-search');
+      if(search&&search.value){
+        search.value='';
+        search.dispatchEvent(new Event('input',{bubbles:true}));
+      }
+      button.click();
+      finder.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+      button.focus({preventScroll:true});
+    });
+  });
 })();
 </script>
 
