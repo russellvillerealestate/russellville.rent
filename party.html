@@ -109,15 +109,78 @@ footer a{font-weight:800}
 .quick-scan .card-content>p:not(:last-child){flex:1 1 100%;order:4;margin:0;padding:12px 0 0;border-top:1px solid var(--line)}
 @media(max-width:720px){.quick-scan .provider{grid-template-columns:1fr}.quick-scan .card-heading{flex-direction:row;align-items:center;justify-content:space-between;border-right:0;border-bottom:1px solid var(--line);padding:11px 17px}.quick-scan .card-content{padding:17px}.party-view-toolbar{padding:13px}.party-view-group{width:100%}.party-view-group button{flex:1}}
 @media(prefers-reduced-motion:reduce){.quick-scan .provider{transition:none}}
+
+/* Celebration atlas, 2026-10-30. StayARV photographic scale, NN/g information scent,
+   web.dev responsive layout and WCAG 2.2 keyboard focus/target guidance. */
+.hero{background:#162b37;min-height:620px}
+.party-hero-photo{position:absolute;z-index:0;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 52%;filter:saturate(.9) contrast(1.06)}
+.hero:after{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(96deg,#112c34fa 0%,#16333cef 41%,#4c3041ce 74%,#2b3646a0 100%);pointer-events:none}
+.hero:before{z-index:2;opacity:.12}
+.hero-inner{position:relative;z-index:3;min-height:620px;padding-block:82px 127px;grid-template-columns:minmax(0,1.15fr) minmax(250px,.85fr);gap:clamp(25px,5vw,65px)}
+.hero h1{font-size:clamp(3.55rem,6.9vw,6.2rem);line-height:.99;letter-spacing:-.065em;max-width:14ch;margin-bottom:26px}
+.hero h1 em{font-style:italic;color:#ffdab6}
+.hero .eyebrow{font-size:.77rem;letter-spacing:.19em;color:#ffdbaf}
+.hero-copy{font-size:clamp(.98rem,1.4vw,1.12rem);line-height:1.8;max-width:54ch;color:#f8eae0}
+.hero-actions .button.primary{background:#ffdbaf;color:#233339;box-shadow:0 10px 25px #13212938}
+.hero-actions .button.secondary{background:#ffffff13}
+.hero-art{padding:23px;min-height:330px;border-radius:23px;border:1px solid #ffffff60;background:linear-gradient(135deg,#f9cd9c2c,#233b4875);box-shadow:0 22px 55px #0c192e77;backdrop-filter:blur(2px)}
+.ticket.front-ticket{background:#ffe7cf;box-shadow:0 24px 45px #10172987}
+.party-photo-credit{position:absolute;z-index:4;bottom:83px;right:max(20px,calc((100vw - 1160px)/2));max-width:56ch;text-align:right;font-size:.67rem;color:#fff3e8;text-shadow:0 1px 4px #172332}
+.occasion-atlas{position:relative;z-index:5;margin-top:-68px;background:#fffcf5;border:1px solid #e4d9cf;border-radius:24px;padding:31px clamp(20px,3vw,36px) 33px;box-shadow:0 22px 52px #1d363a24}
+.occasion-heading{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(200px,.9fr);align-items:end;gap:18px;margin-bottom:21px}
+.occasion-heading .atlas-overline{grid-column:1/-1;font-size:.68rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:#86465a}
+.occasion-heading h2{font-size:clamp(2.15rem,3.6vw,3.1rem);line-height:1.07;margin:0;color:#203d40}
+.occasion-heading p{font-size:.87rem;color:#556768;line-height:1.6;max-width:47ch;margin:0}
+.occasion-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.occasion-card{position:relative;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;min-width:0;min-height:232px;padding:21px 19px;border-radius:16px;border:1px solid #c6d8ce;background:linear-gradient(142deg,#e4eee5,#f5f8ef);color:#1e463e;text-decoration:none;transition:transform .2s,border-color .2s,box-shadow .2s}
+.occasion-card:nth-child(2){color:#543d32;background:linear-gradient(145deg,#f1e4d1,#fff6ea);border-color:#dfcfb8}
+.occasion-card:nth-child(3){color:#63414f;background:linear-gradient(145deg,#f4e0de,#fff6f1);border-color:#e7cdd0}
+.occasion-card:nth-child(4){color:#fff8e9;background:linear-gradient(145deg,#193e3e,#2c5754);border-color:#234845}
+.occasion-card:after{content:"";z-index:-1;position:absolute;right:-80px;top:-100px;width:165px;height:165px;border:1px solid currentColor;border-radius:50%;opacity:.15;box-shadow:0 0 0 32px #ffffff11,0 0 0 62px #ffffff09}
+.occasion-card:hover{transform:translateY(-4px);border-color:#9b7156;box-shadow:0 15px 25px #243b3829}
+.occasion-card:focus-visible{outline:3px solid #aa6822;outline-offset:4px}
+.occasion-card[data-selected="true"]{box-shadow:inset 0 0 0 3px #ad7a39,0 12px 24px #273c3423}
+.occasion-card-top{display:flex;justify-content:space-between;gap:12px;align-items:start;margin-bottom:auto}
+.occasion-card-top span{font-size:.65rem;line-height:1.5;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
+.occasion-card-top svg{width:64px;height:64px;flex:none;fill:none;stroke:currentColor;stroke-width:2.7;stroke-linejoin:round;stroke-linecap:round}
+.occasion-card strong{display:block;font:400 clamp(1.35rem,2vw,1.78rem)/1.13 Georgia,serif;letter-spacing:-.038em;margin-top:15px}
+.occasion-card small{font-size:.77rem;line-height:1.48;margin-top:9px;opacity:.9}
+.occasion-link{display:flex;justify-content:space-between;gap:10px;margin-top:17px;padding-top:12px;border-top:1px solid currentColor;font-size:.75rem;font-weight:850}
+.occasion-link span{font-size:1.15rem;line-height:1}
+main.shell>.summary{margin-top:16px}
+.finder{padding-top:55px}
+.finder-heading h2{font-size:clamp(2.4rem,4.3vw,3.7rem);line-height:1.04}
+.directory{gap:22px}
+.provider{border-radius:19px;box-shadow:0 12px 28px #1c333616}
+.provider:nth-child(4n+1){border-top:5px solid #ba8b6b}
+.provider:nth-child(4n+2){border-top:5px solid #72988c}
+.provider:nth-child(4n+3){border-top:5px solid #ab798b}
+.provider:nth-child(4n+4){border-top:5px solid #849c81}
+.provider .card-heading{background:#f7f2ed}
+.provider .card-content{padding:27px}
+.provider h2{font:400 clamp(1.3rem,2vw,1.58rem)/1.22 Georgia,serif;letter-spacing:-.035em;color:#203e42}
+.provider p{line-height:1.74}
+.quick-scan .provider{border-top-width:1px}
+.quick-scan .card-content{padding:17px 21px}
+.quick-scan .card-content h2{font-size:1.2rem}
+@media(max-width:1020px){.occasion-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.occasion-card{min-height:200px}.hero-inner{grid-template-columns:minmax(0,1fr) minmax(240px,.8fr)}.hero h1{font-size:clamp(3.25rem,6.2vw,5.3rem)}}
+@media(max-width:860px){.hero-inner{grid-template-columns:1fr;min-height:0;padding:58px 0 115px}.hero h1{font-size:clamp(3.5rem,8.2vw,5.4rem)}.hero-art{max-width:450px;width:100%;margin:auto}.party-photo-credit{bottom:74px}.occasion-atlas{margin-top:-53px}}
+@media(max-width:650px){.hero-inner{padding:51px 0 38px}.hero h1{font-size:clamp(3.1rem,11vw,4.75rem)}.hero-copy{font-size:.98rem}.hero-art{min-height:225px;max-width:350px;padding:13px}.party-photo-credit{position:relative;bottom:auto;right:auto;display:block;padding:0 20px 84px;text-align:left}.occasion-atlas{margin-top:-53px;padding:23px 17px;border-radius:19px}.occasion-heading{display:block}.occasion-heading .atlas-overline{display:block;margin-bottom:10px}.occasion-heading p{margin:12px 0 17px}.occasion-grid{grid-template-columns:1fr}.occasion-card{min-height:0;padding:18px 20px}.occasion-card-top{margin-bottom:0}.occasion-card-top svg{width:51px;height:51px}.occasion-card strong{font-size:1.67rem;margin-top:2px}.occasion-card small{margin-top:5px}.occasion-link{margin-top:13px}.finder{padding-top:40px}.provider .card-content{padding:21px}.provider h2{font-size:1.35rem}}
+@media(prefers-reduced-motion:reduce){.occasion-card{transition:none}.occasion-card:hover{transform:none}}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#providers">Skip to party rental providers</a>
 <header class="site-header"><div class="shell header-inner"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
-<section class="hero" aria-labelledby="page-title"><div class="shell hero-inner">
-<div><p class="eyebrow">Russellville, Arkansas · The River Valley</p><h1 id="page-title">Make room for <em>the moment.</em></h1><p class="hero-copy">Party &amp; event rentals, from bounce houses and tables to décor and hosted celebrations. Find a provider that fits your plans, then confirm inventory, pricing and delivery directly.</p><div class="hero-actions"><a class="button primary" href="#providers">Explore providers ↓</a><a class="button secondary" href="#guide">Before you book ↗</a></div></div>
+<section class="hero" aria-labelledby="page-title"><img class="party-hero-photo" src="assets/downtown-russellville-sunset.jpg" alt="" decoding="async" fetchpriority="high"><div class="shell hero-inner">
+<div><p class="eyebrow">Russellville, Arkansas · The River Valley</p><h1 id="page-title">Around here,<br><em>we celebrate big.</em></h1><p class="hero-copy">Party &amp; event rentals, from bounce houses and tables to décor and hosted celebrations. Find a provider that fits your plans, then confirm inventory, pricing and delivery directly.</p><div class="hero-actions"><a class="button primary" href="#providers">Explore providers ↓</a><a class="button secondary" href="#guide">Before you book ↗</a></div></div>
 <div class="hero-art" aria-hidden="true"><span class="spark one">✳</span><span class="spark two">✦</span><span class="spark three">✳</span><div class="ticket back-ticket"></div><div class="ticket front-ticket"><span class="mini">River Valley / Gatherings</span><span class="big">Good times<br>start here.</span><span class="bottom"><span>PARTY / EVENT</span><span>RUSSELLVILLE.Rent</span></span></div></div>
-</div></section>
+</div><span class="party-photo-credit">Downtown Russellville at sunset · Scenic context, not a rental venue</span></section>
+<section class="occasion-atlas shell" aria-labelledby="occasion-title"><div class="occasion-heading"><span class="atlas-overline">The River Valley celebration guide / Choose your plans</span><h2 id="occasion-title">Start with the kind of day.</h2><p>Choose an occasion to explore matching providers. Confirm individual service areas, prices, availability and booking terms directly.</p></div><nav class="occasion-grid" aria-label="Browse party rentals by need"><a class="occasion-card" data-party-journey="inflatables" href="#providers"><span class="occasion-card-top"><span>01 / Play & games</span><svg viewBox="0 0 70 70" aria-hidden="true" focusable="false"><path d="M9 57V30l12-12 14 12 14-12 12 12v27H9ZM9 42h52M23 18V9h24v9M24 57V42h22v15M16 31v11M54 31v11"/></svg></span><strong>Let them play.</strong><small>Inflatables, slides and party games.</small><span class="occasion-link">See the fun <span aria-hidden="true">↗</span></span></a>
+<a class="occasion-card" data-party-journey="tables" href="#providers"><span class="occasion-card-top"><span>02 / Host together</span><svg viewBox="0 0 70 70" aria-hidden="true" focusable="false"><path d="M7 30 35 12l28 18H7ZM11 30v29M59 30v29M19 59h32M23 43h24M26 43v16M44 43v16M35 12v18"/></svg></span><strong>Gather the crowd.</strong><small>Tents, tables and chairs for the setup.</small><span class="occasion-link">See essentials <span aria-hidden="true">↗</span></span></a>
+<a class="occasion-card" data-party-journey="decor" href="#providers"><span class="occasion-card-top"><span>03 / Make a memory</span><svg viewBox="0 0 70 70" aria-hidden="true" focusable="false"><rect x="9" y="15" width="52" height="42" rx="4"/><circle cx="45" cy="28" r="6"/><path d="m12 51 15-15 11 10 8-8 12 13M19 8v7M51 8v7"/></svg></span><strong>Make it yours.</strong><small>Décor, photo backdrops and special details.</small><span class="occasion-link">See the details <span aria-hidden="true">↗</span></span></a>
+<a class="occasion-card" data-party-journey="onsite" href="#providers"><span class="occasion-card-top"><span>04 / Show up & celebrate</span><svg viewBox="0 0 70 70" aria-hidden="true" focusable="false"><path d="M12 58V19l23-9 23 9v39H12ZM24 58V39h22v19M22 26h5m8 0h5m8 0h5M12 34h46"/></svg></span><strong>Go to the party.</strong><small>On-site celebrations and hosted experiences.</small><span class="occasion-link">See destinations <span aria-hidden="true">↗</span></span></a></nav></section>
 <main class="shell" id="main">
 <div class="summary"><strong>38 publicly listed party and event options</strong><p>Rental equipment and on-site party venues are different services. Read each listing's availability and delivery caveats.</p></div>
 <section class="finder" id="finder" aria-labelledby="finder-title" hidden><div class="finder-heading"><div><p class="eyebrow" style="color:#85506a">Plan by what you need</p><h2 id="finder-title">Find your kind of celebration.</h2></div><p>Search provider names, towns or equipment. Choose a category to narrow the directory.</p></div>
@@ -170,6 +233,7 @@ footer a{font-weight:800}
   const search=document.getElementById("party-search");
   const cards=Array.from(document.querySelectorAll(".provider"));
   const buttons=Array.from(document.querySelectorAll("[data-filter]"));
+  const journeys=Array.from(document.querySelectorAll("[data-party-journey]"));
   const counts=Array.from(document.querySelectorAll("[data-count-for]"));
   const result=document.getElementById("result-count");
   const empty=document.getElementById("empty");
@@ -188,6 +252,7 @@ footer a{font-weight:800}
     });
     buttons.forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.filter===active)));
     counts.forEach(counter=>{counter.textContent="("+searchMatches.filter(card=>matchesCategory(card,counter.dataset.countFor)).length+")"});
+    journeys.forEach(link=>{link.dataset.selected=String(link.dataset.partyJourney===active&&!query)});
     result.textContent=visible+" "+(visible===1?"provider":"providers")+" shown";
     empty.hidden=visible!==0;
   }
@@ -195,6 +260,13 @@ footer a{font-weight:800}
   search.addEventListener("input",update);
   reset.addEventListener("click",()=>{active="all";search.value="";update();search.focus()});
   finder.hidden=false;
+  journeys.forEach(link=>link.addEventListener("click",event=>{
+    const target=buttons.find(button=>button.dataset.filter===link.dataset.partyJourney);
+    if(!target)return;
+    event.preventDefault();active=target.dataset.filter;search.value="";update();
+    finder.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+    target.focus({preventScroll:true});
+  }));
   update();
 })();
 </script>
