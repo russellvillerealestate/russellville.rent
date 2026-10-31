@@ -243,6 +243,111 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
   .jump-deck a:hover,.provider:hover{transform:none}
 }
 
+
+/* 2026-10-31: an illustrated, purpose-first golf-cart inquiry atelier.
+   StayARV-inspired immersive local scenery and restrained forest/gold palette.
+   NN/g: visible choices and clear hierarchy; web.dev: adaptive cards;
+   WCAG 2.2: keyboard-accessible 44px+ anchors, contrast and reduced motion.
+   All art is editorial; it makes no provider, inventory or delivery claims. */
+.request-intro{
+  color:#fffdf4;
+  background:
+    linear-gradient(160deg,rgba(8,32,27,.98) 0%,rgba(11,43,35,.95) 63%,rgba(14,55,43,.91) 100%),
+    url("assets/lake-dardanelle-sunset.jpg") center / cover no-repeat;
+}
+.request-intro:before{
+  border-color:#efd7a04a;
+  box-shadow:0 0 0 44px #f1d3910d,0 0 0 89px #f1d39109;
+}
+.request-intro .eyebrow{color:#f0cf8e}
+.request-intro h2{color:#fff8e8;font-size:clamp(2.45rem,4.1vw,3.6rem);line-height:1.04}
+.request-intro>p:not(.eyebrow){color:#e2ede3;max-width:46ch}
+.cart-scene-gallery{margin-top:30px}
+.cart-scene-heading{
+  margin:0 0 13px;
+  color:#f0d697;
+  font-size:.69rem;
+  font-weight:850;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+.cart-scenes{display:grid;gap:11px}
+.cart-scene{
+  display:grid;
+  grid-template-columns:110px minmax(0,1fr);
+  align-items:center;
+  gap:15px;
+  min-height:122px;
+  padding:9px 17px 9px 9px;
+  background:#fffaf0;
+  border:1px solid #eedcb6;
+  border-radius:15px;
+  color:#1c4336;
+  text-decoration:none;
+  box-shadow:0 13px 28px #051c1738;
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.cart-scene:hover{
+  transform:translateX(5px);
+  border-color:#edc676;
+  box-shadow:0 15px 29px #051c1755;
+}
+.cart-scene:focus-visible{outline:3px solid #ffdb82;outline-offset:4px}
+.cart-scene-art{
+  display:grid;
+  place-items:center;
+  position:relative;
+  width:100%;
+  min-height:101px;
+  height:100%;
+  overflow:hidden;
+  border-radius:11px;
+  background:var(--scene-bg,#e9e4d7);
+  color:#214d3f;
+}
+.cart-scene-art:before{
+  content:"";
+  position:absolute;
+  width:104px;
+  height:104px;
+  right:-52px;
+  top:-52px;
+  border:1px solid #22584435;
+  border-radius:50%;
+  box-shadow:0 0 0 16px #22584413,0 0 0 30px #2258440a;
+}
+.cart-scene-art svg{position:relative;width:100%;max-width:104px;height:88px;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;fill:none;stroke-width:2.8}
+.cart-scene-copy{min-width:0}
+.cart-scene-copy strong{display:block;font:400 clamp(1.2rem,2vw,1.52rem)/1.14 Georgia,"Times New Roman",serif;letter-spacing:-.03em}
+.cart-scene-copy small{display:block;margin-top:8px;color:#526657;font-size:.78rem;line-height:1.45}
+.cart-scene-copy .scene-arrow{display:inline-block;margin-left:5px;color:#96652a;font-weight:850}
+.cart-scene-note{margin:13px 0 0!important;color:#e9eacb!important;font-size:.75rem!important;line-height:1.6}
+.request-route{
+  margin-top:24px;
+  border:1px solid #d8e4c23e;
+  background:#031b1682;
+  box-shadow:none;
+}
+.request-route div:before{background:#133e31}
+.request-route span{color:#d8e8dc}
+@media(max-width:850px){
+  .cart-scenes{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .cart-scene{grid-template-columns:1fr;gap:12px;align-content:start;padding:9px;min-height:0}
+  .cart-scene-art{min-height:114px;height:114px}
+  .cart-scene-copy{padding:0 8px 11px}
+  .cart-scene-copy strong{font-size:1.2rem}
+}
+@media(max-width:610px){
+  .cart-scenes{grid-template-columns:1fr}
+  .cart-scene{grid-template-columns:104px minmax(0,1fr);min-height:112px;align-content:center;padding:8px 12px 8px 8px}
+  .cart-scene-art{height:100%;min-height:96px}
+  .cart-scene-copy{padding:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .cart-scene{transition:none}
+  .cart-scene:hover{transform:none}
+}
+
 </style>
 </head>
 <body>
@@ -325,6 +430,31 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
     <p class="eyebrow">A more useful first conversation</p>
     <h2 id="request-title">Make the first call count.</h2>
     <p>Share the basics once, then ask the providers listed below whether a cart, pickup or delivery is actually available.</p>
+
+    <div class="cart-scene-gallery" aria-labelledby="cart-use-heading">
+      <h3 class="cart-scene-heading" id="cart-use-heading">Choose your starting point</h3>
+      <div class="cart-scenes">
+        <a class="cart-scene" href="#cart-purpose" data-cart-use="an outdoor wedding or event">
+          <span class="cart-scene-art" style="--scene-bg:#efdfc7" aria-hidden="true">
+            <svg viewBox="0 0 104 88" focusable="false"><path d="M9 59 27 26l25 33 25-33 18 33H9Z"/><path d="M18 59v13m68-13v13M26 38h53M39 47h26"/><path d="M52 13v13m-10-6 10-7 10 7"/><path d="M28 71h48"/><path d="m11 16 4 4 4-4m65 1 4 4 4-4"/></svg>
+          </span>
+          <span class="cart-scene-copy"><strong>Celebrate <span class="scene-arrow" aria-hidden="true">↗</span></strong><small>Weddings and outdoor occasions</small></span>
+        </a>
+        <a class="cart-scene" href="#cart-purpose" data-cart-use="transporting guests at an event">
+          <span class="cart-scene-art" style="--scene-bg:#dce9df" aria-hidden="true">
+            <svg viewBox="0 0 104 88" focusable="false"><path d="M12 56h81l-7 14H19l-7-14Z"/><path d="M25 56V31h56v25M21 31l11-12h39l13 12"/><path d="M44 34v22m19-22v22M12 45h12m58 0h11"/><circle cx="32" cy="71" r="7"/><circle cx="75" cy="71" r="7"/><circle cx="40" cy="26" r="3"/><circle cx="63" cy="26" r="3"/></svg>
+          </span>
+          <span class="cart-scene-copy"><strong>Move guests <span class="scene-arrow" aria-hidden="true">↗</span></strong><small>Ask about passenger needs</small></span>
+        </a>
+        <a class="cart-scene" href="#cart-purpose" data-cart-use="work or utility transport">
+          <span class="cart-scene-art" style="--scene-bg:#eee3c4" aria-hidden="true">
+            <svg viewBox="0 0 104 88" focusable="false"><path d="M12 55h80l-7 13H18L12 55Z"/><path d="M20 55V37h40v18M60 37h27v18"/><path d="M30 37V25h20v12m-13-12v-6h7v6"/><path d="M66 37V24h17v13M22 68h65"/><circle cx="30" cy="68" r="7"/><circle cx="75" cy="68" r="7"/><path d="M33 46h14m-7-7v14"/></svg>
+          </span>
+          <span class="cart-scene-copy"><strong>Get to work <span class="scene-arrow" aria-hidden="true">↗</span></strong><small>Discuss utility or jobsite use</small></span>
+        </a>
+      </div>
+      <p class="cart-scene-note">Illustrative planning prompts, not verified cart models, event inventory, or Russellville delivery. Choose a scene to prefill the inquiry; adjust it before contacting a provider.</p>
+    </div>
     <div class="request-route" aria-label="How this inquiry works">
       <div><strong>01 / Describe the event</strong><span>Dates, passengers and where the cart would be used.</span></div>
       <div><strong>02 / Copy your message</strong><span>Paste it into a provider's official inquiry form.</span></div>
@@ -449,6 +579,18 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
     message.value = parts.join("\n");
     status.textContent = "";
   }
+
+  // Progressive enhancement: use-case links still reach the inquiry without JavaScript.
+  document.querySelectorAll(".cart-scene[data-cart-use]").forEach(link => {
+    link.addEventListener("click", event => {
+      event.preventDefault();
+      const purposeField = byId("cart-purpose");
+      purposeField.value = link.dataset.cartUse;
+      render();
+      purposeField.focus();
+      status.textContent = "Starting point added. Review your details and confirm availability with a provider.";
+    });
+  });
   fields.forEach(field => { field.addEventListener("input", render); field.addEventListener("change", render); });
   form.addEventListener("submit", event => event.preventDefault());
   byId("cart-copy").addEventListener("click", async () => {
