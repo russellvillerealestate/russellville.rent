@@ -809,6 +809,51 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   .hometown--closing .landmark figcaption span{font-size:.6rem}
 }
 @media(prefers-reduced-motion:reduce){.hometown-return{transition:none}.hometown-return:hover{transform:none}}
+
+/* Four-path editorial discovery, November 1, 2026.
+   References: StayARV image-led hierarchy; NN/g descriptive wayfinding and
+   visual scanning; web.dev responsive images; WCAG 2.2 keyboard focus and targets.
+   Artwork is illustrative. All 34 category records and search logic are untouched. */
+.discovery{margin:52px 0 30px}
+.discovery-heading{margin-bottom:25px;align-items:end}
+.discovery-heading h2{font-size:clamp(2.25rem,4.2vw,3.65rem);line-height:1.05;max-width:20ch}
+.discovery-heading>p{max-width:36ch;font-size:.94rem;line-height:1.65}
+.discovery-grid{grid-template-columns:repeat(12,minmax(0,1fr));gap:18px}
+.discovery-card{min-height:312px;padding:29px 31px;border-radius:23px;box-shadow:0 15px 35px #173f3515}
+.discovery-card--home,.discovery-card--party{grid-column:span 7}
+.discovery-card--water,.discovery-card--gear{grid-column:span 5}
+.discovery-card h3{font-size:clamp(2.1rem,3.25vw,3.05rem);line-height:1.05;max-width:16ch;text-wrap:balance}
+.discovery-card .path-kicker{font-size:.72rem;letter-spacing:.15em;text-shadow:0 1px 4px #13251b76}
+.discovery-card .path-description{font-size:.9rem;font-weight:650;opacity:1}
+.discovery-card .path-arrow{height:50px;width:50px;flex:none;border:1px solid #f5e9d4b8;background:#ffffff26}
+.discovery-card--gear{background:#1c473b;color:#fff;border-color:#8eaa98}
+.discovery-card--party{background:#594b50;color:#fff;border-color:#b69e8b}
+.discovery-card--gear::before{background:linear-gradient(180deg,#081e1c73 0%,#102b2494 50%,#102b24f0 100%)}
+.discovery-card--party::before{background:linear-gradient(180deg,#281c2580 0%,#35252ba0 48%,#2e2027f2 100%)}
+.discovery-card--gear .path-arrow{border-color:#f5e9d4b8;background:#ffffff26}
+.discovery-card>.discovery-scene{position:absolute;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none;transition:transform .45s ease}
+.discovery-card:hover>.discovery-scene{transform:scale(1.035)}
+.discovery-caption{margin:15px 4px 0;color:#637267;font-size:.74rem;line-height:1.55}
+@media(max-width:970px){
+  .discovery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .discovery-card--home,.discovery-card--party,.discovery-card--water,.discovery-card--gear{grid-column:auto}
+  .discovery-card{min-height:280px;padding:24px}
+  .discovery-card h3{font-size:clamp(1.95rem,4vw,2.65rem)}
+}
+@media(max-width:650px){
+  .discovery{margin:36px 0 24px}
+  .discovery-heading h2{font-size:clamp(2.15rem,8vw,3rem)}
+  .discovery-grid{grid-template-columns:minmax(0,1fr);gap:13px}
+  .discovery-card{min-height:215px;padding:24px 22px;border-radius:18px}
+  .discovery-card h3{font-size:2rem}
+  .discovery-card .path-arrow{width:44px;height:44px}
+  .discovery-caption{font-size:.71rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .discovery-card>.discovery-scene{transition:none}
+  .discovery-card:hover>.discovery-scene{transform:none}
+}
+
 </style>
 </head>
 <body>
@@ -846,7 +891,7 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 
 
 <section class="discovery" aria-labelledby="discovery-title">
-  <div class="discovery-heading"><div><p class="eyebrow">MADE FOR THE RIVER VALLEY</p><h2 id="discovery-title">Whatever your next chapter looks like.</h2></div><p>Start with what you have in mind. We'll take you to the right rental category.</p></div>
+  <div class="discovery-heading"><div><p class="eyebrow">MADE FOR THE RIVER VALLEY / FOUR WAYS IN</p><h2 id="discovery-title">Whatever your next chapter looks like.</h2></div><p>Start with what you have in mind. Choose a path to filter the directory, or explore all 34 categories below.</p></div>
   <div class="discovery-grid">
     <a class="discovery-card discovery-card--home" href="#browse" data-discovery-category="homes">
       <img src="assets/downtown-russellville-sunset.jpg" alt="" width="1200" height="544" loading="lazy">
@@ -859,11 +904,44 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
       <div class="path-content"><div><h3>Make a splash.</h3><span class="path-description">Browse kayaks &amp; paddling</span></div><span class="path-arrow" aria-hidden="true">↗</span></div>
     </a>
     <a class="discovery-card discovery-card--gear" href="#browse" data-discovery-category="tools">
-      <span class="path-glyph" aria-hidden="true">✳</span>
+      <svg class="discovery-scene" viewBox="0 0 600 350" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+  <defs><linearGradient id="discovery-gear-sky" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#577a5b"/><stop offset="1" stop-color="#203f3c"/></linearGradient></defs>
+  <rect width="600" height="350" fill="url(#discovery-gear-sky)"/><circle cx="471" cy="81" r="58" fill="#ecc891" opacity=".87"/>
+  <path d="M0 168 92 116l91 39 103-60 128 62 89-59 97 69v183H0Z" fill="#63856b" opacity=".78"/>
+  <path d="M0 228 108 184l95 37 92-52 107 38 103-44 95 53v134H0Z" fill="#325d50"/>
+  <path d="M0 291c130-35 232-38 322-20s182-1 278-34v113H0Z" fill="#20453d"/>
+  <g stroke="#e4dec0" stroke-width="2" fill="none" opacity=".22"><path d="M28 308h543M52 326h498M58 265h98M395 262h155"/></g>
+  <g transform="translate(278 69)" fill="none" stroke="#f5deb0" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M34 162h161l19 16H26Z" fill="#bf996b" fill-opacity=".33" stroke-width="5"/>
+    <path d="M61 158V90h71v68M78 90V62h39v28M134 104l47-43 24 29-31 25" stroke-width="9"/>
+    <path d="M182 62 197 34l28 11-17 45M139 144h35m-115 0h42" stroke-width="8"/>
+    <circle cx="78" cy="180" r="15" fill="#d7ae74" stroke-width="6"/>
+    <circle cx="177" cy="180" r="15" fill="#d7ae74" stroke-width="6"/>
+  </g><path d="M0 349c88-55 170-44 238-31s169 37 362-13v44Z" fill="#143a33"/>
+</svg>
       <span class="path-kicker">03 / Get to work</span>
       <div class="path-content"><div><h3>Bring the tools.</h3><span class="path-description">Browse equipment rentals</span></div><span class="path-arrow" aria-hidden="true">↗</span></div>
     </a>
+    <a class="discovery-card discovery-card--party" href="#browse" data-discovery-category="party">
+      <svg class="discovery-scene" viewBox="0 0 600 350" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+  <defs><linearGradient id="discovery-event-sky" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#bb856f"/><stop offset=".6" stop-color="#6c5868"/><stop offset="1" stop-color="#313f4f"/></linearGradient></defs>
+  <rect width="600" height="350" fill="url(#discovery-event-sky)"/><circle cx="487" cy="85" r="63" fill="#ffd9a1" opacity=".75"/>
+  <path d="M0 232Q110 177 223 222t377-13v141H0Z" fill="#344b52" opacity=".8"/>
+  <path d="M0 298q174-58 318-4t282-27v83H0Z" fill="#1c3942"/>
+  <path d="M75 125Q298 183 535 117" stroke="#fbe0ac" stroke-width="3" fill="none"/>
+  <g fill="#ffe1a4"><circle cx="99" cy="131" r="6"/><circle cx="153" cy="141" r="6"/><circle cx="208" cy="146" r="6"/><circle cx="267" cy="150" r="6"/><circle cx="328" cy="147" r="6"/><circle cx="386" cy="138" r="6"/><circle cx="447" cy="128" r="6"/><circle cx="509" cy="119" r="6"/></g>
+  <g fill="#f0c999" stroke="#ffebb9" stroke-width="3" stroke-linejoin="round">
+    <path d="M112 229 284 106l173 123Z"/><path d="m112 229 172-60 173 60" fill="#d89c79"/>
+    <path d="M125 228h317v73H125Z" fill="#f3d2a9" fill-opacity=".16"/>
+  </g><g stroke="#ead2aa" stroke-width="6"><path d="M131 227v96m153-150v147m155-93v96"/></g>
+  <g fill="#f5dfb0"><rect x="197" y="263" width="174" height="9" rx="4"/><path d="M222 270v37m125-37v37" stroke="#f5dfb0" stroke-width="6"/></g>
+  <path d="M0 341q123-58 296-16t304-5v30H0Z" fill="#182f35"/>
+</svg>
+      <span class="path-kicker">04 / Celebrate &amp; gather</span>
+      <div class="path-content"><div><h3>Make it a moment.</h3><span class="path-description">Browse parties &amp; event rentals</span></div><span class="path-arrow" aria-hidden="true">↗</span></div>
+    </a>
   </div>
+  <p class="discovery-caption">River Valley photographs and original illustrative scenes are for navigation—not pictures of rental providers or proof of availability.</p>
 </section>
 
 <section id="browse" aria-labelledby="browse-title"><div class="section-head"><div><p class="eyebrow">Find it around here</p><h2 id="browse-title">What are you looking for?</h2><p>Explore rental options, or ask us about a category we’re building.</p></div><span class="browse-label">34 categories. One local hub.</span></div>
