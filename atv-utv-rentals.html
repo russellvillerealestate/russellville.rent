@@ -101,6 +101,48 @@ main{max-width:1400px;padding:22px clamp(15px,2.2vw,34px) 90px}
 @media(max-width:820px){.route-card{min-height:0}.route-art{height:160px}.route-card .route-kicker{min-height:0}}
 @media(max-width:640px){.route-art{height:126px}.route-card{gap:11px}.route-art-note{font-size:.75rem}}
 
+
+/* Ozark rental rules comparison / November 2026. */
+.ride-ledger{position:relative;isolation:isolate;overflow:hidden;margin:44px 0 54px;padding:clamp(25px,4.2vw,57px);border-radius:28px;background:linear-gradient(129deg,#0d302a 0%,#17483a 65%,#285a44 100%);color:#fffdf3;box-shadow:0 28px 55px #0b34272a}
+.ride-ledger:before{content:"";position:absolute;z-index:-1;pointer-events:none;inset:0;background:repeating-radial-gradient(ellipse at 105% -25%,transparent 0 36px,#efd49e18 37px 39px,transparent 40px 78px)}
+.ride-ledger-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(20px,4vw,54px);align-items:end;padding-bottom:27px;border-bottom:1px solid #f0e6cb45}
+.ride-ledger-eyebrow{margin:0 0 11px;font-size:.69rem;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:#f2d397}
+.ride-ledger-head h2{margin:0;font:400 clamp(2.25rem,4.8vw,4.3rem)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.053em;text-wrap:balance}
+.ride-ledger-head h2 em{font-weight:400;color:#f2d397}
+.ride-ledger-head>p{max-width:45ch;margin:0 0 4px;font-size:.92rem;line-height:1.72;color:#e1eee3}
+.ride-ledger-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:25px}
+.ride-ledger-card{position:relative;display:flex;flex-direction:column;min-width:0;overflow:hidden;border:1px solid #e1e5d7;border-radius:18px;background:#fffdf6;color:#173f33;box-shadow:0 13px 28px #031f1b24}
+.ride-ledger-card:nth-child(2){background:#f2f4ed}
+.ride-ledger-card:nth-child(3){background:#f9f1df}
+.ride-ledger-card:before{content:"";height:6px;flex:none;background:#81a786}
+.ride-ledger-card:nth-child(2):before{background:#aebf9b}
+.ride-ledger-card:nth-child(3):before{background:#d1a86a}
+.ride-ledger-card-top{display:flex;flex-direction:column;gap:11px;padding:24px 24px 18px}
+.ride-ledger-index{font-size:.67rem;letter-spacing:.17em;text-transform:uppercase;font-weight:850;color:#567766}
+.ride-ledger-card h3{margin:0;font:400 clamp(1.52rem,2vw,1.85rem)/1.14 Georgia,"Times New Roman",serif;letter-spacing:-.038em}
+.ride-ledger-location{font-size:.78rem;line-height:1.4;color:#5d6d5f}
+.ride-ledger-age{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 24px 15px;padding-bottom:18px;border-bottom:1px solid #cbd7cc}
+.ride-ledger-age strong{font:400 clamp(2.7rem,4vw,3.75rem)/1 Georgia,"Times New Roman",serif;letter-spacing:-.07em;color:#1b5540}
+.ride-ledger-age span{max-width:15ch;font-size:.75rem;line-height:1.4;font-weight:750;color:#496253}
+.ride-ledger-card:nth-child(3) .ride-ledger-age strong{color:#78521f}
+.ride-ledger-card dl{display:grid;gap:13px;margin:0;padding:0 24px 23px}
+.ride-ledger-card dl>div{min-width:0}
+.ride-ledger-card dt{margin:0 0 3px;font-size:.67rem;line-height:1.4;font-weight:850;letter-spacing:.1em;text-transform:uppercase;color:#577467}
+.ride-ledger-card dd{margin:0;font-size:.85rem;line-height:1.6;color:#294a3b}
+.ride-ledger-card dd strong{color:#153e31}
+.ride-ledger-card .ride-ledger-link{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:50px;margin:auto 24px 23px;padding:10px 0;border-top:1px solid #cbd7cc;color:#1a5b44;text-decoration:none;font-size:.84rem;font-weight:850}
+.ride-ledger-card .ride-ledger-link:hover{text-decoration:underline;text-decoration-thickness:2px}
+.ride-ledger-card .ride-ledger-link:focus-visible{outline:3px solid #a66a17;outline-offset:3px}
+.ride-ledger-link span{font-size:1.25rem;line-height:1}
+.ride-ledger-foot{display:flex;align-items:center;justify-content:space-between;gap:23px;flex-wrap:wrap;margin:22px 0 0}
+.ride-ledger-foot p{max-width:75ch;margin:0;font-size:.79rem;line-height:1.55;color:#dbece0}
+.ride-ledger-foot a{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:11px 17px;border-radius:999px;background:#f3d597;color:#173a2e;text-decoration:none;white-space:normal;text-align:center;font-size:.82rem;font-weight:850}
+.ride-ledger-foot a:hover{background:#ffe9b9}
+.ride-ledger-foot a:focus-visible{outline:3px solid #ffdf85;outline-offset:4px}
+@media(max-width:1050px){.ride-ledger{padding:30px}.ride-ledger-grid{gap:11px}.ride-ledger-card-top{padding:19px 17px 15px}.ride-ledger-age{margin:0 17px 14px}.ride-ledger-card dl{padding:0 17px 20px}.ride-ledger-card .ride-ledger-link{margin-inline:17px}}
+@media(max-width:800px){.ride-ledger-head{grid-template-columns:1fr;gap:12px}.ride-ledger-head>p{max-width:72ch}.ride-ledger-grid{grid-template-columns:1fr}.ride-ledger-card{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:12px}.ride-ledger-card:before{grid-column:1/-1}.ride-ledger-card-top{padding:24px 20px 12px}.ride-ledger-age{grid-column:1;align-self:start;margin:0 20px;padding-bottom:12px}.ride-ledger-card dl{grid-column:2;grid-row:2/4;padding:24px 22px 15px 5px}.ride-ledger-card .ride-ledger-link{grid-column:1/-1;margin:0 20px 15px}}
+@media(max-width:540px){.ride-ledger{margin:38px 0 42px;padding:26px 17px;border-radius:19px}.ride-ledger-head h2{font-size:clamp(2.15rem,10vw,3rem)}.ride-ledger-head>p{font-size:.86rem}.ride-ledger-grid{gap:13px}.ride-ledger-card{display:flex}.ride-ledger-card-top{padding:19px 21px 13px}.ride-ledger-age{margin:0 21px 14px}.ride-ledger-age strong{font-size:3rem}.ride-ledger-card dl{padding:0 21px 18px}.ride-ledger-card .ride-ledger-link{margin:0 21px 17px}.ride-ledger-foot{align-items:stretch;flex-direction:column;gap:14px}.ride-ledger-foot a{width:100%}}
+
 </style></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-head"><a href="/">Russellville.Rent</a><a class="back" href="/">← All rental categories</a></header>
 <main id="main"><section class="hero" aria-labelledby="hero-title"><div><p class="eyebrow">Russellville &amp; the Arkansas River Valley</p><h1 id="hero-title">Find a side-by-side.<br><em>Find your trail.</em></h1><p>Compare independently listed side-by-side rentals in the Ozarks, around Ozone and Mount Magazine. The operators below advertise rentals on their own websites; confirm dates, trail restrictions and exact pickup or delivery arrangements before traveling.</p><a href="#directory">Explore three providers <span aria-hidden="true">↗</span></a></div>
@@ -142,6 +184,40 @@ main{max-width:1400px;padding:22px clamp(15px,2.2vw,34px) 90px}
     <a class="route-card" href="#wilderness-rider"><span class="route-kicker"><b>03</b> BOXLEY AREA · ADVENTURE PARK</span><span class="route-icon" aria-hidden="true">↗</span><span class="route-art" aria-hidden="true"><svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg" focusable="false"><rect width="500" height="180" fill="#315d4c"/><circle cx="370" cy="49" r="37" fill="#e7c18d"/><path d="M0 122 80 87l70 33 93-57 85 42 89-31 83 46v60H0Z" fill="#638a70"/><path d="M0 143q78-38 157-13t153-10 190 12v48H0Z" fill="#244a3c"/><g fill="#193b31"><path d="m40 142 19-67 20 67H66v38H51v-38Zm56-14 21-70 21 70h-14v52h-15v-52Zm289 18 22-84 24 84h-17v34h-15v-34Zm69-12 18-61 18 61h-12v46h-12v-46Z"/></g><path d="M24 164q109-11 197 7t253-12" fill="none" stroke="#e9d8b3" stroke-width="8" stroke-linecap="round"/><path d="M31 167V142m56 25v-20m61 23v-15m63 17v-13m72 11v-17m68 15v-17m72 15v-22" stroke="#e9d8b3" stroke-width="5"/><path d="M12 180h488" stroke="#10352b" stroke-width="12"/></svg></span><strong>Ride at the park.</strong><span>Two- to eight-hour packages. Vehicles stay on Wilderness Rider property.</span><span class="route-action">See Wilderness Rider <span aria-hidden="true">→</span></span></a>
   </nav>
   <p class="route-art-note">Illustrated Ozark landscapes are decorative route guides, not photographs of rental vehicles, permitted trails or provider properties.</p>
+</section>
+
+<section class="ride-ledger" aria-labelledby="ride-ledger-title">
+  <div class="ride-ledger-head">
+    <div><p class="ride-ledger-eyebrow">The trail rules / Compare before you book</p><h2 id="ride-ledger-title">One kind of ride.<br><em>Three sets of rules.</em></h2></div>
+    <p>Where you can ride, how old the driver must be, and whether delivery is offered are different for each operator. Check the restrictions first—not just the price.</p>
+  </div>
+  <div class="ride-ledger-grid">
+    <article class="ride-ledger-card">
+      <div class="ride-ledger-card-top"><span class="ride-ledger-index">01 / Ozark National Forest area</span><h3>Ozark Ridge</h3><span class="ride-ledger-location">Ozone · Regional operator</span></div>
+      <div class="ride-ledger-age"><strong>25+</strong><span>Minimum driver age · license and proof of insurance required</span></div>
+      <dl><div><dt>Where you ride</dt><dd>Ask which Ozark-area roads and trails are permitted with the rental.</dd></div>
+      <div><dt>Delivery to Russellville</dt><dd>Delivery advertised; <strong>specific service unconfirmed.</strong></dd></div>
+      <div><dt>Published rate example</dt><dd><strong>From $375 / full day</strong> for a two-seat vehicle; confirm current terms.</dd></div></dl>
+      <a class="ride-ledger-link" href="#ozark-ridge">Review Ozark Ridge details <span aria-hidden="true">↗</span></a>
+    </article>
+    <article class="ride-ledger-card">
+      <div class="ride-ledger-card-top"><span class="ride-ledger-index">02 / Mount Magazine area</span><h3>Cove Creek Supply</h3><span class="ride-ledger-location">Paris · Regional operator</span></div>
+      <div class="ride-ledger-age"><strong>Ask</strong><span>Driver age and equipment requirements not independently verified</span></div>
+      <dl><div><dt>Where you ride</dt><dd>Confirm the authorized riding area, routes and pickup location.</dd></div>
+      <div><dt>Delivery to Russellville</dt><dd><strong>Unconfirmed.</strong> Ask the operator before planning transport.</dd></div>
+      <div><dt>Published rate example</dt><dd><strong>Not independently verified.</strong> Consult the operator's booking link.</dd></div></dl>
+      <a class="ride-ledger-link" href="#cove-creek">Review Cove Creek details <span aria-hidden="true">↗</span></a>
+    </article>
+    <article class="ride-ledger-card">
+      <div class="ride-ledger-card-top"><span class="ride-ledger-index">03 / Buffalo River region</span><h3>Wilderness Rider</h3><span class="ride-ledger-location">Boxley area · On-site adventure park</span></div>
+      <div class="ride-ledger-age"><strong>21+</strong><span>Minimum driver age · valid driver's license required</span></div>
+      <dl><div><dt>Where you ride</dt><dd><strong>On Wilderness Rider property only.</strong> No off-site vehicle use.</dd></div>
+      <div><dt>Delivery to Russellville</dt><dd><strong>Not offered.</strong> These are on-site park rentals.</dd></div>
+      <div><dt>Published rate example</dt><dd><strong>From $225 / 2 hours.</strong> Confirm current dates and fees.</dd></div></dl>
+      <a class="ride-ledger-link" href="#wilderness-rider">Review Wilderness Rider details <span aria-hidden="true">↗</span></a>
+    </article>
+  </div>
+  <div class="ride-ledger-foot"><p>Rates above cover different rental durations and are <strong>not directly comparable</strong>. Requirements are summarized from the operator information below; always confirm current policy, permitted routes, insurance and availability before travel.</p><a href="#directory">Search all three providers ↗</a></div>
 </section>
 <section id="directory" aria-labelledby="directory-title"><div class="section-head"><div><p class="eyebrow">01 / Verified operator sources</p><h2 id="directory-title">Choose your starting point.</h2></div><p>Three regional options, listed by the operator’s stated rental service—not by unverified availability or review counts.</p></div>
 <div class="toolbar" id="filters" hidden role="search" aria-label="Filter off-road rental providers"><label for="provider-search">Find a provider</label><input id="provider-search" type="search" placeholder="Try Ozone, Magazine, six seats…" autocomplete="off"><button type="button" data-area="all" aria-pressed="true">All regions</button><button type="button" data-area="river-valley" aria-pressed="false">River Valley area</button><button type="button" data-area="northwest" aria-pressed="false">Northwest Arkansas</button></div>
