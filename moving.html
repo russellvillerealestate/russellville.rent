@@ -189,11 +189,60 @@ url("assets/downtown-russellville-sunset.jpg") center 55%/cover no-repeat;
 .quick .quick-links a{transition:none}
 .quick .quick-links a:hover{transform:none}}
 
+
+/* 2026-11-01: moving journey illustration, established pine/gold colors, unchanged providers. */
+.hero{position:relative;isolation:isolate;background:#173b34}
+.hero-scenery{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.hero-scenery svg{display:block;width:100%;height:100%;object-fit:cover}
+.hero:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,#092b25ef 0%,#103c33de 42%,#123a3180 76%,#123a3165),linear-gradient(0deg,#0b3029b8,transparent 45%)}
+.hero-inner{position:relative;z-index:2;min-height:565px}
+.hero .art svg{filter:drop-shadow(0 25px 26px #071d19ab)}
+.quick-title{grid-template-columns:minmax(0,.85fr) minmax(350px,1.1fr);grid-template-rows:auto auto;gap:17px 36px;align-items:center;min-height:340px;padding:36px 38px;background:linear-gradient(145deg,#11392f,#204b3d)}
+.quick-title>div:first-child{grid-column:1;grid-row:1;align-self:end}
+.quick-title>div:first-child strong{font-size:clamp(2.4rem,3.8vw,3.5rem);line-height:1.05;max-width:12ch}
+.quick-title>p{grid-column:1;grid-row:2;align-self:start;margin:0;color:#e7eee3;max-width:44ch;font-size:.92rem}
+.quick-scene{position:relative;grid-column:2;grid-row:1/span 2;align-self:stretch;overflow:hidden;min-height:270px;border:1px solid #ffe3ad66;border-radius:22px;box-shadow:0 20px 38px #09241d85}
+.quick-scene svg{display:block;width:100%;height:100%;min-height:270px;object-fit:cover}
+.quick-scene-note{position:absolute;bottom:13px;left:13px;max-width:calc(100% - 26px);padding:7px 11px;border-radius:7px;background:#153c32f0;color:#ffeac7;font-size:.66rem;font-weight:800;line-height:1.4}
+.quick-cluster--local{background:linear-gradient(145deg,#fffdf7,#f6f0e5)}
+.quick-cluster--nearby{background:linear-gradient(130deg,#e9f1e8,#f3f8f2)}
+.quick-cluster--local .quick-cluster-head{border-left:4px solid #bf8b4d;padding-left:17px}
+.quick-cluster--nearby .quick-cluster-head{border-left:4px solid #72967d;padding-left:17px}
+.quick .quick-links a:after{content:"";position:absolute;inset:auto 0 0;height:4px;background:linear-gradient(90deg,#d2a46e,#5a9077);opacity:.8;transition:height .18s ease}
+.quick .quick-links a:hover:after,.quick .quick-links a:focus-visible:after{height:7px}
+@media(max-width:920px){.quick-title{grid-template-columns:minmax(0,1fr) minmax(270px,1fr);gap:16px 21px;padding:29px}.quick-scene,.quick-scene svg{min-height:238px}}
+@media(max-width:730px){.hero:after{background:linear-gradient(90deg,#0c3029ef,#0f3a32bd),linear-gradient(0deg,#0b3029bd,transparent 55%)}.quick-title{grid-template-columns:1fr;grid-template-rows:auto auto auto;gap:14px;padding:27px 24px;min-height:0}.quick-title>div:first-child{grid-column:1;grid-row:1}.quick-title>p{grid-column:1;grid-row:2}.quick-scene{grid-column:1;grid-row:3;min-height:225px}.quick-scene svg{min-height:225px}.quick-title>div:first-child strong{max-width:none}}
+@media(max-width:490px){.hero-inner{min-height:0}.quick-title{padding:22px 18px}.quick-title>div:first-child strong{font-size:2.45rem}.quick-scene,.quick-scene svg{min-height:182px}.quick-scene-note{font-size:.58rem;bottom:9px;left:9px}.quick-cluster--local .quick-cluster-head,.quick-cluster--nearby .quick-cluster-head{padding-left:12px}}
+@media(prefers-reduced-motion:reduce){.quick .quick-links a:after{transition:none}}
 </style></head>
 <body><a class="skip" href="#main">Skip to rental options</a><header><div class="wrap"><a class="brand" href="/">Russellville<span>.Rent</span></a><a class="back" href="/">← Browse all rentals</a></div></header>
-<section class="hero" aria-labelledby="title"><div class="wrap hero-inner"><div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="title">Move with <em>a plan.</em></h1><p class="hero-copy">Moving truck &amp; equipment rentals. Find local moving-truck and trailer rental options, then confirm your pickup details directly with each provider.</p><div class="hero-actions"><a class="btn primary" href="#local">Explore local options ↓</a><a class="btn secondary" href="#checklist">Before you book ↗</a></div><div class="hero-facts" aria-label="Pickup locations shown in this directory"><span class="hero-fact"><strong>02</strong><span>Russellville pickup listings</span></span><span class="hero-fact"><strong>03</strong><span>Nearby-town alternatives</span></span></div></div><div class="art" aria-hidden="true"><svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" role="presentation"><defs><linearGradient id="box" x2="1" y2="1"><stop stop-color="#f2d6ad"/><stop offset="1" stop-color="#d89b61"/></linearGradient></defs><ellipse cx="280" cy="335" rx="252" ry="20" fill="#061d16" opacity=".55"/><path d="M54 117h293q16 0 16 16v154H38V134q0-17 16-17Z" fill="url(#box)"/><path d="M60 134h277v128H60Z" fill="#f6e5c9" opacity=".5" stroke="#c18c57" stroke-width="4"/><path d="M198 134v128M60 197h277" stroke="#c18c57" stroke-width="2" opacity=".7"/><path d="M363 187h69q20 0 31 20l44 67v15H363Z" fill="#e9dcc4"/><path d="M390 201h40q10 0 17 12l19 34h-76Z" fill="#78a59b"/><path d="M30 280h480v23H30Z" fill="#193b32"/><circle cx="112" cy="301" r="31" fill="#112d28" stroke="#f1d8b5" stroke-width="7"/><circle cx="112" cy="301" r="10" fill="#b7c4b9"/><circle cx="428" cy="301" r="31" fill="#112d28" stroke="#f1d8b5" stroke-width="7"/><circle cx="428" cy="301" r="10" fill="#b7c4b9"/><path d="M92 168h160M92 181h107" stroke="#b98050" stroke-width="5" stroke-linecap="round" opacity=".6"/><path d="M15 269 45 252l31 17v53H15Z" fill="#b87e4f"/><path d="M15 269h61M45 252v70" stroke="#efc28c" stroke-width="3"/><circle cx="500" cy="99" r="5" fill="#f0c58e"/></svg><span class="art-caption">Your next move starts here</span></div></div></section>
+<section class="hero" aria-labelledby="title"><div class="hero-scenery" aria-hidden="true"><svg viewBox="0 0 1600 650" preserveAspectRatio="xMidYMid slice" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<rect width="1600" height="650" fill="#526e69"/><path d="M0 230Q400 150 830 252T1600 180V0H0Z" fill="#698883" opacity=".55"/>
+<circle cx="1292" cy="155" r="93" fill="#f0c68e"/><circle cx="1292" cy="155" r="132" fill="none" stroke="#f9e3b5" opacity=".4" stroke-width="2"/>
+<path d="m0 404 133-96 132 40 152-134 175 106 163-130 162 131 144-112 168 87 156-70 115 84v340H0Z" fill="#8da49a" opacity=".66"/>
+<path d="m0 474 168-137 121 75 150-132 181 126 185-95 164 105 171-138 182 125 178-79v326H0Z" fill="#355c54"/>
+<path d="M0 525c215-86 314 29 535-32 176-45 294 29 470-5 227-53 357 14 595-16v178H0Z" fill="#1b4840"/>
+<path d="M0 538c255-18 422 44 650 16 306-37 506 18 950-22v118H0Z" fill="#42736d"/>
+<path d="M0 576c185-29 404 12 584 7 325-11 478-29 1016 5" fill="none" stroke="#b5c7ab" stroke-width="6" opacity=".22"/>
+<path d="M0 606c371-46 567 22 860-7 329-32 478 0 740-35v86H0Z" fill="#163e36"/>
+<g fill="#e7c99e" opacity=".64"><path d="M875 483h96v52h-96z"/><path d="m865 483 57-45 59 45z"/><path d="M903 501h23v34h-23z" fill="#2f6155"/><path d="M995 480h47v55h-47z"/><path d="m988 480 31-26 31 26z"/></g>
+<g fill="#173f37"><path d="m1118 515 28-93 32 93zm-25 0 55-132 55 132zM1430 519l39-123 44 123zm-20 0 52-160 54 160z"/></g>
+</svg></div><div class="wrap hero-inner"><div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="title">Move with <em>a plan.</em></h1><p class="hero-copy">Moving truck &amp; equipment rentals. Find local moving-truck and trailer rental options, then confirm your pickup details directly with each provider.</p><div class="hero-actions"><a class="btn primary" href="#local">Explore local options ↓</a><a class="btn secondary" href="#checklist">Before you book ↗</a></div><div class="hero-facts" aria-label="Pickup locations shown in this directory"><span class="hero-fact"><strong>02</strong><span>Russellville pickup listings</span></span><span class="hero-fact"><strong>03</strong><span>Nearby-town alternatives</span></span></div></div><div class="art" aria-hidden="true"><svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" role="presentation"><defs><linearGradient id="box" x2="1" y2="1"><stop stop-color="#f2d6ad"/><stop offset="1" stop-color="#d89b61"/></linearGradient></defs><ellipse cx="280" cy="335" rx="252" ry="20" fill="#061d16" opacity=".55"/><path d="M54 117h293q16 0 16 16v154H38V134q0-17 16-17Z" fill="url(#box)"/><path d="M60 134h277v128H60Z" fill="#f6e5c9" opacity=".5" stroke="#c18c57" stroke-width="4"/><path d="M198 134v128M60 197h277" stroke="#c18c57" stroke-width="2" opacity=".7"/><path d="M363 187h69q20 0 31 20l44 67v15H363Z" fill="#e9dcc4"/><path d="M390 201h40q10 0 17 12l19 34h-76Z" fill="#78a59b"/><path d="M30 280h480v23H30Z" fill="#193b32"/><circle cx="112" cy="301" r="31" fill="#112d28" stroke="#f1d8b5" stroke-width="7"/><circle cx="112" cy="301" r="10" fill="#b7c4b9"/><circle cx="428" cy="301" r="31" fill="#112d28" stroke="#f1d8b5" stroke-width="7"/><circle cx="428" cy="301" r="10" fill="#b7c4b9"/><path d="M92 168h160M92 181h107" stroke="#b98050" stroke-width="5" stroke-linecap="round" opacity=".6"/><path d="M15 269 45 252l31 17v53H15Z" fill="#b87e4f"/><path d="M15 269h61M45 252v70" stroke="#efc28c" stroke-width="3"/><circle cx="500" cy="99" r="5" fill="#f0c58e"/></svg><span class="art-caption">Your next move starts here</span></div></div></section>
 <main id="main" class="wrap"><nav class="quick" aria-label="Compare moving rental pickup locations">
-<div class="quick-title"><div><span class="quick-kicker">PICKUP BOARD / FIVE LOCATIONS</span><strong>Choose where to start.</strong></div><p>Scan the listed services, then jump to each provider’s contact details. Confirm vehicles, prices and availability directly.</p></div>
+<div class="quick-title"><div><span class="quick-kicker">PICKUP BOARD / FIVE LOCATIONS</span><strong>Choose where to start.</strong></div><p>Scan the listed services, then jump to each provider’s contact details. Confirm vehicles, prices and availability directly.</p><div class="quick-scene" aria-hidden="true"><svg viewBox="0 0 820 390" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<rect width="820" height="390" rx="22" fill="#dfdfc8"/><circle cx="660" cy="87" r="65" fill="#efc78d"/>
+<path d="m0 236 126-91 137 52 99-109 158 104 97-75 110 70 93-50v253H0Z" fill="#afc3ae"/>
+<path d="m0 281 135-78 123 47 135-86 171 96 147-75 109 58v147H0Z" fill="#749889"/>
+<path d="M0 303c158-45 237 37 421-17s277-10 399-9v113H0Z" fill="#3f7265"/>
+<path d="M0 332c158 12 288-12 432 3 144 16 277-22 388-5v60H0Z" fill="#285849"/>
+<path d="M0 394c228-105 490-110 820-5Z" fill="#334b43"/><path d="M20 383c201-87 501-101 792-7" fill="none" stroke="#e9c48c" stroke-width="4" stroke-dasharray="22 26"/>
+<g transform="translate(304 213)"><ellipse cx="162" cy="141" rx="170" ry="14" fill="#173f34" opacity=".3"/>
+<path d="M24 8h193v115H10V23Q10 8 24 8Z" fill="#f3dfb9" stroke="#2b5345" stroke-width="5"/><path d="M40 24h159v78H40Z" fill="#dfbc8b"/><path d="M118 24v77M40 64h159" stroke="#b5855a" stroke-width="3"/>
+<path d="M218 64h69l46 52v13H218Z" fill="#e5c79f" stroke="#285348" stroke-width="5"/><path d="M244 75h38l30 34h-68Z" fill="#75a29a" stroke="#285348" stroke-width="3"/>
+<path d="M2 121h333v18H2Z" fill="#2d5145"/><circle cx="75" cy="142" r="25" fill="#1b3a35" stroke="#e8cc9a" stroke-width="6"/><circle cx="269" cy="142" r="25" fill="#1b3a35" stroke="#e8cc9a" stroke-width="6"/>
+</g><path d="m44 290 35-107 36 107zm666-14 28-94 28 94z" fill="#225344"/>
+<path d="M15 15H805V375H15Z" fill="none" stroke="#f5e8d1" stroke-width="2" opacity=".75"/>
+</svg><span class="quick-scene-note">River Valley illustration · not a route map or fleet photo</span></div></div>
 
 <div class="quick-cluster quick-cluster--local" role="group" aria-labelledby="quick-local-label">
 <div class="quick-cluster-head"><span>01 / CLOSE TO HOME</span><strong id="quick-local-label">Two Russellville pickup locations.</strong><p>Compare local pickup first.</p></div>
