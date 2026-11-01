@@ -277,20 +277,70 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
   .action:hover{transform:none}
 }
 
+
+/* 2026-10-31: immersive local-photo event editorial; provider data and planning script untouched */
+.hero{position:relative;isolation:isolate;min-height:640px;background:#102f29}
+.hero-photo{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center 45%}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(98deg,#0b2522f7 0%,#10362fe9 36%,#113c32b5 65%,#102d2b9e 100%)}
+.hero-grid{min-height:640px;grid-template-columns:minmax(0,1.3fr) minmax(255px,.7fr);gap:clamp(20px,4vw,65px);padding-block:clamp(76px,9vw,122px) 130px}
+.hero h1{max-width:850px;text-shadow:0 3px 20px #081c1b7a}
+.hero-copy{color:#f2f5ee;max-width:52ch}
+.hero .eyebrow{color:#ffe0a3}
+.sound-art{max-width:370px;min-height:340px;background:linear-gradient(160deg,#0e2524e8,#1c493cc9);border:1px solid #f6d49d84;box-shadow:0 30px 75px #071b1b9c;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+.sound-art:before{border-color:#d9c899a6}
+.sound-art .wave i{background:linear-gradient(#fff4c8,#d7ac54)}
+.quick-guide{margin-top:-68px}
+.guide-box{background:transparent;border:0;box-shadow:0 24px 48px #10291c2b;gap:3px;border-radius:15px}
+.guide-item{min-width:0;position:relative;display:flex;flex-direction:column;min-height:220px;padding:27px clamp(21px,3vw,35px);background:#fffdf6;border-top:5px solid #cfad65;color:#214436;text-decoration:none;transition:background .2s ease,transform .2s ease}
+.guide-item:first-child{background:#163c33;color:#fff;border-top-color:#e6c581}
+.guide-item+.guide-item{border-left:1px solid #e5e1d4}
+.guide-item:first-child strong{color:#fff}
+.guide-item:first-child>span:not(.guide-number):not(.guide-cta){color:#e1e9df}
+.guide-item:hover{background:#f1f4e8;transform:translateY(-3px)}
+.guide-item:first-child:hover{background:#245446}
+.guide-number{font-size:.65rem!important;letter-spacing:.17em!important;text-transform:uppercase;font-weight:850;color:#7d6336!important;margin:0 0 19px!important}
+.guide-item:first-child .guide-number{color:#f4d49b!important}
+.guide-item strong{font:400 clamp(1.45rem,2vw,1.8rem)/1.13 Georgia,"Times New Roman",serif;letter-spacing:-.035em;max-width:19ch;margin-bottom:13px}
+.guide-item>span:not(.guide-number):not(.guide-cta){color:#536c5e;font-size:.82rem;line-height:1.4}
+.guide-cta{display:flex!important;align-items:center;justify-content:space-between;gap:12px;margin-top:auto!important;padding-top:22px;color:#15533d!important;font-size:.73rem!important;letter-spacing:.03em;font-weight:850}
+.guide-item:first-child .guide-cta{color:#f5d896!important}
+.guide-cta span{font-size:1.15rem}
+.event-connections{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:0;overflow:hidden;margin-top:78px;border-radius:20px;background:#f6f1e7;border:1px solid #d2dcca;box-shadow:0 20px 55px #153d2a13}
+.connections-head{position:relative;isolation:isolate;min-width:0;min-height:480px;display:flex;flex-direction:column;justify-content:center;align-items:start;padding:clamp(30px,5vw,58px);color:#fff;background:linear-gradient(128deg,#10362bf4,#143e33bf),url("assets/downtown-russellville-sunset.jpg") center/cover}
+.connections-head:before{content:"";position:absolute;z-index:-1;inset:16px;border:1px solid #e5cc9463;pointer-events:none}
+.connections-kicker{margin:0 0 24px;color:#f7dca7;font-size:.67rem;font-weight:850;letter-spacing:.19em;text-transform:uppercase}
+.connections-head h2{font:400 clamp(2.65rem,4.1vw,4.15rem)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.06em;max-width:14ch;margin:0 0 24px;text-wrap:balance}
+.connections-head h2 em{color:#efcb86}
+.connections-head>p:not(.connections-kicker){max-width:38ch;margin:0;color:#e6eee6;font-size:.91rem}
+.connections-caption{display:flex;gap:16px;align-items:center;margin-top:30px;font-size:.62rem;letter-spacing:.13em;font-weight:800;color:#eddcae}
+.connections-caption span{font-size:1.5rem}
+.connections-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;align-self:stretch;background:#d5dfd5}
+.connections-grid a{position:relative;min-width:0;display:flex;flex-direction:column;align-items:start;justify-content:center;min-height:232px;padding:31px 29px 55px;background:#fffdf8;text-decoration:none;color:#1b4335;transition:background .2s ease}
+.connections-grid a:hover{background:#ecf3e9}
+.connection-step{display:block;margin-bottom:17px;font-size:.65rem;letter-spacing:.14em;font-weight:850;color:#647966}
+.connections-grid strong{font:400 clamp(1.52rem,2.5vw,2.05rem)/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.04em;margin-bottom:12px}
+.connections-grid a>span:not(.connection-step):not(.connection-arrow){display:block;color:#4d6559;font-size:.84rem;max-width:30ch}
+.connection-arrow{position:absolute;right:27px;bottom:21px;font-size:1.35rem;color:#216c4a}
+.connections-disclaimer{grid-column:1/-1;margin:0;padding:14px 26px 17px;border-top:1px solid #d9e2d5;background:#f6f8f2;font-size:.74rem;line-height:1.5;color:#4f6255}
+.guide-item:focus-visible,.connections-grid a:focus-visible{outline:3px solid #aa691f;outline-offset:-5px;z-index:2}
+@media(max-width:980px){.hero-grid{grid-template-columns:minmax(0,1fr) minmax(200px,.53fr)}.sound-art{min-height:275px}.event-connections{grid-template-columns:1fr}.connections-head{min-height:340px}.connections-head h2{max-width:20ch}}
+@media(max-width:760px){.hero{min-height:0}.hero:before{background:linear-gradient(115deg,#0b2623f5,#0e302acb)}.hero-grid{grid-template-columns:1fr;min-height:0;gap:30px;padding-block:66px 104px}.sound-art{width:min(100%,390px);max-width:390px;min-height:150px}.quick-guide{margin-top:-47px}.guide-box{grid-template-columns:1fr;gap:2px}.guide-item{min-height:0;padding:20px 24px;border-top:0;border-left:5px solid #cfad65}.guide-item+.guide-item{border-left:5px solid #cfad65;border-top:0}.guide-number{margin-bottom:10px!important}.guide-item strong{max-width:none}.guide-cta{padding-top:12px}.connections-head{min-height:0;padding:48px 34px}}
+@media(max-width:520px){.hero-grid{padding-block:51px 83px}.hero h1{font-size:clamp(2.62rem,10vw,4.2rem)}.hero-actions .action{width:100%}.sound-art{min-height:140px}.connections-grid{grid-template-columns:1fr}.connections-grid a{min-height:160px;padding:23px 26px 42px}.connections-head{padding:45px 29px}.connections-head h2{font-size:clamp(2.35rem,9vw,3.2rem)}.connections-disclaimer{padding-inline:21px}}
+@media(prefers-reduced-motion:reduce){.guide-item,.connections-grid a{transition:none}.guide-item:hover{transform:none}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to rental providers</a>
 <header class="site-head"><div class="shell"><a class="brand" href="/">Russellville<span>.Rent</span></a><a class="back" href="/">← Browse all rentals</a></div></header>
-<section class="hero" aria-labelledby="page-title"><div class="shell hero-grid">
+<section class="hero" aria-labelledby="page-title"><img class="hero-photo" src="assets/downtown-russellville-sunset.jpg" alt="" fetchpriority="high" decoding="async"><div class="shell hero-grid">
 <div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley · Event rentals</p><h1 id="page-title">Audio, visual <br><em>and event equipment</em> <br>rentals</h1><p class="hero-copy">Sound equipment, microphones, lighting, projectors and production gear for Russellville events. Compare what providers advertise—and what still needs to be confirmed.</p><div class="hero-actions"><a class="action primary" href="#confirmed">Explore confirmed delivery ↓</a><a class="action secondary" href="#more-options">Other providers ↓</a></div></div>
 <div class="sound-art" aria-hidden="true"><div class="wave"><i style="--h:34px"></i><i style="--h:62px"></i><i style="--h:94px"></i><i style="--h:49px"></i><i style="--h:126px"></i><i style="--h:76px"></i><i style="--h:154px"></i><i style="--h:92px"></i><i style="--h:120px"></i><i style="--h:48px"></i><i style="--h:90px"></i><i style="--h:60px"></i><i style="--h:36px"></i></div><span class="art-label">SOUND / LIGHT / PRODUCTION</span></div>
 </div></section>
-<div class="shell quick-guide" aria-label="Directory at a glance"><div class="guide-box">
-<div class="guide-item"><strong>6 listed providers</strong><span>Sound, lighting and event production</span></div>
-<div class="guide-item"><strong>2 confirm Russellville delivery</strong><span>Other service details still require a quote</span></div>
-<div class="guide-item"><strong>Verify before booking</strong><span>Equipment, dates, delivery and total cost</span></div>
-</div></div>
+<div class="shell quick-guide"><nav class="guide-box" aria-label="Audio and visual directory shortcuts">
+  <a class="guide-item" href="#confirmed"><span class="guide-number">01 / Service areas</span><strong>2 confirm Russellville delivery</strong><span>Other service details still require a quote</span><span class="guide-cta">See advertised delivery <span aria-hidden="true">↗</span></span></a>
+  <a class="guide-item" href="#service-map"><span class="guide-number">02 / Choose a service</span><strong>6 listed providers</strong><span>Sound, lighting and event production</span><span class="guide-cta">Explore the six paths <span aria-hidden="true">↗</span></span></a>
+  <a class="guide-item" href="#plan-title"><span class="guide-number">03 / Plan the details</span><strong>Verify before booking</strong><span>Equipment, dates, delivery and total cost</span><span class="guide-cta">Review the checklist <span aria-hidden="true">↗</span></span></a>
+</nav></div>
 <main class="shell" id="main">
 
 <section class="service-map" id="service-map" aria-labelledby="service-map-title">
@@ -356,6 +406,14 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
 <div class="provider-content"><h2>EdmoSound — Event Audio, Video &amp; Lighting (Regional)</h2><p>Rogers-based event production company advertising concert-grade sound, live audio engineering, video projection, screens and professional lighting alongside mobile stages. Its official booking policy says <strong>no unstaffed or equipment-only rentals</strong>: each rental is a staffed full-service production package with custom transport, setup and an on-site technician. The operator serves Arkansas broadly, but <strong>Russellville delivery is UNCONFIRMED</strong>. Request a site-specific quote and confirm travel, stage or audiovisual requirements, crew and final cost. Also listed in the <a href="stages.html">stage rental directory</a>.</p><p class="area">Rogers, Arkansas — Russellville delivery UNCONFIRMED</p><p><a href="mailto:sales@edmosound.com">sales@edmosound.com</a> · <a href="https://www.edmosound.com/about" target="_blank" rel="noopener noreferrer">Official equipment and production services ↗</a> · <a href="https://www.edmosound.com/request-quote" target="_blank" rel="noopener noreferrer">Official quote and staffed-only terms ↗</a></p></div>
 </article></div>
 </section>
+<section class="event-connections" aria-labelledby="event-connections-title">
+<div class="connections-head"><p class="connections-kicker">A complete event / Beyond the sound system</p><h2 id="event-connections-title">Make the whole event <em>come together.</em></h2><p>Sound and screens are one part of the plan. Follow these rental directories to explore the venue, stage and event essentials without losing your place here.</p><span class="connections-caption">RUSSELLVILLE &amp; THE ARKANSAS RIVER VALLEY <span aria-hidden="true">↘</span></span></div>
+<div class="connections-grid" aria-label="Related event rental directories">
+<a href="venues.html"><span class="connection-step">01 / THE SPACE</span><strong>Find the venue</strong><span>Event rooms, pavilions and gathering places.</span><span class="connection-arrow" aria-hidden="true">↗</span></a>
+<a href="stages.html"><span class="connection-step">02 / THE PLATFORM</span><strong>Explore stages</strong><span>Stage and event-platform rental options.</span><span class="connection-arrow" aria-hidden="true">↗</span></a>
+<a href="party.html"><span class="connection-step">03 / THE SETUP</span><strong>Plan the gathering</strong><span>Tents, tables, inflatables and party rentals.</span><span class="connection-arrow" aria-hidden="true">↗</span></a>
+<a href="photo-booths.html"><span class="connection-step">04 / THE MOMENT</span><strong>Add a photo booth</strong><span>Compare photo booth and 360-video options.</span><span class="connection-arrow" aria-hidden="true">↗</span></a>
+</div><p class="connections-disclaimer">Each category is an independent directory. Confirm availability, prices, service areas and requirements directly with the listed providers.</p></section>
 <section class="brief-builder" id="event-brief" aria-labelledby="brief-title" hidden>
 <div class="brief-header">
   <div><p class="kicker">03 / Plan your production</p><h2 id="brief-title">Build a better rental request.</h2><p>Collect the essentials in one reusable event brief, then share it directly with the providers you choose. No booking or quote is created here.</p></div>
