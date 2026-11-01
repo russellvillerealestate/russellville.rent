@@ -160,6 +160,49 @@ body[data-workspace-view="ledger"] .listing-card .card-links{grid-column:2;grid-
  .jump-links a:hover{transform:none}
 }
 
+
+/* 2026-11-01: A substantial place-first workspace search studio.
+   The search remains in its original reading order after published rates.
+   Distinct destination shortcuts use the existing listing filter, without touching
+   provider facts, rate panels or the card/directory view switch.
+   Guidance: StayARV spatial contrast; NN/g information scent; web.dev responsive
+   layout; WCAG 2.2 visible focus, readable text and generous touch targets. */
+.workspace-search-stage{position:relative;isolation:isolate;overflow:hidden;padding:clamp(38px,5.4vw,72px) 0;background:linear-gradient(120deg,#0f3234 0%,#164a45 56%,#245b4d 100%);color:#fff}
+.workspace-search-stage:before{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;opacity:.14;background-image:linear-gradient(#dfeee322 1px,transparent 1px),linear-gradient(90deg,#dfeee322 1px,transparent 1px);background-size:48px 48px;transform:rotate(-8deg) scale(1.25)}
+.workspace-search-stage:after{content:"";position:absolute;z-index:-1;top:-260px;left:-215px;width:580px;height:580px;pointer-events:none;border:1px solid #e3deb036;border-radius:50%;box-shadow:0 0 0 55px #ffe8a40a,0 0 0 113px #ffe8a409}
+.workspace-search-stage-inner{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:clamp(26px,5vw,69px);align-items:center}
+.workspace-search-overline{margin:0 0 20px;color:#f2d49b;font-size:.7rem;font-weight:850;letter-spacing:.17em;text-transform:uppercase}
+.workspace-search-story h2{max-width:12ch;margin:0;font:400 clamp(2.8rem,4.7vw,5.1rem)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.059em;text-wrap:balance;color:#fffdf5}
+.workspace-search-story h2 em{font-weight:400;font-style:italic;color:#f0d29b}
+.workspace-search-story>p:not(.workspace-search-overline){max-width:46ch;color:#e2ece4;font-size:clamp(.94rem,1.3vw,1.08rem);line-height:1.73;margin:25px 0 25px}
+.workspace-search-browse{display:inline-flex;align-items:center;justify-content:space-between;gap:22px;min-height:49px;padding:11px 18px;border:1px solid #eddbaf87;border-radius:999px;color:#f9e8c1;text-decoration:none;font-size:.82rem;font-weight:800;transition:background-color .18s ease}
+.workspace-search-browse:hover{background:#ffffff16}
+.workspace-search-browse span{font-size:1.2rem;line-height:1}
+.workspace-search-panel{position:relative;display:none;min-width:0;padding:clamp(24px,3.3vw,40px);border:1px solid #dce7d8;border-radius:23px;background:linear-gradient(145deg,#fffdf7 0%,#f1f5ed 100%);color:#183d36;box-shadow:0 23px 52px #061f2180}
+.js .workspace-search-panel{display:block}
+.workspace-search-panel:after{content:"";position:absolute;pointer-events:none;right:-13px;top:21px;bottom:21px;width:13px;border:1px solid #f6d7a4;border-left:0;border-radius:0 12px 12px 0;background:#e9d2a7}
+.workspace-search-panel-kicker{display:flex;align-items:center;justify-content:space-between;gap:15px;margin:0 0 25px;padding-bottom:15px;border-bottom:1px solid #d6e2d7;color:#426659;font-size:.71rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
+.workspace-search-panel-kicker span:last-child{font-size:1.4rem;line-height:1;color:#b18242}
+.workspace-search-panel .finder-inner{width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:11px;padding:0}
+.workspace-search-panel .finder label{font-size:.95rem}
+.workspace-search-panel .finder-inner label{font-size:.93rem;line-height:1.45;color:#194137}
+.workspace-search-panel .finder-inner input{min-height:58px;border:2px solid #aec5b5;border-radius:11px;padding:13px 15px;font-size:1rem;background:#fff;color:#183d36}
+.workspace-search-panel .finder-inner input:focus-visible{outline:3px solid #a15d18;outline-offset:3px}
+.workspace-search-panel .finder-inner>button{min-height:58px;align-self:end;border-color:#a6bbae;border-radius:11px;padding:12px 15px;background:#e9f0e7;color:#174135}
+.workspace-search-panel .search-status{grid-column:1/-1;min-height:24px;margin:4px 0 0;color:#3f6152;font-weight:750;font-size:.79rem}
+.workspace-search-suggestions{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-top:21px;padding-top:21px;border-top:1px solid #d7e4d8}
+.workspace-search-suggestions>span{width:100%;color:#496b5c;font-size:.7rem;font-weight:850;letter-spacing:.11em;text-transform:uppercase}
+.workspace-search-suggestions button{min-height:45px;padding:10px 14px;border:1px solid #bbcebe;border-radius:999px;background:#fff;color:#205444;font-size:.79rem;font-weight:800;cursor:pointer;transition:border-color .18s,background-color .18s,transform .18s}
+.workspace-search-suggestions button:hover{border-color:#719d83;background:#e6f0e5;transform:translateY(-2px)}
+.workspace-search-suggestions button[aria-pressed="true"]{background:#194d3e;color:white;border-color:#194d3e}
+.workspace-search-suggestions button:focus-visible{outline:3px solid #a15d18;outline-offset:4px}
+.workspace-search-disclaimer{color:#4e665a;font-size:.77rem;line-height:1.55;margin:18px 0 0}
+.workspace-search-noscript{grid-column:2;color:#fff;padding:17px;border:1px solid #fffa;border-radius:10px}
+@media(max-width:900px){.workspace-search-stage-inner{grid-template-columns:1fr;gap:23px}.workspace-search-story h2{max-width:19ch}.workspace-search-story>p:not(.workspace-search-overline){max-width:65ch;margin:17px 0}.workspace-search-noscript{grid-column:1}}
+@media(max-width:600px){.workspace-search-stage{padding:40px 0 45px}.workspace-search-overline{font-size:.64rem;margin-bottom:12px}.workspace-search-story h2{font-size:clamp(2.65rem,11vw,3.8rem)}.workspace-search-panel{padding:24px 20px;border-radius:17px}.workspace-search-panel:after{display:none}.workspace-search-panel .finder-inner{grid-template-columns:1fr}.workspace-search-panel .finder-inner>button{justify-self:start;min-height:44px}.workspace-search-suggestions{gap:8px}.workspace-search-suggestions button{flex:1 1 calc(50% - 8px);padding:10px 9px;font-size:.76rem}}
+@media(max-width:390px){.workspace-search-suggestions button{flex-basis:100%}}
+@media(prefers-reduced-motion:reduce){.workspace-search-browse,.workspace-search-suggestions button{transition:none}.workspace-search-suggestions button:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -196,7 +239,36 @@ body[data-workspace-view="ledger"] .listing-card .card-links{grid-column:2;grid-
     <p class="workspace-menu-note"><strong>Price guide, not a booking offer.</strong> These are published rates for Co-Create only, not prices for every provider on this page. Availability, eligibility, fees and final terms must be confirmed with the operator. Meeting-room options and other office listings appear below.</p>
   </div>
 </section>
-<div class="finder" role="search"><div class="wrap finder-inner"><div><label for="space-search">Search these workspace listings</label><input type="search" id="space-search" placeholder="Try “conference”, “downtown” or a provider" autocomplete="off"></div><button id="clear-search" type="button" hidden>Clear search</button><p id="search-status" class="search-status" role="status" aria-live="polite"></p></div></div>
+
+
+
+<section class="workspace-search-stage" id="workspace-search" aria-labelledby="workspace-search-title">
+  <div class="wrap workspace-search-stage-inner">
+    <div class="workspace-search-story">
+      <p class="workspace-search-overline">The local workroom / Find your fit</p>
+      <h2 id="workspace-search-title">The right space <em>changes everything.</em></h2>
+      <p>Need a downtown desk, an office suite, a conference room or a jobsite workspace? Search the local directory by place, provider or feature.</p>
+      <a class="workspace-search-browse" href="#coworking">Browse workspace listings <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="finder workspace-search-panel" role="search" aria-label="Search Russellville workspace listings">
+      <p class="workspace-search-panel-kicker"><span>01 / Explore the directory</span><span aria-hidden="true">✳</span></p>
+      <div class="finder-inner">
+        <div><label for="space-search">Search these workspace listings</label><input type="search" id="space-search" placeholder="Try downtown, conference, office…" autocomplete="off"></div>
+        <button id="clear-search" type="button" hidden>Clear search</button>
+        <p id="search-status" class="search-status" role="status" aria-live="polite" aria-atomic="true"></p>
+      </div>
+      <div class="workspace-search-suggestions" role="group" aria-label="Suggested workspace searches">
+        <span>Start with a shortcut</span>
+        <button type="button" data-workspace-query="downtown" aria-pressed="false">Downtown</button>
+        <button type="button" data-workspace-query="office suite" aria-pressed="false">Office suites</button>
+        <button type="button" data-workspace-query="meeting" aria-pressed="false">Meeting rooms</button>
+        <button type="button" data-workspace-query="mobile" aria-pressed="false">Mobile offices</button>
+      </div>
+      <p class="workspace-search-disclaimer">Results update as you search. Contact each provider directly to verify current availability and terms.</p>
+    </div>
+    <noscript><p class="workspace-search-noscript">Searching requires JavaScript. Every workspace listing and its contact details remain available below.</p></noscript>
+  </div>
+</section>
 
 <section class="workspace-view wrap" id="workspace-view" aria-label="Workspace directory display" hidden>
   <div class="workspace-view-copy"><strong>Choose your browsing view.</strong><span>Compare detailed cards or scan a streamlined directory. Your search stays in place.</span></div>
@@ -249,8 +321,13 @@ for(const section of sections){const hasMatches=[...section.querySelectorAll('.l
 status.textContent=query?(visible+' matching '+(visible===1?'listing':'listings')):(cards.length+' listings across four workspace types');
 empty.hidden=visible!==0;reset.hidden=!query;
 }
+const searchShortcuts=[...document.querySelectorAll('[data-workspace-query]')];
+function updateSearchShortcuts(){const query=input.value.trim().toLocaleLowerCase();for(const button of searchShortcuts){button.setAttribute('aria-pressed',String(query===button.dataset.workspaceQuery));}}
+for(const button of searchShortcuts){button.addEventListener('click',()=>{const value=button.dataset.workspaceQuery;input.value=(input.value.trim().toLocaleLowerCase()===value)?'':value;filter();input.focus();});}
 input.addEventListener('input',filter);
 reset.addEventListener('click',()=>{input.value='';filter();input.focus();});
+const originalFilter=filter;
+filter=function(){originalFilter();updateSearchShortcuts();};
 filter();
 })();</script>
 
