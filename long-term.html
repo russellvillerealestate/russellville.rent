@@ -155,6 +155,57 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
 @media(max-width:470px){.rental-paths{padding:28px 19px;border-radius:17px}.rental-path{padding:17px 16px}.rental-path-header{gap:16px}.rental-path h3{font-size:1.48rem}.rental-path svg{width:46px;height:40px}.rental-paths-foot{display:block}.rental-paths-foot span{display:block;margin-top:7px}}
 @media(prefers-reduced-motion:reduce){.rental-path{transition:none}.rental-path:hover{transform:none}}
 
+
+/* 2026-11-01 Source Atlas: three clearly differentiated routes to original leasing sources.
+   Additive navigation; original source text, destination links, listing filters, and scripts stay intact. */
+.sources-section{padding-top:28px}
+.source-atlas{position:relative;isolation:isolate;overflow:hidden;margin:24px 0 23px;padding:clamp(24px,4.2vw,52px);border-radius:25px;background:#123d32;color:#fff;box-shadow:0 22px 52px #163f3227}
+.source-atlas::before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(112deg,#0b302af2,#0c342cf2 55%,#133e35e6),url("assets/downtown-russellville-sunset.jpg") center 48%/cover no-repeat}
+.source-atlas::after{content:"";position:absolute;z-index:-1;pointer-events:none;right:-120px;top:-190px;width:390px;height:390px;border:1px solid #f2ca8959;border-radius:50%;box-shadow:0 0 0 52px #f2ca8911,0 0 0 112px #f2ca8908}
+.source-atlas-head{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(220px,.65fr);gap:35px;align-items:end;margin-bottom:27px}
+.source-atlas-kicker{color:#f5d08c;text-transform:uppercase;letter-spacing:.17em;font-size:.68rem;font-weight:850;margin:0 0 10px}
+.source-atlas h3{color:#fff;font:400 clamp(2.3rem,4.7vw,4rem)/1.045 Georgia,"Times New Roman",serif;letter-spacing:-.055em;margin:0;text-wrap:balance}
+.source-atlas h3 em{color:#f2ce92;font-style:normal}
+.source-atlas-head>p{margin:0 0 5px;color:#e1eae2;font-size:.89rem;line-height:1.68;max-width:360px}
+.source-atlas-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.source-lane{display:flex;flex-direction:column;min-width:0;min-height:340px;padding:24px;border:1px solid #ffffff55;border-radius:18px;background:#ffffff13;transition:background .22s,border-color .22s,transform .22s}
+.source-lane:hover{background:#ffffff20;border-color:#f0cf96;transform:translateY(-3px)}
+.source-lane:nth-child(2){background:#e9f1e4f2;color:#173e32;border-color:#e9f1e4}
+.source-lane:nth-child(2):hover{background:#fff4df}
+.source-lane:nth-child(3){background:#f2d9bbed;color:#243e33;border-color:#e6c69e}
+.source-lane:nth-child(3):hover{background:#ffe8c8}
+.source-lane-top{display:flex;justify-content:space-between;align-items:start;gap:15px;margin-bottom:23px}
+.source-lane-index{font-size:.67rem;line-height:1.4;letter-spacing:.13em;font-weight:900;color:#f2d08f;text-transform:uppercase}
+.source-lane:nth-child(n+2) .source-lane-index{color:#6b5631}
+.source-lane svg{display:block;width:62px;height:55px;flex:none;fill:none;stroke:#e5c688;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.source-lane:nth-child(n+2) svg{stroke:#28684e}
+.source-lane h4{font:400 clamp(1.6rem,2.35vw,2rem)/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.045em;color:inherit;margin:0 0 10px;text-wrap:balance}
+.source-lane p:not(.source-lane-index){color:#dce7dd;font-size:.8rem;line-height:1.61;margin:0 0 19px}
+.source-lane:nth-child(n+2) p:not(.source-lane-index){color:#3c5b4c}
+.source-lane-links{display:grid;gap:6px;margin-top:auto}
+.source-lane-links a{display:flex;align-items:center;justify-content:space-between;gap:11px;min-height:44px;color:#fff!important;font-weight:800;font-size:.78rem;line-height:1.36;text-decoration:none;padding:8px 0;border-bottom:1px solid #ffffff4d;overflow-wrap:anywhere}
+.source-lane-links a::after{content:"↗";flex:none;font-size:1.08rem}
+.source-lane:nth-child(n+2) .source-lane-links a{color:#174f39!important;border-bottom-color:#7f9b856e}
+.source-lane-links a:hover{text-decoration:underline;text-underline-offset:4px}
+.source-lane-links a:focus-visible{outline:3px solid #fff;outline-offset:3px;border-radius:4px}
+.source-lane:nth-child(n+2) .source-lane-links a:focus-visible{outline-color:#91581b}
+.source-atlas-foot{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:22px;color:#d9e5dc;font-size:.74rem;line-height:1.5}
+.source-atlas-foot p{margin:0;max-width:700px}
+.source-atlas-foot a{color:#f7d396;font-weight:850;white-space:nowrap}
+.source-grid .source-card{display:flex;flex-direction:column;align-items:flex-start;min-height:235px;padding:25px;border-radius:17px;border-color:#d3e0d5;border-top:4px solid #41785b;box-shadow:0 8px 26px #133d300d;scroll-margin-top:106px}
+.source-grid .source-card:nth-child(3),.source-grid .source-card:nth-child(6){border-top-color:#bd915a}
+.source-grid .source-card:nth-child(5){border-top-color:#77967f}
+.source-grid .source-card h3{font:400 clamp(1.32rem,2vw,1.63rem)/1.2 Georgia,"Times New Roman",serif;letter-spacing:-.035em;color:#163e32;margin:0 0 12px}
+.source-grid .source-card p{font-size:.84rem;line-height:1.7}
+.source-grid .source-card>a{display:inline-flex;align-items:center;justify-content:center;margin-top:auto;min-height:44px;padding:11px 16px;border-radius:999px;background:#173e32;color:#fff;font-size:.77rem;text-decoration:none}
+.source-grid .source-card>a:hover{background:#2b6650;color:#fff}
+.source-grid .source-card>a:focus-visible{outline:3px solid #a66a1b;outline-offset:4px}
+.source-grid .source-card:target{outline:3px solid #b87c2b;outline-offset:4px;box-shadow:0 0 0 9px #eec78a30}
+@media(max-width:990px){.source-atlas-head{grid-template-columns:1fr;gap:14px}.source-atlas-head>p{max-width:750px}.source-lane{padding:20px;min-height:370px}.source-lane svg{width:52px;height:48px}}
+@media(max-width:750px){.source-atlas{padding:27px 22px;border-radius:20px}.source-atlas-grid{grid-template-columns:1fr;gap:10px}.source-lane{min-height:0;display:grid;grid-template-columns:90px minmax(0,1fr);grid-template-areas:"icon title" "icon copy" "links links";column-gap:14px;padding:20px}.source-lane-top{grid-area:icon;flex-direction:column;justify-content:flex-start;gap:11px;margin-bottom:0}.source-lane h4{grid-area:title;margin:0 0 7px}.source-lane p:not(.source-lane-index){grid-area:copy;margin:0 0 14px}.source-lane-links{grid-area:links;margin-top:9px}.source-lane svg{width:57px;height:48px}.source-atlas-foot{flex-wrap:wrap}}
+@media(max-width:430px){.source-atlas{padding:23px 17px}.source-atlas h3{font-size:clamp(2.15rem,10vw,3rem)}.source-lane{grid-template-columns:69px minmax(0,1fr);column-gap:10px;padding:17px}.source-lane-top{gap:8px}.source-lane svg{width:45px;height:42px}.source-lane h4{font-size:1.51rem}.source-atlas-foot a{white-space:normal}}
+@media(prefers-reduced-motion:reduce){.source-lane{transition:none}.source-lane:hover{transform:none}}
+
 </style></head>
 <body>
 <a class="skip" href="#main">Skip to listings</a>
@@ -318,13 +369,65 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
         <p>The automated index is designed to collect factual listing information from public manager pages and retain source attribution.</p>
       </div>
     </div>
+
+    <div class="source-atlas" aria-labelledby="source-atlas-title">
+      <div class="source-atlas-head">
+        <div>
+          <p class="source-atlas-kicker">The River Valley / Source atlas</p>
+          <h3 id="source-atlas-title">A listing starts the search.<br><em>The source completes it.</em></h3>
+        </div>
+        <p>Not every rental is published the same way. Compare manager pages, direct-leasing communities and public housing without confusing a floor plan or waitlist with a current vacancy.</p>
+      </div>
+      <div class="source-atlas-grid">
+        <article class="source-lane">
+          <div class="source-lane-top">
+            <span class="source-lane-index">01 / Manager pages</span>
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 88 70"><path d="M6 33 43 6l38 27M13 31v32h61V31M22 43h17v20M52 42h13v11H52zM28 16h30"/></svg>
+          </div>
+          <h4>Explore manager listings.</h4>
+          <p>Check the rental pages maintained by Russellville-area property-management sources.</p>
+          <div class="source-lane-links">
+            <a href="#source-rvr">River Valley Realty</a>
+            <a href="#source-moore">Moore &amp; Co. Rental</a>
+            <a href="#source-natural">Natural State Property Management</a>
+          </div>
+        </article>
+        <article class="source-lane">
+          <div class="source-lane-top">
+            <span class="source-lane-index">02 / Direct leasing</span>
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 88 70"><path d="M18 63V12h52v51M8 63h72M29 23h11v11H29zM49 23h11v11H49zM29 42h11v11H29zM49 42h11v11H49zM41 63V49h6v14"/></svg>
+          </div>
+          <h4>Go straight to the community.</h4>
+          <p>See published floor plans and leasing information. Listed plans do not establish live availability.</p>
+          <div class="source-lane-links">
+            <a href="#source-spring">Spring Lake I/II Apartments</a>
+            <a href="#source-urban">Urban Loft Co.</a>
+          </div>
+        </article>
+        <article class="source-lane">
+          <div class="source-lane-top">
+            <span class="source-lane-index">03 / Public housing</span>
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 88 70"><path d="M7 62h74M18 62V27l26-18 26 18v35M31 62V43h26v19M15 28h58M39 31h10v7H39z"/></svg>
+          </div>
+          <h4>Check the application path.</h4>
+          <p>Public housing follows separate eligibility and waiting-list rules; no vacancy is implied.</p>
+          <div class="source-lane-links">
+            <a href="#source-housing">Russellville Housing Authority</a>
+          </div>
+        </article>
+      </div>
+      <div class="source-atlas-foot">
+        <p>These are independent sources, not a live inventory guarantee. Verify openings, applications, fees and lease terms directly.</p>
+        <a href="#filters">Back to rental filters ↑</a>
+      </div>
+    </div>
     <div class="source-grid">
-      <article class="source-card"><h3>River Valley Realty Management Service</h3><p>Residential and commercial rental listings serving Russellville and the River Valley.</p><a href="https://www.rentrvr.com/" target="_blank" rel="noopener noreferrer">Visit source ↗</a></article>
-      <article class="source-card"><h3>Moore &amp; Co. Rental</h3><p>Russellville-area homes and apartments published through its rental property pages.</p><a href="https://www.mooreforrent.com/rental-properties/russellville/" target="_blank" rel="noopener noreferrer">Visit source ↗</a></article>
-      <article class="source-card"><h3>Spring Lake I/II Apartments — Direct Leasing</h3><p>Russellville apartment community offering one- and two-bedroom floor plans. The official leasing website advertises short-term lease options, subject to confirmation; listed floor-plan prices do not establish unit availability. 922 N Sidney Ave, Russellville, AR 72801 · <a href="tel:+14798587079">479-858-7079</a>. Confirm current openings, lease terms, fees and rates directly.</p><a href="https://www.springlake.apartments/" target="_blank" rel="noopener noreferrer">Official leasing and floor plans ↗</a></article>
-      <article class="source-card"><h3>Natural State Property Management</h3><p>Russellville rental availability published through its public property-management site.</p><a href="https://www.naturalstatepropertymanagement.com/" target="_blank" rel="noopener noreferrer">Visit source ↗</a></article>
-      <article class="source-card"><h3>Russellville Housing Authority — Public Housing</h3><p>Official public-housing provider offering rental homes, apartments and the Glenwood House for older adults and people with disabilities. Applications are placed on a waiting list; this listing does not establish a current vacancy. Office: 115 S Denver Ave, Russellville, AR 72801 · <a href="tel:+14799685440">479-968-5440</a>. Confirm eligibility, waiting-list status and application requirements directly.</p><a href="https://rsvlha.com/apply-today/" target="_blank" rel="noopener noreferrer">Official application and waiting-list information ↗</a></article>
-      <article class="source-card"><h3>Urban Loft Co. — Russellville Apartments</h3><p>The operator’s official Russellville community page advertises one-bedroom loft apartments, furnished options, included utilities and Wi-Fi. Published floor-plan starting rents begin at $1,099/month; this does not establish a currently available unit or a final all-in quote. 111 W Harrell Dr, Russellville, AR 72802 · <a href="tel:+14793378951">479-337-8951</a>. Confirm vacancies, lease terms, fees and amenities directly.</p><a href="https://theurbanloftco.com/communities/russellville/" target="_blank" rel="noopener noreferrer">Official floor plans and leasing ↗</a></article>
+      <article class="source-card" id="source-rvr"><h3>River Valley Realty Management Service</h3><p>Residential and commercial rental listings serving Russellville and the River Valley.</p><a href="https://www.rentrvr.com/" target="_blank" rel="noopener noreferrer">Visit source ↗</a></article>
+      <article class="source-card" id="source-moore"><h3>Moore &amp; Co. Rental</h3><p>Russellville-area homes and apartments published through its rental property pages.</p><a href="https://www.mooreforrent.com/rental-properties/russellville/" target="_blank" rel="noopener noreferrer">Visit source ↗</a></article>
+      <article class="source-card" id="source-spring"><h3>Spring Lake I/II Apartments — Direct Leasing</h3><p>Russellville apartment community offering one- and two-bedroom floor plans. The official leasing website advertises short-term lease options, subject to confirmation; listed floor-plan prices do not establish unit availability. 922 N Sidney Ave, Russellville, AR 72801 · <a href="tel:+14798587079">479-858-7079</a>. Confirm current openings, lease terms, fees and rates directly.</p><a href="https://www.springlake.apartments/" target="_blank" rel="noopener noreferrer">Official leasing and floor plans ↗</a></article>
+      <article class="source-card" id="source-natural"><h3>Natural State Property Management</h3><p>Russellville rental availability published through its public property-management site.</p><a href="https://www.naturalstatepropertymanagement.com/" target="_blank" rel="noopener noreferrer">Visit source ↗</a></article>
+      <article class="source-card" id="source-housing"><h3>Russellville Housing Authority — Public Housing</h3><p>Official public-housing provider offering rental homes, apartments and the Glenwood House for older adults and people with disabilities. Applications are placed on a waiting list; this listing does not establish a current vacancy. Office: 115 S Denver Ave, Russellville, AR 72801 · <a href="tel:+14799685440">479-968-5440</a>. Confirm eligibility, waiting-list status and application requirements directly.</p><a href="https://rsvlha.com/apply-today/" target="_blank" rel="noopener noreferrer">Official application and waiting-list information ↗</a></article>
+      <article class="source-card" id="source-urban"><h3>Urban Loft Co. — Russellville Apartments</h3><p>The operator’s official Russellville community page advertises one-bedroom loft apartments, furnished options, included utilities and Wi-Fi. Published floor-plan starting rents begin at $1,099/month; this does not establish a currently available unit or a final all-in quote. 111 W Harrell Dr, Russellville, AR 72802 · <a href="tel:+14793378951">479-337-8951</a>. Confirm vacancies, lease terms, fees and amenities directly.</p><a href="https://theurbanloftco.com/communities/russellville/" target="_blank" rel="noopener noreferrer">Official floor plans and leasing ↗</a></article>
     </div>
   </section>
 
