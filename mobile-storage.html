@@ -221,6 +221,34 @@ footer a{font-weight:750}
 @media(max-width:700px){.hero-inner{display:flex;flex-direction:column;gap:23px;align-items:stretch;min-height:0;padding-block:55px 109px}.hero h1{font-size:clamp(3.25rem,12vw,5rem);max-width:12ch}.hero-copy{font-size:1rem}.hero-visual{width:min(100%,420px);max-width:420px;margin:auto;padding:12px}.hero-visual svg{max-height:255px}.scenic-note{left:18px;bottom:48px;max-width:calc(100% - 36px);font-size:.6rem}.storage-paths{grid-template-columns:1fr;gap:10px;margin-top:-24px}.storage-path{min-height:0;padding:20px 66px 20px 21px;gap:6px}.storage-path strong{font-size:1.6rem;max-width:none}.storage-path small{max-width:none}.path-diagram{height:28px;margin-top:2px}.path-diagram i{height:18px;width:35px}.path-diagram i:nth-child(2){height:23px;width:47px}.path-diagram i:nth-child(3){height:27px;width:62px}.path-arrow{right:17px;top:19px}}
 @media(prefers-reduced-motion:reduce){.storage-path{transition:none}.storage-path:hover{transform:none}}
 
+
+/* Original illustrated format atlas: a service-type map rather than unverified provider photography.
+   No JavaScript or new network assets; anchors lead to existing source-verified listings. */
+.storage-format-atlas{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);margin:43px 0 32px;background:#123e32;color:#f8f4e9;border-radius:29px;overflow:hidden;box-shadow:0 22px 56px #10362924}
+.format-art{position:relative;min-width:0;display:flex;flex-direction:column;justify-content:space-between;gap:25px;isolation:isolate;min-height:590px;padding:38px 34px 28px;background:radial-gradient(ellipse at 70% 55%,#b77d4b59,transparent 60%),linear-gradient(153deg,#0c3029,#205145 64%,#344f3f)}
+.format-art::before{content:"";pointer-events:none;position:absolute;z-index:-1;inset:0;background:repeating-linear-gradient(0deg,transparent 0 29px,#e9d9b60b 29px 30px)}
+.format-kicker{display:block;color:#ecd2a9;text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;font-weight:850}
+.format-art h2{font:400 clamp(2.7rem,4.1vw,4.15rem)/1.01 Georgia,"Times New Roman",serif;letter-spacing:-.058em;color:#fff7e9;max-width:10ch;margin:15px 0 0;text-wrap:balance}
+.format-art h2 em{color:#efc08d;font-style:italic}
+.format-art svg{display:block;width:100%;height:auto;max-width:490px;margin:auto auto 0;filter:drop-shadow(0 19px 15px #031c1990)}
+.format-art-note{display:block;font-size:.69rem;line-height:1.55;color:#e7e8d8;letter-spacing:.02em;border-top:1px solid #ffffff3b;padding-top:13px}
+.format-options{min-width:0;padding:38px clamp(22px,3.5vw,51px) 34px;background:linear-gradient(160deg,#143f34,#0a3028)}
+.format-options .format-kicker{color:#ecc497}
+.format-options>p{font-size:.94rem;line-height:1.68;color:#d4e4d6;max-width:48ch;margin:12px 0 21px}
+.format-list{display:grid;gap:10px}
+.format-option{min-width:0;display:grid;grid-template-columns:35px minmax(0,1fr) 35px;align-items:start;gap:13px;padding:17px 14px;border:1px solid #9ebca34f;border-radius:15px;background:#ffffff0d;color:#fffdf5;text-decoration:none;transition:background .2s,transform .2s,border-color .2s}
+.format-option:hover{background:#ffffff1a;transform:translateX(3px);border-color:#dfc197}
+.format-option:focus-visible{outline:3px solid #f9c17b;outline-offset:4px}
+.format-index{font:400 1.4rem/1.1 Georgia,serif;color:#f2bd87}
+.format-option strong{display:block;font:400 clamp(1.22rem,2vw,1.53rem)/1.2 Georgia,serif;letter-spacing:-.025em;color:#fff7ec}
+.format-option small{display:block;margin-top:7px;font-size:.78rem;line-height:1.55;color:#d0e4d7}
+.format-go{display:grid;place-items:center;width:34px;height:34px;border:1px solid #bcceba85;border-radius:50%;color:#f7d3a5;font-size:1.1rem}
+.format-disclaimer{margin:19px 0 0!important;font-size:.72rem!important;line-height:1.55!important;color:#c9d9cb!important}
+#storage-format-atlas,#provider-1,#provider-2{scroll-margin-top:27px}
+@media(max-width:820px){.storage-format-atlas{grid-template-columns:1fr}.format-art{min-height:360px;display:grid;grid-template-columns:1fr minmax(0,1fr);align-items:center;gap:15px;padding:29px}.format-art h2{font-size:clamp(2.6rem,7vw,4.1rem)}.format-art svg{grid-row:1/3;grid-column:2;max-width:330px}.format-art-note{grid-column:1/-1}.format-options{padding:29px 31px 31px}.format-list{grid-template-columns:repeat(2,minmax(0,1fr))}.format-option{grid-template-columns:26px 1fr;gap:8px}.format-go{grid-column:2;justify-self:end;margin-top:5px}}
+@media(max-width:560px){.storage-format-atlas{margin:31px 0 24px;border-radius:20px}.format-art{min-height:0;display:flex;align-items:stretch;padding:26px 22px 22px}.format-art h2{font-size:clamp(2.45rem,10vw,3.45rem);max-width:13ch}.format-art svg{max-width:330px;max-height:260px}.format-options{padding:25px 20px 28px}.format-list{grid-template-columns:1fr}.format-option{grid-template-columns:30px minmax(0,1fr) 34px;gap:10px;padding:15px 13px}.format-go{grid-column:auto;margin:0}.format-option strong{font-size:1.34rem}}
+@media(prefers-reduced-motion:reduce){.format-option{transition:none}.format-option:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -236,6 +264,71 @@ footer a{font-weight:750}
 
 <main id="main" class="wrap">
 <div class="intro"><strong>Local-first, independently compiled</strong><span>Service areas and pricing are labeled by what providers publicly advertise—not by assumed availability. Confirm the total with each business.</span></div>
+
+<section class="storage-format-atlas" id="storage-format-atlas" aria-labelledby="storage-format-title">
+  <div class="format-art">
+    <div><span class="format-kicker">The River Valley space guide / Four forms</span><h2 id="storage-format-title">Room for <em>what's next.</em></h2></div>
+    <svg viewBox="0 0 460 335" role="img" aria-label="Illustrated landscape with a steel storage container, a compact moving cube, a mobile office and a stationary storage trailer; examples are not to scale">
+      <defs>
+        <linearGradient id="atlas-sky" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#d2a078"/><stop offset="1" stop-color="#efc79a"/></linearGradient>
+        <linearGradient id="atlas-steel" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#8ca59c"/><stop offset="1" stop-color="#356353"/></linearGradient>
+      </defs>
+      <circle cx="350" cy="80" r="47" fill="#f1c18c" opacity=".85"/>
+      <path d="M0 152Q61 85 121 135T243 129T460 110V248H0Z" fill="#528074" opacity=".75"/>
+      <path d="M0 188Q88 138 171 176T338 164T460 155V275H0Z" fill="#2a574c"/>
+      <path d="M0 264L460 217V335H0Z" fill="#1c453a"/>
+      <path d="M0 284L460 244" stroke="#e2b685" stroke-width="2" opacity=".45"/>
+      <!-- Moving cube: a small, individually handled storage type -->
+      <g transform="translate(17 201)">
+        <path d="M4 12 56 0 98 12 46 25Z" fill="#efd2a9"/>
+        <path d="M4 12V79L46 93V25Z" fill="#b78e66"/>
+        <path d="M46 25 98 12V78L46 93Z" fill="#e7bd8c"/>
+        <path d="M53 30V82M62 29V79M71 26V77M80 24V75M89 22V72" stroke="#a67a50" stroke-width="2"/>
+        <rect x="20" y="47" width="15" height="12" rx="2" fill="#f9e4c4"/>
+      </g>
+      <!-- Storage container: typical ribbed steel visual -->
+      <g transform="translate(109 159)">
+        <path d="M5 21 103 1 203 24 103 46Z" fill="#a8c5b7"/>
+        <path d="M5 21V130L103 154V46Z" fill="url(#atlas-steel)"/>
+        <path d="M103 46 203 24V133L103 154Z" fill="#456e60"/>
+        <g stroke="#d5e4d1" stroke-opacity=".54" stroke-width="2"><path d="M18 25V133M32 30V136M46 33V139M60 37V142M74 40V146M88 44V150M116 46V150M130 42V147M144 40V144M158 36V142M172 33V139M186 28V135"/></g>
+        <path d="M103 46V154" stroke="#10392e" stroke-width="4"/>
+      </g>
+      <!-- Office: windows distinguish an office unit from a storage box -->
+      <g transform="translate(256 119)">
+        <path d="M0 23 70 7 130 26 60 44Z" fill="#f1d2a3"/>
+        <path d="M0 23V117L60 135V44Z" fill="#d2a679"/>
+        <path d="M60 44 130 26V119L60 135Z" fill="#e2bc8b"/>
+        <rect x="18" y="55" width="29" height="28" fill="#386b75" stroke="#fcdfa8" stroke-width="4"/>
+        <path d="M32 57V83" stroke="#fce5bd" stroke-width="2"/>
+        <rect x="76" y="62" width="24" height="32" fill="#285c64" stroke="#fce5bd" stroke-width="4"/>
+        <path d="M88 64V94" stroke="#fce5bd" stroke-width="2"/>
+        <rect x="105" y="55" width="15" height="67" fill="#ab7b52" stroke="#fce5bd" stroke-width="3"/>
+      </g>
+      <!-- Trailer: wheeled stationary-storage silhouette, not a transport promise -->
+      <g transform="translate(234 250)">
+        <path d="M0 12 150 0 179 12 29 24Z" fill="#ccd4ba"/>
+        <path d="M0 12V52L29 67V24Z" fill="#728d7c"/>
+        <path d="M29 24 179 12V55L29 67Z" fill="#afc4a8"/>
+        <path d="M41 25V64M58 23V63M75 21V61M92 20V60M109 18V59M126 17V57M143 15V56M160 13V55" stroke="#698b7c" stroke-width="2"/>
+        <circle cx="66" cy="73" r="9" fill="#182e29" stroke="#e8cca0" stroke-width="3"/>
+        <circle cx="147" cy="67" r="9" fill="#182e29" stroke="#e8cca0" stroke-width="3"/>
+      </g>
+    </svg>
+    <small class="format-art-note">Original illustrative field sketch · Not provider photographs, exact dimensions or confirmed inventory.</small>
+  </div>
+  <div class="format-options">
+    <span class="format-kicker">Before comparing rates</span>
+    <p>Start with the form of space you need. These links jump to the existing provider details, where you can confirm actual dimensions, availability and the full delivered price.</p>
+    <nav class="format-list" aria-label="Choose a portable storage format">
+      <a class="format-option" href="#provider-1"><span class="format-index">01</span><span><strong>Ground-level containers</strong><small>For on-site storage. Scotty's advertises 10-, 20- and 40-foot options with published base rates.</small></span><span class="format-go" aria-hidden="true">↗</span></a>
+      <a class="format-option" href="#provider-2"><span class="format-index">02</span><span><strong>Compact moving cubes</strong><small>U-Box's smaller moving-and-storage format; ask about pickup, delivery and warehouse storage.</small></span><span class="format-go" aria-hidden="true">↗</span></a>
+      <a class="format-option" href="#provider-1"><span class="format-index">03</span><span><strong>Mobile jobsite offices</strong><small>Scotty's advertises a 20-foot office and a 40-foot office-and-storage combination.</small></span><span class="format-go" aria-hidden="true">↗</span></a>
+      <a class="format-option" href="#provider-1"><span class="format-index">04</span><span><strong>Dry-van storage trailers</strong><small>Scotty's lists 48- and 53-foot trailers for storage. Ask about placement and current inventory.</small></span><span class="format-go" aria-hidden="true">↗</span></a>
+    </nav>
+    <p class="format-disclaimer">Service types are different—not interchangeable sizes or live product listings. The artwork is conceptual and not to scale. Confirm location-specific service, equipment, fees and rental terms directly.</p>
+  </div>
+</section>
 <section id="rates" aria-labelledby="rates-title"><div class="section-head"><div><p class="eyebrow" style="color:#956a45">01 / Published prices</p><h2 id="rates-title">A useful starting point.</h2><p>Scotty&#39;s Storage Trailer Rentals’ advertised monthly rates, checked October 26, 2026. These are not guaranteed totals.</p></div><span class="section-number">One provider · Five options</span></div>
 <div class="rate-panel"><div class="rate-banner"><strong>Scotty&#39;s · Russellville, Arkansas</strong><span>Monthly base rental rates as advertised</span></div><dl class="rates"><div class="rate"><span class="type">Storage container</span><dt>10-foot standard</dt><dd>$75<small>per month</small></dd></div><div class="rate"><span class="type">Storage container</span><dt>20-foot standard</dt><dd>$100<small>per month</small></dd></div><div class="rate"><span class="type">Storage container</span><dt>40-foot standard / high-cube</dt><dd>$130<small>per month</small></dd></div><div class="rate"><span class="type">Mobile office</span><dt>20-foot office</dt><dd>$250<small>per month</small></dd></div><div class="rate"><span class="type">Office + storage</span><dt>40-foot combination</dt><dd>$350<small>per month</small></dd></div></dl><div class="delivery"><p><strong>Advertised local container delivery: $150</strong> for 10-, 20- or 40-foot containers to Russellville, Dardanelle, Atkins and Pottsville. Pickup, taxes, minimum terms and special site conditions require confirmation.</p><a href="https://www.scottysstorage.com/russellvillearkansas" target="_blank" rel="noopener noreferrer">Official rate details ↗</a></div></div></section>
 
