@@ -206,6 +206,31 @@ main.shell>.summary{margin-top:16px}
 @media(max-width:570px){.party-rate-atlas{margin:32px 0 16px;border-radius:18px}.party-rate-intro{padding:28px 23px}.party-rate-intro h2{font-size:2.55rem}.party-rate-sheet{padding:19px 15px 22px}.party-rate-grid{gap:9px}.party-rate-link{min-height:151px;padding:16px 12px}.party-rate-link>strong{font-size:2.3rem}.party-rate-provider{font-size:.71rem}.party-rate-sheet-head{display:block}.party-rate-sheet-head span{display:block;margin-top:4px}.party-rate-warning{grid-template-columns:1fr;gap:4px}}
 @media(max-width:350px){.party-rate-grid{grid-template-columns:1fr}.party-rate-link{min-height:0}.party-rate-link>strong{margin:7px 0}.party-rate-go{padding-top:7px}}
 @media(prefers-reduced-motion:reduce){.party-rate-link{transition:none}.party-rate-link:hover{transform:none}}
+
+/* November 1, 2026: editorial, equal-scale tent footprint comparison.
+   This is a dimensional visual aid, not an inventory or capacity claim. */
+.party-tent-study{margin:19px 0 22px;padding:clamp(24px,3.5vw,39px);border-radius:20px;background:radial-gradient(circle at 93% 2%,#547c6b 0%,transparent 39%),#153e38;color:#fff;box-shadow:0 17px 38px #15332d23}
+.party-tent-study-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.78fr);align-items:end;gap:32px;margin-bottom:25px}
+.party-tent-study-kicker{display:block;color:#f4d69f;font-size:.69rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px}
+.party-tent-study h3{font:400 clamp(1.9rem,3.6vw,3.1rem)/1.07 Georgia,"Times New Roman",serif;letter-spacing:-.052em;margin:0;text-wrap:balance}
+.party-tent-study h3 em{font-weight:400;color:#f5d39d}
+.party-tent-study-head p{color:#e2eae3;font-size:.89rem;line-height:1.65;margin:0;max-width:52ch}
+.party-tent-comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.party-tent-option{min-width:0;margin:0;padding:22px 22px 19px;background:#f9f6ed;color:#203f36;border:1px solid #e4dac7;border-radius:15px;overflow:hidden}
+.party-tent-label{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.party-tent-label strong{font:400 1.35rem/1.12 Georgia,serif;letter-spacing:-.035em}
+.party-tent-label span{font-size:.67rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase;color:#476254}
+.party-tent-stage{--plan-width:clamp(144px,18vw,212px);height:calc(var(--plan-width) + 13px);display:flex;align-items:flex-end;justify-content:center;position:relative;padding-bottom:4px;background:repeating-linear-gradient(0deg,transparent 0 20px,#d3dbc925 21px 22px);border-radius:10px}
+.party-tent-shape{position:relative;width:var(--plan-width);height:var(--plan-width);display:grid;place-items:center;border:3px solid #ca854d;border-radius:4px;background-color:#e5b889;background-image:linear-gradient(to right,#855b4440 1px,transparent 1px),linear-gradient(to bottom,#855b4440 1px,transparent 1px);background-size:calc(var(--plan-width) / 4) calc(var(--plan-width) / 4);box-shadow:0 8px 20px #384b381f}
+.party-tent-option--small .party-tent-shape{height:calc(var(--plan-width) / 2);border-color:#47755f;background-color:#b8d2be}
+.party-tent-shape span{font-size:.75rem;font-weight:850;color:#273e32;text-align:center;background:#fffdf6d9;padding:5px 8px;border-radius:5px}
+.party-tent-option figcaption{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-top:15px;color:#486256;font-size:.8rem;line-height:1.45}
+.party-tent-option figcaption strong{font:400 1.6rem/1 Georgia,serif;color:#1c493a}
+.party-tent-scale-note{display:flex;flex-wrap:wrap;gap:12px 25px;align-items:center;justify-content:space-between;padding:14px 0 0;font-size:.75rem;line-height:1.6;color:#e4efdf}
+.party-tent-scale-note strong{color:#f7d79c}
+.party-tent-scale-note span:last-child{max-width:57ch}
+@media(max-width:750px){.party-tent-study-head{grid-template-columns:1fr;gap:13px}.party-tent-stage{--plan-width:clamp(130px,26vw,190px)}}
+@media(max-width:530px){.party-tent-comparison{grid-template-columns:1fr}.party-tent-stage{--plan-width:clamp(160px,55vw,215px)}.party-tent-study{padding:22px 17px}.party-tent-option{padding:20px 17px}}
 </style>
 </head>
 <body>
@@ -237,7 +262,27 @@ main.shell>.summary{margin-top:16px}
       <a class="party-rate-link" href="#party-provider-nsane"><span class="party-rate-type">20 × 20-foot tent</span><strong>$250</strong><span class="party-rate-provider">NSaNe Inflatables</span><span class="party-rate-go">See provider details ↗</span></a>
       <a class="party-rate-link" href="#party-provider-happy-jumpers"><span class="party-rate-type">10 × 20-foot tent</span><strong>$125</strong><span class="party-rate-provider">Happy Jumpers</span><span class="party-rate-go">See provider details ↗</span></a>
     </div>
-    <div class="party-rate-warning"><strong>Before booking</strong><span>Tent sizes differ; these are not equivalent packages. Happy Jumpers separately lists $50 per 10 × 20-foot tent for optional assembly and $1.50 per mile for delivery. Confirm taxes, deposits, setup, delivery, weather policy and dates before comparing totals.</span></div>
+    
+    <section class="party-tent-study" aria-labelledby="party-tent-study-title">
+      <div class="party-tent-study-head">
+        <div><span class="party-tent-study-kicker">The event field sketch / 1:1 visual scale</span><h3 id="party-tent-study-title">A bigger tent.<br><em>A different footprint.</em></h3></div>
+        <p>The published tent examples above are different sizes. This equal-scale floor-plan illustration shows why the headline prices alone do not compare like-for-like.</p>
+      </div>
+      <div class="party-tent-comparison">
+        <figure class="party-tent-option party-tent-option--small">
+          <div class="party-tent-label"><strong>10 × 20 ft</strong><span>Happy Jumpers · listed item</span></div>
+          <div class="party-tent-stage"><div class="party-tent-shape" aria-hidden="true"><span>200 sq ft</span></div></div>
+          <figcaption><strong>200 square feet</strong><span>Published tent rental: $125</span></figcaption>
+        </figure>
+        <figure class="party-tent-option party-tent-option--large">
+          <div class="party-tent-label"><strong>20 × 20 ft</strong><span>NSaNe Inflatables · listed item</span></div>
+          <div class="party-tent-stage"><div class="party-tent-shape" aria-hidden="true"><span>400 sq ft</span></div></div>
+          <figcaption><strong>400 square feet</strong><span>Published tent rental: $250</span></figcaption>
+        </figure>
+      </div>
+      <div class="party-tent-scale-note"><strong>Same scale · Each grid square represents 5 × 5 ft.</strong><span>Floor area is not seating capacity. Layout, weather, anchoring, surface, setup, delivery and provider terms can change what works for an event. Confirm with each operator.</span></div>
+    </section>
+<div class="party-rate-warning"><strong>Before booking</strong><span>Tent sizes differ; these are not equivalent packages. Happy Jumpers separately lists $50 per 10 × 20-foot tent for optional assembly and $1.50 per mile for delivery. Confirm taxes, deposits, setup, delivery, weather policy and dates before comparing totals.</span></div>
     <p class="party-rate-sources">Published catalog snapshots, not confirmed final quotes. Recheck <a href="https://www.nsaneinflatables.com/category/tent-tables-and-chairs" target="_blank" rel="noopener noreferrer">NSaNe’s official price list ↗</a> and <a href="https://www.happy-jumpers.com/category/table-and-chair-rental" target="_blank" rel="noopener noreferrer">Happy Jumpers’ catalog ↗</a> for current terms.</p>
   </div>
 </section>
