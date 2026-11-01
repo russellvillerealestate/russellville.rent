@@ -229,6 +229,39 @@ footer{margin-top:35px;padding:22px 0;border-top:1px solid var(--line);font-size
 @media(max-width:650px){.round-board{padding:21px 16px;border-radius:20px;margin-top:17px}.round-board-head{grid-template-columns:1fr;gap:11px}.round-board-head p{max-width:none}.round-board-grid{grid-template-columns:1fr}.round-board-card--rate{grid-column:auto}.round-board-card{min-height:0;padding:17px 17px 0}.round-board-art{min-height:95px}.round-board-art svg{height:100px}.round-board-description{min-height:0}.round-board-cta{margin-left:-17px;margin-right:-17px;padding:12px 17px}.round-board-footer{flex-direction:column;align-items:stretch;gap:12px}.round-board-footer a{width:100%}}
 @media(prefers-reduced-motion:reduce){.round-board-card{transition:none}.round-board-card:hover{transform:none}}
 
+
+/* Mobile-golf event inquiry studio, November 1 2026: strong contrast, responsive layout and no external assets. */
+.golf-inquiry{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);margin:42px 0 0;overflow:hidden;background:#f9faf4;border:1px solid #c0d1bf;border-radius:26px;box-shadow:0 20px 46px #123d301f}
+.golf-inquiry-art{display:flex;flex-direction:column;position:relative;isolation:isolate;padding:clamp(27px,4vw,44px);color:#fff;background:linear-gradient(150deg,#0a2a24,#155341 74%,#2c7055)}
+.golf-inquiry-art:before{content:"";z-index:-1;position:absolute;inset:0;background:radial-gradient(ellipse at 75% 50%,#efc58628,transparent 62%)}
+.golf-inquiry-eyebrow{display:block;color:#f4d89f;font-size:.68rem;font-weight:850;letter-spacing:.17em;text-transform:uppercase;margin:0 0 13px}
+.golf-inquiry-art h2{margin:0;max-width:11ch;font:400 clamp(2.3rem,4.1vw,3.6rem)/1.03 Georgia,serif;letter-spacing:-.06em;text-wrap:balance}
+.golf-inquiry-art h2 em{font-weight:400;color:#f3d595}
+.golf-inquiry-art>p{max-width:45ch;margin:18px 0 16px;color:#e0eee4;font-size:.88rem;line-height:1.7}
+.golf-inquiry-scene{margin:auto -17px 0;min-height:170px;display:grid;place-items:end center}
+.golf-inquiry-scene svg{width:100%;max-height:285px;height:auto;filter:drop-shadow(0 13px 17px #031b157a)}
+.golf-inquiry-caption{font-size:.72rem;color:#e0e8d9;line-height:1.5}
+.golf-inquiry-form{min-width:0;padding:clamp(24px,4vw,41px);background:linear-gradient(155deg,#fffefa,#f1f5ec)}
+.golf-inquiry-form h3{margin:0 0 8px;color:#194334;font:400 clamp(1.6rem,2.7vw,2.15rem)/1.12 Georgia,serif;letter-spacing:-.045em}
+.golf-inquiry-lead{margin:0 0 23px;color:#4d6455;font-size:.85rem;line-height:1.63}
+.golf-inquiry-fields{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.golf-inquiry-fields label{display:block;min-width:0;font-size:.78rem;font-weight:800;color:#2e513e}
+.golf-inquiry-fields label span{display:block;margin-bottom:7px}
+.golf-inquiry-fields input,.golf-inquiry-fields select{display:block;width:100%;min-height:47px;padding:9px 12px;border:1px solid #adbfaf;border-radius:10px;background:#fff;color:#173a2c;font:500 .88rem/1.3 system-ui,sans-serif}
+.golf-inquiry-output{margin-top:23px;padding-top:21px;border-top:1px solid #d1dfd2}
+.golf-inquiry-output label{display:block;margin-bottom:9px;color:#31553c;font-size:.72rem;font-weight:850;letter-spacing:.13em;text-transform:uppercase}
+.golf-inquiry-output textarea{display:block;width:100%;min-height:175px;resize:vertical;padding:14px 16px;border:1px solid #bfd1be;border-radius:11px;background:white;color:#274838;font:500 .85rem/1.65 system-ui,sans-serif}
+.golf-inquiry-actions{display:flex;flex-wrap:wrap;gap:11px;align-items:center;margin-top:13px}
+.golf-inquiry-actions button{min-height:47px;padding:11px 17px;border:0;border-radius:10px;background:#194b38;color:#fff;font-weight:850;font-size:.82rem;cursor:pointer;transition:transform .2s,background .2s}
+.golf-inquiry-actions button:hover{transform:translateY(-2px);background:#2e674e}
+.golf-inquiry-actions a{display:inline-flex;align-items:center;min-height:44px;font-size:.8rem;font-weight:800;color:#245e44}
+.golf-inquiry-status{font-size:.77rem;color:#2d5a40;min-height:1.3em;margin:12px 0 0}
+.golf-inquiry-note{font-size:.73rem;line-height:1.57;color:#627568;margin:6px 0 0}
+.golf-inquiry :is(input,select,textarea,button):focus-visible{outline:3px solid #a76a18;outline-offset:3px}
+@media(max-width:850px){.golf-inquiry{grid-template-columns:1fr}.golf-inquiry-art h2{max-width:20ch}.golf-inquiry-scene{margin:-12px auto -23px;max-width:530px;width:100%;min-height:0}.golf-inquiry-scene svg{max-height:205px}}
+@media(max-width:490px){.golf-inquiry{border-radius:18px;margin-top:27px}.golf-inquiry-art,.golf-inquiry-form{padding:26px 21px}.golf-inquiry-fields{grid-template-columns:1fr}.golf-inquiry-art h2{font-size:2.65rem}.golf-inquiry-scene{margin:0 auto -14px}.golf-inquiry-actions{flex-direction:column;align-items:stretch}.golf-inquiry-actions :is(button,a){width:100%;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.golf-inquiry-actions button{transition:none}.golf-inquiry-actions button:hover{transform:none}}
+
 </style></head>
 <body><a class="skip" href="#main">Skip to rental options</a><header><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back" href="/">← Browse all rentals</a></div></header>
 <main id="main">
@@ -289,6 +322,51 @@ footer{margin-top:35px;padding:22px 0;border-top:1px solid var(--line);font-size
 <p class="quote-sr" id="quote-status" role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 
+
+<section class="golf-inquiry" id="golf-event-inquiry" aria-labelledby="golf-inquiry-title">
+  <div class="golf-inquiry-art">
+    <span class="golf-inquiry-eyebrow">The mobile event desk / Plan before you call</span>
+    <h2 id="golf-inquiry-title">Take the <em>fairway</em> to your event.</h2>
+    <p>Make a better first inquiry. Share the details you know, then ask regional mobile-golf operators to confirm delivery, equipment requirements and an actual quote.</p>
+    <div class="golf-inquiry-scene" aria-hidden="true">
+      <svg viewBox="0 0 480 270" focusable="false">
+        <defs><linearGradient id="golf-beam" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7e4b6" stop-opacity=".48"/><stop offset="1" stop-color="#f7e4b6" stop-opacity="0"/></linearGradient></defs>
+        <ellipse cx="244" cy="244" rx="203" ry="23" fill="#051b17" opacity=".56"/>
+        <rect x="83" y="56" width="315" height="160" rx="5" fill="#e8efdf" stroke="#d7ead1" stroke-width="6"/>
+        <rect x="101" y="73" width="280" height="125" fill="#a5cda9"/>
+        <path d="M101 198q100-69 280-27v27Z" fill="#56966c"/>
+        <path d="M230 162q-31-51 24-71t91 21" stroke="#f7f7e5" stroke-width="4" fill="none" stroke-dasharray="6 9"/>
+        <path d="M312 158V105m0 0 35 11-35 13" fill="#edc17c" stroke="#2b6048" stroke-width="4"/>
+        <path d="M70 215h350" stroke="#c0daba" stroke-width="5" stroke-linecap="round"/>
+        <path d="m73 221 339 0 33 25H40Z" fill="#1e6048" stroke="#98c3a3" stroke-width="3"/>
+        <path d="M52 201V74h22v127" stroke="#80a78a" stroke-width="7"/>
+        <rect x="30" y="176" width="65" height="44" rx="7" fill="#e3c28b" stroke="#f5deb2" stroke-width="4"/>
+        <path d="M75 169 215 90v116Z" fill="url(#golf-beam)"/>
+        <circle cx="219" cy="225" r="8" fill="#fff" stroke="#d4d9cb" stroke-width="2"/>
+        <path d="M219 220q38-62 102-83" stroke="#f5dba1" stroke-width="3" stroke-dasharray="5 8" fill="none"/>
+        <circle cx="410" cy="61" r="5" fill="#f6d18f"/>
+      </svg>
+    </div>
+    <span class="golf-inquiry-caption">Illustrative mobile simulator scene, not provider equipment or a scaled floor plan. Confirm space, power, venue permission and delivery.</span>
+  </div>
+  <div class="golf-inquiry-form">
+    <h3>Put your plans into words.</h3>
+    <p class="golf-inquiry-lead">Fill in what you know. This is a private on-page drafting tool, not a booking request.</p>
+    <form id="golf-brief-form" autocomplete="off">
+      <div class="golf-inquiry-fields">
+        <label for="golf-event-type"><span>Occasion</span><select id="golf-event-type"><option value="">Not decided</option><option value="a private party">Private party</option><option value="a corporate event">Corporate event</option><option value="a fundraiser">Fundraiser</option><option value="another gathering">Other gathering</option></select></label>
+        <label for="golf-event-date"><span>Date (optional)</span><input id="golf-event-date" type="date"></label>
+        <label for="golf-event-place"><span>Town or venue (optional)</span><input id="golf-event-place" type="text" maxlength="80" placeholder="e.g., Russellville"></label>
+        <label for="golf-event-setting"><span>Event setting</span><select id="golf-event-setting"><option value="">Not decided</option><option value="indoors">Indoors</option><option value="outdoors">Outdoors</option></select></label>
+      </div>
+      <div class="golf-inquiry-output"><label for="golf-inquiry-text">Ready-to-copy inquiry</label><textarea id="golf-inquiry-text" readonly rows="7">Hello, I am planning an event near Russellville, Arkansas. Do you offer a mobile golf simulator at my location? Please confirm dates, space and power requirements, setup time, travel costs, minimum hours and the full delivered price.</textarea></div>
+      <div class="golf-inquiry-actions"><button id="golf-copy-inquiry" type="button" hidden>Copy inquiry ↗</button><a href="#mobile">Compare mobile operators ↑</a></div>
+      <p class="golf-inquiry-status" role="status" aria-live="polite" id="golf-inquiry-status"></p>
+      <p class="golf-inquiry-note">No details are sent or stored. Russellville delivery, dates and rates are not confirmed. Without JavaScript, select and copy the sample text manually.</p>
+    </form>
+  </div>
+</section>
+
 <section class="planning" aria-labelledby="planning-title"><div><h2 id="planning-title">Before you book</h2><p>Check these details before reserving a bay or arranging an event.</p></div><ul><li>Is the experience on-site or delivered?</li><li>Is your date available?</li><li>What space and power are needed for mobile setup?</li><li>What is the total price including travel, minimum hours and setup?</li></ul></section>
 <p class="note">Independent directory. Verify current operating status, dates, rates, minimums, travel distance and delivery with each operator. <a href="sms:+14799707301">Suggest a correction</a>.</p><footer>Russellville.Rent · <a href="/">Return to homepage</a></footer>
 </main>
@@ -309,6 +387,42 @@ status.textContent=hours+'-hour example: $'+(hours*100).toLocaleString('en-US')+
 }
 buttons.forEach(function(button){button.addEventListener('click',function(){setHours(Number(button.dataset.hours));});});
 section.setAttribute('data-ready','true');
+})();
+</script>
+
+
+<script>
+/* Draft-only mobile-golf inquiry: no persistence, submission or external calls. */
+(() => {
+  const form=document.getElementById('golf-brief-form');
+  if(!form)return;
+  const type=document.getElementById('golf-event-type');
+  const date=document.getElementById('golf-event-date');
+  const place=document.getElementById('golf-event-place');
+  const setting=document.getElementById('golf-event-setting');
+  const note=document.getElementById('golf-inquiry-text');
+  const button=document.getElementById('golf-copy-inquiry');
+  const status=document.getElementById('golf-inquiry-status');
+  function compose(){
+    const out=["Hello, I am planning "+(type.value||"an event")+" and would like to rent a mobile golf simulator."];
+    out.push(place.value.trim()?"The proposed venue is "+place.value.trim()+".":"The event is near Russellville, Arkansas; the exact venue is not decided.");
+    if(date.value)out.push("The proposed date is "+date.value+".");
+    if(setting.value)out.push("The setup would be "+setting.value+".");
+    out.push("Can you serve this location? Please confirm availability, space and power needs, venue requirements, setup time, travel costs, minimum hours and the complete delivered price.");
+    note.value=out.join("\n");
+    status.textContent="";
+  }
+  form.addEventListener('submit',e=>e.preventDefault());
+  [type,date,place,setting].forEach(el=>{el.addEventListener('input',compose);el.addEventListener('change',compose);});
+  button.hidden=false;
+  button.addEventListener('click',async()=>{
+    try{
+      if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(note.value);
+      else{note.focus();note.select();if(!document.execCommand('copy'))throw new Error('Unavailable');}
+      status.textContent='Inquiry copied. Contact each operator directly for a quote.';
+    }catch(error){note.focus();note.select();status.textContent='Select and copy the highlighted text manually.';}
+  });
+  compose();
 })();
 </script>
 
