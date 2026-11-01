@@ -141,7 +141,7 @@ main#main{padding:0 16px 54px!important}
 .storage-city-all{min-height:44px;flex:0 0 auto;background:#f5f9f4;color:#275741;border:1px solid #bdd2c1;border-radius:999px;padding:9px 15px;font-size:.79rem;font-weight:850;cursor:pointer}
 .storage-city-all[aria-pressed="true"]{background:#153f33;color:#fff;border-color:#153f33}
 .storage-city-all span{font-size:.7rem;opacity:.84;margin-left:4px}
-.storage-location-rail{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin-top:17px}
+.storage-location-rail{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px;margin-top:17px}
 .storage-city{position:relative;display:flex;flex-direction:column;align-items:flex-start;min-width:0;min-height:120px;overflow:hidden;text-align:left;border:1px solid #d0dfd3;border-radius:15px;padding:17px 15px 14px;background:radial-gradient(circle at 92% 15%,#e4efe4 0,transparent 43%),#f9fbf8;color:#214f3b;cursor:pointer;transition:transform .18s,box-shadow .18s,border-color .18s,background .18s}
 .storage-city::after{content:"";position:absolute;width:90px;height:90px;right:-43px;bottom:-48px;border:1px solid #81ab904a;border-radius:50%;box-shadow:0 0 0 17px #81ab9015;pointer-events:none}
 .storage-city-marker{display:inline-flex;align-items:center;gap:7px;font-size:.63rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase;color:#577d65;margin-bottom:9px}
@@ -349,6 +349,7 @@ main#main{padding:0 16px 54px!important}
   <button type="button" class="storage-city" data-storage-city="pottsville" aria-pressed="false"><span class="storage-city-marker">Nearby</span><strong>Pottsville</strong><span class="storage-city-count" data-city-count="pottsville"></span></button>
   <button type="button" class="storage-city" data-storage-city="dardanelle" aria-pressed="false"><span class="storage-city-marker">Across the river</span><strong>Dardanelle</strong><span class="storage-city-count" data-city-count="dardanelle"></span></button>
   <button type="button" class="storage-city" data-storage-city="dover" aria-pressed="false"><span class="storage-city-marker">Nearby</span><strong>Dover</strong><span class="storage-city-count" data-city-count="dover"></span></button>
+  <button type="button" class="storage-city" data-storage-city="clarksville" aria-pressed="false"><span class="storage-city-marker">Farther west</span><strong>Clarksville</strong><span class="storage-city-count" data-city-count="clarksville"></span></button>
  </div>
  <p class="storage-locations-note">Grouped by towns mentioned in published facility details, not by guaranteed unit availability. A provider advertising multiple locations can appear in more than one town.</p>
 </div></section>
@@ -413,7 +414,7 @@ main#main{padding:0 16px 54px!important}
   const input = document.getElementById('storage-search');
   const buttons = Array.from(document.querySelectorAll('[data-storage-filter]'));
   const cityButtons = Array.from(document.querySelectorAll('[data-storage-city]'));
-  const cityLabels = {russellville:'Russellville',pottsville:'Pottsville',dardanelle:'Dardanelle',dover:'Dover'};
+  const cityLabels = {russellville:'Russellville',pottsville:'Pottsville',dardanelle:'Dardanelle',dover:'Dover',clarksville:'Clarksville'};
   // Classify published facility locations, including additional advertised towns.
   cards.forEach(card => {
     card.dataset.storageSearchText = card.textContent.toLocaleLowerCase();
