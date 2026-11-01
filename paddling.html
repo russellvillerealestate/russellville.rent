@@ -142,12 +142,57 @@ main{max-width:1220px!important;padding:24px 28px 80px!important}
 @media(max-width:700px){main{padding:18px 17px 55px!important}.paddle-hero{min-height:0;padding:35px 26px 30px;background:linear-gradient(100deg,rgba(9,32,30,.93),rgba(10,44,38,.73)),url('/assets/lake-dardanelle-sunset.jpg') center/cover}.paddle-hero h1{font-size:clamp(2.85rem,9vw,4.45rem)!important}.paddle-hero-local{padding:22px;gap:7px}.paddle-hero-local-rate strong{font-size:3rem}.paddle-explorer{margin:21px 0 32px}.paddle-mode{min-height:0}.paddle-jump{grid-template-columns:1fr}.paddle-jump a{min-height:84px}.paddle-overview{margin-bottom:37px}}
 @media(max-width:430px){.paddle-hero{padding:30px 20px}.paddle-hero h1{font-size:2.75rem!important}.paddle-hero-local-title{font-size:1.8rem}.paddle-primary-link{width:100%;justify-content:space-between}.paddle-explorer{padding:24px 18px}}
 @media(prefers-reduced-motion:reduce){.paddle-primary-link{transition:none}.paddle-primary-link:hover{transform:none}}
+
+/* 2026-10-31: Lake Dardanelle price atelier; locally scoped, no external assets. */
+.paddle-studio-link{display:inline-flex;align-items:center;justify-content:center;gap:7px;margin:12px 0 0 9px;padding:13px 19px;border:1px solid #f2e4c28c;border-radius:100px;color:#fff!important;text-decoration:none;font-weight:750;font-size:.89rem;min-height:46px;transition:background .2s}
+.paddle-studio-link:hover{background:#ffffff20}
+.kayak-studio{isolation:isolate;position:relative;overflow:hidden;margin:38px 0 42px;border-radius:27px;padding:clamp(24px,4vw,48px);background:linear-gradient(130deg,#113b3c,#1b5d55 70%,#276b5a);color:#f8f1de;box-shadow:0 26px 60px #113d3923;scroll-margin-top:20px}
+.kayak-studio:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:repeating-radial-gradient(ellipse at 95% 3%,transparent 0 33px,#f1e9c00d 35px 37px,transparent 40px 76px)}
+.kayak-studio-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:25px}
+.kayak-studio-kicker{font-size:.72rem;letter-spacing:.17em;font-weight:850;text-transform:uppercase;color:#eacb95;margin:0 0 10px}
+.kayak-studio h2{margin:0;font:400 clamp(2.25rem,4.6vw,4.15rem)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.045em;color:#fff;max-width:13ch;text-wrap:balance}
+.kayak-studio h2 em{font-style:italic;color:#f0c887}
+.kayak-studio-head>p{margin:0;max-width:44ch;color:#dcebe3;font-size:.95rem;line-height:1.66}
+.kayak-studio-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.kayak-studio-scene{overflow:hidden;position:relative;min-height:320px;border-radius:19px;background:#c8d8c9}
+.kayak-studio-scene svg{display:block;width:100%;height:100%;min-height:320px;object-fit:cover}
+.kayak-studio-scene figcaption{position:absolute;left:0;bottom:0;right:0;padding:23px 25px 18px;color:#e4f4e6;background:linear-gradient(0deg,#0c3534e8,transparent);font-size:.75rem;letter-spacing:.02em}
+.kayak-studio-console{border-radius:19px;padding:clamp(22px,3.2vw,34px);background:#faf7ed;color:#153c32;box-shadow:0 14px 28px #0b282b20}
+.kayak-studio-step{margin:0 0 9px;font-size:.7rem;font-weight:850;text-transform:uppercase;letter-spacing:.13em;color:#5f7568}
+.kayak-studio-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-bottom:23px}
+.kayak-studio-controls--time{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:21px}
+.kayak-studio-controls button{min-width:0;min-height:48px;padding:11px 10px;border:1px solid #becfc1;border-radius:11px;background:#fff;color:#20483b;font:750 .9rem/1.3 system-ui,-apple-system,sans-serif;cursor:pointer;transition:background .18s,border-color .18s}
+.kayak-studio-controls button:hover{border-color:#235c4b}
+.kayak-studio-controls button[aria-pressed="true"]{background:#174d3d;color:#fff;border-color:#174d3d}
+.kayak-studio-controls button:focus-visible,.kayak-studio a:focus-visible,.paddle-studio-link:focus-visible{outline:3px solid #f5bd58;outline-offset:3px}
+.kayak-studio-pricebox{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:17px 0 18px;border-top:1px solid #d9e1d5;border-bottom:1px solid #d9e1d5}
+.kayak-studio-pricebox .price-label{display:block;font-size:.7rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase;color:#637665}
+.kayak-studio-pricebox output{display:block;font:400 clamp(2.6rem,4vw,4rem)/1.05 Georgia,"Times New Roman",serif;letter-spacing:-.05em;color:#173d32}
+.kayak-studio-pricebox .selection{font-size:.89rem;color:#486754;line-height:1.45;max-width:14ch;text-align:right}
+.kayak-studio-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:21px}
+.kayak-studio-cta a{display:inline-flex;justify-content:center;align-items:center;min-height:46px;border-radius:10px;padding:12px 16px;text-decoration:none;font-weight:800;font-size:.84rem}
+.kayak-studio-cta a:first-child{background:#174d3d;color:#fff}
+.kayak-studio-cta a:last-child{border:1px solid #c7d7c5;color:#174d3d;background:#fff}
+.kayak-studio-rates{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:start;gap:27px;margin-top:23px;padding-top:21px;border-top:1px solid #f0e5cd40}
+.kayak-studio-caveat{margin:0;max-width:46ch;font-size:.84rem;line-height:1.65;color:#e4f1e5}
+.kayak-studio-rates table{border-collapse:collapse;width:100%;font-size:.85rem;color:#f3f4e9}
+.kayak-studio-rates caption{text-align:left;font-size:.68rem;letter-spacing:.12em;font-weight:850;text-transform:uppercase;color:#e8c794;padding-bottom:9px}
+.kayak-studio-rates th,.kayak-studio-rates td{text-align:left;padding:9px 10px;border-bottom:1px solid #e8ecd42b;white-space:nowrap}
+.kayak-studio-rates th{font-weight:800}
+.kayak-studio-rates tbody th{font-weight:600;color:#e2efe4}
+.kayak-studio-rates td.is-current{background:#f5e0b3;color:#153f33;font-weight:850;border-radius:5px}
+.kayak-studio-source{margin:15px 0 0;font-size:.76rem;color:#d5e6d5}
+.kayak-studio-source a{color:#fae0a6!important;font-weight:800}
+@media(max-width:880px){.kayak-studio-head{display:block}.kayak-studio-head>p{margin-top:17px;max-width:65ch}.kayak-studio-layout{grid-template-columns:1fr}.kayak-studio-scene{min-height:260px}.kayak-studio-scene svg{height:260px;min-height:260px}.kayak-studio-rates{grid-template-columns:1fr;gap:12px}}
+@media(max-width:520px){.kayak-studio{padding:24px 17px;border-radius:20px;margin:27px 0}.kayak-studio h2{font-size:2.5rem}.kayak-studio-scene,.kayak-studio-scene svg{min-height:220px}.kayak-studio-scene svg{height:220px}.kayak-studio-console{padding:22px 18px}.kayak-studio-cta a{width:100%}.kayak-studio-rates th,.kayak-studio-rates td{padding:9px 6px;font-size:.81rem}.paddle-studio-link{margin-left:0;display:flex;width:100%}}
+@media(prefers-reduced-motion:reduce){.kayak-studio-controls button,.paddle-studio-link{transition:none}}
 </style></head><body><header><a href="/">Russellville.Rent ← Browse all rentals</a></header><main><section class="paddle-hero" aria-labelledby="paddle-title">
   <div class="paddle-hero-copy">
     <p class="paddle-eyebrow">RUSSELLVILLE, ARKANSAS &amp; THE RIVER VALLEY</p>
     <h1 id="paddle-title">Kayaks, canoes <em>&amp; paddleboards</em></h1>
     <p class="paddle-intro">Explore local paddling rentals and kayak opportunities around Lake Dardanelle.</p>
     <a class="paddle-primary-link" href="#russellville-kayaks">See the Russellville rental <span aria-hidden="true">↗</span></a>
+    <a class="paddle-studio-link" href="#russellville-rate-guide">Compare kayak prices <span aria-hidden="true">↗</span></a>
   </div>
   <aside class="paddle-hero-local" aria-label="Published Russellville kayak rental starting rate">
     <span class="paddle-hero-local-kicker">01 / START CLOSE TO HOME</span>
@@ -158,7 +203,61 @@ main{max-width:1220px!important;padding:24px 28px 80px!important}
     <a href="#russellville-kayaks">View verified listing <span aria-hidden="true">↗</span></a>
   </aside>
 </section>
-<p class="paddle-photo-note">Lake Dardanelle at sunset · Scenic photography, not a claim of rental inventory or safe water conditions.</p><section class="paddle-explorer" id="paddle-explorer" aria-labelledby="paddle-explorer-title" hidden>
+<p class="paddle-photo-note">Lake Dardanelle at sunset · Scenic photography, not a claim of rental inventory or safe water conditions.</p>
+<section class="kayak-studio" id="russellville-rate-guide" aria-labelledby="kayak-studio-title">
+  <div class="kayak-studio-head">
+    <div><p class="kayak-studio-kicker">Lake Dardanelle / A local rental guide</p><h2 id="kayak-studio-title">One lake. <em>Two ways to paddle.</em></h2></div>
+    <p>Choose a single or tandem kayak and see the operator's published prices side by side. This is a guide to the Russellville kiosk, not a live booking or availability check.</p>
+  </div>
+  <div class="kayak-studio-layout">
+    <figure class="kayak-studio-scene">
+      <svg viewBox="0 0 640 390" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a single kayak and a tandem kayak on Lake Dardanelle-inspired water">
+        <defs><linearGradient id="kayak-water" x2=".9" y2="1"><stop stop-color="#7cb5a1"/><stop offset="1" stop-color="#194f51"/></linearGradient><linearGradient id="kayak-hull" x2="1" y2="1"><stop stop-color="#f6c47a"/><stop offset="1" stop-color="#c87546"/></linearGradient></defs>
+        <rect width="640" height="390" fill="url(#kayak-water)"/>
+        <path d="M-60 75 Q50 11 154 73T370 69T700 90M-60 160Q45 103 165 160T385 145T700 154M-60 272Q56 213 162 275T381 274T700 275" fill="none" stroke="#e2e3c1" opacity=".24" stroke-width="13"/>
+        <path d="M-30 35Q143 134 319 40T686 60M-35 330Q153 255 307 333T675 324" fill="none" stroke="#f1f1d8" opacity=".28" stroke-width="2" stroke-dasharray="6 13"/>
+        <g transform="translate(210 84) rotate(-22)"><path d="M0-95Q-29-64-30 18Q-30 97 0 130Q30 97 30 18Q29-64 0-95Z" fill="url(#kayak-hull)" stroke="#673d2b" stroke-width="4"/><ellipse cx="0" cy="15" rx="17" ry="23" fill="#254d49"/><path d="M-73 25H73" stroke="#263e38" stroke-width="6" stroke-linecap="round"/><path d="M-79 14Q-93 25-79 37L-55 32V19ZM79 14Q93 25 79 37L55 32V19Z" fill="#d9e9d9"/></g>
+        <g transform="translate(445 202) rotate(24)"><path d="M0-128Q-36-92-36 22Q-36 112 0 149Q36 112 36 22Q36-92 0-128Z" fill="#f2d3a2" stroke="#42504a" stroke-width="4"/><ellipse cx="0" cy="-40" rx="19" ry="24" fill="#284b45"/><ellipse cx="0" cy="53" rx="19" ry="24" fill="#284b45"/><path d="M-80-28H80M-82 68H82" stroke="#223f3c" stroke-width="6" stroke-linecap="round"/><path d="M-89-42Q-106-27-89-13L-65-19V-36ZM89-42Q106-27 89-13L65-19V-36ZM-89 54Q-106 69-89 84L-65 78V60ZM89 54Q106 69 89 84L65 78V60Z" fill="#e6ece0"/></g>
+      </svg>
+      <figcaption>Illustrated kayak types, not a photograph of available equipment or a water-safety assessment.</figcaption>
+    </figure>
+    <div class="kayak-studio-console">
+      <p class="kayak-studio-step">01 / Choose a kayak</p>
+      <div class="kayak-studio-controls" role="group" aria-label="Kayak type">
+        <button type="button" data-kayak-type="single" aria-pressed="true">Single kayak</button>
+        <button type="button" data-kayak-type="tandem" aria-pressed="false">Tandem kayak</button>
+      </div>
+      <p class="kayak-studio-step">02 / Choose a published duration</p>
+      <div class="kayak-studio-controls kayak-studio-controls--time" role="group" aria-label="Rental duration">
+        <button type="button" data-kayak-hours="1" aria-pressed="true">1 hour</button>
+        <button type="button" data-kayak-hours="2" aria-pressed="false">2 hours</button>
+        <button type="button" data-kayak-hours="day" aria-pressed="false">Full day</button>
+      </div>
+      <div class="kayak-studio-pricebox" role="status" aria-live="polite" aria-atomic="true">
+        <div><span class="price-label">Operator-posted base price</span><output id="kayak-studio-price">$19.99</output></div>
+        <span class="selection" id="kayak-studio-selection">Single kayak · 1 hour</span>
+      </div>
+      <div class="kayak-studio-cta">
+        <a href="https://wheneverwatersports.com/russellville" target="_blank" rel="noopener noreferrer">Check official rates &amp; details ↗</a>
+        <a href="#russellville-kayaks">Full local listing ↓</a>
+      </div>
+    </div>
+  </div>
+  <div class="kayak-studio-rates">
+    <p class="kayak-studio-caveat"><strong>Plan, then confirm.</strong> Rates are for one kayak at Whenever Watersports' Lake Dardanelle kiosk. Full day means up to eight hours or sunset, whichever comes first. Taxes, conditions, current inventory, safe water conditions and final charges must be checked with the operator. No payment or personal information is collected here.</p>
+    <table>
+      <caption>All six published Russellville kiosk base prices</caption>
+      <thead><tr><th scope="col">Duration</th><th scope="col">Single kayak</th><th scope="col">Tandem kayak</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">1 hour</th><td class="is-current" data-kayak-rate="single-1">$19.99</td><td data-kayak-rate="tandem-1">$39.99</td></tr>
+        <tr><th scope="row">2 hours</th><td data-kayak-rate="single-2">$29.99</td><td data-kayak-rate="tandem-2">$59.99</td></tr>
+        <tr><th scope="row">Full day</th><td data-kayak-rate="single-day">$49.99</td><td data-kayak-rate="tandem-day">$79.99</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="kayak-studio-source">Source: <a href="https://wheneverwatersports.com/russellville" target="_blank" rel="noopener noreferrer">Whenever Watersports' official Russellville rental page</a>, checked October 31, 2026. Published prices may change.</p>
+</section>
+<section class="paddle-explorer" id="paddle-explorer" aria-labelledby="paddle-explorer-title" hidden>
 <div class="paddle-explorer-head"><div><p class="paddle-explorer-kicker">The waterway explorer / 09 options</p><h2 id="paddle-explorer-title">Where will you paddle?</h2></div><p class="paddle-explorer-desc">Choose a setting to narrow the directory. Location, access and eligibility matter.</p></div>
 <div class="paddle-explorer-grid" role="group" aria-label="Filter paddling options by setting">
 <button class="paddle-mode paddle-mode--lake" type="button" data-paddle-filter="lake" aria-pressed="false"><span class="paddle-mode-mark" aria-hidden="true"></span><strong>Lake rentals &amp; tours · 3</strong><small>Lake Dardanelle kiosk and guided outings; Lake Bailey kiosk</small></button>
@@ -200,4 +299,39 @@ main{max-width:1220px!important;padding:24px 28px 80px!important}
   explorer.hidden=false;
   show('all');
 })();
-</script></body></html>
+</script>
+<script>
+/* Progressive-enhancement kayak price selector; static six-price table works without JavaScript. */
+(function(){
+  const studio=document.getElementById('russellville-rate-guide');
+  if(!studio)return;
+  const price=document.getElementById('kayak-studio-price');
+  const selection=document.getElementById('kayak-studio-selection');
+  if(!price||!selection)return;
+  const rates={single:{'1':'$19.99','2':'$29.99',day:'$49.99'},tandem:{'1':'$39.99','2':'$59.99',day:'$79.99'}};
+  const durations={'1':'1 hour','2':'2 hours',day:'Full day'};
+  let type='single',hours='1';
+  function render(){
+    price.textContent=rates[type][hours];
+    selection.textContent=(type==='single'?'Single kayak':'Tandem kayak')+' · '+durations[hours];
+    studio.querySelectorAll('[data-kayak-type]').forEach(function(button){
+      button.setAttribute('aria-pressed',String(button.dataset.kayakType===type));
+    });
+    studio.querySelectorAll('[data-kayak-hours]').forEach(function(button){
+      button.setAttribute('aria-pressed',String(button.dataset.kayakHours===hours));
+    });
+    studio.querySelectorAll('[data-kayak-rate]').forEach(function(cell){
+      cell.classList.toggle('is-current',cell.dataset.kayakRate===type+'-'+hours);
+    });
+  }
+  studio.addEventListener('click',function(event){
+    const button=event.target.closest('button[data-kayak-type],button[data-kayak-hours]');
+    if(!button||!studio.contains(button))return;
+    if(button.dataset.kayakType)type=button.dataset.kayakType;
+    if(button.dataset.kayakHours)hours=button.dataset.kayakHours;
+    render();
+  });
+  render();
+})();
+</script>
+</body></html>
