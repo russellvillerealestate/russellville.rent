@@ -273,7 +273,35 @@
       .guide-strip>a:hover{transform:none}
     }
 
-  </style>
+  
+/* Instrument explorer: tactile editorial navigation to the original inquiry form. */
+.band-explorer{margin:62px 0 12px;padding:clamp(24px,4vw,46px);border-radius:26px;background:radial-gradient(circle at 97% 5%,#35684e,#143d33 48%,#102f29);color:#fffdf3;box-shadow:0 23px 58px #102f2933;scroll-margin-top:30px}
+.band-explorer-header{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:end;margin-bottom:28px}
+.band-explorer-header .eyebrow{color:#f3d58d}
+.band-explorer h2{margin:0;max-width:16ch;font:400 clamp(2.5rem,4.9vw,4.1rem)/1.05 Georgia,"Times New Roman",serif;letter-spacing:-.065em;text-wrap:balance}
+.band-explorer h2 em{color:#f2d48f;font-weight:400}
+.band-explorer-header>p{font-size:.92rem;line-height:1.78;color:#e7efe5;margin:0 0 6px}
+.band-explorer-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.band-explorer-card{display:flex;flex-direction:column;min-width:0;min-height:300px;padding:21px 19px 18px;border:2px solid transparent;border-radius:18px;background:#f6ede0;color:#1d4335;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.band-explorer-card:nth-child(2){background:#e4eee3}.band-explorer-card:nth-child(3){background:#f0e4ca}.band-explorer-card:last-child{background:#325f4d;color:#fffef7;border-color:#80a78b}
+.band-explorer-card:hover{transform:translateY(-5px);box-shadow:0 15px 30px #061d1659}
+.band-explorer-card:focus-visible{outline:3px solid #fbe2a4;outline-offset:4px}
+.band-explorer-card.is-selected{border-color:#c58e47;box-shadow:0 0 0 3px #f7dda0}
+.band-explorer-index{font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;font-weight:850}
+.band-explorer-art{display:grid;place-items:center;align-self:stretch;min-height:125px;margin:12px 0 7px;color:#b07b38}
+.band-explorer-card:nth-child(2) .band-explorer-art{color:#3d755f}.band-explorer-card:nth-child(3) .band-explorer-art{color:#937139}.band-explorer-card:last-child .band-explorer-art{color:#f4d99d}
+.band-explorer-art svg{max-height:112px;max-width:100%;width:175px;filter:drop-shadow(0 6px 7px #152e2517)}
+.band-explorer-art strong{display:grid;place-items:center;width:98px;height:98px;border:1px solid currentColor;border-radius:50%;font:400 4.7rem Georgia,serif}
+.band-explorer-name{margin-top:auto;font:400 clamp(1.45rem,2.1vw,1.87rem)/1.14 Georgia,serif;letter-spacing:-.045em}
+.band-explorer-desc{margin-top:9px;color:#4a6353;font-size:.79rem;line-height:1.58}.band-explorer-card:last-child .band-explorer-desc{color:#e2eee2}
+.band-explorer-bottom{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+.band-explorer-bottom p{margin:0;color:#e5ebe4;font-size:.78rem;line-height:1.65}.band-explorer-bottom p:last-child{text-align:right;color:#f5db9e}
+@media(max-width:980px){.band-explorer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.band-explorer-card{min-height:245px}}
+@media(max-width:650px){.band-explorer{margin-top:42px;padding:25px 19px;border-radius:18px}.band-explorer-header{grid-template-columns:1fr;gap:14px}.band-explorer h2{font-size:clamp(2.4rem,9vw,3.4rem)}.band-explorer-card{padding:16px;min-height:213px}.band-explorer-art{min-height:89px;margin:7px 0}.band-explorer-art svg{max-height:85px}.band-explorer-art strong{height:76px;width:76px;font-size:3.4rem}.band-explorer-bottom{grid-template-columns:1fr;gap:8px}.band-explorer-bottom p:last-child{text-align:left}}
+@media(max-width:420px){.band-explorer-grid{grid-template-columns:1fr}.band-explorer-card{min-height:152px;display:grid;grid-template-columns:90px 1fr;grid-template-rows:auto auto auto;gap:3px 14px}.band-explorer-index{grid-column:2;align-self:end}.band-explorer-art{grid-column:1;grid-row:1/4;margin:0;min-height:100px}.band-explorer-art svg{max-height:100px}.band-explorer-name{grid-column:2;margin:0}.band-explorer-desc{grid-column:2;margin:0}}
+@media(prefers-reduced-motion:reduce){.band-explorer-card{transition:none}.band-explorer-card:hover{transform:none}}
+
+</style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to main content</a>
@@ -376,6 +404,19 @@
       <p class="compare-note">Summary of advertised programs, not a quote or guarantee. Confirm current instrument selection, availability, prices, eligibility and contract terms with each provider.</p>
     </section>
 
+
+
+<section class="band-explorer" id="instrument-explorer" aria-labelledby="instrument-explorer-heading">
+  <div class="band-explorer-header">
+    <div><p class="eyebrow">Band-room collection / Find your starting note</p><h2 id="instrument-explorer-heading">Every great sound <em>starts somewhere.</em></h2></div>
+    <p>Know the instrument your band director recommended? Choose it to prefill the existing inquiry below. The cards are examples to ask about, not confirmed rental stock at either provider. If unsure, ask the school first.</p>
+  </div>
+  <div class="band-explorer-grid" aria-label="Instrument choices"><a class="band-explorer-card" href="#band-instrument" data-band-pick="Trumpet"><span class="band-explorer-index">01 / BRASS</span><span class="band-explorer-art" aria-hidden="true"><svg viewBox="0 0 180 110" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M10 52h125q15 0 36-16v43q-21-17-36-17H10z" fill="currentColor" fill-opacity=".14"/><path d="M17 46v27m154-37v43M48 53V25h67v28M48 63v27h67V63M63 26v39m23-39v39m23-39v39"/></svg></span><span class="band-explorer-name">Trumpet</span><span class="band-explorer-desc">Ask about a student trumpet.</span></a>
+<a class="band-explorer-card" href="#band-instrument" data-band-pick="Trombone"><span class="band-explorer-index">02 / BRASS</span><span class="band-explorer-art" aria-hidden="true"><svg viewBox="0 0 180 110" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M11 53h123q16 0 37-15v41q-21-15-37-15H11z" fill="currentColor" fill-opacity=".14"/><path d="M18 44v28m153-34v41M41 53V29h49q16 0 16 17v18M65 65v29q0 9 12 9h77q12 0 12-13V68"/></svg></span><span class="band-explorer-name">Trombone</span><span class="band-explorer-desc">Ask about a student trombone.</span></a>
+<a class="band-explorer-card" href="#band-instrument" data-band-pick="Saxophone"><span class="band-explorer-index">03 / WOODWIND</span><span class="band-explorer-art" aria-hidden="true"><svg viewBox="0 0 180 110" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round" stroke-linecap="round" focusable="false"><path d="M70 11l42 18-13 52q-6 22-27 22-25 0-28-24l-22-6" stroke-width="8"/><path d="M22 73q20-7 35 12l-22 19Q22 94 22 73z" fill="currentColor" fill-opacity=".16"/><path d="M80 17L90 2l21 9-8 17"/><g fill="currentColor" stroke="none"><circle cx="98" cy="42" r="4"/><circle cx="94" cy="55" r="4"/><circle cx="89" cy="68" r="4"/><circle cx="83" cy="80" r="4"/></g></svg></span><span class="band-explorer-name">Saxophone</span><span class="band-explorer-desc">Ask about a student saxophone.</span></a>
+<a class="band-explorer-card" href="#band-instrument" data-band-pick=""><span class="band-explorer-index">04 / GUIDANCE</span><span class="band-explorer-art" aria-hidden="true"><strong>?</strong></span><span class="band-explorer-name">Help me choose.</span><span class="band-explorer-desc">Leave the instrument blank and ask the school.</span></a></div>
+  <div class="band-explorer-bottom"><p>Drawings are illustrative, not product photographs. Confirm the instrument, model, rental terms and availability directly with your school and provider.</p><p id="instrument-explorer-status" role="status" aria-live="polite" aria-atomic="true">Choose a card to prepare an inquiry.</p></div>
+</section>
 
     <section class="band-desk" id="inquiry-desk" aria-labelledby="desk-title">
       <p class="eyebrow">The band-room desk / Ready for your first call</p>
@@ -501,6 +542,24 @@ Could you confirm current availability, the monthly price and all fees, how paym
     }
   });
   render();
+})();
+</script>
+
+<script>
+/* Instrument examples enhance the original copy-ready form; anchors are the no-script fallback. */
+(() => {
+  const field=document.getElementById("band-instrument");
+  const status=document.getElementById("instrument-explorer-status");
+  const cards=[...document.querySelectorAll("[data-band-pick]")];
+  if(!field||!status||cards.length!==4)return;
+  cards.forEach(card=>card.addEventListener("click",event=>{
+    event.preventDefault();
+    field.value=card.dataset.bandPick;
+    field.dispatchEvent(new Event("input",{bubbles:true}));
+    cards.forEach(other=>other.classList.toggle("is-selected",other===card));
+    status.textContent=field.value ? field.value+" added to your inquiry. You can edit it." : "No instrument selected. Ask your band director for guidance.";
+    field.focus();
+  }));
 })();
 </script>
 </body>
