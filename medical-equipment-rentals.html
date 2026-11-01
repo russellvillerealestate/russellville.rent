@@ -140,6 +140,45 @@
 @media(prefers-reduced-motion:reduce){.rental-path,.equipment-choice{transition:none!important}.rental-path:hover,.equipment-choice:hover{transform:none}}
 @media print{.med-hero{background:#fff!important;color:#163b32}.med-hero h1,.med-hero h1 em,.med-hero .hero-intro,.med-hero .eyebrow,.hero-rail strong,.hero-rail small{color:#163b32!important;text-shadow:none}.med-hero .hero-art{display:none}.rental-path{min-height:0;box-shadow:none}.path-art{display:none}.wrap>.notice{box-shadow:none}}
 
+
+/* November 1, 2026: an editorial rate atlas reproducing existing operator-posted
+   example amounts, never claiming current price, inventory or Russellville delivery.
+   Design: StayARV/Russellville live comparison, NNGroup hierarchy, web.dev reflow,
+   W3C WCAG 2.2 visible focus and usable touch targets. */
+.rate-atlas{position:relative;isolation:isolate;overflow:hidden;margin:clamp(62px,7vw,90px) 0 0;padding:clamp(27px,4.4vw,52px);border-radius:30px;background:linear-gradient(130deg,#0b302b 0%,#1b5344 70%,#24634e 100%);color:#f9f6ed;box-shadow:0 22px 53px #10372a29}
+.rate-atlas:before{content:"";position:absolute;z-index:-1;right:-110px;top:-185px;width:470px;height:470px;border:1px solid #f4d9a344;border-radius:50%;box-shadow:0 0 0 45px #fff9e50a,0 0 0 91px #fff9e508;pointer-events:none}
+.rate-atlas-heading{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(230px,.7fr);align-items:end;gap:26px;margin-bottom:27px}
+.rate-atlas-heading .rate-kicker{display:block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:850;color:#f4d19c;margin-bottom:11px}
+.rate-atlas h2{margin:0;color:#fffaf0;font:400 clamp(2.15rem,4.6vw,4rem)/1.07 Georgia,"Times New Roman",serif;letter-spacing:-.052em;text-wrap:balance;max-width:15ch}
+.rate-atlas-heading p{margin:0 0 4px;max-width:41ch;color:#e6efe5;font-size:.92rem;line-height:1.68}
+.rate-atlas-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.rate-slip{display:flex;flex-direction:column;min-width:0;padding:clamp(23px,3vw,34px);border-radius:20px;background:#fffaf0;color:#193d34;border:1px solid #f3e4c6;box-shadow:0 13px 25px #06251f32}
+.rate-slip--trumotion{background:#f2f7ef;border-color:#c6dfcf}
+.rate-slip-top{display:flex;justify-content:space-between;align-items:start;gap:16px;padding-bottom:17px;border-bottom:1px solid #c8d8ca}
+.rate-slip-index{display:block;margin-bottom:6px;color:#5d745e;font-size:.67rem;font-weight:850;letter-spacing:.13em;text-transform:uppercase}
+.rate-slip h3{margin:0;color:#193d34;font:400 clamp(1.52rem,2.6vw,2.05rem)/1.17 Georgia,"Times New Roman",serif;letter-spacing:-.04em}
+.rate-slip-mark{flex:none;display:grid;place-items:center;width:53px;height:53px;border-radius:15px;background:#e8ead8;color:#315c4b}
+.rate-slip--trumotion .rate-slip-mark{background:#dbeadd}
+.rate-slip-mark svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.rate-rows{margin:12px 0 0}
+.rate-rows>div{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #d8e0d4}
+.rate-rows dt{font-size:.85rem;line-height:1.4;font-weight:750;color:#2b4a3e}
+.rate-rows dd{display:flex;align-items:baseline;gap:5px;margin:0;color:#153e35;text-align:right;white-space:nowrap}
+.rate-rows dd strong{font:400 clamp(1.58rem,2.7vw,2.1rem)/1 Georgia,"Times New Roman",serif;letter-spacing:-.05em}
+.rate-rows dd small{font-size:.7rem;font-weight:700;color:#536958}
+.rate-slip-note{font-size:.78rem;line-height:1.62;color:#4d6355;margin:17px 0 19px}
+.rate-slip .rate-link{display:inline-flex;align-items:center;justify-content:space-between;gap:18px;min-height:48px;padding:10px 15px;margin-top:auto;border-radius:11px;background:#164b3e;color:#fff;text-decoration:none;font-size:.81rem;font-weight:800;transition:background .18s}
+.rate-slip .rate-link:hover{background:#266c54}
+.rate-slip .rate-link:focus-visible{outline:3px solid #b16d13;outline-offset:4px}
+.rate-atlas-bottom{display:flex;align-items:center;justify-content:space-between;gap:22px;margin-top:21px;padding-top:22px;border-top:1px solid #ffffff51}
+.rate-atlas-bottom p{margin:0;max-width:70ch;color:#eaf2e9;font-size:.82rem;line-height:1.65}
+.rate-atlas-badge{flex:none;display:inline-block;border-radius:999px;border:1px solid #f7d69b9c;padding:10px 14px;color:#ffe2aa;font-size:.68rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:810px){.rate-atlas-heading{grid-template-columns:1fr;gap:15px}.rate-atlas h2{max-width:none}.rate-atlas-bottom{align-items:flex-start;flex-direction:column;gap:12px}}
+@media(max-width:680px){.rate-atlas{margin-top:54px;padding:26px 17px;border-radius:21px}.rate-atlas-grid{grid-template-columns:1fr;gap:12px}.rate-slip{padding:24px 20px}.rate-atlas-heading{margin-bottom:21px}.rate-atlas h2{font-size:clamp(2.15rem,9vw,3rem)}}
+@media(max-width:370px){.rate-rows>div{grid-template-columns:1fr;gap:4px}.rate-rows dd{text-align:left}}
+@media(prefers-reduced-motion:reduce){.rate-slip .rate-link{transition:none}}
+@media print{.rate-atlas{background:#fff!important;color:#173d34;box-shadow:none;border:1px solid #bdcebe;break-inside:avoid}.rate-atlas h2,.rate-atlas-heading p,.rate-atlas-bottom p,.rate-atlas-badge{color:#173d34}.rate-slip{box-shadow:none}.rate-atlas-badge{border-color:#173d34}}
+
 </style>
 </head>
 <body>
@@ -216,6 +255,36 @@
 <article class="card" id="diamond" data-equipment="mobility beds ramps lifts chairs"><span class="kicker">02 / LITTLE ROCK, ARKANSAS</span><h3>Diamond Medical Equipment &amp; Supplies</h3><span class="badge">Regional showroom &amp; rentals</span><p>Official rental catalog lists knee walkers, manual wheelchairs, ramps, electric hospital beds, patient lifts, lift chairs and mobility scooters. Published examples include manual wheelchairs at $75/month or $50/weekend, ramps at $75/month and scooters at $150/week or $400/month. These are <strong>operator-posted examples, not confirmed current quotes</strong>. The company advertises delivery within central Arkansas; <strong>Russellville delivery is UNCONFIRMED.</strong></p><p class="detail">300 South Rodney Parham, Suite 16, Little Rock, AR 72205 · Confirm delivery charges and equipment availability</p><p class="links"><a href="tel:+15012253106">501-225-3106</a> · <a href="https://www.diamondmedical-ar.com/rentals" target="_blank" rel="noopener noreferrer">Official rental catalog ↗</a> · <a href="https://www.diamondmedical-ar.com/contact" target="_blank" rel="noopener noreferrer">Official contact ↗</a></p></article>
 <article class="card" id="trumotion" data-equipment="mobility beds ramps lifts chairs"><span class="kicker">03 / LITTLE ROCK, ARKANSAS</span><h3>TruMotion Medical</h3><span class="badge">Regional rental provider</span><p>Official rental catalog advertises power and manual wheelchairs, mobility scooters, knee walkers, semi-electric hospital beds, suitcase wheelchair ramps, patient lifts and lift chairs. Published examples: standard manual wheelchair $35/week or $105/month; standard scooter $40/day or $300/month; semi-electric hospital bed $350/month; 4–6-foot suitcase ramp $95/month; patient lift $225/month. The operator lists a separate $75 setup and delivery fee for these examples (lift chairs have a different fee). Prices are published examples, not confirmed quotes. <strong>Russellville delivery, final fees and equipment availability are UNCONFIRMED.</strong> TruMotion is associated with American Medical Rentals; do not count the two names as independent operators or assume either has a Russellville branch.</p><p class="detail">6701 West 12th Street, Suite 5, Little Rock, AR 72204 · Little Rock storefront verified</p><p class="links"><a href="tel:+15019752557">501-975-2557</a> · <a href="https://trumotionmedical.com/rentals-2/" target="_blank" rel="noopener noreferrer">Official rentals ↗</a> · <a href="https://trumotionmedical.com/about-us/" target="_blank" rel="noopener noreferrer">Official address &amp; operator background ↗</a></p></article>
 </div></section>
+
+<section class="rate-atlas" id="published-rates" aria-labelledby="rate-atlas-title">
+  <div class="rate-atlas-heading"><div><span class="rate-kicker">The rental desk / Published price notes</span><h2 id="rate-atlas-title">See the base rate. Ask about the rest.</h2></div>
+    <p>Two regional operators publish example monthly prices. Use these as starting points for your calls, not as comparable equipment quotes. The equipment specifications, availability and additional fees can differ.</p>
+  </div>
+  <div class="rate-atlas-grid">
+    <article class="rate-slip" aria-labelledby="diamond-rates-title">
+      <div class="rate-slip-top"><div><span class="rate-slip-index">01 / Little Rock · Published examples</span><h3 id="diamond-rates-title">Diamond Medical</h3></div><span class="rate-slip-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M7 11h18l9 9-17 17L4 24V14a3 3 0 0 1 3-3Z"/><circle cx="12" cy="19" r="2.5"/><path d="m21 19 6 6m0-6-6 6"/></svg></span></div>
+      <dl class="rate-rows">
+        <div><dt>Manual wheelchair</dt><dd><strong>$75</strong><small>/ month</small></dd></div>
+        <div><dt>Wheelchair ramp</dt><dd><strong>$75</strong><small>/ month</small></dd></div>
+        <div><dt>Mobility scooter</dt><dd><strong>$400</strong><small>/ month</small></dd></div>
+      </dl>
+      <p class="rate-slip-note">Operator-posted examples. Verify the model, rental duration, delivery charge, total due and current rate directly. Russellville delivery is unconfirmed.</p>
+      <a class="rate-link" href="#diamond">Read Diamond's full listing <span aria-hidden="true">↗</span></a>
+    </article>
+    <article class="rate-slip rate-slip--trumotion" aria-labelledby="trumotion-rates-title">
+      <div class="rate-slip-top"><div><span class="rate-slip-index">02 / Little Rock · Published examples</span><h3 id="trumotion-rates-title">TruMotion Medical</h3></div><span class="rate-slip-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M7 11h18l9 9-17 17L4 24V14a3 3 0 0 1 3-3Z"/><circle cx="12" cy="19" r="2.5"/><path d="m21 19 6 6m0-6-6 6"/></svg></span></div>
+      <dl class="rate-rows">
+        <div><dt>Standard manual wheelchair</dt><dd><strong>$105</strong><small>/ month</small></dd></div>
+        <div><dt>Suitcase ramp (4–6 feet)</dt><dd><strong>$95</strong><small>/ month</small></dd></div>
+        <div><dt>Standard mobility scooter</dt><dd><strong>$300</strong><small>/ month</small></dd></div>
+      </dl>
+      <p class="rate-slip-note">These examples list a separate $75 setup and delivery fee; lift chairs have different fees. Actual Russellville delivery, stock and final cost are unconfirmed.</p>
+      <a class="rate-link" href="#trumotion">Read TruMotion's full listing <span aria-hidden="true">↗</span></a>
+    </article>
+  </div>
+  <div class="rate-atlas-bottom"><p>Examples transcribed from the existing provider listings, reviewed October 31, 2026. Different equipment and terms are not interchangeable. These amounts exclude unconfirmed additional charges and do not establish local delivery, product suitability or availability.</p><span class="rate-atlas-badge">Russellville delivery · Unconfirmed</span></div>
+</section>
+
 <section class="steps" id="before-you-go" aria-labelledby="steps-title"><p class="eyebrow" style="color:#52705e">02 / Before booking</p><h2 id="steps-title">Confirm these details.</h2><div class="steps-grid"><div><strong>01 · Exact equipment</strong><span>Ask about dimensions, capacity, condition, accessories and current stock.</span></div><div><strong>02 · Delivery to Russellville</strong><span>Ask whether your specific address is served, and request the full pickup, setup and delivery quote.</span></div><div><strong>03 · Terms &amp; safe use</strong><span>Confirm rental duration, deposit, return policy and training or fitting requirements.</span></div></div></section>
 <p class="note">Independent directory, reviewed October 31, 2026. Listings describe operator-advertised rental services, not guaranteed local delivery or availability. For no-cost alternatives, see <a href="medical-equipment-loans.html">medical equipment lending programs</a>. <a href="sms:+14799707301">Suggest a correction</a>.</p>
 <footer><span>© 2026 Russellville.Rent · Independent rental directory</span><a href="/">Return to homepage ↗</a></footer>
