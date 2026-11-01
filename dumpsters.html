@@ -198,6 +198,50 @@ main{padding-top:clamp(62px,8vw,104px)}
 @media(max-width:650px){.hero{background-position:center,60% 55%}.hero .container{grid-template-columns:1fr;gap:34px;min-height:0;padding-block:60px 39px}.hero h1{font-size:clamp(3rem,11.5vw,4.6rem)}.hero-visual{width:100%;max-width:460px;min-height:220px;margin:0}.hero-visual svg{max-height:235px}.project-chooser{padding-block:50px 58px}.project-heading{display:block}.project-heading h2{font-size:clamp(2.35rem,10vw,3.35rem)}.project-heading p{margin-top:16px;max-width:49ch}.project-grid,.provider-grid{grid-template-columns:1fr}.project-path{min-height:0;padding:26px}.project-top{margin-bottom:12px}.provider-grid .provider:last-child{grid-column:auto}main{padding-top:54px}}
 @media(prefers-reduced-motion:reduce){.project-path{transition:none}.project-path:hover{transform:none}}
 
+
+/* 2026-10-31: editorial published-price comparison; additive to existing guide. */
+.rate-guide{position:relative;isolation:isolate;overflow:hidden;background:#10362d;color:#fff9ed;padding:clamp(72px,8vw,112px) 0}
+.rate-guide::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 95% 0%,#447c5180,transparent 42%),radial-gradient(circle at 0% 100%,#64744048,transparent 38%);pointer-events:none}
+.rate-heading{display:grid;grid-template-columns:1.2fr .65fr;gap:clamp(24px,5vw,72px);align-items:end;margin-bottom:34px}
+.rate-heading h2{font:400 clamp(2.8rem,5.4vw,5rem)/1.04 Georgia,serif;letter-spacing:-.06em;max-width:15ch;margin:0;text-wrap:balance}
+.rate-heading h2 em{font-style:italic;color:#f4d99e}
+.rate-kicker{margin:0 0 15px;color:#f1ca81;font-size:.71rem;text-transform:uppercase;font-weight:900;letter-spacing:.19em}
+.rate-aside{border-top:1px solid #afc9b36e;padding-top:16px}
+.rate-aside p{font-size:.95rem;line-height:1.7;color:#e4ecde;margin:0 0 14px}
+.rate-aside a{display:inline-flex;align-items:center;min-height:44px;color:#ffe1a7;font-size:.83rem;font-weight:850}
+.rate-board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:21px}
+.rate-sheet{min-width:0;display:flex;flex-direction:column;background:#fffdf6;color:#173d31;border-radius:24px;padding:clamp(24px,3vw,38px);box-shadow:0 16px 36px #061d1845}
+.rate-sheet.morrilton{background:#e4eee4}
+.rate-top{display:flex;justify-content:space-between;gap:13px;align-items:start;border-bottom:1px solid #b6cab966;padding-bottom:22px}
+.rate-number{display:block;font:400 2.1rem/1 Georgia,serif;color:#8a9f8b;margin-bottom:11px}
+.rate-label{margin:0 0 8px;font-size:.66rem;text-transform:uppercase;font-weight:900;letter-spacing:.1em;color:#52725b}
+.rate-sheet h3{font:400 clamp(1.7rem,3vw,2.35rem)/1.12 Georgia,serif;letter-spacing:-.05em;color:#153d31;margin:0}
+.rate-art{height:79px;display:flex;align-items:end;gap:5px;flex:none}
+.rate-art i{display:block;width:20px;height:36px;background:#d7a962;border:2px solid #9c692c;transform:skewY(-9deg);box-shadow:inset 5px 0 #e9c58a}
+.rate-art i:nth-child(2){width:24px;height:49px}.rate-art i:nth-child(3){width:29px;height:66px}
+.morrilton .rate-art i{background:#7c9d78;border-color:#3e7259;box-shadow:inset 5px 0 #a9bfa1}
+.rate-list{margin:19px 0 15px;padding:0}
+.rate-list>div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #d7e0d3}
+.rate-list dt{font-size:.9rem;font-weight:800;color:#315747}
+.rate-list dd{margin:0;display:flex;flex-direction:column;align-items:end;text-align:right}
+.rate-list strong{font:400 clamp(1.65rem,2.6vw,2.2rem)/1.1 Georgia,serif;letter-spacing:-.06em;color:#163d31}
+.rate-list small{font-size:.67rem;color:#526b57;font-weight:700;margin-top:4px}
+.morrilton .rate-list>div{grid-template-columns:minmax(0,1fr) auto auto}
+.rate-sheet-note{font-size:.8rem;line-height:1.65;color:#486355;margin:10px 0 24px}
+.rate-sheet-note strong{color:#1f4c39}
+.rate-link{display:flex;justify-content:space-between;gap:12px;align-items:center;min-height:48px;margin-top:auto;padding:11px 17px;border-radius:12px;background:#153e32;color:white;text-decoration:none;font-size:.84rem;font-weight:850}
+.rate-link:hover{text-decoration:underline;background:#286049}
+.rate-checks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+.rate-check{padding:19px 20px;border:1px solid #bed3c26b;border-radius:15px;background:#ffffff0c}
+.rate-check strong{display:block;font-size:.81rem;color:#f4d494;margin-bottom:6px}
+.rate-check p{margin:0;font-size:.77rem;color:#e2eae0;line-height:1.6}
+.rate-foot{font-size:.78rem;line-height:1.7;color:#d3e3d5;margin:23px 0 0}
+.rate-foot a{color:#ffe2a8;font-weight:800}
+#danny-provider,#american-provider{scroll-margin-top:24px}
+@media(max-width:850px){.rate-heading{grid-template-columns:1fr}.rate-heading h2{max-width:19ch}.rate-aside{max-width:65ch}.rate-board{gap:14px}.rate-sheet{padding:24px}.rate-art{transform:scale(.8);transform-origin:right top}}
+@media(max-width:700px){.rate-board,.rate-checks{grid-template-columns:1fr}.rate-heading h2{font-size:clamp(2.65rem,10vw,4rem)}.rate-art{transform:none}.rate-checks{gap:9px}.rate-check{padding:16px 18px}}
+@media(max-width:380px){.morrilton .rate-list>div{grid-template-columns:1fr 1fr}.morrilton .rate-list dt{grid-column:1/-1}.morrilton .rate-list dd{text-align:left;align-items:start}.rate-art{transform:scale(.68);transform-origin:top right}}
+
 </style>
 </head>
 <body>
@@ -252,15 +296,53 @@ main{padding-top:clamp(62px,8vw,104px)}
   </div>
  </div>
 </section>
+
+<section class="rate-guide" id="published-rates" aria-labelledby="rates-heading">
+ <div class="container">
+  <div class="rate-heading">
+   <div><p class="rate-kicker">02 / Published-price field guide · October 31, 2026</p><h2 id="rates-heading">Start with a rate.<br><em>Finish with a quote.</em></h2></div>
+   <div class="rate-aside"><p>Two area-serving operators publish specific rental prices. Compare their different terms before calling—not as a promise of the lowest delivered price.</p><a href="#questions">Which costs should I confirm? ↗</a></div>
+  </div>
+  <div class="rate-board">
+   <article class="rate-sheet" aria-labelledby="rate-danny-title">
+    <div class="rate-top"><div><span class="rate-number">01</span><p class="rate-label">Russellville delivery advertised</p><h3 id="rate-danny-title">Danny's Roll Offs</h3></div><div class="rate-art" aria-hidden="true"><i></i><i></i><i></i></div></div>
+    <dl class="rate-list">
+     <div><dt>13-yard container</dt><dd><strong>$325</strong><small>starting at</small></dd></div>
+     <div><dt>15-yard container</dt><dd><strong>$350</strong><small>starting at</small></dd></div>
+     <div><dt>20-yard container</dt><dd><strong>$425</strong><small>starting at</small></dd></div>
+     <div><dt>30-yard container</dt><dd><strong>$525</strong><small>starting at</small></dd></div>
+    </dl>
+    <p class="rate-sheet-note"><strong>Up to five rental days included</strong> in the advertised starting rates. Short and tall 20-yard options are both advertised at $425. Confirm weight allowance, extensions, acceptable materials, transport and total charges.</p>
+    <a class="rate-link" href="#danny-provider">View Danny's full provider details <span aria-hidden="true">↗</span></a>
+   </article>
+   <article class="rate-sheet morrilton" aria-labelledby="rate-american-title">
+    <div class="rate-top"><div><span class="rate-number">02</span><p class="rate-label">Morrilton · Russellville service advertised</p><h3 id="rate-american-title">American Dumpster Rentals</h3></div><div class="rate-art" aria-hidden="true"><i></i><i></i><i></i></div></div>
+    <dl class="rate-list">
+     <div><dt>15-yard container</dt><dd><strong>$300</strong><small>4 days</small></dd><dd><strong>$350</strong><small>7 days</small></dd></div>
+     <div><dt>20-yard container</dt><dd><strong>$375</strong><small>4 days</small></dd><dd><strong>$425</strong><small>7 days</small></dd></div>
+    </dl>
+    <p class="rate-sheet-note">The operator advertises <strong>two tons of debris included</strong>, with <strong>$50 per additional ton</strong>. Confirm the actual delivered total, allowed waste and date-specific availability.</p>
+    <a class="rate-link" href="#american-provider">View American's full provider details <span aria-hidden="true">↗</span></a>
+   </article>
+  </div>
+  <div class="rate-checks" aria-label="Three checks before comparing rental quotes">
+   <div class="rate-check"><strong>01 / Time is different</strong><p>Five-day starting rates and separate four- or seven-day prices are different rental terms.</p></div>
+   <div class="rate-check"><strong>02 / Weight can change the total</strong><p>Confirm included tonnage for the selected container and the price of extra weight.</p></div>
+   <div class="rate-check"><strong>03 / Address matters</strong><p>Ask about delivery, pickup, taxes, site access and prohibited materials for your job.</p></div>
+  </div>
+  <p class="rate-foot">Rates reviewed October 31, 2026 on the <a href="https://www.dannysrolloffs.com/" target="_blank" rel="noopener noreferrer">Danny's rental catalog ↗</a> and <a href="https://www.americandumpster-rentals.com/dumpster-rental-russellville-ar" target="_blank" rel="noopener noreferrer">American's Russellville page ↗</a>. Illustrative container shapes are not to scale. Prices are published examples, not live quotes or availability; other providers in the directory below may quote differently.</p>
+ </div>
+</section>
+
 <main class="container" id="main">
  <section aria-labelledby="local-title">
   <div class="section-title"><div><p class="section-label">01 / Nearby options</p><h2 id="local-title">Start close to home.</h2><p>Seven providers explicitly advertising Russellville-area dumpster or waste-container services. Confirm the right container and delivery arrangements for your project.</p></div></div>
   <div class="provider-grid">
-   <article class="provider"><div class="provider-top"><span class="provider-number" aria-hidden="true">01</span><span class="provider-tag">Russellville delivery advertised</span></div><h2>Danny&#39;s Roll Offs</h2><p>Official rental catalog advertises 13-yard dumpsters starting at <strong>$325</strong>, 15-yard at <strong>$350</strong>, 20-yard short and tall options at <strong>$425</strong>, and 30-yard at <strong>$525</strong>, each with up to five rental days included. Its official service-area list explicitly includes Russellville, Dardanelle, Pottsville, Dover, Atkins and nearby communities. These are <strong>advertised starting rates, not guaranteed delivered totals</strong>; confirm availability, weight limits, acceptable materials, taxes, delivery fees and current terms with the operator.</p><p class="detail">Russellville-area delivery explicitly advertised · Local storefront address not verified</p><p><a href="tel:+14798867323">479-886-7323</a> &nbsp; · &nbsp; <a href="https://www.dannysrolloffs.com/" target="_blank" rel="noopener noreferrer">Official rental sizes, starting rates and service area ↗</a></p></article>
+   <article class="provider" id="danny-provider"><div class="provider-top"><span class="provider-number" aria-hidden="true">01</span><span class="provider-tag">Russellville delivery advertised</span></div><h2>Danny&#39;s Roll Offs</h2><p>Official rental catalog advertises 13-yard dumpsters starting at <strong>$325</strong>, 15-yard at <strong>$350</strong>, 20-yard short and tall options at <strong>$425</strong>, and 30-yard at <strong>$525</strong>, each with up to five rental days included. Its official service-area list explicitly includes Russellville, Dardanelle, Pottsville, Dover, Atkins and nearby communities. These are <strong>advertised starting rates, not guaranteed delivered totals</strong>; confirm availability, weight limits, acceptable materials, taxes, delivery fees and current terms with the operator.</p><p class="detail">Russellville-area delivery explicitly advertised · Local storefront address not verified</p><p><a href="tel:+14798867323">479-886-7323</a> &nbsp; · &nbsp; <a href="https://www.dannysrolloffs.com/" target="_blank" rel="noopener noreferrer">Official rental sizes, starting rates and service area ↗</a></p></article>
    <article class="provider"><div class="provider-top"><span class="provider-number" aria-hidden="true">02</span><span class="provider-tag">Dover · serves Russellville</span></div><h2>JCS Disposal</h2><p>Dover-based roll-off dumpster provider with an official Russellville service page advertising 15-, 20-, 30- and 40-yard containers for household cleanouts, remodeling, roofing and construction projects. The operator lists tires, wet paint, chemical liquids, batteries and yard debris (limbs, leaves and trees) as prohibited materials. <strong>Pricing, weight allowances, delivery dates and available sizes require a direct quote.</strong></p><p class="detail">Dover, AR · Russellville service explicitly advertised</p><p><a href="tel:+14798806543">479-880-6543</a> &nbsp; · &nbsp; <a href="https://jcsdisposal.com/dumpster-rental-russellville-ar/" target="_blank" rel="noopener noreferrer">Official Russellville sizes and rental terms ↗</a></p></article>
    <article class="provider"><div class="provider-top"><span class="provider-number" aria-hidden="true">03</span><span class="provider-tag">Russellville</span></div><h2>RTI Trash</h2><p>Commercial front-load dumpsters and roll-off containers.</p><p class="detail">3640 S Frankfort Ave, Russellville, AR 72802</p><p><a href="tel:+14798902662">479-890-2662</a> &nbsp; · &nbsp; <a href="https://www.rtitrash.com/" target="_blank" rel="noopener noreferrer">Provider website ↗</a></p></article>
    <article class="provider"><div class="provider-top"><span class="provider-number" aria-hidden="true">04</span><span class="provider-tag">Clarksville · Russellville delivery listed</span></div><h2>H &amp; H Recycling — Roll-Off Rentals</h2><p>Officially advertises 15-, 20- and 30-yard roll-off dumpster rentals with delivery and pickup. Its published delivery-fee schedule explicitly names Russellville and lists a $75 fuel surcharge for that destination; mileage charges may also apply. Confirm current pricing, container availability, permitted materials and delivery arrangements directly.</p><p class="detail">2068 Highway 123, Clarksville, AR 72830 · Russellville delivery explicitly listed</p><p><a href="tel:+14797051690">479-705-1690</a> &nbsp; · &nbsp; <a href="https://handhrecycling.com/roll-off-2/" target="_blank" rel="noopener noreferrer">Official roll-off rental terms ↗</a></p></article>
-   <article class="provider"><div class="provider-top"><span class="provider-number" aria-hidden="true">05</span><span class="provider-tag">Morrilton · serves Russellville</span></div><h2>American Dumpster Rentals</h2><p>Morrilton-based operator officially advertises 15- and 20-yard roll-off dumpster delivery in Russellville. Published 4-day rates are $300 (15-yard) and $375 (20-yard); published 7-day rates are $350 and $425 respectively. The operator states that rentals include 2 tons of debris, with $50 per additional ton. Confirm current quotes, any delivery charges, available dates and permitted waste before booking.</p><p class="detail">Morrilton, AR · Russellville service explicitly advertised</p><p><a href="tel:+15012898375">501-289-8375</a> &nbsp; · &nbsp; <a href="https://www.americandumpster-rentals.com/dumpster-rental-russellville-ar" target="_blank" rel="noopener noreferrer">Official Russellville rental terms ↗</a></p></article>
+   <article class="provider" id="american-provider"><div class="provider-top"><span class="provider-number" aria-hidden="true">05</span><span class="provider-tag">Morrilton · serves Russellville</span></div><h2>American Dumpster Rentals</h2><p>Morrilton-based operator officially advertises 15- and 20-yard roll-off dumpster delivery in Russellville. Published 4-day rates are $300 (15-yard) and $375 (20-yard); published 7-day rates are $350 and $425 respectively. The operator states that rentals include 2 tons of debris, with $50 per additional ton. Confirm current quotes, any delivery charges, available dates and permitted waste before booking.</p><p class="detail">Morrilton, AR · Russellville service explicitly advertised</p><p><a href="tel:+15012898375">501-289-8375</a> &nbsp; · &nbsp; <a href="https://www.americandumpster-rentals.com/dumpster-rental-russellville-ar" target="_blank" rel="noopener noreferrer">Official Russellville rental terms ↗</a></p></article>
    <article class="provider"><div class="provider-top"><span class="provider-number" aria-hidden="true">06</span><span class="provider-tag">Russellville service advertised</span></div><h2>WM (Waste Management) — Temporary Dumpster Rentals</h2><p>WM officially advertises temporary 20-, 30- and 40-yard roll-off dumpster rentals for Russellville, with online ordering and scheduling. This is a national operator; a Russellville storefront is not verified. Confirm current container availability, total pricing, rental period, permitted debris and exact delivery terms before booking.</p><p class="detail">Russellville, AR — service explicitly advertised; local branch address unconfirmed</p><p><a href="tel:+18444540543">844-454-0543</a> &nbsp; · &nbsp; <a href="https://www.wm.com/us/en/location/ar/russellville/dumpster-rental-russellville-ar" target="_blank" rel="noopener noreferrer">Official Russellville dumpster rentals ↗</a></p></article>
    <article class="provider"><div class="provider-top"><span class="provider-number" aria-hidden="true">07</span><span class="provider-tag">Russellville service advertised</span></div><h2>Budget Dumpster — Russellville Booking Service</h2><p>Budget Dumpster publishes a Russellville-specific roll-off dumpster rental page for household cleanouts, renovation work and construction projects. The national booking service advertises scheduled container delivery to Russellville, but this does not establish a local storefront, an individual hauling contractor or availability on a particular date. Confirm the delivering operator, container size, full quote, permitted materials, weight limits and delivery address directly.</p><p class="detail">Russellville, AR — service advertised on official booking page; local branch unconfirmed</p><p><a href="tel:+18553701367">855-370-1367</a> &nbsp; · &nbsp; <a href="https://www.budgetdumpster.com/russellville-ar-dumpster-rental-arkansas.php" target="_blank" rel="noopener noreferrer">Official Russellville rental information ↗</a></p></article>
   </div>
