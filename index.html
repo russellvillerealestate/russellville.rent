@@ -918,6 +918,105 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 .rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="tools"] .directory-pictogram{transition:none!important}
 }
 
+
+/* 2026-11-01 / River Valley shortlist journal.
+   Site-specific sunset imagery and generous composition adapt StayARV's sense
+   of place to a personal rental shortlist. Existing category copy and destinations
+   are reused verbatim, and saved entries remain entirely local to the browser.
+   Research: NN/g visual hierarchy + proximity, web.dev responsive grids,
+   WCAG 2.2 focus visibility, touch targets and reflow. */
+.saved-panel{
+  grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);
+  gap:0;align-items:stretch;overflow:hidden;
+  margin:8px 0 30px;padding:0;border:1px solid #9ebca8;
+  border-radius:25px;background:#fffef9;
+  box-shadow:0 24px 56px #123b2a26;
+}
+.saved-panel:before{display:none}
+.saved-panel-intro{
+  position:relative;isolation:isolate;display:flex;flex-direction:column;
+  justify-content:flex-end;min-height:335px;padding:clamp(30px,4vw,49px);
+  background:linear-gradient(0deg,rgba(8,37,31,.97) 0%,rgba(9,43,35,.88) 42%,rgba(15,50,41,.34) 100%),url("assets/downtown-russellville-sunset.jpg") center/cover;
+  color:#fff;overflow:hidden
+}
+.saved-panel-intro:before{
+  content:"";position:absolute;z-index:-1;right:-105px;top:-105px;
+  width:310px;height:310px;border:1px solid #fff8dc63;border-radius:50%;
+  box-shadow:0 0 0 45px #ffe1aa16,0 0 0 91px #ffe1aa0c;pointer-events:none
+}
+.saved-panel-intro:after{
+  content:"RUSSELLVILLE  /  YOUR LOCAL RENTAL GUIDE";order:-1;
+  display:block;width:max-content;max-width:100%;margin-bottom:auto;
+  padding:8px 11px;border:1px solid #fce7b58c;border-radius:6px;
+  color:#ffdfa1;font-size:.59rem;font-weight:850;line-height:1.4;
+  letter-spacing:.16em;overflow-wrap:anywhere
+}
+.saved-panel .saved-panel-kicker{color:#ffdca0;letter-spacing:.18em;margin-bottom:13px}
+.saved-panel h3{color:#fff;font-size:clamp(2.3rem,4vw,3.9rem);line-height:1.035;max-width:12ch;text-wrap:balance}
+.saved-panel-intro>p:last-child{color:#e5ece0;font-size:.93rem;line-height:1.7;max-width:38ch;margin-top:13px}
+.saved-panel-content{display:flex;flex-direction:column;justify-content:center;min-width:0;min-height:335px;padding:clamp(23px,3.1vw,42px);background:linear-gradient(135deg,#fffef9,#eff3e9)}
+.saved-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:stretch;margin:0;padding:0;list-style:none}
+.saved-item{
+  display:flex;min-width:0;max-width:none;min-height:135px;
+  border:1px solid #d3e1d6;border-radius:15px;overflow:hidden;
+  background:#fff;box-shadow:0 8px 18px #113c2c0b;
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease
+}
+.saved-item:hover{transform:translateY(-3px);border-color:#9ab6a0;box-shadow:0 15px 26px #113c2c1b}
+.saved-item>a{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto 1fr;
+  gap:13px 9px;align-content:start;align-items:start;flex:1;min-width:0;
+  min-height:135px;padding:17px 14px 16px 18px;color:#183f34;
+  text-decoration:none
+}
+.saved-item>a:hover{text-decoration:none}
+.saved-item-number{grid-column:1;display:block;color:#9b7139;font:400 1.75rem/1 Georgia,"Times New Roman",serif;letter-spacing:-.065em}
+.saved-item-details{grid-column:1;display:block;min-width:0}
+.saved-item-details strong{display:block;color:#183f34;font:400 clamp(1.05rem,1.45vw,1.32rem)/1.16 Georgia,"Times New Roman",serif;letter-spacing:-.025em;text-wrap:balance}
+.saved-item-details small{
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;
+  overflow:hidden;margin-top:7px;color:#576d5e;font-size:.72rem;line-height:1.5;
+  font-weight:450
+}
+.saved-item-arrow{grid-column:2;grid-row:1;display:grid;place-items:center;width:29px;height:29px;border:1px solid #cddfce;border-radius:50%;color:#336651;font-size:1rem;line-height:1}
+.saved-item>button{
+  flex:0 0 44px;width:44px;min-height:135px;align-self:stretch;
+  background:#eef4ec;border-left:1px solid #d5e1d5;color:#315c47
+}
+.saved-item>a:focus-visible,.saved-item>button:focus-visible,.saved-clear:focus-visible{outline:3px solid #9c5814;outline-offset:-4px}
+.saved-empty{display:flex;align-items:center;min-height:185px;padding:27px;border:1px dashed #a6bcaa;border-radius:17px;background:linear-gradient(125deg,#f8faef,#e9f1e6);color:#355642;font-size:1.04rem;line-height:1.65}
+.saved-panel-footer{padding-top:16px;border-top:1px solid #d4dfd3;margin-top:18px}
+.saved-panel-footer small{font-size:.77rem;color:#4b6455}
+.saved-clear{border-radius:9px;background:#fff}
+@media(max-width:1010px){
+  .saved-panel{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr)}
+  .saved-panel-intro{min-height:360px;padding:30px}
+  .saved-panel-content{padding:24px}
+}
+@media(max-width:760px){
+  .saved-panel{grid-template-columns:1fr}
+  .saved-panel-intro{min-height:255px;padding:27px;background-position:center 61%}
+  .saved-panel h3{font-size:clamp(2.25rem,6vw,3.2rem);max-width:20ch}
+  .saved-panel-content{min-height:0;padding:24px}
+  .saved-item{min-height:115px}
+  .saved-item>a{min-height:115px}
+  .saved-item>button{min-height:115px}
+}
+@media(max-width:480px){
+  .saved-panel{border-radius:18px}
+  .saved-panel-intro{min-height:245px;padding:24px 21px}
+  .saved-panel-intro:after{font-size:.52rem;letter-spacing:.11em}
+  .saved-panel-content{padding:18px 15px}
+  .saved-links{grid-template-columns:1fr;gap:10px}
+  .saved-item,.saved-item>a,.saved-item>button{min-height:105px}
+  .saved-item>a{padding:14px 12px 13px 15px;gap:9px}
+  .saved-item-details strong{font-size:1.23rem}
+  .saved-item-number{font-size:1.4rem}
+  .saved-item>button{flex-basis:46px;width:46px}
+  .saved-empty{min-height:145px;padding:20px}
+}
+@media(prefers-reduced-motion:reduce){.saved-item{transition:none}.saved-item:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -1050,7 +1149,7 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <p class="sr-only" id="saved-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
 <section class="saved-panel" id="saved-panel" aria-labelledby="saved-panel-title" hidden>
   <div class="saved-panel-intro"><p class="saved-panel-kicker">YOUR RIVER VALLEY SHORTLIST</p><h3 id="saved-panel-title">Keep your favorites close.</h3><p>Save up to eight rental categories for quick return visits. No account or booking request is created.</p></div>
-  <div class="saved-panel-content"><div class="saved-links" id="saved-links"></div><p class="saved-empty" id="saved-empty">No categories saved yet. Use the Save buttons on any rental card.</p><div class="saved-panel-footer"><small id="saved-storage-note">Saved in this browser when storage is available.</small><button class="saved-clear" id="saved-clear" type="button" hidden>Clear all saved</button></div></div>
+  <div class="saved-panel-content"><ol class="saved-links" id="saved-links" aria-label="Your saved rental categories"></ol><p class="saved-empty" id="saved-empty">No categories saved yet. Use the Save buttons on any rental card.</p><div class="saved-panel-footer"><small id="saved-storage-note">Saved in this browser when storage is available.</small><button class="saved-clear" id="saved-clear" type="button" hidden>Clear all saved</button></div></div>
 </section>
 
 <div class="rentals-grid" id="rental-results" data-view="grid" data-layout="editorial"><article class="rental-card" data-category="homes">
@@ -1367,11 +1466,28 @@ function renderSavedCategories(){
     const card = categoryCards.get(key);
     const source = card.querySelector(".card-link");
     const name = card.querySelector("h3").textContent.trim();
-    const item = document.createElement("span");
+    const item = document.createElement("li");
     item.className = "saved-item";
     const link = document.createElement("a");
     link.href = source.getAttribute("href");
-    link.textContent = name + " ↗";
+    link.setAttribute("aria-label", "Open " + name + " rental category");
+    const number = document.createElement("span");
+    number.className = "saved-item-number";
+    number.setAttribute("aria-hidden", "true");
+    number.textContent = String(index + 1).padStart(2, "0");
+    const details = document.createElement("span");
+    details.className = "saved-item-details";
+    const title = document.createElement("strong");
+    title.textContent = name;
+    const description = [...card.querySelectorAll(".card-body > p")].find(p => !p.matches(".eyebrow,.status"));
+    const hint = document.createElement("small");
+    hint.textContent = description ? description.textContent.trim() : "Browse this rental category.";
+    details.append(title, hint);
+    const arrow = document.createElement("span");
+    arrow.className = "saved-item-arrow";
+    arrow.textContent = "↗";
+    arrow.setAttribute("aria-hidden", "true");
+    link.append(number, details, arrow);
     if (source.target === "_blank") {
       link.target = "_blank";
       link.rel = "noopener noreferrer";
