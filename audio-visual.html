@@ -327,6 +327,55 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
 @media(max-width:760px){.hero{min-height:0}.hero:before{background:linear-gradient(115deg,#0b2623f5,#0e302acb)}.hero-grid{grid-template-columns:1fr;min-height:0;gap:30px;padding-block:66px 104px}.sound-art{width:min(100%,390px);max-width:390px;min-height:150px}.quick-guide{margin-top:-47px}.guide-box{grid-template-columns:1fr;gap:2px}.guide-item{min-height:0;padding:20px 24px;border-top:0;border-left:5px solid #cfad65}.guide-item+.guide-item{border-left:5px solid #cfad65;border-top:0}.guide-number{margin-bottom:10px!important}.guide-item strong{max-width:none}.guide-cta{padding-top:12px}.connections-head{min-height:0;padding:48px 34px}}
 @media(max-width:520px){.hero-grid{padding-block:51px 83px}.hero h1{font-size:clamp(2.62rem,10vw,4.2rem)}.hero-actions .action{width:100%}.sound-art{min-height:140px}.connections-grid{grid-template-columns:1fr}.connections-grid a{min-height:160px;padding:23px 26px 42px}.connections-head{padding:45px 29px}.connections-head h2{font-size:clamp(2.35rem,9vw,3.2rem)}.connections-disclaimer{padding-inline:21px}}
 @media(prefers-reduced-motion:reduce){.guide-item,.connections-grid a{transition:none}.guide-item:hover{transform:none}}
+
+/* 2026-11-01 / Six-scene production atlas. Original vector illustrations are
+   navigation only, not pictures of providers, advertised equipment or inventory.
+   Live references: stayarv.com / russellville.rent. Research:
+   nngroup.com/articles/visual-hierarchy-ux-definition/;
+   web.dev/learn/design/responsive-images/; w3.org/TR/WCAG22/. */
+.service-map{padding-top:clamp(78px,9vw,118px)}
+.service-map-head h2{font-size:clamp(2.7rem,5vw,4.7rem)}
+.route-grid{gap:20px;margin-top:33px}
+.route-card{min-height:0!important;padding:0!important;overflow:hidden;border-radius:14px;isolation:isolate;box-shadow:0 16px 38px #133a2c17}
+.route-card .route-top{margin:0;padding:23px 24px 17px}
+.route-card .route-scene{--scene-bg:#e7e2cf;--scene-ink:#557364;position:relative;display:grid;place-items:center;margin:0 21px 24px;min-height:154px;overflow:hidden;border:1px solid #ffffff4b;border-radius:9px;background:radial-gradient(circle at 76% 22%,#ffffff88,transparent 39%),var(--scene-bg);color:var(--scene-ink)}
+.route-card .route-scene:before{content:"";position:absolute;inset:14px;border:1px solid currentColor;opacity:.19;pointer-events:none}
+.route-scene svg{position:relative;width:100%;max-width:325px;height:auto;max-height:160px;padding:0 12px;overflow:visible;transition:transform .35s ease}
+.route-card:hover .route-scene svg{transform:scale(1.035)}
+.route-scene-tag{position:absolute;z-index:1;top:13px;left:14px;padding:3px 6px;background:#ffffffd9;color:#244639;border-radius:3px;font-size:.55rem;font-weight:900;line-height:1.3;letter-spacing:.14em}
+.route-grid li:nth-child(1) .route-scene{--scene-bg:#c9cfac;--scene-ink:#42624d}
+.route-grid li:nth-child(2) .route-scene{--scene-bg:#abc3bd;--scene-ink:#f4dcaa}
+.route-grid li:nth-child(3) .route-scene{--scene-bg:#dce8d7;--scene-ink:#396a5e}
+.route-grid li:nth-child(4) .route-scene{--scene-bg:#f4e3d0;--scene-ink:#95684c}
+.route-grid li:nth-child(5) .route-scene{--scene-bg:#d3e1e1;--scene-ink:#477774}
+.route-grid li:nth-child(6) .route-scene{--scene-bg:#d4d7e6;--scene-ink:#646b97}
+.route-card>h3,.route-card>p{margin-left:25px;margin-right:25px}
+.route-card>h3{font-size:clamp(1.65rem,2.5vw,2.25rem);line-height:1.09}
+.route-card>.route-provider{margin-top:4px}
+.route-card>.route-foot{margin:14px 25px 0;padding:17px 0 24px}
+.route-grid li:nth-child(-n+2) .route-scene{min-height:182px}
+.route-grid li:nth-child(-n+2) .route-scene svg{max-height:174px}
+.route-grid li:nth-child(2) .route-scene{background:linear-gradient(155deg,#476f75,#243b56);color:#f0d6a1}
+.route-grid li:nth-child(2) .route-scene-tag{background:#173b38;color:#fff2d7}
+.route-card:focus-visible{outline:4px solid #b77622;outline-offset:4px}
+@media(max-width:1040px){
+ .route-grid{gap:15px}
+ .route-grid li:last-child{grid-column:auto}
+ .route-grid li:nth-child(-n+2) .route-scene{min-height:154px}
+ .route-grid li:nth-child(-n+2) .route-scene svg{max-height:160px}
+}
+@media(max-width:760px){
+ .route-card .route-scene{min-height:125px;margin:0 19px 17px}
+ .route-grid li:nth-child(-n+2) .route-scene{min-height:125px}
+ .route-scene svg,.route-grid li:nth-child(-n+2) .route-scene svg{max-width:260px;max-height:130px}
+ .route-card .route-top{padding:20px 21px 13px}
+ .route-card>h3,.route-card>p{margin-inline:22px}
+ .route-card>.route-foot{margin-inline:22px}
+}
+@media(prefers-reduced-motion:reduce){
+ .route-scene svg{transition:none}
+ .route-card:hover .route-scene svg{transform:none}
+}
 </style>
 </head>
 <body>
@@ -348,36 +397,42 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
   <ol class="route-grid" aria-label="Explore event equipment and production service types">
     <li><a class="route-card route-confirmed" href="#provider-1">
       <span class="route-top"><span class="route-number">CHANNEL 01</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
+      <span class="route-scene" aria-hidden="true"><span class="route-scene-tag">SOUND / EQUIPMENT</span><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet"><path d="M18 126H302" stroke="currentColor" opacity=".25"/><rect x="65" y="40" width="64" height="98" rx="7" fill="#132c2d" stroke="currentColor" stroke-width="3"/><circle cx="97" cy="100" r="23" stroke="currentColor" stroke-width="5"/><circle cx="97" cy="61" r="8" fill="currentColor" opacity=".8"/><rect x="183" y="54" width="58" height="84" rx="6" fill="#132c2d" stroke="currentColor" stroke-width="3"/><circle cx="212" cy="108" r="19" stroke="currentColor" stroke-width="4"/><circle cx="212" cy="72" r="6" fill="currentColor"/><path d="M144 75v48m-13 0h26m-11-48 16-24m-16 24-15-24" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M268 76q27 21 0 42M281 62q39 37 0 70" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".6"/></svg></span>
       <h3>Equipment without a DJ</h3><p class="route-provider">Roots &amp; Rhythm Rentals</p><p>Speakers, microphones and lighting available as equipment-only rentals. Russellville delivery and setup advertised for an extra fee.</p>
       <span class="route-foot"><span>Russellville delivery advertised</span><span aria-hidden="true">↗</span></span>
     </a></li>
     <li><a class="route-card route-confirmed" href="#provider-2">
       <span class="route-top"><span class="route-number">CHANNEL 02</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
+      <span class="route-scene" aria-hidden="true"><span class="route-scene-tag">CINEMA / OUTDOORS</span><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet"><path d="M16 132h288" stroke="currentColor" opacity=".3"/><rect x="54" y="26" width="210" height="103" rx="6" fill="#152c32" stroke="currentColor" stroke-width="4"/><rect x="66" y="38" width="186" height="78" rx="2" fill="#447878"/><circle cx="204" cy="64" r="14" fill="#f3d4a0"/><path d="M66 101 113 68l35 25 31-19 73 42H66Z" fill="#1a5557"/><path d="m54 127-11 14m221-14 11 14M143 129v11m32-11v11" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M24 61q13-19 26 0m228-4q13-19 25 0" stroke="currentColor" stroke-width="3" opacity=".65"/></svg></span>
       <h3>Outdoor movie screens</h3><p class="route-provider">FunFlicks — Arkansas</p><p>Inflatable movie screens with projection, sound, delivery, setup and on-site support. Russellville is included in the provider's advertised service area.</p>
       <span class="route-foot"><span>Russellville service advertised</span><span aria-hidden="true">↗</span></span>
     </a></li>
     <li><a class="route-card " href="#provider-3">
       <span class="route-top"><span class="route-number">CHANNEL 03</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
+      <span class="route-scene" aria-hidden="true"><span class="route-scene-tag">PROJECTION / GEAR</span><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet"><path d="M20 127h280" stroke="currentColor" opacity=".26"/><path d="M54 57h118v61H54z" fill="#1d4542" stroke="currentColor" stroke-width="3"/><path d="M113 118v19m-36 0h72" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="m172 76 82-30v54l-82-18" fill="currentColor" opacity=".16"/><rect x="185" y="79" width="87" height="46" rx="8" fill="#233d3c" stroke="currentColor" stroke-width="3"/><circle cx="241" cy="102" r="15" stroke="currentColor" stroke-width="4"/><circle cx="241" cy="102" r="6" fill="currentColor"/><path d="M196 125v12m62-12v12" stroke="currentColor" stroke-width="4"/><path d="M72 78h79m-79 11h56" stroke="currentColor" stroke-width="3" opacity=".55"/></svg></span>
       <h3>Projection &amp; event gear</h3><p class="route-provider">A/V Arkansas</p><p>Projectors, screens, sound and event production advertised. Confirm equipment-only options and location-specific delivery.</p>
       <span class="route-foot"><span>Russellville delivery unconfirmed</span><span aria-hidden="true">↗</span></span>
     </a></li>
     <li><a class="route-card " href="#provider-4">
       <span class="route-top"><span class="route-number">CHANNEL 04</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
+      <span class="route-scene" aria-hidden="true"><span class="route-scene-tag">WEDDINGS / LIGHTS</span><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet"><path d="M22 127h276" stroke="currentColor" opacity=".3"/><path d="M46 39h228M70 39v86m180-86v86" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M65 42q18 35 36 0 18 35 36 0 18 35 36 0 18 35 36 0 18 35 36 0" stroke="currentColor" stroke-width="3" opacity=".8"/><circle cx="83" cy="78" r="7" fill="currentColor"/><circle cx="135" cy="78" r="7" fill="currentColor"/><circle cx="187" cy="78" r="7" fill="currentColor"/><circle cx="239" cy="78" r="7" fill="currentColor"/><path d="M123 126v-19h74v19m-60-19V93m44 14V93" stroke="currentColor" stroke-width="4"/><path d="M127 94q33-44 66 0" stroke="currentColor" stroke-width="3"/><circle cx="160" cy="81" r="11" stroke="currentColor" stroke-width="3"/></svg></span>
       <h3>Wedding entertainment</h3><p class="route-provider">636 Entertainment</p><p>DJ-led packages with sound and event lighting advertised. Standalone equipment-only rental remains unconfirmed.</p>
       <span class="route-foot"><span>Ask about package details</span><span aria-hidden="true">↗</span></span>
     </a></li>
     <li><a class="route-card " href="#provider-5">
       <span class="route-top"><span class="route-number">CHANNEL 05</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
+      <span class="route-scene" aria-hidden="true"><span class="route-scene-tag">TECH / CONTROL</span><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet"><path d="M35 128h250" stroke="currentColor" opacity=".3"/><path d="m52 65 209 0 26 65H33Z" fill="#173935" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><rect x="76" y="35" width="167" height="41" rx="5" fill="#173935" stroke="currentColor" stroke-width="3"/><path d="M94 57h25m14 0h25m14 0h25m14 0h13" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M74 87h161M62 105h195" stroke="currentColor" stroke-width="3" opacity=".5"/><circle cx="90" cy="94" r="5" fill="currentColor"/><circle cx="124" cy="94" r="5" fill="currentColor"/><circle cx="158" cy="94" r="5" fill="currentColor"/><circle cx="192" cy="94" r="5" fill="currentColor"/><path d="M105 110v13m38-14v9m37-9v13m38-14v10" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span>
       <h3>Full technical production</h3><p class="route-provider">CWP Productions</p><p>Professional setup and on-site technical support advertised. Equipment-only pickup and Russellville delivery are unconfirmed.</p>
       <span class="route-foot"><span>Russellville delivery unconfirmed</span><span aria-hidden="true">↗</span></span>
     </a></li>
     <li><a class="route-card " href="#provider-6">
       <span class="route-top"><span class="route-number">CHANNEL 06</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
+      <span class="route-scene" aria-hidden="true"><span class="route-scene-tag">CONCERT / STAGE</span><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet"><path d="M20 129h280" stroke="currentColor" opacity=".3"/><path d="M34 124V31h252v93M34 45h252M46 31l24 14 24-14 24 14 24-14 24 14 24-14 24 14 24-14 24 14" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M72 47 39 119h67Zm90 0-33 72h66Zm90 0-33 72h66Z" fill="currentColor" opacity=".13"/><rect x="79" y="89" width="40" height="34" rx="3" fill="#203e3d" stroke="currentColor" stroke-width="3"/><circle cx="99" cy="108" r="10" stroke="currentColor" stroke-width="3"/><rect x="201" y="89" width="40" height="34" rx="3" fill="#203e3d" stroke="currentColor" stroke-width="3"/><circle cx="221" cy="108" r="10" stroke="currentColor" stroke-width="3"/><path d="M158 79v44m-17-44h34m-34 44h34" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="158" cy="71" r="9" fill="currentColor"/></svg></span>
       <h3>Staffed concert audio &amp; stage</h3><p class="route-provider">EdmoSound</p><p>Professional sound, video and lighting packages with on-site crew; no unstaffed equipment rentals. Russellville delivery unconfirmed.</p>
       <span class="route-foot"><span>Full-service packages only</span><span aria-hidden="true">↗</span></span>
     </a></li>
   </ol>
-  <p class="route-disclaimer">These are navigation suggestions, not recommendations of equipment suitability or confirmed inventory. Verify dates, delivery, total charges and rental terms with each provider.</p>
+  <p class="route-disclaimer">Illustrations depict equipment types, not actual provider inventory. These are navigation suggestions, not recommendations of equipment suitability or confirmed inventory. Verify dates, delivery, total charges and rental terms with each provider.</p>
 </section>
 
 <section class="section" id="confirmed" aria-labelledby="confirmed-title"><div class="section-heading"><div><p class="kicker">01 / Start here</p><h2 class="section-title" id="confirmed-title">Russellville delivery advertised</h2></div><p class="section-intro">These providers explicitly advertise delivery and setup for Russellville events. Confirm your equipment list and final charges directly.</p></div>
