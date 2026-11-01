@@ -193,6 +193,43 @@ h1{font-size:clamp(3.4rem,6.4vw,6.2rem);line-height:1.035;max-width:12ch;letter-
 @media(prefers-reduced-motion:reduce){.route-lane{transition:none}.route-lane:hover{transform:none}}
 @media print{.hero{background:#fff;border-radius:0}.hero .wrap{min-height:0;padding-bottom:18px}.explainer{margin-top:0;box-shadow:none}.route-map{margin-top:20px}.route-lanes{grid-template-columns:1fr}.route-lane{min-height:0;display:block;break-inside:avoid;box-shadow:none}.route-num{font-size:1.4rem}.route-who{margin-top:12px}}
 
+
+/* Community call studio. NN/g cognitive-load principles (2025); web.dev form
+   design; W3C WCAG 2.2. No health information transmitted or stored. */
+.call-studio{display:grid;grid-template-columns:minmax(0,.93fr) minmax(0,1.07fr);overflow:hidden;margin:70px 0 0;border-radius:27px;border:1px solid #cadcd0;box-shadow:0 25px 52px #102d271a;background:#fffdf7}
+.call-studio-poster{position:relative;isolation:isolate;overflow:hidden;min-height:625px;padding:clamp(30px,4vw,50px);background:linear-gradient(135deg,#0d302d,#1a4d40 67%,#296651);color:#fff;display:flex;flex-direction:column}
+.call-studio-poster:before{content:"";position:absolute;z-index:-1;right:-160px;bottom:-130px;width:430px;height:430px;border:1px solid #f3d39c4d;border-radius:50%;box-shadow:0 0 0 48px #ffffff12,0 0 0 93px #ffffff09}
+.call-studio-kicker{margin:0 0 24px;color:#f3d39c;letter-spacing:.17em;font-size:.69rem;font-weight:900;text-transform:uppercase}
+.call-studio h2{font:400 clamp(2.7rem,4.7vw,4.5rem)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.062em;margin:0 0 22px;color:#fff;text-wrap:balance}
+.call-studio-poster>p:not(.call-studio-kicker){font-size:1.03rem;line-height:1.72;color:#e6eee7;margin:0;max-width:46ch}
+.call-studio-sequence{display:grid;gap:13px;list-style:none;padding:0;margin:32px 0 auto}
+.call-studio-sequence li{display:flex;gap:13px;align-items:flex-start;font-size:.86rem;line-height:1.55;color:#edf3e9}
+.call-studio-sequence b{display:grid;place-items:center;width:29px;height:29px;flex:0 0 29px;border-radius:50%;border:1px solid #bdd3b4a0;color:#f5dcae;font:400 .9rem Georgia,serif}
+.call-studio-art{margin:35px auto 0;max-width:260px;width:65%;align-self:center}
+.call-studio-art svg{display:block;width:100%;height:auto;filter:drop-shadow(0 12px 20px #09272055)}
+.call-studio-workspace{padding:clamp(28px,3.7vw,48px);min-width:0}
+.call-studio-subtitle{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#4b715e;font-weight:900;margin:0 0 9px}
+.call-studio h3{font:400 clamp(1.9rem,3vw,2.65rem)/1.13 Georgia,"Times New Roman",serif;letter-spacing:-.05em;margin:0 0 11px;color:#153f33}
+.call-studio-helper{font-size:.88rem;color:#52685c;line-height:1.7;margin:0 0 24px}
+.call-studio-form{display:grid;gap:17px}
+.call-studio-field label{display:block;margin-bottom:7px;color:#254f3d;font-size:.79rem;font-weight:850}
+.call-studio-field select{display:block;width:100%;min-height:53px;border:1px solid #aac3b1;border-radius:9px;padding:11px 13px;color:#173e32;background:#fff;font:inherit;font-size:1rem}
+.call-studio-field select:focus-visible,.call-studio-notes:focus-visible{outline:3px solid #b87923;outline-offset:3px}
+.call-studio-preview{padding:21px;margin-top:24px;border-radius:15px;border:1px solid #cadfce;background:#edf4eb}
+.call-studio-preview label{display:block;font-size:.7rem;letter-spacing:.13em;color:#355e49;font-weight:900;text-transform:uppercase;margin-bottom:11px}
+.call-studio-notes{display:block;resize:vertical;width:100%;min-height:222px;border:1px solid #b7cdbb;border-radius:9px;padding:16px;background:#fffdfa;color:#263f33;font:inherit;font-size:.89rem;line-height:1.65}
+.call-studio-warning{margin:11px 0 0;color:#536b5a;font-size:.76rem;line-height:1.6}
+.call-studio-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.call-studio-actions a,.call-studio-actions button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 15px;border-radius:9px;border:1px solid #abc3b3;background:white;color:#1b5641;text-decoration:none;font:inherit;font-size:.84rem;font-weight:850;cursor:pointer}
+.call-studio-actions a:first-child{background:#153f34;color:#fff;border-color:#153f34}
+.call-studio-actions a:first-child:hover{background:#27634b}
+.call-studio-actions a:not(:first-child):hover,.call-studio-actions button:hover{background:#e3efe6}
+.call-studio-actions button[hidden]{display:none}
+.call-studio-status{min-height:1.2em;margin:9px 0 0;font-size:.8rem;color:#1e654c;font-weight:750}
+.call-studio-privacy{border-top:1px solid #d7e3d8;margin:20px 0 0;padding-top:15px;font-size:.76rem;line-height:1.6;color:#52675a}
+@media(max-width:940px){.call-studio{grid-template-columns:1fr}.call-studio-poster{min-height:0;padding:37px 40px}.call-studio h2{max-width:16ch}.call-studio-sequence{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:27px;gap:14px}.call-studio-art{display:none}}
+@media(max-width:620px){.call-studio{margin-top:42px;border-radius:19px}.call-studio-poster{padding:30px 24px}.call-studio h2{font-size:clamp(2.65rem,10vw,3.45rem)}.call-studio-sequence{grid-template-columns:1fr}.call-studio-workspace{padding:25px 20px}.call-studio-preview{padding:15px}.call-studio-notes{min-height:260px}.call-studio-actions{display:grid;grid-template-columns:1fr}.call-studio-actions a,.call-studio-actions button{width:100%;text-align:center}}
+@media print{.call-studio{display:none!important}}
 </style>
 </head>
 <body>
@@ -226,6 +263,57 @@ h1{font-size:clamp(3.4rem,6.4vw,6.2rem);line-height:1.035;max-width:12ch;letter-
   </nav>
   <p class="route-foot">No program guarantees equipment availability, local pickup or delivery. Contact the provider before visiting.</p>
 </section>
+
+<section class="call-studio" id="call-studio" aria-labelledby="call-studio-title">
+  <div class="call-studio-poster">
+    <p class="call-studio-kicker">Community lending / Before you travel</p>
+    <h2 id="call-studio-title">One call can save a trip.</h2>
+    <p>Prepare the right questions before leaving home. The programs determine eligibility, available equipment, collection arrangements and safe fit—not this page.</p>
+    <ol class="call-studio-sequence">
+      <li><b aria-hidden="true">01</b>Choose a program to contact.</li>
+      <li><b aria-hidden="true">02</b>Ask about the equipment and pickup.</li>
+      <li><b aria-hidden="true">03</b>Confirm terms directly before visiting.</li>
+    </ol>
+    <div class="call-studio-art" aria-hidden="true"><svg viewBox="0 0 260 165" xmlns="http://www.w3.org/2000/svg"><rect x="51" y="12" width="155" height="141" rx="16" fill="#f3ddb2" transform="rotate(-6 51 12)"/><rect x="71" y="31" width="159" height="125" rx="14" fill="#e7f0e4"/><path d="M97 65h104M97 88h83M97 111h90" stroke="#75a18a" stroke-width="7" stroke-linecap="round"/><circle cx="197" cy="128" r="25" fill="#f2d199"/><path d="m187 122 9 10 12-16" stroke="#245642" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+  </div>
+  <div class="call-studio-workspace">
+    <p class="call-studio-subtitle">Private planning tool / No booking request</p>
+    <h3>Build your call note.</h3>
+    <p class="call-studio-helper">Make three selections for a clear script. This does not check stock, ask for medical history, or send a request.</p>
+    <form class="call-studio-form" id="lending-form" aria-label="Prepare questions for a lending program">
+      <div class="call-studio-field"><label for="lending-program">Which program?</label><select id="lending-program">
+        <option value="goodwill">Goodwill Health Equipment Loan Program</option>
+        <option value="ican">Increasing Capabilities Access Network</option>
+        <option value="ascc">Arkansas Spinal Cord Commission</option>
+      </select></div>
+      <div class="call-studio-field"><label for="lending-item">What equipment?</label><select id="lending-item">
+        <option value="a wheelchair or mobility aid">Wheelchair or mobility aid</option>
+        <option value="a walker or cane">Walker or cane</option>
+        <option value="bathroom safety equipment">Bathroom safety equipment</option>
+        <option value="a ramp or access aid">Ramp or access aid</option>
+        <option value="another assistive device">Other / not sure</option>
+      </select></div>
+      <div class="call-studio-field"><label for="lending-transport">What arrangement should you ask about?</label><select id="lending-transport">
+        <option value="pickup or transfer near Russellville">Pickup or transfer near Russellville</option>
+        <option value="delivery to Russellville">Delivery to Russellville</option>
+        <option value="traveling to a program location">Traveling to a program location</option>
+        <option value="pickup and delivery options">Not sure / ask what is possible</option>
+      </select></div>
+    </form>
+    <div class="call-studio-preview">
+      <label for="lending-notes">Your call notes</label>
+      <textarea class="call-studio-notes" id="lending-notes" rows="8" readonly spellcheck="false">Hello, I am calling about the Goodwill Health Equipment Loan Program. Is a wheelchair or mobility aid included in the program and currently available? Can you tell me about pickup or transfer near Russellville? Please confirm loan requirements, equipment condition and safe fit, return arrangements, and any fees before I travel.</textarea>
+      <p class="call-studio-warning">Questions, not promises: selecting a device or delivery option does not mean the program offers it.</p>
+    </div>
+    <div class="call-studio-actions">
+      <a id="lending-phone" href="tel:+15013725100">Call Goodwill mission services ↗</a>
+      <a id="lending-details" href="#goodwill">See full program details ↗</a>
+      <button type="button" id="lending-copy" hidden>Copy call notes</button>
+    </div>
+    <p class="call-studio-status" id="lending-status" role="status" aria-live="polite" aria-atomic="true"></p>
+    <p class="call-studio-privacy">No details are saved or transmitted. Avoid entering private health information. Confirm eligibility, device suitability, availability and service area with the program. <noscript>To customize the note, enable JavaScript. Full phone numbers and program descriptions remain below.</noscript></p>
+  </div>
+</section>
 <section id="programs" aria-labelledby="programs-title"><div class="section-head"><div><p class="eyebrow" style="color:#52705e">01 / Available programs</p><h2 id="programs-title">Start with the right resource.</h2></div><p>Call first to confirm eligibility, current inventory and where to collect equipment.</p></div>
 <div class="program-grid">
 <article class="program-card program-card--goodwill" id="goodwill" aria-labelledby="program-1">
@@ -248,4 +336,47 @@ h1{font-size:clamp(3.4rem,6.4vw,6.2rem);line-height:1.035;max-width:12ch;letter-
 <p class="note">Independent directory. Program inventory and terms can change. Verify equipment condition, size, safe fit, loan requirements, and pickup or delivery with each program. No program guarantees availability. <a href="sms:+14799707301">Suggest a correction</a>.</p>
 <footer><span>© 2026 Russellville.Rent · Independent rental directory</span><a href="/">Return to homepage ↗</a></footer>
 </div></main>
+
+<script>
+/* Progressive enhancement only: no submission, storage or tracking. */
+(() => {
+  const form=document.getElementById('lending-form');
+  if(!form)return;
+  const program=document.getElementById('lending-program');
+  const item=document.getElementById('lending-item');
+  const transport=document.getElementById('lending-transport');
+  const notes=document.getElementById('lending-notes');
+  const phone=document.getElementById('lending-phone');
+  const details=document.getElementById('lending-details');
+  const copy=document.getElementById('lending-copy');
+  const status=document.getElementById('lending-status');
+  const programs={
+    goodwill:{name:'the Goodwill Health Equipment Loan Program',call:'Call Goodwill mission services ↗',href:'tel:+15013725100',id:'#goodwill',question:'Does the Russellville store have it, or can the program transfer one from elsewhere?'},
+    ican:{name:'the Increasing Capabilities Access Network',call:'Call the iCAN program ↗',href:'tel:+18008282799',id:'#ican',question:'Does the program provide a device loan or demonstration, and what requirements apply?'},
+    ascc:{name:'the Arkansas Spinal Cord Commission loan closets',call:'Call the Spinal Cord Commission ↗',href:'tel:+18004591517',id:'#ascc',question:'I understand this program is for eligible commission clients. How do I confirm eligibility and coordinate with a case manager?'}
+  };
+  function refresh(){
+    const selected=programs[program.value]||programs.goodwill;
+    notes.value='Hello, I am calling about '+selected.name+'. Is '+item.value+' included in this program and currently available? '+selected.question+' Can you tell me about '+transport.value+'? Please confirm eligibility, equipment condition and safe fit, loan duration, return arrangements and any fees before I travel.';
+    phone.textContent=selected.call;
+    phone.href=selected.href;
+    details.href=selected.id;
+    status.textContent='';
+  }
+  form.addEventListener('change',refresh);
+  copy.hidden=false;
+  copy.addEventListener('click',async()=>{
+    try{
+      if(!navigator.clipboard||!navigator.clipboard.writeText)throw Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(notes.value);
+      status.textContent='Call notes copied.';
+    }catch(error){
+      notes.focus();
+      notes.select();
+      status.textContent='Select and copy the highlighted notes.';
+    }
+  });
+  refresh();
+})();
+</script>
 </body></html>
