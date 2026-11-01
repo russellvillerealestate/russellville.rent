@@ -854,6 +854,70 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   .discovery-card:hover>.discovery-scene{transform:none}
 }
 
+
+/* 2026-11-01: original landscape and editorial equipment centerpiece.
+   Retain existing links, real provider text and the previous homepage design.
+   Wide unfiltered grid only, respecting list, search, mobile and reduced motion. */
+.tools-landscape,.tools-art-caption{display:none}
+@media(min-width:1001px){
+.rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="tools"]{
+ grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+ min-height:380px;border-radius:25px;overflow:hidden;border-color:#95b6a1;
+ box-shadow:0 23px 55px #143c3020
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="tools"] .category-art{
+ height:100%;min-height:380px;isolation:isolate;align-items:flex-end;justify-content:flex-start;
+ padding:27px 30px;background:#1d493d;color:#f9dfa9
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="tools"] .tools-landscape{
+ display:block;position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="tools"] .category-art:before{
+ width:280px;height:280px;left:29px;top:54px;right:auto;bottom:auto;
+ border:1px solid #ffebbf69;opacity:1;box-shadow:0 0 0 40px #f6e7c40d;z-index:1
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="tools"] .category-art:after{display:none}
+.rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="tools"] .icon-tile .directory-pictogram{
+ position:absolute;z-index:2;top:calc(50% - 84px);left:clamp(29px,6vw,84px);
+ width:168px;height:168px;padding:34px;border-radius:26px;
+ background:linear-gradient(145deg,#153e36e5,#1c493bbb);color:#ffe1a4;
+ border:2px solid #f8e3b287;box-shadow:0 19px 33px #092d2866;transform:none
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="tools"]:hover .icon-tile .directory-pictogram{transform:none}
+.rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="tools"] .tools-art-caption{
+ display:block;position:absolute;top:24px;left:29px;z-index:2;
+ color:#fff1cf;font-size:.67rem;font-weight:850;line-height:1.5;letter-spacing:.16em;
+ text-shadow:0 3px 8px #0a3028
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="tools"] .tools-art-caption span{
+ display:block;color:#e3ebd9;font-size:.6rem;letter-spacing:.12em;font-weight:650
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="tools"] .category-art small{
+ position:relative;left:auto;bottom:auto;z-index:2;padding:8px 13px;
+ background:#0e302acb;color:#fff1d0;border:1px solid #f8e7ba88;
+ font-size:.62rem;letter-spacing:.12em
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="tools"] .card-body{
+ justify-content:center;padding:clamp(33px,4vw,52px);
+ background:linear-gradient(145deg,#faf8ef,#edf2e9);border-left:1px solid #cedacb
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="tools"] .card-body h3{
+ color:#133b30;font:400 clamp(2.4rem,4vw,3.75rem)/1.04 Georgia,"Times New Roman",serif;
+ letter-spacing:-.06em;margin-bottom:22px;text-wrap:balance
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="tools"] .card-body>p:not(.eyebrow){
+ font-size:.96rem;line-height:1.67;max-width:46ch
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="tools"] .card-body>.card-link{
+ display:flex;align-items:center;min-height:49px;margin-top:auto;padding:12px 16px;
+ background:#173e34;color:white;border:0;border-radius:11px
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="tools"] .card-body>.card-link:hover{background:#2c654f}
+}
+@media(prefers-reduced-motion:reduce){
+.rentals-grid[data-view="grid"][data-layout="editorial"] > .rental-card[data-category="tools"] .directory-pictogram{transition:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -1002,7 +1066,7 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <p class="status">Added Space Storage · Arkansas Storage Centers (Pottsville) · Hwy 64 E Storage (Clarksville) · Ozark Self Storage (Danville)</p>
 <a class="card-link" href="storage.html">Browse storage providers <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="tools">
-<div class="category-art icon-tile" style="--tile-ink:#4d5d3e;--tile-bg:#e5ebd8" role="img" aria-label="Construction equipment"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-tools"></use></svg><small>EQUIPMENT</small></div>
+<div class="category-art icon-tile" style="--tile-ink:#4d5d3e;--tile-bg:#e5ebd8" role="img" aria-label="Construction equipment"><svg class="tools-landscape" viewBox="0 0 700 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><path fill="#477363" d="M0 0h700v440H0z"/><circle cx="548" cy="97" r="60" fill="#f0d69c" opacity=".88"/><circle cx="548" cy="97" r="85" stroke="#f5e3ba" opacity=".25" fill="none"/><path fill="#94aa8e" d="M0 250 113 170l70 50 92-80 108 93 89-64 121 72 107-51v250H0z"/><path fill="#5b866f" d="m0 291 100-67 89 56 107-81 120 75 98-45 91 36 95-49v224H0z"/><path fill="#214c3c" d="m0 335 111-60 118 44 94-45 112 54 129-47 136 41v118H0z"/><path fill="#10352e" d="M0 369q104-49 222-13t233-8q122-35 245 4v88H0z"/><path stroke="#f5d9a4" stroke-width="2" stroke-opacity=".4" fill="none" d="M0 363q111-28 225 0t231-10q128-38 244-5M0 394q111-28 225 0t231-10q128-38 244-5M351 298h224M374 298v-64h151v64M413 234v-27h70v27M448 207v-35m-15 16h30"/><path fill="#15372d" opacity=".8" d="m13 338 32-94 35 94Zm57 3 27-74 29 74Zm512-5 29-89 34 89Zm71 4 24-65 23 65Z"/></svg><span class="tools-art-caption" aria-hidden="true">THE RIVER VALLEY FIELD GUIDE<span>BUILD · LIFT · GET IT DONE</span></span><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-tools"></use></svg><small>EQUIPMENT · ILLUSTRATION</small></div>
 <div class="card-body"><p class="eyebrow">Tools &amp; equipment</p><h3>Tools &amp; equipment</h3>
 <p>The right gear for your next project.</p>
 <p class="status">Central Rental &amp; Supply · Riggs Cat · United Rentals · Ridout Lumber · Yell County Gin (Dardanelle)</p>
