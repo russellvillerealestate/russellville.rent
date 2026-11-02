@@ -285,6 +285,36 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.79rem;col
  .camp-journeys-grid .camp-pathway{transition:none}
  .camp-journeys-grid .camp-pathway:hover{transform:none}
 }
+
+/* Place-first River Valley atlas; existing campground-type controls remain unchanged.
+   Reference: StayARV landscape hierarchy, NN/g visual hierarchy, web.dev responsive design,
+   W3C WCAG 2.2 focus visibility/reflow/motion. All scenes are illustrative. */
+.camp-area-atlas{position:relative;isolation:isolate;overflow:hidden;margin:36px 0 31px;padding:clamp(26px,3.8vw,46px);border-radius:25px;background:linear-gradient(108deg,rgba(5,34,29,.97),rgba(8,43,35,.94) 46%,rgba(8,43,35,.68)),url("assets/lake-dardanelle-sunset.jpg") center 56%/cover no-repeat;color:#fff;box-shadow:0 22px 42px #123c302b}
+.camp-area-atlas:before{content:"";position:absolute;z-index:-1;width:420px;height:420px;top:-290px;right:-95px;border-radius:50%;border:1px solid #f4daaa61;box-shadow:0 0 0 38px #f4daaa0e,0 0 0 80px #f4daaa0a;pointer-events:none}
+.camp-area-intro{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(240px,.65fr);gap:30px;align-items:end;margin-bottom:24px}
+.camp-area-kicker{margin:0 0 12px;color:#f5d89f;font-size:.67rem;letter-spacing:.16em;text-transform:uppercase;font-weight:850}
+.camp-area-intro h2{max-width:17ch;margin:0;font:400 clamp(2.05rem,4.2vw,3.65rem)/1.06 Georgia,"Times New Roman",serif;letter-spacing:-.052em;text-wrap:balance}
+.camp-area-intro h2 em{font-weight:400;color:#f4d296}
+.camp-area-intro>p{max-width:34ch;margin:0 0 4px;font-size:.91rem;line-height:1.66;color:#dceae1}
+.camp-area-grid{display:grid;grid-template-columns:1.17fr repeat(3,minmax(0,1fr));gap:11px}
+.camp-area-link{position:relative;display:flex;flex-direction:column;gap:10px;min-width:0;min-height:185px;padding:22px 20px 19px;border:1px solid #ffffff59;border-radius:15px;background:rgba(7,37,31,.83);color:#fff;text-decoration:none;box-shadow:0 10px 25px #041f1a30;transition:transform .2s,border-color .2s,background .2s}
+.camp-area-link:first-child{background:rgba(242,218,169,.95);border-color:#f5dfb6;color:#153c30}
+.camp-area-link:hover{transform:translateY(-3px);border-color:#f6d89f;background:#184f40}
+.camp-area-link:first-child:hover{background:#ffebc5}
+.camp-area-link:focus-visible{outline:3px solid #f5ca76;outline-offset:4px}
+.camp-area-index{display:block;font-size:.64rem;font-weight:850;line-height:1.4;letter-spacing:.13em;text-transform:uppercase;color:#f6d49b}
+.camp-area-link:first-child .camp-area-index{color:#775220}
+.camp-area-link strong{display:block;font:400 clamp(1.46rem,2.4vw,2.05rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.04em;color:inherit}
+.camp-area-link small{display:block;max-width:27ch;font-size:.76rem;line-height:1.55;color:#d2e3d7}
+.camp-area-link:first-child small{color:#385b48}
+.camp-area-action{display:flex;align-items:center;justify-content:space-between;gap:11px;margin-top:auto;padding-top:12px;border-top:1px solid #ffffff4b;color:#f5d49b;font-size:.76rem;font-weight:850}
+.camp-area-link:first-child .camp-area-action{border-color:#725b3b55;color:#315d47}
+.camp-area-action span:last-child{font-size:1.18rem}
+.camp-area-footnote{margin:16px 0 0;color:#dce7dd;font-size:.73rem;line-height:1.6}
+@media(max-width:1000px){.camp-area-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.camp-area-link{min-height:164px}.camp-area-intro h2{max-width:22ch}}
+@media(max-width:640px){.camp-area-atlas{margin:26px 0;padding:25px 19px;border-radius:18px;background-position:58% center}.camp-area-intro{grid-template-columns:1fr;gap:9px;margin-bottom:18px}.camp-area-intro h2{font-size:clamp(2rem,8.7vw,3rem)}.camp-area-intro>p{font-size:.84rem;max-width:55ch}.camp-area-grid{grid-template-columns:1fr;gap:9px}.camp-area-link{min-height:0;padding:17px 18px 15px;gap:6px}.camp-area-link strong{font-size:1.65rem}.camp-area-link small{max-width:none}.camp-area-action{margin-top:5px;padding-top:8px}.camp-area-footnote{font-size:.71rem}}
+@media(prefers-reduced-motion:reduce){.camp-area-link{transition:none}.camp-area-link:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -327,6 +357,21 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.79rem;col
     </div>
     <div class="finder-row"><div class="search-field"><label for="camp-search">Search campgrounds, towns, or amenities</label><input id="camp-search" type="search" placeholder="Try Pottsville, showers, or first-come" autocomplete="off"></div><button class="clear" id="clear-search" type="button">Show all places</button></div>
     <div class="suggestions" aria-label="Suggested searches"><span>EXPLORE</span><button type="button" data-search="Russellville" aria-pressed="false">Russellville</button><button type="button" data-search="Pottsville" aria-pressed="false">Pottsville</button><button type="button" data-search="State Park" aria-pressed="false">State parks</button><button type="button" data-search="first-come" aria-pressed="false">First-come sites</button></div>
+  </section>
+
+
+  <section class="camp-area-atlas" aria-labelledby="camp-area-title">
+    <div class="camp-area-intro">
+      <div><p class="camp-area-kicker">The River Valley / A place-first field guide</p><h2 id="camp-area-title">Know your destination? <em>Start there.</em></h2></div>
+      <p>Explore the campground directory by area, whether you are staying close to town or heading toward the creeks and mountain lakes.</p>
+    </div>
+    <nav class="camp-area-grid" aria-label="Browse campgrounds by destination">
+      <a class="camp-area-link" href="#camp-list" data-camp-area="Russellville"><span class="camp-area-index">01 / Lake Dardanelle area</span><strong>Russellville</strong><small>Compare in-town options and nearby public campgrounds.</small><span class="camp-area-action"><span>See Russellville results</span><span aria-hidden="true">↗</span></span></a>
+      <a class="camp-area-link" href="#camp-list" data-camp-area="Dover"><span class="camp-area-index">02 / Ozark foothills</span><strong>Dover</strong><small>Look toward Big Piney Creek and the north-valley trails.</small><span class="camp-area-action"><span>See Dover results</span><span aria-hidden="true">↗</span></span></a>
+      <a class="camp-area-link" href="#camp-list" data-camp-area="Plainview"><span class="camp-area-index">03 / Lake Nimrod country</span><strong>Plainview</strong><small>Explore lake-area campgrounds and independent stays.</small><span class="camp-area-action"><span>See Plainview results</span><span aria-hidden="true">↗</span></span></a>
+      <a class="camp-area-link" href="#camp-list" data-camp-area="Clarksville"><span class="camp-area-index">04 / Heading west</span><strong>Clarksville</strong><small>Find western River Valley stops and regional options.</small><span class="camp-area-action"><span>See Clarksville results</span><span aria-hidden="true">↗</span></span></a>
+    </nav>
+    <p class="camp-area-footnote">Lake Dardanelle background is regional scenery, not a listed campsite. Location links narrow existing directory results; they do not check availability, travel distances or reservations. Without JavaScript, each link opens the full directory.</p>
   </section>
 
   <section id="camp-trip-board" class="trip-board" aria-labelledby="camp-trip-title" hidden>
@@ -598,5 +643,28 @@ board.hidden=false;render();
 })();
 </script>
 
+
+<script>
+/* Destination cards reuse existing search/type filters; native anchors work without JavaScript. */
+(function(){
+  'use strict';
+  const input=document.getElementById('camp-search');
+  const finder=document.querySelector('.finder');
+  const allTypes=document.querySelector('.stay-filter[data-type-filter="all"]');
+  if(!input||!finder||!allTypes)return;
+  document.querySelectorAll('[data-camp-area]').forEach(link=>{
+    link.addEventListener('click',event=>{
+      if(!document.documentElement.classList.contains('has-js'))return;
+      event.preventDefault();
+      allTypes.click();
+      input.value=link.dataset.campArea;
+      input.dispatchEvent(new Event('input',{bubbles:true}));
+      const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      finder.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});
+      input.focus({preventScroll:true});
+    });
+  });
+})();
+</script>
 </body>
 </html>
