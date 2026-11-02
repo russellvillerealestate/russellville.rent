@@ -262,6 +262,47 @@ footer{margin-top:35px;padding:22px 0;border-top:1px solid var(--line);font-size
 @media(max-width:490px){.golf-inquiry{border-radius:18px;margin-top:27px}.golf-inquiry-art,.golf-inquiry-form{padding:26px 21px}.golf-inquiry-fields{grid-template-columns:1fr}.golf-inquiry-art h2{font-size:2.65rem}.golf-inquiry-scene{margin:0 auto -14px}.golf-inquiry-actions{flex-direction:column;align-items:stretch}.golf-inquiry-actions :is(button,a){width:100%;justify-content:center}}
 @media(prefers-reduced-motion:reduce){.golf-inquiry-actions button{transition:none}.golf-inquiry-actions button:hover{transform:none}}
 
+
+/* 2026-11-02: Scenic, diagram-led event planning studio.
+   Reference: StayARV immersive local imagery and editorial composition.
+   Evidence: Nielsen Norman Group visual hierarchy, web.dev responsive layouts,
+   W3C WCAG 2.2 focus visibility, readable labels, reflow and pointer targets.
+   Original four booking checks and all rental listings remain unchanged. */
+.planning--fieldguide{
+  display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:0;
+  align-items:stretch;margin:52px 0 0;padding:0;overflow:hidden;
+  border:1px solid #456e58;border-radius:27px;background:#11372d;color:#fffdf4;
+  box-shadow:0 25px 55px #0d342c26
+}
+.fieldguide-visual{
+  display:flex;flex-direction:column;justify-content:center;min-width:0;
+  padding:clamp(25px,3.8vw,45px);
+  background:linear-gradient(135deg,#102c26e5,#194836b8 72%,#294f3a9e),
+    url("assets/lake-dardanelle-sunset.jpg") center/cover no-repeat
+}
+.fieldguide-visual-label{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:0 0 19px}
+.fieldguide-visual-label span,.fieldguide-kicker{font-size:.66rem;letter-spacing:.17em;font-weight:850;color:#f2d69a}
+.fieldguide-visual-label strong{font:italic 1.45rem Georgia,"Times New Roman",serif;letter-spacing:-.035em;color:white}
+.fieldguide-scene{padding:12px;border:1px solid #d6e7b966;border-radius:17px;background:#0b2b25d6;box-shadow:0 18px 36px #041e1c69}
+.fieldguide-scene svg{display:block;width:100%;height:auto}
+.fieldguide-caption{max-width:59ch;margin:18px 0 0!important;color:#edf2e7!important;font-size:.75rem!important;line-height:1.65!important}
+.fieldguide-caption strong{color:#ffe2a5}
+.fieldguide-copy{display:flex;flex-direction:column;justify-content:center;min-width:0;padding:clamp(30px,4.5vw,56px)}
+.planning--fieldguide .fieldguide-kicker{display:block;margin-bottom:17px;color:#f3d99b}
+.planning--fieldguide h2{font:400 clamp(2.5rem,4vw,4.1rem)/1.05 Georgia,"Times New Roman",serif;letter-spacing:-.055em;margin:0 0 15px;text-wrap:balance}
+.planning--fieldguide .fieldguide-copy>p{font-size:.91rem;line-height:1.7;color:#e0eddf;margin:0 0 20px}
+.planning--fieldguide .fieldguide-lead{margin-bottom:26px!important;color:#f2f6ea!important}
+.planning--fieldguide .fieldguide-lead strong{color:#f6d99e}
+.planning--fieldguide ul{display:grid;grid-template-columns:1fr;gap:11px;margin:0 0 26px}
+.planning--fieldguide li{align-items:center;min-height:49px;padding:12px 14px;border:1px solid #e0efdc35;border-radius:12px;background:#ffffff0c;font-size:.87rem;line-height:1.5}
+.planning--fieldguide li:before{margin-top:0}
+.fieldguide-action{display:inline-flex;align-items:center;justify-content:space-between;gap:19px;min-height:50px;max-width:100%;padding:12px 18px;border:1px solid #f0daa9;border-radius:11px;background:#f0daa9;color:#173b2e;text-decoration:none;font-size:.86rem;font-weight:850;transition:background-color .2s,transform .2s}
+.fieldguide-action:hover{background:#ffeab9;transform:translateY(-2px)}
+.fieldguide-action:focus-visible{outline:3px solid #fff;outline-offset:4px}
+@media(max-width:900px){.planning--fieldguide{grid-template-columns:1fr}.fieldguide-visual{padding:28px}.fieldguide-scene{max-width:630px;width:100%;align-self:center}.fieldguide-caption{max-width:630px;align-self:center}.fieldguide-copy{padding:33px}.planning--fieldguide h2{font-size:clamp(2.5rem,5vw,3.5rem)}}
+@media(max-width:650px){.planning--fieldguide{margin-top:37px;border-radius:20px}.fieldguide-visual{padding:22px 18px}.fieldguide-visual-label strong{font-size:1.17rem}.fieldguide-visual-label span,.fieldguide-kicker{font-size:.59rem}.fieldguide-scene{padding:6px;border-radius:12px}.fieldguide-copy{padding:27px 22px 31px}.planning--fieldguide h2{font-size:2.55rem}.planning--fieldguide li{padding:10px 11px}.fieldguide-action{width:100%}}
+@media(prefers-reduced-motion:reduce){.fieldguide-action{transition:none}.fieldguide-action:hover{transform:none}}
+
 </style></head>
 <body><a class="skip" href="#main">Skip to rental options</a><header><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back" href="/">← Browse all rentals</a></div></header>
 <main id="main">
@@ -367,7 +408,50 @@ footer{margin-top:35px;padding:22px 0;border-top:1px solid var(--line);font-size
   </div>
 </section>
 
-<section class="planning" aria-labelledby="planning-title"><div><h2 id="planning-title">Before you book</h2><p>Check these details before reserving a bay or arranging an event.</p></div><ul><li>Is the experience on-site or delivered?</li><li>Is your date available?</li><li>What space and power are needed for mobile setup?</li><li>What is the total price including travel, minimum hours and setup?</li></ul></section>
+<section class="planning planning--fieldguide" aria-labelledby="planning-title">
+  <div class="fieldguide-visual">
+    <div class="fieldguide-visual-label"><span>THE RIVER VALLEY / EVENT FIELD GUIDE</span><strong>Sketch the setup.</strong></div>
+    <div class="fieldguide-scene" role="img" aria-label="Illustrative bird's-eye diagram of a mobile golf event: projection screen at one end, playing area, guest area and load-in and power questions. Not a scaled layout or provider equipment.">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 430" aria-hidden="true" focusable="false">
+        <defs>
+          <pattern id="fieldguide-grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#c0d9be" stroke-opacity=".11" stroke-width="1"/></pattern>
+          <linearGradient id="fieldguide-turf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5f9a70"/><stop offset="1" stop-color="#255d4b"/></linearGradient>
+        </defs>
+        <rect x="1" y="1" width="578" height="428" rx="16" fill="#10392e" stroke="#a7c4a0" stroke-opacity=".55"/>
+        <rect x="2" y="2" width="576" height="426" rx="15" fill="url(#fieldguide-grid)"/>
+        <path d="M85 91H494V327H85Z" fill="#123d35" stroke="#d3e2cc" stroke-dasharray="8 8" stroke-width="2"/>
+        <rect x="150" y="90" width="280" height="38" rx="5" fill="#e4e8d0" stroke="#f2d69a" stroke-width="4"/>
+        <path d="M170 117c60-21 162-20 240-1" stroke="#6a9d7c" fill="none" stroke-width="3"/>
+        <text x="290" y="73" fill="#f5dda4" text-anchor="middle" font-size="15" font-family="system-ui,sans-serif" font-weight="700" letter-spacing="1.5">SCREEN / PROJECTION</text>
+        <path d="M172 147H408L370 279H210Z" fill="url(#fieldguide-turf)" stroke="#77ac80" stroke-width="2"/>
+        <path d="M290 266c-36-45-44-75 7-116" stroke="#faf2cf" stroke-width="3" stroke-dasharray="8 9" fill="none"/>
+        <circle cx="290" cy="266" r="7" fill="#fffdf4"/>
+        <circle cx="290" cy="266" r="15" fill="none" stroke="#e6f0d3" stroke-opacity=".7"/>
+        <text x="290" y="205" text-anchor="middle" fill="#fffdf4" font-size="17" font-family="system-ui,sans-serif" font-weight="700">PLAY AREA</text>
+        <path d="M95 354H285" stroke="#f1d89d" stroke-opacity=".9" stroke-width="2"/>
+        <circle cx="117" cy="348" r="11" fill="#eed6a3"/><circle cx="152" cy="348" r="11" fill="#eed6a3"/><circle cx="187" cy="348" r="11" fill="#eed6a3"/>
+        <text x="117" y="386" fill="#f5dda4" font-size="15" font-family="system-ui,sans-serif" font-weight="700" letter-spacing=".5">GUEST AREA?</text>
+        <rect x="384" y="330" width="95" height="42" rx="8" fill="#d7e7cc" stroke="#eecf91" stroke-width="2"/>
+        <path d="m426 340-8 15h9l-5 10 19-18h-11l5-7" fill="#3e7753"/>
+        <text x="430" y="393" fill="#f5dda4" text-anchor="middle" font-size="14" font-family="system-ui,sans-serif" font-weight="700">POWER / ACCESS?</text>
+        <path d="M322 352h49" fill="none" stroke="#efdaa8" stroke-width="2" stroke-dasharray="4 5"/>
+        <path d="m362 344 11 8-11 8" fill="none" stroke="#efdaa8" stroke-width="2"/>
+        <circle cx="90" cy="91" r="20" fill="#f1d89d"/><text x="90" y="97" fill="#183d31" font-size="17" text-anchor="middle" font-weight="800" font-family="system-ui,sans-serif">1</text>
+        <circle cx="85" cy="303" r="20" fill="#f1d89d"/><text x="85" y="309" fill="#183d31" font-size="17" text-anchor="middle" font-weight="800" font-family="system-ui,sans-serif">2</text>
+        <circle cx="494" cy="327" r="20" fill="#f1d89d"/><text x="494" y="333" fill="#183d31" font-size="17" text-anchor="middle" font-weight="800" font-family="system-ui,sans-serif">3</text>
+      </svg>
+    </div>
+    <p class="fieldguide-caption">Conceptual event sketch over Lake Dardanelle scenery. <strong>Not to scale</strong>, not a provider installation or minimum-clearance specification. Confirm the actual setup and guest safety with the operator and venue.</p>
+  </div>
+  <div class="fieldguide-copy">
+    <span class="fieldguide-kicker">ASK BEFORE YOU RESERVE / 04 CHECKPOINTS</span>
+    <h2 id="planning-title">Before you book</h2>
+    <p>Check these details before reserving a bay or arranging an event.</p>
+    <p class="fieldguide-lead">A mobile simulator needs more than a date. Use the diagram to ask about the screen, playing area, guests, power and access—<strong>the provider determines the actual space requirements</strong>.</p>
+    <ul><li>Is the experience on-site or delivered?</li><li>Is your date available?</li><li>What space and power are needed for mobile setup?</li><li>What is the total price including travel, minimum hours and setup?</li></ul>
+    <a class="fieldguide-action" href="#golf-event-inquiry">Build your mobile-event inquiry <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
 <p class="note">Independent directory. Verify current operating status, dates, rates, minimums, travel distance and delivery with each operator. <a href="sms:+14799707301">Suggest a correction</a>.</p><footer>Russellville.Rent · <a href="/">Return to homepage</a></footer>
 </main>
 <script>
