@@ -152,6 +152,47 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
 @media(max-width:510px){.hero .wrap{padding-top:48px;padding-bottom:36px}.hero h1{font-size:clamp(3.4rem,13vw,5rem)}.hero .actions{gap:10px}.hero .button{min-height:51px;padding:12px 18px;font-size:.78rem}.ride-facts{gap:12px;padding-top:17px;font-size:.73rem}.ride-facts strong{font-size:1.3rem}.ride-finder .wrap{padding-top:42px;padding-bottom:54px}.ride-finder-head h2,.section-head h2{font-size:2.65rem}.ride-option{min-height:164px;grid-template-columns:70px 1fr;padding:18px;gap:13px}.ride-option .ride-symbol{width:66px;height:66px;border-radius:18px}.ride-symbol svg{width:52px;height:52px}.ride-copy strong{font-size:1.6rem}.ride-copy small{font-size:.78rem}.ride-copy em{font-size:.72rem}.rates{padding-top:58px;padding-bottom:65px}.rate-grid{grid-template-columns:1fr}.rate-card:first-child{grid-column:auto}.rate-card{min-height:195px;padding:25px}.rate-card:first-child h3{font-size:2rem}.shop h2{font-size:2.85rem}}
 @media(prefers-reduced-motion:reduce){.back,.hero .button,.ride-option{transition:none}.hero .button:hover,.ride-option:hover{transform:none}}
 
+
+/* 2026-11-01: Photo-led operator atlas. New navigation only; published rates,
+   restrictions, providers and filter behavior are sourced from the original
+   directory and remain untouched. Inspiration: StayARV immersive hero;
+   NN/g visual hierarchy; web.dev responsive imagery; WCAG 2.2 focus visibility. */
+.bike-access{position:relative;isolation:isolate;overflow:hidden;background:#10362e;color:#f8f7ee}
+.bike-access:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 7% 12%,#3d7b604d,transparent 40%),linear-gradient(155deg,#0c2c26,#19483b)}
+.bike-access .wrap{padding-top:clamp(62px,7vw,100px);padding-bottom:clamp(64px,7vw,105px)}
+.bike-access-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(245px,.65fr);gap:clamp(25px,5vw,75px);align-items:end;margin-bottom:32px}
+.bike-access-head .eyebrow{color:#f0d69c;margin-bottom:15px}
+.bike-access-head h2{font:400 clamp(2.75rem,5vw,4.85rem)/1.055 Georgia,"Times New Roman",serif;letter-spacing:-.058em;max-width:16ch;margin:0;text-wrap:balance}
+.bike-access-head p:last-child{font-size:1rem;line-height:1.75;color:#e0eae0;max-width:42ch;margin:0 0 5px}
+.bike-access-grid{display:grid;grid-template-columns:1.16fr 1fr 1fr;gap:17px}
+.bike-access-card{position:relative;isolation:isolate;min-width:0;min-height:425px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;border:1px solid #d8e9d257;border-radius:23px;padding:clamp(23px,2.6vw,32px);color:#fff;text-decoration:none;box-shadow:0 20px 41px #031d1790;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.bike-access-card:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#092c2840 0%,#092c2855 30%,#07231fe9 76%,#071d19f9 100%)}
+.bike-access-card:hover{transform:translateY(-6px);box-shadow:0 29px 50px #031d17ac;border-color:#ffdfab}
+.bike-access-card:focus-visible{outline:4px solid #f4d093;outline-offset:5px}
+.bike-access-media{position:absolute;inset:0;z-index:-2;background:#366f5a;overflow:hidden}
+.bike-access-media img,.bike-access-media svg{width:100%;height:100%;display:block;object-fit:cover}
+.bike-access-media img{transition:transform .4s ease}
+.bike-access-card:hover .bike-access-media img{transform:scale(1.045)}
+.bike-access-card--local .bike-access-media img{object-position:51% center}
+.bike-access-card--campus .bike-access-media img{object-position:52% center}
+.bike-access-card--regional .bike-access-media{background:#315a4b}
+.bike-access-chip{align-self:flex-start;display:inline-block;max-width:100%;padding:9px 13px;border:1px solid #fff9;background:#123d36d9;border-radius:999px;font-size:.69rem;line-height:1.25;font-weight:850;letter-spacing:.1em;text-transform:uppercase}
+.bike-access-card--regional .bike-access-chip{background:#f1d098;color:#183a31;border-color:#f1d098}
+.bike-access-card--campus .bike-access-chip{background:#e6f0e7;color:#153f33;border-color:#e6f0e7}
+.bike-access-card-copy{display:block}
+.bike-access-index{display:block;margin-bottom:10px;color:#f8d59b;font-size:.7rem;font-weight:850;letter-spacing:.16em}
+.bike-access-card strong{display:block;font:400 clamp(1.85rem,2.8vw,2.55rem)/1.06 Georgia,"Times New Roman",serif;letter-spacing:-.045em;max-width:15ch;text-wrap:balance}
+.bike-access-card small{display:block;font-size:.9rem;line-height:1.57;color:#e5eee5;margin:15px 0 18px;max-width:35ch}
+.bike-access-cta{display:inline-flex;align-items:center;gap:11px;color:#f7d79d;font-size:.83rem;font-weight:850}
+.bike-access-cta:after{content:"↗";font-size:1.25rem;line-height:1}
+.bike-access-disclaimer{max-width:98ch;margin:22px 0 0;color:#cfdfd1;font-size:.81rem;line-height:1.65}
+#shop-title,#regional-bike-title,#student-title{scroll-margin-top:30px}
+@media(max-width:960px){.bike-access-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bike-access-card{min-height:360px}.bike-access-card--campus{grid-column:1 / -1;min-height:280px}.bike-access-card--campus strong{max-width:24ch}}
+@media(max-width:680px){.bike-access-head{grid-template-columns:1fr;gap:15px}.bike-access-head h2{font-size:clamp(2.65rem,9.4vw,3.65rem)}.bike-access-grid{grid-template-columns:1fr}.bike-access-card,.bike-access-card--campus{grid-column:auto;min-height:310px}.bike-access-card strong{font-size:2.2rem}.bike-access .wrap{padding-top:57px;padding-bottom:65px}}
+@media(max-width:410px){.bike-access-card{padding:23px;min-height:312px}.bike-access-head h2{font-size:2.6rem}.bike-access-card strong{font-size:2rem}}
+@media(prefers-reduced-motion:reduce){.bike-access-card,.bike-access-media img{transition:none}.bike-access-card:hover,.bike-access-card:hover .bike-access-media img{transform:none}}
+@media print{.bike-access{background:#fff;color:#173c30}.bike-access:before,.bike-access-media{display:none}.bike-access-head p:last-child,.bike-access-head .eyebrow,.bike-access-disclaimer{color:#173c30}.bike-access-card{min-height:0;box-shadow:none;color:#173c30;border-color:#888;break-inside:avoid}.bike-access-card:before{display:none}.bike-access-card small,.bike-access-cta,.bike-access-index{color:#173c30}}
+
 </style></head><body>
 <a class="skip" href="#rates">Skip to rental rates</a>
 <header><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
@@ -181,6 +222,34 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
 <article class="rate-card" data-ride="electric"><span class="index">04 · ELECTRIC</span><h3>Electric commuter bike</h3><div class="price"><strong><data value="50">$50</data></strong><span>/ day</span></div></article>
 <article class="rate-card" data-ride="road"><span class="index">05 · ROAD + GRAVEL</span><h3>Road or gravel bike</h3><div class="price"><strong><data value="50">$50</data></strong><span>/ day</span></div></article></div>
 <p class="small-note">Rental fleet sizes, specific models, available dates and delivery are not confirmed.</p></section>
+
+<section class="bike-access" id="bike-access-atlas" aria-labelledby="bike-access-title">
+  <div class="wrap">
+    <div class="bike-access-head">
+      <div><p class="eyebrow">The River Valley bicycle guide / Three distinct options</p><h2 id="bike-access-title">A bike for the day. Or a way to get started.</h2></div>
+      <p>The five daily rates above belong to one Russellville shop. There are also a regional on-site rental and a restricted campus checkout program. Choose the type of access that fits before making the trip.</p>
+    </div>
+    <nav class="bike-access-grid" aria-label="Jump to bicycle providers and checkout programs">
+      <a class="bike-access-card bike-access-card--local" href="#shop-title">
+        <span class="bike-access-media" aria-hidden="true"><img src="assets/downtown-russellville-sunset.jpg" width="1200" height="544" loading="lazy" decoding="async" alt=""></span>
+        <span class="bike-access-chip">Russellville · Public rental shop</span>
+        <span class="bike-access-card-copy"><span class="bike-access-index">01 / START LOCAL</span><strong>Jackalope Cycling</strong><small>Five published daily bike rates. Call the Russellville store to confirm fit, availability and reservation details.</small><span class="bike-access-cta">See the local rental desk</span></span>
+      </a>
+      <a class="bike-access-card bike-access-card--regional" href="#regional-bike-title">
+        <span class="bike-access-media" aria-hidden="true"><svg viewBox="0 0 600 700" preserveAspectRatio="xMidYMid slice" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect width="600" height="700" fill="#9cb7a2"/><circle cx="457" cy="139" r="85" fill="#f7d69e"/><path d="M0 320 100 188l95 79 109-156 144 174 89-119 63 99v435H0Z" fill="#648a7b"/><path d="m0 392 89-100 105 70 122-131 143 102 141-97v464H0Z" fill="#3c6a5a"/><path d="M0 493Q130 420 267 488T600 435V700H0Z" fill="#285446"/><path d="M0 574Q175 520 323 565T600 534V700H0Z" fill="#194439"/><path d="M-30 700Q210 489 630 610" fill="none" stroke="#d2bb8b" stroke-width="26"/><path d="M-30 700Q210 489 630 610" fill="none" stroke="#f7e9c7" stroke-width="3" stroke-dasharray="24 24"/><g fill="none" stroke="#f5e2b5" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" transform="translate(175 350)"><circle cx="48" cy="130" r="50"/><circle cx="238" cy="130" r="50"/><path d="m48 130 67-106 58 106H48l67-106 123 106-18-98h-24M94 12h39"/></g><path d="M0 0H600V700H0Z" fill="none" stroke="#f3e2b6" stroke-width="10" opacity=".1"/></svg></span>
+        <span class="bike-access-chip">Clarksville · On-site only</span>
+        <span class="bike-access-card-copy"><span class="bike-access-index">02 / RIDE AT THE LODGE</span><strong>Horsehead Lake Lodge</strong><small>Advertised on-site mountain-bike rentals. Rates, available models and access for nonguests are unconfirmed.</small><span class="bike-access-cta">Review regional rental details</span></span>
+      </a>
+      <a class="bike-access-card bike-access-card--campus" href="#student-title">
+        <span class="bike-access-media" aria-hidden="true"><img src="assets/arkansas-tech-wilson-hall.jpg" width="1200" height="800" loading="lazy" decoding="async" alt=""></span>
+        <span class="bike-access-chip">Arkansas Tech · Eligibility restricted</span>
+        <span class="bike-access-card-copy"><span class="bike-access-index">03 / CAMPUS PROGRAM</span><strong>Outdoor Recreation checkout</strong><small>No-cost bicycle checkout for enrolled students. Employee access requires membership eligibility confirmation; not a public rental.</small><span class="bike-access-cta">Check campus requirements</span></span>
+      </a>
+    </nav>
+    <p class="bike-access-disclaimer">Downtown Russellville and Arkansas Tech campus photos show local scenery, not rental storefronts, bicycle stock or pickup sites. The mountain scene is an original illustration. These are separate programs, not interchangeable rentals; verify prices, eligibility, inventory and conditions directly.</p>
+  </div>
+</section>
+
 <section class="shop" aria-labelledby="shop-title"><div class="wrap">
 <div><p class="eyebrow">One local rental provider</p><h2 id="shop-title">Jackalope Cycling<br>Russellville</h2><p>Locally operated bicycle shop. The shop asks customers to telephone to reserve. Confirm bike size, pickup, helmet and accessory policies, deposits and final rental terms directly.</p><div class="actions"><a class="button dark" href="tel:+14798904950">Call (479) 890-4950 ↗</a><a class="button light" href="https://jackalopecycling.com/pages/services" target="_blank" rel="noopener noreferrer">Official bike rentals and posted rates ↗</a></div></div>
 <div class="shop-card"><dl><dt>Local storefront</dt><dd>112 N Commerce Ave<br>Russellville, AR 72801</dd><dt>Phone to reserve</dt><dd><a href="tel:+14798904950">(479) 890-4950</a></dd><dt>Shop information</dt><dd><a href="https://jackalopecycling.com/pages/contact" target="_blank" rel="noopener noreferrer">Official contact and hours ↗</a></dd><dt>Delivery</dt><dd>Not confirmed</dd></dl></div>
