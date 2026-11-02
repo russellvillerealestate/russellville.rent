@@ -376,6 +376,62 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
  .route-scene svg{transition:none}
  .route-card:hover .route-scene svg{transform:none}
 }
+
+/* Nov 2, 2026 — Editorial event desk. Live StayARV / Russellville.Rent comparison:
+   prominent hierarchy and place-based warmth without pretending the scene is a
+   provider photo. NN/g information scent: clear destinations and caveats;
+   web.dev: responsive CSS grid; WCAG 2.2: visible focus, reflow, reduced motion.
+   Existing provider details, six service routes, forms and links are unchanged. */
+.quick-guide{margin-top:-76px;position:relative;z-index:4}
+.guide-heading-row{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);align-items:end;gap:30px;padding:25px clamp(25px,4vw,48px) 24px;background:#f7f1e4;border:1px solid #dfd3bb;border-bottom:0;border-radius:22px 22px 0 0;box-shadow:0 14px 32px #081c1526}
+.guide-heading-kicker{margin:0 0 6px;color:#7b552d;font-size:.68rem;font-weight:850;letter-spacing:.17em;text-transform:uppercase}
+.guide-heading-row h2{margin:0;font:400 clamp(1.65rem,3vw,2.65rem)/1.11 Georgia,"Times New Roman",serif;letter-spacing:-.05em;color:#173c32;text-wrap:balance}
+.guide-heading-row>p{margin:0 0 3px;max-width:47ch;font-size:.84rem;line-height:1.55;color:#506559}
+.guide-box{display:grid;grid-template-columns:minmax(0,1.13fr) minmax(0,.87fr);grid-template-rows:repeat(2,minmax(142px,auto));gap:7px;background:#f7f1e4;padding:0 7px 7px;border:1px solid #dfd3bb;border-top:0;border-radius:0 0 22px 22px;box-shadow:0 25px 50px #10291c2e;overflow:visible}
+.guide-item,.guide-item+.guide-item{position:relative;min-width:0;min-height:0;padding:23px clamp(23px,3vw,36px);border:0;border-radius:13px;background:#edf1e8;box-shadow:none;transition:background-color .18s,transform .18s,box-shadow .18s}
+.guide-item:first-child{grid-row:span 2;min-height:324px;padding:clamp(26px,3.5vw,42px);overflow:hidden;isolation:isolate;background:linear-gradient(145deg,#174a3b,#0c2f2c 92%);color:#fff}
+.guide-item:first-child:after{content:"";position:absolute;z-index:-1;right:-115px;bottom:-205px;width:420px;height:420px;border:1px solid #e4c5897d;border-radius:50%;box-shadow:0 0 0 45px #dcbf7517,0 0 0 90px #dcbf7510;pointer-events:none}
+.guide-item:nth-child(2){background:#234c3f;color:#fff}
+.guide-item:nth-child(3){background:#e6e9de;color:#173c32}
+.guide-item .guide-number{color:#6b5c39!important;margin:0 0 10px!important}
+.guide-item:first-child .guide-number,.guide-item:nth-child(2) .guide-number{color:#eacb92!important}
+.guide-item strong{max-width:27ch;font:400 clamp(1.3rem,2vw,1.83rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.038em;margin:0 0 10px}
+.guide-item:first-child strong{max-width:16ch;font-size:clamp(2.05rem,3.45vw,3.35rem);line-height:1.07}
+.guide-item:nth-child(2) strong,.guide-item:nth-child(2)>span:not(.guide-number):not(.guide-cta){color:#fff}
+.guide-item:nth-child(2)>span:not(.guide-number):not(.guide-cta){color:#e0eee3}
+.guide-item:first-child>span:not(.guide-number):not(.guide-cta){color:#e7f0e6}
+.guide-item>span:not(.guide-number):not(.guide-cta){max-width:38ch;line-height:1.5}
+.guide-item .guide-cta{padding-top:13px;margin-top:auto!important;color:#215841!important}
+.guide-item:first-child .guide-cta,.guide-item:nth-child(2) .guide-cta{color:#f3d292!important}
+.guide-item:hover{transform:translateY(-3px);box-shadow:0 15px 27px #142e2231}
+.guide-item:first-child:hover{background:linear-gradient(145deg,#215746,#123e36)}
+.guide-item:nth-child(2):hover{background:#315e4d}
+.guide-item:nth-child(3):hover{background:#f4f3e9}
+.guide-item:focus-visible{outline:4px solid #b77729;outline-offset:3px;z-index:5}
+@media(max-width:920px){
+ .guide-heading-row{grid-template-columns:1fr;gap:11px}
+ .guide-box{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto auto}
+ .guide-item:first-child{grid-column:1/-1;grid-row:auto;min-height:238px}
+ .guide-item:first-child strong{max-width:22ch}
+ .guide-item:nth-child(2),.guide-item:nth-child(3){min-height:216px}
+}
+@media(max-width:610px){
+ .quick-guide{margin-top:-48px}
+ .guide-heading-row{padding:23px 22px 21px;border-radius:17px 17px 0 0}
+ .guide-heading-row h2{font-size:clamp(1.8rem,7vw,2.3rem)}
+ .guide-heading-row>p{font-size:.81rem}
+ .guide-box{grid-template-columns:1fr;grid-template-rows:none;gap:6px;padding:0 6px 6px;border-radius:0 0 17px 17px}
+ .guide-item,.guide-item+.guide-item{grid-column:auto;grid-row:auto;min-height:0;border:0;padding:24px 22px;border-radius:11px}
+ .guide-item:first-child{min-height:225px;padding:27px 23px}
+ .guide-item:first-child strong{font-size:clamp(2rem,8vw,2.65rem)}
+ .guide-item strong{max-width:none}
+ .guide-item .guide-cta{padding-top:16px}
+}
+@media(prefers-reduced-motion:reduce){
+ .guide-item{transition:none}
+ .guide-item:hover{transform:none}
+}
+
 </style>
 </head>
 <body>
@@ -385,8 +441,10 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
 <div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley · Event rentals</p><h1 id="page-title">Audio, visual <br><em>and event equipment</em> <br>rentals</h1><p class="hero-copy">Sound equipment, microphones, lighting, projectors and production gear for Russellville events. Compare what providers advertise—and what still needs to be confirmed.</p><div class="hero-actions"><a class="action primary" href="#confirmed">Explore confirmed delivery ↓</a><a class="action secondary" href="#more-options">Other providers ↓</a></div></div>
 <div class="sound-art" aria-hidden="true"><div class="wave"><i style="--h:34px"></i><i style="--h:62px"></i><i style="--h:94px"></i><i style="--h:49px"></i><i style="--h:126px"></i><i style="--h:76px"></i><i style="--h:154px"></i><i style="--h:92px"></i><i style="--h:120px"></i><i style="--h:48px"></i><i style="--h:90px"></i><i style="--h:60px"></i><i style="--h:36px"></i></div><span class="art-label">SOUND / LIGHT / PRODUCTION</span></div>
 </div></section>
-<div class="shell quick-guide"><nav class="guide-box" aria-label="Audio and visual directory shortcuts">
-  <a class="guide-item" href="#confirmed"><span class="guide-number">01 / Service areas</span><strong>2 confirm Russellville delivery</strong><span>Other service details still require a quote</span><span class="guide-cta">See advertised delivery <span aria-hidden="true">↗</span></span></a>
+<div class="shell quick-guide">
+<div class="guide-heading-row"><div><p class="guide-heading-kicker">The River Valley event desk / Start here</p><h2>Three ways to make it happen.</h2></div><p>Check who advertises Russellville service, find the equipment or crew you need, then prepare your questions before requesting a quote.</p></div>
+<nav class="guide-box" aria-label="Audio and visual directory shortcuts">
+  <a class="guide-item" href="#confirmed"><span class="guide-number">01 / Service areas</span><strong>2 advertise Russellville service</strong><span>Other service details still require a quote</span><span class="guide-cta">See advertised delivery <span aria-hidden="true">↗</span></span></a>
   <a class="guide-item" href="#service-map"><span class="guide-number">02 / Choose a service</span><strong>7 listed providers</strong><span>Sound, lighting and event production</span><span class="guide-cta">Explore the six paths <span aria-hidden="true">↗</span></span></a>
   <a class="guide-item" href="#plan-title"><span class="guide-number">03 / Plan the details</span><strong>Verify before booking</strong><span>Equipment, dates, delivery and total cost</span><span class="guide-cta">Review the checklist <span aria-hidden="true">↗</span></span></a>
 </nav></div>
