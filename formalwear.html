@@ -275,6 +275,44 @@ a:focus-visible{outline:3px solid #a66a17;outline-offset:4px;border-radius:3px}
 }
 @media(prefers-reduced-motion:reduce){.fit-atlas-stop{transition:none}.fit-atlas-stop:hover{transform:none}}
 
+
+/* 2026-11-02: Local-first provider editorial layout. StayARV hierarchy adapted to a five-store directory.
+   Informed by Nielsen Norman Group information scent, web.dev responsive layouts and WCAG 2.2 keyboard focus.
+   Provider descriptions, prices, contacts, anchors and JavaScript intentionally unchanged. */
+.provider-spotlight{display:grid;grid-template-columns:minmax(210px,.31fr) minmax(0,1fr);gap:17px;margin-bottom:68px;align-items:stretch}
+.spotlight-rail{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;gap:40px;overflow:hidden;padding:clamp(25px,3.3vw,41px);border-radius:18px;background:radial-gradient(circle at 120% -10%,#59776a 0%,transparent 42%),linear-gradient(145deg,#234b3d,#102d27);color:#fff7e8}
+.spotlight-rail:after{content:"01";position:absolute;z-index:-1;right:-.15em;bottom:-.29em;font:400 clamp(10rem,20vw,18rem)/1 Georgia,serif;color:#ffffff0f;pointer-events:none}
+.spotlight-rail-kicker{color:#f0d5a9;font-size:.7rem;font-weight:850;letter-spacing:.13em;text-transform:uppercase;line-height:1.6}
+.spotlight-rail strong{display:block;font:400 clamp(2.5rem,3.5vw,4.1rem)/1.01 Georgia,"Times New Roman",serif;letter-spacing:-.065em}
+.spotlight-rail strong em{color:#edc894;font-weight:400}
+.spotlight-rail-note{padding-top:20px;border-top:1px solid #ffffff50;color:#dfe8dc;font-size:.82rem;line-height:1.6}
+.provider-spotlight .provider-card{box-shadow:0 20px 55px #1d3a2b13}
+.provider-spotlight .provider-name{font-size:clamp(2.7rem,4vw,4.2rem)}
+.provider-region+.provider-region{margin-top:75px}
+.provider-region-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:25px;padding:0 5px 25px;border-bottom:1px solid #cbd4ca}
+.provider-region-index{display:block;margin-bottom:11px;font-size:.71rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase;color:#87603e}
+.provider-region-heading h3{font:400 clamp(2.8rem,4.9vw,4.75rem)/1 Georgia,"Times New Roman",serif;letter-spacing:-.059em;margin:0;text-wrap:balance}
+.provider-region-heading h3 em{color:#a2764e;font-weight:400}
+.provider-region-heading p{max-width:43ch;margin:0 0 4px;color:#526559;font-size:.91rem;line-height:1.7}
+.provider-region-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch}
+.provider-region-grid .provider-card{display:flex;flex-direction:column;min-width:0;border-radius:17px;box-shadow:0 14px 32px #1d3a2b0b}
+.provider-region-grid .provider-main{padding:clamp(27px,3vw,37px)}
+.provider-region-grid .provider-name{font-size:clamp(2.2rem,3.1vw,3.3rem);line-height:1.08;max-width:16ch;margin:18px 0 15px}
+.provider-region-grid .provider-description{font-size:.93rem;line-height:1.72;margin-bottom:23px}
+.provider-region-grid .provider-details{margin-top:auto;padding:27px clamp(27px,3vw,37px);border-left:0;border-top:1px solid #d6dfd3}
+.provider-region-grid .provider-details address{font-size:1rem;margin-bottom:17px}
+.provider-region-grid .provider-details .contact{font-size:1.23rem}
+.provider-region-grid .button{font-size:.81rem;padding:11px 13px;min-height:44px}
+.provider-region--regional{position:relative;padding:clamp(27px,4vw,44px);border:1px solid #3b6657;border-radius:24px;background:radial-gradient(ellipse at 99% 3%,#426556 0%,transparent 49%),linear-gradient(145deg,#1c4338,#102e27);color:#fff9ee;overflow:hidden}
+.provider-region--regional .provider-region-heading{border-bottom-color:#ffffff40}
+.provider-region--regional .provider-region-index{color:#efd09d}
+.provider-region--regional .provider-region-heading h3 em{color:#edc895}
+.provider-region--regional .provider-region-heading p{color:#e2eae1}
+.provider-region--regional .provider-card{color:var(--ink)}
+@media(max-width:980px){.provider-spotlight{grid-template-columns:1fr}.spotlight-rail{min-height:215px;gap:15px}.spotlight-rail strong{font-size:3.3rem}.provider-spotlight .provider-card{grid-template-columns:minmax(0,1fr) minmax(280px,.85fr)}}
+@media(max-width:790px){.provider-region-heading{display:block}.provider-region-heading p{margin-top:16px}.provider-region-grid{grid-template-columns:1fr}.provider-region-grid .provider-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.8fr)}.provider-region-grid .provider-details{border-top:0;border-left:1px solid #d6dfd3}.provider-region+.provider-region{margin-top:55px}}
+@media(max-width:650px){.provider-spotlight{margin-bottom:49px}.spotlight-rail{min-height:195px;padding:26px}.spotlight-rail strong{font-size:2.8rem}.provider-spotlight .provider-card,.provider-region-grid .provider-card{display:flex;flex-direction:column}.provider-region-grid .provider-details{border-left:0;border-top:1px solid #d6dfd3}.provider-region-heading h3{font-size:clamp(2.65rem,10vw,3.7rem)}.provider-region--regional{padding:21px 16px;border-radius:18px}.provider-region-grid{gap:15px}.provider-region-grid .provider-main{padding:27px 23px}.provider-region-grid .provider-details{padding:23px}.provider-region-grid .provider-name{font-size:2.65rem}}
+
 </style>
 </head>
 <body>
@@ -365,27 +403,49 @@ a:focus-visible{outline:3px solid #a66a17;outline-offset:4px;border-radius:3px}
 </section>
 <section class="provider-section shell" id="provider" aria-labelledby="provider-title">
 <div class="section-intro"><div><p class="eyebrow">01 / Local &amp; nearby rental providers</p><h2 class="section-title" id="provider-title">Find your formal fit.</h2></div><p>Compare one Russellville provider with nearby stores in Clarksville and Morrilton plus regional storefronts in Conway and Fort Smith. These are separate businesses, not Russellville branches. Confirm styles, fittings, prices and availability directly.</p></div>
-<article class="provider-card" aria-labelledby="formal-affairs-title">
+<div class="provider-spotlight">
+  <div class="spotlight-rail" aria-label="Russellville hometown option">
+    <span class="spotlight-rail-kicker">01 / Right here · Russellville</span>
+    <strong>Begin<br>close to<br><em>home.</em></strong>
+    <span class="spotlight-rail-note">One local storefront.<br>Fitting details, first-hand.</span>
+  </div>
+  <article class="provider-card" aria-labelledby="formal-affairs-title">
 <div class="provider-main"><span class="card-kicker">Russellville · Formalwear</span><h3 class="provider-name" id="formal-affairs-title">Formal Affairs</h3><p class="provider-description">Tuxedo and suit rental provider.</p><div class="provider-actions"><a class="button button-dark" href="tel:+14798909557">Call 479-890-9557 <span aria-hidden="true">↗</span></a><a class="button button-light" href="https://www.jimsformalwear.com/store-detail/formal-affairs-FF441" target="_blank" rel="noopener noreferrer">Provider information <span aria-hidden="true">↗</span></a></div></div>
 <div class="provider-details"><p class="detail-label">Visit / Contact</p><address>121 E Harrell Dr, Suite 11<br>Russellville, AR 72802</address><p class="detail-label">Phone</p><a class="contact" href="tel:+14798909557">479-890-9557</a><p>Confirm current hours and address before visiting.</p></div>
 </article>
-
-<article class="provider-card" aria-labelledby="danielles-title">
-<div class="provider-main"><span class="card-kicker">Clarksville · Nearby formalwear</span><h3 class="provider-name" id="danielles-title">Danielle's</h3><p class="provider-description">Jim's Formal Wear lists this Clarksville retailer for suit and tuxedo rentals, as well as bridal and other formalwear. This is a Clarksville storefront, not a Russellville branch; rental stock, fittings and prices require confirmation.</p><div class="provider-actions"><a class="button button-dark" href="tel:+14797545885">Call 479-754-5885 <span aria-hidden="true">↗</span></a><a class="button button-light" href="https://www.jimsformalwear.com/store-detail/danielles-FD142" target="_blank" rel="noopener noreferrer">Official authorized retailer listing <span aria-hidden="true">↗</span></a></div></div>
+</div>
+<section class="provider-region" aria-labelledby="nearby-formalwear">
+  <div class="provider-region-heading">
+    <div><span class="provider-region-index">02 / The neighboring towns</span><h3 id="nearby-formalwear">A little farther.<br><em>More options.</em></h3></div>
+    <p>Two independently operated storefronts in Clarksville and Morrilton. Check fitting appointments, inventory and return arrangements before traveling.</p>
+  </div>
+  <div class="provider-region-grid">
+    <article class="provider-card" aria-labelledby="danielles-title">
+<div class="provider-main"><span class="card-kicker">Clarksville · Nearby formalwear</span><h4 class="provider-name" id="danielles-title">Danielle's</h4><p class="provider-description">Jim's Formal Wear lists this Clarksville retailer for suit and tuxedo rentals, as well as bridal and other formalwear. This is a Clarksville storefront, not a Russellville branch; rental stock, fittings and prices require confirmation.</p><div class="provider-actions"><a class="button button-dark" href="tel:+14797545885">Call 479-754-5885 <span aria-hidden="true">↗</span></a><a class="button button-light" href="https://www.jimsformalwear.com/store-detail/danielles-FD142" target="_blank" rel="noopener noreferrer">Official authorized retailer listing <span aria-hidden="true">↗</span></a></div></div>
 <div class="provider-details"><p class="detail-label">Visit / Contact</p><address>2382 W Clark Rd<br>Clarksville, AR 72830</address><p class="detail-label">Phone</p><a class="contact" href="tel:+14797545885">479-754-5885</a><p>Nearby in-store rental option. Confirm current hours and fitting procedures before visiting.</p></div>
 </article>
-<article class="provider-card" aria-labelledby="merle-norman-title">
-<div class="provider-main"><span class="card-kicker">Morrilton · Nearby formalwear</span><h3 class="provider-name" id="merle-norman-title">Merle Norman &amp; More</h3><p class="provider-description">The Morrilton store officially advertises suit and tuxedo rentals for weddings, prom and special events, with orders placed through the store rather than its online style catalog. It works with formalwear suppliers including Jim's Formal Wear and Paul Morrell. This is not a Russellville storefront; confirm sizes, rates and booking terms.</p><div class="provider-actions"><a class="button button-dark" href="tel:+15013548092">Call 501-354-8092 <span aria-hidden="true">↗</span></a><a class="button button-light" href="https://merlenormanmorrilton.com/wedding-gift-services/" target="_blank" rel="noopener noreferrer">Official rental information <span aria-hidden="true">↗</span></a></div></div>
+    <article class="provider-card" aria-labelledby="merle-norman-title">
+<div class="provider-main"><span class="card-kicker">Morrilton · Nearby formalwear</span><h4 class="provider-name" id="merle-norman-title">Merle Norman &amp; More</h4><p class="provider-description">The Morrilton store officially advertises suit and tuxedo rentals for weddings, prom and special events, with orders placed through the store rather than its online style catalog. It works with formalwear suppliers including Jim's Formal Wear and Paul Morrell. This is not a Russellville storefront; confirm sizes, rates and booking terms.</p><div class="provider-actions"><a class="button button-dark" href="tel:+15013548092">Call 501-354-8092 <span aria-hidden="true">↗</span></a><a class="button button-light" href="https://merlenormanmorrilton.com/wedding-gift-services/" target="_blank" rel="noopener noreferrer">Official rental information <span aria-hidden="true">↗</span></a></div></div>
 <div class="provider-details"><p class="detail-label">Visit / Contact</p><address>106 S Moose St<br>Morrilton, AR 72110</address><p class="detail-label">Phone</p><a class="contact" href="tel:+15013548092">501-354-8092</a><p>Nearby in-store rental option; ask about pickup, fitting and returns.</p></div>
 </article>
-<article class="provider-card" aria-labelledby="bell-sward-title">
-<div class="provider-main"><span class="card-kicker">Conway · Regional formalwear</span><h3 class="provider-name" id="bell-sward-title">Bell &amp; Sward Gentlemen's Clothier</h3><p class="provider-description">Conway men's clothing retailer whose official website lists tuxedo rentals alongside on-site tailoring and formalwear services. This is a regional in-store option, not a Russellville branch or a verified Russellville delivery service. Confirm rental choices, alterations, deposits and pickup timing directly.</p><div class="provider-actions"><a class="button button-dark" href="tel:+15015046880">Call 501-504-6880 <span aria-hidden="true">↗</span></a><a class="button button-light" href="https://bellandsward.com/" target="_blank" rel="noopener noreferrer">Official tuxedo-rental information <span aria-hidden="true">↗</span></a></div></div>
+  </div>
+</section>
+<section class="provider-region provider-region--regional" aria-labelledby="regional-formalwear">
+  <div class="provider-region-heading">
+    <div><span class="provider-region-index">03 / Beyond the immediate valley</span><h3 id="regional-formalwear">Make the trip<br><em>count.</em></h3></div>
+    <p>Conway and Fort Smith are regional in-store choices, not Russellville branches. Confirm fitting, pickup and return requirements before planning travel.</p>
+  </div>
+  <div class="provider-region-grid">
+    <article class="provider-card" aria-labelledby="bell-sward-title">
+<div class="provider-main"><span class="card-kicker">Conway · Regional formalwear</span><h4 class="provider-name" id="bell-sward-title">Bell &amp; Sward Gentlemen's Clothier</h4><p class="provider-description">Conway men's clothing retailer whose official website lists tuxedo rentals alongside on-site tailoring and formalwear services. This is a regional in-store option, not a Russellville branch or a verified Russellville delivery service. Confirm rental choices, alterations, deposits and pickup timing directly.</p><div class="provider-actions"><a class="button button-dark" href="tel:+15015046880">Call 501-504-6880 <span aria-hidden="true">↗</span></a><a class="button button-light" href="https://bellandsward.com/" target="_blank" rel="noopener noreferrer">Official tuxedo-rental information <span aria-hidden="true">↗</span></a></div></div>
 <div class="provider-details"><p class="detail-label">Visit / Contact</p><address>1011 Oak St<br>Conway, AR 72032</address><p class="detail-label">Phone</p><a class="contact" href="tel:+15015046880">501-504-6880</a><p>Regional storefront; no Russellville delivery claim. Confirm hours and appointment requirements.</p></div>
 </article>
-<article class="provider-card" aria-labelledby="rainwaters-title">
-<div class="provider-main"><span class="card-kicker">Fort Smith · Regional formalwear</span><h3 class="provider-name" id="rainwaters-title">Rainwater's Men's Clothing and Tuxedo Rental</h3><p class="provider-description">Fort Smith in-store suit and tuxedo rental specialist with an official online rental catalog. Published examples include suit rentals listed at $160 and a classic black notch-lapel tuxedo rental listed at $185; options, accessories and total charges vary. This is a Fort Smith storefront, <strong>not a Russellville branch or verified delivery service</strong>. Confirm current pricing, fittings, collection and return terms before reserving.</p><div class="provider-actions"><a class="button button-dark" href="tel:+14794525836">Call 479-452-5836 <span aria-hidden="true">↗</span></a><a class="button button-light" href="https://rainwater-s.com/collections/tux-suit-rental" target="_blank" rel="noopener noreferrer">Official rental catalog <span aria-hidden="true">↗</span></a></div></div>
+    <article class="provider-card" aria-labelledby="rainwaters-title">
+<div class="provider-main"><span class="card-kicker">Fort Smith · Regional formalwear</span><h4 class="provider-name" id="rainwaters-title">Rainwater's Men's Clothing and Tuxedo Rental</h4><p class="provider-description">Fort Smith in-store suit and tuxedo rental specialist with an official online rental catalog. Published examples include suit rentals listed at $160 and a classic black notch-lapel tuxedo rental listed at $185; options, accessories and total charges vary. This is a Fort Smith storefront, <strong>not a Russellville branch or verified delivery service</strong>. Confirm current pricing, fittings, collection and return terms before reserving.</p><div class="provider-actions"><a class="button button-dark" href="tel:+14794525836">Call 479-452-5836 <span aria-hidden="true">↗</span></a><a class="button button-light" href="https://rainwater-s.com/collections/tux-suit-rental" target="_blank" rel="noopener noreferrer">Official rental catalog <span aria-hidden="true">↗</span></a></div></div>
 <div class="provider-details"><p class="detail-label">Visit / Contact</p><address>9700 Rogers Avenue<br>Fort Smith, AR 72903</address><p class="detail-label">Phone</p><a class="contact" href="tel:+14794525836">479-452-5836</a><p>Regional in-store option; verify hours and rental arrangements. <a href="https://rainwater-s.com/pages/find-our-store" target="_blank" rel="noopener noreferrer">Official address and hours ↗</a></p></div>
 </article>
+  </div>
+</section>
 </section>
 <section class="guide" aria-labelledby="guide-title"><div class="shell">
 <div class="guide-heading"><div><p class="eyebrow">Before you reserve</p><h2 id="guide-title">Three questions worth asking.</h2></div><p>A quick checklist to help you plan your rental. Policies and inventory have not been independently verified.</p></div>
