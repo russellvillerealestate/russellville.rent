@@ -345,6 +345,68 @@
 @media(max-width:520px){.contract-studio{margin-top:45px;border-radius:17px}.contract-banner{padding:33px 24px}.contract-banner h2{font-size:2.7rem}.contract-workspace{padding:18px}.contract-term{display:block}.contract-term>div:last-child{margin-top:14px}.contract-term input{max-width:160px}.contract-option{padding:20px}.contract-fields{gap:9px}.contract-field{font-size:.68rem}.contract-field input{padding:9px 7px}}
 @media(prefers-reduced-motion:reduce){.contract-meter span{transition:none}}
 
+
+/* Three-route school-band atlas, Nov 2 2026: expand two-provider spread after
+   a verified online option was added. Scenic editorial hierarchy follows
+   StayARV; all provider facts/links and two-quote calculator remain intact.
+   NN/g visual hierarchy, web.dev responsive design, W3C WCAG 2.2. */
+.compare-card--online{
+  grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);
+  gap:0;padding:0;overflow:hidden;min-height:370px;
+  background:#f8f3e6;border:1px solid #c8d6c8;color:#183e32;
+}
+.compare-online-story{
+  position:relative;isolation:isolate;display:flex;flex-direction:column;
+  padding:clamp(26px,4vw,43px);min-width:0;overflow:hidden;
+  background:radial-gradient(circle at 92% 12%,#547968 0,transparent 32%),
+    linear-gradient(140deg,#11382e 0%,#1e4d3e 100%);color:#fffdf6;
+}
+.compare-online-story:before{
+  content:"";position:absolute;z-index:-1;right:-120px;bottom:-70px;
+  width:470px;height:210px;transform:rotate(-13deg);opacity:.22;
+  background:repeating-linear-gradient(to bottom,transparent 0 19px,#f3d99f 19px 21px,transparent 21px 34px);
+  pointer-events:none;
+}
+.compare-online-story .compare-index{color:#f4d69b}
+.compare-online-story .compare-emblem{border-color:#f4d69b88;color:#ffdf9f}
+.compare-online-overline{
+  margin:4px 0 9px;color:#f1d39a;letter-spacing:.17em;text-transform:uppercase;
+  font-size:.65rem;font-weight:850;
+}
+.compare-card--online h3{
+  font:400 clamp(2rem,3.6vw,3.4rem)/1.06 Georgia,"Times New Roman",serif;
+  letter-spacing:-.06em;color:#fffdf5;margin:0 0 15px;text-wrap:balance;
+}
+.compare-card--online h3 span{display:block;color:#f3d8a2;font-size:.62em;line-height:1.24;letter-spacing:-.03em;margin-top:8px}
+.compare-card--online .compare-subtitle{max-width:40ch;color:#e3efe5;font-size:.88rem;line-height:1.7}
+.compare-card--online .compare-cta{
+  align-self:flex-start;min-width:min(100%,270px);margin-top:auto;
+  background:#f1d296;color:#14372e;
+}
+.compare-card--online .compare-cta:hover{background:#ffe2a9}
+.compare-online-facts{min-width:0;padding:clamp(24px,3.6vw,41px);background:linear-gradient(160deg,#fffdf7,#eaf0e4)}
+.compare-online-label{
+  display:block;margin-bottom:15px;color:#48644e;font-size:.68rem;letter-spacing:.13em;
+  text-transform:uppercase;font-weight:850;
+}
+.compare-card--online .compare-facts{margin:0}
+.compare-card--online .compare-facts>div{grid-template-columns:minmax(104px,.42fr) minmax(0,1fr);padding:15px 0;border-color:#d3ded1}
+.compare-card--online .compare-facts dt{color:#285943}
+.compare-card--online .compare-facts dd{color:#385548}
+.compare-online-foot{margin:17px 0 0;font-size:.76rem;color:#5b6e5d;line-height:1.6}
+@media(max-width:860px){
+  .compare-card--online{grid-template-columns:1fr}
+  .compare-online-story{min-height:300px}
+  .compare-card--online .compare-cta{margin-top:18px}
+}
+@media(max-width:480px){
+  .compare-online-story,.compare-online-facts{padding:24px 20px}
+  .compare-online-story{min-height:0}
+  .compare-card--online h3{font-size:2.3rem}
+  .compare-card--online .compare-facts>div{grid-template-columns:1fr;gap:5px}
+  .compare-card--online .compare-cta{width:100%}
+}
+
 </style>
 </head>
 <body>
@@ -408,14 +470,14 @@
     <nav class="guide-strip" aria-label="Choose a band rental path">
       <a href="#cooper-music"><span class="mark" aria-hidden="true">01</span><span><strong>Local music store</strong>Russellville storefront</span><span class="guide-arrow" aria-hidden="true">↗</span></a>
       <a href="#school-band-service"><span class="mark" aria-hidden="true">02</span><span><strong>Regional program</strong>Russellville service advertised</span><span class="guide-arrow" aria-hidden="true">↗</span></a>
-      <a href="#questions"><span class="mark" aria-hidden="true">03</span><span><strong>Know the difference</strong>Rent-to-own, not event audio</span><span class="guide-arrow" aria-hidden="true">↗</span></a>
+      <a href="#sweetwater-instrument-rentals"><span class="mark" aria-hidden="true">03</span><span><strong>Online school-linked</strong>Russellville schools listed; terms to confirm</span><span class="guide-arrow" aria-hidden="true">↗</span></a>
     </nav>
 
 
     <section class="compare" id="compare-programs" aria-labelledby="compare-title">
       <div class="compare-heading">
-        <div><p class="eyebrow">The program scorecard / Two featured options</p><h2 id="compare-title">Two paths to<br><em>the first note.</em></h2></div>
-        <p>Compare the practical differences before calling. Details marked “ask” are not confirmed, and neither program's live inventory or prices are shown here.</p>
+        <div><p class="eyebrow">The program atlas / Three rental paths</p><h2 id="compare-title">Three paths to<br><em>the first note.</em></h2></div>
+        <p>Start with a local store, a regional school-band program, or a school-linked online option. Live inventory, eligibility, pricing and delivery still require confirmation.</p>
       </div>
       <div class="compare-grid">
         <article class="compare-card compare-card--local" aria-labelledby="compare-local-title">
@@ -444,8 +506,27 @@
           </dl>
           <a class="compare-cta" href="#school-band-service">See regional provider details <span aria-hidden="true">↗</span></a>
         </article>
+        <article class="compare-card compare-card--online" aria-labelledby="compare-online-title">
+          <div class="compare-online-story">
+            <div class="compare-top"><span class="compare-index">03 / Online school-linked program</span><span class="compare-emblem" aria-hidden="true">♬</span></div>
+            <p class="compare-online-overline">A third way to start</p>
+            <h3 id="compare-online-title">Sweetwater <span>Band &amp; Orchestra Instrument Rentals</span></h3>
+            <p class="compare-subtitle">A school-linked online starting point, not a verified Russellville storefront.</p>
+            <a class="compare-cta" href="#sweetwater-instrument-rentals">See online program details <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="compare-online-facts">
+            <span class="compare-online-label">The online route / What is published</span>
+            <dl class="compare-facts">
+              <div><dt>Access</dt><dd>Online program; local walk-in storefront not verified.</dd></div>
+              <div><dt>Schools listed</dt><dd>Russellville, Atkins, Dardanelle, Dover and Pottsville appear in its school selection.</dd></div>
+              <div><dt>Availability</dt><dd>School listings do not confirm an instrument, eligibility or delivery to your address.</dd></div>
+              <div><dt>Before choosing</dt><dd>Confirm the model, contract terms, all charges and pickup or delivery directly.</dd></div>
+            </dl>
+            <p class="compare-online-foot">Review the full provider listing below for the official Russellville school-rental link.</p>
+          </div>
+        </article>
       </div>
-      <p class="compare-note">Summary of two featured programs, not a quote or guarantee. An additional online school-linked option appears in the provider directory below. Confirm current instrument selection, availability, prices, eligibility and contract terms with each provider.</p>
+      <p class="compare-note">Three program routes are shown for discovery, not as quotes or guarantees. The two-column cost worksheet below compares Cooper Music and Arkansas School Band Service only; request any Sweetwater quote separately. Confirm instrument selection, eligibility, pricing, availability and contract terms with every provider.</p>
       <a href="#contract-scorecard" class="contract-jump">Have quotes? Open the side-by-side cost worksheet ↓</a>
     </section>
 
@@ -454,7 +535,7 @@
 <section class="band-explorer" id="instrument-explorer" aria-labelledby="instrument-explorer-heading">
   <div class="band-explorer-header">
     <div><p class="eyebrow">Band-room collection / Find your starting note</p><h2 id="instrument-explorer-heading">Every great sound <em>starts somewhere.</em></h2></div>
-    <p>Know the instrument your band director recommended? Choose it to prefill the existing inquiry below. The cards are examples to ask about, not confirmed rental stock at either provider. If unsure, ask the school first.</p>
+    <p>Know the instrument your band director recommended? Choose it to prefill the existing inquiry below. The cards are examples to ask about, not confirmed rental stock at any provider. If unsure, ask the school first.</p>
   </div>
   <div class="band-explorer-grid" aria-label="Instrument choices"><a class="band-explorer-card" href="#band-instrument" data-band-pick="Trumpet"><span class="band-explorer-index">01 / BRASS</span><span class="band-explorer-art" aria-hidden="true"><svg viewBox="0 0 180 110" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M10 52h125q15 0 36-16v43q-21-17-36-17H10z" fill="currentColor" fill-opacity=".14"/><path d="M17 46v27m154-37v43M48 53V25h67v28M48 63v27h67V63M63 26v39m23-39v39m23-39v39"/></svg></span><span class="band-explorer-name">Trumpet</span><span class="band-explorer-desc">Ask about a student trumpet.</span></a>
 <a class="band-explorer-card" href="#band-instrument" data-band-pick="Trombone"><span class="band-explorer-index">02 / BRASS</span><span class="band-explorer-art" aria-hidden="true"><svg viewBox="0 0 180 110" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M11 53h123q16 0 37-15v41q-21-15-37-15H11z" fill="currentColor" fill-opacity=".14"/><path d="M18 44v28m153-34v41M41 53V29h49q16 0 16 17v18M65 65v29q0 9 12 9h77q12 0 12-13V68"/></svg></span><span class="band-explorer-name">Trombone</span><span class="band-explorer-desc">Ask about a student trombone.</span></a>
