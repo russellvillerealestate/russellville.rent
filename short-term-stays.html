@@ -161,6 +161,46 @@ main.wrap{padding-top:28px}
 @media(max-width:740px){.stay-top{height:120px}}
 @media(prefers-reduced-motion:reduce){.stay-top svg{transition:none}.stay:hover .stay-top svg{transform:none}}
 
+
+/* 2026-11-02 getaway folio. Place-led local photography, not a listing image.
+   NN/g hierarchy, web.dev responsive media, WCAG 2.2 keyboard and target guidance. */
+.stay-board{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);overflow:hidden;min-width:0;margin:28px 0 30px;border:1px solid #ccdacb;border-radius:25px;background:#fdfcf6;box-shadow:0 20px 45px #15392f1f}
+.stay-board-visual{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;min-height:360px;padding:clamp(28px,4vw,46px);color:#fff;background:linear-gradient(180deg,#0b332a5e,#0a302bcf 54%,#062620f2),url("assets/downtown-russellville-sunset.jpg") center 55%/cover no-repeat}
+.stay-board-visual:before{content:"";position:absolute;z-index:-1;right:-100px;top:-110px;width:280px;height:280px;border:1px solid #f8e5b178;border-radius:50%;box-shadow:0 0 0 44px #f6d49a12,0 0 0 88px #f6d49a0b;pointer-events:none}
+.stay-board-kicker{font-size:.67rem;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:#fbe0a4;margin-bottom:auto}
+.stay-board h3{font:400 clamp(2.35rem,4vw,4rem)/1.02 Georgia,serif;letter-spacing:-.06em;margin:23px 0 15px;max-width:11ch;color:#fff;text-wrap:balance}
+.stay-board h3 em{color:#f5d99d;font-weight:400}
+.stay-board-visual p{margin:0;max-width:38ch;color:#f0f6ed;font-size:.87rem}
+.stay-board-visual a{display:inline-flex;align-items:center;min-height:46px;margin-top:19px;padding:9px 17px;border-radius:100px;background:#f2d99e;color:#173b2f;text-decoration:none;font-size:.82rem;font-weight:850}
+.stay-board-visual a:hover{background:#ffeabe}
+.stay-board-caption{margin-top:13px;color:#e0e8df;font-size:.65rem;line-height:1.4}
+.stay-board-content{display:flex;flex-direction:column;justify-content:center;min-width:0;padding:clamp(23px,3vw,36px);background:radial-gradient(circle at 100% 0,#e5eedf,transparent 50%),#fdfcf6}
+.stay-board-heading{display:flex;justify-content:space-between;align-items:baseline;gap:15px;margin-bottom:17px}
+.stay-board-heading strong{font:400 clamp(1.4rem,2.3vw,2rem)/1.15 Georgia,serif;letter-spacing:-.04em;color:#173d33}
+.stay-board-count{color:#476a51;font-size:.7rem;font-weight:850;flex:none}
+.stay-board-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;list-style:none;margin:0;padding:0}
+.stay-board-entry{display:flex;min-width:0;min-height:114px;border:1px solid #d5e0d1;border-radius:14px;background:#fff;overflow:hidden}
+.stay-board-entry>a{display:flex;flex:1;min-width:0;flex-direction:column;justify-content:center;gap:5px;padding:12px 10px 12px 15px;color:#174735;text-decoration:none}
+.stay-board-entry>a:hover{background:#f0f7ed}
+.stay-board-number{font:400 1.35rem/1 Georgia,serif;color:#a57938}
+.stay-board-name{font-size:.81rem;font-weight:800;line-height:1.35;overflow-wrap:anywhere}
+.stay-board-meta{font-size:.67rem;color:#5c7063;line-height:1.4}
+.stay-board-entry>button{min-width:44px;min-height:114px;border:0;border-left:1px solid #dce8d9;background:#e9f3e7;color:#24523d;cursor:pointer;font-size:1.45rem}
+.stay-board-entry>button:hover{background:#d7e9d4}
+.stay-board-placeholder{display:flex;flex-direction:column;justify-content:center;gap:9px;min-height:114px;padding:14px 15px;border:1px dashed #abc4aa;border-radius:14px;background:#f4f8ee;color:#5f745c}
+.stay-board-placeholder strong{font-size:.75rem;font-weight:650;line-height:1.35}
+.stay-board-bottom{display:flex;align-items:center;justify-content:space-between;gap:18px;border-top:1px solid #dce5d9;padding-top:15px;margin-top:17px}
+.stay-board-bottom p{margin:0;color:#5d7261;font-size:.72rem;line-height:1.5}
+.stay-board-bottom button{flex:none;min-height:44px;padding:9px 13px;border:1px solid #bbd0bf;border-radius:9px;background:#fff;color:#244d3c;font-size:.75rem;font-weight:850;cursor:pointer}
+.stay-board-bottom button:disabled{opacity:.5;cursor:default}
+.stay-save{position:absolute;z-index:5;top:12px;right:14px;min-height:46px;max-width:calc(100% - 28px);padding:8px 14px;border:1px solid #f4e4c4a6;border-radius:100px;background:#153f36f2;color:#fff5df;font-size:.76rem;font-weight:850;cursor:pointer}
+.stay-save:hover{background:#28634f}.stay-save[aria-pressed="true"]{background:#f5dca6;color:#1e4738;border-color:#f5dca6}
+.stay-save:focus-visible,.stay-board a:focus-visible,.stay-board button:focus-visible{outline:3px solid #a96918;outline-offset:3px}
+@media(max-width:900px){.stay-board{grid-template-columns:1fr}.stay-board-visual{min-height:280px;background-position:center 55%}.stay-board h3{max-width:18ch;margin-top:18px}.stay-board-content{padding:26px}}
+@media(max-width:520px){.stay-board{border-radius:18px;margin:23px 0}.stay-board-visual{padding:26px 22px;min-height:285px}.stay-board h3{font-size:2.65rem}.stay-board-content{padding:22px 15px}.stay-board-list{gap:8px}.stay-board-entry,.stay-board-placeholder,.stay-board-entry>button{min-height:105px}.stay-board-entry>a{padding:10px}.stay-board-name{font-size:.76rem}.stay-board-placeholder{padding:10px}.stay-board-heading strong{font-size:1.5rem}.stay-board-bottom{flex-direction:column;align-items:stretch}.stay-board-bottom button{width:100%}}
+@media(max-width:370px){.stay-board-list{grid-template-columns:1fr}.stay-board-entry,.stay-board-placeholder,.stay-board-entry>button{min-height:82px}.stay-board-heading{align-items:flex-start;flex-direction:column;gap:4px}}
+@media(prefers-reduced-motion:reduce){.stay-board a,.stay-board button{transition:none}}
+
 </style>
 </head>
 <body>
@@ -202,6 +242,13 @@ main.wrap{padding-top:28px}
 </section>
 <div class="controls" id="stay-controls"><div class="search-wrap"><label for="search">Search stays or towns</label><input id="search" type="search" autocomplete="off" placeholder="Try Dover, tiny cabin, pet friendly…"></div><div class="filters" role="group" aria-label="Filter by lodging type"><button class="filter" data-filter="all" aria-pressed="true">All stays</button><button class="filter" data-filter="private" aria-pressed="false">Private operators</button><button class="filter" data-filter="park" aria-pressed="false">State parks</button></div></div>
 <p class="count" id="count" role="status" aria-live="polite">Showing 11 of 11 operators</p>
+
+<section class="stay-board" id="stay-board" aria-labelledby="stay-board-title" hidden>
+  <div class="stay-board-visual"><span class="stay-board-kicker">River Valley / Your travel folio</span><h3 id="stay-board-title">A little list of <em>somewhere next.</em></h3><p>Collect up to four stay operators while you compare towns and options. Nothing is booked, sent or shared.</p><a href="#stay-grid">Find stays to save ↗</a><small class="stay-board-caption">Downtown Russellville scenery · Not a listed rental property</small></div>
+  <div class="stay-board-content"><div class="stay-board-heading"><strong>Your weekend shortlist</strong><span class="stay-board-count" id="stay-board-count">0 of 4 saved</span></div><ol class="stay-board-list" id="stay-board-list" aria-label="Saved stay operators"></ol><div class="stay-board-bottom"><p id="stay-board-note">Saved in this browser when storage is available. Saving is not a reservation.</p><button type="button" id="stay-board-clear" disabled>Clear shortlist</button></div></div>
+  <p class="sr-only" id="stay-board-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
+</section>
+
 <details class="stay-index" id="stay-index" hidden>
  <summary><span class="stay-index-intro"><span class="stay-index-eyebrow">The River Valley stay index · <span id="stay-index-count">11 operators</span></span><span class="stay-index-title">Find the name. <em>Open the details.</em></span></span><span class="stay-index-help">Jump directly to a provider while keeping all terms, cautions and contact links in its full listing.</span><span class="stay-index-toggle" aria-hidden="true">View index</span></summary>
  <nav class="stay-index-nav" aria-label="Jump to a stay operator"><p>Choose a name to go to its complete directory entry. These links do not book a reservation.</p><ol class="stay-index-list" id="stay-index-list"></ol></nav>
@@ -325,4 +372,140 @@ clearFilters.addEventListener("click", () => {
 regionExplorer.hidden = false;
 refresh();
 </script>
+
+<script>
+/* Progressive enhancement: the original provider cards, filters and links
+   remain intact; saving is private, optional and never creates a booking. */
+(() => {
+  const board = document.getElementById("stay-board");
+  const list = document.getElementById("stay-board-list");
+  const total = document.getElementById("stay-board-count");
+  const note = document.getElementById("stay-board-note");
+  const clear = document.getElementById("stay-board-clear");
+  const feedback = document.getElementById("stay-board-feedback");
+  const entries = [...document.querySelectorAll("#stay-grid .stay")].map(card => ({
+    id: card.id, card,
+    name: card.querySelector("h3").textContent.trim(),
+    location: card.querySelector(".stay-label").textContent.trim()
+  }));
+  const byId = new Map(entries.map(entry => [entry.id, entry]));
+  const key = "russellville.stays.shortlist.v1";
+  const limit = 4;
+  let canStore = false;
+  let saved = [];
+  const clean = input => Array.isArray(input)
+    ? [...new Set(input.filter(id => typeof id === "string" && byId.has(id)))].slice(0, limit)
+    : [];
+  try {
+    localStorage.setItem(key + ".test", "ok");
+    localStorage.removeItem(key + ".test");
+    saved = clean(JSON.parse(localStorage.getItem(key) || "[]"));
+    canStore = true;
+  } catch (_) { canStore = false; }
+  const saveButtons = new Map();
+  for (const entry of entries) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "stay-save";
+    button.setAttribute("aria-pressed", "false");
+    button.addEventListener("click", () => {
+      if (saved.includes(entry.id)) {
+        saved = saved.filter(id => id !== entry.id);
+        feedback.textContent = entry.name + " removed.";
+      } else if (saved.length === limit) {
+        feedback.textContent = "Four operators are saved. Remove one before saving another.";
+        return;
+      } else {
+        saved.push(entry.id);
+        feedback.textContent = entry.name + " added to your getaway shortlist.";
+      }
+      persist();
+      render();
+    });
+    entry.card.querySelector(".stay-top").append(button);
+    saveButtons.set(entry.id, button);
+  }
+  function persist() {
+    if (!canStore) return;
+    try { localStorage.setItem(key, JSON.stringify(saved)); }
+    catch (_) { canStore = false; }
+  }
+  function render() {
+    list.replaceChildren();
+    saved.forEach((id, index) => {
+      const entry = byId.get(id);
+      const item = document.createElement("li");
+      item.className = "stay-board-entry";
+      const link = document.createElement("a");
+      link.href = "#" + id;
+      link.setAttribute("aria-label", "View details for " + entry.name);
+      const number = document.createElement("span");
+      number.className = "stay-board-number";
+      number.textContent = String(index + 1).padStart(2, "0");
+      const name = document.createElement("span");
+      name.className = "stay-board-name";
+      name.textContent = entry.name;
+      const meta = document.createElement("span");
+      meta.className = "stay-board-meta";
+      meta.textContent = entry.location;
+      link.append(number, name, meta);
+      link.addEventListener("click", () => {
+        if (entry.card.hidden) document.getElementById("clear-filters").click();
+        entry.card.focus({preventScroll: true});
+      });
+      const remove = document.createElement("button");
+      remove.type = "button";
+      remove.textContent = "×";
+      remove.setAttribute("aria-label", "Remove " + entry.name + " from the shortlist");
+      remove.addEventListener("click", () => {
+        saved = saved.filter(value => value !== id);
+        feedback.textContent = entry.name + " removed.";
+        persist();
+        render();
+      });
+      item.append(link, remove);
+      list.append(item);
+    });
+    for (let index = saved.length; index < limit; index++) {
+      const item = document.createElement("li");
+      item.className = "stay-board-placeholder";
+      const number = document.createElement("span");
+      number.className = "stay-board-number";
+      number.textContent = String(index + 1).padStart(2, "0");
+      const copy = document.createElement("strong");
+      copy.textContent = index === 0 ? "Your first find goes here." : "Another stay to compare.";
+      item.append(number, copy);
+      list.append(item);
+    }
+    total.textContent = saved.length + " of 4 saved";
+    clear.disabled = saved.length === 0;
+    note.textContent = canStore
+      ? "Saved in this browser for return visits. No booking or message is created."
+      : "Browser storage is unavailable; this shortlist lasts only while the page is open.";
+    for (const entry of entries) {
+      const button = saveButtons.get(entry.id);
+      const active = saved.includes(entry.id);
+      button.setAttribute("aria-pressed", String(active));
+      button.setAttribute("aria-label", (active ? "Remove " : "Save ") + entry.name + (active ? " from" : " to") + " your getaway shortlist");
+      button.textContent = active ? "✓ Saved" : "＋ Save stay";
+    }
+  }
+  clear.addEventListener("click", () => {
+    saved = [];
+    persist();
+    render();
+    feedback.textContent = "Your getaway shortlist is clear.";
+  });
+  window.addEventListener("storage", event => {
+    if (canStore && event.key === key) {
+      try { saved = clean(JSON.parse(event.newValue || "[]")); }
+      catch (_) { saved = []; }
+      render();
+    }
+  });
+  board.hidden = false;
+  render();
+})();
+</script>
+
 </body></html>
