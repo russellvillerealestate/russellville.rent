@@ -301,6 +301,50 @@
 @media(max-width:420px){.band-explorer-grid{grid-template-columns:1fr}.band-explorer-card{min-height:152px;display:grid;grid-template-columns:90px 1fr;grid-template-rows:auto auto auto;gap:3px 14px}.band-explorer-index{grid-column:2;align-self:end}.band-explorer-art{grid-column:1;grid-row:1/4;margin:0;min-height:100px}.band-explorer-art svg{max-height:100px}.band-explorer-name{grid-column:2;margin:0}.band-explorer-desc{grid-column:2;margin:0}}
 @media(prefers-reduced-motion:reduce){.band-explorer-card{transition:none}.band-explorer-card:hover{transform:none}}
 
+
+/* Quote-led scorecard: prices are never sourced or invented by the directory. */
+.contract-jump{display:inline-flex;align-items:center;min-height:44px;margin-top:12px;color:#225e48;text-underline-offset:4px;font-weight:850}
+.contract-studio{margin:62px 0 12px;background:#103a30;border-radius:24px;overflow:hidden;color:#fffdf5;box-shadow:0 23px 48px #10362d24}
+.contract-banner{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center;padding:46px clamp(24px,5vw,54px);background:radial-gradient(circle at 95% 0%,#5a7963,transparent 53%),linear-gradient(115deg,#0b2c25,#235244)}
+.contract-banner .eyebrow{color:#eec67b}
+.contract-banner h2{font:400 clamp(2.7rem,5vw,4.8rem)/1.04 Georgia,serif;letter-spacing:-.055em;margin:0 0 16px;text-wrap:balance}
+.contract-banner h2 em{color:#f4d292}
+.contract-banner p:last-child{color:#e1ece3;font-size:.92rem;max-width:55ch;margin:0}
+.contract-art{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;min-height:190px;border:1px solid #f8dfa44d;border-radius:16px;padding:24px;background:#ffffff0a;overflow:hidden}
+.contract-art::before{content:"";position:absolute;inset:32px 0 auto;height:90px;background:repeating-linear-gradient(to bottom,transparent 0,transparent 17px,#f4db9f55 18px,#f4db9f55 19px);z-index:-1}
+.contract-melody{display:flex;justify-content:space-between;align-items:center;transform:rotate(-9deg);color:#f4d292;font:400 4.5rem/1 Georgia,serif}
+.contract-melody span:nth-child(2){transform:translateY(-13px)}
+.contract-art small{font-size:.65rem;text-transform:uppercase;letter-spacing:.16em;color:#e0eadf;font-weight:850}
+.contract-workspace{padding:clamp(22px,4vw,43px)}
+.contract-term{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:17px 21px;border:1px solid #ffffff36;border-radius:15px;background:#ffffff0a;margin-bottom:18px}
+.contract-term strong{font-size:1.02rem}.contract-term p{margin:4px 0 0;color:#d4e2d5;font-size:.81rem}
+.contract-term label{display:block;font-size:.79rem;font-weight:850;margin:0 0 5px}
+.contract-term input{width:130px}
+.contract-layout{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.contract-option{min-width:0;margin:0;padding:27px;border-radius:18px;border:1px solid #d5e0d0;background:#fffdf8;color:#203f33}
+.contract-option legend{float:left;width:100%;padding:0;margin:0 0 11px;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:#54715b;font-weight:850}
+.contract-option h3{clear:both;font:400 clamp(1.65rem,2.7vw,2.4rem)/1.1 Georgia,serif;letter-spacing:-.04em;margin:0 0 12px}
+.contract-option>p{font-size:.8rem;color:#5e705f;margin:0 0 18px}
+.contract-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.contract-field{display:block;min-width:0;font-size:.74rem;font-weight:850;color:#395743}
+.contract-field span{display:block;margin:0 0 7px}
+.contract-field input,.contract-term input{display:block;min-width:0;min-height:48px;border:1px solid #adbfaa;border-radius:9px;padding:8px 12px;background:white;color:#234333;font:400 1rem system-ui,sans-serif}
+.contract-field input{width:100%}
+.contract-field input:focus-visible,.contract-term input:focus-visible{outline:3px solid #a96a1b;outline-offset:3px}
+.contract-total{border-top:1px solid #dce4d7;margin-top:21px;padding-top:17px}
+.contract-total-label{display:block;font-size:.72rem;font-weight:850;letter-spacing:.07em;text-transform:uppercase;color:#52705c}
+.contract-total output{display:block;min-height:40px;margin-top:7px;color:#1b533e;font:400 clamp(1.7rem,3vw,2.5rem)/1.2 Georgia,serif}
+.contract-total output.contract-placeholder{font:700 .85rem/1.5 system-ui,sans-serif;color:#687b6a}
+.contract-meter{height:10px;border-radius:12px;background:#e1e9dd;margin-top:15px;overflow:hidden}
+.contract-meter span{display:block;height:100%;width:0;border-radius:12px;background:linear-gradient(90deg,#c6a062,#f0cf84);transition:width .25s ease}
+.contract-option:nth-child(2) .contract-meter span{background:linear-gradient(90deg,#49806b,#99bda4)}
+.contract-summary{border:1px solid #f3df966a;background:#e7c97c3b;border-radius:14px;padding:17px 19px;color:#fff7dc;font-size:.87rem;font-weight:750;margin:20px 0 0}
+.contract-disclaimer{font-size:.79rem;color:#dae8de;line-height:1.65;margin:18px 0 0}
+.contract-disclaimer strong{color:white}
+@media(max-width:820px){.contract-banner{grid-template-columns:1fr}.contract-art{max-width:430px;min-height:145px}.contract-layout{grid-template-columns:1fr}.contract-option{padding:22px}}
+@media(max-width:520px){.contract-studio{margin-top:45px;border-radius:17px}.contract-banner{padding:33px 24px}.contract-banner h2{font-size:2.7rem}.contract-workspace{padding:18px}.contract-term{display:block}.contract-term>div:last-child{margin-top:14px}.contract-term input{max-width:160px}.contract-option{padding:20px}.contract-fields{gap:9px}.contract-field{font-size:.68rem}.contract-field input{padding:9px 7px}}
+@media(prefers-reduced-motion:reduce){.contract-meter span{transition:none}}
+
 </style>
 </head>
 <body>
@@ -402,6 +446,7 @@
         </article>
       </div>
       <p class="compare-note">Summary of advertised programs, not a quote or guarantee. Confirm current instrument selection, availability, prices, eligibility and contract terms with each provider.</p>
+      <a href="#contract-scorecard" class="contract-jump">Have quotes? Open the side-by-side cost worksheet ↓</a>
     </section>
 
 
@@ -417,6 +462,43 @@
 <a class="band-explorer-card" href="#band-instrument" data-band-pick=""><span class="band-explorer-index">04 / GUIDANCE</span><span class="band-explorer-art" aria-hidden="true"><strong>?</strong></span><span class="band-explorer-name">Help me choose.</span><span class="band-explorer-desc">Leave the instrument blank and ask the school.</span></a></div>
   <div class="band-explorer-bottom"><p>Drawings are illustrative, not product photographs. Confirm the instrument, model, rental terms and availability directly with your school and provider.</p><p id="instrument-explorer-status" role="status" aria-live="polite" aria-atomic="true">Choose a card to prepare an inquiry.</p></div>
 </section>
+
+
+    <section class="contract-studio" id="contract-scorecard" aria-labelledby="contract-title">
+      <div class="contract-banner">
+        <div><p class="eyebrow">Band-room ledger / Your own quotes</p><h2 id="contract-title">Make the numbers <em>sing.</em></h2>
+          <p>Two programs, one time period. Enter the monthly payments and one-time fees quoted to you to see estimated costs side by side. We do not publish provider prices here.</p></div>
+        <div class="contract-art" aria-hidden="true"><div class="contract-melody"><span>♪</span><span>♫</span><span>♩</span></div><small>Illustration · Not rental inventory</small></div>
+      </div>
+      <form class="contract-workspace" id="contract-form" novalidate aria-describedby="contract-disclaimer">
+        <div class="contract-term"><div><strong>Compare the same period for both programs.</strong><p>Choose months you want to compare. This is not a contract-term or ownership-date assumption.</p></div>
+          <div><label for="contract-months">Months to compare</label><input id="contract-months" type="number" min="1" max="120" step="1" inputmode="numeric" placeholder="e.g. 12" aria-describedby="contract-disclaimer"></div></div>
+        <div class="contract-layout">
+          <fieldset class="contract-option"><legend>01 / Local storefront · Your quote</legend><h3>Cooper Music</h3>
+            <p>Russellville storefront. Enter only figures received from this provider.</p>
+            <div class="contract-fields">
+              <label class="contract-field" for="contract-cooper-monthly"><span>Monthly payment ($)</span><input id="contract-cooper-monthly" type="number" min="0" max="999999" step="0.01" inputmode="decimal" placeholder="Not yet known" aria-describedby="contract-disclaimer"></label>
+              <label class="contract-field" for="contract-cooper-fees"><span>One-time fees ($)</span><input id="contract-cooper-fees" type="number" min="0" max="999999" step="0.01" inputmode="decimal" placeholder="0 if none" aria-describedby="contract-disclaimer"></label>
+            </div><div class="contract-total"><span class="contract-total-label">Estimated payments + fees</span>
+              <output id="contract-cooper-result" class="contract-placeholder" for="contract-months contract-cooper-monthly contract-cooper-fees">Add a quote to compare</output>
+              <div class="contract-meter" aria-hidden="true"><span id="contract-cooper-meter"></span></div>
+            </div>
+          </fieldset>
+          <fieldset class="contract-option"><legend>02 / Regional program · Your quote</legend><h3>Arkansas School Band Service</h3>
+            <p>Russellville service advertised. Confirm delivery and written terms.</p>
+            <div class="contract-fields">
+              <label class="contract-field" for="contract-arsb-monthly"><span>Monthly payment ($)</span><input id="contract-arsb-monthly" type="number" min="0" max="999999" step="0.01" inputmode="decimal" placeholder="Not yet known" aria-describedby="contract-disclaimer"></label>
+              <label class="contract-field" for="contract-arsb-fees"><span>One-time fees ($)</span><input id="contract-arsb-fees" type="number" min="0" max="999999" step="0.01" inputmode="decimal" placeholder="0 if none" aria-describedby="contract-disclaimer"></label>
+            </div><div class="contract-total"><span class="contract-total-label">Estimated payments + fees</span>
+              <output id="contract-arsb-result" class="contract-placeholder" for="contract-months contract-arsb-monthly contract-arsb-fees">Add a quote to compare</output>
+              <div class="contract-meter" aria-hidden="true"><span id="contract-arsb-meter"></span></div>
+            </div>
+          </fieldset>
+        </div>
+        <p class="contract-summary" id="contract-summary" role="status" aria-live="polite" aria-atomic="true">Enter a comparison period and both providers' quoted amounts to see the difference. Leave unknown fees blank; enter zero only when a provider confirms none.</p>
+        <p class="contract-disclaimer" id="contract-disclaimer"><strong>Important:</strong> Simple arithmetic using your entered numbers, not advertised rates, final prices, financing disclosures, or total ownership costs. Tax, extra fees, deposits, interest, repairs, returns, payment credits and purchase terms are not modeled unless included in your inputs. Confirm the written agreement. The page does not send or save entries.</p>
+      </form>
+    </section>
 
     <section class="band-desk" id="inquiry-desk" aria-labelledby="desk-title">
       <p class="eyebrow">The band-room desk / Ready for your first call</p>
@@ -560,6 +642,51 @@ Could you confirm current availability, the monthly price and all fees, how paym
     status.textContent=field.value ? field.value+" added to your inquiry. You can edit it." : "No instrument selected. Ask your band director for guidance.";
     field.focus();
   }));
+})();
+</script>
+
+<script>
+/* Quote-led student band rental arithmetic. All inputs are manual and session-only. */
+(() => {
+  const form=document.getElementById("contract-form");
+  if(!form)return;
+  const element=id=>document.getElementById(id);
+  const money=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",minimumFractionDigits:2,maximumFractionDigits:2});
+  const read=id=>{
+    const raw=element(id).value.trim();
+    return raw===""?null:Number(raw);
+  };
+  function quoteTotal(months,monthly,fees){
+    if(!Number.isInteger(months)||months<1||months>120||
+       !Number.isFinite(monthly)||monthly<0||monthly>999999||
+       !Number.isFinite(fees)||fees<0||fees>999999)return null;
+    return Math.round((months*monthly+fees)*100)/100;
+  }
+  function render(){
+    const months=read("contract-months");
+    const local=quoteTotal(months,read("contract-cooper-monthly"),read("contract-cooper-fees"));
+    const regional=quoteTotal(months,read("contract-arsb-monthly"),read("contract-arsb-fees"));
+    for(const [key,total] of [["cooper",local],["arsb",regional]]){
+      const output=element("contract-"+key+"-result");
+      output.textContent=total===null?"Add quoted amounts to compare":money.format(total);
+      output.classList.toggle("contract-placeholder",total===null);
+      element("contract-"+key+"-meter").style.width="0%";
+    }
+    const status=element("contract-summary");
+    if(local===null||regional===null){
+      status.textContent="Enter a valid number of months (1–120), monthly payments and one-time fees for both quotes. Enter zero for fees only when confirmed.";
+      return;
+    }
+    const max=Math.max(local,regional);
+    element("contract-cooper-meter").style.width=(max?100*local/max:0)+"%";
+    element("contract-arsb-meter").style.width=(max?100*regional/max:0)+"%";
+    const diff=Math.round(Math.abs(local-regional)*100)/100;
+    status.textContent="Over "+months+" month"+(months===1?"":"s")+", your entered amounts differ by "+money.format(diff)+". These are not contract totals: compare purchase-credit, repair, return and ownership terms too.";
+  }
+  form.addEventListener("input",render);
+  form.addEventListener("change",render);
+  form.addEventListener("submit",e=>e.preventDefault());
+  render();
 })();
 </script>
 </body>
