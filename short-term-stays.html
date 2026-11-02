@@ -201,6 +201,7 @@ main.wrap{padding-top:28px}
 @media(max-width:370px){.stay-board-list{grid-template-columns:1fr}.stay-board-entry,.stay-board-placeholder,.stay-board-entry>button{min-height:82px}.stay-board-heading{align-items:flex-start;flex-direction:column;gap:4px}}
 @media(prefers-reduced-motion:reduce){.stay-board a,.stay-board button{transition:none}}
 
+.stay-board-feedback{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 </style>
 </head>
 <body>
@@ -388,13 +389,16 @@ refresh();
     name: card.querySelector("h3").textContent.trim(),
     location: card.querySelector(".stay-label").textContent.trim()
   }));
-  const byId = new Map(entries.map(entry => [entry.id, entry]));
+  const byName = new Map(entries.map(entry => [entry.name, entry]));
   const key = "russellville.stays.shortlist.v1";
   const limit = 4;
   let canStore = false;
   let saved = [];
   const clean = input => Array.isArray(input)
-    ? [...new Set(input.filter(id => typeof id === "string" && byId.has(id)))].slice(0, limit)
+    ? [...new Set(input.map(value => {
+        const entry = byName.get(value) || entries.find(item => item.id === value);
+        return entry ? entry.name : null;
+      }).filter(Boolean))].slice(0, limit)
     : [];
   try {
     localStorage.setItem(key + ".test", "ok");
@@ -409,14 +413,14 @@ refresh();
     button.className = "stay-save";
     button.setAttribute("aria-pressed", "false");
     button.addEventListener("click", () => {
-      if (saved.includes(entry.id)) {
-        saved = saved.filter(id => id !== entry.id);
+      if (saved.includes(entry.name)) {
+        saved = saved.filter(name => name !== entry.name);
         feedback.textContent = entry.name + " removed.";
       } else if (saved.length === limit) {
         feedback.textContent = "Four operators are saved. Remove one before saving another.";
         return;
       } else {
-        saved.push(entry.id);
+        saved.push(entry.name);
         feedback.textContent = entry.name + " added to your getaway shortlist.";
       }
       persist();
@@ -433,11 +437,11 @@ refresh();
   function render() {
     list.replaceChildren();
     saved.forEach((id, index) => {
-      const entry = byId.get(id);
+      const entry = byName.get(id);
       const item = document.createElement("li");
       item.className = "stay-board-entry";
       const link = document.createElement("a");
-      link.href = "#" + id;
+      link.href = "#" + entry.id;
       link.setAttribute("aria-label", "View details for " + entry.name);
       const number = document.createElement("span");
       number.className = "stay-board-number";
@@ -458,7 +462,7 @@ refresh();
       remove.textContent = "×";
       remove.setAttribute("aria-label", "Remove " + entry.name + " from the shortlist");
       remove.addEventListener("click", () => {
-        saved = saved.filter(value => value !== id);
+        saved = saved.filter(value => value !== entry.name);
         feedback.textContent = entry.name + " removed.";
         persist();
         render();
@@ -484,7 +488,7 @@ refresh();
       : "Browser storage is unavailable; this shortlist lasts only while the page is open.";
     for (const entry of entries) {
       const button = saveButtons.get(entry.id);
-      const active = saved.includes(entry.id);
+      const active = saved.includes(entry.name);
       button.setAttribute("aria-pressed", String(active));
       button.setAttribute("aria-label", (active ? "Remove " : "Save ") + entry.name + (active ? " from" : " to") + " your getaway shortlist");
       button.textContent = active ? "✓ Saved" : "＋ Save stay";
