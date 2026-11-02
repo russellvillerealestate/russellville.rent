@@ -305,6 +305,54 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
 @media(max-width:580px){.event-companion{margin-top:65px;border-radius:20px}.event-companion-story{min-height:0;padding:48px 27px 41px}.event-companion-story h2{font-size:clamp(2.5rem,11vw,3.5rem)}.event-companion-scene{margin-top:23px}.event-companion-choices{grid-template-columns:1fr}.event-companion-card{min-height:0;padding:23px 25px}.event-companion-card-top{margin-bottom:12px}.event-companion-icon{width:53px;height:53px}.event-companion-icon svg{width:39px;height:39px}.event-companion-card small{margin-top:7px}.event-companion-arrow{padding-top:14px}.event-companion-footnote{padding:18px 25px}}
 @media(prefers-reduced-motion:reduce){.event-companion-card{transition:none}}
 
+
+/* 2026-11-01 | StayARV-inspired place photography, responsive form hierarchy;
+   Nielsen Norman Group form scanning; web.dev reflow; W3C WCAG 2.2 labels,
+   visible keyboard focus and large targets. Existing provider content untouched. */
+.quote-studio{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);overflow:hidden;min-width:0;margin:clamp(65px,8vw,100px) 0 0;border:1px solid #c4d5c6;border-radius:27px;background:#fffdf6;box-shadow:0 24px 55px #103b3024}
+.quote-story{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;min-width:0;min-height:690px;padding:clamp(29px,4vw,52px);background:linear-gradient(0deg,#082c26fa,#113d33e9 49%,#173e32a8),url("assets/lake-dardanelle-sunset.jpg") center 55%/cover;color:#fffdf3}
+.quote-story:before{content:"";position:absolute;z-index:-1;inset:16px;border:1px solid #f9e0b95e;border-radius:16px;pointer-events:none}
+.quote-story-index,.quote-overline,.quote-kicker{font-size:.67rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase;color:#f3d39f}
+.quote-story-index{align-self:flex-start;max-width:100%;padding:9px 12px;border:1px solid #f9d49b80;border-radius:6px}
+.quote-story-body{padding:56px 0 28px}
+.quote-overline{margin:0 0 17px}
+.quote-story h2{margin:0 0 21px;font:400 clamp(2.9rem,5vw,5.2rem)/1 Georgia,serif;letter-spacing:-.065em;text-wrap:balance;color:#fffdf3}
+.quote-story h2 em{font-weight:400;color:#f4d29a}
+.quote-story-body>p:last-child{margin:0;max-width:40ch;color:#e7eee2;font-size:.94rem;line-height:1.77}
+.quote-story-steps{list-style:none;padding:0;margin:0;border-top:1px solid #e2e5d06b}
+.quote-story-steps li{display:grid;grid-template-columns:40px 1fr;gap:3px 13px;padding:15px 0;border-bottom:1px solid #e2e5d054}
+.quote-story-steps li>span{grid-row:1/span 2;color:#f3d29a;font:400 1.5rem/1 Georgia,serif}
+.quote-story-steps strong{font-size:.88rem;line-height:1.3}
+.quote-story-steps small{color:#d4e2d8;font-size:.77rem;line-height:1.5}
+.quote-scene-note{margin:18px 0 0;color:#d8e6d8;font-size:.7rem;line-height:1.55}
+.quote-workbook{padding:clamp(27px,4vw,52px);min-width:0;background:linear-gradient(135deg,#fffdf8,#f1f5ed)}
+.quote-kicker{margin:0 0 12px;color:#97672e}
+.quote-workbook h3{margin:0 0 12px;color:#173e32;font:400 clamp(2.15rem,3.5vw,3.3rem)/1.08 Georgia,serif;letter-spacing:-.05em}
+.quote-lead{max-width:57ch;margin:0 0 27px;color:#566d5c;font-size:.87rem;line-height:1.7}
+.quote-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px 14px}
+.quote-fields>div{min-width:0}
+.quote-fields label,.quote-preview-label{display:block;margin-bottom:7px;color:#244e3d;font-size:.8rem;font-weight:800;line-height:1.4}
+.quote-fields input,.quote-fields select,.quote-workbook textarea{width:100%;min-width:0;min-height:51px;padding:12px 13px;border:1px solid #adc6b3;border-radius:10px;background:#fff;color:#163f30;font:400 .88rem/1.5 system-ui,sans-serif}
+.quote-fields input::placeholder{color:#647c6b;opacity:1}
+.quote-fields input:focus-visible,.quote-fields select:focus-visible,.quote-workbook textarea:focus-visible,.quote-actions button:focus-visible,.quote-actions a:focus-visible,.quote-extras input:focus-visible{outline:3px solid #ad6410;outline-offset:3px}
+.quote-extras{display:flex;flex-wrap:wrap;gap:10px 18px;margin:24px 0;padding:17px 0;border:0;border-top:1px solid #d1dfd0;border-bottom:1px solid #d1dfd0}
+.quote-extras legend{color:#244e3d;font-size:.8rem;font-weight:800;padding-right:6px}
+.quote-extras label{display:inline-flex;align-items:center;gap:9px;min-height:44px;font-size:.83rem;font-weight:700;color:#375646;cursor:pointer}
+.quote-extras input{flex:none;width:20px;height:20px;accent-color:#165a42}
+.quote-workbook textarea{display:block;min-height:181px;resize:vertical;line-height:1.64;background:#fffefa;padding:15px}
+.quote-actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:17px}
+.quote-actions button,.quote-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 17px;border-radius:10px;font-size:.83rem;font-weight:800;text-decoration:none}
+.quote-actions button{background:#174b39;color:#fff;border:1px solid #174b39;cursor:pointer}
+.quote-actions button:hover{background:#2b6850}
+.quote-actions button[hidden]{display:none}
+.quote-actions a{color:#19523a;background:#e3eee2;border:1px solid #bcd0bf}
+.quote-actions a:hover{background:#d5e9d6}
+.quote-feedback{min-height:1.2em;margin:12px 0 0;font-size:.81rem;font-weight:750;color:#246247}
+.quote-disclaimer{margin:13px 0 0;font-size:.73rem;line-height:1.65;color:#546c5a}
+@media(max-width:930px){.quote-studio{grid-template-columns:1fr}.quote-story{min-height:0;padding:40px 35px}.quote-story-body{padding:43px 0 32px}.quote-story-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.quote-story-steps li{display:flex;flex-direction:column}.quote-workbook{padding:35px}}
+@media(max-width:620px){.quote-studio{margin-top:59px;border-radius:19px}.quote-story{padding:37px 24px 26px}.quote-story:before{inset:10px}.quote-story h2{font-size:clamp(2.85rem,11vw,4.2rem)}.quote-story-steps{display:block}.quote-story-steps li{display:grid;grid-template-columns:36px 1fr}.quote-workbook{padding:27px 20px}.quote-fields{grid-template-columns:1fr;gap:13px}.quote-extras{display:grid;gap:5px}.quote-actions>*{width:100%}}
+@media print{.quote-story{min-height:0;background:#fff!important;color:#163f30}.quote-story h2,.quote-story h2 em,.quote-story-body>p,.quote-story-index,.quote-overline,.quote-story-steps li>span,.quote-story-steps small,.quote-scene-note{color:#163f30!important}.quote-studio{box-shadow:none}.quote-actions button{display:none!important}}
+
 </style>
 </head>
 <body>
@@ -402,6 +450,47 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
 <article class="provider"><div class="provider-index" aria-hidden="true">06</div><div class="provider-content"><p class="provider-tag">River Valley · delivery unconfirmed</p><h3>Peerless Potty — Arkansas River Valley (Regional)</h3><p class="provider-description">Portable toilet rentals for construction projects and special events; the operator also advertises recreational vehicle holding-tank pump-out service. Its official website describes service across the Arkansas River Valley and eastern Oklahoma. <strong>Russellville delivery is UNCONFIRMED</strong>; verify coverage, current operating status, equipment options and fees directly.</p><p class="provider-area">Arkansas River Valley regional provider — Russellville delivery UNCONFIRMED</p><p class="provider-actions"><a href="tel:+14792593650">479-259-3650</a> · <a href="https://peerlesspotty.com/" target="_blank" rel="noopener noreferrer">Official provider website ↗</a></p></div></article>
 <article class="provider"><div class="provider-index" aria-hidden="true">07</div><div class="provider-content"><p class="provider-tag">Morrilton service verified · Russellville unconfirmed</p><h3>Dependable Waste Solutions — Central Arkansas</h3><p class="provider-description">Officially advertises portable restroom rentals for events and jobsites, including standard, event, mobile and accessible units, plus portable sinks and holding tanks. Weekend and monthly rental terms are listed; monthly rentals include weekly cleaning. The operator explicitly names <strong>Morrilton</strong> in its service area, but <strong>Russellville delivery is UNCONFIRMED</strong>. Confirm delivery, equipment, servicing, rates and availability directly.</p><p class="provider-area">Cabot-based provider · Morrilton service verified · Russellville delivery UNCONFIRMED</p><p class="provider-actions"><a href="tel:+15012411690">501-241-1690</a> · <a href="https://www.dependablewastesolutions.com/rentals/porta-potty-rentals/" target="_blank" rel="noopener noreferrer">Official restroom rentals ↗</a> · <a href="https://www.dependablewastesolutions.com/" target="_blank" rel="noopener noreferrer">Official service areas ↗</a></p></div></article><article class="provider"><div class="provider-index" aria-hidden="true">08</div><div class="provider-content"><p class="provider-tag">Regional · Russellville &amp; Pope County listed by operator</p><h3>Arkansas Portable Toilets — North Little Rock (Regional)</h3><p class="provider-description">The operator now explicitly lists <strong>Russellville and Pope County</strong> on its official portable-toilet service page. Advertised rentals include standard portable toilets, wheelchair-accessible units, portable handwashing stations and restroom trailers. This is a regional provider, <strong>not a verified Russellville storefront</strong>. Confirm your exact-address delivery, inventory, dates, setup, servicing and total charges before booking.</p><p class="provider-area">North Little Rock, AR · regional operator · Russellville service explicitly advertised</p><p class="provider-actions"><a href="tel:+15017537140">501-753-7140 (Central Arkansas office)</a> · <a href="https://arportabletoilets.com/Portable-Toilet-Pope-County/" target="_blank" rel="noopener noreferrer">Official Pope County &amp; Russellville service page ↗</a> · <a href="https://arportabletoilets.com/" target="_blank" rel="noopener noreferrer">Official equipment information ↗</a></p></div></article>
 <article class="provider"><div class="provider-index" aria-hidden="true">09</div><div class="provider-content"><p class="provider-tag">Regional · Russellville listed in official service area</p><h3>Mountain Aire Sanitation — Hot Springs &amp; Mena (Regional)</h3><p class="provider-description">The operator officially advertises event and construction-site portable toilet rentals, handwashing sinks, accessible units and holding-tank rentals. Its published Arkansas service-area list explicitly names <strong>Russellville, Atkins, Dardanelle and Pottsville</strong>. This is a regional operator, not a verified Russellville storefront. Confirm the exact delivery address, available units, cleaning schedule and full fees with the provider.</p><p class="provider-area">Hot Springs and Mena, AR · Russellville service advertised by operator; actual booking availability unconfirmed</p><p class="provider-actions"><a href="tel:+15015470436">501-547-0436 (Hot Springs office)</a> · <a href="https://www.mountainairesanitation.com/" target="_blank" rel="noopener noreferrer">Official portable restroom rentals ↗</a> · <a href="https://www.mountainairesanitation.com/service-areas" target="_blank" rel="noopener noreferrer">Official Russellville service-area listing ↗</a></p></div></article></div>
+</section>
+
+<!-- Provider-neutral restroom rental worksheet; no reservation or provider data. -->
+<section class="quote-studio" id="quote-studio" aria-labelledby="quote-studio-title">
+ <div class="quote-story">
+  <span class="quote-story-index">RIVER VALLEY FIELD NOTES / THE RENTAL REQUEST</span>
+  <div class="quote-story-body">
+   <p class="quote-overline">Before the first call</p>
+   <h2 id="quote-studio-title">One site.<br><em>One clear request.</em></h2>
+   <p>Build one consistent request to compare operators on location, timing, servicing and full cost. Each provider must confirm what it actually offers.</p>
+  </div>
+  <ol class="quote-story-steps">
+   <li><span>01</span><strong>Describe the site</strong><small>Town and service dates</small></li>
+   <li><span>02</span><strong>List the needs</strong><small>Units, handwashing and access</small></li>
+   <li><span>03</span><strong>Compare real quotes</strong><small>Delivery, cleaning and fees</small></li>
+  </ol>
+  <p class="quote-scene-note">River Valley scenery, not a photograph of a provider or its equipment.</p>
+ </div>
+ <div class="quote-workbook">
+  <p class="quote-kicker">THE REQUEST WORKBOOK</p>
+  <h3>Make the first call count.</h3>
+  <p class="quote-lead">Fields are optional. Your draft stays in this browser: nothing is booked, sent or saved.</p>
+  <form id="quote-workbook-form" autocomplete="off">
+   <div class="quote-fields">
+    <div><label for="quote-location">Delivery town or site</label><input id="quote-location" type="text" maxlength="90" placeholder="e.g. Russellville, Arkansas"></div>
+    <div><label for="quote-date">Dates and service duration</label><input id="quote-date" type="text" maxlength="85" placeholder="e.g. June 12–14, pickup Monday"></div>
+    <div><label for="quote-occasion">Type of site</label><select id="quote-occasion"><option value="">Please advise</option><option value="an outdoor event">Outdoor event</option><option value="a construction jobsite">Construction / jobsite</option><option value="another temporary site">Other temporary site</option></select></div>
+    <div><label for="quote-units">Number of units requested</label><input id="quote-units" type="number" min="1" max="99" step="1" inputmode="numeric" placeholder="Ask provider to recommend"></div>
+   </div>
+   <fieldset class="quote-extras"><legend>Also ask about</legend>
+    <label><input id="quote-handwash" type="checkbox"><span>Handwashing stations</span></label>
+    <label><input id="quote-accessible" type="checkbox"><span>Accessible restroom options</span></label>
+   </fieldset>
+   <label class="quote-preview-label" for="quote-preview">Your copy-ready request</label>
+   <textarea id="quote-preview" rows="8" readonly spellcheck="false">Hello, I am looking for temporary portable restroom rentals. Please confirm whether you serve my site and dates, recommended equipment and quantities, delivery and pickup, servicing, accessibility options, and the complete cost. Thank you.</textarea>
+   <div class="quote-actions"><button type="button" id="quote-copy" hidden>Copy request ↗</button><a href="#local">See nearby providers ↓</a></div>
+   <p id="quote-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
+   <p class="quote-disclaimer">Not a quote, reservation or accessibility assessment. Confirm exact-address delivery, safe placement, accessibility, inventory, dates and all charges directly with each operator.</p>
+   <noscript><p class="quote-disclaimer">Live drafting requires JavaScript. The sample request remains selectable for manual copying.</p></noscript>
+  </form>
+ </div>
 </section>
 
 <section id="restroom-call-plan" class="call-plan" aria-labelledby="call-plan-title" hidden>
@@ -561,6 +650,49 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
     }
   });
   board.hidden=false;render();
+})();
+</script>
+
+
+<script>
+(() => {
+ const form=document.getElementById("quote-workbook-form");
+ if(!form)return;
+ const get=id=>document.getElementById(id);
+ const preview=get("quote-preview"),copy=get("quote-copy"),status=get("quote-feedback");
+ const clean=id=>get(id).value.trim();
+ function draft(){
+  const location=clean("quote-location"),dates=clean("quote-date"),purpose=clean("quote-occasion"),units=clean("quote-units");
+  const extras=[];
+  if(get("quote-handwash").checked)extras.push("handwashing stations");
+  if(get("quote-accessible").checked)extras.push("accessible restroom options");
+  preview.value=[
+   "Hello, I am requesting a portable restroom rental quote.",
+   location?"Delivery location: "+location+".":"Please confirm whether you serve my address.",
+   dates?"Dates and duration: "+dates+".":"Please advise on dates and availability.",
+   purpose?"Site use: "+purpose+".":"Please advise on suitable units for my site.",
+   units?"Units requested: "+units+"; please advise if appropriate.":"Please suggest a suitable quantity.",
+   extras.length?"Please include options for "+extras.join(" and ")+".":"Please advise on handwashing and accessible options.",
+   "Please confirm delivery and pickup, servicing, safe placement, accessible access, deposits, availability and the total cost including all fees. Russellville service is not assumed.",
+   "Thank you."
+  ].join("\n");
+  status.textContent="";
+ }
+ form.addEventListener("input",draft);
+ form.addEventListener("change",draft);
+ form.addEventListener("submit",event=>event.preventDefault());
+ copy.hidden=false;
+ draft();
+ copy.addEventListener("click",async()=>{
+  try{
+   if(!navigator.clipboard || !navigator.clipboard.writeText)throw Error("Unavailable");
+   await navigator.clipboard.writeText(preview.value);
+   status.textContent="Request copied. Contact providers directly to confirm.";
+  }catch{
+   preview.focus();preview.select();
+   status.textContent="Select and copy the highlighted request manually.";
+  }
+ });
 })();
 </script>
 
