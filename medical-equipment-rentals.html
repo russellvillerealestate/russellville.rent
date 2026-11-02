@@ -179,6 +179,50 @@
 @media(prefers-reduced-motion:reduce){.rate-slip .rate-link{transition:none}}
 @media print{.rate-atlas{background:#fff!important;color:#173d34;box-shadow:none;border:1px solid #bdcebe;break-inside:avoid}.rate-atlas h2,.rate-atlas-heading p,.rate-atlas-bottom p,.rate-atlas-badge{color:#173d34}.rate-slip{box-shadow:none}.rate-atlas-badge{border-color:#173d34}}
 
+
+/* November 2, 2026 — Regional rental request desk.
+   Visual reference: live StayARV.com and Russellville.Rent; NN/g form grouping;
+   web.dev responsive imagery and W3C WCAG 2.2 focus/target guidance.
+   The scenic photograph is local atmosphere, never provider/inventory evidence. */
+.med-call-desk{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);overflow:hidden;isolation:isolate;margin:clamp(64px,8vw,100px) 0 0;border-radius:28px;background:#fdfcf7;border:1px solid #d3e0d4;box-shadow:0 23px 54px #183c3020;scroll-margin-top:24px}
+.med-call-scene{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:670px;padding:clamp(28px,4vw,49px);color:#fff;background:linear-gradient(180deg,#092b29cf 0%,#092b295c 43%,#072923f2 100%),url('/assets/downtown-russellville-sunset.jpg') center center/cover no-repeat}
+.med-call-scene:after{content:"";position:absolute;inset:18px;border:1px solid #fff5d559;border-radius:15px;pointer-events:none}
+.med-call-kicker{position:relative;margin:0;color:#ffe3ad;font-size:.71rem;line-height:1.5;letter-spacing:.17em;text-transform:uppercase;font-weight:850}
+.med-call-scene-bottom{position:relative}
+.med-call-scene h2{max-width:13ch;margin:0;color:#fff;font:400 clamp(2.65rem,4.2vw,4.6rem)/1.07 Georgia,"Times New Roman",serif;letter-spacing:-.055em;text-wrap:balance}
+.med-call-scene h2 em{display:block;color:#ffe0a1;font-style:italic}
+.med-call-scene-lead{max-width:35ch;margin:22px 0 28px;color:#f3f5ee;font-size:.93rem}
+.med-call-scene-steps{display:grid;gap:0;margin:0;padding:0;list-style:none;border-top:1px solid #f2eee65c}
+.med-call-scene-steps li{display:grid;grid-template-columns:33px 1fr;gap:13px;padding:15px 0;border-bottom:1px solid #f2eee65c;color:#f7f6ed;font-size:.84rem}
+.med-call-scene-steps li span{color:#f2d69b;font-weight:850;font-size:.68rem;letter-spacing:.1em;padding-top:3px}
+.med-call-photo-note{margin:19px 0 0;color:#e7eee9;font-size:.69rem;line-height:1.5}
+.med-call-desk-content{min-width:0;padding:clamp(24px,4vw,48px)}
+.med-call-desk-label{margin:0 0 8px;color:#6d5a34;font-size:.7rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
+.med-call-desk h3{margin:0;color:#183e34;font:400 clamp(1.85rem,3vw,2.65rem)/1.13 Georgia,"Times New Roman",serif;letter-spacing:-.045em}
+.med-call-desk-lead{margin:13px 0 23px;color:#4a6658;font-size:.87rem;max-width:58ch}
+.med-call-desk-fieldset{border:0;padding:0;margin:0;min-width:0;display:grid;gap:15px}
+.med-call-desk-fieldset legend{padding:0;margin-bottom:13px;color:#1e4b3c;font-weight:850;font-size:.8rem}
+.med-call-desk-field label{display:block;margin-bottom:5px;color:#1c4336;font-size:.79rem;font-weight:800}
+.med-call-desk-field select{display:block;width:100%;min-height:49px;border:1px solid #a7c0ae;background:#fff;border-radius:10px;padding:10px 13px;color:#193c31;font:inherit;font-size:.87rem}
+.med-call-desk-field select:focus-visible,.med-call-desk textarea:focus-visible,.med-call-copy:focus-visible,.med-call-contact:focus-visible{outline:3px solid #a7670a;outline-offset:4px}
+.med-call-preview{margin-top:24px;padding:22px;border:1px solid #d3dfd3;border-radius:14px;background:#edf3ec}
+.med-call-preview-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:10px}
+.med-call-preview-head strong{font-size:.86rem;color:#193f33}
+.med-call-preview-head small{font-size:.69rem;font-weight:800;letter-spacing:.07em;color:#586a5d;text-transform:uppercase}
+.med-call-preview label{display:block;color:#456252;font-size:.78rem;margin-bottom:8px}
+.med-call-preview textarea{width:100%;min-height:182px;max-width:100%;resize:vertical;display:block;padding:15px;border:1px solid #a9bfb0;border-radius:10px;background:#fff;color:#214336;font:400 .87rem/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+.med-call-actions{display:flex;align-items:center;gap:11px;flex-wrap:wrap;margin-top:15px}
+.med-call-copy,.med-call-contact{display:inline-flex;align-items:center;justify-content:center;min-height:47px;border-radius:10px;padding:11px 15px;font-size:.82rem;font-weight:800;text-decoration:none}
+.med-call-copy{cursor:pointer;border:0;background:#194f40;color:#fff;font-family:inherit}
+.med-call-copy:hover{background:#2b7058}.med-call-contact{border:1px solid #bdcdbe;color:#174d3c;background:#fff}
+.med-call-contact:hover{background:#e2eee2}
+.med-call-status{display:block;min-height:20px;color:#245544;font-size:.78rem;margin-top:9px}
+.med-call-privacy{margin:18px 0 0;color:#4c6558;font-size:.76rem;line-height:1.6}
+@media(max-width:880px){.med-call-desk{grid-template-columns:1fr}.med-call-scene{min-height:460px}.med-call-scene-bottom{max-width:700px}.med-call-scene h2{max-width:18ch}.med-call-scene-steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.med-call-scene-steps li{grid-template-columns:1fr}}
+@media(max-width:620px){.med-call-desk{border-radius:20px;margin-top:58px}.med-call-scene{padding:28px 25px 30px;min-height:490px}.med-call-scene:after{inset:12px}.med-call-scene h2{font-size:clamp(2.6rem,10vw,3.5rem)}.med-call-scene-steps{grid-template-columns:1fr;gap:0}.med-call-scene-steps li{grid-template-columns:32px 1fr;padding:9px 0}.med-call-desk-content{padding:27px 21px}.med-call-preview{padding:17px 13px}.med-call-actions{display:grid;grid-template-columns:1fr}.med-call-copy,.med-call-contact{width:100%}}
+@media(prefers-reduced-motion:reduce){.med-call-copy,.med-call-contact{transition:none}}
+@media print{.med-call-desk{display:block;box-shadow:none;break-inside:avoid}.med-call-scene{min-height:0;background:#fff!important;color:#193e34;padding:20px}.med-call-scene h2,.med-call-scene h2 em,.med-call-scene-lead,.med-call-kicker,.med-call-scene-steps li,.med-call-photo-note{color:#193e34}.med-call-scene:after{display:none}.med-call-desk-content{padding:20px}.med-call-actions{display:none}}
+
 </style>
 </head>
 <body>
@@ -285,6 +329,71 @@
   <div class="rate-atlas-bottom"><p>Examples transcribed from the existing provider listings, reviewed October 31, 2026. Different equipment and terms are not interchangeable. These amounts exclude unconfirmed additional charges and do not establish local delivery, product suitability or availability.</p><span class="rate-atlas-badge">Russellville delivery · Unconfirmed</span></div>
 </section>
 
+
+<section class="med-call-desk" id="call-desk" aria-labelledby="med-call-title">
+  <div class="med-call-scene">
+    <p class="med-call-kicker">The River Valley / Regional rental request desk</p>
+    <div class="med-call-scene-bottom">
+      <h2 id="med-call-title">Be ready <em>before the first call.</em></h2>
+      <p class="med-call-scene-lead">Three regional rental companies. No confirmed delivery to Russellville. Turn your questions into one clear request before contacting an operator.</p>
+      <ol class="med-call-scene-steps">
+        <li><span>01</span>Ask if the operator serves your Russellville address.</li>
+        <li><span>02</span>Confirm the advertised equipment, current stock and setup requirements.</li>
+        <li><span>03</span>Request total charges and rental-return terms.</li>
+      </ol>
+      <p class="med-call-photo-note">Downtown Russellville scenery · Not a provider storefront or inventory photograph.</p>
+    </div>
+  </div>
+  <div class="med-call-desk-content">
+    <p class="med-call-desk-label">A private planning tool / Nothing sent</p>
+    <h3>Build your call note.</h3>
+    <p class="med-call-desk-lead">Choose an operator, an advertised equipment group and a time frame. Copy the questions when you call. This page does not confirm safe equipment selection or make a booking.</p>
+    <form id="med-call-form" autocomplete="off">
+      <fieldset class="med-call-desk-fieldset">
+        <legend>Prepare your rental inquiry</legend>
+        <div class="med-call-desk-field"><label for="med-call-provider">Regional operator</label>
+          <select id="med-call-provider" name="provider">
+            <option value="">Choose later — compare all three</option>
+            <option value="attention">ATTENTION Medical Supply · Heber Springs</option>
+            <option value="diamond">Diamond Medical · Little Rock</option>
+            <option value="trumotion">TruMotion Medical · Little Rock</option>
+          </select>
+        </div>
+        <div class="med-call-desk-field"><label for="med-call-equipment">Equipment to ask about</label>
+          <select id="med-call-equipment" name="equipment">
+            <option value="">Not sure yet — ask about available options</option>
+            <option value="a wheelchair or mobility scooter">Wheelchair or mobility scooter</option>
+            <option value="a hospital bed">Hospital bed</option>
+            <option value="a ramp or knee walker">Ramp or knee walker</option>
+            <option value="a patient lift">Patient lift</option>
+            <option value="a lift chair">Lift chair</option>
+          </select>
+        </div>
+        <div class="med-call-desk-field"><label for="med-call-duration">Estimated rental period</label>
+          <select id="med-call-duration" name="duration">
+            <option value="">Not sure yet</option>
+            <option value="a few days">A few days</option>
+            <option value="one week">One week</option>
+            <option value="one month">One month</option>
+            <option value="longer than one month">Longer than one month</option>
+          </select>
+        </div>
+      </fieldset>
+    </form>
+    <div class="med-call-preview">
+      <div class="med-call-preview-head"><strong>Your call note</strong><small>Draft · Not submitted</small></div>
+      <label for="med-call-note">Read this note while calling, or copy it into a message:</label>
+      <textarea id="med-call-note" readonly rows="8">Hello, I am comparing medical equipment rentals for use in Russellville, Arkansas. Could you tell me what equipment is available and whether you deliver to my specific address? Please confirm equipment details, safe fit or setup requirements, rental duration, delivery and pickup costs, deposit, all other charges, and return terms. Thank you.</textarea>
+      <div class="med-call-actions">
+        <button type="button" class="med-call-copy" id="med-call-copy" hidden>Copy questions ↗</button>
+        <a class="med-call-contact" id="med-call-contact" href="#providers">See operator contact details ↑</a>
+      </div>
+      <span class="med-call-status" id="med-call-status" role="status" aria-live="polite"></span>
+    </div>
+    <p class="med-call-privacy">Your selections remain on this page and are not saved, submitted or sent to any provider. Do not enter private medical details. Operators must confirm availability, suitability, delivery, pricing and all terms. <noscript>Without JavaScript, use the sample questions above and the provider contact details.</noscript></p>
+  </div>
+</section>
+
 <section class="steps" id="before-you-go" aria-labelledby="steps-title"><p class="eyebrow" style="color:#52705e">02 / Before booking</p><h2 id="steps-title">Confirm these details.</h2><div class="steps-grid"><div><strong>01 · Exact equipment</strong><span>Ask about dimensions, capacity, condition, accessories and current stock.</span></div><div><strong>02 · Delivery to Russellville</strong><span>Ask whether your specific address is served, and request the full pickup, setup and delivery quote.</span></div><div><strong>03 · Terms &amp; safe use</strong><span>Confirm rental duration, deposit, return policy and training or fitting requirements.</span></div></div></section>
 <p class="note">Independent directory, reviewed October 31, 2026. Listings describe operator-advertised rental services, not guaranteed local delivery or availability. For no-cost alternatives, see <a href="medical-equipment-loans.html">medical equipment lending programs</a>. <a href="sms:+14799707301">Suggest a correction</a>.</p>
 <footer><span>© 2026 Russellville.Rent · Independent rental directory</span><a href="/">Return to homepage ↗</a></footer>
@@ -329,4 +438,58 @@ document.querySelectorAll('[data-quick-category]').forEach(function(path){
   });
 });
 </script>
+
+<script>
+/* November 2: local-only inquiry composer. No network calls, storage or personal health data. */
+(function(){
+  const form=document.getElementById('med-call-form');
+  const note=document.getElementById('med-call-note');
+  const copy=document.getElementById('med-call-copy');
+  const contact=document.getElementById('med-call-contact');
+  const status=document.getElementById('med-call-status');
+  if(!form||!note||!copy||!contact||!status)return;
+  const contacts={
+    attention:{name:'ATTENTION Medical Supply',tel:'tel:+15013622441'},
+    diamond:{name:'Diamond Medical',tel:'tel:+15012253106'},
+    trumotion:{name:'TruMotion Medical',tel:'tel:+15019752557'}
+  };
+  function buildNote(){
+    const fields=form.elements;
+    const selected=contacts[fields.provider.value];
+    const equipment=fields.equipment.value||'medical equipment options';
+    const duration=fields.duration.value||'a rental period I still need to confirm';
+    const greeting=selected?'Hello '+selected.name+',':'Hello,';
+    return [
+      greeting,
+      'I am asking about '+equipment+' for use in Russellville, Arkansas.',
+      'My estimated need is '+duration+'. Could you confirm current availability and whether you serve my exact address?',
+      'Please explain the equipment specifications, safe fit or setup requirements, pickup or delivery arrangements, and any training requirements.',
+      'What is the full rental cost, including delivery, setup, deposits, taxes or other fees, and what are the return and cancellation terms?',
+      'Thank you.'
+    ].join('\n');
+  }
+  function update(){
+    note.value=buildNote();
+    const selected=contacts[form.elements.provider.value];
+    contact.href=selected?selected.tel:'#providers';
+    contact.textContent=selected?'Call '+selected.name+' ↗':'See operator contact details ↑';
+    status.textContent='';
+  }
+  form.addEventListener('change',update);
+  form.addEventListener('submit',event=>event.preventDefault());
+  copy.hidden=false;
+  copy.addEventListener('click',async()=>{
+    try{
+      if(!navigator.clipboard?.writeText)throw new Error('clipboard not available');
+      await navigator.clipboard.writeText(note.value);
+      status.textContent='Copied. Use this note when you contact the operator.';
+    }catch(err){
+      note.focus();note.select();
+      status.textContent='Questions selected. Copy with your keyboard or device menu.';
+    }
+  });
+  update();
+})();
+</script>
+
 </body></html>
