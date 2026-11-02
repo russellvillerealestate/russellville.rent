@@ -353,6 +353,166 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
 @media(max-width:620px){.quote-studio{margin-top:59px;border-radius:19px}.quote-story{padding:37px 24px 26px}.quote-story:before{inset:10px}.quote-story h2{font-size:clamp(2.85rem,11vw,4.2rem)}.quote-story-steps{display:block}.quote-story-steps li{display:grid;grid-template-columns:36px 1fr}.quote-workbook{padding:27px 20px}.quote-fields{grid-template-columns:1fr;gap:13px}.quote-extras{display:grid;gap:5px}.quote-actions>*{width:100%}}
 @media print{.quote-story{min-height:0;background:#fff!important;color:#163f30}.quote-story h2,.quote-story h2 em,.quote-story-body>p,.quote-story-index,.quote-overline,.quote-story-steps li>span,.quote-story-steps small,.quote-scene-note{color:#163f30!important}.quote-studio{box-shadow:none}.quote-actions button{display:none!important}}
 
+
+/* 2026-11-02 / A River Valley service atlas, not a provider endorsement.
+   Compared live StayARV and Russellville.Rent before redesign: adapt the
+   former's photography-led editorial rhythm, broad breathing room and green/
+   gold palette to verified-vs-unconfirmed directory distinctions. Research:
+   Nielsen Norman Group (visual hierarchy / information scent), Google web.dev
+   (responsive layout / restrained imagery), WCAG 2.2 (reflow, focus, targets).
+   Scenic images are illustrative and do not depict these providers. */
+#local .provider-list,#regional .provider-list{align-items:stretch}
+#local .provider-list>.provider,#regional .provider-list>.provider{min-width:0;isolation:isolate}
+#local .provider-list>.provider:first-child{
+  border:1px solid #a3bfa7;border-radius:26px;
+  background:#fffdf7;box-shadow:0 22px 52px #123a2c24;
+}
+#local .provider-list>.provider:first-child .provider-index{
+  position:relative;isolation:isolate;overflow:hidden;min-height:230px;
+  display:flex;align-items:flex-end;padding:29px 34px 19px;
+  color:#fff7df;font:400 clamp(3.5rem,6vw,5.9rem)/1 Georgia,"Times New Roman",serif;
+  background:linear-gradient(0deg,#092d29e8 0%,#143f3480 47%,#143f3422 100%),
+    url("assets/downtown-russellville-sunset.jpg") center 55%/cover no-repeat;
+  border-bottom:4px solid #dfbc75;
+}
+#local .provider-list>.provider:first-child .provider-index:after{
+  content:"RUSSELLVILLE SCENERY  /  ILLUSTRATIVE";
+  position:absolute;top:23px;left:29px;right:29px;
+  color:#fff5d9;font-size:.61rem;font-family:system-ui,-apple-system,sans-serif;
+  font-weight:850;letter-spacing:.18em;line-height:1.5;text-shadow:0 2px 7px #123a30;
+}
+#local .provider-list>.provider:first-child .provider-content{
+  justify-content:center;background:linear-gradient(145deg,#fffdf7,#f0f5e9);
+  padding:clamp(26px,3.1vw,43px);
+}
+#local .provider-list>.provider:first-child .provider-tag{
+  color:#32634e;letter-spacing:.14em;
+}
+#local .provider-list>.provider:first-child h3{
+  font:400 clamp(2rem,3.4vw,3.15rem)/1.1 Georgia,"Times New Roman",serif;
+  letter-spacing:-.055em;color:#143d31;text-wrap:balance;margin:0 0 21px;
+}
+#local .provider-list>.provider:first-child .provider-description{
+  color:#405b4d;font-size:1.03rem;line-height:1.76;
+}
+#local .provider-list>.provider:not(:first-child){
+  border-top:4px solid #98b7a0;border-radius:19px;
+  box-shadow:0 10px 24px #11392e12;
+}
+#local .provider-list>.provider:nth-child(2){
+  border-top-color:#cb9c5d;background:#fffaf1;
+}
+#local .provider-list>.provider:nth-child(2) .provider-index{
+  background:#f5e9d5;color:#8d6436;
+}
+#local .provider-list>.provider:nth-child(3){
+  border-top-color:#5a9690;background:#f9fcf8;
+}
+#local .provider-list>.provider:nth-child(3) .provider-index{
+  background:#e2f0ed;color:#376f68;
+}
+#local .provider-list>.provider:not(:first-child) .provider-index{
+  min-height:56px;border-bottom:1px solid #dce8da;
+  font-size:1.65rem;padding:10px 24px;
+}
+#local .provider-list>.provider:not(:first-child) .provider-content{
+  padding:24px 26px 26px;
+}
+#local .provider-list>.provider:not(:first-child) h3{
+  font:400 clamp(1.37rem,2.15vw,1.77rem)/1.18 Georgia,"Times New Roman",serif;
+  letter-spacing:-.035em;color:#1b4738;margin:0 0 13px;
+}
+#local .provider-list>.provider:not(:first-child) .provider-description{
+  font-size:.89rem;line-height:1.62;
+}
+#regional .provider-list>.provider:first-child{
+  border:1px solid #c6d7c8;border-radius:24px;
+  box-shadow:0 19px 43px #12382b1b;
+}
+#regional .provider-list>.provider:first-child .provider-index{
+  position:relative;isolation:isolate;overflow:hidden;
+  display:flex;align-items:flex-end;
+  background:radial-gradient(circle at 105% 0%,#e8c27e45,transparent 45%),
+    linear-gradient(135deg,#153f33,#225847);
+  color:#f5d699;
+  font:400 clamp(3.7rem,7vw,6rem)/1 Georgia,"Times New Roman",serif;
+  border:0;
+}
+#regional .provider-list>.provider:first-child .provider-index:before{
+  content:"";position:absolute;z-index:-1;right:-90px;top:-130px;
+  width:350px;height:350px;border:1px solid #e8d3a44f;border-radius:50%;
+  box-shadow:0 0 0 44px #e8d3a415,0 0 0 88px #e8d3a40b;
+  pointer-events:none;
+}
+#regional .provider-list>.provider:first-child .provider-index:after{
+  content:"REGIONAL OPERATOR  /  RUSSELLVILLE SERVICE ADVERTISED";
+  position:absolute;top:31px;left:29px;right:18px;
+  color:#f6e5c0;font:.7rem/1.65 system-ui,-apple-system,sans-serif;
+  font-weight:800;letter-spacing:.13em;
+}
+#regional .provider-list>.provider:first-child .provider-content{
+  justify-content:center;background:linear-gradient(125deg,#fffdfa,#eff3e8);
+  padding:clamp(29px,3.3vw,49px);
+}
+#regional .provider-list>.provider:first-child h3{
+  font:400 clamp(2rem,3.3vw,2.8rem)/1.12 Georgia,"Times New Roman",serif;
+  color:#153e32;letter-spacing:-.05em;margin:0 0 20px;text-wrap:balance;
+}
+#regional .provider-list>.provider:first-child .provider-description{
+  font-size:.94rem;line-height:1.74;
+}
+#local .provider-list>.provider a:focus-visible,
+#regional .provider-list>.provider a:focus-visible{
+  outline:3px solid #ab6a18;outline-offset:4px;position:relative;z-index:2;
+}
+@media(min-width:1001px){
+  #local .provider-list{grid-template-columns:repeat(12,minmax(0,1fr));gap:19px}
+  #local .provider-list>.provider:first-child{grid-column:span 7;grid-row:span 2}
+  #local .provider-list>.provider:not(:first-child){grid-column:span 5}
+  #regional .provider-list>.provider:first-child{
+    grid-column:1/-1;display:grid;
+    grid-template-columns:minmax(220px,.38fr) minmax(0,.62fr);
+  }
+  #regional .provider-list>.provider:first-child .provider-index{
+    min-height:350px;padding:32px;
+  }
+}
+@media(min-width:701px) and (max-width:1000px){
+  #local .provider-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  #local .provider-list>.provider:first-child{grid-column:1/-1}
+  #local .provider-list>.provider:first-child .provider-index{min-height:205px}
+  #regional .provider-list>.provider:first-child{
+    grid-column:1/-1;display:grid;grid-template-columns:minmax(205px,.4fr) minmax(0,.6fr);
+  }
+  #regional .provider-list>.provider:first-child .provider-index{min-height:345px;padding:28px}
+}
+@media(max-width:700px){
+  #local .provider-list,#regional .provider-list{grid-template-columns:1fr;gap:14px}
+  #local .provider-list>.provider:first-child .provider-index{min-height:185px;padding:26px}
+  #local .provider-list>.provider:first-child .provider-index:after{top:18px;left:24px}
+  #local .provider-list>.provider:first-child .provider-content{padding:27px 23px}
+  #local .provider-list>.provider:not(:first-child) .provider-content{padding:23px}
+  #regional .provider-list>.provider:first-child{display:flex;flex-direction:column}
+  #regional .provider-list>.provider:first-child .provider-index{
+    min-height:165px;padding:22px 25px;font-size:3.8rem;
+  }
+  #regional .provider-list>.provider:first-child .provider-index:after{
+    top:20px;left:24px;font-size:.62rem;
+  }
+  #regional .provider-list>.provider:first-child .provider-content{padding:27px 23px}
+  #regional .provider-list>.provider:first-child h3,
+  #local .provider-list>.provider:first-child h3{font-size:2.15rem}
+}
+@media(max-width:400px){
+  #local .provider-list>.provider:first-child .provider-index:after,
+  #regional .provider-list>.provider:first-child .provider-index:after{letter-spacing:.08em}
+}
+@media(prefers-reduced-motion:reduce){
+  #local .provider-list>.provider,#regional .provider-list>.provider{
+    transition:none!important;transform:none!important;
+  }
+}
+
 </style>
 </head>
 <body>
