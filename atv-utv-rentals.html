@@ -166,6 +166,90 @@ main{max-width:1400px;padding:22px clamp(15px,2.2vw,34px) 90px}
 }
 @media(max-width:420px){.route-card{flex-basis:85vw}.route-card strong{font-size:1.85rem}.route-art{height:135px}}
 @media(prefers-reduced-motion:reduce){.route-grid{scroll-behavior:auto}.route-card:hover{transform:none}}
+
+/* Trail atlas bento wayfinding — November 2, 2026.
+   Make the Ozark-area route a large visual lead and place the Mount Magazine
+   and on-property adventure alternatives beside it. This changes hierarchy,
+   not operator priority, booking status, rules, or price information.
+   Keep the November 1 mobile swipe comparison intact at <=720px.
+   Research: NN/g visual hierarchy; web.dev responsive macro layouts; WCAG 2.2. */
+@media (min-width:1101px) {
+  .route-intro{margin-top:64px}
+  .route-grid{
+    grid-template-columns:minmax(0,1.16fr) minmax(0,1fr);
+    grid-template-rows:repeat(2,minmax(0,1fr));
+    gap:16px;align-items:stretch
+  }
+  .route-card{min-height:0}
+  .route-card:first-child{
+    grid-column:1;grid-row:1 / span 2;
+    padding:clamp(29px,3.4vw,45px);
+    background:linear-gradient(160deg,#e3ede0 0%,#fbfdf7 66%,#fff 100%);
+    border-color:#abc4aa;border-top:6px solid #507c60;
+    box-shadow:0 22px 46px #153d2c1b
+  }
+  .route-card:first-child .route-art{
+    height:clamp(235px,24vw,320px);
+    margin:12px 0 6px;border-radius:18px;
+    border-color:#91ac97;box-shadow:0 19px 34px #153d2a24
+  }
+  .route-card:first-child .route-kicker{
+    display:inline-flex;align-items:center;min-height:0;
+    color:#3d6a4c;font-size:.75rem
+  }
+  .route-card:first-child strong{
+    max-width:16ch;font-size:clamp(2.5rem,3.4vw,3.85rem);
+    line-height:1.04;letter-spacing:-.058em
+  }
+  .route-card:first-child>span:nth-last-child(2){
+    max-width:50ch;font-size:.94rem;line-height:1.65
+  }
+  .route-card:first-child .route-action{
+    font-size:.91rem;padding-top:21px;border-top-color:#adc6b1
+  }
+  .route-card:not(:first-child){
+    grid-column:2;display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(126px,38%);
+    grid-template-rows:auto auto minmax(0,1fr) auto;
+    gap:10px 18px;align-items:start;
+    min-height:0;padding:24px 22px 19px;
+    border-top-width:5px
+  }
+  .route-card:not(:first-child) .route-kicker{
+    grid-column:1 / -1;grid-row:1;min-height:0;
+    max-width:none;padding-right:27px
+  }
+  .route-card:not(:first-child) .route-art{
+    grid-column:2;grid-row:2 / span 2;
+    align-self:stretch;height:100%;min-height:125px;
+    border-radius:13px;margin:0
+  }
+  .route-card:not(:first-child) strong{
+    grid-column:1;grid-row:2;max-width:14ch;
+    font-size:clamp(1.65rem,2.15vw,2.35rem);line-height:1.06
+  }
+  .route-card:not(:first-child)>span:nth-last-child(2){
+    grid-column:1;grid-row:3;
+    max-width:30ch;font-size:.81rem;line-height:1.55
+  }
+  .route-card:not(:first-child) .route-action{
+    grid-column:1 / -1;grid-row:4;
+    padding-top:13px;font-size:.8rem
+  }
+  .route-card:nth-child(2){background:#edf0e6}
+  .route-card:nth-child(3){background:#1e493b}
+}
+@media (min-width:721px) and (max-width:1100px){
+  .route-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .route-card{min-height:0}
+  .route-card:first-child{grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1fr) minmax(200px,.8fr);column-gap:26px}
+  .route-card:first-child .route-kicker{grid-column:1 / -1}
+  .route-card:first-child .route-art{grid-column:2;grid-row:2 / span 3;height:100%;min-height:170px}
+  .route-card:first-child strong,.route-card:first-child>span:nth-last-child(2){grid-column:1}
+  .route-card:first-child .route-action{grid-column:1 / -1}
+  .route-card:nth-child(n+2){min-height:390px}
+}
+
 </style></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-head"><a href="/">Russellville.Rent</a><a class="back" href="/">← All rental categories</a></header>
 <main id="main"><section class="hero" aria-labelledby="hero-title"><div class="hero-terrain" aria-hidden="true"><svg viewBox="0 0 1440 410" preserveAspectRatio="xMidYMax slice" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="trail-dusk" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c6c995" stop-opacity=".34"/><stop offset="1" stop-color="#214f3c" stop-opacity=".03"/></linearGradient></defs><circle cx="1155" cy="88" r="90" fill="#e7c78c" opacity=".23"/><path d="M0 265 118 173l95 66 128-145 138 143 112-75 136 95 114-113 132 122 145-102 137 91 135-83 50 41v191H0Z" fill="url(#trail-dusk)"/><path d="M0 312 146 216l126 65 118-83 132 101 112-49 144 59 121-88 129 81 134-97 178 112v93H0Z" fill="#6e9572" opacity=".27"/><path d="M0 355q152-85 306-37t278-17 268 34 278-9 310 19v65H0Z" fill="#224e3a" opacity=".67"/><path d="M0 389q242-40 447-7t414-15 579 17v26H0Z" fill="#102f28" opacity=".8"/><g fill="#153d2f" opacity=".68"><path d="m60 349 29-96 31 96h-21v57H78v-57Z"/><path d="m130 363 24-79 24 79h-17v43h-16v-43Z"/><path d="m1184 349 31-112 33 112h-22v61h-21v-61Z"/><path d="m1244 362 22-72 24 72h-15v48h-16v-48Z"/><path d="m1345 354 27-95 29 95h-20v56h-18v-56Z"/></g><path d="M-20 409q285-106 529-57t386-18 560 71" stroke="#cbaa78" stroke-opacity=".3" stroke-width="8" stroke-dasharray="3 20" fill="none"/></svg></div><div><p class="eyebrow">Russellville &amp; the Arkansas River Valley</p><h1 id="hero-title">Find a side-by-side.<br><em>Find your trail.</em></h1><p>Compare independently listed side-by-side rentals in the Ozarks, around Ozone and Mount Magazine. The operators below advertise rentals on their own websites; confirm dates, trail restrictions and exact pickup or delivery arrangements before traveling.</p><a href="#directory">Explore three providers <span aria-hidden="true">↗</span></a></div>
