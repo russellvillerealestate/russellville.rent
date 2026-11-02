@@ -242,6 +242,43 @@ main{padding-top:clamp(62px,8vw,104px)}
 @media(max-width:700px){.rate-board,.rate-checks{grid-template-columns:1fr}.rate-heading h2{font-size:clamp(2.65rem,10vw,4rem)}.rate-art{transform:none}.rate-checks{gap:9px}.rate-check{padding:16px 18px}}
 @media(max-width:380px){.morrilton .rate-list>div{grid-template-columns:1fr 1fr}.morrilton .rate-list dt{grid-column:1/-1}.morrilton .rate-list dd{text-align:left;align-items:start}.rate-art{transform:scale(.68);transform-origin:top right}}
 
+
+/* 2026-11-02 / Field-layout atlas: illustrated questions, not dimensions or site approval. */
+.access-atlas{margin:clamp(52px,7vw,92px) 0 0;border-radius:26px;overflow:hidden;background:#f6f0e3;border:1px solid #dacfb7;box-shadow:0 24px 56px #18382e18}
+.access-atlas__header{display:flex;align-items:end;justify-content:space-between;gap:26px;padding:clamp(26px,4.5vw,50px);background:#f6f0e3}
+.access-atlas__kicker{margin:0 0 12px;color:#875a28;font-size:.7rem;font-weight:900;letter-spacing:.19em;text-transform:uppercase}
+.access-atlas__header h2{font:400 clamp(2.35rem,4.8vw,4.65rem)/1.04 Georgia,serif;letter-spacing:-.064em;color:#153e34;margin:0;text-wrap:balance}
+.access-atlas__header h2 em{color:#a1692d;font-weight:400}
+.access-atlas__header>p{max-width:320px;margin:0 0 5px;color:#57685b;font-size:.93rem;line-height:1.65}
+.access-atlas__body{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);background:#173d34}
+.access-atlas__scene{position:relative;overflow:hidden;isolation:isolate;min-height:595px;padding:clamp(23px,4vw,44px);display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg,#061b17a8,#0c2e24e8),url("assets/downtown-russellville-sunset.jpg") center/cover;color:#fff}
+.access-atlas__scene:before{content:"";position:absolute;inset:16px;border:1px solid #fff4d434;border-radius:14px;pointer-events:none}
+.access-atlas__badge{position:relative;z-index:1;align-self:flex-start;border:1px solid #ffe5b16b;border-radius:999px;background:#09271fc9;padding:10px 15px;font-size:.68rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#ffe3ad}
+.access-atlas__drawing{position:relative;z-index:1;margin:35px auto;max-width:640px;width:100%;padding:17px 10px 9px;border:1px solid #eed8aa58;border-radius:19px;background:#0c2c26dc;box-shadow:0 22px 55px #0419159e;backdrop-filter:blur(5px)}
+.access-atlas__drawing svg{width:100%;height:auto;display:block}
+.access-atlas__scene-note{position:relative;z-index:1;color:#e2e8dc;font-size:.74rem;line-height:1.65;max-width:51ch;margin:0}
+.access-atlas__guide{padding:clamp(24px,4vw,47px);color:#f0f3ea;background:linear-gradient(145deg,#215347,#12382f)}
+.access-atlas__guide>p:first-child{color:#e9c991;text-transform:uppercase;font-size:.7rem;font-weight:850;letter-spacing:.16em;margin:0 0 14px}
+.access-atlas__guide h3{font:400 clamp(1.8rem,3vw,2.6rem)/1.12 Georgia,serif;letter-spacing:-.045em;margin:0 0 16px;color:#fff8eb}
+.access-atlas__guide>p:nth-of-type(2){font-size:.91rem;line-height:1.65;color:#d8e5da;margin:0 0 25px}
+.access-atlas__prompt{border-top:1px solid #ffffff36}
+.access-atlas__prompt:last-of-type{border-bottom:1px solid #ffffff36}
+.access-atlas__prompt summary{list-style:none;display:flex;align-items:center;gap:13px;min-height:70px;cursor:pointer;color:#fff;font-weight:800;line-height:1.3}
+.access-atlas__prompt summary::-webkit-details-marker{display:none}
+.access-atlas__prompt summary span{flex:none;color:#f3d098;font:400 1.35rem/1 Georgia,serif}
+.access-atlas__prompt summary:after{content:"+";font-size:1.55rem;line-height:1;margin-left:auto;color:#f0d4a8}
+.access-atlas__prompt[open] summary:after{content:"−"}
+.access-atlas__prompt summary:focus-visible{outline:3px solid #ffdc8e;outline-offset:-3px;border-radius:6px}
+.access-atlas__prompt p{margin:0 0 19px 31px;max-width:43ch;color:#e3e9de;font-size:.85rem;line-height:1.67}
+.access-atlas__actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.access-atlas__actions a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 17px;border:1px solid #e6d1aa;border-radius:999px;font-size:.81rem;font-weight:800;text-decoration:none;color:#163b30;background:#f1d396}
+.access-atlas__actions a+ a{background:transparent;color:#fff}
+.access-atlas__actions a:hover{text-decoration:underline}
+.access-atlas__actions a:focus-visible{outline:3px solid #ffdc8e;outline-offset:3px}
+@media(max-width:850px){.access-atlas__body{grid-template-columns:1fr}.access-atlas__scene{min-height:auto}.access-atlas__drawing{max-width:570px}.access-atlas__guide{padding:30px}}
+@media(max-width:620px){.access-atlas{margin-top:45px;border-radius:18px}.access-atlas__header{display:block;padding:27px 23px}.access-atlas__header>p{margin-top:18px}.access-atlas__header h2{font-size:clamp(2.45rem,10vw,3.5rem)}.access-atlas__scene{padding:25px 19px}.access-atlas__scene:before{inset:8px}.access-atlas__drawing{margin:25px auto;padding:5px}.access-atlas__guide{padding:29px 21px}.access-atlas__prompt summary{min-height:62px}}
+@media(prefers-reduced-motion:reduce){.access-atlas *{scroll-behavior:auto}}
+
 </style>
 </head>
 <body>
@@ -357,6 +394,64 @@ main{padding-top:clamp(62px,8vw,104px)}
    <aside class="regional-explainer"><h3>Check service area before planning.</h3><p>Do not assume delivery to Russellville is available. Ask for a written quote covering delivery, pickup, container availability and any location-based fees.</p></aside>
   </div>
  </section>
+
+
+<section class="access-atlas" id="container-access" aria-labelledby="access-atlas-title">
+ <div class="access-atlas__header">
+  <div><p class="access-atlas__kicker">03 / A visual field guide · Before delivery</p><h2 id="access-atlas-title">Make space for<br><em>the pickup.</em></h2></div>
+  <p>The right container is only part of the plan. Walk through the drop-off details you should confirm with the rental operator before scheduling.</p>
+ </div>
+ <div class="access-atlas__body">
+  <div class="access-atlas__scene">
+   <span class="access-atlas__badge">River Valley / Site planning sketch</span>
+   <div class="access-atlas__drawing">
+    <svg viewBox="0 0 610 420" role="img" aria-labelledby="access-illustration-title access-illustration-desc" xmlns="http://www.w3.org/2000/svg">
+     <title id="access-illustration-title">Illustrated driveway, building, container and truck approach</title>
+     <desc id="access-illustration-desc">A conceptual overhead site diagram marks a building, driveway access, possible container set-down area, and neighboring obstacles. It is not drawn to scale and does not show safe clearances.</desc>
+     <defs><pattern id="access-grain" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M0 13h26M13 0v26" stroke="#b9cbb7" stroke-width=".5" opacity=".2"/></pattern></defs>
+     <rect x="17" y="19" width="576" height="382" rx="12" fill="#e5ead7"/>
+     <rect x="17" y="19" width="576" height="382" rx="12" fill="url(#access-grain)"/>
+     <path d="M26 322H585" stroke="#9dada2" stroke-width="95"/>
+     <path d="M26 322H585" stroke="#f2f1e4" stroke-width="2" stroke-dasharray="13 12"/>
+     <path d="M280 322V188" stroke="#a9b7a9" stroke-width="103"/>
+     <path d="M280 324V188" stroke="#eff4e9" stroke-width="3" stroke-dasharray="9 11"/>
+     <rect x="68" y="62" width="168" height="146" rx="5" fill="#96744e"/>
+     <path d="M60 67L153 28l90 39-90 41Z" fill="#cfad73"/>
+     <path d="M68 67v141h168V67" fill="#e5cb98" opacity=".86"/>
+     <rect x="101" y="135" width="53" height="73" fill="#87684a"/>
+     <rect x="169" y="126" width="33" height="34" fill="#b9d9d2" stroke="#7a9d90" stroke-width="3"/>
+     <text x="152" y="231" text-anchor="middle" fill="#365848" font-family="system-ui,sans-serif" font-size="13" font-weight="800">BUILDING</text>
+     <rect x="350" y="83" width="157" height="100" rx="8" fill="#e3c58c" stroke="#9c7340" stroke-width="3"/>
+     <path d="M361 92h133v82H361z" fill="#bf8b4b"/>
+     <path d="M388 92v82M418 92v82M448 92v82M478 92v82" stroke="#e8bd77" stroke-width="7"/>
+     <rect x="337" y="70" width="184" height="125" rx="14" fill="none" stroke="#f2b63b" stroke-width="4" stroke-dasharray="10 7"/>
+     <rect x="332" y="42" width="195" height="25" rx="12" fill="#103d32"/>
+     <text x="429" y="59" text-anchor="middle" fill="#f5e0aa" font-family="system-ui,sans-serif" font-size="13" font-weight="800">ASK ABOUT PLACEMENT</text>
+     <path d="M279 315v-71c0-36 28-57 69-60" fill="none" stroke="#c78131" stroke-width="9" stroke-linecap="round" stroke-dasharray="10 12"/>
+     <path d="m331 168 22 16-23 16" fill="none" stroke="#c78131" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+     <rect x="70" y="290" width="161" height="39" rx="19" fill="#103d32"/>
+     <text x="150" y="315" text-anchor="middle" fill="#fff4d9" font-family="system-ui,sans-serif" font-size="13" font-weight="800">TRUCK ACCESS</text>
+     <circle cx="555" cy="219" r="24" fill="#6c9475"/><circle cx="562" cy="206" r="19" fill="#7faa79"/>
+     <circle cx="551" cy="254" r="27" fill="#739471"/><circle cx="542" cy="244" r="19" fill="#94ad80"/>
+     <rect x="468" y="273" width="113" height="26" rx="13" fill="#103d32"/>
+     <text x="525" y="290" text-anchor="middle" fill="#fff4d9" font-family="system-ui,sans-serif" font-size="12" font-weight="800">OBSTACLES?</text>
+     <text x="38" y="381" fill="#456359" font-family="system-ui,sans-serif" font-size="12" font-weight="800">CONCEPT SKETCH · NO DIMENSIONS OR CLEARANCE PROMISES</text>
+    </svg>
+   </div>
+   <p class="access-atlas__scene-note">Illustrative layout, not a survey, installation plan, permission to place a container, or a truck-clearance specification. The backdrop is Russellville scenery, not a provider jobsite photograph.</p>
+  </div>
+  <div class="access-atlas__guide">
+   <p>Four checks / Open for details</p>
+   <h3>Before a driver heads your way.</h3>
+   <p>Use this field guide to describe your site accurately. The rental company must determine whether delivery and placement are possible.</p>
+   <details class="access-atlas__prompt" open><summary><span>01</span>How does the truck get in?</summary><p>Describe the entry road, driveway, gate, slopes and turning area. Ask the operator to verify vehicle access rather than assuming a truck can reach the spot.</p></details>
+   <details class="access-atlas__prompt"><summary><span>02</span>Where could the container sit?</summary><p>Identify the preferred surface and whether it is on private property or a public street. Ask about site protection, necessary permission, placement restrictions and pickup access.</p></details>
+   <details class="access-atlas__prompt"><summary><span>03</span>What's around or overhead?</summary><p>Mention trees, overhead wires, roofs, fences, parked vehicles and other obstructions. Do not estimate safe clearances yourself; have the operator confirm requirements.</p></details>
+   <details class="access-atlas__prompt"><summary><span>04</span>What will go inside?</summary><p>Explain the debris mix, approximate project scope and expected rental dates. Confirm prohibited items, included weight, fill limits and extra pickup or disposal charges.</p></details>
+   <div class="access-atlas__actions"><a href="#main">See rental providers ↗</a><a href="#questions">Review quote questions ↗</a></div>
+  </div>
+ </div>
+</section>
 
 <section class="brief-studio" id="brief-studio" aria-labelledby="brief-title" hidden>
  <div class="brief-intro">
