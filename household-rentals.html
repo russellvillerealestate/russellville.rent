@@ -205,6 +205,47 @@ footer a{font-weight:750;color:var(--forest)}
  .home-journey .journey-card:hover,.providers .card:hover{transform:none}
 }
 
+
+/* November 2026 household essentials atlas. Borrow StayARV's scenic editorial
+   hierarchy, not provider imagery or booking claims. Native-button filtering,
+   visible focus, responsive reflow and reduced motion follow NN/g, web.dev
+   and W3C WCAG 2.2 principles; listing content is left intact. */
+.need-explorer{position:relative;display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);margin-block:34px 7px;border:1px solid #d7e3d7;border-radius:27px;overflow:hidden;background:#e9eee7;box-shadow:0 23px 52px #143a2c18}
+.need-cover{position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:start;min-height:440px;padding:clamp(26px,4vw,47px);color:#fff;background:#11382f}
+.need-cover:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(132deg,rgba(8,33,28,.97) 3%,rgba(13,51,42,.90) 58%,rgba(14,48,39,.74)),url("/assets/downtown-russellville-sunset.jpg") center 54%/cover no-repeat}
+.need-cover:after{content:"";position:absolute;inset:auto 28px 25px auto;width:82px;height:82px;border:1px solid #ffffff50;border-radius:50%;box-shadow:0 0 0 28px #ffffff0c,0 0 0 55px #ffffff06;pointer-events:none}
+.need-cover .need-overline{font-size:.68rem;letter-spacing:.18em;line-height:1.5;text-transform:uppercase;font-weight:850;color:#f3d49f;margin:0 0 35px}
+.need-cover h2{max-width:11ch;margin:0;font:400 clamp(2.65rem,4.3vw,4.25rem)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.055em;text-wrap:balance}
+.need-cover h2 em{color:#f5d6a0;font-style:italic;font-weight:400}
+.need-cover>p:not(.need-overline){max-width:45ch;margin:19px 0 27px;font-size:.92rem;line-height:1.62;color:#edf1e8}
+.need-cover-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:auto}
+.need-all{font:800 .85rem/1.3 system-ui,sans-serif;color:#133c30;background:#f5d9a9;border:2px solid #f5d9a9;border-radius:9px;min-height:48px;padding:12px 18px;cursor:pointer;transition:background .17s,transform .17s}
+.need-all:hover{background:#ffe8bf;transform:translateY(-2px)}
+.need-all[aria-pressed="true"]{box-shadow:0 0 0 3px #163e35,0 0 0 5px #f5d9a9}
+.need-cover-hint{font-size:.72rem;max-width:24ch;line-height:1.45;color:#e4eade}
+.need-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:16px}
+.need-tile{position:relative;display:flex;flex-direction:column;text-align:left;align-items:start;min-width:0;min-height:404px;padding:21px 18px 20px;border:2px solid transparent;border-radius:17px;background:#fffdf7;color:#183d31;font:inherit;cursor:pointer;box-shadow:0 7px 22px #173c2b0d;transition:transform .2s,box-shadow .2s,border-color .2s,background .2s}
+.need-tile:nth-child(2){background:#f8f3e9}.need-tile:nth-child(3){background:#f0f4ed}
+.need-tile:hover{transform:translateY(-5px);box-shadow:0 15px 32px #173c2b22}
+.need-tile[aria-pressed="true"]{background:#e4efe3;border-color:#27634f;box-shadow:0 0 0 2px #d1e7d5,0 16px 31px #173c2b1b}
+.need-tile:focus-visible,.need-all:focus-visible,.need-jump:focus-visible{outline:3px solid #a35825;outline-offset:4px}
+.need-tile-number{font-size:.68rem;letter-spacing:.15em;font-weight:850;color:#796346}
+.need-tile-art{position:relative;display:grid;place-items:center;align-self:stretch;margin:23px -7px 26px;min-height:125px;border-radius:12px;background:#e3ebe2;overflow:hidden;color:#2d725d}
+.need-tile:nth-child(2) .need-tile-art{background:#eae3d6;color:#9b6d41}.need-tile:nth-child(3) .need-tile-art{background:#dfe9e7;color:#46776e}
+.need-tile-art:before{content:"";position:absolute;width:130px;height:130px;right:-36px;top:-65px;border-radius:50%;border:2px solid currentColor;opacity:.13}
+.need-tile-art svg{width:min(88%,142px);height:98px;position:relative}
+.need-tile-title{font:400 clamp(1.3rem,1.9vw,1.72rem)/1.13 Georgia,"Times New Roman",serif;letter-spacing:-.038em;color:#143d30}
+.need-tile-note{display:block;margin:10px 0 22px;font-size:.78rem;line-height:1.5;color:#526a5e}
+.need-tile-foot{display:flex;align-items:center;justify-content:space-between;gap:7px;width:100%;margin-top:auto;padding-top:13px;border-top:1px solid #d6e2d7;font-size:.72rem;font-weight:850;color:#255c47}
+.need-tile-foot span:last-child{font-size:1.2rem}
+.need-results{display:flex;align-items:center;gap:9px;margin:18px 0 21px;padding:12px 16px;border-radius:11px;border:1px solid #cee0d2;background:#eaf3ea;color:#255543;font-size:.88rem;font-weight:700}
+.need-results:before{content:"";width:9px;height:9px;flex:0 0 9px;border-radius:50%;background:#4b9370}
+.need-jump{display:inline-block;color:#1d5941;text-decoration:underline;font-weight:800}
+@media(max-width:980px){.need-explorer{grid-template-columns:1fr}.need-cover{min-height:0;padding:35px 37px}.need-cover h2{max-width:18ch}.need-cover .need-overline{margin-bottom:18px}.need-cover>p:not(.need-overline){margin-bottom:20px}.need-tiles{padding:14px}.need-tile{min-height:320px}.need-tile-art{min-height:100px;margin:17px -4px 20px}.need-tile-art svg{height:86px}}
+@media(max-width:620px){.need-explorer{border-radius:20px;margin-top:22px}.need-cover{padding:32px 24px}.need-cover h2{font-size:clamp(2.5rem,9vw,3.35rem)}.need-tiles{grid-template-columns:1fr;gap:10px;padding:11px}.need-tile{min-height:0;display:grid;grid-template-columns:93px minmax(0,1fr);grid-template-rows:auto auto 1fr;column-gap:16px;align-items:start;padding:17px}.need-tile-number{grid-column:2}.need-tile-art{grid-column:1;grid-row:1/4;min-height:112px;height:100%;margin:0}.need-tile-art svg{height:74px;width:80px}.need-tile-title{grid-column:2;margin-top:5px;font-size:1.55rem}.need-tile-note{grid-column:2;margin:7px 0 0}.need-tile-foot{grid-column:1/-1;margin-top:15px;padding-top:11px}.need-cover-hint{max-width:100%}}
+@media(max-width:375px){.need-tile{grid-template-columns:76px minmax(0,1fr);column-gap:12px;padding:14px}.need-tile-art{min-height:109px}.need-tile-art svg{width:69px}.need-tile-title{font-size:1.35rem}.need-cover{padding:29px 20px}}
+@media(prefers-reduced-motion:reduce){.need-tile,.need-all{transition:none}.need-tile:hover,.need-all:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -244,13 +285,47 @@ footer a{font-weight:750;color:var(--forest)}
   <a class="journey-card" href="#questions"><span class="journey-kicker">03 / PREPARE</span><span class="journey-heading">Know what to ask.</span><span class="journey-detail">Review ownership, return, delivery and fee questions.</span><span class="journey-arrow" aria-hidden="true">↗</span></a>
 </nav>
 <div class="intro-band"><div class="wrap"><strong>Know the difference</strong><p>Rent-to-own agreements are different from short-term rentals. Ask each retailer how payments, fees, returns and ownership work before agreeing to terms.</p></div></div>
+
+<section class="need-explorer wrap" id="shop-by-need" aria-labelledby="need-title" hidden>
+  <div class="need-cover">
+    <p class="need-overline">The River Valley home edit / By what you need</p>
+    <h2 id="need-title">Start with the <em>essential.</em></h2>
+    <p>Find Russellville retailers advertising the kinds of items you need. Every shop has its own inventory, payment agreement and ownership terms.</p>
+    <div class="need-cover-actions"><button type="button" class="need-all" data-need="all" aria-controls="provider-cards" aria-pressed="true">All four retailers ↗</button><span class="need-cover-hint">Category matches, not live stock or rental approval.</span></div>
+  </div>
+  <div class="need-tiles" role="group" aria-label="Filter listed retailers by household item">
+    <button class="need-tile" type="button" data-need="furniture" aria-controls="provider-cards" aria-pressed="false">
+      <span class="need-tile-number">01 / LIVING SPACES</span>
+      <span class="need-tile-art" aria-hidden="true"><svg viewBox="0 0 160 110" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="24" y="41" width="112" height="43" rx="11" fill="currentColor" opacity=".28"/><rect x="39" y="27" width="82" height="39" rx="11" stroke="currentColor" stroke-width="5"/><rect x="16" y="51" width="24" height="34" rx="8" fill="currentColor"/><rect x="120" y="51" width="24" height="34" rx="8" fill="currentColor"/><path d="M32 85v14m96-14v14M80 53v29" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></svg></span>
+      <span class="need-tile-title">Furniture &amp; mattresses</span>
+      <span class="need-tile-note">Explore stores that advertise home furnishings.</span>
+      <span class="need-tile-foot"><span>4 listed retailers</span><span aria-hidden="true">↗</span></span>
+    </button>
+    <button class="need-tile" type="button" data-need="appliances" aria-controls="provider-cards" aria-pressed="false">
+      <span class="need-tile-number">02 / DAILY ROUTINES</span>
+      <span class="need-tile-art" aria-hidden="true"><svg viewBox="0 0 160 110" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="43" y="13" width="75" height="86" rx="9" stroke="currentColor" stroke-width="5"/><path d="M45 57h71M56 23v18M64 23v18" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><rect x="81" y="70" width="22" height="18" rx="3" fill="currentColor" opacity=".33"/><path d="M50 101v5m61-5v5" stroke="currentColor" stroke-width="5"/></svg></span>
+      <span class="need-tile-title">Appliances</span>
+      <span class="need-tile-note">Compare retailers advertising household appliances.</span>
+      <span class="need-tile-foot"><span>3 listed retailers</span><span aria-hidden="true">↗</span></span>
+    </button>
+    <button class="need-tile" type="button" data-need="electronics" aria-controls="provider-cards" aria-pressed="false">
+      <span class="need-tile-number">03 / CONNECTED HOME</span>
+      <span class="need-tile-art" aria-hidden="true"><svg viewBox="0 0 160 110" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="24" y="18" width="112" height="65" rx="7" fill="currentColor" opacity=".24" stroke="currentColor" stroke-width="5"/><path d="M80 83v13m-23 1h46M45 53l15-17 18 13 23-22 13 14" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="need-tile-title">Electronics</span>
+      <span class="need-tile-note">Find retailers advertising electronics for home.</span>
+      <span class="need-tile-foot"><span>3 listed retailers</span><span aria-hidden="true">↗</span></span>
+    </button>
+  </div>
+</section>
+
 <section class="providers wrap" id="providers" aria-labelledby="providers-title">
 <div class="section-top"><div><p class="eyebrow">Four Russellville providers</p><h2 id="providers-title">Find a place to start.</h2></div><p>Contact retailers directly to verify inventory, current location, availability and agreement terms.</p></div>
-<div class="cards">
-<article class="card"><div class="card-inner"><p class="card-index">01 / Local provider</p><h3>Rent-A-Center — Russellville</h3><p class="description">Lease-to-own furniture, appliances and electronics.</p><div class="address"><span class="address-label">Published location</span><p>1101 W Main St, Russellville, AR</p></div><div class="card-actions"><a class="button call" href="tel:+14799686605">Call 479-968-6605 ↗</a><a class="button provider" href="https://locations.rentacenter.com/arkansas/russellville/1101-w-main-street/" target="_blank" rel="noopener noreferrer">Public provider information ↗</a></div></div></article>
-<article class="card"><div class="card-inner"><p class="card-index">02 / Local storefront verified</p><h3>Aaron's — Russellville</h3><p class="description">Russellville store offering lease-to-own furniture, appliances and electronics through rental-purchase agreements. The official store locator verifies the address and phone number below. Merchandise selection, delivery, approval, final total ownership cost and availability depend on the agreement; leasing to ownership generally costs more than paying cash. This is not a conventional short-term furniture rental.</p><div class="address"><span class="address-label">Official store location</span><p>1005 E Main St, Russellville, AR 72801</p></div><div class="card-actions"><a class="button call" href="tel:+14799672741">Call 479-967-2741 ↗</a><a class="button provider" href="https://www.aarons.com/locations/us/ar/russellville/1005-e-main-st." target="_blank" rel="noopener noreferrer">Official Russellville store ↗</a></div></div></article>
-<article class="card"><div class="card-inner"><p class="card-index">03 / Local storefront verified</p><h3>Bestway Rent to Own — Russellville</h3><p class="description">Russellville rent-to-own retailer offering furniture, appliances, electronics and other household items. <strong>Bestway's official store locator confirms the address and phone below</strong>, resolving conflicting older third-party addresses. Lease terms, selection, delivery and total cost of ownership require confirmation with the store; rent-to-own is not an ordinary short-term rental.</p><div class="address"><span class="address-label">Official store location</span><p>310 S Arkansas Ave, Russellville, AR 72801</p></div><div class="card-actions"><a class="button call" href="tel:+14798905941">Call 479-890-5941 ↗</a><a class="button provider" href="https://www.bestwayrto.com/find-a-store/" target="_blank" rel="noopener noreferrer">Official Bestway store locator ↗</a></div></div></article>
-<article class="card"><div class="card-inner"><p class="card-index">04 / Local lease-to-own partner</p><h3>Hank&#39;s Fine Furniture &amp; Mattresses — Russellville</h3><p class="description">Russellville furniture and mattress store offering lease-to-own through the third-party provider Acima. Acima independently confirms this participating location. <strong>This is a lease-purchase option, not short-term furniture rental.</strong> Only eligible merchandise may qualify; approval, payments, current stock and ownership terms require confirmation. Ownership through leasing costs more than the cash price. <a href="https://locations.acima.com/arkansas/russellville/2609-e-parkway-dr/" target="_blank" rel="noopener noreferrer">Official Acima partner listing ↗</a></p><div class="address"><span class="address-label">Official store location</span><p>2609 E Parkway Dr, Russellville, AR 72802</p></div><div class="card-actions"><a class="button call" href="tel:+14799679984">Call 479-967-9984 ↗</a><a class="button provider" href="https://hanksfurniture.com/allshops" target="_blank" rel="noopener noreferrer">Official store directory ↗</a></div></div></article>
+<p class="need-results" id="need-results" role="status" aria-live="polite" hidden>Showing all four listed retailers. Confirm inventory with each store.</p>
+<div class="cards" id="provider-cards">
+<article class="card" data-need="furniture appliances electronics"><div class="card-inner"><p class="card-index">01 / Local provider</p><h3>Rent-A-Center — Russellville</h3><p class="description">Lease-to-own furniture, appliances and electronics.</p><div class="address"><span class="address-label">Published location</span><p>1101 W Main St, Russellville, AR</p></div><div class="card-actions"><a class="button call" href="tel:+14799686605">Call 479-968-6605 ↗</a><a class="button provider" href="https://locations.rentacenter.com/arkansas/russellville/1101-w-main-street/" target="_blank" rel="noopener noreferrer">Public provider information ↗</a></div></div></article>
+<article class="card" data-need="furniture appliances electronics"><div class="card-inner"><p class="card-index">02 / Local storefront verified</p><h3>Aaron's — Russellville</h3><p class="description">Russellville store offering lease-to-own furniture, appliances and electronics through rental-purchase agreements. The official store locator verifies the address and phone number below. Merchandise selection, delivery, approval, final total ownership cost and availability depend on the agreement; leasing to ownership generally costs more than paying cash. This is not a conventional short-term furniture rental.</p><div class="address"><span class="address-label">Official store location</span><p>1005 E Main St, Russellville, AR 72801</p></div><div class="card-actions"><a class="button call" href="tel:+14799672741">Call 479-967-2741 ↗</a><a class="button provider" href="https://www.aarons.com/locations/us/ar/russellville/1005-e-main-st." target="_blank" rel="noopener noreferrer">Official Russellville store ↗</a></div></div></article>
+<article class="card" data-need="furniture appliances electronics"><div class="card-inner"><p class="card-index">03 / Local storefront verified</p><h3>Bestway Rent to Own — Russellville</h3><p class="description">Russellville rent-to-own retailer offering furniture, appliances, electronics and other household items. <strong>Bestway's official store locator confirms the address and phone below</strong>, resolving conflicting older third-party addresses. Lease terms, selection, delivery and total cost of ownership require confirmation with the store; rent-to-own is not an ordinary short-term rental.</p><div class="address"><span class="address-label">Official store location</span><p>310 S Arkansas Ave, Russellville, AR 72801</p></div><div class="card-actions"><a class="button call" href="tel:+14798905941">Call 479-890-5941 ↗</a><a class="button provider" href="https://www.bestwayrto.com/find-a-store/" target="_blank" rel="noopener noreferrer">Official Bestway store locator ↗</a></div></div></article>
+<article class="card" data-need="furniture"><div class="card-inner"><p class="card-index">04 / Local lease-to-own partner</p><h3>Hank&#39;s Fine Furniture &amp; Mattresses — Russellville</h3><p class="description">Russellville furniture and mattress store offering lease-to-own through the third-party provider Acima. Acima independently confirms this participating location. <strong>This is a lease-purchase option, not short-term furniture rental.</strong> Only eligible merchandise may qualify; approval, payments, current stock and ownership terms require confirmation. Ownership through leasing costs more than the cash price. <a href="https://locations.acima.com/arkansas/russellville/2609-e-parkway-dr/" target="_blank" rel="noopener noreferrer">Official Acima partner listing ↗</a></p><div class="address"><span class="address-label">Official store location</span><p>2609 E Parkway Dr, Russellville, AR 72802</p></div><div class="card-actions"><a class="button call" href="tel:+14799679984">Call 479-967-9984 ↗</a><a class="button provider" href="https://hanksfurniture.com/allshops" target="_blank" rel="noopener noreferrer">Official store directory ↗</a></div></div></article>
 </div></section>
 
 <section class="cost-studio" id="cost-estimator" aria-labelledby="cost-title">
@@ -377,5 +452,34 @@ update();
 })();
 
 </script>
+
+<script>
+/* Progressive enhancement: the complete four-provider directory remains visible without JavaScript. */
+(function(){
+  "use strict";
+  const explorer=document.getElementById("shop-by-need");
+  const cards=Array.from(document.querySelectorAll("#provider-cards > article.card"));
+  const buttons=Array.from(explorer.querySelectorAll("button[data-need]"));
+  const status=document.getElementById("need-results");
+  const categories={all:"All categories",furniture:"Furniture and mattresses",appliances:"Appliances",electronics:"Electronics"};
+  if(cards.length!==4||buttons.length!==4||!status)return;
+  buttons.forEach(function(button){
+    button.addEventListener("click",function(){
+      const selected=button.dataset.need;
+      let visible=0;
+      cards.forEach(function(card){
+        const matched=selected==="all"||card.dataset.need.split(" ").includes(selected);
+        card.hidden=!matched;
+        if(matched)visible++;
+      });
+      buttons.forEach(function(item){item.setAttribute("aria-pressed",String(item===button));});
+      status.textContent=(selected==="all"?"Showing all "+visible+" listed retailers.":"Showing "+visible+" retailers advertising "+categories[selected].toLowerCase()+".")+" Confirm current selection and terms with each store.";
+    });
+  });
+  explorer.hidden=false;
+  status.hidden=false;
+})();
+</script>
+
 </body>
 </html>
