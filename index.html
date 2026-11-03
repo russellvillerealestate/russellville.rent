@@ -1017,6 +1017,71 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 }
 @media(prefers-reduced-motion:reduce){.saved-item{transition:none}.saved-item:hover{transform:none}}
 
+
+/* 2026-11-03 Storage identity: original illustrative River Valley unit scene,
+   never provider inventory. Scoped to the original unfiltered directory atlas.
+   StayARV immersive art; NN/g information scent; web.dev responsive vector art;
+   WCAG 2.2 reflow, focus and reduced-motion. */
+.storage-landscape,.storage-art-caption{display:none}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="storage"]{
+ border:1px solid #95b7a6;border-radius:23px;overflow:hidden;
+ background:#f9fbf6;box-shadow:0 17px 44px #153b2f18
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="storage"] .category-art{
+ position:relative;isolation:isolate;display:flex;flex-direction:column;
+ justify-content:flex-end;align-items:flex-end;gap:9px;
+ height:250px;padding:22px 24px;overflow:hidden;background:#19433e;color:#f9deb2
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="storage"] .category-art:before,
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="storage"] .category-art:after{display:none}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="storage"] .storage-landscape{
+ display:block;position:absolute;z-index:0;inset:0;width:100%;height:100%;
+ pointer-events:none;transition:transform .35s ease
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="storage"]:hover .storage-landscape{transform:scale(1.035)}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="storage"] .icon-tile .directory-pictogram{
+ position:relative;z-index:2;width:105px;height:105px;padding:23px;
+ background:#173f38e8;color:#ffe0a8;border:2px solid #f4d39aba;
+ border-radius:23px;box-shadow:0 12px 32px #092d285e;transform:none
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="storage"]:hover .icon-tile .directory-pictogram{transform:none}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="storage"] .storage-art-caption{
+ display:block;position:absolute;z-index:2;top:20px;left:22px;right:20px;
+ color:#fff4d4;text-shadow:0 2px 9px #0a302a;
+ font-size:.69rem;font-weight:850;letter-spacing:.13em;line-height:1.45
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="storage"] .storage-art-caption span{
+ display:block;margin-top:5px;color:#f1e2c9;font-size:.53rem;letter-spacing:.08em
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="storage"] .category-art small{
+ position:relative;z-index:2;left:auto;bottom:auto;padding:6px 11px;
+ background:#143a34ec;color:#fff4d4;border:1px solid #f4d39a9c;
+ border-radius:7px;font-size:.61rem;letter-spacing:.11em
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="storage"] .card-body{
+ background:linear-gradient(165deg,#fffefa,#f0f5ef);padding:clamp(24px,3vw,33px)
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="storage"] .card-body h3{
+ font:400 clamp(1.55rem,2.25vw,2.08rem)/1.15 Georgia,"Times New Roman",serif;
+ letter-spacing:-.045em;color:#19453a
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="storage"] .card-body>.card-link{
+ display:flex;align-items:center;min-height:49px;margin-top:auto;
+ padding:12px 15px;background:#194638;color:#fff;border:0;border-radius:11px
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="storage"] .card-body>.card-link:hover{background:#28664e}
+@media(min-width:1001px){
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="storage"]{min-height:420px}
+}
+@media(max-width:600px){
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="storage"] .category-art{height:245px}
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="storage"] .card-body{padding:26px 23px}
+}
+@media(prefers-reduced-motion:reduce){
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="storage"] .storage-landscape{transition:none}
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="storage"]:hover .storage-landscape{transform:none}
+}
+
 </style>
 </head>
 <body>
@@ -1159,7 +1224,22 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <p class="status">River Valley Realty · Natural State Property Management · Spring Lake I/II · Parker Place Apartments · Shadow Lake Apartments · Treeview Apartments</p>
 <a class="card-link" href="long-term.html">Browse long-term rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="storage">
-<div class="category-art icon-tile" style="--tile-ink:#285f61;--tile-bg:#d5e9e7" role="img" aria-label="Storage boxes"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-storage"></use></svg><small>STORAGE</small></div>
+<div class="category-art icon-tile" style="--tile-ink:#285f61;--tile-bg:#d5e9e7" role="img" aria-label="Storage boxes"><svg class="storage-landscape" viewBox="0 0 700 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+<rect width="700" height="450" fill="#19433e"/>
+<circle cx="520" cy="95" r="80" fill="#f1cc89" opacity=".88"/><circle cx="520" cy="95" r="109" fill="none" stroke="#f8e2af" stroke-width="2" opacity=".3"/>
+<path d="M0 240 94 168 173 221 265 142 368 215 471 161 581 223 700 153V450H0Z" fill="#69917a"/>
+<path d="M0 277 112 217 197 260 315 203 400 255 519 193 700 264V450H0Z" fill="#365f4e"/>
+<path d="M0 348c137-46 234-22 337-42s215-36 363 8v136H0Z" fill="#153b36"/>
+<path d="m75 275 230-73 237 72v24H75Z" fill="#e8c58c" stroke="#16392f" stroke-width="9" stroke-linejoin="round"/>
+<rect x="95" y="292" width="430" height="130" fill="#d7ddc5" stroke="#173b34" stroke-width="8"/>
+<path d="M96 300h428" stroke="#a3b4a2" stroke-width="7"/>
+<rect x="120" y="318" width="110" height="104" rx="3" fill="#38645d" stroke="#173b34" stroke-width="7"/>
+<rect x="254" y="318" width="110" height="104" rx="3" fill="#38645d" stroke="#173b34" stroke-width="7"/>
+<rect x="388" y="318" width="110" height="104" rx="3" fill="#38645d" stroke="#173b34" stroke-width="7"/>
+<path d="M121 343h108m-108 22h108m-108 22h108m26-44h108m-108 22h108m-108 22h108m26-44h108m-108 22h108m-108 22h108" fill="none" stroke="#9db8aa" stroke-width="4" opacity=".7"/>
+<path d="M0 416h700" stroke="#e9cc99" stroke-width="3" opacity=".65"/>
+<path d="m567 309 27-94 26 94h-53Zm48 4 21-71 22 71h-43Z" fill="#0c332c" opacity=".9"/>
+</svg><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-storage"></use></svg><span class="storage-art-caption" aria-hidden="true">MAKE ROOM / RIVER VALLEY<span>ILLUSTRATED SCENE · NOT A FACILITY PHOTO</span></span><small>STORAGE</small></div>
 <div class="card-body"><p class="eyebrow">Storage</p><h3>Self-storage &amp; vehicle storage</h3>
 <p>Compare storage units and vehicle parking around Russellville, Pottsville, Dardanelle, Atkins, Clarksville, Danville and Morrilton.</p>
 <p class="status">Added Space Storage · Mike's Mini Storage (Atkins) · Hwy 64 E Storage (Clarksville) · Mini Mall Storage (Clarksville) · Ozark Self Storage (Danville) · Smith Storage (Morrilton)</p>
