@@ -250,6 +250,60 @@ main{max-width:1400px;padding:22px clamp(15px,2.2vw,34px) 90px}
   .route-card:nth-child(n+2){min-height:390px}
 }
 
+
+/* 2026-11-03 / River Valley trail departure desk. Keeps existing operator atlas
+   and rules, adds a scenic booking-prep surface rather than another provider list.
+   Inspiration: StayARV immersive storytelling; NN/g visual hierarchy and grouping;
+   web.dev responsive layouts; W3C WCAG 2.2 keyboard, contrast, reflow and focus.
+   No tracking, booking, external graphics, or assumed provider availability. */
+.trip-desk{position:relative;isolation:isolate;overflow:hidden;margin:78px 0 40px;padding:clamp(26px,4.9vw,64px);border-radius:29px;background:radial-gradient(circle at 7% 0%,#3b7158 0%,transparent 42%),linear-gradient(132deg,#112f29 0%,#164338 64%,#102e29 100%);color:#f8f5e9;box-shadow:0 29px 66px #123c2e24}
+.trip-desk:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.28;pointer-events:none;background:repeating-linear-gradient(105deg,transparent 0 91px,#d4ca9d18 92px 93px,transparent 94px 184px)}
+.trip-desk-top{display:grid;grid-template-columns:minmax(0,.94fr) minmax(300px,1.06fr);align-items:start;gap:clamp(28px,5vw,74px)}
+.trip-desk-copy{min-width:0}
+.trip-desk-kicker{display:inline-flex;align-items:center;gap:12px;color:#f3d39b;font-size:.69rem;font-weight:850;letter-spacing:.2em;text-transform:uppercase;margin:0 0 24px}
+.trip-desk-kicker:before{content:"";width:31px;height:1px;background:#f2d19a}
+.trip-desk h2{margin:0;color:#fff8ea;font:400 clamp(3rem,5.6vw,5.65rem)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.064em;max-width:11ch;text-wrap:balance}
+.trip-desk h2 em{color:#f0cd91;font-style:italic}
+.trip-desk-lead{max-width:46ch;color:#e1eee4;font-size:clamp(.94rem,1.6vw,1.1rem);line-height:1.75;margin:24px 0 22px}
+.trip-desk-route{display:block;width:min(100%,410px);height:auto;max-height:155px;margin-top:25px;opacity:.9}
+.trip-desk-route path:first-child{stroke:#efcc91;stroke-width:16;stroke-linecap:round;stroke-dasharray:1 0;fill:none;opacity:.23}
+.trip-desk-route path:nth-child(2){stroke:#f3d7a6;stroke-width:2.5;stroke-linecap:round;stroke-dasharray:3 11;fill:none}
+.trip-desk-route circle{fill:#f5d7a2;stroke:#1b483c;stroke-width:5}
+.trip-desk-panel{position:relative;min-width:0;border:1px solid #e5dbbb;border-radius:20px;padding:clamp(22px,3vw,34px);background:#fffcf4;color:#203c2f;box-shadow:0 23px 46px #051e1a5c}
+.trip-desk-panel:before{content:"FIELD NOTE / 01";display:block;font-size:.65rem;line-height:1.4;letter-spacing:.21em;color:#7c6b4a;font-weight:850;margin-bottom:18px}
+.trip-desk-panel h3,.trip-desk-form legend{display:block;color:#173b31;font:400 clamp(1.65rem,2.6vw,2.5rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.045em;margin:0 0 13px}
+.trip-desk-panel p{color:#486354;font-size:.89rem;line-height:1.65;margin:0 0 17px}
+.trip-desk-static ol{margin:19px 0 0;padding:0;list-style:none;display:grid;gap:16px}
+.trip-desk-static li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:13px;align-items:start;padding-top:15px;border-top:1px solid #d7dfd1}
+.trip-desk-static li span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#e3ecdf;color:#205844;font-weight:850;font-size:.72rem}
+.trip-desk-static li strong{display:block;font-size:.9rem;color:#1f4735}
+.trip-desk-static li small{display:block;font-size:.79rem;color:#52695b;line-height:1.55;margin-top:3px}
+.trip-desk-form[hidden],.trip-desk-static[hidden],.trip-desk-copy-button[hidden]{display:none!important}
+.trip-desk-form{margin:0}
+.trip-desk-form fieldset{border:0;margin:0;padding:0;min-width:0}
+.trip-desk-form legend{margin-bottom:21px}
+.trip-desk-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 12px}
+.trip-desk-fields label{min-width:0;display:block;font-size:.76rem;font-weight:800;color:#325646}
+.trip-desk-fields label:last-child{grid-column:1/-1}
+.trip-desk-fields select,.trip-desk-fields input,.trip-desk-fields textarea,.trip-desk-output{display:block;width:100%;min-width:0;margin-top:7px;padding:12px 13px;min-height:47px;border:1px solid #b9cbbb;border-radius:9px;background:#fff;color:#193d30;font:400 .88rem/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+.trip-desk-fields textarea{min-height:72px;resize:vertical}
+.trip-desk-output-label{display:block;font-size:.75rem;font-weight:850;color:#355743;margin:17px 0 0}
+.trip-desk-output{min-height:146px;resize:vertical;background:#f1f5eb;font-size:.78rem;line-height:1.65}
+.trip-desk-copy-button{display:inline-flex;justify-content:center;align-items:center;min-height:49px;margin-top:13px;padding:11px 20px;border:0;border-radius:9px;background:#18543f;color:#fff;cursor:pointer;font:850 .84rem/1.3 system-ui,sans-serif;transition:background .18s,transform .18s}
+.trip-desk-copy-button:hover{background:#276b51;transform:translateY(-2px)}
+.trip-desk-copy-button:focus-visible,.trip-desk-fields :is(select,input,textarea):focus-visible,.trip-desk-output:focus-visible{outline:3px solid #ad650e;outline-offset:3px}
+.trip-desk-feedback{margin:10px 0 0!important;min-height:1.4em;font-size:.76rem!important}
+.trip-desk-privacy{margin:12px 0 0!important;font-size:.74rem!important;color:#5b6d5e!important}
+.trip-desk .notes{margin:39px 0 0;padding-top:29px;border-top:1px solid #d4e4d35e;gap:13px}
+.trip-desk .notes section{padding:23px 21px;border:1px solid #d6e7d142;border-radius:13px;background:#ffffff0b}
+.trip-desk .notes section:before{content:"0" counter(trip);counter-increment:trip;display:block;color:#eed09c;font:400 2.05rem/1 Georgia,serif;letter-spacing:-.045em;margin-bottom:17px}
+.trip-desk .notes{counter-reset:trip}
+.trip-desk .notes h3{color:#fbf1db;font-size:1.04rem;margin-bottom:9px}
+.trip-desk .notes p{color:#dfebe0;font-size:.83rem;line-height:1.7}
+@media(max-width:860px){.trip-desk-top{grid-template-columns:1fr;gap:25px}.trip-desk h2{max-width:16ch}.trip-desk-route{max-width:370px;max-height:110px;margin:10px 0}.trip-desk .notes{grid-template-columns:1fr 1fr}}
+@media(max-width:590px){.trip-desk{margin:51px 0 28px;padding:24px 18px 19px;border-radius:18px}.trip-desk h2{font-size:clamp(2.7rem,11vw,4.3rem)}.trip-desk-kicker{font-size:.6rem;letter-spacing:.12em;margin-bottom:16px}.trip-desk-lead{margin-top:16px}.trip-desk-route{max-height:90px}.trip-desk-panel{padding:22px 19px}.trip-desk-fields{grid-template-columns:1fr;gap:13px}.trip-desk-fields label:last-child{grid-column:auto}.trip-desk-copy-button{width:100%}.trip-desk .notes{grid-template-columns:1fr;gap:9px;margin-top:25px;padding-top:23px}.trip-desk .notes section{padding:20px}}
+@media(prefers-reduced-motion:reduce){.trip-desk-copy-button{transition:none}.trip-desk-copy-button:hover{transform:none}}
+
 </style></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-head"><a href="/">Russellville.Rent</a><a class="back" href="/">← All rental categories</a></header>
 <main id="main"><section class="hero" aria-labelledby="hero-title"><div class="hero-terrain" aria-hidden="true"><svg viewBox="0 0 1440 410" preserveAspectRatio="xMidYMax slice" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="trail-dusk" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c6c995" stop-opacity=".34"/><stop offset="1" stop-color="#214f3c" stop-opacity=".03"/></linearGradient></defs><circle cx="1155" cy="88" r="90" fill="#e7c78c" opacity=".23"/><path d="M0 265 118 173l95 66 128-145 138 143 112-75 136 95 114-113 132 122 145-102 137 91 135-83 50 41v191H0Z" fill="url(#trail-dusk)"/><path d="M0 312 146 216l126 65 118-83 132 101 112-49 144 59 121-88 129 81 134-97 178 112v93H0Z" fill="#6e9572" opacity=".27"/><path d="M0 355q152-85 306-37t278-17 268 34 278-9 310 19v65H0Z" fill="#224e3a" opacity=".67"/><path d="M0 389q242-40 447-7t414-15 579 17v26H0Z" fill="#102f28" opacity=".8"/><g fill="#153d2f" opacity=".68"><path d="m60 349 29-96 31 96h-21v57H78v-57Z"/><path d="m130 363 24-79 24 79h-17v43h-16v-43Z"/><path d="m1184 349 31-112 33 112h-22v61h-21v-61Z"/><path d="m1244 362 22-72 24 72h-15v48h-16v-48Z"/><path d="m1345 354 27-95 29 95h-20v56h-18v-56Z"/></g><path d="M-20 409q285-106 529-57t386-18 560 71" stroke="#cbaa78" stroke-opacity=".3" stroke-width="8" stroke-dasharray="3 20" fill="none"/></svg></div><div><p class="eyebrow">Russellville &amp; the Arkansas River Valley</p><h1 id="hero-title">Find a side-by-side.<br><em>Find your trail.</em></h1><p>Compare independently listed side-by-side rentals in the Ozarks, around Ozone and Mount Magazine. The operators below advertise rentals on their own websites; confirm dates, trail restrictions and exact pickup or delivery arrangements before traveling.</p><a href="#directory">Explore three providers <span aria-hidden="true">↗</span></a></div>
@@ -350,11 +404,64 @@ main{max-width:1400px;padding:22px clamp(15px,2.2vw,34px) 90px}
 <div class="links"><a href="https://wildernessrider.com/side-x-side-rentals/" target="_blank" rel="noopener noreferrer">Official rentals &amp; rules ↗</a></div>
 </article>
 </div><p class="result" id="no-results" hidden>No providers match those filters. Clear the search or select all regions.</p></section>
+
+<section class="trip-desk" id="trip-desk" aria-labelledby="trip-desk-title">
+  <div class="trip-desk-top">
+    <div class="trip-desk-copy">
+      <p class="trip-desk-kicker">The River Valley / Before you roll</p>
+      <h2 id="trip-desk-title">Make the call.<br><em>Then find the trail.</em></h2>
+      <p class="trip-desk-lead">A beautiful route is only half the plan. Use this field note to prepare questions about seating, driver eligibility, where the vehicle may go, and the total cost. A provider—not this directory—confirms what you can actually reserve.</p>
+      <svg class="trip-desk-route" viewBox="0 0 420 152" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M24 119C97 145 88 31 173 52s79 94 139 40 47-48 83-70"/><path d="M24 119C97 145 88 31 173 52s79 94 139 40 47-48 83-70"/><circle cx="24" cy="119" r="9"/><circle cx="395" cy="22" r="9"/></svg>
+    </div>
+    <div class="trip-desk-panel">
+      <div class="trip-desk-static" id="trip-desk-static">
+        <h3>Three questions for your first call.</h3>
+        <p>Use these with any listed operator. Ask for written confirmation of the rental terms before driving to a pickup point.</p>
+        <ol>
+          <li><span aria-hidden="true">1</span><div><strong>Can our group drive it?</strong><small>Minimum age, licenses, insurance, passengers, seating, safety gear.</small></div></li>
+          <li><span aria-hidden="true">2</span><div><strong>Where is it allowed?</strong><small>Permitted trails or park boundaries, pickup location and delivery limitations.</small></div></li>
+          <li><span aria-hidden="true">3</span><div><strong>What is the entire cost?</strong><small>Rental duration, deposits, insurance, fuel, fees and cancellation rules.</small></div></li>
+        </ol>
+      </div>
+      <form class="trip-desk-form" id="trip-desk-form" hidden>
+        <fieldset>
+          <legend>Build a first-call brief.</legend>
+          <div class="trip-desk-fields">
+            <label for="trip-operator">Operator
+              <select id="trip-operator" name="operator">
+                <option value="">Choose a provider</option>
+                <option value="ozark">Ozark Ridge — Ozone</option>
+                <option value="cove">Cove Creek Supply — Paris</option>
+                <option value="wilderness">Wilderness Rider — Boxley area</option>
+              </select>
+            </label>
+            <label for="trip-seats">People needing seats
+              <select id="trip-seats" name="seats">
+                <option value="">Not sure yet</option><option>2</option><option>4</option><option>6</option><option>More than 6</option>
+              </select>
+            </label>
+            <label for="trip-date">Preferred date
+              <input type="date" id="trip-date" name="date">
+            </label>
+            <label for="trip-details">Your top priority or question
+              <textarea id="trip-details" name="details" maxlength="300" placeholder="Example: trail access, driver eligibility, pickup, or delivery"></textarea>
+            </label>
+          </div>
+          <label class="trip-desk-output-label" for="trip-desk-output">Your ready-to-copy questions</label>
+          <textarea class="trip-desk-output" id="trip-desk-output" rows="6" readonly aria-describedby="trip-desk-privacy"></textarea>
+          <button class="trip-desk-copy-button" id="trip-desk-copy" type="button">Copy call brief ↗</button>
+          <p class="trip-desk-feedback" id="trip-desk-feedback" role="status" aria-live="polite"></p>
+          <p class="trip-desk-privacy" id="trip-desk-privacy">Prepared on this device only. Nothing is submitted, saved or booked.</p>
+        </fieldset>
+      </form>
+    </div>
+  </div>
 <div class="notes" aria-label="Before you reserve">
 <section><h3>Ask where to ride.</h3><p>Verify permitted roads and trails, current forest restrictions, and whether the rental must remain on private property. Do not assume a rental can leave its property.</p></section>
 <section><h3>Confirm costs and coverage.</h3><p>Ask for total fees, damage deposits, insurance requirements, fuel terms, cancellation policy and any mileage or delivery charges.</p></section>
 <section><h3>Confirm driver eligibility.</h3><p>Age and driver’s license rules vary by provider. Ask about passengers, vehicle seating and appropriate safety gear before booking.</p></section>
 </div>
+</section>
 <p class="disclaimer">Independent regional rental directory, last source review October 31, 2026. This directory is not a booking service. Provider descriptions, rates, availability, policies and trail conditions can change. All services specifically delivered to Russellville are <strong>UNCONFIRMED</strong> unless separately stated by an official provider source. <a href="sms:+14799707301">Submit a correction</a>.</p>
 <footer><a href="/">← Back to the Russellville.Rent directory</a></footer>
 </main><script>
@@ -364,4 +471,60 @@ let area='all';
 function render(){const terms=input.value.toLowerCase().trim().split(/\s+/).filter(Boolean);let shown=0;cards.forEach(card=>{const txt=(card.textContent+' '+card.dataset.search).toLowerCase();const match=(area==='all'||card.dataset.area===area)&&terms.every(t=>txt.includes(t));card.hidden=!match;if(match)shown++;});count.textContent='Showing '+shown+' of '+cards.length+' regional rental operators';empty.hidden=shown!==0;buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.area===area)));}
 bar.addEventListener('click',event=>{const b=event.target.closest('[data-area]');if(!b)return;area=b.dataset.area;render();});input.addEventListener('input',render);bar.hidden=false;render();
 })();
-</script></body></html>
+</script>
+
+<script>
+/* Client-only first-call field note. Never infers vehicle inventory or booking eligibility. */
+(function () {
+  const form=document.getElementById('trip-desk-form');
+  const staticCard=document.getElementById('trip-desk-static');
+  const operator=document.getElementById('trip-operator');
+  const seats=document.getElementById('trip-seats');
+  const date=document.getElementById('trip-date');
+  const details=document.getElementById('trip-details');
+  const output=document.getElementById('trip-desk-output');
+  const copy=document.getElementById('trip-desk-copy');
+  const feedback=document.getElementById('trip-desk-feedback');
+  if (!form||!staticCard||!operator||!seats||!date||!details||!output||!copy||!feedback)return;
+  const names={
+    ozark:'Ozark Ridge — Ozone',
+    cove:'Cove Creek Supply — Paris',
+    wilderness:'Wilderness Rider — Boxley area'
+  };
+  const extra={
+    ozark:'Confirm minimum driver age 25, license/proof of insurance, approved routes, and whether delivery serves our destination.',
+    cove:'Confirm driver age, available vehicle seating/models, approved riding area, pickup/delivery arrangements, and published price.',
+    wilderness:'Confirm minimum driver age 21, park-only vehicle use, riding session length, included fees, and required safety equipment.'
+  };
+  function render(){
+    const chosen=operator.value;
+    output.value=[
+      'Side-by-side rental inquiry',
+      'Operator: '+(names[chosen]||'Not selected'),
+      'Preferred date: '+(date.value||'To discuss'),
+      'Seats needed: '+(seats.value||'To discuss'),
+      'Additional note: '+(details.value.trim()||'None yet'),
+      '',
+      'Please confirm current availability and the complete price including taxes, deposits, fuel and damage/insurance terms.',
+      'Please also confirm allowed routes/property boundaries, driver/passenger requirements, protective gear, pickup/delivery and cancellation rules.',
+      extra[chosen]||'Please confirm which rental models and service locations are actually offered.'
+    ].join('\n');
+    feedback.textContent='';
+  }
+  form.addEventListener('input',render);
+  form.addEventListener('change',render);
+  form.addEventListener('submit',e=>e.preventDefault());
+  copy.addEventListener('click',async()=>{
+    try{
+      if(!navigator.clipboard||!navigator.clipboard.writeText)throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(output.value);
+      feedback.textContent='Call brief copied. Contact the operator directly; nothing was sent.';
+    }catch(_){
+      output.focus();output.select();
+      feedback.textContent='Select and copy the highlighted call brief. Nothing was sent.';
+    }
+  });
+  render();form.hidden=false;staticCard.hidden=true;
+})();
+</script>
+</body></html>
