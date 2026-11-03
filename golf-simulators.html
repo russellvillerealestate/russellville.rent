@@ -339,8 +339,66 @@ footer{margin-top:35px;padding:22px 0;border-top:1px solid var(--line);font-size
 @media(max-width:880px){#local .local-card{grid-template-columns:1fr}.local-art{min-height:300px}.local-art svg{max-height:190px}}
 @media(max-width:650px){#local .local-card{border-radius:19px;min-height:0}#local .local-card .card-content{padding:27px 23px}#local .local-card h3{font-size:clamp(2.05rem,10vw,2.8rem)}.local-art{min-height:255px;padding:23px 23px 20px}.local-art svg{max-height:170px;max-width:320px}.local-art p{font-size:1.65rem}#mobile .mobile-grid .card-top{padding:15px 20px}.event-card-scene{height:149px;padding:2px 12px 16px}.event-card-scene svg{height:133px}#mobile .mobile-grid .card-content{padding:25px 22px}#mobile .mobile-grid h3{font-size:2rem}}
 
+
+/* Golf rental navigation atlas — 2026-11-03.
+   StayARV's clear, assured primary navigation adapted for a multi-option directory.
+   References: Nielsen Norman Group visual hierarchy/information scent;
+   web.dev responsive reflow; W3C WCAG 2.2 focus, touch targets and reflow.
+   No provider or listing claims are introduced. */
+.golf-site-header{position:sticky;top:0;z-index:40;background:#0d302aef;color:#fff;border-bottom:1px solid #e8d3a93e;backdrop-filter:blur(14px)}
+.golf-site-header .golf-header-inner{max-width:1240px;min-height:91px;display:flex;align-items:center;justify-content:space-between;gap:clamp(13px,2vw,29px);padding:13px 27px}
+.golf-site-header a{text-decoration:none}
+.golf-identity{display:inline-flex;align-items:center;gap:12px;min-height:51px;flex:none;white-space:nowrap;color:#fff}
+.golf-identity-icon{position:relative;display:grid;place-items:center;flex:none;width:47px;height:47px;border:1px solid #f2d49c89;border-radius:14px;background:linear-gradient(145deg,#2b6550,#123c32);color:#ffe0a2;box-shadow:0 4px 0 #021f1b5c;font:italic 400 2rem/1 Georgia,"Times New Roman",serif}
+.golf-identity-icon>span{position:absolute;right:5px;top:3px;font:800 .52rem/1 system-ui,sans-serif}
+.golf-identity-name{display:flex;flex-direction:column;line-height:1.1;gap:5px}
+.golf-identity-name strong{font-size:1.18rem;letter-spacing:-.047em;font-weight:850}
+.golf-identity-name strong span{color:#f0d69a}
+.golf-identity-name small{font-size:.57rem;letter-spacing:.16em;color:#cdded0;font-weight:850}
+.golf-nav{display:flex;align-items:center;justify-content:center;gap:5px;flex-wrap:nowrap;margin-left:auto}
+.golf-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:47px;padding:11px clamp(10px,1.35vw,17px);border:1px solid transparent;border-radius:9px;color:#eef4ec;font-size:.8rem;line-height:1.25;font-weight:800;white-space:nowrap;transition:background-color .17s,border-color .17s}
+.golf-nav a:hover{background:#ffffff17;border-color:#d4e6d13d;color:#fff}
+.golf-return{display:inline-flex;align-items:center;justify-content:center;gap:13px;min-height:47px;flex:none;padding:11px 17px;border-radius:10px;border:1px solid #f6db9f;background:#f6db9f;color:#183d31;font-size:.8rem;font-weight:850;white-space:nowrap}
+.golf-return:hover{background:#ffedbd;color:#17382e}
+.golf-site-header a:focus-visible{outline:3px solid #ffdf9e;outline-offset:3px}
+html{scroll-padding-top:114px}
+#local,#mobile,#sample-budget,#golf-event-inquiry{scroll-margin-top:114px}
+@media(max-width:1010px){
+  .golf-site-header .golf-header-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto;min-height:0;gap:9px 15px;padding:10px 22px 0}
+  .golf-identity{grid-column:1;grid-row:1;justify-self:start}
+  .golf-return{grid-column:2;grid-row:1}
+  .golf-nav{grid-column:1/-1;grid-row:2;justify-content:space-around;margin:0;padding:6px 0 8px;border-top:1px solid #ffffff29;width:100%}
+  .golf-nav a{flex:1;padding:9px 12px;min-height:42px}
+  html{scroll-padding-top:140px}
+  #local,#mobile,#sample-budget,#golf-event-inquiry{scroll-margin-top:140px}
+}
+@media(max-width:600px){
+  .golf-site-header .golf-header-inner{padding:10px 15px 0;gap:8px 10px}
+  .golf-identity{gap:8px;min-width:0}
+  .golf-identity-icon{width:39px;height:39px;border-radius:11px;font-size:1.65rem}
+  .golf-identity-name strong{font-size:1rem}
+  .golf-identity-name small{font-size:.49rem;letter-spacing:.105em}
+  .golf-return{padding:9px 11px;min-height:43px;font-size:.72rem;gap:5px}
+  .golf-nav{justify-content:flex-start;gap:4px;overflow-x:auto;scrollbar-width:thin;overscroll-behavior-inline:contain;padding:5px 1px 8px}
+  .golf-nav a{flex:0 0 auto;min-height:43px;padding:10px 13px;font-size:.75rem}
+  html{scroll-padding-top:124px}
+  #local,#mobile,#sample-budget,#golf-event-inquiry{scroll-margin-top:124px}
+}
+@media(max-width:375px){.golf-identity-name strong{font-size:.92rem}.golf-identity-name small{font-size:.46rem}.golf-return{font-size:.66rem}}
+@media(prefers-reduced-motion:reduce){.golf-nav a{transition:none}}
+
 </style></head>
-<body><a class="skip" href="#main">Skip to rental options</a><header><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back" href="/">← Browse all rentals</a></div></header>
+<body><a class="skip" href="#main">Skip to rental options</a>
+<header class="golf-site-header"><div class="header-inner golf-header-inner">
+  <a class="golf-identity" href="/" aria-label="Russellville.Rent — all rental categories">
+    <span class="golf-identity-icon" aria-hidden="true">R<span>↗</span></span>
+    <span class="golf-identity-name"><strong>Russellville<span>.Rent</span></strong><small>RIVER VALLEY / GOLF RENTALS</small></span>
+  </a>
+  <nav class="golf-nav" aria-label="Golf rental page sections">
+    <a href="#local">Local bay</a><a href="#mobile">Mobile events</a><a href="#sample-budget">Rates &amp; costs</a><a href="#golf-event-inquiry">Plan an event</a>
+  </nav>
+  <a class="golf-return" href="/">All rentals <span aria-hidden="true">↗</span></a>
+</div></header>
 <main id="main">
 <section class="hero" aria-labelledby="page-title"><div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Your next round.<br><em>Your kind of day.</em></h1><p class="intro">Choose between an <strong>on-site simulator bay in Russellville</strong> and mobile simulators that come to an event. <strong>Mobile delivery to Russellville is UNCONFIRMED</strong>; ask providers about travel charges, setup space and available dates.</p><div class="hero-actions"><a href="#local">Find a local bay ↓</a><a href="#mobile">Explore mobile events ↗</a></div><div class="hero-facts" aria-label="Options at a glance"><span><b>01</b> Russellville indoor bay</span><span><b>02</b> Regional event providers · delivery unconfirmed</span></div></div><div class="hero-art" aria-hidden="true"><svg viewBox="0 0 500 345" xmlns="http://www.w3.org/2000/svg" focusable="false"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#356e50"/><stop offset="1" stop-color="#123a30"/></linearGradient></defs><path d="M49 72 246 20 457 72 457 273 246 328 49 273Z" fill="#092722" opacity=".6"/><path d="M77 94 246 49 431 94 431 255 246 306 77 255Z" fill="#24523f" stroke="#b5d5a2" stroke-width="3"/><path d="M99 113 246 75 408 113 408 238 246 281 99 238Z" fill="url(#g)"/><path d="M99 210 246 183 408 210 408 238 246 281 99 238Z" fill="#387650"/><path d="M246 281V183M99 238 246 183 408 238" stroke="#e0f0c0" stroke-opacity=".22" stroke-width="2" fill="none"/><path d="M168 292 250 273 350 297 263 322Z" fill="#6c9e66" stroke="#b6d69c" stroke-width="3"/><path d="M228 287Q282 185 366 136" fill="none" stroke="#dcef9b" stroke-width="4" stroke-dasharray="7 10" stroke-linecap="round"/><circle cx="366" cy="136" r="7" fill="#e5f8b4"/><circle cx="260" cy="298" r="8" fill="white"/><path d="M280 296 318 223 335 215" stroke="#e4e8dc" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="142" cy="128" r="17" fill="none" stroke="#dcef9b" stroke-width="2"/><path d="M133 128h18m-9-9v18" stroke="#dcef9b" stroke-width="2"/></svg></div></section>
 <section class="round-board" aria-labelledby="round-board-title">
