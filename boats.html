@@ -167,13 +167,63 @@ footer{border-top:1px solid var(--line);padding:22px 0;margin-top:35px;font-size
 @media(max-width:600px){.closure-callout{grid-template-columns:1fr;gap:10px;margin:-16px 9px 0;padding:20px;border-radius:14px}.closure-callout-mark{width:45px;height:45px;border-radius:12px;font-size:1.8rem}.closure-callout-link{grid-column:1;justify-self:stretch}.scene-caption{padding:0 7px}.boat-access-steps{grid-template-columns:1fr}.boat-access-steps li{min-height:0;padding:19px}.boat-access-steps strong{font-size:1.32rem}}
 @media(prefers-reduced-motion:reduce){.closure-callout-link{transition:none}.closure-callout-link:hover{transform:none}}
 
+
+
+/* November 2026 marina safety-first editorial wayfinding.
+   StayARV place-led visual approach; Nielsen Norman Group hierarchy;
+   web.dev responsive reflow; WCAG 2.2 visible focus and reduced motion.
+   All marina closures and independent-source cautions remain intact. */
+.skip-link{position:absolute;top:-100px;left:16px;z-index:30;display:inline-flex;align-items:center;min-height:48px;padding:10px 17px;border-radius:8px;background:#fff9e9;color:#153f34;font-weight:850;text-decoration:none;box-shadow:0 5px 18px #06261f45}
+.skip-link:focus{top:12px}
+body{background:#f6f6f0}
+.header-inner,main{max-width:1280px}
+.header-inner{min-height:79px}
+.hero{grid-template-columns:minmax(0,1.05fr) minmax(290px,.75fr);gap:clamp(30px,5vw,75px);min-height:540px;padding:clamp(48px,5.7vw,78px);align-items:center;border-radius:0 0 32px 32px;background:linear-gradient(105deg,rgba(6,33,29,.96) 0%,rgba(7,36,32,.89) 37%,rgba(11,43,39,.65) 100%),url("assets/lake-dardanelle-sunset.jpg") center 55%/cover no-repeat;box-shadow:0 27px 55px #092d2932}
+.hero>div:first-child{position:relative;z-index:1}
+.hero .eyebrow{font-size:.76rem;letter-spacing:.2em}
+.hero h1{font-size:clamp(3.25rem,6.6vw,6.5rem);line-height:.98;letter-spacing:-.065em;max-width:11ch;text-wrap:balance;margin-bottom:27px}
+.hero h1 em{font-weight:400;color:#f6dca7}
+.hero-intro{font-size:clamp(1rem,1.35vw,1.13rem);line-height:1.76;max-width:48ch;color:#f6f5ec}
+.status-panel{position:relative;z-index:1;padding:30px 28px;border:1px solid #f5e8cc80;border-radius:23px;background:rgba(5,37,32,.91);box-shadow:0 26px 50px #04191380;backdrop-filter:none}
+.status-panel h2{font-size:.72rem;letter-spacing:.2em;color:#f6dca7}
+.status-row{gap:15px;padding:21px 0}
+.status-row strong{font:400 clamp(1.35rem,2.1vw,1.75rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.035em}
+.status-row small{font-size:.8rem;letter-spacing:.025em;font-weight:800;color:#ffdcab}
+.status-dot{width:13px;height:13px;flex-basis:13px;background:#e5a565;box-shadow:0 0 0 6px #e5a56522}
+.closure-callout{margin:-34px 50px 0;padding:25px 30px;border-left-width:8px;box-shadow:0 18px 39px #092d2930}
+.scene-caption{margin-top:18px;padding-inline:7px}
+.decision-directory{margin-top:57px}
+.decision-directory-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.6fr);gap:24px;align-items:end;margin-bottom:21px}
+.decision-directory-heading p{margin:0}
+.decision-overline{display:block;margin-bottom:9px;color:#65795e;font-size:.68rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+.decision-directory-heading h2{margin:0;color:#173e33;font:400 clamp(2.25rem,4.3vw,4.15rem)/1.06 Georgia,"Times New Roman",serif;letter-spacing:-.055em;text-wrap:balance}
+.decision-directory-heading h2 em{color:#86613c;font-weight:400}
+.decision-directory-heading>p{max-width:43ch;color:#536c5e;font-size:.87rem;line-height:1.65}
+.decision-rail{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:14px;margin:0}
+.decision-link{min-height:225px;padding:29px 27px 25px;gap:15px;border-radius:19px;box-shadow:0 14px 33px #173e3414}
+.decision-link:before{left:27px;right:27px;height:5px}
+.decision-link strong{font-size:clamp(1.55rem,2.5vw,2rem)}
+.decision-link small{font-size:.85rem;line-height:1.55}
+.decision-link:first-child{background:linear-gradient(145deg,#164739,#0f302a);border-color:#235849}
+.decision-link:first-child .decision-kicker{color:#f4d09b}
+.decision-link:first-child strong{color:#fff9eb}
+.decision-link:first-child small{color:#e0e9e2}
+.decision-link:first-child:before{background:#f1c48b}
+.decision-link:focus-visible{outline:3px solid #bf782e;outline-offset:4px}
+.section-head{margin-top:58px}
+.section-head h2{font-size:clamp(2rem,3.3vw,2.65rem)}
+@media(max-width:960px){.hero{grid-template-columns:1fr;min-height:0;gap:25px;padding:61px 46px 79px}.hero h1{max-width:15ch}.status-panel{display:grid;grid-template-columns:1fr 1fr;gap:0 20px;padding:22px 27px}.status-panel h2{grid-column:1/-1;margin-bottom:8px}.status-row{padding:15px 0}.closure-callout{margin:-25px 26px 0}.decision-directory-heading{grid-template-columns:1fr;gap:9px}.decision-rail{grid-template-columns:repeat(2,minmax(0,1fr))}.decision-link:last-child{grid-column:1/-1;min-height:168px}}
+@media(max-width:610px){.header-inner{min-height:68px}.hero{padding:46px 26px 61px;border-radius:0 0 20px 20px;background-position:62% center}.hero h1{font-size:clamp(3.05rem,12vw,4.6rem);max-width:13ch;margin-bottom:17px}.hero-intro{font-size:.96rem}.status-panel{display:block;padding:20px;border-radius:15px}.status-row{padding:13px 0}.status-row strong{font-size:1.37rem}.closure-callout{margin:-18px 8px 0;padding:19px}.scene-caption{padding:0 5px}.decision-directory{margin-top:39px}.decision-directory-heading h2{font-size:clamp(2rem,9vw,3rem)}.decision-directory-heading>p{font-size:.82rem}.decision-rail{grid-template-columns:1fr;gap:11px}.decision-link,.decision-link:last-child{grid-column:auto;min-height:0;padding:23px 22px}.decision-link:before{left:22px;right:22px}.decision-link strong{font-size:1.53rem}.decision-link small{font-size:.81rem}.section-head{margin-top:40px}}
+@media(prefers-reduced-motion:reduce){.decision-link{transition:none}.decision-link:hover{transform:none}}
+
 </style>
 </head>
 <body>
+<a class="skip-link" href="#closure-details">Skip to marina closure details</a>
 <header class="site-header"><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back" href="/">← Browse all rentals</a></div></header>
 <main>
 <section class="hero" aria-labelledby="page-title">
-<div><p class="eyebrow">Russellville, Arkansas · Lake Dardanelle</p><h1 id="page-title">Boat &amp; marina rentals</h1><p class="hero-intro">Current rental availability and official closure information. There are no verified active boat or marina rental providers listed here.</p></div>
+<div><p class="eyebrow">Russellville, Arkansas · Lake Dardanelle</p><h1 id="page-title">Boat &amp; marina <em>rentals</em></h1><p class="hero-intro">Current rental availability and official closure information. There are no verified active boat or marina rental providers listed here.</p></div>
 <aside class="status-panel" aria-label="Marina closure status">
 <h2>Marina status at a glance</h2>
 <div class="status-row"><span class="status-dot" aria-hidden="true"></span><div><strong>Russellville Marina</strong><small>Closed · October 23, 2026</small></div></div>
@@ -186,11 +236,14 @@ footer{border-top:1px solid var(--line);padding:22px 0;margin-top:35px;font-size
   <a class="closure-callout-link" href="#closure-details">Read closure notices <span aria-hidden="true">↗</span></a>
 </aside>
 <p class="scene-caption">Lake Dardanelle scenery is illustrative; it does not indicate that either marina is open or accessible.</p>
+<section class="decision-directory" aria-labelledby="decision-title">
+<div class="decision-directory-heading"><div><span class="decision-overline">A local lake guide / Three clear next steps</span><h2 id="decision-title">Closed marinas. <em>Clear next steps.</em></h2></div><p>Start with the closure details, coordinate property access with the Corps, or browse separate outdoor options that do not depend on the closed marinas.</p></div>
 <nav class="decision-rail" aria-label="Find the information you need">
 <a class="decision-link" href="#closure-details"><span class="decision-kicker">01 · Safety first</span><strong>Check marina closures ↗</strong><small>Read the federal closure information before visiting.</small></a>
 <a class="decision-link" href="#property-access"><span class="decision-kicker">02 · For boat owners</span><strong>Understand property access ↗</strong><small>Arrange access by appointment; see the July 7, 2027 property deadline.</small></a>
 <a class="decision-link" href="#alternatives"><span class="decision-kicker">03 · Explore alternatives</span><strong>Find another way on the water ↗</strong><small>See separately listed kayak rental opportunities.</small></a>
 </nav>
+</section>
 <section id="closure-details" aria-labelledby="closures-title">
 <div class="section-head"><h2 id="closures-title">Know before you go</h2><p>Federal marina closure notices</p></div>
 <div class="notice notice--critical"><div class="notice-label">Full closure · Russellville Marina</div><p><strong>Important closure notice — October 23, 2026:</strong> The U.S. Army Corps of Engineers ordered a full closure of Russellville Marina, including its grounds, docks, cabins, store, repair shop and all commercial operations. <strong>Boat and cabin rentals at this marina are not available.</strong> The operator website may still advertise rentals, but the federal closure supersedes that information. Do not attempt to access closed facilities.</p></div>
