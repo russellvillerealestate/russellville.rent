@@ -237,6 +237,39 @@ footer{font-size:.82rem;color:var(--muted);margin:35px 0 45px}
 @media(max-width:720px){.capacity-atlas-hero{grid-template-columns:1fr;gap:19px;min-height:0;padding:36px 29px}.capacity-atlas h2{font-size:clamp(2.5rem,8vw,3.7rem)}.capacity-atlas-intro{max-width:55ch}}
 @media(max-width:520px){.capacity-atlas{margin:30px 0 34px}.capacity-atlas-hero{padding:30px 22px;border-radius:18px 18px 0 0}.capacity-atlas-hero:before{inset:10px;border-radius:10px}.capacity-atlas-cards{grid-template-columns:1fr;border-radius:0 0 18px 18px}.capacity-atlas-card{min-height:0;padding:22px 24px}.capacity-atlas-figure{font-size:4.25rem;margin:14px 0 3px}.capacity-atlas-card strong{margin:12px 0 8px}.capacity-atlas-detail{margin-bottom:22px}.capacity-atlas-foot{font-size:.74rem}}
 @media(prefers-reduced-motion:reduce){.capacity-atlas-card{transition:none}}
+
+/* 2026-11-03 / Saved-venue decision desk. An editorial, place-led comparison
+   uses the existing venue data and shortlist state only. No rates are computed,
+   new provider claims made, or listings hidden. StayARV: full-bleed narrative;
+   Nielsen Norman Group: scannable paired labels; web.dev: responsive imagery;
+   WCAG 2.2: keyboard focus, touch targets and reduced-motion support. */
+.notebook-jump{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:9px 14px;border-radius:10px;background:#e8f1e4;border:1px solid #9ebaa2;color:#194b37;font-size:.77rem;font-weight:850;text-decoration:none;white-space:nowrap}
+.notebook-jump:hover{background:#d9e8d5}
+.notebook-jump:focus-visible{outline:3px solid #a3661a;outline-offset:3px}
+.notebook-compare{margin:29px 0 7px;border:1px solid #d1d9c5;border-radius:21px;overflow:hidden;background:#f6f7f0;color:#1c4235;box-shadow:0 17px 38px #001c171c}
+.notebook-compare-banner{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:12px;min-height:242px;padding:clamp(28px,4.2vw,50px);color:#fff8e9;background:linear-gradient(92deg,#0c302aed 0%,#123a33e8 42%,#193f32ab 70%,#10332991 100%),url("assets/downtown-russellville-sunset.jpg") center 53%/cover no-repeat}
+.notebook-compare-banner:after{content:"";position:absolute;inset:13px;z-index:-1;border:1px solid #f5e8c35b;border-radius:13px;pointer-events:none}
+.notebook-compare-kicker{margin:0;color:#f1d49c;font-size:.66rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
+.notebook-compare-banner h3{max-width:17ch;margin:0;color:#fffdf0;font:400 clamp(2.4rem,4.7vw,4.35rem)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.058em;text-wrap:balance}
+.notebook-compare-banner h3 em{color:#f4d39b}
+.notebook-compare-banner>p:not(.notebook-compare-kicker){max-width:55ch;color:#e9f1e8;font-size:.91rem;line-height:1.66;margin:0}
+.notebook-compare-caption{display:block;margin-top:9px;color:#f8e6c2;font-size:.68rem;line-height:1.5}
+.notebook-compare-track{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(238px,100%),1fr));gap:13px;padding:clamp(15px,2.8vw,27px)}
+.notebook-compare-card{min-width:0;display:flex;flex-direction:column;gap:13px;min-height:285px;padding:22px 20px 19px;border:1px solid #cedbcc;border-top:5px solid #477c63;border-radius:16px;background:#fffef9;box-shadow:0 9px 22px #143c2a0c}
+.notebook-compare-card:nth-child(3n+2){border-top-color:#bf9459;background:#fbf5e8}
+.notebook-compare-card:nth-child(3n+3){border-top-color:#578b8e;background:#f0f7f4}
+.notebook-compare-index{color:#7b6138;font-size:.61rem;font-weight:900;letter-spacing:.14em}
+.notebook-compare-card h4{margin:0;color:#1e4737;font:400 clamp(1.4rem,2.2vw,1.86rem)/1.14 Georgia,"Times New Roman",serif;letter-spacing:-.035em;overflow-wrap:anywhere}
+.notebook-compare-card dl{margin:0 0 15px}
+.notebook-compare-card dl>div{padding:12px 0;border-top:1px solid #d6e1d2}
+.notebook-compare-card dt{margin:0 0 4px;color:#637362;font-size:.62rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+.notebook-compare-card dd{margin:0;color:#315345;font-size:.78rem;line-height:1.55;overflow-wrap:anywhere}
+.notebook-compare-action{display:inline-flex;align-items:center;justify-content:space-between;width:100%;min-height:47px;margin-top:auto;padding:12px 14px;border:0;border-radius:9px;background:#194b3b;color:#fff;cursor:pointer;font:850 .77rem/1.35 system-ui,sans-serif;text-align:left}
+.notebook-compare-action:hover{background:#2a664c}
+.notebook-compare-action:focus-visible{outline:3px solid #b87924;outline-offset:3px}
+.notebook-compare-fine{padding:0 clamp(15px,2.8vw,27px) 23px;margin:0;color:#586f60;font-size:.73rem;line-height:1.65}
+@media(max-width:610px){.notebook-compare{margin-top:23px;border-radius:17px}.notebook-compare-banner{min-height:234px;padding:29px 23px}.notebook-compare-banner h3{font-size:clamp(2.2rem,9.2vw,3.25rem)}.notebook-compare-banner:after{inset:9px}.notebook-compare-track{grid-template-columns:1fr;gap:11px;padding:16px}.notebook-compare-card{min-height:0}.notebook-compare-fine{padding:0 18px 21px}.notebook-jump{font-size:.73rem}}
+@media(prefers-reduced-motion:reduce){.notebook-compare-action{scroll-behavior:auto}}
 </style></head><body><a class="skip-link" href="#venues">Skip to venue listings</a><header><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back-link" href="/">← All rental categories</a></div></header><main>
 <section class="venue-hero" aria-labelledby="page-title">
 <img class="venue-hero-photo" src="assets/downtown-russellville-sunset.jpg" alt="" fetchpriority="high" decoding="async">
@@ -294,12 +327,22 @@ footer{font-size:.82rem;color:var(--muted);margin:35px 0 45px}
   </div>
   <p class="notebook-empty" id="notebook-empty">No venues saved yet. Use the “Save venue” button on a listing to keep it here.</p>
   <ol class="notebook-list" id="notebook-list" aria-label="Saved event venues" hidden></ol>
+  <section class="notebook-compare" id="notebook-compare" aria-labelledby="notebook-compare-title" hidden>
+    <div class="notebook-compare-banner">
+      <p class="notebook-compare-kicker">THE RIVER VALLEY / YOUR DECISION DESK</p>
+      <h3 id="notebook-compare-title">Your places, <em>side by side.</em></h3>
+      <p>Review the listed location and advertised uses for the spaces you saved. Open each full listing before contacting the operator.</p>
+      <span class="notebook-compare-caption">Downtown Russellville scenery · Not a venue photograph</span>
+    </div>
+    <div class="notebook-compare-track" id="notebook-compare-track" role="list" aria-label="Saved venues side-by-side"></div>
+    <p class="notebook-compare-fine">Comparison details come from the existing directory entries, not live venue availability. Confirm address, capacity, accessibility, pricing, dates and permitted uses directly.</p>
+  </section>
   <div class="notebook-tools"><button type="button" id="notebook-copy" hidden>Copy venue names ↗</button><button type="button" id="notebook-clear" hidden>Clear shortlist</button></div>
   <p class="notebook-feedback" id="notebook-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
   <p class="notebook-storage" id="notebook-storage">This shortlist stays in your browser when local storage is available. Saving does not contact or reserve a venue.</p>
   <textarea class="notebook-fallback" id="notebook-fallback" aria-label="Shortlist text for manual copying" readonly hidden></textarea>
 </section>
-<section id="venues" aria-labelledby="venues-title"><div class="results-heading"><h2 id="venues-title">Explore local venues</h2><div class="results-meta"><p id="venue-count" role="status" aria-live="polite" aria-atomic="true">Browse available venue information below.</p><div class="view-switch" id="venue-view-switch" role="group" aria-label="Venue display style" hidden>
+<section id="venues" aria-labelledby="venues-title"><div class="results-heading"><h2 id="venues-title">Explore local venues</h2><div class="results-meta"><p id="venue-count" role="status" aria-live="polite" aria-atomic="true">Browse available venue information below.</p><a id="notebook-jump" class="notebook-jump" href="#venue-notebook" hidden>View saved venues (0) ↑</a><div class="view-switch" id="venue-view-switch" role="group" aria-label="Venue display style" hidden>
 <button type="button" data-venue-view="cards" aria-controls="venue-grid" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="9" height="8" rx="1.5"/><rect x="13" y="3" width="9" height="8" rx="1.5"/><rect x="2" y="13" width="9" height="8" rx="1.5"/><rect x="13" y="13" width="9" height="8" rx="1.5"/></svg>Cards</button>
 <button type="button" data-venue-view="rows" aria-controls="venue-grid" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="5" height="5" rx="1"/><path d="M11 5.5h11"/><rect x="2" y="10" width="5" height="5" rx="1"/><path d="M11 12.5h11"/><rect x="2" y="17" width="5" height="5" rx="1"/><path d="M11 19.5h11"/></svg>Directory</button>
 </div></div></div>
@@ -385,6 +428,9 @@ filterVenues();
   const clear = document.getElementById("notebook-clear");
   const storageNote = document.getElementById("notebook-storage");
   const fallback = document.getElementById("notebook-fallback");
+  const compare = document.getElementById("notebook-compare");
+  const compareTrack = document.getElementById("notebook-compare-track");
+  const notebookJump = document.getElementById("notebook-jump");
   const cards = Array.from(document.querySelectorAll("#venue-grid article"));
   if (!panel || !list || !cards.length) return;
   const key = "russellville-venue-shortlist-v1";
@@ -452,6 +498,7 @@ filterVenues();
       button.setAttribute("aria-label", (active ? "Remove " : "Save ") + name + (active ? " from" : " to") + " your shortlist");
     }
     list.replaceChildren();
+    compareTrack.replaceChildren();
     let index = 0;
     for (const name of saved) {
       const card = catalog.get(name);
@@ -482,11 +529,45 @@ filterVenues();
       actions.append(view, remove);
       item.append(number, entry, actions);
       list.appendChild(item);
+      // Pull comparison facts only from the matching original venue entry.
+      const tile = document.createElement("article");
+      tile.className = "notebook-compare-card";
+      tile.setAttribute("role", "listitem");
+      const tileIndex = document.createElement("span");
+      tileIndex.className = "notebook-compare-index";
+      tileIndex.textContent = String(index).padStart(2,"0") + " / SAVED SPACE";
+      const tileName = document.createElement("h4");
+      tileName.textContent = name;
+      const tileFields = document.createElement("dl");
+      const makeField = (label, value) => {
+        const row = document.createElement("div");
+        const dt = document.createElement("dt");
+        const dd = document.createElement("dd");
+        dt.textContent = label;
+        dd.textContent = value;
+        row.append(dt, dd);
+        tileFields.appendChild(row);
+      };
+      const locationText = card.querySelector(".detail")?.textContent.trim() || "Ask the venue for its location.";
+      const labels = { celebrations:"Celebrations", meetings:"Meetings & work", outdoors:"Parks & outdoors", hotels:"Hotel event rooms", activities:"Parties & activities" };
+      const uses = (card.dataset.venueTypes || "").split(" ").filter(Boolean).map(type => labels[type] || type).join(" · ");
+      makeField("Listed location", locationText);
+      makeField("Directory groups", uses || "See full listing");
+      const tileAction = document.createElement("button");
+      tileAction.type = "button";
+      tileAction.className = "notebook-compare-action";
+      tileAction.textContent = "Open original listing ↗";
+      tileAction.addEventListener("click", () => reveal(name));
+      tile.append(tileIndex, tileName, tileFields, tileAction);
+      compareTrack.appendChild(tile);
     }
     total.textContent = String(saved.size);
     const hasSaved = saved.size > 0;
     empty.hidden = hasSaved;
     list.hidden = !hasSaved;
+    compare.hidden = !hasSaved;
+    notebookJump.hidden = false;
+    notebookJump.textContent = "View saved venues (" + saved.size + ") ↑";
     copy.hidden = !hasSaved;
     clear.hidden = !hasSaved;
     fallback.hidden = true;
