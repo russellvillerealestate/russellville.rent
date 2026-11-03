@@ -206,6 +206,39 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
 @media(max-width:430px){.source-atlas{padding:23px 17px}.source-atlas h3{font-size:clamp(2.15rem,10vw,3rem)}.source-lane{grid-template-columns:69px minmax(0,1fr);column-gap:10px;padding:17px}.source-lane-top{gap:8px}.source-lane svg{width:45px;height:42px}.source-lane h4{font-size:1.51rem}.source-atlas-foot a{white-space:normal}}
 @media(prefers-reduced-motion:reduce){.source-lane{transition:none}.source-lane:hover{transform:none}}
 
+
+/* Nov 2026: renter-readiness editorial module. Existing Russellville scenery,
+   StayARV-inspired image hierarchy; NN/g navigation; web.dev responsive design;
+   WCAG 2.2 focus/contrast. Static text only, no new scripts or provider claims. */
+.renter-guide{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);min-height:520px;margin:9px 0 53px;border-radius:25px;overflow:hidden;background:#113c32;color:#fff;box-shadow:0 24px 55px #143e3125;scroll-margin-top:95px}
+.renter-guide-scene{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;gap:35px;min-width:0;min-height:520px;padding:clamp(27px,4vw,52px);background:#123c33}
+.renter-guide-scene::before{content:"";position:absolute;inset:0;z-index:-2;background:url("assets/downtown-russellville-sunset.jpg") center 48%/cover no-repeat}
+.renter-guide-scene::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#082923aa 0%,#092c29cb 53%,#092923f5 100%)}
+.renter-guide-kicker{display:block;margin:0 0 15px;color:#f5d39a;font-size:.68rem;font-weight:850;letter-spacing:.18em;text-transform:uppercase}
+.renter-guide h2{margin:0;color:#fff;font:400 clamp(2.5rem,4.3vw,4.2rem)/1.045 Georgia,"Times New Roman",serif;letter-spacing:-.06em;text-wrap:balance}
+.renter-guide h2 em{color:#f5d39a;font-style:normal}
+.renter-guide-scene p{color:#e3eee6;max-width:36ch;font-size:.91rem;line-height:1.7;margin:20px 0 0}
+.renter-guide-scene-bottom{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px;border-top:1px solid #ffffff5b;padding-top:17px}
+.renter-guide-scene-bottom span{color:#dfebe3;font-size:.72rem;line-height:1.55;max-width:22ch}
+.renter-guide-scene-bottom a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 17px;border:1px solid #f3d09b;border-radius:999px;background:#f2d397;color:#17392f;text-decoration:none;font-size:.78rem;font-weight:850;white-space:normal}
+.renter-guide-scene-bottom a:hover{background:#fff0c9}
+.renter-guide-scene-bottom a:focus-visible,.renter-guide-contacts a:focus-visible{outline:3px solid #ffe6ab;outline-offset:4px}
+.renter-guide-content{display:flex;flex-direction:column;min-width:0;padding:clamp(25px,3.5vw,43px);background:linear-gradient(135deg,#133e35,#1c5143)}
+.renter-guide-content>p{color:#d8e8dd;font-size:.87rem;line-height:1.65;margin:0 0 22px;max-width:53ch}
+.renter-guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;list-style:none;padding:0;margin:0}
+.renter-guide-grid li{display:flex;flex-direction:column;gap:9px;min-width:0;min-height:178px;padding:20px;border:1px solid #ffffff5c;border-radius:15px;background:#ffffff10}
+.renter-guide-grid li:nth-child(2){background:#f0e5d1;color:#173e32;border-color:#f0e5d1}
+.renter-guide-grid li:nth-child(2) p{color:#345346}
+.renter-guide-grid li:nth-child(2) .renter-guide-number{color:#735127}
+.renter-guide-number{font-size:.7rem;letter-spacing:.13em;font-weight:900;color:#f1cb8e}
+.renter-guide-grid h3{font:400 clamp(1.25rem,2vw,1.55rem)/1.13 Georgia,"Times New Roman",serif;letter-spacing:-.035em;margin:0;color:inherit}
+.renter-guide-grid p{margin:0;font-size:.79rem;line-height:1.6;color:#dfebe4}
+.renter-guide-contacts{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:11px;margin-top:auto;padding-top:22px}
+.renter-guide-contacts span{font-size:.74rem;color:#d4e5d9;line-height:1.55;max-width:33ch}
+.renter-guide-contacts a{color:#f6dcae;font-size:.8rem;font-weight:850;text-underline-offset:4px}
+@media(max-width:940px){.renter-guide{grid-template-columns:1fr;min-height:0}.renter-guide-scene{min-height:350px}.renter-guide-scene p{max-width:65ch}.renter-guide-content{padding:31px}.renter-guide-grid li{min-height:160px}}
+@media(max-width:600px){.renter-guide{margin:3px 0 42px;border-radius:19px}.renter-guide-scene{min-height:330px;padding:27px 23px}.renter-guide h2{font-size:clamp(2.35rem,10vw,3.2rem)}.renter-guide-scene-bottom{align-items:flex-start}.renter-guide-content{padding:24px 19px}.renter-guide-grid{grid-template-columns:1fr;gap:10px}.renter-guide-grid li{min-height:0;padding:19px}.renter-guide-contacts{align-items:flex-start;flex-direction:column}}
+
 </style></head>
 <body>
 <a class="skip" href="#main">Skip to listings</a>
@@ -358,6 +391,34 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
 
     <div class="notice">
       <strong>Important:</strong> This index summarizes publicly available rental information and identifies the original listing source. Confirm availability, pricing, application requirements and all lease terms before relying on a listing. Property managers can request corrections or removal at any time.
+    </div>
+  </section>
+
+
+  <section class="renter-guide" id="renter-guide" aria-labelledby="renter-guide-title">
+    <div class="renter-guide-scene">
+      <div>
+        <span class="renter-guide-kicker">THE RIVER VALLEY / BEFORE YOU APPLY</span>
+        <h2 id="renter-guide-title">Find the right place.<br><em>Know the whole picture.</em></h2>
+        <p>A promising listing is the beginning, not the full agreement. Take these four questions to the actual manager or leasing office before paying an application fee.</p>
+      </div>
+      <div class="renter-guide-scene-bottom">
+        <span>Downtown Russellville scenery · Not a listed rental property</span>
+        <a href="#sources">Find the original leasing source ↗</a>
+      </div>
+    </div>
+    <div class="renter-guide-content">
+      <p>Use this quick rental-readiness desk while comparing homes, apartments and direct-leasing communities. Ask each operator directly; this directory does not verify live vacancies or contract terms.</p>
+      <ol class="renter-guide-grid">
+        <li><span class="renter-guide-number">01 / AVAILABILITY</span><h3>Is this home actually open?</h3><p>Confirm the specific unit, showing availability, move-in date and who accepts applications.</p></li>
+        <li><span class="renter-guide-number">02 / TRUE MONTHLY COST</span><h3>What is the full monthly total?</h3><p>Ask what rent excludes: utilities, required services, parking, pet charges and other recurring fees.</p></li>
+        <li><span class="renter-guide-number">03 / UPFRONT TERMS</span><h3>What is due before move-in?</h3><p>Request written application criteria, screening fees, deposits, lease length and refund conditions.</p></li>
+        <li><span class="renter-guide-number">04 / DAILY LIFE</span><h3>Will it work day to day?</h3><p>Confirm pet rules, maintenance arrangements, parking, accessibility needs and the move-in process.</p></li>
+      </ol>
+      <div class="renter-guide-contacts">
+        <span>No application or inquiry is submitted here. Verify all answers with the listed operator.</span>
+        <a href="#listings">Back to rental results ↑</a>
+      </div>
     </div>
   </section>
 
