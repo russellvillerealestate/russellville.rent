@@ -1200,6 +1200,88 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 }
 @media(prefers-reduced-motion:reduce){.journey-cta{transition:none}}
 
+
+/* Closing help desk: scenic, human-centered contact panel with useful inquiry prompts.
+   Design: StayARV immersive photography and generous spacing; Nielsen Norman Group
+   homepage wayfinding/information scent; web.dev image dimensions and below-fold lazy loading;
+   W3C WCAG 2.2 focus visibility, text contrast, touch targets and reduced motion.
+   Uses an existing local asset. All contact details and behavior remain unchanged. */
+.contact--studio{
+  position:relative;isolation:isolate;display:grid;
+  grid-template-columns:minmax(0,1.06fr) minmax(340px,.84fr);
+  gap:0;align-items:stretch;min-height:520px;padding:0;margin:64px 0 40px;
+  border:1px solid #2a5546;border-radius:27px;overflow:hidden;
+  background:#0e312a;color:#fffdf4;box-shadow:0 28px 55px #0a30232b;
+}
+.contact--studio .contact-copy{
+  position:relative;isolation:isolate;min-width:0;
+  padding:clamp(35px,5vw,72px);
+  background:radial-gradient(ellipse at -10% 110%,#32674b84,transparent 57%),#103a2f;
+}
+.contact--studio .contact-copy:before{
+  content:"";position:absolute;z-index:-1;pointer-events:none;
+  width:360px;height:360px;border:1px solid #f2d79e36;border-radius:50%;
+  right:-178px;top:-210px;box-shadow:0 0 0 40px #f2d79e0a,0 0 0 80px #f2d79e07;
+}
+.contact--studio .eyebrow{color:#f8d99b;letter-spacing:.16em;margin:0 0 7px}
+.contact-copy-label{display:block;color:#e3eadd;font-size:.64rem;font-weight:850;letter-spacing:.17em}
+.contact--studio h2{
+  max-width:12ch;margin:19px 0 20px;
+  font:400 clamp(2.75rem,4.8vw,4.9rem)/1.03 Georgia,"Times New Roman",serif;
+  letter-spacing:-.065em;color:#fffdf4;text-wrap:balance;
+}
+.contact--studio .contact-copy>p:not(.eyebrow):not(.phone){
+  max-width:48ch;margin:0;color:#e0eee5;font-size:clamp(.92rem,1.1vw,1.02rem);line-height:1.7;
+}
+.contact-message-guide{margin-top:26px;padding:20px 0 19px;border-top:1px solid #dbe9d63d;border-bottom:1px solid #dbe9d63d}
+.contact-message-guide>strong{display:block;color:#f9d99a;font-size:.8rem;letter-spacing:.02em;margin-bottom:13px}
+.contact-guide-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.contact-guide-grid span{display:flex;align-items:center;gap:8px;color:#eef6e9;font-size:.75rem;line-height:1.4}
+.contact-guide-grid b{display:grid;place-items:center;flex:none;width:28px;height:28px;border:1px solid #f4d69e99;border-radius:50%;color:#f4d69e;font-size:.6rem;letter-spacing:.04em}
+.contact--studio .contact-studio-actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:27px;flex-shrink:1;width:auto}
+.contact--studio .button{
+  min-height:54px;min-width:155px;padding:13px 23px;border-radius:11px;
+  display:inline-flex;align-items:center;justify-content:space-between;gap:18px;
+  font-size:.87rem;font-weight:850;
+}
+.contact--studio .button span{font-size:1.1rem}
+.contact--studio .primary{background:#f3d498;color:#14372c;border:1px solid #f3d498}
+.contact--studio .primary:hover{background:#ffe6b1}
+.contact--studio .secondary{background:#fff8e8;color:#173b30;border:1px solid #fff8e8}
+.contact--studio .secondary:hover{background:#e3eddd}
+.contact--studio a:focus-visible{outline:3px solid #ffe6a8;outline-offset:4px}
+.contact--studio .phone{font-size:.8rem;font-weight:650;color:#d2e2d7;margin-top:23px;line-height:1.7}
+.contact--studio .phone a{color:#fff0c1;text-decoration-thickness:1px}
+.contact-scene{position:relative;margin:0;overflow:hidden;min-height:100%;background:#345f56}
+.contact-scene img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:46% center}
+.contact-scene:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,#0c241f0b 38%,#081f1de8 100%)}
+.contact-scene figcaption{position:absolute;z-index:1;left:clamp(22px,3vw,45px);right:clamp(22px,3vw,45px);bottom:clamp(25px,3vw,47px);color:white}
+.contact-scene figcaption span{display:block;margin-bottom:7px;font-size:.64rem;letter-spacing:.18em;font-weight:900;color:#f5d89a}
+.contact-scene figcaption strong{display:block;font:400 clamp(1.85rem,3vw,2.8rem)/1.1 Georgia,serif;letter-spacing:-.045em;max-width:13ch}
+.contact-scene figcaption small{display:block;margin-top:13px;font-size:.71rem;line-height:1.5;color:#eff4eb}
+@media(max-width:920px){
+ .contact--studio{grid-template-columns:minmax(0,1fr);margin:45px 0 34px}
+ .contact--studio .contact-copy{padding:clamp(28px,5vw,48px)}
+ .contact--studio h2{max-width:20ch}
+ .contact-scene{min-height:255px}
+ .contact-scene img{object-position:50% 42%}
+ .contact-scene figcaption strong{max-width:none}
+}
+@media(max-width:600px){
+ .contact--studio{margin:35px 0 24px;min-height:0;border-radius:20px}
+ .contact--studio .contact-copy{padding:31px 23px 28px}
+ .contact--studio h2{font-size:clamp(2.55rem,9.5vw,3.65rem);margin:18px 0}
+ .contact-guide-grid{grid-template-columns:1fr;gap:9px}
+ .contact-guide-grid span{font-size:.8rem}
+ .contact--studio .contact-studio-actions{display:grid;grid-template-columns:1fr;gap:10px;width:100%}
+ .contact--studio .button{width:100%;min-height:52px;justify-content:space-between}
+ .contact--studio .phone{margin-top:17px}
+ .contact-scene{min-height:225px}
+ .contact-scene figcaption{bottom:24px;left:23px;right:23px}
+ .contact-scene figcaption strong{font-size:1.94rem}
+}
+@media(prefers-reduced-motion:reduce){.contact--studio .button{transition:none}.contact--studio .button:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -1562,7 +1644,31 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 </section>
 <section class="hometown hometown--closing" aria-labelledby="hometown-title"><div class="hometown-copy"><p class="eyebrow">This is our kind of place</p><h2 id="hometown-title">A little lake time.<br>A whole lot of hometown.</h2><p>Lake days, Tech green and gold, and the familiar sights on the way home.</p><a class="hometown-return" href="#browse">Back to rental categories <span aria-hidden="true">↗</span></a></div><figure class="landmark downtown"><img src="assets/downtown-russellville-sunset.jpg" alt="Downtown Russellville beneath a vivid orange and pink sunset" width="1200" height="544" loading="lazy"><figcaption>Downtown Russellville<span>Home looks good from here</span></figcaption></figure><figure class="landmark tech"><img src="assets/arkansas-tech-wilson-hall.jpg" alt="The red brick buildings and white cupola of Wilson Hall at Arkansas Tech University" width="1280" height="848" loading="lazy"><figcaption>Arkansas Tech University<span>Wilson Hall · Russellville</span></figcaption></figure><figure class="landmark tower"><img src="water%20tower.jpg" alt="The I love Russellville water tower above the trees" width="900" height="486" loading="lazy"><figcaption>A familiar welcome home<span>The I ♥ Russellville water tower</span></figcaption></figure></section>
 <section id="list" class="owner" aria-labelledby="owner-title"><div><p class="eyebrow">For local businesses & rental owners</p><h2 id="owner-title">Your rental belongs<br>in the neighborhood.</h2><p>Manage homes? Rent out tools, boats, storage, or event equipment? Help neighbors find what you offer.</p><a class="button" href="sms:+14799707301">Text us to request a listing ↗</a></div><div class="owner-details"><strong>Let’s build the local directory.</strong><p>Send your business or rental name, category, service area, website, and the best public contact details. We’ll review the information with you before adding a listing.</p><p>Ask about a basic listing or future featured placement. Any paid placement will be clearly labeled “Sponsored.”</p></div></section>
-<section id="contact" class="contact" aria-labelledby="contact-title"><div><p class="eyebrow">A little local help</p><h2 id="contact-title">Can’t find what you need?</h2><p>Tell us what you’re looking for, when you need it, and your budget. For listing requests or corrections, get in touch here too.</p><p class="phone">Russellville.Rent · <a href="tel:+14799707301">479-970-7301</a></p></div><div class="actions"><a class="button primary" href="sms:+14799707301">Text us ↗</a><a class="button secondary" href="tel:+14799707301">Call the hub</a></div></section>
+<section id="contact" class="contact contact--studio" aria-labelledby="contact-title">
+  <div class="contact-copy">
+    <p class="eyebrow">A little local help</p>
+    <span class="contact-copy-label">THE RIVER VALLEY / HELP DESK</span>
+    <h2 id="contact-title">Can’t find what you need?</h2>
+    <p>Tell us what you’re looking for, when you need it, and your budget. For listing requests or corrections, get in touch here too.</p>
+    <div class="contact-message-guide" aria-label="Details to include when contacting us">
+      <strong>Make the first message count.</strong>
+      <div class="contact-guide-grid">
+        <span><b>01</b> What you need</span>
+        <span><b>02</b> When you need it</span>
+        <span><b>03</b> Where you need it</span>
+      </div>
+    </div>
+    <div class="actions contact-studio-actions">
+      <a class="button primary" href="sms:+14799707301">Text us <span aria-hidden="true">↗</span></a>
+      <a class="button secondary" href="tel:+14799707301">Call the hub <span aria-hidden="true">↗</span></a>
+    </div>
+    <p class="phone">Russellville.Rent · <a href="tel:+14799707301">479-970-7301</a></p>
+  </div>
+  <figure class="contact-scene">
+    <img src="assets/downtown-russellville-sunset.jpg" alt="Downtown Russellville beneath a colorful sunset" width="1200" height="544" loading="lazy" decoding="async">
+    <figcaption><span>HERE IN THE RIVER VALLEY</span><strong>A hometown connection.</strong><small>Downtown Russellville scenery · Not a rental provider photograph</small></figcaption>
+  </figure>
+</section>
 <footer><span>© <span id="year">2026</span> Russellville.Rent</span><span>Local rentals. Local connections. Russellville, Arkansas.</span><a href="#list">Request a listing</a></footer>
 <details class="photo-credits"><summary>Local photo credits</summary><p>Lake Dardanelle sunset and downtown sunset photographs supplied for Russellville.Rent. Wilson Hall: <a href="https://commons.wikimedia.org/wiki/File:Wilson_Hall%E2%80%94Arkansas_Tech_University.JPG">Valis55, Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. Photos cropped for the layout; the Wilson Hall crop is shared under the same license. Water-tower photo from the existing Russellville.Rent collection.</p></details>
 </main>
