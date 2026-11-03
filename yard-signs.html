@@ -189,6 +189,49 @@ footer a{font-weight:750}
 }
 @media(prefers-reduced-motion:reduce){.occasion-path{transition:none}.occasion-path:hover{transform:none}}
 @media print{.hero{background:#173e34!important}.occasion-path{box-shadow:none}.occasion-path:after{display:none}}
+
+/* 2026-11-03: Scenic service footprint. StayARV reference; Nielsen Norman
+   information scent, web.dev responsive grids, W3C WCAG 2.2 focus/targets.
+   Image depicts Russellville context, not a rental provider's work. */
+.occasion-service-link{margin-left:auto;min-height:44px;display:inline-flex;align-items:center;justify-content:center;padding:7px 14px;border-radius:999px;background:#123d36;color:#fff;text-decoration:none;font-size:.8rem;font-weight:850}
+.occasion-service-link:hover{background:#285b4b}
+.service-atlas{padding:clamp(52px,7vw,92px) 0;background:#f5f0e5;border-bottom:1px solid #e3d9c7;scroll-margin-top:30px}
+.atlas-heading{display:flex;align-items:end;justify-content:space-between;gap:22px;margin:0 0 25px}
+.atlas-heading .eyebrow{color:#965f3a;margin:0 0 10px}
+.atlas-heading h2{font-size:clamp(2.6rem,5vw,4.6rem);max-width:14ch;margin:0;color:#163e34;line-height:1.05;text-wrap:balance}
+.atlas-heading>p{font-size:.94rem;color:#4c6055;max-width:42ch;margin:0 0 3px}
+.atlas-grid{display:grid;grid-template-columns:minmax(0,1.42fr) minmax(300px,.78fr);gap:18px}
+.atlas-local,.atlas-regional{border-radius:22px;overflow:hidden;min-width:0;display:flex;flex-direction:column;position:relative;isolation:isolate}
+.atlas-local{min-height:465px;padding:clamp(28px,4.3vw,50px);background:linear-gradient(112deg,#09231fe8 0%,#10382edb 61%,#163e35c7 100%),url("assets/downtown-russellville-sunset.jpg") center/cover;color:#fff;box-shadow:0 24px 46px #1a3c3222}
+.atlas-local:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(0deg,#0b2a26ad,transparent 60%)}
+.atlas-topline{display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:.7rem;font-weight:850;letter-spacing:.15em;text-transform:uppercase;color:#f9dca9}
+.atlas-count{width:58px;height:58px;display:grid;place-items:center;flex:none;border:1px solid #fce1ae83;border-radius:50%;color:#f9dfb1;font:400 2rem Georgia,serif;letter-spacing:-.06em}
+.atlas-local h3{font:400 clamp(2rem,3.8vw,3.6rem)/1.08 Georgia,serif;letter-spacing:-.05em;max-width:12ch;margin:26px 0 16px;color:#fff}
+.atlas-local>p{margin:0 0 24px;max-width:51ch;color:#e8f0e7;font-size:.91rem;line-height:1.7}
+.atlas-towns{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:auto 0 22px;padding:0}
+.atlas-towns li{min-width:0;display:flex;align-items:center;min-height:48px;padding:10px 12px;border:1px solid #d7edda78;border-radius:9px;background:#183f36cb;font-weight:750;font-size:.82rem;line-height:1.25;color:#fff;overflow-wrap:anywhere}
+.atlas-towns li:first-child{border-color:#f4d79b;background:#f4d79b;color:#193a30}
+.atlas-local .atlas-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:15px;padding-top:18px;border-top:1px solid #ffffff5b}
+.atlas-local .atlas-foot span{font-size:.75rem;line-height:1.5;color:#e0ede3;max-width:37ch}
+.atlas-foot a,.atlas-regional a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 17px;border-radius:9px;text-decoration:none;font-size:.83rem;font-weight:850}
+.atlas-foot a{background:#f8d98c;color:#12392e}
+.atlas-foot a:hover{background:#ffe6ae}
+.atlas-regional{padding:clamp(26px,3.6vw,42px);background:#ffe8d3;border:1px solid #e8caaa;color:#643d30}
+.atlas-regional:before{content:"";position:absolute;z-index:-1;width:300px;height:300px;top:-130px;right:-110px;border:1px solid #aa6a4a4d;border-radius:50%;box-shadow:0 0 0 39px #c7885420,0 0 0 78px #c7885412;pointer-events:none}
+.atlas-regional .atlas-topline{color:#985136}
+.atlas-regional .atlas-count{border-color:#b574536e;color:#965339}
+.atlas-regional h3{font:400 clamp(2.2rem,3.7vw,3.25rem)/1.08 Georgia,serif;letter-spacing:-.05em;margin:29px 0 12px;color:#673929}
+.atlas-regional>p{font-size:.9rem;line-height:1.75;color:#684a3b;margin:0 0 17px}
+.atlas-coverage-note{padding:15px 17px;border-left:4px solid #ac6548;background:#fff6ea;border-radius:0 10px 10px 0;font-size:.82rem;line-height:1.6;color:#744332;margin:auto 0 20px}
+.atlas-regional a{width:100%;background:#123d36;color:#fff}
+.atlas-regional a:hover{background:#265c4c}
+.atlas-foot a:focus-visible,.atlas-regional a:focus-visible,.occasion-service-link:focus-visible{outline:3px solid #fff;outline-offset:3px;box-shadow:0 0 0 6px #163e36}
+.atlas-regional a:focus-visible{outline-color:#f6db9b}
+.atlas-source{margin:15px 0 0;color:#526357;font-size:.75rem;line-height:1.55}
+@media(max-width:880px){.atlas-heading{display:block}.atlas-heading>p{margin-top:14px;max-width:66ch}.atlas-grid{grid-template-columns:1fr}.atlas-local{min-height:0}}
+@media(max-width:570px){.occasion-service-link{margin-left:0;width:100%}.atlas-local,.atlas-regional{padding:27px 22px;border-radius:17px}.atlas-towns{grid-template-columns:repeat(2,minmax(0,1fr))}.atlas-local h3{margin-top:20px}.atlas-local .atlas-foot{align-items:stretch}.atlas-foot a{width:100%}.atlas-local .atlas-foot span{max-width:none}}
+@media print{.atlas-local{background:#103a2f!important;color:#fff!important;box-shadow:none}.atlas-regional{break-inside:avoid}}
+
 </style>
 </head>
 <body>
@@ -215,7 +258,7 @@ footer a{font-weight:750}
 <g fill="#e78568"><path d="M335 32 l4 9 10 1 -8 7 2 10 -8 -5 -8 5 2 -10 -8 -7 10 -1z"/><circle cx="462" cy="217" r="6"/></g>
 <g stroke="#c8e2ca" stroke-width="4" stroke-linecap="round"><path d="M46 159 l13 10 M57 150 l-10 14 M456 150 l13 10 M468 147 l-10 14 M278 31 l8 10"/></g>
 </svg></div></div></section>
-<div class="occasion-strip"><div class="wrap"><strong>Made for milestones</strong><span>Birthdays</span><span>Graduations</span><span>Birth announcements</span><span>School &amp; community events</span></div></div>
+<div class="occasion-strip"><div class="wrap"><strong>Made for milestones</strong><span>Birthdays</span><span>Graduations</span><span>Birth announcements</span><span>School &amp; community events</span><a class="occasion-service-link" href="#service-atlas">Check delivery towns <span aria-hidden="true">↘</span></a></div></div>
 
 <section class="occasion-pathways" aria-labelledby="paths-title">
 <div class="wrap">
@@ -251,6 +294,30 @@ footer a{font-weight:750}
 <div class="studio-sign"><span class="studio-sign-kicker" id="preview-kicker">HAPPY BIRTHDAY</span><strong class="studio-sign-name" id="preview-name">YOUR NAME</strong><span class="studio-sign-footer" id="preview-footer">MAKE A WISH</span></div>
 <p class="studio-scene-caption">Idea only · Actual lettering, signs and availability vary by provider.</p>
 </div></div></section>
+
+<section class="service-atlas" id="service-atlas" aria-labelledby="service-atlas-title">
+<div class="wrap">
+  <div class="atlas-heading"><div><p class="eyebrow">Where the celebration can go / River Valley guide</p><h2 id="service-atlas-title">Make sure the address is in range.</h2></div><p>Two operators, two different published coverage areas. Find the best starting point before you choose a date or finalize your greeting.</p></div>
+  <div class="atlas-grid">
+    <article class="atlas-local" aria-labelledby="atlas-local-title">
+      <div class="atlas-topline"><span>01 / Local operator · Published service area</span><span class="atlas-count" aria-label="Seven towns">07</span></div>
+      <h3 id="atlas-local-title">Seven River Valley towns.</h3>
+      <p>Sign Gypsies River Valley lists these communities as served. This is a coverage guide, not a live address checker or an availability confirmation.</p>
+      <ul class="atlas-towns" aria-label="Published towns served by Sign Gypsies River Valley"><li>Russellville</li><li>Atkins</li><li>Dardanelle</li><li>Dover</li><li>Hector</li><li>London</li><li>Pottsville</li></ul>
+      <div class="atlas-foot"><span>Ask about your exact address, setup space, preferred day and final price.</span><a href="#provider">See local provider &amp; $85 starting price <span aria-hidden="true">↗</span></a></div>
+    </article>
+    <article class="atlas-regional" aria-labelledby="atlas-regional-title">
+      <div class="atlas-topline"><span>02 / Separately operated branch</span><span class="atlas-count" aria-hidden="true">↗</span></div>
+      <h3 id="atlas-regional-title">Looking around Morrilton?</h3>
+      <p>Card My Yard Conway explicitly includes Morrilton (72110) on its published service list. It is not the Russellville operator.</p>
+      <div class="atlas-coverage-note"><strong>Russellville delivery unconfirmed.</strong> Neither Russellville ZIP code 72801 nor 72802 appears on that branch's published list. Confirm the exact address before booking.</div>
+      <a href="#regional-heading">Compare the Morrilton-area option <span aria-hidden="true">↗</span></a>
+    </article>
+  </div>
+  <p class="atlas-source">Scenic Russellville imagery provides local context; it does not depict either provider's yard signs. Coverage is based on the operators' published information and may change. Confirm all details directly.</p>
+</div>
+</section>
+
 <section class="content wrap" id="provider" aria-labelledby="provider-heading"><div class="section-head"><div><p class="eyebrow">One local operator</p><h2 id="provider-heading">The greeting starts here.</h2></div><p>Review the advertised details, then contact the operator directly to arrange a date and design.</p></div>
 <div class="provider-layout">
 <article class="provider"><span class="tag">River Valley service</span><h3>Sign Gypsies River Valley</h3><p>The official local operator advertises personalized yard-sign greetings, delivery, setup and pickup approximately 24 hours later. Listed occasions include birthdays, birth announcements, graduations, school events, sports celebrations and community events.</p><h4>Verified service area</h4><p class="detail"><strong>Verified service area:</strong> Russellville, Atkins, Dardanelle, Dover, Hector, London and Pottsville, Arkansas. No storefront or pickup address independently verified.</p><div class="provider-links"><a href="tel:+14793856923">479-385-6923</a> <a href="https://signgypsies.com/all-locations/sign-gypsies-river-valley/" target="_blank" rel="noopener noreferrer">Official local information &amp; booking ↗</a></div></article>
