@@ -333,6 +333,62 @@ main#main{padding:0 16px 54px!important}
 @media(max-width:390px){.storage-view-controls button{padding:12px;min-height:92px}.storage-view-controls strong{font-size:.86rem}.storage-view-controls span{font-size:.67rem}}
 @media(prefers-reduced-motion:reduce){.storage-view-controls button{transition:none}.storage-view-controls button:hover{transform:none}}
 </style>
+
+<style id="storage-route-guide-design">
+/* 2026-11-03 / Storage needs -> existing category filters.
+   Keeps the earlier landmark-led hero intact instead of overwriting prior designs.
+   Direction: StayARV's landscape scale/contrasting typography/clear primary action.
+   Research: NN/g visual hierarchy, web.dev responsive media, W3C WCAG 2.2 focus + targets.
+   No new provider claims, remote imagery, inventory or external requests. */
+.storage-route-guide{position:relative;z-index:3;margin:-51px 13px 39px;padding:clamp(23px,4vw,40px);border:1px solid #d8d6c6;border-radius:25px;background:#f8f5eb;box-shadow:0 25px 58px #102f2b25}
+.storage-route-heading{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(220px,.8fr);align-items:end;gap:26px;margin-bottom:27px}
+.storage-route-eyebrow{margin:0 0 11px!important;color:#84602e;font-size:.68rem!important;letter-spacing:.17em;text-transform:uppercase;font-weight:900}
+.storage-route-heading h2{margin:0;font:400 clamp(2.3rem,4.8vw,4.05rem)/1.06 Georgia,"Times New Roman",serif;letter-spacing:-.059em;color:#153b2e;text-wrap:balance}
+.storage-route-heading h2 em{font-weight:400;color:#9c6b32}
+.storage-route-heading>p{max-width:39ch;margin:0 0 4px;color:#51695b;font-size:.87rem;line-height:1.68}
+.storage-route-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.storage-route{display:flex;min-width:0;min-height:262px;flex-direction:column;gap:12px;padding:23px 24px;border:1px solid #d2dcd0;border-radius:17px;background:linear-gradient(160deg,#fff,#e8f0e6);color:#163f32;text-decoration:none;box-shadow:0 8px 24px #1c3c3210;transition:transform .2s,box-shadow .2s,border-color .2s}
+.storage-route--vehicle{background:linear-gradient(140deg,#164b3c,#0d332e);color:#fff;border-color:#194c3c}
+.storage-route--climate{background:linear-gradient(145deg,#fbf5e8,#efdbb7);border-color:#e0cda8}
+.storage-route-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;min-height:70px}
+.storage-route-top>span{font-size:.66rem;line-height:1.5;font-weight:900;letter-spacing:.14em;opacity:.82}
+.storage-route-top svg{flex:none;width:80px;height:70px;opacity:.82}
+.storage-route strong{display:block;font:400 clamp(1.6rem,2.2vw,2.05rem)/1.16 Georgia,"Times New Roman",serif;letter-spacing:-.045em}
+.storage-route-detail{font-size:.8rem;line-height:1.55;opacity:.85;max-width:33ch}
+.storage-route-action{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:15px;border-top:1px solid currentColor;font-size:.75rem;font-weight:900;line-height:1.4;letter-spacing:.015em}
+.storage-route-action span{font-size:1.25rem;line-height:1}
+.storage-route:hover{transform:translateY(-5px);box-shadow:0 20px 36px #123f302a;border-color:#8da993}
+.storage-route:focus-visible{outline:4px solid #b97722;outline-offset:4px}
+.storage-route--vehicle:focus-visible{outline-color:#f7d594}
+.storage-route-fine{margin:19px 0 0;color:#64786b;font-size:.73rem;line-height:1.6}
+.storage-finder{margin-top:0}
+#storage-grid{scroll-margin-top:18px}
+@media(max-width:900px){
+ .storage-route-guide{margin:-31px 7px 33px;padding:27px 24px}
+ .storage-route-heading{grid-template-columns:1fr;gap:13px}
+ .storage-route-heading>p{max-width:65ch}
+ .storage-route-grid{gap:10px}
+ .storage-route{padding:18px 17px;min-height:255px}
+ .storage-route-top svg{width:62px;height:58px}
+ .storage-route strong{font-size:clamp(1.43rem,2.8vw,1.8rem)}
+}
+@media(max-width:690px){
+ .storage-route-guide{margin:-18px 0 28px;padding:25px 17px;border-radius:18px}
+ .storage-route-heading h2{font-size:clamp(2.25rem,9vw,3.45rem)}
+ .storage-route-grid{grid-template-columns:1fr;gap:10px}
+ .storage-route{min-height:0;gap:9px;padding:18px 19px}
+ .storage-route-top{min-height:0;align-items:center}
+ .storage-route-top svg{width:59px;height:52px}
+ .storage-route strong{font-size:1.75rem}
+ .storage-route-detail{max-width:none}
+ .storage-route-action{padding-top:10px}
+ .storage-finder{margin:0 0 26px}
+}
+@media(prefers-reduced-motion:reduce){
+ .storage-route{transition:none}
+ .storage-route:hover{transform:none}
+}
+</style>
 </head><body><a class="storage-skip" href="#storage-grid">Skip to storage providers</a><header class="storage-topbar"><div class="storage-topbar-inner"><a class="storage-brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="storage-back" href="/">← All rental categories</a></div></header><main id="main"><section class="storage-hero" aria-labelledby="storage-title">
 <div class="storage-hero-content">
 <p class="storage-eyebrow">Russellville · Arkansas River Valley</p>
@@ -364,7 +420,30 @@ main#main{padding:0 16px 54px!important}
 </svg>
 <span class="storage-art-caption">Space for every next chapter</span>
 </div></div>
-</section><section class="storage-finder" id="storage-finder" aria-labelledby="storage-finder-title" hidden><div class="storage-finder-top"><div><h2 id="storage-finder-title">Find the right space</h2><p class="storage-finder-intro">Search providers or narrow by advertised storage options.</p></div><button type="button" class="storage-reset" id="storage-reset">Reset filters</button></div><form id="storage-search-form" role="search"><label class="storage-search-label" for="storage-search">Search by name, location, or feature</label><input class="storage-search" id="storage-search" type="search" autocomplete="off" placeholder="Try “boat”, “Main Street”, or “24-hour”"></form><fieldset class="storage-filter-fieldset"><legend>Choose your storage need</legend>
+</section>
+<!-- Distinct, progressive-enhancement wayfinding. Provider classifications stay in the existing filter script. -->
+<section class="storage-route-guide" aria-labelledby="storage-route-title">
+  <div class="storage-route-heading">
+    <div><p class="storage-route-eyebrow">THE RIVER VALLEY STORAGE FIELD GUIDE / START HERE</p><h2 id="storage-route-title">Find room for <em>what matters.</em></h2></div>
+    <p>Start with the kind of space you need. These paths use the directory's existing storage-type filters; verify current units and access directly with each facility.</p>
+  </div>
+  <div class="storage-route-grid">
+    <a class="storage-route storage-route--home" data-storage-route="units" href="#storage-grid">
+      <span class="storage-route-top"><span>01 / MAKE SPACE</span><svg viewBox="0 0 120 95" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" aria-hidden="true" focusable="false"><path d="M16 47 60 15l44 32v37H16V47Z"/><path d="M34 84V49h52v35M34 61h52M34 72h52"/><path d="M46 23V11h13v13"/></svg></span>
+      <strong>Storage units</strong><span class="storage-route-detail">Compare traditional storage spaces for belongings and everyday overflow.</span><span class="storage-route-action">See unit-storage listings <span aria-hidden="true">↗</span></span>
+    </a>
+    <a class="storage-route storage-route--vehicle" data-storage-route="vehicles" href="#storage-grid">
+      <span class="storage-route-top"><span>02 / PARK THE ADVENTURE</span><svg viewBox="0 0 120 95" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" aria-hidden="true" focusable="false"><path d="M9 72h103M23 36h53l16 20v16H23V36Z"/><path d="M35 44h20v16H35zM63 44h14l11 16H63z"/><circle cx="39" cy="73" r="10"/><circle cx="80" cy="73" r="10"/><path d="M15 35V23h16M91 33h16v19"/></svg></span>
+      <strong>Boat &amp; RV parking</strong><span class="storage-route-detail">Explore facilities advertising vehicle storage or parking options.</span><span class="storage-route-action">See vehicle-storage listings <span aria-hidden="true">↗</span></span>
+    </a>
+    <a class="storage-route storage-route--climate" data-storage-route="climate" href="#storage-grid">
+      <span class="storage-route-top"><span>03 / CONSIDER THE CONDITIONS</span><svg viewBox="0 0 120 95" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" aria-hidden="true" focusable="false"><rect x="24" y="18" width="72" height="62" rx="8"/><circle cx="60" cy="49" r="19"/><path d="M60 30v38M41 49h38M47 36l26 26M73 36 47 62"/></svg></span>
+      <strong>Climate-controlled</strong><span class="storage-route-detail">Focus on providers that mention temperature-managed storage.</span><span class="storage-route-action">See climate-storage listings <span aria-hidden="true">↗</span></span>
+    </a>
+  </div>
+  <p class="storage-route-fine">Illustrative guide only; category matches are based on published descriptions, not confirmed vacancies, suitability, prices or reservations.</p>
+</section>
+<section class="storage-finder" id="storage-finder" aria-labelledby="storage-finder-title" hidden><div class="storage-finder-top"><div><h2 id="storage-finder-title">Find the right space</h2><p class="storage-finder-intro">Search providers or narrow by advertised storage options.</p></div><button type="button" class="storage-reset" id="storage-reset">Reset filters</button></div><form id="storage-search-form" role="search"><label class="storage-search-label" for="storage-search">Search by name, location, or feature</label><input class="storage-search" id="storage-search" type="search" autocomplete="off" placeholder="Try “boat”, “Main Street”, or “24-hour”"></form><fieldset class="storage-filter-fieldset"><legend>Choose your storage need</legend>
 <p class="storage-filter-hint">Browse by advertised storage type. Inventory and availability are not guaranteed.</p>
 <div class="storage-filter-list" role="group" aria-label="Storage type">
 <button type="button" data-storage-filter="all" aria-pressed="true"><span class="storage-filter-icon" aria-hidden="true"><svg viewBox="0 0 72 58" focusable="false"><rect x="7" y="8" width="25" height="20" rx="3"/><rect x="40" y="8" width="25" height="20" rx="3"/><rect x="7" y="35" width="25" height="16" rx="3"/><rect x="40" y="35" width="25" height="16" rx="3"/></svg></span><strong>All providers</strong><small>Explore the full directory</small></button>
@@ -663,6 +742,25 @@ main#main{padding:0 16px 54px!important}
  buttons.forEach(button=>button.addEventListener('click',()=>select(button.dataset.storageView)));
  select('cards');
  dock.hidden=false;
+})();
+</script>
+
+<script id="storage-route-guide-script">
+/* Progressive enhancement only: delegate filtering to existing, verified controls. */
+(() => {
+  const grid=document.getElementById('storage-grid');
+  const reset=document.getElementById('storage-reset');
+  const routes=document.querySelectorAll('[data-storage-route]');
+  if(!grid||!reset)return;
+  routes.forEach(link=>link.addEventListener('click',()=>{
+    const kind=link.dataset.storageRoute;
+    const filter=document.querySelector('[data-storage-filter="'+kind+'"]');
+    if(!filter||document.getElementById('storage-finder')?.hidden)return;
+    reset.click();
+    filter.click();
+    grid.setAttribute('tabindex','-1');
+    requestAnimationFrame(()=>grid.focus({preventScroll:true}));
+  }));
 })();
 </script>
 </body></html>
