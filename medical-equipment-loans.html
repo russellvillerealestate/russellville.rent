@@ -266,6 +266,94 @@ h1{font-size:clamp(3.4rem,6.4vw,6.2rem);line-height:1.035;max-width:12ch;letter-
 @media(prefers-reduced-motion:reduce){.route-actions a{transition:none}}
 @media print{.route-lanes .route-lane:first-child{background:#fff!important;color:#173d34!important;box-shadow:none}.route-lanes .route-lane:first-child :is(.route-num,.route-main strong,.route-who,.route-kind,.route-description,.route-who small){color:#173d34!important}.route-lanes .route-lane:first-child .route-actions a{color:#173d34!important;border-color:#61776a}}
 
+
+/* 2026-11-03: River Valley lending field guide — place-led editorial contrast.
+   Compared live StayARV.com / Russellville.Rent. NN/g information scent:
+   distinguish statewide, local, and eligibility-restricted programs without
+   making an availability claim; web.dev responsive composition and image restraint;
+   W3C WCAG 2.2 focus visibility, reflow, readable contrast and reduced motion.
+   Uses an existing 99 KB local landscape, not a photograph of a lending program.
+   The existing contact desk, three program records and links are unchanged. */
+.hero{
+  background:
+    linear-gradient(101deg,rgba(5,32,29,.97) 0%,rgba(7,41,35,.94) 40%,rgba(10,51,43,.78) 68%,rgba(9,43,37,.69) 100%),
+    url("assets/downtown-russellville-sunset.jpg") center 54%/cover no-repeat;
+  border-radius:0 0 45px 45px;
+  box-shadow:0 24px 50px #0a2f2c28
+}
+.hero:before{
+  background:radial-gradient(ellipse at 86% 23%,#f0d3a629,transparent 51%);
+  opacity:1
+}
+.hero .wrap{min-height:620px;gap:clamp(30px,5vw,72px);padding-top:74px;padding-bottom:128px}
+.hero h1{max-width:12.5ch;font-size:clamp(3.65rem,6.5vw,6.45rem);line-height:1.005}
+.hero-intro{max-width:57ch;color:#f0f6f0}
+.hero .button.secondary{background:#092f2baa;border-color:#e1efdbab}
+.hero .button.secondary:hover{background:#184d41}
+.hero-art{align-self:center;min-height:430px}
+.hero-art:after{opacity:.6}
+.resource-board{transform:rotate(-3deg) translateY(-4px);box-shadow:0 32px 74px #001e1ab8,0 0 0 8px #e6eed91a}
+.resource-board-tab{box-shadow:0 15px 24px #001a176b}
+.hero-landscape-note{
+  display:inline-block;margin:23px 0 0;padding:7px 11px;
+  border:1px solid #d8e9d565;border-radius:8px;background:#0829229c;
+  color:#f3f5e8;font-size:.71rem;line-height:1.45;font-weight:700
+}
+.steps{
+  display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+  align-items:center;gap:clamp(25px,4vw,59px);
+  margin-top:64px;padding:clamp(29px,4.6vw,56px);
+  overflow:hidden;position:relative;isolation:isolate;
+  border-radius:27px;border:1px solid #ffffff30;
+  background:linear-gradient(105deg,#082a26f5 0%,#103c34e6 42%,#154b3bd9 100%),
+    url("assets/lake-dardanelle-sunset.jpg") center/cover no-repeat;
+  box-shadow:0 25px 54px #0e392e2b;color:#fff
+}
+.steps:before{
+  content:"";position:absolute;pointer-events:none;inset:16px;
+  border:1px solid #ffffff32;border-radius:17px;z-index:-1
+}
+.steps .eyebrow{color:#f5d8a0;letter-spacing:.2em;margin-bottom:18px}
+.steps h2{font:400 clamp(2.5rem,4.35vw,4.1rem)/1.07 Georgia,"Times New Roman",serif;letter-spacing:-.06em;max-width:12ch;text-wrap:balance;margin:0 0 21px}
+.steps-intro{max-width:35ch;color:#e7f1e8;font-size:.9rem;line-height:1.76;margin:0 0 22px}
+.steps-place{display:inline-block;border-top:1px solid #e2eddb77;padding-top:12px;color:#e8f1de;font-size:.7rem;line-height:1.5;letter-spacing:.015em}
+.steps-grid{display:grid;grid-template-columns:1fr;gap:11px}
+.steps-grid>div{
+  display:grid;grid-template-columns:1fr;
+  gap:6px;align-content:center;min-height:119px;
+  padding:19px 22px;border:1px solid #dce8da;
+  border-radius:14px;background:#fffdf5;color:#193d32;
+  box-shadow:0 11px 26px #051e1840
+}
+.steps-grid>div:nth-child(2){background:#eff5ea}
+.steps-grid>div:nth-child(3){background:#f9f2e6}
+.steps-grid strong{display:block;font:400 clamp(1.2rem,1.75vw,1.52rem)/1.2 Georgia,"Times New Roman",serif;letter-spacing:-.025em;color:#153d31}
+.steps-grid span{display:block;color:#3f5b4c;font-size:.83rem;line-height:1.6;margin:0}
+@media(max-width:880px){
+  .hero .wrap{min-height:0;gap:22px;padding-top:62px;padding-bottom:114px}
+  .hero-art{min-height:330px}
+  .steps{grid-template-columns:1fr;gap:22px}
+  .steps h2{max-width:20ch}
+  .steps-intro{max-width:67ch}
+}
+@media(max-width:700px){
+  .hero{border-radius:0 0 25px 25px;background-position:58% center}
+  .hero .wrap{padding-top:43px;padding-bottom:77px}
+  .hero h1{font-size:clamp(3.2rem,10vw,5rem)}
+  .hero-art{min-height:300px}
+  .resource-board{transform:none}
+  .resource-board-tab{right:-7px}
+  .steps{margin-top:40px;padding:27px 20px;border-radius:19px}
+  .steps:before{inset:9px;border-radius:13px}
+  .steps h2{font-size:clamp(2.4rem,9vw,3.4rem)}
+  .steps-grid>div{min-height:0;padding:19px 18px}
+}
+@media print{
+ .hero{background:white!important;color:#173d34;box-shadow:none}
+ .hero-landscape-note{display:none}
+ .steps{display:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -275,7 +363,7 @@ h1{font-size:clamp(3.4rem,6.4vw,6.2rem);line-height:1.035;max-width:12ch;letter-
 <section class="hero" aria-labelledby="page-title"><div class="wrap">
 <div><p class="eyebrow">Russellville, Arkansas · Community resources</p><h1 id="page-title">Equipment support, <em>within reach.</em></h1>
 <p class="hero-intro">Free equipment lending and statewide assistive-technology device loans for Arkansas residents. These programs are <strong>not commercial equipment rentals</strong>. Ask about eligibility, available equipment, pickup, loan duration and safe fit before traveling.</p>
-<div class="hero-actions"><a class="button primary" href="#programs">Compare three programs ↓</a><a class="button secondary" href="#before-you-go">What to confirm ↗</a></div></div>
+<div class="hero-actions"><a class="button primary" href="#programs">Compare three programs ↓</a><a class="button secondary" href="#before-you-go">What to confirm ↗</a></div><p class="hero-landscape-note">Downtown Russellville scenery · not a lending-program facility</p></div>
 <div class="hero-art" aria-hidden="true">
   <div class="resource-board">
     <div class="resource-board-head"><span>RIVER VALLEY / RESOURCE GUIDE</span><span class="resource-board-count">03</span></div>
@@ -368,7 +456,7 @@ h1{font-size:clamp(3.4rem,6.4vw,6.2rem);line-height:1.035;max-width:12ch;letter-
 <p class="program-actions"><a href="tel:+18004591517">800-459-1517</a> · <a href="tel:+15012961788">501-296-1788</a> · <a href="https://healthy.arkansas.gov/wp-content/uploads/ASCC_Equipment_Loan_Program.pdf" target="_blank" rel="noopener noreferrer">Official equipment loan policy ↗</a> · <a href="https://healthy.arkansas.gov/wp-content/uploads/ASCC_Referral_Information.pdf" target="_blank" rel="noopener noreferrer">Official eligibility and referral details ↗</a></p>
 </article>
 </div></section>
-<section class="steps" id="before-you-go" aria-labelledby="steps-title"><p class="eyebrow">02 / Before you travel</p><h2 id="steps-title">Three things to ask first.</h2><div class="steps-grid"><div><strong>01 · Is the item available?</strong><span>Ask about the exact equipment, size and condition. Local inventory may be limited.</span></div><div><strong>02 · How does the loan work?</strong><span>Confirm eligibility, loan duration and any pickup or return requirements.</span></div><div><strong>03 · Will it fit the user?</strong><span>Confirm safe fit and suitability with the program before using equipment.</span></div></div></section>
+<section class="steps" id="before-you-go" aria-labelledby="steps-title"><div class="steps-copy"><p class="eyebrow">02 / Before you travel</p><h2 id="steps-title">Three things to ask first.</h2><p class="steps-intro">Call before making the trip. A quick conversation can establish what is available, who qualifies, and whether an item will be suitable before anyone leaves home.</p><span class="steps-place">River Valley landscape illustration for context · not a provider location</span></div><div class="steps-grid"><div><strong>01 · Is the item available?</strong><span>Ask about the exact equipment, size and condition. Local inventory may be limited.</span></div><div><strong>02 · How does the loan work?</strong><span>Confirm eligibility, loan duration and any pickup or return requirements.</span></div><div><strong>03 · Will it fit the user?</strong><span>Confirm safe fit and suitability with the program before using equipment.</span></div></div></section>
 <p class="note">Independent directory. Program inventory and terms can change. Verify equipment condition, size, safe fit, loan requirements, and pickup or delivery with each program. No program guarantees availability. <a href="sms:+14799707301">Suggest a correction</a>.</p>
 <footer><span>© 2026 Russellville.Rent · Independent rental directory</span><a href="/">Return to homepage ↗</a></footer>
 </div></main>
