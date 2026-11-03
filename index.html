@@ -1282,6 +1282,74 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 }
 @media(prefers-reduced-motion:reduce){.contact--studio .button{transition:none}.contact--studio .button:hover{transform:none}}
 
+
+/* Nov 3, 2026 — River Valley school-band spotlight: an illustrated editorial
+   directory panel, not a provider photo. Live StayARV reference: expansive
+   place-based hero, strong hierarchy and generous whitespace. NN/g: recognition
+   and information scent; web.dev: inline responsive art avoids remote image
+   downloads; W3C WCAG 2.2: visible focus and motion preferences.
+   Card text, provider descriptions, links and category filtering are untouched. */
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="instruments"]{
+  min-width:0;border:1px solid #adc4ad;border-radius:23px;overflow:hidden;
+  box-shadow:0 18px 44px #153b2f1c
+}
+.rental-card[data-category="instruments"] .band-poster{
+  position:relative;isolation:isolate;height:100%;min-height:265px;padding:0;
+  background:#173e39;overflow:hidden
+}
+.band-poster:before,.band-poster:after{content:none}
+.band-poster-scene{display:block;width:100%;height:100%;min-height:265px;object-fit:cover}
+.band-poster:after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,#05241d12 35%,#05241dbb 100%)}
+.band-poster-stamp,.band-poster-caption{position:absolute;z-index:1;color:#fff5dc;
+  letter-spacing:.15em;line-height:1.45;font-weight:850;text-shadow:0 2px 8px #102e29a6}
+.band-poster-stamp{top:22px;left:24px;font-size:.65rem}
+.band-poster-caption{bottom:22px;right:24px;font-size:.68rem}
+.band-poster-caption b{color:#f6d69e;font-size:1.15rem}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="instruments"] .card-body{
+  padding:clamp(24px,3.3vw,40px);justify-content:center;
+  background:linear-gradient(160deg,#fffdfa,#eef3e8)
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="instruments"] .card-body h3{
+  font:400 clamp(1.7rem,3.05vw,2.7rem)/1.1 Georgia,"Times New Roman",serif;
+  letter-spacing:-.055em;color:#173f34;text-wrap:balance
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="instruments"] .card-body .card-link{
+  display:inline-flex;align-items:center;justify-content:center;min-height:49px;
+  padding:12px 16px;border:1px solid #174b3a;border-radius:11px;
+  background:#194a3a;color:#fff;text-decoration:none;font-weight:850
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="instruments"] .card-body .card-link:hover{
+  background:#29634c
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="instruments"] .card-body .card-link:focus-visible{
+  outline:3px solid #a66a17;outline-offset:4px
+}
+@media(min-width:761px){
+  .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="instruments"]{
+    grid-column:span 2;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);min-height:365px
+  }
+  .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="instruments"] .band-poster{min-height:365px}
+  .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="instruments"] .band-poster-scene{min-height:365px}
+}
+@media(min-width:601px) and (max-width:760px){
+  .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="instruments"]{grid-column:span 2}
+  .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="instruments"] .band-poster{height:270px;min-height:270px}
+  .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="instruments"] .band-poster-scene{height:270px;min-height:270px}
+}
+@media(max-width:600px){
+  .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="instruments"] .band-poster{min-height:230px;height:230px}
+  .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="instruments"] .band-poster-scene{height:230px;min-height:230px}
+  .band-poster-stamp{top:16px;left:17px;font-size:.55rem}
+  .band-poster-caption{bottom:15px;right:16px;font-size:.57rem}
+}
+.rentals-grid[data-view="list"]>.rental-card[data-category="instruments"] .band-poster{height:100%;min-height:185px}
+.rentals-grid[data-view="list"]>.rental-card[data-category="instruments"] .band-poster-scene{height:100%;min-height:185px}
+@media(max-width:600px){
+ .rentals-grid[data-view="list"]>.rental-card[data-category="instruments"] .band-poster{height:155px;min-height:155px}
+ .rentals-grid[data-view="list"]>.rental-card[data-category="instruments"] .band-poster-scene{height:155px;min-height:155px}
+}
+
 </style>
 </head>
 <body>
@@ -1582,7 +1650,30 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <p class="status">Roots &amp; Rhythm · A/V Arkansas · 636 Entertainment · EdmoSound (regional; delivery unconfirmed)</p>
 <a class="card-link" href="audio-visual.html">Browse audio &amp; visual rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="instruments">
-<div class="category-art icon-tile" style="--tile-ink:#5a5948;--tile-bg:#eae8d8" role="img" aria-label="Neutral trumpet illustration"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-instruments"></use></svg><small>BAND INSTRUMENTS</small></div>
+<div class="category-art band-poster" role="img" aria-label="Original illustrated trumpet against Arkansas River Valley hills; not a provider instrument or inventory photograph">
+  <svg class="band-poster-scene" viewBox="0 0 780 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="band-poster-sky" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#143e39"/><stop offset=".65" stop-color="#315b4f"/><stop offset="1" stop-color="#7d8066"/></linearGradient><linearGradient id="band-poster-brass" x1="0" x2=".85" y1="0" y2="1"><stop stop-color="#fff0b7"/><stop offset=".44" stop-color="#eac176"/><stop offset="1" stop-color="#b07736"/></linearGradient></defs>
+    <rect width="780" height="480" fill="url(#band-poster-sky)"/>
+    <circle cx="605" cy="116" r="73" fill="#e9c98d" opacity=".9"/><circle cx="605" cy="116" r="104" fill="none" stroke="#f5dcab" stroke-width="2" opacity=".4"/>
+    <path d="M0 298 110 232 213 289 339 211 446 265 582 209 702 276 780 221V480H0Z" fill="#74927a"/>
+    <path d="M0 345 112 274 249 325 365 254 526 330 673 270 780 323V480H0Z" fill="#406b5b"/>
+    <path d="M0 398Q140 345 261 384T510 374T780 383V480H0Z" fill="#183f3b"/>
+    <g stroke="#f4daa2" stroke-width="2" fill="none" opacity=".34"><path d="M21 92Q390 30 759 96M21 120Q390 58 759 124M21 148Q390 86 759 152M21 176Q390 114 759 180M21 204Q390 142 759 208"/></g>
+    <g transform="translate(82 90) rotate(-8 280 190)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M66 232H436" stroke="#482f24" stroke-width="28"/><path d="M66 230H436" stroke="url(#band-poster-brass)" stroke-width="22"/>
+      <path d="M434 218Q483 215 550 169V303Q482 261 434 245Z" fill="url(#band-poster-brass)" stroke="#f5d78d" stroke-width="6"/>
+      <path d="M552 167Q535 235 552 305" fill="none" stroke="#ffedb0" stroke-width="9"/>
+      <path d="M50 214V250M45 232H76" stroke="#f0cf85" stroke-width="11"/>
+      <path d="M147 231V168Q147 135 177 135H364Q394 135 394 168V231" fill="none" stroke="#e5b361" stroke-width="12"/>
+      <path d="M159 234V294Q159 319 193 319H350Q385 319 385 293V233" fill="none" stroke="#c9934d" stroke-width="13"/>
+      <path d="M191 176H218M262 176H289M332 176H359" stroke="#fff0c3" stroke-width="7"/>
+      <g fill="#e8b961" stroke="#ffe8a6" stroke-width="3"><rect x="205" y="158" width="22" height="100" rx="5"/><rect x="276" y="158" width="22" height="100" rx="5"/><rect x="347" y="158" width="22" height="100" rx="5"/></g>
+      <g fill="#fff0b5"><rect x="200" y="145" width="32" height="15" rx="6"/><rect x="271" y="145" width="32" height="15" rx="6"/><rect x="342" y="145" width="32" height="15" rx="6"/></g>
+    </g>
+  </svg>
+  <span class="band-poster-stamp" aria-hidden="true">THE RIVER VALLEY<br>STUDENT BAND GUIDE</span>
+  <span class="band-poster-caption" aria-hidden="true">FIRST NOTE <b>→</b> NEXT CHAPTER</span>
+</div>
 <div class="card-body"><p class="eyebrow">Band instrument rentals</p><h3>Band instruments &amp; rent-to-own</h3><p>Find school band instrument rental and rent-to-own programs in Russellville.</p><p class="status">Cooper Music · Arkansas School Band Service · Sweetwater (online school-linked)</p><a class="card-link" href="instruments.html">Browse band instrument rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="yard-signs">
 <div class="category-art icon-tile" style="--tile-ink:#8b5839;--tile-bg:#f7e5cb" role="img" aria-label="Yard sign"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-yard-signs"></use></svg><small>YARD GREETINGS</small></div>
