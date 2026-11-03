@@ -1082,6 +1082,124 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
  .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="storage"]:hover .storage-landscape{transform:none}
 }
 
+
+/* 2026-11-03 / Homepage rental journey: an immersive field-guide spread.
+   Live reference: StayARV.com full-bleed place imagery and calm hierarchy.
+   NN/g: scannability and informative headings; web.dev: below-fold lazy image;
+   W3C WCAG 2.2: semantic ordered steps, focus indicator, large targets and reflow.
+   Preserve all three steps verbatim, all provider/category records and existing scripts. */
+.journey{
+  display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+  gap:0;min-height:690px;margin:68px 0 56px;padding:0;
+  overflow:hidden;border:1px solid #bccbbf;border-radius:28px;
+  background:#f8f7f0;box-shadow:0 24px 54px #153b2d20
+}
+.journey::before{content:none}
+.journey-scene{position:relative;isolation:isolate;display:flex;flex-direction:column;
+  justify-content:space-between;gap:55px;min-width:0;min-height:690px;
+  margin:0;padding:clamp(27px,3.4vw,47px);
+  overflow:hidden;background:#123e35;color:#fffaec
+}
+.journey-scene>img{position:absolute;z-index:-2;inset:0;
+  display:block;width:100%;height:100%;object-fit:cover;object-position:51% center
+}
+.journey-scene::after{content:"";position:absolute;z-index:-1;inset:0;
+  background:linear-gradient(180deg,#0c302bd6 0%,#123e3466 39%,#0a2e27e8 100%);
+  pointer-events:none
+}
+.journey-scene-kicker{align-self:flex-start;display:inline-block;
+  padding:11px 12px;border:1px solid #f1dfb38c;border-radius:7px;
+  color:#ffe0a7;font-size:.64rem;font-weight:850;letter-spacing:.14em;line-height:1.5
+}
+.journey-scene-copy{margin-top:auto}
+.journey-scene-rule{display:block;width:65px;height:3px;background:#f0c989;margin-bottom:22px}
+.journey-scene-copy strong{display:block;color:#fff9eb;
+  font:400 clamp(3.1rem,5vw,5.25rem)/1.015 Georgia,"Times New Roman",serif;
+  letter-spacing:-.065em;text-wrap:balance;text-shadow:0 3px 14px #0b281e8a
+}
+.journey-scene-copy em{font-weight:400;color:#ffdaa0}
+.journey-scene-sub{display:block;max-width:30ch;margin-top:20px;
+  font-size:.96rem;line-height:1.65;color:#e8efe2
+}
+.journey-scene figcaption{max-width:36ch;color:#e9e9d8;
+  font-size:.69rem;line-height:1.5;letter-spacing:.015em
+}
+.journey-route{display:flex;flex-direction:column;justify-content:center;
+  min-width:0;padding:clamp(32px,4.2vw,56px) clamp(25px,4vw,54px)
+}
+.journey .journey-heading{display:block;margin:0 0 29px}
+.journey .journey-heading .eyebrow{margin-bottom:11px}
+.journey h2{max-width:20ch;font-size:clamp(2.25rem,3.9vw,3.65rem);line-height:1.07;
+  letter-spacing:-.06em;text-wrap:balance
+}
+.journey .journey-intro{max-width:54ch;margin:13px 0 0;
+  font-size:.9rem;line-height:1.62
+}
+.journey .how{display:grid;grid-template-columns:minmax(0,1fr);
+  gap:11px;border:0;margin:0;padding:0;list-style:none
+}
+.journey .how>li{display:grid;grid-template-columns:58px minmax(0,1fr);
+  grid-template-rows:auto auto auto;gap:0 16px;align-items:start;
+  min-height:0;padding:18px 19px 19px;border:1px solid #d1dfd0;
+  border-left:4px solid #557d60;border-radius:13px;
+  background:#fffef9;box-shadow:0 5px 14px #163e3410
+}
+.journey .how>li:nth-child(2){border-left-color:#628e8e}
+.journey .how>li:nth-child(3){border-left-color:#bd9355}
+.journey .how>li:not(:last-child)::after{content:none}
+.journey .how-step-top{grid-column:1;grid-row:1/4;
+  display:block;margin:3px 0 0
+}
+.journey .how-step-icon{width:51px;height:51px;border-radius:13px}
+.journey .how-step-icon svg{width:31px;height:31px}
+.journey .how-step-index{display:none}
+.journey .step-number{grid-column:2;grid-row:1;margin:0;
+  color:#5a775a;font-size:.66rem;line-height:1.35
+}
+.journey .how h3{grid-column:2;grid-row:2;margin:5px 0 6px;
+  font:400 clamp(1.18rem,1.8vw,1.45rem)/1.15 Georgia,serif;
+  letter-spacing:-.025em
+}
+.journey .how p{grid-column:2;grid-row:3;margin:0;
+  color:#506858;font-size:.82rem;line-height:1.56
+}
+.journey-cta{display:inline-flex;align-items:center;justify-content:space-between;
+  align-self:flex-start;gap:23px;min-height:50px;margin-top:20px;
+  padding:11px 17px;border-radius:10px;background:#184b3c;color:#fff;
+  font-size:.81rem;font-weight:850;text-decoration:none;
+  transition:background-color .18s ease
+}
+.journey-cta:hover{background:#286b50;text-decoration:none}
+.journey-cta:focus-visible{outline:3px solid #ae6d16;outline-offset:4px}
+@media(max-width:990px){
+  .journey{grid-template-columns:1fr;min-height:0;margin:49px 0 43px}
+  .journey-scene{min-height:310px;gap:20px;padding:29px 34px}
+  .journey-scene-copy strong{font-size:clamp(2.6rem,5.8vw,4rem)}
+  .journey-scene-copy{margin:0}
+  .journey-scene-sub{max-width:49ch;margin-top:9px}
+  .journey-route{padding:35px 38px 39px}
+}
+@media(max-width:600px){
+  .journey{margin:35px 0 27px;border-radius:18px}
+  .journey-scene{min-height:260px;gap:17px;padding:24px 22px}
+  .journey-scene-kicker{font-size:.57rem;padding:8px 10px}
+  .journey-scene-copy strong{font-size:clamp(2.45rem,9vw,3.5rem)}
+  .journey-scene-rule{margin-bottom:12px}
+  .journey-scene-sub{font-size:.78rem;line-height:1.45}
+  .journey-scene figcaption{font-size:.61rem}
+  .journey-route{padding:28px 19px 29px}
+  .journey h2{font-size:clamp(2.1rem,7.9vw,3rem)}
+  .journey .journey-heading{margin-bottom:21px}
+  .journey .how>li{grid-template-columns:44px minmax(0,1fr);
+    gap:0 11px;padding:16px 13px 17px
+  }
+  .journey .how-step-icon{width:42px;height:42px;border-radius:11px}
+  .journey .how-step-icon svg{width:27px;height:27px}
+  .journey .how h3{font-size:1.18rem}
+  .journey-cta{width:100%;min-height:49px}
+}
+@media(prefers-reduced-motion:reduce){.journey-cta{transition:none}}
+
 </style>
 </head>
 <body>
@@ -1426,12 +1544,21 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <p class="directory-note">This is a growing local directory. Categories marked “Listings welcome” do not have published providers yet. Contact the provider or our hub to confirm availability, pricing, and rental terms.</p>
 </section>
 <section class="journey" aria-labelledby="how-title">
+<figure class="journey-scene journey-scene--nov03">
+  <img src="assets/lake-dardanelle-docks.jpg" alt="Covered docks and calm water at Lake Dardanelle" loading="lazy" decoding="async">
+  <span class="journey-scene-kicker">THE RIVER VALLEY / YOUR RENTAL FIELD GUIDE</span>
+  <div class="journey-scene-copy"><span class="journey-scene-rule" aria-hidden="true"></span><strong>Good things<br>start <em>locally.</em></strong><span class="journey-scene-sub">Browse with confidence. Connect with the people who know the rental.</span></div>
+  <figcaption>Lake Dardanelle scenery · Not a provider listing or availability photo</figcaption>
+</figure>
+<div class="journey-route">
   <div class="journey-heading"><div><p class="eyebrow">HOW IT WORKS</p><h2 id="how-title">Find it. Ask about it.<br><em>Make it happen.</em></h2></div><p class="journey-intro">Your next rental starts with a local connection. Here's how to get from looking to arranging.</p></div>
   <ol class="how">
     <li><div class="how-step-top"><span class="how-step-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="21" cy="21" r="10"/><path d="m29 29 9 9"/><path d="M17 21h8M21 17v8"/></svg></span><span class="how-step-index" aria-hidden="true">01</span></div><span class="step-number">01 / EXPLORE</span><h3>Start with what you need</h3><p>Browse local rental businesses and the categories we’re adding.</p></li>
     <li><div class="how-step-top"><span class="how-step-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 12h28a4 4 0 0 1 4 4v15a4 4 0 0 1-4 4H20l-9 6v-6H8a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4Z"/><path d="M14 21h16M14 27h11"/></svg></span><span class="how-step-index" aria-hidden="true">02</span></div><span class="step-number">02 / CONNECT</span><h3>Talk to a real person</h3><p>Visit a provider’s site or call or text our hub for more information.</p></li>
     <li><div class="how-step-top"><span class="how-step-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="9" y="9" width="30" height="30" rx="5"/><path d="m16 24 6 6 11-13"/></svg></span><span class="how-step-index" aria-hidden="true">03</span></div><span class="step-number">03 / ARRANGE</span><h3>Work out the details</h3><p>Confirm rates, dates, pickup, and any agreement directly with the rental provider.</p></li>
   </ol>
+<a class="journey-cta" href="#browse">Explore the rental directory <span aria-hidden="true">↗</span></a>
+</div>
 </section>
 <section class="hometown hometown--closing" aria-labelledby="hometown-title"><div class="hometown-copy"><p class="eyebrow">This is our kind of place</p><h2 id="hometown-title">A little lake time.<br>A whole lot of hometown.</h2><p>Lake days, Tech green and gold, and the familiar sights on the way home.</p><a class="hometown-return" href="#browse">Back to rental categories <span aria-hidden="true">↗</span></a></div><figure class="landmark downtown"><img src="assets/downtown-russellville-sunset.jpg" alt="Downtown Russellville beneath a vivid orange and pink sunset" width="1200" height="544" loading="lazy"><figcaption>Downtown Russellville<span>Home looks good from here</span></figcaption></figure><figure class="landmark tech"><img src="assets/arkansas-tech-wilson-hall.jpg" alt="The red brick buildings and white cupola of Wilson Hall at Arkansas Tech University" width="1280" height="848" loading="lazy"><figcaption>Arkansas Tech University<span>Wilson Hall · Russellville</span></figcaption></figure><figure class="landmark tower"><img src="water%20tower.jpg" alt="The I love Russellville water tower above the trees" width="900" height="486" loading="lazy"><figcaption>A familiar welcome home<span>The I ♥ Russellville water tower</span></figcaption></figure></section>
 <section id="list" class="owner" aria-labelledby="owner-title"><div><p class="eyebrow">For local businesses & rental owners</p><h2 id="owner-title">Your rental belongs<br>in the neighborhood.</h2><p>Manage homes? Rent out tools, boats, storage, or event equipment? Help neighbors find what you offer.</p><a class="button" href="sms:+14799707301">Text us to request a listing ↗</a></div><div class="owner-details"><strong>Let’s build the local directory.</strong><p>Send your business or rental name, category, service area, website, and the best public contact details. We’ll review the information with you before adding a listing.</p><p>Ask about a basic listing or future featured placement. Any paid placement will be clearly labeled “Sponsored.”</p></div></section>
