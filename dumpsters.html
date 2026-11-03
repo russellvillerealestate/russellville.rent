@@ -279,6 +279,47 @@ main{padding-top:clamp(62px,8vw,104px)}
 @media(max-width:620px){.access-atlas{margin-top:45px;border-radius:18px}.access-atlas__header{display:block;padding:27px 23px}.access-atlas__header>p{margin-top:18px}.access-atlas__header h2{font-size:clamp(2.45rem,10vw,3.5rem)}.access-atlas__scene{padding:25px 19px}.access-atlas__scene:before{inset:8px}.access-atlas__drawing{margin:25px auto;padding:5px}.access-atlas__guide{padding:29px 21px}.access-atlas__prompt summary{min-height:62px}}
 @media(prefers-reduced-motion:reduce){.access-atlas *{scroll-behavior:auto}}
 
+
+/* Rental-dispatch discovery desk / 2026-11-03.
+   StayARV place-led composition; NN/g visual hierarchy; web.dev responsive layouts;
+   W3C WCAG 2.2 focus and pointer target guidance. */
+.provider-explorer{margin:0 0 50px;overflow:hidden;border-radius:27px;background:#103a30;color:#fff;border:1px solid #173c32;box-shadow:0 23px 55px #173d3022}
+.pe-intro{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);align-items:center;gap:30px;padding:clamp(28px,4.5vw,52px);background:linear-gradient(115deg,#0c2d29 12%,#174b3e 77%,#245847)}
+.pe-eyebrow{margin:0 0 15px;color:#f1d89f;font-size:.68rem;font-weight:850;letter-spacing:.17em;text-transform:uppercase}
+.pe-intro h2{font:400 clamp(2.35rem,4.8vw,4.35rem)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.055em;margin:0 0 18px;text-wrap:balance}
+.pe-intro h2 em{color:#f2d49b;font-weight:400}
+.pe-intro p:not(.pe-eyebrow){max-width:51ch;margin:0;color:#e2ede3;font-size:.94rem;line-height:1.65}
+.pe-art{min-width:0;position:relative;display:grid;place-items:center;min-height:245px;border:1px solid #d4e7ce55;border-radius:21px;background:radial-gradient(circle at 55% 28%,#64998050,transparent 58%),linear-gradient(155deg,#235c4f,#123e35);box-shadow:inset 0 0 0 8px #ffffff07}
+.pe-art svg{display:block;width:min(100%,390px);height:auto;padding:12px;filter:drop-shadow(0 15px 12px #031d1a55)}
+.pe-art span{position:absolute;left:18px;bottom:13px;color:#f4e3bf;font-size:.61rem;font-weight:750;text-transform:uppercase;letter-spacing:.1em}
+.pe-controls{padding:25px clamp(22px,4.5vw,48px) 30px;background:#123b32}
+.pe-controls[hidden],.pe-fallback[hidden],.provider[hidden],#local-providers[hidden],#regional-providers[hidden],.pe-no-results[hidden],.pe-clear[hidden]{display:none!important}
+.pe-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pe-choice{display:flex;align-items:center;gap:14px;text-align:left;cursor:pointer;min-height:105px;width:100%;padding:18px 19px;border:1px solid #8ba99b88;border-radius:14px;background:#ffffff0a;color:#f5f8f0;transition:background-color .18s,border-color .18s}
+.pe-choice:hover{background:#ffffff1b;border-color:#e5d7b0}
+.pe-choice[aria-pressed="true"]{background:#f3d69c;color:#18382c;border-color:#f3d69c;box-shadow:0 8px 22px #041b181e}
+.pe-choice>strong{font:400 clamp(2.1rem,4vw,3.15rem)/1 Georgia,serif;letter-spacing:-.06em}
+.pe-choice>span{display:block;min-width:0}
+.pe-choice>span b{display:block;font-size:.81rem;line-height:1.32}
+.pe-choice>span small{display:block;margin-top:5px;font-size:.69rem;line-height:1.35;opacity:.87}
+.pe-search-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:11px;align-items:end;margin-top:24px}
+.pe-search-field{display:block;min-width:0;color:#f5e4bd;font-size:.75rem;font-weight:800}
+.pe-search-field input{display:block;width:100%;min-width:0;min-height:51px;margin-top:8px;padding:11px 16px;border:1px solid #c7dac9;border-radius:11px;background:#fffdf7;color:#193d31;font:400 .94rem/1.4 system-ui,sans-serif}
+.pe-clear{min-height:51px;padding:11px 18px;border-radius:11px;border:1px solid #dfd5b6;background:transparent;color:#fff;font-size:.83rem;font-weight:750;cursor:pointer}
+.pe-clear:hover{background:#ffffff1a}
+.pe-choice:focus-visible,.pe-search-field input:focus-visible,.pe-clear:focus-visible,.pe-fallback a:focus-visible{outline:3px solid #ffde90;outline-offset:3px}
+.pe-status{margin:12px 0 0;color:#e5eddf;font-size:.81rem;min-height:1.5em}
+.pe-disclaimer{border-top:1px solid #d1dfc747;padding:16px clamp(22px,4.5vw,48px);font-size:.74rem;line-height:1.65;color:#d9e9dc;background:#0e312a}
+.pe-fallback{padding:20px 34px;display:flex;flex-wrap:wrap;gap:12px}
+.pe-fallback a{display:inline-flex;align-items:center;min-height:44px;padding:9px 15px;border:1px solid #e4cd98;border-radius:9px;color:#f7e7bc;text-decoration:none;font-size:.85rem;font-weight:750}
+.pe-fallback a:hover{text-decoration:underline}
+.pe-no-results{border:1px dashed #9ab59f;background:#fff;border-radius:17px;padding:35px;margin-bottom:34px;color:#294a3d}
+.pe-no-results h3{margin:0 0 8px;font:400 1.8rem/1.15 Georgia,serif}.pe-no-results p{margin:0;color:#52685a}
+#local-providers,#regional-providers{scroll-margin-top:20px}
+@media(max-width:800px){.pe-intro{grid-template-columns:1fr}.pe-art{min-height:180px}.pe-art svg{max-width:340px}.pe-choices{grid-template-columns:1fr}.pe-choice{min-height:75px}.pe-choice>strong{min-width:2ch}}
+@media(max-width:580px){.provider-explorer{border-radius:19px;margin-bottom:36px}.pe-intro{padding:30px 22px 24px;gap:22px}.pe-intro h2{font-size:clamp(2.4rem,10vw,3.4rem)}.pe-art{min-height:160px}.pe-art span{font-size:.54rem}.pe-controls{padding:22px 18px}.pe-choices{gap:9px}.pe-choice{padding:13px 15px}.pe-search-row{grid-template-columns:1fr}.pe-clear{width:100%}.pe-fallback{padding:18px}}
+@media(prefers-reduced-motion:reduce){.pe-choice{transition:none}}
+
 </style>
 </head>
 <body>
@@ -372,7 +413,43 @@ main{padding-top:clamp(62px,8vw,104px)}
 </section>
 
 <main class="container" id="main">
- <section aria-labelledby="local-title">
+
+<section class="provider-explorer" id="provider-explorer" aria-labelledby="provider-explorer-title">
+ <div class="pe-intro">
+  <div><p class="pe-eyebrow">The River Valley rental dispatch / 13 listed options</p>
+   <h2 id="provider-explorer-title">A clearer path <em>to the right provider.</em></h2>
+   <p>Start with operators advertising Russellville-area service, or widen the search to regional leads. Search names, towns and container sizes without losing any published details.</p>
+  </div>
+  <div class="pe-art" aria-hidden="true">
+   <svg viewBox="0 0 420 230" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <path d="M19 194H405M38 211H393" stroke="#aec7a7" stroke-width="2" stroke-dasharray="7 8" opacity=".7"/>
+    <path d="M40 152 137 132 161 148 151 184 53 198 40 152Z" fill="#cc9653" stroke="#f6dba0" stroke-width="2"/>
+    <path d="M53 166 161 148 151 184 53 198V166Z" fill="#a66d38"/><path d="M75 162V195M106 156V189M136 151V186" stroke="#edc081" stroke-width="5"/>
+    <path d="M120 102 247 75 271 98 263 170 137 191 120 102Z" fill="#e5b867" stroke="#f4d89f" stroke-width="2"/>
+    <path d="M137 123 271 98 263 170 137 191V123Z" fill="#c7893f"/><path d="M160 120V187M190 115V182M220 110V176M250 105V171" stroke="#f1c982" stroke-width="6"/>
+    <path d="M221 48 353 26 379 49 370 143 238 169 221 48Z" fill="#f0ca84" stroke="#fff0c3" stroke-width="2"/>
+    <path d="M238 70 379 49 370 143 238 169V70Z" fill="#bb7835"/><path d="M263 65V163M294 60V156M325 57V150M354 52V146" stroke="#f3bf75" stroke-width="7"/>
+    <path d="m41 149 96-20 24 17M121 99l126-27 23 23M222 45l132-21 23 22" stroke="#fff0c1" stroke-width="5"/>
+   </svg><span>Conceptual containers · Not provider inventory or scale</span>
+  </div>
+ </div>
+ <div id="provider-explorer-controls" class="pe-controls" hidden>
+  <div class="pe-choices" role="group" aria-label="Filter providers by Russellville service information">
+   <button class="pe-choice" type="button" data-provider-scope="all" aria-pressed="true"><strong>13</strong><span><b>All providers</b><small>Entire directory, no exclusions</small></span></button>
+   <button class="pe-choice" type="button" data-provider-scope="local" aria-pressed="false"><strong>10</strong><span><b>Russellville service listed</b><small>Address-specific delivery still requires confirmation</small></span></button>
+   <button class="pe-choice" type="button" data-provider-scope="regional" aria-pressed="false"><strong>03</strong><span><b>Regional leads to verify</b><small>Russellville delivery not confirmed</small></span></button>
+  </div>
+  <div class="pe-search-row">
+   <label class="pe-search-field" for="provider-search">Search provider, town or size<input id="provider-search" type="search" placeholder="Try 6-yard, Clarksville, or construction" maxlength="90" autocomplete="off"></label>
+   <button class="pe-clear" id="provider-search-clear" type="button" hidden>Clear search</button>
+  </div>
+  <p class="pe-status" id="provider-search-status" role="status" aria-live="polite">Showing all 13 listed providers.</p>
+ </div>
+ <div class="pe-fallback" id="provider-explorer-fallback"><a href="#local-providers">Browse Russellville service listings ↗</a><a href="#regional-providers">See regional leads ↗</a><a href="#published-rates">Compare published rates ↗</a></div>
+ <p class="pe-disclaimer">“Service listed” means the operator advertises coverage, not that a container is available or delivery to your address is approved. The three regional options have unconfirmed Russellville delivery. Check debris restrictions, weight, dates, pickup and complete charges directly.</p>
+</section>
+<div class="pe-no-results" id="provider-empty" hidden><h3>No matching listed providers.</h3><p>Try another name, town, size or service-area option. No listings have been deleted.</p></div>
+ <section id="local-providers" aria-labelledby="local-title">
   <div class="section-title"><div><p class="section-label">01 / Nearby options</p><h2 id="local-title">Start close to home.</h2><p>Ten providers explicitly advertising Russellville-area dumpster or waste-container services. Confirm the right container and delivery arrangements for your project.</p></div></div>
   <div class="provider-grid">
    <article class="provider" id="danny-provider"><div class="provider-top"><span class="provider-number" aria-hidden="true">01</span><span class="provider-tag">Russellville delivery advertised</span></div><h2>Danny&#39;s Roll Offs</h2><p>Official rental catalog advertises 13-yard dumpsters starting at <strong>$325</strong>, 15-yard at <strong>$350</strong>, 20-yard short and tall options at <strong>$425</strong>, and 30-yard at <strong>$525</strong>, each with up to five rental days included. Its official service-area list explicitly includes Russellville, Dardanelle, Pottsville, Dover, Atkins and nearby communities. These are <strong>advertised starting rates, not guaranteed delivered totals</strong>; confirm availability, weight limits, acceptable materials, taxes, delivery fees and current terms with the operator.</p><p class="detail">Russellville-area delivery explicitly advertised · Local storefront address not verified</p><p><a href="tel:+14798867323">479-886-7323</a> &nbsp; · &nbsp; <a href="https://www.dannysrolloffs.com/" target="_blank" rel="noopener noreferrer">Official rental sizes, starting rates and service area ↗</a></p></article>
@@ -387,7 +464,7 @@ main{padding-top:clamp(62px,8vw,104px)}
    <article class="provider" id="conway-dumpster-group-provider"><div class="provider-top"><span class="provider-number" aria-hidden="true">10</span><span class="provider-tag">Conway · Russellville delivery advertised</span></div><h2>Conway Dumpster Rental Group — Russellville Service</h2><p>The Conway-based operator explicitly advertises roll-off dumpster delivery to Russellville on its own location page. It lists <strong>10-, 15-, 20- and 30-yard containers</strong> for home cleanouts, roofing, renovations and construction. <strong>Russellville storefront not verified; individual job availability, on-time delivery and final pricing are not independently confirmed.</strong> Request a written quote covering delivery, pickup, included weight, accepted materials and scheduling before booking.</p><p class="detail">Conway, AR · Russellville delivery specifically advertised by operator</p><p><a href="tel:+15015857772">501-585-7772</a> &nbsp; · &nbsp; <a href="https://conwaydumpsterrentalgroup.com/locations/russellville.html" target="_blank" rel="noopener noreferrer">Official Russellville dumpster sizes and service page ↗</a> · <a href="https://conwaydumpsterrentalgroup.com/contact.html" target="_blank" rel="noopener noreferrer">Official contact details ↗</a></p></article>
   </div>
  </section>
- <section class="regional-section" aria-labelledby="regional-title">
+ <section class="regional-section" id="regional-providers" aria-labelledby="regional-title">
   <div class="section-title"><div><p class="section-label">02 / Wider search</p><h2 id="regional-title">Additional regional leads.</h2><p>These operators advertise service in Arkansas or the River Valley, but Russellville delivery has not been confirmed.</p></div></div>
   <div class="regional-layout">
    <article class="provider regional"><div class="provider-top"><span class="provider-number" aria-hidden="true">11</span><span class="provider-tag">Regional · delivery unconfirmed</span></div><h2>Metro Services — Central Arkansas (Regional)</h2><p>Officially advertises 10-, 20-, 30- and 40-yard roll-off dumpster rentals for construction, cleanouts and events, with service marketed throughout Arkansas. This is a regional operator, not a Russellville branch; <strong>delivery to Russellville is UNCONFIRMED</strong> and must be verified directly, along with container availability, fees and scheduling. Same provider is also listed under portable restrooms.</p><p class="detail">Central Arkansas hub: 6216 Young Rd, Little Rock, AR 72209 · Russellville delivery UNCONFIRMED</p><p><a href="tel:+15013710098">501-371-0098</a> &nbsp; · &nbsp; <a href="https://metroservicesusa.com/" target="_blank" rel="noopener noreferrer">Official dumpster rentals and service area ↗</a></p></article>
@@ -568,6 +645,43 @@ function formatDumpsterBrief(fields){
    select.focus({preventScroll:true});
   });
  });
+})();
+
+/* Progressive enhancement; without scripts all provider cards stay visible. */
+(function(){
+ const panel=document.getElementById('provider-explorer-controls');
+ const local=document.getElementById('local-providers');
+ const regional=document.getElementById('regional-providers');
+ if(!panel||!local||!regional)return;
+ const entries=[
+  ...Array.from(local.querySelectorAll('article.provider')).map(node=>({node,scope:'local',text:node.textContent.toLocaleLowerCase()})),
+  ...Array.from(regional.querySelectorAll('article.provider')).map(node=>({node,scope:'regional',text:node.textContent.toLocaleLowerCase()}))
+ ];
+ const buttons=Array.from(panel.querySelectorAll('[data-provider-scope]'));
+ const input=document.getElementById('provider-search');
+ const clear=document.getElementById('provider-search-clear');
+ const status=document.getElementById('provider-search-status');
+ const empty=document.getElementById('provider-empty');
+ let scope='all';
+ function update(){
+  const terms=input.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+  let matches=0,localMatches=0,regionalMatches=0;
+  entries.forEach(entry=>{
+   const visible=(scope==='all'||entry.scope===scope)&&terms.every(term=>entry.text.includes(term));
+   entry.node.hidden=!visible;
+   if(visible){matches++;if(entry.scope==='local')localMatches++;else regionalMatches++;}
+  });
+  local.hidden=localMatches===0;regional.hidden=regionalMatches===0;
+  empty.hidden=matches!==0;clear.hidden=input.value.length===0;
+  status.textContent=matches===0?'No listed providers match these filters.':('Showing '+matches+' of '+entries.length+' listed providers'+(scope==='all'?'':scope==='local'?' with Russellville-area service advertised':' with Russellville delivery unconfirmed')+'.');
+  buttons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.providerScope===scope)));
+ }
+ buttons.forEach(button=>button.addEventListener('click',()=>{scope=button.dataset.providerScope;update();}));
+ input.addEventListener('input',update);
+ input.addEventListener('keydown',event=>{if(event.key==='Escape'&&input.value){input.value='';update();}});
+ clear.addEventListener('click',()=>{input.value='';update();input.focus();});
+ document.getElementById('provider-explorer-fallback').hidden=true;
+ panel.hidden=false;update();
 })();
 </script>
 </body>
