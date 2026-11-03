@@ -214,6 +214,41 @@ url("assets/downtown-russellville-sunset.jpg") center 55%/cover no-repeat;
 @media(max-width:730px){.hero:after{background:linear-gradient(90deg,#0c3029ef,#0f3a32bd),linear-gradient(0deg,#0b3029bd,transparent 55%)}.quick-title{grid-template-columns:1fr;grid-template-rows:auto auto auto;gap:14px;padding:27px 24px;min-height:0}.quick-title>div:first-child{grid-column:1;grid-row:1}.quick-title>p{grid-column:1;grid-row:2}.quick-scene{grid-column:1;grid-row:3;min-height:225px}.quick-scene svg{min-height:225px}.quick-title>div:first-child strong{max-width:none}}
 @media(max-width:490px){.hero-inner{min-height:0}.quick-title{padding:22px 18px}.quick-title>div:first-child strong{font-size:2.45rem}.quick-scene,.quick-scene svg{min-height:182px}.quick-scene-note{font-size:.58rem;bottom:9px;left:9px}.quick-cluster--local .quick-cluster-head,.quick-cluster--nearby .quick-cluster-head{padding-left:12px}}
 @media(prefers-reduced-motion:reduce){.quick .quick-links a:after{transition:none}}
+
+/* November 3, 2026: Moving pickup studio. StayARV-inspired forest-and-gold
+   editorial scale; NN/g recognition, web.dev responsive layout and WCAG 2.2
+   focus/target visibility. Existing listings and other interactions unchanged. */
+.move-chooser[hidden],.provider[hidden],#local[hidden],#nearby[hidden],#move-chooser-empty[hidden]{display:none!important}
+.move-chooser{position:relative;isolation:isolate;overflow:hidden;margin:64px 0 0;border-radius:25px;background:linear-gradient(135deg,#123a30,#092b26);color:#fff;box-shadow:0 20px 48px #173f3329}
+.move-chooser:before{content:"";position:absolute;z-index:-1;width:520px;height:520px;border:1px solid #f1d49847;border-radius:50%;top:-290px;right:-230px;box-shadow:0 0 0 55px #e2c18712,0 0 0 115px #e2c18709;pointer-events:none}
+.move-chooser-heading{padding:clamp(27px,4vw,50px) clamp(23px,5vw,57px) 0;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(190px,.7fr);gap:24px;align-items:end}
+.move-chooser-kicker{font-size:.7rem;letter-spacing:.17em;font-weight:850;text-transform:uppercase;color:#f2d098;display:block;margin-bottom:12px}
+.move-chooser h2{font:400 clamp(2.65rem,5vw,4.85rem)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.06em;margin:0;text-wrap:balance}
+.move-chooser h2 em{color:#f2d098;font-weight:400}
+.move-chooser-heading p{margin:0 0 4px;max-width:40ch;color:#e0efe3;font-size:.87rem;line-height:1.65}
+.move-kind-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding:33px clamp(23px,5vw,57px) 42px}
+.move-kind{min-width:0;min-height:205px;display:grid;grid-template-columns:minmax(0,1fr) minmax(100px,.48fr);gap:12px;align-items:center;border:1px solid #fae8c17a;border-radius:17px;background:#f8f4e8;color:#184735;padding:23px;text-align:left;cursor:pointer;font:inherit;transition:transform .2s,box-shadow .2s}
+.move-kind:hover{transform:translateY(-3px);box-shadow:0 15px 31px #051c177a}
+.move-kind[aria-pressed="true"]{background:#f2d49e;box-shadow:inset 0 0 0 3px #163c31;border-color:#f2d49e}
+.move-kind-index{display:block;color:#775936;font-size:.67rem;letter-spacing:.14em;font-weight:900}
+.move-kind strong{display:block;margin:11px 0 9px;font:400 clamp(1.75rem,2.75vw,2.6rem)/1.08 Georgia,"Times New Roman",serif;letter-spacing:-.053em}
+.move-kind small{display:block;color:#496354;font-size:.8rem;line-height:1.5}
+.move-kind-next{display:block;margin-top:15px;font-size:.74rem;color:#1e6247;font-weight:850}
+.move-kind svg{width:100%;height:auto;max-height:155px;fill:none;stroke:#225b49;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+.move-kind:focus-visible,.move-area-btn:focus-visible,#move-chooser-query:focus-visible,#move-chooser-reset:focus-visible{outline:3px solid #e7a64a;outline-offset:4px}
+.move-chooser-controls{display:grid;grid-template-columns:1.2fr 1fr;gap:17px 26px;align-items:end;padding:30px clamp(23px,5vw,57px) 27px;background:#fff;color:#194133}
+.move-chooser-controls label,.move-chooser-controls legend{display:block;color:#2b5c44;font-size:.77rem;font-weight:850;margin-bottom:9px}
+#move-chooser-query{width:100%;min-height:51px;background:#fafbf8;color:#183e32;padding:11px 15px;border:1px solid #a9c6b4;border-radius:10px;font:inherit}
+.move-area{padding:0;border:0;margin:0;min-width:0}.move-area-options{display:flex;gap:7px;flex-wrap:wrap}
+.move-area-btn,#move-chooser-reset{min-height:46px;border:1px solid #bfd4c5;border-radius:10px;background:#eff5ed;padding:10px 13px;color:#24513e;cursor:pointer;font:800 .8rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif}
+.move-area-btn[aria-pressed="true"]{background:#1a4d3e;border-color:#1a4d3e;color:#fff}
+.move-chooser-footer{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:16px;border-top:1px solid #e2eae2}
+.move-chooser-footer p{color:#466454;font-size:.83rem;margin:0}#move-chooser-reset{background:#fff}
+.move-chooser-empty{margin:24px 0;padding:22px 26px;background:#fff1d6;border:1px solid #d6bb87;border-radius:14px}.move-chooser-empty p{margin:4px 0 0}
+@media(max-width:850px){.move-chooser-heading,.move-chooser-controls{grid-template-columns:1fr}.move-chooser-footer{grid-column:auto}.move-chooser-heading p{max-width:60ch}.move-kind{grid-template-columns:1fr}.move-kind svg{max-height:92px;max-width:175px;justify-self:end}}
+@media(max-width:570px){.move-chooser{margin-top:42px;border-radius:19px}.move-chooser-heading{padding:29px 22px 0;gap:11px}.move-chooser h2{font-size:clamp(2.55rem,10.8vw,3.7rem)}.move-kind-grid{grid-template-columns:1fr;gap:12px;padding:22px}.move-kind{grid-template-columns:minmax(0,1fr) minmax(90px,.4fr);min-height:158px;padding:21px}.move-kind svg{max-height:120px}.move-chooser-controls{padding:24px 22px}.move-area-options{display:grid;grid-template-columns:1fr 1fr}.move-area-btn:first-child{grid-column:1/-1}.move-chooser-footer{flex-direction:column;align-items:stretch}#move-chooser-reset{width:100%}}
+@media(prefers-reduced-motion:reduce){.move-kind{transition:none}.move-kind:hover{transform:none}}
+@media print{.move-chooser{display:none!important}#local[hidden],#nearby[hidden]{display:block!important}.provider[hidden]{display:grid!important}}
 </style><style>
 /* River Valley moving quote ledger — blank, user-supplied estimates only.
    StayARV reference: immersive evergreen/amber hierarchy and generous editorial spacing.
@@ -351,6 +386,20 @@ url("assets/downtown-russellville-sunset.jpg") center 55%/cover no-repeat;
 <a href="#pickup-uhaul-morrilton"><span class="quick-index" aria-hidden="true">06</span><span class="quick-info"><span class="quick-area">Morrilton · E Vine St</span><strong>McKeys Lawn &amp; Car Care — U-Haul</strong><small>Trucks · trailers · moving supplies</small></span><span class="quick-arrow" aria-hidden="true">↗</span></a>
 <a href="#pickup-uhaul-pelsor"><span class="quick-index" aria-hidden="true">07</span><span class="quick-info"><span class="quick-area">Sand Gap (Pelsor) · AR 7</span><strong>Red Oak Station — U-Haul</strong><small>Trucks · trailers · towing equipment</small></span><span class="quick-arrow" aria-hidden="true">↗</span></a></div>
 </div></nav>
+
+<section class="move-chooser" id="move-chooser" aria-labelledby="move-chooser-title" hidden>
+ <div class="move-chooser-heading"><div><span class="move-chooser-kicker">River Valley pickup guide / Seven directory options</span><h2 id="move-chooser-title">Choose the load.<br><em>Find the right ride.</em></h2></div><p>Choose trucks or trailers, then narrow by pickup area. All original provider descriptions, phone numbers, locations and confirmation notes stay available in the complete listings below.</p></div>
+ <div class="move-kind-grid" role="group" aria-label="Equipment type">
+ <button class="move-kind" type="button" data-move-kind="truck" aria-pressed="false" aria-controls="local nearby"><span><span class="move-kind-index">01 / THE MOVE</span><strong>Moving trucks.</strong><small>Find locations advertising moving trucks. Confirm sizes, dates and pickup terms.</small><span class="move-kind-next">Explore truck pickups ↗</span></span><svg viewBox="0 0 200 140" aria-hidden="true" focusable="false"><path d="M18 42h113v75H18zM131 68h30l22 25v24h-52zM35 58h71M35 73h71M35 88h71M149 80h13M30 118h150"/><circle cx="54" cy="118" r="14"/><circle cx="151" cy="118" r="14"/><path d="M17 30h112m-111-7h44M73 22h44"/></svg></button>
+ <button class="move-kind" type="button" data-move-kind="trailer" aria-pressed="false" aria-controls="local nearby"><span><span class="move-kind-index">02 / THE HAUL</span><strong>Towable trailers.</strong><small>Explore providers advertising trailers. Check hitch requirements and towing limits.</small><span class="move-kind-next">Explore trailer pickups ↗</span></span><svg viewBox="0 0 200 140" aria-hidden="true" focusable="false"><path d="M25 57h127v51H25zM20 57l11-17h109l12 17M37 72h102M37 84h102M152 107h21l15 12M15 109h164"/><circle cx="60" cy="112" r="15"/><circle cx="123" cy="112" r="15"/><path d="M40 40v68m97-68v68M19 32h131"/></svg></button>
+ </div>
+ <div class="move-chooser-controls">
+ <div><label for="move-chooser-query">Search provider or pickup town</label><input id="move-chooser-query" type="search" placeholder="Try U-Haul, Penske, Dardanelle…" autocomplete="off" aria-controls="local nearby"></div>
+ <fieldset class="move-area"><legend>Choose a pickup area</legend><div class="move-area-options"><button class="move-area-btn" type="button" data-move-area="all" aria-controls="local nearby" aria-pressed="true">All areas</button><button class="move-area-btn" type="button" data-move-area="local" aria-controls="local nearby" aria-pressed="false">Russellville</button><button class="move-area-btn" type="button" data-move-area="regional" aria-controls="local nearby" aria-pressed="false">Nearby towns</button></div></fieldset>
+ <div class="move-chooser-footer"><p id="move-chooser-count" role="status" aria-live="polite">Showing 7 of 7 pickup locations.</p><button id="move-chooser-reset" type="button">Show all options ↗</button></div>
+ </div>
+</section>
+<div id="move-chooser-empty" class="move-chooser-empty" hidden><strong>No pickup listings match these choices.</strong><p>Try another town or equipment type. Matches do not indicate live vehicle availability.</p></div>
 <section id="local" aria-labelledby="local-title"><div class="section-head"><div><h2 id="local-title">Start close to home.</h2><p>Three Russellville operators to contact about moving trucks or trailers. White Trailer Rental offers towable trailers; moving trucks are not advertised by that company. Confirm inventory and pickup details directly.</p></div><span class="section-label">01 / Russellville</span></div><div class="provider-list"><article class="provider" id="pickup-uhaul-russellville" tabindex="-1"><div class="number" aria-hidden="true">01</div><div class="provider-body"><span class="tag">Russellville pickup</span><h3>U-Haul Moving &amp; Storage of Russellville</h3><p>Moving trucks, trailers and portable moving containers.</p><p class="detail">2821 E Main St, Russellville, AR 72802</p><p><a href="tel:+14794980933">479-498-0933</a> &nbsp; · &nbsp; <a href="https://www.uhaul.com/Locations/Truck-Rentals-near-Russellville-AR-72802/742075/" target="_blank" rel="noopener noreferrer">Provider website ↗</a></p></div></article><article class="provider" id="pickup-penske-russellville" tabindex="-1"><div class="number" aria-hidden="true">02</div><div class="provider-body"><span class="tag">Russellville pickup</span><h3>Penske Truck Rental — Space World Agent</h3><p>Penske officially lists a Russellville moving-truck rental agent at this location. The operator offers moving-truck reservations; confirm the truck sizes actually available locally, rental dates, rates, one-way eligibility and pickup arrangements directly with Penske. This is a Penske rental-agent location, not an assertion that every nationally advertised truck model is stocked here.</p><p class="detail">303 E Harrell Dr, Russellville, AR 72801</p><p><a href="tel:+14798800049">479-880-0049</a> &nbsp; · &nbsp; <a href="https://www.pensketruckrental.com/locations/us/arkansas/russellville/783020/" target="_blank" rel="noopener noreferrer">Official Penske Russellville location ↗</a></p></div></article><article class="provider" id="pickup-white-trailer" tabindex="-1"><div class="number" aria-hidden="true">03</div><div class="provider-body"><span class="tag">Russellville · trailer rentals only</span><h3>White Trailer Rental</h3><p>Russellville-based operator advertising bookable enclosed trailers, utility trailers, car haulers (including winch-equipped options), a dump trailer, gooseneck and other equipment-hauling trailers. It offers online reservations and daily or longer rentals. <strong>Moving trucks are not advertised.</strong> Confirm trailer size, towing capacity, hitch requirements, proof of insurance, rates and availability before booking. The operator now consistently lists 3845 E Main St on its official homepage and contact page; confirm the exact trailer pickup point and instructions before traveling.</p><p class="detail">3845 E Main St, Russellville, AR 72802 · Published contact address; pickup point UNCONFIRMED</p><p><a href="tel:+14795526080">479-552-6080</a> &nbsp; · &nbsp; <a href="https://whitetrailerrental.com/" target="_blank" rel="noopener noreferrer">Official trailer rentals ↗</a> &nbsp; · &nbsp; <a href="trailers.html#provider-hauling">Detailed trailer directory listing ↗</a></p></div></article></div></section>
 <section id="nearby" class="nearby" aria-labelledby="nearby-title"><div class="section-head"><div><h2 id="nearby-title">Regional pickup alternatives.</h2><p>Official moving-truck pickup options in Dardanelle, Clarksville, Morrilton and Sand Gap (Pelsor). These are not Russellville branches; Sand Gap is a farther Pope County option. Confirm drive time, inventory and reservation terms with each dealer.</p></div><span class="section-label">02 / Regional pickups</span></div><div class="provider-list"><article class="provider" id="pickup-uhaul-dardanelle" tabindex="-1"><div class="number" aria-hidden="true">04</div><div class="provider-body"><span class="tag">Dardanelle pickup</span><h3>U-Haul Neighborhood Dealer — Old Bank Gun &amp; Pawn (Dardanelle)</h3><p>Official U-Haul location offering moving-truck rentals and trailers/towing equipment. This is a Dardanelle pickup location, not a separate Russellville branch. Confirm specific truck sizes, reservation dates, pickup arrangements and pricing directly with U-Haul.</p><p class="detail">310 Union St, Dardanelle, AR 72834 · Mon–Fri 8:30 AM–5 PM; Sat 8:30 AM–noon; Sun closed (listed office hours)</p><p><a href="tel:+14792293223">479-229-3223</a> &nbsp; · &nbsp; <a href="https://www.uhaul.com/Locations/Truck-Rentals-near-Dardanelle-AR-72834/047231/" target="_blank" rel="noopener noreferrer">Official Dardanelle U-Haul dealer ↗</a></p></div></article><article class="provider" id="pickup-uhaul-clarksville" tabindex="-1"><div class="number" aria-hidden="true">05</div><div class="provider-body"><span class="tag">Clarksville pickup</span><h3>U-Haul Neighborhood Dealer — Killane and Sons</h3><p>U-Haul officially lists moving-truck rentals, trailers and towing equipment, and moving supplies at this Clarksville dealer. Listed office hours are Monday–Saturday, 8 a.m.–5 p.m.; closed Sunday. <strong>This is a Clarksville pickup location, not a Russellville branch.</strong> Confirm vehicle and trailer types, dates, pickup and return options, and final pricing with U-Haul.</p><p class="detail">601 E Main St, Clarksville, AR 72830</p><p><a href="tel:+14797545289">479-754-5289</a> &nbsp; · &nbsp; <a href="https://www.uhaul.com/Locations/Truck-Rentals-near-Clarksville-AR-72830/026038/" target="_blank" rel="noopener noreferrer">Official Clarksville U-Haul dealer ↗</a></p></div></article><article class="provider" id="pickup-uhaul-morrilton" tabindex="-1"><div class="number" aria-hidden="true">06</div><div class="provider-body"><span class="tag">Morrilton pickup</span><h3>U-Haul Neighborhood Dealer — McKeys Lawn &amp; Car Care</h3><p>U-Haul officially lists moving-truck rentals, trailers and towing equipment, and moving supplies at this Morrilton dealer. Listed office hours are Monday–Friday, 8 a.m.–5 p.m. and Saturday, 8 a.m.–noon; closed Sunday. <strong>This is a Morrilton pickup location, not a Russellville branch.</strong> Confirm rental availability, truck sizes, reservation dates and final charges directly.</p><p class="detail">209 E Vine St, Morrilton, AR 72110</p><p><a href="tel:+15013548252">501-354-8252</a> &nbsp; · &nbsp; <a href="https://www.uhaul.com/Locations/Truck-Rentals-near-Morrilton-AR-72110/044273/" target="_blank" rel="noopener noreferrer">Official Morrilton U-Haul dealer ↗</a></p></div><article class="provider" id="pickup-uhaul-pelsor" tabindex="-1"><div class="number" aria-hidden="true">07</div><div class="provider-body"><span class="tag">Sand Gap / Pelsor pickup · farther Pope County option</span><h3>U-Haul Neighborhood Dealer — Red Oak Station</h3><p>U-Haul announced this Sand Gap dealer on August 6, 2026. Its official location page lists moving-truck rentals, trailers and towing equipment, and moving supplies. <strong>This is a Pelsor pickup location, not a Russellville branch or a delivery service.</strong> Confirm truck or trailer availability, travel distance, rental dates and total charges before visiting.</p><p class="detail">38539 AR 7, Pelsor, AR 72856 · Mon closed; Tue–Thu 8 AM–6 PM; Fri–Sat 8 AM–8 PM; Sun 8 AM–6 PM (official posted office hours)</p><p><a href="tel:+14794705004">479-470-5004</a> &nbsp; · &nbsp; <a href="https://www.uhaul.com/Locations/Truck-Rentals-near-Pelsor-AR-72856/007549/" target="_blank" rel="noopener noreferrer">Official Pelsor U-Haul dealer ↗</a></p></div></article></article></div></section>
 
@@ -498,4 +547,60 @@ url("assets/downtown-russellville-sunset.jpg") center 55%/cover no-repeat;
   print.addEventListener('click', () => window.print());
   update();
 })();
-</script></body></html>
+</script>
+
+<script>
+/* Filter is progressive enhancement; original cards remain without JavaScript. */
+(() => {
+ const chooser=document.getElementById('move-chooser');
+ const data=[
+ ['pickup-uhaul-russellville','local','truck trailer'],
+ ['pickup-penske-russellville','local','truck'],
+ ['pickup-white-trailer','local','trailer'],
+ ['pickup-uhaul-dardanelle','regional','truck trailer'],
+ ['pickup-uhaul-clarksville','regional','truck trailer'],
+ ['pickup-uhaul-morrilton','regional','truck trailer'],
+ ['pickup-uhaul-pelsor','regional','truck trailer']
+ ];
+ const entries=data.map(([id,place,kinds])=>({card:document.getElementById(id),place,kinds:kinds.split(' ')}));
+ if(!chooser || entries.some(entry=>!entry.card))return;
+ const query=document.getElementById('move-chooser-query');
+ const count=document.getElementById('move-chooser-count');
+ const empty=document.getElementById('move-chooser-empty');
+ const sections={local:document.getElementById('local'),regional:document.getElementById('nearby')};
+ const typeButtons=[...chooser.querySelectorAll('[data-move-kind]')];
+ const placeButtons=[...chooser.querySelectorAll('[data-move-area]')];
+ let kind='all',place='all';
+ function update(){
+  const needle=query.value.trim().toLocaleLowerCase();
+  const counts={local:0,regional:0};
+  let shown=0;
+  entries.forEach(({card,place:location,kinds})=>{
+   const match=(kind==='all'||kinds.includes(kind))&&(place==='all'||location===place)&&(!needle||card.textContent.toLocaleLowerCase().includes(needle));
+   card.hidden=!match;
+   if(match){counts[location]++;shown++;}
+  });
+  Object.entries(sections).forEach(([area,section])=>{section.hidden=counts[area]===0;});
+  typeButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.moveKind===kind)));
+  placeButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.moveArea===place)));
+  count.textContent='Showing '+shown+' of '+entries.length+' published pickup listings.';
+  empty.hidden=shown!==0;
+ }
+ function reset(){kind='all';place='all';query.value='';update();}
+ typeButtons.forEach(button=>button.addEventListener('click',()=>{kind=kind===button.dataset.moveKind?'all':button.dataset.moveKind;update();}));
+ placeButtons.forEach(button=>button.addEventListener('click',()=>{place=button.dataset.moveArea;update();}));
+ query.addEventListener('input',update);
+ document.getElementById('move-chooser-reset').addEventListener('click',()=>{reset();query.focus();});
+ document.querySelectorAll('a[href^="#pickup-"],a[href="#local"],a[href="#nearby"]').forEach(link=>link.addEventListener('click',()=>{
+  const item=document.getElementById(link.getAttribute('href').slice(1));
+  if(item&&(item.hidden||item.closest('section[hidden]')))reset();
+ }));
+ window.addEventListener('hashchange',()=>{
+  const item=document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if(item&&(item.hidden||item.closest('section[hidden]'))){reset();item.scrollIntoView();}
+ });
+ chooser.hidden=false;
+ update();
+})();
+</script>
+</body></html>
