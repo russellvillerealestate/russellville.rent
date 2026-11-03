@@ -304,9 +304,69 @@ main{max-width:1400px;padding:22px clamp(15px,2.2vw,34px) 90px}
 @media(max-width:590px){.trip-desk{margin:51px 0 28px;padding:24px 18px 19px;border-radius:18px}.trip-desk h2{font-size:clamp(2.7rem,11vw,4.3rem)}.trip-desk-kicker{font-size:.6rem;letter-spacing:.12em;margin-bottom:16px}.trip-desk-lead{margin-top:16px}.trip-desk-route{max-height:90px}.trip-desk-panel{padding:22px 19px}.trip-desk-fields{grid-template-columns:1fr;gap:13px}.trip-desk-fields label:last-child{grid-column:auto}.trip-desk-copy-button{width:100%}.trip-desk .notes{grid-template-columns:1fr;gap:9px;margin-top:25px;padding-top:23px}.trip-desk .notes section{padding:20px}}
 @media(prefers-reduced-motion:reduce){.trip-desk-copy-button{transition:none}.trip-desk-copy-button:hover{transform:none}}
 
+
+/* Nov 3, 2026 · Off-road departure board. Adapt StayARV's photographic scale
+   for regional vehicle discovery without implying lakeside vehicle availability.
+   NN/g: descriptive link labels and information scent; web.dev: reuse a local
+   compressed image; W3C WCAG 2.2: focus, reflow, touch targets, reduced motion. */
+.hero{
+  background:linear-gradient(104deg,rgba(5,30,27,.98) 0%,rgba(8,43,36,.94) 38%,rgba(13,52,42,.82) 68%,rgba(13,49,38,.67) 100%),url("assets/lake-dardanelle-sunset.jpg") center 60%/cover no-repeat;
+  border:1px solid #658270;box-shadow:0 32px 67px #0f362c38;
+}
+.hero:before{opacity:.33}
+.hero:after{background:#e2be7720}
+.hero-terrain{opacity:.29}
+.hero h1{text-shadow:0 4px 27px #081c17a6}
+.hero .visual-column{align-self:center}
+.hero .ride-visual{border-color:#ebd19d9e;box-shadow:0 27px 63px #061f1a9e}
+.trail-compass{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:9px;margin-top:34px;max-width:770px
+}
+.hero .trail-compass a{
+  position:relative;display:flex;flex-direction:column;align-items:flex-start;
+  min-height:114px;min-width:0;margin:0;padding:16px 35px 16px 16px;
+  background:#092d28d9;border:1px solid #f3dbac78;border-radius:13px;
+  color:#fff7e6;text-decoration:none;box-shadow:0 10px 21px #091c1863;
+  transition:background-color .18s,transform .18s,border-color .18s
+}
+.hero .trail-compass a:hover{background:#235547f2;border-color:#f3d7a2;transform:translateY(-2px)}
+.hero .trail-compass a:focus-visible{outline:3px solid #ffdb9a;outline-offset:4px}
+.trail-compass-no{display:block;margin-bottom:14px;font-size:.6rem;letter-spacing:.12em;font-weight:850;line-height:1.45;color:#f3d5a0}
+.trail-compass strong{display:block;max-width:17ch;font:400 clamp(1.05rem,1.35vw,1.32rem)/1.16 Georgia,"Times New Roman",serif;letter-spacing:-.03em}
+.trail-compass-arrow{position:absolute;top:14px;right:13px;color:#f8d396;font-size:1.2rem;line-height:1}
+.hero .trail-compass-provenance{margin:11px 0 0!important;color:#e2e9de!important;font-size:.68rem!important;line-height:1.5!important;max-width:65ch!important}
+@media(max-width:1080px){
+  .trail-compass{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .hero .trail-compass a{padding:14px 25px 14px 13px;min-height:110px}
+}
+@media(max-width:820px){
+  .hero{background-position:center 55%}
+  .trail-compass{max-width:none}
+  .hero .trail-compass a{min-height:101px}
+}
+@media(max-width:640px){
+  .hero{background-position:62% center}
+  .trail-compass{grid-template-columns:1fr;margin-top:25px;gap:8px}
+  .hero .trail-compass a{min-height:64px;padding:11px 42px 12px 15px}
+  .trail-compass-no{font-size:.6rem;margin-bottom:4px}
+  .trail-compass strong{font-size:1.14rem;max-width:none}
+  .trail-compass-arrow{top:calc(50% - 12px);font-size:1.2rem}
+  .hero .trail-compass-provenance{font-size:.65rem!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero .trail-compass a{transition:none}
+  .hero .trail-compass a:hover{transform:none}
+}
+
 </style></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-head"><a href="/">Russellville.Rent</a><a class="back" href="/">← All rental categories</a></header>
-<main id="main"><section class="hero" aria-labelledby="hero-title"><div class="hero-terrain" aria-hidden="true"><svg viewBox="0 0 1440 410" preserveAspectRatio="xMidYMax slice" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="trail-dusk" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c6c995" stop-opacity=".34"/><stop offset="1" stop-color="#214f3c" stop-opacity=".03"/></linearGradient></defs><circle cx="1155" cy="88" r="90" fill="#e7c78c" opacity=".23"/><path d="M0 265 118 173l95 66 128-145 138 143 112-75 136 95 114-113 132 122 145-102 137 91 135-83 50 41v191H0Z" fill="url(#trail-dusk)"/><path d="M0 312 146 216l126 65 118-83 132 101 112-49 144 59 121-88 129 81 134-97 178 112v93H0Z" fill="#6e9572" opacity=".27"/><path d="M0 355q152-85 306-37t278-17 268 34 278-9 310 19v65H0Z" fill="#224e3a" opacity=".67"/><path d="M0 389q242-40 447-7t414-15 579 17v26H0Z" fill="#102f28" opacity=".8"/><g fill="#153d2f" opacity=".68"><path d="m60 349 29-96 31 96h-21v57H78v-57Z"/><path d="m130 363 24-79 24 79h-17v43h-16v-43Z"/><path d="m1184 349 31-112 33 112h-22v61h-21v-61Z"/><path d="m1244 362 22-72 24 72h-15v48h-16v-48Z"/><path d="m1345 354 27-95 29 95h-20v56h-18v-56Z"/></g><path d="M-20 409q285-106 529-57t386-18 560 71" stroke="#cbaa78" stroke-opacity=".3" stroke-width="8" stroke-dasharray="3 20" fill="none"/></svg></div><div><p class="eyebrow">Russellville &amp; the Arkansas River Valley</p><h1 id="hero-title">Find a side-by-side.<br><em>Find your trail.</em></h1><p>Compare independently listed side-by-side rentals in the Ozarks, around Ozone and Mount Magazine. The operators below advertise rentals on their own websites; confirm dates, trail restrictions and exact pickup or delivery arrangements before traveling.</p><a href="#directory">Explore three providers <span aria-hidden="true">↗</span></a></div>
+<main id="main"><section class="hero" aria-labelledby="hero-title"><div class="hero-terrain" aria-hidden="true"><svg viewBox="0 0 1440 410" preserveAspectRatio="xMidYMax slice" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="trail-dusk" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c6c995" stop-opacity=".34"/><stop offset="1" stop-color="#214f3c" stop-opacity=".03"/></linearGradient></defs><circle cx="1155" cy="88" r="90" fill="#e7c78c" opacity=".23"/><path d="M0 265 118 173l95 66 128-145 138 143 112-75 136 95 114-113 132 122 145-102 137 91 135-83 50 41v191H0Z" fill="url(#trail-dusk)"/><path d="M0 312 146 216l126 65 118-83 132 101 112-49 144 59 121-88 129 81 134-97 178 112v93H0Z" fill="#6e9572" opacity=".27"/><path d="M0 355q152-85 306-37t278-17 268 34 278-9 310 19v65H0Z" fill="#224e3a" opacity=".67"/><path d="M0 389q242-40 447-7t414-15 579 17v26H0Z" fill="#102f28" opacity=".8"/><g fill="#153d2f" opacity=".68"><path d="m60 349 29-96 31 96h-21v57H78v-57Z"/><path d="m130 363 24-79 24 79h-17v43h-16v-43Z"/><path d="m1184 349 31-112 33 112h-22v61h-21v-61Z"/><path d="m1244 362 22-72 24 72h-15v48h-16v-48Z"/><path d="m1345 354 27-95 29 95h-20v56h-18v-56Z"/></g><path d="M-20 409q285-106 529-57t386-18 560 71" stroke="#cbaa78" stroke-opacity=".3" stroke-width="8" stroke-dasharray="3 20" fill="none"/></svg></div><div><p class="eyebrow">Russellville &amp; the Arkansas River Valley</p><h1 id="hero-title">Find a side-by-side.<br><em>Find your trail.</em></h1><p>Compare independently listed side-by-side rentals in the Ozarks, around Ozone and Mount Magazine. The operators below advertise rentals on their own websites; confirm dates, trail restrictions and exact pickup or delivery arrangements before traveling.</p><a href="#directory">Explore three providers <span aria-hidden="true">↗</span></a>
+<nav class="trail-compass" aria-label="Plan your side-by-side rental">
+  <a href="#route-title"><span class="trail-compass-no">01 / PICK A ROUTE</span><strong>Choose a rental path</strong><span aria-hidden="true" class="trail-compass-arrow">↗</span></a>
+  <a href="#ride-ledger-title"><span class="trail-compass-no">02 / KNOW THE RULES</span><strong>Compare riding restrictions</strong><span aria-hidden="true" class="trail-compass-arrow">↗</span></a>
+  <a href="#trip-desk"><span class="trail-compass-no">03 / MAKE THE CALL</span><strong>Prepare a quote request</strong><span aria-hidden="true" class="trail-compass-arrow">↗</span></a>
+</nav><p class="trail-compass-provenance">Lake Dardanelle scenery is a River Valley backdrop, not a rental trail, permitted route or operator property.</p></div>
 <div class="visual-column">
   <figure class="ride-visual">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 370" role="img" aria-labelledby="ride-art-title" focusable="false">
