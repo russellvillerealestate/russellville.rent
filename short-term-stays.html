@@ -202,6 +202,36 @@ main.wrap{padding-top:28px}
 @media(prefers-reduced-motion:reduce){.stay-board a,.stay-board button{transition:none}}
 
 #stay-board-feedback{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* November 2, 2026: illustrated gallery / comparison-led editorial rows.
+   Existing artwork is regional scenery, never purported provider photos.
+   Reference: StayARV generous scenic composition, Nielsen Norman Group visual
+   hierarchy, web.dev responsive layout, WCAG 2.2 focus, reflow and targets.
+   Progressive enhancement: every listing remains fully readable without JS. */
+.stay-view{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:26px;margin:21px 0 21px;padding:clamp(24px,3vw,36px);overflow:hidden;border-radius:22px;border:1px solid #4c765b;background:linear-gradient(106deg,#102e2de8 0%,#16483ce9 60%,#1d4e419c 100%),url("assets/lake-dardanelle-sunset.jpg") center 56%/cover no-repeat;color:#fff;box-shadow:0 17px 36px #0b3d3030}
+.stay-view:after{content:"";position:absolute;z-index:-1;right:-105px;top:-142px;width:310px;height:310px;border:1px solid #ecd69b59;border-radius:50%;box-shadow:0 0 0 35px #eedb9d10,0 0 0 72px #eedb9d0b;pointer-events:none}
+.stay-view-copy{min-width:0}
+.stay-view-kicker{display:block;margin-bottom:12px;font-size:.64rem;font-weight:850;letter-spacing:.16em;line-height:1.6;color:#f9dca2}
+.stay-view h3{margin:0;color:#fff;font:400 clamp(1.65rem,3vw,2.5rem)/1.08 Georgia,"Times New Roman",serif;letter-spacing:-.045em;text-wrap:balance}
+.stay-view h3 em{color:#f4d399;font-weight:400}
+.stay-view p{max-width:60ch;margin:12px 0 0;color:#e2ede5;font-size:.82rem;line-height:1.6}
+.stay-view-options{display:flex;align-items:stretch;gap:7px;flex-wrap:wrap;padding:6px;border:1px solid #d7e2d46b;border-radius:13px;background:#0b2b26ba}
+.stay-view-options button{min-height:48px;padding:11px 15px;border:1px solid transparent;border-radius:9px;background:transparent;color:#eaf3e8;font:800 .8rem/1.3 system-ui,sans-serif;cursor:pointer;white-space:nowrap}
+.stay-view-options button span{margin-right:8px;font-size:1.22rem;vertical-align:-.04em}
+.stay-view-options button[aria-pressed="true"]{background:#f3d69e;color:#163c30;border-color:#f3d69e;box-shadow:0 4px 11px #031b162a}
+.stay-view-options button:not([aria-pressed="true"]):hover{background:#ffffff22}
+.stay-view-options button:focus-visible{outline:3px solid #f7dca7;outline-offset:3px}
+#stay-grid[data-view="list"]{grid-template-columns:minmax(0,1fr);gap:17px}
+#stay-grid[data-view="list"] .stay{display:grid;grid-template-columns:minmax(190px,31%) minmax(0,1fr);align-items:stretch;min-height:245px;border-radius:20px}
+#stay-grid[data-view="list"] .stay-top{height:100%;min-height:100%;align-self:stretch}
+#stay-grid[data-view="list"] .stay-top svg{height:100%;width:100%;object-fit:cover}
+#stay-grid[data-view="list"] .stay-inner{min-width:0;padding:clamp(22px,2.9vw,34px)}
+#stay-grid[data-view="list"] .stay h3{font-size:clamp(1.55rem,2.5vw,2.2rem);margin:10px 0 12px}
+#stay-grid[data-view="list"] .details{margin-top:13px}
+#stay-grid[data-view="list"] .stay:hover{transform:none}
+@media(max-width:940px){.stay-view{grid-template-columns:1fr;gap:20px}.stay-view-options{justify-self:start}.stay-view p{max-width:70ch}}
+@media(max-width:700px){#stay-grid[data-view="list"] .stay{grid-template-columns:1fr}#stay-grid[data-view="list"] .stay-top{height:112px;min-height:112px}#stay-grid[data-view="list"] .stay-top svg{height:100%}.stay-view{padding:24px 20px;border-radius:17px}.stay-view-options{width:100%}.stay-view-options button{flex:1 1 135px;white-space:normal}}
+@media(prefers-reduced-motion:reduce){.stay-view-options button{transition:none}}
 </style>
 </head>
 <body>
@@ -254,6 +284,17 @@ main.wrap{padding-top:28px}
  <summary><span class="stay-index-intro"><span class="stay-index-eyebrow">The River Valley stay index · <span id="stay-index-count">11 operators</span></span><span class="stay-index-title">Find the name. <em>Open the details.</em></span></span><span class="stay-index-help">Jump directly to a provider while keeping all terms, cautions and contact links in its full listing.</span><span class="stay-index-toggle" aria-hidden="true">View index</span></summary>
  <nav class="stay-index-nav" aria-label="Jump to a stay operator"><p>Choose a name to go to its complete directory entry. These links do not book a reservation.</p><ol class="stay-index-list" id="stay-index-list"></ol></nav>
 </details>
+<!-- Progressive enhancement: choose a pictorial gallery or a scannable editorial list. -->
+<section class="stay-view" id="stay-view" aria-labelledby="stay-view-title" hidden>
+  <div class="stay-view-copy"><span class="stay-view-kicker">YOUR RIVER VALLEY FIELD GUIDE / TWO WAYS TO BROWSE</span>
+    <h3 id="stay-view-title">Find your next stay, <em>your way.</em></h3>
+    <p>Browse illustrated destination cards, or compare the same complete operator details in one spacious list. Neither view changes availability or published terms.</p>
+  </div>
+  <div class="stay-view-options" role="group" aria-label="Choose stay listing layout">
+    <button type="button" data-stay-view="grid" aria-pressed="true"><span aria-hidden="true">▦</span> Scenic cards</button>
+    <button type="button" data-stay-view="list" aria-pressed="false"><span aria-hidden="true">☷</span> Compare in rows</button>
+  </div>
+</section>
 <p class="scenery-disclaimer">The illustrated landscapes below represent general River Valley scenery, not photographs of individual rental properties or promises of particular views.</p>
 <div class="grid" id="stay-grid">
 <article class="stay" data-kind="private" data-region="dover" data-search="laben properties the hobbit house russellville tolkien themed guest suite furnished vacation short term mid term rental family pets kitchen wifi"><div class="stay-top"><svg viewBox="0 0 600 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><use href="#stay-scene-dover"></use></svg></div><div class="stay-inner"><div class="stay-label">Furnished stays · Russellville</div><h3>LABEN Properties — The Hobbit House</h3><p class="place">Russellville, Arkansas · Exact street address not publicly confirmed</p><p>Operator-listed Tolkien-themed furnished guest suite in Russellville, with two bedrooms, one bathroom and space for up to eight guests. The official booking page lists a kitchen, Wi-Fi and pets allowed. LABEN also advertises other vacation and mid-term rentals across Arkansas, including partner-managed properties; these are one operator listing, not claims that all properties are in Russellville. Confirm dates, total pricing, pet terms and arrival details directly.</p><div class="details"><div class="terms">Guest suite · 2 bedrooms · Up to 8 guests · Availability unconfirmed</div><div class="stay-links"><a class="primary" href="https://laben.holidayfuture.com/listings/152461" target="_blank" rel="noopener noreferrer">Official Hobbit House booking ↗</a><a class="secondary" href="https://laben.holidayfuture.com/" target="_blank" rel="noopener noreferrer">Operator's other stays ↗</a></div></div></div></article>
@@ -509,6 +550,35 @@ refresh();
   });
   board.hidden = false;
   render();
+})();
+</script>
+
+
+<script>
+/* Two presentation modes; original provider cards, filters and shortlist remain
+   unchanged. The controls appear only when this enhancement initializes. */
+(() => {
+  const panel = document.getElementById("stay-view");
+  const grid = document.getElementById("stay-grid");
+  const buttons = [...panel.querySelectorAll("[data-stay-view]")];
+  const key = "russellville.stays.view.v1";
+  let view = "grid";
+  try { if (localStorage.getItem(key) === "list") view = "list"; } catch (_) {}
+  function render(next) {
+    view = next === "list" ? "list" : "grid";
+    grid.dataset.view = view;
+    for (const button of buttons) {
+      button.setAttribute("aria-pressed", String(button.dataset.stayView === view));
+    }
+  }
+  for (const button of buttons) {
+    button.addEventListener("click", () => {
+      render(button.dataset.stayView);
+      try { localStorage.setItem(key, view); } catch (_) {}
+    });
+  }
+  render(view);
+  panel.hidden = false;
 })();
 </script>
 
