@@ -441,7 +441,7 @@ footer a{font-weight:750}
 <section class="provider-switchboard" aria-labelledby="switch-title">
   <div class="switch-scene"><span class="scene-label">River Valley / provider field guide</span><strong>Find room for your next move.</strong><small>Downtown Russellville scenery, not a provider property or photograph of inventory.</small></div>
   <div class="switch-body">
-    <p class="eyebrow">Eight listings / Four rental formats</p>
+    <p class="eyebrow">Nine listings / Four rental formats</p>
     <h3 id="switch-title">Narrow the list.<br><em>Keep the facts.</em></h3>
     <p>Select a rental format and Russellville service evidence. Filters reflect advertised services, <strong>not confirmed stock, dates, suitability or final delivered prices.</strong></p>
     <div class="switch-controls" id="switch-controls" hidden>
@@ -459,7 +459,7 @@ footer a{font-weight:750}
           <button type="button" class="switch-choice" data-evidence="verify" aria-pressed="false">Details to verify</button>
         </div></fieldset>
       </div>
-      <div class="switch-result"><span id="switch-count" role="status" aria-live="polite" aria-atomic="true">Showing all 8 provider listings.</span><button id="switch-reset" class="switch-reset" type="button">Show all providers ↗</button></div>
+      <div class="switch-result"><span id="switch-count" role="status" aria-live="polite" aria-atomic="true">Showing all 9 provider listings.</span><button id="switch-reset" class="switch-reset" type="button">Show all providers ↗</button></div>
     </div>
     <p id="switch-fallback">All nine providers are listed below with published information and specific verification caveats.</p>
   </div>
@@ -559,7 +559,7 @@ footer a{font-weight:750}
   const count=document.getElementById('switch-count'),reset=document.getElementById('switch-reset');
   const groupA=document.getElementById('switch-formats'),groupB=document.getElementById('switch-evidence');
   const cards=Array.from(document.querySelectorAll('#providers .provider, section[aria-labelledby="confirm-title"] .provider'));
-  if(!controls||!fallback||!count||!reset||!groupA||!groupB||cards.length!==8||cards.some(c=>!c.dataset.formats||!c.dataset.evidence))return;
+  if(!controls||!fallback||!count||!reset||!groupA||!groupB||cards.length<1||cards.some(c=>!c.dataset.formats||!c.dataset.evidence))return;
   let format='all',evidence='all';
   function render(){
     let n=0;
@@ -571,7 +571,7 @@ footer a{font-weight:750}
       const note=grid.nextElementSibling;
       if(note&&note.classList.contains('filter-no-results'))note.hidden=!!grid.querySelector('.provider:not([hidden])');
     });
-    count.textContent=n===8?'Showing all 8 provider listings.':'Showing '+n+' of 8 provider listings. '+(n?'Confirm availability with each operator.':'No matches. Change your filters or show all providers.');
+    count.textContent=n===cards.length?'Showing all '+cards.length+' provider listings.':'Showing '+n+' of '+cards.length+' provider listings. '+(n?'Confirm availability with each operator.':'No matches. Change your filters or show all providers.');
   }
   function select(group,key,value){
     if(key==='format')format=value; else evidence=value;
