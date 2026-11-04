@@ -389,6 +389,112 @@ main#main{padding:0 16px 54px!important}
  .storage-route:hover{transform:none}
 }
 </style>
+<style>
+
+/* 2026-11-04 River Valley storage ledger: CSS-only design; preserve
+   filtering, compact view, shortlist, provider data and automation.
+   Reviewed StayARV, Nielsen Norman Group hierarchy, web.dev responsive
+   guidance, and W3C WCAG 2.2 focus, motion, reflow and target size. */
+.storage-grid:not(.is-compact){display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:21px!important}
+.storage-grid:not(.is-compact)>article{
+ position:relative;isolation:isolate;overflow:hidden;display:grid!important;
+ grid-template-columns:minmax(0,.34fr) minmax(0,.66fr);
+ grid-auto-rows:min-content;align-content:start;align-items:start;
+ column-gap:clamp(37px,5vw,66px);row-gap:12px;min-width:0;min-height:235px;
+ padding:clamp(27px,3.2vw,41px)!important;border:1px solid #cad9cf!important;
+ border-radius:19px!important;background:#fffdfa!important;
+ box-shadow:0 14px 37px #14372d13!important;
+ transition:box-shadow .2s,border-color .2s!important
+}
+.storage-grid:not(.is-compact)>article:nth-child(even){background:#f9f7ee!important}
+.storage-grid:not(.is-compact)>article:hover{transform:none!important;border-color:#98b4a1!important;box-shadow:0 20px 45px #14372d24!important}
+.storage-grid:not(.is-compact)>article::after{
+ content:"";position:absolute;z-index:0;pointer-events:none;inset:0 auto 0 0;width:39%;
+ background:radial-gradient(circle at 94% 7%,#e5c88f2b 0 12%,transparent 40%),
+ repeating-linear-gradient(151deg,transparent 0 22px,#e4e1bf10 22px 23px),
+ linear-gradient(155deg,#1a5041,#0b302d 74%)
+}
+.storage-grid:not(.is-compact)>article:nth-child(3n + 2)::after{
+ background:radial-gradient(circle at 8% 89%,#e3c78329 0 12%,transparent 45%),
+ repeating-linear-gradient(151deg,transparent 0 22px,#e4e1bf0d 22px 23px),
+ linear-gradient(155deg,#224f45,#113832 74%)
+}
+.storage-grid:not(.is-compact)>article:nth-child(3n + 3)::after{
+ background:radial-gradient(circle at 92% 10%,#d6ad712d 0 12%,transparent 43%),
+ repeating-linear-gradient(151deg,transparent 0 22px,#e4e1bf12 22px 23px),
+ linear-gradient(155deg,#19443e,#0e302e 74%)
+}
+.storage-grid:not(.is-compact)>article>*{min-width:0;position:relative;z-index:1}
+.storage-grid:not(.is-compact)>article::before{
+ counter-increment:provider;content:"STORAGE / " counter(provider,decimal-leading-zero);
+ position:relative;z-index:1;grid-column:1;grid-row:1;display:block;
+ margin:0 0 7px;color:#f0d698;font-size:.68rem;line-height:1.5;
+ font-weight:900;letter-spacing:.2em
+}
+.storage-grid:not(.is-compact)>article>h2{
+ grid-column:1;grid-row:2;align-self:start;max-width:14ch;margin:0 0 4px!important;
+ color:#fff9e9!important;font:400 clamp(1.68rem,3vw,2.5rem)/1.12 Georgia,"Times New Roman",serif!important;
+ letter-spacing:-.055em!important;text-wrap:balance;overflow-wrap:break-word
+}
+.storage-grid:not(.is-compact)>article>.storage-offerings{
+ grid-column:1;grid-row:3;margin:9px 0 0;gap:7px
+}
+.storage-grid:not(.is-compact)>article .storage-offering{
+ min-height:30px;border-color:#ffffff8c;background:#f4f3e8;color:#214b3a;font-size:.7rem
+}
+.storage-grid:not(.is-compact)>article>p,
+.storage-grid:not(.is-compact)>article>button{grid-column:2;min-width:0}
+.storage-grid:not(.is-compact)>article>p{
+ margin:0 0 6px;line-height:1.65;color:#37554a;font-size:.94rem
+}
+.storage-grid:not(.is-compact)>article>.detail{
+ padding-top:11px;border-top:1px solid #d8e4d9;color:#536e5e!important;font-size:.83rem
+}
+.storage-grid:not(.is-compact)>article>p:last-child{
+ margin-top:4px;padding-top:13px;border-top:1px solid #d8e4d9
+}
+.storage-grid:not(.is-compact)>article>p:last-child:empty{display:none}
+.storage-grid:not(.is-compact)>article>button{
+ justify-self:start;margin:8px 0;min-height:44px
+}
+.storage-grid:not(.is-compact)>article a:focus-visible,
+.storage-grid:not(.is-compact)>article button:focus-visible{
+ outline:3px solid #b46e1b;outline-offset:3px
+}
+@media(max-width:850px){
+ .storage-grid:not(.is-compact)>article{
+   display:flex!important;flex-direction:column;gap:0;min-height:0;padding:23px 23px 25px!important
+ }
+ .storage-grid:not(.is-compact)>article::after{inset:0 0 auto 0;width:100%;height:210px}
+ .storage-grid:not(.is-compact)>article::before{margin:0 0 10px;font-size:.66rem}
+ .storage-grid:not(.is-compact)>article>h2{
+   max-width:25ch;min-height:85px;margin:0 0 6px!important;
+   font-size:clamp(1.6rem,5vw,2.15rem)!important
+ }
+ .storage-grid:not(.is-compact)>article>.storage-offerings{
+   margin:13px 0 25px;min-height:32px;align-items:center
+ }
+ .storage-grid:not(.is-compact)>article>p{margin:0 0 12px;line-height:1.6}
+ .storage-grid:not(.is-compact)>article>p:first-of-type{
+   padding-top:17px;border-top:1px solid #d9e3d9
+ }
+ .storage-grid:not(.is-compact)>article>.detail{padding-top:11px}
+ .storage-grid:not(.is-compact)>article>button{align-self:start;margin:8px 0}
+}
+@media(max-width:460px){
+ .storage-grid:not(.is-compact)>article{padding:21px 19px 23px!important}
+ .storage-grid:not(.is-compact)>article::after{height:222px}
+ .storage-grid:not(.is-compact)>article>h2{
+   min-height:103px;font-size:clamp(1.55rem,7.6vw,1.9rem)!important
+ }
+ .storage-grid:not(.is-compact)>article>.storage-offerings{margin:11px 0 25px}
+ .storage-grid:not(.is-compact)>article .storage-offering{font-size:.68rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .storage-grid:not(.is-compact)>article{transition:none!important}
+}
+
+</style>
 </head><body><a class="storage-skip" href="#storage-grid">Skip to storage providers</a><header class="storage-topbar"><div class="storage-topbar-inner"><a class="storage-brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="storage-back" href="/">← All rental categories</a></div></header><main id="main"><section class="storage-hero" aria-labelledby="storage-title">
 <div class="storage-hero-content">
 <p class="storage-eyebrow">Russellville · Arkansas River Valley</p>
