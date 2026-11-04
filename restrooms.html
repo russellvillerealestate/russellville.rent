@@ -515,6 +515,36 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
   }
 }
 
+
+/* Rental service-finder: foregrounds the user's real job—narrowing provider
+   descriptions—without suggesting that delivery, dates or stock are confirmed.
+   Photo is River Valley scenery, never a listed restroom provider. */
+.service-finder[hidden],.provider[hidden],.provider-filter-empty[hidden]{display:none!important}
+.service-finder{position:relative;isolation:isolate;overflow:hidden;margin:58px 0 28px;border-radius:25px;background:#10392f;color:#fff;box-shadow:0 24px 48px #0c352b22}
+.service-finder:before{content:"";position:absolute;z-index:-2;inset:0;background:linear-gradient(100deg,rgba(7,39,33,.98) 0%,rgba(10,49,40,.94) 48%,rgba(10,45,35,.71) 100%),url("/assets/downtown-russellville-sunset.jpg") center 54%/cover no-repeat}
+.service-finder:after{content:"";position:absolute;z-index:-1;pointer-events:none;right:-100px;bottom:-190px;width:390px;height:390px;border-radius:50%;border:1px solid #f0d59b59;box-shadow:0 0 0 54px #f0d59b0e,0 0 0 108px #f0d59b08}
+.service-finder-grid{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:clamp(24px,5vw,75px);align-items:center;padding:clamp(26px,4.7vw,54px)}
+.service-finder-kicker{display:block;color:#f6d79f;font-size:.68rem;line-height:1.5;font-weight:850;letter-spacing:.17em;text-transform:uppercase;margin-bottom:12px}
+.service-finder h2{font:400 clamp(2.1rem,4.5vw,3.65rem)/1.05 Georgia,"Times New Roman",serif;letter-spacing:-.055em;max-width:13ch;margin:0 0 17px;color:#fff;text-wrap:balance}
+.service-finder h2 em{font-style:italic;color:#f2d093}
+.service-finder-intro{font-size:.89rem;line-height:1.7;color:#e1ece4;max-width:43ch;margin:0}
+.service-finder-picture{margin:23px 0 0;color:#d4e3d4;font-size:.68rem;line-height:1.5}
+.service-finder-desk{min-width:0;background:#f9f8f2;border:1px solid #ffffffe0;border-radius:20px;padding:clamp(22px,3vw,31px);box-shadow:0 18px 48px #001e164b;color:#203e32}
+.service-finder-desk label{display:block;font-weight:850;font-size:.87rem;color:#1b4233;margin-bottom:10px}
+.service-finder-input{width:100%;min-height:54px;border:2px solid #b6cbb9;border-radius:11px;padding:12px 16px;font:600 1rem/1.3 system-ui,sans-serif;background:white;color:#1c3e32;box-shadow:0 5px 12px #122d1b0a}
+.service-finder-input::placeholder{color:#66776c;opacity:1;font-weight:400}
+.service-finder-input:focus-visible,.service-finder button:focus-visible{outline:3px solid #a56618;outline-offset:3px}
+.service-finder-caption{display:block;font-size:.67rem;line-height:1.5;margin:16px 0 9px;color:#647766;letter-spacing:.1em;text-transform:uppercase;font-weight:900}
+.service-finder-chips{display:flex;flex-wrap:wrap;gap:7px}
+.service-finder-chips button{min-height:43px;min-width:44px;padding:9px 12px;border-radius:999px;border:1px solid #b8cbb9;background:white;color:#315344;font-size:.75rem;line-height:1.2;font-weight:800;cursor:pointer}
+.service-finder-chips button[aria-pressed="true"]{background:#174a3a;border-color:#174a3a;color:#fff}
+.service-finder-chips button:hover:not([aria-pressed="true"]){background:#edf4eb}
+.service-finder-result{min-height:24px;margin:19px 0 0;font-size:.83rem;font-weight:850;color:#205840}
+.service-finder-fine{margin:6px 0 0;color:#5c7062;font-size:.72rem;line-height:1.55}
+.provider-filter-empty{padding:18px 21px;border:1px dashed #b5c6b7;border-radius:12px;background:#f0f5ef;color:#345747;font-size:.88rem}
+@media(max-width:850px){.service-finder-grid{grid-template-columns:1fr;gap:24px}.service-finder h2{max-width:none}.service-finder-intro{max-width:64ch}.service-finder-picture{margin-top:10px}}
+@media(max-width:580px){.service-finder{margin:38px 0 19px;border-radius:19px}.service-finder-grid{padding:24px 16px;gap:20px}.service-finder h2{font-size:clamp(2.3rem,10vw,3rem)}.service-finder-desk{padding:21px 17px;border-radius:15px}.service-finder-chips button{flex:1 1 auto}.service-finder:before{background-position:62% center}}
+
 </style>
 </head>
 <body>
@@ -597,6 +627,31 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
 <li><span class="planner-step" aria-hidden="true">02</span><div><strong id="rr-plan-q2">Handwashing</strong><p id="rr-plan-a2">Ask about station availability and placement near the restroom area.</p></div></li>
 <li><span class="planner-step" aria-hidden="true">03</span><div><strong id="rr-plan-q3">Service approach</strong><p id="rr-plan-a3">Confirm delivery, pickup and servicing access before event day.</p></div></li>
 </ol><a class="planner-link" href="#local">Find nearby rental providers ↓</a></div></div>
+</section>
+
+
+<section class="service-finder" id="service-finder" aria-labelledby="service-finder-title" hidden>
+  <div class="service-finder-grid">
+    <div>
+      <span class="service-finder-kicker">River Valley / Provider finder</span>
+      <h2 id="service-finder-title">Find the <em>right questions.</em> Then the provider.</h2>
+      <p class="service-finder-intro">Search the directory's actual provider descriptions for restroom types, service areas and equipment mentions. Compare the full listings below before contacting anyone.</p>
+      <p class="service-finder-picture">River Valley scenery is not a provider, rental unit or proof of service coverage.</p>
+    </div>
+    <div class="service-finder-desk">
+      <label for="service-finder-query">Search these provider listings</label>
+      <input class="service-finder-input" id="service-finder-query" type="search" autocomplete="off" placeholder="Try handwashing, accessible, Russellville…" aria-describedby="service-finder-help">
+      <span class="service-finder-caption">Refine by equipment mentioned</span>
+      <div class="service-finder-chips" role="group" aria-label="Equipment mentioned in provider listings">
+        <button type="button" data-service-mention="wash" aria-pressed="false">Handwashing</button>
+        <button type="button" data-service-mention="access" aria-pressed="false">Accessible units</button>
+        <button type="button" data-service-mention="trailer" aria-pressed="false">Restroom trailers</button>
+        <button type="button" data-service-mention="" aria-pressed="true">All equipment</button>
+      </div>
+      <p class="service-finder-result" id="service-finder-result" role="status" aria-live="polite" aria-atomic="true">All providers shown.</p>
+      <p class="service-finder-fine" id="service-finder-help">Text matches are not inventory or delivery confirmations. Clear the search and select “All equipment” to restore every listing. Nothing is sent or saved.</p>
+    </div>
+  </div>
 </section>
 
 <section class="section" id="local" aria-labelledby="local-title">
@@ -703,6 +758,63 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
 <p class="note">Russellville.Rent is an independent directory. Some businesses are based outside Russellville, and delivery or business status may be unconfirmed. Please confirm operating status, service area, availability, pricing and terms directly with each provider. <a href="sms:+14799707301">Submit corrections</a>.</p>
 <footer class="site-footer"><span>Russellville.Rent · Independent rental directory</span><a href="/">Return to all rental categories</a></footer>
 </main>
+<script>
+
+/* Progressive enhancement only. Without JavaScript every original provider
+   stays visible and the unavailable search controls stay out of the page. */
+(()=>{
+  const finder=document.getElementById("service-finder");
+  const input=document.getElementById("service-finder-query");
+  const status=document.getElementById("service-finder-result");
+  const chips=[...finder.querySelectorAll("[data-service-mention]")];
+  const groups=["local","regional"].map(id=>{
+    const section=document.getElementById(id);
+    const list=section.querySelector(".provider-list");
+    const cards=[...list.querySelectorAll(".provider")];
+    const empty=document.createElement("p");
+    empty.className="provider-filter-empty";
+    empty.hidden=true;
+    empty.textContent="No listing descriptions in this group mention that search. Clear the filters to see every provider.";
+    list.append(empty);
+    return {cards,empty};
+  });
+  const cards=groups.flatMap(g=>g.cards);
+  const descriptions=new Map(cards.map(card=>[card,card.textContent.toLowerCase().replace(/\\s+/g," ")]));
+  const keywords={
+    wash:/handwash|hand wash|washing station|portable sink|wash station/i,
+    access:/accessible|wheelchair/i,
+    trailer:/restroom trailers?|luxury restrooms?|stall luxury/i
+  };
+  let selected="";
+  const refresh=()=>{
+    const terms=input.value.toLowerCase().trim().split(/\\s+/).filter(Boolean);
+    let count=0;
+    groups.forEach(({cards:group,empty})=>{
+      let shown=0;
+      group.forEach(card=>{
+        const copy=descriptions.get(card);
+        const match=terms.every(term=>copy.includes(term))&&(!selected||keywords[selected].test(copy));
+        card.hidden=!match;
+        if(match){count++;shown++;}
+      });
+      empty.hidden=shown!==0;
+    });
+    status.textContent=count===cards.length&&!terms.length&&!selected
+      ? "Showing all "+count+" listed providers."
+      : count ? "Showing "+count+" of "+cards.length+" provider descriptions."
+      : "No directory descriptions match. Try another term or clear the filters.";
+  };
+  chips.forEach(button=>button.addEventListener("click",()=>{
+    selected=button.dataset.serviceMention;
+    chips.forEach(item=>item.setAttribute("aria-pressed",String(item===button)));
+    refresh();
+  }));
+  input.addEventListener("input",refresh);
+  finder.hidden=false;
+  refresh();
+})();
+
+</script>
 <script>
 
 (()=>{
