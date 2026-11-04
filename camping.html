@@ -315,6 +315,25 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.79rem;col
 @media(max-width:640px){.camp-area-atlas{margin:26px 0;padding:25px 19px;border-radius:18px;background-position:58% center}.camp-area-intro{grid-template-columns:1fr;gap:9px;margin-bottom:18px}.camp-area-intro h2{font-size:clamp(2rem,8.7vw,3rem)}.camp-area-intro>p{font-size:.84rem;max-width:55ch}.camp-area-grid{grid-template-columns:1fr;gap:9px}.camp-area-link{min-height:0;padding:17px 18px 15px;gap:6px}.camp-area-link strong{font-size:1.65rem}.camp-area-link small{max-width:none}.camp-area-action{margin-top:5px;padding-top:8px}.camp-area-footnote{font-size:.71rem}}
 @media(prefers-reduced-motion:reduce){.camp-area-link{transition:none}.camp-area-link:hover{transform:none}}
 
+
+/* November 2026 contextual trailhead navigation: editorial StayARV colors,
+   Nielsen Norman Group discoverability, web.dev touch sizes, WCAG 2.2 focus. */
+.camp-compass{position:fixed;top:12px;left:50%;z-index:60;transform:translateX(-50%);display:flex;align-items:center;justify-content:space-between;gap:22px;width:min(720px,calc(100% - 32px));min-height:68px;padding:9px 12px 9px 22px;border:1px solid #d2be8c;border-radius:18px;background:linear-gradient(117deg,#153d32,#245749);color:#fff8e6;box-shadow:0 17px 43px #0c2a2473}
+.camp-compass[hidden]{display:none!important}
+.camp-compass-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
+.camp-compass-eyebrow{font-size:.6rem;line-height:1.25;letter-spacing:.16em;text-transform:uppercase;font-weight:850;color:#efd093}
+.camp-compass-count{font:400 1.07rem/1.2 Georgia,"Times New Roman",serif;letter-spacing:-.03em;color:#fffef8;white-space:nowrap}
+.camp-compass-links{display:flex;align-items:center;gap:8px;flex:none}
+.camp-compass-links a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 15px;border:1px solid #d6e5d166;border-radius:11px;color:#fff8e7;text-decoration:none;text-align:center;font-size:.78rem;font-weight:820;line-height:1.2;white-space:nowrap;transition:background-color .18s ease,transform .18s ease}
+.camp-compass-links a:first-child{background:#f2d49f;border-color:#f2d49f;color:#214537}
+.camp-compass-links a:hover{background:#ffffff28;transform:translateY(-2px)}
+.camp-compass-links a:first-child:hover{background:#ffe9bc}
+.camp-compass-links a:focus-visible{outline:3px solid #ffda83;outline-offset:3px}
+#camp-search,#camp-trip-title,.stay-filter,.trip-save,.listing-grid a,.listing-grid button,.listing-grid summary{scroll-margin-top:94px}
+@media(max-width:600px){.camp-compass{top:8px;width:calc(100% - 20px);min-height:0;gap:10px;padding:8px 10px 8px 14px;border-radius:15px}.camp-compass-eyebrow{font-size:.56rem;letter-spacing:.12em}.camp-compass-count{font-size:.82rem;white-space:normal}.camp-compass-links{gap:6px}.camp-compass-links a{min-height:48px;padding:9px 11px;font-size:.73rem}}
+@media(max-width:400px){.camp-compass{padding:8px;gap:6px}.camp-compass-copy{display:none}.camp-compass-links{display:grid;grid-template-columns:1fr 1fr;width:100%}.camp-compass-links a{white-space:normal;padding:9px 6px;min-height:49px}}
+@media(prefers-reduced-motion:reduce){.camp-compass-links a{transition:none}.camp-compass-links a:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -325,6 +344,11 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.79rem;col
   <aside class="hero-aside" aria-label="Directory overview"><div class="hero-scene" aria-hidden="true"><svg viewBox="0 0 260 118" xmlns="http://www.w3.org/2000/svg" focusable="false"><circle cx="200" cy="29" r="16" fill="#f1c879"/><circle cx="40" cy="23" r="2" fill="#e5f0dd"/><circle cx="113" cy="12" r="2" fill="#e5f0dd"/><circle cx="238" cy="60" r="2" fill="#e5f0dd"/><path d="M0 92 58 39 100 73 150 27 218 82 260 53V118H0Z" fill="#4e8567"/><path d="M0 105 65 72 109 96 174 62 260 101V118H0Z" fill="#2d654f"/><path d="M0 108Q65 96 130 109T260 106V118H0Z" fill="#153f37"/><path d="M53 107 79 76 105 107Z" fill="#f1c879"/><path d="M79 76V107" stroke="#8d6034" stroke-width="2"/><path d="M190 105V72m-13 19 13-25 13 25m-30 8 17-23 17 23" stroke="#dcebd9" stroke-width="3" stroke-linecap="round" fill="none"/></svg></div><strong>50</strong><span>places to explore</span><p>From private RV parks to lakeside campgrounds and forest recreation areas.</p></aside>
 </div></section>
 <main id="main-content" class="shell">
+<nav id="camp-compass" class="camp-compass" aria-label="Campground list shortcuts" hidden>
+  <div class="camp-compass-copy"><span class="camp-compass-eyebrow">Campground field guide · Quick return</span><span class="camp-compass-count" id="camp-compass-count">50 places to explore</span></div>
+  <div class="camp-compass-links"><a href="#camp-search" data-compass-target="camp-search">↖ Refine your search</a><a href="#camp-trip-board" data-compass-target="camp-trip-title">Your saved trip ↗</a></div>
+</nav>
+
 
   <section class="camp-journeys" id="camp-journeys" aria-labelledby="camp-journeys-title">
     <div class="camp-journeys-header"><div><p class="camp-journeys-label">Choose your kind of stay / River Valley</p><h2 id="camp-journeys-title">A place for every kind of outside.</h2></div><p>Start with a campground type, then refine by town, amenities or the name you know.</p></div>
@@ -664,6 +688,37 @@ board.hidden=false;render();
       input.focus({preventScroll:true});
     });
   });
+})();
+</script>
+
+<script>
+/* Contextual campground shortcuts. No changes to filters or saved state. */
+(function(){
+  'use strict';
+  const bar=document.getElementById('camp-compass'),finder=document.querySelector('.finder'),list=document.getElementById('camp-list'),count=document.getElementById('result-count');
+  if(!bar||!finder||!list||!count)return;
+  let queued=false;
+  function update(){
+    queued=false;
+    const f=finder.getBoundingClientRect(),l=list.getBoundingClientRect();
+    const visible=f.bottom<0 && l.top<innerHeight*.55 && l.bottom>Math.max(105,innerHeight*.26);
+    bar.hidden=!visible;
+    if(visible)document.getElementById('camp-compass-count').textContent=count.textContent.trim();
+  }
+  function queue(){if(queued)return;queued=true;requestAnimationFrame(update);}
+  addEventListener('scroll',queue,{passive:true});
+  addEventListener('resize',queue,{passive:true});
+  document.querySelectorAll('#camp-compass [data-compass-target]').forEach(link=>{
+    link.addEventListener('click',event=>{
+      const target=document.getElementById(link.dataset.compassTarget);
+      if(!target)return;
+      event.preventDefault();
+      target.focus({preventScroll:true});
+      target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});
+      queue();
+    });
+  });
+  queue();
 })();
 </script>
 </body>
