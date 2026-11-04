@@ -231,6 +231,52 @@ main.shell>.summary{margin-top:16px}
 .party-tent-scale-note span:last-child{max-width:57ch}
 @media(max-width:750px){.party-tent-study-head{grid-template-columns:1fr;gap:13px}.party-tent-stage{--plan-width:clamp(130px,26vw,190px)}}
 @media(max-width:530px){.party-tent-comparison{grid-template-columns:1fr}.party-tent-stage{--plan-width:clamp(160px,55vw,215px)}.party-tent-study{padding:22px 17px}.party-tent-option{padding:20px 17px}}
+
+/* Event Edit, Nov 3 2026. Live design comparisons: StayARV + Russellville.Rent.
+   Principles: NN/g visual hierarchy, web.dev responsive design, WCAG 2.2.
+   Browser-only enhancement; 46 original operator descriptions preserved. */
+.event-edit{position:relative;isolation:isolate;overflow:hidden;scroll-margin-top:20px;margin:64px 0 25px;padding:clamp(24px,4vw,46px);border-radius:24px;color:#fff;background:radial-gradient(circle at 98% 0%,#a25d7777,transparent 48%),linear-gradient(128deg,#142e37,#283343 60%,#65394f);box-shadow:0 24px 60px #172c3533}
+.event-edit:before{content:"";position:absolute;z-index:-1;right:-160px;top:-250px;width:480px;height:480px;border:1px solid #f7d9b16c;border-radius:50%;box-shadow:0 0 0 58px #ffffff08,0 0 0 116px #ffffff06}
+.event-edit-head{display:grid;grid-template-columns:1.2fr .8fr;align-items:end;gap:35px;margin-bottom:31px}
+.event-edit-kicker{display:block;margin-bottom:14px;color:#f7d6aa;font-size:.71rem;font-weight:850;letter-spacing:.18em;text-transform:uppercase}
+.event-edit h2{font:400 clamp(2.4rem,4.5vw,4.65rem)/1.03 Georgia,serif;letter-spacing:-.058em;color:#fff;margin:0;text-wrap:balance}
+.event-edit h2 em{color:#f9cba9}
+.event-edit-intro{font-size:.93rem;line-height:1.7;color:#f3e7e6;max-width:42ch;margin:0 0 4px}
+.event-edit-boardhead{display:flex;justify-content:space-between;align-items:center;gap:14px;border-bottom:1px solid #efd4ba77;padding-bottom:14px;margin-bottom:16px}
+.event-edit-boardhead strong{color:#f7d6aa;font-size:.7rem;letter-spacing:.17em;text-transform:uppercase}
+.event-edit-counter{font-size:.84rem;color:#f4d8ba;white-space:nowrap}
+.event-edit-counter strong{font:400 1.8rem/1 Georgia,serif;color:#fff}
+.event-edit-grid{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.event-edit-slot{min-width:0;min-height:187px;padding:21px 17px;display:flex;flex-direction:column;gap:9px;border:1px dashed #efdec4ab;border-radius:15px;background:#ffffff0b}
+.event-edit-slot-top{font-size:.66rem;font-weight:850;letter-spacing:.15em;color:#f5cda4}
+.event-edit-slot-name{font:400 clamp(1.15rem,1.8vw,1.5rem)/1.24 Georgia,serif;letter-spacing:-.035em;color:#fff;overflow-wrap:anywhere}
+.event-edit-slot-desc{font-size:.76rem;color:#eee0df;line-height:1.45;margin-top:auto}
+.event-edit-slot.is-saved{border-style:solid;border-color:#efc58d;background:#f9f6ef;box-shadow:0 9px 20px #081b2429}
+.event-edit-slot.is-saved .event-edit-slot-top{color:#a3684c}
+.event-edit-slot.is-saved .event-edit-slot-name{color:#1b413b}
+.event-edit-slot.is-saved .event-edit-slot-desc{color:#52675d}
+.event-edit-slot-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}
+.event-edit-slot-actions button{min-height:44px;flex:1;padding:8px 10px;background:#e4efe7;color:#174a3d;border:1px solid #bcd2c4;border-radius:9px;font-size:.75rem;font-weight:850;cursor:pointer}
+.event-edit-slot-actions button:last-child{background:#fff;color:#675954}
+.event-edit-tools{display:flex;flex-wrap:wrap;gap:11px;margin-top:21px}
+.event-edit-tools button{min-height:46px;border-radius:999px;padding:11px 19px;background:#f9d1a1;color:#23363b;border:1px solid #f6d6ad;font-size:.82rem;font-weight:850;cursor:pointer}
+.event-edit-tools button:last-child{background:transparent;color:#fff5df;border-color:#eedab18c}
+.event-edit-tools button:disabled{opacity:.48;cursor:not-allowed}
+.event-edit-tools button:hover:not(:disabled),.event-edit-slot-actions button:hover{filter:brightness(1.06)}
+.event-edit-status{min-height:1.4em;margin:15px 0 0;color:#ffe0ab;font-size:.81rem}
+.event-edit-note{font-size:.75rem;color:#e2dcda;line-height:1.6;margin:8px 0 0}
+.event-edit-fallback{display:block;margin-top:15px;width:100%;min-height:120px;padding:12px;border:2px solid #ffdfa5;border-radius:8px;background:white;color:#173a33;font:14px/1.5 system-ui,sans-serif}
+.event-save{min-height:44px;padding:9px 13px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #cdbfaf;border-radius:999px;background:#fff;color:#674a50;font-size:.76rem;font-weight:850;cursor:pointer}
+.event-save:hover{background:#f8e3d9}
+.event-save[aria-pressed="true"]{background:#285346;color:white;border-color:#285346}
+.event-edit-jump{display:inline-flex;align-items:center;min-height:44px;padding:9px 13px;border:1px solid #b6d2c2;border-radius:999px;background:#e8f3e8;text-decoration:none;color:#1a5044;font-size:.75rem;font-weight:850}
+.event-edit-jump:hover{background:#d6e9d8}
+.event-save:focus-visible,.event-edit-slot-actions button:focus-visible,.event-edit-tools button:focus-visible,.event-edit-jump:focus-visible{outline:3px solid #f2af59;outline-offset:4px}
+@media(max-width:1000px){.event-edit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.event-edit-slot{min-height:158px}}
+@media(max-width:690px){.event-edit{padding:24px 19px;margin:42px 0 15px;border-radius:18px}.event-edit-head{grid-template-columns:1fr;gap:15px}.event-edit h2{font-size:clamp(2.3rem,9vw,3.3rem)}.event-edit-grid{gap:9px}.event-edit-slot{min-height:142px;padding:15px 13px}.event-edit-slot-name{font-size:1.18rem}.event-edit-slot-actions button{font-size:.7rem;padding:8px}.event-edit-intro{max-width:60ch}}
+@media(max-width:410px){.event-edit-grid{grid-template-columns:1fr}.event-edit-slot{min-height:96px}.event-edit-slot.is-empty:nth-child(n+3){display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.event-edit-slot,.event-save{transition:none}}
+
 </style>
 </head>
 <body>
@@ -288,6 +334,17 @@ main.shell>.summary{margin-top:16px}
 </section>
 <section class="finder" id="finder" aria-labelledby="finder-title" hidden><div class="finder-heading"><div><p class="eyebrow" style="color:#85506a">Plan by what you need</p><h2 id="finder-title">Find your kind of celebration.</h2></div><p>Search provider names, towns or equipment. Choose a category to narrow the directory.</p></div>
 <div class="finder-controls"><div class="search-row"><div class="search-field"><label for="party-search">Search party rentals</label><input type="search" id="party-search" placeholder="Try “chairs”, “bounce house”, “Russellville”…" autocomplete="off" aria-controls="provider-grid"></div><button type="button" class="reset" id="reset">Clear filters</button></div><div class="filters" role="group" aria-label="Filter by party rental type"><button type="button" data-filter="all" aria-pressed="true">All options <span class="count" data-count-for="all" aria-hidden="true"></span></button><button type="button" data-filter="inflatables" aria-pressed="false">Inflatables & games <span class="count" data-count-for="inflatables" aria-hidden="true"></span></button><button type="button" data-filter="tables" aria-pressed="false">Tents & tables <span class="count" data-count-for="tables" aria-hidden="true"></span></button><button type="button" data-filter="decor" aria-pressed="false">Décor & photo <span class="count" data-count-for="decor" aria-hidden="true"></span></button><button type="button" data-filter="onsite" aria-pressed="false">On-site parties <span class="count" data-count-for="onsite" aria-hidden="true"></span></button><button type="button" data-filter="activities" aria-pressed="false">Activities <span class="count" data-count-for="activities" aria-hidden="true"></span></button><button type="button" data-filter="supplies" aria-pressed="false">Party supplies <span class="count" data-count-for="supplies" aria-hidden="true"></span></button></div></div></section>
+
+<section class="event-edit" id="event-edit" aria-labelledby="event-edit-title" hidden>
+  <div class="event-edit-head"><div><span class="event-edit-kicker">The celebration edit / Make your own lineup</span><h2 id="event-edit-title">A few good options.<br><em>One clear plan.</em></h2></div><p class="event-edit-intro">Forty-six party and event options can be a lot to compare. Save up to four providers while you browse, review them together, then connect with each one directly.</p></div>
+  <div class="event-edit-boardhead"><strong>Your event lineup / Planning board</strong><span class="event-edit-counter"><strong id="event-edit-number">0</strong> of 4 saved</span></div>
+  <ol id="event-edit-grid" class="event-edit-grid" aria-label="Your selected party rental providers"></ol>
+  <div class="event-edit-tools"><button type="button" id="event-edit-copy" disabled>Copy my lineup ↗</button><button type="button" id="event-edit-clear" disabled>Clear saved providers</button></div>
+  <p id="event-edit-status" class="event-edit-status" role="status" aria-live="polite" aria-atomic="true"></p>
+  <p id="event-edit-note" class="event-edit-note">Saved in this browser when local storage is available. Saving does not book a rental, send a message, confirm availability or establish a price.</p>
+  <textarea id="event-edit-fallback" class="event-edit-fallback" aria-label="Text version of your saved party rental providers" readonly hidden></textarea>
+</section>
+
 <section id="providers" aria-labelledby="providers-title"><div class="results-line"><h2 id="providers-title">Explore rental providers</h2><p id="result-count" role="status" aria-live="polite" aria-atomic="true">46 providers shown</p></div>
 <div class="party-view-toolbar" id="party-view-toolbar" hidden>
 <div><span class="view-label">How to explore</span><span class="view-help" id="party-view-help">Full descriptions and booking caveats are visible.</span></div>
@@ -428,6 +485,151 @@ main.shell>.summary{margin-top:16px}
   scanButton.addEventListener('click',function(){setView('scan')});
   setView('full');
   toolbar.hidden=false;
+})();
+</script>
+<script>
+/* Party rental event edit: progressive enhancement and local-only storage. */
+(function(){
+  const board=document.getElementById("event-edit");
+  const grid=document.getElementById("event-edit-grid");
+  const total=document.getElementById("event-edit-number");
+  const copy=document.getElementById("event-edit-copy");
+  const clear=document.getElementById("event-edit-clear");
+  const status=document.getElementById("event-edit-status");
+  const note=document.getElementById("event-edit-note");
+  const fallback=document.getElementById("event-edit-fallback");
+  const directory=document.getElementById("provider-grid");
+  if(!board||!grid||!total||!copy||!clear||!status||!note||!fallback||!directory)return;
+  const key="rv-rent-party-edit-v1";
+  const catalog=new Map();
+  const saved=new Set();
+  const limit=4;
+  let storageReady=true;
+  const cards=Array.from(directory.querySelectorAll("article.provider"));
+  cards.forEach(function(card,index){
+    const nameNode=card.querySelector(".card-content h2,.card-content h3");
+    const top=card.querySelector(".card-heading");
+    if(!nameNode||!top)return;
+    const name=nameNode.textContent.trim();
+    if(!name||catalog.has(name))return;
+    if(!card.id)card.id="party-lineup-provider-"+(index+1);
+    card.setAttribute("tabindex","-1");
+    const button=document.createElement("button");
+    button.type="button";
+    button.className="event-save";
+    button.setAttribute("aria-pressed","false");
+    top.appendChild(button);
+    catalog.set(name,{card:card,button:button});
+    button.addEventListener("click",function(){
+      if(saved.has(name)){saved.delete(name);render("Removed "+name+" from your lineup.");}
+      else if(saved.size===limit){status.textContent="Your lineup has four providers. Remove one to save a different option.";board.scrollIntoView({block:"start",behavior:"auto"});}
+      else{saved.add(name);render("Saved "+name+" to your lineup.");}
+    });
+  });
+  if(!catalog.size)return;
+  try{
+    const names=JSON.parse(localStorage.getItem(key)||"[]");
+    if(Array.isArray(names)){
+      names.slice(0,limit).forEach(function(name){if(typeof name==="string"&&catalog.has(name))saved.add(name);});
+    }
+  }catch(error){storageReady=false;}
+  const jump=document.createElement("a");
+  jump.href="#event-edit";
+  jump.className="event-edit-jump";
+  jump.textContent="Saved lineup (0) ↑";
+  const heading=document.querySelector("#providers .results-line");
+  if(heading)heading.insertBefore(jump,heading.querySelector("#result-count"));
+  function persist(){
+    if(!storageReady)return;
+    try{localStorage.setItem(key,JSON.stringify(Array.from(saved)));}
+    catch(error){storageReady=false;}
+    if(!storageReady)note.textContent="Browser storage is unavailable. Your choices remain only until this page closes. No booking or messages are sent.";
+  }
+  function openProvider(name){
+    const entry=catalog.get(name);
+    if(!entry)return;
+    const reset=document.getElementById("reset");
+    if(reset)reset.click();
+    requestAnimationFrame(function(){
+      entry.card.scrollIntoView({block:"center",behavior:"auto"});
+      entry.card.focus({preventScroll:true});
+    });
+  }
+  function action(text,callback,ariaLabel){
+    const button=document.createElement("button");
+    button.type="button";
+    button.textContent=text;
+    button.setAttribute("aria-label",ariaLabel);
+    button.addEventListener("click",callback);
+    return button;
+  }
+  function render(message){
+    const names=Array.from(saved);
+    catalog.forEach(function(entry,name){
+      const active=saved.has(name);
+      entry.button.setAttribute("aria-pressed",String(active));
+      entry.button.textContent=active?"✓ Saved provider":"＋ Save provider";
+      entry.button.setAttribute("aria-label",(active?"Remove ":"Save ")+name+(active?" from":" to")+" event lineup");
+    });
+    grid.replaceChildren();
+    for(let index=0;index<limit;index++){
+      const name=names[index];
+      const item=document.createElement("li");
+      item.className="event-edit-slot "+(name?"is-saved":"is-empty");
+      const label=document.createElement("span");
+      label.className="event-edit-slot-top";
+      label.textContent=String(index+1).padStart(2,"0")+" / "+(name?"SAVED":"OPEN SLOT");
+      const title=document.createElement("strong");
+      title.className="event-edit-slot-name";
+      title.textContent=name||"Your next option.";
+      const sub=document.createElement("span");
+      sub.className="event-edit-slot-desc";
+      sub.textContent=name?"Confirm current inventory, final cost and delivery.":"Select a provider from the directory below.";
+      item.append(label,title,sub);
+      if(name){
+        const tools=document.createElement("div");
+        tools.className="event-edit-slot-actions";
+        tools.append(
+          action("View listing ↗",function(){openProvider(name);},"View "+name+" in the directory"),
+          action("Remove",function(){saved.delete(name);render("Removed "+name+".");},"Remove "+name+" from lineup")
+        );
+        item.appendChild(tools);
+      }
+      grid.appendChild(item);
+    }
+    total.textContent=String(saved.size);
+    copy.disabled=saved.size===0;
+    clear.disabled=saved.size===0;
+    jump.textContent="Saved lineup ("+saved.size+") ↑";
+    fallback.hidden=true;
+    if(typeof message==="string")status.textContent=message;
+    persist();
+  }
+  function exportText(){
+    return "Party rental lineup — Russellville.Rent\n"+
+      Array.from(saved).map(function(name,index){
+        const phone=catalog.get(name).card.querySelector('a[href^="tel:"]');
+        return (index+1)+". "+name+(phone?" — "+phone.textContent.trim():"");
+      }).join("\n")+
+      "\n\nConfirm availability, dates, location-specific delivery, total charges and cancellation terms with each provider. No booking was made.";
+  }
+  copy.addEventListener("click",async function(){
+    const value=exportText();
+    try{
+      if(!navigator.clipboard||!navigator.clipboard.writeText)throw Error("Clipboard unavailable");
+      await navigator.clipboard.writeText(value);
+      status.textContent="Provider names and published phone numbers copied. No message was sent.";
+    }catch(error){
+      fallback.value=value;
+      fallback.hidden=false;
+      fallback.focus();
+      fallback.select();
+      status.textContent="The lineup text is selected below for manual copying.";
+    }
+  });
+  clear.addEventListener("click",function(){saved.clear();render("Event lineup cleared.");});
+  board.hidden=false;
+  render();
 })();
 </script>
 </body>
