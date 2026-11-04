@@ -203,6 +203,180 @@ body[data-workspace-view="ledger"] .listing-card .card-links{grid-column:2;grid-
 @media(max-width:390px){.workspace-search-suggestions button{flex-basis:100%}}
 @media(prefers-reduced-motion:reduce){.workspace-search-browse,.workspace-search-suggestions button{transition:none}.workspace-search-suggestions button:hover{transform:none}}
 
+
+/* 2026-11-04 / Workspace provider folios.
+   Design: StayARV's immersive scale and spatial rhythm, adapted to a multi-operator
+   directory instead of depicting unverified office interiors. The existing
+   accessible search and cards/ledger toggle are deliberately unchanged.
+   References: NN/g visual hierarchy; web.dev responsive design; WCAG 2.2
+   focus visibility, contrast, reflow, and reduced-motion preferences. */
+body:not([data-workspace-view="ledger"]) .category .cards{
+  grid-template-columns:minmax(0,1fr);
+  gap:17px;
+  counter-reset:workspace-folio;
+}
+body:not([data-workspace-view="ledger"]) .category .listing-card{
+  counter-increment:workspace-folio;
+  position:relative;
+  isolation:isolate;
+  display:grid;
+  grid-template-columns:minmax(220px,.76fr) minmax(0,1.24fr);
+  grid-template-rows:auto auto minmax(40px,1fr) auto auto;
+  column-gap:clamp(24px,4vw,58px);
+  row-gap:13px;
+  align-items:start;
+  padding:clamp(26px,3.7vw,45px);
+  overflow:hidden;
+  border-radius:21px;
+  border:1px solid #d0dfd5;
+  border-left:7px solid #b88645;
+  background:linear-gradient(112deg,#f0f3eb 0%,#f0f3eb 37%,#fffdf8 37%,#fffdf8 100%);
+  box-shadow:0 13px 32px #15373d12;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+body:not([data-workspace-view="ledger"]) .category .listing-card::before{
+  content:"THE WORKSPACE EDIT / " counter(workspace-folio,decimal-leading-zero);
+  grid-column:1;
+  grid-row:1;
+  display:block;
+  align-self:start;
+  color:#547264;
+  font:850 .67rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;
+  letter-spacing:.14em;
+}
+body:not([data-workspace-view="ledger"]) .category .listing-card .listing-type{
+  grid-column:1;
+  grid-row:2;
+  margin:3px 0 0;
+  padding:7px 12px;
+  background:#e0e9dc;
+  color:#235c49;
+  border-radius:6px;
+  font-size:.64rem;
+}
+body:not([data-workspace-view="ledger"]) .category .listing-card h3{
+  grid-column:1;
+  grid-row:3 / span 2;
+  margin:7px 0 0;
+  max-width:20ch;
+  color:#173e36;
+  font:400 clamp(1.75rem,2.85vw,2.55rem)/1.13 Georgia,"Times New Roman",serif;
+  letter-spacing:-.048em;
+  text-wrap:balance;
+  overflow-wrap:anywhere;
+}
+body:not([data-workspace-view="ledger"]) .category .listing-card p:not(.detail):not(.card-links){
+  grid-column:2;
+  grid-row:1 / span 3;
+  align-self:start;
+  margin:0;
+  color:#344f49;
+  font-size:clamp(.88rem,1vw,.98rem);
+  line-height:1.78;
+}
+body:not([data-workspace-view="ledger"]) .category .listing-card .detail{
+  grid-column:2;
+  grid-row:4;
+  align-self:end;
+  margin:0;
+  padding:15px 0 0;
+  border-top:1px solid #cbdacf;
+  color:#4a655b;
+  font-size:.83rem;
+  line-height:1.65;
+}
+body:not([data-workspace-view="ledger"]) .category .listing-card .card-links{
+  grid-column:1 / -1;
+  grid-row:5;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:4px 12px;
+  min-width:0;
+  margin:11px 0 0;
+  padding:17px 0 0;
+  border-top:1px solid #cbdacf;
+  color:#476c5e;
+  line-height:1.55;
+  font-size:.86rem;
+}
+body:not([data-workspace-view="ledger"]) .category .listing-card .card-links a{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  padding:9px 12px;
+  border:1px solid #b6cfbf;
+  border-radius:9px;
+  background:#f7fbf7;
+  color:#185c48;
+  font-weight:850;
+  text-decoration:none;
+  overflow-wrap:anywhere;
+}
+body:not([data-workspace-view="ledger"]) .category .listing-card .card-links a:hover{
+  background:#e6f0e7;
+  text-decoration:underline;
+}
+body:not([data-workspace-view="ledger"]) .category .listing-card:nth-child(even){
+  border-left-color:#5d8b81;
+  background:linear-gradient(112deg,#e4ece8 0%,#e4ece8 37%,#f8fbf7 37%,#f8fbf7 100%);
+}
+body:not([data-workspace-view="ledger"]) .category .listing-card:nth-child(3n+1){
+  border-left-color:#e5bc7b;
+  border-color:#3c6357;
+  border-left-width:7px;
+  background:linear-gradient(112deg,#153c39 0%,#153c39 37%,#1d4844 37%,#1d4844 100%);
+  color:#fff;
+}
+body:not([data-workspace-view="ledger"]) .category .listing-card:nth-child(3n+1)::before{color:#e8d39f}
+body:not([data-workspace-view="ledger"]) .category .listing-card:nth-child(3n+1) .listing-type{background:#e6ce9f;color:#1c443a}
+body:not([data-workspace-view="ledger"]) .category .listing-card:nth-child(3n+1) h3{color:#fffdf2}
+body:not([data-workspace-view="ledger"]) .category .listing-card:nth-child(3n+1) p:not(.detail):not(.card-links){color:#e4eee7}
+body:not([data-workspace-view="ledger"]) .category .listing-card:nth-child(3n+1) .detail{color:#dcebe0;border-color:#67857a}
+body:not([data-workspace-view="ledger"]) .category .listing-card:nth-child(3n+1) .card-links{color:#e5eee8;border-color:#67857a}
+body:not([data-workspace-view="ledger"]) .category .listing-card:nth-child(3n+1) .card-links a{background:#f0dcaf;border-color:#f0dcaf;color:#153e35}
+body:not([data-workspace-view="ledger"]) .category .listing-card:nth-child(3n+1) .card-links a:hover{background:#fff0cf}
+body:not([data-workspace-view="ledger"]) .category .listing-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 20px 40px #15373d25;
+}
+body:not([data-workspace-view="ledger"]) .category .listing-card:focus-within{
+  outline:2px solid #bb7828;
+  outline-offset:4px;
+}
+@media(max-width:800px){
+  body:not([data-workspace-view="ledger"]) .category .listing-card{
+    grid-template-columns:minmax(0,1fr);
+    grid-template-rows:auto;
+    gap:0;
+    padding:clamp(23px,4.6vw,34px);
+    background:#fffdf8;
+  }
+  body:not([data-workspace-view="ledger"]) .category .listing-card:nth-child(even){background:#f1f5f0}
+  body:not([data-workspace-view="ledger"]) .category .listing-card:nth-child(3n+1){background:#173e3a}
+  body:not([data-workspace-view="ledger"]) .category .listing-card::before,
+  body:not([data-workspace-view="ledger"]) .category .listing-card .listing-type,
+  body:not([data-workspace-view="ledger"]) .category .listing-card h3,
+  body:not([data-workspace-view="ledger"]) .category .listing-card p:not(.detail):not(.card-links),
+  body:not([data-workspace-view="ledger"]) .category .listing-card .detail,
+  body:not([data-workspace-view="ledger"]) .category .listing-card .card-links{
+    grid-column:1;
+    grid-row:auto;
+  }
+  body:not([data-workspace-view="ledger"]) .category .listing-card .listing-type{margin-top:16px}
+  body:not([data-workspace-view="ledger"]) .category .listing-card h3{margin:17px 0;max-width:29ch;font-size:clamp(1.67rem,5.4vw,2.15rem)}
+  body:not([data-workspace-view="ledger"]) .category .listing-card .detail{margin-top:16px}
+  body:not([data-workspace-view="ledger"]) .category .listing-card .card-links{margin-top:19px;gap:8px}
+}
+@media(max-width:420px){
+  body:not([data-workspace-view="ledger"]) .category .listing-card .card-links{display:block}
+  body:not([data-workspace-view="ledger"]) .category .listing-card .card-links a{display:flex;margin:6px 0;width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  body:not([data-workspace-view="ledger"]) .category .listing-card{transition:none}
+  body:not([data-workspace-view="ledger"]) .category .listing-card:hover{transform:none}
+}
+
 </style>
 </head>
 <body>
