@@ -432,6 +432,31 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
  .guide-item:hover{transform:none}
 }
 
+
+/* 2026-11-04: seven-channel event atlas. Preserve all provider descriptions and booking
+   qualifications. Compared live StayARV + Russellville.Rent; NNG visual hierarchy,
+   web.dev responsive design, W3C WCAG 2.2 focus visibility and reduced motion.
+   Complete the seven-provider visual index, using a 2 / 3 / 2 editorial rhythm. */
+.route-grid li:nth-child(n+6){grid-column:span 3}
+.route-grid li:nth-child(n+6) .route-card{min-height:305px!important}
+.route-grid li:nth-child(n+6) .route-scene{min-height:180px}
+.route-grid li:nth-child(n+6) .route-scene svg{max-height:170px}
+.route-grid li:nth-child(7) .route-card{background:linear-gradient(145deg,#fcf5e9,#fffdf7);border-color:#d8c6a8}
+.route-grid li:nth-child(7) .route-scene{--scene-bg:#5c4343;--scene-ink:#fbe4bc;background:radial-gradient(circle at 52% 10%,#8d796a,#5a4748 65%,#343741)}
+.route-grid li:nth-child(7) .route-scene-tag{background:#312d35;color:#ffecc8}
+.route-grid li:nth-child(7) .route-provider{color:#684f30}
+.route-grid li:nth-child(7) .route-foot{color:#71512a}
+@media(max-width:1040px){
+ .route-grid li:nth-child(n+6){grid-column:auto}
+ .route-grid li:nth-child(n+6) .route-card{min-height:260px!important}
+ .route-grid li:nth-child(7){grid-column:1/-1}
+}
+@media(max-width:760px){
+ .route-grid li:nth-child(n+6),.route-grid li:nth-child(7){grid-column:auto}
+ .route-grid li:nth-child(n+6) .route-card{min-height:0!important}
+ .route-grid li:nth-child(n+6) .route-scene{min-height:125px}
+ .route-grid li:nth-child(n+6) .route-scene svg{max-height:130px}
+}
 </style>
 </head>
 <body>
@@ -445,13 +470,13 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
 <div class="guide-heading-row"><div><p class="guide-heading-kicker">The River Valley event desk / Start here</p><h2>Three ways to make it happen.</h2></div><p>Check who advertises Russellville service, find the equipment or crew you need, then prepare your questions before requesting a quote.</p></div>
 <nav class="guide-box" aria-label="Audio and visual directory shortcuts">
   <a class="guide-item" href="#confirmed"><span class="guide-number">01 / Service areas</span><strong>2 advertise Russellville service</strong><span>Other service details still require a quote</span><span class="guide-cta">See advertised delivery <span aria-hidden="true">↗</span></span></a>
-  <a class="guide-item" href="#service-map"><span class="guide-number">02 / Choose a service</span><strong>7 listed providers</strong><span>Sound, lighting and event production</span><span class="guide-cta">Explore the six paths <span aria-hidden="true">↗</span></span></a>
+  <a class="guide-item" href="#service-map"><span class="guide-number">02 / Choose a service</span><strong>7 listed providers</strong><span>Sound, lighting and event production</span><span class="guide-cta">Explore the seven paths <span aria-hidden="true">↗</span></span></a>
   <a class="guide-item" href="#plan-title"><span class="guide-number">03 / Plan the details</span><strong>Verify before booking</strong><span>Equipment, dates, delivery and total cost</span><span class="guide-cta">Review the checklist <span aria-hidden="true">↗</span></span></a>
 </nav></div>
 <main class="shell" id="main">
 
 <section class="service-map" id="service-map" aria-labelledby="service-map-title">
-  <div class="service-map-head"><div><p class="kicker">The production signal board / Start with your need</p><h2 id="service-map-title">What kind of event support?</h2></div><p>Six service paths, based on what each provider advertises. Select a card to review its details and confirmation status.</p></div>
+  <div class="service-map-head"><div><p class="kicker">The production signal board / Start with your need</p><h2 id="service-map-title">What kind of event support?</h2></div><p>Seven service paths, based on what each provider advertises. Select a card to review its details and confirmation status.</p></div>
   <ol class="route-grid" aria-label="Explore event equipment and production service types">
     <li><a class="route-card route-confirmed" href="#provider-1">
       <span class="route-top"><span class="route-number">CHANNEL 01</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
@@ -488,6 +513,22 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
       <span class="route-scene" aria-hidden="true"><span class="route-scene-tag">CONCERT / STAGE</span><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet"><path d="M20 129h280" stroke="currentColor" opacity=".3"/><path d="M34 124V31h252v93M34 45h252M46 31l24 14 24-14 24 14 24-14 24 14 24-14 24 14 24-14 24 14" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M72 47 39 119h67Zm90 0-33 72h66Zm90 0-33 72h66Z" fill="currentColor" opacity=".13"/><rect x="79" y="89" width="40" height="34" rx="3" fill="#203e3d" stroke="currentColor" stroke-width="3"/><circle cx="99" cy="108" r="10" stroke="currentColor" stroke-width="3"/><rect x="201" y="89" width="40" height="34" rx="3" fill="#203e3d" stroke="currentColor" stroke-width="3"/><circle cx="221" cy="108" r="10" stroke="currentColor" stroke-width="3"/><path d="M158 79v44m-17-44h34m-34 44h34" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="158" cy="71" r="9" fill="currentColor"/></svg></span>
       <h3>Staffed concert audio &amp; stage</h3><p class="route-provider">EdmoSound</p><p>Professional sound, video and lighting packages with on-site crew; no unstaffed equipment rentals. Russellville delivery unconfirmed.</p>
       <span class="route-foot"><span>Full-service packages only</span><span aria-hidden="true">↗</span></span>
+    </a></li>
+    <li><a class="route-card route-ceremony" href="#provider-7">
+      <span class="route-top"><span class="route-number">CHANNEL 07</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
+      <span class="route-scene" aria-hidden="true"><span class="route-scene-tag">CEREMONY / LIVE MUSIC</span><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet">
+        <path d="M22 134H298M42 41H278" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+        <path d="M49 41L71 54 94 41 117 54 140 41 163 54 186 41 209 54 232 41 255 54 275 41" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" opacity=".85"/>
+        <circle cx="71" cy="54" r="5" fill="#ffe9b8"/><circle cx="117" cy="54" r="5" fill="#ffe9b8"/><circle cx="163" cy="54" r="5" fill="#ffe9b8"/><circle cx="209" cy="54" r="5" fill="#ffe9b8"/><circle cx="255" cy="54" r="5" fill="#ffe9b8"/>
+        <path d="M60 58L43 118H98L79 58M251 58L232 118H288L267 58" fill="#ffe1ad" opacity=".13"/>
+        <rect x="57" y="98" width="44" height="34" rx="4" fill="#322f3a" stroke="currentColor" stroke-width="3"/><circle cx="79" cy="115" r="10" stroke="currentColor" stroke-width="3"/>
+        <rect x="219" y="98" width="44" height="34" rx="4" fill="#322f3a" stroke="currentColor" stroke-width="3"/><circle cx="241" cy="115" r="10" stroke="currentColor" stroke-width="3"/>
+        <path d="M154 64L161 115M153 83L178 76M160 115H181M161 115V132M146 132H181" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        <rect x="143" y="58" width="18" height="27" rx="9" fill="#312e3a" stroke="currentColor" stroke-width="3"/>
+        <path d="M128 127H196" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".65"/>
+      </svg></span>
+      <h3>Live sound &amp; stage lighting</h3><p class="route-provider">Smoothman Music Productions</p><p>Ceremony and live-music sound with on-site technician, stage lighting and a 16-by-16-foot stage advertised. Confirm Russellville travel and full event costs.</p>
+      <span class="route-foot"><span>Russellville delivery unconfirmed</span><span aria-hidden="true">↗</span></span>
     </a></li>
   </ol>
   <p class="route-disclaimer">Illustrations depict equipment types, not actual provider inventory. These are navigation suggestions, not recommendations of equipment suitability or confirmed inventory. Verify dates, delivery, total charges and rental terms with each provider.</p>
