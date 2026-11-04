@@ -348,6 +348,69 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
   .cart-scene:hover{transform:none}
 }
 
+
+/* 2026-11-04 · The six-stop rental passport.
+   Design: replace a cramped schematic with substantial place-led operator passes,
+   keep the Russellville transport question visually distinct, and surface only
+   offerings actually stated in the preserved provider records. A scenic local
+   backdrop is clearly identified as non-provider imagery.
+   Compared live https://stayarv.com/ and https://russellville.rent/ before editing.
+   References: Nielsen Norman Group (3 Common IA Mistakes: Information Scent),
+   web.dev Responsive Web Design Basics (fluid CSS Grid and flexible columns),
+   W3C WCAG 2.2 (visible focus, target size, reflow and reduced motion).
+   No booking, verified inventory, local delivery or pricing assertion is added. */
+.delivery-board{background:radial-gradient(ellipse at 95% 0%,#285b4e 0%,transparent 48%),linear-gradient(140deg,#12392f,#092921 95%)}
+.delivery-diagram{display:grid;grid-template-columns:minmax(0,1fr);gap:0;align-items:stretch}
+.delivery-map-kicker{display:flex;justify-content:space-between;align-items:baseline;gap:18px;margin:0 0 15px;color:#f4d89d;font-size:.67rem;font-weight:850;letter-spacing:.16em}
+.delivery-map-kicker span{font-weight:550;letter-spacing:0;color:#dae9db;font-size:.79rem}
+.delivery-origins{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.delivery-origin{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;align-items:start;justify-content:space-between;gap:29px;min-width:0;min-height:259px;padding:24px;border-radius:17px;border:1px solid #e7dfc9;background:#fcf6e8;color:#133c31;box-shadow:0 15px 27px #03181022;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.delivery-origin:nth-child(3n+2){background:#e4eee3;border-color:#b8d0bd}
+.delivery-origin:nth-child(3n){background:#f0e5d3;border-color:#decba8}
+.delivery-origin:before{content:"";position:absolute;z-index:-1;width:195px;height:195px;right:-91px;top:-94px;border-radius:50%;border:1px solid #496b5737;box-shadow:0 0 0 23px #426c5414,0 0 0 49px #426c540a;pointer-events:none}
+.delivery-origin:hover{background:#fffdf5;border-color:#e6bd6d;transform:translateY(-5px);box-shadow:0 20px 33px #0318104d}
+.delivery-origin:focus-visible{outline:4px solid #ffda8d;outline-offset:4px;z-index:1}
+.delivery-origin:nth-child(3n+2):hover,.delivery-origin:nth-child(3n):hover{background:#fffdf5}
+.delivery-index{flex:none;display:grid;place-items:center;width:48px;height:48px;border:none;border-radius:12px;background:#143e33;color:#f3d799;font:400 1.32rem/1 Georgia,"Times New Roman",serif}
+.delivery-origin-text{display:flex;flex-direction:column;min-width:0;flex:1;width:100%;justify-content:end}
+.delivery-origin strong{font:400 clamp(1.55rem,2.45vw,2.18rem)/1.06 Georgia,"Times New Roman",serif;letter-spacing:-.05em;text-wrap:balance;overflow-wrap:anywhere}
+.delivery-origin small{display:block;min-height:2.4em;margin-top:10px;color:#416350;font-size:.76rem;line-height:1.4;font-weight:700}
+.delivery-offer{display:block;min-height:3em;margin-top:15px;padding-top:13px;border-top:1px solid #8b9e8a60;color:#305646;font-size:.78rem;font-weight:650;line-height:1.45}
+.delivery-origin-text:after{content:"VIEW PROVIDER DETAILS  ↗";display:block;margin-top:17px;color:#174b39;font-size:.63rem;font-weight:900;letter-spacing:.1em}
+.delivery-gate{min-height:95px;display:grid;place-items:center}
+.delivery-gate:before{left:50%;right:auto;top:0;bottom:0;border-top:0;border-left:2px dashed #efd08d87}
+.delivery-gate span{width:auto;min-width:210px;height:48px;padding:10px 25px;border-radius:100px;background:#154437;color:#ffe7b5;font-size:.76rem;line-height:1.1}
+.delivery-destination{position:relative;display:grid;grid-template-columns:68px minmax(0,1fr) auto;gap:15px;align-items:center;min-height:178px;padding:26px clamp(24px,4vw,46px);border:1px solid #bfa56f;border-radius:20px;text-align:left;background:linear-gradient(95deg,#0a2827f0,#1c4c3fd6),url("assets/downtown-russellville-sunset.jpg") center 60%/cover no-repeat;color:#fff8eb;box-shadow:0 21px 39px #00190f45}
+.delivery-pin{display:grid;place-items:center;width:59px;height:59px;margin:0;border:1px solid #f1d69e8f;border-radius:50%;color:#ffe1a2;font-size:2.5rem}
+.delivery-destination strong{font:400 clamp(2rem,4vw,3.4rem)/1.05 Georgia,"Times New Roman",serif;letter-spacing:-.055em;color:#fff6df}
+.delivery-destination small{margin:0;display:block;max-width:190px;padding:11px 14px;border-radius:10px;border:1px solid #f3cd8399;background:#173b30e8;color:#ffe3ad;font-size:.75rem;font-weight:850;line-height:1.35}
+.delivery-caption{margin:21px 2px 0;max-width:100ch;color:#d8e7d8;font-size:.78rem;line-height:1.65}
+@media(max-width:930px){
+ .delivery-origins{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .delivery-origin{min-height:222px}
+ .delivery-destination{grid-template-columns:60px minmax(0,1fr)}
+ .delivery-destination small{grid-column:2;max-width:none;justify-self:start}
+}
+@media(max-width:570px){
+ .delivery-map-kicker{display:block;line-height:1.6}
+ .delivery-map-kicker span{display:block;margin-top:5px}
+ .delivery-origins{grid-template-columns:minmax(0,1fr);gap:10px}
+ .delivery-origin{min-height:0;display:grid;grid-template-columns:46px minmax(0,1fr);gap:15px;padding:18px}
+ .delivery-index{width:45px;height:45px}
+ .delivery-origin-text{justify-content:start}
+ .delivery-origin strong{font-size:clamp(1.52rem,7vw,2rem)}
+ .delivery-origin small,.delivery-offer{min-height:0}
+ .delivery-origin small{margin-top:7px}
+ .delivery-offer{margin-top:10px;padding-top:9px}
+ .delivery-origin-text:after{margin-top:11px}
+ .delivery-gate{min-height:78px}
+ .delivery-destination{grid-template-columns:1fr;gap:12px;padding:28px 23px;justify-items:start;text-align:left}
+ .delivery-pin{width:50px;height:50px}
+ .delivery-destination small{grid-column:1}
+ .delivery-caption{font-size:.75rem}
+}
+@media(prefers-reduced-motion:reduce){.delivery-origin{transition:none}.delivery-origin:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -411,18 +474,19 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
 <section class="delivery-board" id="delivery" aria-labelledby="delivery-title">
 <div class="delivery-heading"><div><p class="eyebrow">Delivery first · Six inquiry paths</p><h2 id="delivery-title">Start with the service-area question.</h2><p>These six providers are outside Russellville. Before choosing a cart, ask whether delivery or pickup works for your location. Select a starting point to jump to its provider contact.</p></div><span class="delivery-flag">Russellville delivery unconfirmed</span></div>
 <div class="delivery-diagram">
+<p class="delivery-map-kicker">SIX OPERATOR PROFILES <span>Review the advertised rental format, then check the provider details.</span></p>
 <nav class="delivery-origins" aria-label="Jump to golf cart rental providers">
-<a class="delivery-origin" href="#provider-river-valley"><span class="delivery-index" aria-hidden="true">01</span><span class="delivery-origin-text"><strong>Conway</strong><small>River Valley Golf Carts · Contact details ↗</small></span></a>
-<a class="delivery-origin" href="#provider-arkansas-powersports"><span class="delivery-index" aria-hidden="true">02</span><span class="delivery-origin-text"><strong>North Little Rock</strong><small>Arkansas Golf &amp; Powersports · Contact details ↗</small></span></a>
-<a class="delivery-origin" href="#provider-clear-creek"><span class="delivery-index" aria-hidden="true">03</span><span class="delivery-origin-text"><strong>Hot Springs Village</strong><small>Clear Creek Golf Car · Contact details ↗</small></span></a>
-<a class="delivery-origin" href="#provider-kaptain-chris"><span class="delivery-index" aria-hidden="true">04</span><span class="delivery-origin-text"><strong>Hot Springs</strong><small>Kaptain Chris &amp; Pup's · Contact details ↗</small></span></a>
-<a class="delivery-origin" href="#provider-lone-star"><span class="delivery-index" aria-hidden="true">05</span><span class="delivery-origin-text"><strong>North Little Rock</strong><small>Lone Star Golf Cars · Contact details ↗</small></span></a>
-<a class="delivery-origin" href="#provider-mid-state"><span class="delivery-index" aria-hidden="true">06</span><span class="delivery-origin-text"><strong>Bryant</strong><small>Mid-State Golf Cars · Contact details ↗</small></span></a>
+<a class="delivery-origin" href="#provider-river-valley"><span class="delivery-index" aria-hidden="true">01</span><span class="delivery-origin-text"><strong>Conway</strong><small>River Valley Golf Carts · Contact details ↗</small><span class="delivery-offer">Event cart rentals · Online inquiry advertised</span></span></a>
+<a class="delivery-origin" href="#provider-arkansas-powersports"><span class="delivery-index" aria-hidden="true">02</span><span class="delivery-origin-text"><strong>North Little Rock</strong><small>Arkansas Golf &amp; Powersports · Contact details ↗</small><span class="delivery-offer">Rental reservation inquiry advertised</span></span></a>
+<a class="delivery-origin" href="#provider-clear-creek"><span class="delivery-index" aria-hidden="true">03</span><span class="delivery-origin-text"><strong>Hot Springs Village</strong><small>Clear Creek Golf Car · Contact details ↗</small><span class="delivery-offer">Daily, weekend, weekly and monthly terms advertised</span></span></a>
+<a class="delivery-origin" href="#provider-kaptain-chris"><span class="delivery-index" aria-hidden="true">04</span><span class="delivery-origin-text"><strong>Hot Springs</strong><small>Kaptain Chris &amp; Pup's · Contact details ↗</small><span class="delivery-offer">Two-, four- and six-passenger options advertised</span></span></a>
+<a class="delivery-origin" href="#provider-lone-star"><span class="delivery-index" aria-hidden="true">05</span><span class="delivery-origin-text"><strong>North Little Rock</strong><small>Lone Star Golf Cars · Contact details ↗</small><span class="delivery-offer">Passenger and utility configurations advertised</span></span></a>
+<a class="delivery-origin" href="#provider-mid-state"><span class="delivery-index" aria-hidden="true">06</span><span class="delivery-origin-text"><strong>Bryant</strong><small>Mid-State Golf Cars · Contact details ↗</small><span class="delivery-offer">Event and operations rentals advertised</span></span></a>
 </nav>
 <div class="delivery-gate" aria-hidden="true"><span>Ask about<br>delivery</span></div>
 <div class="delivery-destination"><span class="delivery-pin" aria-hidden="true">◎</span><strong>Russellville</strong><small>Service not verified</small></div>
 </div>
-<p class="delivery-caption">Conceptual inquiry diagram only—not a map, route, travel estimate or service-area guarantee. Confirm rental inventory, transport fees and terms with each provider.</p>
+<p class="delivery-caption">Conceptual inquiry diagram only—not a map, route, travel estimate or service-area guarantee. Confirm rental inventory, transport fees and terms with each provider. The background shows local River Valley scenery, not a rental storefront or an established delivery route.</p>
 </section>
 
 <section class="request-studio" aria-labelledby="request-title">
