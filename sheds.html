@@ -339,6 +339,100 @@ footer a{font-weight:750}
 @media(max-width:700px){.hero{border-radius:0 0 23px 23px;background-position:57% center}.hero-inner{grid-template-columns:1fr;padding-block:53px 26px;gap:25px}.hero h1{font-size:clamp(3.25rem,11.2vw,5rem)}.hero .blueprint{width:min(100%,480px);margin-inline:auto;transform:none}.shed-hero-bottom{padding-bottom:43px}.shed-scene-caption{text-align:left;max-width:40ch}.shed-hero-route{grid-template-columns:1fr}.shed-hero-route a{min-height:77px;grid-template-columns:38px minmax(0,1fr) 18px;padding:13px 19px;gap:14px}.shed-hero-route a+a{border-left:0;border-top:1px solid #f0e6c35e}.shed-route-arrow{display:block}.shed-route-index{font-size:1.45rem}.shed-route-copy strong{font-size:1.25rem}}
 @media(max-width:460px){.hero-inner{padding-block:46px 21px}.hero h1{font-size:clamp(3rem,12vw,4.25rem)}.hero .blueprint{padding:12px}.hero .blueprint figcaption{font-size:.56rem}.shed-scene-caption{font-size:.61rem}.shed-hero-route a{padding:12px 15px}.shed-route-copy strong{font-size:1.14rem}}
 @media(prefers-reduced-motion:reduce){.shed-hero-route a{transition:none}}
+
+/* Nov 4 2026 / River Valley dealer folios. Compared live StayARV and Russellville.Rent.
+   Nielsen Norman Group hierarchy / information scent; web.dev responsive design;
+   W3C WCAG 2.2 keyboard focus and reflow. Artwork is not provider inventory.
+   Source content, links, scripts and update-listings.yml remain unchanged. */
+#providers .section-heading{padding-bottom:25px;border-bottom:1px solid #c9d9cb}
+#providers .section-heading h2{font-size:clamp(2.6rem,5.2vw,4.7rem);line-height:1.02;max-width:16ch;text-wrap:balance}
+#providers .cards{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
+#providers .provider{
+  isolation:isolate;display:grid;grid-template-columns:minmax(260px,.43fr) minmax(0,.57fr);
+  min-height:330px;border:1px solid #cbd9cf;border-radius:25px;
+  background:#fffdf7;overflow:hidden;box-shadow:0 19px 43px #15392a14
+}
+#providers .provider:hover{box-shadow:0 23px 48px #15392a26}
+#providers .card-top{
+  position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;
+  align-items:flex-start;justify-content:space-between;gap:20px;min-width:0;min-height:330px;
+  padding:clamp(24px,3vw,37px);border:0;background:linear-gradient(145deg,#205343,#0d302d);
+  color:#f8e7c2
+}
+#providers .card-top:before{
+  content:"";position:absolute;z-index:-1;right:-8px;bottom:63px;width:75%;height:57%;
+  clip-path:polygon(0 45%,50% 0,100% 45%,100% 100%,0 100%);
+  background:repeating-linear-gradient(90deg,#f5dfac16 0 16px,#f5dfac2c 16px 17px);
+  border-bottom:8px solid #f5dfac45;pointer-events:none
+}
+#providers .card-top:after{
+  content:"ILLUSTRATIVE BUILDING FORM · NOT DEALER INVENTORY";display:block;position:relative;
+  max-width:35ch;font:850 .64rem/1.65 system-ui,sans-serif;letter-spacing:.1em;
+  color:#f8e6be;text-transform:uppercase
+}
+#providers .card-index{
+  position:relative;display:block;font:400 clamp(4.7rem,8vw,7.2rem)/.9 Georgia,serif;
+  letter-spacing:-.08em;color:#f5d79c;text-shadow:0 8px 25px #001e1980
+}
+#providers .card-area{
+  position:relative;display:block;max-width:28ch;text-align:left;line-height:1.5;
+  letter-spacing:.12em;color:#f5edd8;font-size:.74rem
+}
+#providers .provider:first-child .card-top{
+  background:linear-gradient(180deg,#072a2699,#092c28e8),
+    url("assets/downtown-russellville-sunset.jpg") center 50%/cover no-repeat
+}
+#providers .provider:first-child .card-top:after{content:"DOWNTOWN RUSSELLVILLE SCENERY · NOT A DEALER PHOTO"}
+#providers .provider:nth-child(2) .card-top{background:linear-gradient(155deg,#205549,#143b37)}
+#providers .provider:nth-child(3) .card-top{background:linear-gradient(155deg,#34685a,#16463c)}
+#providers .provider:nth-child(n+4) .card-top{background:linear-gradient(145deg,#6b573e,#403c30)}
+#providers .provider:nth-child(even) .card-top{grid-column:2;grid-row:1}
+#providers .provider:nth-child(even) .card-content{grid-column:1;grid-row:1}
+#providers .card-content{
+  min-width:0;display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(27px,4vw,50px);background:linear-gradient(145deg,#fffef9,#f4f7ef)
+}
+#providers .provider:nth-child(n+4) .card-content{background:linear-gradient(135deg,#fffdf7,#f8f1e6)}
+#providers .provider h3{
+  font-size:clamp(1.85rem,3.3vw,3.15rem);line-height:1.06;letter-spacing:-.05em;
+  margin:0 0 21px;max-width:21ch;text-wrap:balance
+}
+#providers .provider .description{font-size:1rem;line-height:1.74;max-width:63ch;margin-bottom:20px}
+#providers .provider .address{margin:0 0 20px;padding-top:17px}
+#providers .card-actions{display:flex;flex-wrap:wrap;gap:10px}
+#providers .card-actions .button{width:auto;min-height:48px;padding:11px 19px}
+#providers .card-actions .button:focus-visible{outline:3px solid #a35e0b;outline-offset:4px}
+#providers .provider[id]:target{outline:4px solid #a35e0b;outline-offset:4px}
+@media(max-width:900px){
+  #providers .provider{grid-template-columns:minmax(215px,.42fr) minmax(0,.58fr);min-height:300px}
+  #providers .card-top{min-height:300px}
+  #providers .card-index{font-size:4.8rem}
+  #providers .card-content{padding:29px}
+  #providers .provider h3{font-size:clamp(1.7rem,3vw,2.3rem)}
+}
+@media(max-width:700px){
+  #providers .cards{gap:17px}
+  #providers .provider{display:flex;flex-direction:column;min-height:0;border-radius:19px}
+  #providers .card-top{min-height:176px;padding:21px 25px;gap:13px}
+  #providers .card-top:before{width:49%;height:95%;right:2px;bottom:-16px}
+  #providers .card-index{font-size:3.8rem}
+  #providers .card-top:after{font-size:.58rem}
+  #providers .card-area{font-size:.68rem}
+  #providers .card-content{padding:27px 24px 30px}
+  #providers .provider h3{font-size:clamp(1.75rem,7vw,2.6rem)}
+  #providers .card-actions .button{width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  #providers .provider{transition:none!important}
+  #providers .provider:hover{transform:none!important}
+}
+@media print{
+  #providers .provider{break-inside:avoid;box-shadow:none;min-height:0}
+  #providers .card-top{min-height:0;background:#e9eee7!important;color:#193c30}
+  #providers .card-index,#providers .card-area{color:#193c30;text-shadow:none}
+  #providers .card-top:before,#providers .card-top:after{display:none}
+}
+
 </style>
 </head>
 <body>
