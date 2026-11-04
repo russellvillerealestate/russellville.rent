@@ -315,7 +315,7 @@ footer a{font-weight:700}
 .hero-art svg{width:100%;height:auto;max-width:500px;filter:drop-shadow(0 24px 18px #071a16a0)}
 .hero-art .route-label{bottom:42px;right:26px;border:0;background:#f4d697;color:#173a2e;border-radius:7px;padding:7px 12px;font-size:.65rem;box-shadow:0 4px 12px #061b1745}
 .hero-art .scenic-caption{left:27px;bottom:17px;right:19px;color:#f9eacb;text-transform:none;letter-spacing:.025em;font-size:.67rem;line-height:1.3}
-.road-quicknav{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;width:min(1170px,calc(100% - 100px));max-width:none;padding:0;margin:0 auto -44px;border:1px solid #eed9b5ad;border-radius:18px;overflow:hidden;background:#f9f6ee;box-shadow:0 24px 55px #082c2842}
+.road-quicknav{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;width:min(1170px,calc(100% - 100px));max-width:none;padding:0;margin:-44px auto 0;border:1px solid #eed9b5ad;border-radius:18px;overflow:hidden;background:#f9f6ee;box-shadow:0 24px 55px #082c2842}
 .road-quicklink{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:7px;min-width:0;min-height:160px;padding:24px 27px 22px;background:linear-gradient(145deg,#faf9f4,#f2f0e5);color:#174137;text-decoration:none;border-right:1px solid #d9dfd2;transition:background-color .2s,transform .2s}
 .road-quicklink:last-child{border-right:0}
 .road-quicklink:nth-child(2){background:linear-gradient(145deg,#eaf3e9,#f6f7ee)}
@@ -325,7 +325,7 @@ footer a{font-weight:700}
 .road-quicklink>span:last-child{display:flex;width:100%;justify-content:space-between;gap:14px;color:#4e6558;font-size:.76rem;line-height:1.4;font-weight:750}
 .road-quicklink>span:last-child span{color:#1a5d46;font-size:1.1rem;line-height:1}
 .road-quicknav:focus-within{overflow:visible}
-main.wrap{padding-top:85px}
+main.wrap{padding-top:52px}
 #journey-title,#compare-title,#pickup-atlas-title,#providers-title,#checklist-title{scroll-margin-top:25px}
 @media(max-width:1020px){
   .header-inner{width:min(100% - 36px,930px);flex-direction:column;align-items:stretch;justify-content:center;gap:9px;padding-block:15px}
@@ -352,14 +352,14 @@ main.wrap{padding-top:85px}
   .hero-art svg{max-width:340px}
   .hero-art .route-label{bottom:39px;right:17px}
   .hero-art .scenic-caption{left:18px;right:15px;bottom:14px;font-size:.6rem}
-  .road-quicknav{width:calc(100% - 36px);grid-template-columns:1fr;gap:0;margin-bottom:-35px}
+  .road-quicknav{width:calc(100% - 36px);grid-template-columns:1fr;gap:0;margin-top:-35px}
   .road-quicklink{display:grid;grid-template-columns:1fr auto;gap:4px 13px;min-height:0;padding:17px 20px;border-right:0;border-bottom:1px solid #d9dfd2}
   .road-quicklink:last-child{border-bottom:0}
   .road-quick-index{grid-column:1/3;font-size:.62rem}
   .road-quicklink strong{font-size:1.33rem}
   .road-quicklink>span:last-child{grid-column:2;grid-row:2/4;display:flex;justify-content:flex-end;align-items:center;font-size:0}
   .road-quicklink>span:last-child span{font-size:1.3rem}
-  main.wrap{padding-top:72px}
+  main.wrap{padding-top:44px}
 }
 @media(prefers-reduced-motion:reduce){
   .hero-art{transform:none}
@@ -412,7 +412,8 @@ main.wrap{padding-top:85px}
       <span class="scenic-caption">Russellville skyline · Scenic photo, not a rental vehicle</span>
     </div>
   </div>
-  <nav class="road-quicknav wrap" aria-label="Find car rental information quickly">
+</div>
+<nav class="road-quicknav wrap" aria-label="Find car rental information quickly">
     <a href="#compare-title" class="road-quicklink">
       <span class="road-quick-index">01 / Compare</span>
       <strong>See what’s known.</strong>
@@ -429,7 +430,6 @@ main.wrap{padding-top:85px}
       <span>Availability, insurance &amp; total costs <span aria-hidden="true">↗</span></span>
     </a>
   </nav>
-</div>
 <main id="main" class="wrap">
   <section class="journey" aria-labelledby="journey-title">
     <div class="journey-head"><div><p class="eyebrow">The River Valley road guide / 01</p><h2 id="journey-title">What brings you<br>behind the wheel?</h2></div><p>Choose what best describes your trip. We'll bring that purpose into a ready-to-copy rental inquiry—or you can browse the providers directly.</p></div>
