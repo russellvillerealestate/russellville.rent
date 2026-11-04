@@ -342,6 +342,135 @@ url("assets/downtown-russellville-sunset.jpg") center 55%/cover no-repeat;
   .quick{margin-top:-48px}
 }
 @media(prefers-reduced-motion:reduce){.art{transform:none}}
+
+/* November 4, 2026 — pickup route atlas.
+   StayARV's forest/gold visual direction, adapted to the eight existing
+   moving directory contacts. Nielsen Norman Group: aligned, scannable headings;
+   web.dev: fluid responsive grids; WCAG 2.2: focus and generous click targets.
+   All original copy, source links, scripts, filters and print mode preserved. */
+#local .section-head,#nearby .section-head{
+  position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;
+  gap:22px;align-items:end;margin:68px 0 24px;
+  padding:clamp(28px,4vw,46px);border-radius:23px;overflow:hidden
+}
+#local .section-head{
+  background:radial-gradient(circle at 93% 11%,#346b57,transparent 44%),linear-gradient(125deg,#12372e,#092b27);
+  box-shadow:0 20px 46px #163b3023;color:#fff
+}
+#local .section-head:after{
+  content:"";position:absolute;right:-42px;bottom:-110px;width:275px;height:275px;
+  border:1px solid #f3d6a350;border-radius:50%;
+  box-shadow:0 0 0 39px #ffffff0b,0 0 0 75px #ffffff06;pointer-events:none
+}
+#local .section-head h2{position:relative;z-index:1;color:#fffdf4;max-width:14ch;font-size:clamp(2.4rem,4vw,4.2rem)}
+#local .section-head p{position:relative;z-index:1;color:#e1ede5}
+#local .section-label{position:relative;z-index:1;align-self:start;color:#f7d49d}
+#nearby .section-head{
+  background:linear-gradient(115deg,#eee9dc,#e6eee6);
+  border:1px solid #d0dccf;border-left:7px solid #a17c53
+}
+#nearby .section-head h2{font-size:clamp(2.25rem,3.7vw,3.6rem)}
+#nearby .section-label{color:#74542d;align-self:start}
+#local .provider-list,#nearby .provider-list{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:stretch
+}
+#local .provider-list>.provider,#nearby .provider-list>.provider{
+  position:relative;display:flex;flex-direction:column;min-width:0;
+  border:1px solid #cadbce;border-radius:22px;overflow:hidden;background:#fffdf8;
+  box-shadow:0 14px 36px #14392f14;transition:transform .2s,box-shadow .2s,border-color .2s
+}
+#local .provider-list>.provider:hover,#nearby .provider-list>.provider:hover{
+  transform:translateY(-3px);border-color:#82a890;box-shadow:0 19px 40px #12382e24
+}
+#local .provider-list>.provider:first-child,#nearby .provider-list>.provider:last-child{
+  display:grid;grid-column:1/-1;grid-template-columns:minmax(235px,.7fr) minmax(0,1.3fr)
+}
+#local .provider .number,#nearby .provider .number{
+  position:relative;isolation:isolate;display:flex;align-items:flex-start;
+  min-height:155px;padding:27px 33px;overflow:hidden;
+  background:radial-gradient(circle at 80% 20%,#447a64,transparent 46%),linear-gradient(135deg,#194b3c,#0e322b);
+  color:#f6dcaa;font:400 clamp(4rem,7vw,6.8rem)/.95 Georgia,"Times New Roman",serif;letter-spacing:-.09em
+}
+#nearby .provider .number{
+  background:radial-gradient(circle at 83% 25%,#8c7959,transparent 51%),linear-gradient(135deg,#4d6455,#283e37);
+  color:#fce0b5
+}
+#local .provider .number:before,#nearby .provider .number:before{
+  content:"";position:absolute;z-index:-1;inset:17px;border:1px solid #ffebc75c;pointer-events:none
+}
+#local .provider .number:after,#nearby .provider .number:after{
+  content:"";position:absolute;right:23px;bottom:28px;width:clamp(70px,9vw,145px);height:49px;
+  border-bottom:3px dashed #f2d5a77a;border-right:3px dashed #f2d5a77a;
+  border-radius:0 0 30px 0;transform:skew(-12deg);pointer-events:none
+}
+#local .provider-list>.provider:first-child .number,
+#nearby .provider-list>.provider:last-child .number{min-height:100%;padding:clamp(32px,4vw,54px)}
+#local .provider .provider-body,#nearby .provider .provider-body{
+  min-width:0;display:flex;flex-direction:column;flex:1;padding:clamp(26px,3vw,39px)
+}
+#local .provider h3,#nearby .provider h3{
+  font:400 clamp(1.8rem,2.7vw,2.65rem)/1.12 Georgia,"Times New Roman",serif;
+  letter-spacing:-.05em;color:#113d32;margin:5px 0 16px;text-wrap:balance
+}
+#local .provider .tag,#nearby .provider .tag{
+  align-self:flex-start;display:inline-flex;align-items:center;min-height:32px;
+  background:#e9f2e7;border:1px solid #bcd4c1;border-radius:6px;
+  padding:6px 10px;color:#285b43;line-height:1.4
+}
+#nearby .provider .tag{color:#725432;background:#f6f0e5;border-color:#e1d2bb}
+#local .provider p,#nearby .provider p{line-height:1.72}
+#local .provider .detail,#nearby .provider .detail{
+  color:#3f5b4d;font-weight:650;border-top:1px solid #dbe4d9;
+  padding-top:18px;margin-top:21px
+}
+#local .provider p:last-child,#nearby .provider p:last-child{
+  margin-top:auto;padding-top:20px;gap:9px 11px
+}
+#local .provider p:last-child a,#nearby .provider p:last-child a{
+  min-height:46px;max-width:100%;border-radius:9px;
+  padding:10px 14px;background:#edf3e9;color:#1d513a;border-color:#c4d6c5;
+  line-height:1.45;text-align:center;overflow-wrap:anywhere
+}
+#local .provider p:last-child a:first-child,#nearby .provider p:last-child a:first-child{
+  background:#184636;border-color:#184636;color:#fffdf4
+}
+#local .provider p:last-child a:hover,#nearby .provider p:last-child a:hover{background:#dbe9da;color:#153a2e}
+#local .provider p:last-child a:first-child:hover,#nearby .provider p:last-child a:first-child:hover{background:#2c624c;color:#fff}
+#local .provider a:focus-visible,#nearby .provider a:focus-visible{outline:3px solid #a86b1b;outline-offset:4px}
+@media(max-width:940px){
+  #local .provider-list,#nearby .provider-list{grid-template-columns:1fr;gap:17px}
+  #local .provider-list>.provider,#nearby .provider-list>.provider,
+  #local .provider-list>.provider:first-child,#nearby .provider-list>.provider:last-child{
+    display:grid;grid-column:auto;grid-template-columns:145px minmax(0,1fr)
+  }
+  #local .provider .number,#nearby .provider .number,
+  #local .provider-list>.provider:first-child .number,#nearby .provider-list>.provider:last-child .number{
+    min-height:100%;font-size:3.7rem;padding:28px 19px
+  }
+  #local .provider .number:after,#nearby .provider .number:after{right:13px;bottom:24px;width:57px}
+}
+@media(max-width:620px){
+  #local .section-head,#nearby .section-head{display:block;margin-top:49px;padding:27px 23px;border-radius:17px}
+  #local .section-head h2,#nearby .section-head h2{font-size:clamp(2.2rem,9vw,3.15rem);max-width:none}
+  #local .section-label,#nearby .section-label{display:block;margin-top:16px;white-space:normal}
+  #local .provider-list>.provider,#nearby .provider-list>.provider,
+  #local .provider-list>.provider:first-child,#nearby .provider-list>.provider:last-child{
+    display:flex;flex-direction:column
+  }
+  #local .provider .number,#nearby .provider .number,
+  #local .provider-list>.provider:first-child .number,#nearby .provider-list>.provider:last-child .number{
+    min-height:102px;align-items:center;padding:16px 25px;font-size:4.2rem
+  }
+  #local .provider .number:after,#nearby .provider .number:after{right:25px;bottom:29px;width:87px;height:24px}
+  #local .provider .provider-body,#nearby .provider .provider-body{padding:25px 22px}
+  #local .provider h3,#nearby .provider h3{font-size:clamp(1.75rem,7.4vw,2.3rem)}
+  #local .provider p:last-child a,#nearby .provider p:last-child a{width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  #local .provider-list>.provider,#nearby .provider-list>.provider{transition:none}
+  #local .provider-list>.provider:hover,#nearby .provider-list>.provider:hover{transform:none}
+}
+
 </style>
 </head>
 <body><a class="skip" href="#main">Skip to rental options</a><header><div class="wrap"><a class="brand" href="/">Russellville<span>.Rent</span></a><a class="back" href="/">← Browse all rentals</a></div></header>
