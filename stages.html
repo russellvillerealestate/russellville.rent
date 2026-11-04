@@ -147,6 +147,42 @@ main.wrap{width:min(1230px,calc(100% - 56px))}
 @media(max-width:750px){.hero-inner{width:min(100% - 42px,620px);padding:68px 0 89px}.hero h1{font-size:clamp(3.45rem,10.5vw,5.2rem)}.hero-photo-credit{left:20px;right:20px;text-align:left;bottom:12px}.routes{margin-bottom:55px}.routes-intro{grid-template-columns:1fr;gap:14px}.route-grid{grid-template-columns:1fr}.route,.route-local{grid-column:auto;min-height:290px}.route-title,.route-local .route-title{margin-top:84px}.grid>.card-local{padding:25px 23px}}
 @media(max-width:520px){main.wrap{width:min(100% - 30px,1230px)}.hero-inner{width:min(100% - 30px,620px);padding:52px 0 80px}.hero h1{font-size:clamp(2.85rem,12vw,4rem)}.route{padding:23px;min-height:300px}.route-symbol{width:112px;right:14px}.grid>.card-local h3{font-size:1.6rem}}
 @media(prefers-reduced-motion:reduce){.route,.grid>.card{transition:none}.route:hover,.grid>.card:hover{transform:none}}
+
+/* 2026-11-04 / The stages-already-here chapter.
+   Visual and navigational separation of regional delivered-stage suppliers from fixed local venues.
+   StayARV: place-led imagery, type, room to breathe. NN/g: unambiguous information scent.
+   web.dev: fixed image container and reuse of locally hosted scene. WCAG 2.2: focus and target size. */
+.venue-chapter{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,.97fr) minmax(0,1.03fr);overflow:hidden;min-height:452px;margin:38px 0 8px;border-radius:7px 34px 7px 34px;background:#153a38;color:#fff;border:1px solid #244f49;box-shadow:0 24px 55px #102e3128}
+.venue-chapter-scene{position:relative;isolation:isolate;min-height:370px;overflow:hidden;background:linear-gradient(0deg,#062f31ed,#082f3199 35%,#183f4260 74%),url("assets/lake-dardanelle-sunset.jpg") center 54%/cover no-repeat}
+.venue-chapter-scene:after{content:"";position:absolute;inset:18px;border:1px solid #f8e4b667;pointer-events:none;border-radius:3px 22px 3px 22px}
+.venue-chapter-number{position:absolute;top:32px;left:34px;font-size:.72rem;font-weight:900;letter-spacing:.18em;color:#ffe2a5;text-transform:uppercase}
+.venue-chapter-art{position:absolute;top:50%;left:50%;width:min(73%,390px);height:auto;transform:translate(-50%,-46%);filter:drop-shadow(0 15px 23px #061e1e8a)}
+.venue-chapter-photo-note{position:absolute;bottom:30px;left:34px;right:28px;font-size:.71rem;line-height:1.4;font-weight:750;color:#fff6db;text-shadow:0 2px 6px #051d1e;letter-spacing:.04em}
+.venue-chapter-copy{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:clamp(34px,5vw,64px)}
+.venue-chapter-copy .eyebrow{color:#f1c98e;margin-bottom:18px}
+.venue-chapter h2{font:700 clamp(2.3rem,4.3vw,4.25rem)/1.06 Georgia,"Times New Roman",serif;letter-spacing:-.058em;max-width:13ch;margin:0;text-wrap:balance}
+.venue-chapter h2 em{font-weight:400;color:#f3c78b}
+.venue-chapter-copy>p:not(.eyebrow):not(.venue-chapter-small){font-size:.97rem;max-width:50ch;line-height:1.68;color:#dfede7;margin:22px 0 26px}
+.venue-chapter-links{display:flex;align-items:stretch;flex-wrap:wrap;gap:10px;width:100%}
+.venue-chapter-links a{display:inline-flex;align-items:center;justify-content:center;min-height:49px;border:1px solid #c3dcce;padding:11px 17px;border-radius:9px;text-decoration:none;font-size:.85rem;font-weight:850;text-align:center;color:#f5f7ed}
+.venue-chapter-links a:first-child{background:#f0c98a;color:#143631;border-color:#f0c98a}
+.venue-chapter-links a:hover{background:#e4efe8;color:#153d37}
+.venue-chapter-links a:focus-visible{outline:3px solid #ffeca9;outline-offset:4px}
+.venue-chapter-small{color:#d4e3dc;font-size:.75rem;line-height:1.5;margin:18px 0 0}
+.grid>.card-local{grid-column:auto;position:relative;min-height:100%;padding:34px 31px;border:2px solid #d4b980;border-radius:7px 25px 7px 25px;background:linear-gradient(150deg,#fffaf0 0%,#fffefa 68%);box-shadow:0 15px 32px #183c3613}
+.grid>.card-local:before{content:"AT THE VENUE";display:block;font-size:.64rem;font-weight:900;letter-spacing:.18em;color:#95632d;border-bottom:1px solid #dbcba9;padding-bottom:13px;margin-bottom:14px}
+.grid>.card-local h3{font-size:clamp(1.6rem,2.7vw,2.05rem);line-height:1.18;color:#183d38}
+.grid>.card-local .tag{background:#f4dfb8;color:#65441f}
+.grid>.card-local .detail{background:#f2eee3}
+.grid>.card-local .actions a:first-child{background:#173e36;border-color:#173e36}
+#brookstock-stage{background:linear-gradient(150deg,#f1f5ed 0%,#fffefa 70%);border-color:#afc6ab}
+#brookstock-stage:before{color:#44664b;border-bottom-color:#cbd9c6}
+#brookstock-stage .tag{background:#deebda;color:#36583a}
+@media(max-width:940px){.venue-chapter{grid-template-columns:1fr;min-height:0}.venue-chapter-scene{min-height:320px}.venue-chapter-copy{padding:35px}.venue-chapter h2{max-width:20ch}.venue-chapter-links a{flex:1 1 180px}}
+@media(max-width:750px){.grid>.card-local{grid-column:1/-1;min-height:0}}
+@media(max-width:520px){.venue-chapter{margin:21px 0 4px;border-radius:7px 20px 7px 20px}.venue-chapter-scene{min-height:265px}.venue-chapter-scene:after{inset:11px}.venue-chapter-number{top:25px;left:23px}.venue-chapter-photo-note{bottom:21px;left:23px}.venue-chapter-art{width:78%}.venue-chapter-copy{padding:29px 22px 32px}.venue-chapter h2{font-size:clamp(2.15rem,10vw,3.15rem)}.venue-chapter-links{display:grid;grid-template-columns:1fr}.grid>.card-local{padding:25px 22px}}
+@media(prefers-reduced-motion:reduce){.venue-chapter-links a{scroll-behavior:auto}}
+
 </style>
 </head>
 <body>
@@ -261,6 +297,34 @@ main.wrap{width:min(1230px,calc(100% - 56px))}
 <p class="detail">4630 Greene Rd 628, Paragould, AR 72450 · Regional provider; Russellville delivery UNCONFIRMED</p>
 <div class="actions"><a href="mailto:info@upsidesound.com" aria-label="Email Upside Sound at info at upsidesound dot com">Email rental provider ↗</a><a href="https://upsidesound.com/" target="_blank" rel="noopener noreferrer">Official mobile-stage and sound rentals ↗</a></div>
 </article>
+
+<section class="venue-chapter" aria-labelledby="venue-chapter-title">
+ <div class="venue-chapter-scene">
+  <span class="venue-chapter-number">Chapter 02 / Stay on site</span>
+  <svg class="venue-chapter-art" viewBox="0 0 420 262" fill="none" aria-hidden="true" focusable="false">
+   <path d="M35 219H385" stroke="#fff1ce" stroke-width="5" stroke-linecap="round"/>
+   <path d="M79 102L210 46L341 102V215H79Z" fill="#113c3d" fill-opacity=".83" stroke="#f6d9a3" stroke-width="5"/>
+   <path d="M96 102H324M96 102L153 151L210 102L267 151L324 102M153 151V201M267 151V201" stroke="#f3c889" stroke-width="5" stroke-linejoin="round"/>
+   <path d="M122 216V167H298V216" stroke="#f4e8cd" stroke-width="5"/>
+   <path d="M141 165V199M210 165V199M279 165V199" stroke="#f4e8cd" stroke-width="4" stroke-linecap="round"/>
+   <path d="M118 122L129 145L140 122M202 122L213 145L224 122M283 122L294 145L305 122" fill="#f4d393" stroke="#f7e1b3" stroke-width="2"/>
+   <path d="M54 218H366M92 235H328" stroke="#f4d89d" stroke-width="2" opacity=".7"/>
+   <circle cx="210" cy="23" r="5" fill="#fff1ce"/><path d="M210 11V2M195 23H186M225 23H234" stroke="#fff1ce" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+  <span class="venue-chapter-photo-note">River Valley scenery + original stage illustration · Not venue photography</span>
+ </div>
+ <div class="venue-chapter-copy">
+  <p class="eyebrow">02 / Existing stages · Russellville &amp; Dover</p>
+  <h2 id="venue-chapter-title">The stage is <em>already there.</em></h2>
+  <p>Not every event needs a stage delivered. Two listed venues have an existing outdoor stage as part of their facilities. Compare the locations, then ask about dates, permitted use and the full venue rental terms.</p>
+  <div class="venue-chapter-links">
+   <a href="#depot-stage">Russellville · Depot Park ↓</a>
+   <a href="#brookstock-stage">Dover · Brookstock ↓</a>
+  </div>
+  <p class="venue-chapter-small">These are on-site venues, not portable-stage suppliers. Stage access and event availability require direct confirmation.</p>
+ </div>
+</section>
+
 <article class="card card-local" id="depot-stage">
 <div class="card-top"><span class="index">LOCAL VENUE 08</span><span class="tag">On-site stage only</span></div>
 <h3>Historic Train Depot — Depot Park Stage (Russellville)</h3>
