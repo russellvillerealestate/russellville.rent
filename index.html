@@ -1449,6 +1449,111 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   .rentals-grid[data-view="list"]>.rental-card[data-category="cars"] .roadbook-brand>small{display:none}
 }
 
+
+/* 2026-11-04 / River Valley stay collection. Live StayARV-inspired scenic scale
+   and grounded forest/gold identity; a three-card editorial rhythm for cabins,
+   campsites and camper rentals rather than a provider-style sales page.
+   NN/g visual hierarchy and information scent: differentiate neighboring paths.
+   web.dev responsive reflow / no extra network imagery (reuse the homepage's
+   existing Lake Dardanelle photo); WCAG 2.2 focus/reflow/reduced motion.
+   Image is explicitly local scenery, never presented as lodging inventory. */
+.rental-card[data-category="stays"] .stay-landscape{
+  isolation:isolate;position:relative;display:flex;flex-direction:column;
+  align-items:flex-start;justify-content:space-between;gap:26px;
+  height:100%;min-height:290px;padding:clamp(22px,3vw,40px);
+  background:linear-gradient(180deg,#082b27d4 0%,#08312c38 47%,#082923e5 100%),
+    url("assets/lake-dardanelle-sunset.jpg") center 54%/cover no-repeat;
+  color:#fff9eb;text-align:left
+}
+.rental-card[data-category="stays"] .stay-landscape:before{
+  content:"";position:absolute;inset:14px;border:1px solid #fff3d573;
+  border-radius:13px;pointer-events:none
+}
+.stay-landscape-kicker,.stay-landscape-caption{position:relative;z-index:1;
+  font-size:.64rem;line-height:1.5;font-weight:850;letter-spacing:.13em;
+  text-shadow:0 2px 8px #061e19}
+.stay-landscape-kicker{color:#ffe3aa}.stay-landscape-caption{
+  max-width:35ch;letter-spacing:.02em;color:#f3f4ea;font-weight:600}
+.stay-landscape-title{position:relative;z-index:1;
+  font:400 clamp(2.45rem,4.5vw,4.35rem)/.99 Georgia,"Times New Roman",serif;
+  letter-spacing:-.055em;text-shadow:0 3px 18px #051b16d9;text-wrap:balance}
+.stay-landscape-title em{color:#ffe1a1;font-weight:400}
+.rental-card[data-category="camping"] .camping-night{
+  isolation:isolate;color:#fff4d7;
+  background:linear-gradient(180deg,#0b3027a9,#092e29b8),
+    url("assets/lake-dardanelle-docks.jpg") center 62%/cover no-repeat
+}
+.rental-card[data-category="camping"] .camping-night:before{
+  width:auto;height:auto;inset:15px;border:1px solid #fff4d76e;
+  border-radius:12px;box-shadow:none;background:none
+}
+.rental-card[data-category="camping"] .camping-night:after{content:none}
+.rental-card[data-category="camping"] .camping-night .directory-pictogram{
+  color:#fff0bf;filter:drop-shadow(0 7px 13px #071a14c0)}
+.rental-card[data-category="camping"] .camping-night small{
+  color:#fff9e7;text-shadow:0 2px 7px #071e18;letter-spacing:.14em}
+.rental-card[data-category="rv-rentals"] .camper-glow{
+  isolation:isolate;background:radial-gradient(circle at 75% 28%,#f8e5aa 0%,transparent 45%),
+    linear-gradient(138deg,#d8e8d9,#f5ebd0);color:#2d5c49}
+.rental-card[data-category="rv-rentals"] .camper-glow:before{
+  width:170px;height:170px;right:-10px;bottom:-115px;background:#8ab69b54;
+  border:0;box-shadow:0 0 0 35px #ffffff64}
+.rental-card[data-category="rv-rentals"] .camper-glow:after{
+  width:230px;height:90px;right:auto;left:-40px;bottom:-65px;
+  background:#bed7be;border:0;border-radius:50%}
+.rental-card[data-category="rv-rentals"] .camper-glow .directory-pictogram{
+  position:relative;z-index:1;filter:drop-shadow(0 8px 12px #244d3825)}
+.rental-card[data-category="rv-rentals"] .camper-glow small{
+  position:relative;z-index:1;color:#2a5c48}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stays"]{
+  border:1px solid #aac1b0;border-radius:24px;overflow:hidden;
+  box-shadow:0 17px 42px #153b2f1b
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stays"] .card-body{
+  justify-content:center;padding:clamp(25px,3.5vw,46px);
+  background:linear-gradient(150deg,#fffef9,#ebf0e5)}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stays"] .card-body h3{
+  color:#173f34;font:400 clamp(2rem,3.35vw,3.45rem)/1.07 Georgia,"Times New Roman",serif;
+  letter-spacing:-.055em;text-wrap:balance;margin-bottom:18px
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stays"] .card-body>p:not(.eyebrow){
+  max-width:49ch;font-size:.93rem;line-height:1.65
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stays"] .card-actions .card-link{
+  display:flex;align-items:center;min-height:50px;padding:11px 15px;
+  color:#fff;background:#194a3b;border:0;border-radius:11px;text-decoration:none
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stays"] .card-actions .card-link:hover{background:#28654e}
+@media(min-width:850px){
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stays"]{
+   grid-column:span 2;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);min-height:410px
+ }
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stays"] .stay-landscape{min-height:410px}
+}
+@media(min-width:601px) and (max-width:849px){
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stays"]{grid-column:span 2}
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stays"] .stay-landscape{height:275px;min-height:275px}
+}
+@media(max-width:600px){
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stays"]{border-radius:18px}
+ .rental-card[data-category="stays"] .stay-landscape{height:242px;min-height:242px;padding:25px}
+ .stay-landscape-title{font-size:2.7rem}
+ .stay-landscape-kicker{font-size:.55rem}
+ .stay-landscape-caption{font-size:.61rem}
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stays"] .card-body{padding:24px}
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stays"] .card-body h3{font-size:2.1rem}
+}
+.rentals-grid[data-view="list"]>.rental-card[data-category="stays"] .stay-landscape{
+  height:100%;min-height:185px;gap:6px;padding:18px
+}
+.rentals-grid[data-view="list"] .stay-landscape-title{font-size:clamp(1.4rem,2.7vw,2.1rem)}
+.rentals-grid[data-view="list"] .stay-landscape-caption{font-size:.57rem}
+@media(max-width:600px){
+ .rentals-grid[data-view="list"]>.rental-card[data-category="stays"] .stay-landscape{height:170px;min-height:170px;padding:14px}
+ .rentals-grid[data-view="list"] .stay-landscape-title{font-size:1.45rem}
+ .rentals-grid[data-view="list"] .stay-landscape-kicker{font-size:.51rem}
+}
+
 </style>
 </head>
 <body>
@@ -1661,19 +1766,19 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <p class="status">Co-Create Innovation Hub · Hidden Gem Suites · Local office listings</p>
 <a class="card-link" href="office-space.html">Browse offices &amp; coworking <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="stays">
-<div class="image-wrap"><img src="airbnbruss.png" alt="Airbnb &amp; Short-Term Stays" loading="lazy" width="640" height="380"></div>
+<div class="image-wrap stay-landscape" role="img" aria-label="Sunset over Lake Dardanelle. River Valley scenery, not a listed rental property."><span class="stay-landscape-kicker">RIVER VALLEY / YOUR NEXT GETAWAY</span><span class="stay-landscape-title" aria-hidden="true">Stay a little<br><em>longer.</em></span><span class="stay-landscape-caption">Lake Dardanelle scenery · Not a rental property photo</span></div>
 <div class="card-body"><p class="eyebrow">Short-term stays</p><h3>Airbnb &amp; Short-Term Stays</h3>
 <p>Explore verified local cabins, state-park lodging and other furnished getaways near Russellville.</p>
 <p class="status">WanderLost Ozarks · LABEN Properties (Hobbit House) · Ozark Piney Cabins</p>
 <a class="card-link" href="short-term-stays.html">Browse cabins &amp; short-term stays <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="camping">
-<div class="category-art icon-tile" style="--tile-ink:#35645b;--tile-bg:#e0eee5" role="img" aria-label="Campground illustration"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-camping"></use></svg><small>CAMPGROUNDS</small></div>
+<div class="category-art icon-tile camping-night" style="--tile-ink:#f8e9c1;--tile-bg:#193f37" role="img" aria-label="Campground icon over Lake Dardanelle scenery, not a photo of a rental campsite"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-camping"></use></svg><small>CAMPGROUNDS</small></div>
 <div class="card-body"><p class="eyebrow">Camping &amp; RV sites</p><h3>Campgrounds &amp; RV sites</h3>
 <p>Compare RV sites and campgrounds in Russellville, Pottsville, London and nearby River Valley destinations.</p>
 <p class="status">Ivy's Cove · Edens RV Resort · Ozark Piney RV campsite</p>
 <a class="card-link" href="camping.html">Browse campgrounds &amp; RV sites <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="rv-rentals">
-<div class="category-art icon-tile" style="--tile-ink:#46634f;--tile-bg:#e3eddf" role="img" aria-label="Neutral camper illustration"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-rv-rentals"></use></svg><small>CAMPER RENTALS</small></div>
+<div class="category-art icon-tile camper-glow" style="--tile-ink:#2c5646;--tile-bg:#e2e9d9" role="img" aria-label="Illustrated camper symbol, not rental inventory"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-rv-rentals"></use></svg><small>CAMPER RENTALS</small></div>
 <div class="card-body"><p class="eyebrow">Recreational vehicle rentals</p><h3>RV &amp; camper rentals</h3>
 <p>Rent a camper or motorhome for a trip or campground stay; confirm delivery to Russellville.</p>
 <p class="status">Huddleston RV Rentals · Jez Camper Rental · Camper Rentals of Arkansas (regional; Russellville delivery unconfirmed) · RVshare · RVezy</p>
