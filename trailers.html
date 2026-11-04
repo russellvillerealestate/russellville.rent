@@ -137,6 +137,67 @@ h1{font:400 clamp(2.8rem,5.5vw,4.8rem)/1.08 Georgia,"Times New Roman",serif;lett
 @media(max-width:650px){.hero-editorial{border-radius:0 0 20px 20px}.hero-copy-wrap{padding:36px 24px 26px}.hero-editorial h1{font-size:clamp(2.75rem,11vw,4.6rem)}.hero-stage{min-height:214px;padding:20px 23px;grid-template-columns:1fr}.hero-stage-top{grid-column:auto}.hero-trailer-picture{position:absolute;width:72%;right:2%;top:25%;min-height:0;opacity:.87}.hero-stage-bottom{align-self:end;max-width:100%;margin-top:95px}.directory-jumps{padding:15px;border-radius:0 0 14px 14px}.directory-jumps .jump a{flex:1 1 auto}.overview{grid-template-columns:1fr 1fr;margin:18px 0 46px}.overview div{padding:16px}.overview div:nth-child(n+3){border-top:1px solid #d9e3d9}.rental-lanes{margin-bottom:42px}.rental-lanes-grid{grid-template-columns:1fr}.rental-lane,.rental-lane:last-child{min-height:0;grid-column:auto;padding:21px}.rental-lane .lane-art{height:65px;margin-bottom:4px}.rental-lane .lane-art svg{height:58px}.lane-description{margin-bottom:16px}.rental-lane strong{font-size:1.95rem}}
 @media(max-width:390px){.hero-actions a{width:100%}.directory-jumps .jump{display:grid;grid-template-columns:1fr 1fr}.directory-jumps .jump a{justify-content:center;text-align:center}.overview{grid-template-columns:1fr}.overview div{border-top:1px solid #d9e3d9}.hero-stage-bottom strong{font-size:1.03rem}}
 @media(prefers-reduced-motion:reduce){.hero-actions a,.rental-lane{transition:none}.hero-actions a:hover,.rental-lane:hover{transform:none}}
+
+/* November 4, 2026 — The River Valley hauling ledger.
+   Immersive, alternating editorial operator folios translate StayARV's scenic
+   scale into a supplier directory, rather than copying its page structure.
+   Nielsen Norman Group: prominent navigation and scannable information hierarchy.
+   web.dev: CSS decorative illustration avoids content-image loading shifts.
+   W3C WCAG 2.2: semantic content unchanged, visible focus, responsive reflow
+   and reduced-motion accommodation. Existing provider descriptions, pricing,
+   booking destinations and preflight JavaScript remain unmodified. */
+.group{margin-bottom:clamp(55px,7.5vw,95px)}
+.group .section-heading{position:relative;align-items:end;padding:0 0 24px;margin-bottom:24px;border-bottom:1px solid #b9cfc2}
+.group .section-heading:before{content:"";position:absolute;left:0;bottom:-2px;width:min(180px,26%);height:4px;border-radius:5px;background:linear-gradient(90deg,#19543f,#d7ad68)}
+.group .section-heading h2{max-width:16ch;font-size:clamp(2.45rem,4.55vw,4.15rem);line-height:1.05;letter-spacing:-.055em;text-wrap:balance}
+.group .section-heading>p{max-width:37ch;line-height:1.55}
+.group .grid,.group .grid.single{grid-template-columns:minmax(0,1fr);gap:23px}
+.group .grid.single .provider{max-width:none}
+.group .provider{display:grid;grid-template-columns:minmax(164px,24%) minmax(0,1fr);min-height:286px;border-radius:24px;border-color:#c9d7c9;box-shadow:0 18px 38px #173c3214;transform:none;transition:box-shadow .22s ease,border-color .22s ease}
+.group .provider:hover{transform:none;box-shadow:0 22px 42px #173c3226;border-color:#8cae9c}
+.group .provider .number{position:relative;isolation:isolate;display:flex;align-items:flex-start;justify-content:flex-start;min-height:100%;padding:26px 24px;border-right:0;overflow:hidden;background:radial-gradient(ellipse at 5% 4%,#397259 0%,transparent 62%),linear-gradient(155deg,#1c503f,#0e332b);color:#f6dea9;font:italic 400 clamp(4.5rem,8.3vw,7.6rem)/1 Georgia,serif;letter-spacing:-.09em;text-align:left}
+.group .provider .number:before{content:"";position:absolute;inset:13px;border:1px solid #f1d29445;border-radius:12px;z-index:-1;pointer-events:none}
+.group .provider .number:after{content:"";position:absolute;bottom:11%;right:-6%;width:110%;height:112px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20120%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23f4d591%22%20stroke-width%3D%223.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M15%2090h267M21%2076h27l18%2012h21%22%2F%3E%3Cpath%20d%3D%22M88%2023h164v59H88zM88%2068h164M101%2034h138M103%2042v24m33-24v24m34-24v24m34-24v24%22%2F%3E%3Ccircle%20cx%3D%22128%22%20cy%3D%2290%22%20r%3D%2215%22%2F%3E%3Ccircle%20cx%3D%22219%22%20cy%3D%2290%22%20r%3D%2215%22%2F%3E%3Cpath%20d%3D%22M130%2090h-4m95%200h-4%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M91%2026h156v40H91z%22%20fill%3D%22%23f4d591%22%20opacity%3D%22.08%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;opacity:.85;pointer-events:none;z-index:-1}
+.group .provider:nth-child(even) .number{background:radial-gradient(ellipse at 90% 0%,#a17d4b44,transparent 59%),linear-gradient(145deg,#294d48,#163b39)}
+.group .provider:nth-child(even) .number:after{transform:scaleX(-1);opacity:.7}
+.group .provider .card-content{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(190px,.82fr);grid-template-rows:auto auto 1fr auto;column-gap:clamp(18px,3vw,35px);align-items:start;padding:clamp(24px,3.8vw,42px);background:linear-gradient(130deg,#fff 0%,#fff 58%,#fafcf8 100%)}
+.group .provider .card-content>.card-label{grid-column:1/-1;grid-row:1;letter-spacing:.13em;font-size:.72rem!important;color:#447158!important;margin:0 0 11px!important}
+.group .provider .card-content>h3{grid-column:1;grid-row:2;font:400 clamp(1.8rem,3.4vw,2.75rem)/1.13 Georgia,serif;letter-spacing:-.042em;margin:0 0 15px;color:#143d31;text-wrap:balance}
+.group .provider .card-content>p:nth-of-type(2){grid-column:1;grid-row:3;max-width:74ch;font-size:.94rem;line-height:1.78;margin:0 0 17px;color:#364f43}
+.group .provider .card-content>.detail{grid-column:2;grid-row:2/span 2;align-self:start;margin:2px 0 10px;padding:19px 17px;border:1px solid #d6e2d2;border-left:4px solid #adba8e;border-radius:0 12px 12px 0;background:#eff5eb;font-size:.86rem;line-height:1.7;color:#345743;overflow-wrap:anywhere}
+.group .provider .card-content>p:last-child{grid-column:1/-1;grid-row:4;padding-top:18px;margin:0!important;border-top:1px solid #dce5dd;line-height:2.8;overflow-wrap:anywhere}
+.group .provider .card-content>p:last-child a{font-size:.83rem}
+.group .provider .card-content>p:last-child a:first-of-type{background:#194d3b;border-color:#194d3b}
+#nearby .provider .number{background:linear-gradient(150deg,#265f61,#153f45)}
+#cold-storage .provider .number{background:linear-gradient(150deg,#235b70,#0b3447)}
+#rent-to-own .provider .number{background:linear-gradient(150deg,#84613c,#4b392d)}
+#commercial-freight .provider .number{background:linear-gradient(150deg,#40536b,#263a50)}
+#rent-to-own .provider .card-content>.detail{background:#fbf5e7;border-color:#e7d3ab;border-left-color:#be9254}
+.group .provider:target{outline:4px solid #a46c21;outline-offset:5px}
+@media(max-width:910px){
+ .group .provider{grid-template-columns:minmax(120px,22%) minmax(0,1fr)}
+ .group .provider .number{padding:22px 16px;font-size:clamp(3.4rem,8vw,5rem)}
+ .group .provider .number:after{width:145%;right:-30%;height:100px}
+ .group .provider .card-content{display:block;padding:clamp(21px,3vw,30px)}
+ .group .provider .card-content>h3{font-size:clamp(1.75rem,3.7vw,2.4rem)}
+ .group .provider .card-content>.detail{margin:12px 0;padding:14px 16px}
+ .group .provider .card-content>p:last-child{margin-top:17px!important}
+}
+@media(max-width:650px){
+ .group .section-heading{display:block;padding-bottom:18px}
+ .group .section-heading h2{font-size:clamp(2.18rem,8.8vw,3rem)}
+ .group .section-heading>p{margin:13px 0 0;max-width:60ch}
+ .group .provider{display:block;min-height:0;border-radius:18px}
+ .group .provider .number{min-height:105px;padding:13px 21px;font-size:4.4rem;align-items:center}
+ .group .provider .number:before{inset:9px}
+ .group .provider .number:after{width:165px;height:88px;right:6%;bottom:7%;transform:none}
+ .group .provider:nth-child(even) .number:after{transform:scaleX(-1)}
+ .group .provider .card-content{padding:23px 21px 25px}
+ .group .provider .card-content>h3{font-size:clamp(1.7rem,6vw,2.2rem)}
+ .group .provider .card-content>p:nth-of-type(2){font-size:.91rem}
+ .group .provider .card-content>p:last-child a{margin:3px 2px}
+}
+@media(prefers-reduced-motion:reduce){.group .provider{transition:none}}
 </style></head><body>
 <a class="skip-link" href="#main">Skip to trailer rentals</a>
 <header><nav class="nav" aria-label="Site navigation"><a class="logo" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← Browse all rentals</a></nav></header>
