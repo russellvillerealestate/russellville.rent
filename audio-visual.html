@@ -457,6 +457,129 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
  .route-grid li:nth-child(n+6) .route-scene{min-height:125px}
  .route-grid li:nth-child(n+6) .route-scene svg{max-height:130px}
 }
+
+/* November 4, 2026: editorial production folios. Seven existing decorative
+   service SVG scenes reused; never implied to be actual provider inventory.
+   Reference: live StayARV / Russellville.Rent; NN/g visual hierarchy and
+   information scent, web.dev responsive layout, WCAG 2.2 focus/reflow. */
+#confirmed .section-heading,#more-options .section-heading{margin-bottom:30px}
+#confirmed .section-title,#more-options .section-title{
+ font:400 clamp(2.35rem,4.6vw,4.35rem)/1.05 Georgia,"Times New Roman",serif;
+ letter-spacing:-.06em;text-wrap:balance;max-width:15ch
+}
+#confirmed .section-intro,#more-options .section-intro{
+ font-size:.98rem;line-height:1.7;max-width:43ch
+}
+.provider-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:23px}
+.provider-grid .provider:last-child{grid-column:auto}
+.provider,.provider.featured{
+ display:grid;grid-template-columns:minmax(0,.87fr) minmax(0,1.13fr);
+ min-height:380px;border:1px solid #cad7ce;border-radius:17px;
+ background:#fffef9;box-shadow:0 20px 48px #0e352a16;
+ overflow:hidden;scroll-margin-top:28px
+}
+#confirmed .provider+.provider{margin-top:22px}
+.provider .card-top,.provider.featured .card-top{
+ position:relative;isolation:isolate;display:flex;flex-direction:column;
+ align-items:flex-start;justify-content:flex-start;min-height:365px;
+ padding:clamp(23px,3vw,36px);border:0;overflow:hidden;
+ background:radial-gradient(circle at 69% 44%,#416b55,#173d35 62%,#0c2a27);
+ color:#f6e6be
+}
+.provider .card-top:before{
+ content:"";position:absolute;inset:17px;border:1px solid currentColor;
+ opacity:.32;pointer-events:none;z-index:0
+}
+.provider .card-top:after{
+ content:"";position:absolute;width:290px;height:290px;right:-110px;
+ top:-130px;border:1px solid currentColor;border-radius:50%;
+ box-shadow:0 0 0 35px #fff5db0b,0 0 0 78px #fff5db08;
+ opacity:.36;pointer-events:none
+}
+.provider .index{
+ position:relative;z-index:2;font:400 clamp(2.3rem,5vw,4.4rem)/1 Georgia,"Times New Roman",serif;
+ letter-spacing:-.07em;color:inherit
+}
+.provider .folio-scene{
+ position:absolute;z-index:1;inset:33px 13px 63px;display:grid;
+ place-items:center;pointer-events:none
+}
+.provider .folio-scene svg{
+ display:block;width:min(100%,420px);height:auto;max-height:245px;
+ overflow:visible;filter:drop-shadow(0 15px 18px #061e1b32)
+}
+.provider .card-top .status{
+ position:relative;z-index:2;margin-top:auto;max-width:100%;
+ border-radius:5px;padding:9px 12px;line-height:1.4;
+ font-size:.74rem;letter-spacing:0;box-shadow:0 4px 16px #071d162b
+}
+.provider .folio-caption{
+ position:relative;z-index:2;display:block;margin-top:13px;
+ font-size:.59rem;font-weight:850;line-height:1.45;letter-spacing:.13em;
+ text-transform:uppercase;color:inherit
+}
+.provider .provider-content,.provider.featured .provider-content{
+ min-width:0;align-self:center;padding:clamp(28px,4.3vw,58px);
+ overflow-wrap:anywhere
+}
+.provider h2,.provider.featured h2{
+ margin:0 0 21px;font:400 clamp(2rem,3.4vw,3rem)/1.09 Georgia,"Times New Roman",serif;
+ letter-spacing:-.055em;color:#183f33;text-wrap:balance
+}
+.provider p,.provider.featured p{font-size:.94rem;line-height:1.8}
+.provider .area{padding-top:19px;border-top:1px solid #d7e0d5;
+ margin-top:25px;color:#3e5e4c;font-weight:800}
+.provider p:last-child{line-height:1.95}
+.provider p:last-child a{padding:5px 0;font-weight:800;text-decoration-thickness:1.5px}
+#provider-2 .card-top,#provider-4 .card-top,#provider-6 .card-top{
+ grid-column:2;grid-row:1
+}
+#provider-2 .provider-content,#provider-4 .provider-content,#provider-6 .provider-content{
+ grid-column:1;grid-row:1
+}
+#provider-1 .card-top{background:radial-gradient(circle at 58% 36%,#487a65,#173d35 67%,#102d2a);color:#f3dca2}
+#provider-2 .card-top{background:radial-gradient(circle at 63% 38%,#466b75,#1c3d51 69%,#102732);color:#f4daa7}
+#provider-3 .card-top{background:radial-gradient(circle at 64% 44%,#dce8d8,#a9c4b8 59%,#7da59b);color:#245c54}
+#provider-4 .card-top{background:radial-gradient(circle at 65% 31%,#f9e6cd,#e5c9b2 66%,#cba98f);color:#6c4a3b}
+#provider-5 .card-top{background:radial-gradient(circle at 57% 36%,#dae9e9,#a3c9ca 69%,#71a4ab);color:#315d65}
+#provider-6 .card-top{background:radial-gradient(circle at 58% 42%,#4d5168,#252e47 64%,#18213a);color:#f1d5a0}
+#provider-7 .card-top{background:radial-gradient(circle at 58% 42%,#87645f,#563f47 64%,#342f3d);color:#ffe6bd}
+#provider-3 .folio-scene svg,#provider-4 .folio-scene svg,#provider-5 .folio-scene svg{
+ filter:drop-shadow(0 13px 16px #22423819)
+}
+@media(max-width:820px){
+ .provider,.provider.featured{grid-template-columns:minmax(0,1fr);min-height:0}
+ .provider .card-top,.provider.featured .card-top,
+ #provider-2 .card-top,#provider-4 .card-top,#provider-6 .card-top{
+  grid-column:1;grid-row:1;min-height:260px
+ }
+ .provider .provider-content,.provider.featured .provider-content,
+ #provider-2 .provider-content,#provider-4 .provider-content,#provider-6 .provider-content{
+  grid-column:1;grid-row:2;padding:clamp(23px,4vw,36px)
+ }
+ .provider .folio-scene{inset:20px 20px 45px}
+ .provider .folio-scene svg{max-height:180px;width:min(80%,320px)}
+ .provider .index{font-size:3.3rem}
+ .provider h2,.provider.featured h2{font-size:clamp(1.8rem,4.3vw,2.6rem)}
+}
+@media(max-width:520px){
+ #confirmed .section-title,#more-options .section-title{font-size:clamp(2rem,8vw,2.85rem)}
+ .provider-grid{gap:17px}
+ .provider,.provider.featured{border-radius:12px}
+ .provider .card-top,.provider.featured .card-top,
+ #provider-2 .card-top,#provider-4 .card-top,#provider-6 .card-top{
+  min-height:228px;padding:22px
+ }
+ .provider .card-top:before{inset:11px}
+ .provider .folio-scene{inset:26px 9px 45px}
+ .provider .folio-scene svg{width:min(73%,260px);max-height:145px}
+ .provider .index{font-size:2.7rem}
+ .provider .card-top .status{font-size:.67rem;padding:7px 10px}
+ .provider .folio-caption{font-size:.54rem;margin-top:9px}
+ .provider .provider-content,.provider.featured .provider-content{padding:25px 21px}
+ .provider h2,.provider.featured h2{font-size:clamp(1.8rem,7.3vw,2.4rem)}
+ .provider p,.provider.featured p{font-size:.88rem}
+}
 </style>
 </head>
 <body>
@@ -536,31 +659,41 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
 
 <section class="section" id="confirmed" aria-labelledby="confirmed-title"><div class="section-heading"><div><p class="kicker">01 / Start here</p><h2 class="section-title" id="confirmed-title">Russellville delivery advertised</h2></div><p class="section-intro">These providers explicitly advertise delivery and setup for Russellville events. Confirm your equipment list and final charges directly.</p></div>
 <article class="provider featured" id="provider-1">
-<div class="card-top"><span class="index" aria-hidden="true">01</span><span class="status confirmed">Russellville delivery confirmed</span></div>
+<div class="card-top"><span class="index" aria-hidden="true">01</span><span class="status confirmed">Russellville delivery confirmed</span><span class="folio-scene" aria-hidden="true"><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet"><path d="M18 126H302" stroke="currentColor" opacity=".25"/><rect x="65" y="40" width="64" height="98" rx="7" fill="#132c2d" stroke="currentColor" stroke-width="3"/><circle cx="97" cy="100" r="23" stroke="currentColor" stroke-width="5"/><circle cx="97" cy="61" r="8" fill="currentColor" opacity=".8"/><rect x="183" y="54" width="58" height="84" rx="6" fill="#132c2d" stroke="currentColor" stroke-width="3"/><circle cx="212" cy="108" r="19" stroke="currentColor" stroke-width="4"/><circle cx="212" cy="72" r="6" fill="currentColor"/><path d="M144 75v48m-13 0h26m-11-48 16-24m-16 24-15-24" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M268 76q27 21 0 42M281 62q39 37 0 70" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".6"/></svg></span><span class="folio-caption" aria-hidden="true">Service illustration / Not provider inventory</span></div>
 <div class="provider-content"><h2>Roots &amp; Rhythm Rentals</h2><p>Official Russellville-specific rentals include battery-powered speakers, wireless microphones, mixers, subwoofers and wireless event lighting. Equipment-only rentals are available without a DJ; delivery and setup to Russellville are explicitly offered for an additional fee. A signed rental agreement, Arkansas driver’s license and refundable card authorization or deposit are required; premium BASSBOSS systems also require insurance. Confirm equipment, total charges and event date directly.</p><p class="area">Alexander, Arkansas — Russellville delivery CONFIRMED by official provider</p><p><a href="tel:+15014203502">501-420-3502</a> · <a href="mailto:randravrental@gmail.com">randravrental@gmail.com</a> · <a href="https://www.rootsandrhythmrentals.com/russellville-audio-lighting-rentals" target="_blank" rel="noopener noreferrer">Public provider information ↗</a></p></div>
 </article>
 <article class="provider" id="provider-2">
-<div class="card-top"><span class="index" aria-hidden="true">02</span><span class="status confirmed">Russellville service advertised</span></div>
+<div class="card-top"><span class="index" aria-hidden="true">02</span><span class="status confirmed">Russellville service advertised</span><span class="folio-scene" aria-hidden="true"><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet"><path d="M16 132h288" stroke="currentColor" opacity=".3"/><rect x="54" y="26" width="210" height="103" rx="6" fill="#152c32" stroke="currentColor" stroke-width="4"/><rect x="66" y="38" width="186" height="78" rx="2" fill="#447878"/><circle cx="204" cy="64" r="14" fill="#f3d4a0"/><path d="M66 101 113 68l35 25 31-19 73 42H66Z" fill="#1a5557"/><path d="m54 127-11 14m221-14 11 14M143 129v11m32-11v11" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M24 61q13-19 26 0m228-4q13-19 25 0" stroke="currentColor" stroke-width="3" opacity=".65"/></svg></span><span class="folio-caption" aria-hidden="true">Service illustration / Not provider inventory</span></div>
 <div class="provider-content"><h2>FunFlicks — Outdoor Movie Screens (Arkansas)</h2><p>The operator's official Arkansas rental page explicitly lists Russellville among its service locations. It advertises inflatable outdoor movie screens with projection and sound for schools, community events, private gatherings and other venues. Each screen reservation includes delivery, setup, removal and an on-site technician. This is a regional event service, not a Russellville storefront; confirm dates, screen options, site requirements and the full location-specific quote directly.</p><p class="area">Arkansas regional operator — Russellville service CONFIRMED on official coverage list</p><p><a href="https://www.funflicks.com/projector-screen-rental-little-rock/" target="_blank" rel="noopener noreferrer">Official screen rentals &amp; Russellville service area ↗</a></p></div>
 </article>
 </section>
 <section class="section" id="more-options" aria-labelledby="more-title"><div class="section-heading"><div><p class="kicker">02 / More options</p><h2 class="section-title" id="more-title">Additional production providers</h2></div><p class="section-intro">These listings may be useful for your event, but delivery or equipment-only rental details are not confirmed as noted below.</p></div>
 <div class="provider-grid"><article class="provider" id="provider-3">
-<div class="card-top"><span class="index" aria-hidden="true">03</span><span class="status verify">Russellville delivery unconfirmed</span></div>
+<div class="card-top"><span class="index" aria-hidden="true">03</span><span class="status verify">Russellville delivery unconfirmed</span><span class="folio-scene" aria-hidden="true"><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet"><path d="M20 127h280" stroke="currentColor" opacity=".26"/><path d="M54 57h118v61H54z" fill="#1d4542" stroke="currentColor" stroke-width="3"/><path d="M113 118v19m-36 0h72" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="m172 76 82-30v54l-82-18" fill="currentColor" opacity=".16"/><rect x="185" y="79" width="87" height="46" rx="8" fill="#233d3c" stroke="currentColor" stroke-width="3"/><circle cx="241" cy="102" r="15" stroke="currentColor" stroke-width="4"/><circle cx="241" cy="102" r="6" fill="currentColor"/><path d="M196 125v12m62-12v12" stroke="currentColor" stroke-width="4"/><path d="M72 78h79m-79 11h56" stroke="currentColor" stroke-width="3" opacity=".55"/></svg></span><span class="folio-caption" aria-hidden="true">Service illustration / Not provider inventory</span></div>
 <div class="provider-content"><h2>A/V Arkansas</h2><p>Sound, video, projectors, screens, lighting and event production. The company advertises delivery broadly, but Russellville-specific delivery and equipment availability are not independently confirmed; request a location-specific quote.</p><p class="area">Little Rock, Arkansas — Russellville delivery UNCONFIRMED</p><p><a href="https://avarkansas.com/" target="_blank" rel="noopener noreferrer">Public provider information ↗</a></p></div>
 </article><article class="provider" id="provider-4">
-<div class="card-top"><span class="index" aria-hidden="true">04</span><span class="status verify">Equipment-only rental unconfirmed</span></div>
+<div class="card-top"><span class="index" aria-hidden="true">04</span><span class="status verify">Equipment-only rental unconfirmed</span><span class="folio-scene" aria-hidden="true"><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet"><path d="M22 127h276" stroke="currentColor" opacity=".3"/><path d="M46 39h228M70 39v86m180-86v86" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M65 42q18 35 36 0 18 35 36 0 18 35 36 0 18 35 36 0 18 35 36 0" stroke="currentColor" stroke-width="3" opacity=".8"/><circle cx="83" cy="78" r="7" fill="currentColor"/><circle cx="135" cy="78" r="7" fill="currentColor"/><circle cx="187" cy="78" r="7" fill="currentColor"/><circle cx="239" cy="78" r="7" fill="currentColor"/><path d="M123 126v-19h74v19m-60-19V93m44 14V93" stroke="currentColor" stroke-width="4"/><path d="M127 94q33-44 66 0" stroke="currentColor" stroke-width="3"/><circle cx="160" cy="81" r="11" stroke="currentColor" stroke-width="3"/></svg></span><span class="folio-caption" aria-hidden="true">Service illustration / Not provider inventory</span></div>
 <div class="provider-content"><h2>636 Entertainment</h2><p>Official wedding entertainment packages include disc-jockey services, sound systems, wireless microphones and dance-floor or architectural lighting; some packages include a photo booth. <strong>Standalone equipment-only rentals are UNCONFIRMED.</strong> Ask for event-specific packages, availability and pricing.</p><p class="area">Russellville area — equipment-only rentals UNCONFIRMED</p><p><a href="tel:+18704159780">870-415-9780</a> · <a href="https://www.636entertainment.net/wedding-packages" target="_blank" rel="noopener noreferrer">Public provider information ↗</a></p></div>
 </article><article class="provider" id="provider-5">
-<div class="card-top"><span class="index" aria-hidden="true">05</span><span class="status verify">Russellville delivery unconfirmed</span></div>
+<div class="card-top"><span class="index" aria-hidden="true">05</span><span class="status verify">Russellville delivery unconfirmed</span><span class="folio-scene" aria-hidden="true"><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet"><path d="M35 128h250" stroke="currentColor" opacity=".3"/><path d="m52 65 209 0 26 65H33Z" fill="#173935" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><rect x="76" y="35" width="167" height="41" rx="5" fill="#173935" stroke="currentColor" stroke-width="3"/><path d="M94 57h25m14 0h25m14 0h25m14 0h13" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M74 87h161M62 105h195" stroke="currentColor" stroke-width="3" opacity=".5"/><circle cx="90" cy="94" r="5" fill="currentColor"/><circle cx="124" cy="94" r="5" fill="currentColor"/><circle cx="158" cy="94" r="5" fill="currentColor"/><circle cx="192" cy="94" r="5" fill="currentColor"/><path d="M105 110v13m38-14v9m37-9v13m38-14v10" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span><span class="folio-caption" aria-hidden="true">Service illustration / Not provider inventory</span></div>
 <div class="provider-content"><h2>CWP Productions — Professional Event Audio &amp; Video (Regional)</h2><p>Little Rock-based full-service event production provider advertising professional sound-system rentals (speakers, line arrays, microphones and mixers), video production, live streaming, projection, video walls and event lighting. Its rentals include professional setup and on-site technical support; <strong>equipment-only pickup is not confirmed</strong>. The company lists Central and Northwest Arkansas service, but <strong>Russellville delivery is UNCONFIRMED</strong>; request a site-specific quote and verify travel charges, inventory and event dates. Also listed in the <a href="stages.html">stage rental directory</a>.</p><p class="area">Little Rock, Arkansas — Russellville delivery UNCONFIRMED</p><p><a href="tel:+15019528885">501-952-8885</a> · <a href="mailto:events@cwpproductions.com">events@cwpproductions.com</a> · <a href="https://cwpproductions.com/services/professional-audio-rentals-and-video-production-services/" target="_blank" rel="noopener noreferrer">Official audio and video rental services ↗</a> · <a href="https://cwpproductions.com/services/professional-lighting-rentals-design-services/" target="_blank" rel="noopener noreferrer">Official lighting rental services ↗</a></p></div>
 </article>
 <article class="provider" id="provider-6">
-<div class="card-top"><span class="index" aria-hidden="true">06</span><span class="status verify">Russellville delivery unconfirmed</span></div>
+<div class="card-top"><span class="index" aria-hidden="true">06</span><span class="status verify">Russellville delivery unconfirmed</span><span class="folio-scene" aria-hidden="true"><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet"><path d="M20 129h280" stroke="currentColor" opacity=".3"/><path d="M34 124V31h252v93M34 45h252M46 31l24 14 24-14 24 14 24-14 24 14 24-14 24 14 24-14 24 14" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M72 47 39 119h67Zm90 0-33 72h66Zm90 0-33 72h66Z" fill="currentColor" opacity=".13"/><rect x="79" y="89" width="40" height="34" rx="3" fill="#203e3d" stroke="currentColor" stroke-width="3"/><circle cx="99" cy="108" r="10" stroke="currentColor" stroke-width="3"/><rect x="201" y="89" width="40" height="34" rx="3" fill="#203e3d" stroke="currentColor" stroke-width="3"/><circle cx="221" cy="108" r="10" stroke="currentColor" stroke-width="3"/><path d="M158 79v44m-17-44h34m-34 44h34" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="158" cy="71" r="9" fill="currentColor"/></svg></span><span class="folio-caption" aria-hidden="true">Service illustration / Not provider inventory</span></div>
 <div class="provider-content"><h2>EdmoSound — Event Audio, Video &amp; Lighting (Regional)</h2><p>Rogers-based event production company advertising concert-grade sound, live audio engineering, video projection, screens and professional lighting alongside mobile stages. Its official booking policy says <strong>no unstaffed or equipment-only rentals</strong>: each rental is a staffed full-service production package with custom transport, setup and an on-site technician. The operator serves Arkansas broadly, but <strong>Russellville delivery is UNCONFIRMED</strong>. Request a site-specific quote and confirm travel, stage or audiovisual requirements, crew and final cost. Also listed in the <a href="stages.html">stage rental directory</a>.</p><p class="area">Rogers, Arkansas — Russellville delivery UNCONFIRMED</p><p><a href="mailto:sales@edmosound.com">sales@edmosound.com</a> · <a href="https://www.edmosound.com/about" target="_blank" rel="noopener noreferrer">Official equipment and production services ↗</a> · <a href="https://www.edmosound.com/request-quote" target="_blank" rel="noopener noreferrer">Official quote and staffed-only terms ↗</a></p></div>
 </article>
 <article class="provider" id="provider-7">
-<div class="card-top"><span class="index" aria-hidden="true">07</span><span class="status verify">Russellville delivery unconfirmed</span></div>
+<div class="card-top"><span class="index" aria-hidden="true">07</span><span class="status verify">Russellville delivery unconfirmed</span><span class="folio-scene" aria-hidden="true"><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet">
+        <path d="M22 134H298M42 41H278" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+        <path d="M49 41L71 54 94 41 117 54 140 41 163 54 186 41 209 54 232 41 255 54 275 41" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" opacity=".85"/>
+        <circle cx="71" cy="54" r="5" fill="#ffe9b8"/><circle cx="117" cy="54" r="5" fill="#ffe9b8"/><circle cx="163" cy="54" r="5" fill="#ffe9b8"/><circle cx="209" cy="54" r="5" fill="#ffe9b8"/><circle cx="255" cy="54" r="5" fill="#ffe9b8"/>
+        <path d="M60 58L43 118H98L79 58M251 58L232 118H288L267 58" fill="#ffe1ad" opacity=".13"/>
+        <rect x="57" y="98" width="44" height="34" rx="4" fill="#322f3a" stroke="currentColor" stroke-width="3"/><circle cx="79" cy="115" r="10" stroke="currentColor" stroke-width="3"/>
+        <rect x="219" y="98" width="44" height="34" rx="4" fill="#322f3a" stroke="currentColor" stroke-width="3"/><circle cx="241" cy="115" r="10" stroke="currentColor" stroke-width="3"/>
+        <path d="M154 64L161 115M153 83L178 76M160 115H181M161 115V132M146 132H181" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        <rect x="143" y="58" width="18" height="27" rx="9" fill="#312e3a" stroke="currentColor" stroke-width="3"/>
+        <path d="M128 127H196" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".65"/>
+      </svg></span><span class="folio-caption" aria-hidden="true">Service illustration / Not provider inventory</span></div>
 <div class="provider-content"><h2>Smoothman Music Productions — Event Sound &amp; Lighting (Regional)</h2><p>Fayetteville-based production provider officially advertises wedding ceremony and live-music sound production with an on-site technician, stage lighting and a 16-by-16-foot stage with setup and teardown. Published starting prices are $500 for ceremony or live-music sound and $250 for stage lighting; these are <strong>not</strong> Russellville-specific quotes. The company lists Northwest Arkansas, Fort Smith, Little Rock and surrounding areas; <strong>Russellville delivery remains UNCONFIRMED</strong>. Ask about local availability, equipment-only rentals, crew, transport and total charges. Also listed in the <a href="stages.html">stage rental directory</a>.</p><p class="area">Fayetteville, Arkansas — Russellville delivery UNCONFIRMED</p><p><a href="tel:+14795959109">479-595-9109</a> · <a href="https://smoothmanmusic.com/audio-video-production-smp/" target="_blank" rel="noopener noreferrer">Official sound and lighting packages ↗</a> · <a href="https://smoothmanmusic.com/contact/" target="_blank" rel="noopener noreferrer">Official contact details ↗</a></p></div>
 </article></div>
 </section>
