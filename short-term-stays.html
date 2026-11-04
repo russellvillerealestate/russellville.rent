@@ -232,6 +232,38 @@ main.wrap{padding-top:28px}
 @media(max-width:940px){.stay-view{grid-template-columns:1fr;gap:20px}.stay-view-options{justify-self:start}.stay-view p{max-width:70ch}}
 @media(max-width:700px){#stay-grid[data-view="list"] .stay{grid-template-columns:1fr}#stay-grid[data-view="list"] .stay-top{height:112px;min-height:112px}#stay-grid[data-view="list"] .stay-top svg{height:100%}.stay-view{padding:24px 20px;border-radius:17px}.stay-view-options{width:100%}.stay-view-options button{flex:1 1 135px;white-space:normal}}
 @media(prefers-reduced-motion:reduce){.stay-view-options button{transition:none}}
+
+/* 2026-11-04 / River Valley postcard folio.
+   Keep the existing scenic stay finder and browser-only saved shortlist; make
+   the four saved places genuinely comparable using their own listed terms.
+   Inspiration: StayARV's generous image scale and green/gold hierarchy.
+   NN/g information scent; web.dev responsive layouts; WCAG 2.2 keyboard focus,
+   text reflow, target size, and reduced-motion preferences.
+   Landscape artwork is illustrative, never a photo of a listed property. */
+.stay-board-list{gap:14px}
+.stay-board-entry{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 48px;min-height:265px;border:1px solid #cadccd;border-radius:17px;box-shadow:0 9px 22px #143d3120}
+.stay-board-entry>a{display:flex;min-width:0;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:7px;padding:0 0 16px;color:#163c32;overflow:hidden;text-decoration:none}
+.stay-board-entry>a:hover{background:#f3f8f0}
+.stay-board-scene{display:block;flex:none;height:91px;background:#dae9df;overflow:hidden}
+.stay-board-scene svg{display:block;width:100%;height:100%}
+.stay-board-entry .stay-board-number{position:absolute;top:11px;left:11px;z-index:1;display:grid;place-items:center;min-width:37px;height:33px;border:1px solid #f7e7c7a6;border-radius:6px;background:#103e35e8;color:#ffe4af;font:400 1.08rem Georgia,serif;letter-spacing:.04em}
+.stay-board-entry .stay-board-name{display:block;padding:5px 16px 0;color:#173e33;font:400 clamp(1.07rem,1.55vw,1.32rem)/1.17 Georgia,"Times New Roman",serif;letter-spacing:-.027em;overflow-wrap:anywhere}
+.stay-board-entry .stay-board-meta{padding:0 16px;color:#52745a;font-size:.68rem;font-weight:850;letter-spacing:.07em;text-transform:uppercase;line-height:1.35}
+.stay-board-place{display:block;padding:0 16px;font-size:.71rem;font-weight:650;color:#425b50;line-height:1.43;overflow-wrap:anywhere}
+.stay-board-terms{display:block;padding:8px 16px 0;margin-top:3px;border-top:1px solid #dfebdf;color:#425a4c;font-size:.73rem;line-height:1.53;overflow-wrap:anywhere}
+.stay-board-open{display:flex;align-items:center;justify-content:space-between;gap:7px;margin-top:auto;padding:8px 16px 0;color:#176046;font-size:.75rem;font-weight:850}
+.stay-board-open span{font-size:1.12rem;line-height:1}
+.stay-board-entry>button{min-width:48px;min-height:100%;border-left:1px solid #d5e4d4;background:#e9f1e6;color:#24533e;font-size:1.3rem}
+.stay-board-entry>button:hover{background:#d7e9d0}
+.stay-board-entry :is(a,button):focus-visible{outline:3px solid #b67925;outline-offset:-4px}
+.stay-board-placeholder{position:relative;min-height:265px;justify-content:flex-end;gap:16px;overflow:hidden;padding:22px;border:1px dashed #9cb99d;background:linear-gradient(165deg,#dce9db 0%,#f5f8ef 67%)}
+.stay-board-placeholder:before{content:"";position:absolute;top:-65px;right:-59px;width:197px;height:197px;border:1px solid #4677644b;border-radius:50%;box-shadow:0 0 0 29px #386e4710,0 0 0 55px #386e4709;pointer-events:none}
+.stay-board-placeholder .stay-board-number{font:400 2.6rem/1 Georgia,serif;color:#608b77}
+.stay-board-placeholder strong{max-width:17ch;color:#486d58;font:400 1.13rem/1.23 Georgia,serif}
+.stay-board-provenance{margin:13px 0 0;color:#53695b;font-size:.72rem;line-height:1.55}
+@media(max-width:980px){.stay-board-list{grid-template-columns:1fr 1fr}.stay-board-entry,.stay-board-placeholder{min-height:255px}}
+@media(max-width:650px){.stay-board-list{grid-template-columns:minmax(0,1fr)}.stay-board-entry,.stay-board-placeholder{min-height:0}.stay-board-entry>a{padding-bottom:16px}.stay-board-scene{height:100px}.stay-board-placeholder{min-height:136px}.stay-board-entry .stay-board-name{font-size:1.26rem}.stay-board-terms{font-size:.75rem}.stay-board-entry>button{min-height:100%;min-width:48px}.stay-board-provenance{margin-top:11px}}
+
 </style>
 </head>
 <body>
@@ -276,7 +308,7 @@ main.wrap{padding-top:28px}
 
 <section class="stay-board" id="stay-board" aria-labelledby="stay-board-title" hidden>
   <div class="stay-board-visual"><span class="stay-board-kicker">River Valley / Your travel folio</span><h3 id="stay-board-title">A little list of <em>somewhere next.</em></h3><p>Collect up to four stay operators while you compare towns and options. Nothing is booked, sent or shared.</p><a href="#stay-grid">Find stays to save ↗</a><small class="stay-board-caption">Downtown Russellville scenery · Not a listed rental property</small></div>
-  <div class="stay-board-content"><div class="stay-board-heading"><strong>Your weekend shortlist</strong><span class="stay-board-count" id="stay-board-count">0 of 4 saved</span></div><ol class="stay-board-list" id="stay-board-list" aria-label="Saved stay operators"></ol><div class="stay-board-bottom"><p id="stay-board-note">Saved in this browser when storage is available. Saving is not a reservation.</p><button type="button" id="stay-board-clear" disabled>Clear shortlist</button></div></div>
+  <div class="stay-board-content"><div class="stay-board-heading"><strong>Your weekend shortlist</strong><span class="stay-board-count" id="stay-board-count">0 of 4 saved</span></div><ol class="stay-board-list" id="stay-board-list" aria-label="Saved stay operators"></ol><p class="stay-board-provenance">Region scenes are illustrations, not property photos. Terms and locations shown on each saved card come from its full directory listing; confirm details with the operator.</p><div class="stay-board-bottom"><p id="stay-board-note">Saved in this browser when storage is available. Saving is not a reservation.</p><button type="button" id="stay-board-clear" disabled>Clear shortlist</button></div></div>
   <p class="sr-only" id="stay-board-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
 </section>
 
@@ -493,7 +525,29 @@ refresh();
       const meta = document.createElement("span");
       meta.className = "stay-board-meta";
       meta.textContent = entry.location;
-      link.append(number, name, meta);
+      // The visual folio reuses each operator's existing listing details.
+      // Illustrated scenery never represents a specific rental property.
+      const scene = document.createElement("span");
+      scene.className = "stay-board-scene";
+      scene.setAttribute("aria-hidden", "true");
+      const illustration = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      illustration.setAttribute("viewBox", "0 0 600 160");
+      illustration.setAttribute("preserveAspectRatio", "xMidYMid slice");
+      illustration.setAttribute("focusable", "false");
+      const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+      use.setAttribute("href", "#stay-scene-" + entry.card.dataset.region);
+      illustration.append(use);
+      scene.append(illustration);
+      const place = document.createElement("span");
+      place.className = "stay-board-place";
+      place.textContent = entry.card.querySelector(".place").textContent.trim();
+      const terms = document.createElement("span");
+      terms.className = "stay-board-terms";
+      terms.textContent = entry.card.querySelector(".terms").textContent.trim();
+      const open = document.createElement("span");
+      open.className = "stay-board-open";
+      open.innerHTML = 'Read complete listing <span aria-hidden="true">↗</span>';
+      link.append(scene, number, name, meta, place, terms, open);
       link.addEventListener("click", () => {
         if (entry.card.hidden) document.getElementById("clear-filters").click();
         entry.card.focus({preventScroll: true});
