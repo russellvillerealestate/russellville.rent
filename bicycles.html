@@ -153,6 +153,14 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
 @media(prefers-reduced-motion:reduce){.back,.hero .button,.ride-option{transition:none}.hero .button:hover,.ride-option:hover{transform:none}}
 
 
+/* November 4, 2026: the four-stop bicycle access atlas corrects an omission
+   in the earlier photo-led three-card guide. It now links to all four listed
+   public/regional/campus options; 7/5 editorial image panels on desktop,
+   equal two-column tablets, single-column phones. Scenic photos and original
+   illustrations identify regions, not specific provider facilities.
+   Reference: live StayARV.com place-led hero; NN/g visual hierarchy and
+   information scent; web.dev responsive design; WCAG 2.2 focus visibility
+   and pointer-target sizes. No rental rates or booking claims changed. */
 /* 2026-11-01: Photo-led operator atlas. New navigation only; published rates,
    restrictions, providers and filter behavior are sourced from the original
    directory and remain untouched. Inspiration: StayARV immersive hero;
@@ -164,8 +172,8 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
 .bike-access-head .eyebrow{color:#f0d69c;margin-bottom:15px}
 .bike-access-head h2{font:400 clamp(2.75rem,5vw,4.85rem)/1.055 Georgia,"Times New Roman",serif;letter-spacing:-.058em;max-width:16ch;margin:0;text-wrap:balance}
 .bike-access-head p:last-child{font-size:1rem;line-height:1.75;color:#e0eae0;max-width:42ch;margin:0 0 5px}
-.bike-access-grid{display:grid;grid-template-columns:1.16fr 1fr 1fr;gap:17px}
-.bike-access-card{position:relative;isolation:isolate;min-width:0;min-height:425px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;border:1px solid #d8e9d257;border-radius:23px;padding:clamp(23px,2.6vw,32px);color:#fff;text-decoration:none;box-shadow:0 20px 41px #031d1790;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.bike-access-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px}
+.bike-access-card{position:relative;isolation:isolate;min-width:0;min-height:390px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;border:1px solid #d8e9d257;border-radius:23px;padding:clamp(23px,2.6vw,32px);color:#fff;text-decoration:none;box-shadow:0 20px 41px #031d1790;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
 .bike-access-card:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#092c2840 0%,#092c2855 30%,#07231fe9 76%,#071d19f9 100%)}
 .bike-access-card:hover{transform:translateY(-6px);box-shadow:0 29px 50px #031d17ac;border-color:#ffdfab}
 .bike-access-card:focus-visible{outline:4px solid #f4d093;outline-offset:5px}
@@ -173,9 +181,16 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
 .bike-access-media img,.bike-access-media svg{width:100%;height:100%;display:block;object-fit:cover}
 .bike-access-media img{transition:transform .4s ease}
 .bike-access-card:hover .bike-access-media img{transform:scale(1.045)}
+.bike-access-card--local{grid-column:span 7}
+.bike-access-card--regional{grid-column:span 5}
+.bike-access-card--plainview{grid-column:span 5}
+.bike-access-card--campus{grid-column:span 7}
+.bike-access-card--local strong,.bike-access-card--campus strong{font-size:clamp(2.15rem,3.25vw,3rem)}
 .bike-access-card--local .bike-access-media img{object-position:51% center}
 .bike-access-card--campus .bike-access-media img{object-position:52% center}
 .bike-access-card--regional .bike-access-media{background:#315a4b}
+.bike-access-card--plainview .bike-access-media{background:#456d5b}
+.bike-access-card--plainview .bike-access-chip{background:#e7c895;color:#173e32;border-color:#e7c895}
 .bike-access-chip{align-self:flex-start;display:inline-block;max-width:100%;padding:9px 13px;border:1px solid #fff9;background:#123d36d9;border-radius:999px;font-size:.69rem;line-height:1.25;font-weight:850;letter-spacing:.1em;text-transform:uppercase}
 .bike-access-card--regional .bike-access-chip{background:#f1d098;color:#183a31;border-color:#f1d098}
 .bike-access-card--campus .bike-access-chip{background:#e6f0e7;color:#153f33;border-color:#e6f0e7}
@@ -186,8 +201,8 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
 .bike-access-cta{display:inline-flex;align-items:center;gap:11px;color:#f7d79d;font-size:.83rem;font-weight:850}
 .bike-access-cta:after{content:"↗";font-size:1.25rem;line-height:1}
 .bike-access-disclaimer{max-width:98ch;margin:22px 0 0;color:#cfdfd1;font-size:.81rem;line-height:1.65}
-#shop-title,#regional-bike-title,#student-title{scroll-margin-top:30px}
-@media(max-width:960px){.bike-access-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bike-access-card{min-height:360px}.bike-access-card--campus{grid-column:1 / -1;min-height:280px}.bike-access-card--campus strong{max-width:24ch}}
+#shop-title,#regional-bike-title,#weekender-bike-title,#student-title{scroll-margin-top:30px}
+@media(max-width:960px){.bike-access-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bike-access-card{min-height:370px}.bike-access-card--local,.bike-access-card--regional,.bike-access-card--plainview,.bike-access-card--campus{grid-column:auto}.bike-access-card--local strong,.bike-access-card--campus strong{font-size:clamp(1.85rem,3vw,2.4rem)}}
 @media(max-width:680px){.bike-access-head{grid-template-columns:1fr;gap:15px}.bike-access-head h2{font-size:clamp(2.65rem,9.4vw,3.65rem)}.bike-access-grid{grid-template-columns:1fr}.bike-access-card,.bike-access-card--campus{grid-column:auto;min-height:310px}.bike-access-card strong{font-size:2.2rem}.bike-access .wrap{padding-top:57px;padding-bottom:65px}}
 @media(max-width:410px){.bike-access-card{padding:23px;min-height:312px}.bike-access-head h2{font-size:2.6rem}.bike-access-card strong{font-size:2rem}}
 @media(prefers-reduced-motion:reduce){.bike-access-card,.bike-access-media img{transition:none}.bike-access-card:hover,.bike-access-card:hover .bike-access-media img{transform:none}}
@@ -226,7 +241,7 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
 <section class="bike-access" id="bike-access-atlas" aria-labelledby="bike-access-title">
   <div class="wrap">
     <div class="bike-access-head">
-      <div><p class="eyebrow">The River Valley bicycle guide / Three ways to access bikes</p><h2 id="bike-access-title">A bike for the day. Or a way to get started.</h2></div>
+      <div><p class="eyebrow">The River Valley bicycle guide / Four clear ways to access bikes</p><h2 id="bike-access-title">A bike for the day. Or a way to get started.</h2></div>
       <p>The five daily rates above belong to one Russellville shop. There are also two regional on-site rental providers and a restricted campus checkout program. Choose the type of access that fits before making the trip.</p>
     </div>
     <nav class="bike-access-grid" aria-label="Jump to bicycle providers and checkout programs">
@@ -240,13 +255,18 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
         <span class="bike-access-chip">Clarksville · On-site only</span>
         <span class="bike-access-card-copy"><span class="bike-access-index">02 / RIDE AT THE LODGE</span><strong>Horsehead Lake Lodge</strong><small>Advertised on-site mountain-bike rentals. Rates, available models and access for nonguests are unconfirmed.</small><span class="bike-access-cta">Review regional rental details</span></span>
       </a>
+      <a class="bike-access-card bike-access-card--plainview" href="#weekender-bike-title">
+        <span class="bike-access-media" aria-hidden="true"><svg viewBox="0 0 600 700" preserveAspectRatio="xMidYMid slice" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect width="600" height="700" fill="#abc6b1"/><circle cx="452" cy="135" r="74" fill="#f5d3a1"/><path d="M0 305 105 194l120 103 140-144 125 124 110-90v513H0Z" fill="#738f80"/><path d="m0 385 128-120 117 98 134-124 114 99 107-92v454H0Z" fill="#456d5b"/><path d="M0 470q145-75 310 0t290-15v245H0Z" fill="#285b52"/><path d="M0 540q143-43 294 10t306-19v169H0Z" fill="#80a9a1"/><path d="M0 576q130-27 292 9t308-8v123H0Z" fill="#b1c5a7"/><g fill="#173f39"><path d="M64 433 97 349l33 84zm-12 16 45-113 45 113zm406-37 46-115 46 115zm18 28 28-71 28 71z"/><path d="M85 441h24v61H85zm410-3h19v70h-19z"/></g><path d="M275 545 370 397l96 148Z" fill="#e4bc81"/><path d="M370 397 419 545h-97Z" fill="#bb7957"/><path d="M370 397v148" stroke="#f8e4c2" stroke-width="5"/><path d="M0 608q135-20 310 12t290-17" fill="none" stroke="#dfd5ad" stroke-width="11"/><g transform="translate(32 425)" fill="none" stroke="#f4e4c7" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><circle cx="58" cy="122" r="45"/><circle cx="216" cy="122" r="45"/><path d="m58 122 55-88 45 88H58l55-88 103 88-16-81h-22M94 25h38"/></g></svg></span>
+        <span class="bike-access-chip">Plainview · On-site only</span>
+        <span class="bike-access-card-copy"><span class="bike-access-index">03 / LAKESIDE STAY</span><strong>The Weekender</strong><small>The Plainview campground advertises bicycle rentals for guests. Bike types, rates and access for nonguests are unconfirmed.</small><span class="bike-access-cta">See campground rental details</span></span>
+      </a>
       <a class="bike-access-card bike-access-card--campus" href="#student-title">
         <span class="bike-access-media" aria-hidden="true"><img src="assets/arkansas-tech-wilson-hall.jpg" width="1200" height="800" loading="lazy" decoding="async" alt=""></span>
         <span class="bike-access-chip">Arkansas Tech · Eligibility restricted</span>
-        <span class="bike-access-card-copy"><span class="bike-access-index">03 / CAMPUS PROGRAM</span><strong>Outdoor Recreation checkout</strong><small>No-cost bicycle checkout for enrolled students. Employee access requires membership eligibility confirmation; not a public rental.</small><span class="bike-access-cta">Check campus requirements</span></span>
+        <span class="bike-access-card-copy"><span class="bike-access-index">04 / CAMPUS PROGRAM</span><strong>Outdoor Recreation checkout</strong><small>No-cost bicycle checkout for enrolled students. Employee access requires membership eligibility confirmation; not a public rental.</small><span class="bike-access-cta">Check campus requirements</span></span>
       </a>
     </nav>
-    <p class="bike-access-disclaimer">Downtown Russellville and Arkansas Tech campus photos show local scenery, not rental storefronts, bicycle stock or pickup sites. The mountain scene is an original illustration. These are separate programs, not interchangeable rentals; verify prices, eligibility, inventory and conditions directly.</p>
+    <p class="bike-access-disclaimer">Downtown Russellville and Arkansas Tech campus photos show local scenery, not rental storefronts, bicycle stock or pickup sites. The mountain and lakeside scenes are original illustrations, not photographs of the regional rental properties. These are separate programs, not interchangeable rentals; verify prices, eligibility, inventory and conditions directly.</p>
   </div>
 </section>
 
