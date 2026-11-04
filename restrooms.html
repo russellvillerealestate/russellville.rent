@@ -779,7 +779,7 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
     return {cards,empty};
   });
   const cards=groups.flatMap(g=>g.cards);
-  const descriptions=new Map(cards.map(card=>[card,card.textContent.toLowerCase().replace(/\\s+/g," ")]));
+  const descriptions=new Map(cards.map(card=>[card,card.textContent.toLowerCase().replace(/\s+/g," ")]));
   const keywords={
     wash:/handwash|hand wash|washing station|portable sink|wash station/i,
     access:/accessible|wheelchair/i,
@@ -787,7 +787,7 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
   };
   let selected="";
   const refresh=()=>{
-    const terms=input.value.toLowerCase().trim().split(/\\s+/).filter(Boolean);
+    const terms=input.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
     let count=0;
     groups.forEach(({cards:group,empty})=>{
       let shown=0;
