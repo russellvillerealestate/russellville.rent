@@ -257,6 +257,48 @@ main{max-width:1160px;margin:0 auto;padding:0 28px}.hero{position:relative;isola
 @media(max-width:550px){.roadbook-header .header-inner{padding:15px 17px 17px;gap:14px}.brand-stamp{width:46px;height:46px;border-radius:12px 12px 4px 12px;font-size:1.85rem}.brand-stamp span{font-size:.7rem}.brand-wordmark strong{font-size:1.28rem}.brand-wordmark small{font-size:.54rem;letter-spacing:.09em}.roadbook-nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.roadbook-nav a{min-height:67px;padding:10px 12px}.roadbook-nav-name{font-size:.86rem}.roadbook-nav-index{font-size:.57rem}}
 @media(max-width:360px){.brand-wordmark strong{font-size:1.14rem}.brand-wordmark small{font-size:.49rem}.roadbook-nav a{padding:10px 9px}.roadbook-nav-name{font-size:.78rem}}
 @media(prefers-reduced-motion:reduce){.roadbook-nav a{transition:none}.roadbook-nav a:hover{transform:none}}
+
+/* 2026-11-04 · River Valley Roadbook provider folios. Compared live StayARV
+   and Russellville.Rent, reviewed recent commits; inspired by NN/g scanning
+   and information scent, web.dev responsive layout, W3C WCAG 2.2 reflow,
+   pointer targets and visible focus. Existing illustrations are not inventory.
+   Presentation only: preserve all provider records, rates, links and scripts. */
+@media(min-width:960px){
+ #rv-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:30px;max-width:1250px;margin-inline:auto}
+ #rv-grid article{display:grid;grid-template-columns:minmax(255px,.85fr) minmax(0,1.15fr);grid-template-rows:auto auto 1fr auto auto;column-gap:clamp(23px,3.4vw,52px);align-items:start;min-height:425px;padding:0;border:1px solid #cbdacf;border-radius:27px;background:linear-gradient(120deg,#fffefa,#f6f8f1);box-shadow:0 24px 52px #143e331c}
+ #rv-grid article[data-type="marketplace"]{border-color:#bfd6d5;background:linear-gradient(120deg,#fffefa,#f0f7f6)}
+ #rv-grid article>.rv-card-scene{grid-column:1;grid-row:1/6;display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;min-height:425px;height:100%;padding:clamp(25px,3.4vw,46px);border-radius:25px 0 0 25px;overflow:hidden}
+ #rv-grid article>.rv-card-scene:after{inset:17px;border-radius:14px}
+ #rv-grid article .rv-card-scene-copy{gap:17px}
+ #rv-grid article .rv-card-scene-copy strong{max-width:15ch;font-size:clamp(2rem,3.3vw,3.15rem);line-height:1.08;letter-spacing:-.055em}
+ #rv-grid article .rv-card-scene-copy small{max-width:36ch;font-size:.72rem;line-height:1.65}
+ #rv-grid article .rv-card-scene-art{align-self:center;width:min(100%,355px)}
+ #rv-grid article>.tag{grid-column:2;grid-row:1;margin:32px 34px 10px 0}
+ #rv-grid article>h3{grid-column:2;grid-row:2;margin:0 34px 9px 0;font:400 clamp(1.8rem,2.7vw,2.55rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.05em;text-wrap:balance}
+ #rv-grid article>p{grid-column:2;margin:8px 34px 10px 0;max-width:65ch;font-size:.9rem;line-height:1.7}
+ #rv-grid article>p:not(.detail):not(:last-child){grid-row:3}
+ #rv-grid article>.detail{grid-row:4;margin-top:7px;padding-top:13px;border-top:1px solid #cbdccf}
+ #rv-grid article>p:last-child{grid-row:5;align-self:end;max-width:none;margin:7px 34px 28px 0;padding:13px 16px}
+ #rv-grid article:nth-child(even){grid-template-columns:minmax(0,1.15fr) minmax(255px,.85fr);background:linear-gradient(240deg,#fffefa,#f6f8f1)}
+ #rv-grid article[data-type="marketplace"]:nth-child(even){background:linear-gradient(240deg,#fffefa,#f0f7f6)}
+ #rv-grid article:nth-child(even)>.rv-card-scene{grid-column:2;border-radius:0 25px 25px 0}
+ #rv-grid article:nth-child(even)>:not(.rv-card-scene){grid-column:1}
+ #rv-grid article:nth-child(even)>.tag{margin:32px 0 10px 34px}
+ #rv-grid article:nth-child(even)>h3{margin:0 0 9px 34px}
+ #rv-grid article:nth-child(even)>p{margin-left:34px;margin-right:0}
+ #rv-grid article:nth-child(even)>p:last-child{margin:7px 0 28px 34px}
+}
+#rv-grid article[hidden]{display:none!important}
+@media(min-width:960px) and (max-width:1100px){
+ #rv-grid article,#rv-grid article:nth-child(even){column-gap:20px}
+ #rv-grid article>.rv-card-scene{padding:26px 22px}
+ #rv-grid article .rv-card-scene-copy strong{font-size:2.13rem}
+ #rv-grid article>.tag,#rv-grid article>h3,#rv-grid article>p,#rv-grid article>p:last-child{margin-right:23px}
+ #rv-grid article:nth-child(even)>.tag,#rv-grid article:nth-child(even)>h3,#rv-grid article:nth-child(even)>p,#rv-grid article:nth-child(even)>p:last-child{margin-left:23px;margin-right:0}
+}
+@media(min-width:760px) and (max-width:959px){#rv-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}}
+@media(max-width:759px){#rv-grid{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){#rv-grid article{transition:none}#rv-grid article:hover{transform:none}}
 </style></head><body>
 <a class="skip-link" href="#providers">Skip to rental listings</a>
 <header class="roadbook-header">
