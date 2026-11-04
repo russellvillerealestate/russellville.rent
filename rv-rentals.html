@@ -229,8 +229,50 @@ main{max-width:1160px;margin:0 auto;padding:0 28px}.hero{position:relative;isola
 @media(max-width:970px){.rv-planner{grid-template-columns:1fr}.rv-planner-scene{min-height:340px;gap:20px;padding:29px 36px;background-position:center 55%}.rv-planner-scene-copy strong{max-width:none;font-size:clamp(2.65rem,6vw,4rem)}.rv-planner-scene-note{max-width:460px}.rv-planner-desk{padding:33px 35px 39px}}
 @media(max-width:620px){.rv-planner{margin-top:33px;border-radius:19px}.rv-planner-scene{min-height:288px;padding:26px 24px}.rv-planner-scene:after{inset:10px;border-radius:12px}.rv-planner-scene-top{font-size:.56rem;letter-spacing:.12em}.rv-planner-scene-copy>span{font-size:.65rem;margin-bottom:11px}.rv-planner-scene-copy strong{font-size:clamp(2.15rem,10vw,3.05rem)}.rv-planner-scene-note{font-size:.68rem;margin-top:12px}.rv-planner-desk{padding:26px 19px 29px}.rv-planner-fields{grid-template-columns:1fr;gap:13px}.rv-planner-field--wide{grid-column:auto}.rv-planner-preview{padding:16px 13px}.rv-planner-preview textarea{min-height:270px}.rv-planner-preview-actions{align-items:stretch;flex-direction:column}.rv-planner-copy{width:100%}}
 
+
+/* River Valley Roadbook wayfinding masthead — Nov 3, 2026.
+   Compared live StayARV place-led composition with Russellville.Rent's current camper page;
+   NN/g information scent, Google web.dev responsive reflow and W3C WCAG 2.2
+   visible focus and minimum touch targets. Navigation is static anchor HTML:
+   no new script, images, external dependency or changes to provider content. */
+.roadbook-header{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(115deg,#092d2a 0%,#103b33 64%,#28543d 100%);border-bottom:1px solid #e0c78c55}
+.roadbook-header:before{content:"";pointer-events:none;position:absolute;inset:0;background:radial-gradient(circle at 3% 100%,#e7bd7d1b,transparent 29%),repeating-linear-gradient(90deg,transparent 0,transparent 124px,#ffffff05 125px,#ffffff05 126px);z-index:-1}
+.roadbook-header .header-inner{max-width:1280px;display:grid;grid-template-columns:minmax(240px,.87fr) minmax(0,1.6fr);align-items:center;gap:clamp(18px,3vw,46px);padding:18px 28px 19px}
+.roadbook-header .roadbook-brand{display:flex;align-items:center;gap:15px;min-width:0;font-size:1rem;letter-spacing:normal}
+.brand-stamp{display:flex;align-items:center;justify-content:center;position:relative;flex:none;width:58px;height:58px;border-radius:16px 16px 5px 16px;background:#efd297;color:#17372e;font:400 2.25rem/1 Georgia,serif;box-shadow:0 5px 20px #031c1a48;transform:rotate(-5deg)}
+.brand-stamp span{position:absolute;right:5px;top:6px;font:900 .8rem/1 system-ui,sans-serif}
+.brand-wordmark{min-width:0;display:flex;flex-direction:column;gap:4px}
+.brand-wordmark strong{color:#fcf8e9;font-size:clamp(1.23rem,1.8vw,1.57rem);letter-spacing:-.052em;line-height:1.1}
+.brand-dot{color:#eac785}
+.brand-wordmark small{color:#d6e7d9;font-size:.58rem;font-weight:800;letter-spacing:.13em;line-height:1.55}
+.roadbook-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;align-self:stretch}
+.roadbook-nav a{display:flex;flex-direction:column;justify-content:center;gap:7px;min-width:0;min-height:76px;padding:12px clamp(10px,1.35vw,20px);border:1px solid #f8edcc28;border-radius:12px;background:#ffffff0b;text-decoration:none;transition:background-color .2s,border-color .2s,transform .2s}
+.roadbook-nav a:hover{background:#f1d59d18;border-color:#f1d59d8a;transform:translateY(-2px)}
+.roadbook-nav a:focus-visible,.roadbook-brand:focus-visible{outline:3px solid #f4d99d;outline-offset:3px}
+.roadbook-nav-index{color:#f4d99d;font-size:.58rem;font-weight:850;letter-spacing:.13em;white-space:normal}
+.roadbook-nav-name{display:flex;align-items:center;justify-content:space-between;gap:5px;color:#fffdf6;font-size:clamp(.77rem,1vw,.92rem);font-weight:800;line-height:1.3}
+.roadbook-nav-name span{color:#f4d99d;font-size:1.04rem;font-weight:500;flex:none}
+#providers,#rv-trip-planner{scroll-margin-top:22px}
+@media(max-width:960px){.roadbook-header .header-inner{grid-template-columns:1fr;gap:15px;padding:16px 25px 18px}.roadbook-nav a{min-height:64px}.roadbook-nav-name{font-size:.89rem}}
+@media(max-width:550px){.roadbook-header .header-inner{padding:15px 17px 17px;gap:14px}.brand-stamp{width:46px;height:46px;border-radius:12px 12px 4px 12px;font-size:1.85rem}.brand-stamp span{font-size:.7rem}.brand-wordmark strong{font-size:1.28rem}.brand-wordmark small{font-size:.54rem;letter-spacing:.09em}.roadbook-nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.roadbook-nav a{min-height:67px;padding:10px 12px}.roadbook-nav-name{font-size:.86rem}.roadbook-nav-index{font-size:.57rem}}
+@media(max-width:360px){.brand-wordmark strong{font-size:1.14rem}.brand-wordmark small{font-size:.49rem}.roadbook-nav a{padding:10px 9px}.roadbook-nav-name{font-size:.78rem}}
+@media(prefers-reduced-motion:reduce){.roadbook-nav a{transition:none}.roadbook-nav a:hover{transform:none}}
 </style></head><body>
-<a class="skip-link" href="#providers">Skip to rental listings</a><header><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back-link" href="/">← All rental categories</a></div></header>
+<a class="skip-link" href="#providers">Skip to rental listings</a>
+<header class="roadbook-header">
+  <div class="header-inner">
+    <a class="brand roadbook-brand" href="/" aria-label="Russellville.Rent home">
+      <span class="brand-stamp" aria-hidden="true">R<span>↗</span></span>
+      <span class="brand-wordmark"><strong>Russellville<span class="brand-dot">.</span>Rent</strong><small>THE RIVER VALLEY ROADBOOK <span aria-hidden="true">/</span> RV RENTALS</small></span>
+    </a>
+    <nav class="roadbook-nav" aria-label="Camper rental navigation">
+      <a href="#providers"><span class="roadbook-nav-index">01 / EXPLORE</span><span class="roadbook-nav-name">Rental options <span aria-hidden="true">↘</span></span></a>
+      <a href="#rv-trip-planner"><span class="roadbook-nav-index">02 / PREPARE</span><span class="roadbook-nav-name">Trip planner <span aria-hidden="true">↘</span></span></a>
+      <a href="/camping.html"><span class="roadbook-nav-index">03 / NEARBY</span><span class="roadbook-nav-name">Campgrounds <span aria-hidden="true">↗</span></span></a>
+      <a href="/"><span class="roadbook-nav-index">04 / DIRECTORY</span><span class="roadbook-nav-name">All rentals <span aria-hidden="true">↗</span></span></a>
+    </nav>
+  </div>
+</header>
 <main><section class="hero" aria-labelledby="page-title"><div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Bring your <em>own adventure.</em></h1><p class="hero-intro">Find a recreational vehicle (RV) or camper to rent for a trip, tailgate or campground stay. Compare direct Arkansas operators and rental marketplaces. These are vehicle rentals, not campsite reservations.</p><div class="hero-actions"><a class="hero-button primary" href="#rental-finder">Compare rental paths <span aria-hidden="true">↓</span></a><a class="hero-button secondary" href="/camping.html">Find a campsite <span aria-hidden="true">↗</span></a></div></div><div class="hero-visual" aria-hidden="true"><svg viewBox="0 0 600 430" xmlns="http://www.w3.org/2000/svg" focusable="false">
 <defs><linearGradient id="rv-body" x2="1" y2="1"><stop stop-color="#fff3d7"/><stop offset="1" stop-color="#e5cba1"/></linearGradient><linearGradient id="rv-glass" x2="1" y2="1"><stop stop-color="#b5d9d4"/><stop offset="1" stop-color="#578e87"/></linearGradient></defs>
 <circle cx="464" cy="86" r="55" fill="#f4c983"/><circle cx="464" cy="86" r="74" fill="none" stroke="#f4c983" stroke-opacity=".25" stroke-width="2"/>
