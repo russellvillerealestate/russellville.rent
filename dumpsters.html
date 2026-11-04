@@ -320,6 +320,104 @@ main{padding-top:clamp(62px,8vw,104px)}
 @media(max-width:580px){.provider-explorer{border-radius:19px;margin-bottom:36px}.pe-intro{padding:30px 22px 24px;gap:22px}.pe-intro h2{font-size:clamp(2.4rem,10vw,3.4rem)}.pe-art{min-height:160px}.pe-art span{font-size:.54rem}.pe-controls{padding:22px 18px}.pe-choices{gap:9px}.pe-choice{padding:13px 15px}.pe-search-row{grid-template-columns:1fr}.pe-clear{width:100%}.pe-fallback{padding:18px}}
 @media(prefers-reduced-motion:reduce){.pe-choice{transition:none}}
 
+
+/* 2026-11-04 / River Valley dispatch folios.
+   Scene-first design study: stayarv.com (live November 4, 2026).
+   Research: Nielsen Norman Group on information scent and hierarchy;
+   web.dev on responsive layout and stable image presentation;
+   W3C Web Content Accessibility Guidelines 2.2 on visible focus and target size.
+   Layout-only: provider source facts, search, links and automation unchanged. */
+.hero::before{
+  background:linear-gradient(108deg,rgba(7,31,26,.97) 0%,rgba(8,35,29,.93) 39%,rgba(12,46,37,.71) 100%),
+    url("assets/downtown-russellville-sunset.jpg") 50% 46% / cover no-repeat;
+}
+.hero .container{min-height:570px;padding-block:clamp(66px,8vw,110px)}
+.hero h1{font-size:clamp(3.3rem,6.7vw,6.3rem);max-width:12ch}
+.hero-intro{max-width:51ch}
+.hero-visual::before{inset:1% 3%;border-color:#ffefce80;box-shadow:0 0 0 29px #f4dbad11,0 0 0 64px #f4dbad08}
+.hero-visual svg{filter:drop-shadow(0 28px 20px #031913b9)}
+.hero-attribution{max-width:55ch;line-height:1.6;letter-spacing:.09em}
+#local-providers .section-title{padding:0 0 27px;border-bottom:1px solid #c5d6c8;margin-bottom:28px}
+#local-providers .section-label{letter-spacing:.21em}
+#local-providers .section-title h2{font-size:clamp(2.35rem,4.7vw,4.3rem);line-height:1.06;max-width:13ch}
+#local-providers .section-title p{max-width:65ch}
+.provider-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.provider-grid .provider{
+  position:relative;isolation:isolate;overflow:hidden;
+  padding:0;border-radius:23px;background:#fffdf8;
+  border:1px solid #d7dfd4;box-shadow:0 16px 38px #12392d15;
+}
+.provider-grid .provider:nth-child(4n + 2),
+.provider-grid .provider:nth-child(4n + 3){background:#f8efe2;border-color:#dcd0ba}
+.provider-grid .provider-top{
+  position:relative;isolation:isolate;overflow:hidden;align-items:start;
+  min-height:134px;margin:0;padding:27px 28px 24px;
+  background:linear-gradient(128deg,#10382f,#245647);border-bottom:4px solid #d4b47b;
+}
+.provider-grid .provider:nth-child(4n + 2) .provider-top,
+.provider-grid .provider:nth-child(4n + 3) .provider-top{
+  background:linear-gradient(125deg,#3a4431,#77613b);border-color:#edc986;
+}
+.provider-grid .provider-top::before{
+  content:"";position:absolute;z-index:-1;right:-64px;top:-103px;
+  width:276px;height:276px;border:1px solid #fff0ce66;border-radius:50%;
+  box-shadow:0 0 0 34px #fff6df12,0 0 0 72px #fff6df0b;pointer-events:none;
+}
+.provider-grid .provider-number{
+  color:#ffe0a1;font:400 clamp(2.8rem,4.4vw,3.85rem)/.95 Georgia,serif;letter-spacing:-.08em;
+}
+.provider-grid .provider-tag{
+  max-width:68%;padding:8px 11px;border-radius:8px;
+  background:#f9e8bb;color:#244337;font-size:.68rem;line-height:1.38;font-weight:850;
+}
+.provider-grid .provider h2{
+  padding:26px 28px 0;margin:0 0 16px;
+  color:#173d32;font:400 clamp(1.65rem,2.45vw,2.13rem)/1.13 Georgia,"Times New Roman",serif;
+  letter-spacing:-.046em;text-wrap:balance;
+}
+.provider-grid .provider>p{padding-inline:28px;margin-bottom:15px;font-size:.88rem;line-height:1.69}
+.provider-grid .provider>p.detail{
+  margin-top:auto;padding-top:16px;border-top:1px solid #d8e1d7;
+  color:#486354;font-size:.78rem;font-weight:800;
+}
+.provider-grid .provider>p:last-child{
+  margin:0;padding:17px 25px 22px;gap:9px;
+  background:#eaf1e8;border-top:1px solid #ceddd0;
+}
+.provider-grid .provider:nth-child(4n + 2)>p:last-child,
+.provider-grid .provider:nth-child(4n + 3)>p:last-child{background:#f0e5d4;border-color:#dccbb1}
+.provider-grid .provider>p:last-child a{
+  min-height:46px;white-space:normal;text-align:center;line-height:1.35;
+}
+.provider-grid .provider:hover{transform:translateY(-3px);box-shadow:0 22px 45px #102f2b2b}
+@media(max-width:940px){
+ .hero .container{min-height:505px}
+ .provider-grid{gap:14px}
+ .provider-grid .provider-top{padding:23px 22px;min-height:120px}
+ .provider-grid .provider h2{padding:22px 22px 0}
+ .provider-grid .provider>p{padding-inline:22px}
+ .provider-grid .provider>p:last-child{padding:16px 19px 21px}
+}
+@media(max-width:720px){
+ .hero .container{min-height:auto}
+ .provider-grid{grid-template-columns:1fr;gap:17px}
+ .provider-grid .provider-top{min-height:112px}
+ .provider-grid .provider-tag{max-width:72%}
+}
+@media(max-width:650px){
+ .hero::before{background-position:58% center}
+ .hero h1{font-size:clamp(3.05rem,11vw,4.6rem)}
+ .hero .container{padding-block:57px 44px}
+ .hero-visual{min-height:230px}
+ .hero-attribution{font-size:.65rem}
+ #local-providers .section-title h2{font-size:clamp(2.25rem,9vw,3.25rem)}
+ .provider-grid .provider h2{font-size:clamp(1.85rem,7vw,2.25rem)}
+ .provider-grid .provider>p:last-child a{width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+ .provider-grid .provider{transition:none}
+ .provider-grid .provider:hover{transform:none}
+}
 </style>
 </head>
 <body>
@@ -331,7 +429,7 @@ main{padding-top:clamp(62px,8vw,104px)}
    <p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p>
    <h1 id="page-title">Make room for <em>what’s next.</em></h1>
    <p class="hero-intro">Waste containers and dumpster rental services for cleanups and construction projects.</p>
-   <div class="hero-actions"><a class="cta primary" href="#main">Compare providers ↘</a><a class="cta secondary" href="#questions">What to ask first ↗</a><a class="cta secondary" href="#project-chooser">Pick your project ↗</a></div><span class="hero-attribution">Russellville &amp; the River Valley · Independent local guide</span>
+   <div class="hero-actions"><a class="cta primary" href="#main">Compare providers ↘</a><a class="cta secondary" href="#questions">What to ask first ↗</a><a class="cta secondary" href="#project-chooser">Pick your project ↗</a></div><span class="hero-attribution">Independent River Valley rental guide · Downtown scenery and illustrative containers, not provider facilities</span>
   </div>
   <div class="hero-visual" aria-hidden="true">
    <svg viewBox="0 0 470 310" xmlns="http://www.w3.org/2000/svg" fill="none">
