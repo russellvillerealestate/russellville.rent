@@ -239,6 +239,51 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
 @media(max-width:940px){.renter-guide{grid-template-columns:1fr;min-height:0}.renter-guide-scene{min-height:350px}.renter-guide-scene p{max-width:65ch}.renter-guide-content{padding:31px}.renter-guide-grid li{min-height:160px}}
 @media(max-width:600px){.renter-guide{margin:3px 0 42px;border-radius:19px}.renter-guide-scene{min-height:330px;padding:27px 23px}.renter-guide h2{font-size:clamp(2.35rem,10vw,3.2rem)}.renter-guide-scene-bottom{align-items:flex-start}.renter-guide-content{padding:24px 19px}.renter-guide-grid{grid-template-columns:1fr;gap:10px}.renter-guide-grid li{min-height:0;padding:19px}.renter-guide-contacts{align-items:flex-start;flex-direction:column}}
 
+
+/* River Valley renter comparison desk, 2026-11-04. StayARV-inspired scenic green
+   composition, with Nielsen Norman Group comparison patterns, web.dev image
+   guidance, and WCAG 2.2 focus and pointer-target recommendations. */
+.compare-intro{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;background:#edf2e8;border:1px solid #d1dfd2;border-left:5px solid #bd9557;border-radius:13px;padding:18px 23px;margin:12px 0 24px}
+.compare-intro p{margin:0;color:#24483c;font-size:.88rem;line-height:1.6;max-width:67ch}
+.compare-intro .compare-label{color:#8c6237;font-size:.66rem;font-weight:850;letter-spacing:.15em;text-transform:uppercase;margin:0 0 4px}
+.compare-intro a{display:flex;align-items:center;justify-content:center;min-height:44px;padding:10px 16px;background:#214f3f;color:#fff;border-radius:8px;font-size:.82rem;font-weight:850;text-decoration:none}
+.compare-intro a:hover{background:#306b51}
+.compare-intro .compare-status{flex-basis:100%;font-size:.8rem;min-height:1px}
+.compare-pick{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:46px;padding:10px 14px;margin-top:12px;background:#ecf2e9;border:1px solid #c6dbc9;border-radius:9px;color:#254d3a;font-size:.79rem;font-weight:850;cursor:pointer}
+.compare-pick:hover{background:#deebdf}
+.compare-pick[aria-pressed="true"]{background:#214e3c;color:#fff;border-color:#214e3c}
+.compare-pick:focus-visible,.compare-remove:focus-visible,.compare-clear:focus-visible,.compare-visit:focus-visible{outline:3px solid #f0c782;outline-offset:3px}
+.compare-desk{position:relative;isolation:isolate;margin:20px 0 43px;padding:clamp(24px,4vw,48px);background:#15382e;color:#fff8ee;border-radius:25px;overflow:hidden;box-shadow:0 22px 50px #123c342c}
+.compare-desk:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,#0a2722e9,#143c32db 55%,#18392eb5),url("assets/downtown-russellville-sunset.jpg") center 43%/cover}
+.compare-desk-header{display:flex;justify-content:space-between;align-items:end;gap:26px;margin-bottom:26px}
+.compare-desk-header .eyebrow{color:#f3cc8d}
+.compare-desk h2{font:400 clamp(2.5rem,5.4vw,4.9rem)/1.01 Georgia,serif;letter-spacing:-.06em;max-width:17ch;margin:0 0 14px;text-wrap:balance}
+.compare-desk h2 em{color:#efc587}
+.compare-desk-header p:last-child{font-size:.88rem;line-height:1.6;max-width:49ch;margin:0;color:#e6f0e4}
+.compare-clear{background:#f0d4a5;color:#193b31;border:0;border-radius:8px;min-height:44px;padding:10px 18px;font-size:.82rem;font-weight:850;cursor:pointer;flex-shrink:0}
+.compare-clear:hover{background:#fbe6c0}
+.compare-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:15px}
+.compare-option{background:#fffdf6;border:1px solid #d8cbb6;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;color:#1b3b2e;min-width:0;box-shadow:0 16px 32px #041d1745}
+.compare-option-visual{height:160px;margin:0;position:relative;background:#dce7d8}
+.compare-option-visual img{width:100%;height:100%;object-fit:cover;display:block}
+.compare-option-visual figcaption{position:absolute;bottom:10px;left:10px;right:10px;width:max-content;max-width:calc(100% - 20px);padding:5px 9px;background:#163b32e8;border-radius:6px;color:#fff;font-size:.63rem;font-weight:800}
+.compare-option-body{display:flex;flex-direction:column;flex:1;padding:23px}
+.compare-option-index{font-size:.66rem;font-weight:850;letter-spacing:.13em;color:#956b3b}
+.compare-option h3{font:400 clamp(1.45rem,2.5vw,2.2rem)/1.12 Georgia,serif;letter-spacing:-.04em;margin:10px 0 18px;overflow-wrap:anywhere}
+.compare-option dl{margin:0 0 20px;border-top:1px solid #e0e7db}
+.compare-option dl div{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:10px 0;border-bottom:1px solid #e0e7db}
+.compare-option dt{font-size:.73rem;color:#5b7162}
+.compare-option dd{font-size:.79rem;line-height:1.4;text-align:right;font-weight:850;margin:0;overflow-wrap:anywhere}
+.compare-option .compare-rent{font:400 1.55rem/1 Georgia,serif;color:#1e573b}
+.compare-option-actions{display:grid;gap:9px;margin-top:auto}
+.compare-visit,.compare-remove{min-height:44px;display:flex;align-items:center;justify-content:center;border-radius:8px;padding:10px 12px;font-size:.8rem;font-weight:850;text-decoration:none;text-align:center}
+.compare-visit{background:#1f523e;color:white}
+.compare-remove{border:1px solid #d8dfd3;background:#f0f2eb;color:#3f5a48;cursor:pointer}
+.compare-desk-note{color:#e2eade;font-size:.76rem;line-height:1.6;margin:19px 0 0}
+@media(max-width:1000px){.compare-choices{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.compare-intro{padding:17px}.compare-intro a{width:100%}.compare-desk{padding:24px 16px;border-radius:19px}.compare-desk-header{display:block}.compare-desk h2{font-size:clamp(2.5rem,11vw,3.7rem)}.compare-clear{width:100%;margin-top:20px}.compare-choices{grid-template-columns:1fr}.compare-option-visual{height:195px}}
+@media(prefers-reduced-motion:reduce){.compare-pick{transition:none}}
+
 </style></head>
 <body>
 <a class="skip" href="#main">Skip to listings</a>
@@ -382,7 +427,18 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
       </div>
     </div>
 
+
+    <div class="compare-intro" id="compareIntro">
+      <div><p class="compare-label">The renter's field guide / Side by side</p><p><strong>Found a few possible homes?</strong> Pin up to three listings to compare published rent, layout and listing sources.</p></div>
+      <a href="#compareDesk" id="compareJump" hidden>Review <span id="compareCount">0</span> pinned rentals ↓</a>
+      <p id="compareStatus" class="compare-status" role="status" aria-live="polite"></p>
+    </div>
     <div id="listings" class="listings" aria-live="polite"></div>
+    <section class="compare-desk" id="compareDesk" aria-labelledby="compareHeading" hidden>
+      <div class="compare-desk-header"><div><p class="eyebrow">Your shortlist / The River Valley</p><h2 id="compareHeading">The right place is in the <em>details.</em></h2><p>Compare what current sources publish, then check actual openings and terms with the manager.</p></div><button type="button" class="compare-clear" id="compareClear">Clear comparison</button></div>
+      <div class="compare-choices" id="compareChoices"></div>
+      <p class="compare-desk-note">This is not an availability check, booking or application. Monthly rent may exclude utilities, deposits or other fees; generic images do not show the actual property. Confirm all terms with the source.</p>
+    </section>
     <div id="empty" class="empty" hidden>
       <h3>No matching rentals.</h3>
       <p>Change the filters or text Russellville.Rent and tell us what you need.</p>

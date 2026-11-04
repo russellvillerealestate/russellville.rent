@@ -1,4 +1,4 @@
-const state={listings:[],filtered:[]};
+const state={listings:[],filtered:[],compareIds:new Set()};
 const $=id=>document.getElementById(id);
 const money=n=>n?new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(n):"Call";
 const FALLBACK_IMAGE="https://images.unsplash.com/photo-1768941124460-6fa7161715ff?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=82&w=1600";
@@ -30,6 +30,7 @@ function card(item){
         <a class="inquire" href="${sms}">Ask about rental</a>
         <a class="source-link" href="${safe(item.source_url)}" target="_blank" rel="noopener noreferrer">View source ↗</a>
       </div>
+      <button type="button" class="compare-pick" data-compare-id="${safe(item.id)}" aria-controls="compareDesk" aria-pressed="${state.compareIds.has(String(item.id))}"><span>${state.compareIds.has(String(item.id))?"Pinned to compare":"Pin to compare"}</span><span aria-hidden="true">${state.compareIds.has(String(item.id))?"✓":"+"}</span></button>
     </div>
   </article>`;
 }
@@ -64,6 +65,7 @@ function render(){
   $("inventoryCount").textContent=state.listings.length;
   const managers=new Set(state.listings.map(x=>x.manager));
   $("managerCount").textContent=managers.size;
+  drawComparison();
 }
 
 /* Shareable, removable search criteria. The existing listing index is unchanged. */
@@ -160,6 +162,74 @@ function bindSearchSummary(){
     }
   });
 }
+
+
+/* Presentation-only comparison of indexed listings; no new provider claims. */
+function compareOption(item,n){
+  const photo=item.image_url||FALLBACK_IMAGE;
+  const rate=item.rent?money(item.rent):"Ask source";
+  const display=v=>v==null?"Ask source":String(v);
+  const photoLabel=item.image_verified===false?"Generic image – not this property":"Listing-source image";
+  return `<article class="compare-option">
+    <figure class="compare-option-visual"><img loading="lazy" src="${safe(photo)}" alt="${safe(item.image_verified===false?"Generic rental illustration":"Photo of "+item.address)}"><figcaption>${safe(photoLabel)}</figcaption></figure>
+    <div class="compare-option-body">
+      <span class="compare-option-index">OPTION ${n+1} / ${safe(item.type||"Rental")}</span>
+      <h3>${safe(item.address)}</h3>
+      <dl>
+        <div><dt>Published rent</dt><dd class="compare-rent">${safe(rate)}</dd></div>
+        <div><dt>Bedrooms</dt><dd>${safe(display(item.beds))}</dd></div>
+        <div><dt>Bathrooms</dt><dd>${safe(display(item.baths))}</dd></div>
+        <div><dt>Rental type</dt><dd>${safe(item.type||"Unspecified")}</dd></div>
+        <div><dt>Manager</dt><dd>${safe(item.manager)}</dd></div>
+        <div><dt>Source checked</dt><dd>${safe(ageLabel(item))}</dd></div>
+      </dl>
+      <div class="compare-option-actions">
+        <a class="compare-visit" href="${safe(item.source_url)}" rel="noopener noreferrer" target="_blank">Check original listing ↗</a>
+        <button type="button" class="compare-remove" data-compare-id="${safe(item.id)}">Remove from comparison</button>
+      </div>
+    </div>
+  </article>`;
+}
+function drawComparison(){
+  const selected=[...state.compareIds].map(id=>state.listings.find(item=>String(item.id)===id)).filter(Boolean);
+  $("compareDesk").hidden=selected.length===0;
+  $("compareJump").hidden=selected.length===0;
+  $("compareCount").textContent=String(selected.length);
+  $("compareChoices").innerHTML=selected.map(compareOption).join("");
+  document.querySelectorAll(".compare-pick[data-compare-id]").forEach(button=>{
+    const on=state.compareIds.has(button.dataset.compareId);
+    button.setAttribute("aria-pressed",String(on));
+    button.firstElementChild.textContent=on?"Pinned to compare":"Pin to compare";
+    button.lastElementChild.textContent=on?"✓":"+";
+  });
+  $("compareChoices").querySelectorAll(".compare-option-visual img").forEach(img=>img.addEventListener("error",()=>{if(img.src!==FALLBACK_IMAGE)img.src=FALLBACK_IMAGE;}));
+}
+function onCompareClick(event){
+  const button=event.target.closest("button[data-compare-id]");
+  if(!button)return;
+  const id=button.dataset.compareId,item=state.listings.find(x=>String(x.id)===id);
+  if(!item)return;
+  const removing=state.compareIds.has(id);
+  if(removing)state.compareIds.delete(id);
+  else if(state.compareIds.size>=3){$("compareStatus").textContent="Compare up to three rentals; remove one before adding another.";return;}
+  else state.compareIds.add(id);
+  drawComparison();
+  $("compareStatus").textContent=item.address+(removing?" removed from":" added to")+" your comparison.";
+  if(button.classList.contains("compare-remove")){
+    const original=[...document.querySelectorAll(".compare-pick")].find(x=>x.dataset.compareId===id);
+    if(original)original.focus();
+    else if(state.compareIds.size)$("compareClear").focus();
+    else $("compareIntro").scrollIntoView({block:"nearest"});
+  }
+}
+$("listings").addEventListener("click",onCompareClick);
+$("compareChoices").addEventListener("click",onCompareClick);
+$("compareClear").addEventListener("click",()=>{
+  state.compareIds.clear();
+  drawComparison();
+  $("compareStatus").textContent="Your rental comparison is cleared.";
+  $("compareIntro").scrollIntoView({block:"nearest"});
+});
 
 async function load(){
   try{
