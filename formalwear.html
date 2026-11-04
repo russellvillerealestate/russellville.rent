@@ -313,6 +313,41 @@ a:focus-visible{outline:3px solid #a66a17;outline-offset:4px;border-radius:3px}
 @media(max-width:790px){.provider-region-heading{display:block}.provider-region-heading p{margin-top:16px}.provider-region-grid{grid-template-columns:1fr}.provider-region-grid .provider-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.8fr)}.provider-region-grid .provider-details{border-top:0;border-left:1px solid #d6dfd3}.provider-region+.provider-region{margin-top:55px}}
 @media(max-width:650px){.provider-spotlight{margin-bottom:49px}.spotlight-rail{min-height:195px;padding:26px}.spotlight-rail strong{font-size:2.8rem}.provider-spotlight .provider-card,.provider-region-grid .provider-card{display:flex;flex-direction:column}.provider-region-grid .provider-details{border-left:0;border-top:1px solid #d6dfd3}.provider-region-heading h3{font-size:clamp(2.65rem,10vw,3.7rem)}.provider-region--regional{padding:21px 16px;border-radius:18px}.provider-region-grid{gap:15px}.provider-region-grid .provider-main{padding:27px 23px}.provider-region-grid .provider-details{padding:23px}.provider-region-grid .provider-name{font-size:2.65rem}}
 
+
+/* Nov 2026 event-edit wayfinding: task-based routes informed by Nielsen Norman
+   Group, responsive composition by web.dev, and WCAG 2.2 focus/reduced motion.
+   StayARV-inspired photographic scale; no new provider/availability claims. */
+.occasion-next{margin:54px auto 76px;padding:clamp(26px,4vw,50px);background:#153a31;color:#f7f5eb;border:1px solid #214f40;border-radius:29px;box-shadow:0 25px 58px #122b2524}
+.occasion-next-intro{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(220px,.75fr);gap:30px;align-items:end;margin-bottom:27px}
+.occasion-next-kicker{display:block;margin:0 0 15px;color:#f4ce91;font-size:.7rem;letter-spacing:.19em;font-weight:850;text-transform:uppercase}
+.occasion-next h2{margin:0;color:#fffaf0;font:400 clamp(2.5rem,5.4vw,5rem)/1 Georgia,"Times New Roman",serif;letter-spacing:-.065em;text-wrap:balance}
+.occasion-next h2 em{color:#f5c991;font-weight:400}
+.occasion-next-intro>p{margin:0 0 3px;max-width:39ch;color:#dce7dc;font-size:.94rem;line-height:1.7}
+.occasion-next-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
+.occasion-next-card{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;min-width:0;min-height:260px;overflow:hidden;padding:clamp(22px,2.7vw,32px);border:1px solid #ffffff30;border-radius:18px;color:#fffdf1;text-decoration:none;transition:transform .22s,box-shadow .22s,border-color .22s}
+.occasion-next-card::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.8}
+.occasion-next-card--venue{grid-column:span 7;min-height:324px;background:linear-gradient(95deg,#102f2de8,#102f2dbf 50%,#1b393342),url("assets/downtown-russellville-sunset.jpg") center 53%/cover no-repeat}
+.occasion-next-card--photo{grid-column:span 5;background:#e5d5b9;color:#173b32;border-color:#e5d5b9}
+.occasion-next-card--party{grid-column:span 5;background:#e8beba;color:#502f36;border-color:#e8beba}
+.occasion-next-card--sound{grid-column:span 7;background:radial-gradient(circle at 83% 19%,#558d8970,transparent 44%),linear-gradient(125deg,#244b53,#142e3a)}
+.occasion-next-card--photo::after{background:repeating-linear-gradient(120deg,transparent 0 30px,#583e3410 31px 32px)}
+.occasion-next-card--party::after{background:radial-gradient(circle at 84% 24%,transparent 0 49px,#6f384b23 50px 52px,transparent 53px 80px,#6f384b1b 81px 83px,transparent 84px)}
+.occasion-next-card--sound::after{background:repeating-linear-gradient(90deg,transparent 0 25px,#e9e4cb0c 26px 27px)}
+.occasion-next-card:hover{transform:translateY(-4px);box-shadow:0 17px 29px #071c1947;border-color:#fff4d1}
+.occasion-next-card:focus-visible{outline:3px solid #f2c776;outline-offset:4px}
+.occasion-next-card-tag{display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:.67rem;font-weight:850;letter-spacing:.15em;text-transform:uppercase}
+.occasion-next-card-tag span:last-child{font-size:1.4rem;font-weight:400;line-height:1}
+.occasion-next-card-copy{display:flex;flex-direction:column;align-items:flex-start;gap:8px;max-width:40ch}
+.occasion-next-card-copy strong{font:400 clamp(1.9rem,3.4vw,3.35rem)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.05em;text-wrap:balance}
+.occasion-next-card-copy small{font-size:.81rem;line-height:1.5;max-width:33ch;color:inherit;opacity:.94}
+.occasion-next-go{display:inline-flex;align-items:center;gap:12px;margin-top:14px;padding:8px 0;border-top:1px solid currentColor;font-size:.8rem;font-weight:850}
+.occasion-next-go span{transition:transform .22s}
+.occasion-next-card:hover .occasion-next-go span{transform:translate(3px,-3px)}
+.occasion-next-note{margin:18px 0 0;color:#d8e5da;font-size:.75rem;line-height:1.6}
+@media(max-width:830px){.occasion-next-intro{grid-template-columns:1fr;gap:13px}.occasion-next-intro>p{max-width:62ch}.occasion-next-card--venue,.occasion-next-card--photo,.occasion-next-card--party,.occasion-next-card--sound{grid-column:span 6;min-height:270px}.occasion-next-card-copy strong{font-size:clamp(1.85rem,4.2vw,2.6rem)}}
+@media(max-width:580px){.occasion-next{width:calc(100% - 26px);margin:34px auto 52px;padding:25px 17px;border-radius:20px}.occasion-next h2{font-size:clamp(2.55rem,11vw,3.65rem)}.occasion-next-grid{grid-template-columns:1fr;gap:12px}.occasion-next-card--venue,.occasion-next-card--photo,.occasion-next-card--party,.occasion-next-card--sound{grid-column:1;min-height:226px;padding:22px}.occasion-next-card--venue{min-height:270px}.occasion-next-card-copy strong{font-size:2.25rem}.occasion-next-intro{margin-bottom:22px}}
+@media(prefers-reduced-motion:reduce){.occasion-next-card,.occasion-next-go span{transition:none}.occasion-next-card:hover{transform:none}.occasion-next-card:hover .occasion-next-go span{transform:none}}
+
 </style>
 </head>
 <body>
@@ -455,6 +490,21 @@ a:focus-visible{outline:3px solid #a66a17;outline-offset:4px;border-radius:3px}
 <article class="guide-item"><span class="guide-number">03</span><h3>What's included?</h3><p>Request the complete rental price, deposit details and any alteration or late-return terms.</p></article>
 </div>
 </div></section>
+
+<section class="occasion-next shell" aria-labelledby="occasion-next-title">
+  <div class="occasion-next-intro">
+    <div><span class="occasion-next-kicker">The event edit / Beyond the outfit</span><h2 id="occasion-next-title">A great look.<br><em>An entire occasion.</em></h2></div>
+    <p>Putting together a wedding, prom or celebration? Keep planning with these separate River Valley rental directories. Start with your outfit, then find the space, details and sound.</p>
+  </div>
+  <nav class="occasion-next-grid" aria-label="Explore related event rental categories">
+  <a class="occasion-next-card occasion-next-card--venue" href="/venues.html"><span class="occasion-next-card-tag"><span>01 / The setting</span><span aria-hidden="true">✳</span></span><span class="occasion-next-card-copy"><strong>Find the place.</strong><small>Explore event venues and gathering spaces around the River Valley.</small><span class="occasion-next-go">Browse event venues <span aria-hidden="true">↗</span></span></span></a>
+  <a class="occasion-next-card occasion-next-card--photo" href="/photo-booths.html"><span class="occasion-next-card-tag"><span>02 / The memories</span><span aria-hidden="true">▣</span></span><span class="occasion-next-card-copy"><strong>Capture the night.</strong><small>Compare separately listed photo booth rental options.</small><span class="occasion-next-go">Browse photo booths <span aria-hidden="true">↗</span></span></span></a>
+  <a class="occasion-next-card occasion-next-card--party" href="/party.html"><span class="occasion-next-card-tag"><span>03 / The celebration</span><span aria-hidden="true">✦</span></span><span class="occasion-next-card-copy"><strong>Make it a moment.</strong><small>Find party and event rental categories, from practical equipment to extras.</small><span class="occasion-next-go">Browse party rentals <span aria-hidden="true">↗</span></span></span></a>
+  <a class="occasion-next-card occasion-next-card--sound" href="/audio-visual.html"><span class="occasion-next-card-tag"><span>04 / The atmosphere</span><span aria-hidden="true">♫</span></span><span class="occasion-next-card-copy"><strong>Set the scene.</strong><small>Explore sound, lighting and audio-visual rental providers for events.</small><span class="occasion-next-go">Browse sound &amp; lighting <span aria-hidden="true">↗</span></span></span></a>
+  </nav>
+  <p class="occasion-next-note">These are links to independent category guides—not a coordinated package or a claim of confirmed availability. The Russellville sunset photograph is local scenery, not a listed event venue.</p>
+</section>
+
 <aside class="disclaimer shell"><p><strong>Independent directory.</strong> Contact the provider to confirm current rental availability, address, prices and terms.</p></aside>
 </main>
 <footer class="site-footer"><div class="shell"><span>© 2026 Russellville.Rent · Local rentals. Local connections.</span><a href="/">Return to homepage ↗</a></div></footer>
