@@ -284,6 +284,149 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
 @media(max-width:650px){.compare-intro{padding:17px}.compare-intro a{width:100%}.compare-desk{padding:24px 16px;border-radius:19px}.compare-desk-header{display:block}.compare-desk h2{font-size:clamp(2.5rem,11vw,3.7rem)}.compare-clear{width:100%;margin-top:20px}.compare-choices{grid-template-columns:1fr}.compare-option-visual{height:195px}}
 @media(prefers-reduced-motion:reduce){.compare-pick{transition:none}}
 
+
+/* Residential lookbook / photographic listing folios, November 2026.
+   Use the existing verified-or-labelled property images, visible source badges and two view modes.
+   Inspiration: StayARV's generous landscape photography; NNGroup's predictable aligned scanning
+   and clear information hierarchy; web.dev's responsive image guidance; WCAG 2.2 focus/target rules.
+   This is presentation-only: no listing data, prices, links, filter logic or scripts are changed. */
+.listings:not(.is-compact){
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:25px;
+}
+.listings:not(.is-compact) .card{
+  position:relative;
+  min-width:0;
+  border:1px solid #d4e1d7;
+  border-radius:24px;
+  background:#fffefb;
+  box-shadow:0 13px 40px #123d3014;
+}
+.listings:not(.is-compact) .property-art{
+  position:relative;
+  height:clamp(240px,27vw,318px);
+  background:linear-gradient(135deg,#dce9df,#eff3e8);
+}
+.listings:not(.is-compact) .property-art::after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:28%;
+  background:linear-gradient(transparent,rgba(10,35,28,.17));
+  pointer-events:none;
+}
+.listings:not(.is-compact) .property-photo{
+  object-fit:cover;
+  object-position:center;
+  transition:transform .35s ease;
+}
+.listings:not(.is-compact) .card:hover .property-photo{transform:scale(1.035)}
+.listings:not(.is-compact) .source-badge{
+  top:16px;
+  left:16px;
+  max-width:calc(100% - 32px);
+  border:1px solid #fffef0;
+  background:rgba(255,254,248,.96);
+  box-shadow:0 4px 15px #10362c24;
+}
+.listings:not(.is-compact) .photo-note{
+  bottom:15px;
+  right:16px;
+  border-radius:6px;
+  background:#113a30e8;
+}
+.listings:not(.is-compact) .card-body{
+  position:relative;
+  padding:0 26px 26px;
+}
+.listings:not(.is-compact) .price{
+  position:relative;
+  z-index:2;
+  display:inline-flex;
+  align-items:baseline;
+  gap:6px;
+  align-self:flex-start;
+  max-width:100%;
+  margin:-33px 0 14px -1px;
+  padding:13px 19px 12px;
+  border:1px solid #d6e4d8;
+  border-radius:15px;
+  background:#fffefb;
+  color:#133e32;
+  box-shadow:0 10px 24px #0b32282b;
+  font-size:clamp(1.86rem,2.8vw,2.25rem);
+}
+.listings:not(.is-compact) .price small{
+  color:#4b6b5c;
+  font-size:.74rem;
+}
+.listings:not(.is-compact) .specs{
+  gap:8px;
+  margin:2px 0 15px;
+}
+.listings:not(.is-compact) .specs span{
+  padding:6px 10px;
+  border-color:#d5e4d6;
+  background:#edf4ed;
+}
+.listings:not(.is-compact) .address{
+  font:400 clamp(1.4rem,2vw,1.8rem)/1.16 Georgia,"Times New Roman",serif;
+  letter-spacing:-.037em;
+  color:#153b31;
+  margin:0 0 7px;
+  text-wrap:balance;
+}
+.listings:not(.is-compact) .location{
+  margin:0 0 20px;
+  font-size:.82rem;
+}
+.listings:not(.is-compact) .manager{
+  margin-top:auto;
+  padding-top:16px;
+  font-size:.76rem;
+  border-top:1px solid #dfe8df;
+}
+.listings:not(.is-compact) .card-actions{
+  gap:10px;
+  margin-top:18px;
+}
+.listings:not(.is-compact) .card-actions a{
+  border-radius:999px;
+  min-height:48px;
+  font-size:.79rem;
+}
+.listings:not(.is-compact) .inquire{background:#173e32}
+.listings:not(.is-compact) .inquire:hover{background:#2c6650}
+.listings:not(.is-compact) .source-link:hover{background:#edf4ec}
+.listings:not(.is-compact) .compare-pick{
+  min-height:48px;
+  margin-top:12px;
+  padding:12px 17px;
+  border-radius:12px;
+}
+@media(max-width:900px){
+  .listings:not(.is-compact){grid-template-columns:1fr;gap:21px}
+  .listings:not(.is-compact) .property-art{height:clamp(235px,42vw,365px)}
+  .listings:not(.is-compact) .address{font-size:1.7rem}
+}
+@media(max-width:600px){
+  .listings:not(.is-compact){gap:18px}
+  .listings:not(.is-compact) .card{border-radius:18px}
+  .listings:not(.is-compact) .property-art{height:225px}
+  .listings:not(.is-compact) .card-body{padding:0 19px 20px}
+  .listings:not(.is-compact) .price{margin-top:-27px;padding:11px 15px 10px;font-size:1.88rem}
+  .listings:not(.is-compact) .address{font-size:1.5rem}
+  .listings:not(.is-compact) .card-actions{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .listings:not(.is-compact) .card-actions a{font-size:.72rem;padding:9px 7px}
+}
+@media(max-width:380px){
+  .listings:not(.is-compact) .card-actions{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .listings:not(.is-compact) .property-photo{transition:none}
+  .listings:not(.is-compact) .card:hover .property-photo{transform:none}
+}
+
 </style></head>
 <body>
 <a class="skip" href="#main">Skip to listings</a>
