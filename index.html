@@ -1605,6 +1605,79 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 @media(max-width:600px){.atlas-entry-link{grid-template-columns:67px minmax(0,1fr);gap:10px;min-height:0;padding:18px 15px;border-radius:16px}.atlas-entry-symbols{gap:4px}.atlas-entry-symbols svg{width:30px;height:30px;padding:5px;border-radius:6px}.atlas-entry-copy small{font-size:.53rem;letter-spacing:.08em}.atlas-entry-copy strong{font-size:1.4rem}.atlas-entry-copy>span{font-size:.72rem}.atlas-entry-cta{grid-column:1/-1;justify-self:stretch;min-height:48px}.atlas-dialog{width:100vw;height:100dvh;max-height:100dvh;margin:0;border:0;border-radius:0}.atlas-shell{max-height:100dvh}.atlas-scene{min-height:116px;padding:16px 20px}.atlas-scene-title{font-size:1.85rem}.atlas-scene-caption{font-size:.58rem}.atlas-content{padding:23px 18px 34px}.atlas-heading h2{font-size:2.15rem}.atlas-index{grid-template-columns:1fr}.atlas-item{min-height:57px}}
 @media(prefers-reduced-motion:reduce){.atlas-entry-link,.atlas-item{transition:none}.atlas-entry-link:hover{transform:none}}
 
+
+/* 2026-11-05 / Closure-first River Valley boat directory card.
+   Compared live StayARV and Russellville.Rent. Reuses an existing scenic asset
+   without implying marina access or current rental availability. Evidence:
+   Nielsen Norman Group visual hierarchy (2021); Google web.dev responsive
+   design basics; W3C WCAG 2.2 focus visibility, reflow and target sizing. */
+.boat-closure-scene{
+ position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;
+ gap:18px;min-width:0;min-height:250px;padding:clamp(24px,4vw,46px);
+ background:#113b36;color:#fff8e9;overflow:hidden
+}
+.boat-closure-scene:before{
+ content:"";position:absolute;z-index:-2;inset:0;
+ background:linear-gradient(105deg,#092b29f5 0%,#092b29d6 50%,#133e3999 100%),
+ url("assets/lake-dardanelle-docks.jpg") center 62%/cover no-repeat
+}
+.boat-closure-scene:after{
+ content:"";position:absolute;inset:16px;z-index:-1;border:1px solid #f7dcab66;
+ border-radius:13px;pointer-events:none
+}
+.boat-closure-overline{font-size:.68rem;line-height:1.4;letter-spacing:.17em;font-weight:900;color:#f4d69e}
+.boat-closure-arthead{display:block;font:400 clamp(2.4rem,5.1vw,5.35rem)/.99 Georgia,"Times New Roman",serif;letter-spacing:-.062em;text-wrap:balance;text-shadow:0 4px 21px #092b29}
+.boat-closure-arthead em{font-weight:400;color:#ffdda3}
+.boat-closure-state{align-self:flex-start;display:inline-flex;align-items:center;gap:11px;min-height:44px;padding:8px 14px;
+ border:1px solid #ffdeb69c;border-radius:100px;background:#622f21ed;color:#fff7ed;font-size:.78rem;font-weight:850;line-height:1.4}
+.boat-closure-state b{display:grid;place-items:center;flex:none;width:23px;height:23px;border:2px solid #fff4df;border-radius:50%;font-size:.82rem}
+.boat-closure-caption{font-size:.68rem;line-height:1.45;color:#eff0e8;max-width:45ch}
+.rental-card[data-category="boats"] .card-body .eyebrow{color:#9a6128}
+.rental-card[data-category="boats"] .card-body>p.status{color:#875022!important;font-weight:800}
+.rental-card[data-category="boats"] .card-body .card-link{color:#fff;background:#173f37;
+ border-radius:12px;border:0;min-height:49px;padding:12px 17px;align-items:center;text-decoration:none}
+.rental-card[data-category="boats"] .card-body .card-link:hover{background:#285948}
+.boat-alternative-link{display:inline-flex;justify-content:space-between;gap:14px;align-items:center;
+ margin-top:13px;min-height:44px;font-size:.79rem;font-weight:800;color:#245745;text-decoration:underline;text-underline-offset:4px}
+.boat-alternative-link:hover{color:#8c521f}
+.rental-card[data-category="boats"] :is(a,button):focus-visible{outline:3px solid #a66a17;outline-offset:3px}
+@media(min-width:850px){
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="boats"]{
+  grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);
+  min-height:430px;border:1px solid #aebfb0;border-radius:25px;box-shadow:0 20px 48px #123c301f
+ }
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="boats"] .boat-closure-scene{height:100%;min-height:430px}
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="boats"] .card-body{
+  padding:clamp(30px,4vw,55px);justify-content:center;background:linear-gradient(135deg,#fffdfa,#f0f3eb)
+ }
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="boats"] .card-body h3{
+  font:400 clamp(2.3rem,3.4vw,3.7rem)/1.05 Georgia,"Times New Roman",serif;letter-spacing:-.06em;margin-bottom:19px
+ }
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="boats"] .card-body>p:not(.eyebrow){font-size:.93rem;line-height:1.65}
+}
+@media(min-width:601px) and (max-width:849px){
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="boats"]{grid-column:1/-1}
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="boats"] .boat-closure-scene{min-height:285px}
+}
+@media(max-width:600px){
+ .boat-closure-scene{padding:27px 23px;min-height:295px}
+ .boat-closure-scene:after{inset:11px}
+ .boat-closure-arthead{font-size:clamp(2.6rem,12vw,3.95rem)}
+ .boat-closure-overline{font-size:.6rem;letter-spacing:.12em}
+ .boat-closure-state{font-size:.73rem}
+ .boat-closure-caption{font-size:.62rem}
+ .rental-card[data-category="boats"] .card-body{padding:25px 23px}
+}
+.rentals-grid[data-view="list"] .boat-closure-scene{height:100%;min-height:185px;padding:19px}
+.rentals-grid[data-view="list"] .boat-closure-arthead{font-size:clamp(1.4rem,2.7vw,2.2rem)}
+.rentals-grid[data-view="list"] .boat-closure-caption{display:none}
+@media(max-width:600px){
+ .rentals-grid[data-view="list"] .boat-closure-scene{min-height:158px;padding:13px;gap:8px}
+ .rentals-grid[data-view="list"] .boat-closure-arthead{font-size:1.65rem}
+ .rentals-grid[data-view="list"] .boat-closure-state{min-height:0;padding:7px 9px;font-size:.59rem}
+ .rentals-grid[data-view="list"] .boat-closure-state b{width:18px;height:18px}
+}
+
 </style>
 </head>
 <body>
@@ -1807,11 +1880,16 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <p class="status">24/7 Rent-A-Ride · Cogswell Rentals · Enterprise</p>
 <a class="card-link" href="cars.html">Explore local car rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="boats">
-<div class="category-art icon-tile" style="--tile-ink:#246c82;--tile-bg:#d4eaf1" role="img" aria-label="Motorboat"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-boats"></use></svg><small>BOAT RENTALS</small></div>
+<div class="boat-closure-scene" role="img" aria-label="Lake Dardanelle scenery; neither closed marina is an available boat rental location">
+ <span class="boat-closure-overline">LAKE DARDANELLE / SERVICE ADVISORY</span>
+ <span class="boat-closure-arthead" aria-hidden="true">Marinas<br><em>closed.</em></span>
+ <span class="boat-closure-state" aria-hidden="true"><b>!</b> No verified active boat rentals</span>
+ <span class="boat-closure-caption" aria-hidden="true">River Valley scenery · Not an open marina or rental provider photo</span>
+</div>
 <div class="card-body"><p class="eyebrow">Boats</p><h3>Boats</h3>
 <p><strong>Closure alert:</strong> The U.S. Army Corps of Engineers closed Russellville Marina and all commercial operations October 23, 2026. No active local boat-rental provider is currently verified.</p>
 <p class="status">Russellville Marina CLOSED Oct 23, 2026 · Dardanelle Marina CLOSED Dec 31, 2025</p>
-<a class="card-link" href="boats.html">View marina closure &amp; boat-rental status <span aria-hidden="true">↗</span></a></div></article>
+<a class="card-link" href="boats.html">View marina closure &amp; boat-rental status <span aria-hidden="true">↗</span></a><a class="boat-alternative-link" href="paddling.html">Different outing? Explore kayak &amp; paddleboard rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="party">
 <div class="brand-feature" aria-label="Featured: Happy Jumpers"><img src="https://www.happy-jumpers.com/theme/DIGITAL-LOGO@1x.png" alt="Happy Jumpers brand mark" width="112" height="112" loading="lazy" decoding="async"><span>Happy Jumpers</span><small>FEATURED LOCAL PROVIDER</small></div>
 <div class="card-body"><p class="eyebrow">Party &amp; event rentals</p><h3>Party &amp; event rentals</h3>
