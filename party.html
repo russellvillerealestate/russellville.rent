@@ -287,7 +287,7 @@ main.shell>.summary{margin-top:16px}
 .party-directory-kicker{display:block;color:#f7d3a8;font-size:.7rem;letter-spacing:.17em;text-transform:uppercase;font-weight:850;margin-bottom:21px}
 .party-directory-header h2{margin:0 0 17px;color:#fff;font:400 clamp(2.5rem,4.8vw,4.9rem)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.06em;text-wrap:balance}
 .party-directory-header h2 em{font-style:normal;color:#f4cf9a}
-.party-directory-intro{font-size:.94rem;line-height:1.72;color:#e0ede6;max-width:54ch;margin:0 0 24px}
+.party-directory-header .party-directory-intro{font-size:.94rem;line-height:1.72;color:#e0ede6;max-width:54ch;margin:0 0 24px}
 .party-directory-header #result-count{display:inline-flex;align-items:center;gap:8px;margin:0;padding:9px 15px;border:1px solid #e7c99b90;border-radius:999px;background:#ffffff12;color:#fff;font-size:.78rem;font-weight:800}
 .party-directory-header #result-count:before{content:"";width:8px;height:8px;border-radius:50%;background:#f4cf9a}
 .party-directory-header .event-edit-jump{margin:0 12px 12px 0;background:#f4d3ad;color:#203e37;border-color:#f4d3ad;align-self:flex-start}
@@ -313,7 +313,7 @@ html{scroll-padding-top:125px}
 #provider-grid .provider{scroll-margin-top:145px}
 @media(max-width:930px){.party-directory-header{grid-template-columns:1fr}.party-directory-copy{padding:40px}.party-directory-art{min-height:235px}.party-directory-art-label{font-size:2.3rem}.party-directory-art-credit{bottom:22px}.party-directory-ribbon{grid-template-columns:42px minmax(0,1fr);gap:10px 15px}.party-ribbon-stamp{width:42px;height:42px}.party-ribbon-links{grid-column:1/-1}.party-ribbon-links a{flex:1}}
 @media(max-width:620px){.party-directory-header{margin:40px 0 16px;border-radius:18px}.party-directory-copy{padding:29px 23px}.party-directory-header h2{font-size:clamp(2.45rem,10vw,3.5rem)}.party-directory-art{min-height:200px;padding:30px 25px}.party-directory-art:before{inset:12px}.party-directory-art-credit{left:25px;font-size:.6rem}.party-directory-ribbon{top:0;padding:11px 12px;border-radius:0 0 14px 14px;margin-bottom:15px}.party-ribbon-stamp{display:none}.party-ribbon-text{grid-column:1/-1}.party-ribbon-text strong{font-size:1.1rem}.party-ribbon-links{grid-column:1/-1}.party-ribbon-links a{font-size:.76rem;padding:9px;min-height:44px}}
-@media print{.party-directory-header{background:#fff!important;color:#183b35;box-shadow:none;border:1px solid #cad8d1}.party-directory-header h2,.party-directory-header #result-count{color:#183b35}.party-directory-header h2 em,.party-directory-kicker{color:#31594a}.party-directory-intro{color:#31594a}.party-directory-art,.party-directory-ribbon{display:none!important}}
+@media print{.party-directory-header{background:#fff!important;color:#183b35;box-shadow:none;border:1px solid #cad8d1}.party-directory-header h2,.party-directory-header #result-count{color:#183b35}.party-directory-header h2 em,.party-directory-kicker{color:#31594a}.party-directory-header .party-directory-intro{color:#31594a}.party-directory-art,.party-directory-ribbon{display:none!important}}
 
 </style>
 </head>
@@ -590,7 +590,7 @@ html{scroll-padding-top:125px}
   jump.className="event-edit-jump";
   jump.textContent="Saved lineup (0) ↑";
   const heading=document.querySelector("#providers .results-line");
-  if(heading)heading.insertBefore(jump,heading.querySelector("#result-count"));
+  if(heading){const marker=heading.querySelector("#result-count");if(marker&&marker.parentNode)marker.parentNode.insertBefore(jump,marker);}
   function persist(){
     if(!storageReady)return;
     try{localStorage.setItem(key,JSON.stringify(Array.from(saved)));}
