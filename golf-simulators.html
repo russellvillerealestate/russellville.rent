@@ -387,6 +387,67 @@ html{scroll-padding-top:114px}
 @media(max-width:375px){.golf-identity-name strong{font-size:.92rem}.golf-identity-name small{font-size:.46rem}.golf-return{font-size:.66rem}}
 @media(prefers-reduced-motion:reduce){.golf-nav a{transition:none}}
 
+
+/* Four-route clubhouse atlas: hometown feature beside regional operators.
+   StayARV immersive hierarchy; NN/g scannable grouping; web.dev responsive design;
+   W3C WCAG 2.2 focus/reflow. Artwork is illustrative, not provider inventory. */
+.round-board{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 14% 7%,#3e75573b,transparent 53%),linear-gradient(145deg,#10392e,#071f20)}
+.round-board:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.17;background:repeating-radial-gradient(circle at 20% 65%,transparent 0 58px,#c4d8b5 60px,#c4d8b5 61px,transparent 63px 110px)}
+.round-board-head{grid-template-columns:1.05fr .95fr;align-items:center;margin-bottom:27px}
+.round-board-head h2{max-width:13ch;font-size:clamp(2.65rem,4.8vw,4.2rem)}
+.round-board-grid{grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);grid-template-rows:repeat(3,minmax(0,1fr));gap:12px}
+.round-board-grid>.round-board-card{min-height:0}
+.round-board-card--local{grid-row:1/span 3;padding:clamp(24px,3vw,36px) clamp(23px,3vw,33px) 0;background:radial-gradient(ellipse at 30% 31%,#346c52,#163c33 68%,#0c2927);border-color:#99b799}
+.round-board-card--local .round-board-upper{min-height:62px}
+.round-board-card--local .round-board-status{background:#ecdcac;border-color:#f9e7ba;color:#234735}
+.round-board-card--local .round-board-art{position:relative;flex:1;min-height:205px;margin:21px -10px 25px;background:radial-gradient(ellipse at 50% 58%,#79aa80a8,#1a4c3d 70%);border:1px solid #e4e4bd47;border-radius:26px 26px 50% 50%}
+.round-board-card--local .round-board-art:after{content:"RIVER VALLEY  /  ILLUSTRATED ROUND";position:absolute;bottom:15px;left:0;right:0;text-align:center;color:#eaf0d1;font-size:.56rem;font-weight:850;letter-spacing:.14em}
+.round-board-card--local .round-board-art svg{max-width:360px;height:220px;filter:drop-shadow(0 15px 13px #071d1b77)}
+.round-board-card--local .round-board-name{font-size:clamp(2.7rem,4.6vw,4.1rem);line-height:1.03}
+.round-board-card--local .round-board-description{font-size:.93rem;min-height:0}
+.round-board-card--local .round-board-facts{margin:22px 0 24px;padding-top:21px;border-color:#cbe2d178}
+.round-board-card--local .round-board-facts>span{font-size:.87rem}
+.round-board-card--local .round-board-cta{min-height:68px;margin-left:calc(-1*clamp(23px,3vw,33px));margin-right:calc(-1*clamp(23px,3vw,33px));padding-left:clamp(23px,3vw,33px);padding-right:clamp(23px,3vw,33px);font-size:.88rem}
+.round-board-grid>.round-board-card:not(.round-board-card--local){display:grid;grid-template-columns:minmax(94px,.31fr) minmax(0,.69fr);grid-template-rows:auto auto auto 1fr auto;column-gap:16px;align-content:start;padding:15px 17px 0;border-radius:17px}
+.round-board-grid>.round-board-card:not(.round-board-card--local) .round-board-upper{grid-column:1/-1;grid-row:1;min-height:34px}
+.round-board-grid>.round-board-card:not(.round-board-card--local) .round-board-art{grid-column:1;grid-row:2/span 2;align-self:stretch;min-height:84px;margin:3px 0 8px}
+.round-board-grid>.round-board-card:not(.round-board-card--local) .round-board-art svg{height:82px}
+.round-board-grid>.round-board-card:not(.round-board-card--local) .round-board-name{grid-column:2;grid-row:2;font-size:clamp(1.48rem,2.4vw,1.9rem);align-self:end;margin:3px 0 3px}
+.round-board-grid>.round-board-card:not(.round-board-card--local) .round-board-description{grid-column:2;grid-row:3;min-height:0;font-size:.73rem}
+.round-board-grid>.round-board-card:not(.round-board-card--local) .round-board-facts{grid-column:1/-1;grid-row:4;align-self:end;gap:9px;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);margin:8px 0 11px;padding-top:11px}
+.round-board-grid>.round-board-card:not(.round-board-card--local) .round-board-facts>span{font-size:.71rem;line-height:1.45}
+.round-board-grid>.round-board-card:not(.round-board-card--local) .round-board-cta{grid-column:1/-1;grid-row:5;min-height:45px;margin:0 -17px;padding:10px 17px}
+.round-board-card--nwa{background:#e2eee6;color:#163c33;border-color:#a8c8b7}
+.round-board-card--nwa .round-board-art{background:linear-gradient(145deg,#d5e8d6,#b8d7ce)}
+.round-board-card--nwa .round-board-cta{background:#c6ded0;color:#194736;border-color:#9fbeaa}
+.round-board-card--nwa .round-board-cta:hover{background:#b7d2c2}
+.round-board-grid>.round-board-card:not(.round-board-card--local) .round-board-status{max-width:145px}
+.round-board-footer{border-top:1px solid #ffffff32;padding-top:18px;margin-top:22px}
+@media(max-width:920px){
+ .round-board-grid{grid-template-columns:1fr;grid-template-rows:none}
+ .round-board-card--local{grid-row:auto}
+ .round-board-card--local .round-board-art{min-height:200px}
+ .round-board-card--local .round-board-name{font-size:clamp(2.65rem,6vw,4rem)}
+ .round-board-grid>.round-board-card:not(.round-board-card--local){grid-template-columns:minmax(110px,.22fr) minmax(0,.78fr)}
+ .round-board-head{grid-template-columns:1fr;gap:13px}
+ .round-board-head h2{max-width:none}
+}
+@media(max-width:600px){
+ .round-board{padding:23px 15px}
+ .round-board-card--local{padding:22px 20px 0}
+ .round-board-card--local .round-board-art{min-height:150px;margin:14px -3px}
+ .round-board-card--local .round-board-art svg{height:155px}
+ .round-board-card--local .round-board-name{font-size:2.75rem}
+ .round-board-card--local .round-board-cta{margin-left:-20px;margin-right:-20px;padding-left:20px;padding-right:20px}
+ .round-board-grid>.round-board-card:not(.round-board-card--local){display:flex;flex-direction:column;padding:18px 18px 0}
+ .round-board-grid>.round-board-card:not(.round-board-card--local) .round-board-upper{width:100%;gap:8px}
+ .round-board-grid>.round-board-card:not(.round-board-card--local) .round-board-art{align-self:stretch;width:100%;min-height:85px;margin:8px 0}
+ .round-board-grid>.round-board-card:not(.round-board-card--local) .round-board-name{align-self:stretch}
+ .round-board-grid>.round-board-card:not(.round-board-card--local) .round-board-facts{align-self:stretch;width:100%;margin:15px 0}
+ .round-board-grid>.round-board-card:not(.round-board-card--local) .round-board-cta{align-self:stretch;margin:0 -18px;padding:12px 18px}
+}
+@media(prefers-reduced-motion:reduce){.round-board-card:hover{transform:none}}
+
 </style></head>
 <body><a class="skip" href="#main">Skip to rental options</a>
 <header class="golf-site-header"><div class="header-inner golf-header-inner">
@@ -403,9 +464,9 @@ html{scroll-padding-top:114px}
 <section class="hero" aria-labelledby="page-title"><div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Your next round.<br><em>Your kind of day.</em></h1><p class="intro">Choose between an <strong>on-site simulator bay in Russellville</strong> and mobile simulators that come to an event. <strong>Mobile delivery to Russellville is UNCONFIRMED</strong>; ask providers about travel charges, setup space and available dates.</p><div class="hero-actions"><a href="#local">Find a local bay ↓</a><a href="#mobile">Explore mobile events ↗</a></div><div class="hero-facts" aria-label="Options at a glance"><span><b>01</b> Russellville indoor bay</span><span><b>03</b> Regional event providers · delivery unconfirmed</span></div></div><div class="hero-art" aria-hidden="true"><svg viewBox="0 0 500 345" xmlns="http://www.w3.org/2000/svg" focusable="false"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#356e50"/><stop offset="1" stop-color="#123a30"/></linearGradient></defs><path d="M49 72 246 20 457 72 457 273 246 328 49 273Z" fill="#092722" opacity=".6"/><path d="M77 94 246 49 431 94 431 255 246 306 77 255Z" fill="#24523f" stroke="#b5d5a2" stroke-width="3"/><path d="M99 113 246 75 408 113 408 238 246 281 99 238Z" fill="url(#g)"/><path d="M99 210 246 183 408 210 408 238 246 281 99 238Z" fill="#387650"/><path d="M246 281V183M99 238 246 183 408 238" stroke="#e0f0c0" stroke-opacity=".22" stroke-width="2" fill="none"/><path d="M168 292 250 273 350 297 263 322Z" fill="#6c9e66" stroke="#b6d69c" stroke-width="3"/><path d="M228 287Q282 185 366 136" fill="none" stroke="#dcef9b" stroke-width="4" stroke-dasharray="7 10" stroke-linecap="round"/><circle cx="366" cy="136" r="7" fill="#e5f8b4"/><circle cx="260" cy="298" r="8" fill="white"/><path d="M280 296 318 223 335 215" stroke="#e4e8dc" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="142" cy="128" r="17" fill="none" stroke="#dcef9b" stroke-width="2"/><path d="M133 128h18m-9-9v18" stroke="#dcef9b" stroke-width="2"/></svg></div></section>
 <section class="round-board" aria-labelledby="round-board-title">
   <div class="round-board-head">
-    <div><span class="round-board-kicker">THE RIVER VALLEY PLAYBOOK / THREE FEATURED OPTIONS</span>
+    <div><span class="round-board-kicker">THE RIVER VALLEY PLAYBOOK / FOUR DISTINCT OPTIONS</span>
       <h2 id="round-board-title">Where does <em>your round</em> happen?</h2></div>
-    <p>Start with the experience you want. One simulator is a verified Russellville storefront; the mobile operators are regional options whose Russellville delivery is unconfirmed. Two are highlighted here; a third appears in the full guide below.</p>
+    <p>One verified Russellville storefront and three regional mobile operators. Follow each route to its complete listing; mobile delivery to Russellville remains unconfirmed.</p>
   </div>
   <div class="round-board-grid">
     <a class="round-board-card round-board-card--local" href="#local">
@@ -431,6 +492,15 @@ html{scroll-padding-top:114px}
       <span class="round-board-description">Mobile simulator · Searcy-based operator</span>
       <span class="round-board-facts"><span><b>Experience</b><span>Event setup</span></span><span><b>Advertised base</b><span>$125/hour for first 3 hours · later hours discounted; fees extra</span></span></span>
       <span class="round-board-cta">See the published rate <span aria-hidden="true">↗</span></span>
+    </a>
+
+    <a class="round-board-card round-board-card--nwa" href="#tee-time-nwa">
+      <span class="round-board-upper"><span class="round-board-index">04 / WIDEN THE SEARCH</span><span class="round-board-status is-unconfirmed">Russellville not listed</span></span>
+      <span class="round-board-art" aria-hidden="true"><svg viewBox="0 0 300 115" focusable="false"><path d="M25 90Q98 46 171 78T280 65" fill="none" stroke="#9ec3a8" stroke-width="17" stroke-linecap="round"/><rect x="38" y="15" width="124" height="68" rx="5" fill="#2f6854" stroke="#f2d5a0" stroke-width="3"/><path d="M43 63Q102 25 157 66" fill="none" stroke="#cee6ce" stroke-width="3" stroke-dasharray="5 7"/><path d="M191 93q34-54 77-64" fill="none" stroke="#a77a41" stroke-width="3" stroke-dasharray="6 6"/><circle cx="190" cy="94" r="7" fill="#fffefa"/><path d="M267 32V8l17 6-17 6" fill="#d3a86d" stroke="#d3a86d" stroke-width="2"/></svg></span>
+      <span class="round-board-name">Tee Time NWA</span>
+      <span class="round-board-description">Portable simulators · Northwest Arkansas region</span>
+      <span class="round-board-facts"><span><b>Experience</b><span>Private events and longer rentals</span></span><span><b>Advertised starting rate</b><span>From $550 for private events · duration not published</span></span></span>
+      <span class="round-board-cta">Check its service area and terms <span aria-hidden="true">↗</span></span>
     </a>
   </div>
   <div class="round-board-footer"><p>Not live availability or a booking comparison. Travel, setup fees and exact totals must be confirmed directly with each operator.</p><a href="#sample-budget">Preview Puttees' example base costs <span aria-hidden="true">↗</span></a></div>
