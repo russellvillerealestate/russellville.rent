@@ -216,6 +216,76 @@ body{background:#f6f6f0}
 @media(max-width:610px){.header-inner{min-height:68px}.hero{padding:46px 26px 61px;border-radius:0 0 20px 20px;background-position:62% center}.hero h1{font-size:clamp(3.05rem,12vw,4.6rem);max-width:13ch;margin-bottom:17px}.hero-intro{font-size:.96rem}.status-panel{display:block;padding:20px;border-radius:15px}.status-row{padding:13px 0}.status-row strong{font-size:1.37rem}.closure-callout{margin:-18px 8px 0;padding:19px}.scene-caption{padding:0 5px}.decision-directory{margin-top:39px}.decision-directory-heading h2{font-size:clamp(2rem,9vw,3rem)}.decision-directory-heading>p{font-size:.82rem}.decision-rail{grid-template-columns:1fr;gap:11px}.decision-link,.decision-link:last-child{grid-column:auto;min-height:0;padding:23px 22px}.decision-link:before{left:22px;right:22px}.decision-link strong{font-size:1.53rem}.decision-link small{font-size:.81rem}.section-head{margin-top:40px}}
 @media(prefers-reduced-motion:reduce){.decision-link{transition:none}.decision-link:hover{transform:none}}
 
+/* Nov 5, 2026 / Marina access dossier.
+   Compared live StayARV and Russellville.Rent before the change.
+   Hierarchy: Nielsen Norman Group visual hierarchy (color, scale, grouping);
+   layouts: Google web.dev responsive design; interaction: W3C WCAG 2.2
+   focus visible, reflow, touch target size. No claim of reopened facilities.
+   Move already-published Corps access instructions into the initial viewport;
+   retain all original closure notices, dates, contact links, destinations. */
+@media(min-width:961px){
+ .hero{grid-template-columns:minmax(0,1.08fr) minmax(390px,.92fr);gap:clamp(28px,4.4vw,65px);min-height:610px}
+}
+.status-panel{
+ display:flex;flex-direction:column;overflow:hidden;
+ background:#fff9ec;color:#183b31;border:1px solid #f8e2b4;
+ border-radius:26px;padding:0;box-shadow:0 30px 68px #031e1a88;
+}
+.status-panel h2{
+ margin:0;padding:22px 29px 19px;
+ background:linear-gradient(110deg,#fff5d8,#f3e3bd);
+ color:#634a28;font:900 .7rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;
+ letter-spacing:.17em
+}
+.status-panel .status-row{
+ gap:17px;min-height:86px;align-items:center;
+ margin:0;padding:17px 29px;border-top:1px solid #e7deca
+}
+.status-panel .status-row strong{color:#163c31;font:400 clamp(1.45rem,2.2vw,1.87rem)/1.13 Georgia,"Times New Roman",serif}
+.status-panel .status-row small{margin-top:6px;color:#894826;font-size:.79rem;font-weight:850}
+.status-panel .status-dot{width:14px;height:14px;flex:0 0 14px;margin-top:0;background:#ac522c;box-shadow:0 0 0 6px #ac522c25}
+.marina-help-strip{
+ margin:5px 13px 13px;padding:clamp(21px,2.5vw,29px);
+ border-radius:17px;background:linear-gradient(130deg,#113f34 0%,#195744 100%);
+ color:#fffaf1;box-shadow:inset 0 0 0 1px #fff5d51b
+}
+.marina-help-kicker{display:block;margin-bottom:11px;color:#f4d292;font-size:.64rem;font-weight:900;line-height:1.5;letter-spacing:.14em}
+.marina-help-strip p{margin:0 0 19px;max-width:39ch;font-size:.85rem;line-height:1.6;color:#e4efe8}
+.marina-help-strip p strong{display:block;margin-bottom:7px;font:400 clamp(1.43rem,2.25vw,1.85rem)/1.13 Georgia,serif;letter-spacing:-.04em;color:#fff4da}
+.marina-help-actions{display:grid;grid-template-columns:1fr;gap:9px}
+.marina-help-actions a{
+ display:flex;align-items:center;justify-content:space-between;gap:10px;
+ min-height:48px;padding:11px 15px;border-radius:11px;
+ font-size:.78rem;font-weight:850;line-height:1.45;text-decoration:none;
+ transition:background-color .2s ease,transform .2s ease
+}
+.marina-help-primary{background:#f4d79f;color:#173b32}
+.marina-help-secondary{border:1px solid #d7e7d2b5;color:#fffaf0;background:#fff9e50c}
+.marina-help-primary:hover{background:#ffe4ae;transform:translateY(-2px)}
+.marina-help-secondary:hover{background:#fff9e523;transform:translateY(-2px)}
+.marina-help-actions a:focus-visible{outline:3px solid #fff8d4;outline-offset:3px}
+.marina-help-strip>small{display:block;margin-top:14px;color:#dce9dd;font-size:.7rem;line-height:1.5}
+@media(min-width:1350px){.marina-help-actions{grid-template-columns:minmax(0,1.3fr) minmax(0,.8fr)}}
+@media(max-width:960px){.hero{min-height:0}.status-panel{display:flex;padding:0}.status-panel h2{margin:0}}
+@media(max-width:610px){
+ .status-panel{border-radius:19px}
+ .status-panel h2{padding:19px 20px 16px}
+ .status-panel .status-row{padding:15px 20px;min-height:77px}
+ .status-panel .status-row strong{font-size:1.38rem}
+ .marina-help-strip{margin:4px 9px 9px;padding:21px 18px;border-radius:13px}
+ .marina-help-strip p strong{font-size:1.52rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .marina-help-actions a{transition:none}
+ .marina-help-actions a:hover{transform:none}
+}
+@media print{
+ .status-panel{box-shadow:none;border:1px solid #aaa;background:#fff!important;color:#163a31}
+ .status-panel h2,.marina-help-strip{background:#fff!important;color:#163a31}
+ .marina-help-kicker,.marina-help-strip p,.marina-help-strip p strong,.marina-help-strip>small{color:#163a31}
+ .marina-help-actions a{color:#163a31;border:1px solid #777}
+}
+
 </style>
 </head>
 <body>
@@ -228,6 +298,15 @@ body{background:#f6f6f0}
 <h2>Marina status at a glance</h2>
 <div class="status-row"><span class="status-dot" aria-hidden="true"></span><div><strong>Russellville Marina</strong><small>Closed · October 23, 2026</small></div></div>
 <div class="status-row"><span class="status-dot" aria-hidden="true"></span><div><strong>Dardanelle Marina</strong><small>Closed · December 31, 2025</small></div></div>
+<div class="marina-help-strip" role="group" aria-label="Russellville Marina property access information">
+  <span class="marina-help-kicker">FOR BOAT OWNERS / ACCESS BY APPOINTMENT</span>
+  <p><strong>Have belongings at the marina?</strong> The general removal window ended October 30, 2026. Coordinate with the Corps before attempting access.</p>
+  <div class="marina-help-actions">
+    <a class="marina-help-primary" href="tel:+15013401762">Call Russellville Site Office <span aria-hidden="true">↗</span></a>
+    <a class="marina-help-secondary" href="#property-access">Read access rules <span aria-hidden="true">↓</span></a>
+  </div>
+  <small>These links do not grant entry. Closed docks remain restricted.</small>
+</div>
 </aside>
 </section>
 <aside class="closure-callout" aria-label="Marina rental closure notice">
