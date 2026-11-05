@@ -418,6 +418,203 @@ main{padding-top:clamp(62px,8vw,104px)}
  .provider-grid .provider{transition:none}
  .provider-grid .provider:hover{transform:none}
 }
+
+/* 2026-11-05 / River Valley local-service folios.
+   Design review: live stayarv.com + russellville.rent; retain scenic, forest/gold
+   typography system while improving the ten-provider scan hierarchy.
+   Sources: NN/g visual hierarchy; web.dev responsive design; W3C WCAG 2.2
+   focus visible, pointer targets and reflow. All operator source content untouched.
+   Photos are editorial River Valley scenery, NEVER operator inventory. */
+#local-providers .provider-grid{
+  grid-template-columns:minmax(0,1fr);
+  gap:clamp(19px,3vw,32px);
+}
+#local-providers .provider-grid .provider,
+#local-providers .provider-grid .provider:last-child{
+  display:grid;
+  grid-column:auto;
+  grid-template-columns:minmax(245px,.82fr) minmax(0,1.18fr);
+  grid-template-rows:auto auto 1fr auto;
+  grid-template-areas:"scene name" "scene copy" "scene detail" "scene links";
+  min-height:344px;
+  border:1px solid #cbd8c8;
+  border-radius:25px;
+  overflow:hidden;
+  background:#fffdf7;
+  box-shadow:0 22px 48px #112f291c;
+}
+#local-providers .provider-grid .provider:nth-child(even){
+  grid-template-columns:minmax(0,1.18fr) minmax(245px,.82fr);
+  grid-template-areas:"name scene" "copy scene" "detail scene" "links scene";
+  background:#f9f3e8;
+  border-color:#d8cfbc;
+}
+#local-providers .provider-grid .provider .provider-top{
+  grid-area:scene;
+  min-width:0;
+  min-height:344px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:24px;
+  margin:0;
+  padding:clamp(25px,4vw,45px);
+  position:relative;
+  isolation:isolate;
+  border:0;
+  border-right:5px solid #e9c68a;
+  border-radius:0;
+  background:linear-gradient(145deg,#071c19cc,#153b32ae 53%,#214b3bce),
+    url("assets/downtown-russellville-sunset.jpg") center/cover no-repeat;
+  color:#fff;
+}
+#local-providers .provider-grid .provider:nth-child(even) .provider-top{
+  border-right:0;
+  border-left:5px solid #f0d5a2;
+  background:linear-gradient(145deg,#102f29d9,#234c3cb5 56%,#3e4833d5),
+    url("assets/lake-dardanelle-sunset.jpg") center/cover no-repeat;
+}
+#local-providers .provider-grid .provider:nth-child(3n) .provider-top{
+  background:linear-gradient(155deg,#0c2825ee,#1d5144cb 55%,#52633caf),
+    url("assets/lake-dardanelle-sunset.jpg") center/cover no-repeat;
+}
+#local-providers .provider-grid .provider .provider-top::before{
+  right:-94px;top:-120px;z-index:-1;width:360px;height:360px;
+  border-color:#ffecc783;box-shadow:0 0 0 48px #ffefca13,0 0 0 102px #ffefca0b;
+}
+#local-providers .provider-grid .provider .provider-top::after{
+  content:"RIVER VALLEY SCENERY / NOT PROVIDER INVENTORY";
+  display:block;
+  position:relative;
+  z-index:1;
+  max-width:26ch;
+  padding-top:13px;
+  border-top:1px solid #ffe8bc85;
+  color:#fff0d0;
+  font-size:.65rem;
+  line-height:1.65;
+  letter-spacing:.14em;
+  font-weight:850;
+}
+#local-providers .provider-grid .provider-number{
+  color:#ffe0a6;
+  font:400 clamp(5.4rem,10vw,9rem)/.82 Georgia,"Times New Roman",serif;
+  letter-spacing:-.105em;
+  text-shadow:0 13px 28px #041d1a82;
+}
+#local-providers .provider-grid .provider-tag{
+  max-width:min(100%,33ch);
+  padding:10px 13px;
+  border:1px solid #ffecbd9e;
+  border-radius:10px;
+  background:#f8e3b8;
+  color:#214434;
+  font-size:.72rem;
+  line-height:1.5;
+  font-weight:900;
+  text-align:left;
+  text-wrap:balance;
+}
+#local-providers .provider-grid .provider h2{
+  grid-area:name;
+  padding:clamp(27px,4vw,42px) clamp(24px,4vw,46px) 0;
+  margin:0 0 12px;
+  max-width:27ch;
+  font:400 clamp(1.95rem,3.6vw,3rem)/1.08 Georgia,"Times New Roman",serif;
+  letter-spacing:-.053em;
+  color:#153b31;
+}
+#local-providers .provider-grid .provider>p:not(.detail):not(:last-child){
+  grid-area:copy;
+  padding:0 clamp(24px,4vw,46px);
+  margin:0 0 22px;
+  max-width:86ch;
+  font-size:.94rem;
+  line-height:1.72;
+  color:#344f40;
+}
+#local-providers .provider-grid .provider>p.detail{
+  grid-area:detail;
+  align-self:end;
+  margin:0;
+  padding:15px clamp(24px,4vw,46px);
+  border-top:1px solid #d5dfd2;
+  font-size:.79rem;
+  line-height:1.6;
+  color:#3d5f4b;
+}
+#local-providers .provider-grid .provider>p:last-child{
+  grid-area:links;
+  margin:0;
+  padding:15px clamp(19px,3vw,39px) 20px;
+  background:#e8f0e6;
+  border-top:1px solid #cedccb;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:6px 9px;
+  line-height:1.6;
+}
+#local-providers .provider-grid .provider:nth-child(even)>p:last-child{
+  background:#f0e7d6;
+  border-color:#ded0b7;
+}
+#local-providers .provider-grid .provider>p:last-child a{
+  display:inline-flex;
+  min-height:44px;
+  justify-content:center;
+  align-items:center;
+  padding:8px 11px;
+  border-radius:9px;
+  border:1px solid #c3d6c5;
+  background:#fffef7;
+  color:#1b533e;
+  font-size:.8rem;
+  font-weight:800;
+  text-decoration:underline;
+  text-align:center;
+  white-space:normal;
+}
+#local-providers .provider-grid .provider>p:last-child a:hover{background:#dcebdc}
+#local-providers .provider-grid .provider>p:last-child a:focus-visible{
+  outline:3px solid #a56617;outline-offset:3px;
+}
+@media(max-width:880px){
+  #local-providers .provider-grid .provider,
+  #local-providers .provider-grid .provider:last-child,
+  #local-providers .provider-grid .provider:nth-child(even){
+    grid-template-columns:minmax(0,1fr);
+    grid-template-rows:auto;
+    grid-template-areas:"scene" "name" "copy" "detail" "links";
+  }
+  #local-providers .provider-grid .provider .provider-top{
+    min-height:228px;
+    border-right:0;
+    border-left:0;
+    border-bottom:5px solid #edcf97;
+    padding:26px 31px;
+  }
+  #local-providers .provider-grid .provider-number{font-size:6.2rem}
+  #local-providers .provider-grid .provider h2{max-width:none}
+}
+@media(max-width:500px){
+  #local-providers .provider-grid{gap:17px}
+  #local-providers .provider-grid .provider{border-radius:19px}
+  #local-providers .provider-grid .provider .provider-top{min-height:195px;padding:22px}
+  #local-providers .provider-grid .provider-number{font-size:5.2rem}
+  #local-providers .provider-grid .provider h2{padding:25px 22px 0;font-size:clamp(1.9rem,7.7vw,2.5rem)}
+  #local-providers .provider-grid .provider>p:not(.detail):not(:last-child){padding:0 22px}
+  #local-providers .provider-grid .provider>p.detail{padding:15px 22px}
+  #local-providers .provider-grid .provider>p:last-child{padding:17px}
+  #local-providers .provider-grid .provider>p:last-child a{width:100%}
+  #local-providers .provider-grid .provider .provider-top::after{font-size:.59rem}
+}
+@media(prefers-reduced-motion:reduce){
+  #local-providers .provider-grid .provider{transition:none}
+  #local-providers .provider-grid .provider:hover{transform:none}
+}
+
 </style>
 </head>
 <body>
