@@ -626,6 +626,66 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
 @media(prefers-reduced-motion:reduce){
  #regional .provider-list>.provider:not(:first-child){transition:none!important;transform:none!important}
 }
+
+/* 2026-11-05 editorial follow-through: decorate local provider cards without
+   implying that scenic imagery depicts actual facilities or stock. */
+.local-folio-note{display:flex;align-items:center;gap:11px;margin:-5px 0 24px;color:#4f6758;font-size:.81rem;line-height:1.55}
+.local-folio-note:before{content:"";flex:none;width:35px;height:2px;background:#b78a44}
+#local .provider-list>.provider:nth-child(n+2){border:1px solid #b9cbbb;border-radius:23px;overflow:hidden;background:#fffdf6;box-shadow:0 15px 34px #0e3c2d1c}
+#local .provider-list>.provider:nth-child(n+2) .provider-index{
+  position:relative;isolation:isolate;overflow:hidden;display:flex;
+  align-items:flex-end;min-height:155px;padding:42px 30px 17px;border:0;
+  color:#fff8e5;text-shadow:0 3px 12px #08261a88;
+  font:400 clamp(3.3rem,5vw,5.1rem)/.95 Georgia,"Times New Roman",serif
+}
+#local .provider-list>.provider:nth-child(n+2) .provider-index:before{
+  content:"";position:absolute;inset:13px;z-index:-1;border:1px solid #ffffff85;border-radius:11px;pointer-events:none
+}
+#local .provider-list>.provider:nth-child(n+2) .provider-index:after{
+  content:"RIVER VALLEY SCENERY / NOT PROVIDER PHOTOGRAPHY";
+  position:absolute;top:28px;left:30px;right:21px;color:#fff7e3;text-shadow:0 2px 8px #18392c;
+  font:800 .62rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.13em
+}
+#local .provider-list>.provider:nth-child(2) .provider-index{
+  background:linear-gradient(0deg,#10372edb,#194d3d46),
+    url("assets/lake-dardanelle-docks.jpg") center 61%/cover no-repeat
+}
+#local .provider-list>.provider:nth-child(3) .provider-index{
+  background:radial-gradient(circle at 72% 25%,#f4d39d 0 7%,transparent 7.3%),
+    linear-gradient(163deg,transparent 52%,#164f43 52.3% 61%,transparent 61.3%),
+    linear-gradient(18deg,#082b2e 18%,#1d6258 18.3% 33%,transparent 33.3%),
+    linear-gradient(148deg,#356d65,#0b3938 67%,#0b2d2c)
+}
+#local .provider-list>.provider:nth-child(3) .provider-index:after{content:"RIVER VALLEY FIELD ART / NOT PROVIDER EQUIPMENT"}
+#local .provider-list>.provider:nth-child(n+2) .provider-content{
+  padding:clamp(24px,2.5vw,32px);background:linear-gradient(150deg,#fffefa,#eff5ec)
+}
+#local .provider-list>.provider:nth-child(2) .provider-content{background:linear-gradient(150deg,#fffaf1,#f4f0e5)}
+#local .provider-list>.provider:nth-child(n+2) .provider-tag{color:#37634e;letter-spacing:.12em}
+#local .provider-list>.provider:nth-child(n+2) h3{
+  font:400 clamp(1.65rem,2.45vw,2.35rem)/1.09 Georgia,"Times New Roman",serif;
+  letter-spacing:-.055em;text-wrap:balance;color:#163d33;margin:0 0 17px
+}
+#local .provider-list>.provider:nth-child(n+2) .provider-description{font-size:.93rem;line-height:1.75}
+#local .provider-list>.provider:nth-child(n+2) .provider-actions{margin-top:16px}
+@media(min-width:1001px){
+ #local .provider-list>.provider:nth-child(n+2) .provider-index{min-height:132px}
+ #local .provider-list>.provider:nth-child(n+2) .provider-content{padding:24px 30px 27px}
+}
+@media(max-width:700px){
+ #local .provider-list>.provider:nth-child(n+2) .provider-index{min-height:165px;padding:50px 25px 20px;font-size:3.65rem}
+ #local .provider-list>.provider:nth-child(n+2) .provider-index:after{left:25px;top:25px;font-size:.59rem}
+ #local .provider-list>.provider:nth-child(n+2) .provider-content{padding:27px 23px 28px}
+ #local .provider-list>.provider:nth-child(n+2) h3{font-size:clamp(1.65rem,6vw,2.1rem)}
+}
+@media(max-width:390px){
+ .local-folio-note{font-size:.76rem}
+ #local .provider-list>.provider:nth-child(n+2) .provider-index:after{letter-spacing:.08em}
+}
+@media print{
+ #local .provider-list>.provider:nth-child(n+2){box-shadow:none}
+ #local .provider-list>.provider:nth-child(n+2) .provider-index{background:#234c43!important;print-color-adjust:exact}
+}
 </style>
 </head>
 <body>
@@ -737,6 +797,7 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
 
 <section class="section" id="local" aria-labelledby="local-title">
 <div class="section-head"><div><p class="section-kicker">Start close to home</p><h2 id="local-title">Russellville &amp; nearby</h2><p>Two Russellville-based listings plus a Dardanelle event-rental provider advertising Russellville service. Confirm each business’s current availability.</p></div><span class="section-index" aria-hidden="true">01</span></div>
+<p class="local-folio-note">River Valley scenery and illustrations are editorial—not photographs of provider facilities or rental inventory, or proof of availability.</p>
 <div class="provider-list"><article class="provider"><div class="provider-index" aria-hidden="true">01</div><div class="provider-content"><p class="provider-tag">Russellville based</p><h3>Murdock Portable Toilets, Septic &amp; Storage</h3><p class="provider-description">Portable toilets, washing stations and storage containers.</p><p class="provider-area">Russellville, Arkansas</p><p class="provider-actions"><a href="tel:+14799681282">479-968-1282</a> · <a href="https://murdockportable.com/" target="_blank" rel="noopener noreferrer">Public provider information ↗</a></p></div></article>
 <article class="provider"><div class="provider-index" aria-hidden="true">02</div><div class="provider-content"><p class="provider-tag">Russellville based · verify operations</p><h3>On Site Portable Toilets</h3><p class="provider-description">Portable toilet rentals for jobsites and events; operating details not independently confirmed.</p><p class="provider-area">Russellville, Arkansas</p><p class="provider-actions"><a href="tel:+14799672224">479-967-2224</a> · <a href="https://www.septic.com/septic-services/arkansas/russellville/on-site-portable-toilets/" target="_blank" rel="noopener noreferrer">Public provider information ↗</a></p></div></article>
 <article class="provider"><div class="provider-index" aria-hidden="true">03</div><div class="provider-content"><p class="provider-tag">Dardanelle · Russellville service verified</p><h3>EZ Event Rentals</h3><p class="provider-description">Officially advertises portable bathroom rentals for parties, weddings and construction sites, including weekly servicing for construction rentals. Its published service-area list <strong>explicitly names Russellville</strong>, as well as Dardanelle, Atkins, Dover and London. Tables, tents and other event rentals are offered by this same operator. Confirm restroom type, accessible-unit availability, cleaning schedule, delivery charges, exact address eligibility and final rates; no specific unit or booking is guaranteed.</p><p class="provider-area">Based in Dardanelle, Arkansas · Russellville delivery listed by operator; fees and dates unconfirmed</p><p class="provider-actions"><a href="tel:+14792230247">479-223-0247</a> · <a href="https://www.thateazy.com/" target="_blank" rel="noopener noreferrer">Official sanitation rentals &amp; service area ↗</a></p></div></article></div>
