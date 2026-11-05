@@ -427,6 +427,54 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
   .listings:not(.is-compact) .card:hover .property-photo{transform:none}
 }
 
+
+/* 2026-11-05 / Long-term rental search desk.
+   A scenic, sectioned search console adapts StayARV's editorial scale to a usable
+   housing filter workflow. NN/g proximity & grouped form fields; web.dev responsive
+   layout; WCAG 2.2 visible focus, named fields and comfortable targets.
+   Existing form controls, ids, values, listeners and reset semantics are unchanged. */
+.search-section #filters.rental-console{display:block;overflow:hidden;padding:0;gap:0;border:1px solid #c6d7c8;border-radius:26px;background:#f8f8f2;box-shadow:0 22px 56px #143c2d1a}
+.rental-console-head{position:relative;isolation:isolate;overflow:hidden;display:flex;justify-content:space-between;align-items:flex-end;gap:28px;min-height:215px;padding:clamp(29px,4vw,52px);color:#fffdf1;background:linear-gradient(108deg,#0c2e28f7 4%,#123b30e8 58%,#103a2d8c 100%),url("assets/downtown-russellville-sunset.jpg") center 52%/cover}
+.rental-console-head:after{content:"";position:absolute;z-index:-1;right:-85px;top:-140px;width:320px;height:320px;border-radius:50%;border:1px solid #f2d6a74a;box-shadow:0 0 0 34px #f2d6a712,0 0 0 70px #f2d6a709;pointer-events:none}
+.rental-console-head-copy{min-width:0;max-width:730px}
+.rental-console-overline,.rental-console-step>span,.rental-console-foot-label{display:block;color:#f7d99b;font-size:.68rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase;line-height:1.5}
+.rental-console-head h3{font:400 clamp(2.35rem,4.7vw,4.2rem)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.057em;margin:12px 0 15px;text-wrap:balance}
+.rental-console-head h3 em{color:#f4d796;font-weight:400}
+.rental-console-head p{font-size:clamp(.87rem,1.1vw,.99rem);color:#e6efe5;line-height:1.64;max-width:63ch;margin:0}
+.rental-console-landmark{flex:none;align-self:flex-start;display:inline-flex;gap:15px;align-items:center;padding:9px 13px;border-radius:6px;border:1px solid #e4ead68c;background:#0f332b9c;color:#fff8e5;font-size:.61rem;font-weight:850;letter-spacing:.11em;white-space:nowrap}
+.rental-console-body{padding:clamp(20px,3vw,35px);background:linear-gradient(140deg,#f9faf4,#f0f3e9)}
+.rental-console-find{display:grid;grid-template-columns:minmax(175px,.5fr) minmax(0,1fr);align-items:center;gap:clamp(16px,3vw,40px);padding:clamp(19px,2.6vw,28px);border:1px solid #b6d0ba;border-radius:19px;background:#fff;box-shadow:0 12px 27px #183a2c0f}
+.rental-console-step>span{color:#637e69;font-size:.65rem}
+.rental-console-step strong{display:block;margin-top:9px;font:400 clamp(1.38rem,2.5vw,2.12rem)/1.14 Georgia,"Times New Roman",serif;letter-spacing:-.04em;color:#173f33}
+.rental-console-step small{display:block;margin-top:7px;font-size:.77rem;color:#607265;line-height:1.5}
+.rental-console-find .field-search{grid-column:auto;min-width:0}
+.rental-console .field label{display:block;margin:0 0 7px;font-size:.72rem;font-weight:800;letter-spacing:.01em;text-transform:none;color:#345644}
+.rental-console .field input,.rental-console .field select{width:100%;min-width:0;min-height:52px;padding:11px 14px;border:1px solid #b6c9b9;border-radius:11px;background:#fff;color:#183b2d;font-size:.92rem}
+.rental-console .field input:focus-visible,.rental-console .field select:focus-visible{outline:3px solid #ad711d;outline-offset:3px}
+.rental-console-find .field input{background:#f8faf6;border-color:#91b29a;min-height:58px;font-size:1.02rem}
+.rental-console-sections{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.rental-console-group{min-width:0;margin:0;padding:clamp(18px,2.2vw,27px);border:1px solid #d5e0d0;border-radius:19px;background:#fff}
+.rental-console-group legend{float:none;width:auto;max-width:100%;padding:0;font:400 clamp(1.25rem,2vw,1.57rem)/1.2 Georgia,"Times New Roman",serif;letter-spacing:-.03em;color:#1e4636}
+.rental-console-group legend span{display:block;margin-bottom:7px;color:#617b61;font:850 .62rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.16em}
+.rental-console-group>p{margin:7px 0 17px;color:#586e5f;font-size:.79rem;line-height:1.55}
+.rental-console-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:end;gap:13px}
+.rental-console-pair .field{min-width:0}
+.rental-console-group:focus-within,.rental-console-find:focus-within{border-color:#6f9982;box-shadow:0 0 0 2px #66977923}
+.rental-console-foot{display:grid;grid-template-columns:minmax(220px,.82fr) minmax(0,1.18fr);align-items:end;gap:24px;padding:24px clamp(20px,3vw,35px);border-top:1px solid #d4dfcf;background:#e9efe5}
+.rental-console-foot-label{color:#59775e;font-size:.62rem;margin-bottom:7px}
+.rental-console-manager{min-width:0}
+.rental-console-manager .field{min-width:0}
+.rental-console-manager .field select{background:#fffdf7}
+.rental-console-clear{display:flex;align-items:center;justify-content:flex-end;gap:18px}
+.rental-console-clear>span{max-width:300px;font-size:.74rem;line-height:1.5;color:#536b59}
+.search-section #filters .reset{display:inline-flex;gap:12px;align-items:center;justify-content:center;flex:none;width:auto;min-height:52px;padding:11px 18px;border:1px solid #1d5944;border-radius:11px;background:#174b3a;color:#fff;font-size:.81rem;font-weight:850;cursor:pointer;white-space:nowrap}
+.search-section #filters .reset:hover{background:#2a6850}
+.search-section #filters .reset:focus-visible{outline:3px solid #ad711d;outline-offset:3px}
+@media(max-width:930px){.rental-console-head{min-height:0}.rental-console-landmark{display:none}.rental-console-foot{grid-template-columns:1fr}.rental-console-clear{justify-content:space-between}}
+@media(max-width:730px){.search-section #filters.rental-console{border-radius:18px}.rental-console-head{padding:29px 24px 34px;min-height:0}.rental-console-head h3{font-size:clamp(2.45rem,9vw,3.3rem)}.rental-console-body{padding:17px}.rental-console-find{grid-template-columns:1fr;padding:20px;gap:12px}.rental-console-sections{grid-template-columns:1fr;gap:12px;margin-top:12px}.rental-console-group{padding:20px}.rental-console-foot{padding:19px 17px;gap:16px}}
+@media(max-width:420px){.rental-console-pair{grid-template-columns:1fr;gap:13px}.rental-console-head{padding:27px 20px 31px}.rental-console-head h3{font-size:2.5rem}.rental-console-clear{flex-direction:column;align-items:stretch;gap:13px}.rental-console-clear>span{max-width:none}.search-section #filters .reset{width:100%}.rental-console-find .field input{font-size:.92rem}}
+@media(prefers-reduced-motion:reduce){.rental-console *{scroll-behavior:auto}}
+
 </style></head>
 <body>
 <a class="skip" href="#main">Skip to listings</a>
@@ -503,39 +551,69 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
       </div>
     </div>
 
-    <form id="filters" class="filters" role="search">
-      <div class="field field-search">
+    
+    <form id="filters" class="filters rental-console" role="search">
+      <div class="rental-console-head">
+        <div class="rental-console-head-copy">
+          <span class="rental-console-overline">The Russellville rental desk / Find your next address</span>
+          <h3>Make the search <em>yours.</em></h3>
+          <p>Look up a property or manager, then narrow down the spaces that fit your budget and day-to-day needs.</p>
+        </div>
+        <span class="rental-console-landmark">RUSSELLVILLE, ARKANSAS <span aria-hidden="true">↗</span></span>
+      </div>
+      <div class="rental-console-body">
+        <div class="rental-console-find">
+          <div class="rental-console-step"><span>01 / START HERE</span><strong>Search the directory</strong><small>Street, manager, or property type</small></div>
+          <div class="field field-search">
         <label for="q">Search</label>
         <input id="q" type="search" placeholder="Address, manager, property type…">
       </div>
-      <div class="field">
+        </div>
+        <div class="rental-console-sections">
+          <fieldset class="rental-console-group">
+            <legend><span>02 / YOUR BUDGET</span> Set a price range</legend>
+            <p>Use the published monthly rent to narrow your results. Fees and utilities may cost extra.</p>
+            <div class="rental-console-pair"><div class="field">
         <label for="minRent">Min rent</label>
         <select id="minRent">
           <option value="">No min</option><option value="500">$500</option><option value="750">$750</option>
           <option value="1000">$1,000</option><option value="1250">$1,250</option><option value="1500">$1,500</option>
         </select>
-      </div>
-      <div class="field">
+      </div><div class="field">
         <label for="maxRent">Max rent</label>
         <select id="maxRent">
           <option value="">No max</option><option value="750">$750</option><option value="1000">$1,000</option>
           <option value="1250">$1,250</option><option value="1500">$1,500</option><option value="2000">$2,000</option>
           <option value="2500">$2,500</option>
         </select>
-      </div>
-      <div class="field">
+      </div></div>
+          </fieldset>
+          <fieldset class="rental-console-group">
+            <legend><span>03 / YOUR SPACE</span> Choose the layout</legend>
+            <p>Pick a bedroom minimum and a property type, or leave either field open.</p>
+            <div class="rental-console-pair"><div class="field">
         <label for="beds">Bedrooms</label>
         <select id="beds"><option value="">Any</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select>
-      </div>
-      <div class="field">
+      </div><div class="field">
         <label for="type">Type</label>
         <select id="type"><option value="">Any type</option></select>
+      </div></div>
+          </fieldset>
+        </div>
       </div>
-      <div class="field">
+      <div class="rental-console-foot">
+        <div class="rental-console-manager">
+          <span class="rental-console-foot-label">04 / PROPERTY SOURCE</span>
+          <div class="field">
         <label for="manager">Manager</label>
         <select id="manager"><option value="">Any manager</option></select>
       </div>
-      <button class="reset" type="reset">Clear</button>
+        </div>
+        <div class="rental-console-clear">
+          <span>Filters update the results below. Confirm current availability with each original source.</span>
+          <button class="reset" type="reset">Clear filters <span aria-hidden="true">↺</span></button>
+        </div>
+      </div>
     </form>
 
     <section class="search-summary" aria-labelledby="summary-title">
