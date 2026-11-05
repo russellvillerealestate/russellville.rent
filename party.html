@@ -277,6 +277,44 @@ main.shell>.summary{margin-top:16px}
 @media(max-width:410px){.event-edit-grid{grid-template-columns:1fr}.event-edit-slot{min-height:96px}.event-edit-slot.is-empty:nth-child(n+3){display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.event-edit-slot,.event-save{transition:none}}
 
+
+/* Nov 5 2026. Celebration index and in-directory navigation, inspired by
+   StayARV's immersive sections. NN/g information scent; web.dev responsive
+   composition; WCAG 2.2 target sizes and focus visibility. Existing data intact. */
+#providers{scroll-margin-top:24px}
+.party-directory-header{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);gap:0;align-items:stretch;margin:62px 0 20px;padding:0;border-radius:25px;background:#193c39;color:#fff;box-shadow:0 26px 54px #172d3320}
+.party-directory-copy{padding:clamp(29px,4.8vw,58px)}
+.party-directory-kicker{display:block;color:#f7d3a8;font-size:.7rem;letter-spacing:.17em;text-transform:uppercase;font-weight:850;margin-bottom:21px}
+.party-directory-header h2{margin:0 0 17px;color:#fff;font:400 clamp(2.5rem,4.8vw,4.9rem)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.06em;text-wrap:balance}
+.party-directory-header h2 em{font-style:normal;color:#f4cf9a}
+.party-directory-intro{font-size:.94rem;line-height:1.72;color:#e0ede6;max-width:54ch;margin:0 0 24px}
+.party-directory-header #result-count{display:inline-flex;align-items:center;gap:8px;margin:0;padding:9px 15px;border:1px solid #e7c99b90;border-radius:999px;background:#ffffff12;color:#fff;font-size:.78rem;font-weight:800}
+.party-directory-header #result-count:before{content:"";width:8px;height:8px;border-radius:50%;background:#f4cf9a}
+.party-directory-header .event-edit-jump{margin:0 12px 12px 0;background:#f4d3ad;color:#203e37;border-color:#f4d3ad;align-self:flex-start}
+.party-directory-art{position:relative;isolation:isolate;min-height:355px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding:36px;background:linear-gradient(130deg,#172d34d6,#2b303aa3),url("assets/downtown-russellville-sunset.jpg") center/cover}
+.party-directory-art:before{content:"";position:absolute;inset:17px;border:1px solid #fff8df73;border-radius:13px;pointer-events:none}
+.party-directory-art:after{content:"";position:absolute;right:-70px;top:-100px;width:300px;height:300px;border:1px solid #fbd5a770;border-radius:50%;box-shadow:0 0 0 32px #fff8ed18,0 0 0 65px #fff8ed0b;pointer-events:none}
+.party-directory-art-label{position:relative;display:block;color:#fff7e9;font:400 clamp(2rem,3.1vw,3.25rem)/1.08 Georgia,serif;letter-spacing:-.05em;text-shadow:0 3px 15px #17252f90}
+.party-directory-art-mark{position:relative;color:#f5d3a7;font-size:5rem;line-height:1;margin:11px 0}
+.party-directory-art-credit{position:absolute;bottom:31px;left:35px;right:27px;font-size:.64rem;line-height:1.5;letter-spacing:.07em;text-transform:uppercase;font-weight:800;color:#ffebd6}
+.party-directory-ribbon[hidden]{display:none!important}
+.party-directory-ribbon{position:sticky;top:8px;z-index:12;display:grid;grid-template-columns:52px minmax(0,1fr) auto;align-items:center;gap:17px;padding:15px 18px;margin:0 0 21px;background:#193d39;border:1px solid #618577;color:#fff;border-radius:17px;box-shadow:0 14px 35px #0f2c2c60}
+.party-ribbon-stamp{width:50px;height:50px;display:grid;place-items:center;border:1px solid #f1d3a2;border-radius:11px;color:#f4d2a1;font-size:1.9rem;line-height:1}
+.party-ribbon-text strong{display:block;color:#fff;font:400 1.35rem/1.18 Georgia,serif;letter-spacing:-.025em}
+.party-ribbon-text span{display:block;color:#dbe9e0;font-size:.77rem;margin-top:4px}
+.party-ribbon-text b{color:#ffdc9e}
+.party-ribbon-links{display:flex;gap:8px;align-items:center}
+.party-ribbon-links a{display:inline-flex;align-items:center;justify-content:center;min-height:47px;padding:10px 17px;border-radius:999px;border:1px solid #bed2bf;color:#fff;font-size:.8rem;font-weight:850;text-decoration:none;white-space:nowrap}
+.party-ribbon-links a.party-ribbon-saved{background:#f4cf99;color:#193a32;border-color:#f4cf99}
+.party-ribbon-links a:hover{background:#335c4f;color:#fff}
+.party-ribbon-links a.party-ribbon-saved:hover{background:#ffe1b6;color:#183a30}
+.party-ribbon-links a:focus-visible{outline:3px solid #fff;outline-offset:3px}
+html{scroll-padding-top:125px}
+#provider-grid .provider{scroll-margin-top:145px}
+@media(max-width:930px){.party-directory-header{grid-template-columns:1fr}.party-directory-copy{padding:40px}.party-directory-art{min-height:235px}.party-directory-art-label{font-size:2.3rem}.party-directory-art-credit{bottom:22px}.party-directory-ribbon{grid-template-columns:42px minmax(0,1fr);gap:10px 15px}.party-ribbon-stamp{width:42px;height:42px}.party-ribbon-links{grid-column:1/-1}.party-ribbon-links a{flex:1}}
+@media(max-width:620px){.party-directory-header{margin:40px 0 16px;border-radius:18px}.party-directory-copy{padding:29px 23px}.party-directory-header h2{font-size:clamp(2.45rem,10vw,3.5rem)}.party-directory-art{min-height:200px;padding:30px 25px}.party-directory-art:before{inset:12px}.party-directory-art-credit{left:25px;font-size:.6rem}.party-directory-ribbon{top:0;padding:11px 12px;border-radius:0 0 14px 14px;margin-bottom:15px}.party-ribbon-stamp{display:none}.party-ribbon-text{grid-column:1/-1}.party-ribbon-text strong{font-size:1.1rem}.party-ribbon-links{grid-column:1/-1}.party-ribbon-links a{font-size:.76rem;padding:9px;min-height:44px}}
+@media print{.party-directory-header{background:#fff!important;color:#183b35;box-shadow:none;border:1px solid #cad8d1}.party-directory-header h2,.party-directory-header #result-count{color:#183b35}.party-directory-header h2 em,.party-directory-kicker{color:#31594a}.party-directory-intro{color:#31594a}.party-directory-art,.party-directory-ribbon{display:none!important}}
+
 </style>
 </head>
 <body>
@@ -345,7 +383,21 @@ main.shell>.summary{margin-top:16px}
   <textarea id="event-edit-fallback" class="event-edit-fallback" aria-label="Text version of your saved party rental providers" readonly hidden></textarea>
 </section>
 
-<section id="providers" aria-labelledby="providers-title"><div class="results-line"><h2 id="providers-title">Explore rental providers</h2><p id="result-count" role="status" aria-live="polite" aria-atomic="true">46 providers shown</p></div>
+<section id="providers" aria-labelledby="providers-title">
+<div class="results-line party-directory-header">
+  <div class="party-directory-copy">
+    <span class="party-directory-kicker">The River Valley / Celebration directory</span>
+    <h2 id="providers-title">Every detail.<br><em>Every kind of celebration.</em></h2>
+    <p class="party-directory-intro">Browse independently listed rental providers, compare what they advertise, and save the options that fit. Confirm inventory, delivery and final pricing directly.</p>
+    <p id="result-count" role="status" aria-live="polite" aria-atomic="true">46 providers shown</p>
+  </div>
+  <div class="party-directory-art" aria-hidden="true"><span class="party-directory-art-label">THE<br>CELEBRATION<br>INDEX</span><span class="party-directory-art-mark">✳</span><span class="party-directory-art-credit">River Valley scenery · Not a rental venue</span></div>
+</div>
+<nav class="party-directory-ribbon" id="party-directory-ribbon" aria-label="Party rental browsing shortcuts" hidden>
+  <div class="party-ribbon-stamp" aria-hidden="true">✳</div>
+  <div class="party-ribbon-text"><strong>Keep the good ideas together.</strong><span><b id="party-ribbon-visible">46</b> matching providers · <b id="party-ribbon-saved">0</b> of 4 saved</span></div>
+  <div class="party-ribbon-links"><a href="#finder">Refine results <span aria-hidden="true">↗</span></a><a href="#event-edit" class="party-ribbon-saved">Your lineup <span aria-hidden="true">↑</span></a></div>
+</nav>
 <div class="party-view-toolbar" id="party-view-toolbar" hidden>
 <div><span class="view-label">How to explore</span><span class="view-help" id="party-view-help">Full descriptions and booking caveats are visible.</span></div>
 <div class="party-view-group" role="group" aria-label="Provider display"><button type="button" id="party-view-details" aria-controls="provider-grid" aria-pressed="true">Full details</button><button type="button" id="party-view-scan" aria-controls="provider-grid" aria-pressed="false">Quick scan</button></div>
@@ -632,5 +684,30 @@ main.shell>.summary{margin-top:16px}
   render();
 })();
 </script>
+
+<script>
+/* Display-only synchronization with original filter and saved-lineup controls. */
+(function(){
+  const bar=document.getElementById("party-directory-ribbon");
+  const count=document.getElementById("result-count");
+  const saved=document.getElementById("event-edit-number");
+  const shown=document.getElementById("party-ribbon-visible");
+  const selected=document.getElementById("party-ribbon-saved");
+  const finder=document.getElementById("finder");
+  const board=document.getElementById("event-edit");
+  if(!bar||!count||!saved||!shown||!selected||!finder||!board||finder.hidden||board.hidden)return;
+  function sync(){
+    const number=parseInt(count.textContent.trim(),10);
+    if(Number.isFinite(number))shown.textContent=String(number);
+    selected.textContent=saved.textContent.trim();
+  }
+  const observer=new MutationObserver(sync);
+  observer.observe(count,{childList:true,characterData:true,subtree:true});
+  observer.observe(saved,{childList:true,characterData:true,subtree:true});
+  sync();
+  bar.hidden=false;
+})();
+</script>
+
 </body>
 </html>
