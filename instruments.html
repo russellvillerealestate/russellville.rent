@@ -407,6 +407,126 @@
   .compare-card--online .compare-cta{width:100%}
 }
 
+
+/* River Valley band-program folios | 2026-11-05.
+   Scenic editorial composition inspired by StayARV's immersive hero and practical
+   navigation. NN/g information scent; web.dev responsive layout; WCAG 2.2 focus
+   visibility and target sizes. Artwork is clearly not provider imagery.
+   Existing provider copy, official links, contract calculator and inquiry forms preserved. */
+#providers{margin-top:clamp(46px,7vw,86px);scroll-margin-top:28px}
+#providers .section-heading{margin-bottom:30px}
+#providers .section-heading h2{
+  font:400 clamp(2.4rem,5vw,4.3rem)/1.05 Georgia,"Times New Roman",serif;
+  letter-spacing:-.055em;text-wrap:balance
+}
+#providers .provider-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(20px,3vw,34px)}
+#providers .provider{
+  display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+  grid-template-rows:auto minmax(180px,1fr) auto;align-items:stretch;
+  border:1px solid #d8e1d5;border-radius:25px;background:#fffdf7;
+  overflow:hidden;box-shadow:0 18px 50px #14352b17
+}
+#providers .provider-top{
+  z-index:1;grid-column:1;grid-row:1;min-width:0;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;
+  padding:20px clamp(23px,3vw,34px);background:#153d33;color:#fff6df;
+  border:0;border-bottom:1px solid #ffffff3b
+}
+#providers .provider-top span{color:#f5d18c;letter-spacing:.15em}
+#providers .provider-top b{color:#f3eee0}
+#providers .provider-art{
+  position:relative;isolation:isolate;grid-column:1;grid-row:2/4;
+  display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;
+  min-height:340px;min-width:0;overflow:hidden;padding:clamp(26px,4vw,44px);
+  background:linear-gradient(148deg,#113a32cc,#122c29bb 55%,#12392ae8),
+    url("/assets/downtown-russellville-sunset.jpg") center 52%/cover no-repeat;
+  color:#fff7de
+}
+#providers .provider-art::before{
+  content:"";position:absolute;z-index:-1;top:40%;left:-10%;
+  width:120%;height:135px;transform:rotate(-13deg);opacity:.4;
+  background:repeating-linear-gradient(to bottom,transparent 0 20px,#f5d8a8 20px 22px,transparent 22px 27px);
+  pointer-events:none
+}
+#providers .provider-art::after{
+  content:"";position:absolute;z-index:-1;right:-130px;bottom:-145px;
+  width:390px;height:390px;border:1px solid #ffeacb58;border-radius:50%;
+  box-shadow:0 0 0 38px #ffffff09,0 0 0 84px #ffffff07;pointer-events:none
+}
+#providers .provider-art-kicker,
+#providers .provider-art-caption{
+  position:relative;z-index:1;font-size:.68rem;font-weight:800;
+  line-height:1.5;letter-spacing:.14em;text-transform:uppercase
+}
+#providers .provider-art-kicker{color:#ffe3a8}
+#providers .provider-art-caption{max-width:33ch;color:#fff4df;font-size:.63rem;letter-spacing:.1em}
+#providers .provider-art-note{
+  position:relative;z-index:1;align-self:center;display:block;
+  font:400 clamp(8rem,16vw,13rem)/1 Georgia,"Times New Roman",serif;
+  text-shadow:0 16px 35px #051b1b55;color:#ffe1a6;transform:rotate(-9deg)
+}
+#providers .provider:nth-child(2) .provider-art{
+  background:radial-gradient(circle at 75% 30%,#c79660 0%,transparent 46%),
+    linear-gradient(148deg,#294d44,#173d36 55%,#0a2b29)
+}
+#providers .provider:nth-child(3) .provider-art{
+  background:radial-gradient(circle at 78% 18%,#6b866c 0%,transparent 44%),
+    linear-gradient(145deg,#142d2a,#385749 55%,#102b27)
+}
+#providers .provider:nth-child(even){grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+#providers .provider:nth-child(even) .provider-top,
+#providers .provider:nth-child(even) .provider-art{grid-column:2}
+#providers .provider-body{
+  grid-column:2;grid-row:1/3;min-width:0;
+  padding:clamp(30px,4vw,49px) clamp(26px,4vw,49px) 18px;
+  background:#fffdf7
+}
+#providers .provider:nth-child(even) .provider-body,
+#providers .provider:nth-child(even) .provider-actions{grid-column:1}
+#providers .provider h3{
+  max-width:22ch;margin:0 0 23px;color:#153c32;
+  font:400 clamp(2rem,3.1vw,3.15rem)/1.09 Georgia,"Times New Roman",serif;
+  letter-spacing:-.052em;text-wrap:balance
+}
+#providers .provider p{font-size:.94rem;line-height:1.8;color:#365447}
+#providers .provider .location{
+  margin-top:22px;border-top:1px solid #dce5da;
+  padding-top:18px;color:#405f4a;font-size:.82rem
+}
+#providers .provider-actions{
+  grid-column:2;grid-row:3;align-items:center;gap:10px;
+  padding:13px clamp(26px,4vw,49px) clamp(29px,4vw,44px);background:#fffdf7
+}
+#providers .provider-actions .button{
+  min-height:48px;padding:11px 16px;border-radius:11px;
+  font-weight:750;line-height:1.45
+}
+#providers .provider:target{
+  outline:3px solid #a96c19;outline-offset:5px;scroll-margin-top:28px
+}
+@media(max-width:780px){
+  #providers .provider,#providers .provider:nth-child(even){
+    display:flex;flex-direction:column
+  }
+  #providers .provider-top{order:1;padding:17px 24px}
+  #providers .provider-art{order:2;min-height:230px;padding:23px 28px}
+  #providers .provider-art-note{font-size:9rem}
+  #providers .provider-body{order:3;padding:27px 26px 14px}
+  #providers .provider-actions{order:4;padding:12px 26px 30px}
+  #providers .provider h3{max-width:none}
+}
+@media(max-width:420px){
+  #providers .section-heading h2{font-size:2.45rem}
+  #providers .provider-top{padding:16px 19px}
+  #providers .provider-art{min-height:210px;padding:22px}
+  #providers .provider-art-note{font-size:7.4rem}
+  #providers .provider-body{padding:25px 22px 12px}
+  #providers .provider h3{font-size:2.15rem}
+  #providers .provider-actions{padding:10px 22px 28px}
+  #providers .provider-actions .button{width:100%}
+}
+@media(prefers-reduced-motion:reduce){#providers .provider-art-note{transform:none}}
+
 </style>
 </head>
 <body>
@@ -619,6 +739,11 @@ Could you confirm current availability, the monthly price and all fees, how paym
       <div class="provider-grid">
         <article class="provider" id="cooper-music">
           <div class="provider-top"><span>01 / Local store</span><b>Russellville</b></div>
+          <div class="provider-art" role="img" aria-label="Decorative musical notes layered over a River Valley sunset; not a photograph of Cooper Music or its inventory">
+            <span class="provider-art-kicker" aria-hidden="true">COOPER MUSIC / LOCAL STORE</span>
+            <span class="provider-art-note" aria-hidden="true">♫</span>
+            <span class="provider-art-caption" aria-hidden="true">RIVER VALLEY SUNSET · EDITORIAL SCENE, NOT A STOREFRONT PHOTO</span>
+          </div>
           <div class="provider-body">
             <h3>Cooper Music — Russellville</h3>
             <p>Local band instrument store advertising in-house rent-to-own for student and step-up instruments, including saxophones, trumpets and trombones. The official program advertises a first payment upfront plus 24 monthly payments at 11.29% interest. Returns are accepted, but confirm the specific instrument's return window (one published trombone offer says after four months), total cost and any fees before signing. Separate Klarna/Synchrony promotional purchase financing is not a rental. The published school delivery route includes Russellville, Pottsville and Dardanelle. Confirm eligibility, current inventory and school delivery directly.</p>
@@ -631,6 +756,11 @@ Could you confirm current availability, the monthly price and all fees, how paym
         </article>
         <article class="provider" id="school-band-service">
           <div class="provider-top"><span>02 / Regional program</span><b>Russellville served</b></div>
+          <div class="provider-art" role="img" aria-label="Decorative music staff illustration for a regional school-band rental inquiry; not a provider or inventory photograph">
+            <span class="provider-art-kicker" aria-hidden="true">SCHOOL BAND / REGIONAL ROUTE</span>
+            <span class="provider-art-note" aria-hidden="true">♩</span>
+            <span class="provider-art-caption" aria-hidden="true">GRAPHIC ILLUSTRATION · NOT AN INVENTORY OR DELIVERY PHOTO</span>
+          </div>
           <div class="provider-body">
             <h3>Arkansas School Band Service — Russellville service advertised</h3>
             <p>Official rental program for school band instruments, with payments credited toward purchase, repair and replacement coverage, and the option to return an instrument without a long-term commitment. The company explicitly names Russellville among communities it serves. Confirm instrument selection, pickup or delivery arrangements, and current pricing.</p>
@@ -643,6 +773,11 @@ Could you confirm current availability, the monthly price and all fees, how paym
         </article>
         <article class="provider" id="sweetwater-instrument-rentals">
           <div class="provider-top"><span>03 / Online school-linked program</span><b>Russellville schools listed</b></div>
+          <div class="provider-art" role="img" aria-label="Decorative music staff illustration for an online instrument rental option; not a Russellville storefront photograph">
+            <span class="provider-art-kicker" aria-hidden="true">SCHOOL-LINKED / ONLINE OPTION</span>
+            <span class="provider-art-note" aria-hidden="true">♬</span>
+            <span class="provider-art-caption" aria-hidden="true">GRAPHIC ILLUSTRATION · NOT A LOCAL STORE PHOTO</span>
+          </div>
           <div class="provider-body">
             <h3>Sweetwater — Band &amp; Orchestra Instrument Rentals</h3>
             <p>Sweetwater's official Russellville instrument-rental page lists Russellville School District and nearby districts including Atkins, Dardanelle, Dover and Pottsville for school-based rental selection. This is an online program, not a verified Russellville storefront. The school list is not proof of instrument inventory, eligibility, or delivery to a particular address; confirm model availability, contract terms, delivery or pickup arrangements, and charges directly.</p>
