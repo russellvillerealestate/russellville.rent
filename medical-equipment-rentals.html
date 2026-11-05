@@ -223,6 +223,119 @@
 @media(prefers-reduced-motion:reduce){.med-call-copy,.med-call-contact{transition:none}}
 @media print{.med-call-desk{display:block;box-shadow:none;break-inside:avoid}.med-call-scene{min-height:0;background:#fff!important;color:#193e34;padding:20px}.med-call-scene h2,.med-call-scene h2 em,.med-call-scene-lead,.med-call-kicker,.med-call-scene-steps li,.med-call-photo-note{color:#193e34}.med-call-scene:after{display:none}.med-call-desk-content{padding:20px}.med-call-actions{display:none}}
 
+
+/* November 4, 2026 — provider folios for the regional medical rental directory.
+   The verified source text, published example rates, uncertainty warnings and
+   call/source links are unchanged. Dark identity panels use abstract geometry,
+   not photographs of any medical retailer or evidence of local delivery.
+   Reference: StayARV site-led composition; NN/g visual hierarchy
+   (https://www.nngroup.com/articles/visual-hierarchy-ux-definition/);
+   web.dev responsive layouts (https://web.dev/learn/design/responsive-images);
+   W3C WCAG 2.2 keyboard focus and minimum target size
+   (https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/). */
+#providers{scroll-margin-top:30px}
+#providers .section-head{gap:clamp(22px,4vw,65px);align-items:end;margin-bottom:27px}
+#providers .section-head h2{font-size:clamp(2.5rem,5vw,4.35rem);line-height:1.05;letter-spacing:-.058em;text-wrap:balance}
+#providers .section-head p:last-child{font-size:.97rem;line-height:1.65}
+#providers .jump{gap:11px;margin-bottom:30px}
+#providers .jump a{min-height:47px;display:inline-flex;align-items:center;padding:11px 19px;border-radius:10px;background:#e5eee4;border-color:#c8d8ca;color:#204d3e;transition:background-color .17s}
+#providers .jump a:hover{background:#d4e4d7}
+#providers .grid{grid-template-columns:minmax(0,1fr);gap:24px}
+#providers .card,#providers .card:nth-child(3){
+ position:relative;display:grid;grid-template-columns:minmax(275px,.87fr) minmax(0,1.13fr);
+ grid-column:auto;min-height:400px;padding:0;border:1px solid #cbdacf;
+ border-radius:23px;overflow:hidden;background:#fffef9;
+ box-shadow:0 23px 49px #123a2d1c
+}
+#providers .card:target{outline:4px solid #a56a18;outline-offset:5px}
+#providers .card-identity{
+ position:relative;isolation:isolate;display:flex;flex-direction:column;
+ align-items:flex-start;min-width:0;overflow:hidden;min-height:400px;
+ padding:clamp(29px,4vw,49px);background:linear-gradient(148deg,#215748 0%,#0f332f 80%);
+ color:#fff
+}
+#providers .card:nth-child(2) .card-identity{background:linear-gradient(150deg,#37657a,#193d4d 82%)}
+#providers .card:nth-child(3) .card-identity{background:linear-gradient(150deg,#66563e,#37493c 85%)}
+#providers .card-identity:before,#providers .card-identity:after{
+ content:"";position:absolute;pointer-events:none;border:1px solid #f4dfb177;border-radius:50%;z-index:0
+}
+#providers .card-identity:before{width:370px;height:370px;right:-195px;top:-185px;box-shadow:0 0 0 44px #f6dfb10b,0 0 0 86px #f6dfb10a}
+#providers .card-identity:after{width:230px;height:230px;left:-150px;bottom:-135px;opacity:.4}
+#providers .card-identity>*{position:relative;z-index:1}
+#providers .card-identity .kicker{
+ display:block;color:#f6dba6;font-size:.71rem;line-height:1.5;
+ letter-spacing:.17em;text-transform:uppercase;font-weight:900
+}
+#providers .card-identity h3{
+ max-width:18ch;margin:clamp(24px,3.5vw,44px) 0 30px;
+ color:#fffdf3;font:400 clamp(2.1rem,3.4vw,3.35rem)/1.08 Georgia,"Times New Roman",serif;
+ letter-spacing:-.053em;overflow-wrap:break-word;text-wrap:balance
+}
+#providers .card-identity .badge{
+ margin-top:auto;max-width:100%;padding:10px 14px;border:1px solid #f4e4ba;
+ background:#f6e9c9;color:#314a39;border-radius:8px;
+ font-size:.7rem;line-height:1.4;letter-spacing:.07em;text-transform:uppercase
+}
+#providers .card-details{
+ display:flex;flex-direction:column;justify-content:center;min-width:0;
+ padding:clamp(29px,4.2vw,56px);overflow-wrap:anywhere
+}
+#providers .card-details p{
+ max-width:73ch;margin:0 0 18px;color:#2c4c40;
+ font-size:.96rem;line-height:1.79
+}
+#providers .card-details .detail{
+ margin:3px 0 20px;padding:15px 0 0;border-top:1px solid #d7e2d7;
+ color:#486357;font-size:.87rem;line-height:1.6
+}
+#providers .card-details .links{margin:auto 0 0;padding-top:15px;border-top:1px solid #d7e2d7;line-height:3.25}
+#providers .card-details .links a{
+ display:inline-flex;align-items:center;justify-content:center;min-height:44px;
+ margin:4px 5px 4px 0;padding:9px 14px;border-radius:9px;
+ border:1px solid #c6d8c9;background:#eaf2e9;color:#1a5141;
+ text-decoration:none;line-height:1.4;font-size:.81rem;font-weight:800;
+ transition:background-color .17s
+}
+#providers .card-details .links a:first-child{background:#174d3e;border-color:#174d3e;color:#fff}
+#providers .card-details .links a:hover{background:#d3e7d7}
+#providers .card-details .links a:first-child:hover{background:#296b53}
+#providers .card-details .links a:focus-visible,#providers .jump a:focus-visible{
+ outline:3px solid #ad6b16;outline-offset:4px
+}
+@media(max-width:850px){
+ #providers .card,#providers .card:nth-child(3){grid-template-columns:minmax(0,1fr)}
+ #providers .card-identity{min-height:245px;padding:31px 35px}
+ #providers .card-identity h3{max-width:24ch;margin:23px 0 24px;font-size:clamp(2.05rem,5vw,2.9rem)}
+ #providers .card-identity .badge{margin-top:0}
+ #providers .card-details{padding:30px 35px}
+ #providers .section-head{display:block}
+ #providers .section-head p:last-child{margin-top:12px;max-width:70ch}
+}
+@media(max-width:520px){
+ #providers .section-head h2{font-size:clamp(2.25rem,9vw,3rem)}
+ #providers .grid{gap:17px}
+ #providers .card,#providers .card:nth-child(3){border-radius:16px;min-height:0}
+ #providers .card-identity{min-height:220px;padding:28px 24px}
+ #providers .card-identity h3{font-size:clamp(2rem,9vw,2.7rem);margin:20px 0 23px}
+ #providers .card-details{padding:27px 23px}
+ #providers .card-details p{font-size:.9rem;line-height:1.72}
+ #providers .card-details .links{line-height:1.8}
+ #providers .card-details .links a{margin:4px 4px 4px 0;font-size:.77rem}
+ #providers .jump{display:grid;grid-template-columns:1fr}
+ #providers .jump a{justify-content:space-between}
+}
+@media(prefers-reduced-motion:reduce){
+ #providers .jump a,#providers .card-details .links a{transition:none}
+}
+@media print{
+ #providers .card,#providers .card:nth-child(3){display:block;min-height:0;box-shadow:none;break-inside:avoid}
+ #providers .card-identity{min-height:0;padding:18px 23px;background:#fff!important;color:#173e32}
+ #providers .card-identity .kicker,#providers .card-identity h3{color:#173e32}
+ #providers .card-identity .badge{background:#fff;border-color:#bccdbb}
+ #providers .card-details{padding:15px 23px}
+ #providers .card-details .links a{border:0;padding:0 5px 0 0;min-height:0;background:transparent!important;color:#173e32!important}
+}
+
 </style>
 </head>
 <body>
@@ -295,9 +408,9 @@
 <section id="providers" aria-labelledby="providers-title"><div class="section-head"><div><p class="eyebrow" style="color:#52705e">01 / Verified rental offerings</p><h2 id="providers-title">Compare regional providers.</h2></div><p>Three distinct rental operators. Published examples are not real-time inventory or binding quotes.</p></div>
 <nav class="jump" aria-label="Jump to rental providers"><a href="#attention">ATTENTION Medical Supply</a><a href="#diamond">Diamond Medical</a><a href="#trumotion">TruMotion Medical</a></nav>
 <div class="grid">
-<article class="card" id="attention" data-equipment="mobility beds ramps"><span class="kicker">01 / HEBER SPRINGS, ARKANSAS</span><h3>ATTENTION Medical Supply</h3><span class="badge">Regional rental branch</span><p>Official rental page advertises mobility scooters, manual and power wheelchairs, ramps, hospital beds, knee walkers and rollators. Offers weekly, monthly and short-term rentals, with delivery and pickup on most items. <strong>Russellville delivery and current inventory are UNCONFIRMED.</strong> Ask the Heber Springs branch whether it serves your address.</p><p class="detail">2102 Highway 25B, Heber Springs, AR 72543-6405 · Heber Springs location verified; no Russellville branch verified</p><p class="links"><a href="tel:+15013622441">501-362-2441</a> · <a href="https://www.attentionmedical.com/rentals" target="_blank" rel="noopener noreferrer">Official rentals ↗</a> · <a href="https://www.attentionmedical.com/locations" target="_blank" rel="noopener noreferrer">Official locations ↗</a></p></article>
-<article class="card" id="diamond" data-equipment="mobility beds ramps lifts chairs"><span class="kicker">02 / LITTLE ROCK, ARKANSAS</span><h3>Diamond Medical Equipment &amp; Supplies</h3><span class="badge">Regional showroom &amp; rentals</span><p>Official rental catalog lists knee walkers, manual wheelchairs, ramps, electric hospital beds, patient lifts, lift chairs and mobility scooters. Published examples include manual wheelchairs at $75/month or $50/weekend, ramps at $75/month and scooters at $150/week or $400/month. These are <strong>operator-posted examples, not confirmed current quotes</strong>. The company advertises delivery within central Arkansas; <strong>Russellville delivery is UNCONFIRMED.</strong></p><p class="detail">300 South Rodney Parham, Suite 16, Little Rock, AR 72205 · Confirm delivery charges and equipment availability</p><p class="links"><a href="tel:+15012253106">501-225-3106</a> · <a href="https://www.diamondmedical-ar.com/rentals" target="_blank" rel="noopener noreferrer">Official rental catalog ↗</a> · <a href="https://www.diamondmedical-ar.com/contact" target="_blank" rel="noopener noreferrer">Official contact ↗</a></p></article>
-<article class="card" id="trumotion" data-equipment="mobility beds ramps lifts chairs"><span class="kicker">03 / LITTLE ROCK, ARKANSAS</span><h3>TruMotion Medical</h3><span class="badge">Regional rental provider</span><p>Official rental catalog advertises power and manual wheelchairs, mobility scooters, knee walkers, semi-electric hospital beds, suitcase wheelchair ramps, patient lifts and lift chairs. Published examples: standard manual wheelchair $35/week or $105/month; standard scooter $40/day or $300/month; semi-electric hospital bed $350/month; 4–6-foot suitcase ramp $95/month; patient lift $225/month. The operator lists a separate $75 setup and delivery fee for these examples (lift chairs have a different fee). Prices are published examples, not confirmed quotes. <strong>Russellville delivery, final fees and equipment availability are UNCONFIRMED.</strong> TruMotion is associated with American Medical Rentals; do not count the two names as independent operators or assume either has a Russellville branch.</p><p class="detail">6701 West 12th Street, Suite 5, Little Rock, AR 72204 · Little Rock storefront verified</p><p class="links"><a href="tel:+15019752557">501-975-2557</a> · <a href="https://trumotionmedical.com/rentals-2/" target="_blank" rel="noopener noreferrer">Official rentals ↗</a> · <a href="https://trumotionmedical.com/about-us/" target="_blank" rel="noopener noreferrer">Official address &amp; operator background ↗</a></p></article>
+<article class="card" id="attention" data-equipment="mobility beds ramps"><div class="card-identity"><span class="kicker">01 / HEBER SPRINGS, ARKANSAS</span><h3>ATTENTION Medical Supply</h3><span class="badge">Regional rental branch</span></div><div class="card-details"><p>Official rental page advertises mobility scooters, manual and power wheelchairs, ramps, hospital beds, knee walkers and rollators. Offers weekly, monthly and short-term rentals, with delivery and pickup on most items. <strong>Russellville delivery and current inventory are UNCONFIRMED.</strong> Ask the Heber Springs branch whether it serves your address.</p><p class="detail">2102 Highway 25B, Heber Springs, AR 72543-6405 · Heber Springs location verified; no Russellville branch verified</p><p class="links"><a href="tel:+15013622441">501-362-2441</a> · <a href="https://www.attentionmedical.com/rentals" target="_blank" rel="noopener noreferrer">Official rentals ↗</a> · <a href="https://www.attentionmedical.com/locations" target="_blank" rel="noopener noreferrer">Official locations ↗</a></p></div></article>
+<article class="card" id="diamond" data-equipment="mobility beds ramps lifts chairs"><div class="card-identity"><span class="kicker">02 / LITTLE ROCK, ARKANSAS</span><h3>Diamond Medical Equipment &amp; Supplies</h3><span class="badge">Regional showroom &amp; rentals</span></div><div class="card-details"><p>Official rental catalog lists knee walkers, manual wheelchairs, ramps, electric hospital beds, patient lifts, lift chairs and mobility scooters. Published examples include manual wheelchairs at $75/month or $50/weekend, ramps at $75/month and scooters at $150/week or $400/month. These are <strong>operator-posted examples, not confirmed current quotes</strong>. The company advertises delivery within central Arkansas; <strong>Russellville delivery is UNCONFIRMED.</strong></p><p class="detail">300 South Rodney Parham, Suite 16, Little Rock, AR 72205 · Confirm delivery charges and equipment availability</p><p class="links"><a href="tel:+15012253106">501-225-3106</a> · <a href="https://www.diamondmedical-ar.com/rentals" target="_blank" rel="noopener noreferrer">Official rental catalog ↗</a> · <a href="https://www.diamondmedical-ar.com/contact" target="_blank" rel="noopener noreferrer">Official contact ↗</a></p></div></article>
+<article class="card" id="trumotion" data-equipment="mobility beds ramps lifts chairs"><div class="card-identity"><span class="kicker">03 / LITTLE ROCK, ARKANSAS</span><h3>TruMotion Medical</h3><span class="badge">Regional rental provider</span></div><div class="card-details"><p>Official rental catalog advertises power and manual wheelchairs, mobility scooters, knee walkers, semi-electric hospital beds, suitcase wheelchair ramps, patient lifts and lift chairs. Published examples: standard manual wheelchair $35/week or $105/month; standard scooter $40/day or $300/month; semi-electric hospital bed $350/month; 4–6-foot suitcase ramp $95/month; patient lift $225/month. The operator lists a separate $75 setup and delivery fee for these examples (lift chairs have a different fee). Prices are published examples, not confirmed quotes. <strong>Russellville delivery, final fees and equipment availability are UNCONFIRMED.</strong> TruMotion is associated with American Medical Rentals; do not count the two names as independent operators or assume either has a Russellville branch.</p><p class="detail">6701 West 12th Street, Suite 5, Little Rock, AR 72204 · Little Rock storefront verified</p><p class="links"><a href="tel:+15019752557">501-975-2557</a> · <a href="https://trumotionmedical.com/rentals-2/" target="_blank" rel="noopener noreferrer">Official rentals ↗</a> · <a href="https://trumotionmedical.com/about-us/" target="_blank" rel="noopener noreferrer">Official address &amp; operator background ↗</a></p></div></article>
 </div></section>
 
 <section class="rate-atlas" id="published-rates" aria-labelledby="rate-atlas-title">
