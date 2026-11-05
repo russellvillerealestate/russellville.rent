@@ -334,6 +334,54 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.79rem;col
 @media(max-width:400px){.camp-compass{padding:8px;gap:6px}.camp-compass-copy{display:none}.camp-compass-links{display:grid;grid-template-columns:1fr 1fr;width:100%}.camp-compass-links a{white-space:normal;padding:9px 6px;min-height:49px}}
 @media(prefers-reduced-motion:reduce){.camp-compass-links a{transition:none}.camp-compass-links a:hover{transform:none}}
 
+
+
+/* Nov 5: saved campground fieldboard — scenic trip-planning folios; no invented availability.
+   Live StayARV landscape hierarchy; Nielsen Norman Group information scent;
+   web.dev responsive composition; WCAG 2.2 focus visibility and touch targets. */
+.trip-board{position:relative;isolation:isolate;overflow:hidden;margin:46px 0 34px;padding:clamp(24px,4.5vw,47px);border:1px solid #547763;border-radius:26px;background:linear-gradient(113deg,#082d27f6,#113b33f1 55%,#174538e5),url("assets/lake-dardanelle-sunset.jpg") center 54%/cover no-repeat;color:#fff9ea;box-shadow:0 26px 55px #0c30294b}
+.trip-board:before{content:"";position:absolute;z-index:-1;right:-135px;top:-200px;width:475px;height:475px;border:1px solid #f0d9a45c;border-radius:50%;box-shadow:0 0 0 48px #f4dab00c,0 0 0 96px #f4dab009;pointer-events:none}
+.trip-board .trip-board-kicker{color:#f0d59c}
+.trip-board h2{font:400 clamp(2.4rem,5vw,4.2rem)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.055em;max-width:17ch;color:#fffcf2;text-wrap:balance}
+.trip-board .trip-board-description{max-width:62ch;color:#deeadf;font-size:.95rem;line-height:1.68}
+.trip-board .trip-board-count{font-size:1.32rem;color:#f5d8a0;white-space:nowrap}
+.trip-board .trip-board-meta button{min-height:48px;border-radius:11px;border-color:#cfd8b3a3;background:transparent;color:#fff7e7}
+.trip-board .trip-board-meta button:not(:disabled):hover{background:#ffffff25}
+.trip-board-route{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:29px;counter-reset:trip-stop}
+.trip-board-route span{position:relative;min-width:0;min-height:93px;padding:15px 16px;border:1px dashed #b7cfae8a;border-radius:13px;background:#071d1a77;color:#dce9dc;counter-increment:trip-stop}
+.trip-board-route span:before{content:"0" counter(trip-stop);display:block;margin-bottom:13px;color:#f1d39b;font-size:.66rem;font-weight:850;letter-spacing:.14em}
+.trip-board-route span b{display:block;font-size:.78rem}
+.trip-board-route span.is-filled{background:#f1d7a4;color:#163f31;border-color:#f1d7a4}
+.trip-board-route span.is-filled:before{color:#77511e}
+.trip-board-route span.is-filled b:after{content:" ✓"}
+.trip-board .trip-board-items{gap:14px;margin-top:18px}
+.trip-board .trip-board-item{position:relative;min-height:284px;padding:23px 24px 22px;border:1px solid #e7e3d6;border-radius:17px;background:#fffdf6;color:#1b4336;box-shadow:0 14px 29px #061d1933}
+.trip-board .trip-board-item:before{content:"";position:absolute;left:0;right:0;top:0;height:7px;border-radius:17px 17px 0 0;background:linear-gradient(90deg,#9fc8a3,#f1d39b)}
+.trip-board .trip-board-item[data-type="state"]:before{background:linear-gradient(90deg,#e8b858,#f8e4b9)}
+.trip-board .trip-board-item[data-type="federal"]:before{background:linear-gradient(90deg,#7fb6b4,#b7dcd8)}
+.trip-board .trip-board-item-number{display:block;margin:2px 0 16px;font-size:.66rem;font-weight:850;letter-spacing:.15em;color:#846532}
+.trip-board .trip-board-item-label{display:inline-flex;align-items:center;min-height:27px;padding:3px 10px;border-radius:100px;background:#e5f0e4;color:#2e5d45;font-size:.65rem}
+.trip-board .trip-board-item[data-type="state"] .trip-board-item-label{background:#f7ebcf;color:#755321}
+.trip-board .trip-board-item[data-type="federal"] .trip-board-item-label{background:#e1f0ee;color:#30605d}
+.trip-board .trip-board-item h3{font:400 clamp(1.48rem,2.65vw,2.16rem)/1.17 Georgia,"Times New Roman",serif;letter-spacing:-.04em;margin:12px 0 15px;color:#173c31;text-wrap:balance}
+.trip-board .trip-board-contact{display:flex;align-items:start;flex-wrap:wrap;gap:9px 12px;margin-top:auto;padding-top:15px;border-top:1px solid #dfe8d9}
+.trip-board .trip-board-contact a{display:inline-flex;align-items:center;min-height:44px;padding:9px 12px;border:1px solid #b9d2be;border-radius:10px;background:#ecf4e9;color:#1b6045;font-size:.76rem;font-weight:800;text-decoration:none;overflow-wrap:anywhere}
+.trip-board .trip-board-contact a:hover{background:#dceadd}
+.trip-board .trip-board-item-actions{margin-top:13px}
+.trip-board .trip-board-item-actions a{background:#154d3a;color:#fff;border-color:#154d3a}
+.trip-board .trip-board-item-actions a:hover{background:#20664a}
+.trip-board .trip-board-item-actions button{background:#fff;color:#4e5e4c}
+.trip-board .trip-board-item-note{margin:12px 0 0;font-size:.73rem;line-height:1.4;color:#5d6e61}
+.trip-board .trip-board-empty{margin-top:18px;background:#f9f6ea;color:#32513f;border:1px solid #e1d3b0;padding:20px 22px}
+.trip-board .trip-board-copy{min-height:48px;background:#f2d69a;color:#173b30;border-color:#f2d69a}
+.trip-board .trip-board-copy:not(:disabled):hover{background:#ffe7b7}
+.trip-board .trip-board-status{color:#f3d79e}
+.trip-board .trip-board-fallback{background:#fff;color:#173e31;border-radius:12px}
+.trip-board a:focus-visible,.trip-board button:focus-visible{outline:3px solid #f5cf78;outline-offset:4px}
+@media(max-width:780px){.trip-board{padding:29px 23px}.trip-board .trip-board-items{grid-template-columns:1fr}.trip-board .trip-board-item{min-height:0}.trip-board-route{gap:7px}.trip-board-route span{padding:13px 10px;min-height:80px}.trip-board-route span b{font-size:.69rem}}
+@media(max-width:500px){.trip-board{margin:32px 0 24px;padding:26px 18px;border-radius:19px}.trip-board-top{flex-direction:column}.trip-board .trip-board-meta{flex-direction:row;align-items:center;width:100%;justify-content:space-between}.trip-board h2{font-size:clamp(2.15rem,9vw,3.25rem)}.trip-board-route{grid-template-columns:repeat(2,minmax(0,1fr))}.trip-board-route span{min-height:68px;padding:10px 12px}.trip-board-route span:before{margin-bottom:5px}.trip-board .trip-board-item{padding:20px 18px}.trip-board .trip-board-item h3{font-size:1.75rem}.trip-board .trip-board-contact a,.trip-board .trip-board-item-actions a,.trip-board .trip-board-item-actions button{flex:1}}
+@media(prefers-reduced-motion:reduce){.trip-board-route span{transition:none}}
+
 </style>
 </head>
 <body>
@@ -401,6 +449,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.79rem;col
   <section id="camp-trip-board" class="trip-board" aria-labelledby="camp-trip-title" hidden>
     <div class="trip-board-top"><div><p class="trip-board-kicker">Field notes / Your private trip board</p><h2 id="camp-trip-title" tabindex="-1">Make a weekend shortlist.</h2><p class="trip-board-description">Pin up to four places as you browse. Saved locally in this browser. This is a planning tool, not a reservation or availability check.</p></div>
     <div class="trip-board-meta"><strong class="trip-board-count" id="camp-trip-count">0 / 4 saved</strong><button id="camp-trip-clear" type="button" disabled>Clear all</button></div></div>
+    <div class="trip-board-route" aria-hidden="true"><span data-trip-slot="1"><b>Open stop</b></span><span data-trip-slot="2"><b>Open stop</b></span><span data-trip-slot="3"><b>Open stop</b></span><span data-trip-slot="4"><b>Open stop</b></span></div>
     <div id="camp-trip-items" class="trip-board-items" role="list" aria-label="Saved campground options" hidden></div>
     <p id="camp-trip-empty" class="trip-board-empty">Choose “Save to trip plan” on any campground to collect your favorites here.</p>
     <div class="trip-board-tools"><button id="camp-trip-copy" class="trip-board-copy" type="button" disabled>Copy trip list ↗</button><p id="camp-trip-status" class="trip-board-status" role="status" aria-live="polite"></p></div>
@@ -545,14 +594,28 @@ function render(message){
   for(const name of saved){
     const entry=entries.get(name);if(!entry)continue;
     const item=document.createElement('div'),label=document.createElement('span'),heading=document.createElement('h3');
+    const number=document.createElement('span'),contact=document.createElement('div'),note=document.createElement('p');
     const actions=document.createElement('div'),link=document.createElement('a'),remove=document.createElement('button');
-    item.className='trip-board-item';item.setAttribute('role','listitem');
+    item.className='trip-board-item';item.setAttribute('role','listitem');item.dataset.type=entry.card.dataset.type||'';
+    number.className='trip-board-item-number';number.textContent='YOUR STOP / '+String(items.children.length+1).padStart(2,'0');
     label.className='trip-board-item-label';label.textContent=typeName[entry.card.dataset.type]||'Campground';
     heading.textContent=name;actions.className='trip-board-item-actions';
-    link.href='#'+entry.card.id;link.textContent='View details ↗';
+    const sourcePhone=entry.card.querySelector('a[href^="tel:"]');
+    const sourceSite=entry.card.querySelector('a[href^="https://"]');
+    contact.className='trip-board-contact';
+    if(sourcePhone){
+      const phone=document.createElement('a');phone.href=sourcePhone.href;phone.textContent='Call '+sourcePhone.textContent.trim();
+      contact.append(phone);
+    }
+    if(sourceSite){
+      const website=document.createElement('a');website.href=sourceSite.href;website.textContent=sourceSite.textContent.trim();
+      website.target='_blank';website.rel='noopener noreferrer';contact.append(website);
+    }
+    link.href='#'+entry.card.id;link.textContent='Review complete listing ↗';
     remove.type='button';remove.textContent='Remove';remove.setAttribute('aria-label','Remove '+name+' from trip plan');
     remove.addEventListener('click',()=>{removeName(name);title.focus({preventScroll:true});});
-    actions.append(link,remove);item.append(label,heading,actions);items.append(item);
+    note.className='trip-board-item-note';note.textContent='Links from the directory; confirm current availability, fees and stay rules.';
+    actions.append(link,remove);item.append(number,label,heading,contact,actions,note);items.append(item);
   }
   for(const [name,entry] of entries){
     const active=saved.includes(name);
@@ -561,6 +624,11 @@ function render(message){
     entry.button.textContent=active?'✓ Saved to trip plan':'+ Save to trip plan';
     entry.card.classList.toggle('is-trip-saved',active);
   }
+  board.querySelectorAll('[data-trip-slot]').forEach((slot,index)=>{
+    const filled=index<saved.length;
+    slot.classList.toggle('is-filled',filled);
+    slot.querySelector('b').textContent=filled?'Saved stop':'Open stop';
+  });
   count.textContent=saved.length+' / '+MAX+' saved';
   items.hidden=!saved.length;empty.hidden=!!saved.length;
   clear.disabled=copy.disabled=!saved.length;fallback.hidden=true;
@@ -587,7 +655,13 @@ try{
 clear.addEventListener('click',()=>{saved=[];persist();render('Trip board cleared.');title.focus({preventScroll:true});});
 copy.addEventListener('click',async()=>{
   const lines=['Russellville.Rent camping shortlist','Confirm fees, availability, access and booking terms with each operator.',''];
-  saved.forEach((name,i)=>lines.push((i+1)+'. '+name+' — '+(typeName[entries.get(name).card.dataset.type]||'Campground')));
+  saved.forEach((name,i)=>{
+    const card=entries.get(name).card;
+    lines.push((i+1)+'. '+name+' — '+(typeName[card.dataset.type]||'Campground'));
+    const phone=card.querySelector('a[href^="tel:"]'),website=card.querySelector('a[href^="https://"]');
+    if(phone)lines.push('   Phone: '+phone.textContent.trim());
+    if(website)lines.push('   Source: '+website.href);
+  });
   lines.push('','Full listings: https://russellville.rent/camping.html');
   const text=lines.join('\n');
   try{
