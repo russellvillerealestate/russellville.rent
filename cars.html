@@ -366,6 +366,84 @@ main.wrap{padding-top:52px}
   .road-quicklink,.header-routes>a{transition:none}
 }
 
+
+/* 2026-11-05 · River Valley auto-rental provider folios.
+   Compared live https://stayarv.com/ and https://russellville.rent/ .
+   Reference: Nielsen Norman Group, visual hierarchy & scanning
+   (https://www.nngroup.com/articles/visual-hierarchy-ux-definition/);
+   Google web.dev, responsive reflow (https://web.dev/learn/design/);
+   W3C WCAG 2.2, focus appearance, keyboard and target size
+   (https://www.w3.org/TR/WCAG22/).
+   Scenic assets and SVG art are illustrative, not images of any fleet.
+   Existing prices, terms, operators, links, inquiry and mileage scripts unchanged. */
+.car-provider-directory{margin-top:clamp(56px,7vw,94px)}
+.car-provider-directory>.section-head{align-items:end;margin:0 0 32px;gap:25px;padding:0 0 22px;border-bottom:1px solid #c6d5c9}
+.car-provider-directory .section-head h2{font-size:clamp(2.65rem,5.6vw,5.15rem);line-height:1.02;letter-spacing:-.06em;text-wrap:balance}
+.car-provider-directory .section-head p{font-size:.97rem;line-height:1.72;max-width:55ch}
+.car-folios{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(22px,3vw,39px)}
+.car-folios .card{display:grid;grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr);grid-template-rows:auto minmax(0,1fr);min-height:430px;border:1px solid #cbd8c8;border-radius:26px;background:#fffcf5;box-shadow:0 25px 48px #0e332719;transition:box-shadow .22s}
+.car-folios .card:hover{transform:none;box-shadow:0 29px 55px #0e33272a}
+.car-folios .car-provider-scene{grid-column:1;grid-row:1/3;position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;align-items:stretch;margin:0;min-width:0;min-height:430px;padding:clamp(24px,3vw,39px);overflow:hidden;color:#fff5dd;background:linear-gradient(160deg,#082c27e8,#15463bb8 49%,#0a2f2de6),url("assets/downtown-russellville-sunset.jpg") center 57%/cover no-repeat}
+.car-folios .car-provider-scene:before{content:"";position:absolute;z-index:-1;inset:14px;border:1px solid #f8e8c84a;border-radius:15px;pointer-events:none}
+.car-folios .car-provider-scene:after{content:"";position:absolute;z-index:-1;right:-45%;top:-43%;width:110%;aspect-ratio:1;border-radius:50%;border:1px solid #f3d39554;box-shadow:0 0 0 41px #f3d3950b,0 0 0 88px #f3d39509;pointer-events:none}
+.car-folios .car-scene-top{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:13px;font-size:.67rem;font-weight:850;letter-spacing:.15em;color:#f9e2b7}
+.car-folios .car-scene-top b{display:grid;place-items:center;width:48px;height:48px;flex:none;border:1px solid #f3d79a9c;border-radius:50%;font:400 1.42rem/1 Georgia,"Times New Roman",serif;letter-spacing:0;color:#fff4d9}
+.car-folios .car-folio-car{display:block;align-self:center;position:relative;z-index:1;width:min(100%,600px);height:auto;max-height:355px;margin:20px 0;filter:drop-shadow(0 16px 17px #001e18a0)}
+.car-folios .car-provider-scene figcaption{position:relative;z-index:2;display:grid;gap:8px;max-width:44ch;padding-top:17px;border-top:1px solid #f9e3bd79}
+.car-folios .car-provider-scene figcaption strong{font:400 clamp(1.6rem,2.7vw,2.25rem)/1.08 Georgia,"Times New Roman",serif;letter-spacing:-.045em;color:#fff5e2}
+.car-folios .car-provider-scene figcaption small{max-width:56ch;font-size:.69rem;line-height:1.5;color:#e3f0e2}
+.car-folios .card:nth-child(2) .car-provider-scene{background:linear-gradient(145deg,#2d382dec,#6a5038ac 55%,#183b32ec),url("assets/downtown-russellville-sunset.jpg") center 40%/cover no-repeat}
+.car-folios .card:nth-child(3) .car-provider-scene{background:linear-gradient(155deg,#102f39ea,#295866bb 55%,#0e3639ed),url("assets/downtown-russellville-sunset.jpg") 70% 66%/cover no-repeat}
+.car-folios .card:nth-child(even) .car-provider-scene{grid-column:2}
+.car-folios .card-top,.car-folios .card:nth-child(2) .card-top,.car-folios .card:nth-child(3) .card-top{grid-column:2;grid-row:1;min-height:0;padding:clamp(28px,3.3vw,43px) clamp(27px,3.8vw,50px) 0;display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:18px;background:none;overflow:visible}
+.car-folios .card-top:after{display:none}
+.car-folios .card-top .card-index{font-size:2.7rem;color:#b99c63;line-height:1}
+.car-folios .card-top .eyebrow{max-width:30ch;text-align:right;font-size:.68rem;line-height:1.5;letter-spacing:.13em;color:#406b54}
+.car-folios .card-body{grid-column:2;grid-row:2;min-width:0;padding:clamp(20px,2.2vw,29px) clamp(27px,3.8vw,50px) clamp(29px,3.4vw,47px);display:flex;flex-direction:column;justify-content:start}
+.car-folios .card-body h3{font:400 clamp(2.05rem,3.4vw,3.25rem)/1.07 Georgia,"Times New Roman",serif;letter-spacing:-.057em;max-width:23ch;text-wrap:balance;margin-bottom:18px;color:#143a2f}
+.car-folios .card-description{min-height:0;max-width:72ch;font-size:.94rem;line-height:1.76;color:#3c594c;margin-bottom:24px}
+.car-folios .details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 22px;margin-top:auto;padding-top:19px;border-top:1px solid #c8d9ca}
+.car-folios .details p{min-width:0;margin:0;color:#2d4d3c;font-size:.86rem;line-height:1.55}
+.car-folios .label{color:#5c755f;font-size:.67rem;letter-spacing:.13em;margin-bottom:7px}
+.car-folios .actions{margin-top:22px;gap:9px}
+.car-folios .actions .button{min-height:47px;padding:12px 18px;border-radius:10px;font-size:.82rem;line-height:1.35}
+.car-folios .card:nth-child(even) .card-top,.car-folios .card:nth-child(even) .card-body{grid-column:1}
+.car-folios .card:target{outline:4px solid #a56d23;outline-offset:5px;scroll-margin-top:25px}
+.car-folios a:focus-visible{outline:3px solid #a66c20;outline-offset:4px}
+@media(max-width:940px){
+ .car-folios .card{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto;min-height:0}
+ .car-folios .car-provider-scene,.car-folios .card:nth-child(even) .car-provider-scene{grid-column:1;grid-row:1;min-height:300px;padding:25px 30px}
+ .car-folios .car-folio-car{max-height:210px;max-width:460px}
+ .car-folios .card-top,.car-folios .card:nth-child(even) .card-top{grid-column:1;grid-row:2;padding:25px 30px 0}
+ .car-folios .card-body,.car-folios .card:nth-child(even) .card-body{grid-column:1;grid-row:3;padding:18px 30px 30px}
+ .car-folios .card-body h3{max-width:none}
+}
+@media(max-width:620px){
+ .car-provider-directory{margin-top:48px}
+ .car-provider-directory>.section-head{display:block;margin-bottom:22px}
+ .car-provider-directory .section-head h2{font-size:clamp(2.6rem,10vw,3.7rem)}
+ .car-provider-directory .section-head p{margin-top:11px}
+ .car-folios{gap:21px}
+ .car-folios .card{border-radius:18px}
+ .car-folios .car-provider-scene,.car-folios .card:nth-child(even) .car-provider-scene{min-height:254px;padding:20px 22px}
+ .car-folios .car-provider-scene:before{inset:9px;border-radius:10px}
+ .car-folios .car-scene-top{font-size:.59rem}
+ .car-folios .car-scene-top b{width:36px;height:36px;font-size:1.12rem}
+ .car-folios .car-folio-car{max-height:165px;margin:9px auto}
+ .car-folios .car-provider-scene figcaption strong{font-size:1.55rem}
+ .car-folios .car-provider-scene figcaption small{font-size:.65rem}
+ .car-folios .card-top,.car-folios .card:nth-child(even) .card-top{padding:23px 23px 0}
+ .car-folios .card-top .card-index{font-size:2.25rem}
+ .car-folios .card-body,.car-folios .card:nth-child(even) .card-body{padding:15px 23px 27px}
+ .car-folios .card-body h3{font-size:clamp(2rem,8vw,2.6rem)}
+ .car-folios .card-description{font-size:.91rem;line-height:1.7}
+ .car-folios .details{grid-template-columns:minmax(0,1fr);gap:9px}
+ .car-folios .actions{flex-direction:column}
+ .car-folios .actions .button{width:100%;justify-content:center;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){.car-folios .card{transition:none}}
+@media print{.car-folios .card{display:block;box-shadow:none;break-inside:avoid}.car-folios .car-provider-scene{display:none}.car-folios .card-top,.car-folios .card-body{padding:17px 23px}.car-folios .card-top .eyebrow{text-align:left}}
+
 </style>
 </head>
 <body>
@@ -507,10 +585,28 @@ main.wrap{padding-top:52px}
       </aside>
     </div>
   </section>
-  <section aria-labelledby="providers-title">
+  <section class="car-provider-directory" aria-labelledby="providers-title">
     <div class="section-head"><div><p class="eyebrow" style="color:#698167">Find a vehicle</p><h2 id="providers-title">Your rental options</h2><p>Start with a local provider and confirm the details directly before making plans.</p></div><span class="section-number">01 / Compare</span></div>
-    <div class="grid">
+    <div class="grid car-folios">
       <article class="card" id="rental-ride">
+        <figure class="car-provider-scene" aria-hidden="true"><span class="car-scene-top"><span>RIVER VALLEY / ROAD ATLAS</span><b>01</b></span><svg class="car-folio-car" viewBox="0 0 640 380" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <circle cx="470" cy="76" r="46" fill="#FFE0A1" opacity=".83"/>
+  <path d="M0 229 88 178l90 47 98-91 110 88 100-70 154 79v149H0Z" fill="#9ABBA0" opacity=".48"/>
+  <path d="m0 264 101-52 103 34 102-74 128 86 105-64 101 43v143H0Z" fill="#477B68" opacity=".66"/>
+  <path d="M0 318Q190 278 351 321T640 302v78H0Z" fill="#153D32" opacity=".8"/>
+  <path d="M-12 367Q206 303 652 357" fill="none" stroke="#F2D5A0" stroke-width="14" opacity=".66"/>
+  <path d="M34 367Q222 322 606 355" fill="none" stroke="#F8F0D5" stroke-width="3" stroke-dasharray="23 16" opacity=".9"/>
+  <ellipse cx="322" cy="320" rx="212" ry="18" fill="#06251E" opacity=".5"/>
+  <path d="M140 246 191 194q20-18 49-18h155q28 0 45 18l45 52 43 10q17 4 17 22v26H104v-23q0-19 18-26Z" fill="#F2D59A" stroke="#FFF4D9" stroke-width="7" stroke-linejoin="round"/>
+  <path d="m217 190-47 56h140v-58h-71q-13 0-22 2ZM329 188v58h134l-39-46q-9-12-29-12Z" fill="#1B4E45" stroke="#CDE6DC" stroke-width="4"/>
+  <path d="M309 185v66M139 269h396" stroke="#C29553" stroke-width="4"/>
+  <path d="M131 267h45m298 0h54" stroke="#FFF7DD" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="203" cy="306" r="38" fill="#092823" stroke="#F8E7C7" stroke-width="7"/>
+  <circle cx="203" cy="306" r="14" fill="#C6D9C6"/>
+  <circle cx="450" cy="306" r="38" fill="#092823" stroke="#F8E7C7" stroke-width="7"/>
+  <circle cx="450" cy="306" r="14" fill="#C6D9C6"/>
+  <path d="M154 277h-33m400 0h18" stroke="#FFEDBE" stroke-width="8" stroke-linecap="round"/>
+</svg><figcaption><strong>THE HOMETOWN DESK</strong><small>Downtown scenery and original illustration · Not provider vehicles, inventory or a reservation</small></figcaption></figure>
         <div class="card-top"><span class="card-index" aria-hidden="true">01</span><p class="eyebrow">Locally based</p></div>
         <div class="card-body"><h3>24/7 Rent-A-Ride</h3><p class="card-description">A Russellville car-rental business offering vehicle rentals for local drivers and visitors.</p>
           <div class="details"><p><span class="label">Location</span>111 S Arkansas Ave<br>Russellville, AR 72801</p><p><span class="label">Phone</span><a href="tel:+14795672470">(479) 567-2470</a></p></div>
@@ -518,6 +614,24 @@ main.wrap{padding-top:52px}
         </div>
       </article>
       <article class="card" id="cogswell-rentals">
+        <figure class="car-provider-scene" aria-hidden="true"><span class="car-scene-top"><span>RIVER VALLEY / ROAD ATLAS</span><b>02</b></span><svg class="car-folio-car" viewBox="0 0 640 380" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <circle cx="470" cy="76" r="46" fill="#FFE0A1" opacity=".83"/>
+  <path d="M0 229 88 178l90 47 98-91 110 88 100-70 154 79v149H0Z" fill="#9ABBA0" opacity=".48"/>
+  <path d="m0 264 101-52 103 34 102-74 128 86 105-64 101 43v143H0Z" fill="#477B68" opacity=".66"/>
+  <path d="M0 318Q190 278 351 321T640 302v78H0Z" fill="#153D32" opacity=".8"/>
+  <path d="M-12 367Q206 303 652 357" fill="none" stroke="#F2D5A0" stroke-width="14" opacity=".66"/>
+  <path d="M34 367Q222 322 606 355" fill="none" stroke="#F8F0D5" stroke-width="3" stroke-dasharray="23 16" opacity=".9"/>
+  <ellipse cx="322" cy="320" rx="212" ry="18" fill="#06251E" opacity=".5"/>
+  <path d="M140 246 191 194q20-18 49-18h155q28 0 45 18l45 52 43 10q17 4 17 22v26H104v-23q0-19 18-26Z" fill="#F2D59A" stroke="#FFF4D9" stroke-width="7" stroke-linejoin="round"/>
+  <path d="m217 190-47 56h140v-58h-71q-13 0-22 2ZM329 188v58h134l-39-46q-9-12-29-12Z" fill="#1B4E45" stroke="#CDE6DC" stroke-width="4"/>
+  <path d="M309 185v66M139 269h396" stroke="#C29553" stroke-width="4"/>
+  <path d="M131 267h45m298 0h54" stroke="#FFF7DD" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="203" cy="306" r="38" fill="#092823" stroke="#F8E7C7" stroke-width="7"/>
+  <circle cx="203" cy="306" r="14" fill="#C6D9C6"/>
+  <circle cx="450" cy="306" r="38" fill="#092823" stroke="#F8E7C7" stroke-width="7"/>
+  <circle cx="450" cy="306" r="14" fill="#C6D9C6"/>
+  <path d="M154 277h-33m400 0h18" stroke="#FFEDBE" stroke-width="8" stroke-linecap="round"/>
+</svg><figcaption><strong>THE DEALERSHIP DESK</strong><small>Downtown scenery and original illustration · Not provider vehicles, inventory or a reservation</small></figcaption></figure>
         <div class="card-top"><span class="card-index" aria-hidden="true">02</span><p class="eyebrow">Local dealership rental desk</p></div>
         <div class="card-body"><h3>Cogswell Motors Rentals</h3><p class="card-description">Cars, trucks, minivans, sport utility vehicles, and 15-passenger vans. Official rental terms require drivers to be at least 21 with a valid driver&#39;s license and a major credit card. Standard included mileage is 200 miles/day, 1,400 miles/week or 3,000 miles/month unless otherwise specified. The operator advertises a 10% discount for corporate customers and nonprofit organizations (not combinable with other discounts) and after-hours service for an additional fee. Cogswell Mazda's official rental page also advertises rental-vehicle delivery to Russellville Regional Airport; confirm whether the service is available for your booking, plus any timing requirements or fees. Confirm the vehicle, final quote, insurance, mileage exceptions and availability directly.</p>
           <div class="details"><p><span class="label">Location</span>1900 E Main St<br>Russellville, AR 72801</p><p><span class="label">Rental phone</span><a href="tel:+14794982530">(479) 498-2530</a></p></div>
@@ -525,6 +639,24 @@ main.wrap{padding-top:52px}
         </div>
       </article>
       <article class="card" id="enterprise-rentals">
+        <figure class="car-provider-scene" aria-hidden="true"><span class="car-scene-top"><span>RIVER VALLEY / ROAD ATLAS</span><b>03</b></span><svg class="car-folio-car" viewBox="0 0 640 380" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <circle cx="470" cy="76" r="46" fill="#FFE0A1" opacity=".83"/>
+  <path d="M0 229 88 178l90 47 98-91 110 88 100-70 154 79v149H0Z" fill="#9ABBA0" opacity=".48"/>
+  <path d="m0 264 101-52 103 34 102-74 128 86 105-64 101 43v143H0Z" fill="#477B68" opacity=".66"/>
+  <path d="M0 318Q190 278 351 321T640 302v78H0Z" fill="#153D32" opacity=".8"/>
+  <path d="M-12 367Q206 303 652 357" fill="none" stroke="#F2D5A0" stroke-width="14" opacity=".66"/>
+  <path d="M34 367Q222 322 606 355" fill="none" stroke="#F8F0D5" stroke-width="3" stroke-dasharray="23 16" opacity=".9"/>
+  <ellipse cx="322" cy="320" rx="212" ry="18" fill="#06251E" opacity=".5"/>
+  <path d="M140 246 191 194q20-18 49-18h155q28 0 45 18l45 52 43 10q17 4 17 22v26H104v-23q0-19 18-26Z" fill="#F2D59A" stroke="#FFF4D9" stroke-width="7" stroke-linejoin="round"/>
+  <path d="m217 190-47 56h140v-58h-71q-13 0-22 2ZM329 188v58h134l-39-46q-9-12-29-12Z" fill="#1B4E45" stroke="#CDE6DC" stroke-width="4"/>
+  <path d="M309 185v66M139 269h396" stroke="#C29553" stroke-width="4"/>
+  <path d="M131 267h45m298 0h54" stroke="#FFF7DD" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="203" cy="306" r="38" fill="#092823" stroke="#F8E7C7" stroke-width="7"/>
+  <circle cx="203" cy="306" r="14" fill="#C6D9C6"/>
+  <circle cx="450" cy="306" r="38" fill="#092823" stroke="#F8E7C7" stroke-width="7"/>
+  <circle cx="450" cy="306" r="14" fill="#C6D9C6"/>
+  <path d="M154 277h-33m400 0h18" stroke="#FFEDBE" stroke-width="8" stroke-linecap="round"/>
+</svg><figcaption><strong>THE LOCAL BRANCH</strong><small>Downtown scenery and original illustration · Not provider vehicles, inventory or a reservation</small></figcaption></figure>
         <div class="card-top"><span class="card-index" aria-hidden="true">03</span><p class="eyebrow">National rental company, local branch</p></div>
         <div class="card-body"><h3>Enterprise Rent-A-Car</h3><p class="card-description">Russellville Sorells Body Shop branch. Contact the local office for rental availability and pickup arrangements.</p>
           <div class="details"><p><span class="label">Location</span>1903 S Arkansas Ave<br>Russellville, AR 72801</p><p><span class="label">Phone</span><a href="tel:+14799682779">(479) 968-2779</a></p></div>
