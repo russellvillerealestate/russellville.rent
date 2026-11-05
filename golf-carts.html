@@ -411,6 +411,67 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
 }
 @media(prefers-reduced-motion:reduce){.delivery-origin{transition:none}.delivery-origin:hover{transform:none}}
 
+
+/* 2026-11-05 / Six-stop illustrated rental atlas. Compare: live stayarv.com and
+   russellville.rent. Research: Nielsen Norman Group visual hierarchy and
+   scanning; web.dev responsive grid; W3C WCAG 2.2 keyboard focus and targets.
+   Original operator data, inquiry scripts, prices and delivery caveats preserved.
+   Decorative cart art depicts no real provider's inventory. */
+#providers{margin-top:clamp(55px,7vw,100px)}
+#providers .section-head{align-items:end;gap:25px;margin:0 0 30px;padding:0 0 23px;border-bottom:1px solid #bdcbbd}
+#providers .section-head h2{font:400 clamp(2.55rem,5vw,4.7rem)/1.03 Georgia,serif;letter-spacing:-.065em;max-width:12ch;text-wrap:balance}
+#providers .section-head p{max-width:30ch;font-size:.95rem;line-height:1.65;text-align:right}
+#providers .provider-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:30px}
+#providers .provider{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);grid-template-rows:auto 1fr;min-height:460px;border:1px solid #c6d6c8;border-radius:24px;background:#fdfcf7;box-shadow:0 20px 46px #18372c19;overflow:hidden;transition:box-shadow .24s ease}
+#providers .provider:hover{box-shadow:0 25px 54px #18372c2c}
+#providers .provider-top{grid-column:2;grid-row:1;align-items:center;gap:15px;padding:31px clamp(24px,3.4vw,49px) 10px;background:transparent;border:0}
+#providers .provider-top .location{font-size:.72rem;letter-spacing:.13em;color:#426b53}
+#providers .provider-top .number{font:400 2.8rem/1 Georgia,serif;letter-spacing:-.07em;color:#b78f48}
+#providers .provider-body{grid-column:2;grid-row:2;min-width:0;padding:12px clamp(24px,3.4vw,49px) 34px;background:transparent}
+#providers .provider h3{font:400 clamp(1.95rem,3.2vw,2.9rem)/1.06 Georgia,serif;letter-spacing:-.055em;text-wrap:balance;max-width:18ch;margin:0 0 17px}
+#providers .provider p{font-size:.91rem;line-height:1.65;max-width:62ch;margin-bottom:15px}
+#providers .provider .address{font-size:.83rem;line-height:1.5;margin-top:2px;margin-bottom:20px}
+#providers .provider .status{font-size:.76rem;line-height:1.55;padding:11px 14px;margin-top:auto;max-width:66ch;background:#f8eed9;color:#704b19}
+#providers .provider-actions{margin-top:19px;gap:9px}
+#providers .provider .action{min-height:46px;padding:11px 15px}
+#providers .provider-folio-scene{--sky:#315e50;--ground:#122e2a;grid-column:1;grid-row:1/3;position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;min-width:0;min-height:440px;margin:0;padding:clamp(25px,3vw,40px);overflow:hidden;background:radial-gradient(ellipse at 76% 25%,#daa35e8a,transparent 45%),linear-gradient(160deg,var(--sky),var(--ground));color:#fff0d5}
+#providers .provider-folio-scene:before{content:"";position:absolute;inset:17% -22% auto auto;width:70%;aspect-ratio:1;border:1px solid #fff0d534;border-radius:50%;box-shadow:0 0 0 55px #fff0d50b,0 0 0 110px #fff0d508;pointer-events:none}
+#providers .folio-edition{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:.67rem;font-weight:800;letter-spacing:.16em;color:#f9e6c3}
+#providers .folio-edition b{display:grid;place-items:center;width:45px;height:45px;flex:none;border:1px solid #f5ddab8a;border-radius:50%;font:400 1.4rem/1 Georgia,serif;letter-spacing:0}
+#providers .folio-cart{position:relative;align-self:center;display:block;width:min(100%,560px);height:auto;margin:auto 0;filter:drop-shadow(0 15px 14px #09231c70)}
+#providers .folio-disclaimer{position:relative;z-index:2;max-width:38ch;border-top:1px solid #f3dfab6b;padding-top:13px;font-size:.68rem;line-height:1.6;letter-spacing:.035em;color:#fff0d4}
+#providers .provider:nth-child(2) .provider-folio-scene{--sky:#526447;--ground:#203c33}
+#providers .provider:nth-child(3) .provider-folio-scene{--sky:#3c626a;--ground:#163c41}
+#providers .provider:nth-child(4) .provider-folio-scene{--sky:#785543;--ground:#3c3c33}
+#providers .provider:nth-child(5) .provider-folio-scene{--sky:#3c5f4c;--ground:#132e29}
+#providers .provider:nth-child(6) .provider-folio-scene{--sky:#6a624c;--ground:#303c32}
+#providers .provider:nth-child(even) .provider-folio-scene{grid-column:2}
+#providers .provider:nth-child(even) .provider-top,#providers .provider:nth-child(even) .provider-body{grid-column:1}
+@media(max-width:1000px){
+ #providers .provider{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto;min-height:0}
+ #providers .provider-top,#providers .provider:nth-child(even) .provider-top{grid-column:1;grid-row:1;padding:24px 26px 14px}
+ #providers .provider-folio-scene,#providers .provider:nth-child(even) .provider-folio-scene{grid-column:1;grid-row:2;min-height:285px;padding:24px 28px}
+ #providers .folio-cart{max-width:400px;max-height:225px}
+ #providers .provider-body,#providers .provider:nth-child(even) .provider-body{grid-column:1;grid-row:3;padding:23px 26px 28px}
+ #providers .provider h3{max-width:25ch}
+}
+@media(max-width:620px){
+ #providers .section-head{display:block;margin-bottom:20px}
+ #providers .section-head h2{font-size:clamp(2.55rem,9vw,3.65rem)}
+ #providers .section-head p{text-align:left;max-width:45ch;margin-top:13px}
+ #providers .provider-grid{gap:20px}
+ #providers .provider{border-radius:17px}
+ #providers .provider-top,#providers .provider:nth-child(even) .provider-top{padding:20px 20px 12px}
+ #providers .provider-top .number{font-size:2.1rem}
+ #providers .provider-folio-scene,#providers .provider:nth-child(even) .provider-folio-scene{min-height:237px;padding:17px 21px}
+ #providers .folio-edition{font-size:.56rem}
+ #providers .folio-edition b{width:34px;height:34px;font-size:1.1rem}
+ #providers .folio-cart{max-height:170px;width:min(100%,350px)}
+ #providers .folio-disclaimer{font-size:.61rem}
+ #providers .provider-body,#providers .provider:nth-child(even) .provider-body{padding:22px 20px 24px}
+ #providers .provider h3{font-size:clamp(1.8rem,7.4vw,2.4rem)}
+}
+@media(prefers-reduced-motion:reduce){#providers .provider{transition:none}}
 </style>
 </head>
 <body>
@@ -546,6 +607,29 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
 <div class="provider-grid">
 <article class="provider" id="provider-river-valley">
 <div class="provider-top"><span class="location">Conway, Arkansas</span><span class="number" aria-hidden="true">01</span></div>
+<figure class="provider-folio-scene">
+ <span class="folio-edition">RIVER VALLEY / RENTAL ATLAS <b>01</b></span>
+ <svg class="folio-cart" viewBox="0 0 620 350" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="none">
+  <circle cx="469" cy="79" r="49" fill="#F5D697" opacity=".85"/>
+  <path d="M0 205 70 161 160 197 234 135 330 187 413 151 493 191 564 147 620 174V350H0Z" fill="#A0BEAA" opacity=".5"/>
+  <path d="M0 246 81 211 155 237 237 209 305 243 384 202 469 249 548 212 620 239V350H0Z" fill="#477D68" opacity=".65"/>
+  <path d="M0 281Q153 246 307 276T620 265V350H0Z" fill="#183D34" opacity=".48"/>
+  <path d="M115 292H513" stroke="#F5D697" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 13"/>
+  <path d="m182 211 24-96h206l31 96" stroke="#F5E5C4" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M173 114h251l-19-23H198Z" fill="#F2D294" stroke="#143A32" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M213 151v59M315 151v59" stroke="#F5E5C4" stroke-width="6" stroke-linecap="round"/>
+  <path d="M211 176h101c9 0 15 6 15 15v31H195v-31c0-9 7-15 16-15Z" fill="#143D34" stroke="#F5E5C4" stroke-width="5"/>
+  <path d="M205 176v-18h106v18" fill="#F2D294"/>
+  <path d="m332 217 25-67h41" stroke="#F5E5C4" stroke-width="6" stroke-linecap="round"/>
+  <path d="M132 219h340l-17 45H149Z" fill="#F5D697" stroke="#143D34" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M154 239h298l-10 33H164Z" fill="#D5A85E" stroke="#143D34" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="207" cy="275" r="38" fill="#0C2B26" stroke="#F4E7C9" stroke-width="7"/>
+  <circle cx="207" cy="275" r="15" fill="#F0CA80"/>
+  <circle cx="405" cy="275" r="38" fill="#0C2B26" stroke="#F4E7C9" stroke-width="7"/>
+  <circle cx="405" cy="275" r="15" fill="#F0CA80"/>
+ </svg>
+ <figcaption class="folio-disclaimer">Original illustration · Not a provider vehicle or proof of available inventory</figcaption>
+</figure>
 <div class="provider-body">
 <h3>River Valley Golf Carts — Conway</h3>
 <p>Officially advertises event golf cart rentals and an online rental-request form. Rental models, quantities and delivery terms must be confirmed directly.</p>
@@ -556,6 +640,29 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
 </article>
 <article class="provider" id="provider-arkansas-powersports">
 <div class="provider-top"><span class="location">North Little Rock, Arkansas</span><span class="number" aria-hidden="true">02</span></div>
+<figure class="provider-folio-scene">
+ <span class="folio-edition">RIVER VALLEY / RENTAL ATLAS <b>02</b></span>
+ <svg class="folio-cart" viewBox="0 0 620 350" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="none">
+  <circle cx="469" cy="79" r="49" fill="#F5D697" opacity=".85"/>
+  <path d="M0 205 70 161 160 197 234 135 330 187 413 151 493 191 564 147 620 174V350H0Z" fill="#A0BEAA" opacity=".5"/>
+  <path d="M0 246 81 211 155 237 237 209 305 243 384 202 469 249 548 212 620 239V350H0Z" fill="#477D68" opacity=".65"/>
+  <path d="M0 281Q153 246 307 276T620 265V350H0Z" fill="#183D34" opacity=".48"/>
+  <path d="M115 292H513" stroke="#F5D697" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 13"/>
+  <path d="m182 211 24-96h206l31 96" stroke="#F5E5C4" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M173 114h251l-19-23H198Z" fill="#F2D294" stroke="#143A32" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M213 151v59M315 151v59" stroke="#F5E5C4" stroke-width="6" stroke-linecap="round"/>
+  <path d="M211 176h101c9 0 15 6 15 15v31H195v-31c0-9 7-15 16-15Z" fill="#143D34" stroke="#F5E5C4" stroke-width="5"/>
+  <path d="M205 176v-18h106v18" fill="#F2D294"/>
+  <path d="m332 217 25-67h41" stroke="#F5E5C4" stroke-width="6" stroke-linecap="round"/>
+  <path d="M132 219h340l-17 45H149Z" fill="#F5D697" stroke="#143D34" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M154 239h298l-10 33H164Z" fill="#D5A85E" stroke="#143D34" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="207" cy="275" r="38" fill="#0C2B26" stroke="#F4E7C9" stroke-width="7"/>
+  <circle cx="207" cy="275" r="15" fill="#F0CA80"/>
+  <circle cx="405" cy="275" r="38" fill="#0C2B26" stroke="#F4E7C9" stroke-width="7"/>
+  <circle cx="405" cy="275" r="15" fill="#F0CA80"/>
+ </svg>
+ <figcaption class="folio-disclaimer">Original illustration · Not a provider vehicle or proof of available inventory</figcaption>
+</figure>
 <div class="provider-body">
 <h3>Arkansas Golf &amp; Powersports — North Little Rock</h3>
 <p>Golf cart dealer with an official rental reservation inquiry form. Ask whether golf carts are available for your requested dates and location.</p>
@@ -566,6 +673,29 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
 </article>
 <article class="provider" id="provider-clear-creek">
 <div class="provider-top"><span class="location">Hot Springs Village, Arkansas</span><span class="number" aria-hidden="true">03</span></div>
+<figure class="provider-folio-scene">
+ <span class="folio-edition">RIVER VALLEY / RENTAL ATLAS <b>03</b></span>
+ <svg class="folio-cart" viewBox="0 0 620 350" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="none">
+  <circle cx="469" cy="79" r="49" fill="#F5D697" opacity=".85"/>
+  <path d="M0 205 70 161 160 197 234 135 330 187 413 151 493 191 564 147 620 174V350H0Z" fill="#A0BEAA" opacity=".5"/>
+  <path d="M0 246 81 211 155 237 237 209 305 243 384 202 469 249 548 212 620 239V350H0Z" fill="#477D68" opacity=".65"/>
+  <path d="M0 281Q153 246 307 276T620 265V350H0Z" fill="#183D34" opacity=".48"/>
+  <path d="M115 292H513" stroke="#F5D697" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 13"/>
+  <path d="m182 211 24-96h206l31 96" stroke="#F5E5C4" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M173 114h251l-19-23H198Z" fill="#F2D294" stroke="#143A32" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M213 151v59M315 151v59" stroke="#F5E5C4" stroke-width="6" stroke-linecap="round"/>
+  <path d="M211 176h101c9 0 15 6 15 15v31H195v-31c0-9 7-15 16-15Z" fill="#143D34" stroke="#F5E5C4" stroke-width="5"/>
+  <path d="M205 176v-18h106v18" fill="#F2D294"/>
+  <path d="m332 217 25-67h41" stroke="#F5E5C4" stroke-width="6" stroke-linecap="round"/>
+  <path d="M132 219h340l-17 45H149Z" fill="#F5D697" stroke="#143D34" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M154 239h298l-10 33H164Z" fill="#D5A85E" stroke="#143D34" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="207" cy="275" r="38" fill="#0C2B26" stroke="#F4E7C9" stroke-width="7"/>
+  <circle cx="207" cy="275" r="15" fill="#F0CA80"/>
+  <circle cx="405" cy="275" r="38" fill="#0C2B26" stroke="#F4E7C9" stroke-width="7"/>
+  <circle cx="405" cy="275" r="15" fill="#F0CA80"/>
+ </svg>
+ <figcaption class="folio-disclaimer">Original illustration · Not a provider vehicle or proof of available inventory</figcaption>
+</figure>
 <div class="provider-body">
 <h3>Clear Creek Golf Car &amp; Utility Vehicles — Hot Springs Village</h3>
 <p>Established multi-location golf cart dealer with an official short- and long-term golf cart and utility vehicle rental program for events, weddings and jobsites. The operator advertises day, weekend, week and month rentals plus delivery and pickup services. Confirm which rental models are available through this branch, transport charges and final terms directly; the general company rental page does not guarantee inventory at any location.</p>
@@ -576,6 +706,29 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
 </article>
 <article class="provider" id="provider-kaptain-chris">
 <div class="provider-top"><span class="location">Hot Springs, Arkansas</span><span class="number" aria-hidden="true">04</span></div>
+<figure class="provider-folio-scene">
+ <span class="folio-edition">RIVER VALLEY / RENTAL ATLAS <b>04</b></span>
+ <svg class="folio-cart" viewBox="0 0 620 350" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="none">
+  <circle cx="469" cy="79" r="49" fill="#F5D697" opacity=".85"/>
+  <path d="M0 205 70 161 160 197 234 135 330 187 413 151 493 191 564 147 620 174V350H0Z" fill="#A0BEAA" opacity=".5"/>
+  <path d="M0 246 81 211 155 237 237 209 305 243 384 202 469 249 548 212 620 239V350H0Z" fill="#477D68" opacity=".65"/>
+  <path d="M0 281Q153 246 307 276T620 265V350H0Z" fill="#183D34" opacity=".48"/>
+  <path d="M115 292H513" stroke="#F5D697" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 13"/>
+  <path d="m182 211 24-96h206l31 96" stroke="#F5E5C4" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M173 114h251l-19-23H198Z" fill="#F2D294" stroke="#143A32" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M213 151v59M315 151v59" stroke="#F5E5C4" stroke-width="6" stroke-linecap="round"/>
+  <path d="M211 176h101c9 0 15 6 15 15v31H195v-31c0-9 7-15 16-15Z" fill="#143D34" stroke="#F5E5C4" stroke-width="5"/>
+  <path d="M205 176v-18h106v18" fill="#F2D294"/>
+  <path d="m332 217 25-67h41" stroke="#F5E5C4" stroke-width="6" stroke-linecap="round"/>
+  <path d="M132 219h340l-17 45H149Z" fill="#F5D697" stroke="#143D34" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M154 239h298l-10 33H164Z" fill="#D5A85E" stroke="#143D34" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="207" cy="275" r="38" fill="#0C2B26" stroke="#F4E7C9" stroke-width="7"/>
+  <circle cx="207" cy="275" r="15" fill="#F0CA80"/>
+  <circle cx="405" cy="275" r="38" fill="#0C2B26" stroke="#F4E7C9" stroke-width="7"/>
+  <circle cx="405" cy="275" r="15" fill="#F0CA80"/>
+ </svg>
+ <figcaption class="folio-disclaimer">Original illustration · Not a provider vehicle or proof of available inventory</figcaption>
+</figure>
 <div class="provider-body">
 <h3>Kaptain Chris &amp; Pup's Family Outdoor Store — Hot Springs</h3>
 <p>Official golf cart rental catalog advertises two-, four- and six-passenger rental options, and describes larger passenger carts and utility or cargo configurations for events. Request a quote for the exact cart, dates, pickup or delivery, and all charges; the published catalog does not confirm a Russellville rental service area or available units.</p>
@@ -587,6 +740,29 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
 
 <article class="provider" id="provider-lone-star">
 <div class="provider-top"><span class="location">North Little Rock, Arkansas</span><span class="number" aria-hidden="true">05</span></div>
+<figure class="provider-folio-scene">
+ <span class="folio-edition">RIVER VALLEY / RENTAL ATLAS <b>05</b></span>
+ <svg class="folio-cart" viewBox="0 0 620 350" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="none">
+  <circle cx="469" cy="79" r="49" fill="#F5D697" opacity=".85"/>
+  <path d="M0 205 70 161 160 197 234 135 330 187 413 151 493 191 564 147 620 174V350H0Z" fill="#A0BEAA" opacity=".5"/>
+  <path d="M0 246 81 211 155 237 237 209 305 243 384 202 469 249 548 212 620 239V350H0Z" fill="#477D68" opacity=".65"/>
+  <path d="M0 281Q153 246 307 276T620 265V350H0Z" fill="#183D34" opacity=".48"/>
+  <path d="M115 292H513" stroke="#F5D697" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 13"/>
+  <path d="m182 211 24-96h206l31 96" stroke="#F5E5C4" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M173 114h251l-19-23H198Z" fill="#F2D294" stroke="#143A32" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M213 151v59M315 151v59" stroke="#F5E5C4" stroke-width="6" stroke-linecap="round"/>
+  <path d="M211 176h101c9 0 15 6 15 15v31H195v-31c0-9 7-15 16-15Z" fill="#143D34" stroke="#F5E5C4" stroke-width="5"/>
+  <path d="M205 176v-18h106v18" fill="#F2D294"/>
+  <path d="m332 217 25-67h41" stroke="#F5E5C4" stroke-width="6" stroke-linecap="round"/>
+  <path d="M132 219h340l-17 45H149Z" fill="#F5D697" stroke="#143D34" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M154 239h298l-10 33H164Z" fill="#D5A85E" stroke="#143D34" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="207" cy="275" r="38" fill="#0C2B26" stroke="#F4E7C9" stroke-width="7"/>
+  <circle cx="207" cy="275" r="15" fill="#F0CA80"/>
+  <circle cx="405" cy="275" r="38" fill="#0C2B26" stroke="#F4E7C9" stroke-width="7"/>
+  <circle cx="405" cy="275" r="15" fill="#F0CA80"/>
+ </svg>
+ <figcaption class="folio-disclaimer">Original illustration · Not a provider vehicle or proof of available inventory</figcaption>
+</figure>
 <div class="provider-body">
 <h3>Lone Star Golf Cars — North Little Rock</h3>
 <p>Official Arkansas rental page advertises two-, four- and six-passenger golf carts plus utility configurations for events, campuses and commercial uses, with a rental quote form. The company describes delivery and pickup options, but has not explicitly confirmed service to Russellville; request a written quote for your precise location and dates.</p>
@@ -597,6 +773,29 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
 </article>
 <article class="provider" id="provider-mid-state">
 <div class="provider-top"><span class="location">Bryant, Arkansas</span><span class="number" aria-hidden="true">06</span></div>
+<figure class="provider-folio-scene">
+ <span class="folio-edition">RIVER VALLEY / RENTAL ATLAS <b>06</b></span>
+ <svg class="folio-cart" viewBox="0 0 620 350" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="none">
+  <circle cx="469" cy="79" r="49" fill="#F5D697" opacity=".85"/>
+  <path d="M0 205 70 161 160 197 234 135 330 187 413 151 493 191 564 147 620 174V350H0Z" fill="#A0BEAA" opacity=".5"/>
+  <path d="M0 246 81 211 155 237 237 209 305 243 384 202 469 249 548 212 620 239V350H0Z" fill="#477D68" opacity=".65"/>
+  <path d="M0 281Q153 246 307 276T620 265V350H0Z" fill="#183D34" opacity=".48"/>
+  <path d="M115 292H513" stroke="#F5D697" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 13"/>
+  <path d="m182 211 24-96h206l31 96" stroke="#F5E5C4" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M173 114h251l-19-23H198Z" fill="#F2D294" stroke="#143A32" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M213 151v59M315 151v59" stroke="#F5E5C4" stroke-width="6" stroke-linecap="round"/>
+  <path d="M211 176h101c9 0 15 6 15 15v31H195v-31c0-9 7-15 16-15Z" fill="#143D34" stroke="#F5E5C4" stroke-width="5"/>
+  <path d="M205 176v-18h106v18" fill="#F2D294"/>
+  <path d="m332 217 25-67h41" stroke="#F5E5C4" stroke-width="6" stroke-linecap="round"/>
+  <path d="M132 219h340l-17 45H149Z" fill="#F5D697" stroke="#143D34" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M154 239h298l-10 33H164Z" fill="#D5A85E" stroke="#143D34" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="207" cy="275" r="38" fill="#0C2B26" stroke="#F4E7C9" stroke-width="7"/>
+  <circle cx="207" cy="275" r="15" fill="#F0CA80"/>
+  <circle cx="405" cy="275" r="38" fill="#0C2B26" stroke="#F4E7C9" stroke-width="7"/>
+  <circle cx="405" cy="275" r="15" fill="#F0CA80"/>
+ </svg>
+ <figcaption class="folio-disclaimer">Original illustration · Not a provider vehicle or proof of available inventory</figcaption>
+</figure>
 <div class="provider-body">
 <h3>Mid-State Golf Cars — Bryant</h3>
 <p>Family-owned Central Arkansas golf car business whose official website advertises rentals for events and operations, with a rental inquiry option. Ask which carts are in the rental fleet and whether pickup or transport could work for your event; Russellville service is not advertised.</p>
