@@ -1554,6 +1554,57 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
  .rentals-grid[data-view="list"] .stay-landscape-kicker{font-size:.51rem}
 }
 
+
+/* 2026-11-05: Full rental-category atlas. Place-led immersion inspired by the
+   live StayARV site; Nielsen Norman Group descriptive navigation; Google web.dev
+   responsive imagery; W3C WCAG 2.2 focus, target size and reduced motion. */
+.atlas-entry{margin:26px 0 0}
+.atlas-entry-link{display:grid;grid-template-columns:132px minmax(0,1fr) auto;align-items:center;gap:clamp(16px,3vw,35px);min-height:142px;padding:23px clamp(22px,3vw,36px);border:1px solid #9eb89e;border-radius:22px;background:linear-gradient(115deg,#133b33,#245642 75%,#326b51);color:#fff9eb;text-decoration:none;box-shadow:0 16px 35px #143b301d;transition:transform .2s,box-shadow .2s}
+.atlas-entry-link:hover{transform:translateY(-3px);box-shadow:0 23px 40px #143b302d}
+.atlas-entry-link:focus-visible{outline:3px solid #a66a17;outline-offset:4px}
+.atlas-entry-symbols{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;transform:rotate(-7deg)}
+.atlas-entry-symbols svg{width:58px;height:58px;padding:11px;border:1px solid #f3dfa769;border-radius:10px;background:#f1ddb425;color:#f6dfaf}
+.atlas-entry-copy{display:flex;flex-direction:column;gap:6px;min-width:0}
+.atlas-entry-copy small{font-size:.64rem;font-weight:900;letter-spacing:.16em;color:#edce95}
+.atlas-entry-copy strong{font:400 clamp(1.65rem,3vw,2.65rem)/1.1 Georgia,serif;letter-spacing:-.05em}
+.atlas-entry-copy>span{font-size:.83rem;color:#e4f0e6}
+.atlas-entry-cta{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:50px;padding:12px 17px;background:#f1d49b;border-radius:12px;color:#193e32;font-size:.82rem;font-weight:900;white-space:nowrap}
+.atlas-entry-cta>span{font-size:1.2rem}
+.atlas-dialog{position:fixed;inset:0;width:min(1160px,calc(100vw - 38px));max-width:none;max-height:min(88dvh,850px);margin:auto;padding:0;border:1px solid #c9d8c8;border-radius:25px;background:#fbfcf7;color:#173e35;box-shadow:0 30px 105px #09231dd1;overflow:hidden}
+.atlas-dialog::backdrop{background:#071f1acc;backdrop-filter:blur(4px)}
+.atlas-shell{display:grid;grid-template-columns:minmax(270px,.7fr) minmax(0,1.3fr);min-height:min(660px,84dvh);max-height:inherit}
+.atlas-scene{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;gap:25px;min-width:0;padding:clamp(25px,3vw,40px);background:#123a31;color:#fff5df;overflow:hidden}
+.atlas-scene img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:60% center}
+.atlas-scene:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#0c342abb,#0a2a249e 38%,#09271feb)}
+.atlas-kicker{font-size:.64rem;font-weight:900;letter-spacing:.17em;color:#eaca91;line-height:1.5}
+.atlas-scene-title{font:400 clamp(2.8rem,5vw,4.9rem)/1.04 Georgia,serif;letter-spacing:-.055em}
+.atlas-scene-title em{font-style:normal;color:#f2d498}
+.atlas-scene-caption{max-width:30ch;color:#e2e7df;font-size:.69rem;line-height:1.5}
+.atlas-content{min-width:0;max-height:inherit;overflow-y:auto;padding:clamp(22px,3vw,40px);scrollbar-gutter:stable}
+.atlas-heading{display:flex;align-items:start;justify-content:space-between;gap:15px}
+.atlas-heading .atlas-kicker{color:#5c765d}
+.atlas-heading h2{font:400 clamp(2.2rem,4vw,3.55rem)/1.04 Georgia,serif;letter-spacing:-.055em;margin:12px 0}
+.atlas-heading h2 em{font-style:normal;color:#5b8366}
+.atlas-heading p{font-size:.85rem;line-height:1.55;color:#516a5a;margin:0 0 22px}
+.atlas-close{flex:0 0 48px;width:48px;height:48px;border:1px solid #c1d0c1;border-radius:12px;background:#fff;color:#245543;cursor:pointer;font-size:1.85rem;line-height:1}
+.atlas-close:hover{background:#ecf3e9}
+.atlas-search-label{display:block;font-size:.74rem;font-weight:850;color:#234c3c;margin-bottom:7px}
+#atlas-search{width:100%;min-height:52px;padding:12px 15px;border:1px solid #b3c3b3;border-radius:11px;background:white;color:#193c31;font-size:.94rem}
+.atlas-count{margin:15px 0 12px;font-size:.68rem;letter-spacing:.13em;color:#526f59;font-weight:900;text-transform:uppercase}
+.atlas-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.atlas-item{display:flex;align-items:center;gap:10px;min-width:0;min-height:62px;padding:11px 12px;border:1px solid #d8e4d7;border-radius:12px;background:white;color:#244d3e;text-decoration:none;transition:background .15s,border-color .15s}
+.atlas-item:hover{background:#edf5ec;border-color:#8cac93}
+.atlas-item svg{width:29px;height:29px;flex:none;color:#397356}
+.atlas-item-label{min-width:0;flex:1;font-size:.82rem;line-height:1.3;font-weight:800}
+.atlas-item-arrow{font-size:1.1rem;color:#366d50}
+.atlas-empty{padding:18px;border:1px dashed #93ad94;border-radius:11px;color:#506c59;font-size:.87rem}
+.atlas-disclaimer{margin:20px 0 0;padding-top:15px;border-top:1px solid #dce5da;color:#5b6c61;font-size:.72rem;line-height:1.55}
+.atlas-dialog a:focus-visible,.atlas-dialog button:focus-visible,.atlas-dialog input:focus-visible{outline:3px solid #ab6a15;outline-offset:3px}
+@media(max-width:975px){.atlas-entry-link{grid-template-columns:105px minmax(0,1fr)}.atlas-entry-cta{grid-column:2;justify-self:start}.atlas-entry-symbols svg{width:46px;height:46px;padding:8px}}
+@media(max-width:790px){.atlas-dialog{width:calc(100vw - 18px);max-height:95dvh;border-radius:19px}.atlas-shell{grid-template-columns:1fr;overflow-y:auto;max-height:95dvh;min-height:0}.atlas-scene{min-height:156px;padding:22px 26px;gap:8px}.atlas-scene-title{font-size:2.2rem}.atlas-scene-caption{max-width:none}.atlas-content{max-height:none;overflow:visible;padding:25px}.atlas-index{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.atlas-entry-link{grid-template-columns:67px minmax(0,1fr);gap:10px;min-height:0;padding:18px 15px;border-radius:16px}.atlas-entry-symbols{gap:4px}.atlas-entry-symbols svg{width:30px;height:30px;padding:5px;border-radius:6px}.atlas-entry-copy small{font-size:.53rem;letter-spacing:.08em}.atlas-entry-copy strong{font-size:1.4rem}.atlas-entry-copy>span{font-size:.72rem}.atlas-entry-cta{grid-column:1/-1;justify-self:stretch;min-height:48px}.atlas-dialog{width:100vw;height:100dvh;max-height:100dvh;margin:0;border:0;border-radius:0}.atlas-shell{max-height:100dvh}.atlas-scene{min-height:116px;padding:16px 20px}.atlas-scene-title{font-size:1.85rem}.atlas-scene-caption{font-size:.58rem}.atlas-content{padding:23px 18px 34px}.atlas-heading h2{font-size:2.15rem}.atlas-index{grid-template-columns:1fr}.atlas-item{min-height:57px}}
+@media(prefers-reduced-motion:reduce){.atlas-entry-link,.atlas-item{transition:none}.atlas-entry-link:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -1642,7 +1693,15 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
     </a>
   </div>
   <p class="discovery-caption">River Valley photographs and original illustrative scenes are for navigation—not pictures of rental providers or proof of availability.</p>
+
 </section>
+<div class="atlas-entry">
+ <a href="#browse" data-atlas-open class="atlas-entry-link">
+  <span class="atlas-entry-symbols" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#rental-pictogram-homes"></use></svg><svg viewBox="0 0 64 64"><use href="#rental-pictogram-tools"></use></svg><svg viewBox="0 0 64 64"><use href="#rental-pictogram-paddling"></use></svg><svg viewBox="0 0 64 64"><use href="#rental-pictogram-party"></use></svg></span>
+  <span class="atlas-entry-copy"><small>THE COMPLETE RIVER VALLEY INDEX</small><strong>One place. Every kind of rental.</strong><span>Open the full category guide without scrolling through every listing.</span></span>
+  <span class="atlas-entry-cta">See every category <span aria-hidden="true">↗</span></span>
+ </a>
+</div>
 
 <section id="browse" aria-labelledby="browse-title"><div class="section-head"><div><p class="eyebrow">Find it around here</p><h2 id="browse-title">What are you looking for?</h2><p>Explore rental options, or ask us about a category we’re building.</p></div><span class="browse-label">34 categories. One local hub.</span></div>
 <form class="filters" id="filters" role="search" hidden><div><label for="search">Search rentals</label><input type="search" id="search" placeholder="Try houses, cars, kayaks, storage…" autocomplete="off"></div><div><label for="category">Category</label><select id="category"><option value="all">All categories</option><option value="homes">Long-term rentals</option><option value="storage">Storage</option><option value="tools">Tools &amp; equipment</option><option value="paddling">Kayaks, canoes &amp; paddleboards</option><option value="bicycles">Bicycles &amp; e-bikes</option><option value="atv-utv">Side-by-side &amp; off-road rentals</option><option value="rvs">RV site rentals</option><option value="rv-rentals">RV &amp; camper vehicle rentals</option><option value="cars">Car rentals</option><option value="boats">Boats</option><option value="party">Party &amp; event rentals</option><option value="commercial">Commercial spaces</option><option value="stays">Short-term stays</option><option value="camping">Camping &amp; RV sites</option><option value="trailers">Trailer rentals</option><option value="mobile-storage">Portable storage</option><option value="dumpsters">Dumpster rentals</option><option value="venues">Event venues</option><option value="moving">Moving trucks</option><option value="restrooms">Portable restroom rentals</option><option value="photo-booths">Photo booth rentals</option><option value="temporary-fencing">Temporary fencing rentals</option><option value="formalwear">Formalwear rentals</option><option value="sheds">Portable building rentals</option><option value="household-rentals">Furniture &amp; appliance rentals</option><option value="audio-visual">Audio &amp; visual rentals</option><option value="instruments">Band instrument rentals</option><option value="yard-signs">Yard sign rentals</option><option value="golf-carts">Golf cart rentals</option><option value="stages">Stage &amp; platform rentals</option><option value="golf-simulators">Golf simulator rentals</option><option value="medical-equipment-rentals">Medical equipment rentals</option><option value="medical-equipment-loans">Medical equipment loans</option><option value="other">Other local rentals</option></select></div><button type="reset" class="button reset">Clear filters</button></form>
@@ -1968,6 +2027,29 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <details class="photo-credits"><summary>Local photo credits</summary><p>Lake Dardanelle sunset and downtown sunset photographs supplied for Russellville.Rent. Wilson Hall: <a href="https://commons.wikimedia.org/wiki/File:Wilson_Hall%E2%80%94Arkansas_Tech_University.JPG">Valis55, Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. Photos cropped for the layout; the Wilson Hall crop is shared under the same license. Water-tower photo from the existing Russellville.Rent collection.</p></details>
 </main>
 
+
+<dialog class="atlas-dialog" id="atlas-dialog" aria-labelledby="atlas-title" aria-describedby="atlas-description">
+ <div class="atlas-shell">
+  <aside class="atlas-scene" aria-hidden="true">
+   <img src="assets/downtown-russellville-sunset.jpg" alt="" width="1200" height="544" loading="lazy">
+   <span class="atlas-kicker">RUSSELLVILLE / THE RIVER VALLEY</span>
+   <span class="atlas-scene-title">Find it<br>around <em>here.</em></span>
+   <span class="atlas-scene-caption">Downtown Russellville scenery · Not a rental provider photograph</span>
+  </aside>
+  <section class="atlas-content" aria-label="Rental category directory">
+   <div class="atlas-heading">
+    <div><span class="atlas-kicker">YOUR LOCAL RENTAL FIELD GUIDE / COMPLETE INDEX</span><h2 id="atlas-title">Every rental.<br><em>One starting point.</em></h2><p id="atlas-description">Open any category's existing provider directory. Prices, availability and terms must be confirmed with the businesses.</p></div>
+    <button type="button" class="atlas-close" id="atlas-close" aria-label="Close category guide">×</button>
+   </div>
+   <label class="atlas-search-label" for="atlas-search">Find a category</label>
+   <input type="search" id="atlas-search" placeholder="Try cabins, storage, cars, events…" autocomplete="off">
+   <p class="atlas-count" id="atlas-count" role="status" aria-live="polite" aria-atomic="true"></p>
+   <nav class="atlas-index" id="atlas-index" aria-label="All rental category links"></nav>
+   <p class="atlas-empty" id="atlas-empty" hidden>No matching category. Try another search or clear the field to see all categories.</p>
+   <p class="atlas-disclaimer">This is a directory index, not a booking form or live inventory search. The original rental listings and terms remain on their individual pages.</p>
+  </section>
+ </div>
+</dialog>
 
 <a class="browse-return" id="browse-return" href="#search" aria-label="Return to rental search filters" hidden>
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4"/><circle cx="8" cy="7" r="2" fill="#153d32"/><circle cx="15" cy="12" r="2" fill="#153d32"/></svg>
@@ -2582,6 +2664,64 @@ filterRentals();
     // A cached failure can occur before this footer script installs the listener.
     if(img.complete && img.naturalWidth===0)showFallback();
   });
+})();
+
+
+/* Category links are sourced directly from existing cards; no duplicate data. */
+(function(){
+ const modal=document.getElementById("atlas-dialog");
+ const list=document.getElementById("atlas-index");
+ const query=document.getElementById("atlas-search");
+ const count=document.getElementById("atlas-count");
+ const empty=document.getElementById("atlas-empty");
+ if(!modal||!list||!query||typeof modal.showModal!=="function")return;
+ const links=[];
+ document.querySelectorAll("#rental-results > .rental-card").forEach(function(card){
+  const source=card.querySelector(".card-link[href]");
+  const heading=card.querySelector(".card-body h3");
+  if(!source||!heading)return;
+  const link=document.createElement("a");
+  link.className="atlas-item";
+  link.href=source.getAttribute("href");
+  const svg=document.createElementNS("http://www.w3.org/2000/svg","svg");
+  svg.setAttribute("viewBox","0 0 64 64");
+  svg.setAttribute("aria-hidden","true");
+  const use=document.createElementNS("http://www.w3.org/2000/svg","use");
+  const key=card.dataset.category;
+  use.setAttribute("href","#rental-pictogram-"+(document.getElementById("rental-pictogram-"+key)?key:"other"));
+  svg.appendChild(use);
+  const name=document.createElement("span");
+  name.className="atlas-item-label";
+  name.textContent=heading.textContent.trim();
+  const arrow=document.createElement("span");
+  arrow.className="atlas-item-arrow";
+  arrow.setAttribute("aria-hidden","true");
+  arrow.textContent="↗";
+  link.append(svg,name,arrow);
+  list.appendChild(link);
+  links.push(link);
+ });
+ if(!links.length)return;
+ function filter(){
+  const value=query.value.trim().toLocaleLowerCase();
+  let shown=0;
+  links.forEach(function(link){link.hidden=!link.textContent.toLocaleLowerCase().includes(value);if(!link.hidden)shown++;});
+  count.textContent=shown+" of "+links.length+" rental categories";
+  empty.hidden=shown>0;
+ }
+ filter();
+ document.querySelectorAll("[data-atlas-open]").forEach(function(trigger){
+  trigger.addEventListener("click",function(event){
+   event.preventDefault();
+   query.value="";
+   filter();
+   if(!modal.open)modal.showModal();
+   query.focus({preventScroll:true});
+  });
+ });
+ query.addEventListener("input",filter);
+ document.getElementById("atlas-close").addEventListener("click",function(){modal.close();});
+ modal.addEventListener("click",function(event){if(event.target===modal)modal.close();});
 })();
 
 </script>
