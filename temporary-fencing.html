@@ -64,6 +64,52 @@ main{padding-block:58px 66px}.section-head{display:flex;align-items:end;justify-
 @media(max-width:850px){.planner-layout{grid-template-columns:1fr}.planner-preview{padding:18px}.planner-heading{display:block}.planner-heading p:last-child{margin-top:12px;max-width:60ch}.planner-sheet{max-width:none}}
 @media(max-width:550px){.fence-planner{margin-top:39px;border-radius:16px}.planner-heading{padding:26px 22px}.planner-form{padding:27px 21px}.planner-fields{grid-template-columns:1fr}.planner-preview{padding:12px}.planner-sheet{padding:26px 22px}.sheet-details div{grid-template-columns:95px minmax(0,1fr)}.planner-actions button{flex:1}}
 @media(prefers-reduced-motion:reduce){.fence-planner *{scroll-behavior:auto}}
+
+/* Provider folios, Nov 2026: purposeful local-first hierarchy; scenes never imply supplier inventory. */
+.fence-folio-key{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 0 14px}
+.fence-folio-key p{position:relative;margin:0;display:grid;grid-template-columns:10px 1fr;grid-template-rows:auto auto;column-gap:12px;padding:17px 20px;background:#fffdf9;border:1px solid #d7e1da;border-radius:12px}
+.fence-folio-key-mark{grid-row:1/3;width:10px;height:10px;border-radius:50%;margin-top:6px;background:#1a7054}
+.fence-folio-key-mark-regional{background:#ae6a26}
+.fence-folio-key strong{grid-column:2;color:#183d33;font-size:.84rem;line-height:1.35}
+.fence-folio-key small{grid-column:2;color:#4c6258;font-size:.77rem;line-height:1.55}
+.fence-folio-disclosure{margin:0 0 24px;color:#526861;font-size:.77rem;line-height:1.6}
+.fence-folio-list{grid-template-columns:1fr;gap:28px}
+.fence-folio-list article{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:0;padding:0;min-height:390px;border:1px solid #cddbd2;border-radius:23px;background:#fffdf9;overflow:hidden;box-shadow:0 22px 48px #12372b12;align-items:stretch}
+.fence-folio-list article>:not(.fence-folio-art){grid-column:2;margin-left:clamp(24px,4vw,52px);margin-right:clamp(24px,4vw,52px);min-width:0}
+.fence-folio-list .fence-folio-art{grid-column:1;grid-row:1/6;position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;min-height:360px;padding:clamp(23px,3vw,34px);overflow:hidden;background:radial-gradient(ellipse at 70% 25%,#61827677,transparent 53%),linear-gradient(135deg,#103b31,#205246 68%,#123229);color:#f4d8a6}
+.fence-folio-list .fence-folio-art:after{content:"";position:absolute;z-index:-1;inset:auto -30% -20% -30%;height:55%;border-radius:50%;background:radial-gradient(ellipse,#071d1980,transparent 72%)}
+.fence-folio-list .fence-folio-art-1{background:linear-gradient(0deg,#0c302cef,#103d3b70 63%,#102b2e4d),url("/assets/downtown-russellville-sunset.jpg") center / cover no-repeat,#14382e}
+.fence-folio-list .fence-folio-art-2{background:radial-gradient(ellipse at 72% 24%,#dfc49985,transparent 45%),linear-gradient(135deg,#ac7a48,#5a3928 85%);color:#fff0ce}
+.fence-folio-list .fence-folio-art-3{background:radial-gradient(ellipse at 16% 15%,#75a79975,transparent 43%),linear-gradient(150deg,#1e6052,#103d38 72%);color:#d9eacc}
+.fence-folio-overline,.fence-folio-source{display:block;position:relative;z-index:1;font-weight:850;line-height:1.45}
+.fence-folio-overline{font-size:.69rem;letter-spacing:.18em;text-transform:uppercase}
+.fence-folio-source{font-size:.64rem;letter-spacing:.035em;color:#fff9e8;opacity:.9}
+.fence-folio-chapter{position:relative;z-index:1;display:block;font:400 clamp(2.65rem,5vw,4.5rem)/.99 Georgia,"Times New Roman",serif;letter-spacing:-.055em;max-width:9ch;text-wrap:balance;margin-top:auto;margin-bottom:12px}
+.fence-folio-place{position:relative;z-index:1;display:block;font-size:.72rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px;color:#ffdfaa}
+.fence-folio-drawing{width:100%;height:auto;max-height:230px;position:absolute;inset:21% 0 auto;z-index:0;opacity:.32;transform:translateX(6%);pointer-events:none}
+.fence-folio-list .fence-folio-1 .fence-folio-drawing{opacity:.58;filter:drop-shadow(0 8px 10px #0a2e29)}
+.fence-folio-list article>.card-top{align-self:end;margin-top:clamp(24px,4vw,42px);margin-bottom:18px}
+.fence-folio-list article>h3{font:400 clamp(2rem,3.4vw,3rem)/1.09 Georgia,"Times New Roman",serif;letter-spacing:-.047em;margin-bottom:14px;color:#12382f;text-wrap:balance}
+.fence-folio-list article>p:not(:last-child){max-width:70ch}
+.fence-folio-list article>.area{background:#eef2ec;border-left:3px solid #5d9178}
+.fence-folio-list article>p:last-child{align-self:end;padding-bottom:clamp(24px,4vw,40px);padding-top:6px}
+.fence-folio-list article:nth-child(even)>.fence-folio-art{grid-column:2;grid-row:1/6}
+.fence-folio-list article:nth-child(even)>:not(.fence-folio-art){grid-column:1}
+.fence-folio-list article:nth-child(even)>.area{border-left-color:#b47736}
+.fence-folio-list article:focus-within{box-shadow:0 0 0 3px #d1a35c,0 25px 48px #12372b19}
+@media(max-width:760px){
+ .fence-folio-list article{grid-template-columns:minmax(0,1fr);min-height:0}
+ .fence-folio-list article>.fence-folio-art,.fence-folio-list article:nth-child(even)>.fence-folio-art{grid-column:1;grid-row:1;min-height:230px}
+ .fence-folio-list article>:not(.fence-folio-art),.fence-folio-list article:nth-child(even)>:not(.fence-folio-art){grid-column:1;margin-left:24px;margin-right:24px}
+ .fence-folio-list article>.card-top{grid-row:2;margin-top:25px}
+ .fence-folio-list .fence-folio-art{padding:24px}
+ .fence-folio-chapter{font-size:clamp(2.5rem,8vw,3.8rem);max-width:none}
+ .fence-folio-drawing{width:62%;left:35%;top:12%}
+ .fence-folio-list article>p:last-child{padding-bottom:26px}
+}
+@media(max-width:550px){.fence-folio-key{grid-template-columns:1fr}.fence-folio-list .fence-folio-art{min-height:213px}.fence-folio-list article>.fence-folio-art{min-height:213px}.fence-folio-place{margin-bottom:8px}}
+@media(prefers-reduced-motion:reduce){.fence-folio-list *{scroll-behavior:auto}}
+
 </style>
 
 <style id="fence-field-guide-2026">
@@ -203,9 +249,32 @@ main.wrap{padding-top:0}
 </section>
 
 <div class="section-head" id="providers" tabindex="-1"><div><p class="section-label">01 / Explore providers</p><h2>Find the right fence supplier</h2></div><p>Compare published service details, then confirm the delivery area and final quote directly.</p></div>
-<div class="grid"><article><div class="card-top"><span class="number">PROVIDER 01</span><span class="tag">Russellville service verified</span></div><h3>AF&amp;G LLC</h3><p>Temporary chain-link fence panels, portable privacy screens and event crowd-control barriers. The operator has an official Russellville service page confirming temporary fencing delivery, installation and removal in Russellville. Confirm available dates, equipment and the complete quote directly.</p><p class="area">Conway-based provider · Russellville service explicitly advertised</p><p><a href="tel:+15017719929">501-771-9929</a> · <a href="https://arfence.com/temporary-fence-rental-russellville-ar/" target="_blank" rel="noopener noreferrer">Official Russellville service confirmation ↗</a></p></article>
-<article><div class="card-top"><span class="number">PROVIDER 02</span><span class="tag tag-caution">Russellville delivery unconfirmed</span></div><h3>National Rent-A-Fence — Arkansas regional service</h3><p>Official Arkansas service pages advertise temporary chain-link fencing, freestanding fence panels, pedestrian barricades, windscreens and fence gates for construction and events. The provider describes service across much of Arkansas, but <strong>delivery to Russellville is UNCONFIRMED</strong>. Ask for a written quote covering delivery, installation, removal, rental period and site requirements.</p><p class="area">Arkansas regional provider · No Russellville office verified · Russellville delivery UNCONFIRMED</p><p><a href="tel:+18003525675">800-352-5675</a> · <a href="https://www.rentnational.com/fort-smith" target="_blank" rel="noopener noreferrer">Official Arkansas rental and service information ↗</a></p></article>
-<article><div class="card-top"><span class="number">PROVIDER 03</span><span class="tag tag-caution">Russellville delivery UNCONFIRMED</span></div><h3>Modern Fence Company — Fort Smith (Regional)</h3><p>The operator officially advertises temporary fence rentals for construction, renovation, storm damage and qualifying municipal projects, with project-specific installation, gates and removal. Its normal service territory is approximately 75 miles from Fort Smith, with farther travel considered for larger projects. <strong>Russellville delivery is UNCONFIRMED.</strong> Confirm whether your site qualifies, equipment, rental terms and pricing directly.</p><p class="area">5801 S 29th St, Fort Smith, AR 72908 · Russellville delivery UNCONFIRMED</p><p><a href="tel:+14796496511">479-649-6511</a> · <a href="https://modernfence.com/temporary-fence-rental/" target="_blank" rel="noopener noreferrer">Official temporary fence rentals and service area ↗</a></p></article></div>
+<div class="fence-folio-key" aria-label="How to interpret supplier service claims">
+ <p><span class="fence-folio-key-mark fence-folio-key-mark-local" aria-hidden="true"></span><strong>Russellville service advertised</strong><small>One provider confirms local service on an official page.</small></p>
+ <p><span class="fence-folio-key-mark fence-folio-key-mark-regional" aria-hidden="true"></span><strong>Delivery needs confirmation</strong><small>Two regional operators require a direct service-area check.</small></p>
+</div>
+<p class="fence-folio-disclosure">Scene photography and fence artwork are editorial illustrations, not photographs of suppliers, installed projects or available stock.</p>
+<div class="grid fence-folio-list"><article class="fence-folio fence-folio-1"><div class="fence-folio-art fence-folio-art-1" aria-hidden="true">
+  <span class="fence-folio-overline">01 / LOCAL SERVICE</span>
+  <svg class="fence-folio-drawing" viewBox="0 0 520 300" focusable="false" aria-hidden="true"><g stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M44 232V64M260 232V64M476 232V64M44 80H476M44 218H476" stroke-width="8"/><path d="M47 86 252 212M103 81 259 180M181 81 260 128M261 82 469 211M322 81 476 178M400 81 476 128M44 215 257 86M44 159 174 81M45 104 70 81M264 213 472 85M264 158 394 81M318 217 476 118M394 217 476 166" stroke-width="2.8" opacity=".42"/><path d="M31 234H488" stroke-width="5"/><path d="M75 235v22M446 235v22" stroke-width="6"/></g></svg>
+  <span class="fence-folio-chapter">Russellville advertised</span>
+  <span class="fence-folio-place">CONWAY → RUSSELLVILLE</span>
+  <small class="fence-folio-source">River Valley backdrop · not a provider or inventory photo</small>
+</div><div class="card-top"><span class="number">PROVIDER 01</span><span class="tag">Russellville service verified</span></div><h3>AF&amp;G LLC</h3><p>Temporary chain-link fence panels, portable privacy screens and event crowd-control barriers. The operator has an official Russellville service page confirming temporary fencing delivery, installation and removal in Russellville. Confirm available dates, equipment and the complete quote directly.</p><p class="area">Conway-based provider · Russellville service explicitly advertised</p><p><a href="tel:+15017719929">501-771-9929</a> · <a href="https://arfence.com/temporary-fence-rental-russellville-ar/" target="_blank" rel="noopener noreferrer">Official Russellville service confirmation ↗</a></p></article>
+<article class="fence-folio fence-folio-2"><div class="fence-folio-art fence-folio-art-2" aria-hidden="true">
+  <span class="fence-folio-overline">02 / REGIONAL OPTION</span>
+  <svg class="fence-folio-drawing" viewBox="0 0 520 300" focusable="false" aria-hidden="true"><g stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M44 232V64M260 232V64M476 232V64M44 80H476M44 218H476" stroke-width="8"/><path d="M47 86 252 212M103 81 259 180M181 81 260 128M261 82 469 211M322 81 476 178M400 81 476 128M44 215 257 86M44 159 174 81M45 104 70 81M264 213 472 85M264 158 394 81M318 217 476 118M394 217 476 166" stroke-width="2.8" opacity=".42"/><path d="M31 234H488" stroke-width="5"/><path d="M75 235v22M446 235v22" stroke-width="6"/></g></svg>
+  <span class="fence-folio-chapter">Check delivery</span>
+  <span class="fence-folio-place">ARKANSAS SERVICE AREA</span>
+  <small class="fence-folio-source">Illustrative fence drawing · not available inventory</small>
+</div><div class="card-top"><span class="number">PROVIDER 02</span><span class="tag tag-caution">Russellville delivery unconfirmed</span></div><h3>National Rent-A-Fence — Arkansas regional service</h3><p>Official Arkansas service pages advertise temporary chain-link fencing, freestanding fence panels, pedestrian barricades, windscreens and fence gates for construction and events. The provider describes service across much of Arkansas, but <strong>delivery to Russellville is UNCONFIRMED</strong>. Ask for a written quote covering delivery, installation, removal, rental period and site requirements.</p><p class="area">Arkansas regional provider · No Russellville office verified · Russellville delivery UNCONFIRMED</p><p><a href="tel:+18003525675">800-352-5675</a> · <a href="https://www.rentnational.com/fort-smith" target="_blank" rel="noopener noreferrer">Official Arkansas rental and service information ↗</a></p></article>
+<article class="fence-folio fence-folio-3"><div class="fence-folio-art fence-folio-art-3" aria-hidden="true">
+  <span class="fence-folio-overline">03 / REGIONAL OPTION</span>
+  <svg class="fence-folio-drawing" viewBox="0 0 520 300" focusable="false" aria-hidden="true"><g stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M44 232V64M260 232V64M476 232V64M44 80H476M44 218H476" stroke-width="8"/><path d="M47 86 252 212M103 81 259 180M181 81 260 128M261 82 469 211M322 81 476 178M400 81 476 128M44 215 257 86M44 159 174 81M45 104 70 81M264 213 472 85M264 158 394 81M318 217 476 118M394 217 476 166" stroke-width="2.8" opacity=".42"/><path d="M31 234H488" stroke-width="5"/><path d="M75 235v22M446 235v22" stroke-width="6"/></g></svg>
+  <span class="fence-folio-chapter">Check delivery</span>
+  <span class="fence-folio-place">FORT SMITH → ASK FIRST</span>
+  <small class="fence-folio-source">Illustrative fence drawing · not available inventory</small>
+</div><div class="card-top"><span class="number">PROVIDER 03</span><span class="tag tag-caution">Russellville delivery UNCONFIRMED</span></div><h3>Modern Fence Company — Fort Smith (Regional)</h3><p>The operator officially advertises temporary fence rentals for construction, renovation, storm damage and qualifying municipal projects, with project-specific installation, gates and removal. Its normal service territory is approximately 75 miles from Fort Smith, with farther travel considered for larger projects. <strong>Russellville delivery is UNCONFIRMED.</strong> Confirm whether your site qualifies, equipment, rental terms and pricing directly.</p><p class="area">5801 S 29th St, Fort Smith, AR 72908 · Russellville delivery UNCONFIRMED</p><p><a href="tel:+14796496511">479-649-6511</a> · <a href="https://modernfence.com/temporary-fence-rental/" target="_blank" rel="noopener noreferrer">Official temporary fence rentals and service area ↗</a></p></article></div>
 
 
 <section class="perimeter-atlas" id="site-sketch" aria-labelledby="site-sketch-title">
