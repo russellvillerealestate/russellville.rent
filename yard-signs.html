@@ -232,6 +232,36 @@ footer a{font-weight:750}
 @media(max-width:570px){.occasion-service-link{margin-left:0;width:100%}.atlas-local,.atlas-regional{padding:27px 22px;border-radius:17px}.atlas-towns{grid-template-columns:repeat(2,minmax(0,1fr))}.atlas-local h3{margin-top:20px}.atlas-local .atlas-foot{align-items:stretch}.atlas-foot a{width:100%}.atlas-local .atlas-foot span{max-width:none}}
 @media print{.atlas-local{background:#103a2f!important;color:#fff!important;box-shadow:none}.atlas-regional{break-inside:avoid}}
 
+
+/* 2026-11-06 — Three-route coverage folio, StayARV-inspired editorial hierarchy.
+   The third regional operator was listed later than the two-card atlas;
+   make every documented route directly discoverable without implying
+   Russellville delivery. NN/g proximity/hierarchy, web.dev responsive
+   composition, W3C WCAG 2.2 keyboard focus and 24px minimum targets.
+   Existing provider copy, prices, links, and greeting-studio logic untouched. */
+.atlas-grid{grid-template-columns:minmax(0,1.28fr) minmax(310px,.92fr);align-items:stretch}
+.atlas-local{grid-row:span 2;min-height:635px}
+.atlas-grid .atlas-regional{padding:clamp(23px,2.6vw,33px)}
+.atlas-grid .atlas-regional h3{font-size:clamp(1.85rem,2.8vw,2.65rem);margin:16px 0 10px}
+.atlas-grid .atlas-regional>p{font-size:.86rem;line-height:1.6;margin:0 0 12px}
+.atlas-grid .atlas-regional .atlas-coverage-note{padding:11px 14px;margin:auto 0 14px}
+.atlas-regional--fort{background:linear-gradient(146deg,#12372f 0%,#245645 100%);border-color:#2f6653;color:#fffdf1;box-shadow:0 16px 38px #163a3027}
+.atlas-regional--fort:before{width:270px;height:270px;top:-105px;right:-95px;border-color:#f7d99c64;box-shadow:0 0 0 32px #fff4d009,0 0 0 72px #fff4d008}
+.atlas-regional--fort .atlas-topline{color:#f9deaf}
+.atlas-regional--fort .atlas-count{border-color:#f3dca98c;color:#f9deaf;font-size:1.7rem}
+.atlas-fort-place{align-self:flex-start;margin:15px 0 1px;color:#f2d298;font:800 .67rem/1.35 system-ui,sans-serif;letter-spacing:.21em}
+.atlas-fort-place span{margin-left:12px;font-size:1rem;letter-spacing:0}
+.atlas-grid .atlas-regional--fort h3{color:#fffaf1}
+.atlas-grid .atlas-regional--fort>p{color:#e6eee6}
+.atlas-regional--fort .atlas-coverage-note{background:#fff5df;border-left-color:#f1ca7b;color:#684328}
+.atlas-regional--fort a{background:#f5d596;color:#183b32;color-scheme:light}
+.atlas-regional--fort a:hover{background:#ffe5b1}
+.atlas-regional--fort a:focus-visible{outline:3px solid #fff;border:1px solid #3a7560;box-shadow:0 0 0 6px #a15a24}
+.regional-options .provider[id]{scroll-margin-top:24px}
+@media(max-width:880px){.atlas-grid{grid-template-columns:1fr}.atlas-local{grid-row:auto;min-height:0}.atlas-grid .atlas-regional{padding:clamp(24px,4vw,38px)}}
+@media(max-width:570px){.atlas-grid .atlas-regional{padding:25px 22px}.atlas-grid .atlas-regional h3{font-size:2.1rem}.atlas-fort-place{letter-spacing:.15em}}
+@media print{.atlas-regional--fort{background:#fff!important;color:#163b32!important;box-shadow:none}.atlas-grid .atlas-regional--fort h3,.atlas-grid .atlas-regional--fort>p,.atlas-regional--fort .atlas-topline,.atlas-regional--fort .atlas-count{color:#163b32!important}.atlas-grid .atlas-regional--fort a{border:1px solid #555}}
+
 </style>
 </head>
 <body>
@@ -297,7 +327,7 @@ footer a{font-weight:750}
 
 <section class="service-atlas" id="service-atlas" aria-labelledby="service-atlas-title">
 <div class="wrap">
-  <div class="atlas-heading"><div><p class="eyebrow">Where the celebration can go / River Valley guide</p><h2 id="service-atlas-title">Make sure the address is in range.</h2></div><p>Two published coverage areas are mapped here: local River Valley service and the Morrilton-serving Conway branch. A third, Fort Smith-based yard-card rental option is listed below with Russellville delivery UNCONFIRMED.</p></div>
+  <div class="atlas-heading"><div><p class="eyebrow">Where the celebration can go / River Valley guide</p><h2 id="service-atlas-title">Make sure the address is in range.</h2></div><p>Three distinct provider routes: seven published River Valley towns, Morrilton coverage through the Conway branch, and Fort Smith-area yard-card listings. Regional delivery to Russellville remains UNCONFIRMED.</p></div>
   <div class="atlas-grid">
     <article class="atlas-local" aria-labelledby="atlas-local-title">
       <div class="atlas-topline"><span>01 / Local operator · Published service area</span><span class="atlas-count" aria-label="Seven towns">07</span></div>
@@ -311,10 +341,18 @@ footer a{font-weight:750}
       <h3 id="atlas-regional-title">Looking around Morrilton?</h3>
       <p>Card My Yard Conway explicitly includes Morrilton (72110) on its published service list. It is not the Russellville operator.</p>
       <div class="atlas-coverage-note"><strong>Russellville delivery unconfirmed.</strong> Neither Russellville ZIP code 72801 nor 72802 appears on that branch's published list. Confirm the exact address before booking.</div>
-      <a href="#regional-heading">Compare the Morrilton-area option <span aria-hidden="true">↗</span></a>
+      <a href="#card-my-yard-conway">See Morrilton provider details <span aria-hidden="true">↗</span></a>
+    </article>
+    <article class="atlas-regional atlas-regional--fort" aria-labelledby="atlas-fort-title">
+      <div class="atlas-topline"><span>03 / Fort Smith-area operator</span><span class="atlas-count" aria-hidden="true">03</span></div>
+      <div class="atlas-fort-place" aria-hidden="true">FORT SMITH <span>↗</span></div>
+      <h3 id="atlas-fort-title">Celebrations west of town.</h3>
+      <p>K.C. Treasures advertises yard-card rentals and names Fort Smith, Charleston, Greenwood and Mansfield as delivery-area examples. This is a regional operator, not a Russellville storefront.</p>
+      <div class="atlas-coverage-note"><strong>Russellville delivery unconfirmed.</strong> Ask whether your exact address is served, and confirm design, setup, travel charges and final price.</div>
+      <a href="#kc-treasures-yard-cards">See Fort Smith provider details <span aria-hidden="true">↗</span></a>
     </article>
   </div>
-  <p class="atlas-source">Scenic Russellville imagery provides local context; it does not depict either provider's yard signs. Coverage is based on the operators' published information and may change. Confirm all details directly.</p>
+  <p class="atlas-source">Scenic Russellville imagery provides local context; it does not depict any provider's actual yard signs. Coverage is based on the operators' published information and may change. Confirm all details directly.</p>
 </div>
 </section>
 
@@ -326,7 +364,7 @@ footer a{font-weight:750}
 <section class="regional-options" aria-labelledby="regional-heading">
 <h2 id="regional-heading">More regional yard-greeting options</h2>
 <p class="region-intro">Compare a Conway-area branch that explicitly serves Morrilton with a Fort Smith party-rental operator that also lists yard-card displays. <strong>Neither provider has verified delivery to Russellville.</strong> Check address eligibility before making plans.</p>
-<article class="provider"><span class="tag">Morrilton service verified · Russellville unconfirmed</span>
+<article class="provider" id="card-my-yard-conway"><span class="tag">Morrilton service verified · Russellville unconfirmed</span>
 <h3>Card My Yard Conway — Serves Morrilton</h3>
 <p>Official local franchise offering personalized temporary lawn-sign greetings for birthdays, graduations, anniversaries, baby announcements and business occasions. The operator handles design selection, delivery, installation and pickup for addresses within its published service area. Its official branch page specifically includes ZIP code <strong>72110 (Morrilton)</strong>, but neither Russellville ZIP code 72801 nor 72802 appears in that list. <strong>Russellville delivery UNCONFIRMED.</strong> Ask the branch about an exact address, available dates, total charges and any travel fee.</p>
 <p class="detail"><strong>Conway, Arkansas branch · Morrilton 72110 explicitly served.</strong> No Russellville storefront or delivery coverage verified.</p>
