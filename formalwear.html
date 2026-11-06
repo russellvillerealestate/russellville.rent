@@ -348,6 +348,42 @@ a:focus-visible{outline:3px solid #a66a17;outline-offset:4px;border-radius:3px}
 @media(max-width:580px){.occasion-next{width:calc(100% - 26px);margin:34px auto 52px;padding:25px 17px;border-radius:20px}.occasion-next h2{font-size:clamp(2.55rem,11vw,3.65rem)}.occasion-next-grid{grid-template-columns:1fr;gap:12px}.occasion-next-card--venue,.occasion-next-card--photo,.occasion-next-card--party,.occasion-next-card--sound{grid-column:1;min-height:226px;padding:22px}.occasion-next-card--venue{min-height:270px}.occasion-next-card-copy strong{font-size:2.25rem}.occasion-next-intro{margin-bottom:22px}}
 @media(prefers-reduced-motion:reduce){.occasion-next-card,.occasion-next-go span{transition:none}.occasion-next-card:hover{transform:none}.occasion-next-card:hover .occasion-next-go span{transform:none}}
 
+
+/* 2026-11-06 Fitting Route / live StayARV and Russellville.Rent; NN/g hierarchy,
+   web.dev responsive layouts, WCAG 2.2 focus visibility and target sizing.
+   No rental records, quotes, contacts, original code or workflow modified. */
+.fit-itinerary{position:sticky;top:0;z-index:24;background:#10362d;color:#faf5e8;border-top:1px solid #d6ae7444;border-bottom:1px solid #d6ae7459;box-shadow:0 13px 26px #09271f25}
+.fit-itinerary-layout{display:grid;grid-template-columns:minmax(185px,.26fr) minmax(0,1fr);align-items:center;gap:clamp(15px,2.2vw,32px);min-height:98px}
+.fit-itinerary-heading{padding:15px 0 14px}
+.fit-itinerary-heading>span{display:block;color:#e3ba7b;font-size:.59rem;letter-spacing:.17em;font-weight:850;line-height:1.55}
+.fit-itinerary-heading strong{display:block;margin-top:5px;color:#fffdf3;font:400 clamp(1rem,1.25vw,1.25rem)/1.18 Georgia,"Times New Roman",serif;letter-spacing:-.035em}
+.fit-itinerary-heading em{font-weight:400;color:#e9c493}
+.fit-itinerary-steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;min-width:0;align-items:stretch}
+.fit-itinerary-steps a{position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:4px;min-width:0;min-height:66px;padding:10px 8px 9px 12px;color:#eaf2e9;border-left:1px solid #fcf6de3b;text-decoration:none;font-size:.72rem;font-weight:750;line-height:1.3;transition:background-color .18s,color .18s}
+.fit-itinerary-number{display:block;color:#e5c18b;font-size:.64rem;line-height:1;letter-spacing:.15em;font-weight:850}
+.fit-itinerary-arr{position:absolute;right:6px;top:8px;color:#e8cc9b;font-size:1rem;opacity:.67;line-height:1}
+.fit-itinerary-steps a:hover{background:#ffffff18;color:#fff}
+.fit-itinerary-steps a[aria-current="location"]{background:#eddfc1;color:#133b31;border-left-color:#eddfc1;border-radius:7px}
+.fit-itinerary-steps a[aria-current="location"] .fit-itinerary-number,.fit-itinerary-steps a[aria-current="location"] .fit-itinerary-arr{color:#6d4d26;opacity:1}
+.fit-itinerary-steps a:focus-visible{outline:3px solid #f5c879;outline-offset:-3px;border-radius:7px;background:#245748;color:#fff}
+html{scroll-padding-top:114px}
+:is(#atelier,#fit-atlas-title,#provider,#nearby-formalwear,#regional-formalwear,#guide-title){scroll-margin-top:114px}
+@media(max-width:1080px){.fit-itinerary-layout{grid-template-columns:minmax(150px,.22fr) minmax(0,1fr)}.fit-itinerary-steps a{padding-left:8px;font-size:.68rem}.fit-itinerary-arr{display:none}}
+@media(max-width:850px){
+.fit-itinerary{position:relative;top:auto;box-shadow:0 10px 22px #09271f16}
+.fit-itinerary-layout{display:block;padding-top:17px;padding-bottom:14px}
+.fit-itinerary-heading{padding:0 0 11px}
+.fit-itinerary-heading strong{font-size:1.4rem}
+.fit-itinerary-heading strong br{display:none}
+.fit-itinerary-steps{display:flex;overflow-x:auto;gap:8px;scroll-snap-type:x proximity;overscroll-behavior-x:contain;padding:3px 2px 9px;scrollbar-color:#ddb97e #204e40}
+.fit-itinerary-steps a{flex:0 0 auto;width:138px;min-height:64px;padding:12px 14px;scroll-snap-align:start;border:1px solid #e0c49266;border-radius:10px;font-size:.81rem}
+.fit-itinerary-arr{display:block;right:11px;top:9px}
+html{scroll-padding-top:28px}
+:is(#atelier,#fit-atlas-title,#provider,#nearby-formalwear,#regional-formalwear,#guide-title){scroll-margin-top:28px}
+}
+@media(prefers-reduced-motion:reduce){.fit-itinerary-steps a{transition:none}}
+@media print{.fit-itinerary{position:static;box-shadow:none;background:#fff;color:#193d31;border:1px solid #b8cbbd}.fit-itinerary-steps a{color:#193d31;border-color:#c6d4c9}.fit-itinerary-heading strong,.fit-itinerary-heading em,.fit-itinerary-number{color:#193d31}}
+
 </style>
 </head>
 <body>
@@ -392,6 +428,19 @@ a:focus-visible{outline:3px solid #a66a17;outline-offset:4px;border-radius:3px}
 </div>
 <p class="occasion-note"><span aria-hidden="true">↳</span> Choose a path to preselect your occasion in the fitting planner. Illustrations and styling are editorial inspiration—not confirmed inventory, pricing or a reservation.</p>
 </div></section>
+
+<!-- Fitting route: existing guide chapter links, no new provider information. -->
+<nav class="fit-itinerary" aria-label="Explore the formalwear guide">
+<div class="shell fit-itinerary-layout">
+<div class="fit-itinerary-heading" aria-hidden="true"><span>THE FITTING ROUTE / 06 STOPS</span><strong>From the first look<br><em>to the final detail.</em></strong></div>
+<div class="fit-itinerary-steps">
+<a href="#atelier" data-fit-chapter><span class="fit-itinerary-number">01</span><span>Plan your look</span><span class="fit-itinerary-arr" aria-hidden="true">↗</span></a>
+<a href="#fit-atlas-title" data-fit-chapter><span class="fit-itinerary-number">02</span><span>Explore towns</span><span class="fit-itinerary-arr" aria-hidden="true">↗</span></a>
+<a href="#provider" data-fit-chapter><span class="fit-itinerary-number">03</span><span>Russellville</span><span class="fit-itinerary-arr" aria-hidden="true">↗</span></a>
+<a href="#nearby-formalwear" data-fit-chapter><span class="fit-itinerary-number">04</span><span>Nearby stores</span><span class="fit-itinerary-arr" aria-hidden="true">↗</span></a>
+<a href="#regional-formalwear" data-fit-chapter><span class="fit-itinerary-number">05</span><span>Regional shops</span><span class="fit-itinerary-arr" aria-hidden="true">↗</span></a>
+<a href="#guide-title" data-fit-chapter><span class="fit-itinerary-number">06</span><span>Before booking</span><span class="fit-itinerary-arr" aria-hidden="true">↗</span></a>
+</div></div></nav>
 <section class="atelier" id="atelier" aria-labelledby="atelier-title"><div class="shell">
 <div class="atelier-head"><div><p class="eyebrow">The occasion edit / Plan before you call</p><h2 id="atelier-title">Start with a look. Leave with a plan.</h2></div><p>Choose a visual direction and prepare a fitting inquiry. Illustrations are inspiration only, not confirmed styles or rental inventory.</p></div>
 <div class="atelier-layout"><form class="atelier-form" id="atelier-form">
@@ -550,4 +599,26 @@ document.querySelectorAll(".occasion-card[data-occasion]").forEach(link=>{
 
 update();
 })();
-</script></body></html>
+</script>
+
+<script>
+/* Progressive chapter highlighting: native anchors work without JavaScript. */
+(function(){
+ const links=Array.from(document.querySelectorAll("[data-fit-chapter]"));
+ const chapters=links.map(link=>({link,section:document.getElementById(link.hash.slice(1))}));
+ if(chapters.length!==6||chapters.some(item=>!item.section))return;
+ let scheduled=false;
+ function markChapter(){
+  scheduled=false;
+  const threshold=window.innerWidth>850?145:42;
+  let current=chapters[0];
+  for(const item of chapters){if(item.section.getBoundingClientRect().top<=threshold)current=item;else break;}
+  for(const item of chapters){if(item===current)item.link.setAttribute("aria-current","location");else item.link.removeAttribute("aria-current");}
+ }
+ function schedule(){if(!scheduled){scheduled=true;requestAnimationFrame(markChapter);}}
+ addEventListener("scroll",schedule,{passive:true});
+ addEventListener("resize",schedule,{passive:true});
+ markChapter();
+})();
+</script>
+</body></html>
