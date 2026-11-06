@@ -580,6 +580,43 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
  .provider h2,.provider.featured h2{font-size:clamp(1.8rem,7.3vw,2.4rem)}
  .provider p,.provider.featured p{font-size:.88rem}
 }
+
+/* 2026-11-06 / Production Desk: service-mode discovery, modeled after
+   StayARV's immersive editorial hierarchy, not its business content.
+   References: NN/g information scent; web.dev responsive layout; WCAG 2.2
+   keyboard focus, reflow, and reduced-motion requirements. */
+.production-desk{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);overflow:hidden;margin:30px 0 10px;border-radius:21px;background:#133c32;color:#fff;box-shadow:0 23px 50px #123b3025}
+.production-desk-intro{position:relative;isolation:isolate;display:flex;flex-direction:column;min-width:0;min-height:420px;padding:clamp(28px,4vw,48px);background:linear-gradient(155deg,#163e36,#0c2925)}
+.production-desk-intro:before{content:"";position:absolute;right:-95px;top:-135px;width:290px;height:290px;border:1px solid #f2d7a15e;border-radius:50%;box-shadow:0 0 0 42px #f2d7a10e,0 0 0 82px #f2d7a108;pointer-events:none;z-index:-1}
+.production-desk-kicker,.production-control-label{margin:0 0 18px;color:#f2d69d;font-size:.65rem;font-weight:850;letter-spacing:.17em;line-height:1.55}
+.production-desk-intro h3{margin:0 0 20px;max-width:12ch;font:400 clamp(2.25rem,4.2vw,4.3rem)/1.05 Georgia,"Times New Roman",serif;letter-spacing:-.057em;text-wrap:balance}
+.production-desk-intro h3 em{color:#f3d59a;font-weight:400}
+.production-desk-intro>p:not(.production-desk-kicker){max-width:49ch;font-size:.91rem;line-height:1.7;color:#e0ebe3;margin:0}
+.production-desk-art{display:block;max-width:410px;width:94%;height:auto;margin:auto 0 12px;color:#f3d59a;filter:drop-shadow(0 12px 12px #081c192a)}
+.production-desk-intro small{font-size:.65rem;line-height:1.5;color:#e1d6b9}
+.production-desk-control{min-width:0;padding:clamp(26px,3.4vw,43px);background:radial-gradient(circle at 100% 0,#466958 0,transparent 53%),#224b3f}
+.production-control-label{margin:0 0 23px}
+.production-mode-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.production-mode-grid[hidden],.production-state[hidden],.production-fallback[hidden],.route-grid li[hidden]{display:none!important}
+.production-mode{display:flex;flex-direction:column;align-items:flex-start;min-width:0;min-height:153px;width:100%;padding:20px;text-align:left;font:inherit;cursor:pointer;border:1px solid #d3e2d56a;border-radius:11px;color:#fff;background:#0b302b85;transition:transform .2s,background .2s,border-color .2s}
+.production-mode:hover{transform:translateY(-3px);border-color:#f6db9f;background:#11372f}
+.production-mode:focus-visible{outline:3px solid #ffe0a3;outline-offset:3px}
+.production-mode[aria-pressed="true"]{border-color:#f8d79b;background:#f3d9a3;color:#173d32;box-shadow:inset 0 0 0 1px #f3d9a3}
+.production-mode-count{width:100%;display:flex;justify-content:space-between;align-items:center;color:#f1d393;font-size:1.45rem;line-height:1.1;font-family:Georgia,serif}
+.production-mode[aria-pressed="true"] .production-mode-count{color:#48624a}
+.production-mode-count span{font-family:system-ui;font-size:1.1rem}
+.production-mode strong{display:block;font-size:1.03rem;line-height:1.27;margin:13px 0 7px}
+.production-mode small{font-size:.75rem;line-height:1.45;color:#dce9e0}
+.production-mode[aria-pressed="true"] small{color:#335b4a}
+.production-state{padding:12px 0 0;margin:0;color:#ffdfa2;font-size:.85rem;font-weight:750}
+.production-fallback{font-weight:800;color:#f3d9a3}
+.production-caveat{margin:17px 0 0;font-size:.74rem;line-height:1.6;color:#e5eee5}
+.route-grid.is-filtered{grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.route-grid.is-filtered li:not([hidden]){grid-column:auto!important}
+@media(max-width:900px){.production-desk{grid-template-columns:1fr}.production-desk-intro{min-height:0}.production-desk-art{max-width:300px;margin:24px 0 10px}.production-desk-intro h3{max-width:none}}
+@media(max-width:530px){.production-desk{border-radius:12px}.production-desk-intro,.production-desk-control{padding:25px 21px}.production-mode-grid{grid-template-columns:1fr}.production-mode{min-height:112px;padding:16px 18px}.production-mode strong{margin:7px 0 4px}.production-desk-art{max-width:250px}}
+@media(prefers-reduced-motion:reduce){.production-mode{transition:none}.production-mode:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -600,44 +637,76 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
 
 <section class="service-map" id="service-map" aria-labelledby="service-map-title">
   <div class="service-map-head"><div><p class="kicker">The production signal board / Start with your need</p><h2 id="service-map-title">What kind of event support?</h2></div><p>Seven service paths, based on what each provider advertises. Select a card to review its details and confirmation status.</p></div>
-  <ol class="route-grid" aria-label="Explore event equipment and production service types">
-    <li><a class="route-card route-confirmed" href="#provider-1">
+  
+  <div class="production-desk" aria-labelledby="production-desk-title">
+    <div class="production-desk-intro">
+      <p class="production-desk-kicker">THE PRODUCTION DESK / CHOOSE A SERVICE FORMAT</p>
+      <h3 id="production-desk-title">Find your <em>kind of show.</em></h3>
+      <p>Need a speaker to rent, an outdoor movie setup, or a crew to run the production? Start with the service format, then open the operator's complete listing for delivery status and terms.</p>
+      <svg class="production-desk-art" viewBox="0 0 460 155" fill="none" aria-hidden="true" focusable="false">
+        <path d="M5 134h450" stroke="#f2d7a2" opacity=".35" stroke-width="2"/>
+        <rect x="27" y="44" width="82" height="87" rx="8" fill="#152f2c" stroke="#eac98b" stroke-width="3"/>
+        <circle cx="68" cy="95" r="23" stroke="#eac98b" stroke-width="5"/><circle cx="68" cy="61" r="6" fill="#eac98b"/>
+        <path d="M153 133V28m-26 0h52m-50 105h49" stroke="#efdbb5" stroke-width="5" stroke-linecap="round"/>
+        <rect x="184" y="24" width="215" height="108" rx="10" fill="#193e36" stroke="#efdbb5" stroke-width="3"/>
+        <path d="M206 108h168M206 91h168M206 74h168" stroke="#8faf93" opacity=".65" stroke-width="2"/>
+        <path d="M215 54V94m35-52v52m35-35v35m35-54v54m35-26v26" stroke="#e7c783" stroke-width="8" stroke-linecap="round"/>
+        <circle cx="215" cy="54" r="7" fill="#f4e4bc"/><circle cx="250" cy="42" r="7" fill="#f4e4bc"/><circle cx="285" cy="59" r="7" fill="#f4e4bc"/><circle cx="320" cy="40" r="7" fill="#f4e4bc"/><circle cx="355" cy="68" r="7" fill="#f4e4bc"/>
+        <path d="M411 44q25 24 0 48m10-61q37 37 0 74" stroke="#efdbb5" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+      </svg>
+      <small>Illustration only · Not equipment offered by a particular provider.</small>
+    </div>
+    <div class="production-desk-control">
+      <p class="production-control-label">SELECT A PATH / SEVEN VERIFIED DIRECTORY ENTRIES</p>
+      <div class="production-mode-grid" id="production-modes" role="group" aria-label="Narrow the seven provider paths by service format" hidden>
+        <button type="button" class="production-mode" data-production-filter="all" aria-pressed="true" aria-controls="production-routes"><span class="production-mode-count">07 <span aria-hidden="true">↗</span></span><strong>See every option</strong><small>All advertised service types</small></button>
+        <button type="button" class="production-mode" data-production-filter="equipment" aria-pressed="false" aria-controls="production-routes"><span class="production-mode-count">01 <span aria-hidden="true">↗</span></span><strong>Equipment-only</strong><small>Rent sound gear without a disc jockey</small></button>
+        <button type="button" class="production-mode" data-production-filter="screens" aria-pressed="false" aria-controls="production-routes"><span class="production-mode-count">02 <span aria-hidden="true">↗</span></span><strong>Screens &amp; projection</strong><small>Outdoor cinema or projection inquiries</small></button>
+        <button type="button" class="production-mode" data-production-filter="staffed" aria-pressed="false" aria-controls="production-routes"><span class="production-mode-count">04 <span aria-hidden="true">↗</span></span><strong>Staffed &amp; DJ-led</strong><small>Entertainment and technical crew services</small></button>
+      </div>
+      <p class="production-fallback" id="production-fallback">Explore all seven service cards below. Each opens the full provider listing.</p>
+      <p class="production-state" id="production-state" aria-live="polite" aria-atomic="true" hidden>Showing all seven service paths.</p>
+      <p class="production-caveat">Service-format groupings are a navigation aid, not guaranteed inventory, booking, equipment-only eligibility, Russellville delivery, or technical advice. Full listings remain available below.</p>
+    </div>
+  </div>
+  <ol class="route-grid" id="production-routes" aria-label="Explore event equipment and production service types">
+    <li data-production-mode="equipment"><a class="route-card route-confirmed" href="#provider-1">
       <span class="route-top"><span class="route-number">CHANNEL 01</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
       <span class="route-scene" aria-hidden="true"><span class="route-scene-tag">SOUND / EQUIPMENT</span><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet"><path d="M18 126H302" stroke="currentColor" opacity=".25"/><rect x="65" y="40" width="64" height="98" rx="7" fill="#132c2d" stroke="currentColor" stroke-width="3"/><circle cx="97" cy="100" r="23" stroke="currentColor" stroke-width="5"/><circle cx="97" cy="61" r="8" fill="currentColor" opacity=".8"/><rect x="183" y="54" width="58" height="84" rx="6" fill="#132c2d" stroke="currentColor" stroke-width="3"/><circle cx="212" cy="108" r="19" stroke="currentColor" stroke-width="4"/><circle cx="212" cy="72" r="6" fill="currentColor"/><path d="M144 75v48m-13 0h26m-11-48 16-24m-16 24-15-24" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M268 76q27 21 0 42M281 62q39 37 0 70" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".6"/></svg></span>
       <h3>Equipment without a DJ</h3><p class="route-provider">Roots &amp; Rhythm Rentals</p><p>Speakers, microphones and lighting available as equipment-only rentals. Russellville delivery and setup advertised for an extra fee.</p>
       <span class="route-foot"><span>Russellville delivery advertised</span><span aria-hidden="true">↗</span></span>
     </a></li>
-    <li><a class="route-card route-confirmed" href="#provider-2">
+    <li data-production-mode="screens"><a class="route-card route-confirmed" href="#provider-2">
       <span class="route-top"><span class="route-number">CHANNEL 02</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
       <span class="route-scene" aria-hidden="true"><span class="route-scene-tag">CINEMA / OUTDOORS</span><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet"><path d="M16 132h288" stroke="currentColor" opacity=".3"/><rect x="54" y="26" width="210" height="103" rx="6" fill="#152c32" stroke="currentColor" stroke-width="4"/><rect x="66" y="38" width="186" height="78" rx="2" fill="#447878"/><circle cx="204" cy="64" r="14" fill="#f3d4a0"/><path d="M66 101 113 68l35 25 31-19 73 42H66Z" fill="#1a5557"/><path d="m54 127-11 14m221-14 11 14M143 129v11m32-11v11" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M24 61q13-19 26 0m228-4q13-19 25 0" stroke="currentColor" stroke-width="3" opacity=".65"/></svg></span>
       <h3>Outdoor movie screens</h3><p class="route-provider">FunFlicks — Arkansas</p><p>Inflatable movie screens with projection, sound, delivery, setup and on-site support. Russellville is included in the provider's advertised service area.</p>
       <span class="route-foot"><span>Russellville service advertised</span><span aria-hidden="true">↗</span></span>
     </a></li>
-    <li><a class="route-card " href="#provider-3">
+    <li data-production-mode="screens"><a class="route-card " href="#provider-3">
       <span class="route-top"><span class="route-number">CHANNEL 03</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
       <span class="route-scene" aria-hidden="true"><span class="route-scene-tag">PROJECTION / GEAR</span><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet"><path d="M20 127h280" stroke="currentColor" opacity=".26"/><path d="M54 57h118v61H54z" fill="#1d4542" stroke="currentColor" stroke-width="3"/><path d="M113 118v19m-36 0h72" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="m172 76 82-30v54l-82-18" fill="currentColor" opacity=".16"/><rect x="185" y="79" width="87" height="46" rx="8" fill="#233d3c" stroke="currentColor" stroke-width="3"/><circle cx="241" cy="102" r="15" stroke="currentColor" stroke-width="4"/><circle cx="241" cy="102" r="6" fill="currentColor"/><path d="M196 125v12m62-12v12" stroke="currentColor" stroke-width="4"/><path d="M72 78h79m-79 11h56" stroke="currentColor" stroke-width="3" opacity=".55"/></svg></span>
       <h3>Projection &amp; event gear</h3><p class="route-provider">A/V Arkansas</p><p>Projectors, screens, sound and event production advertised. Confirm equipment-only options and location-specific delivery.</p>
       <span class="route-foot"><span>Russellville delivery unconfirmed</span><span aria-hidden="true">↗</span></span>
     </a></li>
-    <li><a class="route-card " href="#provider-4">
+    <li data-production-mode="staffed"><a class="route-card " href="#provider-4">
       <span class="route-top"><span class="route-number">CHANNEL 04</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
       <span class="route-scene" aria-hidden="true"><span class="route-scene-tag">WEDDINGS / LIGHTS</span><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet"><path d="M22 127h276" stroke="currentColor" opacity=".3"/><path d="M46 39h228M70 39v86m180-86v86" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M65 42q18 35 36 0 18 35 36 0 18 35 36 0 18 35 36 0 18 35 36 0" stroke="currentColor" stroke-width="3" opacity=".8"/><circle cx="83" cy="78" r="7" fill="currentColor"/><circle cx="135" cy="78" r="7" fill="currentColor"/><circle cx="187" cy="78" r="7" fill="currentColor"/><circle cx="239" cy="78" r="7" fill="currentColor"/><path d="M123 126v-19h74v19m-60-19V93m44 14V93" stroke="currentColor" stroke-width="4"/><path d="M127 94q33-44 66 0" stroke="currentColor" stroke-width="3"/><circle cx="160" cy="81" r="11" stroke="currentColor" stroke-width="3"/></svg></span>
       <h3>Wedding entertainment</h3><p class="route-provider">636 Entertainment</p><p>DJ-led packages with sound and event lighting advertised. Standalone equipment-only rental remains unconfirmed.</p>
       <span class="route-foot"><span>Ask about package details</span><span aria-hidden="true">↗</span></span>
     </a></li>
-    <li><a class="route-card " href="#provider-5">
+    <li data-production-mode="staffed"><a class="route-card " href="#provider-5">
       <span class="route-top"><span class="route-number">CHANNEL 05</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
       <span class="route-scene" aria-hidden="true"><span class="route-scene-tag">TECH / CONTROL</span><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet"><path d="M35 128h250" stroke="currentColor" opacity=".3"/><path d="m52 65 209 0 26 65H33Z" fill="#173935" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><rect x="76" y="35" width="167" height="41" rx="5" fill="#173935" stroke="currentColor" stroke-width="3"/><path d="M94 57h25m14 0h25m14 0h25m14 0h13" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M74 87h161M62 105h195" stroke="currentColor" stroke-width="3" opacity=".5"/><circle cx="90" cy="94" r="5" fill="currentColor"/><circle cx="124" cy="94" r="5" fill="currentColor"/><circle cx="158" cy="94" r="5" fill="currentColor"/><circle cx="192" cy="94" r="5" fill="currentColor"/><path d="M105 110v13m38-14v9m37-9v13m38-14v10" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span>
       <h3>Full technical production</h3><p class="route-provider">CWP Productions</p><p>Professional setup and on-site technical support advertised. Equipment-only pickup and Russellville delivery are unconfirmed.</p>
       <span class="route-foot"><span>Russellville delivery unconfirmed</span><span aria-hidden="true">↗</span></span>
     </a></li>
-    <li><a class="route-card " href="#provider-6">
+    <li data-production-mode="staffed"><a class="route-card " href="#provider-6">
       <span class="route-top"><span class="route-number">CHANNEL 06</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
       <span class="route-scene" aria-hidden="true"><span class="route-scene-tag">CONCERT / STAGE</span><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet"><path d="M20 129h280" stroke="currentColor" opacity=".3"/><path d="M34 124V31h252v93M34 45h252M46 31l24 14 24-14 24 14 24-14 24 14 24-14 24 14 24-14 24 14" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M72 47 39 119h67Zm90 0-33 72h66Zm90 0-33 72h66Z" fill="currentColor" opacity=".13"/><rect x="79" y="89" width="40" height="34" rx="3" fill="#203e3d" stroke="currentColor" stroke-width="3"/><circle cx="99" cy="108" r="10" stroke="currentColor" stroke-width="3"/><rect x="201" y="89" width="40" height="34" rx="3" fill="#203e3d" stroke="currentColor" stroke-width="3"/><circle cx="221" cy="108" r="10" stroke="currentColor" stroke-width="3"/><path d="M158 79v44m-17-44h34m-34 44h34" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="158" cy="71" r="9" fill="currentColor"/></svg></span>
       <h3>Staffed concert audio &amp; stage</h3><p class="route-provider">EdmoSound</p><p>Professional sound, video and lighting packages with on-site crew; no unstaffed equipment rentals. Russellville delivery unconfirmed.</p>
       <span class="route-foot"><span>Full-service packages only</span><span aria-hidden="true">↗</span></span>
     </a></li>
-    <li><a class="route-card route-ceremony" href="#provider-7">
+    <li data-production-mode="staffed"><a class="route-card route-ceremony" href="#provider-7">
       <span class="route-top"><span class="route-number">CHANNEL 07</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
       <span class="route-scene" aria-hidden="true"><span class="route-scene-tag">CEREMONY / LIVE MUSIC</span><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet">
         <path d="M22 134H298M42 41H278" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".85"/>
@@ -787,6 +856,31 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
   });
   refresh();
   section.hidden=false;
+})();
+</script>
+
+<script>
+/* Progressive enhancement: all seven provider cards remain present in the
+   document; only the wayfinding cards are filtered. No provider data changes. */
+(function(){
+  "use strict";
+  const modes=document.getElementById("production-modes");
+  const list=document.getElementById("production-routes");
+  const state=document.getElementById("production-state");
+  const fallback=document.getElementById("production-fallback");
+  if(!modes||!list||!state||!fallback)return;
+  const buttons=Array.from(modes.querySelectorAll("[data-production-filter]"));
+  const cards=Array.from(list.querySelectorAll(":scope > li[data-production-mode]"));
+  if(cards.length!==7)return;
+  const labels={all:"all seven",equipment:"the equipment-only",screens:"the two screen and projection",staffed:"the four staffed and DJ-led"};
+  function filter(kind){
+    cards.forEach(card=>{card.hidden=kind!=="all"&&card.dataset.productionMode!==kind;});
+    buttons.forEach(button=>{button.setAttribute("aria-pressed",String(button.dataset.productionFilter===kind));});
+    list.classList.toggle("is-filtered",kind!=="all");
+    state.textContent=kind==="all"?"Showing all seven service paths.":"Showing "+cards.filter(card=>!card.hidden).length+" of seven paths: "+labels[kind]+ " options. All full provider listings remain below.";
+  }
+  buttons.forEach(button=>button.addEventListener("click",()=>filter(button.dataset.productionFilter)));
+  modes.hidden=false;state.hidden=false;fallback.hidden=true;
 })();
 </script>
 </body></html>
