@@ -377,6 +377,54 @@ body:not([data-workspace-view="ledger"]) .category .listing-card:focus-within{
   body:not([data-workspace-view="ledger"]) .category .listing-card:hover{transform:none}
 }
 
+
+/* 2026-11-06 — The Work Atlas: a persistent section compass for a growing
+   31-listing workspace directory. Style direction: StayARV's landscape-scaled
+   dark green/gold hierarchy. References: NN/g visual hierarchy (contrast and
+   grouping), web.dev responsive reflow and W3C WCAG 2.2 focus / target sizing.
+   Counts derive from the actual DOM and respect the existing search results. */
+.workspace-route-nav{position:sticky;top:0;z-index:12;isolation:isolate;background:#103a36;color:#f7f5e9;border-block:1px solid #567665;box-shadow:0 13px 33px #102f3028}
+.workspace-route-inner{display:grid;grid-template-columns:minmax(156px,.21fr) minmax(0,1fr);gap:clamp(18px,2.3vw,37px);align-items:stretch;padding-block:12px}
+.workspace-route-ident{display:flex;flex-direction:column;justify-content:center;gap:3px;padding-left:15px;border-left:3px solid #e3ba7e}
+.workspace-route-ident small{color:#e3ba7e;letter-spacing:.14em;font-size:.6rem;font-weight:850;text-transform:uppercase}
+.workspace-route-ident strong{font:400 clamp(1.14rem,1.7vw,1.48rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.035em;color:#fff9ed}
+.workspace-route-ident span{font-size:.69rem;line-height:1.3;color:#bed3c7}
+.workspace-route-track{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;min-width:0}
+.workspace-route-link{position:relative;display:flex;flex-direction:column;justify-content:center;gap:2px;min-width:0;min-height:79px;padding:11px 14px 12px;background:#1d4e45;border:1px solid #567869;border-radius:9px;color:#fffdf4;text-decoration:none;transition:background-color .18s,border-color .18s,transform .18s}
+.workspace-route-link:hover{background:#286052;border-color:#b8b28a;transform:translateY(-2px)}
+.workspace-route-link:focus-visible{outline:3px solid #f8d394;outline-offset:3px}
+.workspace-route-link[aria-current="location"]{background:#f2d6a5;color:#183c34;border-color:#ffe9ba;box-shadow:inset 0 -4px 0 #ae7840}
+.workspace-route-link[aria-current="location"] .workspace-route-meta{color:#4a6253}
+.workspace-route-numeral{font-size:.6rem;font-weight:850;letter-spacing:.16em;color:#dfc38e;text-transform:uppercase}
+.workspace-route-link[aria-current="location"] .workspace-route-numeral{color:#765c39}
+.workspace-route-link strong{font-size:.83rem;line-height:1.25;letter-spacing:-.02em}
+.workspace-route-meta{color:#c4dace;font-size:.65rem;line-height:1.3}
+.workspace-route-link[hidden]{display:none!important}
+.category{scroll-margin-top:123px}
+@media(max-width:960px){
+ .workspace-route-inner{grid-template-columns:1fr;gap:9px}
+ .workspace-route-ident{display:flex;flex-direction:row;justify-content:space-between;align-items:center;gap:12px;padding-left:12px}
+ .workspace-route-ident strong{font-size:1.13rem}
+ .workspace-route-ident span{margin-left:auto}
+ .workspace-route-track{gap:7px}
+ .workspace-route-link{min-height:65px;padding:9px 11px}
+ .category{scroll-margin-top:162px}
+}
+@media(max-width:640px){
+ .workspace-route-inner{padding-block:8px;gap:7px}
+ .workspace-route-ident small{font-size:.56rem}
+ .workspace-route-ident strong{font-size:1rem}
+ .workspace-route-ident span{display:none}
+ .workspace-route-track{display:flex;gap:7px;overflow-x:auto;scroll-snap-type:x proximity;overscroll-behavior-inline:contain;padding:1px 2px 6px;scrollbar-width:thin;scrollbar-color:#d5ba87 #173b34}
+ .workspace-route-link{flex:0 0 44%;min-width:145px;max-width:210px;scroll-snap-align:start;min-height:62px}
+ .workspace-route-numeral{font-size:.56rem}
+ .workspace-route-link strong{font-size:.8rem}
+ .workspace-route-meta{font-size:.63rem}
+ .category{scroll-margin-top:150px}
+}
+@media(max-width:370px){.workspace-route-link{flex-basis:52%;min-width:140px}}
+@media(prefers-reduced-motion:reduce){.workspace-route-link{transition:none}.workspace-route-link:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -451,6 +499,19 @@ body:not([data-workspace-view="ledger"]) .category .listing-card:focus-within{
     <button type="button" data-workspace-choice="ledger" aria-pressed="false" aria-controls="coworking offices meetings mobile"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="5" height="5" rx="1"/><path d="M11 5.5h11"/><rect x="2" y="10" width="5" height="5" rx="1"/><path d="M11 12.5h11"/><rect x="2" y="17" width="5" height="5" rx="1"/><path d="M11 19.5h11"/></svg>Directory</button>
   </div>
 </section>
+
+<!-- Work Atlas / listing navigation. Links remain usable without JavaScript. -->
+<nav class="workspace-route-nav" aria-label="Workspace directory chapters">
+ <div class="wrap workspace-route-inner">
+  <div class="workspace-route-ident"><small>THE WORK ATLAS / 04</small><strong>Find your space.</strong><span>Jump to a workspace type</span></div>
+  <div class="workspace-route-track">
+   <a class="workspace-route-link" data-workspace-route="coworking" href="#coworking"><span class="workspace-route-numeral">01 / Flex</span><strong>Desks &amp; coworking</strong><span class="workspace-route-meta">View listings ↗</span></a>
+   <a class="workspace-route-link" data-workspace-route="offices" href="#offices"><span class="workspace-route-numeral">02 / Settle</span><strong>Offices &amp; suites</strong><span class="workspace-route-meta">View listings ↗</span></a>
+   <a class="workspace-route-link" data-workspace-route="meetings" href="#meetings"><span class="workspace-route-numeral">03 / Gather</span><strong>Meeting rooms</strong><span class="workspace-route-meta">View listings ↗</span></a>
+   <a class="workspace-route-link" data-workspace-route="mobile" href="#mobile"><span class="workspace-route-numeral">04 / On-site</span><strong>Jobsite offices</strong><span class="workspace-route-meta">View listings ↗</span></a>
+  </div>
+ </div>
+</nav>
 <section class="category wrap" id="coworking" aria-labelledby="coworking-title">
 <div class="category-heading"><div><p class="section-kicker">01 / Flexible workspace</p><h2 id="coworking-title">Coworking & flexible desks</h2></div><p>Drop-in workdays, dedicated desks and flexible spaces.</p></div>
 <div class="cards cards--solo"><article class="listing-card"><span class="listing-type">Coworking</span><h3>Co-Create Innovation Hub</h3><p>Private furnished offices with published monthly rates of $550 for a small office (1–2 people), $750 for a medium office (2–4 people), or $950 for a large office (4+ people); dedicated desks ($250/month), coworking day passes ($25/day) and memberships ($100/month). These are advertised prices, not confirmed current vacancies or final lease quotes. Day passes provide access during staffed hours; monthly members receive 24/7 keycard access. Confirm current staffed hours before visiting. Conference rooms for 4–12 people available hourly, $50/hour nonmembers and $35/hour members. The Think Lounge offers presentation/event seating for up to 50 (70 standing); published rates are $75/hour for members, $150/hour for nonmembers, $350/half day and $500/full day. Confirm current availability directly.</p><p class="detail">215 S Arkansas Ave, Russellville, AR 72801</p><p class="card-links"><a href="tel:+14793154301">479-315-4301</a> · <a href="https://www.cc-hub.com/spaces" target="_blank" rel="noopener noreferrer">Official workspace information ↗</a> · <a href="https://www.cc-hub.com/membership" target="_blank" rel="noopener noreferrer">Official day-pass and 24/7 access terms ↗</a></p></article></div></section>
@@ -539,6 +600,46 @@ filter();
   options.forEach(button => button.addEventListener('click', () => select(button.dataset.workspaceChoice)));
   select(preferred);
   bar.hidden = false;
+})();
+</script>
+
+<script>
+/* Pure navigation: observe the original search's hidden states, never alter
+   filters, prices, listings or stored view choice. Graceful no-JS anchors. */
+(() => {
+ const bar=document.querySelector('.workspace-route-nav');
+ if(!bar || !('MutationObserver' in window)) return;
+ const links=Array.from(bar.querySelectorAll('[data-workspace-route]'));
+ const entries=links.map(link=>({link,section:document.getElementById(link.dataset.workspaceRoute),meta:link.querySelector('.workspace-route-meta')}));
+ if(entries.some(item=>!item.section || !item.meta)) return;
+ let ticking=false;
+ const markLocation=()=>{
+   const threshold=bar.getBoundingClientRect().bottom+28;
+   const available=entries.filter(item=>!item.link.hidden);
+   let active=available[0];
+   for(const item of available){if(item.section.getBoundingClientRect().top<=threshold)active=item;}
+   for(const item of entries){
+     if(active===item)item.link.setAttribute('aria-current','location');
+     else item.link.removeAttribute('aria-current');
+   }
+ };
+ const schedule=()=>{if(ticking)return;ticking=true;requestAnimationFrame(()=>{ticking=false;markLocation();});};
+ const update=()=>{
+   for(const item of entries){
+     const count=Array.from(item.section.querySelectorAll('.listing-card')).filter(card=>!card.hidden).length;
+     item.link.hidden=count===0;
+     item.meta.textContent=count+' '+(count===1?'listing':'listings')+' ↗';
+   }
+   schedule();
+ };
+ const observer=new MutationObserver(update);
+ for(const item of entries){
+   observer.observe(item.section,{attributes:true,attributeFilter:['hidden']});
+   for(const card of item.section.querySelectorAll('.listing-card'))observer.observe(card,{attributes:true,attributeFilter:['hidden']});
+ }
+ window.addEventListener('scroll',schedule,{passive:true});
+ window.addEventListener('resize',schedule,{passive:true});
+ update();
 })();
 </script>
 </body></html>
