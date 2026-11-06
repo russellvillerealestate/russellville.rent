@@ -615,6 +615,43 @@ main{padding-top:clamp(62px,8vw,104px)}
   #local-providers .provider-grid .provider:hover{transform:none}
 }
 
+
+/* 2026-11-06: original River Valley provider dispatch artwork and responsive navigation. */
+.dispatch-index[hidden]{display:none!important}
+.dispatch-index{display:grid;grid-template-columns:minmax(270px,.8fr) minmax(0,1.45fr);margin:47px 0 60px;border:1px solid #cbd9cc;border-radius:27px;overflow:hidden;background:#fffdf8;box-shadow:0 22px 50px #133d301b}
+.dispatch-index-visual{isolation:isolate;position:relative;overflow:hidden;display:flex;flex-direction:column;padding:clamp(27px,4vw,44px);color:#fffef6;background:radial-gradient(circle at 13% 85%,#3e755e,transparent 48%),linear-gradient(145deg,#0f352e,#1c5142)}
+.dispatch-index-visual:before{content:"";position:absolute;z-index:-1;inset:0;background:repeating-linear-gradient(135deg,transparent 0 44px,#ffffff09 44px 45px);pointer-events:none}
+.dispatch-index-kicker,.dispatch-index-label{display:block;font-size:.67rem;line-height:1.5;font-weight:850;letter-spacing:.17em;text-transform:uppercase}
+.dispatch-index-kicker{color:#f5ce87}
+.dispatch-index-visual h2{font:400 clamp(2.3rem,4vw,3.65rem)/1.06 Georgia,"Times New Roman",serif;letter-spacing:-.055em;text-wrap:balance;margin:22px 0 19px;max-width:12ch}
+.dispatch-index-visual h2 em{color:#f0c87b;font-weight:400}
+.dispatch-index-visual>p{font-size:.9rem;line-height:1.7;max-width:36ch;color:#e1eee5;margin:0}
+.dispatch-index-art{display:block;width:100%;max-width:340px;height:auto;margin:auto auto 15px;filter:drop-shadow(0 14px 18px #071f1b66)}
+.dispatch-index-caption{display:block;color:#d5e7d7;font-size:.69rem;line-height:1.5;letter-spacing:.025em}
+.dispatch-index-body{min-width:0;padding:clamp(25px,3.7vw,43px);background:linear-gradient(145deg,#fffdf8,#f2f5ee)}
+.dispatch-index-head{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-bottom:1px solid #cbd9cc;padding-bottom:20px;margin-bottom:19px}
+.dispatch-index-label{color:#526a59}
+.dispatch-index-head>a{color:#185340;font-size:.79rem;font-weight:800;text-decoration:underline;text-underline-offset:4px}
+.dispatch-index-group+.dispatch-index-group{margin-top:27px;padding-top:23px;border-top:1px solid #d2ddd1}
+.dispatch-index-group h3{font:400 clamp(1.28rem,2.3vw,1.8rem)/1.2 Georgia,"Times New Roman",serif;letter-spacing:-.035em;color:#183d34;margin:0 0 14px}
+.dispatch-index-group h3 span{display:block;font:800 .69rem/1.4 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#667967;margin-bottom:6px}
+.dispatch-index-list{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0;padding:0}
+.dispatch-index-list li{min-width:0}
+.dispatch-index-list a{display:grid;grid-template-columns:30px minmax(0,1fr) 14px;align-items:center;gap:10px;width:100%;min-height:64px;padding:10px 12px;text-decoration:none;border:1px solid #d7e2d7;border-radius:12px;background:#fff;color:#183e34;box-shadow:0 3px 8px #1b4b3210;transition:border-color .16s,background .16s,transform .16s}
+.dispatch-index-list a:hover{border-color:#93b6a2;background:#eaf2e7;transform:translateY(-2px)}
+.dispatch-index-list a:focus-visible{outline:3px solid #ad7522;outline-offset:3px}
+.dispatch-index-list .dispatch-index-no{font:400 1.28rem/1 Georgia,serif;color:#99713a}
+.dispatch-index-list .dispatch-index-name{font-size:.82rem;line-height:1.28;font-weight:780;overflow-wrap:anywhere}
+.dispatch-index-list .dispatch-index-arrow{color:#277257;font-size:1.04rem;align-self:start;text-align:right}
+.dispatch-index-group--regional .dispatch-index-list a{background:#fff9ef;border-color:#ead6b6}
+.dispatch-index-group--regional .dispatch-index-list a:hover{background:#faefd9}
+.dispatch-index-group--regional .dispatch-index-no{color:#a76927}
+.dispatch-index-foot{margin:23px 0 0;font-size:.75rem;color:#5f7063;line-height:1.6}
+#local-providers .provider:target,#regional-providers .provider:target,#local-providers .provider:focus,#regional-providers .provider:focus{outline:3px solid #b67e2b;outline-offset:4px;scroll-margin-top:24px}
+@media(max-width:920px){.dispatch-index{grid-template-columns:1fr}.dispatch-index-visual{min-height:270px}.dispatch-index-visual h2{max-width:100%;margin:15px 0}.dispatch-index-art{position:absolute;width:250px;right:15px;bottom:0;margin:0;opacity:.35}.dispatch-index-visual>p,.dispatch-index-caption{position:relative;z-index:1;max-width:65ch}.dispatch-index-body{padding:28px}}
+@media(max-width:590px){.dispatch-index{margin:32px 0 44px;border-radius:19px}.dispatch-index-visual{min-height:0;padding:27px 22px 37px}.dispatch-index-visual h2{font-size:clamp(2.3rem,9vw,3.2rem)}.dispatch-index-art{width:175px;opacity:.19}.dispatch-index-body{padding:23px 17px}.dispatch-index-list{grid-template-columns:1fr}.dispatch-index-list a{min-height:55px}.dispatch-index-group+.dispatch-index-group{margin-top:21px;padding-top:20px}}
+@media(prefers-reduced-motion:reduce){.dispatch-index-list a{transition:none}.dispatch-index-list a:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -708,6 +745,39 @@ main{padding-top:clamp(62px,8vw,104px)}
 </section>
 
 <main class="container" id="main">
+
+
+<!-- Navigation generated from provider records below; all original provider details remain accessible without scripts. -->
+<section class="dispatch-index" id="dispatch-index" aria-labelledby="dispatch-index-title" hidden>
+  <div class="dispatch-index-visual">
+    <span class="dispatch-index-kicker">THE RIVER VALLEY / SUPPLIER INDEX</span>
+    <h2 id="dispatch-index-title"><span id="dispatch-index-total">13</span> names.<br><em>One clear route.</em></h2>
+    <p>Know a name already? Jump straight to the full listing without hunting through a long directory. Every price, term and delivery caveat stays with its provider.</p>
+    <svg class="dispatch-index-art" viewBox="0 0 350 200" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" focusable="false">
+      <path d="M16 160q62-94 121-57t97-20q32-40 101-30" stroke="#9ab7a7" stroke-width="3" stroke-dasharray="6 10"/>
+      <path d="M16 177q55-46 106-25t78-16q46-42 137-14" stroke="#d4b779" stroke-width="2" stroke-dasharray="4 9" opacity=".8"/>
+      <g stroke="#f4d39a" stroke-width="2"><path d="M31 129 107 115 123 134 111 175 38 187 31 129Z" fill="#c68b40"/><path d="M38 144 123 134 111 175 38 187V144Z" fill="#a56c32"/><path d="M56 143v41m27-43v38m24-40v35" stroke-width="5"/></g>
+      <g stroke="#f4d39a" stroke-width="2"><path d="m133 76 88-13 17 17-13 59-89 13-3-76Z" fill="#e4b868"/><path d="m136 95 102-15-13 59-89 13V95Z" fill="#b97d35"/><path d="M161 92v57m29-61v57m28-61v56" stroke-width="5"/></g>
+      <g stroke="#f4d39a" stroke-width="2"><path d="m240 30 62-9 21 17-11 47-64 11-8-66Z" fill="#f2cf8e"/><path d="m248 43 75-5-11 47-64 11V43Z" fill="#d79b48"/><path d="M267 41v52m23-54v51" stroke-width="5"/></g>
+      <circle cx="27" cy="130" r="7" fill="#fff1c7"/><circle cx="137" cy="77" r="7" fill="#fff1c7"/><circle cx="248" cy="30" r="7" fill="#fff1c7"/>
+    </svg>
+    <span class="dispatch-index-caption">Illustrated routing concept · Not a map or available container inventory</span>
+  </div>
+  <div class="dispatch-index-body">
+    <div class="dispatch-index-head"><span class="dispatch-index-label">Your quick-reference dispatch board</span><a href="#provider-explorer-controls">Prefer to filter? Search providers ↗</a></div>
+    <nav aria-label="Jump to complete dumpster rental provider listings">
+      <div class="dispatch-index-group">
+        <h3><span id="dispatch-local-count">10 listed options</span>Russellville-area service advertised</h3>
+        <ol class="dispatch-index-list" id="dispatch-local-links"></ol>
+      </div>
+      <div class="dispatch-index-group dispatch-index-group--regional">
+        <h3><span id="dispatch-regional-count">3 leads to verify</span>Regional delivery unconfirmed</h3>
+        <ol class="dispatch-index-list" id="dispatch-regional-links"></ol>
+      </div>
+    </nav>
+    <p class="dispatch-index-foot">Jumping to a provider clears active directory filters so its full record is visible. Listed service areas do not guarantee delivery, available equipment, or a final quoted price.</p>
+  </div>
+</section>
 
 <section class="provider-explorer" id="provider-explorer" aria-labelledby="provider-explorer-title">
  <div class="pe-intro">
@@ -978,6 +1048,61 @@ function formatDumpsterBrief(fields){
  document.getElementById('provider-explorer-fallback').hidden=true;
  panel.hidden=false;update();
 })();
+
+/* Generated provider index: current names only, reset filters before anchor navigation. */
+(function(){
+  const board=document.getElementById('dispatch-index');
+  if(!board)return;
+  const groups=[
+    {root:document.getElementById('local-providers'),list:document.getElementById('dispatch-local-links'),count:document.getElementById('dispatch-local-count'),regional:false},
+    {root:document.getElementById('regional-providers'),list:document.getElementById('dispatch-regional-links'),count:document.getElementById('dispatch-regional-count'),regional:true}
+  ];
+  if(groups.some(group=>!group.root||!group.list||!group.count))return;
+  let number=0;
+  groups.forEach(group=>{
+    const entries=Array.from(group.root.querySelectorAll('article.provider'));
+    group.count.textContent=entries.length+(group.regional?' leads to verify':' listed options');
+    entries.forEach(node=>{
+      const heading=node.querySelector('h2');
+      if(!heading)return;
+      number+=1;
+      if(!node.id){
+        let slug='dumpster-roster-'+number;
+        while(document.getElementById(slug))slug+='-more';
+        node.id=slug;
+      }
+      node.tabIndex=-1;
+      const item=document.createElement('li');
+      const link=document.createElement('a');
+      link.href='#'+node.id;
+      const index=document.createElement('span');
+      index.className='dispatch-index-no';
+      index.textContent=String(number).padStart(2,'0');
+      index.setAttribute('aria-hidden','true');
+      const name=document.createElement('span');
+      name.className='dispatch-index-name';
+      name.textContent=heading.textContent.trim();
+      const arrow=document.createElement('span');
+      arrow.className='dispatch-index-arrow';
+      arrow.textContent='↗';
+      arrow.setAttribute('aria-hidden','true');
+      link.append(index,name,arrow);
+      link.addEventListener('click',()=>{
+        const all=document.querySelector('#provider-explorer-controls [data-provider-scope="all"]');
+        if(all&&all.getAttribute('aria-pressed')!=='true')all.click();
+        const search=document.getElementById('provider-search');
+        if(search&&search.value){search.value='';search.dispatchEvent(new Event('input',{bubbles:true}));}
+        requestAnimationFrame(()=>node.focus({preventScroll:true}));
+      });
+      item.appendChild(link);
+      group.list.appendChild(item);
+    });
+  });
+  if(!number)return;
+  document.getElementById('dispatch-index-total').textContent=String(number);
+  board.hidden=false;
+})();
+
 </script>
 </body>
 </html>
