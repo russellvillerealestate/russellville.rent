@@ -1765,6 +1765,43 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
  .welcome-popular a,.welcome-search-shell .search-match{transition:none}
  .welcome-search-shell .search-match:hover{transform:none}
 }
+
+/* November 6, 2026: returning visitor's field notes. Existing saved state only.
+   Reviewed live StayARV and Russellville.Rent. NN/g recognition/hierarchy;
+   web.dev responsive design; W3C WCAG 2.2 focus and reflow. */
+.return-trail[hidden]{display:none!important}
+.return-trail{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);position:relative;isolation:isolate;width:100%;margin:38px auto 0;overflow:hidden;border:1px solid #c9d3c4;border-radius:24px;background:#f6f3e8;box-shadow:0 22px 55px #14372d22}
+.return-trail-story{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;min-height:390px;gap:35px;padding:clamp(28px,4.2vw,52px);color:#fff4db;background:linear-gradient(90deg,#0b302cdc,#11372fc2),url("assets/lake-dardanelle-sunset.jpg") center 54%/cover}
+.return-trail-story:before{content:"";position:absolute;inset:15px;z-index:-1;border:1px solid #f3e4c16e;border-radius:12px;pointer-events:none}
+.return-trail-overline{font-size:.65rem;letter-spacing:.19em;font-weight:850;color:#f2dca7}
+.return-trail-emblem{position:absolute;right:48px;top:62px;display:grid;place-items:center;width:100px;height:100px;border:1px solid #f2dbac99;border-radius:50%;color:#f8e5bb;font:400 3rem/1 Georgia,serif;transform:rotate(-14deg);opacity:.76}
+.return-trail-kicker{margin:0 0 13px;font-size:.7rem;font-weight:850;letter-spacing:.13em;text-transform:uppercase;color:#f3dba2}
+.return-trail h2{margin:0 0 18px;color:#fff7e6;font:400 clamp(2.5rem,4.3vw,4.1rem)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.06em;text-wrap:balance}
+.return-trail h2 em{color:#f4d79a;font-weight:400}
+.return-trail-story>div>p:not(.return-trail-kicker){max-width:40ch;line-height:1.68;color:#f4f0dc;font-size:.94rem}
+.return-trail-privacy{display:block;border-top:1px solid #f6e4c255;padding-top:16px;margin-top:25px;line-height:1.5;color:#f0e6cd;font-size:.71rem}
+.return-trail-directory{display:flex;flex-direction:column;min-width:0;padding:clamp(24px,3.2vw,40px)}
+.return-trail-top{display:flex;align-items:start;justify-content:space-between;gap:15px;padding-bottom:21px;border-bottom:1px solid #d8dfd4}
+.return-trail-top>div{display:flex;flex-direction:column;gap:6px}
+.return-trail-top>div span{font-size:.65rem;font-weight:850;letter-spacing:.17em;color:#657b68}
+.return-trail-top strong{font:400 clamp(1.3rem,2.2vw,1.9rem)/1.15 Georgia,"Times New Roman",serif;color:#173e34}
+.return-trail-top a{display:inline-flex;align-items:center;gap:6px;min-height:44px;max-width:170px;color:#205742;font-size:.76rem;font-weight:800;text-align:right;text-decoration:none}
+.return-trail-top a:hover{text-decoration:underline}
+.return-trail-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;list-style:none;margin:21px 0 17px;padding:0}
+.return-trail-links li{min-width:0}
+.return-trail-links a{position:relative;display:flex;flex-direction:column;gap:13px;justify-content:space-between;min-height:112px;padding:18px 19px;text-decoration:none;border:1px solid #cdd9c9;border-radius:12px;background:linear-gradient(145deg,#fffefa,#eaf1e6);color:#194434;transition:background .18s,border-color .18s,transform .18s}
+.return-trail-links a:hover{background:#dcebdd;border-color:#92b49c;transform:translateY(-2px)}
+.return-trail-links a:focus-visible,.return-trail-top a:focus-visible{outline:3px solid #aa691a;outline-offset:4px}
+.return-trail-link-no{font-size:.63rem;font-weight:850;letter-spacing:.16em;color:#738772}
+.return-trail-link-name{font:400 clamp(1.1rem,1.6vw,1.42rem)/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.025em;overflow-wrap:anywhere}
+.return-trail-link-arrow{position:absolute;top:16px;right:17px;font-size:1.1rem;color:#36634b}
+.return-trail-foot{margin:auto 0 0;color:#617160;font-size:.75rem;line-height:1.55}
+.return-trail + .discovery{margin-top:clamp(46px,6.5vw,87px)}
+@media(max-width:950px){.return-trail{grid-template-columns:1fr}.return-trail-story{min-height:325px}.return-trail-emblem{right:45px;top:48px;width:80px;height:80px;font-size:2.5rem}}
+@media(max-width:600px){.return-trail{margin:24px auto 0;border-radius:18px}.return-trail-story{min-height:295px;padding:30px 24px}.return-trail-story:before{inset:10px}.return-trail-emblem{right:30px;top:55px;width:62px;height:62px;font-size:2rem}.return-trail h2{font-size:clamp(2.55rem,9.3vw,3.4rem)}.return-trail-directory{padding:24px 18px}.return-trail-top{flex-wrap:wrap}.return-trail-links{gap:9px}.return-trail-links a{min-height:110px;padding:15px}.return-trail-link-arrow{right:13px;top:12px}.return-trail-link-name{font-size:clamp(1.02rem,4.1vw,1.26rem)}}
+@media(max-width:390px){.return-trail-links{grid-template-columns:1fr}.return-trail-links a{min-height:80px}}
+@media(prefers-reduced-motion:reduce){.return-trail-links a{transition:none}.return-trail-links a:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -1814,6 +1851,25 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 </div>
 </section>
 
+
+<!-- Saved-category wayfinding: hidden entirely for visitors with no saved categories. -->
+<section class="return-trail" id="return-trail" aria-labelledby="return-trail-title" hidden>
+ <div class="return-trail-story">
+  <span class="return-trail-overline">RUSSELLVILLE.RENT / YOUR FIELD NOTES</span>
+  <span class="return-trail-emblem" aria-hidden="true">R↗</span>
+  <div>
+   <p class="return-trail-kicker">Your shortcuts are ready</p>
+   <h2 id="return-trail-title">Pick up where<br><em>you left off.</em></h2>
+   <p>Places you saved are here when you come back. Go directly to the rental categories you chose.</p>
+   <span class="return-trail-privacy">Saved in this browser when available · No account or booking required</span>
+  </div>
+ </div>
+ <div class="return-trail-directory">
+  <div class="return-trail-top"><div><span>THE RETURN ROUTE</span><strong id="return-trail-count">Your saved categories</strong></div><a href="#browse">Explore all categories <span aria-hidden="true">↗</span></a></div>
+  <ol class="return-trail-links" id="return-trail-links" aria-label="Your saved rental category shortcuts"></ol>
+  <p class="return-trail-foot">Confirm availability, prices and terms directly with each provider.</p>
+ </div>
+</section>
 
 <section class="discovery" aria-labelledby="discovery-title">
   <div class="discovery-heading"><div><p class="eyebrow">MADE FOR THE RIVER VALLEY / FOUR WAYS IN</p><h2 id="discovery-title">Whatever your next chapter looks like.</h2></div><p>Start with what you have in mind. Choose a path to filter the directory, or explore all 34 categories below.</p></div>
@@ -2307,6 +2363,9 @@ const savedFeedback = document.getElementById("saved-feedback");
 const savedStorageNote = document.getElementById("saved-storage-note");
 const savedKey = "russellville-rent-saved-categories-v1";
 const categoryCards = new Map(cards.map(card => [card.dataset.category, card]));
+const returnTrail=document.getElementById("return-trail");
+const returnTrailLinks=document.getElementById("return-trail-links");
+const returnTrailCount=document.getElementById("return-trail-count");
 let browserStorageAvailable = true;
 let savedCategories = [];
 try {
@@ -2377,6 +2436,27 @@ function renderSavedCategories(){
     });
     item.append(link, remove);
     savedLinks.appendChild(item);
+  });
+  // The scenic return-route links always reflect original saved category destinations.
+  returnTrail.hidden=savedCategories.length===0;
+  returnTrailCount.textContent=savedCategories.length+(savedCategories.length===1?" category saved":" categories saved");
+  returnTrailLinks.replaceChildren();
+  savedCategories.forEach((key,index)=>{
+    const card=categoryCards.get(key);
+    const originalLink=card?.querySelector(".card-link[href]");
+    const heading=card?.querySelector("h3");
+    if(!originalLink||!heading)return;
+    const li=document.createElement("li"),link=document.createElement("a");
+    link.href=originalLink.getAttribute("href");
+    link.setAttribute("aria-label","Open "+heading.textContent.trim()+" rental category");
+    if(originalLink.target==="_blank"){link.target="_blank";link.rel="noopener noreferrer";}
+    const number=document.createElement("span");number.className="return-trail-link-no";
+    number.textContent=String(index+1).padStart(2,"0")+" / SAVED";
+    const title=document.createElement("span");title.className="return-trail-link-name";
+    title.textContent=heading.textContent.trim();
+    const arrow=document.createElement("span");arrow.className="return-trail-link-arrow";
+    arrow.setAttribute("aria-hidden","true");arrow.textContent="↗";
+    link.append(number,title,arrow);li.append(link);returnTrailLinks.append(li);
   });
   savedEmpty.hidden = savedCategories.length > 0;
   savedClear.hidden = savedCategories.length === 0;
