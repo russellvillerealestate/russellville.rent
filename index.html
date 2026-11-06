@@ -1678,6 +1678,93 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
  .rentals-grid[data-view="list"] .boat-closure-state b{width:18px;height:18px}
 }
 
+
+/* A lakeside editorial masthead and first-fold rental finder.
+   Design context: https://stayarv.com/ + https://russellville.rent/ (Nov 5, 2026).
+   Research: NN/g visual hierarchy https://www.nngroup.com/articles/visual-hierarchy-ux-definition/;
+   Google web.dev responsive layout https://web.dev/learn/design/;
+   W3C WCAG 2.2 https://www.w3.org/TR/WCAG22/ (reflow, focus, target size).
+   The existing search logic, links, rental records and category-shortlist state remain untouched. */
+.hero.welcome-hero{
+ display:grid;grid-template-columns:minmax(0,1.15fr) minmax(345px,.85fr);
+ align-items:center;column-gap:clamp(28px,4.4vw,76px);
+ padding:clamp(37px,6.3vw,92px);
+ min-height:clamp(690px,82vh,925px);
+ border-radius:0 0 34px 34px;
+}
+.welcome-hero::before{background:linear-gradient(100deg,rgba(7,29,25,.91) 0%,rgba(7,29,25,.78) 42%,rgba(7,29,25,.48) 100%),linear-gradient(0deg,rgba(7,29,25,.45),transparent 60%)!important}
+.welcome-copy{position:relative;z-index:1;min-width:0}
+.hero.welcome-hero h1{font-size:clamp(3.2rem,5.6vw,6.8rem);max-width:13ch;line-height:1.01}
+.hero.welcome-hero .intro{max-width:540px;font-size:clamp(1rem,1.5vw,1.23rem);line-height:1.57;margin:27px 0 30px}
+.hero.welcome-hero .hero-note{max-width:555px;margin-top:clamp(38px,5vw,75px);font-size:.75rem;gap:13px 20px}
+.welcome-search-shell{position:relative;z-index:2;min-width:0;align-self:center}
+.hero.welcome-hero .hero-find{
+ position:relative;display:flex;flex-direction:column;gap:18px;width:100%;max-width:none;
+ margin:0;padding:clamp(24px,3vw,38px);
+ background:#fffdf6;border:1px solid #f4e8cb;border-radius:25px;
+ box-shadow:0 24px 64px #041d1959,0 0 0 5px #ffffff12;
+}
+.welcome-hero .hero-find-kicker{color:#5b7664;font-size:.66rem;letter-spacing:.16em}
+.welcome-hero .hero-find-copy strong{font-size:clamp(1.7rem,2.5vw,2.45rem);line-height:1.09;max-width:15ch}
+.welcome-hero .hero-find-form{display:flex;flex-direction:column;gap:11px}
+.welcome-hero .hero-find-input{background:#f5f7f0;border-radius:13px;width:100%;min-width:0}
+.welcome-hero .hero-find-input input{width:100%;min-width:0;min-height:61px;font-size:.95rem}
+.welcome-hero .hero-find-submit{width:100%;min-height:56px;border-radius:13px;background:#163f34;color:white;font-size:.94rem}
+.welcome-popular{display:flex;align-items:center;flex-wrap:wrap;gap:8px;border-top:1px solid #dce5d7;padding-top:17px}
+.welcome-popular>span{flex-basis:100%;color:#516d5d;font-size:.61rem;letter-spacing:.15em;font-weight:850}
+.welcome-popular a{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 11px;gap:5px;
+ border:1px solid #cfddcc;border-radius:999px;background:#f1f5ed;color:#204b3c;
+ font-size:.76rem;line-height:1.1;font-weight:760;text-decoration:none}
+.welcome-popular a:hover{background:#e1ebdd;border-color:#9bb69c}
+.welcome-popular a:focus-visible{outline:3px solid #a86816;outline-offset:3px}
+.welcome-search-shell .search-preview{
+ width:100%;max-width:none;margin:14px 0 0;padding:18px;border-radius:19px;
+ box-shadow:0 18px 44px #051e1a61
+}
+.welcome-search-shell .search-preview-head{display:block;margin-bottom:13px}
+.welcome-search-shell .search-preview h2{font-size:clamp(1.4rem,2vw,1.95rem)}
+.welcome-search-shell .search-preview-status{text-align:left;font-size:.72rem;margin-top:7px}
+.welcome-search-shell .search-preview-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.welcome-search-shell .search-match{min-width:0;min-height:113px;padding:12px;gap:8px}
+.welcome-search-shell .search-match-icon{width:34px;height:34px;border-radius:9px}
+.welcome-search-shell .search-match-icon svg{width:25px;height:25px}
+.welcome-search-shell .search-match-copy strong{font-size:.94rem;overflow-wrap:anywhere}
+.welcome-search-shell .search-match-copy small{font-size:.61rem}
+.welcome-search-shell .search-preview-footer{display:flex;align-items:start;flex-direction:column;margin-top:12px;padding-top:12px}
+.welcome-search-shell .search-preview-footer a{min-height:44px}
+.hero.welcome-hero .hero-find[hidden],.welcome-search-shell .search-preview[hidden]{display:none!important}
+.welcome-hero + .discovery{margin-top:clamp(46px,6.5vw,87px)}
+@media(max-width:990px){
+ .hero.welcome-hero{grid-template-columns:1fr;row-gap:28px;min-height:0;padding:clamp(36px,5vw,60px)}
+ .hero.welcome-hero h1{max-width:14ch;font-size:clamp(3.5rem,8vw,6.1rem)}
+ .hero.welcome-hero .hero-note{margin-top:32px}
+ .welcome-search-shell{width:100%;max-width:660px}
+ .hero.welcome-hero .hero-find{padding:clamp(23px,3vw,31px)}
+}
+@media(max-width:600px){
+ .hero.welcome-hero{display:flex;flex-direction:column;align-items:stretch;gap:24px;min-height:0;padding:39px 21px 27px;border-radius:0 0 23px 23px}
+ .hero.welcome-hero h1{font-size:clamp(3rem,11.1vw,4.6rem);max-width:13ch}
+ .hero.welcome-hero .intro{font-size:1rem;margin:23px 0}
+ .hero.welcome-hero .hero-note{margin:29px 0 0;padding-top:17px;gap:9px 14px}
+ .hero.welcome-hero .hero-find{padding:21px 18px;border-radius:18px;gap:15px}
+ .welcome-hero .hero-find-copy strong{font-size:1.74rem}
+ .welcome-hero .hero-find-input input{min-height:53px;font-size:.89rem}
+ .welcome-hero .hero-find-submit{min-height:52px}
+ .welcome-popular{padding-top:14px}
+ .welcome-popular a{min-height:42px}
+ .welcome-search-shell .search-preview{padding:17px 14px;border-radius:16px}
+}
+@media(max-width:460px){
+ .welcome-search-shell .search-preview-list{grid-template-columns:1fr}
+ .welcome-search-shell .search-match{min-height:0;flex-direction:row;align-items:center;gap:13px;padding:13px}
+ .welcome-search-shell .search-match-top{width:auto;flex:0 0 auto}
+ .welcome-search-shell .search-match-arrow{display:none}
+ .welcome-hero .hero-find-copy strong{font-size:1.65rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .welcome-popular a,.welcome-search-shell .search-match{transition:none}
+ .welcome-search-shell .search-match:hover{transform:none}
+}
 </style>
 </head>
 <body>
@@ -1693,7 +1780,12 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <a class="skip" href="#main">Skip to content</a>
 <header><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><nav aria-label="Main navigation"><a class="browse-nav" href="#browse">Browse rentals</a><a href="#contact">Get in touch</a><a class="nav-list" href="#list">List your rental ↗</a></nav></div></header>
 <main id="main" class="wrap">
-<section class="hero" aria-labelledby="hero-title"><img class="hero-photo" src="assets/lake-dardanelle-sunset.jpg" alt="Sunset over the covered docks at Lake Dardanelle State Park, reflected in the still water" width="1920" height="910" fetchpriority="high"><h1 id="hero-title">Rent what you need.<br><em>Right here at home.</em></h1><p class="intro">From a place near Tech to a weekend on Lake Dardanelle. Find what you need from the people who call this place home.</p><div class="actions"><a class="button primary" href="#browse">Explore rentals <span aria-hidden="true">&nbsp; ↗</span></a><a class="button secondary" href="#list">Have something to rent?</a></div><div class="hero-note"><span>Local businesses & owners</span><span>Everyday needs to weekend plans</span><span>Connect directly</span></div></section>
+<section class="hero welcome-hero" aria-labelledby="hero-title"><img class="hero-photo" src="assets/lake-dardanelle-sunset.jpg" alt="Sunset over the covered docks at Lake Dardanelle State Park, reflected in the still water" width="1920" height="910" fetchpriority="high">
+<div class="welcome-copy">
+<h1 id="hero-title">Rent what you need.<br><em>Right here at home.</em></h1><p class="intro">From a place near Tech to a weekend on Lake Dardanelle. Find what you need from the people who call this place home.</p><div class="actions"><a class="button primary" href="#browse">Explore rentals <span aria-hidden="true">&nbsp; ↗</span></a><a class="button secondary" href="#list">Have something to rent?</a></div><div class="hero-note"><span>Local businesses & owners</span><span>Everyday needs to weekend plans</span><span>Connect directly</span></div>
+</div>
+<div class="welcome-search-shell">
+
 <section class="hero-find" id="hero-find" aria-label="Find local rentals" hidden>
   <div class="hero-find-copy"><span class="hero-find-kicker">YOUR NEXT RENTAL STARTS HERE</span><strong>What are you looking for?</strong></div>
   <form class="hero-find-form" id="hero-search-form" role="search" aria-label="Search rental categories from the homepage">
@@ -1704,6 +1796,13 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
     </div>
     <button class="hero-find-submit" type="submit">Find rentals ↗</button>
   </form>
+  <div class="welcome-popular" aria-label="Direct links to popular rental categories">
+    <span>GO DIRECTLY TO</span>
+    <a href="long-term.html">Homes <span aria-hidden="true">↗</span></a>
+    <a href="storage.html">Storage <span aria-hidden="true">↗</span></a>
+    <a href="equipment.html">Equipment <span aria-hidden="true">↗</span></a>
+    <a href="party.html">Events <span aria-hidden="true">↗</span></a>
+  </div>
   <span class="sr-only" id="search-preview-help">Type to see direct links to matching rental categories. Press Down Arrow to focus the first match, or Enter to filter all categories.</span>
 </section>
 
@@ -1711,6 +1810,8 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   <div class="search-preview-head"><div><span class="search-preview-kicker">FIND YOUR WAY, FASTER</span><h2>Go straight to your rental.</h2></div><p class="search-preview-status" id="search-preview-status" role="status" aria-live="polite" aria-atomic="true"></p></div>
   <div class="search-preview-list" id="search-preview-list"></div>
   <div class="search-preview-footer"><span>Direct links to existing rental categories. Availability and prices remain with each provider.</span><a href="#browse" id="search-preview-all">Browse matching categories ↗</a></div>
+</section>
+</div>
 </section>
 
 
