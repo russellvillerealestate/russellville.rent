@@ -472,6 +472,51 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
  #providers .provider h3{font-size:clamp(1.8rem,7.4vw,2.4rem)}
 }
 @media(prefers-reduced-motion:reduce){#providers .provider{transition:none}}
+
+/* 2026-11-06 / The operator lineup. StayARV's high-contrast utility navigation
+   informs a six-stop editorial strip; no geographic delivery inference.
+   NN/g: chunking & predictable scan patterns; web.dev: fluid responsive layout;
+   WCAG 2.2: focus visibility, minimum 44px targets, reduced motion. */
+#providers .cart-route-nav{
+  position:sticky;top:10px;z-index:9;display:grid;
+  grid-template-columns:minmax(165px,1.25fr) repeat(6,minmax(0,1fr)) minmax(125px,.95fr);
+  gap:0;align-items:stretch;margin:0 0 29px;border:1px solid #30594b;
+  border-radius:18px;overflow:hidden;background:#10372e;color:#fff;
+  box-shadow:0 18px 42px #102f2940;
+}
+#providers .cart-route-title{display:flex;flex-direction:column;justify-content:center;padding:16px 18px 17px;background:#092c26}
+#providers .cart-route-title>span{font-size:.53rem;font-weight:850;letter-spacing:.18em;color:#f3d998}
+#providers .cart-route-title strong{display:block;margin:8px 0;font:400 1.28rem/1.09 Georgia,serif;letter-spacing:-.03em}
+#providers .cart-route-title em{font-style:italic;color:#f4d89a}
+#providers .cart-route-title small{font-size:.59rem;line-height:1.36;color:#d5e4dc}
+#providers .cart-route-nav>a{position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-width:0;min-height:112px;padding:13px 11px 14px;border-left:1px solid #ffffff25;color:#f6f4e8;text-decoration:none;transition:background-color .18s ease}
+#providers .cart-route-nav>a:hover,#providers .cart-route-nav>a[aria-current="location"]{background:#255e4b}
+#providers .cart-route-nav>a:focus-visible{z-index:1;outline:3px solid #ffdc93;outline-offset:-4px;background:#255e4b}
+#providers .cart-route-stop{display:flex;align-items:center;gap:6px;margin-bottom:7px;color:#f3d18b;font-size:.63rem;font-weight:900;letter-spacing:.11em}
+#providers .cart-route-stop i{display:block;width:6px;height:6px;border-radius:50%;background:#8daf99}
+#providers .cart-route-nav>a[aria-current="location"] .cart-route-stop i{background:#ffde98;box-shadow:0 0 0 4px #ffde982a}
+#providers .cart-route-nav>a strong{display:block;font:400 clamp(.79rem,1vw,1.01rem)/1.12 Georgia,serif;letter-spacing:-.02em;overflow-wrap:anywhere}
+#providers .cart-route-nav>a small{display:block;margin-top:6px;font-size:.61rem;line-height:1.25;color:#d1e1d6;overflow-wrap:anywhere}
+#providers .cart-route-nav>a.cart-route-ask{background:#eac984;color:#193d32}
+#providers .cart-route-nav>a.cart-route-ask:hover,#providers .cart-route-nav>a.cart-route-ask:focus-visible{background:#ffe2a1}
+#providers .cart-route-ask>span{font-size:1.23rem;line-height:1}
+#providers .cart-route-nav>a.cart-route-ask small{color:#345849}
+#providers .provider{scroll-margin-top:151px}
+@media(max-width:1100px){
+ #providers .cart-route-nav{position:relative;top:auto;display:flex;align-items:stretch;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x proximity}
+ #providers .cart-route-title{flex:0 0 178px}
+ #providers .cart-route-nav>a{flex:0 0 152px;min-height:107px;scroll-snap-align:start}
+ #providers .cart-route-nav>a strong{font-size:1rem}
+ #providers .cart-route-nav>a.cart-route-ask{flex-basis:155px}
+ #providers .provider{scroll-margin-top:28px}
+}
+@media(max-width:620px){
+ #providers .cart-route-nav{margin:0 -6px 21px;border-radius:13px}
+ #providers .cart-route-title{flex-basis:151px;padding:15px 13px}
+ #providers .cart-route-title strong{font-size:1.19rem}
+ #providers .cart-route-nav>a{flex-basis:142px;padding:12px 13px}
+}
+@media(prefers-reduced-motion:reduce){#providers .cart-route-nav>a{transition:none}}
 </style>
 </head>
 <body>
@@ -604,6 +649,19 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
 </section>
 <section id="providers" aria-labelledby="providers-title">
 <div class="section-head"><h2 id="providers-title">Explore rental providers</h2><p>Contact providers to verify service in Russellville.</p></div>
+
+<!-- The six-stop index stays visible while comparing lengthy listings; editorial
+     place labels are provider locations, never implied Russellville service. -->
+<nav class="cart-route-nav" aria-label="Six-stop golf cart rental provider index">
+  <div class="cart-route-title"><span>THE OPERATOR LINEUP</span><strong>Six stops.<br><em>One clear view.</em></strong><small>Provider hometowns, not verified delivery routes.</small></div>
+  <a href="#provider-river-valley" data-cart-route="provider-river-valley"><span class="cart-route-stop">01 <i aria-hidden="true"></i></span><strong>Conway</strong><small>River Valley Golf Carts</small></a>
+  <a href="#provider-arkansas-powersports" data-cart-route="provider-arkansas-powersports"><span class="cart-route-stop">02 <i aria-hidden="true"></i></span><strong>North Little Rock</strong><small>Arkansas Golf &amp; Powersports</small></a>
+  <a href="#provider-clear-creek" data-cart-route="provider-clear-creek"><span class="cart-route-stop">03 <i aria-hidden="true"></i></span><strong>Hot Springs Village</strong><small>Clear Creek Golf Car</small></a>
+  <a href="#provider-kaptain-chris" data-cart-route="provider-kaptain-chris"><span class="cart-route-stop">04 <i aria-hidden="true"></i></span><strong>Hot Springs</strong><small>Kaptain Chris &amp; Pup's</small></a>
+  <a href="#provider-lone-star" data-cart-route="provider-lone-star"><span class="cart-route-stop">05 <i aria-hidden="true"></i></span><strong>North Little Rock</strong><small>Lone Star Golf Cars</small></a>
+  <a href="#provider-mid-state" data-cart-route="provider-mid-state"><span class="cart-route-stop">06 <i aria-hidden="true"></i></span><strong>Bryant</strong><small>Mid-State Golf Cars</small></a>
+  <a class="cart-route-ask" href="#request-title"><span aria-hidden="true">↗</span><strong>Need a quote?</strong><small>Return to the inquiry builder</small></a>
+</nav>
 <div class="provider-grid">
 <article class="provider" id="provider-river-valley">
 <div class="provider-top"><span class="location">Conway, Arkansas</span><span class="number" aria-hidden="true">01</span></div>
@@ -870,6 +928,28 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
     }
   });
   render();
+}());
+
+/* Current-stop indication is enhancement only: every anchor works without JavaScript. */
+(function(){
+  const links=Array.from(document.querySelectorAll('#providers .cart-route-nav [data-cart-route]'));
+  if(!links.length)return;
+  const entries=links.map(link=>({link,card:document.getElementById(link.dataset.cartRoute)})).filter(entry=>entry.card);
+  function mark(id){
+    entries.forEach(({link,card})=>{
+      if(card.id===id)link.setAttribute('aria-current','location');
+      else link.removeAttribute('aria-current');
+    });
+  }
+  entries.forEach(({link,card})=>link.addEventListener('click',()=>mark(card.id)));
+  if('IntersectionObserver' in window){
+    const observer=new IntersectionObserver(changes=>{
+      changes.filter(change=>change.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio).forEach(change=>{
+        mark(change.target.id);
+      });
+    },{rootMargin:'-22% 0px -60% 0px',threshold:0});
+    entries.forEach(({card})=>observer.observe(card));
+  }
 }());
 </script>
 </body>
