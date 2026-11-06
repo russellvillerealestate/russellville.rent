@@ -183,6 +183,120 @@ main.wrap{width:min(1230px,calc(100% - 56px))}
 @media(max-width:520px){.venue-chapter{margin:21px 0 4px;border-radius:7px 20px 7px 20px}.venue-chapter-scene{min-height:265px}.venue-chapter-scene:after{inset:11px}.venue-chapter-number{top:25px;left:23px}.venue-chapter-photo-note{bottom:21px;left:23px}.venue-chapter-art{width:78%}.venue-chapter-copy{padding:29px 22px 32px}.venue-chapter h2{font-size:clamp(2.15rem,10vw,3.15rem)}.venue-chapter-links{display:grid;grid-template-columns:1fr}.grid>.card-local{padding:25px 22px}}
 @media(prefers-reduced-motion:reduce){.venue-chapter-links a{scroll-behavior:auto}}
 
+
+/* Design / 2026-11-06 / Nine-stage editorial folios.
+   Live references: StayARV immersive green/gold and Russellville.Rent stage directory.
+   NN/g: preserve aligned text for scanning; web.dev: reflow at narrow widths;
+   W3C WCAG 2.2: preserve keyboard focus and adequately sized contact targets.
+   Art is conceptual SVG, never provider inventory or an actual venue photograph. */
+.grid{grid-template-columns:minmax(0,1fr);gap:23px}
+.grid>.card,.grid>.card-local{
+ display:grid;
+ grid-template-columns:minmax(0,1.36fr) minmax(240px,.84fr);
+ grid-template-areas:"top art" "title art" "copy art" "detail detail" "actions actions";
+ column-gap:clamp(24px,4vw,58px);
+ align-items:start;
+ min-height:0;
+ padding:clamp(26px,4.5vw,54px);
+ border:1px solid #d2dfd6;
+ border-radius:6px 29px 6px 29px;
+ background:linear-gradient(125deg,#fffefa 0%,#f4f7ee 100%);
+ box-shadow:0 17px 41px #123b3021;
+}
+.grid>.card-local{border:2px solid #d8bc83;background:linear-gradient(125deg,#fff7e7,#fffefa 70%)}
+.grid>.card-local:before{display:none}
+.grid>.card>.card-top{
+ grid-area:top;
+ margin:0 0 20px;
+ border:0;padding:0;
+ justify-content:flex-start;
+ gap:12px;
+}
+.grid>.card .index{font-size:.7rem;letter-spacing:.15em;color:#37614f}
+.grid>.card .tag{font-size:.68rem;line-height:1.45;border-radius:7px;padding:8px 11px}
+.grid>.card>h3,.grid>.card-local h3{
+ grid-area:title;
+ font:500 clamp(2rem,3.6vw,3.5rem)/1.09 Georgia,"Times New Roman",serif;
+ letter-spacing:-.055em;
+ color:#163a32;
+ margin:0 0 22px;
+ max-width:24ch;
+ text-wrap:balance;
+}
+.grid>.card>p:not(.detail){
+ grid-area:copy;
+ margin:0 0 18px;
+ font-size:clamp(.96rem,1.22vw,1.06rem);
+ line-height:1.77;
+ color:#3b5149;
+ max-width:69ch;
+}
+.grid>.card>p.detail,.grid>.card-local .detail{
+ grid-area:detail;display:flex;align-items:center;
+ margin:23px 0 0;min-height:58px;
+ border:1px solid #d2decf;border-left:5px solid #cb9d56;
+ background:#edf2e8;
+ padding:16px 20px;color:#365348;
+ border-radius:4px 11px 11px 4px;
+ font-size:.83rem;line-height:1.6;font-weight:750;
+}
+.grid>.card-local>p.detail{background:#f5ead3;border-color:#e5d3b2}
+.grid>.card>.actions{
+ grid-area:actions;
+ margin:20px 0 0;padding:0;
+ justify-content:flex-start;gap:10px;
+}
+.grid>.card>.actions a{
+ min-height:48px;padding:11px 19px;
+ border-radius:999px;font-size:.84rem;
+}
+.grid>.card>.actions a:first-child{background:#173c33;border-color:#173c33}
+.grid>.card:after{
+ grid-area:art;
+ display:block;content:"";
+ align-self:stretch;min-width:0;min-height:284px;
+ border-radius:4px 22px 4px 22px;
+ border:1px solid #3f6a55;
+ box-shadow:inset 0 0 0 7px #ffffff10;
+ background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20220%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M25%20183H335M56%20171V55H304V171M56%2055L86%2026H274L304%2055M87%2026L109%2055M273%2026L251%2055M56%2055L92%2088L128%2055L164%2088L200%2055L236%2088L272%2055L304%2088%22%20stroke%3D%22%23e5c892%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M93%20161H268V107H93Z%22%20fill%3D%22%231a5547%22%20stroke%3D%22%23bad3bd%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M93%20161H268M118%20161V183M242%20161V183M134%20107L164%20161M225%20107L196%20161%22%20stroke%3D%22%23f3d9aa%22%20stroke-width%3D%224%22%2F%3E%3Ccircle%20cx%3D%2287%22%20cy%3D%2267%22%20r%3D%229%22%20fill%3D%22%23f6d696%22%2F%3E%3Ccircle%20cx%3D%22181%22%20cy%3D%2267%22%20r%3D%229%22%20fill%3D%22%23f6d696%22%2F%3E%3Ccircle%20cx%3D%22274%22%20cy%3D%2267%22%20r%3D%229%22%20fill%3D%22%23f6d696%22%2F%3E%3C%2Fsvg%3E"),radial-gradient(ellipse at 86% 12%,#3e7c6859,transparent 51%),linear-gradient(140deg,#102f2b,#1b5141);
+ background-repeat:no-repeat;
+ background-position:center center,center,center;
+ background-size:90% auto,cover,cover;
+}
+.grid>.card:nth-of-type(3n+2):after{
+ background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20220%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M25%20183H335M56%20171V55H304V171M56%2055L86%2026H274L304%2055M87%2026L109%2055M273%2026L251%2055M56%2055L92%2088L128%2055L164%2088L200%2055L236%2088L272%2055L304%2088%22%20stroke%3D%22%23e5c892%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M93%20161H268V107H93Z%22%20fill%3D%22%231a5547%22%20stroke%3D%22%23bad3bd%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M93%20161H268M118%20161V183M242%20161V183M134%20107L164%20161M225%20107L196%20161%22%20stroke%3D%22%23f3d9aa%22%20stroke-width%3D%224%22%2F%3E%3Ccircle%20cx%3D%2287%22%20cy%3D%2267%22%20r%3D%229%22%20fill%3D%22%23f6d696%22%2F%3E%3Ccircle%20cx%3D%22181%22%20cy%3D%2267%22%20r%3D%229%22%20fill%3D%22%23f6d696%22%2F%3E%3Ccircle%20cx%3D%22274%22%20cy%3D%2267%22%20r%3D%229%22%20fill%3D%22%23f6d696%22%2F%3E%3C%2Fsvg%3E"),radial-gradient(circle at 83% 21%,#a67e5069,transparent 45%),linear-gradient(130deg,#273d41,#4c5e56);
+}
+.grid>.card:nth-of-type(3n+3):after{
+ background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20220%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M25%20183H335M56%20171V55H304V171M56%2055L86%2026H274L304%2055M87%2026L109%2055M273%2026L251%2055M56%2055L92%2088L128%2055L164%2088L200%2055L236%2088L272%2055L304%2088%22%20stroke%3D%22%23e5c892%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M93%20161H268V107H93Z%22%20fill%3D%22%231a5547%22%20stroke%3D%22%23bad3bd%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M93%20161H268M118%20161V183M242%20161V183M134%20107L164%20161M225%20107L196%20161%22%20stroke%3D%22%23f3d9aa%22%20stroke-width%3D%224%22%2F%3E%3Ccircle%20cx%3D%2287%22%20cy%3D%2267%22%20r%3D%229%22%20fill%3D%22%23f6d696%22%2F%3E%3Ccircle%20cx%3D%22181%22%20cy%3D%2267%22%20r%3D%229%22%20fill%3D%22%23f6d696%22%2F%3E%3Ccircle%20cx%3D%22274%22%20cy%3D%2267%22%20r%3D%229%22%20fill%3D%22%23f6d696%22%2F%3E%3C%2Fsvg%3E"),radial-gradient(circle at 75% 10%,#7a946664,transparent 40%),linear-gradient(130deg,#153b39,#296451);
+}
+.grid>#modular-staging:after{
+ background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20220%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22m46%20109%2095-49%2093%2049-93%2049zM141%20158v35L46%20144v-35M234%20109v35l-93%2049M141%20109l93%2049%2079-41-93-50-79%2042ZM234%20158v28l79-42v-27%22%20fill%3D%22%231d5c4c%22%20stroke%3D%22%23edd09d%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22m79%2092%2094%2051M115%2072l94%2054M160%2084l-88%2049m123-67-89%2049M234%20159l79-42%22%20stroke%3D%22%23e5c892%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E"),radial-gradient(circle at 83% 21%,#a67e5069,transparent 45%),linear-gradient(130deg,#273d41,#4c5e56);
+}
+.grid>.card-local:after{
+ background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20360%20220%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M38%20191H322M67%20177V84H293V177M67%2084L180%2025L293%2084Z%22%20fill%3D%22%23235b4b%22%20stroke%3D%22%23f0d19b%22%20stroke-width%3D%225%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M90%2087H270L180%2044Z%22%20fill%3D%22%23b8935e%22%2F%3E%3Cpath%20d%3D%22M95%20108H265M95%20108L126%20144L157%20108L188%20144L219%20108L250%20144M126%20144V177M219%20144V177%22%20stroke%3D%22%23e7c993%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M114%20177V152H246V177%22%20stroke%3D%22%23e3dcc1%22%20stroke-width%3D%224%22%2F%3E%3C%2Fsvg%3E"),radial-gradient(circle at 83% 13%,#e0b76f66,transparent 50%),linear-gradient(120deg,#274d44,#526646);
+}
+@media(max-width:820px){
+ .grid>.card,.grid>.card-local{
+  grid-template-columns:minmax(0,1fr);
+  grid-template-areas:"top" "title" "art" "copy" "detail" "actions";
+  padding:clamp(23px,5vw,34px);gap:0;
+ }
+ .grid>.card>h3,.grid>.card-local h3{font-size:clamp(2rem,6vw,3rem);margin-bottom:20px}
+ .grid>.card:after{min-height:220px;margin-bottom:22px;background-size:auto 97%,cover,cover}
+ .grid>.card>p.detail{margin-top:12px}
+}
+@media(max-width:520px){
+ .grid{gap:17px}
+ .grid>.card,.grid>.card-local{padding:22px 20px;border-radius:5px 20px 5px 20px}
+ .grid>.card>h3,.grid>.card-local h3{font-size:clamp(1.95rem,8.4vw,2.55rem)}
+ .grid>.card:after{min-height:170px;background-size:auto 100%,cover,cover}
+ .grid>.card>.actions a{width:100%;min-height:48px}
+ .grid>.card>p.detail{padding:14px}
+}
+@media(prefers-reduced-motion:reduce){
+ .grid>.card{transition:none}
+ .grid>.card:hover{transform:none}
+}
 </style>
 </head>
 <body>
