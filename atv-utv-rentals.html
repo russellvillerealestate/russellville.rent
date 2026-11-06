@@ -359,6 +359,170 @@ main{max-width:1400px;padding:22px clamp(15px,2.2vw,34px) 90px}
   .hero .trail-compass a:hover{transform:none}
 }
 
+
+/* 2026-11-05 — Off-road operator folios: regional source listings become three
+   dramatic, alternating illustrated destination chapters, not photo claims.
+   Reviewed live StayARV and Russellville.Rent plus recent repository commits.
+   Nielsen Norman Group: visual hierarchy and descriptive information scent;
+   Google web.dev: responsive reflow and lean local media;
+   W3C WCAG 2.2: focus visibility, readable contrast and reduced motion.
+   All provider descriptions, posted prices, phone links, eligibility and
+   delivery restrictions, filter behavior and automation remain unchanged. */
+#directory .section-head{
+  position:relative;align-items:end;gap:clamp(24px,5vw,80px);
+  margin:clamp(53px,7vw,96px) 0 28px;padding-bottom:28px;
+  border-bottom:1px solid #afc6b4
+}
+#directory .section-head h2{
+  max-width:16ch;font-size:clamp(2.65rem,5.2vw,5rem);
+  line-height:1.03;letter-spacing:-.056em;text-wrap:balance
+}
+#directory .section-head>p{max-width:41ch;font-size:1rem;line-height:1.7}
+#directory>.grid{grid-template-columns:minmax(0,1fr);gap:clamp(22px,3vw,39px)}
+#directory .provider,#directory .provider:first-child{
+  display:grid;grid-template-columns:minmax(250px,.86fr) minmax(0,1.14fr);
+  grid-column:1;align-items:stretch;gap:0;min-height:465px;padding:0;
+  border:1px solid #c9d7cb;border-radius:28px;
+  overflow:hidden;background:#fffdf8;
+  box-shadow:0 24px 52px #15372922;
+  scroll-margin-top:30px
+}
+#directory .provider:before{display:none}
+#directory .provider:nth-child(2){
+  grid-template-columns:minmax(0,1.14fr) minmax(250px,.86fr);
+  background:#f9f6ec;border-color:#d5d4c1
+}
+#directory .provider:nth-child(3){background:#f8fbf7;border-color:#c5d9d1}
+#directory .provider-folio-scene{
+  grid-column:1;grid-row:1;position:relative;isolation:isolate;
+  display:flex;flex-direction:column;justify-content:space-between;
+  min-width:0;min-height:465px;margin:0;overflow:hidden;
+  padding:clamp(22px,3vw,36px);color:#fff
+}
+#directory .provider-folio-scene svg{
+  position:absolute;inset:0;z-index:-2;width:100%;height:100%;
+  display:block;object-fit:cover
+}
+#directory .provider-folio-scene:before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,#0d3423a1,transparent 38%,#061f19ea 100%);
+  pointer-events:none
+}
+#directory .provider-folio-scene:after{
+  content:"";position:absolute;inset:12px;pointer-events:none;
+  border:1px solid #fff7db75;border-radius:17px
+}
+#directory .provider-folio-index{
+  display:inline-flex;align-items:center;align-self:flex-start;
+  min-height:38px;padding:8px 14px;border-radius:999px;
+  border:1px solid #f9e6bb9e;background:#0c392cba;
+  color:#ffe2a5;font-size:.65rem;line-height:1.3;
+  letter-spacing:.16em;font-weight:850
+}
+#directory .provider-folio-caption{display:grid;gap:10px;position:relative;z-index:2}
+#directory .provider-folio-place{
+  font-size:.72rem;font-weight:850;letter-spacing:.15em;
+  color:#fbe1a9
+}
+#directory .provider-folio-caption strong{
+  font:400 clamp(2.25rem,4vw,4.2rem)/1.04 Georgia,"Times New Roman",serif;
+  letter-spacing:-.052em;max-width:14ch;text-wrap:balance;
+  color:#fff9ea;text-shadow:0 2px 20px #092c26aa
+}
+#directory .provider-folio-state{
+  display:inline-flex;align-self:start;justify-self:start;
+  max-width:100%;padding:9px 12px;
+  border:1px solid #f7e1b2a8;border-radius:7px;
+  background:#103d31ee;color:#fff5d9;
+  font-weight:800;font-size:.79rem;line-height:1.45
+}
+#directory .provider-folio-caption small{
+  display:block;max-width:37ch;color:#f1efe5;
+  font-size:.65rem;line-height:1.5
+}
+#directory .provider-folio-body{
+  grid-column:2;grid-row:1;display:flex;flex-direction:column;
+  justify-content:center;min-width:0;
+  padding:clamp(28px,4.5vw,67px)
+}
+#directory .provider:nth-child(2) .provider-folio-scene{grid-column:2}
+#directory .provider:nth-child(2) .provider-folio-body{grid-column:1}
+#directory .provider-folio-body h3{
+  max-width:24ch;font-size:clamp(1.87rem,3vw,3.05rem);
+  line-height:1.12;letter-spacing:-.052em;
+  text-wrap:balance;margin:10px 0 16px
+}
+#directory .provider-folio-body>p:not(.rate),
+#directory .provider-folio-body .main-copy>p:not(.rate){
+  font-size:.93rem;line-height:1.72;color:#3e5848;
+  max-width:69ch;margin:9px 0
+}
+#directory .provider-folio-body .facts{
+  margin-top:19px;padding-top:16px;
+  border-top:1px solid #d1dcca;font-size:.86rem
+}
+#directory .provider-folio-body .links{gap:10px;margin-top:18px}
+#directory .provider-folio-body .links a{
+  min-height:48px;border-radius:100px;padding:12px 18px;
+  text-decoration:none
+}
+#directory .provider-folio-body .links a:focus-visible,
+#directory .provider-folio-body .facts a:focus-visible,
+#directory .provider-folio-body .rate a:focus-visible{
+  outline:3px solid #a7630f;outline-offset:3px
+}
+#directory .provider-folio-body .price-panel{
+  display:block;grid-column:auto;grid-row:auto;align-self:stretch;
+  margin-top:17px;padding-top:14px;border-top:1px solid #d1dcca
+}
+#directory .provider-folio-body .price-panel p{
+  font-size:.82rem;line-height:1.6;margin-bottom:0
+}
+#directory .provider-folio-body .rate{
+  margin:16px 0;padding:17px 19px;border-radius:14px;
+  font-size:.83rem;line-height:1.63
+}
+#directory .provider-folio-body .rate strong{
+  display:block;margin:0 0 7px;
+  font-size:clamp(1.25rem,2vw,1.85rem)
+}
+@media(max-width:980px){
+  #directory .provider,#directory .provider:first-child,
+  #directory .provider:nth-child(2){
+    grid-template-columns:minmax(0,1fr);min-height:0
+  }
+  #directory .provider-folio-scene,
+  #directory .provider:nth-child(2) .provider-folio-scene{
+    grid-column:1;grid-row:1;min-height:300px
+  }
+  #directory .provider-folio-body,
+  #directory .provider:nth-child(2) .provider-folio-body{
+    grid-column:1;grid-row:2;padding:clamp(27px,5vw,45px)
+  }
+  #directory .provider-folio-caption strong{max-width:none;font-size:clamp(2.2rem,5vw,3.4rem)}
+}
+@media(max-width:560px){
+  #directory .section-head{margin-top:48px;padding-bottom:20px}
+  #directory .section-head h2{font-size:clamp(2.5rem,10.5vw,3.4rem)}
+  #directory .provider,#directory .provider:first-child{border-radius:19px}
+  #directory .provider-folio-scene{min-height:290px;padding:22px}
+  #directory .provider-folio-scene:after{inset:8px;border-radius:12px}
+  #directory .provider-folio-body,
+  #directory .provider:nth-child(2) .provider-folio-body{padding:25px 21px 27px}
+  #directory .provider-folio-body h3{font-size:clamp(1.85rem,7.5vw,2.5rem)}
+  #directory .provider-folio-caption strong{font-size:clamp(2.15rem,9vw,3.05rem)}
+  #directory .provider-folio-body .links a{width:100%;justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){
+  #directory .provider-folio-scene svg{transition:none}
+}
+@media print{
+  #directory .provider,#directory .provider:first-child,#directory .provider:nth-child(2){
+    display:block;box-shadow:none;border:1px solid #888;break-inside:avoid
+  }
+  #directory .provider-folio-scene{display:none}
+  #directory .provider-folio-body{padding:17px 20px}
+}
 </style></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-head"><a href="/">Russellville.Rent</a><a class="back" href="/">← All rental categories</a></header>
 <main id="main"><section class="hero" aria-labelledby="hero-title"><div class="hero-terrain" aria-hidden="true"><svg viewBox="0 0 1440 410" preserveAspectRatio="xMidYMax slice" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="trail-dusk" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c6c995" stop-opacity=".34"/><stop offset="1" stop-color="#214f3c" stop-opacity=".03"/></linearGradient></defs><circle cx="1155" cy="88" r="90" fill="#e7c78c" opacity=".23"/><path d="M0 265 118 173l95 66 128-145 138 143 112-75 136 95 114-113 132 122 145-102 137 91 135-83 50 41v191H0Z" fill="url(#trail-dusk)"/><path d="M0 312 146 216l126 65 118-83 132 101 112-49 144 59 121-88 129 81 134-97 178 112v93H0Z" fill="#6e9572" opacity=".27"/><path d="M0 355q152-85 306-37t278-17 268 34 278-9 310 19v65H0Z" fill="#224e3a" opacity=".67"/><path d="M0 389q242-40 447-7t414-15 579 17v26H0Z" fill="#102f28" opacity=".8"/><g fill="#153d2f" opacity=".68"><path d="m60 349 29-96 31 96h-21v57H78v-57Z"/><path d="m130 363 24-79 24 79h-17v43h-16v-43Z"/><path d="m1184 349 31-112 33 112h-22v61h-21v-61Z"/><path d="m1244 362 22-72 24 72h-15v48h-16v-48Z"/><path d="m1345 354 27-95 29 95h-20v56h-18v-56Z"/></g><path d="M-20 409q285-106 529-57t386-18 560 71" stroke="#cbaa78" stroke-opacity=".3" stroke-width="8" stroke-dasharray="3 20" fill="none"/></svg></div><div><p class="eyebrow">Russellville &amp; the Arkansas River Valley</p><h1 id="hero-title">Find a side-by-side.<br><em>Find your trail.</em></h1><p>Compare independently listed side-by-side rentals in the Ozarks, around Ozone and Mount Magazine. The operators below advertise rentals on their own websites; confirm dates, trail restrictions and exact pickup or delivery arrangements before traveling.</p><a href="#directory">Explore three providers <span aria-hidden="true">↗</span></a>
@@ -446,22 +610,106 @@ main{max-width:1400px;padding:22px clamp(15px,2.2vw,34px) 90px}
 <p class="result" id="result-count" role="status" aria-live="polite">Showing 3 regional rental operators</p>
 <div class="grid">
 <article id="ozark-ridge" class="provider" data-area="river-valley" data-search="ozark ridge campground ozone johnson county sxs side by side can am defender max sport xrc rental delivery trail mill creek moccasin gap">
+<figure class="provider-folio-scene" aria-hidden="true">
+  <svg viewBox="0 0 600 640" preserveAspectRatio="xMidYMid slice" focusable="false" xmlns="http://www.w3.org/2000/svg">
+   <rect width="600" height="640" fill="#c6dec7"/>
+   <circle cx="438" cy="154" r="83" fill="#f6dfaf" opacity=".95"/>
+   <path d="M0 333 78 250l83 59 103-162 122 147 88-94 126 133V640H0Z" fill="#638c7e"/>
+   <path d="M0 400 126 301l103 70 128-151 95 128 148-108V640H0Z" fill="#376a58"/>
+   <path d="M0 485 Q127 401 256 457 T600 424 V640H0Z" fill="#204d3f"/>
+   <path d="M-60 645 Q152 475 306 523 T662 471" fill="none" stroke="#a5a17b" stroke-width="82" opacity=".92"/>
+   <path d="M-60 645 Q152 475 306 523 T662 471" fill="none" stroke="#f4e8c8" stroke-width="3" stroke-dasharray="15 21" opacity=".9"/>
+   <g fill="none" stroke="#f5eacf" stroke-linejoin="round" stroke-linecap="round" transform="translate(128 340)">
+    <ellipse cx="72" cy="157" rx="34" ry="37" stroke-width="13" fill="#173b35"/>
+    <ellipse cx="284" cy="157" rx="34" ry="37" stroke-width="13" fill="#173b35"/>
+    <path d="M42 139 71 77h199l48 62-29 5H70Z" fill="#21483d" stroke-width="11"/>
+    <path d="M91 77 129 23h105l36 54M130 23l-1 54m105-54-2 54" stroke-width="11"/>
+    <path d="M117 89h64m28 0h39" stroke="#f3d8a9" stroke-width="8"/>
+   </g>
+   <path d="M0 640V0h600v640Z" fill="none" stroke="#fff6da" stroke-opacity=".22" stroke-width="12"/>
+  </svg>
+  <span class="provider-folio-index">FIELD STOP / 01</span>
+  <figcaption class="provider-folio-caption">
+   <span class="provider-folio-place">OZONE / OZARK FOREST</span>
+   <strong>Into the highlands.</strong>
+   <span class="provider-folio-state">Delivery to Russellville unconfirmed</span>
+   <small>Original illustration · Not a provider vehicle, property or permitted trail</small>
+  </figcaption>
+ </figure>
+<div class="provider-folio-body">
 <div class="main-copy"><span class="tag">Ozone, Arkansas · River Valley area</span><h3>Ozark Ridge Campground &amp; Side-by-Side Rentals</h3><p>The official rental page advertises two-, four- and six-seat Can-Am side-by-side vehicles for Ozark National Forest recreation. It also states that delivery is offered, but gives no verified Russellville service area. <strong>Delivery to Russellville: UNCONFIRMED.</strong> A valid driver’s license, proof of insurance and minimum driver age of 25 are stated requirements; confirm the contract and permitted trails directly.</p>
 <p class="facts"><strong>138 County Road 4540, Ozone, AR 72854</strong><br><a href="tel:+14797744470">479-774-4470</a> · Rates and equipment availability subject to confirmation.</p>
 <div class="links"><a href="https://ozarkridgerv.com/side-by-side-rentals-ozark-national-forest.htm" target="_blank" rel="noopener noreferrer">Official rentals &amp; rates ↗</a><a class="secondary" href="camping.html">See campground listing ↗</a></div></div>
 <div class="price-panel"><div class="rate"><strong>From $375 / full day</strong>Officially posted effective June 1, 2026 for the two-seat Can-Am XRC; four- and six-seat models list $475 per full day. Confirm current rates, deposits and insurance with the operator.</div><p>Trail map/tracking application required; the provider says a preloaded tablet is supplied with a rental.</p></div>
+</div>
 </article>
 <article id="cove-creek" class="provider" data-area="river-valley" data-search="cove creek supply mount magazine paris arkansas logan county sxs side by side utv rental trails rv cabins">
+<figure class="provider-folio-scene" aria-hidden="true">
+  <svg viewBox="0 0 600 640" preserveAspectRatio="xMidYMid slice" focusable="false" xmlns="http://www.w3.org/2000/svg">
+   <rect width="600" height="640" fill="#f3d9af"/>
+   <circle cx="438" cy="154" r="83" fill="#fff0c7" opacity=".95"/>
+   <path d="M0 333 78 250l83 59 103-162 122 147 88-94 126 133V640H0Z" fill="#ac9a79"/>
+   <path d="M0 400 126 301l103 70 128-151 95 128 148-108V640H0Z" fill="#778b6c"/>
+   <path d="M0 485 Q127 401 256 457 T600 424 V640H0Z" fill="#405e4d"/>
+   <path d="M-60 645 Q152 475 306 523 T662 471" fill="none" stroke="#c6a97b" stroke-width="82" opacity=".92"/>
+   <path d="M-60 645 Q152 475 306 523 T662 471" fill="none" stroke="#f4e8c8" stroke-width="3" stroke-dasharray="15 21" opacity=".9"/>
+   <g fill="none" stroke="#f5eacf" stroke-linejoin="round" stroke-linecap="round" transform="translate(128 340)">
+    <ellipse cx="72" cy="157" rx="34" ry="37" stroke-width="13" fill="#173b35"/>
+    <ellipse cx="284" cy="157" rx="34" ry="37" stroke-width="13" fill="#173b35"/>
+    <path d="M42 139 71 77h199l48 62-29 5H70Z" fill="#21483d" stroke-width="11"/>
+    <path d="M91 77 129 23h105l36 54M130 23l-1 54m105-54-2 54" stroke-width="11"/>
+    <path d="M117 89h64m28 0h39" stroke="#f3d8a9" stroke-width="8"/>
+   </g>
+   <path d="M0 640V0h600v640Z" fill="none" stroke="#fff6da" stroke-opacity=".22" stroke-width="12"/>
+  </svg>
+  <span class="provider-folio-index">FIELD STOP / 02</span>
+  <figcaption class="provider-folio-caption">
+   <span class="provider-folio-place">PARIS / MOUNT MAGAZINE</span>
+   <strong>A mountain basecamp.</strong>
+   <span class="provider-folio-state">Ask about pickup and rental terms</span>
+   <small>Original illustration · Not a provider vehicle, property or permitted trail</small>
+  </figcaption>
+ </figure>
+<div class="provider-folio-body">
 <span class="tag">Mount Magazine · Paris, Arkansas</span><h3>Cove Creek Supply — Side-by-side (SXS) Rentals</h3><p>The operator’s official website has a dedicated <strong>SXS Rentals</strong> booking link and advertises nearby trails and recreational vehicle spaces. Rental model, capacity, rates and inventory are not independently verified; check the booking page or contact the store. <strong>Russellville delivery: UNCONFIRMED.</strong></p>
 <p class="rate"><strong>Pricing not confirmed</strong>Operator directs renters to its own booking provider.</p>
 <p class="facts"><strong>11071 State Highway 309, Paris, AR</strong><br><a href="tel:+14799632702">479-963-2702</a></p>
 <div class="links"><a href="https://www.cove-creek.com/" target="_blank" rel="noopener noreferrer">Official site &amp; booking link ↗</a></div>
+</div>
 </article>
 <article id="wilderness-rider" class="provider" data-area="northwest" data-search="wilderness rider buffalo ranch adventure park kingston boxley northwest arkansas side by side 6 seats yamaha viking on site rental 2 hours 4 hours 6 hours 8 hours">
+<figure class="provider-folio-scene" aria-hidden="true">
+  <svg viewBox="0 0 600 640" preserveAspectRatio="xMidYMid slice" focusable="false" xmlns="http://www.w3.org/2000/svg">
+   <rect width="600" height="640" fill="#b9d8da"/>
+   <circle cx="438" cy="154" r="83" fill="#f4e2af" opacity=".95"/>
+   <path d="M0 333 78 250l83 59 103-162 122 147 88-94 126 133V640H0Z" fill="#719b93"/>
+   <path d="M0 400 126 301l103 70 128-151 95 128 148-108V640H0Z" fill="#497d70"/>
+   <path d="M0 485 Q127 401 256 457 T600 424 V640H0Z" fill="#254e48"/>
+   <path d="M-60 645 Q152 475 306 523 T662 471" fill="none" stroke="#b4a37c" stroke-width="82" opacity=".92"/>
+   <path d="M-60 645 Q152 475 306 523 T662 471" fill="none" stroke="#f4e8c8" stroke-width="3" stroke-dasharray="15 21" opacity=".9"/>
+   <g fill="none" stroke="#f5eacf" stroke-linejoin="round" stroke-linecap="round" transform="translate(128 340)">
+    <ellipse cx="72" cy="157" rx="34" ry="37" stroke-width="13" fill="#173b35"/>
+    <ellipse cx="284" cy="157" rx="34" ry="37" stroke-width="13" fill="#173b35"/>
+    <path d="M42 139 71 77h199l48 62-29 5H70Z" fill="#21483d" stroke-width="11"/>
+    <path d="M91 77 129 23h105l36 54M130 23l-1 54m105-54-2 54" stroke-width="11"/>
+    <path d="M117 89h64m28 0h39" stroke="#f3d8a9" stroke-width="8"/>
+   </g>
+   <path d="M0 640V0h600v640Z" fill="none" stroke="#fff6da" stroke-opacity=".22" stroke-width="12"/>
+  </svg>
+  <span class="provider-folio-index">FIELD STOP / 03</span>
+  <figcaption class="provider-folio-caption">
+   <span class="provider-folio-place">BOXLEY / ADVENTURE PARK</span>
+   <strong>Stay on the park trails.</strong>
+   <span class="provider-folio-state">On-site rentals only · No off-site use</span>
+   <small>Original illustration · Not a provider vehicle, property or permitted trail</small>
+  </figcaption>
+ </figure>
+<div class="provider-folio-body">
 <span class="tag">Boxley area · Northwest Arkansas</span><h3>Wilderness Rider Buffalo Ranch &amp; Adventure Park</h3><p>The operator officially advertises on-site side-by-side rentals seating up to six, with park trail fees and fuel included. <strong>Vehicles may only be operated on Wilderness Rider property;</strong> off-site use and Russellville delivery are not offered for these rentals. Driver must be at least 21 with a valid license, according to the operator’s rules.</p>
 <p class="rate"><strong>From $225 / 2 hours</strong>Official side-by-side rental page lists $375 / 4 hours, $550 / 6 hours, $650 / 8 hours and $95 for each additional hour. <strong>Published operating hours conflict:</strong> the <a href="https://wildernessrider.com/side-x-side-rentals/" target="_blank" rel="noopener noreferrer">rental details page ↗</a> states 10 a.m.–6 p.m., while the <a href="https://wildernessrider.com/atv-sxs/" target="_blank" rel="noopener noreferrer">ATV/SXS page ↗</a> states 9 a.m.–5 p.m. Verify the permitted rental window, hours, availability, booking requirements, and final price with the operator before traveling.</p>
 <p class="facts"><strong>Boxley area, Northwest Arkansas</strong> · Use the official directions page to locate the ranch; a postal box is not a pickup address.<br><a href="tel:+18702202944">870-220-2944</a></p>
 <div class="links"><a href="https://wildernessrider.com/side-x-side-rentals/" target="_blank" rel="noopener noreferrer">Official rentals &amp; rules ↗</a></div>
+</div>
 </article>
 </div><p class="result" id="no-results" hidden>No providers match those filters. Clear the search or select all regions.</p></section>
 
