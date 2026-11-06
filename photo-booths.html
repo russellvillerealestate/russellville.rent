@@ -296,6 +296,49 @@ footer a{font-weight:750}
 }
 @media(prefers-reduced-motion:reduce){#more .provider{transition:none}#more .provider:hover{transform:none}}
 
+
+/* Photo Booth Provider Atlas · Nov 6, 2026. Progressive navigation, not new inventory. */
+.booth-atlas[hidden],.provider[hidden],.group-empty[hidden]{display:none!important}
+.booth-atlas{display:grid;grid-template-columns:minmax(0,.76fr) minmax(0,1.24fr);gap:0;margin:clamp(22px,3.5vw,45px) 0 clamp(60px,7vw,95px);border:1px solid #b5c6b8;border-radius:26px;overflow:hidden;background:#f9f8f1;box-shadow:0 26px 62px #0d37292a;scroll-margin-top:28px}
+.booth-atlas-story{position:relative;isolation:isolate;display:flex;flex-direction:column;min-height:625px;padding:clamp(25px,3.3vw,43px);color:#fffaf0;background:#143b32;overflow:hidden}
+.booth-atlas-story:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(150deg,#082923e8 3%,#103b35de 58%,#17433998),url("/assets/downtown-russellville-sunset.jpg") center/cover}
+.booth-atlas-story:after{content:"";position:absolute;right:-114px;bottom:58px;width:315px;height:315px;border:1px solid #f2d6a94d;border-radius:50%;box-shadow:0 0 0 37px #ffffff0a,0 0 0 80px #ffffff08;pointer-events:none}
+.booth-atlas-story-head{display:flex;justify-content:space-between;gap:12px;padding-bottom:19px;border-bottom:1px solid #ffffff60;font-size:.65rem;font-weight:800;letter-spacing:.16em}
+.booth-atlas-story-head span:last-child{font-size:1.25rem;line-height:1}
+.booth-atlas-story-copy{position:relative;margin:auto 0;z-index:1}
+.booth-atlas-kicker{margin:0 0 18px!important;color:#f7d69b!important;font-size:.69rem!important;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
+.booth-atlas-story h2{margin:0 0 27px;font:400 clamp(3.05rem,5vw,5.2rem)/.98 Georgia,"Times New Roman",serif;letter-spacing:-.067em;text-wrap:balance}
+.booth-atlas-story h2 em{color:#f4cd90;font-weight:400}
+.booth-atlas-story-copy>p:last-child{max-width:37ch;margin:0;color:#e8eee3;font-size:.95rem;line-height:1.7}
+.booth-atlas-story-foot{display:flex;justify-content:space-between;align-items:end;gap:16px;padding-top:18px;border-top:1px solid #ffffff50;font-size:.66rem;font-weight:700;letter-spacing:.06em;line-height:1.55;color:#eee6d4}
+.booth-atlas-film{display:flex;gap:4px;transform:rotate(-8deg)}
+.booth-atlas-film i{display:block;width:21px;height:30px;border:4px solid #f2d7a6;background:#153f31;border-radius:2px}
+.booth-atlas-directory{padding:clamp(25px,3.2vw,42px);min-width:0}
+.booth-atlas-directory-head{display:flex;justify-content:space-between;align-items:start;gap:12px;padding-bottom:21px;border-bottom:1px solid #d7dfd2}
+.booth-atlas-directory-head div{display:flex;flex-direction:column;gap:10px}
+.booth-atlas-directory-head div span{color:#8b5e38;font-size:.7rem;font-weight:850;letter-spacing:.16em}
+.booth-atlas-directory-head strong{color:#163d30;font:400 clamp(2rem,3.2vw,3.2rem)/1 Georgia,"Times New Roman",serif;letter-spacing:-.055em}
+#booth-atlas-total{border:1px solid #c6d4c5;border-radius:100px;padding:7px 11px;color:#245c45;font-size:.69rem;font-weight:800;white-space:nowrap}
+.booth-atlas-help{max-width:70ch;margin:18px 0 29px;color:#4d6254;font-size:.87rem;line-height:1.7}
+.booth-atlas-chapter+.booth-atlas-chapter{margin-top:27px}
+.booth-atlas-chapter-title{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:11px;color:#26503e}
+.booth-atlas-chapter-title strong{font-size:.75rem;font-weight:900;letter-spacing:.105em;text-transform:uppercase}
+.booth-atlas-chapter-title span{font-size:.73rem;color:#667e6b;white-space:nowrap}
+.booth-atlas-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.booth-atlas-link{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:7px;min-height:64px;padding:13px 14px;background:#fff;border:1px solid #d5e1d5;border-radius:10px;color:#204734;text-decoration:none;transition:background .18s ease,border-color .18s ease,transform .18s ease}
+.booth-atlas-link:hover{transform:translateY(-2px);background:#e8f2e9;border-color:#91ae99}
+.booth-atlas-link:focus-visible{outline:3px solid #a35a1c;outline-offset:3px}
+.booth-atlas-link strong{display:block;overflow-wrap:anywhere;font-size:.79rem;font-weight:850;line-height:1.35}
+.booth-atlas-link small{display:block;grid-column:1;align-self:start;color:#6d7d70;font-size:.65rem;line-height:1.4}
+.booth-atlas-link>span{grid-column:2;grid-row:1/3;align-self:center;color:#97643d;font-size:1.12rem}
+.booth-atlas-empty{grid-column:1/-1;padding:15px;color:#667968;border:1px dashed #b5cbb7;border-radius:9px;font-size:.82rem}
+.booth-atlas-fine{margin:24px 0 0;padding:16px 0 0;border-top:1px solid #d7dfd2;color:#5c6e61;font-size:.75rem;line-height:1.7}
+.provider:focus{outline:3px solid #a76a2d;outline-offset:4px;scroll-margin-top:25px}
+@media(max-width:1020px){.booth-atlas{grid-template-columns:minmax(0,.64fr) minmax(0,1.36fr)}.booth-atlas-story{padding:29px;min-height:580px}.booth-atlas-story h2{font-size:3.25rem}.booth-atlas-directory{padding:29px}.booth-atlas-links{grid-template-columns:1fr}.booth-atlas-link{min-height:53px}}
+@media(max-width:720px){.booth-atlas{grid-template-columns:1fr;border-radius:18px;margin-bottom:53px}.booth-atlas-story{min-height:0;padding:29px 26px 26px}.booth-atlas-story-copy{margin:36px 0 39px}.booth-atlas-story h2{font-size:clamp(2.85rem,9vw,4.2rem);margin-bottom:20px}.booth-atlas-story-foot{gap:20px}.booth-atlas-directory{padding:27px 22px}.booth-atlas-links{grid-template-columns:repeat(2,minmax(0,1fr))}.booth-atlas-directory-head strong{font-size:2.4rem}}
+@media(max-width:480px){.booth-atlas-links{grid-template-columns:1fr}.booth-atlas-directory-head{flex-wrap:wrap}.booth-atlas-link{min-height:54px}.booth-atlas-story{padding:25px 22px}.booth-atlas-story-copy{margin:28px 0 31px}.booth-atlas-story h2{font-size:2.75rem}.booth-atlas-story-foot{font-size:.62rem}}
+@media(prefers-reduced-motion:reduce){.booth-atlas-link{transition:none}.booth-atlas-link:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -310,6 +353,35 @@ footer a{font-weight:750}
 <a href="#more"><span class="way-number">02 / Widen the search</span><strong>Explore regional options.</strong><small>Compare more booth styles, then ask about delivery and setup.</small><span class="way-arrow" aria-hidden="true">↗</span></a>
 <a href="#price-snapshots"><span class="way-number">03 / Plan the budget</span><strong>See published price examples.</strong><small>Starting figures aren't delivered quotes. Verify every fee.</small><span class="way-arrow" aria-hidden="true">↗</span></a>
 </nav><section class="experience-finder" aria-labelledby="experience-title"><div class="finder-head"><div><p class="eyebrow">The experience edit</p><h2 id="experience-title">Find your kind of photo booth.</h2></div><p>Explore by experience, not just provider name. Categories reflect advertised services, not confirmed availability or delivery.</p></div><div class="experience-options" role="group" aria-label="Filter providers by experience"><button type="button" class="experience-option" data-booth-filter="all" aria-pressed="true"><span class="experience-icon" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><rect x="5" y="7" width="17" height="15" rx="3"/><rect x="26" y="7" width="17" height="15" rx="3"/><rect x="5" y="26" width="17" height="15" rx="3"/><rect x="26" y="26" width="17" height="15" rx="3"/></svg></span><strong>All experiences</strong><small>Every listed provider</small></button><button type="button" class="experience-option" data-booth-filter="photo" aria-pressed="false"><span class="experience-icon" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><rect x="5" y="12" width="38" height="27" rx="4"/><path d="M14 12l3-5h14l3 5"/><circle cx="24" cy="25" r="8"/></svg></span><strong>Photo booths</strong><small>Classic, digital and selfie formats</small></button><button type="button" class="experience-option" data-booth-filter="video" aria-pressed="false"><span class="experience-icon" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><rect x="5" y="13" width="27" height="23" rx="4"/><path d="M32 20l11-6v21l-11-6"/></svg></span><strong>Motion &amp; video</strong><small>Video or 360-degree experiences</small></button><button type="button" class="experience-option" data-booth-filter="creative" aria-pressed="false"><span class="experience-icon" aria-hidden="true"><svg viewBox="0 0 48 48" focusable="false"><path d="M24 3l4.5 13.5L42 21l-13.5 4.5L24 39l-4.5-13.5L6 21l13.5-4.5z"/><path d="M39 35l2 4 4 2-4 2-2 4-2-4-4-2 4-2z"/></svg></span><strong>Creative effects</strong><small>Animated or caricature portraits</small></button></div><p class="finder-status" id="booth-results" role="status" aria-live="polite">Showing all 13 providers.</p><p class="experience-disclaimer">Scenery and illustrated booth formats are for navigation, not photographs of providers’ equipment or confirmation of service, pricing or availability.</p></section>
+
+<!-- Provider Atlas: names, category and service grouping are derived from canonical provider records by the script below. -->
+<section class="booth-atlas" id="booth-atlas" aria-labelledby="booth-atlas-title" hidden>
+  <div class="booth-atlas-story">
+    <div class="booth-atlas-story-head"><span>RUSSELLVILLE.RENT / THE EVENT EDIT</span><span aria-hidden="true">↗</span></div>
+    <div class="booth-atlas-story-copy">
+      <p class="booth-atlas-kicker">The photo booth field guide / Find a name</p>
+      <h2 id="booth-atlas-title">Go straight<br>to the <em>moment.</em></h2>
+      <p>Skip the scroll. Open the original provider listing, then contact the operator about your venue, date and complete package quote.</p>
+    </div>
+    <div class="booth-atlas-story-foot"><span class="booth-atlas-film" aria-hidden="true"><i></i><i></i><i></i></span><span>Downtown Russellville scenery<br>Not a photo of provider equipment</span></div>
+  </div>
+  <div class="booth-atlas-directory">
+    <div class="booth-atlas-directory-head"><div><span>01 / THE CONTACT INDEX</span><strong>Choose your provider.</strong></div><span id="booth-atlas-total">Providers listed below</span></div>
+    <p class="booth-atlas-help">The index follows the experience filter above. Select a name to jump to its complete description and original contact links.</p>
+    <nav aria-label="Jump to photo booth provider listings">
+      <div class="booth-atlas-chapter">
+        <div class="booth-atlas-chapter-title"><strong>Russellville service advertised</strong><span id="booth-atlas-local-count"></span></div>
+        <div class="booth-atlas-links" id="booth-atlas-local"></div>
+      </div>
+      <div class="booth-atlas-chapter">
+        <div class="booth-atlas-chapter-title"><strong>Regional contacts</strong><span id="booth-atlas-regional-count"></span></div>
+        <div class="booth-atlas-links" id="booth-atlas-regional"></div>
+      </div>
+    </nav>
+    <p class="booth-atlas-fine">Regional operators are not confirmed to deliver to Russellville. Check event-address service, pricing, travel charges, setup and dates directly.</p>
+  </div>
+</section>
+
 <section id="russellville" aria-labelledby="local-title"><div class="section-head"><div><h2 id="local-title">Russellville service advertised</h2><p>These providers explicitly mention Russellville in their published service information. Event-date availability, packages and travel charges still require confirmation.</p></div><span class="section-index">01 / START HERE</span></div>
 <p class="group-empty" hidden>No providers in this group match the selected experience. Choose another style or All experiences.</p><div class="cards"><article class="provider provider-featured" data-experience="photo creative"><div class="local-stage local-stage--mirror" aria-hidden="true"><span class="local-stage-edition">RIVER VALLEY / PHOTO EXPERIENCES <b>01</b></span><span class="local-stage-frame"><span class="local-stage-silhouette"></span><span class="local-stage-strip"><i></i><i></i><i></i></span></span><span class="local-stage-foot">The celebration edit<small>Illustration only · Not operator equipment</small></span></div><span class="provider-tag tag-advertised">Russellville service advertised</span><h2>RBS Photo Booths — Russellville Service Confirmed</h2><p>The operator has a Russellville-specific booking page advertising magic mirror, glam, open-air, enclosed, digital and camper-style photo booths, plus animated photo experiences and roaming photography. Service to Russellville is explicitly advertised; confirm event date, package availability and pricing directly.</p><p class="area">Arkansas provider — Russellville service CONFIRMED on official site</p><p><a href="tel:+15019448200">501-944-8200</a> · <a href="https://arkansaspremierevents.com/russellville-photo-booth-rental-in-arkansas" target="_blank" rel="noopener noreferrer">Official Russellville rental options ↗</a></p></article>
 <article class="provider provider-featured" data-experience="creative"><div class="local-stage local-stage--portrait" aria-hidden="true"><span class="local-stage-edition">RIVER VALLEY / PHOTO EXPERIENCES <b>02</b></span><span class="local-stage-frame"><span class="local-stage-silhouette"></span><span class="local-stage-strip"><i></i><i></i><i></i></span></span><span class="local-stage-foot">The portrait edit<small>Illustration only · Not operator equipment</small></span></div><span class="provider-tag tag-advertised">Russellville service advertised</span><h2>Big Day Events — Artificial Intelligence Caricature Photo Booths (Regional)</h2><p>Event photo-booth operator advertising artificial intelligence caricature portraits, branded photo experiences, on-site print options and event activations for corporate functions, trade shows and sporting events. Its official Arkansas service page <strong>explicitly names Russellville</strong> among the cities it serves. This is not a verified Russellville storefront or confirmation of event-date availability; request a location-specific quote and confirm travel, staffing and equipment before booking.</p><p class="area">Regional / nationwide operator — Russellville service advertised on official site; specific availability and delivery terms UNCONFIRMED</p><p><a href="https://bigday.events/caricature-photobooth-arkansas/" target="_blank" rel="noopener noreferrer">Official Arkansas photo-booth service details ↗</a></p></article></div></section>
@@ -358,4 +430,59 @@ footer a{font-weight:750}
   buttons.forEach(button => button.addEventListener('click', () => apply(button.dataset.boothFilter)));
   apply('all');
 })();
-</script></body></html>
+</script>
+<script>
+/* Progressive photo booth Provider Atlas.
+   Canonical provider records own names, service grouping and filter visibility.
+   Native links work once indexed; no network, booking or inventory inference. */
+(() => {
+  const atlas=document.getElementById('booth-atlas');
+  const localList=document.getElementById('booth-atlas-local');
+  const regionalList=document.getElementById('booth-atlas-regional');
+  const total=document.getElementById('booth-atlas-total');
+  const localCount=document.getElementById('booth-atlas-local-count');
+  const regionalCount=document.getElementById('booth-atlas-regional-count');
+  const cards=Array.from(document.querySelectorAll('#russellville article.provider[data-experience],#more article.provider[data-experience]'));
+  if(!atlas||!localList||!regionalList||!total||!localCount||!regionalCount||!cards.length||!('MutationObserver' in window))return;
+  cards.forEach((card,index)=>{
+    if(!card.id)card.id='booth-provider-'+String(index+1).padStart(2,'0');
+    card.setAttribute('tabindex','-1');
+  });
+  function makeLink(card){
+    const link=document.createElement('a');
+    link.className='booth-atlas-link';
+    link.href='#'+card.id;
+    const name=document.createElement('strong');
+    name.textContent=(card.querySelector('h2')||card).textContent.trim();
+    const types=document.createElement('small');
+    const known={photo:'Photo',video:'Video / 360°',creative:'Creative effects'};
+    types.textContent=card.dataset.experience.split(/\s+/).map(value=>known[value]||value).join(' · ');
+    const arrow=document.createElement('span');
+    arrow.setAttribute('aria-hidden','true');arrow.textContent='↗';
+    link.append(name,types,arrow);
+    link.addEventListener('click',()=>{requestAnimationFrame(()=>card.focus({preventScroll:true}));});
+    return link;
+  }
+  function fill(container,visible,emptyText){
+    container.replaceChildren();
+    if(!visible.length){const empty=document.createElement('span');empty.className='booth-atlas-empty';empty.textContent=emptyText;container.append(empty);return;}
+    const fragment=document.createDocumentFragment();
+    visible.forEach(card=>fragment.append(makeLink(card)));
+    container.append(fragment);
+  }
+  function refresh(){
+    const local=cards.filter(card=>card.closest('#russellville')&&!card.hidden);
+    const regional=cards.filter(card=>card.closest('#more')&&!card.hidden);
+    fill(localList,local,'No Russellville-service providers match this experience.');
+    fill(regionalList,regional,'No regional providers match this experience.');
+    localCount.textContent=local.length+' '+(local.length===1?'listing':'listings');
+    regionalCount.textContent=regional.length+' '+(regional.length===1?'listing':'listings');
+    total.textContent=(local.length+regional.length)+' visible of '+cards.length;
+  }
+  const observer=new MutationObserver(refresh);
+  cards.forEach(card=>observer.observe(card,{attributes:true,attributeFilter:['hidden']}));
+  refresh();
+  atlas.hidden=false;
+})();
+</script>
+</body></html>
