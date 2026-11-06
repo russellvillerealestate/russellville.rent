@@ -475,6 +475,182 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
 @media(max-width:420px){.rental-console-pair{grid-template-columns:1fr;gap:13px}.rental-console-head{padding:27px 20px 31px}.rental-console-head h3{font-size:2.5rem}.rental-console-clear{flex-direction:column;align-items:stretch;gap:13px}.rental-console-clear>span{max-width:none}.search-section #filters .reset{width:100%}.rental-console-find .field input{font-size:.92rem}}
 @media(prefers-reduced-motion:reduce){.rental-console *{scroll-behavior:auto}}
 
+
+/* 2026-11-05 | Rental Source Field Ledger
+   Compared live https://stayarv.com/ and https://russellville.rent/:
+   adapt the immersive editorial scale and forest/gold system to a long,
+   fact-dense housing source directory without representing imagery as inventory.
+   NN/g: https://www.nngroup.com/articles/visual-hierarchy-ux-definition/
+   Google: https://web.dev/learn/design/
+   WCAG 2.2: https://www.w3.org/TR/WCAG22/ (reflow, focus, target size).
+   Presentation-only: all 15 factual source cards, links, source atlas,
+   search/compare scripts and listing update automation remain untouched. */
+.sources-section .source-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:clamp(18px,2.6vw,30px);
+  counter-reset:rental-source;
+}
+.sources-section .source-grid>.source-card{
+  --ledger-color:#1b5948;
+  --ledger-shine:#f4d49a;
+  position:relative;
+  isolation:isolate;
+  counter-increment:rental-source;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  min-width:0;
+  min-height:270px;
+  padding:clamp(28px,3.5vw,45px) clamp(25px,3.8vw,52px) clamp(28px,3.5vw,45px) clamp(246px,27%,325px);
+  border:1px solid #c6d8ca;
+  border-radius:25px;
+  background:linear-gradient(135deg,#fffefb,#f0f5ed);
+  box-shadow:0 17px 43px #143c3020;
+  overflow:hidden;
+}
+.sources-section .source-grid>.source-card:nth-child(even){
+  background:linear-gradient(130deg,#fffdf6,#f5f0e5);
+}
+.sources-section .source-grid>.source-card:is(#source-rvr,#source-moore,#source-natural){--ledger-color:#235d49}
+.sources-section .source-grid>.source-card#source-housing{--ledger-color:#28566b;--ledger-shine:#e4edeb}
+.sources-section .source-grid>.source-card:is(#source-spring,#source-river-valley-flats,#source-dels,#source-urban,#source-lakewood,#source-woodbrook,#source-parker,#source-shadowlake,#source-shiloh,#source-stonebrook,#source-treeview){--ledger-color:#6e5234}
+.sources-section .source-grid>.source-card::before{
+  content:counter(rental-source, decimal-leading-zero);
+  position:absolute;
+  inset:0 auto 0 0;
+  z-index:-1;
+  width:clamp(189px,23%,257px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:34px;
+  border-right:1px solid #fff9df55;
+  color:var(--ledger-shine);
+  background:
+    radial-gradient(circle at 112% 105%,#ffffff2d 0 19%,transparent 19.4%),
+    radial-gradient(circle at 112% 105%,transparent 0 31%,#ffffff22 31.2% 31.5%,transparent 31.8%),
+    linear-gradient(142deg,#0f302e 0%,var(--ledger-color) 100%);
+  font:400 clamp(3.8rem,6vw,6.35rem)/1 Georgia,"Times New Roman",serif;
+  letter-spacing:-.095em;
+  pointer-events:none;
+}
+.sources-section .source-grid>.source-card::after{
+  content:"RIVER VALLEY / SOURCE GUIDE";
+  position:absolute;
+  bottom:25px;
+  left:21px;
+  width:clamp(145px,17%,215px);
+  padding-top:13px;
+  border-top:1px solid #ffffff69;
+  color:#ffeed1;
+  font-size:.61rem;
+  font-weight:800;
+  letter-spacing:.11em;
+  line-height:1.5;
+  pointer-events:none;
+}
+.sources-section .source-grid>.source-card>h3{
+  max-width:28ch;
+  margin:0 0 15px;
+  font:400 clamp(1.77rem,3vw,2.65rem)/1.115 Georgia,"Times New Roman",serif;
+  letter-spacing:-.049em;
+  text-wrap:balance;
+  color:#153d33;
+}
+.sources-section .source-grid>.source-card>p{
+  max-width:85ch;
+  margin:0 0 17px;
+  font-size:clamp(.89rem,1.12vw,.98rem);
+  line-height:1.75;
+  color:#385749;
+}
+.sources-section .source-grid>.source-card>p a{
+  color:#165740;
+  text-decoration-thickness:1.5px;
+  text-underline-offset:3px;
+}
+.sources-section .source-grid>.source-card>a{
+  max-width:100%;
+  min-height:48px;
+  margin:5px 0 0;
+  padding:11px 19px;
+  border-radius:999px;
+  border:1px solid #123e30;
+  background:#173d32;
+  color:#fff;
+  font-size:.8rem;
+  line-height:1.45;
+  text-align:center;
+  text-wrap:pretty;
+  overflow-wrap:anywhere;
+  box-shadow:0 6px 17px #123e3022;
+}
+.sources-section .source-grid>.source-card>a:hover{
+  background:#2a624b;
+  border-color:#2a624b;
+}
+.sources-section .source-grid>.source-card :is(a,button):focus-visible{
+  outline:3px solid #a66a1b;
+  outline-offset:4px;
+}
+.sources-section .source-grid>.source-card:target{
+  outline:3px solid #a66a1b;
+  outline-offset:4px;
+}
+@media(max-width:860px){
+  .sources-section .source-grid>.source-card{
+    min-height:0;
+    padding:122px clamp(19px,4vw,29px) 28px;
+    border-radius:21px;
+  }
+  .sources-section .source-grid>.source-card::before{
+    inset:0 0 auto 0;
+    width:100%;
+    height:96px;
+    justify-content:flex-start;
+    padding:0 27px;
+    border-right:0;
+    border-bottom:1px solid #ffffff5f;
+    font-size:4.35rem;
+  }
+  .sources-section .source-grid>.source-card::after{
+    left:auto;right:23px;top:38px;bottom:auto;
+    width:140px;max-width:42%;
+    text-align:right;
+    padding:0;
+    border:0;
+  }
+  .sources-section .source-grid>.source-card>h3{font-size:clamp(1.6rem,4.2vw,2.25rem)}
+}
+@media(max-width:440px){
+  .sources-section .source-grid{gap:16px}
+  .sources-section .source-grid>.source-card{
+    padding:116px 20px 24px;
+    border-radius:17px;
+  }
+  .sources-section .source-grid>.source-card::before{height:89px;padding:0 20px;font-size:3.65rem}
+  .sources-section .source-grid>.source-card::after{right:17px;top:31px;font-size:.52rem;letter-spacing:.07em}
+  .sources-section .source-grid>.source-card>h3{font-size:clamp(1.57rem,6.6vw,2.02rem)}
+  .sources-section .source-grid>.source-card>p{font-size:.9rem}
+  .sources-section .source-grid>.source-card>a{align-self:stretch}
+}
+@media print{
+  .sources-section .source-grid{display:block}
+  .sources-section .source-grid>.source-card{
+    display:block;min-height:0;break-inside:avoid;
+    padding:16px 20px;margin:0 0 14px;border:1px solid #aaa;
+    box-shadow:none;background:white!important;
+  }
+  .sources-section .source-grid>.source-card::before,
+  .sources-section .source-grid>.source-card::after{display:none}
+  .sources-section .source-grid>.source-card>a{
+    display:inline-block;margin-right:8px;background:white;color:#153d33;
+    box-shadow:none;border:1px solid #789080;
+  }
+}
+
 </style></head>
 <body>
 <a class="skip" href="#main">Skip to listings</a>
