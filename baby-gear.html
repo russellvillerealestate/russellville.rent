@@ -10,13 +10,184 @@
 <style>
 :root{--forest:#173f35;--ink:#243d35;--muted:#526960;--paper:#f7f8f4;--line:#d8e3da;--gold:#edcb79}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:#1c574b;text-underline-offset:3px}a:focus-visible{outline:3px solid #bc841f;outline-offset:4px}header{background:#102f2b;color:white}header a{color:white;text-decoration:none}.wrap{max-width:1060px;margin:auto;padding:0 26px}.top{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 0}.brand{font-size:1.14rem;font-weight:800}.back{font-weight:650;font-size:.9rem}.hero{padding:65px 0 74px;background:radial-gradient(ellipse at 88% 5%,#32675b,transparent 48%),linear-gradient(145deg,#102f2b,#1b5244);color:white}.eyebrow{font-size:.78rem;letter-spacing:.17em;text-transform:uppercase;font-weight:800;color:var(--gold)}h1{font-size:clamp(2.6rem,6.2vw,4.8rem);max-width:16ch;line-height:1.07;margin:17px 0 20px;letter-spacing:-.045em}.lead{font-size:clamp(1.05rem,2.3vw,1.24rem);max-width:690px;color:#dfebe5}.hero small{display:block;margin-top:22px;color:#c5d8cd}.hero a{color:white}.main{padding-top:55px;padding-bottom:70px}.intro{max-width:730px}.intro h2{font-size:clamp(1.65rem,3.4vw,2.45rem);line-height:1.15;letter-spacing:-.03em}.intro p{color:var(--muted)}.provider{display:grid;grid-template-columns:minmax(0,2fr) minmax(230px,1fr);gap:38px;margin-top:28px;padding:clamp(24px,4vw,42px);background:white;border:1px solid var(--line);border-radius:23px;box-shadow:0 13px 36px #153b3512}.tag{display:inline-flex;border-radius:30px;background:#edf5eb;padding:5px 12px;color:#205647;font-size:.75rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}.provider h3{font-size:clamp(1.55rem,3vw,2.15rem);line-height:1.2;margin:18px 0}.provider p{max-width:65ch}.fine{font-size:.92rem;color:#4c655b}.box{border-radius:17px;background:#eaf2e9;padding:22px;align-self:start}.box h4{font-size:1rem;margin:0 0 14px}.box p{margin:12px 0;font-size:.93rem}.button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;margin-top:10px;padding:10px 18px;border-radius:10px;background:var(--forest);color:white;text-decoration:none;font-weight:750}.button:hover{background:#255d4d}.notes{margin-top:30px;padding:22px 28px;border:1px solid #d9e3d6;border-radius:15px;background:#eff4ed}.notes h3{margin:0 0 7px}.notes p{margin:0;color:#4d665a}footer{padding:26px 0;border-top:1px solid var(--line);font-size:.88rem;color:#61746a}@media(max-width:720px){.top{flex-wrap:wrap}.hero{padding:46px 0 55px}.provider{grid-template-columns:1fr;gap:14px}.main{padding-top:35px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* 2026-11-06 design: StayARV-inspired immersive forest field guide with original vector editorial art.
+   Reference principles: NN/g visual hierarchy + information scent; web.dev responsive sizing;
+   WCAG 2.2 visible focus, reflow and appropriately sized targets. */
+:root{--deep:#0d3029;--moss:#244f40;--cream:#f6f3e8;--warm:#fffaf0;--gold:#f0cc80}
+html{scroll-padding-top:96px}
+body{background:var(--cream);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:1210px;padding-inline:clamp(20px,4vw,50px)}
+.skip-link{position:absolute;left:12px;top:-110px;z-index:100;padding:10px 18px;background:#fff;color:var(--deep);border-radius:0 0 9px 9px;font-weight:750}
+.skip-link:focus{top:0}
+header{position:relative;z-index:5;background:#0b2924;border-bottom:1px solid #e9d6a229}
+.top{min-height:77px;padding-block:16px}
+.brand{font-size:1.3rem;font-weight:850;letter-spacing:-.045em;white-space:nowrap}
+.brand-dot{color:#e8be66}
+.top-nav{display:flex;align-items:center;gap:clamp(14px,2.2vw,29px)}
+.top-nav a{font-size:.86rem;font-weight:700;color:#e2f0e7;white-space:nowrap}
+.top-nav a:hover{color:var(--gold)}
+.top-nav .back{padding:10px 16px;border:1px solid #b7ccbd66;border-radius:999px;color:#fff}
+.hero{position:relative;isolation:isolate;overflow:hidden;padding:58px 0 0;background:radial-gradient(ellipse at 76% -12%,#43756370,transparent 42%),linear-gradient(124deg,#092921 0%,#163d33 56%,#234e40 100%);color:white}
+.hero-ambient{position:absolute;inset:0;z-index:-1;opacity:.2;background:repeating-radial-gradient(ellipse at 93% 28%,transparent 0 29px,#e5d4a51c 30px 31px,transparent 32px 57px);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.03fr) minmax(0,.97fr);gap:clamp(26px,4vw,60px);align-items:center}
+.hero-copy{padding:38px 0 64px}
+.eyebrow{letter-spacing:.16em}
+.hero h1{font-size:clamp(3.35rem,6vw,6.3rem);line-height:.99;max-width:12ch;letter-spacing:-.065em;margin:23px 0 29px;font-weight:820;text-wrap:balance}
+.hero h1 em{color:var(--gold);font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.052em;font-style:italic}
+.lead{max-width:57ch;color:#e6ede6;line-height:1.65;font-size:clamp(1.06rem,1.5vw,1.26rem)}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:29px}
+.hero-cta,.hero-secondary{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:50px;padding:12px 21px;border-radius:999px;font-size:.94rem;font-weight:780;text-decoration:none;transition:transform .2s ease,background .2s ease}
+.hero-cta{background:var(--gold);color:#15382d!important;box-shadow:0 10px 28px #0002}
+.hero-cta:hover{background:#ffdfa0;transform:translateY(-2px)}
+.hero-secondary{border:1px solid #d8ead29c;color:#fff!important}
+.hero-secondary:hover{background:#ffffff1f}
+.hero-caveat{display:flex;gap:9px;align-items:flex-start;margin-top:25px;color:#cbdcd1;font-size:.82rem;line-height:1.5}
+.hero-caveat span{color:var(--gold);font-size:.68rem;margin-top:5px}
+.hero-art{position:relative;margin:16px 0 40px;padding:15px 15px 9px;border-radius:27px;background:#ece9d9;border:1px solid #ffefca;box-shadow:0 30px 65px #071e1a69;transform:rotate(1.1deg)}
+.hero-art:before{content:"";position:absolute;inset:-13px 13px 13px -13px;z-index:-1;border:1px solid #d7c48e66;border-radius:29px}
+.hero-art svg{display:block;width:100%;height:auto}
+.art-heading,.art-caption{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:2px 12px;color:#32584a;font-weight:850;letter-spacing:.08em;font-size:.65rem}
+.art-caption{padding:6px 12px 3px;letter-spacing:.02em;font-size:.66rem;font-weight:670;color:#566d5b}
+.art-caption span:last-child{font-size:1.1rem;color:#b18039}
+.hero-facts{display:flex;flex-wrap:wrap;gap:0;padding-block:16px 18px;border-top:1px solid #bad0bb40;color:#d9e5da;font-size:.79rem;font-weight:640;letter-spacing:.02em}
+.hero-facts span{display:flex;gap:10px;align-items:center;padding:4px 28px 4px 0;margin-right:28px;border-right:1px solid #c5dec74b}
+.hero-facts span:last-child{border-right:0;margin-right:0}
+.hero-facts strong{color:var(--gold);font-size:1.2rem}
+.trip-guide{background:#e6ebdc;padding:clamp(62px,8vw,104px) 0;border-bottom:1px solid #d5dfd0}
+.guide-header{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:33px}
+.guide-header .eyebrow{color:#557568}
+.guide-header h2{margin:14px 0 0;font-size:clamp(2.45rem,4.4vw,4.6rem);line-height:1.02;letter-spacing:-.05em;max-width:18ch}
+.guide-header h2 em{font-family:Georgia,"Times New Roman",serif;color:#537f60;font-weight:400}
+.guide-header>p{max-width:360px;font-size:1.03rem;line-height:1.65;color:#486358;margin:0 0 7px}
+.guide-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.guide-card{display:flex;flex-direction:column;align-items:flex-start;min-width:0;min-height:312px;padding:clamp(23px,3vw,34px);color:#173b30;text-decoration:none;background:#fffdfa;border-radius:20px;border:1px solid #d4dfd2;box-shadow:0 10px 25px #26402a0a;transition:transform .2s ease,box-shadow .2s ease}
+.guide-card:nth-child(2){background:#173d32;color:#fff;border-color:#173d32}
+.guide-card:hover{transform:translateY(-5px);box-shadow:0 18px 35px #26402a19}
+.guide-num{font-size:.69rem;font-weight:850;letter-spacing:.16em;opacity:.83}
+.guide-icon{width:76px;height:76px;display:grid;place-items:center;margin:22px 0 11px;background:#e8efdf;border-radius:22px;color:#255342}
+.guide-card:nth-child(2) .guide-icon{background:#d5e4be;color:#184639}
+.guide-icon svg{width:63px;height:63px}
+.guide-card strong{display:block;font-size:clamp(1.28rem,2vw,1.6rem);font-weight:790;letter-spacing:-.035em}
+.guide-card>span:nth-last-child(2){margin-top:8px;line-height:1.5;font-size:.91rem;opacity:.88}
+.guide-arrow{margin-top:auto;padding-top:22px;font-weight:790;font-size:.89rem;color:#326a53}
+.guide-card:nth-child(2) .guide-arrow{color:var(--gold)}
+.main{padding-top:clamp(60px,8vw,100px);padding-bottom:clamp(65px,9vw,112px)}
+.intro{max-width:810px}
+.intro h2{font-size:clamp(2.4rem,4.7vw,4.2rem);letter-spacing:-.055em;margin:12px 0 19px}
+.intro>p:last-child{font-size:1.04rem;line-height:1.7}
+.provider-kicker{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:51px;padding:12px 2px;color:#315b49;font-weight:790;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;border-top:1px solid #cadaca}
+.provider-kicker span:last-child{font-weight:600;letter-spacing:.02em;text-transform:none}
+.provider{position:relative;grid-template-columns:minmax(0,1.55fr) minmax(270px,.88fr);gap:clamp(25px,4vw,54px);margin-top:6px;padding:clamp(27px,4.7vw,58px);border:1px solid #d3dfd0;border-top:7px solid #d2a763;border-radius:19px;box-shadow:0 24px 57px #163d3512}
+.provider h3{font-size:clamp(1.95rem,3.6vw,3.1rem);letter-spacing:-.047em;line-height:1.12;max-width:22ch}
+.provider>div>p{line-height:1.75;color:#40594d}
+.provider>div>p.fine{font-size:.84rem;color:#586b60}
+.tag{background:#e8f1e1;color:#285a42;padding:8px 13px;letter-spacing:.07em}
+.provider a:not(.button){text-underline-offset:4px;font-weight:700}
+.box{position:relative;padding:clamp(24px,3vw,34px);background:linear-gradient(160deg,#173e32,#0c2d27);color:#f5f6eb;border-radius:17px;box-shadow:0 15px 32px #143b322e}
+.box:before{content:"";display:block;width:66px;height:5px;border-radius:4px;background:var(--gold);margin-bottom:26px}
+.box h4{font-size:clamp(1.25rem,2vw,1.5rem);letter-spacing:-.03em}
+.box p{color:#e5e8dc;line-height:1.65}
+.box a:not(.button){color:#ffdc92}
+.box .button{width:100%;background:var(--gold);color:#173a2e;border-radius:999px;min-height:52px;text-align:center}
+.box .button:hover{background:#ffdfa3}
+.notes{position:relative;display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:22px;margin-top:27px;padding:clamp(29px,4vw,45px);background:#dfe8d9;border:1px solid #cadcc8;border-radius:19px}
+.notes:before{content:"TRAVEL NOTES / KEEP THIS HANDY";grid-column:1 / -1;font-size:.71rem;font-weight:850;letter-spacing:.15em;color:#406b53}
+.notes h3{font-size:clamp(1.65rem,2.7vw,2.3rem);letter-spacing:-.035em;line-height:1.15}
+.notes p{line-height:1.72}
+footer{background:#0d3029;color:#d2e0d5;border-top:0;padding:33px 0}
+footer a{color:#ffe3a5}
+:where(a):focus-visible{outline:3px solid #f4b93e;outline-offset:4px}
+@media(max-width:950px){.hero-grid{grid-template-columns:1fr 1fr;gap:18px}.hero h1{font-size:clamp(3rem,5.7vw,5.1rem)}.hero-copy{padding-bottom:34px}.guide-card{min-height:350px}.provider{grid-template-columns:minmax(0,1fr) minmax(245px,.8fr)}}
+@media(max-width:760px){.top{align-items:flex-start}.top-nav{flex-wrap:wrap;justify-content:flex-end;row-gap:8px}.top-nav a{font-size:.77rem}.hero{padding-top:12px}.hero-grid{grid-template-columns:1fr}.hero-copy{padding:29px 0 5px}.hero h1{font-size:clamp(3.15rem,10vw,5rem)}.hero-art{max-width:550px;width:100%;margin:18px auto 32px}.hero-facts{gap:12px}.hero-facts span{border:0;margin:0;padding:0;flex-basis:100%}.guide-header{display:block}.guide-header>p{margin-top:19px;max-width:55ch}.guide-grid{grid-template-columns:1fr;gap:12px}.guide-card{min-height:0;padding:25px}.guide-icon{margin:12px 0 9px;width:62px;height:62px}.guide-icon svg{width:55px;height:55px}.provider{grid-template-columns:1fr}.notes{grid-template-columns:1fr;gap:10px}.notes:before{grid-column:1}.intro h2{font-size:clamp(2.1rem,8vw,3.1rem)}}
+@media(max-width:470px){.top{gap:8px;align-items:center}.brand{font-size:1.08rem}.top-nav{gap:8px}.top-nav a:not(.back){display:none}.top-nav .back{padding:8px 10px;font-size:.73rem}.hero h1{font-size:clamp(2.85rem,12.5vw,4.15rem)}.hero-actions{align-items:stretch}.hero-cta,.hero-secondary{width:100%}.hero-art{padding:9px 9px 7px;border-radius:18px}.art-heading,.art-caption{font-size:.53rem;padding-inline:7px}.hero-facts{font-size:.73rem}.provider-kicker{display:block}.provider-kicker span:last-child{display:block;margin-top:4px}.main{padding-top:54px}}
+@media(prefers-reduced-motion:reduce){.guide-card,.hero-cta,.hero-secondary{transition:none}.guide-card:hover,.hero-cta:hover{transform:none}}
+
 </style>
 </head>
 <body>
-<header><div class="wrap top"><a class="brand" href="/">Russellville.Rent</a><a class="back" href="/#browse">← All rental categories</a></div></header>
-<section class="hero"><div class="wrap"><p class="eyebrow">The River Valley / Family travel</p><h1>Travel lighter. Bring the essentials.</h1><p class="lead">Cribs, strollers, car seats and other baby equipment advertised for Russellville visitors. Confirm your exact destination, rental dates, product availability, delivery fees and safety requirements directly with the provider.</p><small>Advertised service is not live inventory or a confirmed reservation.</small></div></section>
+<a class="skip-link" href="#providers">Skip to provider</a><header><div class="wrap top"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span class="brand-dot">.</span>Rent</a><nav class="top-nav" aria-label="Page navigation"><a href="#providers">Provider</a><a href="#trip-checklist">Travel checklist</a><a class="back" href="/#browse">← All rental categories</a></nav></div></header>
+<section class="hero" aria-labelledby="family-hero-title">
+  <div class="hero-ambient" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">The River Valley / Family travel</p>
+      <h1 id="family-hero-title">Travel lighter.<br><em>Bring the essentials.</em></h1>
+      <p class="lead">Cribs, strollers, car seats and other baby equipment advertised for Russellville visitors. Confirm your exact destination, rental dates, product availability, delivery fees and safety requirements directly with the provider.</p>
+      <div class="hero-actions"><a class="hero-cta" href="#providers">Explore the advertised provider <span aria-hidden="true">↗</span></a><a class="hero-secondary" href="#trip-checklist">Before you book <span aria-hidden="true">↓</span></a></div>
+      <p class="hero-caveat"><span aria-hidden="true">●</span> Advertised service is not live inventory or a confirmed reservation.</p>
+    </div>
+    <div class="hero-art" aria-label="Decorative illustrated family travel essentials, not actual rental inventory">
+      <div class="art-heading"><span>THE RIVER VALLEY FIELD GUIDE</span><span>FAMILY TRAVEL / 01</span></div>
+      <svg viewBox="0 0 660 540" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="family-sky" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#fff0c5"/><stop offset=".64" stop-color="#c9d5b6"/><stop offset="1" stop-color="#7d9c83"/></linearGradient>
+          <linearGradient id="family-hill" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#507562"/><stop offset="1" stop-color="#234a3e"/></linearGradient>
+          <linearGradient id="family-cream" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fffdf0"/><stop offset="1" stop-color="#e8e4ce"/></linearGradient>
+          <filter id="family-shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#132e27" flood-opacity=".26"/></filter>
+          <clipPath id="family-round"><rect x="24" y="20" width="612" height="470" rx="24"/></clipPath>
+        </defs>
+        <rect x="24" y="20" width="612" height="470" rx="24" fill="url(#family-sky)"/>
+        <g clip-path="url(#family-round)">
+          <circle cx="491" cy="130" r="83" fill="#f3ca79" opacity=".88"/>
+          <path d="M18 307Q145 189 267 298Q391 178 650 270V500H18Z" fill="#a7bca0"/>
+          <path d="M-30 379Q127 269 270 374Q453 242 690 333V510H-30Z" fill="url(#family-hill)"/>
+          <path d="M-30 443Q131 382 311 453Q479 365 690 410V520H-30Z" fill="#163d35"/>
+          <path d="M122 512C175 408 392 399 492 512" stroke="#b5c9ab" stroke-width="3" stroke-dasharray="9 13" fill="none" opacity=".8"/>
+          <g opacity=".75" fill="#163c31"><path d="m50 299 21-50 22 50h-12l11 22H48l12-22Z"/><path d="m557 269 28-79 27 79h-17l13 28h-49l13-28Z"/><path d="m595 294 15-43 17 43h-8l10 21h-39l10-21Z"/></g>
+          <g filter="url(#family-shadow)" transform="translate(74 213)">
+            <rect x="0" y="30" width="177" height="176" rx="16" fill="#e6ac67"/>
+            <rect x="12" y="43" width="153" height="151" rx="10" fill="#f1c791"/>
+            <path d="M43 30V14q0-19 19-19h53q19 0 19 19v16" fill="none" stroke="#a65e3e" stroke-width="12" stroke-linecap="round"/>
+            <path d="M86 44v146M22 94h132" stroke="#d88c55" stroke-width="7" opacity=".8"/>
+            <circle cx="38" cy="194" r="8" fill="#a65e3e"/><circle cx="145" cy="194" r="8" fill="#a65e3e"/>
+            <rect x="53" y="84" width="77" height="55" rx="10" fill="#fff7df"/><path d="m75 111 14 14 22-29" stroke="#24574a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </g>
+          <g filter="url(#family-shadow)" transform="translate(239 139)">
+            <rect x="22" y="89" width="217" height="148" rx="17" fill="url(#family-cream)" stroke="#c89e61" stroke-width="11"/>
+            <rect x="44" y="111" width="173" height="95" rx="7" fill="#f7e5b9"/>
+            <path d="M67 112v97M107 112v97M147 112v97M187 112v97" stroke="#c89e61" stroke-width="10"/>
+            <path d="M18 238v37M242 238v37" stroke="#b8804d" stroke-width="13" stroke-linecap="round"/>
+            <path d="M67 86V67q0-28 31-28h66q31 0 31 28v19" fill="none" stroke="#c89e61" stroke-width="11" stroke-linecap="round"/>
+            <rect x="73" y="65" width="122" height="23" rx="11" fill="#d1dcb8"/>
+            <path d="m119 44 9-23 9 23" stroke="#edc36c" stroke-width="9" fill="none" stroke-linecap="round"/>
+          </g>
+          <g filter="url(#family-shadow)" transform="translate(392 316)">
+            <path d="M19 38q3-57 78-57t80 60l-6 49H46Z" fill="#dfb769" stroke="#5c6c52" stroke-width="8"/>
+            <path d="M46 90h125l-30 62H74Z" fill="#f3e2b8" stroke="#7f8e73" stroke-width="9" stroke-linejoin="round"/>
+            <path d="m134 51 34-75h37" stroke="#244f43" stroke-width="12" stroke-linecap="round" fill="none"/>
+            <path d="m75 153-13 30m84-30 17 30" stroke="#244f43" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="57" cy="188" r="21" fill="#233f37" stroke="#f5db9d" stroke-width="8"/><circle cx="168" cy="188" r="21" fill="#233f37" stroke="#f5db9d" stroke-width="8"/>
+          </g>
+        </g>
+        <rect x="24" y="20" width="612" height="470" rx="24" fill="none" stroke="#e8d7a9" stroke-width="2"/>
+        <path d="M51 52h63M51 52v30M609 456h-63M609 456v-30" stroke="#fff8da" stroke-width="3" fill="none" opacity=".85"/>
+        <rect x="45" y="456" width="233" height="54" rx="9" fill="#f8f4e9"/>
+        <circle cx="67" cy="483" r="7" fill="#c48c43"/><text x="86" y="490" font-family="system-ui,sans-serif" font-size="14" font-weight="800" fill="#20483e" letter-spacing="1">TRAVEL ESSENTIALS</text>
+      </svg>
+      <div class="art-caption"><span>Illustrative scene — not provider inventory</span><span aria-hidden="true">✳</span></div>
+    </div>
+  </div>
+  <div class="wrap hero-facts" aria-label="Directory limitations">
+    <span><strong>01</strong> Provider advertising Russellville service</span>
+    <span><strong>?</strong> Local storefront not independently verified</span>
+    <span><strong>→</strong> Confirm gear, delivery and total price</span>
+  </div>
+</section>
+<section class="trip-guide" id="route-guide" aria-labelledby="route-title">
+  <div class="wrap">
+    <div class="guide-header"><div><p class="eyebrow">A little planning goes a long way</p><h2 id="route-title">Less luggage.<br><em>More room for the trip.</em></h2></div><p>Start with the equipment, then confirm the delivery details and safety requirements before making arrangements.</p></div>
+    <div class="guide-grid">
+      <a class="guide-card" href="#providers"><span class="guide-num">01 / DISCOVER</span><span class="guide-icon" aria-hidden="true"><svg viewBox="0 0 72 72"><rect x="13" y="26" width="46" height="30" rx="4" fill="none" stroke="currentColor" stroke-width="4"/><path d="M20 26V18h32v8M23 33v16M36 33v16M49 33v16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span><strong>Find the essentials.</strong><span>See the advertised crib, stroller, car-seat and baby-gear options.</span><span class="guide-arrow">Explore provider ↗</span></a>
+      <a class="guide-card" href="#delivery-details"><span class="guide-num">02 / VERIFY</span><span class="guide-icon" aria-hidden="true"><svg viewBox="0 0 72 72"><path d="M10 48h52M15 48V21h28v27M43 32h11l8 9v7" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="27" cy="50" r="7" fill="#f0cc80" stroke="currentColor" stroke-width="3"/><circle cx="52" cy="50" r="7" fill="#f0cc80" stroke="currentColor" stroke-width="3"/></svg></span><strong>Pin down delivery.</strong><span>Check your address, dates, equipment stock, fees and minimum charge.</span><span class="guide-arrow">Review details ↗</span></a>
+      <a class="guide-card" href="#trip-checklist"><span class="guide-num">03 / PREPARE</span><span class="guide-icon" aria-hidden="true"><svg viewBox="0 0 72 72"><rect x="17" y="15" width="38" height="45" rx="5" fill="none" stroke="currentColor" stroke-width="4"/><path d="M26 28l4 4 8-9M26 45h20" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><strong>Travel with confidence.</strong><span>Review compatibility, recalls, cleaning and equipment instructions.</span><span class="guide-arrow">See checklist ↗</span></a>
+    </div>
+  </div>
+</section>
 <main class="wrap main" id="providers"><div class="intro"><p class="eyebrow" style="color:#557565">Baby &amp; toddler equipment</p><h2>One advertised Russellville provider</h2><p>Delivery-to-Russellville claims below come from the company's own location page. A physical Russellville storefront, actual available equipment and delivery slot have not been independently verified.</p></div>
-<article class="provider"><div><span class="tag">Russellville service advertised</span><h3>Babies Getaway — Cribs, Strollers &amp; Car Seats</h3><p>Babies Getaway's <strong>official Russellville page</strong> advertises rentals of cribs, strollers, car seats, high chairs, playpens and related baby equipment for trips to Russellville, with delivery and pickup from vacation homes, hotels and other destinations. The provider's public policy describes a <strong>three-day minimum rental charge</strong> and advises booking <strong>at least 3–4 days ahead</strong>. It confirms individual orders after reviewing equipment availability, delivery dates and driver capacity.</p><p><strong>Important:</strong> Russellville service is advertised by the operator, but a local storefront, individual item inventory, confirmed delivery availability, all-in pricing and any rush-service eligibility are <strong>UNCONFIRMED</strong>. The provider says delivery charges appear during checkout; do not treat its location page as a confirmed booking.</p><p class="fine">Regional delivery service · No independently verified Russellville pickup address · Source checked November 6, 2026</p><p><a href="https://www.babiesgetaway.com/Russellville-AR" target="_blank" rel="noopener noreferrer">Official Russellville service and rental terms ↗</a> · <a href="https://www.babiesgetaway.com/" target="_blank" rel="noopener noreferrer">Company rental catalog ↗</a></p></div><aside class="box"><h4>Check before booking</h4><p><strong>Phone:</strong> <a href="tel:+18447951539">844-795-1539</a> (official national booking line)</p><p><strong>Examples:</strong> Cribs · strollers · car seats · high chairs · playpens</p><p><strong>Timing:</strong> Three-day minimum charge; provider recommends several days' notice.</p><p><strong>Delivery:</strong> Russellville advertised; exact address, date, stock and fees need confirmation.</p><a class="button" href="https://www.babiesgetaway.com/Russellville-AR" target="_blank" rel="noopener noreferrer">Check provider options ↗</a></aside></article>
-<div class="notes"><h3>Confirm the gear, not just the destination.</h3><p>Check age and size compatibility, recalls, cleaning policy, instructions, pickup and drop-off arrangements, damage terms and total charges. A rental listing does not replace following each child's equipment safety instructions or applicable car-seat rules.</p></div>
+<div class="provider-kicker"><span>Provider 01 / 01</span><span>Advertising Russellville delivery · Verify before ordering</span></div>
+<article class="provider"><div><span class="tag">Russellville service advertised</span><h3>Babies Getaway — Cribs, Strollers &amp; Car Seats</h3><p>Babies Getaway's <strong>official Russellville page</strong> advertises rentals of cribs, strollers, car seats, high chairs, playpens and related baby equipment for trips to Russellville, with delivery and pickup from vacation homes, hotels and other destinations. The provider's public policy describes a <strong>three-day minimum rental charge</strong> and advises booking <strong>at least 3–4 days ahead</strong>. It confirms individual orders after reviewing equipment availability, delivery dates and driver capacity.</p><p><strong>Important:</strong> Russellville service is advertised by the operator, but a local storefront, individual item inventory, confirmed delivery availability, all-in pricing and any rush-service eligibility are <strong>UNCONFIRMED</strong>. The provider says delivery charges appear during checkout; do not treat its location page as a confirmed booking.</p><p class="fine">Regional delivery service · No independently verified Russellville pickup address · Source checked November 6, 2026</p><p><a href="https://www.babiesgetaway.com/Russellville-AR" target="_blank" rel="noopener noreferrer">Official Russellville service and rental terms ↗</a> · <a href="https://www.babiesgetaway.com/" target="_blank" rel="noopener noreferrer">Company rental catalog ↗</a></p></div><aside class="box" id="delivery-details"><h4>Check before booking</h4><p><strong>Phone:</strong> <a href="tel:+18447951539">844-795-1539</a> (official national booking line)</p><p><strong>Examples:</strong> Cribs · strollers · car seats · high chairs · playpens</p><p><strong>Timing:</strong> Three-day minimum charge; provider recommends several days' notice.</p><p><strong>Delivery:</strong> Russellville advertised; exact address, date, stock and fees need confirmation.</p><a class="button" href="https://www.babiesgetaway.com/Russellville-AR" target="_blank" rel="noopener noreferrer">Check provider options ↗</a></aside></article>
+<div class="notes" id="trip-checklist"><h3>Confirm the gear, not just the destination.</h3><p>Check age and size compatibility, recalls, cleaning policy, instructions, pickup and drop-off arrangements, damage terms and total charges. A rental listing does not replace following each child's equipment safety instructions or applicable car-seat rules.</p></div>
 </main><footer><div class="wrap">Independent local directory · Provider information can change · <a href="/#contact">Request a correction</a> · <a href="/">Russellville.Rent home</a></div></footer>
 </body></html>
