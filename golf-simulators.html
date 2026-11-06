@@ -448,6 +448,70 @@ html{scroll-padding-top:114px}
 }
 @media(prefers-reduced-motion:reduce){.round-board-card:hover{transform:none}}
 
+
+/* 2026-11-05 · Mobile simulator operator field folios
+   Live references: https://stayarv.com/ + https://russellville.rent/
+   Research: NN/g zigzag-page-layout (aligned text columns scan faster than
+   decorative zigzags); web.dev/learn/design/ responsive macro layouts;
+   WCAG 2.2 1.4.10 reflow and focus visibility. Existing service, price,
+   delivery and setup caveats remain source text, not illustrative claims.
+   Scenic panels are existing vector drawings, not operator photos. */
+#mobile{margin-top:clamp(58px,7vw,96px)}
+#mobile>.section-head{align-items:end;gap:clamp(18px,4vw,48px);padding-bottom:24px;margin-bottom:27px;border-bottom:1px solid #c5d7c6}
+#mobile>.section-head h2{font:400 clamp(2.65rem,5.15vw,4.55rem)/1.03 Georgia,"Times New Roman",serif;letter-spacing:-.062em;max-width:15ch;text-wrap:balance}
+#mobile>.section-head>p{max-width:28ch;font-size:.9rem;line-height:1.65;color:#536e5b;text-align:right}
+#mobile .mobile-grid{grid-template-columns:minmax(0,1fr);gap:clamp(22px,3.2vw,34px)}
+#mobile .mobile-grid>.card{display:grid;grid-template-columns:minmax(260px,.83fr) minmax(0,1.17fr);grid-template-rows:78px minmax(310px,1fr);align-items:stretch;min-height:440px;border:1px solid #c4d8c8;border-radius:24px;overflow:hidden;box-shadow:0 21px 46px #14382e1b}
+#mobile .mobile-grid .card-top{grid-column:1;grid-row:1;display:flex;align-items:center;gap:18px;padding:19px clamp(23px,3vw,37px);background:#143b32;border:0;border-bottom:1px solid #ffffff36}
+#mobile .mobile-grid .card-top span{color:#ffe2a6;font-size:.72rem;letter-spacing:.16em;line-height:1.5}
+#mobile .mobile-grid .card-top b{color:#f3e5c4;font:400 2.3rem/1 Georgia,"Times New Roman",serif}
+#mobile .mobile-grid .event-card-scene{grid-column:1;grid-row:2;position:relative;isolation:isolate;display:grid;place-items:center;height:auto;min-height:310px;overflow:hidden;padding:37px 26px 55px;background:radial-gradient(ellipse at 76% 18%,#abcb937a,transparent 53%),linear-gradient(148deg,#255846,#0d302d);color:#f3e5ca}
+#mobile .mobile-grid .event-card-scene--puttees{background:radial-gradient(ellipse at 76% 18%,#fff1c5ae,transparent 53%),linear-gradient(145deg,#527d65,#1b4940);color:#fff9df}
+#mobile .mobile-grid>.card:nth-child(3) .event-card-scene{background:radial-gradient(ellipse at 80% 14%,#d6b88d8c,transparent 52%),linear-gradient(145deg,#466c70,#153b48)}
+#mobile .mobile-grid .event-card-scene:before{content:"";position:absolute;inset:auto -120px -180px auto;width:440px;height:440px;border:1px solid #fff6d447;border-radius:50%;box-shadow:0 0 0 46px #fff6d40c,0 0 0 96px #fff6d408;pointer-events:none}
+#mobile .mobile-grid .event-card-scene:after{inset:15px;border:1px solid #f8eac56b;border-radius:15px}
+#mobile .mobile-grid .event-card-scene svg{position:relative;z-index:1;width:min(100%,510px);height:auto;max-height:295px;filter:drop-shadow(0 13px 12px #06261d62)}
+#mobile .mobile-grid .event-card-scene>span{bottom:25px;left:31px;right:29px;text-align:left;color:#fff2d4;font-size:.7rem;line-height:1.45;letter-spacing:.055em}
+#mobile .mobile-grid .card-content{grid-column:2;grid-row:1/3;display:flex;flex-direction:column;min-width:0;padding:clamp(29px,4.2vw,55px);background:linear-gradient(145deg,#fffefa,#f5f9f1)}
+#mobile .mobile-grid h3{font:400 clamp(2.05rem,3.35vw,3.3rem)/1.08 Georgia,"Times New Roman",serif;letter-spacing:-.056em;color:#153b30;max-width:20ch;margin:0 0 21px;text-wrap:balance;overflow-wrap:anywhere}
+#mobile .mobile-grid .card-content>p{font-size:.94rem;line-height:1.78;color:#3c594b}
+#mobile .mobile-grid .warning{border:1px solid #ebd6a9;border-left:4px solid #b88537;margin:9px 0 20px;background:#fff5e4;color:#6b4c20}
+#mobile .mobile-grid .card-content .detail{margin-top:auto;padding-top:16px;border-top:1px solid #cfddcf;color:#456451}
+#mobile .mobile-grid .links{margin-top:19px;padding-top:15px;border-top:1px solid #cfddcf}
+#mobile .mobile-grid .links a{min-height:48px;border-radius:9px}
+#mobile .mobile-grid .links a:focus-visible{outline:3px solid #a56a17;outline-offset:4px}
+@media(max-width:850px){
+  #mobile .mobile-grid>.card{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto;min-height:0}
+  #mobile .mobile-grid .card-top{grid-column:1;grid-row:1;min-height:70px;padding:16px 27px}
+  #mobile .mobile-grid .event-card-scene{grid-column:1;grid-row:2;height:auto;min-height:255px;padding:22px 28px 45px}
+  #mobile .mobile-grid .event-card-scene svg{max-height:240px}
+  #mobile .mobile-grid .card-content{grid-column:1;grid-row:3;padding:clamp(27px,4vw,42px)}
+  #mobile .mobile-grid h3{font-size:clamp(2.05rem,5.2vw,2.85rem);max-width:25ch}
+}
+@media(max-width:600px){
+  #mobile>.section-head{display:block;padding-bottom:18px;margin-bottom:20px}
+  #mobile>.section-head h2{font-size:clamp(2.55rem,9vw,3.5rem)}
+  #mobile>.section-head>p{max-width:52ch;margin:12px 0 0;text-align:left}
+  #mobile .mobile-grid{gap:18px}
+  #mobile .mobile-grid>.card{border-radius:17px}
+  #mobile .mobile-grid .card-top{padding:14px 23px;min-height:62px}
+  #mobile .mobile-grid .card-top span{font-size:.65rem}
+  #mobile .mobile-grid .card-top b{font-size:1.9rem}
+  #mobile .mobile-grid .event-card-scene{min-height:212px;padding:16px 22px 39px}
+  #mobile .mobile-grid .event-card-scene svg{max-height:175px}
+  #mobile .mobile-grid .event-card-scene>span{bottom:15px;left:23px;right:23px;font-size:.61rem}
+  #mobile .mobile-grid .card-content{padding:26px 22px}
+  #mobile .mobile-grid h3{font-size:clamp(1.85rem,7.6vw,2.5rem)}
+  #mobile .mobile-grid .card-content>p{font-size:.89rem;line-height:1.71}
+}
+@media print{
+  #mobile .mobile-grid>.card{display:block;min-height:0;box-shadow:none;break-inside:avoid;border:1px solid #888}
+  #mobile .mobile-grid .card-top{background:#fff!important;color:#173f35;border-bottom:1px solid #bbb}
+  #mobile .mobile-grid .card-top span,#mobile .mobile-grid .card-top b{color:#173f35}
+  #mobile .mobile-grid .event-card-scene{display:none}
+  #mobile .mobile-grid .card-content{padding:19px 22px;background:white}
+}
+
 </style></head>
 <body><a class="skip" href="#main">Skip to rental options</a>
 <header class="golf-site-header"><div class="header-inner golf-header-inner">
