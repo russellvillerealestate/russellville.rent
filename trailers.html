@@ -198,6 +198,70 @@ h1{font:400 clamp(2.8rem,5.5vw,4.8rem)/1.08 Georgia,"Times New Roman",serif;lett
  .group .provider .card-content>p:last-child a{margin:3px 2px}
 }
 @media(prefers-reduced-motion:reduce){.group .provider{transition:none}}
+
+/* November 6, 2026 — Hauling Atlas: a scenic, task-first editorial workbench.
+   Original provider claims, price examples, contact links and navigation are unchanged.
+   Reference: https://stayarv.com/ (immersive pine/gold visual scale).
+   Research: https://www.nngroup.com/articles/visual-hierarchy-ux-definition/
+   https://web.dev/articles/responsive-web-design-basics
+   https://www.w3.org/TR/WCAG22/ (focus visible, reflow, reduced motion).
+   All scenes are illustration only, not actual trailer models or available inventory. */
+.haul-guide{margin:0 0 clamp(48px,7vw,86px);scroll-margin-top:22px}
+.haul-showcase{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);overflow:hidden;isolation:isolate;background:#f3f3e9;border:1px solid #c6d6c8;border-radius:27px;box-shadow:0 28px 60px #143c3318}
+.haul-picture{position:relative;display:flex;align-items:center;justify-content:center;min-width:0;padding:28px 16px 44px;min-height:680px;background:radial-gradient(ellipse at 70% 13%,#66816e 0%,transparent 40%),linear-gradient(155deg,#264e4d,#102d2b 78%);overflow:hidden}
+.haul-picture:before{content:"FIELD NOTES   /   03 HAULING JOBS";position:absolute;z-index:2;top:27px;left:29px;color:#f0d79d;font-size:.65rem;font-weight:850;letter-spacing:.18em}
+.haul-picture:after{content:"ILLUSTRATED TRAILER TYPES · NOT PROVIDER INVENTORY";position:absolute;left:29px;right:16px;bottom:23px;color:#d1dfd3;font-size:.58rem;font-weight:800;letter-spacing:.1em}
+.haul-picture svg{width:100%;max-height:610px;overflow:visible;filter:drop-shadow(0 19px 20px #061c1b65)}
+.haul-scene-unit{transition:opacity .3s ease,transform .3s ease;transform-box:fill-box;transform-origin:center}
+.haul-workbench{min-width:0;padding:clamp(25px,3.3vw,44px);background:radial-gradient(circle at 100% 0%,#e7efdf 0,transparent 49%),#f9faf5}
+.haul-workbench .haul-heading{display:block;margin-bottom:27px}
+.haul-workbench .haul-heading .eyebrow{font-size:.64rem;letter-spacing:.15em;color:#4b6a56}
+.haul-workbench .haul-heading h2{font-size:clamp(2.5rem,4.5vw,4.5rem);line-height:1.03;max-width:10ch;color:#143d31;text-wrap:balance;margin:0 0 16px}
+.haul-workbench .haul-heading p{max-width:49ch;margin:0;color:#40594b;font-size:.88rem;line-height:1.6}
+.haul-workbench .haul-options{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+.haul-workbench .haul-option,.haul-workbench .haul-option:last-child{display:grid;grid-template-columns:65px minmax(0,1fr);grid-template-rows:auto auto 1fr;column-gap:18px;min-height:0;grid-column:auto;padding:19px 21px;align-items:start;border:1px solid #cbd9cc;border-radius:14px;background:#fff;box-shadow:0 7px 20px #193b3010;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.haul-workbench .haul-option:hover{transform:translateX(5px);box-shadow:0 12px 28px #193b301c;border-color:#8da88e}
+.haul-workbench .haul-icon{grid-column:1;grid-row:1/4;display:grid;place-items:center;width:61px;height:61px;margin:0;border-radius:13px}
+.haul-workbench .haul-icon svg{width:39px;height:39px}
+.haul-workbench .haul-title{grid-column:2;grid-row:1;font-size:clamp(1.31rem,2vw,1.65rem);line-height:1.2}
+.haul-workbench .haul-desc{grid-column:2;grid-row:2;margin:6px 0 0;font-size:.78rem;line-height:1.55}
+.haul-workbench .haul-route{grid-column:2;grid-row:3;align-self:end;margin:12px 0 0;padding-top:9px;min-height:30px;color:#1d6049;font-size:.72rem}
+.haul-workbench-note{font-size:.73rem;color:#54695a;line-height:1.5;margin:18px 0 0}
+@supports selector(:has(*)){
+.haul-showcase:has(.haul-option:is(:hover,:focus-visible)) .haul-scene-unit{opacity:.32}
+.haul-showcase:has(.haul-option:nth-child(1):is(:hover,:focus-visible)) .haul-scene-unit-1,
+.haul-showcase:has(.haul-option:nth-child(2):is(:hover,:focus-visible)) .haul-scene-unit-2,
+.haul-showcase:has(.haul-option:nth-child(3):is(:hover,:focus-visible)) .haul-scene-unit-3{opacity:1;transform:translateY(-5px)}
+}
+@media(max-width:950px){
+.haul-showcase{grid-template-columns:minmax(0,1fr)}
+.haul-picture{min-height:310px;padding:37px 25px 22px}
+.haul-picture svg{height:270px;max-height:270px;width:auto;max-width:100%}
+.haul-workbench .haul-heading h2{max-width:none}
+.haul-workbench .haul-options{grid-template-columns:repeat(3,minmax(0,1fr))}
+.haul-workbench .haul-option,.haul-workbench .haul-option:last-child{display:flex;flex-direction:column;grid-column:auto;min-height:220px;padding:17px}
+.haul-workbench .haul-icon{width:52px;height:52px;margin:0 0 13px}
+.haul-workbench .haul-title{font-size:1.32rem}
+.haul-workbench .haul-route{width:100%;margin-top:auto}
+}
+@media(max-width:650px){
+.haul-guide{margin:0 0 48px}
+.haul-showcase{border-radius:18px}
+.haul-picture{min-height:220px;padding:42px 12px 8px}
+.haul-picture:before{top:18px;left:19px;font-size:.55rem}
+.haul-picture:after{left:19px;bottom:12px;font-size:.49rem}
+.haul-picture svg{height:195px;max-height:195px;width:100%;max-width:350px}
+.haul-workbench{padding:26px 19px 28px}
+.haul-workbench .haul-heading h2{font-size:clamp(2.4rem,10vw,3.4rem)}
+.haul-workbench .haul-options{grid-template-columns:minmax(0,1fr)}
+.haul-workbench .haul-option,.haul-workbench .haul-option:last-child{display:grid;grid-template-columns:56px minmax(0,1fr);grid-template-rows:auto auto 1fr;column-gap:13px;min-height:0;padding:16px}
+.haul-workbench .haul-icon{grid-column:1;grid-row:1/4;width:51px;height:51px;margin:0}
+.haul-workbench .haul-title{grid-column:2;grid-row:1}
+.haul-workbench .haul-desc{grid-column:2;grid-row:2}
+.haul-workbench .haul-route{grid-column:2;grid-row:3;margin-top:10px}
+}
+@media(prefers-reduced-motion:reduce){.haul-scene-unit,.haul-workbench .haul-option{transition:none}.haul-workbench .haul-option:hover{transform:none}.haul-showcase:has(.haul-option:is(:hover,:focus-visible)) .haul-scene-unit{transform:none}}
+
 </style></head><body>
 <a class="skip-link" href="#main">Skip to trailer rentals</a>
 <header><nav class="nav" aria-label="Site navigation"><a class="logo" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← Browse all rentals</a></nav></header>
@@ -240,6 +304,57 @@ h1{font:400 clamp(2.8rem,5.5vw,4.8rem)/1.08 Georgia,"Times New Roman",serif;lett
 </section>
 
 <section class="haul-guide" id="haul-guide" aria-labelledby="haul-title">
+
+  <div class="haul-showcase">
+    <div class="haul-picture" aria-hidden="true">
+      <svg viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg" focusable="false">
+        <defs>
+          <linearGradient id="haul-sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#486c60"/><stop offset="1" stop-color="#123832"/></linearGradient>
+          <linearGradient id="haul-gold" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f5dca0"/><stop offset="1" stop-color="#bb9757"/></linearGradient>
+        </defs>
+        <circle cx="454" cy="120" r="84" fill="#f5dc9c" opacity=".24"/>
+        <circle cx="454" cy="120" r="55" fill="#f5dc9c" opacity=".38"/>
+        <path d="M0 184Q75 148 155 177T305 177T460 172T600 160V700H0Z" fill="#537365" opacity=".45"/>
+        <path d="M0 209Q112 171 217 201T430 188T600 194V700H0Z" fill="#204b42" opacity=".79"/>
+        <g fill="#12352f" opacity=".9"><path d="M22 229l16-35 15 35h-8l9 17H18l12-17Zm73 0 17-38 17 38h-9l12 21H93l11-21Zm420 7 16-42 18 42h-8l9 22h-38l13-22Zm54-9 12-30 14 30h-7l10 18h-30l10-18Z"/></g>
+        <path d="M20 297h560M20 497h560M20 671h560" stroke="#e6c989" stroke-width="2" stroke-dasharray="5 11" opacity=".4"/>
+        <g class="haul-scene-unit haul-scene-unit-1">
+          <rect x="46" y="221" width="508" height="133" rx="20" fill="#0d2e2c" stroke="#a1b2a0" stroke-opacity=".45" stroke-width="2"/>
+          <path d="M78 321h453" stroke="#c7ad78" stroke-width="4" opacity=".7"/>
+          <path d="M107 246h272v68H107Z" fill="#e4d8bb" opacity=".92" stroke="#f7e9bd" stroke-width="4"/>
+          <path d="M128 258h230m-230 13h230" stroke="#1c4a3d" stroke-width="2" opacity=".35"/>
+          <path d="M378 266h79l38 33v15H378Z" fill="url(#haul-gold)" stroke="#eed5a0" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M402 275h43l22 20h-65Z" fill="#365b52" stroke="#264740" stroke-width="3"/>
+          <path d="M495 298h18v15h-18" fill="#eed59d"/>
+          <circle cx="164" cy="320" r="22" fill="#0e2d2d" stroke="#ead39a" stroke-width="8"/>
+          <circle cx="410" cy="320" r="22" fill="#0e2d2d" stroke="#ead39a" stroke-width="8"/>
+        </g>
+        <g class="haul-scene-unit haul-scene-unit-2">
+          <rect x="46" y="378" width="508" height="133" rx="20" fill="#0d2e2c" stroke="#a1b2a0" stroke-opacity=".45" stroke-width="2"/>
+          <path d="M77 479h452" stroke="#c7ad78" stroke-width="4" opacity=".7"/>
+          <path d="M94 466h388l43 14H94Z" fill="url(#haul-gold)"/>
+          <path d="M116 458h345" stroke="#eed6a3" stroke-width="7" stroke-linecap="round"/>
+          <path d="M168 444l26-34h166l34 34v16H168Z" fill="#d2d9cf" stroke="#e9d99d" stroke-width="5" stroke-linejoin="round"/>
+          <path d="M210 414l-17 29h80v-29m20 0v29h77l-23-29" fill="#41675d" opacity=".8"/>
+          <circle cx="217" cy="462" r="22" fill="#12302f" stroke="#d7c78f" stroke-width="7"/>
+          <circle cx="374" cy="462" r="22" fill="#12302f" stroke="#d7c78f" stroke-width="7"/>
+          <circle cx="170" cy="487" r="18" fill="#0e2d2d" stroke="#e8d09a" stroke-width="7"/>
+          <circle cx="394" cy="487" r="18" fill="#0e2d2d" stroke="#e8d09a" stroke-width="7"/>
+        </g>
+        <g class="haul-scene-unit haul-scene-unit-3">
+          <rect x="46" y="536" width="508" height="133" rx="20" fill="#0d2e2c" stroke="#a1b2a0" stroke-opacity=".45" stroke-width="2"/>
+          <path d="M77 633h452" stroke="#c7ad78" stroke-width="4" opacity=".7"/>
+          <path d="M102 610h385l33 20H94Z" fill="#f0d69a"/>
+          <path d="M157 601l41-51h240l-36 60H157Z" fill="#d6bf8b" stroke="#f7e5b5" stroke-width="5" stroke-linejoin="round"/>
+          <path d="M181 580h226M206 562h211" stroke="#876c44" stroke-width="3" opacity=".5"/>
+          <path d="M160 604l-23 8m287-2 23 2" stroke="#f4dda6" stroke-width="5"/>
+          <path d="M235 611l55-45" stroke="#aebaa3" stroke-width="7" stroke-linecap="round"/>
+          <circle cx="177" cy="633" r="21" fill="#0e2d2d" stroke="#ecd5a0" stroke-width="7"/>
+          <circle cx="386" cy="633" r="21" fill="#0e2d2d" stroke="#ecd5a0" stroke-width="7"/>
+        </g>
+      </svg>
+    </div>
+    <div class="haul-workbench">
   <div class="haul-heading"><div><span class="eyebrow">Find your starting point / 03 hauling jobs</span><h2 id="haul-title">What are you hauling?</h2></div><p>Choose a job to jump to a listed Russellville provider. These are starting points, not confirmed reservations or equipment matches.</p></div>
   <nav class="haul-options" aria-label="Browse trailer rentals by hauling job">
     <a class="haul-option" href="#provider-moving">
@@ -255,6 +370,9 @@ h1{font:400 clamp(2.8rem,5.5vw,4.8rem)/1.08 Georgia,"Times New Roman",serif;lett
       <span class="haul-title">Dump &amp; work</span><span class="haul-desc">Dump trailers, flatbeds and jobsite hauling.</span><span class="haul-route"><span>View Central Rental &amp; Supply</span><span aria-hidden="true">↗</span></span>
     </a>
   </nav>
+    <p class="haul-workbench-note">Illustrated trailer types help explain hauling jobs. They are not photos, model specifications, equipment recommendations or proof of any provider’s available fleet.</p>
+    </div>
+  </div>
 </section>
 <section class="group" id="local" aria-labelledby="local-title"><div class="section-heading"><div><span class="eyebrow">01 / In Russellville</span><h2 id="local-title">Short-term trailer rentals</h2></div><p>Check the specific trailer type, pickup location, and towing requirements with each provider.</p></div><div class="grid"><article class="provider" id="provider-hauling"><div class="number" aria-hidden="true">01</div><div class="card-content"><p class="card-label">Russellville · Equipment rental</p><h3>White Trailer Rental</h3><p>Official rental inventory includes 20-foot car haulers (including a winch-equipped option), a 24-foot enclosed car hauler with winch, a 14-foot utility trailer, a 14-foot dump trailer, a 33-foot gooseneck, a 26-foot power-tilt deckover with winch, and a horse/stock trailer. Online booking and one-day, multiday and weekly rentals are advertised. The operator states reservations may be cancelled or changed without an additional fee up to 24 hours before scheduled pickup; check the full policy and any limitations when booking. The operator advises renters to confirm trailer-towing coverage with their automobile insurer. Verify each trailer’s current availability, capacity, towing requirements, rates and final terms with the operator.</p><p class="detail">3845 E Main St, Russellville, AR 72802 — the operator now lists this contact address on both its official homepage and contact page. The exact trailer pickup point and instructions remain UNCONFIRMED; verify them before traveling.</p><p><a href="tel:+14795526080">479-552-6080</a> &nbsp; · &nbsp; <a href="https://whitetrailerrental.com/" target="_blank" rel="noopener noreferrer">Provider website ↗</a></p></div></article><article class="provider" id="provider-moving"><div class="number" aria-hidden="true">02</div><div class="card-content"><p class="card-label">Russellville · Moving and utility</p><h3>U-Haul Moving &amp; Storage of Russellville</h3><p>Moving and utility trailer rentals.</p><p class="detail">2821 E Main St, Russellville, AR 72802</p><p><a href="tel:+14794980933">479-498-0933</a> &nbsp; · &nbsp; <a href="https://www.uhaul.com/Locations/Trailer-Rentals-near-Russellville-AR-72802/742075/" target="_blank" rel="noopener noreferrer">Provider website ↗</a></p></div></article><article class="provider" id="provider-dump"><div class="number" aria-hidden="true">03</div><div class="card-content"><p class="card-label">Russellville · Equipment rental</p><h3>Central Rental &amp; Supply</h3><p>Official trailer catalog advertises 14-foot dump trailers, flatbed trailers from 10 to 20 feet (tilt options on some larger models), and tow/car dollies. The operator serves Russellville and Harrison; confirm which trailer models are available at the Russellville yard, along with towing requirements, rates and dates.</p><p class="detail">105 N Sidney Ave, Russellville, AR 72801</p><p><a href="tel:+14798907400">479-890-7400</a> &nbsp; · &nbsp; <a href="https://www.centralrentalandsupply.com/trailers" target="_blank" rel="noopener noreferrer">Official trailer catalog ↗</a></p></div></article>
 <article class="provider" id="provider-wattstheload"><div class="number" aria-hidden="true">04</div><div class="card-content"><p class="card-label">Russellville service · Dump &amp; equipment trailers</p><h3>WattstheLoad — Watts the Load LLC</h3><p>The operator's official website advertises dump-trailer and heavy-duty equipment-trailer rentals, along with optional material hauling and debris-disposal services. Published rates include dump trailers at $100/day, $400/week or $1,200/month, and equipment trailers at $75/day, $200/weekend or $350/week. These are advertised rates, <strong>not confirmed quotes</strong>; verify date availability, taxes, deposit, towing and loading requirements, delivery/pickup arrangements and total charges before reserving.</p><p class="detail">Russellville, AR — <strong>service explicitly listed on the operator's official service-area page</strong>; physical pickup address UNCONFIRMED</p><p><a href="tel:+18708280148">870-828-0148</a> &nbsp; · &nbsp; <a href="https://www.wattstheload.com/" target="_blank" rel="noopener noreferrer">Official provider website ↗</a> · <a href="https://www.wattstheload.com/general-5" target="_blank" rel="noopener noreferrer">Russellville service area ↗</a> · <a href="https://www.wattstheload.com/general-5-1" target="_blank" rel="noopener noreferrer">Published rental rates ↗</a></p></div></article><article class="provider" id="provider-tractor-supply"><div class="number" aria-hidden="true">05</div><div class="card-content"><p class="card-label">Russellville · Store-advertised trailer rental</p><h3>Tractor Supply Co. — Russellville Store #596</h3><p>The retailer's <strong>official Russellville store page explicitly lists trailer rental</strong> as an on-site service, including trailers for transporting purchases and other hauling needs. This confirms the store advertises the service, <strong>not any specific trailer model, current inventory, rental price or pickup availability</strong>. Call the store to confirm the trailer type, reservation policy, towing requirements, rental period, fees and availability before traveling.</p><p class="detail">320 North Hampton Ave, Russellville, AR 72802 · Trailer-rental service advertised at this store</p><p><a href="tel:+14798909800">479-890-9800</a> &nbsp; · &nbsp; <a href="https://www.tractorsupply.com/tsc/store_Russellville-AR-72802_596" target="_blank" rel="noopener noreferrer">Official store services &amp; trailer rental ↗</a></p></div></article></div></section>
