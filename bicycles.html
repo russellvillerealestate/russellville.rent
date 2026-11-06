@@ -260,6 +260,50 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
  .bike-folio-intro{display:block}
 }
 
+
+/* November 6, 2026 / Bicycle rate gallery. Preserve the preceding scenic,
+   dark-pine StayARV-inspired design and all posted prices/filters.
+   Five self-contained decorative bike-type illustrations, not inventory photos.
+   Source guidance: NNGroup visual hierarchy, web.dev responsive images,
+   and W3C WCAG 2.2 focus/reflow/target guidelines. */
+.rate-grid{gap:clamp(15px,2vw,23px);align-items:stretch}
+.rate-card{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;min-height:0;padding:0;border-radius:23px;background:#fffdf7;box-shadow:0 14px 32px #143b2d17;scroll-margin-top:30px}
+.rate-card .index{display:block;padding:24px 26px 11px;letter-spacing:.16em;color:#3b765b}
+.rate-card-scene{display:block;position:relative;margin:0 17px;aspect-ratio:600/260;min-height:138px;border-radius:15px;overflow:hidden;background:#245847}
+.rate-card-scene svg{display:block;width:100%;height:100%}
+.rate-card h3{flex:1;padding:4px 26px 15px;margin:16px 0 0;max-width:23ch;font-size:clamp(1.4rem,2vw,1.9rem)}
+.rate-card .price{margin:0 26px 27px;padding-top:17px;border-color:#d8e3d8}
+.rate-card .price strong{font-size:clamp(2.15rem,3.2vw,3.35rem)}
+.rate-card:first-child{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);grid-template-rows:auto minmax(0,1fr) auto;min-height:355px;background:#123f34;color:#fff}
+.rate-card:first-child .index{grid-column:2;grid-row:1;padding:42px 25px 0;color:#f7d998}
+.rate-card:first-child .rate-card-scene{grid-column:1;grid-row:1/4;align-self:stretch;width:100%;height:100%;min-height:355px;margin:0;aspect-ratio:auto;border-radius:0}
+.rate-card:first-child .rate-card-scene svg{height:100%}
+.rate-card:first-child h3{grid-column:2;grid-row:2;align-self:center;margin:0;padding:23px 25px;max-width:16ch;font-size:clamp(2.05rem,3.1vw,3.4rem)}
+.rate-card:first-child .price{grid-column:2;grid-row:3;margin:0 25px 30px;padding-top:18px;border-color:#ffffff5e}
+.rate-card:first-child .price span{color:#f5f2de}
+.rate-card[hidden]{display:none!important}
+.rate-art-notice{font-size:.77rem;color:#526d5c;margin:8px 0 0;line-height:1.6}
+@media(max-width:1050px){
+ .rate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .rate-card:first-child{grid-column:1/-1}
+}
+@media(max-width:650px){
+ .rate-grid{grid-template-columns:1fr}
+ .rate-card:first-child{grid-column:auto;display:flex;min-height:0}
+ .rate-card:first-child .index{padding:25px 25px 12px}
+ .rate-card:first-child .rate-card-scene{width:calc(100% - 34px);height:auto;aspect-ratio:600/260;min-height:0;margin:0 17px;border-radius:15px}
+ .rate-card:first-child h3{padding:9px 26px 22px;margin:17px 0 0;font-size:clamp(2rem,7vw,2.7rem);max-width:18ch}
+ .rate-card:first-child .price{margin:0 26px 27px}
+ .rate-card-scene{min-height:0}
+}
+@media print{
+ .rate-card{break-inside:avoid;box-shadow:none;border:1px solid #888}
+ .rate-card:first-child{display:block;min-height:0;background:#fff;color:#163c30}
+ .rate-card-scene,.rate-card:first-child .rate-card-scene{display:none}
+ .rate-card:first-child .index{color:#163c30}
+ .rate-card:first-child .price strong,.rate-card:first-child .price span{color:#163c30}
+}
+
 </style></head><body>
 <a class="skip" href="#rates">Skip to rental rates</a>
 <header><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
@@ -283,12 +327,13 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
 <ol class="snapshot-bars" id="snapshot-bars" aria-label="Bicycle daily-rate comparison"></ol>
 <p class="snapshot-foot">Published daily rates only, not live quotes. Final pricing, bicycle sizes, deposits and availability must be confirmed with Jackalope Cycling.</p>
 </div>
-<div class="rate-grid" id="rate-grid"><article class="rate-card" data-ride="mountain"><span class="index">01 · MOUNTAIN</span><h3>Carbon full-suspension mountain bike</h3><div class="price"><strong><data value="80">$80</data></strong><span>/ day</span></div></article>
-<article class="rate-card" data-ride="mountain"><span class="index">02 · MOUNTAIN</span><h3>Aluminum full-suspension mountain bike</h3><div class="price"><strong><data value="60">$60</data></strong><span>/ day</span></div></article>
-<article class="rate-card" data-ride="mountain"><span class="index">03 · MOUNTAIN</span><h3>Hardtail mountain bike</h3><div class="price"><strong><data value="50">$50</data></strong><span>/ day</span></div></article>
-<article class="rate-card" data-ride="electric"><span class="index">04 · ELECTRIC</span><h3>Electric commuter bike</h3><div class="price"><strong><data value="50">$50</data></strong><span>/ day</span></div></article>
-<article class="rate-card" data-ride="road"><span class="index">05 · ROAD + GRAVEL</span><h3>Road or gravel bike</h3><div class="price"><strong><data value="50">$50</data></strong><span>/ day</span></div></article></div>
-<p class="small-note">Rental fleet sizes, specific models, available dates and delivery are not confirmed.</p></section>
+<div class="rate-grid" id="rate-grid"><article class="rate-card" data-ride="mountain"><span class="index">01 · MOUNTAIN</span><span class="rate-card-scene" aria-hidden="true"><svg viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid slice"><rect width="600" height="260" fill="#193b39"/><circle cx="492" cy="58" r="35" fill="#f5d398" opacity=".91"/><path d="M0 170 95 74 180 145 292 45 420 152 516 80 600 152v108H0Z" fill="#3e7b65"/><path d="m0 210 105-104 118 94 122-94 123 81 132-77v150H0Z" fill="#90bc88" opacity=".8"/><path d="M0 226Q145 209 305 224T600 211V260H0Z" fill="#193b39" opacity=".55"/><path d="M0 232H600" stroke="#f5d398" stroke-width="2" stroke-dasharray="9 15" opacity=".65"/><g stroke="#15362f" stroke-width="12" fill="none"><circle cx="149" cy="191" r="52"/><circle cx="453" cy="191" r="52"/></g><g stroke="#f8f0dd" stroke-width="9" fill="none"><circle cx="149" cy="191" r="47"/><circle cx="453" cy="191" r="47"/></g><g stroke="#fbf1d9" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M149 191 255 104 315 191H149L255 104 453 191 315 191"/><path d="m241 96-8-20h-31m169 28 25-4 57 91M374 104h38"/></g><path d="m290 158 18-10 13 10-13 12" fill="none" stroke="#f6d69c" stroke-width="5" stroke-linejoin="round"/><g fill="#f5d398"><circle cx="149" cy="191" r="8"/><circle cx="315" cy="191" r="8"/><circle cx="453" cy="191" r="8"/></g><path d="M0 0H600V260H0Z" fill="none" stroke="#ffffff" stroke-opacity=".13" stroke-width="8"/></svg></span><h3>Carbon full-suspension mountain bike</h3><div class="price"><strong><data value="80">$80</data></strong><span>/ day</span></div></article>
+<article class="rate-card" data-ride="mountain"><span class="index">02 · MOUNTAIN</span><span class="rate-card-scene" aria-hidden="true"><svg viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid slice"><rect width="600" height="260" fill="#536f73"/><circle cx="492" cy="58" r="35" fill="#ffe1ac" opacity=".91"/><path d="M0 170 95 74 180 145 292 45 420 152 516 80 600 152v108H0Z" fill="#8ea5a0"/><path d="m0 210 105-104 118 94 122-94 123 81 132-77v150H0Z" fill="#bfd8ba" opacity=".8"/><path d="M0 226Q145 209 305 224T600 211V260H0Z" fill="#536f73" opacity=".55"/><path d="M0 232H600" stroke="#ffe1ac" stroke-width="2" stroke-dasharray="9 15" opacity=".65"/><g stroke="#15362f" stroke-width="12" fill="none"><circle cx="149" cy="191" r="52"/><circle cx="453" cy="191" r="52"/></g><g stroke="#f8f0dd" stroke-width="9" fill="none"><circle cx="149" cy="191" r="47"/><circle cx="453" cy="191" r="47"/></g><g stroke="#fbf1d9" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M149 191 255 104 315 191H149L255 104 453 191 315 191"/><path d="m241 96-8-20h-31m169 28 25-4 57 91M374 104h38"/></g><path d="m290 158 18-10 13 10-13 12" fill="none" stroke="#f6d69c" stroke-width="5" stroke-linejoin="round"/><g fill="#ffe1ac"><circle cx="149" cy="191" r="8"/><circle cx="315" cy="191" r="8"/><circle cx="453" cy="191" r="8"/></g><path d="M0 0H600V260H0Z" fill="none" stroke="#ffffff" stroke-opacity=".13" stroke-width="8"/></svg></span><h3>Aluminum full-suspension mountain bike</h3><div class="price"><strong><data value="60">$60</data></strong><span>/ day</span></div></article>
+<article class="rate-card" data-ride="mountain"><span class="index">03 · MOUNTAIN</span><span class="rate-card-scene" aria-hidden="true"><svg viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid slice"><rect width="600" height="260" fill="#6b6546"/><circle cx="492" cy="58" r="35" fill="#f6d6a0" opacity=".91"/><path d="M0 170 95 74 180 145 292 45 420 152 516 80 600 152v108H0Z" fill="#a5a477"/><path d="m0 210 105-104 118 94 122-94 123 81 132-77v150H0Z" fill="#e0d5a5" opacity=".8"/><path d="M0 226Q145 209 305 224T600 211V260H0Z" fill="#6b6546" opacity=".55"/><path d="M0 232H600" stroke="#f6d6a0" stroke-width="2" stroke-dasharray="9 15" opacity=".65"/><g stroke="#15362f" stroke-width="12" fill="none"><circle cx="149" cy="191" r="52"/><circle cx="453" cy="191" r="52"/></g><g stroke="#f8f0dd" stroke-width="9" fill="none"><circle cx="149" cy="191" r="47"/><circle cx="453" cy="191" r="47"/></g><g stroke="#fbf1d9" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M149 191 255 104 315 191H149L255 104 453 191 315 191"/><path d="m241 96-8-20h-31m169 28 25-4 57 91M374 104h38"/></g><path d="m290 158 18-10 13 10-13 12" fill="none" stroke="#f6d69c" stroke-width="5" stroke-linejoin="round"/><g fill="#f6d6a0"><circle cx="149" cy="191" r="8"/><circle cx="315" cy="191" r="8"/><circle cx="453" cy="191" r="8"/></g><path d="M0 0H600V260H0Z" fill="none" stroke="#ffffff" stroke-opacity=".13" stroke-width="8"/></svg></span><h3>Hardtail mountain bike</h3><div class="price"><strong><data value="50">$50</data></strong><span>/ day</span></div></article>
+<article class="rate-card" data-ride="electric"><span class="index">04 · ELECTRIC</span><span class="rate-card-scene" aria-hidden="true"><svg viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid slice"><rect width="600" height="260" fill="#274e69"/><circle cx="492" cy="58" r="35" fill="#f4d59a" opacity=".91"/><path d="M0 165Q150 95 310 157T600 132V260H0Z" fill="#7196ac"/><path d="M0 215Q177 157 328 211T600 166V260H0Z" fill="#b6d4dc" opacity=".83"/><path d="M0 226Q145 209 305 224T600 211V260H0Z" fill="#274e69" opacity=".55"/><path d="M0 232H600" stroke="#f4d59a" stroke-width="2" stroke-dasharray="9 15" opacity=".65"/><g stroke="#15362f" stroke-width="12" fill="none"><circle cx="149" cy="191" r="52"/><circle cx="453" cy="191" r="52"/></g><g stroke="#f8f0dd" stroke-width="9" fill="none"><circle cx="149" cy="191" r="47"/><circle cx="453" cy="191" r="47"/></g><g stroke="#f7d28d" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M149 191 255 104 315 191H149L255 104 453 191 315 191"/><path d="m241 96-8-20h-31m169 28 25-4 57 91M374 104h38"/></g><rect x="275" y="132" width="45" height="39" rx="6" fill="#f6d79b" stroke="#244b57" stroke-width="4"/><path d="m301 138-12 15h11l-6 12" stroke="#30546a" stroke-width="4" fill="none" stroke-linejoin="round"/><g fill="#f4d59a"><circle cx="149" cy="191" r="8"/><circle cx="315" cy="191" r="8"/><circle cx="453" cy="191" r="8"/></g><path d="M0 0H600V260H0Z" fill="none" stroke="#ffffff" stroke-opacity=".13" stroke-width="8"/></svg></span><h3>Electric commuter bike</h3><div class="price"><strong><data value="50">$50</data></strong><span>/ day</span></div></article>
+<article class="rate-card" data-ride="road"><span class="index">05 · ROAD + GRAVEL</span><span class="rate-card-scene" aria-hidden="true"><svg viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid slice"><rect width="600" height="260" fill="#834c41"/><circle cx="492" cy="58" r="35" fill="#f9ddac" opacity=".91"/><path d="M0 165Q150 95 310 157T600 132V260H0Z" fill="#cf9982"/><path d="M0 215Q177 157 328 211T600 166V260H0Z" fill="#e5c8a8" opacity=".83"/><path d="M0 226Q145 209 305 224T600 211V260H0Z" fill="#834c41" opacity=".55"/><path d="M0 232H600" stroke="#f9ddac" stroke-width="2" stroke-dasharray="9 15" opacity=".65"/><g stroke="#15362f" stroke-width="12" fill="none"><circle cx="149" cy="191" r="52"/><circle cx="453" cy="191" r="52"/></g><g stroke="#f8f0dd" stroke-width="9" fill="none"><circle cx="149" cy="191" r="47"/><circle cx="453" cy="191" r="47"/></g><g stroke="#fce2b4" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M149 191 255 104 315 191H149L255 104 453 191 315 191"/><path d="m241 96-8-20h-31m169 28 25-4 57 91M374 104h38"/></g><path d="m450 189 23-29 14 0m-14 0-3-14" stroke="#fdf0d0" stroke-width="7" fill="none" stroke-linecap="round"/><g fill="#f9ddac"><circle cx="149" cy="191" r="8"/><circle cx="315" cy="191" r="8"/><circle cx="453" cy="191" r="8"/></g><path d="M0 0H600V260H0Z" fill="none" stroke="#ffffff" stroke-opacity=".13" stroke-width="8"/></svg></span><h3>Road or gravel bike</h3><div class="price"><strong><data value="50">$50</data></strong><span>/ day</span></div></article></div>
+<p class="small-note">Rental fleet sizes, specific models, available dates and delivery are not confirmed.</p>
+<p class="rate-art-notice">Bike illustrations are decorative type guides, not photographs of Jackalope Cycling’s rental inventory or a promise of specific models.</p></section>
 
 <section class="bike-access" id="bike-access-atlas" aria-labelledby="bike-access-title">
   <div class="wrap">
