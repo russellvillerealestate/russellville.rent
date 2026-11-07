@@ -307,6 +307,24 @@ h1{font:400 clamp(2.8rem,5.5vw,4.8rem)/1.08 Georgia,"Times New Roman",serif;lett
 @media(max-width:520px){.provider-dispatch{margin:48px 14px 40px;border-radius:18px}.dispatch-editorial{min-height:0;padding:27px 22px 16px}.dispatch-editorial-main{padding-top:26px}.provider-dispatch h2{font-size:3.15rem}.dispatch-scenery{max-height:105px}.dispatch-board{padding:24px 17px}.dispatch-columns{grid-template-columns:1fr;gap:12px}.dispatch-board h3{font-size:1.75rem}.dispatch-total{padding-left:12px;font-size:2rem}.dispatch-read{width:100%;max-width:none}.dispatch-topline{font-size:.61rem}}
 @media(prefers-reduced-motion:reduce){.dispatch-read,.dispatch-rows li a{transition:none}.dispatch-read:hover{transform:none}}
 
+
+/* Nov 7, 2026: persistent trailer dispatch rail. Visual direction: StayARV;
+   research: Nielsen Norman Group hierarchy, Google web.dev responsive design,
+   W3C WCAG 2.2 focus-not-obscured, touch targets and reduced motion. */
+html{scroll-padding-top:110px}
+.directory-jumps{position:sticky;top:0;z-index:30;display:grid;grid-template-columns:134px minmax(0,1fr);gap:19px;align-items:center;margin:0 -12px;padding:13px 20px;border:1px solid #285d49;border-top:1px solid #70906f;border-radius:0 0 18px 18px;background:linear-gradient(112deg,#102f2a 0%,#194737 55%,#1b513b 100%);color:#fff;box-shadow:0 16px 33px #102f2b32}
+.directory-jumps-label{display:flex;flex-direction:column;gap:5px;color:#e4ecd9;font-size:.67rem;line-height:1.35;letter-spacing:.13em}
+.directory-route-progress{font:400 1.45rem/1 Georgia,serif;letter-spacing:.03em;color:#efd69f}
+.directory-jumps .jump{display:flex;flex-wrap:nowrap;min-width:0;overflow-x:auto;overscroll-behavior-inline:contain;gap:8px;margin:0;padding:4px 3px 8px;scrollbar-width:thin;scrollbar-color:#88ac90 #204b3e}
+.directory-jumps .jump a,.directory-jumps .jump a:first-child{display:inline-flex;flex:0 0 auto;min-height:46px;align-items:center;justify-content:center;white-space:nowrap;padding:9px 15px;background:#ffffff11;color:#f4f8ec;border:1px solid #a6c7a166;border-radius:12px;font-size:.77rem;font-weight:800;transition:background .18s,border-color .18s,transform .18s}
+.directory-jumps .jump a:hover{background:#ffffff28;color:#fff;border-color:#f1d69b}
+.directory-jumps .jump a[aria-current="location"],.directory-jumps .jump a:first-child[aria-current="location"]{background:#efd69b;color:#183d2e;border-color:#efd69b;box-shadow:inset 0 0 0 1px #fff4d55a}
+.directory-jumps .jump a:focus-visible{outline:3px solid #f8dc8d;outline-offset:2px}
+#haul-guide,#local,#nearby,#cold-storage,#rent-to-own,#commercial-freight,.provider[id]{scroll-margin-top:110px}
+@media(max-width:760px){.directory-jumps{grid-template-columns:100px minmax(0,1fr);gap:8px;padding:10px 11px;margin:0 -8px;border-radius:0 0 12px 12px}.directory-jumps-label{font-size:.54rem;letter-spacing:.1em}.directory-route-progress{font-size:1.16rem}.directory-jumps .jump{padding:3px 2px 7px;gap:7px}.directory-jumps .jump a,.directory-jumps .jump a:first-child{min-height:44px;padding:8px 11px;font-size:.71rem}}
+@media(max-width:390px){.directory-jumps{grid-template-columns:73px minmax(0,1fr);gap:6px;margin:0 -6px}.directory-jumps-label{font-size:.48rem}.directory-route-progress{font-size:.98rem}}
+@media(prefers-reduced-motion:reduce){.directory-jumps .jump a{transition:none}}
+
 </style></head><body>
 <a class="skip-link" href="#main">Skip to trailer rentals</a>
 <header><nav class="nav" aria-label="Site navigation"><a class="logo" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← Browse all rentals</a></nav></header>
@@ -326,7 +344,7 @@ h1{font:400 clamp(2.8rem,5.5vw,4.8rem)/1.08 Georgia,"Times New Roman",serif;lett
     <div class="hero-stage-bottom"><span>LOCAL HAULING</span><strong>Find a fit.<br>Then confirm it.</strong></div>
   </div>
 </section>
-<div class="directory-jumps"><span class="directory-jumps-label">GO STRAIGHT TO</span><nav class="jump" aria-label="Jump to trailer options"><a href="#haul-guide">Choose by hauling job ↓</a><a href="#local">Russellville rentals ↓</a><a href="#nearby">Nearby option ↓</a><a href="#cold-storage">Refrigerated storage ↓</a><a href="#rent-to-own">Rent-to-own ↓</a><a href="#commercial-freight">Commercial freight ↓</a></nav></div>
+<div class="directory-jumps" id="trailer-route-nav"><span class="directory-jumps-label">TRAILER ROUTE <span class="directory-route-progress" aria-hidden="true">01 / 06</span></span><nav class="jump" aria-label="Jump to trailer options"><a href="#haul-guide">Choose by hauling job ↓</a><a href="#local">Russellville rentals ↓</a><a href="#nearby">Nearby option ↓</a><a href="#cold-storage">Refrigerated storage ↓</a><a href="#rent-to-own">Rent-to-own ↓</a><a href="#commercial-freight">Commercial freight ↓</a></nav></div>
 <div class="overview" aria-label="Directory overview"><div><strong>5</strong><span>Russellville short-term rental providers</span></div><div><strong>2</strong><span>Nearby U-Haul pickup dealers</span></div><div><strong>2</strong><span>Regional refrigerated-trailer inquiries</span></div><div><strong>1</strong><span>Separate rent-to-own program</span></div><div><strong>1</strong><span>Commercial freight-trailer inquiry</span></div></div>
 
 <section class="rental-lanes" aria-labelledby="rental-lanes-title">
@@ -503,4 +521,22 @@ h1{font:400 clamp(2.8rem,5.5vw,4.8rem)/1.08 Georgia,"Times New Roman",serif;lett
   });
   update();
 })();
-</script></body></html>
+</script>
+<script>
+/* Progressive enhancement: section-aware chapter indicator; no network or persistence. */
+(function(){
+  const nav=document.getElementById('trailer-route-nav');if(!nav)return;
+  const chapters=Array.from(nav.querySelectorAll('a[href^="#"]')).map(a=>({a,section:document.getElementById(a.getAttribute('href').slice(1))})).filter(item=>item.section);
+  const progress=nav.querySelector('.directory-route-progress');if(chapters.length!==6)return;
+  let queued=false;
+  function update(){
+    queued=false;const edge=nav.getBoundingClientRect().bottom+22;let selected=0;
+    chapters.forEach((item,index)=>{if(item.section.getBoundingClientRect().top<=edge)selected=index;});
+    chapters.forEach((item,index)=>{if(index===selected)item.a.setAttribute('aria-current','location');else item.a.removeAttribute('aria-current');});
+    if(progress)progress.textContent=String(selected+1).padStart(2,'0')+' / '+String(chapters.length).padStart(2,'0');
+  }
+  function schedule(){if(!queued){queued=true;requestAnimationFrame(update);}}
+  window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',schedule,{passive:true});window.addEventListener('hashchange',schedule);update();
+})();
+</script>
+</body></html>
