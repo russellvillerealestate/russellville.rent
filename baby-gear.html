@@ -146,6 +146,27 @@ footer a{color:#ffe3a5}
 @media(max-width:600px){.family-desk{margin-top:50px;border-radius:16px}.family-desk-story{padding:33px 23px}.family-desk-story:before{inset:9px}.family-desk-story h2{font-size:clamp(2.35rem,10.5vw,3.5rem)}.family-desk-work{padding:24px 19px}.family-desk-top{display:block}.family-desk-top span{display:block;margin-top:6px}.family-desk-gear{grid-template-columns:repeat(2,minmax(0,1fr))}.family-desk-fields{grid-template-columns:1fr}.family-desk-art{min-height:165px}}
 @media(max-width:350px){.family-desk-gear{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.family-desk-actions button{transition:none}}
+
+/* Nov 6, 2026: illustrated packing-board selector, inspired by StayARV's editorial forest-and-gold system.
+   Native checkboxes, minimum-size controls, responsive reflow, focus and reduced-motion support. */
+.family-gear-step{padding:4px 0 22px!important;border-bottom:1px solid #cfddcc!important;margin-bottom:25px!important}
+.family-gear-step legend{font-size:clamp(1.1rem,1.65vw,1.28rem)!important;line-height:1.4}
+.family-gear-help{max-width:52ch;color:#486657;font-size:.85rem;line-height:1.6;margin:1px 0 18px}
+.family-desk-gear{gap:11px}
+.family-desk-gear .family-gear-card{position:relative;display:flex;flex-direction:column;align-items:stretch;gap:0;min-height:187px;padding:12px 12px 14px;border:2px solid #cedacb;border-radius:16px;background:linear-gradient(155deg,#faf9ef,#e7f0e3);box-shadow:0 5px 14px #274d3710;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.family-desk-gear .family-gear-card:nth-child(3n+2){background:linear-gradient(155deg,#fdf2dc,#f3edda)}
+.family-desk-gear .family-gear-card:nth-child(3n){background:linear-gradient(155deg,#f2f6ef,#dcebdc)}
+.family-desk-gear .family-gear-card:hover{transform:translateY(-3px);box-shadow:0 13px 23px #254c3321}
+.family-desk-gear .family-gear-card:has(input:checked){background:#d9ebd2;border-color:#286b4f;box-shadow:inset 0 0 0 1px #286b4f,0 9px 21px #28584425}
+.family-gear-card input{position:absolute;top:13px;right:12px;width:23px!important;height:23px!important;accent-color:#226344;margin:0}
+.family-gear-card .gear-card-count{align-self:flex-start;max-width:calc(100% - 29px);font-size:.59rem;letter-spacing:.14em;font-weight:850;color:#4c6b5b}
+.family-gear-card svg{display:block;flex:none;width:min(100%,117px);height:93px;margin:auto;overflow:visible}
+.family-gear-card .gear-card-name{padding-top:8px;border-top:1px solid #bfceba;color:#173e31;font-weight:850;font-size:clamp(.82rem,1.1vw,.96rem);line-height:1.35}
+.family-desk-gear .family-gear-card:has(input:focus-visible){outline:3px solid #a56b17;outline-offset:4px}
+@media(max-width:600px){.family-desk-gear .family-gear-card{min-height:160px}.family-gear-card svg{height:71px}.family-gear-step{padding-bottom:17px!important}}
+@media(max-width:380px){.family-desk-gear .family-gear-card{min-height:150px;padding:11px 9px}.family-gear-card svg{height:62px}}
+@media(prefers-reduced-motion:reduce){.family-desk-gear .family-gear-card{transition:none}.family-desk-gear .family-gear-card:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -242,13 +263,13 @@ footer a{color:#ffe3a5}
  <div class="family-desk-work">
   <div class="family-desk-top"><strong>Build your call note.</strong><span>02 / TRIP DETAILS</span></div>
   <form id="family-brief-form" autocomplete="off">
-   <fieldset><legend>Which gear do you want to ask about?</legend><div class="family-desk-gear">
-    <label><input name="family-gear" type="checkbox" value="Crib"> Crib</label>
-    <label><input name="family-gear" type="checkbox" value="Stroller"> Stroller</label>
-    <label><input name="family-gear" type="checkbox" value="Car seat"> Car seat</label>
-    <label><input name="family-gear" type="checkbox" value="High chair"> High chair</label>
-    <label><input name="family-gear" type="checkbox" value="Playpen"> Playpen</label>
-    <label><input name="family-gear" type="checkbox" value="Other baby gear"> Other</label>
+   <fieldset class="family-gear-step"><legend>Which gear do you want to ask about?</legend><p class="family-gear-help">Build a packing list to discuss. These illustrated categories are <strong>not confirmed available inventory</strong>; select gear to include in your private inquiry.</p><div class="family-desk-gear">
+    <label class="family-gear-card"><input name="family-gear" type="checkbox" value="Crib"><span class="gear-card-count" aria-hidden="true">01 / GEAR</span><svg viewBox="0 0 100 82" aria-hidden="true" focusable="false" fill="none" stroke="#31594b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="27" width="76" height="39" rx="5" fill="#f4dbab"/><path d="M15 27V15h70v12M22 34v27m12-27v27m12-27v27m12-27v27m12-27v27m12-27v27M20 66v11m60-11v11"/></svg><span class="gear-card-name">Crib</span></label>
+    <label class="family-gear-card"><input name="family-gear" type="checkbox" value="Stroller"><span class="gear-card-count" aria-hidden="true">02 / GEAR</span><svg viewBox="0 0 100 82" aria-hidden="true" focusable="false" fill="none" stroke="#31594b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 39q0-30 31-30t30 30l-7 16H29z" fill="#dce9cf"/><path d="M20 48h60L64 64H36z" fill="#f4dbab"/><path d="M72 35l11-25h11M36 64l-7 9m36-9 9 9"/><circle cx="27" cy="73" r="7" fill="#24503f"/><circle cx="75" cy="73" r="7" fill="#24503f"/></svg><span class="gear-card-name">Stroller</span></label>
+    <label class="family-gear-card"><input name="family-gear" type="checkbox" value="Car seat"><span class="gear-card-count" aria-hidden="true">03 / GEAR</span><svg viewBox="0 0 100 82" aria-hidden="true" focusable="false" fill="none" stroke="#31594b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M30 13h27q27 0 27 28v23H23V31q0-18 7-18z" fill="#dce9cf"/><path d="M34 25h23q16 0 16 23v5H28V38q0-9 6-13z" fill="#f4dbab"/><path d="M19 64h70M29 64v10h56V64M47 36l11 12m0-12L47 48"/></svg><span class="gear-card-name">Car seat</span></label>
+    <label class="family-gear-card"><input name="family-gear" type="checkbox" value="High chair"><span class="gear-card-count" aria-hidden="true">04 / GEAR</span><svg viewBox="0 0 100 82" aria-hidden="true" focusable="false" fill="none" stroke="#31594b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="27" y="19" width="48" height="26" rx="9" fill="#dce9cf"/><rect x="16" y="42" width="69" height="12" rx="5" fill="#f4dbab"/><path d="M30 54l-7 23m47-23 7 23M36 19V9h30v10M50 54v22"/></svg><span class="gear-card-name">High chair</span></label>
+    <label class="family-gear-card"><input name="family-gear" type="checkbox" value="Playpen"><span class="gear-card-count" aria-hidden="true">05 / GEAR</span><svg viewBox="0 0 100 82" aria-hidden="true" focusable="false" fill="none" stroke="#31594b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M16 26h68v43H16z" fill="#dce9cf"/><path d="M16 26l16-13h36l16 13M26 28v40m16-40v40m16-40v40m16-40v40M16 50h68"/><circle cx="50" cy="38" r="5" fill="#c78e53"/></svg><span class="gear-card-name">Playpen</span></label>
+    <label class="family-gear-card"><input name="family-gear" type="checkbox" value="Other baby gear"><span class="gear-card-count" aria-hidden="true">06 / GEAR</span><svg viewBox="0 0 100 82" aria-hidden="true" focusable="false" fill="none" stroke="#31594b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="19" y="29" width="62" height="45" rx="7" fill="#f4dbab"/><path d="M36 29V18q0-17 28 0v11M28 43h44M50 43v24M50 6v10M43 11h14"/></svg><span class="gear-card-name">Other</span></label>
    </div></fieldset>
    <div class="family-desk-field"><label class="desk-label" for="family-brief-destination">General destination (optional)</label><input id="family-brief-destination" type="text" maxlength="110" placeholder="Russellville hotel or vacation rental"><small class="family-desk-hint">Use a town or venue, not a private address.</small></div>
    <div class="family-desk-fields">
