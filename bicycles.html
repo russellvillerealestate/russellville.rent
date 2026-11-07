@@ -304,6 +304,52 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
  .rate-card:first-child .price strong,.rate-card:first-child .price span{color:#163c30}
 }
 
+
+/* 2026-11-07: River Valley ride-budget ticket. Original local rates remain the
+   only data source; hypothetical day/bike multiplication never claims inventory,
+   multiday eligibility, a verified price or a booking. Reference design:
+   StayARV's immersive editorial hierarchy; NN/g information scent; web.dev
+   responsive grid; WCAG 2.2 visible focus, labels, 44px+ targets and reflow. */
+.bike-budget{padding:clamp(38px,6vw,79px) 0 72px;background:#e8eee5;border-block:1px solid #d1dcd0}
+.bike-budget-head{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);align-items:end;gap:25px;margin-bottom:24px}
+.bike-budget-eyebrow{display:block;margin-bottom:10px;color:#436d50;font-size:.68rem;font-weight:900;letter-spacing:.17em;text-transform:uppercase}
+.bike-budget-head h2{max-width:19ch;font:400 clamp(2.45rem,5vw,4.4rem)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.065em;color:#143e32;text-wrap:balance}
+.bike-budget-head h2 em{color:#7d5b33;font-weight:400}
+.bike-budget-head>p{max-width:40ch;font-size:.9rem;color:#486153;line-height:1.65;margin:0 0 5px}
+.bike-budget-board{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:0;border:1px solid #bed3c3;border-radius:24px;background:#fffdf5;overflow:hidden;box-shadow:0 26px 48px #143c3220}
+.bike-budget-entry{position:relative;isolation:isolate;overflow:hidden;padding:clamp(28px,4vw,49px)}
+.bike-budget-entry:before{content:"";position:absolute;z-index:-1;right:-110px;top:-110px;width:300px;height:300px;border-radius:50%;border:1px solid #c7d7c6;box-shadow:0 0 0 27px #d3e3d130,0 0 0 57px #d3e3d120}
+.bike-budget-stamp{display:block;color:#5f795b;font-size:.65rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
+.bike-budget-entry h3{margin:24px 0 13px;font:400 clamp(2.05rem,3.6vw,3.15rem)/1.08 Georgia,"Times New Roman",serif;letter-spacing:-.055em;color:#163f34;max-width:16ch}
+.bike-budget-entry>p{max-width:48ch;color:#496257;font-size:.88rem;line-height:1.6}
+.bike-budget-controls{display:grid;gap:17px;margin-top:24px}
+.bike-budget-controls[hidden],.bike-budget-fallback[hidden]{display:none!important}
+.bike-budget-controls label{display:block;color:#214d3c;font-weight:800;font-size:.82rem}
+.bike-budget-controls select,.bike-budget-controls input{display:block;width:100%;min-height:52px;margin-top:8px;padding:11px 14px;border:1px solid #a9c6ae;border-radius:10px;background:#f8faf5;color:#143c31;font:650 .9rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif}
+.bike-budget-controls select:focus-visible,.bike-budget-controls input:focus-visible{outline:3px solid #a9691b;outline-offset:3px}
+.bike-budget-double{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.bike-budget-helper{font-size:.76rem;color:#53675a;margin:0;line-height:1.55}
+.bike-budget-fallback{margin:28px 0 0;padding:16px 20px;border:1px solid #cbdac8;border-radius:12px;background:#eff4ed;font-size:.86rem!important}
+.bike-budget-ticket{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;gap:19px;min-width:0;padding:clamp(28px,3.5vw,44px);background:radial-gradient(circle at 90% 6%,#356a53,transparent 40%),linear-gradient(150deg,#18493d,#0d302b);color:#fffaf0}
+.bike-budget-ticket:before{content:"";position:absolute;z-index:-1;inset:17px;border:1px solid #e5c88950;border-radius:13px;pointer-events:none}
+.bike-budget-ticket:after{content:"";position:absolute;top:49%;left:-14px;width:28px;height:28px;border-radius:50%;background:#e8eee5;box-shadow:0 0 0 1px #bed3c3}
+.bike-budget-ticket-head{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px dashed #eed7a276;padding-bottom:17px}
+.bike-budget-ticket-head span{color:#f4d99e;font-size:.64rem;font-weight:900;letter-spacing:.17em}
+.bike-budget-ticket-head b{font:400 1.5rem Georgia,serif;color:#f4d99e}
+.bike-budget-scene{display:block;max-width:100%;width:250px;height:auto;margin:0 auto;opacity:.94}
+.bike-budget-ticket-label{display:block;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:#d0e6d7;margin-bottom:6px}
+.bike-budget-unit{display:block;font:400 clamp(1.35rem,2.4vw,2rem)/1.12 Georgia,serif;letter-spacing:-.04em;color:#f9dfa6}
+.bike-budget-equation{margin-top:10px;padding:19px 0;border-top:1px dashed #e5cc8e80;border-bottom:1px dashed #e5cc8e80}
+.bike-budget-equation span{display:block;font-size:.81rem;color:#e4efe6}
+.bike-budget-equation strong{display:block;font:400 clamp(3.3rem,6vw,5.1rem)/1.09 Georgia,serif;letter-spacing:-.068em;color:#fbe1aa;margin:7px 0}
+.bike-budget-ticket-note{font-size:.78rem;line-height:1.6;color:#d7e9dc;margin:0}
+.bike-budget-call{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:52px;padding:13px 18px;border-radius:10px;background:#f2d79e;color:#16372d;text-decoration:none;font-weight:850;font-size:.87rem}
+.bike-budget-call:hover{background:#ffe6ae}
+.bike-budget-call:focus-visible{outline:3px solid #fff;outline-offset:3px}
+@media(max-width:820px){.bike-budget-board{grid-template-columns:1fr}.bike-budget-ticket{min-height:0}.bike-budget-ticket:after{left:49%;top:-14px}.bike-budget-head{grid-template-columns:1fr;gap:15px}}
+@media(max-width:520px){.bike-budget{padding:37px 0 48px}.bike-budget-head h2{font-size:clamp(2.3rem,10vw,3rem)}.bike-budget-entry,.bike-budget-ticket{padding:28px 22px}.bike-budget-double{grid-template-columns:1fr}.bike-budget-board{border-radius:17px}.bike-budget-ticket:before{inset:10px}.bike-budget-scene{max-height:115px}}
+@media print{.bike-budget{background:#fff;break-inside:avoid}.bike-budget-board{box-shadow:none}.bike-budget-ticket{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style></head><body>
 <a class="skip" href="#rates">Skip to rental rates</a>
 <header><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
@@ -334,6 +380,44 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
 <article class="rate-card" data-ride="road"><span class="index">05 · ROAD + GRAVEL</span><span class="rate-card-scene" aria-hidden="true"><svg viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid slice"><rect width="600" height="260" fill="#834c41"/><circle cx="492" cy="58" r="35" fill="#f9ddac" opacity=".91"/><path d="M0 165Q150 95 310 157T600 132V260H0Z" fill="#cf9982"/><path d="M0 215Q177 157 328 211T600 166V260H0Z" fill="#e5c8a8" opacity=".83"/><path d="M0 226Q145 209 305 224T600 211V260H0Z" fill="#834c41" opacity=".55"/><path d="M0 232H600" stroke="#f9ddac" stroke-width="2" stroke-dasharray="9 15" opacity=".65"/><g stroke="#15362f" stroke-width="12" fill="none"><circle cx="149" cy="191" r="52"/><circle cx="453" cy="191" r="52"/></g><g stroke="#f8f0dd" stroke-width="9" fill="none"><circle cx="149" cy="191" r="47"/><circle cx="453" cy="191" r="47"/></g><g stroke="#fce2b4" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M149 191 255 104 315 191H149L255 104 453 191 315 191"/><path d="m241 96-8-20h-31m169 28 25-4 57 91M374 104h38"/></g><path d="m450 189 23-29 14 0m-14 0-3-14" stroke="#fdf0d0" stroke-width="7" fill="none" stroke-linecap="round"/><g fill="#f9ddac"><circle cx="149" cy="191" r="8"/><circle cx="315" cy="191" r="8"/><circle cx="453" cy="191" r="8"/></g><path d="M0 0H600V260H0Z" fill="none" stroke="#ffffff" stroke-opacity=".13" stroke-width="8"/></svg></span><h3>Road or gravel bike</h3><div class="price"><strong><data value="50">$50</data></strong><span>/ day</span></div></article></div>
 <p class="small-note">Rental fleet sizes, specific models, available dates and delivery are not confirmed.</p>
 <p class="rate-art-notice">Bike illustrations are decorative type guides, not photographs of Jackalope Cycling’s rental inventory or a promise of specific models.</p></section>
+
+<section class="bike-budget" id="bike-budget" aria-labelledby="bike-budget-title">
+ <div class="wrap">
+  <div class="bike-budget-head"><div><span class="bike-budget-eyebrow">The River Valley ride desk / a planning tool</span><h2 id="bike-budget-title">Your ride.<br><em>On paper first.</em></h2></div><p>Compare a hypothetical ride budget using the five published daily prices above. This is an arithmetic planning example, never a quote, booking, availability check or multiday rental offer.</p></div>
+  <div class="bike-budget-board">
+   <div class="bike-budget-entry">
+    <span class="bike-budget-stamp">01 / Build your sample ride</span>
+    <h3>Put a number to the adventure.</h3>
+    <p>Select a bike style, a hypothetical number of rental days and a bike count. Published rates come from the Jackalope Cycling cards above.</p>
+    <p class="bike-budget-fallback" id="bike-budget-fallback">One-day example: a carbon full-suspension mountain bike is advertised at $80 per day. Contact the store for any actual booking.</p>
+    <div class="bike-budget-controls" id="bike-budget-controls" hidden>
+     <label for="bike-budget-type">Advertised bike type
+      <select id="bike-budget-type">
+       <option value="0">Carbon full-suspension mountain bike</option>
+       <option value="1">Aluminum full-suspension mountain bike</option>
+       <option value="2">Hardtail mountain bike</option>
+       <option value="3">Electric commuter bike</option>
+       <option value="4">Road or gravel bike</option>
+      </select>
+     </label>
+     <div class="bike-budget-double">
+      <label for="bike-budget-days">Hypothetical rental days<input id="bike-budget-days" type="number" inputmode="numeric" min="1" max="7" step="1" value="1"></label>
+      <label for="bike-budget-quantity">Hypothetical bikes<input id="bike-budget-quantity" type="number" inputmode="numeric" min="1" max="6" step="1" value="1"></label>
+     </div>
+     <p class="bike-budget-helper">Up to 7 days and 6 bikes for illustration only—not an assertion that the shop offers these quantities or durations. Confirm real terms directly.</p>
+    </div>
+   </div>
+   <div class="bike-budget-ticket" aria-label="Illustrative bicycle rental calculation">
+    <div class="bike-budget-ticket-head"><span>RUSSELLVILLE / RIDE NOTE</span><b aria-hidden="true">↗</b></div>
+    <svg class="bike-budget-scene" viewBox="0 0 270 135" role="img" aria-label="Decorative illustration of bicycle wheels on a winding road" xmlns="http://www.w3.org/2000/svg"><path d="M6 113C55 86 90 125 140 97S215 86 264 106" fill="none" stroke="#e7ce97" stroke-width="3" stroke-dasharray="5 9"/><circle cx="68" cy="77" r="33" stroke="#f4ddaf" stroke-width="5" fill="none"/><circle cx="201" cy="77" r="33" stroke="#f4ddaf" stroke-width="5" fill="none"/><path d="m68 77 49-57 34 57H68l49-57 84 57m-91-61h18m48-3h21l4 64" stroke="#d5e8cf" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="68" cy="77" r="6" fill="#f4ddaf"/><circle cx="151" cy="77" r="6" fill="#f4ddaf"/><circle cx="201" cy="77" r="6" fill="#f4ddaf"/></svg>
+    <div><span class="bike-budget-ticket-label">Published rate / One bicycle</span><span class="bike-budget-unit" id="bike-budget-rate">$80 per day</span></div>
+    <div class="bike-budget-equation"><span id="bike-budget-math">1 day × 1 bike · illustrative math</span><strong id="bike-budget-total" role="status" aria-live="polite" aria-atomic="true">$80</strong><span>Example subtotal / not a quote</span></div>
+    <p class="bike-budget-ticket-note">Taxes, deposits, accessories, discounts, availability and multiday pricing are not included or confirmed. The shop may price additional days differently.</p>
+    <a class="bike-budget-call" href="tel:+14798904950">Call Jackalope Cycling to confirm <span aria-hidden="true">↗</span></a>
+   </div>
+  </div>
+ </div>
+</section>
 
 <section class="bike-access" id="bike-access-atlas" aria-labelledby="bike-access-title">
   <div class="wrap">
@@ -431,6 +515,49 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
       result.textContent='Showing '+visible+' '+labels[choice]+'.';
     });
   });
+})();
+</script>
+
+<script>
+/* Isolated, progressive bicycle ride budgeting; published prices are sourced
+   from the original, unmodified daily-rate cards, not replicated in JavaScript. */
+(function(){
+  const root=document.getElementById('bike-budget');
+  const cards=Array.from(document.querySelectorAll('#rate-grid .rate-card'));
+  if(!root||cards.length!==5)return;
+  const rates=cards.map(function(card){return Number(card.querySelector('.price data')?.value);});
+  if(!rates.every(function(rate){return Number.isFinite(rate)&&rate>0;}))return;
+  const select=document.getElementById('bike-budget-type');
+  const days=document.getElementById('bike-budget-days');
+  const bikes=document.getElementById('bike-budget-quantity');
+  const rateOut=document.getElementById('bike-budget-rate');
+  const mathOut=document.getElementById('bike-budget-math');
+  const totalOut=document.getElementById('bike-budget-total');
+  const money=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
+  function count(input,max){
+    const n=Number(input.value);
+    return Number.isInteger(n)&&n>=1&&n<=max?n:null;
+  }
+  function render(){
+    const index=Number(select.value);
+    const dayCount=count(days,7);
+    const bikeCount=count(bikes,6);
+    const rate=rates[index];
+    if(!Number.isInteger(index)||index<0||index>=rates.length||!dayCount||!bikeCount){
+      totalOut.textContent='—';
+      mathOut.textContent='Enter a whole number of days (1–7) and bikes (1–6).';
+      return;
+    }
+    rateOut.textContent=money.format(rate)+' per day';
+    totalOut.textContent=money.format(rate*dayCount*bikeCount);
+    mathOut.textContent=dayCount+(dayCount===1?' day':' days')+' × '+bikeCount+(bikeCount===1?' bike':' bikes')+' · illustrative math';
+  }
+  select.addEventListener('change',render);
+  days.addEventListener('input',render);
+  bikes.addEventListener('input',render);
+  document.getElementById('bike-budget-controls').hidden=false;
+  document.getElementById('bike-budget-fallback').hidden=true;
+  render();
 })();
 </script>
 </body></html>
