@@ -537,7 +537,37 @@ header.equipment-site-header .equipment-home-link:hover{background:#ffe9b8}
 @media(prefers-reduced-motion:reduce){.equipment-dispatch-actions :is(a,button){transition:none}}
 @media print{#equipment-results>.equipment-dispatch{display:none!important}}
 </style>
-</head><body>
+<style id="equipment-wayfinder-style-20261107">
+/* Immersive River Valley supplier wayfinding; StayARV photo/pine/gold direction,
+ NN/g visual hierarchy, web.dev responsive reflow, W3C WCAG 2.2 keyboard focus,
+ targets and reduced motion. All listings and prior interactions unchanged. */
+.equipment-wayfinder{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);margin:30px 0 45px;overflow:hidden;border:1px solid #bed0c0;border-radius:25px;background:#fffdf8;box-shadow:0 23px 48px #133b3026}
+.equipment-wayfinder[hidden]{display:none!important}
+.equipment-wayfinder-photo{display:flex;flex-direction:column;justify-content:center;min-height:440px;padding:clamp(30px,4.8vw,58px);background:linear-gradient(110deg,#092d29f5 0%,#123e33e6 53%,#11382c91),url("assets/downtown-russellville-sunset.jpg") center/cover;color:#fdf9ed}
+.equipment-wayfinder-photo>span,.equipment-wayfinder-kicker{font-size:.69rem;letter-spacing:.16em;font-weight:850;line-height:1.5;text-transform:uppercase}
+.equipment-wayfinder-photo>span{color:#f3d59c}
+.equipment-wayfinder-photo h2{max-width:13ch;font:400 clamp(2.75rem,4.5vw,4.7rem)/1.02 Georgia,serif;letter-spacing:-.065em;color:#fff9ed;margin:27px 0 19px;text-wrap:balance}
+.equipment-wayfinder-photo h2 em{color:#f4d291;font-weight:400}
+.equipment-wayfinder-photo p{max-width:36ch;line-height:1.75;font-size:.94rem;color:#e6eee5;margin:0}
+.equipment-wayfinder-photo small{margin-top:auto;padding-top:30px;color:#ecf0df;font-size:.69rem}
+.equipment-wayfinder-select{min-width:0;display:flex;flex-direction:column;justify-content:center;padding:clamp(30px,4.3vw,55px)}
+.equipment-wayfinder-kicker{color:#94682b!important}
+.equipment-wayfinder-select h3{font:400 clamp(1.9rem,2.9vw,2.8rem)/1.08 Georgia,serif;letter-spacing:-.05em;color:#153b2e;margin:13px 0 7px}
+.equipment-wayfinder-select>p:not(.equipment-wayfinder-kicker){font-size:.86rem;line-height:1.67;color:#50685b;margin:10px 0}
+#equipment-wayfinder-form{display:grid;gap:11px;margin:21px 0 0}
+#equipment-wayfinder-form label{font-size:.81rem;font-weight:850;color:#244a37}
+#equipment-wayfinder-form select{min-width:0;width:100%;min-height:53px;background:white;padding:11px 13px;border:1.5px solid #9db6a0;border-radius:10px;color:#173d31;font:600 .91rem system-ui,sans-serif}
+#equipment-wayfinder-form button{display:flex;align-items:center;justify-content:space-between;min-height:51px;padding:11px 18px;border:0;border-radius:10px;background:#174634;color:#fff;font:850 .9rem system-ui,sans-serif;cursor:pointer}
+#equipment-wayfinder-form button:hover{background:#2e6a50}
+#equipment-wayfinder-form :is(select,button):focus-visible,.equipment-wayfinder-search:focus-visible{outline:3px solid #ae6e15;outline-offset:4px}
+.equipment-wayfinder-select .equipment-wayfinder-count{font-size:.78rem;font-weight:850;color:#315d43;margin-top:16px}
+.equipment-wayfinder-select .equipment-wayfinder-caveat{font-size:.77rem;border-top:1px solid #dbe7dd;margin-top:15px;padding-top:16px}
+.equipment-wayfinder-search{display:inline-flex;align-self:flex-start;align-items:center;min-height:44px;margin-top:16px;font-size:.82rem;font-weight:850;color:#1c5c42}
+@media(max-width:850px){.equipment-wayfinder{grid-template-columns:1fr}.equipment-wayfinder-photo{min-height:300px;padding:35px 38px}.equipment-wayfinder-photo h2{max-width:22ch;margin:17px 0}.equipment-wayfinder-select{padding:35px 38px}}
+@media(max-width:520px){.equipment-wayfinder{border-radius:18px;margin:19px 0 29px}.equipment-wayfinder-photo{min-height:315px;padding:27px 23px}.equipment-wayfinder-photo h2{font-size:clamp(2.6rem,11vw,3.65rem)}.equipment-wayfinder-select{padding:29px 23px}}
+@media(prefers-reduced-motion:reduce){#equipment-wayfinder-form button{transition:none}}
+@media print{.equipment-wayfinder{display:none!important}}
+</style></head><body>
 <a class="equipment-skip" href="#equipment-results">Skip to equipment rental providers</a>
 <header class="equipment-site-header">
   <div class="equipment-nav-wrap">
@@ -601,7 +631,11 @@ header.equipment-site-header .equipment-home-link:hover{background:#ffe9b8}
     </div>
     <p class="equipment-view-status" id="equipment-view-status" role="status" aria-live="polite">Complete provider details are visible.</p>
   </div>
-</section><section id="equipment-results" aria-label="Equipment rental providers"><nav class="equipment-dispatch" aria-label="Equipment provider browsing controls">
+</section><section class="equipment-wayfinder" id="equipment-wayfinder" aria-labelledby="equipment-wayfinder-title" hidden>
+<div class="equipment-wayfinder-photo"><span>RIVER VALLEY / SUPPLIER INDEX</span><h2 id="equipment-wayfinder-title">Know the name?<br><em>Go straight there.</em></h2><p>One direct route to every full equipment provider record, without scrolling the entire supplier ledger.</p><small>Downtown Russellville scenery · Not a rental facility or provider photograph.</small></div>
+<div class="equipment-wayfinder-select"><p class="equipment-wayfinder-kicker">01 / YOUR SUPPLIER WAYFINDER</p><h3>Find your operator.</h3><p>Choose a provider from the live directory, grouped by whether a Russellville street address is published.</p>
+<form id="equipment-wayfinder-form"><label for="equipment-wayfinder-picker">Choose a provider</label><select id="equipment-wayfinder-picker" required><option value="">Select from the directory…</option></select><button type="submit">Open provider details <span aria-hidden="true">↗</span></button></form>
+<p class="equipment-wayfinder-count" id="equipment-wayfinder-count" role="status" aria-live="polite"></p><p class="equipment-wayfinder-caveat">Selecting a provider resets search filters and opens Full details. A published street address does not confirm rental stock, walk-in access or availability; verify with each business.</p><a class="equipment-wayfinder-search" href="#equipment-finder">Prefer to search by equipment? ↗</a></div></section><section id="equipment-results" aria-label="Equipment rental providers"><nav class="equipment-dispatch" aria-label="Equipment provider browsing controls">
   <div class="equipment-dispatch-copy"><span class="equipment-dispatch-kicker">THE RIVER VALLEY / SUPPLIER DESK</span><strong>Keep the directory in reach.</strong><small id="equipment-dispatch-count">Find the tools, people and contacts you need.</small></div>
   <div class="equipment-dispatch-actions">
     <a href="#equipment-finder">Refine tools ↑</a>
@@ -804,4 +838,39 @@ render();panel.hidden=false;
  }
 })();
 </script>
-</body></html>
+<script id="equipment-wayfinder-script-20261107">
+/* Populate supplier index from existing source-of-truth provider articles. */
+(()=>{
+ "use strict";
+ const panel=document.getElementById("equipment-wayfinder"),picker=document.getElementById("equipment-wayfinder-picker"),form=document.getElementById("equipment-wayfinder-form"),count=document.getElementById("equipment-wayfinder-count"),dir=document.getElementById("equipment-results");
+ if(!panel||!picker||!form||!count||!dir)return;
+ const entries=Array.from(dir.querySelectorAll("article")).map((card,i)=>{
+   const heading=card.querySelector("h2");
+   if(!heading)return null;
+   if(!card.id)card.id="equipment-provider-"+(i+1);
+   return {card,heading,area:card.dataset.equipmentArea,name:heading.textContent.trim()};
+ }).filter(Boolean);
+ if(!entries.length)return;
+ const sections=[["Russellville street address listed",entries.filter(p=>p.area==="street")],["Other locations / service to verify",entries.filter(p=>p.area!=="street")]];
+ sections.forEach(([name,records])=>{
+   if(!records.length)return;
+   const group=document.createElement("optgroup");group.label=name;
+   records.forEach(p=>{const option=document.createElement("option");option.value=p.card.id;option.textContent=p.name;group.append(option);});
+   picker.append(group);
+ });
+ count.textContent=entries.length+" listed providers · "+sections[0][1].length+" with street addresses · "+sections[1][1].length+" other entries";
+ panel.hidden=false;
+ form.addEventListener("submit",event=>{
+   event.preventDefault();
+   const selected=entries.find(p=>p.card.id===picker.value);
+   if(!selected){picker.focus();return;}
+   const search=document.getElementById("equipment-query");
+   if(search){search.value="";search.dispatchEvent(new Event("input",{bubbles:true}));}
+   const type=document.querySelector('[data-equipment-type="all"]'),area=document.querySelector('[data-equipment-area-filter="all"]'),full=document.querySelector('[data-equipment-view="full"]');
+   if(type)type.click();if(area)area.click();if(full)full.click();
+   if(selected.card.hidden){count.textContent="Listing still filtered. Clear directory filters to reveal it.";return;}
+   selected.heading.tabIndex=-1;selected.heading.focus({preventScroll:true});
+   selected.card.scrollIntoView({block:"start",behavior:"auto"});
+ });
+})();
+</script></body></html>
