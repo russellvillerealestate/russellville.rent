@@ -683,6 +683,49 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
 @media(max-width:780px){.source-finder-head{grid-template-columns:1fr;gap:16px}}
 @media(max-width:520px){.source-finder{padding:24px 17px;border-radius:19px}.source-finder h3{font-size:clamp(2.2rem,9.2vw,3.25rem)}.source-finder-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.source-finder-tabs button{padding:9px 6px;font-size:.75rem}.source-finder-control{padding:14px 11px}}
 
+
+/* November 7, 2026 / Indexed rent landscape.
+   StayARV scenic forest/gold hierarchy; NN/g visual hierarchy; web.dev responsive
+   image containment/reflow; W3C WCAG 2.2 focus and 44px-plus button targets.
+   Entirely derived from existing JSON listing rents, never marketed as live vacancies. */
+.rent-landscape[hidden]{display:none!important}
+.rent-landscape{margin:clamp(27px,4.5vw,64px) 0 0;padding:0 0 8px}
+.rent-landscape-shell{display:grid;grid-template-columns:minmax(0,.73fr) minmax(0,1.27fr);align-items:stretch;overflow:hidden;border-radius:29px;background:#0e3029;border:1px solid #315f4c;box-shadow:0 25px 59px #113a2f25}
+.rent-landscape-story{position:relative;isolation:isolate;display:flex;flex-direction:column;min-height:435px;overflow:hidden;padding:clamp(33px,4vw,54px);color:#fff;background:linear-gradient(134deg,#0b2c27ed,#18483ce0),url("assets/lake-dardanelle-sunset.jpg") 40% center/cover no-repeat}
+.rent-landscape-story:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:repeating-radial-gradient(circle at 96% 97%,transparent 0 38px,#e5d8ae18 39px 40px,transparent 41px 73px)}
+.rent-landscape-kicker{font-size:.67rem;font-weight:850;letter-spacing:.17em;line-height:1.5;color:#f1d49b}
+.rent-landscape h2{margin:23px 0 19px;color:#fff;font:400 clamp(2.55rem,4.6vw,4.7rem)/1.03 Georgia,"Times New Roman",serif;letter-spacing:-.055em;text-wrap:balance}
+.rent-landscape h2 em{font-weight:400;color:#f4d9a5}
+.rent-landscape-story>p{max-width:44ch;margin:0 0 24px;color:#e2eee4;font-size:.93rem;line-height:1.75}
+.rent-landscape-story>a{align-self:flex-start;display:inline-flex;align-items:center;gap:14px;min-height:47px;margin-top:auto;padding:10px 17px;border-radius:999px;border:1px solid #f0d397;background:#f0d397;color:#173e30;text-decoration:none;font-size:.84rem;font-weight:850}
+.rent-landscape-story>a:hover{background:#ffe5b5}
+.rent-landscape-stamp{position:absolute;right:27px;bottom:21px;display:flex;align-items:center;justify-content:center;width:76px;height:76px;border:1px solid #f3d59b74;border-radius:50%;color:#f6d8a1;font:italic 400 2.7rem/1 Georgia,serif;transform:rotate(-12deg);pointer-events:none}
+.rent-landscape-stamp span{font-size:1.45rem;align-self:flex-start}
+.rent-landscape-main{min-width:0;padding:clamp(21px,3vw,36px);background:#f8f5ed}
+.rent-landscape-top{display:flex;justify-content:space-between;gap:14px;align-items:center;margin:0 0 17px;padding-bottom:14px;border-bottom:1px solid #d3ddcf;color:#50705b;font-size:.66rem;line-height:1.45;font-weight:850;letter-spacing:.11em;text-transform:uppercase}
+.rent-landscape-top span:last-child{color:#6b765f;text-align:right;letter-spacing:0;text-transform:none;font-weight:700}
+.rent-landscape-bands{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+.rent-landscape-band{position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:stretch;text-align:left;min-width:0;min-height:300px;padding:22px 17px 18px;border:1px solid #cfdbcc;border-radius:16px;background:#fffefa;color:#183e31;font:inherit;cursor:pointer;overflow:hidden;transition:transform .18s,box-shadow .18s,border-color .18s}
+.rent-landscape-band:nth-child(2){background:#e8f0e4}
+.rent-landscape-band:nth-child(3){background:#f2e5cf}
+.rent-landscape-band:before{content:attr(data-index);position:absolute;z-index:-1;right:12px;top:6px;color:#33644c0c;font:400 clamp(4.5rem,8vw,7.2rem)/1 Georgia,serif;letter-spacing:-.09em;pointer-events:none}
+.rent-landscape-band:hover{transform:translateY(-4px);border-color:#4f8b67;box-shadow:0 14px 27px #234e3724}
+.rent-landscape-band:focus-visible,.rent-landscape-story>a:focus-visible{outline:4px solid #b47824;outline-offset:3px}
+.rent-landscape-name{display:flex;flex-direction:column;gap:5px;font-size:.63rem;letter-spacing:.11em;font-weight:900;color:#5b765f;line-height:1.3}
+.rent-landscape-name strong{font:400 clamp(1.2rem,1.9vw,1.68rem)/1.1 Georgia,serif;letter-spacing:-.04em;color:#183d30}
+.rent-landscape-number{display:flex;flex-direction:column;gap:5px;margin:34px 0 16px}
+.rent-landscape-number>strong{color:#1b5740;font:400 clamp(3.1rem,5.5vw,5.2rem)/.95 Georgia,serif;letter-spacing:-.07em;font-variant-numeric:tabular-nums}
+.rent-landscape-number small{font-size:.72rem;color:#526b5b;font-weight:750}
+.rent-landscape-bar{display:block;height:10px;margin-top:auto;border-radius:999px;background:#cad9c9;overflow:hidden}
+.rent-landscape-bar-fill{display:block;height:100%;width:0;background:#2c7655;border-radius:999px;transition:width .28s ease}
+.rent-landscape-band:nth-child(3) .rent-landscape-bar-fill{background:#a26d31}
+.rent-landscape-link{display:flex;align-items:center;justify-content:space-between;gap:7px;margin-top:13px;padding-top:11px;border-top:1px solid #cbd8ca;color:#174e37;font-size:.72rem;line-height:1.4;font-weight:850}
+.rent-landscape-disclaimer{margin:19px 0 0;padding:13px 16px;background:#e8ede2;border:1px solid #d5e1d2;border-radius:10px;color:#496451;font-size:.76rem;line-height:1.65}
+@media(max-width:1040px){.rent-landscape-shell{grid-template-columns:1fr}.rent-landscape-story{min-height:0;padding:34px 36px 36px}.rent-landscape h2{max-width:19ch}.rent-landscape-story>p{max-width:75ch}.rent-landscape-stamp{width:65px;height:65px;right:23px;bottom:20px}}
+@media(max-width:680px){.rent-landscape{margin-top:26px}.rent-landscape-shell{border-radius:20px}.rent-landscape-story{padding:31px 22px 35px}.rent-landscape h2{font-size:clamp(2.45rem,9.7vw,3.7rem)}.rent-landscape-stamp{display:none}.rent-landscape-main{padding:18px 15px 23px}.rent-landscape-bands{grid-template-columns:1fr;gap:10px}.rent-landscape-band{min-height:0;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px 17px;padding:18px 19px}.rent-landscape-number{margin:0;grid-column:2;grid-row:1/3;align-items:flex-end}.rent-landscape-number>strong{font-size:3.4rem}.rent-landscape-bar{grid-column:1/-1;margin:5px 0 0}.rent-landscape-link{grid-column:1/-1;margin-top:0}.rent-landscape-name strong{font-size:1.6rem}.rent-landscape-top{align-items:start}}
+@media(max-width:350px){.rent-landscape-band{padding:15px 12px;gap:9px}.rent-landscape-name strong{font-size:1.34rem}.rent-landscape-number>strong{font-size:2.8rem}}
+@media(prefers-reduced-motion:reduce){.rent-landscape-band,.rent-landscape-bar-fill{transition:none}.rent-landscape-band:hover{transform:none}}
+
 </style></head>
 <body>
 <a class="skip" href="#main">Skip to listings</a>
@@ -731,6 +774,43 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
     <p class="market-note">Russellville.Rent is building a local rental index. Availability, fees, screening criteria and lease terms remain subject to confirmation with the property manager.</p>
   </div>
 </div>
+
+<!-- Published-rent landscape: calculated only from existing index records, never vacancies. -->
+<section class="rent-landscape" id="rent-landscape" aria-labelledby="rent-landscape-title" hidden>
+  <div class="wrap rent-landscape-shell">
+    <div class="rent-landscape-story">
+      <span class="rent-landscape-kicker">THE RIVER VALLEY / RENTAL PRICE ATLAS</span>
+      <h2 id="rent-landscape-title">Find the range.<br><em>Find your place.</em></h2>
+      <p>Explore monthly rent ranges represented in this site's indexed listings. Choose a range to open the existing rental search with that budget selected.</p>
+      <a href="#filters">Build a detailed search <span aria-hidden="true">↗</span></a>
+      <div class="rent-landscape-stamp" aria-hidden="true">R<span>↗</span></div>
+    </div>
+    <div class="rent-landscape-main">
+      <div class="rent-landscape-top"><span>01 / THE CURRENT INDEX</span><span id="rent-landscape-total">Indexed rentals with published rent</span></div>
+      <div class="rent-landscape-bands" role="group" aria-label="Search by published monthly rent range">
+        <button type="button" class="rent-landscape-band" data-rent-band="low" data-index="01" aria-describedby="rent-landscape-disclaimer">
+          <span class="rent-landscape-name">UP TO <strong>$1,000</strong></span>
+          <span class="rent-landscape-number"><strong class="rent-landscape-count">—</strong><small>indexed rentals</small></span>
+          <span class="rent-landscape-bar" aria-hidden="true"><span class="rent-landscape-bar-fill"></span></span>
+          <span class="rent-landscape-link">Explore this range <span aria-hidden="true">↗</span></span>
+        </button>
+        <button type="button" class="rent-landscape-band" data-rent-band="mid" data-index="02" aria-describedby="rent-landscape-disclaimer">
+          <span class="rent-landscape-name">FROM <strong>$1,000–$1,500</strong></span>
+          <span class="rent-landscape-number"><strong class="rent-landscape-count">—</strong><small>indexed rentals</small></span>
+          <span class="rent-landscape-bar" aria-hidden="true"><span class="rent-landscape-bar-fill"></span></span>
+          <span class="rent-landscape-link">Explore this range <span aria-hidden="true">↗</span></span>
+        </button>
+        <button type="button" class="rent-landscape-band" data-rent-band="high" data-index="03" aria-describedby="rent-landscape-disclaimer">
+          <span class="rent-landscape-name">FROM <strong>$1,500</strong></span>
+          <span class="rent-landscape-number"><strong class="rent-landscape-count">—</strong><small>indexed rentals</small></span>
+          <span class="rent-landscape-bar" aria-hidden="true"><span class="rent-landscape-bar-fill"></span></span>
+          <span class="rent-landscape-link">Explore this range <span aria-hidden="true">↗</span></span>
+        </button>
+      </div>
+      <p id="rent-landscape-disclaimer" class="rent-landscape-disclaimer">These are counts from the current automated listing index, not a market survey or verified vacancies. Price ranges include their endpoints, so a listing at $1,000 or $1,500 may appear in two groups. Unpriced listings are excluded. Availability, fees and terms must be confirmed with the original source.</p>
+    </div>
+  </div>
+</section>
 
 <main id="main" class="wrap">
   <section class="rental-paths" aria-labelledby="rental-paths-title"><div class="rental-paths-heading"><div><p class="rental-paths-kicker">The River Valley / Find your fit</p><h2 id="rental-paths-title">What feels like home?</h2></div><p>Start with a kind of place. We will open the existing rental search with that filter ready to explore.</p></div><div class="rental-paths-grid"><a class="rental-path" href="?type=House#filters"><div class="rental-path-header"><span class="rental-path-index">01 / HOUSES</span><svg viewBox="0 0 76 64" aria-hidden="true" focusable="false"><path d="M5 31 38 6 71 31 M13 28v30h50V28 M30 58V38h16v20 M19 32h8v9h-8 M49 32h8v9h-8"/></svg></div><div class="rental-path-content"><h3>Houses</h3><p>Start with standalone-home listings.</p><span class="rental-path-action">Browse houses ↗</span></div></a>

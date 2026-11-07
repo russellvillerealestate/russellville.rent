@@ -57,6 +57,30 @@ function apply(){
   render();
   renderSearchSummary();
 }
+
+/* Public index price landscape: no availability or booking inference.
+   Existing inclusive filter boundaries are reused exactly; published rent must be > 0. */
+function renderRentLandscape(){
+  const panel=$("rent-landscape");
+  if(!panel)return;
+  const priced=state.listings.map(item=>Number(item.rent)).filter(rent=>Number.isFinite(rent)&&rent>0);
+  if(!priced.length){panel.hidden=true;return;}
+  const bands={
+    low:priced.filter(rent=>rent<=1000).length,
+    mid:priced.filter(rent=>rent>=1000&&rent<=1500).length,
+    high:priced.filter(rent=>rent>=1500).length
+  };
+  const ceiling=Math.max(1,...Object.values(bands));
+  panel.querySelectorAll("[data-rent-band]").forEach(button=>{
+    const count=bands[button.dataset.rentBand];
+    button.querySelector(".rent-landscape-count").textContent=String(count);
+    button.querySelector(".rent-landscape-bar-fill").style.width=(count/ceiling*100).toFixed(1)+"%";
+    button.setAttribute("aria-label",button.querySelector(".rent-landscape-name").textContent.trim()+": "+count+" indexed rental"+(count===1?"":"s")+". Filter the listings.");
+  });
+  $("rent-landscape-total").textContent=priced.length+" indexed rental"+(priced.length===1?"":"s")+" with published rent";
+  panel.hidden=false;
+}
+
 function render(){
   $("listings").innerHTML=state.filtered.map(card).join("");
   document.querySelectorAll(".property-photo").forEach(img=>img.addEventListener("error",()=>{if(img.src!==FALLBACK_IMAGE)img.src=FALLBACK_IMAGE;}));
@@ -65,6 +89,7 @@ function render(){
   $("inventoryCount").textContent=state.listings.length;
   const managers=new Set(state.listings.map(x=>x.manager));
   $("managerCount").textContent=managers.size;
+  renderRentLandscape();
   drawComparison();
 }
 
@@ -250,6 +275,26 @@ async function load(){
     $("empty").querySelector("p").textContent="Use the source links below or contact Russellville.Rent.";
   }
 }
+/* Budget bands use the existing search inputs; other active filters remain intact. */
+const rentLandscape=$("rent-landscape");
+if(rentLandscape)rentLandscape.addEventListener("click",event=>{
+  const button=event.target.closest("button[data-rent-band]");
+  if(!button)return;
+  const selected={
+    low:["","1000"],
+    mid:["1000","1500"],
+    high:["1500",""]
+  }[button.dataset.rentBand];
+  if(!selected)return;
+  $("minRent").value=selected[0];
+  $("maxRent").value=selected[1];
+  $("filters").dispatchEvent(new Event("change",{bubbles:true}));
+  const count=$("resultCount");
+  count.tabIndex=-1;
+  count.focus({preventScroll:true});
+  count.scrollIntoView({block:"start",behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+});
+
 $("filters").addEventListener("input",apply);
 $("filters").addEventListener("change",apply);
 $("filters").addEventListener("reset",()=>setTimeout(apply,0));
