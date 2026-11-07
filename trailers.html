@@ -325,6 +325,37 @@ html{scroll-padding-top:110px}
 @media(max-width:390px){.directory-jumps{grid-template-columns:73px minmax(0,1fr);gap:6px;margin:0 -6px}.directory-jumps-label{font-size:.48rem}.directory-route-progress{font-size:.98rem}}
 @media(prefers-reduced-motion:reduce){.directory-jumps .jump a{transition:none}}
 
+
+/* November 7, 2026 — The pickup desk: an editorial live finder for the existing
+   eleven record links. Inspired by StayARV's forest/gold wayfinding; W3C WCAG 2.2
+   target sizing and focus, NN/g local-navigation hierarchy, web.dev fluid layouts.
+   Progressive enhancement only: all original links and full records remain. */
+.dispatch-finder{margin:24px 0 12px;padding:clamp(21px,2.5vw,31px);border:1px solid #47755c;border-radius:19px;background:radial-gradient(circle at 100% 0%,#37644d 0%,transparent 45%),linear-gradient(150deg,#10382f,#153e32 80%);color:#fff;box-shadow:0 17px 30px #0c34272d;min-width:0}
+.dispatch-finder[hidden],.dispatch-empty[hidden],.dispatch-chapter[hidden],.dispatch-rows li[hidden]{display:none!important}
+.dispatch-finder-kicker{display:block;color:#efd39b;font-size:.64rem;letter-spacing:.19em;font-weight:850}
+.dispatch-finder-heading h4{margin:11px 0 8px;font:400 clamp(1.5rem,2.5vw,2rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.04em;color:#fff}
+.dispatch-finder-heading h4 em{color:#f0cf8f;font-weight:400}
+.dispatch-finder-heading p{font-size:.82rem;line-height:1.55;color:#d8e6db;max-width:51ch;margin:0 0 21px}
+.dispatch-finder label{display:block;color:#fff;font-size:.79rem;font-weight:750;margin:0 0 9px}
+.dispatch-search-line{display:flex;align-items:center;min-width:0;border:2px solid #d7dece;background:#fff;border-radius:12px;overflow:hidden;min-height:52px;color:#244b39}
+.dispatch-search-line:focus-within{outline:3px solid #f0d08f;outline-offset:3px}
+.dispatch-search-line svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;flex:none;margin-left:15px}
+.dispatch-search-line input{font:inherit;min-width:0;width:100%;flex:1;border:0;outline:0;background:transparent;color:#173c2f;padding:12px 8px;font-size:.88rem}
+.dispatch-search-line input::placeholder{color:#60756a;opacity:1}
+.dispatch-search-line button{border:0;border-left:1px solid #d2dfd2;background:#f1f3ed;color:#1d5138;font-size:.77rem;font-weight:850;min-height:48px;min-width:60px;padding:9px 11px;cursor:pointer}
+.dispatch-search-line button:hover{background:#e1e8d9}
+.dispatch-search-line button:focus-visible{outline:3px solid #945c13;outline-offset:-5px}
+.dispatch-search-hint{font-size:.7rem;color:#cbdbd0;line-height:1.5;margin:9px 0 19px}
+.dispatch-filter-row{display:flex;flex-wrap:wrap;gap:7px}
+.dispatch-filter-row button{font:750 .73rem/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;min-height:44px;padding:10px 13px;cursor:pointer;color:#edf6e9;border:1px solid #82a68c;background:#255441;border-radius:999px;transition:background .2s,border-color .2s,color .2s}
+.dispatch-filter-row button:hover{background:#416b50;border-color:#d6e7ce}
+.dispatch-filter-row button[aria-pressed="true"]{background:#efcf8a;color:#163828;border-color:#efcf8a}
+.dispatch-filter-row button:focus-visible{outline:3px solid #f4d394;outline-offset:3px}
+.dispatch-search-count{font-size:.76rem;font-weight:750;color:#f0dfb0;line-height:1.45;border-top:1px solid #63887280;padding-top:13px;margin:18px 0 0}
+.dispatch-empty{margin:18px 0;border:2px dashed #91a899;background:#f0f4eb;color:#274936;border-radius:12px;padding:20px 23px;font-size:.85rem;line-height:1.6}
+@media(max-width:520px){.dispatch-finder{padding:21px 16px;border-radius:14px}.dispatch-filter-row{gap:6px}.dispatch-filter-row button{flex:1 1 auto}.dispatch-finder-heading h4{font-size:1.75rem}.dispatch-search-line input{font-size:.82rem}.dispatch-search-line svg{margin-left:10px;width:18px}}
+@media(prefers-reduced-motion:reduce){.dispatch-filter-row button{transition:none}}
+
 </style></head><body>
 <a class="skip-link" href="#main">Skip to trailer rentals</a>
 <header><nav class="nav" aria-label="Site navigation"><a class="logo" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← Browse all rentals</a></nav></header>
@@ -455,7 +486,31 @@ html{scroll-padding-top:110px}
  </div>
  <div class="dispatch-board">
   <div class="dispatch-board-head"><div><span class="dispatch-board-kicker">QUICK REFERENCE / ALL CURRENT LISTINGS</span><h3>Go straight to a provider.</h3></div><span class="dispatch-total" aria-label="11 listed options">11 <small>LISTINGS</small></span></div>
-  <nav class="dispatch-columns" aria-label="Direct links to all eleven trailer rental listings">
+  <div class="dispatch-finder" id="dispatch-finder" hidden>
+  <div class="dispatch-finder-heading">
+    <span class="dispatch-finder-kicker">THE RIVER VALLEY / PICKUP DESK</span>
+    <h4>Find the right <em>starting point.</em></h4>
+    <p>Search the actual directory records, or narrow by how and where you rent. Follow a result to its complete listing.</p>
+  </div>
+  <label for="trailer-provider-search">Provider, trailer type, or pickup town</label>
+  <div class="dispatch-search-line">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
+    <input id="trailer-provider-search" type="search" placeholder="Try dump, car hauler, Atkins…" autocomplete="off" spellcheck="false" aria-describedby="dispatch-search-hint">
+    <button class="dispatch-search-reset" id="dispatch-search-reset" type="button">Clear</button>
+  </div>
+  <p class="dispatch-search-hint" id="dispatch-search-hint">Search provider descriptions, trailer types, service notes and towns. Press Down Arrow to focus the first result.</p>
+  <div class="dispatch-filter-row" role="group" aria-label="Narrow trailer rental directory shortcuts">
+    <button type="button" data-dispatch-filter="all" aria-pressed="true">All 11</button>
+    <button type="button" data-dispatch-filter="local" aria-pressed="false">Russellville</button>
+    <button type="button" data-dispatch-filter="nearby" aria-pressed="false">Nearby pickup</button>
+    <button type="button" data-dispatch-filter="cold-storage" aria-pressed="false">Refrigerated</button>
+    <button type="button" data-dispatch-filter="rent-to-own" aria-pressed="false">Rent-to-own</button>
+    <button type="button" data-dispatch-filter="commercial-freight" aria-pressed="false">Freight</button>
+  </div>
+  <p class="dispatch-search-count" id="dispatch-search-count" role="status" aria-live="polite" aria-atomic="true">All 11 directory links shown.</p>
+</div>
+<p class="dispatch-empty" id="dispatch-empty" hidden>No shortcuts match this search. Try a different term or select “All 11.” The complete provider listings below remain available.</p>
+<nav class="dispatch-columns" aria-label="Direct links to all eleven trailer rental listings">
   <div class="dispatch-chapter"><a class="dispatch-chapter-head" href="#local"><span class="dispatch-chapter-number">01</span><span><strong>In Russellville</strong><small>Local short-term rental listings</small></span><span aria-hidden="true">↗</span></a><ol class="dispatch-rows"><li><a href="#provider-hauling"><span class="dispatch-item-num" aria-hidden="true">01</span><span class="dispatch-provider-name">White Trailer Rental</span><span class="dispatch-arrow" aria-hidden="true">↗</span></a></li><li><a href="#provider-moving"><span class="dispatch-item-num" aria-hidden="true">02</span><span class="dispatch-provider-name">U-Haul Moving &amp; Storage of Russellville</span><span class="dispatch-arrow" aria-hidden="true">↗</span></a></li><li><a href="#provider-dump"><span class="dispatch-item-num" aria-hidden="true">03</span><span class="dispatch-provider-name">Central Rental &amp; Supply</span><span class="dispatch-arrow" aria-hidden="true">↗</span></a></li><li><a href="#provider-wattstheload"><span class="dispatch-item-num" aria-hidden="true">04</span><span class="dispatch-provider-name">WattstheLoad — Watts the Load LLC</span><span class="dispatch-arrow" aria-hidden="true">↗</span></a></li><li><a href="#provider-tractor-supply"><span class="dispatch-item-num" aria-hidden="true">05</span><span class="dispatch-provider-name">Tractor Supply Co. — Russellville Store #596</span><span class="dispatch-arrow" aria-hidden="true">↗</span></a></li></ol></div><div class="dispatch-chapter"><a class="dispatch-chapter-head" href="#nearby"><span class="dispatch-chapter-number">02</span><span><strong>Nearby pickup</strong><small>Dardanelle and Atkins U-Haul dealers</small></span><span aria-hidden="true">↗</span></a><ol class="dispatch-rows"><li><a href="#trailer-dispatch-nearby-1"><span class="dispatch-item-num" aria-hidden="true">06</span><span class="dispatch-provider-name">U-Haul Neighborhood Dealer — Old Bank Gun &amp; Pawn (Dardanelle)</span><span class="dispatch-arrow" aria-hidden="true">↗</span></a></li><li><a href="#provider-uhaul-atkins"><span class="dispatch-item-num" aria-hidden="true">07</span><span class="dispatch-provider-name">U-Haul Neighborhood Dealer — 64 Auto and Diesel (Atkins)</span><span class="dispatch-arrow" aria-hidden="true">↗</span></a></li></ol></div><div class="dispatch-chapter"><a class="dispatch-chapter-head" href="#cold-storage"><span class="dispatch-chapter-number">03</span><span><strong>Refrigerated trailers</strong><small>Regional inquiries · delivery unconfirmed</small></span><span aria-hidden="true">↗</span></a><ol class="dispatch-rows"><li><a href="#trailer-dispatch-cold-storage-1"><span class="dispatch-item-num" aria-hidden="true">08</span><span class="dispatch-provider-name">Keep It Cool Mobile — Refrigerated Trailers</span><span class="dispatch-arrow" aria-hidden="true">↗</span></a></li><li><a href="#trailer-dispatch-cold-storage-2"><span class="dispatch-item-num" aria-hidden="true">09</span><span class="dispatch-provider-name">ICE FOX Leasing — Commercial Refrigerated Trailers</span><span class="dispatch-arrow" aria-hidden="true">↗</span></a></li></ol></div><div class="dispatch-chapter"><a class="dispatch-chapter-head" href="#rent-to-own"><span class="dispatch-chapter-number">04</span><span><strong>Rent-to-own</strong><small>Separate ownership program</small></span><span aria-hidden="true">↗</span></a><ol class="dispatch-rows"><li><a href="#trailer-dispatch-rent-to-own-1"><span class="dispatch-item-num" aria-hidden="true">10</span><span class="dispatch-provider-name">Grace Pro Trailers — Rent-to-Own</span><span class="dispatch-arrow" aria-hidden="true">↗</span></a></li></ol></div><div class="dispatch-chapter"><a class="dispatch-chapter-head" href="#commercial-freight"><span class="dispatch-chapter-number">05</span><span><strong>Commercial freight</strong><small>Specialized regional freight inquiry</small></span><span aria-hidden="true">↗</span></a><ol class="dispatch-rows"><li><a href="#trailer-dispatch-commercial-freight-1"><span class="dispatch-item-num" aria-hidden="true">11</span><span class="dispatch-provider-name">Broadline Equipment — Commercial Freight Trailers</span><span class="dispatch-arrow" aria-hidden="true">↗</span></a></li></ol></div>
   </nav>
   <p class="dispatch-notice">These links lead to provider information, not bookings. Confirm trailer type, pickup location, towing requirements, pricing and availability directly with each operator.</p>
@@ -537,6 +592,73 @@ html{scroll-padding-top:110px}
   }
   function schedule(){if(!queued){queued=true;requestAnimationFrame(update);}}
   window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',schedule,{passive:true});window.addEventListener('hashchange',schedule);update();
+})();
+</script>
+<script>
+/* Progressive enhancement only. The original 11 provider records are never hidden. */
+(function(){
+  const box=document.getElementById('dispatch-finder');
+  const list=document.querySelector('#provider-dispatch .dispatch-columns');
+  const field=document.getElementById('trailer-provider-search');
+  const clear=document.getElementById('dispatch-search-reset');
+  const status=document.getElementById('dispatch-search-count');
+  const empty=document.getElementById('dispatch-empty');
+  if(!box||!list||!field||!clear||!status||!empty)return;
+  const chapters=Array.from(list.querySelectorAll('.dispatch-chapter'));
+  const filters=Array.from(box.querySelectorAll('[data-dispatch-filter]'));
+  function normalized(value){
+    return String(value).toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();
+  }
+  const entries=chapters.flatMap(function(chapter){
+    const groupLink=chapter.querySelector('.dispatch-chapter-head[href^="#"]');
+    const group=groupLink?groupLink.getAttribute('href').slice(1):'';
+    return Array.from(chapter.querySelectorAll('.dispatch-rows li')).map(function(row){
+      const a=row.querySelector('a[href^="#"]');
+      const card=a?document.getElementById(a.getAttribute('href').slice(1)):null;
+      return {row:row,chapter:chapter,anchor:a,group:group,
+        words:normalized((a?a.textContent:'')+' '+(groupLink?groupLink.textContent:'')+' '+(card?card.textContent:''))};
+    });
+  });
+  // Do not enable the finder if a source update changes the navigation structure.
+  if(entries.length!==11||entries.some(function(item){return !item.anchor||!item.words;}))return;
+  let selected='all';
+  function update(){
+    const tokens=normalized(field.value).split(' ').filter(Boolean);
+    let shown=0;
+    entries.forEach(function(item){
+      const groupMatch=selected==='all'||item.group===selected;
+      const textMatch=tokens.every(function(token){return item.words.includes(token);});
+      const visible=groupMatch&&textMatch;
+      item.row.hidden=!visible;
+      if(visible)shown++;
+    });
+    chapters.forEach(function(chapter){
+      chapter.hidden=!entries.some(function(item){return item.chapter===chapter&&!item.row.hidden;});
+    });
+    empty.hidden=shown!==0;
+    status.textContent=(shown===11?'All 11':shown+' of 11')+' provider links shown. Complete records remain below.';
+  }
+  filters.forEach(function(button){
+    button.addEventListener('click',function(){
+      selected=button.getAttribute('data-dispatch-filter');
+      filters.forEach(function(other){other.setAttribute('aria-pressed',String(other===button));});
+      update();
+    });
+  });
+  field.addEventListener('input',update);
+  field.addEventListener('keydown',function(event){
+    if(event.key==='ArrowDown'){
+      const first=entries.find(function(item){return !item.row.hidden;});
+      if(first){event.preventDefault();first.anchor.focus();}
+    }
+  });
+  clear.addEventListener('click',function(){
+    field.value='';selected='all';
+    filters.forEach(function(button){button.setAttribute('aria-pressed',String(button.getAttribute('data-dispatch-filter')==='all'));});
+    update();field.focus();
+  });
+  box.hidden=false;
+  update();
 })();
 </script>
 </body></html>
