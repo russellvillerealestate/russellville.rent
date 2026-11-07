@@ -390,6 +390,74 @@
 @media(prefers-reduced-motion:reduce){#providers .jump.med-dispatch a{transition:none!important;transform:none!important}}
 @media print{.med-dispatch-head{background:#fff!important;color:#17483b}.med-dispatch-head p,.med-dispatch-head h3 em{color:#17483b}.med-dispatch-grid{grid-template-columns:1fr;background:#fff}.med-dispatch-item{break-inside:avoid}}
 
+
+/* River Valley equipment gallery — visual redesign 2026-11-07.
+   Original six category names, provider records, button semantics and filter logic remain canonical.
+   Decorative inline illustrations deliberately make no product-availability claims. */
+.has-js .equipment-finder{position:relative;isolation:isolate;overflow:hidden;margin:clamp(48px,6vw,80px) 0 58px;padding:clamp(25px,4.8vw,53px);background:radial-gradient(circle at 92% 8%,#3d725e 0%,transparent 37%),linear-gradient(135deg,#0d302c,#17483c 68%,#225a49);border:1px solid #315c4b;border-radius:27px;color:#fff;box-shadow:0 27px 65px #153a2d30}
+.equipment-finder::before{content:"";position:absolute;z-index:-1;right:-175px;top:-205px;width:510px;height:510px;border:1px solid #f2d69e4d;border-radius:50%;box-shadow:0 0 0 40px #f4d9a912,0 0 0 90px #f4d9a90a;pointer-events:none}
+.equipment-finder .finder-heading{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(220px,.6fr);gap:24px;align-items:end;margin-bottom:30px}
+.equipment-finder .finder-heading h2{color:#fffaf0;font:400 clamp(2.35rem,4.5vw,4.1rem)/1.06 Georgia,"Times New Roman",serif;letter-spacing:-.052em;max-width:16ch;text-wrap:balance}
+.equipment-finder .finder-heading>p{max-width:40ch;color:#deebe1;font-size:.92rem;line-height:1.6}
+.equipment-finder .finder-eyebrow{color:#f6d590;letter-spacing:.19em;font-size:.7rem}
+.equipment-choices{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
+.equipment-choices .equipment-choice{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:44px;grid-column:span 3;min-width:0;min-height:244px;padding:23px 21px 25px;border:2px solid transparent;border-radius:19px;background:#e6ede4;color:#183c31;text-align:left;box-shadow:0 12px 25px #092b2430;transition:transform .22s,box-shadow .22s,border-color .22s}
+.equipment-choices .equipment-choice[data-category="all"]{grid-column:span 7;min-height:275px;padding:30px 32px;background:linear-gradient(126deg,#f6e6c2,#e2eddb 78%);color:#153e33}
+.equipment-choices .equipment-choice[data-category="mobility"]{grid-column:span 5;min-height:275px;padding:30px 28px;background:linear-gradient(130deg,#214f61,#133640 85%);color:#fff9ea}
+.equipment-choices .equipment-choice[data-category="beds"]{background:linear-gradient(142deg,#e0eee1,#b9d3c5);color:#164b3f}
+.equipment-choices .equipment-choice[data-category="ramps"]{background:linear-gradient(142deg,#fae8d0,#edcba3);color:#614227}
+.equipment-choices .equipment-choice[data-category="lifts"]{background:linear-gradient(142deg,#36614f,#174333);color:#fff9e9}
+.equipment-choices .equipment-choice[data-category="chairs"]{background:linear-gradient(142deg,#f2e5ed,#d9bfd1);color:#4d3050}
+.equipment-choices .choice-number{position:relative;z-index:2;display:grid;place-items:center;flex:0 0 auto;width:39px;height:39px;border:1px solid #123e3329;border-radius:100px;background:#ffffffbd;color:#214a39;font-size:.72rem;font-weight:900;letter-spacing:.06em;box-shadow:0 3px 9px #102e2220}
+.equipment-choices .equipment-choice:is([data-category="mobility"],[data-category="lifts"]) .choice-number{background:#ffffff24;border-color:#ffffff57;color:#fff}
+.equipment-choices .choice-graphic{position:absolute;z-index:0;top:27px;right:11px;width:60%;max-width:215px;height:142px;display:block;color:inherit;opacity:.67;pointer-events:none;filter:drop-shadow(0 9px 10px #062b1b19)}
+.equipment-choices .choice-graphic svg{display:block;width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+.equipment-choices .equipment-choice[data-category="all"] .choice-graphic{right:5%;top:15px;width:43%;max-width:265px;height:180px;opacity:.56}
+.equipment-choices .equipment-choice[data-category="mobility"] .choice-graphic{right:5%;top:24px;width:53%;height:160px;opacity:.8}
+.equipment-choices .equipment-choice>span:last-child{position:relative;z-index:1;display:block;max-width:100%}
+.equipment-choices .equipment-choice strong{display:block;color:inherit;font:400 clamp(1.45rem,2vw,1.85rem)/1.11 Georgia,"Times New Roman",serif;letter-spacing:-.04em;text-wrap:balance}
+.equipment-choices .equipment-choice:is([data-category="all"],[data-category="mobility"]) strong{font-size:clamp(2rem,3.5vw,3.2rem);max-width:12ch}
+.equipment-choices .equipment-choice small{display:block;margin-top:9px;color:inherit;opacity:.86;font-size:.79rem;line-height:1.5;font-weight:600;max-width:26ch}
+.equipment-choices .equipment-choice[data-category="all"] small{font-size:.91rem}
+.equipment-choices .equipment-choice:hover{transform:translateY(-4px);box-shadow:0 21px 38px #071d174c}
+.equipment-choices .equipment-choice[aria-pressed="true"]{border-color:#f6d08c;box-shadow:0 0 0 3px #fff7d9,0 16px 34px #071e1b61}
+.equipment-choices .equipment-choice[aria-pressed="true"]::after{content:"✓";position:absolute;z-index:3;top:14px;right:14px;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#f9d992;color:#163e33;font-size:1.05rem;font-weight:900;box-shadow:0 3px 8px #102d2224}
+.equipment-choices .equipment-choice:focus-visible{outline:4px solid #fbe4a8;outline-offset:5px}
+.equipment-finder .finder-footer{border-top:1px solid #f5e8c94d;padding-top:22px;margin-top:27px}
+.equipment-finder .finder-footer p{color:#f1f7ed;font-size:.91rem}
+.equipment-finder .clear-filter{color:#173c32;background:#f4d68d;border-color:#f4d68d}
+@media(max-width:950px){
+ .equipment-finder .finder-heading{grid-template-columns:1fr;gap:11px}
+ .equipment-finder .finder-heading h2{max-width:none}
+ .equipment-finder .finder-heading>p{max-width:64ch}
+ .equipment-choices .equipment-choice,.equipment-choices .equipment-choice:is([data-category="all"],[data-category="mobility"]){grid-column:span 6}
+ .equipment-choices .equipment-choice{min-height:228px}
+}
+@media(max-width:600px){
+ .has-js .equipment-finder{margin:35px 0 42px;padding:24px 17px;border-radius:21px}
+ .equipment-finder .finder-heading{margin-bottom:22px}
+ .equipment-finder .finder-heading h2{font-size:clamp(2.25rem,10vw,3.2rem)}
+ .equipment-choices{gap:11px}
+ .equipment-choices .equipment-choice,.equipment-choices .equipment-choice:is([data-category="all"],[data-category="mobility"]){grid-column:span 12;min-height:188px;padding:22px 20px;gap:35px}
+ .equipment-choices .equipment-choice:is([data-category="all"],[data-category="mobility"]){min-height:211px}
+ .equipment-choices .choice-graphic,.equipment-choices .equipment-choice:is([data-category="all"],[data-category="mobility"]) .choice-graphic{right:9px;top:14px;width:42%;height:128px;opacity:.55}
+ .equipment-choices .equipment-choice>span:last-child{max-width:69%}
+ .equipment-choices .equipment-choice strong{font-size:clamp(1.45rem,6vw,1.95rem)}
+ .equipment-choices .equipment-choice:is([data-category="all"],[data-category="mobility"]) strong{font-size:clamp(1.9rem,7.6vw,2.5rem)}
+ .equipment-choices .equipment-choice small{font-size:.77rem}
+ .equipment-finder .finder-footer{align-items:flex-start}
+}
+@media(max-width:360px){
+ .equipment-choices .equipment-choice>span:last-child{max-width:76%}
+ .equipment-choices .choice-graphic{opacity:.38}
+}
+@media(prefers-reduced-motion:reduce){.equipment-choices .equipment-choice{transition:none!important}.equipment-choices .equipment-choice:hover{transform:none!important}}
+@media print{
+ .has-js .equipment-finder{background:#fff!important;color:#173c32;box-shadow:none;border:1px solid #bccbbb}
+ .equipment-finder .finder-heading h2,.equipment-finder .finder-heading>p,.equipment-finder .finder-eyebrow,.equipment-finder .finder-footer p{color:#173c32}
+ .equipment-choices .equipment-choice{break-inside:avoid;box-shadow:none}
+}
+
 </style>
 </head>
 <body>
@@ -450,12 +518,12 @@
 <section class="equipment-finder" aria-labelledby="finder-title">
 <div class="finder-heading"><div><p class="finder-eyebrow">Explore by equipment</p><h2 id="finder-title">What are you looking for?</h2></div><p>Choose a product type to see providers that advertise it. This is not a live inventory or delivery check.</p></div>
 <div class="equipment-choices" role="group" aria-label="Filter providers by advertised equipment">
-<button type="button" class="equipment-choice" data-category="all" aria-pressed="true"><span class="choice-number" aria-hidden="true">00</span><span><strong>All equipment</strong><small>Compare every operator</small></span></button>
-<button type="button" class="equipment-choice" data-category="mobility" aria-pressed="false"><span class="choice-number" aria-hidden="true">01</span><span><strong>Wheelchairs &amp; scooters</strong><small>Manual and powered mobility</small></span></button>
-<button type="button" class="equipment-choice" data-category="beds" aria-pressed="false"><span class="choice-number" aria-hidden="true">02</span><span><strong>Hospital beds</strong><small>Published hospital bed rentals</small></span></button>
-<button type="button" class="equipment-choice" data-category="ramps" aria-pressed="false"><span class="choice-number" aria-hidden="true">03</span><span><strong>Ramps &amp; knee walkers</strong><small>Access and recovery equipment</small></span></button>
-<button type="button" class="equipment-choice" data-category="lifts" aria-pressed="false"><span class="choice-number" aria-hidden="true">04</span><span><strong>Patient lifts</strong><small>Published patient lift rentals</small></span></button>
-<button type="button" class="equipment-choice" data-category="chairs" aria-pressed="false"><span class="choice-number" aria-hidden="true">05</span><span><strong>Lift chairs</strong><small>Seated lift-assist furniture</small></span></button>
+<button type="button" class="equipment-choice" data-category="all" aria-pressed="true"><span class="choice-number" aria-hidden="true">00</span><span class="choice-graphic" aria-hidden="true"><svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg" focusable="false"><g><circle cx="30" cy="98" r="13"/><circle cx="72" cy="98" r="13"/><path d="M30 84 21 52h39l13 32M33 51V24h23M60 52l13 20h16"/></g><g><path d="M97 96h53M104 96V34h42v62M107 50h36M117 34V20h20v14M108 72h35"/></g></svg></span><span><strong>All equipment</strong><small>Compare every operator</small></span></button>
+<button type="button" class="equipment-choice" data-category="mobility" aria-pressed="false"><span class="choice-number" aria-hidden="true">01</span><span class="choice-graphic" aria-hidden="true"><svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg" focusable="false"><g><circle cx="52" cy="93" r="24"/><circle cx="115" cy="96" r="9"/><circle cx="69" cy="16" r="12"/><path d="M69 33v39h30l16 24M69 45h34l14 14M45 46l8 29 27 4 13 17M50 58H30M62 72H29M88 39 101 30"/></g></svg></span><span><strong>Wheelchairs &amp; scooters</strong><small>Manual and powered mobility</small></span></button>
+<button type="button" class="equipment-choice" data-category="beds" aria-pressed="false"><span class="choice-number" aria-hidden="true">02</span><span class="choice-graphic" aria-hidden="true"><svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg" focusable="false"><g><path d="M16 95V35h13v59M29 63h113v32M29 74h113M137 59v36M33 58v-22h38q11 0 11 12v10M92 57h42M23 99v9M138 99v9"/><path d="M43 44h23M34 83h105"/></g></svg></span><span><strong>Hospital beds</strong><small>Published hospital bed rentals</small></span></button>
+<button type="button" class="equipment-choice" data-category="ramps" aria-pressed="false"><span class="choice-number" aria-hidden="true">03</span><span class="choice-graphic" aria-hidden="true"><svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg" focusable="false"><g><path d="M10 97 105 38h39M105 38v59M12 97h134M28 88l10 9M45 77l13 20M67 63l22 34M105 49h39"/><circle cx="113" cy="24" r="8"/><path d="M113 32v10"/></g></svg></span><span><strong>Ramps &amp; knee walkers</strong><small>Access and recovery equipment</small></span></button>
+<button type="button" class="equipment-choice" data-category="lifts" aria-pressed="false"><span class="choice-number" aria-hidden="true">04</span><span class="choice-graphic" aria-hidden="true"><svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg" focusable="false"><g><path d="M24 106h114M45 103V20h60M105 20v24M41 34h71M52 103l-23-9M61 103l25-9M105 44l-16 17 6 27h38l6-27-17-17M96 70h37M121 44V32"/><circle cx="45" cy="107" r="7"/><circle cx="88" cy="107" r="7"/></g></svg></span><span><strong>Patient lifts</strong><small>Published patient lift rentals</small></span></button>
+<button type="button" class="equipment-choice" data-category="chairs" aria-pressed="false"><span class="choice-number" aria-hidden="true">05</span><span class="choice-graphic" aria-hidden="true"><svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg" focusable="false"><g><path d="M43 30Q43 18 55 18h44q13 0 13 14v36H43zM33 52q-15 0-15 17v23q0 12 12 12h94q12 0 12-12V68q0-14-15-15M35 75h86v15H35zM48 104v9M114 104v9M51 29h54M51 37h54M52 46h54"/></g></svg></span><span><strong>Lift chairs</strong><small>Seated lift-assist furniture</small></span></button>
 </div>
 <div class="finder-footer"><p id="filter-status" role="status" aria-live="polite" aria-atomic="true">Showing all 3 regional providers.</p><button type="button" id="clear-filter" class="clear-filter" hidden>Show all providers ↗</button></div>
 </section>
