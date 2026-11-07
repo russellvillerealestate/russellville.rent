@@ -425,6 +425,51 @@ body:not([data-workspace-view="ledger"]) .category .listing-card:focus-within{
 @media(max-width:370px){.workspace-route-link{flex-basis:52%;min-width:140px}}
 @media(prefers-reduced-motion:reduce){.workspace-route-link{transition:none}.workspace-route-link:hover{transform:none}}
 
+
+/* 2026-11-06 Workspace shortlist: add a decision aid, not new rental claims.
+   StayARV-inspired bold forest/cream/gold editorial arrangement. */
+.workspace-shortlist{position:relative;isolation:isolate;overflow:hidden;margin:clamp(34px,5vw,65px) 0 22px;padding:clamp(35px,5vw,65px) 0;background:radial-gradient(circle at 94% 5%,#35685c 0%,transparent 42%),linear-gradient(125deg,#0e302e,#19483f 76%,#1b5147);color:#f8f8ed}
+.workspace-shortlist:before{content:"";position:absolute;z-index:-1;right:-130px;top:-210px;width:510px;height:510px;border:1px solid #f0d5a73d;border-radius:50%;box-shadow:0 0 0 60px #f0d5a70a,0 0 0 125px #f0d5a709;pointer-events:none}
+.workspace-shortlist-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,.58fr);gap:clamp(20px,4vw,65px);align-items:center;margin-bottom:28px}
+.workspace-shortlist-overline{margin:0 0 13px;color:#f2d49e;font-size:.71rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
+.workspace-shortlist h2{font:400 clamp(2.3rem,4.7vw,4.25rem)/1.06 Georgia,"Times New Roman",serif;letter-spacing:-.06em;color:#fffef5;margin:0 0 14px;text-wrap:balance}
+.workspace-shortlist h2 em{font-style:normal;color:#eecb94}
+.workspace-shortlist-intro{max-width:57ch;margin:0;color:#dfede5;font-size:.93rem;line-height:1.7}
+.workspace-shortlist-figure{display:grid;place-items:center;align-self:stretch;min-height:190px;border:1px solid #cfdfd138;border-radius:20px;background:linear-gradient(125deg,#ffffff0f,#ffffff05);box-shadow:inset 0 0 0 1px #09252219}
+.workspace-shortlist-figure svg{display:block;width:min(92%,315px);height:auto;max-height:210px}
+.workspace-shortlist-figure span{color:#d6e7d9;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;font-weight:850;padding-bottom:15px}
+.workspace-shortlist-rule{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:14px 3px 16px;border-top:1px solid #e7e3c260;color:#f2d49e;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;font-weight:850}
+.workspace-shortlist-rule strong{color:#fffef5;font-size:.81rem;letter-spacing:0;text-transform:none}
+.workspace-shortlist-slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.workspace-slot{min-width:0;min-height:166px;border:1px solid #c4dacc63;border-radius:16px;background:#ffffff0e;padding:22px 20px 19px;display:flex;flex-direction:column;gap:10px}
+.workspace-slot-number{display:block;color:#f2d49e;font-size:.69rem;letter-spacing:.15em;font-weight:850;text-transform:uppercase}
+.workspace-slot-empty{display:block;margin:auto 0;font:400 clamp(1.23rem,1.9vw,1.55rem)/1.22 Georgia,"Times New Roman",serif;color:#bcd3c8;letter-spacing:-.025em}
+.workspace-slot-picked{display:flex;flex-direction:column;gap:7px;flex:1}
+.workspace-slot-picked a{font:400 clamp(1.07rem,1.55vw,1.3rem)/1.2 Georgia,"Times New Roman",serif;color:#fffbed;letter-spacing:-.025em;text-underline-offset:4px}
+.workspace-slot-picked small{font-size:.78rem;color:#c9dfd2;line-height:1.4}
+.workspace-slot-remove{align-self:start;margin-top:auto;min-height:42px;padding:8px 12px;border:1px solid #eac99185;border-radius:9px;background:#ffffff10;color:#ffe5b1;font:700 .78rem system-ui,sans-serif;cursor:pointer}
+.workspace-shortlist-actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:21px}
+.workspace-shortlist-actions button{min-height:48px;padding:11px 18px;border:1px solid #e6d7ad8c;border-radius:10px;background:#f5d69d;color:#15352e;font:800 .86rem system-ui,sans-serif;cursor:pointer}
+.workspace-shortlist-actions button.secondary{background:transparent;color:#fff7e5;border-color:#d3e5d77a}
+.workspace-shortlist-actions button:disabled{opacity:.52;cursor:default}
+.workspace-shortlist-actions button:not(:disabled):hover{filter:brightness(1.07)}
+.workspace-shortlist button:focus-visible,.workspace-shortlist a:focus-visible{outline:3px solid #ffe6aa;outline-offset:4px}
+.workspace-shortlist-note{margin:13px 0 0;color:#d3e4dc;font-size:.79rem;line-height:1.6}
+.workspace-shortlist-fallback{display:block;width:100%;min-height:95px;margin-top:12px;padding:13px;background:#fff;color:#193b31;border:2px solid #eac991;border-radius:9px;font:14px/1.5 system-ui,sans-serif}
+.workspace-shortlist-fallback[hidden]{display:none!important}
+.workspace-save-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;align-self:flex-start;min-height:44px;margin-top:15px;padding:9px 14px;border-radius:9px;border:1px solid #9ab8a6;background:#eff5ee;color:#225647;font:800 .81rem system-ui,sans-serif;cursor:pointer;transition:background-color .18s,border-color .18s}
+.workspace-save-btn:hover{background:#dcece2;border-color:#4d8a73}
+.workspace-save-btn[aria-pressed="true"]{background:#234f40;color:#fff7e7;border-color:#234f40}
+.workspace-save-btn:focus-visible{outline:3px solid #b26923;outline-offset:4px}
+.category .listing-card.workspace-selected{border-color:#638e78;box-shadow:0 10px 28px #27583d25}
+.category .listing-card{scroll-margin-top:156px}
+body[data-workspace-view="ledger"] .category .listing-card .workspace-save-btn{grid-column:1;grid-row:4;justify-self:start;margin-top:9px}
+@media(max-width:850px){.workspace-shortlist-head{grid-template-columns:1fr}.workspace-shortlist-figure{display:none}.workspace-shortlist h2{max-width:17ch}}
+@media(max-width:690px){.workspace-shortlist-slots{grid-template-columns:1fr;gap:10px}.workspace-slot{min-height:100px;padding:17px 19px}.workspace-slot-empty{font-size:1.22rem}.workspace-shortlist-rule{align-items:start;flex-direction:column;gap:5px}.workspace-shortlist-actions button{flex:1 1 145px}.workspace-shortlist-head{margin-bottom:22px}}
+@media(max-width:780px){body[data-workspace-view="ledger"] .category .listing-card .workspace-save-btn{margin-top:14px}}
+@media(prefers-reduced-motion:reduce){.workspace-save-btn{transition:none}}
+@media print{.workspace-shortlist{background:#fff;color:#111;padding:20px 0}.workspace-shortlist h2,.workspace-shortlist h2 em,.workspace-slot-picked a,.workspace-slot-empty,.workspace-shortlist-intro,.workspace-shortlist-rule strong{color:#111}.workspace-slot{border:1px solid #777}.workspace-save-btn,.workspace-shortlist-actions,.workspace-slot-remove,.workspace-shortlist-figure{display:none!important}}
+
 </style>
 </head>
 <body>
@@ -501,6 +546,41 @@ body:not([data-workspace-view="ledger"]) .category .listing-card:focus-within{
 </section>
 
 <!-- Work Atlas / listing navigation. Links remain usable without JavaScript. -->
+
+<!-- A visit-only workspace comparison, derived from the existing directory. -->
+<section class="workspace-shortlist" id="workspace-shortlist" aria-labelledby="workspace-shortlist-title" hidden>
+ <div class="wrap">
+  <div class="workspace-shortlist-head">
+   <div><p class="workspace-shortlist-overline">The River Valley / Your workspace field notes</p>
+    <h2 id="workspace-shortlist-title">Three possibilities.<br><em>One clear view.</em></h2>
+    <p class="workspace-shortlist-intro">Save up to three desks, offices, meeting rooms or jobsite options as you browse. Compare the published details without losing your place in the directory.</p>
+   </div>
+   <div class="workspace-shortlist-figure" aria-hidden="true">
+    <svg viewBox="0 0 310 175" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg">
+     <rect x="23" y="25" width="264" height="125" rx="9" fill="#f0e7d3"/><rect x="39" y="41" width="69" height="92" rx="4" fill="#c4d8ca"/><path d="M72 41v92M39 87h69" stroke="#f0e7d3" stroke-width="5"/>
+     <rect x="121" y="42" width="144" height="91" rx="4" fill="#d1ddd2"/><path d="M121 86h144M189 42v91" stroke="#f7f4e8" stroke-width="8"/>
+     <rect x="137" y="57" width="36" height="18" rx="4" fill="#4a7b68"/><rect x="204" y="56" width="43" height="23" rx="5" fill="#e2ac71"/><rect x="141" y="100" width="38" height="21" rx="5" fill="#8fb9a9"/><rect x="211" y="105" width="34" height="17" rx="4" fill="#59877a"/>
+     <path d="M27 155h260" stroke="#d7c490" stroke-width="3" stroke-linecap="round"/><circle cx="272" cy="24" r="9" fill="#f2d49e"/><path d="M272 9v5m0 20v5m-15-15h5m20 0h5" stroke="#f2d49e" stroke-width="2"/>
+    </svg>
+    <span>Illustrative floor plan · Not a property</span>
+   </div>
+  </div>
+  <div class="workspace-shortlist-rule"><span>Workspace comparison / Three places</span><strong id="workspace-shortlist-count" aria-live="polite" aria-atomic="true">0 of 3 selected</strong></div>
+  <div class="workspace-shortlist-slots" id="workspace-shortlist-slots" aria-label="Selected workspaces">
+   <div class="workspace-slot"><span class="workspace-slot-number">01 / Your first pick</span><span class="workspace-slot-empty">Choose from the listings below.</span></div>
+   <div class="workspace-slot"><span class="workspace-slot-number">02 / A second perspective</span><span class="workspace-slot-empty">Another place to consider.</span></div>
+   <div class="workspace-slot"><span class="workspace-slot-number">03 / Room for one more</span><span class="workspace-slot-empty">Keep your options open.</span></div>
+  </div>
+  <div class="workspace-shortlist-actions">
+   <button type="button" id="workspace-shortlist-copy" disabled>Copy comparison notes ↗</button>
+   <button type="button" id="workspace-shortlist-clear" class="secondary">Clear shortlist</button>
+   <a class="button secondary" href="#coworking">Explore workspaces ↓</a>
+  </div>
+  <p class="workspace-shortlist-note" id="workspace-shortlist-status" role="status" aria-live="polite">Selections are kept only on this page. Nothing is sent or booked. Provider details, prices, fees and availability must be confirmed directly.</p>
+  <textarea id="workspace-shortlist-fallback" class="workspace-shortlist-fallback" aria-label="Select and copy your workspace notes" readonly hidden></textarea>
+ </div>
+</section>
+
 <nav class="workspace-route-nav" aria-label="Workspace directory chapters">
  <div class="wrap workspace-route-inner">
   <div class="workspace-route-ident"><small>THE WORK ATLAS / 04</small><strong>Find your space.</strong><span>Jump to a workspace type</span></div>
@@ -642,4 +722,108 @@ filter();
  update();
 })();
 </script>
+
+<script>
+/* Workspace comparison: additive, visit-only state sourced from existing cards.
+   Does not modify the directory search, display mode or rental records. */
+(() => {
+ const board=document.getElementById('workspace-shortlist');
+ const cards=Array.from(document.querySelectorAll('.category .listing-card'));
+ const slots=document.querySelectorAll('#workspace-shortlist-slots .workspace-slot');
+ const count=document.getElementById('workspace-shortlist-count');
+ const note=document.getElementById('workspace-shortlist-status');
+ const copy=document.getElementById('workspace-shortlist-copy');
+ const clear=document.getElementById('workspace-shortlist-clear');
+ const fallback=document.getElementById('workspace-shortlist-fallback');
+ const search=document.getElementById('space-search');
+ if(!board || !cards.length || slots.length!==3 || !count || !note || !copy || !clear || !fallback) return;
+ const picked=new Map();
+ const meta=new Map();
+ const buttons=new Map();
+ const labels=['01 / Your first pick','02 / A second perspective','03 / Room for one more'];
+ const emptyText=['Choose from the listings below.','Another place to consider.','Keep your options open.'];
+ const make=(tag,className,textValue)=>{
+  const el=document.createElement(tag);
+  if(className)el.className=className;
+  if(textValue!==undefined)el.textContent=textValue;
+  return el;
+ };
+ cards.forEach((card,index)=>{
+  if(!card.querySelector('h3'))return;
+  if(!card.id)card.id='workspace-entry-'+(index+1);
+  const name=card.querySelector('h3').textContent.trim();
+  const kind=card.querySelector('.listing-type')?.textContent.trim()||'Workspace';
+  const place=card.querySelector('.detail')?.textContent.trim()||'Location to verify';
+  const link=card.querySelector('.card-links a[href^="https://"]');
+  meta.set(card.id,{card,name,kind,place,source:link?.href||''});
+  const button=make('button','workspace-save-btn','＋ Add to shortlist');
+  button.type='button';
+  button.setAttribute('aria-pressed','false');
+  button.setAttribute('aria-label','Add '+name+' to workspace shortlist');
+  button.addEventListener('click',()=>{
+   if(picked.has(card.id)){picked.delete(card.id);render();return;}
+   if(picked.size===3){note.textContent='Three spaces are already selected. Remove one before adding another.';return;}
+   picked.set(card.id,true);
+   render();
+  });
+  card.appendChild(button);
+  buttons.set(card.id,button);
+ });
+ function render(){
+  const ids=Array.from(picked.keys());
+  slots.forEach((slot,index)=>{
+   slot.replaceChildren(make('span','workspace-slot-number',labels[index]));
+   const item=meta.get(ids[index]);
+   if(!item){slot.appendChild(make('span','workspace-slot-empty',emptyText[index]));return;}
+   const body=make('div','workspace-slot-picked');
+   const link=make('a','',item.name);
+   link.href='#'+item.card.id;
+   link.addEventListener('click',()=>{
+    if(item.card.hidden && search){search.value='';search.dispatchEvent(new Event('input',{bubbles:true}));}
+   });
+   body.append(link,make('small','',item.kind+' · '+item.place));
+   const remove=make('button','workspace-slot-remove','Remove this space');
+   remove.type='button';
+   remove.setAttribute('aria-label','Remove '+item.name+' from shortlist');
+   remove.addEventListener('click',()=>{picked.delete(item.card.id);render();clear.focus({preventScroll:true});});
+   body.appendChild(remove);
+   slot.appendChild(body);
+  });
+  buttons.forEach((button,id)=>{
+   const saved=picked.has(id),item=meta.get(id);
+   button.setAttribute('aria-pressed',String(saved));
+   button.textContent=saved?'✓ Saved to shortlist':'＋ Add to shortlist';
+   button.setAttribute('aria-label',(saved?'Remove ':'Add ')+item.name+(saved?' from':' to')+' workspace shortlist');
+   item.card.classList.toggle('workspace-selected',saved);
+  });
+  count.textContent=ids.length+' of 3 selected';
+  copy.disabled=ids.length===0;
+  note.textContent=ids.length?'Open a saved space to see its full listing. Notes are not a booking, availability check or verified quote.':'Selections stay on this page only. Nothing is sent or booked. Confirm prices, fees and availability with each provider.';
+  fallback.hidden=true;
+ }
+ clear.addEventListener('click',()=>{picked.clear();render();});
+ copy.addEventListener('click',async()=>{
+  if(!picked.size)return;
+  const names=Array.from(picked.keys()).map((id,index)=>{
+   const item=meta.get(id);
+   return (index+1)+'. '+item.name+'\n'+item.kind+'\n'+item.place+(item.source?'\n'+item.source:'');
+  }).join('\n\n');
+  const content='Russellville.Rent — workspace comparison\n\n'+names+'\n\nConfirm availability, rates, extra charges, lease terms and eligibility directly with each provider.';
+  try{
+   if(!navigator.clipboard?.writeText)throw new Error('Clipboard unsupported');
+   await navigator.clipboard.writeText(content);
+   note.textContent='Comparison notes copied. Confirm the details directly with each provider.';
+  }catch(error){
+   fallback.value=content;
+   fallback.hidden=false;
+   fallback.focus();
+   fallback.select();
+   note.textContent='Clipboard access was unavailable. Select and copy the notes from the text box.';
+  }
+ });
+ board.hidden=false;
+ render();
+})();
+</script>
+
 </body></html>
