@@ -1819,6 +1819,47 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 @media(max-width:520px){.riverfield-tile .directory-pictogram{right:7%;width:94px;height:94px;padding:20px}.riverfield-tile .riverfield-eyebrow{font-size:.55rem}.riverfield-tile small{font-size:.54rem}}
 @media(prefers-reduced-motion:reduce){.riverfield-tile .riverfield-scene,.riverfield-tile .directory-pictogram{transition:none!important}.rental-card:hover .riverfield-tile .riverfield-scene{transform:none}.rental-card:hover .riverfield-tile .directory-pictogram{transform:translateY(-50%)}}
 
+
+/* 2026-11-07: The River Valley gathering portfolio.
+   Scenic vector illustrations are generic category wayfinding, never photos of providers.
+   The venue chapter becomes a double-width editorial feature only in the default
+   unfiltered grid; search, saved categories and list view keep normal card geometry.
+   Based on StayARV's immersive hierarchy, NN/g visual hierarchy, web.dev responsive
+   imagery guidance, and W3C WCAG 2.2 reduced-motion and visible-focus principles. */
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="venues"]{
+ border:1px solid #a9c9b9;border-radius:22px;overflow:hidden;
+ box-shadow:0 17px 42px #163a321c;background:#f8fbf5
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="venues"] .card-body{
+ background:linear-gradient(145deg,#fffdf5,#edf4e8);justify-content:center;
+ padding:clamp(23px,3.1vw,39px)
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="venues"] .card-body h3{
+ font:400 clamp(1.8rem,3.1vw,3rem)/1.08 Georgia,"Times New Roman",serif;
+ letter-spacing:-.055em;color:#143f33;margin-bottom:15px
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="venues"] .card-link{
+ min-height:49px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+ width:fit-content;max-width:100%;padding:11px 17px;border-radius:10px;
+ color:#fff;background:#174a3c;text-decoration:none;font-weight:800
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="venues"] .card-link:hover{background:#26614d}
+@media(min-width:850px){
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="venues"]{
+  grid-column:span 2;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+  min-height:360px
+ }
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="venues"] .riverfield-tile{height:100%;min-height:360px}
+}
+@media(min-width:601px) and (max-width:849px){
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="venues"]{grid-column:span 2}
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="venues"] .riverfield-tile{height:255px}
+}
+@media(max-width:600px){
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="venues"]{border-radius:16px}
+ .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="venues"] .card-body{padding:23px}
+}
+
 </style>
 </head>
 <body>
@@ -2113,7 +2154,8 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <p class="status">Danny&#39;s Roll Offs · JCS Disposal · RTI Trash · Brandon&#39;s Trash Service (small cleanup bins) · Conway Dumpster Rental Group (Conway; Russellville delivery advertised)</p>
 <a class="card-link" href="dumpsters.html">Browse dumpster rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="venues">
-<div class="category-art icon-tile" style="--tile-ink:#684a69;--tile-bg:#f0dff0" role="img" aria-label="Event venue building"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-venues"></use></svg><small>EVENT VENUES</small></div>
+<div class="category-art icon-tile riverfield-tile" style="--tile-ink:#684a69;--tile-bg:#f0dff0" role="img" aria-label="Original illustrated event venue among River Valley trees, not a provider photograph"><svg class="riverfield-scene" viewBox="0 0 700 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="700" height="380" fill="#97a9a6"/><circle cx="554" cy="83" r="69" fill="#f7d5a0"/><path d="M0 217 111 158 243 205 365 147 494 199 604 150 700 177V380H0Z" fill="#628a79"/><path d="M0 246Q130 214 251 248T493 230T700 250V380H0Z" fill="#316456"/><path d="M0 322Q193 286 369 321T700 310V380H0Z" fill="#174b40"/><path d="M281 197 405 111 528 197v130H281Z" fill="#efe2c2"/><path d="m269 200 136-93 135 93" fill="none" stroke="#2f534d" stroke-width="20" stroke-linejoin="round"/><rect x="298" y="212" width="212" height="100" fill="#e7d3ab"/><path d="M319 212v101m46-101v101m46-101v101m46-101v101m46-101v101" stroke="#2b5b51" stroke-width="9"/><path d="M302 314h208M276 326h260" stroke="#f9e8c3" stroke-width="13"/><path d="M389 267h33v54h-33z" fill="#527d70"/><circle cx="574" cy="230" r="54" fill="#1d574a"/><circle cx="597" cy="206" r="49" fill="#286958"/><path d="M586 266v64M558 318h58" stroke="#1c4c40" stroke-width="16"/><path d="M193 324v-83m-32 42h64m-52-24h42" stroke="#234e42" stroke-width="15" stroke-linecap="round"/><circle cx="193" cy="225" r="39" fill="#2d6651"/><circle cx="171" cy="247" r="30" fill="#4f8564"/><path d="M0 348Q186 324 351 351T700 347" stroke="#f7d49a" stroke-opacity=".48" stroke-width="4" fill="none"/></svg><span class="riverfield-eyebrow" aria-hidden="true">RIVER VALLEY / GATHER HERE</span>
+<svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-venues"></use></svg><small>EVENT VENUES</small></div>
 <div class="card-body"><p class="eyebrow">Venues &amp; meeting rooms</p><h3>Event venues</h3>
 <p>Community halls, wedding venues, performance spaces and meeting rooms.</p>
 <p class="status">Historic Train Depot · The Center for the Arts · The Chapel at Dragonfly Farms (Dover)</p>
@@ -2160,7 +2202,8 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <p>Rent-to-own furniture, appliances, TVs and electronics.</p>
 <p class="status">Rent-A-Center · Aaron's · Bestway · Hank's (Acima lease-to-own)</p>
 <a class="card-link" href="household-rentals.html">Browse furniture &amp; appliance rentals <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="audio-visual"><div class="category-art icon-tile" style="--tile-ink:#45517e;--tile-bg:#e1e5f5" role="img" aria-label="Microphone"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-audio-visual"></use></svg><small>AUDIO &amp; VISUAL</small></div><div class="card-body"><p class="eyebrow">Audio &amp; visual rentals</p><h3>Audio &amp; visual rentals</h3>
+<article class="rental-card" data-category="audio-visual"><div class="category-art icon-tile riverfield-tile" style="--tile-ink:#45517e;--tile-bg:#e1e5f5" role="img" aria-label="Original illustrated evening sound and lighting setup, not any rental provider's inventory"><svg class="riverfield-scene" viewBox="0 0 700 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="700" height="380" fill="#344e70"/><circle cx="556" cy="73" r="61" fill="#ebc7a2"/><path d="M0 195Q103 142 233 189T478 175T700 195V380H0Z" fill="#2b5870"/><path d="M0 249Q143 205 269 244T516 221T700 246V380H0Z" fill="#17485b"/><path d="M0 323Q203 278 380 314T700 291V380H0Z" fill="#103b43"/><path d="M210 292h388V174H210Z" fill="#163f4a"/><path d="M202 176h405M211 179l47-47h296l47 47M258 132v46m296-46v46" stroke="#e5c994" stroke-width="10" fill="none" stroke-linejoin="round"/><path d="m280 178-92 127 180-65m106-62 150 134-194-73m-88-60-51 122 114-11" fill="#e5d69d" opacity=".20"/><path d="m280 178-65 106m260-106 93 125m-218-125-37 96" stroke="#f6dfa0" stroke-opacity=".62" stroke-width="4"/><rect x="232" y="200" width="46" height="95" rx="8" fill="#0b292f" stroke="#d6bd91" stroke-width="5"/><rect x="530" y="200" width="46" height="95" rx="8" fill="#0b292f" stroke="#d6bd91" stroke-width="5"/><circle cx="255" cy="224" r="10" stroke="#8ab8aa" stroke-width="3" fill="none"/><circle cx="255" cy="266" r="15" stroke="#8ab8aa" stroke-width="3" fill="none"/><circle cx="554" cy="266" r="15" stroke="#8ab8aa" stroke-width="3" fill="none"/><path d="M300 287h205" stroke="#e3c990" stroke-width="7" stroke-linecap="round"/><rect x="340" y="235" width="120" height="51" rx="6" fill="#bdbeac" opacity=".88"/><path d="M358 256h84m-74 12h64" stroke="#1a4b53" stroke-width="4"/><path d="M0 347Q103 318 217 344T435 338T700 350V380H0Z" fill="#092e36"/></svg><span class="riverfield-eyebrow" aria-hidden="true">RIVER VALLEY / MAKE A SCENE</span>
+<svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-audio-visual"></use></svg><small>AUDIO &amp; VISUAL</small></div><div class="card-body"><p class="eyebrow">Audio &amp; visual rentals</p><h3>Audio &amp; visual rentals</h3>
 <p>Speakers, projectors, event lighting and staffed production packages.</p>
 <p class="status">Roots &amp; Rhythm · A/V Arkansas · 636 Entertainment · EdmoSound (regional; delivery unconfirmed)</p>
 <a class="card-link" href="audio-visual.html">Browse audio &amp; visual rentals <span aria-hidden="true">↗</span></a></div></article>
@@ -2197,7 +2240,8 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <div class="category-art icon-tile" style="--tile-ink:#44634d;--tile-bg:#e0ecdf" role="img" aria-label="Golf cart illustration"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-golf-carts"></use></svg><small>GOLF CARTS</small></div>
 <div class="card-body"><p class="eyebrow">Golf cart rentals</p><h3>Golf carts for events</h3><p>Compare six Arkansas golf cart rental providers for events; Russellville delivery remains UNCONFIRMED.</p><p class="status">River Valley Golf Carts · Arkansas Golf &amp; Powersports · Clear Creek Golf Car · Kaptain Chris &amp; Pup's · Lone Star Golf Cars · Mid-State Golf Cars</p><a class="card-link" href="golf-carts.html">Browse golf cart rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="stages">
-<div class="category-art icon-tile" style="--tile-ink:#6d5443;--tile-bg:#efe6d9" role="img" aria-label="Neutral illustration of a performance stage"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-stages"></use></svg><small>EVENT STAGING</small></div>
+<div class="category-art icon-tile riverfield-tile" style="--tile-ink:#6d5443;--tile-bg:#efe6d9" role="img" aria-label="Original illustration of a generic outdoor performance stage at sunset, not a listed stage or provider"><svg class="riverfield-scene" viewBox="0 0 700 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="700" height="380" fill="#86aba2"/><circle cx="555" cy="68" r="71" fill="#f3d5a1"/><path d="M0 208 112 173 207 200 342 150 479 210 596 173 700 194V380H0Z" fill="#568c7a"/><path d="M0 245Q104 216 215 245T476 228T700 231V380H0Z" fill="#246356"/><path d="M0 320Q203 281 379 308T700 293V380H0Z" fill="#12483f"/><path d="M242 158h377l-47-57H289Z" fill="#173e3b"/><path d="M249 160h369" stroke="#f4dfa4" stroke-width="12" stroke-linecap="round"/><path d="M264 163v154m336-154v154" stroke="#f4dda1" stroke-width="9"/><path d="M282 189h298v101H282Z" fill="#2c675a"/><path d="M282 236q78-71 149 0t149 0v54H282Z" fill="#1a4a45" opacity=".75"/><path d="M253 297h370v33H253Z" fill="#dbbe86"/><path d="M256 330h372" stroke="#f6db9c" stroke-width="9"/><path d="M326 330v25h224v-25M346 355v16h184v-16" stroke="#d6bc82" stroke-width="10"/><path d="m285 159-28 45m355-45 30 45" stroke="#f9e5b6" stroke-width="3"/><circle cx="328" cy="178" r="8" fill="#f5dfb8"/><circle cx="433" cy="178" r="8" fill="#f5dfb8"/><circle cx="557" cy="178" r="8" fill="#f5dfb8"/><path d="M49 317v-78m-22 34h44m-35-20h30M116 321v-113m-26 51h52" stroke="#214e42" stroke-width="13" stroke-linecap="round"/><circle cx="49" cy="234" r="34" fill="#306b57"/><circle cx="116" cy="205" r="47" fill="#39765e"/><path d="M0 352Q189 334 332 347T700 334" stroke="#e8c58e" stroke-width="4" fill="none" opacity=".65"/></svg><span class="riverfield-eyebrow" aria-hidden="true">RIVER VALLEY / TAKE THE STAGE</span>
+<svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-stages"></use></svg><small>EVENT STAGING</small></div>
 <div class="card-body"><p class="eyebrow">Stage &amp; platform rentals</p><h3>Stages &amp; event platforms</h3><p>Compare mobile and modular stage rentals with on-site stages at Depot Park in Russellville and Brookstock Events in Dover. Regional providers’ delivery to Russellville remains UNCONFIRMED.</p><p class="status">Historic Train Depot (on-site only) · Brookstock Events (Dover, on-site only) · CWP Productions · Intents Party Rentals (regional) · Stagemasters · Rock City Staging</p><a class="card-link" href="stages.html">Browse stage rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="golf-simulators">
 <div class="category-art icon-tile" style="--tile-ink:#42604e;--tile-bg:#e2eddf" role="img" aria-label="Neutral golf illustration"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-golf-simulators"></use></svg><small>GOLF SIMULATORS</small></div>
