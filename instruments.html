@@ -527,6 +527,44 @@
 }
 @media(prefers-reduced-motion:reduce){#providers .provider-art-note{transform:none}}
 
+
+/* 2026-11-07 / Band-room field gallery: six illustrative instrument prompts plus
+   school-first guidance. Scenic backdrop is River Valley scenery, not provider inventory.
+   StayARV immersive composition, NN/g clear visual groups, web.dev image containment,
+   W3C WCAG 2.2 reflow/focus/target size/reduced motion. No extra network requests. */
+.band-explorer{position:relative;isolation:isolate;overflow:hidden;
+  background:linear-gradient(120deg,#092b27f5 0%,#123d31f2 50%,#153c30e7 100%),
+    url("assets/downtown-russellville-sunset.jpg") center 58%/cover no-repeat;
+}
+.band-explorer:before{content:"";position:absolute;z-index:-1;top:0;right:0;width:46%;height:210px;
+  opacity:.16;pointer-events:none;
+  background:repeating-linear-gradient(to bottom,transparent 0 20px,#f5dba2 20px 22px,transparent 22px 30px);
+  transform:translate(20%,-25%) rotate(-12deg);
+}
+.band-explorer-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.band-explorer-card{min-height:289px;border-radius:20px;box-shadow:0 10px 23px #031c1640}
+.band-explorer-card:nth-child(4){background:#e9eee1}
+.band-explorer-card:nth-child(5){background:#eadfcb}
+.band-explorer-card:nth-child(6){background:#dce8e8}
+.band-explorer-card:nth-child(4) .band-explorer-art{color:#527659}
+.band-explorer-card:nth-child(5) .band-explorer-art{color:#8e6b45}
+.band-explorer-card:nth-child(6) .band-explorer-art{color:#477d85}
+.band-explorer-card:last-child{grid-column:1/-1;display:grid;
+  grid-template-columns:minmax(100px,.25fr) minmax(0,1fr);
+  grid-template-rows:auto auto auto;gap:6px 23px;
+  min-height:148px;padding:23px 31px;background:linear-gradient(100deg,#294c3d,#315e49);
+}
+.band-explorer-card:last-child .band-explorer-index{grid-column:2;grid-row:1;align-self:end}
+.band-explorer-card:last-child .band-explorer-art{grid-column:1;grid-row:1/4;min-height:92px;margin:0}
+.band-explorer-card:last-child .band-explorer-name{grid-column:2;grid-row:2;margin:0;font-size:clamp(1.6rem,3vw,2.1rem)}
+.band-explorer-card:last-child .band-explorer-desc{grid-column:2;grid-row:3;margin:0;max-width:47ch}
+.band-explorer-card:focus-visible{outline:3px solid #ffe8a4;outline-offset:4px}
+.band-explorer-card.is-selected{border-color:#f4cb81;box-shadow:0 0 0 3px #f8dfa5,0 12px 23px #05241c68}
+@media(max-width:980px){.band-explorer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.band-explorer-card:last-child{grid-column:1/-1}}
+@media(max-width:650px){.band-explorer-card{min-height:225px}.band-explorer-card:last-child{padding:20px;min-height:136px}}
+@media(max-width:420px){.band-explorer-grid{grid-template-columns:1fr}.band-explorer-card{min-height:153px}.band-explorer-card:last-child{grid-column:auto;grid-template-columns:90px minmax(0,1fr);gap:4px 13px;padding:18px}}
+@media(prefers-reduced-motion:reduce){.band-explorer-card{transition:none}.band-explorer-card:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -660,8 +698,12 @@
   <div class="band-explorer-grid" aria-label="Instrument choices"><a class="band-explorer-card" href="#band-instrument" data-band-pick="Trumpet"><span class="band-explorer-index">01 / BRASS</span><span class="band-explorer-art" aria-hidden="true"><svg viewBox="0 0 180 110" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M10 52h125q15 0 36-16v43q-21-17-36-17H10z" fill="currentColor" fill-opacity=".14"/><path d="M17 46v27m154-37v43M48 53V25h67v28M48 63v27h67V63M63 26v39m23-39v39m23-39v39"/></svg></span><span class="band-explorer-name">Trumpet</span><span class="band-explorer-desc">Ask about a student trumpet.</span></a>
 <a class="band-explorer-card" href="#band-instrument" data-band-pick="Trombone"><span class="band-explorer-index">02 / BRASS</span><span class="band-explorer-art" aria-hidden="true"><svg viewBox="0 0 180 110" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M11 53h123q16 0 37-15v41q-21-15-37-15H11z" fill="currentColor" fill-opacity=".14"/><path d="M18 44v28m153-34v41M41 53V29h49q16 0 16 17v18M65 65v29q0 9 12 9h77q12 0 12-13V68"/></svg></span><span class="band-explorer-name">Trombone</span><span class="band-explorer-desc">Ask about a student trombone.</span></a>
 <a class="band-explorer-card" href="#band-instrument" data-band-pick="Saxophone"><span class="band-explorer-index">03 / WOODWIND</span><span class="band-explorer-art" aria-hidden="true"><svg viewBox="0 0 180 110" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round" stroke-linecap="round" focusable="false"><path d="M70 11l42 18-13 52q-6 22-27 22-25 0-28-24l-22-6" stroke-width="8"/><path d="M22 73q20-7 35 12l-22 19Q22 94 22 73z" fill="currentColor" fill-opacity=".16"/><path d="M80 17L90 2l21 9-8 17"/><g fill="currentColor" stroke="none"><circle cx="98" cy="42" r="4"/><circle cx="94" cy="55" r="4"/><circle cx="89" cy="68" r="4"/><circle cx="83" cy="80" r="4"/></g></svg></span><span class="band-explorer-name">Saxophone</span><span class="band-explorer-desc">Ask about a student saxophone.</span></a>
-<a class="band-explorer-card" href="#band-instrument" data-band-pick=""><span class="band-explorer-index">04 / GUIDANCE</span><span class="band-explorer-art" aria-hidden="true"><strong>?</strong></span><span class="band-explorer-name">Help me choose.</span><span class="band-explorer-desc">Leave the instrument blank and ask the school.</span></a></div>
-  <div class="band-explorer-bottom"><p>Drawings are illustrative, not product photographs. Confirm the instrument, model, rental terms and availability directly with your school and provider.</p><p id="instrument-explorer-status" role="status" aria-live="polite" aria-atomic="true">Choose a card to prepare an inquiry.</p></div>
+
+<a class="band-explorer-card" href="#band-instrument" data-band-pick="Clarinet"><span class="band-explorer-index">04 / WOODWIND</span><span class="band-explorer-art" aria-hidden="true"><svg viewBox="0 0 180 110" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" focusable="false"><g transform="rotate(-29 92 55)"><path d="M23 50h120" stroke-width="9"/><path d="M23 50l-12-9v18zM140 44l27-10v32l-27-10z" fill="currentColor" fill-opacity=".16"/><path d="M34 38v24m14-21v18m14-21v23m14-21v20m14-20v20m14-20v20m14-21v22" stroke-width="2.5"/><g fill="#fff8e7" stroke-width="2.5"><circle cx="43" cy="50" r="5"/><circle cx="65" cy="50" r="5"/><circle cx="87" cy="50" r="5"/><circle cx="109" cy="50" r="5"/></g></g></svg></span><span class="band-explorer-name">Clarinet</span><span class="band-explorer-desc">Ask about a student clarinet.</span></a>
+<a class="band-explorer-card" href="#band-instrument" data-band-pick="Flute"><span class="band-explorer-index">05 / WOODWIND</span><span class="band-explorer-art" aria-hidden="true"><svg viewBox="0 0 180 110" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" focusable="false"><g transform="rotate(-12 90 55)"><path d="M13 55h151" stroke-width="10"/><path d="M16 44v22m145-22v22" stroke-width="3"/><path d="M32 43h25v-11" stroke-width="3"/><g fill="#fff8e7" stroke-width="2.5"><circle cx="61" cy="55" r="8"/><circle cx="83" cy="55" r="8"/><circle cx="105" cy="55" r="8"/><circle cx="127" cy="55" r="8"/></g><path d="M51 37h83" stroke-width="2" opacity=".55"/></g></svg></span><span class="band-explorer-name">Flute</span><span class="band-explorer-desc">Ask about a student flute.</span></a>
+<a class="band-explorer-card" href="#band-instrument" data-band-pick="Snare drum"><span class="band-explorer-index">06 / PERCUSSION</span><span class="band-explorer-art" aria-hidden="true"><svg viewBox="0 0 180 110" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" focusable="false"><path d="M46 15l78 45M125 13L54 58" stroke-width="5"/><ellipse cx="90" cy="58" rx="54" ry="15" fill="currentColor" fill-opacity=".12"/><path d="M36 58v28q54 30 108 0V58" fill="currentColor" fill-opacity=".16"/><path d="M36 86q54 26 108 0M54 65v28m24-22v29m24-29v29m24-34v27" stroke-width="3"/><path d="M43 96h94" stroke-width="3"/></svg></span><span class="band-explorer-name">Snare drum</span><span class="band-explorer-desc">Ask about school percussion rentals.</span></a>
+<a class="band-explorer-card" href="#band-instrument" data-band-pick=""><span class="band-explorer-index">07 / GUIDANCE</span><span class="band-explorer-art" aria-hidden="true"><strong>?</strong></span><span class="band-explorer-name">Help me choose.</span><span class="band-explorer-desc">Leave the instrument blank and ask the school.</span></a></div>
+  <div class="band-explorer-bottom"><p>Drawings are illustrative, not product photographs. Confirm the instrument, model, rental terms and availability directly with your school and provider. The sunset backdrop is local River Valley scenery, not a school or rental storefront.</p><p id="instrument-explorer-status" role="status" aria-live="polite" aria-atomic="true">Choose a card to prepare an inquiry.</p></div>
 </section>
 
 
@@ -860,7 +902,8 @@ Could you confirm current availability, the monthly price and all fees, how paym
   const field=document.getElementById("band-instrument");
   const status=document.getElementById("instrument-explorer-status");
   const cards=[...document.querySelectorAll("[data-band-pick]")];
-  if(!field||!status||cards.length!==4)return;
+  if(!field||!status||cards.length<4)return;
+  field.addEventListener("input",()=>cards.forEach(card=>card.classList.toggle("is-selected",!!field.value.trim()&&card.dataset.bandPick===field.value.trim())));
   cards.forEach(card=>card.addEventListener("click",event=>{
     event.preventDefault();
     field.value=card.dataset.bandPick;
