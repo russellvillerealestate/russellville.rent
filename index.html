@@ -1933,6 +1933,55 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
  .directory-masthead .masthead-route-links a:hover{transform:none}
 }
 
+
+/* 2026-11-07 / Alphabetical rental atlas: an editorial index from existing
+   category cards, not a second listing database. Live design references:
+   stayarv.com + russellville.rent. NN/g: information scent, visual hierarchy;
+   web.dev: responsive reflow; W3C WCAG 2.2: focus and touch targets. */
+.atlas-alphabet{
+  position:sticky;top:-1px;z-index:3;
+  margin:18px 0 25px;padding:15px 15px 17px;
+  background:#f3f3e8;border:1px solid #d5dfd0;border-radius:15px;
+  box-shadow:0 8px 22px #193e2c12
+}
+.atlas-alphabet-label{display:block;margin:0 0 10px;color:#42604a;font-size:.66rem;font-weight:900;letter-spacing:.17em;text-transform:uppercase}
+.atlas-alphabet-buttons{display:flex;flex-wrap:wrap;gap:7px}
+.atlas-alphabet-buttons button{
+  min-width:43px;min-height:44px;display:inline-grid;place-items:center;
+  padding:7px 10px;border:1px solid #c9d8c7;border-radius:9px;
+  background:#fff;color:#254d3a;font:800 .88rem/1 system-ui,sans-serif;
+  cursor:pointer;transition:background .17s,border-color .17s
+}
+.atlas-alphabet-buttons button:hover{background:#dce9da;border-color:#72967a}
+.atlas-alphabet-buttons button:focus-visible{outline:3px solid #ab6a15;outline-offset:3px}
+.atlas-index{display:block}
+.atlas-letter-group{scroll-margin-top:20px}
+.atlas-letter-group+.atlas-letter-group{margin-top:27px}
+.atlas-letter-title{
+  display:flex;align-items:center;gap:14px;margin:0 0 12px;padding:0 0 10px;
+  border-bottom:1px solid #ccdbce;
+  color:#204836;font:400 clamp(2.1rem,3.5vw,3.1rem)/1 Georgia,serif;
+  letter-spacing:-.055em
+}
+.atlas-letter-title:after{content:"RENTAL CATEGORIES";color:#70846f;font:850 .57rem/1.4 system-ui,sans-serif;letter-spacing:.15em}
+.atlas-letter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.atlas-letter-group:nth-child(odd) .atlas-letter-title{color:#8a6637}
+.atlas-letter-group .atlas-item{min-height:70px;border-radius:13px}
+.atlas-letter-group .atlas-item:hover{box-shadow:0 8px 19px #244d3820}
+@media(max-width:790px){.atlas-alphabet{position:relative;top:auto}}
+@media(max-width:600px){
+ .atlas-alphabet{margin:13px 0 22px;padding:13px 11px}
+ .atlas-alphabet-buttons{gap:6px}
+ .atlas-alphabet-buttons button{min-width:42px;min-height:44px}
+ .atlas-letter-grid{grid-template-columns:1fr}
+ .atlas-letter-group+.atlas-letter-group{margin-top:24px}
+ .atlas-letter-title{font-size:2.6rem}
+ .atlas-letter-group .atlas-item{min-height:60px}
+}
+@media(prefers-reduced-motion:reduce){
+ .atlas-alphabet-buttons button{transition:none}
+}
+
 </style>
 </head>
 <body>
@@ -2459,6 +2508,10 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
    <label class="atlas-search-label" for="atlas-search">Find a category</label>
    <input type="search" id="atlas-search" placeholder="Try cabins, storage, cars, events…" autocomplete="off">
    <p class="atlas-count" id="atlas-count" role="status" aria-live="polite" aria-atomic="true"></p>
+   <div class="atlas-alphabet" id="atlas-alphabet" hidden>
+    <span class="atlas-alphabet-label">Browse by letter / Jump to a category</span>
+    <div class="atlas-alphabet-buttons" id="atlas-alphabet-buttons" role="group" aria-label="Jump to rental categories by first letter"></div>
+   </div>
    <nav class="atlas-index" id="atlas-index" aria-label="All rental category links"></nav>
    <p class="atlas-empty" id="atlas-empty" hidden>No matching category. Try another search or clear the field to see all categories.</p>
    <p class="atlas-disclaimer">This is a directory index, not a booking form or live inventory search. The original rental listings and terms remain on their individual pages.</p>
@@ -3106,14 +3159,17 @@ filterRentals();
 })();
 
 
-/* Category links are sourced directly from existing cards; no duplicate data. */
+/* Alphabetical River Valley atlas. Reuses the original category cards' links,
+   labels and icons. Search filters the same 35 entries; no new provider data. */
 (function(){
  const modal=document.getElementById("atlas-dialog");
  const list=document.getElementById("atlas-index");
  const query=document.getElementById("atlas-search");
  const count=document.getElementById("atlas-count");
  const empty=document.getElementById("atlas-empty");
- if(!modal||!list||!query||typeof modal.showModal!=="function")return;
+ const alphabet=document.getElementById("atlas-alphabet");
+ const buttons=document.getElementById("atlas-alphabet-buttons");
+ if(!modal||!list||!query||!count||!empty||!alphabet||!buttons||typeof modal.showModal!=="function")return;
  const links=[];
  document.querySelectorAll("#rental-results > .rental-card").forEach(function(card){
   const source=card.querySelector(".card-link[href]");
@@ -3137,14 +3193,53 @@ filterRentals();
   arrow.setAttribute("aria-hidden","true");
   arrow.textContent="↗";
   link.append(svg,name,arrow);
-  list.appendChild(link);
   links.push(link);
  });
  if(!links.length)return;
+ links.sort(function(a,b){return a.textContent.localeCompare(b.textContent,"en",{sensitivity:"base"});});
+ const groups=new Map();
+ links.forEach(function(link){
+  const first=link.querySelector(".atlas-item-label").textContent.charAt(0).toLocaleUpperCase("en");
+  const letter=/^[A-Z]$/.test(first)?first:"#";
+  if(!groups.has(letter)){
+   const section=document.createElement("section");
+   section.className="atlas-letter-group";
+   const title=document.createElement("h3");
+   title.className="atlas-letter-title";
+   title.textContent=letter;
+   title.tabIndex=-1;
+   const grid=document.createElement("div");
+   grid.className="atlas-letter-grid";
+   section.append(title,grid);
+   list.appendChild(section);
+   const button=document.createElement("button");
+   button.type="button";
+   button.textContent=letter;
+   button.setAttribute("aria-label","Jump to categories beginning with "+letter);
+   button.addEventListener("click",function(){
+    title.focus({preventScroll:true});
+    title.scrollIntoView({block:"start",behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+   });
+   buttons.appendChild(button);
+   groups.set(letter,{section,grid,button,links:[]});
+  }
+  groups.get(letter).grid.appendChild(link);
+  groups.get(letter).links.push(link);
+ });
+ alphabet.hidden=false;
  function filter(){
   const value=query.value.trim().toLocaleLowerCase();
   let shown=0;
-  links.forEach(function(link){link.hidden=!link.textContent.toLocaleLowerCase().includes(value);if(!link.hidden)shown++;});
+  groups.forEach(function(group){
+   let matches=0;
+   group.links.forEach(function(link){
+    const match=link.textContent.toLocaleLowerCase().includes(value);
+    link.hidden=!match;
+    if(match){shown++;matches++;}
+   });
+   group.section.hidden=matches===0;
+  });
+  alphabet.hidden=Boolean(value);
   count.textContent=shown+" of "+links.length+" rental categories";
   empty.hidden=shown>0;
  }
