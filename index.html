@@ -1807,10 +1807,11 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
    Preserve readable category captions, existing pictograms, and independent listing records.
    Artwork illustrates rental categories, never individual provider inventory. */
 .rental-card .riverfield-tile{position:relative;isolation:isolate;overflow:hidden;background:#204f46;color:#fff;display:flex;align-items:center;justify-content:center;min-height:195px}
-.rental-card .riverfield-tile::before,.rental-card .riverfield-tile::after{display:none}
+.rental-card .riverfield-tile::before{display:none}
+.rental-card .riverfield-tile::after{content:"";display:block;position:absolute;inset:0;width:auto;height:auto;border:0;border-radius:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,#092f2ab5 0%,#092f2a45 43%,transparent 76%)}
 .riverfield-tile .riverfield-scene{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transform:scale(1);transition:transform .55s ease}
 .riverfield-tile::selection{background:#f8e2ae;color:#153c33}
-.riverfield-tile .riverfield-eyebrow{position:absolute;z-index:2;left:19px;top:17px;color:#fff4d8;text-shadow:0 2px 9px #153b35;letter-spacing:.14em;font-size:.6rem;font-weight:850;line-height:1.4}
+.riverfield-tile .riverfield-eyebrow{position:absolute;z-index:2;left:19px;top:17px;color:#fff4d8;background:#0b362df2;border:1px solid #fff8dd55;border-radius:5px;padding:6px 9px;text-shadow:none;letter-spacing:.12em;font-size:.6rem;font-weight:850;line-height:1.4}
 .riverfield-tile .directory-pictogram{position:absolute;z-index:2;right:9%;top:50%;width:103px;height:103px;padding:22px;transform:translateY(-50%) rotate(-5deg);border:1px solid #fff9e5;border-radius:27px;background:#fff9e8e8;box-shadow:0 15px 32px #0d322c65;color:#1f564a}
 .riverfield-tile small{position:absolute;z-index:2;left:16px;bottom:15px;max-width:calc(100% - 32px);margin:0;padding:7px 10px;background:#0d392fdb;color:#fff5de;border:1px solid #ffffff42;border-radius:7px;font-size:.57rem;letter-spacing:.105em;line-height:1.35;text-shadow:none}
 .rental-card:hover .riverfield-tile .riverfield-scene{transform:scale(1.045)}
