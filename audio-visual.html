@@ -617,6 +617,62 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
 @media(max-width:530px){.production-desk{border-radius:12px}.production-desk-intro,.production-desk-control{padding:25px 21px}.production-mode-grid{grid-template-columns:1fr}.production-mode{min-height:112px;padding:16px 18px}.production-mode strong{margin:7px 0 4px}.production-desk-art{max-width:250px}}
 @media(prefers-reduced-motion:reduce){.production-mode{transition:none}.production-mode:hover{transform:none}}
 
+
+/* 2026-11-07 / Backstage route rail. The persistent, in-flow information
+   architecture is inspired by StayARV's decisive navigation and location-led
+   palette, not copied from that site. NN/g scanning hierarchy; web.dev
+   responsive reflow; WCAG 2.2 keyboard focus, target sizes, reduced motion.
+   All seven provider listings, claims and independent-source caveats persist. */
+.show-route-rail{
+ position:sticky;top:0;z-index:9;isolation:isolate;
+ display:grid;grid-template-columns:minmax(175px,.72fr) repeat(3,minmax(0,1fr));
+ align-items:stretch;gap:0;margin:clamp(44px,6vw,75px) 0 40px;
+ overflow:hidden;border:1px solid #b9cdb5;border-radius:18px;
+ background:#12372f;color:#fff;box-shadow:0 18px 35px #12372926;
+}
+.show-route-brand{
+ position:relative;min-width:0;padding:23px 23px 24px;
+ background:radial-gradient(circle at 105% 8%,#54755b 0,transparent 58%),#0b2b27;
+ display:flex;flex-direction:column;justify-content:space-between;gap:18px;
+ border-right:1px solid #ffffff31;
+}
+.show-route-brand span{color:#f1ca89;font-size:.65rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase}
+.show-route-brand strong{font:400 clamp(1.4rem,2vw,2.05rem)/1.08 Georgia,"Times New Roman",serif;letter-spacing:-.04em}
+.show-route-brand strong em{font-style:normal;color:#f4d4a2}
+.show-route-rail>a{
+ position:relative;min-width:0;display:flex;flex-direction:column;gap:12px;
+ justify-content:space-between;padding:22px clamp(17px,2.6vw,29px) 21px;
+ color:#f7f6ec;text-decoration:none;border-left:1px solid #ffffff25;
+ background:#173e34;transition:background .2s ease;
+}
+.show-route-rail>a:nth-of-type(2){background:#1c4b3d}
+.show-route-rail>a:nth-of-type(3){background:#245542}
+.show-route-rail>a:hover{background:#2a6550}
+.show-route-rail>a:focus-visible{outline:4px solid #f7cf8f;outline-offset:-5px;z-index:2}
+.show-route-overline{display:flex;justify-content:space-between;align-items:center;gap:10px;
+ color:#f3d69e;font-size:.66rem;line-height:1.3;font-weight:850;letter-spacing:.11em;text-transform:uppercase}
+.show-route-overline b{font:400 1.2rem/1 Georgia,serif;letter-spacing:0;color:#f4d5a2}
+.show-route-rail>a strong{font:400 clamp(1.12rem,1.65vw,1.55rem)/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.028em}
+.show-route-rail>a small{color:#d7e5d9;font-size:.75rem;line-height:1.45}
+.show-route-rail>a:after{content:"↗";position:absolute;right:17px;top:51%;font-size:1.2rem;color:#f2cf90}
+#confirmed,#more-options,#plan-title{scroll-margin-top:140px}
+@media(max-width:950px){
+ .show-route-rail{position:relative;top:auto;grid-template-columns:repeat(3,minmax(0,1fr))}
+ .show-route-brand{grid-column:1/-1;padding:21px 25px;flex-direction:row;align-items:center}
+ .show-route-brand strong{font-size:1.85rem}
+ .show-route-rail>a{min-height:150px}
+ #confirmed,#more-options,#plan-title{scroll-margin-top:24px}
+}
+@media(max-width:610px){
+ .show-route-rail{margin:36px 0 30px;grid-template-columns:1fr;gap:0;border-radius:14px}
+ .show-route-brand{padding:20px 20px}
+ .show-route-brand strong{font-size:1.55rem}
+ .show-route-rail>a{min-height:0;padding:21px 49px 20px 20px;gap:6px;border-left:0;border-top:1px solid #ffffff35}
+ .show-route-rail>a strong{font-size:1.4rem}
+ .show-route-rail>a:after{top:44%;right:20px}
+}
+@media(prefers-reduced-motion:reduce){.show-route-rail>a{transition:none}}
+
 </style>
 </head>
 <body>
@@ -725,6 +781,15 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
   </ol>
   <p class="route-disclaimer">Illustrations depict equipment types, not actual provider inventory. These are navigation suggestions, not recommendations of equipment suitability or confirmed inventory. Verify dates, delivery, total charges and rental terms with each provider.</p>
 </section>
+
+
+<!-- Production route rail: in-page navigation only; no claims, filters or listing data. -->
+<nav class="show-route-rail" aria-label="Jump between event equipment provider sections">
+ <div class="show-route-brand"><span>THE SHOW DESK / RIVER VALLEY</span><strong>Find the <em>right crew.</em></strong></div>
+ <a href="#confirmed"><span class="show-route-overline">01 / Start local <b aria-hidden="true">↗</b></span><strong>Russellville delivery</strong><small>See operators advertising service here. Confirm your event details.</small></a>
+ <a href="#more-options"><span class="show-route-overline">02 / Widen the search <b aria-hidden="true">↗</b></span><strong>More production options</strong><small>Compare regional providers and check delivery before booking.</small></a>
+ <a href="#plan-title"><span class="show-route-overline">03 / Before you book <b aria-hidden="true">↗</b></span><strong>Bring a clear plan</strong><small>Review the details needed for a useful quote request.</small></a>
+</nav>
 
 <section class="section" id="confirmed" aria-labelledby="confirmed-title"><div class="section-heading"><div><p class="kicker">01 / Start here</p><h2 class="section-title" id="confirmed-title">Russellville delivery advertised</h2></div><p class="section-intro">These providers explicitly advertise delivery and setup for Russellville events. Confirm your equipment list and final charges directly.</p></div>
 <article class="provider featured" id="provider-1">
