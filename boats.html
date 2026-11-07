@@ -286,6 +286,102 @@ body{background:#f6f6f0}
  .marina-help-actions a{color:#163a31;border:1px solid #777}
 }
 
+
+/* river-valley-alternative-gallery-20261107
+   Bold, photo-led alternative discovery AFTER mandatory marina-closure and access notices.
+   Visual reference reviewed live: stayarv.com and russellville.rent.
+   Research: NN/g visual hierarchy (nngroup.com/articles/visual-hierarchy-ux-definition/);
+   web.dev responsive imagery (web.dev/learn/design/responsive-images);
+   W3C WCAG 2.2 keyboard focus, reflow and reduced motion (w3.org/WAI/WCAG22/quickref/).
+   All photos are locally hosted River Valley scenery, never marina-provider or rental photos.
+   Links, dates, contact records and official closure status remain untouched. */
+.lake-pathways{
+  position:relative;isolation:isolate;
+  margin:clamp(49px,6vw,85px) 0 0;
+  padding:clamp(23px,3.6vw,43px);
+  background:radial-gradient(ellipse at 100% 0%,#36685780,transparent 54%),linear-gradient(146deg,#092c29,#17473c 68%,#12372f);
+  border:1px solid #376858;border-radius:27px;
+  box-shadow:0 23px 55px #123d3027;
+}
+.lake-pathways-heading{align-items:center;margin:0 0 25px;padding:0 0 22px;border-bottom:1px solid #ffffff40}
+.lake-pathways-heading .eyebrow{color:#f2d59b}
+.lake-pathways-heading h2{color:#fff9ec;font-size:clamp(2.1rem,4.35vw,3.85rem);max-width:13ch;line-height:1.04}
+.lake-pathways-heading p:last-child{color:#d9e9df;max-width:39ch;font-size:.91rem}
+.lake-pathways-grid{grid-template-columns:minmax(0,1.09fr) minmax(0,.91fr);grid-template-rows:repeat(2,minmax(245px,auto));gap:15px}
+.lake-path{
+  border-radius:18px;border:1px solid #ffffff52;background:#fffdf5;
+  box-shadow:0 14px 30px #031f1b50
+}
+.lake-path--paddle{grid-row:span 2}
+.lake-path-scene{
+  isolation:isolate;min-height:190px;height:48%;background-position:center;background-size:cover;background-repeat:no-repeat
+}
+.lake-path--paddle .lake-path-scene{min-height:335px;flex:1 1 auto;
+  background-image:linear-gradient(0deg,#082e29bd,#0b302945 53%,#092d2b66),url('/assets/lake-dardanelle-docks.jpg')}
+.lake-path--camp .lake-path-scene{
+  background-image:linear-gradient(0deg,#082e29b0,#123c3c35 58%,#132c2c44),url('/assets/lake-dardanelle-sunset.jpg')}
+.lake-path--stay .lake-path-scene{
+  background-image:linear-gradient(0deg,#082e29ac,#113b3547 58%,#173d3740),url('/assets/downtown-russellville-sunset.jpg')}
+.lake-path-scene:before{display:none}
+.lake-path-scene:after{
+  content:"RIVER VALLEY SCENERY · NOT A RENTAL PHOTO";
+  width:auto;height:auto;inset:auto 13px 13px 13px;
+  border:0;border-radius:7px;background:#072d28e8;color:#fff7e7;
+  opacity:1;z-index:3;padding:8px 10px;
+  font:800 .59rem/1.4 system-ui,sans-serif;letter-spacing:.09em;text-align:center
+}
+.lake-path-scene svg{
+  width:min(66%,178px);height:117px;padding:17px 21px;
+  border:1px solid #ffffffa1;border-radius:19px;
+  background:#fff7e9e8;color:#205648;filter:drop-shadow(0 15px 19px #09292370)
+}
+.lake-path-body{gap:11px;padding:clamp(21px,2.6vw,31px)}
+.lake-path-name{font-size:clamp(1.55rem,2.4vw,2.3rem);line-height:1.09}
+.lake-path-description{font-size:.89rem;max-width:48ch}
+.lake-path-action{
+  min-height:49px;margin-top:auto;
+  color:#164d3b;font-size:.85rem;align-items:center
+}
+.lake-path-action span:last-child{background:#e3eccc;color:#194d3a;width:36px;height:36px}
+.lake-pathways-note{color:#e1eee6;margin:20px 3px 0;padding-top:15px;border-top:1px solid #ffffff31;max-width:87ch}
+.lake-path:hover{transform:translateY(-3px);box-shadow:0 18px 36px #031f1b65;border-color:#f4dba8}
+.lake-path:focus-visible{outline:3px solid #ffdb93;outline-offset:5px}
+@media(min-width:900px){
+ .lake-path:not(.lake-path--paddle){
+   display:grid;grid-template-columns:minmax(0,.42fr) minmax(0,.58fr);align-items:stretch
+ }
+ .lake-path:not(.lake-path--paddle) .lake-path-scene{min-height:245px;height:100%}
+ .lake-path:not(.lake-path--paddle) .lake-path-scene svg{width:min(85%,115px);height:95px;padding:10px}
+ .lake-path:not(.lake-path--paddle) .lake-path-body{padding:22px 20px}
+ .lake-path:not(.lake-path--paddle) .lake-path-name{font-size:clamp(1.35rem,2vw,1.83rem)}
+ .lake-path:not(.lake-path--paddle) .lake-path-description{font-size:.81rem}
+ .lake-path--paddle .lake-path-body{padding:28px 32px 31px}
+}
+@media(min-width:601px) and (max-width:899px){
+ .lake-pathways-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}
+ .lake-path--paddle{grid-row:auto}
+ .lake-path:last-child{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,.48fr) minmax(0,.52fr)}
+ .lake-path:last-child .lake-path-scene{height:100%;min-height:245px}
+ .lake-path--paddle .lake-path-scene{min-height:215px;height:215px;flex:0 0 215px}
+}
+@media(max-width:600px){
+ .lake-pathways{padding:20px 16px 22px;border-radius:19px;margin-top:45px}
+ .lake-pathways-heading{margin-bottom:18px;padding-bottom:20px}
+ .lake-pathways-heading h2{font-size:clamp(2rem,9vw,2.8rem)}
+ .lake-pathways-grid{grid-template-columns:1fr;gap:14px}
+ .lake-path--paddle,.lake-path:last-child{grid-row:auto;grid-column:auto;display:flex}
+ .lake-path-scene,.lake-path:last-child .lake-path-scene,.lake-path--paddle .lake-path-scene{height:190px;min-height:190px;flex:0 0 190px}
+ .lake-path-body{padding:21px}
+ .lake-path-name{font-size:1.65rem}
+}
+@media(prefers-reduced-motion:reduce){.lake-path{transition:none!important}.lake-path:hover{transform:none!important}}
+@media print{
+ .lake-pathways{background:#fff!important;border:1px solid #777;box-shadow:none}
+ .lake-pathways-heading h2,.lake-pathways-heading p:last-child,.lake-pathways-heading .eyebrow,.lake-pathways-note{color:#143c32}
+ .lake-path-scene{display:none}
+ .lake-path{box-shadow:none;border-color:#aaa}
+}
+
 </style>
 </head>
 <body>
