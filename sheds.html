@@ -433,6 +433,48 @@ footer a{font-weight:750}
   #providers .card-top:before,#providers .card-top:after{display:none}
 }
 
+
+/* Design 2026-11-06: StayARV-inspired forest/gold editorial delivery approach.
+  Research: NN/g visual hierarchy; web.dev responsive design; W3C WCAG 2.2
+  visible focus, 24 CSS pixel target minimum, and reflow. */
+.delivery-plan{padding-block:clamp(64px,8vw,108px);scroll-margin-top:30px}
+.delivery-panel{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);border-radius:26px;overflow:hidden;border:1px solid #c7d7c6;box-shadow:0 25px 56px #143a2d1c;background:#fffdf8}
+.delivery-scene{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;min-width:0;min-height:660px;padding:clamp(27px,4vw,48px);background:radial-gradient(ellipse at 78% 26%,#497a628a,transparent 60%),linear-gradient(150deg,#173f35,#092c27);color:#fff8e4}
+.delivery-scene:before{content:"";position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(0deg,transparent 0 49px,#e6efd70c 50px 51px),repeating-linear-gradient(90deg,transparent 0 49px,#e6efd70c 50px 51px);pointer-events:none}
+.delivery-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;font-size:.7rem;font-weight:850;letter-spacing:.13em;color:#f0d195;text-transform:uppercase}
+.delivery-top span+span{border:1px solid #f0d19585;padding:7px 12px;border-radius:99px}
+.delivery-illustration{display:block;max-width:100%;max-height:410px;height:auto;margin:12px auto}
+.delivery-caption{display:flex;justify-content:space-between;align-items:end;gap:18px;border-top:1px solid #f6e7c64f;padding-top:25px}
+.delivery-caption strong{font:400 clamp(1.8rem,2.8vw,2.55rem)/1.04 Georgia,serif;letter-spacing:-.04em;max-width:15ch}
+.delivery-caption small{font-size:.76rem;color:#d4e4d5;line-height:1.5;text-align:right;max-width:25ch}
+.delivery-copy{min-width:0;padding:clamp(32px,4.5vw,63px);background:linear-gradient(165deg,#fffef9,#edf2e5)}
+.delivery-eyebrow{font-size:.72rem;letter-spacing:.17em;color:#526e5a;text-transform:uppercase;font-weight:850}
+.delivery-copy h2{font-size:clamp(2.65rem,4.65vw,4.85rem);line-height:1.02;letter-spacing:-.061em;color:#1c3e32;max-width:12ch;margin:17px 0 23px;text-wrap:balance}
+.delivery-copy h2 em{font:italic 400 1em/1.02 Georgia,serif;color:#64805b}
+.delivery-lead{font-size:1.04rem;color:#496355;line-height:1.74;margin:0 0 29px;max-width:52ch}
+.delivery-accordion{border-top:1px solid #c6d6c6}
+.delivery-accordion details{border-bottom:1px solid #c6d6c6}
+.delivery-accordion summary{list-style:none;display:grid;grid-template-columns:34px minmax(0,1fr) 30px;align-items:center;gap:13px;min-height:85px;padding:13px 0;cursor:pointer;color:#204533}
+.delivery-accordion summary::-webkit-details-marker{display:none}
+.delivery-accordion summary::marker{content:""}
+.delivery-accordion summary:focus-visible{outline:3px solid #995d0e;outline-offset:-2px;border-radius:8px}
+.delivery-number{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#dce9d6;font-size:.73rem;font-weight:850}
+.delivery-question{font-size:clamp(1rem,1.45vw,1.16rem);font-weight:820;line-height:1.3;letter-spacing:-.02em}
+.delivery-toggle{display:grid;place-items:center;width:30px;height:30px;border:1px solid #afc7b1;border-radius:50%;font-size:1.32rem;transition:transform .2s}
+.delivery-accordion details[open] .delivery-toggle{transform:rotate(45deg);background:#1c4937;color:white}
+.delivery-answer{padding:0 28px 24px 47px;color:#4c6455;line-height:1.72;font-size:.94rem}
+.delivery-answer p{margin:0}
+.delivery-actions{display:flex;flex-wrap:wrap;gap:11px;margin:26px 0 15px}
+.delivery-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:50px;border-radius:999px;padding:11px 20px;background:#173e31;color:#fff;text-decoration:none;font-size:.91rem;font-weight:790}
+.delivery-actions a+a{background:transparent;color:#1b4a39;border:1px solid #8baa90}
+.delivery-actions a:hover{background:#2d604c;color:white}
+.delivery-actions a:focus-visible{outline:3px solid #995d0e;outline-offset:4px}
+.delivery-disclaimer{margin:0;color:#53695a;font-size:.8rem;line-height:1.55}
+@media(max-width:940px){.delivery-panel{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)}.delivery-scene{padding:28px;min-height:615px}.delivery-copy{padding:34px}.delivery-caption{display:block}.delivery-caption small{display:block;text-align:left;margin-top:12px}}
+@media(max-width:720px){.delivery-plan{padding-block:50px}.delivery-panel{grid-template-columns:minmax(0,1fr);border-radius:19px}.delivery-scene{min-height:0;padding:26px}.delivery-illustration{max-height:280px;margin:10px auto}.delivery-caption{display:flex}.delivery-caption small{text-align:right;margin-top:0}.delivery-copy{padding:clamp(26px,5vw,42px)}.delivery-copy h2{font-size:clamp(2.6rem,9vw,4.3rem)}}
+@media(max-width:440px){.delivery-caption{display:block}.delivery-caption small{text-align:left;margin-top:10px}.delivery-answer{padding-left:0}.delivery-accordion summary{gap:10px}.delivery-actions a{width:100%}}
+@media(prefers-reduced-motion:reduce){.delivery-toggle{transition:none}}
+@media print{.delivery-panel{display:block;box-shadow:none}.delivery-scene{background:#e8eee7;color:#204533;min-height:0}.delivery-scene:before{display:none}.delivery-illustration{height:150px}.delivery-copy{padding:22px}.delivery-actions{display:none}}
 </style>
 </head>
 <body>
@@ -548,6 +590,55 @@ footer a{font-weight:750}
 </div>
 </section>
 
+
+
+<section class="delivery-plan wrap" id="delivery-plan" aria-labelledby="delivery-plan-title">
+ <div class="delivery-panel">
+  <div class="delivery-scene">
+   <div class="delivery-top"><span>RIVER VALLEY FIELD GUIDE / DELIVERY</span><span>04 / THE SITE</span></div>
+   <svg class="delivery-illustration" viewBox="0 0 500 455" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <defs><linearGradient id="delivery-field" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c5d4b4"/><stop offset="1" stop-color="#f0d5a1"/></linearGradient></defs>
+    <path d="M25 311 243 418 469 306 245 192Z" fill="url(#delivery-field)" stroke="#fae5bb" stroke-width="3"/>
+    <path d="M57 316 244 405 437 307" fill="none" stroke="#779475" stroke-width="2" stroke-dasharray="7 8"/>
+    <path d="M98 274 178 234 257 275 177 316Z" fill="#1b493c" stroke="#f8dda6" stroke-width="5"/>
+    <path d="M110 276 177 312V379L110 344Z" fill="#ecd2a2" stroke="#fff1d0" stroke-width="4"/>
+    <path d="M177 312 245 275V343L177 379Z" fill="#a9c4a8" stroke="#fff1d0" stroke-width="4"/>
+    <path d="M110 276 177 239 245 275" fill="none" stroke="#eebd79" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M131 310 158 323V356L131 343Z" fill="#235445" stroke="#f3e2bf" stroke-width="3"/>
+    <path d="M201 303 225 290V315L201 328Z" fill="#235445" stroke="#f3e2bf" stroke-width="3"/>
+    <path d="M272 356Q320 308 383 338" fill="none" stroke="#f9f4dc" stroke-width="23" stroke-linecap="round"/>
+    <path d="M275 356Q327 312 383 338" fill="none" stroke="#9f835c" stroke-width="2" stroke-dasharray="8 8"/>
+    <g transform="translate(313 277) rotate(12)">
+     <rect x="0" y="31" width="86" height="44" rx="4" fill="#ecc887" stroke="#fff3d5" stroke-width="3"/>
+     <path d="M7 31 22 7h52l12 24" fill="#d9e1bd" stroke="#fff3d5" stroke-width="3"/>
+     <rect x="12" y="40" width="60" height="15" fill="#376451"/>
+     <circle cx="23" cy="75" r="12" fill="#18372f" stroke="#d6e2c6" stroke-width="4"/>
+     <circle cx="70" cy="75" r="12" fill="#18372f" stroke="#d6e2c6" stroke-width="4"/>
+     <path d="M87 45h32v28H87Z" fill="#d8e5cf" stroke="#fff3d5" stroke-width="3"/>
+     <circle cx="103" cy="73" r="9" fill="#19372f" stroke="#d6e2c6" stroke-width="4"/>
+    </g>
+    <path d="M53 227v-57m-8 10 8-18 8 18M45 218h16M274 94v76m-7-67 7-17 7 17m-14 58 7 17 7-17" fill="none" stroke="#f2d599" stroke-width="3" stroke-linecap="round"/>
+    <path d="M290 130h117M58 159h50" stroke="#f2d599" stroke-width="2" stroke-dasharray="5 8"/>
+    <g fill="#f4d695" font-family="system-ui,sans-serif" font-weight="700" font-size="15"><text x="33" y="147">ACCESS</text><text x="286" y="81">CLEARANCE?</text><text x="40" y="438">PLACEMENT?</text></g>
+    <circle cx="62" cy="272" r="23" fill="#8faf8a"/><circle cx="84" cy="254" r="27" fill="#a8c6a1"/><circle cx="450" cy="234" r="29" fill="#a8c6a1"/>
+    <path d="M74 265v62m372-80v45" stroke="#315943" stroke-width="8" stroke-linecap="round"/>
+   </svg>
+   <div class="delivery-caption"><strong>From the road to the right spot.</strong><small>Illustrative approach drawing.<br>Not a site survey or delivery specification.</small></div>
+  </div>
+  <div class="delivery-copy">
+   <span class="delivery-eyebrow">BEFORE THE BUILDING ARRIVES / SITE PLANNING</span>
+   <h2 id="delivery-plan-title">Think beyond <em>the footprint.</em></h2>
+   <p class="delivery-lead">A shed that fits on paper still needs an accessible delivery route, a permitted placement location and clear setup terms. Keep these questions handy when calling a dealer.</p>
+   <div class="delivery-accordion">
+    <details><summary><span class="delivery-number" aria-hidden="true">01</span><span class="delivery-question">Can the delivery crew reach the location?</span><span class="delivery-toggle" aria-hidden="true">+</span></summary><div class="delivery-answer"><p>Ask about gate width, driveway turns, grade, ground conditions, trees and overhead obstructions. Request the dealer's required clearances for its delivery equipment rather than relying on an example diagram.</p></div></details>
+    <details><summary><span class="delivery-number" aria-hidden="true">02</span><span class="delivery-question">Is the building placement permitted?</span><span class="delivery-toggle" aria-hidden="true">+</span></summary><div class="delivery-answer"><p>Verify property boundaries, easements, utility routes, permits, setbacks and community restrictions with the appropriate authorities. Ask the dealer what type of prepared site or base is required.</p></div></details>
+    <details><summary><span class="delivery-number" aria-hidden="true">03</span><span class="delivery-question">What is included on delivery day?</span><span class="delivery-toggle" aria-hidden="true">+</span></summary><div class="delivery-answer"><p>Get written terms for delivery distance, any charges, leveling, supports, anchoring, setup, scheduling and fees if the crew cannot access the planned location.</p></div></details>
+   </div>
+   <div class="delivery-actions"><a href="#providers">Compare five dealers ↗</a><a href="#footprint-studio">Revisit example sizes ↑</a></div>
+   <p class="delivery-disclaimer">General planning questions, not engineering or building-code guidance. Confirm site-specific requirements and actual exterior dimensions before agreeing to delivery.</p>
+  </div>
+ </div>
+</section>
 
 <section class="quote-lab wrap" id="quote-comparison" aria-labelledby="quote-lab-title">
  <div class="quote-lab-hero">
