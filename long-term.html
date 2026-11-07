@@ -651,6 +651,38 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
   }
 }
 
+
+/* Nov 7: responsive source finder; StayARV forest/gold editorial direction.
+   NN/g search/filter usability, web.dev reflow, W3C WCAG 2.2 status/focus. */
+.source-finder[hidden],.source-grid>.source-card[hidden],.source-finder-empty[hidden]{display:none!important}
+.source-finder{position:relative;isolation:isolate;overflow:hidden;margin:30px 0 22px;padding:clamp(24px,4.5vw,54px);border-radius:27px;background:linear-gradient(110deg,#0a2d25,#245540);color:#f8f6e8;box-shadow:0 22px 49px #183c302f}
+.source-finder:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.16;background:url("assets/downtown-russellville-sunset.jpg") center/cover no-repeat;pointer-events:none}
+.source-finder:after{content:"";position:absolute;top:-115px;right:-95px;width:270px;height:270px;border:1px solid #f3d4965b;border-radius:50%;box-shadow:0 0 0 43px #f3d49617,0 0 0 85px #f3d4960d;pointer-events:none}
+.source-finder-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,.8fr);gap:28px;align-items:end;margin-bottom:25px}
+.source-finder-kicker{margin:0 0 12px;color:#f4d397;text-transform:uppercase;font-size:.7rem;font-weight:850;letter-spacing:.16em}
+.source-finder h3{margin:0;color:#fff9e8;font:400 clamp(2.3rem,4.5vw,4.3rem)/1.04 Georgia,serif;letter-spacing:-.056em;text-wrap:balance}
+.source-finder h3 em{color:#f2ce89}
+.source-finder-intro{margin:0 0 5px;max-width:47ch;font-size:.96rem;line-height:1.7;color:#e7eee4}
+.source-finder-control{padding:clamp(16px,2vw,24px);background:#f5f7ef;color:#143c30;border:1px solid #f9e5bf;border-radius:19px}
+.source-finder-control label{display:block;margin-bottom:8px;font-size:.87rem;font-weight:850}
+.source-finder input[type=search]{width:100%;min-height:56px;border:2px solid #91b29b;border-radius:12px;background:#fff;color:#163b2e;padding:12px 16px;font:inherit;font-size:1rem}
+.source-finder input::placeholder{color:#526e60;opacity:1}
+.source-finder-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.source-finder-tabs button{min-height:46px;padding:8px 15px;border:1px solid #b1c8b5;border-radius:999px;background:white;color:#194c3a;font:750 .84rem/1.3 system-ui,sans-serif;cursor:pointer}
+.source-finder-tabs button[aria-pressed=true]{background:#174333;border-color:#174333;color:#fff}
+.source-finder-tabs button:hover{border-color:#397c59;box-shadow:0 3px 12px #123d321c}
+.source-finder-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:13px;margin-top:18px}
+.source-finder-footer p{margin:0;font-size:.85rem;color:#f6e5bf}
+.source-finder-footer button{min-height:44px;border:1px solid #f4d39b;border-radius:999px;background:transparent;color:#ffe7b5;padding:8px 19px;font:750 .82rem system-ui,sans-serif;cursor:pointer}
+.source-finder-footer button:hover{background:#ffffff20}
+.source-finder-note{margin:14px 0 0;color:#d8e4d8;font-size:.79rem;line-height:1.5}
+.source-finder :is(input,button):focus-visible{outline:3px solid #efb441;outline-offset:4px}
+.source-finder-empty{margin:12px 0 22px;padding:34px;border:1px dashed #a5bfa3;border-radius:17px;background:#e8f2e5;color:#173d2d}
+.source-finder-empty strong{font:400 1.7rem Georgia,serif}
+.source-finder-empty p{margin:8px 0 0}
+@media(max-width:780px){.source-finder-head{grid-template-columns:1fr;gap:16px}}
+@media(max-width:520px){.source-finder{padding:24px 17px;border-radius:19px}.source-finder h3{font-size:clamp(2.2rem,9.2vw,3.25rem)}.source-finder-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.source-finder-tabs button{padding:9px 6px;font-size:.75rem}.source-finder-control{padding:14px 11px}}
+
 </style></head>
 <body>
 <a class="skip" href="#main">Skip to listings</a>
@@ -944,7 +976,27 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
         <a href="#filters">Back to rental filters ↑</a>
       </div>
     </div>
-    <div class="source-grid">
+    
+    <section class="source-finder" id="source-finder" aria-labelledby="source-finder-title" hidden>
+      <div class="source-finder-head">
+        <div><p class="source-finder-kicker">River Valley / Rental sources</p><h3 id="source-finder-title">Find the source.<br><em>Know the details.</em></h3></div>
+        <p class="source-finder-intro">Search original local-manager and community records by name, floor plan, published price or policy. Narrow your search without losing the provider's full description or contact links.</p>
+      </div>
+      <div class="source-finder-control">
+        <label for="sourceFindQuery">Search leasing source details</label>
+        <input type="search" id="sourceFindQuery" placeholder="Try pets, River Valley Flats, utilities…" autocomplete="off" aria-controls="sourceRecords">
+        <div class="source-finder-tabs" role="group" aria-label="Source type">
+          <button type="button" data-source-type="all" aria-pressed="true" aria-controls="sourceRecords">All sources</button>
+          <button type="button" data-source-type="manager" aria-pressed="false" aria-controls="sourceRecords">Manager pages</button>
+          <button type="button" data-source-type="community" aria-pressed="false" aria-controls="sourceRecords">Direct leasing</button>
+          <button type="button" data-source-type="housing" aria-pressed="false" aria-controls="sourceRecords">Public housing</button>
+        </div>
+      </div>
+      <div class="source-finder-footer"><p id="sourceFindStatus" role="status" aria-atomic="true">All sources shown.</p><button type="button" id="sourceFindReset">Clear search & filters ↺</button></div>
+      <p class="source-finder-note">A published source is not a verified live vacancy, price or leasing approval. Contact the operator for current terms.</p>
+    </section>
+    <div class="source-finder-empty" id="sourceFindEmpty" hidden><strong>No sources match those filters.</strong><p>Try a different search or clear the filters. All original records are still available.</p></div>
+<div class="source-grid" id="sourceRecords">
       <article class="source-card" id="source-rvr"><h3>River Valley Realty Management Service</h3><p>Residential and commercial rental listings serving Russellville and the River Valley.</p><a href="https://www.rentrvr.com/" target="_blank" rel="noopener noreferrer">Visit source ↗</a></article>
       <article class="source-card" id="source-moore"><h3>Moore &amp; Co. Rental</h3><p>Russellville-area homes and apartments published through its rental property pages.</p><a href="https://www.mooreforrent.com/rental-properties/russellville/" target="_blank" rel="noopener noreferrer">Visit source ↗</a></article>
       <article class="source-card" id="source-spring"><h3>Spring Lake I/II Apartments — Direct Leasing</h3><p>Russellville apartment community offering one- and two-bedroom floor plans. The official leasing website advertises short-term lease options, subject to confirmation. <strong>November 2026 offer:</strong> its official homepage advertises $50 off monthly rent when placing a deposit, including eligible short-term leases, with restrictions and an advertised end date of <strong>November 30, 2026</strong>. The promotion, eligibility and final lease terms require direct confirmation; this is not a guarantee of savings or an available unit. Listed floor-plan prices do not establish unit availability. 922 N Sidney Ave, Russellville, AR 72801 · <a href="tel:+14798587079">479-858-7079</a>. Confirm current openings, lease terms, fees and rates directly.</p><a href="https://www.springlake.apartments/" target="_blank" rel="noopener noreferrer">Official leasing and floor plans ↗</a></article>
@@ -1049,6 +1101,56 @@ form.addEventListener('input',sync);form.addEventListener('change',sync);form.ad
   });
 })();
 </script>
+
+<script>
+/* Progressive source navigation: existing source text and atlas define all records
+   and categories; no data or booking requests are created. */
+(() => {
+ const finder=document.getElementById('source-finder'),
+       grid=document.getElementById('sourceRecords'),
+       input=document.getElementById('sourceFindQuery'),
+       status=document.getElementById('sourceFindStatus'),
+       empty=document.getElementById('sourceFindEmpty');
+ if(!finder || !grid || !input || !status || !empty)return;
+ const cards=Array.from(grid.querySelectorAll('.source-card'));
+ const buttons=Array.from(finder.querySelectorAll('[data-source-type]'));
+ const types=['manager','community','housing'], groups=new Map();
+ document.querySelectorAll('.source-atlas-grid .source-lane').forEach((lane,index)=>{
+  lane.querySelectorAll('a[href^="#source-"]').forEach(a=>groups.set(a.getAttribute('href').slice(1),types[index]));
+ });
+ const records=cards.map(card=>({card,group:groups.get(card.id)||'other',text:card.textContent.toLocaleLowerCase()}));
+ let type='all';
+ function update(){
+  const terms=input.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+  let visible=0;
+  for(const r of records){
+   const match=(type==='all'||r.group===type)&&terms.every(term=>r.text.includes(term));
+   r.card.hidden=!match;
+   if(match)visible++;
+  }
+  buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.sourceType===type)));
+  status.textContent='Showing '+visible+' of '+records.length+' source records.';
+  empty.hidden=visible!==0;
+ }
+ function clear(){type='all';input.value='';update();}
+ function openDeepLink(){
+  const id=decodeURIComponent(location.hash.slice(1));
+  if(records.some(r=>r.card.id===id && r.card.hidden))clear();
+ }
+ input.addEventListener('input',update);
+ buttons.forEach(b=>b.addEventListener('click',()=>{type=b.dataset.sourceType;update();}));
+ document.getElementById('sourceFindReset').addEventListener('click',()=>{clear();input.focus();});
+ document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href^="#source-"]');
+  if(a && records.some(r=>r.card.id===a.getAttribute('href').slice(1) && r.card.hidden))clear();
+ });
+ window.addEventListener('hashchange',openDeepLink);
+ finder.hidden=false;
+ update();
+ openDeepLink();
+})();
+</script>
+
 <script src="assets/app.js" defer></script>
 </body>
 </html>
