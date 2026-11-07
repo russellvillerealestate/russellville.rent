@@ -1860,6 +1860,79 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
  .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="venues"] .card-body{padding:23px}
 }
 
+
+/* November 7, 2026 — River Valley rental masthead.
+   Desktop: a visual two-level, category-first wayfinder inspired by StayARV's
+   forest/gold hierarchy and spacious navigation. Mobile: accessible native
+   details/summary magazine-style menu (works without JavaScript). Design
+   references: NN/g visual hierarchy and information scent; web.dev responsive
+   layout; W3C WCAG 2.2 keyboard focus / 24px+ targets / reflow. */
+.directory-masthead{position:relative;z-index:35;background:#102f29;color:#fff8e6;border-bottom:0;box-shadow:0 12px 34px #0a271d21}
+.directory-masthead .masthead-primary{min-height:86px;gap:26px;padding-top:14px;padding-bottom:14px}
+.directory-masthead .brand{font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:clamp(1.56rem,2.25vw,2.2rem);letter-spacing:-.055em;white-space:nowrap;color:#fff8e6}
+.directory-masthead .brand span{color:#f1d18b}
+.directory-masthead nav[aria-label="Main navigation"]{gap:clamp(15px,2vw,34px);font-size:.87rem}
+.directory-masthead nav[aria-label="Main navigation"] a{color:#f7f3e5}
+.directory-masthead nav[aria-label="Main navigation"] .nav-list{background:#f0d18d;border-color:#f0d18d;color:#143a30;padding:12px 19px;min-height:47px;display:inline-flex;align-items:center;box-shadow:0 6px 18px #0000001a}
+.directory-masthead nav[aria-label="Main navigation"] .nav-list:hover{background:#ffe4a7;color:#143a30;text-decoration:none}
+.directory-masthead .masthead-routes{background:#eee7d6;color:#224638;border-top:1px solid #f0dba83d}
+.directory-masthead .masthead-routes-inner{display:flex;align-items:center;gap:clamp(22px,4vw,72px);min-height:72px}
+.masthead-route-label{display:flex;align-items:center;gap:11px;white-space:nowrap;font-size:.58rem;line-height:1.35;letter-spacing:.15em;font-weight:850;color:#39624e}
+.masthead-route-glyph{display:grid;place-items:center;width:39px;height:39px;background:#174a3b;color:#f2d48e;border-radius:12px;font:700 1.08rem Georgia,serif;letter-spacing:-.04em}
+.directory-masthead .masthead-route-links{display:flex;align-items:center;gap:4px;flex:1;justify-content:flex-end;overflow-x:auto;min-width:0;padding:9px 1px;scrollbar-width:thin;scrollbar-color:#a6baa5 transparent}
+.directory-masthead .masthead-route-links a{display:inline-flex;align-items:center;justify-content:center;min-height:47px;padding:10px 13px;color:#224638;border-radius:999px;white-space:nowrap;text-decoration:none;font-size:.77rem;font-weight:780;letter-spacing:.01em;transition:background .2s,transform .2s}
+.directory-masthead .masthead-route-links a:hover{background:#d9e5d4;transform:translateY(-1px)}
+.directory-masthead .masthead-route-links .masthead-route-all{background:#174a3b;color:#fff8eb;padding:10px 18px;margin-left:5px}
+.directory-masthead .masthead-route-links .masthead-route-all:hover{background:#285f4b;color:white}
+.directory-masthead :is(a,summary):focus-visible{outline:3px solid #e8ae52;outline-offset:3px}
+.mobile-directory-menu{display:none}
+@media(max-width:1150px) and (min-width:761px){
+  .masthead-route-label>span:last-child{display:none}
+  .directory-masthead .masthead-routes-inner{gap:15px}
+}
+@media(max-width:760px){
+  .directory-masthead .masthead-primary{min-height:73px;gap:14px;flex-wrap:nowrap;padding-top:12px;padding-bottom:12px}
+  .directory-masthead .brand{font-size:clamp(1.34rem,5.5vw,1.8rem)}
+  .directory-masthead nav[aria-label="Main navigation"],.directory-masthead .masthead-routes{display:none}
+  .mobile-directory-menu{display:block;margin-left:auto;flex:none;position:relative}
+  .mobile-directory-menu summary{display:flex;align-items:center;justify-content:center;gap:9px;list-style:none;cursor:pointer;border:1px solid #f1d18b85;background:#f1d18b1c;border-radius:100px;color:#fff2d4;font-size:.82rem;font-weight:850;min-height:48px;padding:10px 15px}
+  .mobile-directory-menu summary::-webkit-details-marker{display:none}
+  .mobile-directory-menu[open] summary{background:#f0d18d;color:#14392e}
+  .mobile-menu-burger{display:grid;gap:4px;flex:none}
+  .mobile-menu-burger span{display:block;width:15px;height:2px;border-radius:2px;background:currentColor}
+  .mobile-menu-chevron{font-size:1.3rem;line-height:.5;transition:transform .2s}
+  .mobile-directory-menu[open] .mobile-menu-chevron{transform:rotate(180deg)}
+  .mobile-menu-panel{position:absolute;right:0;top:calc(100% + 12px);width:min(90vw,470px);max-height:min(76vh,720px);overflow-y:auto;overscroll-behavior:contain;z-index:100;padding:clamp(17px,3.5vw,27px);border:1px solid #bcd0b7;border-radius:20px;background:#f7f5ec;color:#173d31;box-shadow:0 28px 55px #09251e7a}
+  .mobile-menu-intro{padding:4px 5px 19px;border-bottom:1px solid #cddacf}
+  .mobile-menu-intro>span{display:block;color:#597b65;font-size:.61rem;font-weight:850;letter-spacing:.17em}
+  .mobile-menu-intro strong{display:block;margin:13px 0 8px;font:400 clamp(1.8rem,6vw,2.45rem)/1.07 Georgia,"Times New Roman",serif;letter-spacing:-.05em}
+  .mobile-menu-intro em{font-style:normal;color:#9b7139}
+  .mobile-menu-intro p{margin:0;color:#4f685a;font-size:.77rem;line-height:1.6}
+  .directory-masthead .mobile-menu-categories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:15px 0;padding:0;font-size:inherit}
+  .mobile-menu-categories a{display:flex;flex-direction:column;justify-content:space-between;gap:10px;min-height:103px;padding:15px 12px;border:1px solid #d5e1d2;border-radius:12px;background:#fff;color:#1e4a39;text-decoration:none}
+  .mobile-menu-categories a:nth-child(2),.mobile-menu-categories a:nth-child(5){background:#e9f0e5}
+  .mobile-menu-categories a span{font-size:.57rem;color:#637f69;letter-spacing:.09em;font-weight:800;text-transform:uppercase}
+  .mobile-menu-categories a strong{font:400 1.05rem/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.025em}
+  .mobile-menu-categories a:hover{border-color:#7eaa81;background:#dbeadc}
+  .mobile-menu-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:13px}
+  .mobile-menu-actions a{display:flex;align-items:center;justify-content:space-between;gap:9px;min-height:48px;border:1px solid #c9d9c8;border-radius:10px;padding:10px 12px;background:#e7eee3;color:#234b38;text-decoration:none;font-size:.73rem;font-weight:800}
+  .mobile-menu-actions .mobile-menu-all{grid-column:1/-1;background:#164735;border-color:#164735;color:#f7efd6;font-size:.87rem;padding:13px 16px}
+  .mobile-menu-actions a:hover{background:#d2e3cf}
+  .mobile-menu-actions .mobile-menu-all:hover{background:#286149}
+  .mobile-menu-foot{margin:14px 3px 0;color:#597265;font-size:.68rem;line-height:1.55}
+}
+@media(max-width:355px){
+ .directory-masthead .brand{font-size:1.26rem}
+ .mobile-directory-menu summary{padding:9px 11px;gap:6px}
+ .mobile-menu-categories a{min-height:97px;padding:12px 10px}
+ .mobile-menu-categories a strong{font-size:.96rem}
+ .mobile-menu-panel{width:calc(100vw - 24px)}
+}
+@media(prefers-reduced-motion:reduce){
+ .directory-masthead .masthead-route-links a,.mobile-menu-chevron{transition:none}
+ .directory-masthead .masthead-route-links a:hover{transform:none}
+}
+
 </style>
 </head>
 <body>
@@ -1873,7 +1946,47 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <symbol id="rental-pictogram-sheds" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 26 32 9l27 17M11 23v33h42V23M24 56V33h16v23M24 38h16m-16 7h16M16 29h4m24 0h4"/></g></symbol>
 </svg>
 <a class="skip" href="#main">Skip to content</a>
-<header><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><nav aria-label="Main navigation"><a class="browse-nav" href="#browse">Browse rentals</a><a href="#contact">Get in touch</a><a class="nav-list" href="#list">List your rental ↗</a></nav></div></header>
+<header class="directory-masthead">
+  <div class="wrap masthead-primary">
+    <a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a>
+    <nav aria-label="Main navigation"><a class="browse-nav" href="#browse">Browse rentals</a><a href="#contact">Get in touch</a><a class="nav-list" href="#list">List your rental ↗</a></nav>
+    <details class="mobile-directory-menu">
+      <summary><span class="mobile-menu-burger" aria-hidden="true"><span></span><span></span><span></span></span>Explore <span class="mobile-menu-chevron" aria-hidden="true">⌄</span></summary>
+      <div class="mobile-menu-panel">
+        <div class="mobile-menu-intro"><span>RIVER VALLEY / RENTAL DIRECTORY</span><strong>Find what you need.<br><em>Close to home.</em></strong><p>Choose a category or open the full rental directory.</p></div>
+        <nav class="mobile-menu-categories" aria-label="Popular rental categories">
+          <a href="long-term.html"><span>01 / Settle in</span><strong>Homes &amp; apartments ↗</strong></a>
+          <a href="storage.html"><span>02 / Make room</span><strong>Storage ↗</strong></a>
+          <a href="equipment.html"><span>03 / Get it done</span><strong>Tools &amp; equipment ↗</strong></a>
+          <a href="paddling.html"><span>04 / Get outside</span><strong>Lake &amp; outdoors ↗</strong></a>
+          <a href="party.html"><span>05 / Celebrate</span><strong>Events &amp; parties ↗</strong></a>
+          <a href="cars.html"><span>06 / Hit the road</span><strong>Vehicle rentals ↗</strong></a>
+        </nav>
+        <div class="mobile-menu-actions">
+          <a class="mobile-menu-all" href="#browse">Browse every category <span aria-hidden="true">↗</span></a>
+          <a href="#saved-panel">Saved categories <span aria-hidden="true">↗</span></a>
+          <a href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+          <a href="#list">List your rental <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="mobile-menu-foot">Connect with providers directly. Confirm availability, pricing and terms with each business.</p>
+      </div>
+    </details>
+  </div>
+  <div class="masthead-routes">
+    <div class="wrap masthead-routes-inner">
+      <span class="masthead-route-label"><span class="masthead-route-glyph" aria-hidden="true">R↗</span> <span>THE RIVER VALLEY / EXPLORE</span></span>
+      <nav class="masthead-route-links" aria-label="Quick links to rental categories">
+        <a href="long-term.html">Homes</a>
+        <a href="storage.html">Storage</a>
+        <a href="equipment.html">Equipment</a>
+        <a href="paddling.html">Lake &amp; outdoors</a>
+        <a href="party.html">Events</a>
+        <a href="cars.html">Vehicles</a>
+        <a class="masthead-route-all" href="#browse">All rentals <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </div>
+</header>
 <main id="main" class="wrap">
 <section class="hero welcome-hero" aria-labelledby="hero-title"><img class="hero-photo" src="assets/lake-dardanelle-sunset.jpg" alt="Sunset over the covered docks at Lake Dardanelle State Park, reflected in the still water" width="1920" height="910" fetchpriority="high">
 <div class="welcome-copy">
