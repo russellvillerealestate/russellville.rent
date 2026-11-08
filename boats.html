@@ -382,6 +382,38 @@ body{background:#f6f6f0}
  .lake-path{box-shadow:none;border-color:#aaa}
 }
 
+
+/* 2026-11-08 / The lake-closure decision deck. After both mandatory closure
+   warnings, make three existing next steps visually distinguishable without
+   changing dates, official contact links, closure restrictions or rental claims.
+   Editorial pictograms are NOT marina photography or verified watercraft.
+   Visual inspiration: live StayARV forest/brass and roomy pictorial storytelling.
+   Research: NN/g visual hierarchy; web.dev adaptive layouts; W3C WCAG 2.2
+   reflow, 24px targets, visible keyboard focus, reduced motion. */
+.decision-directory{margin-top:clamp(41px,5vw,73px)}
+.decision-directory-heading{gap:clamp(20px,4vw,60px);align-items:end}
+.decision-directory-heading h2{font-size:clamp(2.05rem,4.5vw,3.8rem);max-width:14ch;line-height:1.07;text-wrap:balance}
+.decision-rail{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:27px}
+.decision-link{display:flex;flex-direction:column;align-items:flex-start;min-height:345px;padding:0 0 25px;gap:0;overflow:hidden;border:1px solid #cdded1;border-radius:21px;background:#fffdfa;box-shadow:0 15px 34px #0c3d2e16;transition:transform .2s,box-shadow .2s,border-color .2s}
+.decision-link:before{display:none}
+.decision-art{position:relative;isolation:isolate;display:grid;place-items:center;align-self:stretch;min-height:163px;overflow:hidden;background:radial-gradient(circle at 73% 37%,#3c7963,#123b33 73%);color:#f1d79e}
+.decision-art--access{background:radial-gradient(circle at 67% 28%,#47755d,#194738 73%)}
+.decision-art--water{background:linear-gradient(135deg,#23596b,#113b4e 75%);color:#f0d59b}
+.decision-art:before{content:"";position:absolute;inset:auto -35px -110px auto;width:220px;height:220px;border:1px solid #fff5d438;border-radius:50%;box-shadow:0 0 0 27px #fff5d40d,0 0 0 55px #fff5d408}
+.decision-art svg{z-index:1;display:block;width:min(65%,180px);height:120px;filter:drop-shadow(0 9px 9px #07251d45)}
+.decision-art-caption{position:absolute;z-index:2;bottom:11px;left:16px;right:16px;text-align:center;color:#f5ead3;font-size:.57rem;font-weight:850;line-height:1.45;letter-spacing:.13em}
+.decision-link .decision-kicker{margin:21px 23px 12px;padding:0;font-size:.65rem;letter-spacing:.11em;color:#795228}
+.decision-link:nth-child(2) .decision-kicker{color:#3e6b56}
+.decision-link:nth-child(3) .decision-kicker{color:#3f6e80}
+.decision-link strong{display:block;margin:0 23px 10px;max-width:17ch;font:400 clamp(1.45rem,2.35vw,2rem)/1.13 Georgia,"Times New Roman",serif;letter-spacing:-.044em;color:#163d33}
+.decision-link small{display:block;margin:0 23px;max-width:40ch;color:#526b5d;font-size:.83rem;line-height:1.56}
+.decision-link:hover{transform:translateY(-4px);border-color:#7aa58e;box-shadow:0 22px 40px #0c3d2e26}
+.decision-link:focus-visible{outline:4px solid #b76b20;outline-offset:5px}
+@media(max-width:850px){.decision-rail{grid-template-columns:repeat(2,minmax(0,1fr))}.decision-link:last-child{grid-column:1/-1}.decision-link:last-child .decision-art{min-height:170px}.decision-link{min-height:328px}}
+@media(max-width:600px){.decision-directory{margin-top:39px}.decision-directory-heading h2{font-size:clamp(2rem,9vw,2.65rem)}.decision-rail{grid-template-columns:1fr;gap:13px;margin-top:20px}.decision-link,.decision-link:last-child{grid-column:auto;min-height:0;padding-bottom:22px}.decision-art,.decision-link:last-child .decision-art{min-height:140px}.decision-art svg{height:102px;width:min(55%,150px)}.decision-link .decision-kicker{margin-top:17px}.decision-link strong{font-size:1.75rem}.decision-link small{font-size:.84rem}}
+@media(prefers-reduced-motion:reduce){.decision-link{transition:none!important}.decision-link:hover{transform:none!important}}
+@media print{.decision-link{break-inside:avoid;box-shadow:none}.decision-art{display:none}.decision-rail{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
 </style>
 </head>
 <body>
@@ -414,9 +446,9 @@ body{background:#f6f6f0}
 <section class="decision-directory" aria-labelledby="decision-title">
 <div class="decision-directory-heading"><div><span class="decision-overline">A local lake guide / Three clear next steps</span><h2 id="decision-title">Closed marinas. <em>Clear next steps.</em></h2></div><p>Start with the closure details, coordinate property access with the Corps, or browse separate outdoor options that do not depend on the closed marinas.</p></div>
 <nav class="decision-rail" aria-label="Find the information you need">
-<a class="decision-link" href="#closure-details"><span class="decision-kicker">01 · Safety first</span><strong>Check marina closures ↗</strong><small>Read the federal closure information before visiting.</small></a>
-<a class="decision-link" href="#property-access"><span class="decision-kicker">02 · For boat owners</span><strong>Understand property access ↗</strong><small>Arrange access by appointment; see the July 7, 2027 property deadline.</small></a>
-<a class="decision-link" href="#alternatives"><span class="decision-kicker">03 · Explore alternatives</span><strong>Find another way on the water ↗</strong><small>See separately listed kayak rental opportunities.</small></a>
+<a class="decision-link" href="#closure-details"><span class="decision-kicker">01 · Safety first</span><span class="decision-art decision-art--safety" aria-hidden="true"><svg viewBox="0 0 160 125" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><circle cx="125" cy="32" r="25" stroke="currentColor" stroke-opacity=".25" stroke-width="2"/><circle cx="125" cy="32" r="38" stroke="currentColor" stroke-opacity=".1" stroke-width="2"/><path d="M80 15 127 32v31c0 27-18 42-47 52C51 105 33 90 33 63V32L80 15Z" fill="#f3dab0" stroke="#163e34" stroke-width="5" stroke-linejoin="round"/><path d="M80 41v29" stroke="#965325" stroke-width="8" stroke-linecap="round"/><circle cx="80" cy="87" r="5" fill="#965325"/><path d="M25 101h17m76 0h17" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="decision-art-caption">CLOSURE NOTICE / READ FIRST</span></span><strong>Check marina closures ↗</strong><small>Read the federal closure information before visiting.</small></a>
+<a class="decision-link" href="#property-access"><span class="decision-kicker">02 · For boat owners</span><span class="decision-art decision-art--access" aria-hidden="true"><svg viewBox="0 0 160 125" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><circle cx="127" cy="33" r="35" stroke="currentColor" stroke-opacity=".18" stroke-width="2"/><rect x="32" y="23" width="94" height="83" rx="12" fill="#f8e8bf" stroke="#214c3f" stroke-width="5"/><path d="M32 48h94M53 13v23m52-23v23" stroke="#214c3f" stroke-width="7" stroke-linecap="round"/><path d="m54 77 13 13 30-29" stroke="#2c7759" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M26 109h19m67 0h19" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="decision-art-caption">OWNER ACCESS / BY APPOINTMENT</span></span><strong>Understand property access ↗</strong><small>Arrange access by appointment; see the July 7, 2027 property deadline.</small></a>
+<a class="decision-link" href="#alternatives"><span class="decision-kicker">03 · Explore alternatives</span><span class="decision-art decision-art--water" aria-hidden="true"><svg viewBox="0 0 160 125" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><circle cx="120" cy="27" r="26" fill="#e6c78c" opacity=".85"/><path d="M17 95c19-8 28-8 47 0s28 8 47 0 28-8 35-5M17 109c19-8 28-8 47 0s28 8 47 0 28-8 35-5" stroke="#e2f1e1" stroke-width="4" stroke-linecap="round" opacity=".82"/><path d="M26 73c30 16 77 19 113 0l-10 20c-31 11-63 11-94 0L26 73Z" fill="#f1d39d" stroke="#173b38" stroke-width="4" stroke-linejoin="round"/><path d="m79 16-16 54m-8-55 20 6-6 16-20-6 6-16Zm25 50 20 7-6 16-20-7 6-16Z" fill="#e2f1e1" stroke="#17473f" stroke-width="3" stroke-linejoin="round"/></svg><span class="decision-art-caption">SEPARATE RENTAL DIRECTORY</span></span><strong>Find another way on the water ↗</strong><small>See separately listed kayak rental opportunities.</small></a>
 </nav>
 </section>
 <section id="closure-details" aria-labelledby="closures-title">
