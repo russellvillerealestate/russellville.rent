@@ -212,6 +212,46 @@ main.wrap{padding-top:0}
 @media(max-width:700px){.perimeter-atlas{margin-top:53px;padding:24px 18px;border-radius:18px}.perimeter-atlas-heading{grid-template-columns:1fr;gap:14px}.perimeter-atlas-heading h2{font-size:clamp(2.5rem,9.5vw,3.7rem)}.perimeter-atlas-layout{gap:13px}.perimeter-atlas-steps{padding:22px 19px}.perimeter-atlas-steps ol{grid-template-columns:1fr;gap:0}.perimeter-atlas-steps li{grid-template-columns:32px minmax(0,1fr);border:0;border-bottom:1px solid #d9dfd5;border-radius:0;padding:15px 0}.perimeter-atlas-foot{grid-template-columns:1fr;gap:9px}.perimeter-atlas-foot a{grid-column:auto}.perimeter-atlas-scene-top{font-size:.59rem;padding:12px}.perimeter-atlas-scene figcaption{padding:13px 15px}}
 @media(prefers-reduced-motion:reduce){.perimeter-atlas-button{transition:none}.perimeter-atlas-button:hover{transform:none}}
 
+
+/* 2026-11-08 supplier-dispatch edition. Inspiration: StayARV's immersive local landscape,
+   Nielsen Norman Group visual hierarchy; web.dev responsive layouts; W3C WCAG 2.2 focus,
+   reflow and reduced-motion guidance. Scenery is never represented as provider stock. */
+.fence-dispatch{position:relative;isolation:isolate;overflow:hidden;margin:32px 0 38px;padding:clamp(23px,4.2vw,48px);border-radius:25px;background:#102f28;color:#f6f4e9;box-shadow:0 25px 56px #102f2838}
+.fence-dispatch:before{content:"";position:absolute;z-index:-2;inset:0;background:linear-gradient(105deg,#08291ff5 0%,#12392ee9 48%,#163b32c9 100%),url("assets/downtown-russellville-sunset.jpg") center 46%/cover no-repeat}
+.fence-dispatch:after{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;opacity:.12;background:repeating-linear-gradient(90deg,transparent 0 44px,#f6dfb0 45px,#f6dfb0 46px,transparent 47px 90px)}
+.fence-dispatch-intro{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(200px,.7fr);gap:clamp(20px,4vw,50px);align-items:end;margin-bottom:26px}
+.fence-dispatch-kicker{margin:0 0 12px;font-size:.7rem;font-weight:850;letter-spacing:.17em;text-transform:uppercase;color:#f2d398}
+.fence-dispatch h3{margin:0;color:#fff8e7;font:400 clamp(2.45rem,4.7vw,4.6rem)/1.03 Georgia,"Times New Roman",serif;letter-spacing:-.055em;text-wrap:balance}
+.fence-dispatch h3 em{color:#f3cf8b;font-weight:400}
+.fence-dispatch-intro>p{margin:0 0 4px;max-width:44ch;color:#e2eee3;font-size:.9rem;line-height:1.65}
+.fence-dispatch-board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.fence-dispatch-group{min-width:0;overflow:hidden;border:1px solid #c7d6c680;border-radius:17px;background:#fcfaf3;color:#1a4033;box-shadow:0 12px 30px #031a1242}
+.fence-dispatch-group--regional{background:#f3ede0;border-color:#d3b888}
+.fence-dispatch-group-head{display:grid;gap:5px;min-height:150px;align-content:center;padding:22px clamp(18px,2.4vw,29px);background:linear-gradient(120deg,#224d3d,#16392e);color:#f9f7ed}
+.fence-dispatch-group--regional .fence-dispatch-group-head{background:linear-gradient(110deg,#5e492c,#84613a)}
+.fence-dispatch-group-head>span{font-size:.65rem;letter-spacing:.17em;text-transform:uppercase;font-weight:850;color:#f5d695}
+.fence-dispatch-group-head>strong{font:400 clamp(1.45rem,2.3vw,2rem)/1.12 Georgia,serif;letter-spacing:-.03em}
+.fence-dispatch-group-head>small{font-size:.76rem;line-height:1.5;color:#e4f0df}
+.fence-dispatch-group--regional .fence-dispatch-group-head>small{color:#f3e8d4}
+.fence-dispatch-links{display:grid;gap:0;padding:6px 14px 14px}
+.fence-dispatch-link{display:grid;grid-template-columns:40px minmax(0,1fr) 22px;gap:12px;min-height:112px;align-items:center;padding:16px 7px;color:#204839;text-decoration:none;border-bottom:1px solid #dce6d9;transition:background-color .16s}
+.fence-dispatch-link:last-child{border-bottom:0}
+.fence-dispatch-link:hover{background:#e5f0e5}
+.fence-dispatch-group--regional .fence-dispatch-link:hover{background:#e6ddc9}
+.fence-dispatch-link:focus-visible{outline:3px solid #ac641c;outline-offset:-2px;border-radius:7px;background:#fdf9ed}
+.fence-dispatch-number{display:grid;place-items:center;width:39px;height:39px;border-radius:50%;border:1px solid #9fb9a5;color:#315e47;font:400 1.2rem Georgia,serif}
+.fence-dispatch-link-copy{min-width:0}.fence-dispatch-link-copy strong{display:block;font:400 clamp(1.06rem,1.7vw,1.28rem)/1.2 Georgia,serif;letter-spacing:-.025em}
+.fence-dispatch-link-copy small{display:block;margin-top:6px;color:#536d60;font-size:.72rem;line-height:1.5}
+.fence-dispatch-group--regional .fence-dispatch-link-copy small{color:#6c5e49}
+.fence-dispatch-arrow{font-size:1.2rem;justify-self:end;color:#9f7540}
+.fence-dispatch-foot{margin:20px 0 0;color:#d5e7d9;font-size:.76rem;line-height:1.6}
+.fence-dispatch-foot a{color:#ffe0a2;font-weight:800}
+.fence-folio-list article[id^="fence-provider-"]{scroll-margin-top:25px}
+.fence-folio-list article[id^="fence-provider-"]:target{outline:3px solid #bd7a25;outline-offset:4px}
+@media(max-width:780px){.fence-dispatch-intro{grid-template-columns:1fr;gap:15px}.fence-dispatch-board{grid-template-columns:1fr}.fence-dispatch-group-head{min-height:0;padding:21px}.fence-dispatch-link{min-height:90px}.fence-dispatch h3{font-size:clamp(2.5rem,7.5vw,3.7rem)}}
+@media(max-width:480px){.fence-dispatch{padding:22px 16px;border-radius:18px;margin:23px 0 30px}.fence-dispatch-board{gap:12px}.fence-dispatch-links{padding:4px 10px 9px}.fence-dispatch-link{grid-template-columns:32px minmax(0,1fr) 15px;gap:9px;padding:14px 4px}.fence-dispatch-number{width:32px;height:32px;font-size:1rem}.fence-dispatch-arrow{font-size:1rem}.fence-dispatch-intro>p{font-size:.84rem}}
+@media(prefers-reduced-motion:reduce){.fence-dispatch-link{transition:none}}
+
 </style>
 </head>
 <body>
@@ -249,33 +289,58 @@ main.wrap{padding-top:0}
 </section>
 
 <div class="section-head" id="providers" tabindex="-1"><div><p class="section-label">01 / Explore providers</p><h2>Find the right fence supplier</h2></div><p>Compare published service details, then confirm the delivery area and final quote directly.</p></div>
+
+<section class="fence-dispatch" aria-labelledby="fence-dispatch-title">
+  <div class="fence-dispatch-intro">
+    <div><p class="fence-dispatch-kicker">The River Valley / Supplier dispatch</p><h3 id="fence-dispatch-title">Four suppliers.<br><em>Two ways to begin.</em></h3></div>
+    <p>Go straight to a complete supplier record. Begin with companies advertising Russellville service, or widen the inquiry to regional operators. These are contact routes, not confirmed bookings.</p>
+  </div>
+  <div class="fence-dispatch-board">
+    <section class="fence-dispatch-group fence-dispatch-group--near" aria-label="Russellville service advertised">
+      <div class="fence-dispatch-group-head"><span>01 / Start close to home</span><strong>Russellville service advertised</strong><small>Two separate operators. Confirm dates, panels and total charges.</small></div>
+      <div class="fence-dispatch-links">
+        <a class="fence-dispatch-link" href="#fence-provider-1"><span class="fence-dispatch-number">01</span><span class="fence-dispatch-link-copy"><strong>AF&amp;G LLC</strong><small>Conway-based · Russellville delivery, installation and removal advertised</small></span><span class="fence-dispatch-arrow" aria-hidden="true">↗</span></a>
+        <a class="fence-dispatch-link" href="#fence-provider-2"><span class="fence-dispatch-number">02</span><span class="fence-dispatch-link-copy"><strong>Russellville Fence Company</strong><small>Russellville-based · temporary panel rentals advertised; delivery terms to verify</small></span><span class="fence-dispatch-arrow" aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+    <section class="fence-dispatch-group fence-dispatch-group--regional" aria-label="Regional providers with delivery unconfirmed">
+      <div class="fence-dispatch-group-head"><span>02 / Widen the search</span><strong>Regional rental inquiries</strong><small>Russellville delivery is unconfirmed for both operators.</small></div>
+      <div class="fence-dispatch-links">
+        <a class="fence-dispatch-link" href="#fence-provider-3"><span class="fence-dispatch-number">03</span><span class="fence-dispatch-link-copy"><strong>National Rent-A-Fence</strong><small>Arkansas regional service · request address-specific delivery terms</small></span><span class="fence-dispatch-arrow" aria-hidden="true">↗</span></a>
+        <a class="fence-dispatch-link" href="#fence-provider-4"><span class="fence-dispatch-number">04</span><span class="fence-dispatch-link-copy"><strong>Modern Fence Company</strong><small>Fort Smith · ask whether the project falls within its service area</small></span><span class="fence-dispatch-arrow" aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </div>
+  <p class="fence-dispatch-foot">The landscape is River Valley editorial scenery, not a supplier location or installed fence. Service labels reflect published information, not current equipment inventory or guaranteed delivery. <a href="#fence-planner">Prepare a rental inquiry ↗</a></p>
+</section>
+
 <div class="fence-folio-key" aria-label="How to interpret supplier service claims">
  <p><span class="fence-folio-key-mark fence-folio-key-mark-local" aria-hidden="true"></span><strong>Russellville service advertised</strong><small>Two providers advertise local service on official pages.</small></p>
  <p><span class="fence-folio-key-mark fence-folio-key-mark-regional" aria-hidden="true"></span><strong>Delivery needs confirmation</strong><small>Two regional operators require a direct service-area check.</small></p>
 </div>
 <p class="fence-folio-disclosure">Scene photography and fence artwork are editorial illustrations, not photographs of suppliers, installed projects or available stock.</p>
-<div class="grid fence-folio-list"><article class="fence-folio fence-folio-1"><div class="fence-folio-art fence-folio-art-1" aria-hidden="true">
+<div class="grid fence-folio-list"><article id="fence-provider-1" class="fence-folio fence-folio-1"><div class="fence-folio-art fence-folio-art-1" aria-hidden="true">
   <span class="fence-folio-overline">01 / LOCAL SERVICE</span>
   <svg class="fence-folio-drawing" viewBox="0 0 520 300" focusable="false" aria-hidden="true"><g stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M44 232V64M260 232V64M476 232V64M44 80H476M44 218H476" stroke-width="8"/><path d="M47 86 252 212M103 81 259 180M181 81 260 128M261 82 469 211M322 81 476 178M400 81 476 128M44 215 257 86M44 159 174 81M45 104 70 81M264 213 472 85M264 158 394 81M318 217 476 118M394 217 476 166" stroke-width="2.8" opacity=".42"/><path d="M31 234H488" stroke-width="5"/><path d="M75 235v22M446 235v22" stroke-width="6"/></g></svg>
   <span class="fence-folio-chapter">Russellville advertised</span>
   <span class="fence-folio-place">CONWAY → RUSSELLVILLE</span>
   <small class="fence-folio-source">River Valley backdrop · not a provider or inventory photo</small>
 </div><div class="card-top"><span class="number">PROVIDER 01</span><span class="tag">Russellville service verified</span></div><h3>AF&amp;G LLC</h3><p>Temporary chain-link fence panels, portable privacy screens and event crowd-control barriers. The operator has an official Russellville service page confirming temporary fencing delivery, installation and removal in Russellville. Confirm available dates, equipment and the complete quote directly.</p><p class="area">Conway-based provider · Russellville service explicitly advertised</p><p><a href="tel:+15017719929">501-771-9929</a> · <a href="https://arfence.com/temporary-fence-rental-russellville-ar/" target="_blank" rel="noopener noreferrer">Official Russellville service confirmation ↗</a></p></article>
-<article class="fence-folio fence-folio-2"><div class="fence-folio-art fence-folio-art-2" aria-hidden="true">
+<article id="fence-provider-2" class="fence-folio fence-folio-2"><div class="fence-folio-art fence-folio-art-2" aria-hidden="true">
   <span class="fence-folio-overline">02 / LOCAL PROVIDER</span>
   <svg class="fence-folio-drawing" viewBox="0 0 520 300" focusable="false" aria-hidden="true"><g stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M44 232V64M260 232V64M476 232V64M44 80H476M44 218H476" stroke-width="8"/><path d="M47 86 252 212M103 81 259 180M181 81 260 128M261 82 469 211M322 81 476 178M400 81 476 128M44 215 257 86M44 159 174 81M45 104 70 81M264 213 472 85M264 158 394 81M318 217 476 118M394 217 476 166" stroke-width="2.8" opacity=".42"/><path d="M31 234H488" stroke-width="5"/><path d="M75 235v22M446 235v22" stroke-width="6"/></g></svg>
   <span class="fence-folio-chapter">Russellville based</span>
   <span class="fence-folio-place">RUSSELLVILLE · RIVER VALLEY</span>
   <small class="fence-folio-source">Illustrative fence drawing · not available inventory</small>
 </div><div class="card-top"><span class="number">PROVIDER 02</span><span class="tag">Russellville-based · rental inquiries</span></div><h3>Russellville Fence Company — Temporary Panels</h3><p>The Russellville-based contractor officially advertises temporary fence panel <strong>rentals and sales</strong> for construction, events, parking and job-site access control. It identifies Russellville and nearby River Valley communities as service areas. <strong>Current panel inventory, exact rental terms, delivery, installation and pickup are UNCONFIRMED</strong> until the company provides a project-specific quote; no panel quantities or prices are advertised.</p><p class="area">Russellville, Arkansas · Local operator; rental details by quotation</p><p><a href="tel:+14799704670">479-970-4670</a> · <a href="https://www.russellvillefence.com/temporary-fence-panels" target="_blank" rel="noopener noreferrer">Official temporary fence rental information ↗</a> · <a href="https://www.russellvillefence.com/" target="_blank" rel="noopener noreferrer">Official contact and service areas ↗</a></p></article>
-<article class="fence-folio fence-folio-2"><div class="fence-folio-art fence-folio-art-2" aria-hidden="true">
+<article id="fence-provider-3" class="fence-folio fence-folio-2"><div class="fence-folio-art fence-folio-art-2" aria-hidden="true">
   <span class="fence-folio-overline">03 / REGIONAL OPTION</span>
   <svg class="fence-folio-drawing" viewBox="0 0 520 300" focusable="false" aria-hidden="true"><g stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M44 232V64M260 232V64M476 232V64M44 80H476M44 218H476" stroke-width="8"/><path d="M47 86 252 212M103 81 259 180M181 81 260 128M261 82 469 211M322 81 476 178M400 81 476 128M44 215 257 86M44 159 174 81M45 104 70 81M264 213 472 85M264 158 394 81M318 217 476 118M394 217 476 166" stroke-width="2.8" opacity=".42"/><path d="M31 234H488" stroke-width="5"/><path d="M75 235v22M446 235v22" stroke-width="6"/></g></svg>
   <span class="fence-folio-chapter">Check delivery</span>
   <span class="fence-folio-place">ARKANSAS SERVICE AREA</span>
   <small class="fence-folio-source">Illustrative fence drawing · not available inventory</small>
 </div><div class="card-top"><span class="number">PROVIDER 03</span><span class="tag tag-caution">Russellville delivery unconfirmed</span></div><h3>National Rent-A-Fence — Arkansas regional service</h3><p>Official Arkansas service pages advertise temporary chain-link fencing, freestanding fence panels, pedestrian barricades, windscreens and fence gates for construction and events. The provider describes service across much of Arkansas, but <strong>delivery to Russellville is UNCONFIRMED</strong>. Ask for a written quote covering delivery, installation, removal, rental period and site requirements.</p><p class="area">Arkansas regional provider · No Russellville office verified · Russellville delivery UNCONFIRMED</p><p><a href="tel:+18003525675">800-352-5675</a> · <a href="https://www.rentnational.com/fort-smith" target="_blank" rel="noopener noreferrer">Official Arkansas rental and service information ↗</a></p></article>
-<article class="fence-folio fence-folio-3"><div class="fence-folio-art fence-folio-art-3" aria-hidden="true">
+<article id="fence-provider-4" class="fence-folio fence-folio-3"><div class="fence-folio-art fence-folio-art-3" aria-hidden="true">
   <span class="fence-folio-overline">04 / REGIONAL OPTION</span>
   <svg class="fence-folio-drawing" viewBox="0 0 520 300" focusable="false" aria-hidden="true"><g stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M44 232V64M260 232V64M476 232V64M44 80H476M44 218H476" stroke-width="8"/><path d="M47 86 252 212M103 81 259 180M181 81 260 128M261 82 469 211M322 81 476 178M400 81 476 128M44 215 257 86M44 159 174 81M45 104 70 81M264 213 472 85M264 158 394 81M318 217 476 118M394 217 476 166" stroke-width="2.8" opacity=".42"/><path d="M31 234H488" stroke-width="5"/><path d="M75 235v22M446 235v22" stroke-width="6"/></g></svg>
   <span class="fence-folio-chapter">Check delivery</span>
