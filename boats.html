@@ -414,6 +414,22 @@ body{background:#f6f6f0}
 @media(prefers-reduced-motion:reduce){.decision-link{transition:none!important}.decision-link:hover{transform:none!important}}
 @media print{.decision-link{break-inside:avoid;box-shadow:none}.decision-art{display:none}.decision-rail{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
+/* Lake Dardanelle editorial hero | 2026-11-08.
+   Sunset is local scenery, not evidence of access, inventory or reopening.
+   The federal closure notice and call contacts remain prominent and legible. */
+.hero{min-height:clamp(570px,54vw,715px);padding-bottom:clamp(86px,8.2vw,118px);background:#102f2b}
+.marina-hero-photo{position:absolute;inset:0;z-index:-3;display:block;width:100%;height:100%;object-fit:cover;object-position:50% 55%;pointer-events:none}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(93deg,rgba(6,31,27,.95) 0%,rgba(9,41,35,.87) 39%,rgba(12,44,37,.78) 100%),linear-gradient(0deg,rgba(8,35,28,.76),transparent 48%)}
+.hero::after{z-index:-1}
+.hero>div:first-of-type,.hero>.status-panel{position:relative;z-index:1}
+.hero h1{font-size:clamp(3.3rem,6vw,5.6rem);max-width:11ch;text-wrap:balance;text-shadow:0 3px 25px rgba(3,21,17,.4)}
+.hero h1 em{color:#f5d7a1}
+.hero-intro{max-width:46ch;line-height:1.72;color:#f0f3e8;text-shadow:0 2px 12px rgba(2,24,20,.35)}
+.marina-hero-photo-note{position:absolute;z-index:1;left:clamp(32px,5vw,62px);bottom:clamp(22px,3vw,35px);right:clamp(22px,3vw,35px);margin:0;padding-top:13px;border-top:1px solid rgba(248,230,188,.46);color:#f1e5d0;font-size:.7rem;font-weight:650;line-height:1.45;letter-spacing:.035em}
+.marina-hero-photo-note span{color:#ebbc72;padding-inline:6px}
+@media(max-width:960px){.hero{min-height:0}.marina-hero-photo{object-position:56% center}.hero::before{background:linear-gradient(120deg,rgba(6,29,27,.94),rgba(12,45,37,.77)),linear-gradient(0deg,rgba(8,32,27,.74),transparent 50%)}.hero h1{max-width:13ch}}
+@media(max-width:610px){.hero{padding:48px 26px 81px}.marina-hero-photo{object-position:64% center}.hero::before{background:linear-gradient(180deg,rgba(5,28,26,.93) 0%,rgba(10,44,36,.84) 47%,rgba(5,28,26,.97) 100%)}.hero h1{font-size:clamp(3.05rem,12vw,4.6rem);max-width:12ch}.marina-hero-photo-note{left:26px;right:26px;bottom:21px;font-size:.64rem}.marina-hero-photo-note span{padding-inline:3px}}
+@media print{.marina-hero-photo,.marina-hero-photo-note{display:none!important}.hero{background:#fff!important;color:#173c31!important;border:1px solid #888;min-height:0;padding:20px}.hero h1,.hero h1 em,.hero .eyebrow,.hero-intro{color:#173c31!important;text-shadow:none!important}.hero:before,.hero:after{display:none!important}}
 </style>
 </head>
 <body>
@@ -421,6 +437,7 @@ body{background:#f6f6f0}
 <header class="site-header"><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back" href="/">← Browse all rentals</a></div></header>
 <main>
 <section class="hero" aria-labelledby="page-title">
+<img class="marina-hero-photo" src="assets/lake-dardanelle-sunset.jpg" width="1920" height="910" alt="" decoding="async" fetchpriority="high">
 <div><p class="eyebrow">Russellville, Arkansas · Lake Dardanelle</p><h1 id="page-title">Boat &amp; marina <em>rentals</em></h1><p class="hero-intro">Current rental availability and official closure information. There are no verified active boat or marina rental providers listed here.</p></div>
 <aside class="status-panel" aria-label="Marina closure status">
 <h2>Marina status at a glance</h2>
@@ -436,6 +453,7 @@ body{background:#f6f6f0}
   <small>These links do not grant entry. Closed docks remain restricted.</small>
 </div>
 </aside>
+<p class="marina-hero-photo-note">Lake Dardanelle scenery <span aria-hidden="true">/</span> Not an open marina, access point or available rental.</p>
 </section>
 <aside class="closure-callout" aria-label="Marina rental closure notice">
   <span class="closure-callout-mark" aria-hidden="true">!</span>
