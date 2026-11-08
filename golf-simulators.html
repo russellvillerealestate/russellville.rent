@@ -512,6 +512,72 @@ html{scroll-padding-top:114px}
   #mobile .mobile-grid .card-content{padding:19px 22px;background:white}
 }
 
+
+/* 2026-11-07 / The Fairway Ticket Desk: a large, readable four-stop
+   published-price selector, not an availability or delivered-cost quotation.
+   References: live StayARV's immersive forest/gold hierarchy; Nielsen Norman
+   Group's scannability and information scent; web.dev responsive reflow;
+   WCAG 2.2 focus visibility, target size, and reduced-motion preferences.
+   The preexisting quote calculator and listing facts are unchanged. */
+.quote-estimator{
+  margin-top:clamp(48px,7vw,88px);
+  padding:clamp(28px,5vw,58px);
+  border-radius:29px;
+  border-color:#acc8b5;
+  background:radial-gradient(ellipse at 7% 8%,#fcf3de,transparent 38%),linear-gradient(135deg,#eaf1e4,#dce9d9);
+  box-shadow:0 25px 60px #12392b1c;
+}
+.quote-header{align-items:end;margin-bottom:31px}
+.quote-header h2{font-size:clamp(2.55rem,4.7vw,4.45rem);max-width:16ch;line-height:1.04;letter-spacing:-.056em}
+.quote-header p{font-size:.96rem;line-height:1.7;max-width:65ch}
+.quote-stamp{width:105px;height:105px;border-color:#71997b;font-size:.69rem}
+.quote-grid{grid-template-columns:minmax(0,1.16fr) minmax(300px,.84fr);gap:17px}
+.quote-input,.quote-receipt{padding:clamp(23px,3vw,34px);border-radius:22px}
+.quote-input{background:linear-gradient(145deg,#fffefa,#f4f6ed)}
+.quote-label{font-size:.7rem;letter-spacing:.16em}
+.quote-estimator[data-ready="true"] .quote-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.quote-estimator .quote-options button.quote-ticket{
+  display:flex;flex-direction:column;align-items:stretch;text-align:left;min-width:0;
+  min-height:198px;padding:19px 20px 17px;border-radius:15px;
+  border:2px solid #cfddcf;background:linear-gradient(160deg,#f0f5ec,#e3eee1);
+  box-shadow:0 8px 18px #143c2b0e;color:#194936;
+  transition:transform .2s,box-shadow .2s,background .2s,border-color .2s;
+}
+.quote-estimator .quote-options button.quote-ticket:nth-child(2){background:linear-gradient(155deg,#fff7e6,#efe6d2)}
+.quote-estimator .quote-options button.quote-ticket:nth-child(3){background:linear-gradient(155deg,#e7f0e6,#d2e4dc)}
+.quote-estimator .quote-options button.quote-ticket:nth-child(4){background:linear-gradient(155deg,#e2e9e3,#d0ded4)}
+.quote-estimator .quote-options button.quote-ticket:hover{transform:translateY(-4px);border-color:#7aa487;box-shadow:0 16px 27px #143c2b22}
+.quote-estimator .quote-options button.quote-ticket[aria-pressed="true"]{
+  background:radial-gradient(circle at 95% 5%,#3c76578c,transparent 55%),linear-gradient(145deg,#194d3c,#0d342c);
+  border-color:#d3b678;color:#fff7e3;box-shadow:0 13px 25px #173b2f35;
+}
+.quote-ticket-overline{display:block;font-size:.61rem;font-weight:900;letter-spacing:.14em;line-height:1.4;color:#527963}
+.quote-ticket-duration{display:block;margin:9px 0 2px;font:400 clamp(2.5rem,4.2vw,3.55rem)/1 Georgia,"Times New Roman",serif;letter-spacing:-.075em}
+.quote-ticket-duration span{font:750 .78rem/1 system-ui,sans-serif;letter-spacing:0}
+.quote-ticket-price{display:block;font:800 clamp(1.2rem,2.25vw,1.8rem)/1.15 system-ui,sans-serif;letter-spacing:-.045em;margin-top:8px}
+.quote-ticket-price small{font-size:.58em;letter-spacing:0;font-weight:650}
+.quote-ticket-foot{display:block;margin-top:auto;padding-top:12px;font-size:.68rem;line-height:1.4;font-weight:750;color:#55705d}
+.quote-estimator .quote-options button.quote-ticket[aria-pressed="true"] :is(.quote-ticket-overline,.quote-ticket-foot){color:#f0d59d}
+.quote-estimator .quote-options button.quote-ticket:focus-visible{outline:4px solid #b37422;outline-offset:4px}
+.quote-hint{font-size:.8rem;line-height:1.65;margin-top:20px}
+.quote-track{gap:7px;margin:23px 0 11px}
+.quote-track span{height:11px;border-radius:99px;background:#d6e6d9}
+.quote-track span.active{background:#3a7b56}
+.quote-receipt{
+  display:flex;flex-direction:column;justify-content:center;
+  background:radial-gradient(ellipse at 90% 0%,#396d54,transparent 56%),linear-gradient(150deg,#153e31,#0a2b27);
+  border-color:#184b38;box-shadow:0 22px 43px #10372922;
+}
+.quote-line{flex-wrap:wrap;gap:5px 14px}
+.quote-line strong{white-space:normal;text-align:right}
+.quote-total{font-size:clamp(3.5rem,6vw,5.7rem);margin:31px 0 14px}
+.quote-receipt .quote-caption{font-size:.84rem;line-height:1.68}
+.quote-receipt a{align-self:flex-start;min-height:50px;padding:11px 20px;border-radius:99px;margin-top:9px}
+@media(max-width:1020px){.quote-grid{grid-template-columns:1fr}.quote-receipt{min-height:320px}.quote-estimator .quote-options button.quote-ticket{min-height:188px}.quote-header h2{max-width:none}}
+@media(max-width:600px){.quote-estimator{margin-top:45px;padding:25px 16px;border-radius:19px}.quote-header{display:block}.quote-stamp{display:none}.quote-input,.quote-receipt{padding:22px 18px}.quote-grid{gap:12px}.quote-estimator .quote-options button.quote-ticket{padding:15px 12px;min-height:174px}.quote-ticket-duration{font-size:2.7rem}.quote-ticket-overline{font-size:.55rem}.quote-ticket-foot{font-size:.62rem}.quote-total{font-size:3.9rem}.quote-receipt{min-height:0}.quote-line strong{text-align:left}}
+@media(max-width:350px){.quote-estimator[data-ready="true"] .quote-options{grid-template-columns:1fr}.quote-estimator .quote-options button.quote-ticket{min-height:140px}.quote-ticket-duration{font-size:2.9rem}}
+@media(prefers-reduced-motion:reduce){.quote-estimator .quote-options button.quote-ticket{transition:none}.quote-estimator .quote-options button.quote-ticket:hover{transform:none}}
+
 </style></head>
 <body><a class="skip" href="#main">Skip to rental options</a>
 <header class="golf-site-header"><div class="header-inner golf-header-inner">
@@ -577,7 +643,10 @@ html{scroll-padding-top:114px}
 <div class="quote-grid">
 <div class="quote-input"><span class="quote-label" id="quote-length-label">Example event duration</span>
 <div class="quote-options" role="group" aria-labelledby="quote-length-label" aria-describedby="quote-instructions">
-<button type="button" data-hours="3" aria-pressed="true">3 hr</button><button type="button" data-hours="4" aria-pressed="false">4 hr</button><button type="button" data-hours="5" aria-pressed="false">5 hr</button><button type="button" data-hours="6" aria-pressed="false">6 hr</button>
+<button class="quote-ticket" type="button" data-hours="3" aria-pressed="true"><span class="quote-ticket-overline">01 / SHORTEST EVENT</span><strong class="quote-ticket-duration">3 <span>hours</span></strong><span class="quote-ticket-price">$375 <small>base</small></span><span class="quote-ticket-foot">Published minimum</span></button>
+<button class="quote-ticket" type="button" data-hours="4" aria-pressed="false"><span class="quote-ticket-overline">02 / ADD AN HOUR</span><strong class="quote-ticket-duration">4 <span>hours</span></strong><span class="quote-ticket-price">$490 <small>base</small></span><span class="quote-ticket-foot">Fourth hour: +$115</span></button>
+<button class="quote-ticket" type="button" data-hours="5" aria-pressed="false"><span class="quote-ticket-overline">03 / LONGER EVENT</span><strong class="quote-ticket-duration">5 <span>hours</span></strong><span class="quote-ticket-price">$590 <small>base</small></span><span class="quote-ticket-foot">Fifth hour: +$100</span></button>
+<button class="quote-ticket" type="button" data-hours="6" aria-pressed="false"><span class="quote-ticket-overline">04 / CUSTOM EVENT</span><strong class="quote-ticket-duration">6+ <span>hours</span></strong><span class="quote-ticket-price">Ask <small>for quote</small></span><span class="quote-ticket-foot">No published 6-hour total</span></button>
 </div><p class="quote-hint" id="quote-instructions">Published three-hour minimum; first three hours cost $125 each, hour four $115 and hour five $100. Six hours or more require a custom quote.</p>
 <div class="quote-track" aria-hidden="true"><span class="active"></span><span class="active"></span><span class="active"></span><span></span><span></span><span></span></div>
 <div class="quote-track-labels"><span>3-hour minimum</span><span>6+ hours: quote</span></div></div>
