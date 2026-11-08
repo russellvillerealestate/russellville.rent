@@ -565,6 +565,41 @@ main .grid>#russellville-kayaks .paddle-folio-head:before{
 @media(prefers-reduced-motion:reduce){.water-brief-invite{transition:none}}
 @media print{.water-brief{display:block;box-shadow:none;break-inside:avoid}.water-brief-scene{background:#fff!important;color:#183e34;min-height:0;padding:20px}.water-brief-scene h2,.water-brief-scene h2 em,.water-brief-scene p:not(.water-brief-kicker),.water-brief-kicker,.water-brief-art span{color:#183e34}.water-brief-art svg{stroke:#183e34}.water-brief-content{padding:20px}.water-brief-questions details{break-inside:avoid}}
 </style>
+<style id="lake-access-design">
+/* Lake Dardanelle access field guide / 2026-11-08
+   Live references: StayARV, Russellville.Rent, paddling and marina status pages.
+   NN/g hierarchy, web.dev responsive images/reflow, W3C WCAG 2.2 focus/targets.
+   Scenic imagery is NOT proof of open marina facilities, safe conditions or inventory. */
+.lake-access-editorial{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);isolation:isolate;overflow:hidden;margin:clamp(34px,5vw,66px) 0 40px;border:1px solid #4f7563;border-radius:26px;background:#0d3029;color:#fff;box-shadow:0 22px 52px #08291f2b}
+.lake-access-scene{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;min-width:0;min-height:505px;padding:clamp(26px,4vw,45px);background:#174739}
+.lake-access-scene:before{content:"";position:absolute;inset:0;z-index:-2;background:url("assets/lake-dardanelle-sunset.jpg") center 47% / cover no-repeat}
+.lake-access-scene:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#0a302baf,#0c332a66 39%,#071e1be8)}
+.lake-access-kicker{display:inline-block;color:#f5d49b;font-size:.68rem;font-weight:850;letter-spacing:.16em;line-height:1.5;text-transform:uppercase}
+.lake-access-scene h2{margin:14px 0 20px;max-width:13ch;font:400 clamp(3rem,5.8vw,5rem)/.98 Georgia,"Times New Roman",serif;letter-spacing:-.065em;text-wrap:balance;color:#fff9ec}
+.lake-access-scene h2 em{color:#f2d398;font-weight:400}
+.lake-access-scene p{margin:0;max-width:48ch;font-size:.93rem;line-height:1.72;color:#f1f4ed}
+.lake-access-caption{display:block;width:fit-content;max-width:100%;margin-top:24px;padding:8px 12px;border:1px solid #f7ead27c;border-radius:7px;background:#092b27e6;font-size:.63rem;line-height:1.6;color:#fff7e9}
+.lake-access-desk{display:flex;flex-direction:column;min-width:0;padding:clamp(25px,3.8vw,43px);background:radial-gradient(ellipse at 100% 0%,#376b564e,transparent 56%),#0c322b}
+.lake-access-desk-head{margin-bottom:19px;padding-bottom:22px;border-bottom:1px solid #abcdb65c}
+.lake-access-desk-head>span{color:#f2d398;font-size:.65rem;font-weight:850;letter-spacing:.16em}
+.lake-access-desk-head h3{margin:10px 0;font:400 clamp(2rem,3vw,2.75rem)/1.08 Georgia,serif;letter-spacing:-.052em;color:#fff8ea}
+.lake-access-desk-head p{margin:0;color:#e0eee2;font-size:.84rem;line-height:1.65}
+.lake-access-routes{display:grid;gap:11px}
+.lake-access-route{position:relative;display:grid;grid-template-columns:40px minmax(0,1fr) 20px;gap:14px;min-height:105px;padding:17px 16px;align-items:start;border:1px solid #bfdbbf65;border-radius:12px;background:#fffaf10e;color:#fffaf1!important;text-decoration:none;transition:background-color .2s,border-color .2s,transform .2s}
+.lake-access-route:hover{background:#ffffff23;border-color:#f5d494;transform:translateX(3px)}
+.lake-access-route:focus-visible{outline:3px solid #f6cf7e;outline-offset:4px}
+.lake-access-route-index{display:grid;place-items:center;width:38px;height:38px;border:1px solid #efcf93b0;border-radius:50%;color:#f6d99f;font:400 1.12rem Georgia,serif}
+.lake-access-route-copy{display:flex;flex-direction:column;gap:5px;min-width:0}
+.lake-access-route-copy strong{font:400 clamp(1.24rem,1.9vw,1.64rem)/1.16 Georgia,serif;letter-spacing:-.04em;color:#fff9e9}
+.lake-access-route-copy small{font-size:.77rem;line-height:1.52;color:#dfece1}
+.lake-access-route-arrow{font-size:1.18rem;color:#f4d49d;justify-self:end}
+.lake-access-caution{margin:19px 0 0;padding-top:17px;border-top:1px solid #b1cdb85c;font-size:.73rem;line-height:1.62;color:#e4eee1}
+@media(max-width:900px){.lake-access-editorial{grid-template-columns:1fr}.lake-access-scene{min-height:410px}.lake-access-scene h2{max-width:18ch}.lake-access-desk{padding:29px}.lake-access-routes{grid-template-columns:repeat(3,minmax(0,1fr))}.lake-access-route{grid-template-columns:1fr;min-height:207px;gap:10px}.lake-access-route-arrow{position:absolute;right:15px;top:15px}}
+@media(max-width:650px){.lake-access-editorial{margin:31px 0;border-radius:19px}.lake-access-scene{min-height:390px;padding:30px 23px 23px}.lake-access-scene h2{font-size:clamp(2.8rem,11vw,4rem)}.lake-access-scene p{font-size:.87rem}.lake-access-desk{padding:25px 21px}.lake-access-routes{grid-template-columns:1fr}.lake-access-route{grid-template-columns:36px minmax(0,1fr) 18px;min-height:0;gap:11px;padding:16px 14px}.lake-access-route-index{width:34px;height:34px}.lake-access-route-arrow{position:static}.lake-access-desk-head h3{font-size:2.15rem}}
+@media(max-width:360px){.lake-access-scene h2{font-size:2.6rem}.lake-access-desk{padding:22px 16px}.lake-access-route{grid-template-columns:31px minmax(0,1fr);gap:9px}.lake-access-route-index{width:30px;height:30px}.lake-access-route-arrow{display:none}}
+@media(prefers-reduced-motion:reduce){.lake-access-route{transition:none}.lake-access-route:hover{transform:none}}
+@media print{.lake-access-editorial{display:block;border:1px solid #888;box-shadow:none}.lake-access-scene{min-height:0}.lake-access-scene:before,.lake-access-scene:after{display:none}.lake-access-scene,.lake-access-desk{background:#fff;color:#123f30}.lake-access-scene h2,.lake-access-scene h2 em,.lake-access-scene p,.lake-access-desk-head h3,.lake-access-desk-head p,.lake-access-desk-head>span,.lake-access-caution,.lake-access-route,.lake-access-route-copy strong,.lake-access-route-copy small{color:#123f30!important}.lake-access-route{border:1px solid #777}}
+</style>
 </head><body>
 <a class="paddle-skip" href="#russellville-kayaks">Skip to paddling providers</a>
 <header class="paddle-site-header">
@@ -654,6 +689,24 @@ main .grid>#russellville-kayaks .paddle-folio-head:before{
   <a class="water-brief-invite" href="#water-brief">Before you paddle · Four questions worth asking <span aria-hidden="true">↗</span></a>
   <p class="kayak-studio-source">Source: <a href="https://wheneverwatersports.com/russellville" target="_blank" rel="noopener noreferrer">Whenever Watersports' official Russellville rental page</a>, checked October 31, 2026. Published prices may change.</p>
 </section>
+
+<section class="lake-access-editorial" id="lake-access-guide" aria-labelledby="lake-access-heading">
+<div class="lake-access-scene">
+  <span class="lake-access-kicker">Lake Dardanelle / The access field guide</span>
+  <div><h2 id="lake-access-heading">Enjoy the lake.<br><em>Know your launch.</em></h2><p>Finding a kayak and getting onto the water are two separate checks. The state-park kiosk listed here is separate from the closed Russellville and Dardanelle marinas. Confirm your actual launch location and conditions before you go.</p></div>
+  <small class="lake-access-caption">Lake Dardanelle scenery · Not a rental-inventory, marina-access or safety-status photograph</small>
+</div>
+<div class="lake-access-desk">
+ <div class="lake-access-desk-head"><span>THE RIVER VALLEY / WATERWISE</span><h3>Three steps before the shoreline.</h3><p>Start with the local rental listing, then verify access and the day's conditions with the relevant operators.</p></div>
+ <nav class="lake-access-routes" aria-label="Lake rental and access guidance">
+   <a class="lake-access-route" href="#russellville-kayaks"><span class="lake-access-route-index" aria-hidden="true">01</span><span class="lake-access-route-copy"><strong>Find the state-park kiosk.</strong><small>Read published kayak details and contact the independent rental operator.</small></span><span class="lake-access-route-arrow" aria-hidden="true">↗</span></a>
+   <a class="lake-access-route" href="boats.html#closure-details"><span class="lake-access-route-index" aria-hidden="true">02</span><span class="lake-access-route-copy"><strong>Check the marina closures.</strong><small>Both named marinas have federal closure notices. Do not enter closed docks.</small></span><span class="lake-access-route-arrow" aria-hidden="true">↗</span></a>
+   <a class="lake-access-route" href="#water-brief"><span class="lake-access-route-index" aria-hidden="true">03</span><span class="lake-access-route-copy"><strong>Confirm conditions first.</strong><small>Review water, weather, access and rental questions before traveling.</small></span><span class="lake-access-route-arrow" aria-hidden="true">↗</span></a>
+ </nav>
+ <p class="lake-access-caution">This directory does not monitor real-time water conditions, park closures or equipment availability. Listings are not permission to launch or enter restricted facilities.</p>
+</div>
+</section>
+
 <section class="paddle-explorer" id="paddle-explorer" aria-labelledby="paddle-explorer-title" hidden>
 <div class="paddle-explorer-head"><div><p class="paddle-explorer-kicker">The waterway explorer / 10 options</p><h2 id="paddle-explorer-title">Where will you paddle?</h2></div><p class="paddle-explorer-desc">Choose a setting to narrow the directory. Location, access and eligibility matter.</p></div>
 <div class="paddle-explorer-grid" role="group" aria-label="Filter paddling options by setting">
