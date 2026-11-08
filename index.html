@@ -2129,6 +2129,41 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 @media(max-width:360px){.owner-onboarding-steps li{grid-template-columns:1fr}.owner-onboarding-art,.owner-step-no,.owner-onboarding-steps strong,.owner-onboarding-steps li p{grid-column:1;grid-row:auto}.owner-onboarding-art{justify-content:flex-start}}
 @media print{.owner-onboarding-steps li{box-shadow:none;background:#fff!important;border-color:#a5b5a8}.owner-onboarding-steps li p,.owner-onboarding-steps strong,.owner-step-no{color:#173d30!important}}
 
+
+/* 2026-11-08 River Valley return folio. Inspired by StayARV's scenic forest,
+   brass and editorial typography. NN/g hierarchy and information scent,
+   Google web.dev responsive grids, W3C WCAG 2.2 focus and reflow. */
+.recent-trail[hidden]{display:none!important}
+.recent-trail{position:relative;isolation:isolate;overflow:hidden;margin:30px 0 38px;padding:clamp(24px,4vw,45px);border:1px solid #47765d;border-radius:27px;background:radial-gradient(ellipse at 95% 3%,#3f785b68,transparent 52%),linear-gradient(130deg,#0b2c28,#1d5142 72%,#113a32);color:#fffaf0;box-shadow:0 24px 55px #0b352b30}
+.recent-trail::before{content:"";position:absolute;z-index:-1;right:-150px;top:-260px;width:550px;height:550px;border:1px solid #f6d9973d;border-radius:50%;box-shadow:0 0 0 58px #eed5a010,0 0 0 128px #eed5a008;pointer-events:none}
+.recent-trail-top{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(210px,.8fr);align-items:end;gap:clamp(24px,4vw,55px);padding-bottom:26px;border-bottom:1px solid #ffffff42}
+.recent-trail-kicker{color:#f0d399;font-size:.68rem;font-weight:850;letter-spacing:.17em}
+.recent-trail h3{color:#fff7ea;margin:12px 0 0;max-width:14ch;font:400 clamp(2.45rem,4.6vw,4.3rem)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.055em;text-wrap:balance}
+.recent-trail h3 em{color:#f1d295;font-style:normal}
+.recent-trail-explain p{margin:0 0 17px;max-width:40ch;color:#e4f0e6;font-size:.92rem;line-height:1.7}
+.recent-trail-explain button{min-height:47px;padding:11px 18px;border:1px solid #e2eac7b0;background:transparent;color:#fff9e7;border-radius:9px;cursor:pointer;font:800 .79rem/1.4 system-ui,sans-serif}
+.recent-trail-explain button:hover{background:#ffffff1d}
+.recent-trail-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px;margin-top:25px}
+.recent-trail-item{--tile:#f3e5ca;--ink:#1c513c;position:relative;display:flex;flex-direction:column;justify-content:space-between;min-width:0;min-height:215px;grid-column:span 3;padding:clamp(20px,2.6vw,31px);border:1px solid #ffffffba;border-radius:18px;overflow:hidden;background:var(--tile);color:var(--ink);text-decoration:none;box-shadow:0 13px 29px #061f1950;transition:transform .22s,box-shadow .22s}
+.recent-trail-item:first-child{grid-column:span 6;--tile:#f4dfb7;--ink:#134735}
+.recent-trail-item:nth-child(2){--tile:#e0ede2;--ink:#205940}
+.recent-trail-item:nth-child(3){--tile:#e2eaf0;--ink:#305c68}
+.recent-trail-item::before{content:"";position:absolute;right:-75px;top:-115px;width:280px;height:280px;border:1px solid currentColor;border-radius:50%;opacity:.17;pointer-events:none}
+.recent-trail-item:hover{transform:translateY(-4px);box-shadow:0 21px 35px #071f186e;color:var(--ink)}
+.recent-trail-item:focus-visible,.recent-trail-explain button:focus-visible{outline:3px solid #ffe6a4;outline-offset:5px}
+.recent-trail-index{display:flex;align-items:center;justify-content:space-between;gap:12px;color:inherit;font-size:.64rem;font-weight:900;letter-spacing:.14em}
+.recent-trail-index svg{width:59px;height:59px;fill:none;stroke:currentColor;stroke-width:1.8;opacity:.75;flex:none}
+.recent-trail-item:first-child .recent-trail-index svg{width:94px;height:94px}
+.recent-trail-title{position:relative;display:block;margin:11px 0 18px;max-width:15ch;color:inherit;font:400 clamp(1.35rem,2.35vw,2.1rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.04em;overflow-wrap:break-word;text-wrap:balance}
+.recent-trail-item:first-child .recent-trail-title{font-size:clamp(2rem,3.5vw,3rem)}
+.recent-trail-return{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:14px;border-top:1px solid currentColor;font-size:.79rem;font-weight:850;color:inherit}
+.recent-trail-return span:last-child{width:33px;height:33px;display:grid;place-items:center;border-radius:50%;background:#ffffffa0;font-size:1.1rem}
+.recent-trail-foot{color:#d8e8df;margin:17px 0 0;font-size:.72rem;line-height:1.5}
+@media(max-width:850px){.recent-trail-top{grid-template-columns:1fr;gap:17px}.recent-trail-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.recent-trail-item,.recent-trail-item:first-child{grid-column:span 1}.recent-trail-item:first-child{grid-column:1/-1}}
+@media(max-width:550px){.recent-trail{padding:23px 18px;border-radius:20px}.recent-trail h3{font-size:clamp(2.35rem,10vw,3.15rem)}.recent-trail-grid{grid-template-columns:1fr;gap:11px}.recent-trail-item,.recent-trail-item:first-child{grid-column:1;min-height:165px;padding:21px}.recent-trail-item:first-child .recent-trail-index svg{width:59px;height:59px}.recent-trail-title,.recent-trail-item:first-child .recent-trail-title{font-size:1.75rem}}
+@media(prefers-reduced-motion:reduce){.recent-trail-item{transition:none}.recent-trail-item:hover{transform:none}}
+@media print{.recent-trail{display:none!important}}
+
 </style>
 </head>
 <body>
@@ -2301,6 +2336,15 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 </div>
 
 <section id="browse" aria-labelledby="browse-title"><div class="section-head"><div><p class="eyebrow">Find it around here</p><h2 id="browse-title">What are you looking for?</h2><p>Explore rental options, or ask us about a category we’re building.</p></div><span class="browse-label">35 categories. One local hub.</span></div>
+
+<section class="recent-trail" id="recent-trail" aria-labelledby="recent-trail-title" hidden>
+ <div class="recent-trail-top">
+  <div><span class="recent-trail-kicker">RIVER VALLEY / YOUR BROWSING TRAIL</span><h3 id="recent-trail-title">Pick up where <em>you left off.</em></h3></div>
+  <div class="recent-trail-explain"><p>Return to the rental categories you opened in this tab. Your searches, filters and saved categories remain below.</p><button id="recent-trail-clear" type="button">Clear recent categories</button></div>
+ </div>
+ <nav id="recent-trail-grid" class="recent-trail-grid" aria-label="Recently opened rental categories"></nav>
+ <p class="recent-trail-foot">Remembered only in this browser tab; no account or request is created.</p>
+</section>
 <form class="filters" id="filters" role="search" hidden><div><label for="search">Search rentals</label><input type="search" id="search" placeholder="Try houses, cars, kayaks, storage…" autocomplete="off"></div><div><label for="category">Category</label><select id="category"><option value="all">All categories</option><option value="homes">Long-term rentals</option><option value="storage">Storage</option><option value="tools">Tools &amp; equipment</option><option value="paddling">Kayaks, canoes &amp; paddleboards</option><option value="bicycles">Bicycles &amp; e-bikes</option><option value="atv-utv">Side-by-side &amp; off-road rentals</option><option value="rvs">RV site rentals</option><option value="rv-rentals">RV &amp; camper vehicle rentals</option><option value="cars">Car rentals</option><option value="boats">Boats</option><option value="party">Party &amp; event rentals</option><option value="commercial">Commercial spaces</option><option value="stays">Short-term stays</option><option value="camping">Camping &amp; RV sites</option><option value="trailers">Trailer rentals</option><option value="mobile-storage">Portable storage</option><option value="dumpsters">Dumpster rentals</option><option value="venues">Event venues</option><option value="moving">Moving trucks</option><option value="restrooms">Portable restroom rentals</option><option value="photo-booths">Photo booth rentals</option><option value="temporary-fencing">Temporary fencing rentals</option><option value="formalwear">Formalwear rentals</option><option value="sheds">Portable building rentals</option><option value="household-rentals">Furniture &amp; appliance rentals</option><option value="audio-visual">Audio &amp; visual rentals</option><option value="instruments">Band instrument rentals</option><option value="yard-signs">Yard sign rentals</option><option value="golf-carts">Golf cart rentals</option><option value="stages">Stage &amp; platform rentals</option><option value="golf-simulators">Golf simulator rentals</option><option value="medical-equipment-rentals">Medical equipment rentals</option><option value="medical-equipment-loans">Medical equipment loans</option><option value="baby-gear">Baby gear rentals</option><option value="other">Other local rentals</option></select></div><button type="reset" class="button reset">Clear filters</button></form>
 
 <div class="quick-paths" id="quick-paths" role="group" aria-label="Quick rental category filters" hidden>
@@ -3532,5 +3576,57 @@ filterRentals();
 })();
 </script>
 
+<script>
+(function(){
+ "use strict";
+ const panel=document.getElementById("recent-trail"),list=document.getElementById("recent-trail-grid"),clear=document.getElementById("recent-trail-clear");
+ if(!panel||!list||!clear)return;
+ const key="russellville-tab-recent-v1",categories=new Map();
+ document.querySelectorAll("#rental-results > .rental-card").forEach(function(card){
+  const a=card.querySelector(".card-link[href]"),h=card.querySelector(".card-body h3");
+  if(!a||!h)return;
+  let url;try{url=new URL(a.getAttribute("href"),location.href);}catch(e){return;}
+  if(url.origin===location.origin)categories.set(url.pathname,{href:a.getAttribute("href"),name:h.textContent.trim(),category:card.dataset.category});
+ });
+ if(!categories.size)return;
+ let recent=[];
+ try{let prev=JSON.parse(sessionStorage.getItem(key)||"[]");
+  if(Array.isArray(prev))recent=prev.filter(function(p){return typeof p==="string"&&categories.has(p)}).slice(0,3);
+ }catch(e){/* No storage is required. */}
+ function paint(){
+  list.replaceChildren();
+  recent.forEach(function(path,i){
+   const item=categories.get(path);if(!item)return;
+   const a=document.createElement("a");a.href=item.href;a.className="recent-trail-item";
+   const cap=document.createElement("span");cap.className="recent-trail-index";
+   const num=document.createElement("span");num.textContent=(i===0?"MOST RECENT":"RECENTLY OPENED")+" / 0"+(i+1);
+   const svg=document.createElementNS("http://www.w3.org/2000/svg","svg");
+   svg.setAttribute("viewBox","0 0 64 64");svg.setAttribute("aria-hidden","true");
+   const use=document.createElementNS("http://www.w3.org/2000/svg","use");
+   use.setAttribute("href","#rental-pictogram-"+(document.getElementById("rental-pictogram-"+item.category)?item.category:"other"));
+   svg.appendChild(use);cap.append(num,svg);
+   const name=document.createElement("strong");name.className="recent-trail-title";name.textContent=item.name;
+   const action=document.createElement("span");action.className="recent-trail-return";
+   const label=document.createElement("span");label.textContent="Return to category";
+   const arrow=document.createElement("span");arrow.textContent="↗";arrow.setAttribute("aria-hidden","true");
+   action.append(label,arrow);a.append(cap,name,action);list.appendChild(a);
+  });
+  panel.hidden=!list.children.length;
+ }
+ document.addEventListener("click",function(event){
+  if(!(event.target instanceof Element))return;
+  const a=event.target.closest("a[href]");if(!a)return;
+  let url;try{url=new URL(a.getAttribute("href"),location.href);}catch(e){return;}
+  if(url.origin!==location.origin||!categories.has(url.pathname))return;
+  recent=[url.pathname].concat(recent.filter(function(p){return p!==url.pathname;})).slice(0,3);
+  try{sessionStorage.setItem(key,JSON.stringify(recent));}catch(e){/* Navigation unaffected. */}
+ },true);
+ clear.addEventListener("click",function(){
+  recent=[];try{sessionStorage.removeItem(key);}catch(e){}
+  paint();
+ });
+ paint();
+})();
+</script>
 </body>
 </html>
