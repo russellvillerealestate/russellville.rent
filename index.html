@@ -1982,6 +1982,62 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
  .atlas-alphabet-buttons button{transition:none}
 }
 
+
+/* River Valley rental chapters / 2026-11-07. A thematic editorial rhythm for
+   the 35 untouched existing directory cards. Scene symbols already ship
+   inside this HTML; no third-party assets or assumed vendor photographs.
+   References: live stayarv.com and russellville.rent; NN/g visual hierarchy;
+   web.dev responsive design; W3C WCAG 2.2 contrast, focus, reflow. */
+.rentals-grid > .directory-chapter{
+  grid-column:1/-1;min-width:0;position:relative;overflow:hidden;isolation:isolate;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(190px,.35fr);
+  gap:clamp(10px,3vw,45px);align-items:stretch;min-height:205px;
+  margin:clamp(19px,4vw,46px) 0 1px;border:1px solid #a7bea8;border-radius:23px;
+  background:linear-gradient(105deg,#102f2b 0%,#194c3d 61%,#286b55 100%);
+  color:#fff9ec;box-shadow:0 19px 39px #11392d23;
+}
+.rentals-grid > .directory-chapter:first-child{margin-top:0}
+.chapter-intro{align-self:center;padding:clamp(26px,3.3vw,45px);min-width:0}
+.chapter-eyebrow{margin:0 0 10px!important;color:#f1d49c!important;font-size:.64rem!important;letter-spacing:.17em;font-weight:850;text-transform:uppercase}
+.directory-chapter h3{font:400 clamp(2.45rem,5vw,4.75rem)/.99 Georgia,"Times New Roman",serif;letter-spacing:-.065em;margin:0 0 14px;text-wrap:balance}
+.directory-chapter h3 em{color:#f1d49c;font-weight:400}
+.chapter-intro>p:not(.chapter-eyebrow){font-size:.91rem;line-height:1.65;color:#e0ece0;max-width:49ch;margin:0}
+.chapter-count{display:inline-flex;margin-top:19px;padding:7px 12px;border-radius:999px;border:1px solid #e2dfba88;color:#f4e5c6;font-size:.67rem;line-height:1.3;font-weight:850;letter-spacing:.07em;text-transform:uppercase}
+.chapter-illustration{min-width:0;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(ellipse at 68% 15%,#e8d5a644,transparent 55%),linear-gradient(160deg,#346c57,#163c35)}
+.chapter-illustration:before{content:"";position:absolute;inset:22px;border:1px solid #eedfbe4d;border-radius:50%;box-shadow:0 0 0 30px #dbe9c917,0 0 0 67px #dbe9c909}
+.chapter-illustration svg{position:relative;z-index:1;width:min(60%,145px);height:auto;color:#f7e2b7;filter:drop-shadow(0 12px 20px #071b1680)}
+.chapter-illustration .chapter-sequence{position:absolute;right:20px;bottom:19px;color:#f1ddb7;font-size:.62rem;font-weight:850;letter-spacing:.16em}
+.directory-chapter--projects{background:linear-gradient(112deg,#213b30,#5c4b2f 80%,#735437);border-color:#b9a17f}
+.directory-chapter--projects .chapter-illustration{background:radial-gradient(circle at 80% 30%,#dca66b44,transparent 55%),#544832}
+.directory-chapter--outdoors{background:linear-gradient(107deg,#102e32,#1e5761 72%,#3b6f69);border-color:#9bbfbd}
+.directory-chapter--outdoors .chapter-illustration{background:radial-gradient(circle at 40% 15%,#e7dcb041,transparent 60%),#2b6770}
+.directory-chapter--outdoors h3 em,.directory-chapter--outdoors .chapter-eyebrow{color:#d5ebdc!important}
+.directory-chapter--gather{background:linear-gradient(110deg,#3c342f,#6b4b3c 68%,#835b47);border-color:#c0a392}
+.directory-chapter--gather .chapter-illustration{background:radial-gradient(circle at 70% 28%,#ebca9966,transparent 60%),#664a40}
+.directory-chapter--gather h3 em,.directory-chapter--gather .chapter-eyebrow{color:#f7d6b2!important}
+.rentals-grid[data-view="list"]>.directory-chapter{min-height:148px;grid-template-columns:minmax(0,1fr) 170px;margin-top:23px}
+.rentals-grid[data-view="list"]>.directory-chapter .chapter-intro{padding:22px 28px}
+.rentals-grid[data-view="list"]>.directory-chapter h3{font-size:clamp(2rem,4vw,3rem);margin-bottom:6px}
+.rentals-grid[data-view="list"]>.directory-chapter .chapter-count{margin-top:8px}
+@media(max-width:740px){
+ .rentals-grid>.directory-chapter{grid-template-columns:minmax(0,1fr) 125px;min-height:170px}
+ .chapter-illustration svg{width:83px}
+ .directory-chapter h3{font-size:clamp(2.15rem,6vw,3.4rem)}
+ .chapter-intro{padding:26px}
+}
+@media(max-width:520px){
+ .rentals-grid>.directory-chapter,.rentals-grid[data-view="list"]>.directory-chapter{grid-template-columns:minmax(0,1fr) 72px;min-height:0;margin-top:18px;border-radius:16px}
+ .rentals-grid>.directory-chapter .chapter-intro,.rentals-grid[data-view="list"]>.directory-chapter .chapter-intro{padding:24px 0 24px 19px}
+ .directory-chapter h3,.rentals-grid[data-view="list"]>.directory-chapter h3{font-size:clamp(1.95rem,8.7vw,2.6rem)}
+ .chapter-intro>p:not(.chapter-eyebrow){font-size:.78rem}
+ .chapter-eyebrow{font-size:.54rem!important;letter-spacing:.09em}
+ .chapter-illustration svg{width:54px}
+ .chapter-illustration:before{inset:8px}
+ .chapter-illustration .chapter-sequence{right:8px;bottom:10px;font-size:.49rem}
+ .chapter-count{margin-top:13px;font-size:.58rem}
+}
+@media(prefers-reduced-motion:reduce){.directory-chapter *{scroll-behavior:auto}}
+
 </style>
 </head>
 <body>
@@ -2198,7 +2254,12 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   <div class="saved-panel-content"><ol class="saved-links" id="saved-links" aria-label="Your saved rental categories"></ol><p class="saved-empty" id="saved-empty">No categories saved yet. Use the Save buttons on any rental card.</p><div class="saved-panel-footer"><small id="saved-storage-note">Saved in this browser when storage is available.</small><button class="saved-clear" id="saved-clear" type="button" hidden>Clear all saved</button></div></div>
 </section>
 
-<div class="rentals-grid" id="rental-results" data-view="grid" data-layout="editorial"><article class="rental-card" data-category="homes">
+<div class="rentals-grid" id="rental-results" data-view="grid" data-layout="editorial">
+<div class="directory-chapter directory-chapter--everyday" data-chapter="everyday">
+ <div class="chapter-intro"><p class="chapter-eyebrow">The River Valley rental atlas / Everyday living</p><h3>Make room for <em>real life.</em></h3><p>Find a place to live, an everyday essential, or a little more space.</p><span class="chapter-count" aria-live="off">10 rental categories</span></div>
+ <div class="chapter-illustration" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-homes"></use></svg><span class="chapter-sequence">01 / 04</span></div>
+</div>
+<article class="rental-card" data-category="homes">
 <div class="image-wrap"><img src="https://images.unsplash.com/photo-1768941124460-6fa7161715ff?auto=format&amp;fit=crop&amp;fm=jpg&amp;ixlib=rb-4.1.0&amp;q=82&amp;w=1600" alt="Illustrative photograph of residential houses" loading="lazy" width="640" height="380"></div>
 <div class="card-body"><p class="eyebrow">Long-term rentals</p><h3>Long-term rentals</h3>
 <p>Houses, apartments, and places to settle in.</p>
@@ -2225,12 +2286,92 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <p>Compare storage units and vehicle parking around Russellville, Pottsville, Dardanelle, Atkins, Clarksville, Danville and Morrilton.</p>
 <p class="status">Added Space Storage · London RV Park &amp; Storage (units &amp; boat/trailer parking) · Highway 64 Self Storage (units &amp; parking) · Bradley Cove Storage · Valley Commercial Plaza (Weir Rd) · All Secure Mini Storage · StorMark (Dardanelle) · Smith Storage (Morrilton)</p>
 <a class="card-link" href="storage.html">Browse storage providers <span aria-hidden="true">↗</span></a></div></article>
+<article class="rental-card" data-category="commercial">
+<div class="category-art icon-tile" style="--tile-ink:#405d5b;--tile-bg:#e2ebe8" role="img" aria-label="Illustration representing office and coworking space"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-commercial"></use></svg><small>OFFICES &amp; COWORKING</small></div>
+<div class="card-body"><p class="eyebrow">Commercial spaces</p><h3>Offices &amp; coworking</h3>
+<p>Private offices, coworking desks, conference rooms and commercial spaces in Russellville.</p>
+<p class="status">Co-Create Innovation Hub · Hidden Gem Suites · 102 S Sidney Ave office/medical suite (broker-listed; vacancy unconfirmed) · 401 N Independence Ave retail suite (broker-listed; vacancy unconfirmed)</p>
+<a class="card-link" href="office-space.html">Browse offices &amp; coworking <span aria-hidden="true">↗</span></a></div></article>
+<article class="rental-card" data-category="stays">
+<div class="image-wrap stay-landscape" role="img" aria-label="Sunset over Lake Dardanelle. River Valley scenery, not a listed rental property."><span class="stay-landscape-kicker">RIVER VALLEY / YOUR NEXT GETAWAY</span><span class="stay-landscape-title" aria-hidden="true">Stay a little<br><em>longer.</em></span><span class="stay-landscape-caption">Lake Dardanelle scenery · Not a rental property photo</span></div>
+<div class="card-body"><p class="eyebrow">Short-term stays</p><h3>Airbnb &amp; Short-Term Stays</h3>
+<p>Explore verified local cabins, state-park lodging and other furnished getaways near Russellville.</p>
+<p class="status">WanderLost Ozarks · LABEN Properties (Hobbit House) · Ozark Piney Cabins</p>
+<a class="card-link" href="short-term-stays.html">Browse cabins &amp; short-term stays <span aria-hidden="true">↗</span></a></div></article>
+<article class="rental-card" data-category="mobile-storage">
+<div class="category-art icon-tile" style="--tile-ink:#67543f;--tile-bg:#ece3d3" role="img" aria-label="Portable storage truck"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-mobile-storage"></use></svg><small>PORTABLE STORAGE</small></div>
+<div class="card-body"><p class="eyebrow">Portable storage &amp; offices</p><h3>Portable storage &amp; offices</h3>
+<p>Mobile containers, moving cubes, storage trailers and temporary offices.</p>
+<p class="status">Scotty's · U-Haul U-Box · United Rentals (Alexander branch; Russellville service listed) · Mobile Container Solutions · Hugg &amp; Hall Mobile Storage (Russellville service advertised; no local yard verified) · U-Pack ReloCube (intercity moves; local terminal closed) · Provision Storage Solutions (Pottsville; delivery unconfirmed) · Rubbl (marketplace; fulfillment unconfirmed)</p>
+<a class="card-link" href="mobile-storage.html">Browse portable storage <span aria-hidden="true">↗</span></a></div></article>
+<article class="rental-card" data-category="sheds">
+<div class="brand-feature" aria-label="Featured: Affordable Buildings of Russellville"><img src="https://affordablebuildingsofrussellville.com/wp-content/uploads/2025/11/russellville-temp-logo-1200-1024x364.jpg" alt="Affordable Buildings of Russellville brand mark" width="112" height="112" loading="lazy" decoding="async"><span>Affordable Buildings of Russellville</span><small>FEATURED LOCAL PROVIDER</small></div>
+<div class="card-body"><p class="eyebrow">Portable building rentals</p><h3>Portable building rentals</h3>
+<p>Compare five rent-to-own dealers for storage sheds, portable buildings and installed metal carports or garages.</p>
+<p class="status">Derksen dealers · Affordable Buildings · Frontier Shed Co. · Arkansas Metal Structures (Clarksville)</p>
+<a class="card-link" href="sheds.html">Browse portable building rentals <span aria-hidden="true">↗</span></a></div></article>
+<article class="rental-card" data-category="household-rentals">
+<div class="category-art icon-tile" style="--tile-ink:#7d5945;--tile-bg:#f2e4d9" role="img" aria-label="Furniture sofa"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-household-rentals"></use></svg><small>HOME RENTALS</small></div>
+<div class="card-body"><p class="eyebrow">Furniture &amp; appliance rentals</p><h3>Furniture &amp; appliance rentals</h3>
+<p>Rent-to-own furniture, appliances, TVs and electronics.</p>
+<p class="status">Rent-A-Center · Aaron's · Bestway · Hank's (Acima lease-to-own)</p>
+<a class="card-link" href="household-rentals.html">Browse furniture &amp; appliance rentals <span aria-hidden="true">↗</span></a></div></article>
+<article class="rental-card" data-category="baby-gear">
+<div class="category-art icon-tile" style="--tile-ink:#3b675b;--tile-bg:#e2f0e6" role="img" aria-label="Neutral illustration of a baby crib, not a provider photograph"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path d="M12 13v39M52 13v39M12 25h40M12 44h40M21 25v19M30 25v19M39 25v19M48 25v19M8 52h48"/></svg><small>FAMILY TRAVEL</small></div>
+<div class="card-body"><p class="eyebrow">Baby gear rentals</p><h3>Cribs, strollers &amp; baby equipment</h3>
+<p>Travel-ready baby essentials from a provider advertising delivery to Russellville. Confirm dates, inventory and fees.</p>
+<p class="status">Babies Getaway (Russellville service advertised; specific delivery dates unconfirmed)</p>
+<a class="card-link" href="baby-gear.html">Browse baby gear rentals <span aria-hidden="true">↗</span></a></div></article>
+<article class="rental-card" data-category="medical-equipment-rentals">
+<div class="category-art icon-tile" style="--tile-ink:#46634d;--tile-bg:#e3ede3" role="img" aria-label="Neutral wheelchair and mobility equipment symbol"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-medical-equipment-rentals"></use></svg><small>MEDICAL RENTALS</small></div>
+<div class="card-body"><p class="eyebrow">Medical equipment rentals</p><h3>Wheelchairs, scooters &amp; medical equipment</h3><p>Compare regional rental providers. Delivery to Russellville is UNCONFIRMED.</p><p class="status">ATTENTION Medical Supply · Diamond Medical · TruMotion Medical</p><a class="card-link" href="medical-equipment-rentals.html">Browse medical equipment rentals <span aria-hidden="true">↗</span></a></div></article>
+<article class="rental-card" data-category="medical-equipment-loans">
+<div class="category-art icon-tile" style="--tile-ink:#426354;--tile-bg:#e0ece6" role="img" aria-label="Neutral accessibility symbol"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-medical-equipment-loans"></use></svg><small>EQUIPMENT LOANS</small></div>
+<div class="card-body"><p class="eyebrow">Medical equipment loans</p><h3>Medical equipment &amp; assistive technology loans</h3><p>Find free equipment lending and statewide assistive-technology loan programs.</p><p class="status">Goodwill Health Equipment Loan Program · Arkansas iCAN · Arkansas Spinal Cord Commission</p><a class="card-link" href="medical-equipment-loans.html">Browse medical equipment loans <span aria-hidden="true">↗</span></a></div></article>
+<div class="directory-chapter directory-chapter--projects" data-chapter="projects">
+ <div class="chapter-intro"><p class="chapter-eyebrow">The River Valley rental atlas / Practical projects</p><h3>Get it <em>done.</em></h3><p>Equipment, moving, cleanup, and the things that make a job possible.</p><span class="chapter-count" aria-live="off">6 rental categories</span></div>
+ <div class="chapter-illustration" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-tools"></use></svg><span class="chapter-sequence">02 / 04</span></div>
+</div>
 <article class="rental-card" data-category="tools">
 <div class="category-art icon-tile" style="--tile-ink:#4d5d3e;--tile-bg:#e5ebd8" role="img" aria-label="Construction equipment"><svg class="tools-landscape" viewBox="0 0 700 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><path fill="#477363" d="M0 0h700v440H0z"/><circle cx="548" cy="97" r="60" fill="#f0d69c" opacity=".88"/><circle cx="548" cy="97" r="85" stroke="#f5e3ba" opacity=".25" fill="none"/><path fill="#94aa8e" d="M0 250 113 170l70 50 92-80 108 93 89-64 121 72 107-51v250H0z"/><path fill="#5b866f" d="m0 291 100-67 89 56 107-81 120 75 98-45 91 36 95-49v224H0z"/><path fill="#214c3c" d="m0 335 111-60 118 44 94-45 112 54 129-47 136 41v118H0z"/><path fill="#10352e" d="M0 369q104-49 222-13t233-8q122-35 245 4v88H0z"/><path stroke="#f5d9a4" stroke-width="2" stroke-opacity=".4" fill="none" d="M0 363q111-28 225 0t231-10q128-38 244-5M0 394q111-28 225 0t231-10q128-38 244-5M351 298h224M374 298v-64h151v64M413 234v-27h70v27M448 207v-35m-15 16h30"/><path fill="#15372d" opacity=".8" d="m13 338 32-94 35 94Zm57 3 27-74 29 74Zm512-5 29-89 34 89Zm71 4 24-65 23 65Z"/></svg><span class="tools-art-caption" aria-hidden="true">THE RIVER VALLEY FIELD GUIDE<span>BUILD · LIFT · GET IT DONE</span></span><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-tools"></use></svg><small>EQUIPMENT · ILLUSTRATION</small></div>
 <div class="card-body"><p class="eyebrow">Tools &amp; equipment</p><h3>Tools &amp; equipment</h3>
 <p>Construction, lawn-care and cleaning-equipment rentals, plus automotive loaner tools at local auto-parts stores. Confirm inventory, pickup, deposits and rental terms.</p>
 <p class="status">Central Rental &amp; Supply · Riggs Cat · United Rentals · Engineered Rigging (verified Russellville heavy-lifting equipment depot; customer pickup unconfirmed) · River Valley Tractor (Russellville rental inventory UNCONFIRMED) · O&#39;Reilly Auto Parts, AutoZone &amp; Advance Auto Parts (local loaner tools) · Russellville Lowe&#39;s (carpet cleaners) · Ridout Lumber · Yell County Gin (Dardanelle) · Digital Alarm Systems (security trailers)</p>
 <a class="card-link" href="equipment.html">Browse tools &amp; equipment <span aria-hidden="true">↗</span></a></div></article>
+<article class="rental-card" data-category="trailers">
+<div class="brand-feature" aria-label="Featured: U-Haul"><img src="https://cdnep-uhaul-uhaulcom-global-p-001-f2eeewccehcfg9c9.z01.azurefd.net/uhaulcom/cdn/Misc/About/UhaulLogo.jpg" alt="U-Haul brand mark" width="112" height="112" loading="lazy" decoding="async"><span>U-Haul</span><small>FEATURED LOCAL PROVIDER</small></div>
+<div class="card-body"><p class="eyebrow">Trailer rentals</p><h3>Trailer rentals</h3>
+<p>Utility, enclosed, moving, car-hauler and dump trailers; regional refrigerated trailer inquiry and separate rent-to-own options.</p>
+<p class="status">White Trailer Rental · U-Haul · Central Rental &amp; Supply · WattstheLoad · Tractor Supply (store-advertised trailers; inventory unconfirmed) · Keep It Cool Mobile (regional; delivery unconfirmed)</p>
+<a class="card-link" href="trailers.html">Browse trailer rentals <span aria-hidden="true">↗</span></a></div></article>
+<article class="rental-card" data-category="dumpsters">
+<div class="brand-feature" aria-label="Featured: RTI Trash"><img src="https://irp.cdn-website.com/1511dc2e/DESKTOP/png/logo-500.png" alt="RTI Trash brand mark" width="112" height="112" loading="lazy" decoding="async"><span>RTI Trash</span><small>FEATURED LOCAL PROVIDER</small></div>
+<div class="card-body"><p class="eyebrow">Dumpster &amp; roll-off rentals</p><h3>Dumpster rentals</h3>
+<p>Large roll-off containers and smaller cleanup dumpsters for homes, contractors and businesses. Scrap-metal-only roll-off containers are a separate option, not mixed-trash dumpsters.</p>
+<p class="status">Danny&#39;s Roll Offs · JCS Disposal · RTI Trash · Brandon&#39;s Trash Service (small cleanup bins) · Cunningham Metals (scrap metal only) · Conway Dumpster Rental Group (Conway; Russellville delivery advertised)</p>
+<a class="card-link" href="dumpsters.html">Browse dumpster rentals <span aria-hidden="true">↗</span></a></div></article>
+<article class="rental-card" data-category="moving">
+<div class="brand-feature" aria-label="Featured: U-Haul"><img src="https://cdnep-uhaul-uhaulcom-global-p-001-f2eeewccehcfg9c9.z01.azurefd.net/uhaulcom/cdn/Misc/About/UhaulLogo.jpg" alt="U-Haul brand mark" width="112" height="112" loading="lazy" decoding="async"><span>U-Haul</span><small>FEATURED LOCAL PROVIDER</small></div>
+<div class="card-body"><p class="eyebrow">Moving trucks &amp; trailers</p><h3>Moving truck rentals</h3>
+<p>Compare seven moving-truck pickup locations (two in Russellville and five regional), plus Russellville-based White Trailer Rental for utility, enclosed and hauling trailers only. Confirm pickup addresses, equipment and terms directly.</p>
+<p class="status">Russellville: U-Haul &amp; Penske trucks; White Trailer Rental (trailers only) · Regional: Dardanelle, Clarksville, Morrilton, Atkins &amp; Sand Gap</p>
+<a class="card-link" href="moving.html">Browse moving rentals <span aria-hidden="true">↗</span></a></div></article>
+<article class="rental-card" data-category="temporary-fencing">
+<div class="brand-feature" aria-label="Featured: AF&amp;G LLC"><img src="https://arfence.com/wp-content/uploads/2023/01/AFG-Logo-2023-1-1024x732.png" alt="AF&amp;G LLC brand mark" width="112" height="112" loading="lazy" decoding="async"><span>AF&amp;G LLC</span><small>FEATURED LOCAL PROVIDER</small></div>
+<div class="card-body"><p class="eyebrow">Temporary fencing rentals</p><h3>Temporary fencing rentals</h3>
+<p>Construction site and event fencing, panels and barriers.</p>
+<p class="status">AF&amp;G LLC · Russellville service verified · Modern Fence (regional)</p>
+<a class="card-link" href="temporary-fencing.html">Browse temporary fencing rentals <span aria-hidden="true">↗</span></a></div></article>
+<article class="rental-card" data-category="restrooms">
+<div class="category-art icon-tile" style="--tile-ink:#306e69;--tile-bg:#d8ece6" role="img" aria-label="Public restrooms"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-restrooms"></use></svg><small>RESTROOM RENTALS</small></div>
+<div class="card-body"><p class="eyebrow">Portable restroom rentals</p><h3>Portable restroom rentals</h3>
+<p>Portable toilets and restroom trailers for jobsites and events.</p>
+<p class="status">Murdock · On Site · EZ Event Rentals · Bonds Septic (Russellville service advertised) · Posh Potties (Searcy; Russellville delivery UNCONFIRMED)</p>
+<a class="card-link" href="restrooms.html">Browse portable restroom rentals <span aria-hidden="true">↗</span></a></div></article>
+<div class="directory-chapter directory-chapter--outdoors" data-chapter="outdoors">
+ <div class="chapter-intro"><p class="chapter-eyebrow">The River Valley rental atlas / Roads & open air</p><h3>Go a little <em>farther.</em></h3><p>On the lake, along the road, or out under the Arkansas sky.</p><span class="chapter-count" aria-live="off">9 rental categories</span></div>
+ <div class="chapter-illustration" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-paddling"></use></svg><span class="chapter-sequence">03 / 04</span></div>
+</div>
 <article class="rental-card" data-category="paddling">
 <div class="brand-feature" aria-label="Featured: Whenever Watersports"><img src="https://images.squarespace-cdn.com/content/v1/62d04fc8f297b0623a0e3ea9/aadd7b7c-eaaf-4066-9267-f9b79cfb8e05/Brandeis+Blue+%281%29.png" alt="Whenever Watersports brand mark" width="112" height="112" loading="lazy" decoding="async"><span>Whenever Watersports</span><small>FEATURED LOCAL PROVIDER</small></div>
 <div class="card-body"><p class="eyebrow">Kayaks, canoes &amp; paddleboards</p><h3>Kayaks, canoes &amp; paddleboards</h3>
@@ -2267,24 +2408,6 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <p><strong>Closure alert:</strong> The U.S. Army Corps of Engineers closed Russellville Marina and all commercial operations October 23, 2026. No active local boat-rental provider is currently verified.</p>
 <p class="status">Russellville Marina CLOSED Oct 23, 2026 · Dardanelle Marina CLOSED Dec 31, 2025</p>
 <a class="card-link" href="boats.html">View marina closure &amp; boat-rental status <span aria-hidden="true">↗</span></a><a class="boat-alternative-link" href="paddling.html">Different outing? Explore kayak &amp; paddleboard rentals <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="party">
-<div class="brand-feature" aria-label="Featured: Happy Jumpers"><img src="https://www.happy-jumpers.com/theme/DIGITAL-LOGO@1x.png" alt="Happy Jumpers brand mark" width="112" height="112" loading="lazy" decoding="async"><span>Happy Jumpers</span><small>FEATURED LOCAL PROVIDER</small></div>
-<div class="card-body"><p class="eyebrow">Party &amp; event rentals</p><h3>Party &amp; event rentals</h3>
-<p>Tents, tables, inflatables, outdoor movie screens and more for gatherings.</p>
-<p class="status">NSaNe Inflatables · Happy Jumpers · Space Walk · FunFlicks</p>
-<a class="card-link" href="party.html">Browse party &amp; event rentals <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="commercial">
-<div class="category-art icon-tile" style="--tile-ink:#405d5b;--tile-bg:#e2ebe8" role="img" aria-label="Illustration representing office and coworking space"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-commercial"></use></svg><small>OFFICES &amp; COWORKING</small></div>
-<div class="card-body"><p class="eyebrow">Commercial spaces</p><h3>Offices &amp; coworking</h3>
-<p>Private offices, coworking desks, conference rooms and commercial spaces in Russellville.</p>
-<p class="status">Co-Create Innovation Hub · Hidden Gem Suites · 102 S Sidney Ave office/medical suite (broker-listed; vacancy unconfirmed) · 401 N Independence Ave retail suite (broker-listed; vacancy unconfirmed)</p>
-<a class="card-link" href="office-space.html">Browse offices &amp; coworking <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="stays">
-<div class="image-wrap stay-landscape" role="img" aria-label="Sunset over Lake Dardanelle. River Valley scenery, not a listed rental property."><span class="stay-landscape-kicker">RIVER VALLEY / YOUR NEXT GETAWAY</span><span class="stay-landscape-title" aria-hidden="true">Stay a little<br><em>longer.</em></span><span class="stay-landscape-caption">Lake Dardanelle scenery · Not a rental property photo</span></div>
-<div class="card-body"><p class="eyebrow">Short-term stays</p><h3>Airbnb &amp; Short-Term Stays</h3>
-<p>Explore verified local cabins, state-park lodging and other furnished getaways near Russellville.</p>
-<p class="status">WanderLost Ozarks · LABEN Properties (Hobbit House) · Ozark Piney Cabins</p>
-<a class="card-link" href="short-term-stays.html">Browse cabins &amp; short-term stays <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="camping">
 <div class="category-art icon-tile camping-night" style="--tile-ink:#f8e9c1;--tile-bg:#193f37" role="img" aria-label="Campground icon over Lake Dardanelle scenery, not a photo of a rental campsite"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-camping"></use></svg><small>CAMPGROUNDS · LAKE SCENERY, NOT A RENTAL SITE</small></div>
 <div class="card-body"><p class="eyebrow">Camping &amp; RV sites</p><h3>Campgrounds &amp; RV sites</h3>
@@ -2297,24 +2420,19 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <p>Compare Pottsville RV-rental inquiries, regional camper operators and online marketplaces; verify what is supplied and delivery details.</p>
 <p class="status">Quail Run RV Living (Pottsville; camper inventory unverified) · Huddleston RV Rentals · Jez Camper Rental · Camper Rentals of Arkansas (regional; Russellville delivery unconfirmed) · RVshare · RVezy</p>
 <a class="card-link" href="rv-rentals.html">Browse camper &amp; RV rentals <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="trailers">
-<div class="brand-feature" aria-label="Featured: U-Haul"><img src="https://cdnep-uhaul-uhaulcom-global-p-001-f2eeewccehcfg9c9.z01.azurefd.net/uhaulcom/cdn/Misc/About/UhaulLogo.jpg" alt="U-Haul brand mark" width="112" height="112" loading="lazy" decoding="async"><span>U-Haul</span><small>FEATURED LOCAL PROVIDER</small></div>
-<div class="card-body"><p class="eyebrow">Trailer rentals</p><h3>Trailer rentals</h3>
-<p>Utility, enclosed, moving, car-hauler and dump trailers; regional refrigerated trailer inquiry and separate rent-to-own options.</p>
-<p class="status">White Trailer Rental · U-Haul · Central Rental &amp; Supply · WattstheLoad · Tractor Supply (store-advertised trailers; inventory unconfirmed) · Keep It Cool Mobile (regional; delivery unconfirmed)</p>
-<a class="card-link" href="trailers.html">Browse trailer rentals <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="mobile-storage">
-<div class="category-art icon-tile" style="--tile-ink:#67543f;--tile-bg:#ece3d3" role="img" aria-label="Portable storage truck"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-mobile-storage"></use></svg><small>PORTABLE STORAGE</small></div>
-<div class="card-body"><p class="eyebrow">Portable storage &amp; offices</p><h3>Portable storage &amp; offices</h3>
-<p>Mobile containers, moving cubes, storage trailers and temporary offices.</p>
-<p class="status">Scotty's · U-Haul U-Box · United Rentals (Alexander branch; Russellville service listed) · Mobile Container Solutions · Hugg &amp; Hall Mobile Storage (Russellville service advertised; no local yard verified) · U-Pack ReloCube (intercity moves; local terminal closed) · Provision Storage Solutions (Pottsville; delivery unconfirmed) · Rubbl (marketplace; fulfillment unconfirmed)</p>
-<a class="card-link" href="mobile-storage.html">Browse portable storage <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="dumpsters">
-<div class="brand-feature" aria-label="Featured: RTI Trash"><img src="https://irp.cdn-website.com/1511dc2e/DESKTOP/png/logo-500.png" alt="RTI Trash brand mark" width="112" height="112" loading="lazy" decoding="async"><span>RTI Trash</span><small>FEATURED LOCAL PROVIDER</small></div>
-<div class="card-body"><p class="eyebrow">Dumpster &amp; roll-off rentals</p><h3>Dumpster rentals</h3>
-<p>Large roll-off containers and smaller cleanup dumpsters for homes, contractors and businesses. Scrap-metal-only roll-off containers are a separate option, not mixed-trash dumpsters.</p>
-<p class="status">Danny&#39;s Roll Offs · JCS Disposal · RTI Trash · Brandon&#39;s Trash Service (small cleanup bins) · Cunningham Metals (scrap metal only) · Conway Dumpster Rental Group (Conway; Russellville delivery advertised)</p>
-<a class="card-link" href="dumpsters.html">Browse dumpster rentals <span aria-hidden="true">↗</span></a></div></article>
+<article class="rental-card" data-category="golf-carts">
+<div class="category-art icon-tile" style="--tile-ink:#44634d;--tile-bg:#e0ecdf" role="img" aria-label="Golf cart illustration"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-golf-carts"></use></svg><small>GOLF CARTS</small></div>
+<div class="card-body"><p class="eyebrow">Golf cart rentals</p><h3>Golf carts for events</h3><p>Compare six Arkansas golf cart rental providers for events; Russellville delivery remains UNCONFIRMED.</p><p class="status">River Valley Golf Carts · Arkansas Golf &amp; Powersports · Clear Creek Golf Car · Kaptain Chris &amp; Pup's · Lone Star Golf Cars · Mid-State Golf Cars</p><a class="card-link" href="golf-carts.html">Browse golf cart rentals <span aria-hidden="true">↗</span></a></div></article>
+<div class="directory-chapter directory-chapter--gather" data-chapter="gather">
+ <div class="chapter-intro"><p class="chapter-eyebrow">The River Valley rental atlas / Gather & create</p><h3>Make a <em>moment.</em></h3><p>For celebrations, performances, special occasions, and everything around them.</p><span class="chapter-count" aria-live="off">10 rental categories</span></div>
+ <div class="chapter-illustration" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-party"></use></svg><span class="chapter-sequence">04 / 04</span></div>
+</div>
+<article class="rental-card" data-category="party">
+<div class="brand-feature" aria-label="Featured: Happy Jumpers"><img src="https://www.happy-jumpers.com/theme/DIGITAL-LOGO@1x.png" alt="Happy Jumpers brand mark" width="112" height="112" loading="lazy" decoding="async"><span>Happy Jumpers</span><small>FEATURED LOCAL PROVIDER</small></div>
+<div class="card-body"><p class="eyebrow">Party &amp; event rentals</p><h3>Party &amp; event rentals</h3>
+<p>Tents, tables, inflatables, outdoor movie screens and more for gatherings.</p>
+<p class="status">NSaNe Inflatables · Happy Jumpers · Space Walk · FunFlicks</p>
+<a class="card-link" href="party.html">Browse party &amp; event rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="venues">
 <div class="category-art icon-tile riverfield-tile" style="--tile-ink:#684a69;--tile-bg:#f0dff0" role="img" aria-label="Original illustrated event venue among River Valley trees, not a provider photograph"><svg class="riverfield-scene" viewBox="0 0 700 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="700" height="380" fill="#97a9a6"/><circle cx="554" cy="83" r="69" fill="#f7d5a0"/><path d="M0 217 111 158 243 205 365 147 494 199 604 150 700 177V380H0Z" fill="#628a79"/><path d="M0 246Q130 214 251 248T493 230T700 250V380H0Z" fill="#316456"/><path d="M0 322Q193 286 369 321T700 310V380H0Z" fill="#174b40"/><path d="M281 197 405 111 528 197v130H281Z" fill="#efe2c2"/><path d="m269 200 136-93 135 93" fill="none" stroke="#2f534d" stroke-width="20" stroke-linejoin="round"/><rect x="298" y="212" width="212" height="100" fill="#e7d3ab"/><path d="M319 212v101m46-101v101m46-101v101m46-101v101m46-101v101" stroke="#2b5b51" stroke-width="9"/><path d="M302 314h208M276 326h260" stroke="#f9e8c3" stroke-width="13"/><path d="M389 267h33v54h-33z" fill="#527d70"/><circle cx="574" cy="230" r="54" fill="#1d574a"/><circle cx="597" cy="206" r="49" fill="#286958"/><path d="M586 266v64M558 318h58" stroke="#1c4c40" stroke-width="16"/><path d="M193 324v-83m-32 42h64m-52-24h42" stroke="#234e42" stroke-width="15" stroke-linecap="round"/><circle cx="193" cy="225" r="39" fill="#2d6651"/><circle cx="171" cy="247" r="30" fill="#4f8564"/><path d="M0 348Q186 324 351 351T700 347" stroke="#f7d49a" stroke-opacity=".48" stroke-width="4" fill="none"/></svg><span class="riverfield-eyebrow" aria-hidden="true">RIVER VALLEY / GATHER HERE</span>
 <svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-venues"></use></svg><small>EVENT VENUES</small></div>
@@ -2322,48 +2440,18 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <p>Community halls, wedding venues, performance spaces and meeting rooms.</p>
 <p class="status">Historic Train Depot · The Center for the Arts · The Chapel at Dragonfly Farms (Dover)</p>
 <a class="card-link" href="venues.html">Browse event venues <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="moving">
-<div class="brand-feature" aria-label="Featured: U-Haul"><img src="https://cdnep-uhaul-uhaulcom-global-p-001-f2eeewccehcfg9c9.z01.azurefd.net/uhaulcom/cdn/Misc/About/UhaulLogo.jpg" alt="U-Haul brand mark" width="112" height="112" loading="lazy" decoding="async"><span>U-Haul</span><small>FEATURED LOCAL PROVIDER</small></div>
-<div class="card-body"><p class="eyebrow">Moving trucks &amp; trailers</p><h3>Moving truck rentals</h3>
-<p>Compare seven moving-truck pickup locations (two in Russellville and five regional), plus Russellville-based White Trailer Rental for utility, enclosed and hauling trailers only. Confirm pickup addresses, equipment and terms directly.</p>
-<p class="status">Russellville: U-Haul &amp; Penske trucks; White Trailer Rental (trailers only) · Regional: Dardanelle, Clarksville, Morrilton, Atkins &amp; Sand Gap</p>
-<a class="card-link" href="moving.html">Browse moving rentals <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="restrooms">
-<div class="category-art icon-tile" style="--tile-ink:#306e69;--tile-bg:#d8ece6" role="img" aria-label="Public restrooms"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-restrooms"></use></svg><small>RESTROOM RENTALS</small></div>
-<div class="card-body"><p class="eyebrow">Portable restroom rentals</p><h3>Portable restroom rentals</h3>
-<p>Portable toilets and restroom trailers for jobsites and events.</p>
-<p class="status">Murdock · On Site · EZ Event Rentals · Bonds Septic (Russellville service advertised) · Posh Potties (Searcy; Russellville delivery UNCONFIRMED)</p>
-<a class="card-link" href="restrooms.html">Browse portable restroom rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="photo-booths">
 <div class="brand-feature" aria-label="Featured: RBS Photo Booths"><img src="https://content.app-sources.com/s/30654076645747285/thumbnails/640x480/Images/logo-9753808.jpg?format=webp" alt="RBS Photo Booths official logo" width="170" height="104" loading="lazy" decoding="async"><span>RBS Photo Booths</span><small>FEATURED RENTAL PROVIDER</small></div>
 <div class="card-body"><p class="eyebrow">Photo booth rentals</p><h3>Photo booth rentals</h3>
 <p>Photo and video booths for weddings, parties and special events.</p>
 <p class="status">RBS Photo Booths · Bright Booths · 636 Entertainment</p>
 <a class="card-link" href="photo-booths.html">Browse photo booth rentals <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="temporary-fencing">
-<div class="brand-feature" aria-label="Featured: AF&amp;G LLC"><img src="https://arfence.com/wp-content/uploads/2023/01/AFG-Logo-2023-1-1024x732.png" alt="AF&amp;G LLC brand mark" width="112" height="112" loading="lazy" decoding="async"><span>AF&amp;G LLC</span><small>FEATURED LOCAL PROVIDER</small></div>
-<div class="card-body"><p class="eyebrow">Temporary fencing rentals</p><h3>Temporary fencing rentals</h3>
-<p>Construction site and event fencing, panels and barriers.</p>
-<p class="status">AF&amp;G LLC · Russellville service verified · Modern Fence (regional)</p>
-<a class="card-link" href="temporary-fencing.html">Browse temporary fencing rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="formalwear">
 <div class="category-art icon-tile" style="--tile-ink:#493f65;--tile-bg:#e5dff0" role="img" aria-label="Formal suit"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-formalwear"></use></svg><small>FORMALWEAR</small></div>
 <div class="card-body"><p class="eyebrow">Formalwear rentals</p><h3>Formalwear rentals</h3>
 <p>Suits and tuxedos for proms, weddings and special occasions.</p>
 <p class="status">Formal Affairs (Russellville) · Danielle&#39;s (Clarksville) · Merle Norman &amp; More (Morrilton) · Bell &amp; Sward (Conway) · Rainwater&#39;s (Fort Smith)</p>
 <a class="card-link" href="formalwear.html">Browse formalwear rentals <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="sheds">
-<div class="brand-feature" aria-label="Featured: Affordable Buildings of Russellville"><img src="https://affordablebuildingsofrussellville.com/wp-content/uploads/2025/11/russellville-temp-logo-1200-1024x364.jpg" alt="Affordable Buildings of Russellville brand mark" width="112" height="112" loading="lazy" decoding="async"><span>Affordable Buildings of Russellville</span><small>FEATURED LOCAL PROVIDER</small></div>
-<div class="card-body"><p class="eyebrow">Portable building rentals</p><h3>Portable building rentals</h3>
-<p>Compare five rent-to-own dealers for storage sheds, portable buildings and installed metal carports or garages.</p>
-<p class="status">Derksen dealers · Affordable Buildings · Frontier Shed Co. · Arkansas Metal Structures (Clarksville)</p>
-<a class="card-link" href="sheds.html">Browse portable building rentals <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="household-rentals">
-<div class="category-art icon-tile" style="--tile-ink:#7d5945;--tile-bg:#f2e4d9" role="img" aria-label="Furniture sofa"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-household-rentals"></use></svg><small>HOME RENTALS</small></div>
-<div class="card-body"><p class="eyebrow">Furniture &amp; appliance rentals</p><h3>Furniture &amp; appliance rentals</h3>
-<p>Rent-to-own furniture, appliances, TVs and electronics.</p>
-<p class="status">Rent-A-Center · Aaron's · Bestway · Hank's (Acima lease-to-own)</p>
-<a class="card-link" href="household-rentals.html">Browse furniture &amp; appliance rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="audio-visual"><div class="category-art icon-tile riverfield-tile" style="--tile-ink:#45517e;--tile-bg:#e1e5f5" role="img" aria-label="Original illustrated evening sound and lighting setup, not any rental provider's inventory"><svg class="riverfield-scene" viewBox="0 0 700 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="700" height="380" fill="#344e70"/><circle cx="556" cy="73" r="61" fill="#ebc7a2"/><path d="M0 195Q103 142 233 189T478 175T700 195V380H0Z" fill="#2b5870"/><path d="M0 249Q143 205 269 244T516 221T700 246V380H0Z" fill="#17485b"/><path d="M0 323Q203 278 380 314T700 291V380H0Z" fill="#103b43"/><path d="M210 292h388V174H210Z" fill="#163f4a"/><path d="M202 176h405M211 179l47-47h296l47 47M258 132v46m296-46v46" stroke="#e5c994" stroke-width="10" fill="none" stroke-linejoin="round"/><path d="m280 178-92 127 180-65m106-62 150 134-194-73m-88-60-51 122 114-11" fill="#e5d69d" opacity=".20"/><path d="m280 178-65 106m260-106 93 125m-218-125-37 96" stroke="#f6dfa0" stroke-opacity=".62" stroke-width="4"/><rect x="232" y="200" width="46" height="95" rx="8" fill="#0b292f" stroke="#d6bd91" stroke-width="5"/><rect x="530" y="200" width="46" height="95" rx="8" fill="#0b292f" stroke="#d6bd91" stroke-width="5"/><circle cx="255" cy="224" r="10" stroke="#8ab8aa" stroke-width="3" fill="none"/><circle cx="255" cy="266" r="15" stroke="#8ab8aa" stroke-width="3" fill="none"/><circle cx="554" cy="266" r="15" stroke="#8ab8aa" stroke-width="3" fill="none"/><path d="M300 287h205" stroke="#e3c990" stroke-width="7" stroke-linecap="round"/><rect x="340" y="235" width="120" height="51" rx="6" fill="#bdbeac" opacity=".88"/><path d="M358 256h84m-74 12h64" stroke="#1a4b53" stroke-width="4"/><path d="M0 347Q103 318 217 344T435 338T700 350V380H0Z" fill="#092e36"/></svg><span class="riverfield-eyebrow" aria-hidden="true">RIVER VALLEY / MAKE A SCENE</span>
 <svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-audio-visual"></use></svg><small>AUDIO &amp; VISUAL</small></div><div class="card-body"><p class="eyebrow">Audio &amp; visual rentals</p><h3>Audio &amp; visual rentals</h3>
 <p>Speakers, projectors, event lighting and staffed production packages.</p>
@@ -2398,9 +2486,6 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <article class="rental-card" data-category="yard-signs">
 <div class="category-art icon-tile" style="--tile-ink:#8b5839;--tile-bg:#f7e5cb" role="img" aria-label="Yard sign"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-yard-signs"></use></svg><small>YARD GREETINGS</small></div>
 <div class="card-body"><p class="eyebrow">Yard sign rentals</p><h3>Yard greetings &amp; signs</h3><p>Personalized yard signs for birthdays, celebrations and special occasions.</p><p class="status">Sign Gypsies River Valley (local) · Card My Yard Conway (Morrilton served; Russellville delivery unconfirmed) · K.C. Treasures (Fort Smith; Russellville delivery UNCONFIRMED)</p><a class="card-link" href="yard-signs.html">Browse yard sign rentals <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="golf-carts">
-<div class="category-art icon-tile" style="--tile-ink:#44634d;--tile-bg:#e0ecdf" role="img" aria-label="Golf cart illustration"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-golf-carts"></use></svg><small>GOLF CARTS</small></div>
-<div class="card-body"><p class="eyebrow">Golf cart rentals</p><h3>Golf carts for events</h3><p>Compare six Arkansas golf cart rental providers for events; Russellville delivery remains UNCONFIRMED.</p><p class="status">River Valley Golf Carts · Arkansas Golf &amp; Powersports · Clear Creek Golf Car · Kaptain Chris &amp; Pup's · Lone Star Golf Cars · Mid-State Golf Cars</p><a class="card-link" href="golf-carts.html">Browse golf cart rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="stages">
 <div class="category-art icon-tile riverfield-tile" style="--tile-ink:#6d5443;--tile-bg:#efe6d9" role="img" aria-label="Original illustration of a generic outdoor performance stage at sunset, not a listed stage or provider"><svg class="riverfield-scene" viewBox="0 0 700 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="700" height="380" fill="#86aba2"/><circle cx="555" cy="68" r="71" fill="#f3d5a1"/><path d="M0 208 112 173 207 200 342 150 479 210 596 173 700 194V380H0Z" fill="#568c7a"/><path d="M0 245Q104 216 215 245T476 228T700 231V380H0Z" fill="#246356"/><path d="M0 320Q203 281 379 308T700 293V380H0Z" fill="#12483f"/><path d="M242 158h377l-47-57H289Z" fill="#173e3b"/><path d="M249 160h369" stroke="#f4dfa4" stroke-width="12" stroke-linecap="round"/><path d="M264 163v154m336-154v154" stroke="#f4dda1" stroke-width="9"/><path d="M282 189h298v101H282Z" fill="#2c675a"/><path d="M282 236q78-71 149 0t149 0v54H282Z" fill="#1a4a45" opacity=".75"/><path d="M253 297h370v33H253Z" fill="#dbbe86"/><path d="M256 330h372" stroke="#f6db9c" stroke-width="9"/><path d="M326 330v25h224v-25M346 355v16h184v-16" stroke="#d6bc82" stroke-width="10"/><path d="m285 159-28 45m355-45 30 45" stroke="#f9e5b6" stroke-width="3"/><circle cx="328" cy="178" r="8" fill="#f5dfb8"/><circle cx="433" cy="178" r="8" fill="#f5dfb8"/><circle cx="557" cy="178" r="8" fill="#f5dfb8"/><path d="M49 317v-78m-22 34h44m-35-20h30M116 321v-113m-26 51h52" stroke="#214e42" stroke-width="13" stroke-linecap="round"/><circle cx="49" cy="234" r="34" fill="#306b57"/><circle cx="116" cy="205" r="47" fill="#39765e"/><path d="M0 352Q189 334 332 347T700 334" stroke="#e8c58e" stroke-width="4" fill="none" opacity=".65"/></svg><span class="riverfield-eyebrow" aria-hidden="true">RIVER VALLEY / TAKE THE STAGE</span>
 <svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-stages"></use></svg><small>EVENT STAGING</small></div>
@@ -2408,24 +2493,13 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <article class="rental-card" data-category="golf-simulators">
 <div class="category-art icon-tile" style="--tile-ink:#42604e;--tile-bg:#e2eddf" role="img" aria-label="Neutral golf illustration"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-golf-simulators"></use></svg><small>GOLF SIMULATORS</small></div>
 <div class="card-body"><p class="eyebrow">Golf simulator rentals</p><h3>Golf simulator experiences</h3><p>Book a Russellville simulator bay or compare mobile golf simulators for events.</p><p class="status">Old Bank Golf · Tee Time Willy's · Puttees · Tee Time NWA (regional; Russellville delivery unconfirmed)</p><a class="card-link" href="golf-simulators.html">Browse golf simulator rentals <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="medical-equipment-rentals">
-<div class="category-art icon-tile" style="--tile-ink:#46634d;--tile-bg:#e3ede3" role="img" aria-label="Neutral wheelchair and mobility equipment symbol"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-medical-equipment-rentals"></use></svg><small>MEDICAL RENTALS</small></div>
-<div class="card-body"><p class="eyebrow">Medical equipment rentals</p><h3>Wheelchairs, scooters &amp; medical equipment</h3><p>Compare regional rental providers. Delivery to Russellville is UNCONFIRMED.</p><p class="status">ATTENTION Medical Supply · Diamond Medical · TruMotion Medical</p><a class="card-link" href="medical-equipment-rentals.html">Browse medical equipment rentals <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="medical-equipment-loans">
-<div class="category-art icon-tile" style="--tile-ink:#426354;--tile-bg:#e0ece6" role="img" aria-label="Neutral accessibility symbol"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-medical-equipment-loans"></use></svg><small>EQUIPMENT LOANS</small></div>
-<div class="card-body"><p class="eyebrow">Medical equipment loans</p><h3>Medical equipment &amp; assistive technology loans</h3><p>Find free equipment lending and statewide assistive-technology loan programs.</p><p class="status">Goodwill Health Equipment Loan Program · Arkansas iCAN · Arkansas Spinal Cord Commission</p><a class="card-link" href="medical-equipment-loans.html">Browse medical equipment loans <span aria-hidden="true">↗</span></a></div></article>
-<article class="rental-card" data-category="baby-gear">
-<div class="category-art icon-tile" style="--tile-ink:#3b675b;--tile-bg:#e2f0e6" role="img" aria-label="Neutral illustration of a baby crib, not a provider photograph"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path d="M12 13v39M52 13v39M12 25h40M12 44h40M21 25v19M30 25v19M39 25v19M48 25v19M8 52h48"/></svg><small>FAMILY TRAVEL</small></div>
-<div class="card-body"><p class="eyebrow">Baby gear rentals</p><h3>Cribs, strollers &amp; baby equipment</h3>
-<p>Travel-ready baby essentials from a provider advertising delivery to Russellville. Confirm dates, inventory and fees.</p>
-<p class="status">Babies Getaway (Russellville service advertised; specific delivery dates unconfirmed)</p>
-<a class="card-link" href="baby-gear.html">Browse baby gear rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="other">
 <div class="category-art icon-tile" style="--tile-ink:#426454;--tile-bg:#e2ece3" role="img" aria-label="Cleaning tools and other rentals"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-other"></use></svg><small>MORE RENTALS</small></div>
 <div class="card-body"><p class="eyebrow">Other local rentals</p><h3>Other local rentals</h3>
 <p>Something else you need? Start here.</p>
 <p class="status">Building this category · Listings welcome</p>
-<a class="card-link" href="#contact">Ask about other local rentals <span aria-hidden="true">↗</span></a></div></article></div>
+<a class="card-link" href="#contact">Ask about other local rentals <span aria-hidden="true">↗</span></a></div></article>
+</div>
 <div id="empty" class="empty empty-discovery" hidden>
   <div class="empty-discovery-mark" aria-hidden="true">✳</div>
   <p class="empty-discovery-eyebrow">LET'S FIND ANOTHER WAY</p>
@@ -2547,6 +2621,8 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 </dialog>
 
 <script>
+const chapterGroups = {"everyday":["homes","storage","commercial","stays","mobile-storage","sheds","household-rentals","baby-gear","medical-equipment-rentals","medical-equipment-loans"],"projects":["tools","trailers","dumpsters","moving","temporary-fencing","restrooms"],"outdoors":["paddling","bicycles","atv-utv","rvs","cars","boats","camping","rv-rentals","golf-carts"],"gather":["party","venues","photo-booths","formalwear","audio-visual","instruments","yard-signs","stages","golf-simulators","other"]};
+
 document.getElementById("year").textContent = new Date().getFullYear();
 const form = document.getElementById("filters");
 const search = document.getElementById("search");
@@ -2929,6 +3005,14 @@ function filterRentals(){
     const matches = (activeIntent === "all" || intentSets[activeIntent].has(key)) && (category.value === "all" || category.value === key) && terms.every(term=>text.includes(term));
     card.hidden = !matches;
     if(matches) visible++;
+  });
+  // Chapter headings disappear only when no categories in that group match.
+  // Original card elements remain direct children for the saved-list and view modes.
+  document.querySelectorAll("#rental-results > [data-chapter]").forEach(chapter=>{
+    const subset=chapterGroups[chapter.dataset.chapter];
+    const shown=subset.filter(key=>!categoryCards.get(key).hidden).length;
+    chapter.hidden=shown===0;
+    chapter.querySelector(".chapter-count").textContent=shown+" of "+subset.length+" categories";
   });
   rentalGrid.dataset.layout = visible === cards.length && activeIntent === "all" ? "editorial" : "uniform";
   count.textContent = visible + " of " + cards.length + " rental categories shown" + (activeIntent === "all" ? "" : " · "+intentLabels[activeIntent]);
