@@ -2100,6 +2100,35 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   #browse .chapter-wayfinder__link:hover{transform:none}
 }
 
+
+/* November 8, 2026: supplier-onboarding field guide. StayARV's generous
+   forest/cream rhythm adapted to a directory invitation; NN/g information scent,
+   web.dev content-led reflow, WCAG 2.2 focus/target-size guidance.
+   Preserves owner messaging, contact links, sponsorship disclosure, all listings,
+   search/filter/saved state, and the listing-update workflow. */
+.owner-onboarding{grid-column:1/-1;min-width:0;margin-top:clamp(15px,2vw,23px);padding-top:clamp(25px,4vw,40px);border-top:1px solid #d7e6cf5c}
+.owner-onboarding-head{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(220px,.75fr);gap:8px 26px;align-items:end;margin-bottom:22px}
+.owner-onboarding-kicker{grid-column:1/-1;color:#f5d695;font-size:.65rem;font-weight:850;letter-spacing:.18em;line-height:1.4}
+.owner-onboarding-head h3{margin:0;color:#fffdf2;font:400 clamp(1.85rem,3.3vw,3.25rem)/1.11 Georgia,"Times New Roman",serif;letter-spacing:-.047em;text-wrap:balance}
+.owner-onboarding-head p{margin:0!important;color:#dce8d9!important;font-size:.86rem!important;line-height:1.6!important}
+.owner-onboarding-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;list-style:none;margin:0;padding:0}
+.owner-onboarding-steps li{display:flex;flex-direction:column;min-width:0;min-height:274px;padding:22px 24px 20px;border:1px solid #d9e2d3;border-radius:17px;background:linear-gradient(155deg,#fffdf4,#e7f0e2);box-shadow:0 11px 21px #051e1733;color:#173d30}
+.owner-onboarding-steps li:nth-child(2){background:linear-gradient(155deg,#fcf2df,#e9ebdc)}
+.owner-onboarding-steps li:nth-child(3){background:linear-gradient(155deg,#f2f4e8,#ddebe4)}
+.owner-onboarding-art{display:flex;align-items:center;justify-content:flex-start;width:100%;height:88px;margin-bottom:11px;overflow:hidden;color:#28634b}
+.owner-onboarding-art svg{display:block;width:104px;max-width:100%;height:84px}
+.owner-onboarding-steps li:nth-child(2) .owner-onboarding-art{color:#825f31}
+.owner-onboarding-steps li:nth-child(3) .owner-onboarding-art{color:#376e64}
+.owner-step-no{display:block;color:#597962;font-size:.62rem;letter-spacing:.15em;font-weight:850;margin:2px 0 7px}
+.owner-onboarding-steps strong{display:block;font:400 clamp(1.35rem,2.2vw,1.83rem)/1.15 Georgia,serif;letter-spacing:-.037em;color:#153c31}
+.owner-onboarding-steps li p{font-size:.82rem!important;line-height:1.56!important;color:#506659!important;margin:10px 0 0}
+.owner-onboarding-foot{margin:18px 0 0!important;color:#d8e7da!important;font-size:.75rem!important;line-height:1.55!important}
+.owner-onboarding-foot span{color:#f4d28e;margin-right:7px}
+@media(max-width:900px){.owner-onboarding-head{grid-template-columns:1fr;gap:9px}.owner-onboarding-head p{max-width:63ch}.owner-onboarding-steps li{padding:20px 17px;min-height:260px}.owner-onboarding-steps strong{font-size:1.35rem}}
+@media(max-width:650px){.owner-onboarding{padding-top:26px;margin-top:0}.owner-onboarding-head h3{font-size:clamp(2rem,9vw,2.75rem)}.owner-onboarding-head p{font-size:.83rem!important}.owner-onboarding-steps{grid-template-columns:1fr;gap:10px}.owner-onboarding-steps li{display:grid;grid-template-columns:66px minmax(0,1fr);grid-template-rows:auto auto auto;gap:4px 15px;min-height:0;padding:18px 17px}.owner-onboarding-art{grid-column:1;grid-row:1/4;align-self:center;height:70px;margin:0}.owner-onboarding-art svg{width:70px;height:66px}.owner-step-no{grid-column:2;grid-row:1;margin:0}.owner-onboarding-steps strong{grid-column:2;grid-row:2;font-size:1.46rem}.owner-onboarding-steps li p{grid-column:2;grid-row:3;margin:3px 0 0!important;font-size:.78rem!important}.owner-onboarding-foot{margin-top:15px!important}}
+@media(max-width:360px){.owner-onboarding-steps li{grid-template-columns:1fr}.owner-onboarding-art,.owner-step-no,.owner-onboarding-steps strong,.owner-onboarding-steps li p{grid-column:1;grid-row:auto}.owner-onboarding-art{justify-content:flex-start}}
+@media print{.owner-onboarding-steps li{box-shadow:none;background:#fff!important;border-color:#a5b5a8}.owner-onboarding-steps li p,.owner-onboarding-steps strong,.owner-step-no{color:#173d30!important}}
+
 </style>
 </head>
 <body>
@@ -2628,7 +2657,16 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 </div>
 </section>
 <section class="hometown hometown--closing" aria-labelledby="hometown-title"><div class="hometown-copy"><p class="eyebrow">This is our kind of place</p><h2 id="hometown-title">A little lake time.<br>A whole lot of hometown.</h2><p>Lake days, Tech green and gold, and the familiar sights on the way home.</p><a class="hometown-return" href="#browse">Back to rental categories <span aria-hidden="true">↗</span></a></div><figure class="landmark downtown"><img src="assets/downtown-russellville-sunset.jpg" alt="Downtown Russellville beneath a vivid orange and pink sunset" width="1200" height="544" loading="lazy"><figcaption>Downtown Russellville<span>Home looks good from here</span></figcaption></figure><figure class="landmark tech"><img src="assets/arkansas-tech-wilson-hall.jpg" alt="The red brick buildings and white cupola of Wilson Hall at Arkansas Tech University" width="1280" height="848" loading="lazy"><figcaption>Arkansas Tech University<span>Wilson Hall · Russellville</span></figcaption></figure><figure class="landmark tower"><img src="water%20tower.jpg" alt="The I love Russellville water tower above the trees" width="900" height="486" loading="lazy"><figcaption>A familiar welcome home<span>The I ♥ Russellville water tower</span></figcaption></figure></section>
-<section id="list" class="owner" aria-labelledby="owner-title"><div><p class="eyebrow">For local businesses & rental owners</p><h2 id="owner-title">Your rental belongs<br>in the neighborhood.</h2><p>Manage homes? Rent out tools, boats, storage, or event equipment? Help neighbors find what you offer.</p><a class="button" href="sms:+14799707301">Text us to request a listing ↗</a></div><div class="owner-details"><strong>Let’s build the local directory.</strong><p>Send your business or rental name, category, service area, website, and the best public contact details. We’ll review the information with you before adding a listing.</p><p>Ask about a basic listing or future featured placement. Any paid placement will be clearly labeled “Sponsored.”</p></div></section>
+<section id="list" class="owner" aria-labelledby="owner-title"><div><p class="eyebrow">For local businesses & rental owners</p><h2 id="owner-title">Your rental belongs<br>in the neighborhood.</h2><p>Manage homes? Rent out tools, boats, storage, or event equipment? Help neighbors find what you offer.</p><a class="button" href="sms:+14799707301">Text us to request a listing ↗</a></div><div class="owner-details"><strong>Let’s build the local directory.</strong><p>Send your business or rental name, category, service area, website, and the best public contact details. We’ll review the information with you before adding a listing.</p><p>Ask about a basic listing or future featured placement. Any paid placement will be clearly labeled “Sponsored.”</p></div>
+<div class="owner-onboarding" aria-labelledby="owner-onboarding-title">
+  <div class="owner-onboarding-head"><span class="owner-onboarding-kicker">THE LOCAL LISTING FIELD GUIDE / THREE DETAILS</span><h3 id="owner-onboarding-title">One message. A better starting point.</h3><p>Use these details when you text us about your rental. We review submissions before adding a listing.</p></div>
+  <ol class="owner-onboarding-steps">
+    <li><div class="owner-onboarding-art" aria-hidden="true"><svg viewBox="0 0 98 77" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 63V29L49 10l39 19v34H10Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M22 62V36h54v26M30 36V25m38 11V25M39 62V44h20v18" stroke="currentColor" stroke-width="2.4"/><path d="M8 67h82M19 17l30-13 30 13" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></div><span class="owner-step-no">01 / YOUR RENTAL</span><strong>Tell us what you offer.</strong><p>Business or rental name, plus the category it belongs in.</p></li>
+    <li><div class="owner-onboarding-art" aria-hidden="true"><svg viewBox="0 0 98 77" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 20 38 12l22 8 22-8v47l-22 8-22-8-22 8V20Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M38 12v47m22-39v47" stroke="currentColor" stroke-width="2.2"/><path d="M63 22c0 12-12 22-12 22S39 34 39 22a12 12 0 1 1 24 0Z" fill="#d7a45c" stroke="currentColor" stroke-width="2.3"/><circle cx="51" cy="22" r="4" fill="#f8f5e8" stroke="currentColor" stroke-width="1.6"/></svg></div><span class="owner-step-no">02 / SERVICE AREA</span><strong>Show where you work.</strong><p>Towns or areas served, and your website if you have one.</p></li>
+    <li><div class="owner-onboarding-art" aria-hidden="true"><svg viewBox="0 0 98 77" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="14" y="12" width="70" height="48" rx="12" stroke="currentColor" stroke-width="2.7"/><path d="m28 60-2 10 18-10M27 30h43M27 41h28" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/><circle cx="74" cy="41" r="3" fill="currentColor"/></svg></div><span class="owner-step-no">03 / CONTACT</span><strong>Make it easy to reach you.</strong><p>Best public phone or other contact information for renters.</p></li>
+  </ol>
+  <p class="owner-onboarding-foot"><span aria-hidden="true">✦</span> All listing requests are reviewed. Availability, prices, and rental terms remain with each provider.</p>
+</div></section>
 <section id="contact" class="contact contact--studio" aria-labelledby="contact-title">
   <div class="contact-copy">
     <p class="eyebrow">A little local help</p>
