@@ -591,6 +591,70 @@ h1{font-size:clamp(3.4rem,6.4vw,6.2rem);line-height:1.035;max-width:12ch;letter-
   .program-card>.detail,.program-card--ican>.detail{width:auto}
 }
 
+
+/* 2026-11-08 Resource Folios: substantial visual re-composition without changing
+   any medical-program information, calls, or the inquiry builder. Original vector
+   illustrations are clearly not provider locations or inventory. Referenced live
+   StayARV/Russellville.Rent; NN/g visual hierarchy, web.dev responsive design,
+   and W3C WCAG 2.2 keyboard focus/reflow. */
+#programs .program-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:27px}
+#programs .program-card,#programs .program-card--ican,#programs .program-card--ascc{
+ display:grid;grid-template-columns:minmax(245px,.76fr) minmax(0,1.24fr);gap:0;
+ padding:0;overflow:hidden;min-height:410px;border:1px solid #c9d9cf;
+ border-radius:27px;background:#fffdf9;box-shadow:0 20px 50px #102d281b;
+}
+#programs .program-card--ican{grid-template-columns:minmax(0,1.24fr) minmax(245px,.76fr)}
+#programs .folio-copy{grid-column:2;grid-row:1;display:flex;flex-direction:column;min-width:0;padding:clamp(27px,4vw,47px)}
+#programs .program-card--ican .folio-copy{grid-column:1}
+#programs .program-card--ican .folio-visual{grid-column:2}
+#programs .program-card h3{font:400 clamp(1.7rem,2.7vw,2.6rem)/1.14 Georgia,"Times New Roman",serif;letter-spacing:-.052em;max-width:25ch;margin:0 0 22px;text-wrap:balance}
+#programs .program-card p:not(.detail):not(.program-actions){line-height:1.74}
+#programs .program-card .detail{margin-top:auto;padding-top:20px}
+#programs .program-card .program-actions{margin-top:5px}
+#programs .program-symbol{border-radius:50%;width:46px;height:46px}
+#programs .folio-visual{
+ grid-column:1;grid-row:1;position:relative;isolation:isolate;overflow:hidden;
+ display:flex;flex-direction:column;justify-content:space-between;gap:19px;
+ min-height:410px;padding:clamp(24px,3.6vw,40px);
+ background:radial-gradient(ellipse at 86% 10%,#527e6a,transparent 53%),linear-gradient(145deg,#103b31,#2b654e);color:#fff7e8;
+}
+#programs .folio-visual:before{
+ content:"";position:absolute;z-index:-1;left:-115px;bottom:-135px;width:390px;height:390px;
+ border:1px solid #f0dda74d;border-radius:50%;box-shadow:0 0 0 41px #f0dda712,0 0 0 85px #f0dda708;pointer-events:none;
+}
+#programs .folio-visual--ican{background:radial-gradient(ellipse at 80% 10%,#779189,transparent 57%),linear-gradient(140deg,#234e4e,#506b60)}
+#programs .folio-visual--ascc{background:radial-gradient(ellipse at 81% 10%,#5e8d86,transparent 55%),linear-gradient(145deg,#163e47,#316a75)}
+#programs .folio-visual-kicker{display:flex;justify-content:space-between;align-items:center;gap:13px;color:#f5dbab;font-size:.68rem;letter-spacing:.15em;font-weight:850}
+#programs .folio-visual-kicker span:last-child{font:400 1.45rem Georgia,serif}
+#programs .folio-visual svg{display:block;width:100%;max-width:460px;max-height:270px;flex:1;align-self:center;object-fit:contain;filter:drop-shadow(0 12px 19px #10261e5c)}
+#programs .folio-visual-caption{display:flex;flex-direction:column;gap:8px}
+#programs .folio-visual-caption strong{font:400 clamp(1.85rem,2.8vw,2.6rem)/1.1 Georgia,serif;letter-spacing:-.045em}
+#programs .folio-visual-caption small{font-size:.7rem;line-height:1.45;color:#e3ebe1}
+#programs .program-card:target{outline:3px solid #a9660d;outline-offset:5px}
+#programs .program-card a:focus-visible{outline:3px solid #a9660d;outline-offset:4px}
+@media(max-width:900px){
+ #programs .program-card,#programs .program-card--ican,#programs .program-card--ascc{grid-template-columns:1fr;min-height:0}
+ #programs .folio-visual,#programs .program-card--ican .folio-visual{grid-column:1;grid-row:1;min-height:253px;padding:23px 28px}
+ #programs .folio-copy,#programs .program-card--ican .folio-copy{grid-column:1;grid-row:2;padding:clamp(27px,5vw,38px)}
+ #programs .folio-visual svg{max-height:148px}
+ #programs .folio-visual-caption strong{font-size:2rem}
+}
+@media(max-width:560px){
+ #programs .program-grid{gap:21px}
+ #programs .program-card{border-radius:19px}
+ #programs .folio-visual,#programs .program-card--ican .folio-visual{min-height:218px;padding:20px 22px;gap:8px}
+ #programs .folio-visual svg{max-height:124px}
+ #programs .folio-visual-caption strong{font-size:1.7rem}
+ #programs .folio-copy,#programs .program-card--ican .folio-copy{padding:24px 22px}
+ #programs .program-card h3{font-size:1.83rem}
+ #programs .program-actions a{min-height:45px}
+}
+@media print{
+ #programs .program-card,#programs .program-card--ican,#programs .program-card--ascc{display:block;min-height:0;box-shadow:none;break-inside:avoid}
+ #programs .folio-visual{display:none!important}
+ #programs .folio-copy,#programs .program-card--ican .folio-copy{display:block;padding:15px}
+}
+
 </style>
 </head>
 <body>
@@ -678,19 +742,28 @@ h1{font-size:clamp(3.4rem,6.4vw,6.2rem);line-height:1.035;max-width:12ch;letter-
 <section id="programs" aria-labelledby="programs-title"><div class="section-head"><div><p class="eyebrow" style="color:#52705e">01 / Available programs</p><h2 id="programs-title">Start with the right resource.</h2></div><p>Call first to confirm eligibility, current inventory and where to collect equipment.</p></div>
 <div class="program-grid">
 <article class="program-card program-card--goodwill" id="goodwill" aria-labelledby="program-1">
+<div class="folio-visual folio-visual--goodwill" aria-hidden="true"><div class="folio-visual-kicker"><span>01 / THE LOCAL START</span><span>R↗</span></div><svg viewBox="0 0 430 300" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><circle cx="327" cy="70" r="60" fill="#efd498"/><path d="M0 217q104-57 217 0t213-26v109H0Z" fill="#356d58"/><path d="M0 255q120-42 244-3t186-15v63H0Z" fill="#225342"/><path d="M70 136 199 44l147 92" stroke="#f3dab0" stroke-width="12" stroke-linejoin="round"/><path d="M89 136h220v117H89z" fill="#faf0d6" stroke="#285a47" stroke-width="7"/><rect x="126" y="154" width="143" height="96" fill="#dcecdf"/><path d="M168 153v97m58-97v97" stroke="#6b9983" stroke-width="6"/><path d="M183 113h34m-17-17v34" stroke="#386a57" stroke-width="8" stroke-linecap="round"/><circle cx="351" cy="228" r="28" stroke="#f6dbab" stroke-width="8"/><circle cx="312" cy="261" r="13" stroke="#f6dbab" stroke-width="6"/><path d="m343 189-21 0-12 46h40l17 26h-48" stroke="#f6dbab" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/></svg><div class="folio-visual-caption"><strong>Start close to home.</strong><small>Illustrative community scene · Not a store or inventory photo.</small></div></div>
+<div class="folio-copy">
 <div class="program-top"><span class="program-index">01 / LOCAL PICKUP TO CHECK</span><span class="program-symbol" aria-hidden="true">＋</span></div>
 <h3 id="program-1">Goodwill Industries of Arkansas — Health Equipment Loan Program (HELP)</h3><p>Goodwill's statewide Health Equipment Loan Program provides gently used medical equipment free of charge to Arkansas residents, with no set return deadline. Items may include wheelchairs, walkers, crutches, canes, commodes, shower chairs, transfer boards, lift belts and shower rails, depending on donations. Equipment is first-come, first-served. Call or visit the Russellville retail store to ask about stock; Goodwill says an in-stock item may be taken home the same day after completing a HELP form at the store. If unavailable locally, Goodwill says it can check statewide inventory and arrange transfer to the nearest Goodwill location. <strong>Specific equipment availability in Russellville is UNCONFIRMED.</strong></p><p class="detail">Russellville Goodwill store: 2100 N Arkansas Ave, Russellville, AR 72802 · Local store officially listed; equipment stock unconfirmed</p><p class="program-actions"><a href="tel:+15013725100">501-372-5100</a> (Goodwill mission services) · <a href="https://www.goodwillar.org/health-equipment-helps/" target="_blank" rel="noopener noreferrer">Official HELP program ↗</a> · <a href="https://www.goodwillar.org/locations/arkansas/" target="_blank" rel="noopener noreferrer">Official store directory ↗</a></p>
+</div>
 </article>
 <article class="program-card program-card--ican" id="ican" aria-labelledby="program-2">
+<div class="folio-visual folio-visual--ican" aria-hidden="true"><div class="folio-visual-kicker"><span>02 / STATEWIDE ACCESS</span><span>R↗</span></div><svg viewBox="0 0 430 300" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><circle cx="332" cy="76" r="64" fill="#e8d2a7" opacity=".6"/><path d="M15 222Q166 45 415 130M18 258Q185 175 415 264" stroke="#ecd79f" stroke-width="3" stroke-dasharray="7 14" opacity=".8"/><rect x="108" y="37" width="218" height="229" rx="21" fill="#f7efda" stroke="#dfc793" stroke-width="7"/><rect x="127" y="65" width="180" height="160" rx="10" fill="#d7e6d8"/><rect x="141" y="82" width="70" height="55" rx="8" fill="#386f5c"/><path d="M156 108h40m-20-19v38" stroke="#f3d9a5" stroke-width="7" stroke-linecap="round"/><rect x="223" y="82" width="70" height="55" rx="8" fill="#95b9a4"/><path d="M239 102h38m-38 18h27" stroke="#f7f1e0" stroke-width="6" stroke-linecap="round"/><rect x="142" y="153" width="150" height="55" rx="8" fill="#f1dcad"/><path d="M158 171h118m-118 20h80" stroke="#769687" stroke-width="6" stroke-linecap="round"/><circle cx="215" cy="243" r="7" fill="#6d957f"/><circle cx="70" cy="125" r="12" fill="#efd59d"/><circle cx="359" cy="185" r="12" fill="#efd59d"/></svg><div class="folio-visual-caption"><strong>A wider network.</strong><small>Concept art · Not an offered or available device.</small></div></div>
+<div class="folio-copy">
 <div class="program-top"><span class="program-index">02 / STATEWIDE PROGRAM</span><span class="program-symbol" aria-hidden="true">↗</span></div>
 <h3 id="program-2">Increasing Capabilities Access Network (iCAN) — Arkansas statewide</h3><p>Arkansas's statewide assistive-technology program offers device loans, demonstrations, reuse and exchange services. The official program states its services are available to Arkansans regardless of geographic area, age, disability or income. <strong>Device loans are distinct from cash loans or retail rentals.</strong> Confirm whether the specific device is loanable, any requirements, and pickup or return arrangements; Russellville delivery is <strong>UNCONFIRMED</strong>.</p><p class="detail">5401 S University Ave, Little Rock, AR 72209 · Statewide service confirmed; Russellville pickup or delivery unconfirmed</p><p class="program-actions"><a href="tel:+18008282799">800-828-2799</a> (outside Little Rock) · <a href="tel:+15016668868">501-666-8868</a> · <a href="https://ar-ican.org/about-ican/" target="_blank" rel="noopener noreferrer">Official program and device-loan information ↗</a></p>
+</div>
 </article>
 <article class="program-card program-card--ascc" id="ascc" aria-labelledby="program-3">
+<div class="folio-visual folio-visual--ascc" aria-hidden="true"><div class="folio-visual-kicker"><span>03 / CLIENT REFERRAL</span><span>R↗</span></div><svg viewBox="0 0 430 300" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><circle cx="340" cy="63" r="65" fill="#cadbcd" opacity=".35"/><rect x="100" y="45" width="236" height="216" rx="14" fill="#f9f3df" stroke="#cad9ca" stroke-width="7"/><rect x="132" y="76" width="173" height="153" rx="6" fill="#e3ece2"/><path d="M162 103h118m-118 31h118m-118 31h92" stroke="#81a897" stroke-width="7" stroke-linecap="round"/><rect x="143" y="94" width="12" height="12" rx="3" fill="#2e6859"/><rect x="143" y="125" width="12" height="12" rx="3" fill="#2e6859"/><rect x="143" y="156" width="12" height="12" rx="3" fill="#d7b473"/><path d="m155 191 14 13 27-30" stroke="#2e6859" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="344" cy="230" r="37" fill="#e6c989" stroke="#f0dcad" stroke-width="5"/><path d="M329 213q1 25 26 27m-25-30 10-5m14 35 6-11" stroke="#42665a" stroke-width="7" stroke-linecap="round"/></svg><div class="folio-visual-caption"><strong>The right pathway.</strong><small>Editorial guide · Eligibility is determined by the agency.</small></div></div>
+<div class="folio-copy">
 <div class="program-top"><span class="program-index">03 / ELIGIBILITY-RESTRICTED STATE PROGRAM</span><span class="program-symbol" aria-hidden="true">＋</span></div>
 <h3 id="program-3">Arkansas Spinal Cord Commission — Regional Loan Closets</h3>
 <p>The Arkansas Spinal Cord Commission operates regional equipment loan closets for <strong>its eligible clients with spinal cord disabilities</strong>, not the general public. Case managers can arrange short-term loans for emergencies, while equipment is being repaired or purchased, or to try a suitable device. Potential items include manual or power wheelchairs, walkers, portable ramps, therapeutic cushions and adaptive bathroom equipment. The agency states that all of its clients may use the loan program regardless of income. <strong>Current inventory, a Russellville pickup location and delivery to Russellville are UNCONFIRMED.</strong> Contact the commission for eligibility and a case-manager referral before traveling.</p>
 <p class="detail">Arkansas statewide client program · Regional loan closet access and local availability must be confirmed with a case manager</p>
 <p class="program-actions"><a href="tel:+18004591517">800-459-1517</a> · <a href="tel:+15012961788">501-296-1788</a> · <a href="https://healthy.arkansas.gov/wp-content/uploads/ASCC_Equipment_Loan_Program.pdf" target="_blank" rel="noopener noreferrer">Official equipment loan policy ↗</a> · <a href="https://healthy.arkansas.gov/wp-content/uploads/ASCC_Referral_Information.pdf" target="_blank" rel="noopener noreferrer">Official eligibility and referral details ↗</a></p>
+</div>
 </article>
 </div></section>
 <section class="steps" id="before-you-go" aria-labelledby="steps-title"><div class="steps-copy"><p class="eyebrow">02 / Before you travel</p><h2 id="steps-title">Three things to ask first.</h2><p class="steps-intro">Call before making the trip. A quick conversation can establish what is available, who qualifies, and whether an item will be suitable before anyone leaves home.</p><span class="steps-place">River Valley scenic photograph · not a lending-program location</span></div><div class="steps-grid"><div><strong>01 · Is the item available?</strong><span>Ask about the exact equipment, size and condition. Local inventory may be limited.</span></div><div><strong>02 · How does the loan work?</strong><span>Confirm eligibility, loan duration and any pickup or return requirements.</span></div><div><strong>03 · Will it fit the user?</strong><span>Confirm safe fit and suitability with the program before using equipment.</span></div></div></section>
