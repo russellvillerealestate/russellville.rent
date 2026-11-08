@@ -652,6 +652,48 @@ main{padding-top:clamp(62px,8vw,104px)}
 @media(max-width:590px){.dispatch-index{margin:32px 0 44px;border-radius:19px}.dispatch-index-visual{min-height:0;padding:27px 22px 37px}.dispatch-index-visual h2{font-size:clamp(2.3rem,9vw,3.2rem)}.dispatch-index-art{width:175px;opacity:.19}.dispatch-index-body{padding:23px 17px}.dispatch-index-list{grid-template-columns:1fr}.dispatch-index-list a{min-height:55px}.dispatch-index-group+.dispatch-index-group{margin-top:21px;padding-top:20px}}
 @media(prefers-reduced-motion:reduce){.dispatch-index-list a{transition:none}.dispatch-index-list a:hover{transform:none}}
 
+
+/* Contextual mobile supplier navigation — 2026-11-08. Reference: live StayARV
+   versus Russellville.Rent; NN/g visual hierarchy, web.dev responsive layout,
+   WCAG 2.2 focus-not-obscured. Navigation does not establish live inventory. */
+.mobile-dispatch[hidden],.mobile-dispatch{display:none!important}
+@media(max-width:780px){
+ html{scroll-padding-bottom:156px}
+ body.mobile-dispatch-active #main{padding-bottom:120px}
+ .mobile-dispatch:not([hidden]){
+  display:block!important;position:fixed;z-index:45;isolation:isolate;overflow:hidden;
+  left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));
+  bottom:max(12px,env(safe-area-inset-bottom));max-width:560px;margin:auto;
+  padding:15px;border:1px solid #72917c;border-radius:20px;
+  background:linear-gradient(112deg,#0c3029,#184d3d 66%,#246347);
+  box-shadow:0 17px 50px #081e19c9;color:#fff9ed;
+ }
+ .mobile-dispatch:before{
+  content:"";position:absolute;z-index:-1;right:-90px;top:-128px;
+  width:240px;height:240px;border-radius:50%;border:1px solid #edd2a464;
+  box-shadow:0 0 0 28px #f2dba316,0 0 0 67px #f2dba307;pointer-events:none
+ }
+ .mobile-dispatch-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 2px 12px}
+ .mobile-dispatch-brand{color:#f6d79f;font-size:.64rem;font-weight:850;letter-spacing:.14em;line-height:1.4}
+ .mobile-dispatch-count{color:#dce9d8;font-size:.69rem;font-weight:750;white-space:nowrap}
+ .mobile-dispatch-links{display:grid;grid-template-columns:1.15fr 1fr;gap:9px}
+ .mobile-dispatch-links a{
+  display:flex;justify-content:space-between;align-items:center;gap:9px;
+  min-height:49px;padding:10px 13px;border-radius:10px;text-decoration:none;
+  font-size:clamp(.73rem,3vw,.86rem);line-height:1.35;font-weight:800
+ }
+ .mobile-dispatch-links a:first-child{background:#f6d49b;color:#193b31}
+ .mobile-dispatch-links a:last-child{background:#ffffff18;border:1px solid #afc9b4;color:#fff}
+ .mobile-dispatch-links a:hover{filter:brightness(1.08)}
+ .mobile-dispatch-links a:focus-visible{outline:3px solid white;outline-offset:3px}
+ .mobile-dispatch-arrow{font-size:1.1rem;flex:none}
+ #provider-explorer,#brief-studio{scroll-margin-top:24px;scroll-margin-bottom:156px}
+}
+@media(max-width:350px){
+ .mobile-dispatch:not([hidden]){padding:12px}
+ .mobile-dispatch-links{gap:6px}
+ .mobile-dispatch-links a{font-size:.72rem;padding:9px 10px}
+}
 </style>
 </head>
 <body>
@@ -949,6 +991,14 @@ main{padding-top:clamp(62px,8vw,104px)}
  </section>
  <p class="note">Independent local directory. Information is drawn from public listings and may change. Some business services and contact details are not independently confirmed. Please confirm pricing, availability and terms directly with each provider. <a href="sms:+14799707301">Submit corrections</a>.</p>
 </main>
+<!-- Mobile contextual shortcuts; remains hidden for users without JavaScript. -->
+<nav class="mobile-dispatch" id="mobile-dispatch" aria-label="Dumpster rental directory shortcuts" hidden>
+  <div class="mobile-dispatch-head"><span class="mobile-dispatch-brand">R↗ / RIVER VALLEY DISPATCH</span><span class="mobile-dispatch-count" id="mobile-dispatch-count">14 listed providers</span></div>
+  <div class="mobile-dispatch-links">
+    <a href="#provider-explorer">Find suppliers <span class="mobile-dispatch-arrow" aria-hidden="true">↗</span></a>
+    <a href="#brief-studio">Plan a quote <span class="mobile-dispatch-arrow" aria-hidden="true">↗</span></a>
+  </div>
+</nav>
 <footer class="container"><span>Russellville.Rent · Independent local rental directory</span><a href="/">Return to homepage ↗</a></footer>
 <script>
 function formatDumpsterBrief(fields){
@@ -1104,6 +1154,45 @@ function formatDumpsterBrief(fields){
   board.hidden=false;
 })();
 
+</script>
+
+<script>
+
+(function(){
+ "use strict";
+ const dock=document.getElementById("mobile-dispatch");
+ const explorer=document.getElementById("provider-explorer");
+ const finish=document.getElementById("container-access");
+ const status=document.getElementById("provider-search-status");
+ const label=document.getElementById("mobile-dispatch-count");
+ if(!dock||!explorer||!finish||!status||!label||!window.matchMedia)return;
+ const small=window.matchMedia("(max-width:780px)");
+ let queued=false;
+ function sync(){
+  const m=status.textContent.match(/Showing (\d+) of (\d+)/);
+  label.textContent=m?m[1]+" of "+m[2]+" listed":"No matching listings";
+ }
+ function paint(){
+  queued=false;
+  const visible=small.matches&&
+   explorer.getBoundingClientRect().bottom<innerHeight*.36&&
+   finish.getBoundingClientRect().top>innerHeight*.38;
+  dock.hidden=!visible;
+  document.body.classList.toggle("mobile-dispatch-active",visible);
+ }
+ function queue(){if(!queued){queued=true;requestAnimationFrame(paint);}}
+ sync();
+ new MutationObserver(sync).observe(status,{childList:true,subtree:true,characterData:true});
+ window.addEventListener("scroll",queue,{passive:true});
+ window.addEventListener("resize",queue,{passive:true});
+ if(small.addEventListener)small.addEventListener("change",queue);
+ document.addEventListener("focusin",function(e){
+  if(dock.hidden||dock.contains(e.target)||!e.target.getBoundingClientRect)return;
+  const a=e.target.getBoundingClientRect(),top=dock.getBoundingClientRect().top;
+  if(a.bottom>top&&a.top<top)scrollBy({top:a.bottom-top+18,behavior:"auto"});
+ });
+ queue();
+})();
 </script>
 </body>
 </html>
