@@ -1189,7 +1189,7 @@ function formatDumpsterBrief(fields){
  document.addEventListener("focusin",function(e){
   if(dock.hidden||dock.contains(e.target)||!e.target.getBoundingClientRect)return;
   const a=e.target.getBoundingClientRect(),top=dock.getBoundingClientRect().top;
-  if(a.bottom>top&&a.top<top)scrollBy({top:a.bottom-top+18,behavior:"auto"});
+  if(a.bottom>top&&a.top<innerHeight)scrollBy({top:a.bottom-top+18,behavior:"auto"});
  });
  queue();
 })();
