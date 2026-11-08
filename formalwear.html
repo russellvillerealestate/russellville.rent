@@ -384,6 +384,107 @@ html{scroll-padding-top:28px}
 @media(prefers-reduced-motion:reduce){.fit-itinerary-steps a{transition:none}}
 @media print{.fit-itinerary{position:static;box-shadow:none;background:#fff;color:#193d31;border:1px solid #b8cbbd}.fit-itinerary-steps a{color:#193d31;border-color:#c6d4c9}.fit-itinerary-heading strong,.fit-itinerary-heading em,.fit-itinerary-number{color:#193d31}}
 
+
+/* formal-lookbook-folios-20261108 | 2026-11-08
+   Reviewed live StayARV & Russellville.Rent, then recent formalwear history.
+   Original store data, hours, pricing, contact links, scripts & automation unchanged.
+   NNGroup visual hierarchy; web.dev responsive composition; W3C WCAG 2.2
+   logical source order, visible focus and readable mobile reflow.
+   All garment artwork is illustrative, never a dealer or inventory photograph. */
+.provider-region-grid{grid-template-columns:minmax(0,1fr);gap:clamp(18px,3vw,32px)}
+.provider-region-grid .provider-card{
+ display:grid;grid-template-columns:minmax(240px,.44fr) minmax(0,.56fr);
+ grid-template-rows:minmax(0,auto) auto;min-height:490px;align-items:stretch;
+ overflow:hidden;border:1px solid #cbd8cb;border-radius:25px;
+ background:#fffdf7;box-shadow:0 20px 45px #112b2319
+}
+.provider-region-grid .lookbook-art{
+ grid-column:1;grid-row:1/3;position:relative;isolation:isolate;
+ display:flex;flex-direction:column;justify-content:space-between;align-items:stretch;
+ min-width:0;min-height:490px;overflow:hidden;padding:clamp(24px,3vw,39px);
+ color:#f6d7a5;background:radial-gradient(circle at 75% 34%,#436e5c 0,transparent 54%),linear-gradient(140deg,#183d35,#0a2d29)
+}
+.provider-region-grid .lookbook-art:before{
+ content:"";position:absolute;z-index:-1;inset:15px;border:1px solid #fff8e44a;
+ border-radius:10px;pointer-events:none
+}
+.provider-region-grid .lookbook-art:after{
+ content:"";position:absolute;z-index:-1;inset:0;
+ background:repeating-linear-gradient(45deg,transparent 0 28px,#fff6e409 29px 30px);
+ pointer-events:none
+}
+.provider-region-grid .lookbook-art--2{color:#ffe0c4;background:radial-gradient(circle at 55% 37%,#86575b 0,transparent 56%),linear-gradient(140deg,#543843,#282d39)}
+.provider-region-grid .lookbook-art--3{color:#e8e4d0;background:radial-gradient(circle at 63% 27%,#4d6d72 0,transparent 53%),linear-gradient(140deg,#223f51,#102b3b)}
+.provider-region-grid .lookbook-art--4{color:#f4ddaa;background:radial-gradient(circle at 66% 30%,#8e7959 0,transparent 56%),linear-gradient(140deg,#64513d,#302d2b)}
+.provider-region-grid .lookbook-top{
+ display:flex;align-items:flex-start;justify-content:space-between;gap:15px;
+ color:inherit;font-size:.63rem;font-weight:850;letter-spacing:.14em;line-height:1.5
+}
+.provider-region-grid .lookbook-top span:last-child{white-space:nowrap;font:400 1.1rem/1 Georgia,serif;letter-spacing:0}
+.provider-region-grid .lookbook-svg{
+ display:block;width:min(100%,365px);max-height:330px;height:auto;align-self:center;
+ margin:auto 0;filter:drop-shadow(0 19px 14px #001e1c37)
+}
+.provider-region-grid .lookbook-bottom{
+ display:block;max-width:37ch;padding-top:13px;border-top:1px solid #ffffff5e;
+ color:#fff7e8;font-size:.61rem;line-height:1.6;font-weight:850;letter-spacing:.12em
+}
+.provider-region-grid .provider-main{
+ grid-column:2;grid-row:1;align-self:stretch;min-width:0;
+ padding:clamp(27px,3.9vw,53px) clamp(26px,4vw,55px) 25px;
+ background:#fffdf7
+}
+.provider-region-grid .provider-details{
+ grid-column:2;grid-row:2;min-width:0;align-self:stretch;
+ padding:25px clamp(26px,4vw,55px) clamp(27px,3.2vw,43px);
+ border-left:0;border-top:1px solid #d8e2d6;background:#eef2e9
+}
+.provider-region-grid .provider-name{
+ margin:17px 0 16px;max-width:22ch;
+ font:400 clamp(2.15rem,3.4vw,3.65rem)/1.055 Georgia,"Times New Roman",serif;
+ letter-spacing:-.055em;text-wrap:balance
+}
+.provider-region-grid .provider-description{max-width:65ch;font-size:.96rem;line-height:1.78}
+.provider-region-grid .provider-details address{margin-bottom:12px}
+.provider-region-grid .provider-details p:last-child{max-width:70ch}
+.provider-region-grid .provider-card:nth-child(even){grid-template-columns:minmax(0,.56fr) minmax(240px,.44fr)}
+.provider-region-grid .provider-card:nth-child(even) .lookbook-art{grid-column:2}
+.provider-region-grid .provider-card:nth-child(even) .provider-main,
+.provider-region-grid .provider-card:nth-child(even) .provider-details{grid-column:1}
+.provider-region-grid .provider-card:focus-within{border-color:#a77533}
+@media(max-width:830px){
+ .provider-region-grid .provider-card,.provider-region-grid .provider-card:nth-child(even){
+  display:flex;flex-direction:column;min-height:0
+ }
+ .provider-region-grid .lookbook-art{order:0;min-height:230px;padding:21px 27px}
+ .provider-region-grid .lookbook-svg{height:175px;width:min(66%,250px);margin:0 auto}
+ .provider-region-grid .provider-main{order:1;padding:30px 28px 23px}
+ .provider-region-grid .provider-details{
+  order:2;padding:25px 28px 29px;border-left:0;border-top:1px solid #d8e2d6
+ }
+ .provider-region-grid .provider-name{font-size:clamp(2rem,5vw,2.9rem)}
+}
+@media(max-width:530px){
+ .provider-region-grid{gap:17px}
+ .provider-region-grid .provider-card{border-radius:17px}
+ .provider-region-grid .lookbook-art{min-height:205px;padding:18px 22px}
+ .provider-region-grid .lookbook-art:before{inset:10px}
+ .provider-region-grid .lookbook-svg{height:147px;width:min(58%,210px)}
+ .provider-region-grid .lookbook-top{font-size:.56rem}
+ .provider-region-grid .lookbook-bottom{font-size:.55rem}
+ .provider-region-grid .provider-main{padding:27px 23px 20px}
+ .provider-region-grid .provider-details{padding:24px 23px 27px}
+ .provider-region-grid .provider-name{font-size:clamp(2rem,8.1vw,2.75rem)}
+ .provider-region-grid .provider-actions .button{width:100%}
+}
+@media print{
+ .provider-region-grid .provider-card,.provider-region-grid .provider-card:nth-child(even){
+  display:block;min-height:0;box-shadow:none;border-radius:0;break-inside:avoid
+ }
+ .provider-region-grid .lookbook-art{display:none}
+ .provider-region-grid .provider-main,.provider-region-grid .provider-details{padding:15px 20px}
+}
+
 </style>
 </head>
 <body>
@@ -504,11 +605,39 @@ html{scroll-padding-top:28px}
     <p>Two independently operated storefronts in Clarksville and Morrilton. Check fitting appointments, inventory and return arrangements before traveling.</p>
   </div>
   <div class="provider-region-grid">
-    <article class="provider-card" aria-labelledby="danielles-title">
+    <article class="provider-card" aria-labelledby="danielles-title"><div class="lookbook-art lookbook-art--1" aria-hidden="true">
+  <span class="lookbook-top"><span>THE RIVER VALLEY / OCCASION EDIT</span><span>01 / 04</span></span>
+  <svg class="lookbook-svg" viewBox="0 0 350 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+<circle cx="176" cy="157" r="127" fill="none" stroke="currentColor" stroke-opacity=".24" stroke-width="1.5"/>
+<circle cx="176" cy="157" r="97" fill="none" stroke="currentColor" stroke-opacity=".15" stroke-width="1.5"/>
+<path d="M128 54 98 79 48 110 74 273Q176 305 278 273L303 110 254 79 222 54Z" fill="#fff5de" fill-opacity=".14" stroke="currentColor" stroke-width="3.6" stroke-linejoin="round"/>
+<path d="m128 54 48 112-28 31-49-117ZM222 54l-46 112 26 31 52-117Z" fill="#fff3db" fill-opacity=".72" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<path d="m176 166-22 32 21 44 24-44-23-32Z" fill="currentColor" fill-opacity=".77"/>
+<path d="m154 198-21 17 42 61 42-61-18-17M98 80 74 196M254 80l24 116" fill="none" stroke="currentColor" stroke-opacity=".67" stroke-width="3" stroke-linecap="round"/>
+<path d="M149 47q27 18 54 0M160 61l16 16 17-16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+<path d="M110 241h37M222 241h37" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".72"/>
+<circle cx="176" cy="206" r="2.7" fill="#fff7e6"/><circle cx="176" cy="230" r="2.7" fill="#fff7e6"/>
+</svg>
+  <span class="lookbook-bottom">ILLUSTRATIVE FORMALWEAR STUDY<br>NOT A STORE PHOTO OR PRODUCT LISTING</span>
+</div>
 <div class="provider-main"><span class="card-kicker">Clarksville · Nearby formalwear</span><h4 class="provider-name" id="danielles-title">Danielle's</h4><p class="provider-description">Jim's Formal Wear lists this Clarksville retailer for suit and tuxedo rentals, as well as bridal and other formalwear. This is a Clarksville storefront, not a Russellville branch; rental stock, fittings and prices require confirmation.</p><div class="provider-actions"><a class="button button-dark" href="tel:+14797545885">Call 479-754-5885 <span aria-hidden="true">↗</span></a><a class="button button-light" href="https://www.jimsformalwear.com/store-detail/danielles-FD142" target="_blank" rel="noopener noreferrer">Official authorized retailer listing <span aria-hidden="true">↗</span></a></div></div>
 <div class="provider-details"><p class="detail-label">Visit / Contact</p><address>2382 W Clark Rd<br>Clarksville, AR 72830</address><p class="detail-label">Phone</p><a class="contact" href="tel:+14797545885">479-754-5885</a><p class="detail-label">Published store hours</p><p>Tuesday–Friday, 10 a.m.–6 p.m.; Saturday, 10 a.m.–2 p.m.; closed Monday and Sunday. Hours published by authorized formalwear supplier <a href="https://www.jimsformalwear.com/store-detail/danielles-FD142" target="_blank" rel="noopener noreferrer">Jim's Formal Wear ↗</a>; confirm holiday hours and fitting appointments before visiting.</p></div>
 </article>
-    <article class="provider-card" aria-labelledby="merle-norman-title">
+    <article class="provider-card" aria-labelledby="merle-norman-title"><div class="lookbook-art lookbook-art--2" aria-hidden="true">
+  <span class="lookbook-top"><span>THE RIVER VALLEY / OCCASION EDIT</span><span>02 / 04</span></span>
+  <svg class="lookbook-svg" viewBox="0 0 350 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+<circle cx="176" cy="157" r="127" fill="none" stroke="currentColor" stroke-opacity=".24" stroke-width="1.5"/>
+<circle cx="176" cy="157" r="97" fill="none" stroke="currentColor" stroke-opacity=".15" stroke-width="1.5"/>
+<path d="M128 54 98 79 48 110 74 273Q176 305 278 273L303 110 254 79 222 54Z" fill="#fff5de" fill-opacity=".14" stroke="currentColor" stroke-width="3.6" stroke-linejoin="round"/>
+<path d="m128 54 48 112-28 31-49-117ZM222 54l-46 112 26 31 52-117Z" fill="#fff3db" fill-opacity=".72" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<path d="m176 166-22 32 21 44 24-44-23-32Z" fill="currentColor" fill-opacity=".77"/>
+<path d="m154 198-21 17 42 61 42-61-18-17M98 80 74 196M254 80l24 116" fill="none" stroke="currentColor" stroke-opacity=".67" stroke-width="3" stroke-linecap="round"/>
+<path d="M149 47q27 18 54 0M160 61l16 16 17-16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+<path d="M110 241h37M222 241h37" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".72"/>
+<circle cx="176" cy="206" r="2.7" fill="#fff7e6"/><circle cx="176" cy="230" r="2.7" fill="#fff7e6"/>
+</svg>
+  <span class="lookbook-bottom">ILLUSTRATIVE FORMALWEAR STUDY<br>NOT A STORE PHOTO OR PRODUCT LISTING</span>
+</div>
 <div class="provider-main"><span class="card-kicker">Morrilton · Nearby formalwear</span><h4 class="provider-name" id="merle-norman-title">Merle Norman &amp; More</h4><p class="provider-description">The Morrilton store officially advertises suit and tuxedo rentals for weddings, prom and special events, with orders placed through the store rather than its online style catalog. It works with formalwear suppliers including Jim's Formal Wear and Paul Morrell. This is not a Russellville storefront; confirm sizes, rates and booking terms.</p><div class="provider-actions"><a class="button button-dark" href="tel:+15013548092">Call 501-354-8092 <span aria-hidden="true">↗</span></a><a class="button button-light" href="https://merlenormanmorrilton.com/wedding-gift-services/" target="_blank" rel="noopener noreferrer">Official rental information <span aria-hidden="true">↗</span></a></div></div>
 <div class="provider-details"><p class="detail-label">Visit / Contact</p><address>106 S Moose St<br>Morrilton, AR 72110</address><p class="detail-label">Phone</p><a class="contact" href="tel:+15013548092">501-354-8092</a><p class="detail-label">Published store hours</p><p>Monday–Friday, 9 a.m.–5:30 p.m.; Saturday, 9 a.m.–5 p.m. Hours published on the <a href="https://merlenormanmorrilton.com/" target="_blank" rel="noopener noreferrer">operator's official website ↗</a>; confirm Sunday, holiday hours, fitting appointments, pickup and returns before visiting.</p></div>
 </article>
@@ -520,11 +649,39 @@ html{scroll-padding-top:28px}
     <p>Conway and Fort Smith are regional in-store choices, not Russellville branches. Confirm fitting, pickup and return requirements before planning travel.</p>
   </div>
   <div class="provider-region-grid">
-    <article class="provider-card" aria-labelledby="bell-sward-title">
+    <article class="provider-card" aria-labelledby="bell-sward-title"><div class="lookbook-art lookbook-art--3" aria-hidden="true">
+  <span class="lookbook-top"><span>THE RIVER VALLEY / OCCASION EDIT</span><span>03 / 04</span></span>
+  <svg class="lookbook-svg" viewBox="0 0 350 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+<circle cx="176" cy="157" r="127" fill="none" stroke="currentColor" stroke-opacity=".24" stroke-width="1.5"/>
+<circle cx="176" cy="157" r="97" fill="none" stroke="currentColor" stroke-opacity=".15" stroke-width="1.5"/>
+<path d="M128 54 98 79 48 110 74 273Q176 305 278 273L303 110 254 79 222 54Z" fill="#fff5de" fill-opacity=".14" stroke="currentColor" stroke-width="3.6" stroke-linejoin="round"/>
+<path d="m128 54 48 112-28 31-49-117ZM222 54l-46 112 26 31 52-117Z" fill="#fff3db" fill-opacity=".72" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<path d="m176 166-22 32 21 44 24-44-23-32Z" fill="currentColor" fill-opacity=".77"/>
+<path d="m154 198-21 17 42 61 42-61-18-17M98 80 74 196M254 80l24 116" fill="none" stroke="currentColor" stroke-opacity=".67" stroke-width="3" stroke-linecap="round"/>
+<path d="M149 47q27 18 54 0M160 61l16 16 17-16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+<path d="M110 241h37M222 241h37" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".72"/>
+<circle cx="176" cy="206" r="2.7" fill="#fff7e6"/><circle cx="176" cy="230" r="2.7" fill="#fff7e6"/>
+</svg>
+  <span class="lookbook-bottom">ILLUSTRATIVE FORMALWEAR STUDY<br>NOT A STORE PHOTO OR PRODUCT LISTING</span>
+</div>
 <div class="provider-main"><span class="card-kicker">Conway · Regional formalwear</span><h4 class="provider-name" id="bell-sward-title">Bell &amp; Sward Gentlemen's Clothier</h4><p class="provider-description">Conway men's clothing retailer whose official website lists tuxedo rentals alongside on-site tailoring and formalwear services. This is a regional in-store option, not a Russellville branch or a verified Russellville delivery service. Confirm rental choices, alterations, deposits and pickup timing directly.</p><div class="provider-actions"><a class="button button-dark" href="tel:+15015046880">Call 501-504-6880 <span aria-hidden="true">↗</span></a><a class="button button-light" href="https://bellandsward.com/" target="_blank" rel="noopener noreferrer">Official tuxedo-rental information <span aria-hidden="true">↗</span></a></div></div>
 <div class="provider-details"><p class="detail-label">Visit / Contact</p><address>1011 Oak St<br>Conway, AR 72032</address><p class="detail-label">Phone</p><a class="contact" href="tel:+15015046880">501-504-6880</a><p>Regional storefront; no Russellville delivery claim.</p><p class="detail-label">Published store hours</p><p>Monday–Friday, 10 a.m.–6 p.m.; Saturday, 10 a.m.–5 p.m.; closed Sunday. Hours published on the <a href="https://bellandsward.com/" target="_blank" rel="noopener noreferrer">operator's official website ↗</a>; confirm holiday hours and fitting appointments.</p></div>
 </article>
-    <article class="provider-card" aria-labelledby="rainwaters-title">
+    <article class="provider-card" aria-labelledby="rainwaters-title"><div class="lookbook-art lookbook-art--4" aria-hidden="true">
+  <span class="lookbook-top"><span>THE RIVER VALLEY / OCCASION EDIT</span><span>04 / 04</span></span>
+  <svg class="lookbook-svg" viewBox="0 0 350 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+<circle cx="176" cy="157" r="127" fill="none" stroke="currentColor" stroke-opacity=".24" stroke-width="1.5"/>
+<circle cx="176" cy="157" r="97" fill="none" stroke="currentColor" stroke-opacity=".15" stroke-width="1.5"/>
+<path d="M128 54 98 79 48 110 74 273Q176 305 278 273L303 110 254 79 222 54Z" fill="#fff5de" fill-opacity=".14" stroke="currentColor" stroke-width="3.6" stroke-linejoin="round"/>
+<path d="m128 54 48 112-28 31-49-117ZM222 54l-46 112 26 31 52-117Z" fill="#fff3db" fill-opacity=".72" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<path d="m176 166-22 32 21 44 24-44-23-32Z" fill="currentColor" fill-opacity=".77"/>
+<path d="m154 198-21 17 42 61 42-61-18-17M98 80 74 196M254 80l24 116" fill="none" stroke="currentColor" stroke-opacity=".67" stroke-width="3" stroke-linecap="round"/>
+<path d="M149 47q27 18 54 0M160 61l16 16 17-16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+<path d="M110 241h37M222 241h37" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".72"/>
+<circle cx="176" cy="206" r="2.7" fill="#fff7e6"/><circle cx="176" cy="230" r="2.7" fill="#fff7e6"/>
+</svg>
+  <span class="lookbook-bottom">ILLUSTRATIVE FORMALWEAR STUDY<br>NOT A STORE PHOTO OR PRODUCT LISTING</span>
+</div>
 <div class="provider-main"><span class="card-kicker">Fort Smith · Regional formalwear</span><h4 class="provider-name" id="rainwaters-title">Rainwater's Men's Clothing and Tuxedo Rental</h4><p class="provider-description">Fort Smith in-store suit and tuxedo rental specialist with an official online rental catalog. Published examples include suit rentals listed at $160 and a classic black notch-lapel tuxedo rental listed at $185; options, accessories and total charges vary. This is a Fort Smith storefront, <strong>not a Russellville branch or verified delivery service</strong>. Confirm current pricing, fittings, collection and return terms before reserving.</p><div class="provider-actions"><a class="button button-dark" href="tel:+14794525836">Call 479-452-5836 <span aria-hidden="true">↗</span></a><a class="button button-light" href="https://rainwater-s.com/collections/tux-suit-rental" target="_blank" rel="noopener noreferrer">Official rental catalog <span aria-hidden="true">↗</span></a></div></div>
 <div class="provider-details"><p class="detail-label">Visit / Contact</p><address>9700 Rogers Avenue<br>Fort Smith, AR 72903</address><p class="detail-label">Phone</p><a class="contact" href="tel:+14794525836">479-452-5836</a><p>Regional in-store option; verify rental arrangements and appointments.</p><p class="detail-label">Published store hours</p><p>Monday–Friday, 10 a.m.–6 p.m.; Saturday, 10 a.m.–4 p.m. The <a href="https://rainwater-s.com/pages/find-our-store" target="_blank" rel="noopener noreferrer">operator's official hours page ↗</a> does not specify Sunday hours; confirm those and holiday hours before visiting.</p></div>
 </article>
