@@ -356,6 +356,63 @@ footer a{font-weight:750}
 }
 @media(prefers-reduced-motion:reduce){#providers .provider{transition:none}#providers .provider:hover{transform:none}}
 
+
+/* November 8, 2026 — the River Valley rate wall.
+   The former five identical columns mixed storage with offices.
+   Keep rates source-exact; generic CSS drawings do not represent inventory.
+   Design reference: live StayARV, NN/g hierarchy, web.dev responsive patterns,
+   and W3C WCAG 2.2 focus visibility and touch targets. */
+#rates .rate-panel{border-radius:27px;border:1px solid #254e40;background:#12392f;box-shadow:0 24px 58px #133c2b29;overflow:hidden}
+#rates .rate-banner{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:28px clamp(22px,3.7vw,42px);background:radial-gradient(circle at 95% 10%,#467d6270,transparent 37%),linear-gradient(120deg,#0f302b,#1e5041);border-bottom:1px solid #ffffff32}
+#rates .rate-banner strong{font:400 clamp(1.52rem,2.8vw,2.2rem)/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.045em;color:#fff9ec}
+#rates .rate-banner span{color:#f4ddbb;font-size:.78rem;font-weight:750;letter-spacing:.035em;text-align:right}
+#rates .rate-collections{padding:8px clamp(13px,2.3vw,25px) 25px;background:linear-gradient(160deg,#193f34,#102f2b)}
+#rates .rate-collection{margin-top:15px}
+#rates .rate-collection-heading{display:flex;justify-content:space-between;align-items:baseline;gap:15px;padding:8px 7px 15px}
+#rates .rate-collection-heading h3{margin:0;font:400 clamp(1.5rem,2.7vw,2rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.04em;color:#fff8e9}
+#rates .rate-collection-heading p{margin:0;color:#ead6b3;font-size:.75rem;line-height:1.45;text-align:right}
+#rates .rates{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+#rates .rate{position:relative;display:flex;flex-direction:column;align-items:flex-start;grid-column:span 2;min-width:0;min-height:277px;gap:0;padding:24px clamp(18px,2.4vw,28px) 25px;border:1px solid #d5ded0;border-radius:18px;background:linear-gradient(160deg,#fbfaf5,#e4ede3);box-shadow:0 10px 25px #09281e36}
+#rates .rates--offices .rate{grid-column:span 3;min-height:249px;border-color:#e6c89a;background:linear-gradient(150deg,#fff7e8,#ebdac0)}
+#rates .rate::before{content:"";display:block;flex:none;width:clamp(92px,51%,174px);height:57px;margin:2px 0 auto 5px;border:3px solid #356456;border-radius:3px;background:repeating-linear-gradient(90deg,#6c9383 0 12px,#466f62 12px 15px,#80a293 15px 18px);transform:perspective(370px) rotateY(-11deg);box-shadow:10px 11px 0 #2e5145,14px 17px 19px #1c423331}
+#rates .rates--offices .rate::before{width:clamp(115px,49%,210px);height:62px;border-color:#9a6842;background:linear-gradient(90deg,transparent 0 12%,#d4f0e9 12% 31%,#9e664c 31% 34%,transparent 34% 42%,#d4f0e9 42% 62%,#9e664c 62% 65%,transparent 65%),repeating-linear-gradient(90deg,#dbb78f 0 13px,#b68a62 13px 16px);box-shadow:10px 10px 0 #926947,14px 17px 18px #704f3030}
+#rates .rate .type{display:block;margin:19px 0 6px;color:#486b58;font-size:.66rem;letter-spacing:.13em;font-weight:900}
+#rates .rates--offices .rate .type{color:#805325}
+#rates .rate dt{min-height:0;margin:0 0 10px;font-size:clamp(.95rem,1.3vw,1.08rem);line-height:1.4;font-weight:800;color:#1b473a}
+#rates .rate dd{margin:auto 0 0;font:400 clamp(2.5rem,4.7vw,3.7rem)/1.02 Georgia,"Times New Roman",serif;color:#0f3b30;letter-spacing:-.065em}
+#rates .rate dd small{margin-top:6px;color:#4b6659;font-size:.77rem;letter-spacing:0;font-weight:700}
+#rates .rates--offices .rate dd small{color:#795739}
+#rates .delivery{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 22px;align-items:center;padding:24px clamp(22px,3.7vw,42px) 27px;background:#fff0d5;border-top:1px solid #d9bd90}
+#rates .delivery::before{content:"Delivery + final quote";grid-column:1/-1;color:#764b19;font-weight:900;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase}
+#rates .delivery p{max-width:830px;color:#493f32;font-size:.89rem;line-height:1.65}
+#rates .delivery a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 17px;border-radius:10px;background:#184d3c;color:#fff;text-decoration:none;text-align:center;white-space:normal;font-size:.83rem;font-weight:800}
+#rates .delivery a:hover{background:#0e332a}
+#rates .delivery a:focus-visible{outline:3px solid #a36018;outline-offset:4px}
+@media(max-width:850px){
+ #rates .rates{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #rates .rate,#rates .rates--offices .rate{grid-column:span 1;min-height:256px}
+ #rates .rates--containers .rate:last-child{grid-column:1/-1;min-height:231px}
+ #rates .rate::before{width:148px}
+ #rates .delivery{grid-template-columns:1fr}
+ #rates .delivery a{justify-self:start}
+}
+@media(max-width:600px){
+ #rates .rate-banner{align-items:flex-start;flex-direction:column;gap:9px;padding:24px 21px}
+ #rates .rate-banner span{text-align:left}
+ #rates .rate-collections{padding:7px 12px 17px}
+ #rates .rate-collection-heading{align-items:flex-start;flex-direction:column;gap:4px}
+ #rates .rate-collection-heading p{text-align:left}
+ #rates .rates{grid-template-columns:1fr;gap:9px}
+ #rates .rate,#rates .rates--offices .rate,#rates .rates--containers .rate:last-child{grid-column:1;min-height:0;padding:19px 22px 19px}
+ #rates .rate::before{width:132px;height:48px;margin-bottom:17px}
+ #rates .rates--offices .rate::before{width:158px;height:50px}
+ #rates .rate .type{margin:12px 0 4px}
+ #rates .rate dd{margin:5px 0 0;font-size:2.6rem}
+ #rates .rate dd small{display:inline-block;margin:0 0 0 8px}
+ #rates .delivery{padding:23px 22px}
+ #rates .delivery a{width:100%}
+}
+
 </style>
 </head>
 <body>
@@ -437,7 +494,16 @@ footer a{font-weight:750}
   </div>
 </section>
 <section id="rates" aria-labelledby="rates-title"><div class="section-head"><div><p class="eyebrow" style="color:#956a45">01 / Published prices</p><h2 id="rates-title">A useful starting point.</h2><p>Scotty&#39;s Storage Trailer Rentals’ advertised monthly rates, checked November 7, 2026. Five examples appear below; additional published office prices follow. These are base rents, not guaranteed delivered totals.</p></div><span class="section-number">One provider · Five examples</span></div>
-<div class="rate-panel"><div class="rate-banner"><strong>Scotty&#39;s · Russellville, Arkansas</strong><span>Monthly base rental rates as advertised</span></div><dl class="rates"><div class="rate"><span class="type">Storage container</span><dt>10-foot standard</dt><dd>$75<small>per month</small></dd></div><div class="rate"><span class="type">Storage container</span><dt>20-foot standard</dt><dd>$100<small>per month</small></dd></div><div class="rate"><span class="type">Storage container</span><dt>40-foot standard / high-cube</dt><dd>$130<small>per month</small></dd></div><div class="rate"><span class="type">Mobile office</span><dt>20-foot office</dt><dd>$250<small>per month</small></dd></div><div class="rate"><span class="type">Office + storage</span><dt>40-foot combination</dt><dd>$350<small>per month</small></dd></div></dl><div class="delivery"><p><strong>Additional office base rates:</strong> 9-, 10- and 12-foot offices $200 per month each; standalone 40-foot office $400 per month. Office delivery and setup fees are not published as a Russellville-specific quote. <strong>Advertised local container delivery: $150</strong> for 10-, 20- or 40-foot containers to Russellville, Dardanelle, Atkins and Pottsville. Pickup, taxes, minimum terms and special site conditions require confirmation.</p><a href="https://www.scottysstorage.com/russellvillearkansas" target="_blank" rel="noopener noreferrer">Official rate details ↗</a></div></div></section>
+<div class="rate-panel"><div class="rate-banner"><strong>Scotty&#39;s · Russellville, Arkansas</strong><span>Monthly base rental rates as advertised</span></div><div class="rate-collections" aria-label="Advertised monthly base rental rates">
+  <section class="rate-collection" aria-labelledby="rate-containers-title">
+    <div class="rate-collection-heading"><h3 id="rate-containers-title">Storage containers</h3><p>Three published examples · Delivery is separate</p></div>
+    <dl class="rates rates--containers"><div class="rate"><span class="type">Storage container</span><dt>10-foot standard</dt><dd>$75<small>per month</small></dd></div><div class="rate"><span class="type">Storage container</span><dt>20-foot standard</dt><dd>$100<small>per month</small></dd></div><div class="rate"><span class="type">Storage container</span><dt>40-foot standard / high-cube</dt><dd>$130<small>per month</small></dd></div></dl>
+  </section>
+  <section class="rate-collection" aria-labelledby="rate-offices-title">
+    <div class="rate-collection-heading"><h3 id="rate-offices-title">Mobile workplaces</h3><p>Two examples · Additional office rates below</p></div>
+    <dl class="rates rates--offices"><div class="rate"><span class="type">Mobile office</span><dt>20-foot office</dt><dd>$250<small>per month</small></dd></div><div class="rate"><span class="type">Office + storage</span><dt>40-foot combination</dt><dd>$350<small>per month</small></dd></div></dl>
+  </section>
+</div><div class="delivery"><p><strong>Additional office base rates:</strong> 9-, 10- and 12-foot offices $200 per month each; standalone 40-foot office $400 per month. Office delivery and setup fees are not published as a Russellville-specific quote. <strong>Advertised local container delivery: $150</strong> for 10-, 20- or 40-foot containers to Russellville, Dardanelle, Atkins and Pottsville. Pickup, taxes, minimum terms and special site conditions require confirmation.</p><a href="https://www.scottysstorage.com/russellvillearkansas" target="_blank" rel="noopener noreferrer">Official rate details ↗</a></div></div></section>
 
 <section class="size-explorer" id="size-explorer" aria-labelledby="size-explorer-title">
   <div class="size-head"><div><p class="eyebrow">Visual size guide / Published container options</p><h2 id="size-explorer-title">See the length difference.</h2></div><p>Compare Scotty's advertised container lengths at a glance before choosing which unit to ask about.</p></div>
