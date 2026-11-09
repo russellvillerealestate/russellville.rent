@@ -223,6 +223,67 @@ footer a{color:#ffe3a5}
 @media(max-width:700px){.provider-service-checkpoint{grid-template-columns:1fr;margin:0 0 7px}.provider-service-art{min-height:0;gap:10px;padding:21px 24px}.provider-service-art svg{max-height:120px}.provider-service-details{padding:24px 22px}.provider-service-details h3{max-width:none}.provider-service-facts{grid-template-columns:1fr}.provider-service-fact{grid-template-columns:minmax(0,.83fr) minmax(0,1.17fr)}}
 @media(max-width:400px){.provider-service-fact{display:block}.provider-service-fact span{margin-top:5px}.provider-service-art svg{max-height:105px}}
 @media print{.provider-service-checkpoint{box-shadow:none;break-inside:avoid}.provider-service-art{background:#fff;color:#153f32}.provider-service-art-kicker,.provider-service-art-note{color:#153f32}.provider-service-details{background:#fff}}
+
+/* 2026-11-09 / River Valley scenic family field guide.
+   Design reference: live StayARV immersive landscape, calm evergreen / gold,
+   editorial hierarchy and generous layout. NN/g: clear subheadings and grouping;
+   web.dev: stable CSS background composition; W3C WCAG 2.2: focus visibility,
+   responsive targets and reduced motion. Photo is local scenery, not inventory.
+   Sources: nngroup.com/articles/principles-visual-design/ ;
+   nngroup.com/articles/layer-cake-pattern-scanning/ ;
+   web.dev/learn/design/responsive-images ;
+   w3.org/WAI/standards-guidelines/wcag/new-in-22/ */
+.trip-guide{position:relative;isolation:isolate;overflow:hidden;padding:clamp(86px,9.7vw,143px) 0 clamp(76px,9vw,119px);background:#10372f;color:#fff;border-bottom:0}
+.trip-guide:before{content:"";position:absolute;z-index:-2;inset:0 0 24%;background:linear-gradient(90deg,#092e2be8 0%,#103e36c9 55%,#173d34ae 100%),url("assets/lake-dardanelle-sunset.jpg") center 52%/cover no-repeat}
+.trip-guide:after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,transparent 0%,#10372f40 35%,#10372f 68%)}
+.trip-guide .wrap{position:relative}
+.trip-guide .guide-header{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(245px,.75fr);align-items:end;gap:clamp(30px,6vw,100px);margin-bottom:clamp(43px,6vw,73px)}
+.trip-guide .guide-header .eyebrow{color:#f1d5a1;font-size:.73rem;letter-spacing:.2em;text-transform:uppercase}
+.trip-guide .guide-header h2{max-width:15ch;font:400 clamp(3.1rem,6.1vw,6.1rem)/.99 Georgia,"Times New Roman",serif;letter-spacing:-.063em;color:#fff;text-wrap:balance}
+.trip-guide .guide-header h2 em{font:italic 400 1em/1 Georgia,"Times New Roman",serif;color:#f2d59e}
+.trip-guide .guide-header>p{max-width:40ch;line-height:1.75;font-size:clamp(.98rem,1.5vw,1.11rem);border-left:2px solid #f0d59c;padding:4px 0 4px clamp(19px,2.5vw,34px);color:#f0f4e9;margin:0 0 10px}
+.trip-guide .guide-grid{gap:clamp(12px,2vw,22px);grid-template-columns:1.08fr 1fr 1fr}
+.trip-guide .guide-card{position:relative;isolation:isolate;min-height:408px;padding:clamp(28px,3.3vw,42px);border:1px solid #d1dcc8;border-top:6px solid #e4bd7a;border-radius:18px;background:linear-gradient(153deg,#fffefa,#edf1e6);color:#143d30;box-shadow:0 22px 50px #001d1c65;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.trip-guide .guide-card:nth-child(2){background:linear-gradient(150deg,#f9eecf,#e7d3a6);border-color:#eed4a3;border-top-color:#214b3d;color:#153b31}
+.trip-guide .guide-card:nth-child(3){background:linear-gradient(150deg,#f4f9ef,#dfe9d9);border-top-color:#4e9274}
+.trip-guide .guide-card:after{content:attr(data-chapter);position:absolute;top:22px;right:25px;font:400 4rem/1 Georgia,"Times New Roman",serif;color:#184d3515;pointer-events:none}
+.trip-guide .guide-card:hover{transform:translateY(-6px);box-shadow:0 30px 53px #001d1b87}
+.trip-guide .guide-card:focus-visible{outline:3px solid #fbd27d;outline-offset:6px}
+.trip-guide .guide-num{font-size:.72rem;letter-spacing:.16em;font-weight:850;color:#345d4b;opacity:1}
+.trip-guide .guide-icon{width:92px;height:92px;margin:30px 0 22px;border-radius:50%;background:#deebdf;color:#1d6148;border:1px solid #c4dcc8}
+.trip-guide .guide-card:nth-child(2) .guide-icon{background:#f6dfb4;color:#29533f;border-color:#e0bb7d}
+.trip-guide .guide-card:nth-child(3) .guide-icon{background:#d4e7d7;color:#2b694d}
+.trip-guide .guide-icon svg{width:67px;height:67px}
+.trip-guide .guide-card strong{font:400 clamp(1.57rem,2.3vw,2.08rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.045em;max-width:14ch}
+.trip-guide .guide-card>span:nth-last-child(2){font-size:.9rem;line-height:1.65;color:#476455;opacity:1;margin-top:15px}
+.trip-guide .guide-arrow,.trip-guide .guide-card:nth-child(2) .guide-arrow{display:inline-flex;align-items:center;margin-top:auto;padding-top:26px;font-size:.86rem;color:#1b5b43;text-decoration:underline;text-underline-offset:5px;font-weight:850}
+.trip-guide .guide-photo-note{max-width:1200px;margin:23px auto 0;font-size:.74rem;letter-spacing:.02em;line-height:1.5;color:#d6e4d5;text-align:right}
+@media(max-width:980px){
+ .trip-guide .guide-header{grid-template-columns:1fr;gap:18px}
+ .trip-guide .guide-header>p{max-width:60ch}
+ .trip-guide .guide-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .trip-guide .guide-card{min-height:352px}
+ .trip-guide .guide-card:nth-child(3){grid-column:1/-1;min-height:0;display:grid;grid-template-columns:96px minmax(0,1fr);column-gap:28px}
+ .trip-guide .guide-card:nth-child(3) .guide-num{grid-column:1/-1}
+ .trip-guide .guide-card:nth-child(3) .guide-icon{grid-column:1;grid-row:2/5;margin:16px 0}
+ .trip-guide .guide-card:nth-child(3) strong,.trip-guide .guide-card:nth-child(3)>span:nth-last-child(2),.trip-guide .guide-card:nth-child(3) .guide-arrow{grid-column:2}
+}
+@media(max-width:760px){
+ .trip-guide{padding:74px 0 80px}
+ .trip-guide:before{inset:0 0 46%;background-position:center 55%}
+ .trip-guide .guide-header h2{font-size:clamp(3.1rem,10.5vw,4.9rem)}
+ .trip-guide .guide-header>p{padding-left:19px}
+ .trip-guide .guide-grid{grid-template-columns:1fr;gap:15px}
+ .trip-guide .guide-card,.trip-guide .guide-card:nth-child(3){display:flex;flex-direction:column;min-height:0;padding:29px}
+ .trip-guide .guide-icon,.trip-guide .guide-card:nth-child(3) .guide-icon{margin:21px 0 16px}
+ .trip-guide .guide-card:after{font-size:3.2rem}
+ .trip-guide .guide-photo-note{text-align:left}
+}
+@media(prefers-reduced-motion:reduce){
+ .trip-guide .guide-card{transition:none}
+ .trip-guide .guide-card:hover{transform:none}
+}
+
 </style>
 </head>
 <body>
@@ -303,6 +364,7 @@ footer a{color:#ffe3a5}
       <a class="guide-card" href="#trip-checklist"><span class="guide-num">03 / PREPARE</span><span class="guide-icon" aria-hidden="true"><svg viewBox="0 0 72 72"><rect x="17" y="15" width="38" height="45" rx="5" fill="none" stroke="currentColor" stroke-width="4"/><path d="M26 28l4 4 8-9M26 45h20" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><strong>Travel with confidence.</strong><span>Review compatibility, recalls, cleaning and equipment instructions.</span><span class="guide-arrow">See checklist ↗</span></a>
     </div>
   </div>
+<div class="wrap"><p class="guide-photo-note">Lake Dardanelle scenic photograph · An editorial River Valley guide, not provider equipment or confirmed inventory.</p></div>
 </section>
 <main class="wrap main" id="providers"><div class="intro"><p class="eyebrow" style="color:#557565">Baby &amp; toddler equipment</p><h2>One advertised Russellville provider</h2><p>Delivery-to-Russellville claims below come from the company's own location page. A physical Russellville storefront, actual available equipment and delivery slot have not been independently verified.</p></div>
 <div class="provider-kicker"><span>Provider 01 / 01</span><span>Advertising Russellville delivery · Verify before ordering</span></div>
