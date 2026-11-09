@@ -565,6 +565,45 @@
 @media(max-width:420px){.band-explorer-grid{grid-template-columns:1fr}.band-explorer-card{min-height:153px}.band-explorer-card:last-child{grid-column:auto;grid-template-columns:90px minmax(0,1fr);gap:4px 13px;padding:18px}}
 @media(prefers-reduced-motion:reduce){.band-explorer-card{transition:none}.band-explorer-card:hover{transform:none}}
 
+
+/* 2026-11-08 | River Valley band-room wayfinding.
+   Live StayARV and Russellville.Rent visual reference; NN/g scannable task
+   hierarchy, Google web.dev responsive layout, WCAG 2.2 visible focus and reflow.
+   Original three provider anchors and all calculators, listings, scripts remain. */
+.guide-strip.band-route{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:-37px 14px 0;padding:0;background:transparent;border:0;border-radius:0;overflow:visible}
+.band-route-opening{position:relative;isolation:isolate;grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(230px,.85fr);gap:22px;align-items:center;overflow:hidden;min-height:320px;border-radius:23px;background:linear-gradient(105deg,#082923f7 0%,#154034e9 57%,#214b3cd1 100%),url("assets/downtown-russellville-sunset.jpg") center 56%/cover no-repeat;box-shadow:0 20px 46px #092b2350;color:#fff}
+.band-route-opening:before{content:"";position:absolute;inset:12px;z-index:-1;border:1px solid #d1c79b48;border-radius:14px;pointer-events:none}
+.band-route-story{position:relative;padding:clamp(30px,4vw,55px);min-width:0}
+.band-route-kicker{display:block;margin-bottom:17px;color:#f4d69d;font-size:.67rem;font-weight:850;letter-spacing:.15em;line-height:1.5}
+.band-route-opening h2{margin:0;color:#fff9eb;font:400 clamp(2.55rem,4.3vw,4.75rem)/1.06 Georgia,"Times New Roman",serif;letter-spacing:-.055em;text-wrap:balance}
+.band-route-opening h2 em{color:#f2d399}
+.band-route-story>p{max-width:55ch;margin:18px 0 23px;font-size:.9rem;line-height:1.7;color:#e9f2e7}
+.band-route-photo-note{display:block;font-size:.65rem;line-height:1.5;color:#e3dec7}
+.band-route-signal{padding:25px 35px;display:grid;align-items:center;justify-items:center;gap:11px;min-width:0}
+.band-route-signal svg{display:block;width:min(100%,330px);height:auto;max-height:230px;filter:drop-shadow(0 18px 20px #071e1980)}
+.band-route-signal>span{font-size:.62rem;font-weight:850;letter-spacing:.12em;line-height:1.6;color:#ffe4b0;text-align:center}
+.band-route-label{grid-column:1/-1;display:flex;align-items:baseline;justify-content:space-between;gap:14px 20px;padding:19px 4px 4px;border-bottom:1px solid #d1ded0}
+.band-route-label strong{font:400 clamp(1.45rem,2.3vw,2rem)/1.15 Georgia,serif;letter-spacing:-.045em;color:#173d31}
+.band-route-label span{font-size:.76rem;line-height:1.5;color:#536a5d}
+.band-route-label--providers{margin-top:6px}
+.band-route-steps{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.band-route-steps>a{display:grid;grid-template-columns:39px minmax(0,1fr) 19px;gap:11px;align-items:start;padding:23px 17px;min-height:175px;border-radius:16px;text-decoration:none;background:#ebf2e9;border:1px solid #cbddcd;color:#153a30;box-shadow:0 8px 23px #092b2313;transition:background .18s,box-shadow .18s,transform .18s}
+.band-route-steps>a:nth-child(2){background:#f9f0df;border-color:#ded0b8}
+.band-route-steps>a:nth-child(3){background:#e2eee8}
+.band-route-steps>a:hover{background:#f8fcf5;transform:translateY(-3px);box-shadow:0 15px 27px #092b2326}
+.band-route-steps>a:focus-visible{outline:3px solid #aa691a;outline-offset:4px}
+.band-route-step-number{display:grid;place-items:center;width:39px;height:39px;border-radius:11px;background:#174638;color:#f5d8a2;font:400 1.15rem Georgia,serif}
+.band-route-steps strong{display:block;font:400 clamp(1.15rem,1.8vw,1.55rem)/1.18 Georgia,serif;letter-spacing:-.035em;margin:3px 0 10px}
+.band-route-steps small{display:block;font-size:.78rem;line-height:1.5;color:#4f6858}
+.band-route-step-arrow{font-size:1.1rem;color:#315e48}
+.guide-strip.band-route>a{margin:0;min-height:134px;box-shadow:0 9px 24px #102d2620}
+.guide-strip.band-route>a:nth-last-child(3){background:#fffaf0}
+.guide-strip.band-route>a:nth-last-child(2){background:#f5f8f2}
+.guide-strip.band-route>a:nth-last-child(1){background:#ebf3eb}
+#instrument-explorer,#contract-scorecard,#inquiry-desk,#providers{scroll-margin-top:30px}
+@media(max-width:850px){.band-route-opening{grid-template-columns:1fr minmax(170px,.5fr)}.band-route-signal{padding:15px}.band-route-opening h2{font-size:clamp(2.5rem,5.3vw,3.7rem)}}
+@media(max-width:650px){.guide-strip.band-route{grid-template-columns:1fr;margin:17px 0 0;gap:10px}.band-route-opening{grid-template-columns:1fr;gap:0;min-height:0;border-radius:17px}.band-route-story{padding:30px 24px 16px}.band-route-opening h2{font-size:clamp(2.5rem,10vw,3.6rem)}.band-route-signal{display:none}.band-route-label{display:block;padding-top:23px}.band-route-label span{display:block;margin-top:5px}.band-route-steps{grid-template-columns:1fr;gap:9px}.band-route-steps>a{min-height:0;padding:17px 16px;grid-template-columns:35px minmax(0,1fr) 18px}.band-route-steps strong{font-size:1.3rem;margin:2px 0 5px}.band-route-step-number{width:35px;height:35px}.guide-strip.band-route>a{min-height:88px}}
+@media(prefers-reduced-motion:reduce){.band-route-steps>a{transition:none}.band-route-steps>a:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -625,7 +664,37 @@
       </div>
     </section>
 
-    <nav class="guide-strip" aria-label="Choose a band rental path">
+    <nav class="guide-strip band-route" aria-label="Band rental guide: plan, compare and contact">
+      <div class="band-route-opening">
+        <div class="band-route-story">
+          <span class="band-route-kicker">THE BAND ROOM / A RIVER VALLEY FIELD GUIDE</span>
+          <h2>From first note<br>to <em>first rehearsal.</em></h2>
+          <p>Three practical steps before choosing a rental agreement. Explore the instrument, compare total costs from actual quotes, then prepare questions for the provider.</p>
+          <span class="band-route-photo-note">Downtown Russellville photograph · Not a music store or instrument inventory</span>
+        </div>
+        <div class="band-route-signal" aria-hidden="true">
+          <svg viewBox="0 0 360 250" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false">
+            <circle cx="183" cy="130" r="110" stroke="#ead1a1" stroke-opacity=".45"/>
+            <circle cx="183" cy="130" r="82" stroke="#ead1a1" stroke-opacity=".27"/>
+            <g stroke="#f1daa6" stroke-width="2" opacity=".45"><path d="M15 81H345M15 99H345M15 117H345M15 135H345M15 153H345"/></g>
+            <g fill="#f0d198" stroke="#f0d198" stroke-width="7" stroke-linecap="round">
+              <ellipse cx="109" cy="124" rx="14" ry="10" transform="rotate(-19 109 124)"/><path d="M122 122V55"/>
+              <ellipse cx="221" cy="146" rx="14" ry="10" transform="rotate(-19 221 146)"/><path d="M234 143V71"/>
+              <ellipse cx="298" cy="97" rx="12" ry="8" transform="rotate(-19 298 97)"/><path d="M309 94V30"/>
+            </g>
+            <path d="M122 55L234 71" stroke="#f0d198" stroke-width="6" stroke-linecap="round"/>
+            <path d="M36 207h288" stroke="#f0d198" stroke-width="2" stroke-opacity=".5"/>
+          </svg>
+          <span>01 / DISCOVER &nbsp; → &nbsp; 02 / COMPARE &nbsp; → &nbsp; 03 / PREPARE</span>
+        </div>
+      </div>
+      <div class="band-route-label"><strong>Start with what you need</strong><span>Choose a step; all tools work independently.</span></div>
+      <div class="band-route-steps">
+        <a href="#instrument-explorer"><span class="band-route-step-number">01</span><span><strong>Choose your instrument</strong><small>Explore common band choices and school questions.</small></span><span class="band-route-step-arrow" aria-hidden="true">↗</span></a>
+        <a href="#contract-scorecard"><span class="band-route-step-number">02</span><span><strong>Compare written quotes</strong><small>Estimate total cost using amounts you enter.</small></span><span class="band-route-step-arrow" aria-hidden="true">↗</span></a>
+        <a href="#inquiry-desk"><span class="band-route-step-number">03</span><span><strong>Prepare your inquiry</strong><small>Draft the details to confirm with a provider.</small></span><span class="band-route-step-arrow" aria-hidden="true">↗</span></a>
+      </div>
+      <div class="band-route-label band-route-label--providers"><strong>Or go straight to a listed program</strong><span>Three distinct options; availability and terms are not verified.</span></div>
       <a href="#cooper-music"><span class="mark" aria-hidden="true">01</span><span><strong>Local music store</strong>Russellville storefront</span><span class="guide-arrow" aria-hidden="true">↗</span></a>
       <a href="#school-band-service"><span class="mark" aria-hidden="true">02</span><span><strong>Regional program</strong>Russellville service advertised</span><span class="guide-arrow" aria-hidden="true">↗</span></a>
       <a href="#sweetwater-instrument-rentals"><span class="mark" aria-hidden="true">03</span><span><strong>Online school-linked</strong>Russellville schools listed; terms to confirm</span><span class="guide-arrow" aria-hidden="true">↗</span></a>
