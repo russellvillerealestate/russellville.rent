@@ -471,6 +471,34 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.79rem;col
   .camp-art-provenance{display:none}
 }
 
+/* November 2026: stayARV-inspired editorial rate atlas. Prices are sourced from unchanged provider records. */
+.camp-rates{position:relative;isolation:isolate;overflow:hidden;margin:36px 0 56px;padding:clamp(26px,4.5vw,52px);border-radius:28px;color:#fff7e7;background:linear-gradient(103deg,#092d29ed,#0c3431e5 60%,#123e35de),url("assets/lake-dardanelle-sunset.jpg") center 42% / cover;box-shadow:0 22px 48px #102d282c}
+.camp-rates:before{content:"";position:absolute;inset:15px;border:1px solid #ffffff36;border-radius:20px;pointer-events:none}
+.camp-rates-header{position:relative;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(210px,.8fr);align-items:end;gap:28px;margin-bottom:28px}
+.camp-rates-eyebrow{display:block;color:#f1ce91;font-size:.7rem;font-weight:850;letter-spacing:.18em;text-transform:uppercase;margin:0 0 13px}
+.camp-rates h2{max-width:17ch;font:400 clamp(2.45rem,4.5vw,4rem)/1.06 Georgia,"Times New Roman",serif;letter-spacing:-.055em;text-wrap:balance;margin:0;color:#fffaf0}
+.camp-rates h2 em{font-style:normal;color:#f1ce91}
+.camp-rates-intro{max-width:43ch;color:#e0ece4;font-size:.94rem;line-height:1.7;margin:0}
+.camp-rates-grid{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.camp-rate-card{min-width:0;min-height:300px;display:flex;flex-direction:column;align-items:flex-start;padding:clamp(23px,2.7vw,33px);background:linear-gradient(155deg,#fffdf7,#eaf1e8);color:#193c31;border:1px solid #ffffffbb;border-radius:19px;text-decoration:none;box-shadow:0 12px 32px #071e1c35;transition:transform .2s ease,box-shadow .2s ease}
+.camp-rate-card:hover{transform:translateY(-5px);box-shadow:0 18px 38px #071e1c65}
+.camp-rate-card:focus-visible{outline:4px solid #f4c570;outline-offset:5px}
+.camp-rate-number{display:flex;align-items:center;justify-content:space-between;width:100%;gap:10px;padding-bottom:17px;border-bottom:1px solid #cfdccd;color:#456653;font-size:.65rem;letter-spacing:.115em;text-transform:uppercase;font-weight:850}
+.camp-rate-number b{font:400 1.85rem/1 Georgia,serif;color:#7c6a49;letter-spacing:-.06em}
+.camp-rate-name{display:block;font:400 clamp(1.38rem,2.1vw,1.7rem)/1.2 Georgia,"Times New Roman",serif;letter-spacing:-.04em;color:#193d31;margin:19px 0 17px;min-height:2.4em}
+.camp-rate-money{display:block;font:400 clamp(2.3rem,4vw,3.4rem)/1 Georgia,"Times New Roman",serif;letter-spacing:-.07em;color:#174a3b}
+.camp-rate-money small{font:750 .82rem/1.5 system-ui,sans-serif;color:#486357;letter-spacing:0}
+.camp-rate-detail{display:block;margin-top:13px;color:#506659;font-size:.79rem;line-height:1.6}
+.camp-rate-link{display:flex;align-items:center;justify-content:space-between;width:100%;gap:14px;margin-top:auto;padding-top:19px;color:#175943;font-size:.82rem;font-weight:850}
+.camp-rate-link span:last-child{display:grid;place-items:center;flex:none;width:38px;height:38px;border-radius:50%;background:#d9e9d9;color:#18533f;font-size:1.1rem}
+.camp-rates-foot{position:relative;margin:22px 0 0;color:#e0ece4;font-size:.79rem;line-height:1.6;max-width:95ch}
+#camp-list article.camp-rate-target{scroll-margin-top:145px}
+#camp-list article.camp-rate-target:target{outline:4px solid #b77d28;outline-offset:4px}
+@media(max-width:900px){.camp-rates-header{grid-template-columns:1fr;gap:13px}.camp-rates-grid{grid-template-columns:1fr 1fr}.camp-rate-card{min-height:0}.camp-rate-name{min-height:0}}
+@media(max-width:650px){.camp-rates{margin:23px 0 38px;padding:25px 19px;border-radius:20px}.camp-rates:before{inset:8px;border-radius:15px}.camp-rates h2{font-size:clamp(2.25rem,11vw,3rem)}.camp-rates-grid{grid-template-columns:1fr}.camp-rate-card{padding:23px;min-height:0}.camp-rate-name{margin-bottom:13px}.camp-rate-money{font-size:2.75rem}}
+@media(prefers-reduced-motion:reduce){.camp-rate-card{transition:none}.camp-rate-card:hover{transform:none}}
+@media print{.camp-rates{background:#fff;color:#183a32;box-shadow:none;border:1px solid #ccd7cc}.camp-rates h2,.camp-rates h2 em,.camp-rates-eyebrow,.camp-rates-intro,.camp-rates-foot{color:#183a32}.camp-rate-card{box-shadow:none;break-inside:avoid}}
+
 </style>
 </head>
 <body>
@@ -544,6 +572,38 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.79rem;col
     <div class="trip-board-tools"><button id="camp-trip-copy" class="trip-board-copy" type="button" disabled>Copy trip list ↗</button><p id="camp-trip-status" class="trip-board-status" role="status" aria-live="polite"></p></div>
     <textarea id="camp-trip-fallback" class="trip-board-fallback" readonly aria-label="Select and copy trip list" hidden></textarea>
   </section>
+
+  <section class="camp-rates" id="camp-rates-20261109" aria-labelledby="camp-rates-title">
+    <div class="camp-rates-header">
+      <div><span class="camp-rates-eyebrow">RIVER VALLEY / CAMPING RATE ATLAS · 03 LOCAL EXAMPLES</span><h2 id="camp-rates-title">Start nearby. <em>Stay your way.</em></h2></div>
+      <p class="camp-rates-intro">Three independently listed recreational vehicle (RV) parks in Russellville and nearby Atkins with operator-published rate examples. Compare the type of stay first, then open the full listing for terms and direct contact.</p>
+    </div>
+    <div class="camp-rates-grid">
+      <a class="camp-rate-card" href="#camp-destination-1" data-camp-highlight="camp-destination-1">
+        <span class="camp-rate-number"><span>ATKINS / MONTHLY RV SITE</span><b aria-hidden="true">01</b></span>
+        <strong class="camp-rate-name">Adventure RV Park · Lake Atkins</strong>
+        <span class="camp-rate-money">$425 <small>/ month</small></span>
+        <span class="camp-rate-detail">Water, sewer, electricity and Wi-Fi included; optional laundry extra. Interest list offered; openings not confirmed.</span>
+        <span class="camp-rate-link"><span>Review full park listing</span><span aria-hidden="true">↗</span></span>
+      </a>
+      <a class="camp-rate-card" href="#camp-destination-2" data-camp-highlight="camp-destination-2">
+        <span class="camp-rate-number"><span>RUSSELLVILLE / NIGHTLY &amp; MONTHLY</span><b aria-hidden="true">02</b></span>
+        <strong class="camp-rate-name">Ivy’s Cove RV Retreat</strong>
+        <span class="camp-rate-money">$52 <small>/ night</small></span>
+        <span class="camp-rate-detail">Also lists $312/week or $500/month plus electricity. Taxes, fees and applicable deposits are extra.</span>
+        <span class="camp-rate-link"><span>Review full park listing</span><span aria-hidden="true">↗</span></span>
+      </a>
+      <a class="camp-rate-card" href="#camp-destination-3" data-camp-highlight="camp-destination-3">
+        <span class="camp-rate-number"><span>RUSSELLVILLE / MONTHLY RV SITE</span><b aria-hidden="true">03</b></span>
+        <strong class="camp-rate-name">Marina Road Bait &amp; Outdoor RV Park</strong>
+        <span class="camp-rate-money">$450 <small>/ month</small></span>
+        <span class="camp-rate-detail">Published rate for two people includes water, trash and sewage; additional occupants cost extra. Separate from Russellville Marina.</span>
+        <span class="camp-rate-link"><span>Review full park listing</span><span aria-hidden="true">↗</span></span>
+      </a>
+    </div>
+    <p class="camp-rates-foot">Published examples, not live quotes, booking slots or a like-for-like price comparison. Durations and included utilities differ. Prices, occupancy rules, deposits, taxes, availability and all terms require confirmation with the individual operator. The lake image is regional scenery, not a photograph of these parks.</p>
+  </section>
+
   <div class="directory-head"><div><p class="eyebrow" style="color:#7b693e">Explore the directory</p><h2>Find a place to stay</h2><p>Compare details and contact each operator to confirm availability.</p></div><span class="count" id="result-count" role="status" aria-live="polite">Showing 54 of 54 places</span></div>
 
     <p class="camp-art-provenance">Illustrated landscapes distinguish campground types; they are not photos of individual properties or evidence of availability.</p>
@@ -555,9 +615,9 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.79rem;col
     </div>
   </div>
   <div class="listing-grid" id="camp-list">
-<article data-type="independent"><span class="camp-type-label">Independent stay</span><h2>Adventure RV Park — Lake Atkins (Atkins)</h2><p>Officially advertises monthly recreational vehicle (RV) site rentals at $425/month with water, sewer, electricity and Wi-Fi included. Sites offer 30- or 50-amp service; the park also lists showers, a boat launch and optional laundromat use for $25 more. This is a stationary RV-site rental, not a drivable RV rental. The operator offers an application/waitlist; confirm current availability, rates and terms directly.</p><p>152 Launch Road, Atkins, AR 72823 · <a href="tel:+14796410032">479-641-0032</a> · <a href="https://stayarv.com/" target="_blank" rel="noopener noreferrer">Official rates and waitlist ↗</a></p></article>
-<article data-type="independent"><span class="camp-type-label">Independent stay</span><h2>Ivy's Cove RV Retreat — Russellville</h2><p>Open year-round, with full-hookup RV sites. Official posted rates: $52/night, $312/week or $500/month plus electricity (taxes and fees extra). Monthly sites require a $100 electrical deposit and a 20% nonrefundable reservation deposit; daily and weekly cancellations require 72 hours' notice. The operator lists check-in at 2 p.m. and check-out at 11 a.m.; RVs older than 10 years require advance approval for monthly stays. Confirm current rates, age-policy exceptions, all deposits, cancellation terms and availability directly.</p><p>321 Bradley Cove Road, Russellville, AR 72802 · <a href="tel:+14792801662">479-280-1662</a> · <a href="https://www.ivyscove.com/" target="_blank" rel="noopener noreferrer">Official rates and reservations ↗</a></p></article>
-<article data-type="independent"><span class="camp-type-label">Independent stay</span><h2>Marina Road Bait &amp; Outdoor RV Park — Russellville</h2><p>Local operator advertises monthly recreational vehicle (RV) site rentals at $450/month for two people, including water, trash and sewage. The official rate sheet lists an additional $225 per person for extra occupants. Monthly rates are not prorated, and published rates and policies may change. Confirm current site availability, full terms and pricing directly. This is a separate RV park, not Russellville Marina.</p><p>1010 Marina Road, Russellville, AR 72802 · RV park office (call daily): <a href="tel:+15012407674">501-240-7674</a> · General number: <a href="tel:+14799672091">479-967-2091</a> · <a href="https://marinaroadbait.com/" target="_blank" rel="noopener noreferrer">Official RV park rates and contact ↗</a></p></article>
+<article id="camp-destination-1" class="camp-rate-target" data-type="independent"><span class="camp-type-label">Independent stay</span><h2>Adventure RV Park — Lake Atkins (Atkins)</h2><p>Officially advertises monthly recreational vehicle (RV) site rentals at $425/month with water, sewer, electricity and Wi-Fi included. Sites offer 30- or 50-amp service; the park also lists showers, a boat launch and optional laundromat use for $25 more. This is a stationary RV-site rental, not a drivable RV rental. The operator offers an application/waitlist; confirm current availability, rates and terms directly.</p><p>152 Launch Road, Atkins, AR 72823 · <a href="tel:+14796410032">479-641-0032</a> · <a href="https://stayarv.com/" target="_blank" rel="noopener noreferrer">Official rates and waitlist ↗</a></p></article>
+<article id="camp-destination-2" class="camp-rate-target" data-type="independent"><span class="camp-type-label">Independent stay</span><h2>Ivy's Cove RV Retreat — Russellville</h2><p>Open year-round, with full-hookup RV sites. Official posted rates: $52/night, $312/week or $500/month plus electricity (taxes and fees extra). Monthly sites require a $100 electrical deposit and a 20% nonrefundable reservation deposit; daily and weekly cancellations require 72 hours' notice. The operator lists check-in at 2 p.m. and check-out at 11 a.m.; RVs older than 10 years require advance approval for monthly stays. Confirm current rates, age-policy exceptions, all deposits, cancellation terms and availability directly.</p><p>321 Bradley Cove Road, Russellville, AR 72802 · <a href="tel:+14792801662">479-280-1662</a> · <a href="https://www.ivyscove.com/" target="_blank" rel="noopener noreferrer">Official rates and reservations ↗</a></p></article>
+<article id="camp-destination-3" class="camp-rate-target" data-type="independent"><span class="camp-type-label">Independent stay</span><h2>Marina Road Bait &amp; Outdoor RV Park — Russellville</h2><p>Local operator advertises monthly recreational vehicle (RV) site rentals at $450/month for two people, including water, trash and sewage. The official rate sheet lists an additional $225 per person for extra occupants. Monthly rates are not prorated, and published rates and policies may change. Confirm current site availability, full terms and pricing directly. This is a separate RV park, not Russellville Marina.</p><p>1010 Marina Road, Russellville, AR 72802 · RV park office (call daily): <a href="tel:+15012407674">501-240-7674</a> · General number: <a href="tel:+14799672091">479-967-2091</a> · <a href="https://marinaroadbait.com/" target="_blank" rel="noopener noreferrer">Official RV park rates and contact ↗</a></p></article>
 <article data-type="independent"><span class="camp-type-label">Independent stay</span><h2>Outdoor Living Center RV Park — Russellville</h2><p>Good Sam's campground directory lists a 50-site recreational vehicle (RV) park with full-hookup options, 30- and 50-amp electrical service, pull-through sites, restrooms, laundry and a recreation hall accommodating up to 80 people. Good Sam describes the park as open year-round; a visitor also reported a stay in April 2026. <strong>Current operating status, vacancies, rates and booking terms have not been independently confirmed with the operator.</strong> Call before traveling.</p><p>10 Outdoor Ct, Russellville, AR 72802 · <a href="tel:+14799687705">479-968-7705</a> (public directory number) · <a href="https://www.goodsam.com/campgrounds-rv-parks/arkansas/russellville/outdoor-living-center-rv-park/cgid-940000944" target="_blank" rel="noopener noreferrer">Good Sam campground listing ↗</a></p></article>
 <article data-type="federal"><span class="camp-type-label">Federal campground</span><h2>Old Post Road Campground — Russellville</h2><p>U.S. Army Corps of Engineers campground on Lake Dardanelle. Recreation.gov lists 37 reservable campsites with water and electric hookups, plus a boat ramp, playground, picnic areas and nearby biking and recreation trails. Confirm seasonal access, current fees, site availability and reservation terms through the federal booking page.</p><p>1063 Lock and Dam Road, Russellville, AR 72802 · <a href="tel:+14799687962">479-968-7962</a> · <a href="https://www.recreation.gov/camping/campgrounds/232662" target="_blank" rel="noopener noreferrer">Official federal campground information ↗</a></p></article>
 <article data-type="federal"><span class="camp-type-label">Federal campground</span><h2>Piney Bay Campground — London</h2><p>U.S. Army Corps of Engineers campground on Lake Dardanelle. Recreation.gov describes 68 reservable electric-hookup campsites, hot showers, two boat ramps, a swimming beach, playground and group picnic shelter. <strong>Seasonal camping notice:</strong> published 2026 campground dates ran March 1–October 31, so the listed 2026 season has ended. Confirm any exceptional winter access and future season dates directly on Recreation.gov; do not assume overnight camping is available outside the published season. Verify individual-site water hookups and current fees before visiting.</p><p>189 Private Road 2720, London, AR 72847 · <a href="tel:+14798853029">479-885-3029</a> · <a href="https://www.recreation.gov/camping/campgrounds/232672" target="_blank" rel="noopener noreferrer">Official federal campground information ↗</a></p></article>
@@ -887,6 +947,33 @@ board.hidden=false;render();
     });
   });
   queue();
+})();
+</script>
+
+<script>
+/* Scenic rate cards link to original source-of-truth records; recover from active filters. */
+(()=>{
+  "use strict";
+  const search=document.getElementById('camp-search');
+  const all=document.querySelector('[data-type-filter="all"]');
+  const full=document.querySelector('[data-camp-view="full"]');
+  document.querySelectorAll('[data-camp-highlight]').forEach(link=>{
+    link.addEventListener('click',event=>{
+      const card=document.getElementById(link.dataset.campHighlight);
+      if(!card||!search||!all)return;
+      event.preventDefault();
+      search.value='';
+      search.dispatchEvent(new Event('input',{bubbles:true}));
+      all.click();
+      if(full)full.click();
+      if(card.hidden)return;
+      const heading=card.querySelector('h2');
+      if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}
+      const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      card.scrollIntoView({block:'start',behavior:reduced?'auto':'smooth'});
+      if(history.replaceState)history.replaceState(null,'','#'+card.id);
+    });
+  });
 })();
 </script>
 </body>
