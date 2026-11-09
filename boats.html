@@ -155,16 +155,112 @@ footer{border-top:1px solid var(--line);padding:22px 0;margin-top:35px;font-size
 .closure-callout-link:hover{background:#143a2e;transform:translateY(-2px)}
 .closure-callout-link:focus-visible{outline:3px solid #b96b18;outline-offset:4px}
 .scene-caption{margin-top:15px}
-.boat-access-steps{grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}
-.boat-access-steps li{min-height:239px;gap:13px;padding:26px 19px 23px}
-.boat-access-steps li:not(:last-child){border-top:3px solid #e2b875}
-.boat-access-steps li:last-child{border:2px solid #fbe0a8;background:linear-gradient(155deg,#fff0cd,#ecca8f);box-shadow:0 15px 28px #05221b4d}
-.boat-access-steps li:last-child .boat-access-date{color:#794c17;font-weight:900}
-.boat-access-steps strong{font-size:clamp(1.22rem,1.7vw,1.53rem)}
-.boat-access-steps small{font-size:.81rem;line-height:1.56}
-@media(max-width:1080px){.boat-access-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.boat-access-steps li{min-height:180px}}
-@media(max-width:850px){.closure-callout{grid-template-columns:auto minmax(0,1fr);margin:-20px 18px 0}.closure-callout-link{grid-column:2;justify-self:start}.boat-access-steps li{display:flex;flex-direction:column;gap:12px}.boat-access-date{grid-row:auto}.boat-access-steps strong,.boat-access-steps small{grid-column:auto}}
-@media(max-width:600px){.closure-callout{grid-template-columns:1fr;gap:10px;margin:-16px 9px 0;padding:20px;border-radius:14px}.closure-callout-mark{width:45px;height:45px;border-radius:12px;font-size:1.8rem}.closure-callout-link{grid-column:1;justify-self:stretch}.scene-caption{padding:0 7px}.boat-access-steps{grid-template-columns:1fr}.boat-access-steps li{min-height:0;padding:19px}.boat-access-steps strong{font-size:1.32rem}}
+/* 2026-11-09 / Marina access chronology, editorial rail.
+   Compared live StayARV and Russellville.Rent before this enhancement.
+   Recompose the same four dated records as generous two-column, number-indexed
+   timeline folios; no entry, safety qualification, phone, source or date is altered.
+   NN/g: scan-friendly aligned headings + visual hierarchy. web.dev: reflow without
+   oversized imagery. WCAG 2.2: logical source order and readable contrast. */
+.boat-access-steps{
+  counter-reset:marina-stop;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+  margin:28px 0 0;
+}
+.boat-access-steps li{
+  counter-increment:marina-stop;
+  position:relative;
+  min-width:0;
+  min-height:195px;
+  display:grid;
+  grid-template-columns:minmax(96px,.34fr) minmax(0,1fr);
+  grid-template-rows:auto 1fr;
+  align-content:start;
+  gap:13px 22px;
+  padding:27px clamp(20px,2.8vw,32px);
+  border:1px solid #98b7a580;
+  border-left:5px solid #e5be78;
+  border-radius:17px;
+  background:linear-gradient(130deg,#ffffff14,#ffffff05);
+  box-shadow:0 12px 28px #09271f31;
+}
+.boat-access-steps li:not(:last-child){border-top:1px solid #98b7a580}
+.boat-access-steps li::before{
+  content:counter(marina-stop,decimal-leading-zero) " / 04";
+  display:block;
+  grid-column:1;
+  grid-row:1;
+  width:max-content;
+  max-width:100%;
+  padding:8px 11px;
+  border-radius:7px;
+  background:#f0d29e;
+  color:#203e32;
+  font-size:.7rem;
+  font-weight:900;
+  letter-spacing:.13em;
+  line-height:1.2;
+}
+.boat-access-steps .boat-access-date{
+  grid-column:1;
+  grid-row:2;
+  align-self:start;
+  margin:0;
+  color:#f9dfae;
+  font:800 clamp(.95rem,1.4vw,1.14rem)/1.35 system-ui,-apple-system,"Segoe UI",sans-serif;
+  letter-spacing:-.015em;
+  text-transform:none;
+  overflow-wrap:break-word;
+}
+.boat-access-steps strong{
+  grid-column:2;
+  grid-row:1;
+  align-self:center;
+  color:#fffaf1;
+  font:400 clamp(1.42rem,2.3vw,1.93rem)/1.13 Georgia,"Times New Roman",serif;
+  letter-spacing:-.042em;
+  text-wrap:balance;
+}
+.boat-access-steps small{
+  grid-column:2;
+  grid-row:2;
+  color:#e1ede6;
+  font-size:.87rem;
+  line-height:1.62;
+}
+.boat-access-steps li:last-child{
+  border:1px solid #f7dfae;
+  border-left:5px solid #b66e2d;
+  background:linear-gradient(145deg,#fff8e9,#f0d8a4);
+  color:#243f35;
+  box-shadow:0 14px 32px #041f1a4d;
+}
+.boat-access-steps li:last-child::before{background:#254e3e;color:#fff6e5}
+.boat-access-steps li:last-child .boat-access-date{color:#69461f}
+.boat-access-steps li:last-child strong{color:#1c3c31}
+.boat-access-steps li:last-child small{color:#45574b}
+@media(max-width:850px){
+  .boat-access-steps{grid-template-columns:1fr;gap:12px}
+  .boat-access-steps li{min-height:0;grid-template-columns:minmax(110px,.28fr) minmax(0,1fr)}
+  .closure-callout{grid-template-columns:auto minmax(0,1fr);margin:-20px 18px 0}
+  .closure-callout-link{grid-column:2;justify-self:start}
+}
+@media(max-width:600px){
+  .closure-callout{grid-template-columns:1fr;gap:10px;margin:-16px 9px 0;padding:20px;border-radius:14px}
+  .closure-callout-mark{width:45px;height:45px;border-radius:12px;font-size:1.8rem}
+  .closure-callout-link{grid-column:1;justify-self:stretch}
+  .scene-caption{padding:0 7px}
+  .boat-access-steps li{grid-template-columns:minmax(98px,.31fr) minmax(0,1fr);padding:21px 19px;gap:10px 15px}
+  .boat-access-steps strong{font-size:clamp(1.28rem,4.3vw,1.6rem)}
+  .boat-access-steps small{font-size:.82rem}
+}
+@media(max-width:430px){
+  .boat-access-steps li{grid-template-columns:1fr;gap:9px}
+  .boat-access-steps li::before,.boat-access-steps .boat-access-date,
+  .boat-access-steps strong,.boat-access-steps small{grid-column:1;grid-row:auto}
+  .boat-access-steps li::before{margin-bottom:3px}
+}
 @media(prefers-reduced-motion:reduce){.closure-callout-link{transition:none}.closure-callout-link:hover{transform:none}}
 
 
