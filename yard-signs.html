@@ -347,6 +347,108 @@ footer a{font-weight:750}
 }
 @media(prefers-reduced-motion:reduce){.region-folio-sign{transition:none}}
 
+
+/* Local-first greeting folio: one cohesive visual story, with published details unchanged.
+   Art is conceptual, never a claim about provider inventory or an available sign design. */
+.provider-layout{
+  grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);
+  gap:0;align-items:stretch;overflow:hidden;
+  border:1px solid #ccdaca;border-radius:24px;background:#fff;
+  box-shadow:0 24px 58px #123d361a
+}
+.local-sign-scene{
+  position:relative;isolation:isolate;display:flex;align-items:center;justify-content:center;
+  min-height:570px;padding:55px 25px 81px;overflow:hidden;
+  background:radial-gradient(circle at 77% 20%,#f8d08a 0 9%,transparent 9.2%),linear-gradient(150deg,#386e58 0%,#17473e 52%,#102f2b 100%)
+}
+.local-sign-scene:before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(100deg,#fff1c614 0 2px,transparent 2px 54px);
+  mask-image:linear-gradient(to bottom,#000,transparent 75%)
+}
+.local-sign-scene:after{
+  content:"";position:absolute;bottom:-1px;left:-5%;width:110%;height:28%;
+  background:#0b302c;clip-path:polygon(0 58%,15% 43%,35% 62%,49% 38%,68% 61%,86% 42%,100% 54%,100% 100%,0 100%);z-index:0
+}
+.local-scene-sun{
+  position:absolute;top:13%;left:13%;width:90px;height:90px;border:1px solid #f4d7a886;
+  border-radius:50%;box-shadow:0 0 0 21px #fae4b70b,0 0 0 43px #fae4b707
+}
+.local-scene-board{
+  position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  width:min(94%,340px);min-height:284px;padding:38px 21px 47px;
+  text-align:center;color:#183b31;background:#fff6de;border:10px solid #e6b96e;border-radius:17px;
+  box-shadow:0 15px 0 #a47748,0 32px 62px #041e1b94;transform:rotate(-3deg)
+}
+.local-scene-board:after{
+  content:"";position:absolute;top:calc(100% + 23px);left:25%;width:14px;height:120px;
+  background:#d3b089;box-shadow:180px 0 #d3b089;z-index:-1
+}
+.local-board-kicker{
+  color:#836039;font-size:.63rem;letter-spacing:.17em;line-height:1.4;font-weight:850;text-transform:uppercase
+}
+.local-scene-board strong{
+  display:block;font:400 clamp(3.1rem,5vw,4.55rem)/.96 Georgia,"Times New Roman",serif;
+  letter-spacing:-.078em;margin:18px 0 16px
+}
+.local-scene-board em{font-weight:400;color:#a65c49}
+.local-scene-board small{font-size:.79rem;color:#5d755e;font-weight:800;letter-spacing:.035em}
+.local-scene-disclaimer{
+  position:absolute;z-index:2;left:22px;right:22px;bottom:21px;text-align:center;
+  color:#e6f1e6;font-size:.66rem;font-weight:780;letter-spacing:.055em;line-height:1.5
+}
+.provider-layout>.provider{
+  border:0;border-radius:0;box-shadow:none;padding:clamp(28px,4.4vw,55px);
+  display:flex;flex-direction:column;justify-content:center;min-width:0
+}
+.provider-layout>.provider h3{font-size:clamp(2.35rem,4vw,3.6rem);max-width:17ch;margin:20px 0 23px}
+.provider-layout>.provider .tag{align-self:flex-start}
+.provider-layout>.provider .provider-links{gap:12px}
+.provider-layout>.provider .provider-links a{min-height:48px;text-align:center}
+.provider-layout>.price-panel{
+  grid-column:1/-1;display:grid;grid-template-columns:minmax(0,.65fr) minmax(0,1.35fr);
+  gap:clamp(20px,4vw,55px);align-items:center;border:0;border-top:1px solid #e9c5a4;
+  border-radius:0;padding:clamp(27px,4vw,43px) clamp(27px,4.4vw,55px);
+  background:linear-gradient(110deg,#fee2c5,#fff0e0)
+}
+.provider-layout>.price-panel>div{min-width:0}
+.provider-layout>.price-panel .amount{margin:9px 0 0}
+.provider-layout>.price-panel .price-copy{margin:0;font-size:.93rem}
+.provider-layout>.price-panel .price-foot{
+  grid-column:1/-1;margin:0;padding:14px 0 0;border-top:1px solid #dbbea5
+}
+@media(max-width:850px){
+ .provider-layout{grid-template-columns:1fr}
+ .local-sign-scene{min-height:380px;padding:48px 20px 69px}
+ .local-scene-board{min-height:224px;width:min(78%,350px)}
+ .local-scene-board strong{font-size:clamp(3.1rem,7vw,4.3rem)}
+ .local-scene-board:after{height:70px}
+ .provider-layout>.provider{padding:clamp(27px,5vw,40px)}
+ .provider-layout>.price-panel{grid-column:1}
+}
+@media(max-width:540px){
+ .provider-layout{border-radius:17px}
+ .local-sign-scene{min-height:298px;padding:31px 17px 61px}
+ .local-scene-sun{width:60px;height:60px}
+ .local-scene-board{width:min(86%,300px);min-height:181px;padding:23px 13px 29px;border-width:7px;gap:2px}
+ .local-scene-board strong{font-size:clamp(2.7rem,10vw,3.8rem);margin:12px 0}
+ .local-scene-board small{font-size:.7rem}
+ .local-scene-board:after{height:40px;box-shadow:145px 0 #d3b089}
+ .local-scene-disclaimer{font-size:.59rem;bottom:13px}
+ .provider-layout>.provider{padding:26px 22px}
+ .provider-layout>.provider h3{font-size:clamp(2.15rem,9.5vw,2.8rem)}
+ .provider-layout>.provider .provider-links{flex-direction:column}
+ .provider-layout>.provider .provider-links a{width:100%;overflow-wrap:anywhere}
+ .provider-layout>.price-panel{grid-template-columns:1fr;gap:14px;padding:26px 23px}
+ .provider-layout>.price-panel .price-copy{margin-top:4px}
+}
+@media print{
+ .provider-layout{display:block;box-shadow:none;border-color:#777}
+ .local-sign-scene{display:none}
+ .provider-layout>.provider{display:block;padding:20px}
+ .provider-layout>.price-panel{display:block;padding:20px}
+ .provider-layout>.price-panel .price-copy{margin-top:15px}
+}
 </style>
 </head>
 <body>
@@ -443,6 +545,11 @@ footer a{font-weight:750}
 
 <section class="content wrap" id="provider" aria-labelledby="provider-heading"><div class="section-head"><div><p class="eyebrow">One local operator</p><h2 id="provider-heading">The greeting starts here.</h2></div><p>Review the advertised details, then contact the operator directly to arrange a date and design.</p></div>
 <div class="provider-layout">
+<div class="local-sign-scene" role="img" aria-label="Conceptual festive River Valley yard greeting illustration; not actual rental signs or provider inventory.">
+  <span class="local-scene-sun" aria-hidden="true"></span>
+  <div class="local-scene-board" aria-hidden="true"><span class="local-board-kicker">THE RIVER VALLEY / 01</span><strong>Hooray,<br><em>neighbor!</em></strong><small>Make a moment of it.</small></div>
+  <span class="local-scene-disclaimer" aria-hidden="true">Illustration only · Not Sign Gypsies equipment or an available design</span>
+</div>
 <article class="provider"><span class="tag">River Valley service</span><h3>Sign Gypsies River Valley</h3><p>The official local operator advertises personalized yard-sign greetings, delivery, setup and pickup approximately 24 hours later. Listed occasions include birthdays, birth announcements, graduations, school events, sports celebrations and community events.</p><h4>Verified service area</h4><p class="detail"><strong>Verified service area:</strong> Russellville, Atkins, Dardanelle, Dover, Hector, London and Pottsville, Arkansas. No storefront or pickup address independently verified.</p><div class="provider-links"><a href="tel:+14793856923">479-385-6923</a> <a href="https://signgypsies.com/all-locations/sign-gypsies-river-valley/" target="_blank" rel="noopener noreferrer">Official local information &amp; booking ↗</a></div></article>
 <aside class="price-panel" aria-label="Advertised pricing"><div><p class="eyebrow">Advertised starting rate</p><p class="amount">$85 <small>plus tax</small></p><p class="price-copy"><strong>Published starting price:</strong> $85 plus tax. The official local page lists an additional day at $35 and same-day booking rush fee at $25. Prices and availability may change; request a final quote.</p></div><p class="price-foot">Contact the operator for a final quote and available dates.</p></aside>
 </div>
