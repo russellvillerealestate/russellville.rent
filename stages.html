@@ -391,6 +391,189 @@ main.wrap{width:min(1230px,calc(100% - 56px))}
   .stage-contact-links a:hover{transform:none}
 }
 
+
+
+/* Regional stage operator folios / Nov 9 2026.
+   Replace dense two-column summary cards with generous, alternating production
+   dossiers. Stage rig is an original schematic illustration, NOT provider
+   equipment or a representation of current stock or delivery.
+   Visual model: StayARV's immersive imagery and strong content hierarchy.
+   Research: NN/g local navigation and information hierarchy; web.dev responsive
+   image behavior; WCAG 2.2 visible focus, reflow, and reduced motion. */
+.grid>.card:not(.card-local){
+  grid-column:1/-1;
+  position:relative;
+  isolation:isolate;
+  display:grid;
+  grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+  grid-template-rows:auto auto 1fr auto auto;
+  gap:0 clamp(24px,3.8vw,56px);
+  min-height:380px;
+  padding:0;
+  overflow:hidden;
+  border:1px solid #cfdbd3;
+  border-radius:7px 30px 7px 30px;
+  background:#fffefa;
+  box-shadow:0 18px 42px #0c2d301b;
+}
+.grid>.card:not(.card-local)::before{
+  content:"";
+  display:block;
+  grid-column:1;
+  grid-row:1/6;
+  min-height:385px;
+  background-image:linear-gradient(180deg,#0e3431b9,#123a39e2),url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20520%20340%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23f7d4a1%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20stroke-width%3D%225%22%20d%3D%22M53%20128%20260%2050%20467%20128%20438%20128%20260%2072%2082%20128Z%22%2F%3E%3Cpath%20stroke-width%3D%223%22%20d%3D%22M80%20130v140m360-140v140M90%20148h340M100%20170h320M130%20190v76m260-76v76M120%20265h280v25H120z%22%2F%3E%3Cpath%20stroke-width%3D%222.3%22%20opacity%3D%22.78%22%20d%3D%22M106%20146%20140%20180m0-34-34%2034m274-34%2034%2034m0-34-34%2034M158%2079l16%2063m172-63-16%2063%22%2F%3E%3Cpath%20stroke-width%3D%224%22%20d%3D%22M92%20234H57v54h35zm371%200h-35v54h35zM62%20246h26m-26%2014h26m-26%2014h26m344-28h26m-26%2014h26m-26%2014h26%22%2F%3E%3Cpath%20stroke-width%3D%223%22%20d%3D%22M202%20196v38m116-38v38M193%20232h134v25H193z%22%2F%3E%3Cpath%20stroke-width%3D%222%22%20d%3D%22m103%20153-25%2058%2049-3m287-55%2025%2058-49-3%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23f4c27f%22%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%22146%22%20r%3D%227%22%2F%3E%3Ccircle%20cx%3D%22260%22%20cy%3D%22117%22%20r%3D%227%22%2F%3E%3Ccircle%20cx%3D%22380%22%20cy%3D%22146%22%20r%3D%227%22%2F%3E%3Cpath%20opacity%3D%22.25%22%20d%3D%22m140%20149-62%20135h110zm240%200-48%20135h110z%22%2F%3E%3C%2Fg%3E%3Cg%20stroke%3D%22%23e9e7cc%22%20stroke-width%3D%221.8%22%20fill%3D%22none%22%20opacity%3D%22.8%22%3E%3Cpath%20d%3D%22M30%20303H490M39%20310H481M150%20319H370%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"),url("assets/downtown-russellville-sunset.jpg");
+  background-repeat:no-repeat;
+  background-size:cover,86% auto,cover;
+  background-position:center,center 51%,center 46%;
+  background-color:#153a38;
+  border-right:1px solid #e6cfac;
+}
+.grid>.card:not(.card-local)::after{
+  content:"EDITORIAL STAGE DRAWING · NOT PROVIDER INVENTORY";
+  position:absolute;
+  left:clamp(17px,2.4vw,31px);
+  bottom:24px;
+  width:calc(41% - 40px);
+  font:850 .63rem/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;
+  letter-spacing:.12em;
+  color:#ffe1ac;
+  text-shadow:0 2px 8px #061b1d;
+  pointer-events:none;
+}
+.grid>.card:not(.card-local)>.card-top,
+.grid>.card:not(.card-local)>h3,
+.grid>.card:not(.card-local)>p,
+.grid>.card:not(.card-local)>.actions{grid-column:2;min-width:0;margin-right:clamp(21px,3vw,40px)}
+.grid>.card:not(.card-local)>.card-top{
+  grid-row:1;
+  margin-top:0;
+  padding:30px 0 15px;
+  align-self:start;
+}
+.grid>.card:not(.card-local)>h3{
+  grid-row:2;
+  margin-top:18px;
+  font:700 clamp(1.9rem,3vw,2.8rem)/1.12 Georgia,"Times New Roman",serif;
+  letter-spacing:-.05em;
+  color:#143b38;
+}
+.grid>.card:not(.card-local)>p:not(.detail){
+  grid-row:3;
+  margin-top:3px;
+  font-size:.94rem;
+  line-height:1.72;
+  color:#35545a;
+}
+.grid>.card:not(.card-local)>.detail{
+  grid-row:4;
+  margin-top:2px;
+  margin-bottom:17px;
+  border-left:3px solid #b78043;
+  background:#edf3ed;
+}
+.grid>.card:not(.card-local)>.actions{
+  grid-row:5;
+  align-self:end;
+  padding:0 0 30px;
+  gap:9px;
+}
+.grid>.card:not(.card-local)>.actions a{
+  flex:1 1 165px;
+  min-height:48px;
+}
+.grid>.card:not(.card-local):nth-of-type(even){
+  grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);
+  background:#f3efe5;
+}
+.grid>.card:not(.card-local):nth-of-type(even)::before{
+  grid-column:2;
+  border-right:0;
+  border-left:1px solid #e6cfac;
+  background-position:center,center 51%,center 60%;
+  background-color:#25453e;
+}
+.grid>.card:not(.card-local):nth-of-type(even)::after{
+  left:auto;
+  right:clamp(17px,2.4vw,31px);
+  text-align:right;
+}
+.grid>.card:not(.card-local):nth-of-type(even)>.card-top,
+.grid>.card:not(.card-local):nth-of-type(even)>h3,
+.grid>.card:not(.card-local):nth-of-type(even)>p,
+.grid>.card:not(.card-local):nth-of-type(even)>.actions{
+  grid-column:1;
+  margin-left:clamp(21px,3vw,40px);
+  margin-right:0;
+}
+.grid>.card:not(.card-local):nth-of-type(even)>.card-top{
+  margin-right:0;
+}
+.grid>.card:not(.card-local):target{
+  outline:4px solid #bf833c;
+  outline-offset:5px;
+}
+@media(max-width:820px){
+  .grid>.card:not(.card-local),
+  .grid>.card:not(.card-local):nth-of-type(even){
+    grid-template-columns:minmax(0,1fr);
+    grid-template-rows:205px auto auto auto auto auto;
+    gap:0;
+    min-height:0;
+  }
+  .grid>.card:not(.card-local)::before,
+  .grid>.card:not(.card-local):nth-of-type(even)::before{
+    grid-column:1;
+    grid-row:1;
+    min-height:205px;
+    background-size:cover,auto 100%,cover;
+    background-position:center,center 53%,center;
+    border:0;
+    border-bottom:1px solid #d9c39b;
+  }
+  .grid>.card:not(.card-local)::after,
+  .grid>.card:not(.card-local):nth-of-type(even)::after{
+    top:175px;
+    bottom:auto;
+    left:20px;
+    right:auto;
+    width:calc(100% - 40px);
+    text-align:left;
+  }
+  .grid>.card:not(.card-local)>.card-top,
+  .grid>.card:not(.card-local):nth-of-type(even)>.card-top,
+  .grid>.card:not(.card-local)>h3,
+  .grid>.card:not(.card-local):nth-of-type(even)>h3,
+  .grid>.card:not(.card-local)>p,
+  .grid>.card:not(.card-local):nth-of-type(even)>p,
+  .grid>.card:not(.card-local)>.actions,
+  .grid>.card:not(.card-local):nth-of-type(even)>.actions{
+    grid-column:1;
+    margin-left:clamp(20px,4vw,31px);
+    margin-right:clamp(20px,4vw,31px);
+  }
+  .grid>.card:not(.card-local)>.card-top{grid-row:2;padding-top:23px}
+  .grid>.card:not(.card-local)>h3{grid-row:3;margin-top:18px}
+  .grid>.card:not(.card-local)>p:not(.detail){grid-row:4}
+  .grid>.card:not(.card-local)>.detail{grid-row:5}
+  .grid>.card:not(.card-local)>.actions{grid-row:6;padding-bottom:23px}
+}
+@media(max-width:520px){
+  .grid>.card:not(.card-local)>h3{font-size:clamp(1.7rem,7vw,2.25rem)}
+  .grid>.card:not(.card-local)>.actions a{flex-basis:100%}
+  .grid>.card:not(.card-local)::after{font-size:.57rem;letter-spacing:.09em}
+}
+@media print{
+  .grid>.card:not(.card-local),
+  .grid>.card:not(.card-local):nth-of-type(even){display:block;padding:20px;background:#fff;box-shadow:none;break-inside:avoid}
+  .grid>.card:not(.card-local)::before,.grid>.card:not(.card-local)::after{display:none}
+  .grid>.card:not(.card-local)>*{margin:0 0 12px!important;padding:0!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .grid>.card:not(.card-local){transition:none}
+  .grid>.card:not(.card-local):hover{transform:none}
+}
+
 </style>
 </head>
 <body>
