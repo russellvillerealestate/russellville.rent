@@ -420,6 +420,50 @@ footer a{font-weight:750}
 @media(prefers-reduced-motion:reduce){#more .provider{transition:none}#more .provider:hover{transform:none}}
 @media print{#more .provider,#more .provider:nth-child(even){display:block;border:1px solid #999;break-inside:avoid;box-shadow:none;padding:16px}#more .provider>.regional-film{display:none}#more .provider>:not(.regional-film),#more .provider:nth-child(even)>:not(.regional-film){margin:0 0 12px}}
 
+
+/* 2026-11-09 / The Event Brief Desk — StayARV-inspired editorial utility.
+   Sources: NN/g visual hierarchy and forms; web.dev responsive design; WCAG 2.2.
+   Decorative artwork is original CSS, not a listed operator's photo or equipment. */
+.booth-plan{display:grid;grid-template-columns:minmax(0,.91fr) minmax(0,1.09fr);margin:clamp(42px,6vw,88px) 0 45px;border-radius:26px;overflow:hidden;box-shadow:0 25px 65px #102e2826;background:#fffdf6;border:1px solid #bed0c3}
+.booth-plan-visual{position:relative;min-height:680px;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;padding:clamp(29px,4vw,50px);color:#fdf6df;background:radial-gradient(ellipse at 80% 9%,#4970658c,transparent 48%),linear-gradient(150deg,#112f29,#1d4d3f 70%,#133a32)}
+.booth-plan-visual:before{content:"";position:absolute;inset:16px;z-index:-1;border:1px solid #ead29c6b;border-radius:17px;pointer-events:none}
+.booth-plan-visual:after{content:"";position:absolute;right:-150px;top:220px;width:440px;height:440px;border:1px solid #e9c7843c;border-radius:50%;box-shadow:0 0 0 45px #ffffff08,0 0 0 94px #ffffff05;z-index:-1}
+.booth-plan-overline,.booth-plan-foot{display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:.66rem;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:#f4d695}
+.booth-plan-visual h2{margin:40px 0 20px;max-width:10ch;color:#fff9e8;font:400 clamp(3.4rem,5.7vw,6.2rem)/.98 Georgia,"Times New Roman",serif;letter-spacing:-.067em;text-wrap:balance}
+.booth-plan-visual h2 em{font-weight:400;color:#f2d18c}
+.booth-plan-visual>p{max-width:37ch;color:#e1ebe2;line-height:1.65;font-size:1.02rem;margin:0}
+.booth-plan-film{position:relative;display:flex;align-items:center;justify-content:center;transform:rotate(-9deg);padding:25px 0 20px;min-height:185px}
+.booth-plan-frame{width:108px;height:145px;display:block;flex-shrink:0;border:9px solid #fff2d6;border-bottom-width:24px;box-shadow:12px 17px 22px #001c185c;background:radial-gradient(circle at 49% 34%,#edc9a6 0 17%,transparent 18%),radial-gradient(ellipse at 51% 114%,#36584d 0 47%,transparent 48%),linear-gradient(#cf9e8e,#e8cd9f)}
+.booth-plan-frame:first-child{transform:rotate(-11deg) translate(19px,22px);background:radial-gradient(circle at 49% 34%,#f0cfa8 0 17%,transparent 18%),radial-gradient(ellipse at 51% 114%,#78534f 0 47%,transparent 48%),linear-gradient(#bd8e9a,#e4bdaa)}
+.booth-plan-frame:nth-child(2){z-index:1;transform:rotate(4deg) translateY(-8px);height:161px;background:radial-gradient(circle at 49% 34%,#efcfaa 0 17%,transparent 18%),radial-gradient(ellipse at 51% 114%,#2c5e56 0 47%,transparent 48%),linear-gradient(#8caea2,#c9b48f)}
+.booth-plan-frame:last-child{transform:rotate(12deg) translate(-16px,19px)}
+.booth-plan-foot{border-top:1px solid #ead29c58;padding-top:21px;color:#dfd8c2;font-size:.59rem;line-height:1.5}
+.booth-plan-workspace{padding:clamp(25px,4.2vw,51px);background:linear-gradient(160deg,#fffdf6,#f9f6ed)}
+.booth-plan-kicker{margin:0 0 12px;font-size:.69rem;letter-spacing:.18em;text-transform:uppercase;font-weight:850;color:#77653d}
+.booth-plan-workspace h3{font:400 clamp(2rem,3.6vw,3.2rem)/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.055em;color:#153b30;margin:0 0 13px;max-width:13ch}
+.booth-plan-workspace>p:not(.booth-plan-kicker){margin:0 0 27px;color:#566b5f;max-width:56ch;font-size:.92rem}
+.booth-plan-fields{display:grid;grid-template-columns:1fr 1fr;gap:17px 15px}
+.booth-plan-field{display:flex;flex-direction:column;min-width:0;gap:6px}
+.booth-plan-field.full{grid-column:1/-1}
+.booth-plan-field label,.booth-plan-output label{color:#204b3c;font-size:.78rem;font-weight:800}
+.booth-plan-field input,.booth-plan-field select,.booth-plan-field textarea,.booth-plan-output textarea{display:block;width:100%;max-width:100%;min-width:0;border:1px solid #b6c9bd;border-radius:9px;background:#fff;color:#1d3c31;padding:11px 12px;font:inherit;font-size:.91rem;line-height:1.5;min-height:45px}
+.booth-plan-field textarea{min-height:76px;resize:vertical}
+.booth-plan-field :is(input,select,textarea):focus-visible,.booth-plan-output textarea:focus-visible{outline:3px solid #ad6114;outline-offset:3px;border-color:#764513}
+.booth-plan-output{padding-top:23px;margin-top:23px;border-top:1px solid #d1dfd2}
+.booth-plan-output-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:9px}
+.booth-plan-output-header small{font-size:.69rem;color:#637667}
+.booth-plan-output textarea{font-size:.82rem;line-height:1.62;min-height:215px;resize:vertical;background:#ecf2e9;border-color:#b9cab6}
+.booth-plan-actions{display:flex;gap:11px;align-items:center;flex-wrap:wrap;margin-top:13px}
+.booth-plan-copy{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:49px;padding:12px 21px;border:0;border-radius:99px;color:#152d24;background:#f0c578;font:800 .87rem/1.3 system-ui,sans-serif;cursor:pointer;transition:transform .2s ease,background .2s ease}
+.booth-plan-copy:hover{background:#f8d695;transform:translateY(-2px)}
+.booth-plan-copy:focus-visible{outline:3px solid #ad6114;outline-offset:3px}
+.booth-plan-status{font-size:.76rem;color:#3f5d50;min-height:1.6em;line-height:1.4}
+.booth-plan-privacy{margin:15px 0 0!important;font-size:.75rem!important;color:#617569!important;line-height:1.6}
+@media(max-width:850px){.booth-plan{grid-template-columns:1fr}.booth-plan-visual{min-height:0;padding:36px 38px 30px}.booth-plan-visual h2{font-size:clamp(3rem,8vw,5rem);max-width:17ch;margin:25px 0 16px}.booth-plan-film{position:absolute;right:-2px;bottom:30px;opacity:.2;transform:rotate(-9deg) scale(.7);transform-origin:bottom right}.booth-plan-visual>p{position:relative;max-width:56ch}.booth-plan-foot{margin-top:32px}}
+@media(max-width:580px){.booth-plan{margin:40px 0 29px;border-radius:17px}.booth-plan-visual{padding:30px 25px}.booth-plan-visual:before{inset:10px}.booth-plan-visual h2{font-size:clamp(2.9rem,12vw,4.1rem)}.booth-plan-workspace{padding:28px 22px}.booth-plan-fields{grid-template-columns:1fr;gap:14px}.booth-plan-field.full{grid-column:1}.booth-plan-output textarea{min-height:240px}.booth-plan-foot{letter-spacing:.08em}}
+@media(prefers-reduced-motion:reduce){.booth-plan-copy{transition:none}.booth-plan-copy:hover{transform:none}}
+@media print{.booth-plan{display:block;box-shadow:none;break-inside:avoid}.booth-plan-visual{display:none}.booth-plan-workspace{padding:20px;background:#fff}.booth-plan-copy{display:none}}
+
 </style>
 </head>
 <body>
@@ -484,6 +528,40 @@ footer a{font-weight:750}
 </div>
 <p class="price-ledger-note"><span><strong>Before you budget:</strong> All three providers' delivery to Russellville is unconfirmed. Prices may change; confirm the event date, total hours, staffing, prints, travel, taxes, and full terms directly with each provider. This snapshot does not represent live availability.</span></p>
 </section>
+
+<section class="booth-plan" id="event-brief" aria-labelledby="booth-plan-title">
+  <div class="booth-plan-visual">
+    <div class="booth-plan-overline"><span>R↗ / THE EVENT EDIT</span><span>04 / PREPARE</span></div>
+    <div>
+      <h2 id="booth-plan-title">A little plan.<br><em>A big moment.</em></h2>
+      <p>Make your first message count. Put the event details together before you contact a photo-booth operator for a complete quote.</p>
+    </div>
+    <div class="booth-plan-film" aria-hidden="true"><i class="booth-plan-frame"></i><i class="booth-plan-frame"></i><i class="booth-plan-frame"></i></div>
+    <div class="booth-plan-foot"><span>ORIGINAL EDITORIAL ART / NOT PROVIDER EQUIPMENT</span><span>RUSSELLVILLE, ARKANSAS</span></div>
+  </div>
+  <div class="booth-plan-workspace">
+    <p class="booth-plan-kicker">The inquiry studio / No booking or sign-in</p>
+    <h3>Bring the details together.</h3>
+    <p>Answer what you know. Your draft updates below, ready to copy into a message to whichever provider you choose.</p>
+    <form id="booth-plan-form" autocomplete="off">
+      <div class="booth-plan-fields">
+        <div class="booth-plan-field"><label for="booth-plan-date">Event date</label><input id="booth-plan-date" type="date" aria-describedby="booth-plan-privacy"></div>
+        <div class="booth-plan-field"><label for="booth-plan-place">Event city or venue</label><input id="booth-plan-place" type="text" maxlength="120" placeholder="e.g., Russellville" aria-describedby="booth-plan-privacy"></div>
+        <div class="booth-plan-field"><label for="booth-plan-format">Booth experience</label><select id="booth-plan-format"><option value="">Not sure yet</option><option>Classic photo booth or selfie station</option><option>360-degree video experience</option><option>Creative or caricature portraits</option></select></div>
+        <div class="booth-plan-field"><label for="booth-plan-hours">Approximate rental time</label><select id="booth-plan-hours"><option value="">Not sure yet</option><option>2 hours</option><option>3 hours</option><option>4 hours</option><option>More than 4 hours</option></select></div>
+        <div class="booth-plan-field full"><label for="booth-plan-notes">Extra details (optional)</label><textarea id="booth-plan-notes" rows="2" maxlength="360" placeholder="Guest count, indoor or outdoor setup, prints or sharing preferences…"></textarea></div>
+      </div>
+      <div class="booth-plan-output">
+        <div class="booth-plan-output-header"><label for="booth-plan-message">Your ready-to-send inquiry</label><small>Review before sending</small></div>
+        <textarea id="booth-plan-message" rows="8" readonly aria-describedby="booth-plan-privacy">Hello, I'd like a quote for a photo booth at an event. Could you confirm availability, full delivered pricing, travel and setup fees, required space and power, staffing, package features, and cancellation terms?</textarea>
+        <div class="booth-plan-actions"><button class="booth-plan-copy" id="booth-plan-copy" type="button">Copy my event brief <span aria-hidden="true">↗</span></button><span class="booth-plan-status" id="booth-plan-status" role="status" aria-live="polite"></span></div>
+      </div>
+    </form>
+    <p class="booth-plan-privacy" id="booth-plan-privacy">Drafted only in this browser tab. Nothing is submitted, saved, or sent to a provider. Contact details and actual availability remain with each listed operator.</p>
+    <noscript><p class="booth-plan-privacy">The live draft and copy button require JavaScript. You can still copy the sample question above and contact providers directly.</p></noscript>
+  </div>
+</section>
+
 <div class="note"><p>Russellville.Rent is an independent directory. Some businesses are based outside Russellville, and delivery or business status may be unconfirmed. Please confirm operating status, service area, availability, pricing and terms directly with each provider. <a href="sms:+14799707301">Submit corrections</a>.</p></div>
 <footer><span>© 2026 Russellville.Rent · Independent local rental directory</span><a href="/">Return to all rental categories</a></footer>
 </main><script>
@@ -566,4 +644,54 @@ footer a{font-weight:750}
   atlas.hidden=false;
 })();
 </script>
+
+<script>
+/* The Event Brief Desk: local-only, progressive assistance. No submission or persistence. */
+(() => {
+  const form=document.getElementById('booth-plan-form');
+  const preview=document.getElementById('booth-plan-message');
+  const copy=document.getElementById('booth-plan-copy');
+  const status=document.getElementById('booth-plan-status');
+  if(!form||!preview||!copy||!status)return;
+  const date=document.getElementById('booth-plan-date');
+  const city=document.getElementById('booth-plan-place');
+  const format=document.getElementById('booth-plan-format');
+  const hours=document.getElementById('booth-plan-hours');
+  const notes=document.getElementById('booth-plan-notes');
+  function compose(){
+    const fields=[
+      ['Event date',date.value||'To be confirmed'],
+      ['Event city or venue',city.value.trim()||'To be confirmed'],
+      ['Preferred experience',format.value||'Please advise'],
+      ['Approximate hours',hours.value||'To be confirmed']
+    ];
+    const lines=['Hello, I am requesting a photo-booth quote for an upcoming event.',''];
+    fields.forEach(field=>lines.push(field[0]+': '+field[1]));
+    if(notes.value.trim())lines.push('Additional details: '+notes.value.trim());
+    lines.push('','Could you confirm availability for this date and address, the full quoted cost including delivery/travel and setup, staffing, booth space and power needs, package inclusions (prints or digital sharing), and cancellation terms?','Thank you!');
+    preview.value=lines.join('\n');
+    status.textContent='';
+  }
+  form.addEventListener('input',compose);
+  form.addEventListener('change',compose);
+  form.addEventListener('submit',event=>event.preventDefault());
+  copy.addEventListener('click',async()=>{
+    try{
+      if(navigator.clipboard&&window.isSecureContext){
+        await navigator.clipboard.writeText(preview.value);
+        status.textContent='Copied. Paste this into your message to a provider.';
+      }else{
+        preview.focus();preview.select();
+        const success=document.execCommand&&document.execCommand('copy');
+        status.textContent=success?'Copied. Paste this into your message to a provider.':'Select the draft text and copy it manually.';
+      }
+    }catch(error){
+      preview.focus();preview.select();
+      status.textContent='Select the draft text and copy it manually.';
+    }
+  });
+  compose();
+})();
+</script>
+
 </body></html>
