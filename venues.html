@@ -485,6 +485,101 @@ footer{font-size:.82rem;color:var(--muted);margin:35px 0 45px}
 }
 @media(prefers-reduced-motion:reduce){.venue-dock-action{transition:none}.venue-dock-action:hover{transform:none}}
 
+
+/* 2026-11-09 | The Venue Passport gallery.
+   Visual-only restyle of existing directory cards, inspired by the bold evergreen
+   editorial surfaces on StayARV, not provider photography or live availability.
+   NN/g: headings/visible classification support layer-cake scanning; retain the
+   simpler list view for exact lookup. web.dev: fluid two-to-one-column responsive
+   layout. WCAG 2.2: strong text contrast, visible focus and reduced-motion.
+   All listing text, contacts, filters, shortlists and source-update automation stay intact. */
+#venue-grid:not(.view-rows)>article:not(.venue-folio){
+  --passport-start:#163c32;--passport-end:#386b55;
+  display:flex;flex-direction:column;position:relative;isolation:isolate;
+  overflow:hidden;min-width:0;
+  padding:142px clamp(21px,2.8vw,34px) 25px;
+  border:1px solid #b9cbbd;border-radius:22px;
+  background:linear-gradient(116deg,var(--passport-start),var(--passport-end)) top / 100% 116px no-repeat,#fffdf8;
+  box-shadow:0 9px 23px #112d2517,0 1px 0 #fff inset;
+  transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease
+}
+#venue-grid:not(.view-rows)>article:not(.venue-folio)[data-venue-kind="CELEBRATION"]{
+  --passport-start:#493b43;--passport-end:#72515f
+}
+#venue-grid:not(.view-rows)>article:not(.venue-folio)[data-venue-kind="HOTEL SPACE"]{
+  --passport-start:#263f50;--passport-end:#4a6571
+}
+#venue-grid:not(.view-rows)>article:not(.venue-folio)[data-venue-kind="ACTIVITY SPACE"],
+#venue-grid:not(.view-rows)>article:not(.venue-folio)[data-venue-kind="SPORTS PARTY VENUE"]{
+  --passport-start:#514032;--passport-end:#866447
+}
+#venue-grid:not(.view-rows)>article:not(.venue-folio)[data-venue-kind="PARK SHELTER"],
+#venue-grid:not(.view-rows)>article:not(.venue-folio)[data-venue-kind="OUTDOOR SPACE"],
+#venue-grid:not(.view-rows)>article:not(.venue-folio)[data-venue-kind="OUTDOOR VENUE"]{
+  --passport-start:#234734;--passport-end:#56785a
+}
+#venue-grid:not(.view-rows)>article:not(.venue-folio)::before{
+  content:"THE RIVER VALLEY / " attr(data-venue-kind) " / " counter(venue,decimal-leading-zero);
+  position:absolute;top:30px;left:clamp(21px,2.8vw,34px);right:86px;
+  margin:0;max-width:none;color:#ffebbe;
+  font-size:.67rem;line-height:1.5;font-weight:850;letter-spacing:.12em;
+  text-shadow:0 1px 3px #071a1833
+}
+#venue-grid:not(.view-rows)>article:not(.venue-folio)::after{
+  content:"R↗";position:absolute;top:15px;right:21px;
+  font:400 3.1rem/1 Georgia,"Times New Roman",serif;
+  letter-spacing:-.13em;color:#f8d99cbd;
+  pointer-events:none
+}
+#venue-grid:not(.view-rows)>article:not(.venue-folio) h2{
+  font:400 clamp(1.7rem,2.45vw,2.24rem)/1.14 Georgia,"Times New Roman",serif;
+  letter-spacing:-.044em;text-wrap:balance;
+  margin:0 0 19px;color:#143f35
+}
+#venue-grid:not(.view-rows)>article:not(.venue-folio)>p{
+  font-size:.93rem;line-height:1.7;margin:11px 0;
+  color:#34483f;overflow-wrap:anywhere
+}
+#venue-grid:not(.view-rows)>article:not(.venue-folio)>p.detail{
+  margin-top:auto;padding:21px 0 4px;
+  border-top:1px solid #d5dfd2;
+  color:#3f6051;font-size:.81rem;font-weight:750
+}
+#venue-grid:not(.view-rows)>article:not(.venue-folio)>p:last-of-type:not(.detail){
+  padding:14px 15px;background:#edf3eb;border-radius:12px;
+  color:#234b3a;line-height:1.85
+}
+#venue-grid:not(.view-rows)>article:not(.venue-folio)>p:last-of-type a{
+  display:inline-block;min-height:33px;padding-block:4px;
+  color:#12513c;text-decoration-thickness:1.5px
+}
+#venue-grid:not(.view-rows)>article:not(.venue-folio):hover{
+  border-color:#8ca997;transform:translateY(-4px);
+  box-shadow:0 18px 36px #102d2427
+}
+#venue-grid:not(.view-rows)>article:not(.venue-folio) a:focus-visible,
+#venue-grid:not(.view-rows)>article:not(.venue-folio) button:focus-visible{
+  outline:3px solid #ad7422;outline-offset:4px
+}
+@media(max-width:760px){
+  #venue-grid:not(.view-rows)>article:not(.venue-folio){
+    padding:128px 23px 23px;background-size:100% 105px;border-radius:19px
+  }
+  #venue-grid:not(.view-rows)>article:not(.venue-folio)::before{
+    top:25px;left:23px;right:75px;font-size:.63rem
+  }
+  #venue-grid:not(.view-rows)>article:not(.venue-folio)::after{
+    top:18px;right:22px;font-size:2.55rem
+  }
+  #venue-grid:not(.view-rows)>article:not(.venue-folio) h2{
+    font-size:clamp(1.55rem,5.7vw,2.1rem)
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  #venue-grid:not(.view-rows)>article:not(.venue-folio){transition:none}
+  #venue-grid:not(.view-rows)>article:not(.venue-folio):hover{transform:none}
+}
+
 </style></head><body><a class="skip-link" href="#venues">Skip to venue listings</a><header><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back-link" href="/">← All rental categories</a></div></header><main>
 <section class="venue-hero" aria-labelledby="page-title">
 <img class="venue-hero-photo" src="assets/downtown-russellville-sunset.jpg" alt="" fetchpriority="high" decoding="async">
