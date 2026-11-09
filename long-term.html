@@ -747,7 +747,31 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
 .renter-route-compare:not([hidden]){display:flex}
 @media(min-width:901px){#filters,#listings,#compareDesk,#sources{scroll-margin-top:185px}}
 @media(max-width:900px){.renter-route-desk{position:static;top:auto;grid-template-columns:1fr}.renter-route-story{padding:13px 14px}#filters,#listings,#compareDesk,#sources{scroll-margin-top:90px}}
-@media(max-width:550px){.renter-route-desk{padding:9px;border-radius:16px}.renter-route-story{padding:12px 11px}.renter-route-glyph{width:48px;height:48px;font-size:1.2rem}.renter-route-links{grid-template-columns:1fr;gap:7px}.renter-route-link{min-height:67px;flex-direction:row;align-items:center;gap:12px}.renter-route-link>span{flex:0 0 37%;max-width:125px}.renter-route-link strong{margin-left:auto;text-align:right;font-size:1.14rem}.renter-route-link small{display:none}}
+/* Small-screen rental wayfinding: three scannable boarding passes instead of a long vertical list.
+   A two-column reflow below 365px preserves readable text and 44px+ touch targets. */
+@media(max-width:550px){
+  .renter-route-desk{padding:10px;border-radius:19px;background:linear-gradient(145deg,#0e352b,#1c4d3a 77%),url('assets/lake-dardanelle-sunset.jpg') center/cover}
+  .renter-route-story{padding:10px 10px 17px;gap:11px}
+  .renter-route-glyph{width:47px;height:47px;font-size:1.2rem}
+  .renter-route-story small{font-size:.58rem;letter-spacing:.13em}
+  .renter-route-story strong{font-size:1.36rem;margin:3px 0 2px}
+  .renter-route-story p{font-size:.71rem}
+  .renter-route-links{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+  .renter-route-link{position:relative;min-width:0;min-height:130px;flex-direction:column;align-items:stretch;justify-content:space-between;gap:12px;padding:14px 10px 13px;border-radius:13px 13px 6px 13px;box-shadow:inset 0 0 0 1px #fff7,0 5px 14px #061a161f}
+  .renter-route-link>span{flex:none;max-width:none;display:flex;align-items:flex-start;gap:5px;line-height:1.35;font-size:.57rem;letter-spacing:.045em}
+  .renter-route-link>span b{flex:none;display:grid;place-items:center;width:22px;height:22px;margin:-4px -3px 0 0;border-radius:50%;background:#dce9d9;color:#1a5139;font-size:.8rem}
+  .renter-route-link:nth-child(2)>span b{background:#fff5d9}
+  .renter-route-link strong{margin:0;text-align:left;font-size:clamp(.99rem,3.7vw,1.2rem);line-height:1.13;overflow-wrap:break-word}
+  .renter-route-link small{display:none}
+  .renter-route-compare{min-height:47px;border-radius:12px}
+}
+@media(max-width:365px){
+  .renter-route-links{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .renter-route-link{min-height:112px;padding:12px 13px}
+  .renter-route-link:nth-child(3){grid-column:1/-1;min-height:65px;flex-direction:row;align-items:center;gap:16px}
+  .renter-route-link:nth-child(3)>span{max-width:47%}
+  .renter-route-link:nth-child(3) strong{max-width:48%;text-align:right}
+}
 @media(prefers-reduced-motion:reduce){.renter-route-link{transition:none}.renter-route-link:hover{transform:none}}
 @media print{.renter-route-desk{position:static;box-shadow:none;background:#fff;border:1px solid #888;color:#173e31}.renter-route-story small,.renter-route-story p{color:#173e31}.renter-route-desk:before{display:none}.renter-route-link{background:#fff!important;border:1px solid #888}}
 
