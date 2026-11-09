@@ -433,10 +433,10 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
 }
 
 
-/* 2026-11-04: seven-channel event atlas. Preserve all provider descriptions and booking
+/* 2026-11-04: eight-channel event atlas. Preserve all provider descriptions and booking
    qualifications. Compared live StayARV + Russellville.Rent; NNG visual hierarchy,
    web.dev responsive design, W3C WCAG 2.2 focus visibility and reduced motion.
-   Complete the seven-provider visual index, using a 2 / 3 / 2 editorial rhythm. */
+   Complete the eight-provider visual index, using a 2 / 3 / 3 editorial rhythm. */
 .route-grid li:nth-child(n+6){grid-column:span 3}
 .route-grid li:nth-child(n+6) .route-card{min-height:305px!important}
 .route-grid li:nth-child(n+6) .route-scene{min-height:180px}
@@ -543,7 +543,7 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
 #provider-4 .card-top{background:radial-gradient(circle at 65% 31%,#f9e6cd,#e5c9b2 66%,#cba98f);color:#6c4a3b}
 #provider-5 .card-top{background:radial-gradient(circle at 57% 36%,#dae9e9,#a3c9ca 69%,#71a4ab);color:#315d65}
 #provider-6 .card-top{background:radial-gradient(circle at 58% 42%,#4d5168,#252e47 64%,#18213a);color:#f1d5a0}
-#provider-7 .card-top{background:radial-gradient(circle at 58% 42%,#87645f,#563f47 64%,#342f3d);color:#ffe6bd}
+#provider-7 .card-top{background:radial-gradient(circle at 58% 42%,#87645f,#563f47 64%,#342f3d);color:#ffe6bd} #provider-8 .card-top{background:radial-gradient(circle at 58% 42%,#55766c,#224b46 64%,#153b35);color:#f3dfb8}
 #provider-3 .folio-scene svg,#provider-4 .folio-scene svg,#provider-5 .folio-scene svg{
  filter:drop-shadow(0 13px 16px #22423819)
 }
@@ -622,7 +622,7 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
    architecture is inspired by StayARV's decisive navigation and location-led
    palette, not copied from that site. NN/g scanning hierarchy; web.dev
    responsive reflow; WCAG 2.2 keyboard focus, target sizes, reduced motion.
-   All seven provider listings, claims and independent-source caveats persist. */
+   All eight provider listings, claims and independent-source caveats persist. */
 .show-route-rail{
  position:sticky;top:0;z-index:9;isolation:isolate;
  display:grid;grid-template-columns:minmax(175px,.72fr) repeat(3,minmax(0,1fr));
@@ -655,13 +655,13 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
 .show-route-rail>a strong{font:400 clamp(1.12rem,1.65vw,1.55rem)/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.028em}
 .show-route-rail>a small{color:#d7e5d9;font-size:.75rem;line-height:1.45}
 .show-route-rail>a:after{content:"↗";position:absolute;right:17px;top:51%;font-size:1.2rem;color:#f2cf90}
-#confirmed,#more-options,#plan-title,#event-brief,#provider-1,#provider-2,#provider-3,#provider-4,#provider-5,#provider-6,#provider-7{scroll-margin-top:140px}
+#confirmed,#more-options,#plan-title,#event-brief,#provider-1,#provider-2,#provider-3,#provider-4,#provider-5,#provider-6,#provider-7,#provider-8{scroll-margin-top:140px}
 @media(max-width:950px){
  .show-route-rail{position:relative;top:auto;grid-template-columns:repeat(3,minmax(0,1fr))}
  .show-route-brand{grid-column:1/-1;padding:21px 25px;flex-direction:row;align-items:center}
  .show-route-brand strong{font-size:1.85rem}
  .show-route-rail>a{min-height:150px}
- #confirmed,#more-options,#plan-title,#event-brief,#provider-1,#provider-2,#provider-3,#provider-4,#provider-5,#provider-6,#provider-7{scroll-margin-top:24px}
+ #confirmed,#more-options,#plan-title,#event-brief,#provider-1,#provider-2,#provider-3,#provider-4,#provider-5,#provider-6,#provider-7,#provider-8{scroll-margin-top:24px}
 }
 @media(max-width:610px){
  .show-route-rail{margin:36px 0 30px;grid-template-columns:1fr;gap:0;border-radius:14px}
@@ -686,13 +686,13 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
 <div class="guide-heading-row"><div><p class="guide-heading-kicker">The River Valley event desk / Start here</p><h2>Three ways to make it happen.</h2></div><p>Check who advertises Russellville service, find the equipment or crew you need, then prepare your questions before requesting a quote.</p></div>
 <nav class="guide-box" aria-label="Audio and visual directory shortcuts">
   <a class="guide-item" href="#confirmed"><span class="guide-number">01 / Service areas</span><strong>2 advertise Russellville service</strong><span>Other service details still require a quote</span><span class="guide-cta">See advertised delivery <span aria-hidden="true">↗</span></span></a>
-  <a class="guide-item" href="#service-map"><span class="guide-number">02 / Choose a service</span><strong>7 listed providers</strong><span>Sound, lighting and event production</span><span class="guide-cta">Explore the seven paths <span aria-hidden="true">↗</span></span></a>
+  <a class="guide-item" href="#service-map"><span class="guide-number">02 / Choose a service</span><strong>8 listed providers</strong><span>Sound, lighting and event production</span><span class="guide-cta">Explore the eight paths <span aria-hidden="true">↗</span></span></a>
   <a class="guide-item" href="#plan-title"><span class="guide-number">03 / Plan the details</span><strong>Verify before booking</strong><span>Equipment, dates, delivery and total cost</span><span class="guide-cta">Review the checklist <span aria-hidden="true">↗</span></span></a>
 </nav></div>
 <main class="shell" id="main">
 
 <section class="service-map" id="service-map" aria-labelledby="service-map-title">
-  <div class="service-map-head"><div><p class="kicker">The production signal board / Start with your need</p><h2 id="service-map-title">What kind of event support?</h2></div><p>Seven service paths, based on what each provider advertises. Select a card to review its details and confirmation status.</p></div>
+  <div class="service-map-head"><div><p class="kicker">The production signal board / Start with your need</p><h2 id="service-map-title">What kind of event support?</h2></div><p>Eight service paths, based on what each provider advertises. Select a card to review its details and confirmation status.</p></div>
   
   <div class="production-desk" aria-labelledby="production-desk-title">
     <div class="production-desk-intro">
@@ -713,15 +713,15 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
       <small>Illustration only · Not equipment offered by a particular provider.</small>
     </div>
     <div class="production-desk-control">
-      <p class="production-control-label">SELECT A PATH / SEVEN VERIFIED DIRECTORY ENTRIES</p>
-      <div class="production-mode-grid" id="production-modes" role="group" aria-label="Narrow the seven provider paths by service format" hidden>
+      <p class="production-control-label">SELECT A PATH / EIGHT VERIFIED DIRECTORY ENTRIES</p>
+      <div class="production-mode-grid" id="production-modes" role="group" aria-label="Narrow the eight provider paths by service format" hidden>
         <button type="button" class="production-mode" data-production-filter="all" aria-pressed="true" aria-controls="production-routes"><span class="production-mode-count">07 <span aria-hidden="true">↗</span></span><strong>See every option</strong><small>All advertised service types</small></button>
         <button type="button" class="production-mode" data-production-filter="equipment" aria-pressed="false" aria-controls="production-routes"><span class="production-mode-count">01 <span aria-hidden="true">↗</span></span><strong>Equipment-only</strong><small>Rent sound gear without a disc jockey</small></button>
         <button type="button" class="production-mode" data-production-filter="screens" aria-pressed="false" aria-controls="production-routes"><span class="production-mode-count">02 <span aria-hidden="true">↗</span></span><strong>Screens &amp; projection</strong><small>Outdoor cinema or projection inquiries</small></button>
         <button type="button" class="production-mode" data-production-filter="staffed" aria-pressed="false" aria-controls="production-routes"><span class="production-mode-count">04 <span aria-hidden="true">↗</span></span><strong>Staffed &amp; DJ-led</strong><small>Entertainment and technical crew services</small></button>
       </div>
-      <p class="production-fallback" id="production-fallback">Explore all seven service cards below. Each opens the full provider listing.</p>
-      <p class="production-state" id="production-state" aria-live="polite" aria-atomic="true" hidden>Showing all seven service paths.</p>
+      <p class="production-fallback" id="production-fallback">Explore all eight service cards below. Each opens the full provider listing.</p>
+      <p class="production-state" id="production-state" aria-live="polite" aria-atomic="true" hidden>Showing all eight service paths.</p>
       <p class="production-caveat">Service-format groupings are a navigation aid, not guaranteed inventory, booking, equipment-only eligibility, Russellville delivery, or technical advice. Full listings remain available below.</p>
     </div>
   </div>
@@ -778,6 +778,22 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
       <h3>Live sound &amp; stage lighting</h3><p class="route-provider">Smoothman Music Productions</p><p>Ceremony and live-music sound with on-site technician, stage lighting and a 16-by-16-foot stage advertised. Confirm Russellville travel and full event costs.</p>
       <span class="route-foot"><span>Russellville delivery unconfirmed</span><span aria-hidden="true">↗</span></span>
     </a></li>
+<li data-production-mode="staffed"><a class="route-card route-ceremony" href="#provider-8">
+      <span class="route-top"><span class="route-number">CHANNEL 08</span><span class="route-led" aria-hidden="true"><i></i><i></i><i></i></span></span>
+      <span class="route-scene" aria-hidden="true"><span class="route-scene-tag">CONCERT / LIVE SOUND</span><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet">
+        <path d="M22 134H298M42 41H278" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+        <path d="M49 41L71 54 94 41 117 54 140 41 163 54 186 41 209 54 232 41 255 54 275 41" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" opacity=".85"/>
+        <circle cx="71" cy="54" r="5" fill="#ffe9b8"/><circle cx="117" cy="54" r="5" fill="#ffe9b8"/><circle cx="163" cy="54" r="5" fill="#ffe9b8"/><circle cx="209" cy="54" r="5" fill="#ffe9b8"/><circle cx="255" cy="54" r="5" fill="#ffe9b8"/>
+        <path d="M60 58L43 118H98L79 58M251 58L232 118H288L267 58" fill="#ffe1ad" opacity=".13"/>
+        <rect x="57" y="98" width="44" height="34" rx="4" fill="#322f3a" stroke="currentColor" stroke-width="3"/><circle cx="79" cy="115" r="10" stroke="currentColor" stroke-width="3"/>
+        <rect x="219" y="98" width="44" height="34" rx="4" fill="#322f3a" stroke="currentColor" stroke-width="3"/><circle cx="241" cy="115" r="10" stroke="currentColor" stroke-width="3"/>
+        <path d="M154 64L161 115M153 83L178 76M160 115H181M161 115V132M146 132H181" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        <rect x="143" y="58" width="18" height="27" rx="9" fill="#312e3a" stroke="currentColor" stroke-width="3"/>
+        <path d="M128 127H196" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".65"/>
+      </svg></span>
+      <h3>Concert sound &amp; lighting</h3><p class="route-provider">SIDETRAXX Pro Sound</p><p>Professional concert and festival audio, lighting, video and band backline. Arkansas service advertised; Russellville delivery unconfirmed.</p>
+      <span class="route-foot"><span>Russellville delivery unconfirmed</span><span aria-hidden="true">↗</span></span>
+    </a></li>
   </ol>
   <p class="route-disclaimer">Illustrations depict equipment types, not actual provider inventory. These are navigation suggestions, not recommendations of equipment suitability or confirmed inventory. Verify dates, delivery, total charges and rental terms with each provider.</p>
 </section>
@@ -829,6 +845,20 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
         <path d="M128 127H196" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".65"/>
       </svg></span><span class="folio-caption" aria-hidden="true">Service illustration / Not provider inventory</span></div>
 <div class="provider-content"><h2>Smoothman Music Productions — Event Sound &amp; Lighting (Regional)</h2><p>Fayetteville-based production provider officially advertises wedding ceremony and live-music sound production with an on-site technician, stage lighting and a 16-by-16-foot stage with setup and teardown. Published starting prices are $500 for ceremony or live-music sound and $250 for stage lighting; these are <strong>not</strong> Russellville-specific quotes. The company lists Northwest Arkansas, Fort Smith, Little Rock and surrounding areas; <strong>Russellville delivery remains UNCONFIRMED</strong>. Ask about local availability, equipment-only rentals, crew, transport and total charges. Also listed in the <a href="stages.html">stage rental directory</a>.</p><p class="area">Fayetteville, Arkansas — Russellville delivery UNCONFIRMED</p><p><a href="tel:+14795959109">479-595-9109</a> · <a href="https://smoothmanmusic.com/audio-video-production-smp/" target="_blank" rel="noopener noreferrer">Official sound and lighting packages ↗</a> · <a href="https://smoothmanmusic.com/contact/" target="_blank" rel="noopener noreferrer">Official contact details ↗</a></p></div>
+</article>
+<article class="provider" id="provider-8">
+<div class="card-top"><span class="index" aria-hidden="true">08</span><span class="status verify">Russellville delivery unconfirmed</span><span class="folio-scene" aria-hidden="true"><svg viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" preserveAspectRatio="xMidYMid meet">
+        <path d="M22 134H298M42 41H278" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+        <path d="M49 41L71 54 94 41 117 54 140 41 163 54 186 41 209 54 232 41 255 54 275 41" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" opacity=".85"/>
+        <circle cx="71" cy="54" r="5" fill="#ffe9b8"/><circle cx="117" cy="54" r="5" fill="#ffe9b8"/><circle cx="163" cy="54" r="5" fill="#ffe9b8"/><circle cx="209" cy="54" r="5" fill="#ffe9b8"/><circle cx="255" cy="54" r="5" fill="#ffe9b8"/>
+        <path d="M60 58L43 118H98L79 58M251 58L232 118H288L267 58" fill="#ffe1ad" opacity=".13"/>
+        <rect x="57" y="98" width="44" height="34" rx="4" fill="#322f3a" stroke="currentColor" stroke-width="3"/><circle cx="79" cy="115" r="10" stroke="currentColor" stroke-width="3"/>
+        <rect x="219" y="98" width="44" height="34" rx="4" fill="#322f3a" stroke="currentColor" stroke-width="3"/><circle cx="241" cy="115" r="10" stroke="currentColor" stroke-width="3"/>
+        <path d="M154 64L161 115M153 83L178 76M160 115H181M161 115V132M146 132H181" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        <rect x="143" y="58" width="18" height="27" rx="9" fill="#312e3a" stroke="currentColor" stroke-width="3"/>
+        <path d="M128 127H196" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".65"/>
+      </svg></span><span class="folio-caption" aria-hidden="true">Service illustration / Not provider inventory</span></div>
+<div class="provider-content"><h2>SIDETRAXX Pro Sound — Arkansas / Memphis (Regional)</h2><p>Officially advertises professional live sound-system rentals, concert and event lighting, video production and musical-instrument backline for concerts, festivals and other events. The operator describes itself as Arkansas- and Memphis-based and lists Arkansas among the states served; it does <strong>not</strong> specifically confirm Russellville service. <strong>Russellville delivery is UNCONFIRMED.</strong> Ask whether staffed production or equipment-only rental is available for the event date and location, and confirm the equipment, transport, crew, setup, insurance requirements and complete quote. This is the same operator already listed in the <a href="stages.html#sidetraxx-stage">stage rental directory</a>, not a second business.</p><p class="area">Arkansas / Memphis regional operator — Russellville delivery UNCONFIRMED</p><p><a href="tel:+18704945220">870-494-5220</a> · <a href="https://sidetraxxpro.com/" target="_blank" rel="noopener noreferrer">Official sound, lighting, video and backline services ↗</a></p></div>
 </article></div>
 </section>
 <section class="event-connections" aria-labelledby="event-connections-title">
@@ -925,7 +955,7 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
 </script>
 
 <script>
-/* Progressive enhancement: all seven provider cards remain present in the
+/* Progressive enhancement: all eight provider cards remain present in the
    document; only the wayfinding cards are filtered. No provider data changes. */
 (function(){
   "use strict";
@@ -936,13 +966,13 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
   if(!modes||!list||!state||!fallback)return;
   const buttons=Array.from(modes.querySelectorAll("[data-production-filter]"));
   const cards=Array.from(list.querySelectorAll(":scope > li[data-production-mode]"));
-  if(cards.length!==7)return;
-  const labels={all:"all seven",equipment:"the equipment-only",screens:"the two screen and projection",staffed:"the four staffed and DJ-led"};
+  if(cards.length!==8)return;
+  const labels={all:"all eight",equipment:"the equipment-only",screens:"the two screen and projection",staffed:"the five staffed and DJ-led"};
   function filter(kind){
     cards.forEach(card=>{card.hidden=kind!=="all"&&card.dataset.productionMode!==kind;});
     buttons.forEach(button=>{button.setAttribute("aria-pressed",String(button.dataset.productionFilter===kind));});
     list.classList.toggle("is-filtered",kind!=="all");
-    state.textContent=kind==="all"?"Showing all seven service paths.":"Showing "+cards.filter(card=>!card.hidden).length+" of seven paths: "+labels[kind]+ " options. All full provider listings remain below.";
+    state.textContent=kind==="all"?"Showing all eight service paths.":"Showing "+cards.filter(card=>!card.hidden).length+" of eight paths: "+labels[kind]+ " options. All full provider listings remain below.";
   }
   buttons.forEach(button=>button.addEventListener("click",()=>filter(button.dataset.productionFilter)));
   modes.hidden=false;state.hidden=false;fallback.hidden=true;
