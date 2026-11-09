@@ -775,6 +775,251 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
 @media(prefers-reduced-motion:reduce){.renter-route-link{transition:none}.renter-route-link:hover{transform:none}}
 @media print{.renter-route-desk{position:static;box-shadow:none;background:#fff;border:1px solid #888;color:#173e31}.renter-route-story small,.renter-route-story p{color:#173e31}.renter-route-desk:before{display:none}.renter-route-link{background:#fff!important;border:1px solid #888}}
 
+
+
+/* 2026-11-09 / River Valley residence ledger: a full-width, photo-led Compare view.
+   StayARV reference: large imagery, forest/cream contrast, generous editorial spacing.
+   Nielsen Norman Group: aligned scanning and clear information hierarchy.
+   Google web.dev: responsive images/layout; W3C WCAG 2.2: focus and target visibility.
+   Only CSS for the existing .is-compact mode; no rental data, captions, prices,
+   source links, filters, comparisons, script handlers, or saved choices altered. */
+.listings.is-compact{
+  grid-template-columns:minmax(0,1fr);
+  gap:clamp(17px,2.4vw,27px);
+  counter-reset:residence-ledger;
+}
+.listings.is-compact .card{
+  counter-increment:residence-ledger;
+  grid-template-columns:minmax(245px,32%) minmax(0,1fr);
+  align-items:stretch;
+  overflow:hidden;
+  border:1px solid #cbdcd0;
+  border-radius:23px;
+  background:#fffdf8;
+  box-shadow:0 18px 45px #102f2b17;
+  transition:box-shadow .24s ease,transform .24s ease;
+}
+.listings.is-compact .card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 24px 50px #102f2b28;
+}
+.listings.is-compact .property-art{
+  position:relative;
+  isolation:isolate;
+  height:100%;
+  min-height:315px;
+  overflow:hidden;
+  background:linear-gradient(145deg,#a6bda5,#dce6d5);
+}
+.listings.is-compact .property-art::after{
+  content:"";
+  position:absolute;
+  inset:40% 0 0;
+  z-index:1;
+  pointer-events:none;
+  background:linear-gradient(0deg,#0c2d28bd,transparent 70%);
+}
+.listings.is-compact .property-art::before{
+  content:"RIVER VALLEY / " counter(residence-ledger,decimal-leading-zero);
+  position:absolute;
+  bottom:18px;
+  left:20px;
+  z-index:2;
+  color:#ffebc7;
+  font-size:.65rem;
+  line-height:1.4;
+  font-weight:800;
+  letter-spacing:.13em;
+  text-shadow:0 2px 8px #0a2729a8;
+  pointer-events:none;
+}
+.listings.is-compact .property-photo{
+  width:100%;
+  height:100%;
+  min-height:315px;
+  object-fit:cover;
+  object-position:center;
+  transition:transform .4s ease;
+}
+.listings.is-compact .card:hover .property-photo{transform:scale(1.025)}
+.listings.is-compact .source-badge{
+  top:19px;
+  left:19px;
+  max-width:calc(100% - 38px);
+  padding:8px 11px;
+  border:1px solid #fffff5c9;
+  border-radius:9px;
+  background:#fffcf1f2;
+  color:#143a30;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  box-shadow:0 8px 22px #0b30272b;
+}
+.listings.is-compact .photo-note{
+  z-index:3;
+  bottom:53px;
+  right:15px;
+  background:#123c31f0;
+  color:#fff;
+  max-width:calc(100% - 30px);
+  white-space:normal;
+}
+.listings.is-compact .card-body{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(166px,.7fr);
+  grid-template-areas:
+    "address price"
+    "location price"
+    "specs specs"
+    "manager actions"
+    "pin pin";
+  grid-template-rows:auto auto auto 1fr auto;
+  gap:6px 25px;
+  padding:clamp(23px,2.8vw,35px);
+  align-content:stretch;
+  min-width:0;
+}
+.listings.is-compact .address{
+  grid-area:address;
+  align-self:end;
+  margin:0;
+  color:#10382e;
+  font:400 clamp(1.58rem,2.5vw,2.2rem)/1.13 Georgia,"Times New Roman",serif;
+  letter-spacing:-.045em;
+  overflow-wrap:anywhere;
+  text-wrap:balance;
+}
+.listings.is-compact .location{
+  grid-area:location;
+  margin:7px 0 0;
+  text-align:left;
+  align-self:start;
+  color:#536d60;
+  font-size:.84rem;
+}
+.listings.is-compact .price{
+  grid-area:price;
+  align-self:start;
+  justify-self:end;
+  margin:0;
+  color:#154936;
+  font:400 clamp(1.9rem,3vw,2.6rem)/1.12 Georgia,"Times New Roman",serif;
+  letter-spacing:-.05em;
+  text-align:right;
+  white-space:normal;
+}
+.listings.is-compact .price small{
+  display:block;
+  margin-top:5px;
+  color:#52705c;
+  font:750 .72rem/1.4 system-ui,sans-serif;
+  letter-spacing:0;
+}
+.listings.is-compact .specs{
+  grid-area:specs;
+  align-self:center;
+  justify-content:flex-start;
+  gap:9px;
+  margin:18px 0 13px;
+  padding:15px 0;
+  border-top:1px solid #dce7dc;
+  border-bottom:1px solid #dce7dc;
+}
+.listings.is-compact .specs span{
+  padding:6px 11px;
+  border:1px solid #d0e1d1;
+  border-radius:100px;
+  background:#eef4e8;
+  color:#305842;
+  font-weight:750;
+}
+.listings.is-compact .manager{
+  grid-area:manager;
+  align-self:end;
+  margin:0;
+  padding:0 0 2px;
+  border:0;
+  color:#576f61;
+  font-size:.8rem;
+  overflow-wrap:anywhere;
+}
+.listings.is-compact .card-actions{
+  grid-area:actions;
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  align-self:end;
+  gap:9px;
+  margin:0;
+}
+.listings.is-compact .card-actions a{
+  display:grid;
+  place-items:center;
+  min-height:47px;
+  padding:10px 12px;
+  border-radius:10px;
+  font-size:.78rem;
+  text-align:center;
+  overflow-wrap:anywhere;
+}
+.listings.is-compact .inquire{background:#164c3b;color:#fff}
+.listings.is-compact .inquire:hover{background:#28634c}
+.listings.is-compact .source-link{background:#eef5ed;color:#164c3b;border:1px solid #bed4c1}
+.listings.is-compact .source-link:hover{background:#e0eedf}
+.listings.is-compact .compare-pick{
+  grid-area:pin;
+  justify-self:stretch;
+  min-height:47px;
+  margin:18px 0 0;
+  padding:10px 15px;
+  border:1px solid #bed5c0;
+  border-radius:10px;
+}
+.listings.is-compact .card:focus-within{
+  box-shadow:0 0 0 2px #ddb36c,0 19px 45px #102f2b1b;
+}
+@media(max-width:1050px){
+  .listings.is-compact .card{grid-template-columns:minmax(200px,33%) minmax(0,1fr)}
+  .listings.is-compact .card-body{
+    grid-template-columns:minmax(0,1fr);
+    grid-template-areas:"price" "specs" "address" "location" "manager" "actions" "pin";
+    grid-template-rows:auto;
+    gap:9px;
+    padding:24px;
+  }
+  .listings.is-compact .price{justify-self:start;text-align:left}
+  .listings.is-compact .price small{display:inline}
+  .listings.is-compact .specs{margin:6px 0 4px;padding:12px 0}
+  .listings.is-compact .card-actions{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:12px}
+  .listings.is-compact .manager{margin-top:8px}
+  .listings.is-compact .compare-pick{margin-top:5px}
+}
+@media(max-width:680px){
+  .listings.is-compact .card{grid-template-columns:minmax(0,1fr);border-radius:19px}
+  .listings.is-compact .property-art{min-height:0;height:clamp(215px,55vw,315px)}
+  .listings.is-compact .property-photo{height:100%;min-height:0}
+  .listings.is-compact .card-body{padding:24px 21px}
+  .listings.is-compact .address{font-size:clamp(1.55rem,6vw,2rem)}
+  .listings.is-compact .source-badge{max-width:calc(100% - 38px)}
+}
+@media(max-width:410px){
+  .listings.is-compact .card-actions{grid-template-columns:minmax(0,1fr)}
+  .listings.is-compact .card-body{padding:22px 18px}
+  .listings.is-compact .price{font-size:1.92rem}
+  .listings.is-compact .property-art{height:210px}
+}
+@media(prefers-reduced-motion:reduce){
+  .listings.is-compact .card,.listings.is-compact .property-photo{transition:none}
+  .listings.is-compact .card:hover,.listings.is-compact .card:hover .property-photo{transform:none}
+}
+@media print{
+  .listings.is-compact .card{display:block;border:1px solid #888;box-shadow:none;break-inside:avoid}
+  .listings.is-compact .property-art{height:130px;min-height:0}
+  .listings.is-compact .property-photo{height:130px;min-height:0}
+  .listings.is-compact .card-body{display:block;padding:15px 20px}
+  .listings.is-compact .address,.listings.is-compact .price{color:#111}
+  .listings.is-compact .card-actions,.listings.is-compact .compare-pick{display:none}
+}
+
 </style></head>
 <body>
 <a class="skip" href="#main">Skip to listings</a>
