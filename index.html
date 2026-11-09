@@ -2164,6 +2164,47 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 @media(prefers-reduced-motion:reduce){.recent-trail-item{transition:none}.recent-trail-item:hover{transform:none}}
 @media print{.recent-trail{display:none!important}}
 
+
+/* 2026-11-08 mobile River Valley field guide. Compared live StayARV + Russellville.Rent.
+   NN/g hierarchy and information scent; web.dev responsive design; W3C WCAG 2.2
+   focus, keyboard-native details, reflow and adequate target size. No new assets/scripts. */
+@media(max-width:760px){
+.directory-masthead .mobile-menu-panel{width:min(94vw,620px);max-height:min(82vh,760px);max-height:min(82dvh,760px);padding:0;overflow-y:auto;overscroll-behavior:contain;scroll-padding:15px;background:#f7f4eb;border:1px solid #e3d2a8;border-radius:23px;box-shadow:0 29px 68px #051e19b0,0 0 0 1px #fff8e8 inset}
+.directory-masthead .mobile-menu-intro{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:center;min-height:238px;padding:32px clamp(23px,5vw,36px);border-bottom:5px solid #d8b77c;overflow:hidden;color:#fffaf0;background:linear-gradient(94deg,#082b26f5 0%,#123d34d9 58%,#103d329e 100%),url("assets/lake-dardanelle-sunset.jpg") center 58%/cover no-repeat}
+.directory-masthead .mobile-menu-intro::after{content:"";position:absolute;right:-52px;bottom:-77px;width:210px;height:210px;border:1px solid #fae5af5b;border-radius:50%;box-shadow:0 0 0 31px #ffecb10d,0 0 0 64px #ffecb108;pointer-events:none}
+.directory-masthead .mobile-menu-intro>span{font-size:.67rem;letter-spacing:.19em;color:#f7dca7}
+.directory-masthead .mobile-menu-intro strong{font:400 clamp(2.2rem,7.7vw,3.2rem)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.055em;margin:21px 0 14px;max-width:15ch;color:#fffaf0;text-wrap:balance}
+.directory-masthead .mobile-menu-intro em{color:#f4d295;font-style:italic}
+.directory-masthead .mobile-menu-intro p{max-width:36ch;color:#e3eee4;font-size:.84rem;line-height:1.6}
+.directory-masthead .mobile-menu-categories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;padding:24px 21px 16px;margin:0}
+.directory-masthead .mobile-menu-categories a{position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:9px;min-width:0;min-height:186px;padding:18px 16px 17px;border-radius:17px;border:1px solid #d3dfd0;background:#fffefa;color:#153f32;text-decoration:none;box-shadow:0 7px 18px #15392b0c;transition:background .17s ease,border-color .17s ease,transform .17s ease}
+.directory-masthead .mobile-menu-categories a:nth-child(2),.directory-masthead .mobile-menu-categories a:nth-child(5){background:#e8efe3}
+.directory-masthead .mobile-menu-categories a:nth-child(3),.directory-masthead .mobile-menu-categories a:nth-child(6){background:#f4efdf}
+.directory-masthead .mobile-menu-categories a:hover{background:#ddebd9;border-color:#7eaa81;transform:translateY(-2px)}
+.directory-masthead .mobile-route-art{flex:none;display:grid;place-items:center;width:56px;height:56px;border:1px solid #c8d9c5;border-radius:15px;background:#e6efe2;color:#1c5843}
+.directory-masthead .mobile-route-art svg{display:block;width:39px;height:39px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.directory-masthead .mobile-menu-categories a>span:nth-child(2){display:block;margin:1px 0 0;color:#5c7665;font-size:.61rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase;line-height:1.3}
+.directory-masthead .mobile-menu-categories a strong{display:block;margin-top:auto;color:#153f32;font:400 clamp(1.14rem,4.25vw,1.5rem)/1.17 Georgia,"Times New Roman",serif;letter-spacing:-.04em;overflow-wrap:anywhere;text-wrap:balance}
+.directory-masthead .mobile-menu-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:0;padding:16px 21px 18px;border-top:1px solid #d8e0d1}
+.directory-masthead .mobile-menu-actions a{min-height:48px;padding:12px 13px}
+.directory-masthead .mobile-menu-actions .mobile-menu-all{min-height:57px;padding:15px 19px;background:#174938;color:#fff4da;font-size:.92rem;letter-spacing:-.01em}
+.directory-masthead .mobile-menu-foot{margin:0;padding:0 23px 25px;color:#526c5e;font-size:.73rem;line-height:1.55}
+.directory-masthead .mobile-menu-categories a:focus-visible,.directory-masthead .mobile-menu-actions a:focus-visible{outline:3px solid #b06d17;outline-offset:3px;position:relative;z-index:1}
+}
+@media(max-width:410px){
+.directory-masthead .mobile-menu-panel{width:calc(100vw - 18px);border-radius:18px}
+.directory-masthead .mobile-menu-intro{min-height:207px;padding:27px 22px}
+.directory-masthead .mobile-menu-intro strong{font-size:clamp(2.12rem,9vw,2.9rem)}
+.directory-masthead .mobile-menu-categories{gap:9px;padding:16px 13px 12px}
+.directory-masthead .mobile-menu-categories a{min-height:165px;padding:14px 12px}
+.directory-masthead .mobile-route-art{width:47px;height:47px;border-radius:12px}
+.directory-masthead .mobile-route-art svg{width:33px;height:33px}
+.directory-masthead .mobile-menu-categories a strong{font-size:clamp(1.08rem,4.8vw,1.26rem)}
+.directory-masthead .mobile-menu-actions{padding:12px 13px 17px}
+.directory-masthead .mobile-menu-foot{padding:0 15px 21px}
+}
+@media(prefers-reduced-motion:reduce){.directory-masthead .mobile-menu-categories a{transition:none}.directory-masthead .mobile-menu-categories a:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -2186,12 +2227,12 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
       <div class="mobile-menu-panel">
         <div class="mobile-menu-intro"><span>RIVER VALLEY / RENTAL DIRECTORY</span><strong>Find what you need.<br><em>Close to home.</em></strong><p>Choose a category or open the full rental directory.</p></div>
         <nav class="mobile-menu-categories" aria-label="Popular rental categories">
-          <a href="long-term.html"><span>01 / Settle in</span><strong>Homes &amp; apartments ↗</strong></a>
-          <a href="storage.html"><span>02 / Make room</span><strong>Storage ↗</strong></a>
-          <a href="equipment.html"><span>03 / Get it done</span><strong>Tools &amp; equipment ↗</strong></a>
-          <a href="paddling.html"><span>04 / Get outside</span><strong>Lake &amp; outdoors ↗</strong></a>
-          <a href="party.html"><span>05 / Celebrate</span><strong>Events &amp; parties ↗</strong></a>
-          <a href="cars.html"><span>06 / Hit the road</span><strong>Vehicle rentals ↗</strong></a>
+          <a href="long-term.html"><span class="mobile-route-art" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-homes"></use></svg></span><span>01 / Settle in</span><strong>Homes &amp; apartments ↗</strong></a>
+          <a href="storage.html"><span class="mobile-route-art" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-storage"></use></svg></span><span>02 / Make room</span><strong>Storage ↗</strong></a>
+          <a href="equipment.html"><span class="mobile-route-art" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-tools"></use></svg></span><span>03 / Get it done</span><strong>Tools &amp; equipment ↗</strong></a>
+          <a href="paddling.html"><span class="mobile-route-art" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-paddling"></use></svg></span><span>04 / Get outside</span><strong>Lake &amp; outdoors ↗</strong></a>
+          <a href="party.html"><span class="mobile-route-art" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-party"></use></svg></span><span>05 / Celebrate</span><strong>Events &amp; parties ↗</strong></a>
+          <a href="cars.html"><span class="mobile-route-art" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-cars"></use></svg></span><span>06 / Hit the road</span><strong>Vehicle rentals ↗</strong></a>
         </nav>
         <div class="mobile-menu-actions">
           <a class="mobile-menu-all" href="#browse">Browse every category <span aria-hidden="true">↗</span></a>
