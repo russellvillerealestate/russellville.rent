@@ -673,6 +673,144 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
 }
 @media(prefers-reduced-motion:reduce){.show-route-rail>a{transition:none}}
 
+
+/* 2026-11-10 / Production preflight: immersive editorial close.
+   Inspected live stayarv.com + russellville.rent/audio-visual.html first.
+   Inspired by StayARV's landscape-scale pine/brass rhythm, not its content.
+   Research: NN/g visual hierarchy & grouping; Google web.dev fluid layouts;
+   W3C WCAG 2.2 focus visible, reflow, reduced motion and target size.
+   All three pre-existing checklist statements remain verbatim. */
+.plan.preflight{
+  display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);
+  gap:0;overflow:hidden;margin:clamp(60px,7vw,95px) 0 34px;
+  padding:0;border:1px solid #a8bfae;border-radius:24px;
+  background:#f9f6ec;box-shadow:0 24px 58px #0c362b24;
+}
+.preflight-scene{
+  position:relative;isolation:isolate;display:flex;flex-direction:column;
+  justify-content:space-between;gap:25px;min-width:0;min-height:575px;
+  padding:clamp(31px,4vw,59px);overflow:hidden;color:#fff8e7;
+  background:linear-gradient(160deg,#0b2e2b,#194d40 65%,#0c302e);
+}
+.preflight-scene::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(circle at 78% 74%,#65886b44,transparent 42%),
+    repeating-linear-gradient(145deg,transparent 0 63px,#e1c58e0d 64px 65px);
+}
+.preflight-scene::after{
+  content:"";position:absolute;z-index:-1;pointer-events:none;
+  width:480px;height:480px;left:-255px;bottom:-275px;border:1px solid #e7d2a057;
+  border-radius:50%;box-shadow:0 0 0 51px #e7d2a012,0 0 0 102px #e7d2a00a;
+}
+.preflight-kicker,.preflight-scene-caption,.preflight-meta{
+  font-size:.68rem;font-weight:850;letter-spacing:.17em;line-height:1.5;text-transform:uppercase;
+}
+.preflight-kicker{display:block;color:#f3d49e;margin:0 0 25px}
+.plan.preflight h2{
+  max-width:11ch;margin:0;color:#fffaf0;
+  font:400 clamp(2.75rem,4.7vw,5.15rem)/1.02 Georgia,"Times New Roman",serif;
+  letter-spacing:-.065em;text-wrap:balance;
+}
+.plan.preflight h2 em{font-weight:400;color:#f1d39e}
+.preflight-scene-copy{
+  max-width:33ch;margin:20px 0 0;font-size:.97rem;line-height:1.7;color:#e3eae0;
+}
+.preflight-art{
+  display:block;align-self:center;max-width:100%;width:min(420px,100%);
+  height:auto;margin:auto 0 0;color:#f3d49e;
+  filter:drop-shadow(0 17px 20px #061d1a70);
+}
+.preflight-scene-caption{
+  display:block;padding-top:14px;border-top:1px solid #f3d49e80;
+  color:#e7e9d7;font-size:.57rem;
+}
+.preflight-body{
+  min-width:0;display:flex;flex-direction:column;
+  padding:clamp(29px,4vw,56px);background:#f9f6ec;
+}
+.preflight-meta{
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
+  gap:9px;padding-bottom:20px;color:#765b35;border-bottom:1px solid #cad8cb;
+}
+.preflight-meta span:last-child{
+  border:1px solid #8ea99a;border-radius:100px;padding:6px 11px;
+  color:#245342;font-size:.6rem;letter-spacing:.1em;
+}
+.plan.preflight .preflight-steps{
+  display:grid;grid-template-columns:1fr;gap:0;list-style:none;
+  margin:0;padding:0;
+}
+.plan.preflight .preflight-steps li{
+  display:grid;grid-template-columns:66px minmax(0,1fr);column-gap:23px;
+  padding:clamp(20px,2.5vw,33px) 0;border-bottom:1px solid #d3ded2;
+  min-width:0;
+}
+.preflight-index{
+  grid-row:1/3;align-self:start;display:grid;place-items:center;
+  width:58px;height:58px;border:1px solid #c2d2c1;
+  border-radius:50%;font:400 1.7rem/1 Georgia,serif;color:#1a4d3e;background:#e8efe4;
+}
+.preflight-steps h3{
+  grid-column:2;margin:0 0 9px;
+  font:400 clamp(1.37rem,2.3vw,1.85rem)/1.12 Georgia,"Times New Roman",serif;
+  letter-spacing:-.04em;color:#1a4336;
+}
+.plan.preflight .preflight-steps p{
+  grid-column:2;margin:0;color:#475d50;font-size:.89rem;line-height:1.7;
+}
+.preflight-actions{
+  display:flex;flex-wrap:wrap;gap:11px;margin-top:auto;padding-top:29px;
+}
+.preflight-actions a{
+  display:inline-flex;min-height:50px;align-items:center;justify-content:center;
+  padding:12px 18px;border-radius:9px;border:1px solid #376350;
+  text-align:center;text-decoration:none;font-size:.85rem;font-weight:800;
+  color:#f9f8ed;background:#174938;transition:transform .18s,background-color .18s;
+}
+.preflight-actions a:hover{background:#2a6752;transform:translateY(-2px)}
+.preflight-actions a:last-child{background:transparent;color:#20523f}
+.preflight-actions a:last-child:hover{background:#e7eee4}
+.preflight-actions a:focus-visible{outline:3px solid #a76a20;outline-offset:4px}
+.preflight-footnote{
+  margin:16px 0 0;color:#53675b;font-size:.73rem;line-height:1.6;
+}
+@media(max-width:920px){
+  .plan.preflight{grid-template-columns:1fr}
+  .preflight-scene{min-height:0;padding:37px 38px 24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.7fr);align-items:center;gap:22px}
+  .preflight-art{max-width:250px;margin:auto}
+  .preflight-scene-caption{grid-column:1/-1;margin:0}
+  .plan.preflight h2{font-size:clamp(2.65rem,6vw,4rem)}
+  .preflight-body{padding:32px 38px 38px}
+}
+@media(max-width:600px){
+  .plan.preflight{border-radius:14px;margin:49px 0 30px}
+  .preflight-scene{display:flex;align-items:stretch;gap:13px;padding:31px 24px 23px}
+  .preflight-kicker{margin-bottom:18px}
+  .plan.preflight h2{font-size:clamp(2.55rem,10.5vw,3.75rem)}
+  .preflight-scene-copy{font-size:.89rem}
+  .preflight-art{align-self:center;width:min(100%,245px);margin:10px auto}
+  .preflight-body{padding:24px 21px 28px}
+  .plan.preflight .preflight-steps li{grid-template-columns:51px minmax(0,1fr);column-gap:14px;padding:24px 0}
+  .preflight-index{width:48px;height:48px;font-size:1.38rem}
+  .preflight-steps h3{font-size:1.42rem}
+  .plan.preflight .preflight-steps p{font-size:.84rem}
+  .preflight-actions{display:grid;grid-template-columns:1fr}
+  .preflight-actions a{width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  .preflight-actions a{transition:none}
+  .preflight-actions a:hover{transform:none}
+}
+@media print{
+  .plan.preflight{display:block;background:#fff;box-shadow:none;border:1px solid #777}
+  .preflight-scene{display:block;min-height:0;background:#fff;color:#183c32;padding:24px}
+  .plan.preflight h2,.plan.preflight h2 em,.preflight-kicker,.preflight-scene-copy{color:#183c32}
+  .preflight-art,.preflight-scene-caption{display:none}
+  .preflight-body{padding:20px;background:#fff}
+  .preflight-actions a{color:#183c32;background:#fff}
+  .preflight-steps li{break-inside:avoid}
+}
+
 </style>
 </head>
 <body>
@@ -935,7 +1073,38 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
 </div>
 </div>
 </section>
-<section class="plan" aria-labelledby="plan-title"><h2 id="plan-title">Before requesting a quote</h2><ul><li>Share the event date, location, audience size and indoor or outdoor setup.</li><li>Ask whether equipment-only rental, delivery, setup and technical support are available.</li><li>Confirm the complete price, deposit, insurance requirements and cancellation terms.</li></ul></section>
+<section class="plan preflight" aria-labelledby="plan-title">
+  <div class="preflight-scene">
+    <div>
+      <span class="preflight-kicker">THE RIVER VALLEY / EVENT PRODUCTION · 03</span>
+      <h2 id="plan-title">Before requesting <em>a quote.</em></h2>
+      <p class="preflight-scene-copy">Turn an event idea into a useful conversation with the production provider. Three questions, one clear starting point.</p>
+    </div>
+    <svg class="preflight-art" viewBox="0 0 460 245" role="img" aria-label="Decorative illustration of event stage lighting and audio equipment, not actual rental inventory" xmlns="http://www.w3.org/2000/svg">
+      <path d="M23 211H436M66 192V46h330v146M66 46h330M90 46l32 28 33-28 32 28 33-28 32 28 33-28 33 28 32-28 32 28 34-28" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M122 74 61 201h119zm101 0-62 127h125zm105 0-62 127h125z" fill="#f3d49e" opacity=".1"/>
+      <g fill="#153d36" stroke="currentColor" stroke-width="4"><rect x="88" y="143" width="62" height="70" rx="6"/><rect x="312" y="143" width="62" height="70" rx="6"/><circle cx="119" cy="184" r="17"/><circle cx="343" cy="184" r="17"/></g>
+      <path d="M232 126v77m-22-77h44m-37 78h30" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+      <rect x="222" y="97" width="20" height="35" rx="9" fill="#f3d49e"/>
+      <path d="M92 211h285M54 224h356" stroke="currentColor" stroke-width="3" opacity=".45"/>
+      <g fill="#f3d49e"><circle cx="120" cy="90" r="6"/><circle cx="222" cy="90" r="6"/><circle cx="329" cy="90" r="6"/></g>
+    </svg>
+    <span class="preflight-scene-caption">Editorial event-production illustration · Not operator equipment</span>
+  </div>
+  <div class="preflight-body">
+    <div class="preflight-meta"><span>PRE-SHOW CHECKLIST / THREE ESSENTIALS</span><span>Planning only</span></div>
+    <ol class="preflight-steps">
+      <li><span class="preflight-index" aria-hidden="true">01</span><h3>Set the scene.</h3><p>Share the event date, location, audience size and indoor or outdoor setup.</p></li>
+      <li><span class="preflight-index" aria-hidden="true">02</span><h3>Define the support.</h3><p>Ask whether equipment-only rental, delivery, setup and technical support are available.</p></li>
+      <li><span class="preflight-index" aria-hidden="true">03</span><h3>Get the full terms.</h3><p>Confirm the complete price, deposit, insurance requirements and cancellation terms.</p></li>
+    </ol>
+    <div class="preflight-actions">
+      <a href="#event-brief">Build your event inquiry <span aria-hidden="true">&nbsp;↗</span></a>
+      <a href="#production-routes">Review service paths <span aria-hidden="true">&nbsp;↗</span></a>
+    </div>
+    <p class="preflight-footnote">This guide does not check inventory, confirm Russellville delivery or place a booking. Contact each operator directly.</p>
+  </div>
+</section>
 <p class="note">Russellville.Rent is an independent directory. Some businesses are based outside Russellville, and delivery or business status may be unconfirmed. Please confirm operating status, service area, availability, pricing and terms directly with each provider. <a href="sms:+14799707301">Submit corrections</a>.</p>
 </main>
 <footer><div class="shell">Russellville.Rent · <a href="/">Return to all rental categories</a></div></footer>
