@@ -457,6 +457,68 @@ footer a{font-weight:750}
  .provider-layout>.price-panel>div{display:block}
  .provider-layout>.price-panel .price-copy{margin-top:15px}
 }
+/* 2026-11-10 / River Valley celebration postcard.
+   StayARV's immersive, place-led hero interpreted for a separate rental directory.
+   Visual hierarchy: https://www.nngroup.com/articles/visual-hierarchy-ux-definition/
+   Responsive background imagery: https://web.dev/articles/optimize-css-background-images-with-media-queries
+   Focus and target sizing: https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/
+   Existing provider information, availability qualifications and scripts are unchanged. */
+.hero{isolation:isolate;background:linear-gradient(99deg,rgba(7,36,32,.98) 0%,rgba(8,41,36,.95) 35%,rgba(13,45,39,.80) 65%,rgba(12,45,38,.67) 100%),url("assets/downtown-russellville-sunset.jpg") center 50%/cover no-repeat}
+.hero:before{content:"";position:absolute;inset:20px 24px 27px;border:1px solid #f6dfaf50;border-radius:20px;z-index:-1;pointer-events:none}
+.hero-grid{grid-template-columns:minmax(0,1.14fr) minmax(0,.86fr);gap:clamp(26px,5vw,68px);min-height:645px;padding-block:clamp(80px,9vw,125px)}
+.hero .eyebrow{font-size:.76rem;color:#f6d8a0;letter-spacing:.19em}
+.hero h1{font-size:clamp(3.4rem,6.7vw,6.75rem);line-height:.99;letter-spacing:-.065em;max-width:14ch;text-wrap:balance;text-shadow:0 3px 20px #092d2973}
+.hero h1 em{display:block;margin-top:.06em;color:#ffddab;font-weight:400;font-style:italic}
+.hero .hero-lead{max-width:52ch;color:#f3f6ed;font-size:clamp(1rem,1.35vw,1.17rem);line-height:1.73}
+.hero .actions{margin-top:29px;gap:13px}
+.hero .btn{min-height:52px;padding:13px 21px;border-radius:12px}
+.sign-art{min-width:0;min-height:395px;padding:42px 20px 45px;border:2px solid #f4e6c0ba;border-radius:24px;background:linear-gradient(140deg,#dcead9 0%,#f9eccc 56%,#ead3a9 100%);box-shadow:0 25px 64px #061b18b8,0 0 0 9px #ffffff12;transform:rotate(2deg);transition:transform .25s ease,box-shadow .25s ease}
+.sign-art::before{content:"THE RIVER VALLEY / A REASON TO CELEBRATE";position:absolute;top:15px;left:24px;right:24px;text-align:left;color:#285346;font-size:.62rem;font-weight:900;letter-spacing:.14em;line-height:1.4}
+.sign-art::after{content:"ILLUSTRATED GREETING IDEA · NOT A PROVIDER DESIGN";position:absolute;bottom:15px;left:16px;right:16px;text-align:center;color:#31574d;font-size:.59rem;font-weight:850;letter-spacing:.11em;line-height:1.45}
+.sign-art svg{width:min(100%,490px);filter:drop-shadow(0 18px 15px #2753493d)}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.sign-art:hover{transform:rotate(0deg) translateY(-4px);box-shadow:0 30px 70px #061b18ba,0 0 0 9px #ffffff12}}
+/* The occasion rail is a legible navigation-like summary, not a second hero. */
+.occasion-strip{background:#fff1d8;border-bottom:1px solid #e6cfaa}
+.occasion-strip .wrap{display:grid;grid-template-columns:minmax(145px,1.2fr) repeat(4,minmax(0,.85fr)) minmax(177px,1.35fr);align-items:center;gap:10px;padding-block:22px}
+.occasion-strip strong{font:400 1.43rem/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.04em;text-transform:none;color:#73442f}
+.occasion-strip .wrap>span{display:grid;place-items:center;min-height:48px;padding:11px 9px;border:1px solid #e7ceb1;border-radius:12px;background:#fffaf1;color:#653c31;font-weight:800;font-size:.79rem;line-height:1.35;text-align:center}
+.occasion-strip .wrap>span:nth-of-type(even){background:#edf3df;border-color:#ccd9bb;color:#27513d}
+.occasion-strip .occasion-service-link{margin:0;min-height:50px;padding:10px 16px;border-radius:12px;text-align:center}
+@media(max-width:920px){
+ .hero-grid{grid-template-columns:1fr;gap:30px;min-height:0;padding-block:68px 72px}
+ .hero h1{max-width:16ch}
+ .sign-art{width:min(100%,560px);min-height:315px;margin-inline:auto;transform:none}
+ .sign-art svg{max-width:420px}
+ .occasion-strip .wrap{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .occasion-strip strong{grid-column:1/-1}
+ .occasion-strip .occasion-service-link{grid-column:1/-1;justify-self:start;padding-inline:23px}
+}
+@media(max-width:580px){
+ .hero:before{inset:12px 10px 20px;border-radius:13px}
+ .hero-grid{padding-block:55px 61px;gap:18px}
+ .hero h1{font-size:clamp(2.9rem,12vw,4.3rem);max-width:13ch}
+ .hero .hero-lead{font-size:1rem}
+ .hero .actions{gap:9px}
+ .hero .btn{width:100%}
+ .sign-art{min-height:245px;padding:35px 12px 37px;border-radius:17px}
+ .sign-art svg{max-width:320px}
+ .sign-art::before{left:14px;right:14px;top:11px;font-size:.54rem}
+ .sign-art::after{font-size:.52rem;bottom:10px}
+ .occasion-strip .wrap{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding-block:22px}
+ .occasion-strip strong{grid-column:1/-1;font-size:1.55rem}
+ .occasion-strip .occasion-service-link{grid-column:1/-1;width:100%;justify-self:stretch}
+}
+@media(prefers-reduced-motion:reduce){.sign-art{transition:none;transform:none}}
+@media print{
+ .hero{background:#fff!important;color:#173e34!important}
+ .hero h1,.hero .hero-lead,.hero .eyebrow{color:#173e34!important;text-shadow:none}
+ .hero h1 em{color:#654c2c}
+ .hero:before,.sign-art{display:none}
+ .hero-grid{min-height:0;padding:15px 0}
+ .occasion-strip .wrap{display:block}
+ .occasion-strip .wrap>span{display:inline-block;min-height:0;margin:4px}
+}
+
 </style>
 </head>
 <body>
@@ -464,7 +526,7 @@ footer a{font-weight:750}
 <header><div class="wrap header-inner"><a class="brand" href="/" aria-label="Russellville.Rent homepage">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
 <main>
 <section class="hero" aria-labelledby="page-title"><div class="wrap hero-grid">
-<div><p class="eyebrow">Russellville · Arkansas River Valley</p><h1 id="page-title">Make their day. From the front yard.</h1><p class="hero-lead">Personalized temporary yard greetings for birthdays, graduations, announcements and celebrations. Contact the operator directly to confirm available dates, custom designs and final pricing.</p><div class="actions"><a class="btn btn-primary" href="#provider">See local rental details ↓</a><a class="btn btn-outline" href="tel:+14793856923">Call the provider ↗</a></div></div>
+<div><p class="eyebrow">Russellville · Arkansas River Valley</p><h1 id="page-title">Make their day. <em>From the front yard.</em></h1><p class="hero-lead">Personalized temporary yard greetings for birthdays, graduations, announcements and celebrations. Contact the operator directly to confirm available dates, custom designs and final pricing.</p><div class="actions"><a class="btn btn-primary" href="#provider">See local rental details ↓</a><a class="btn btn-outline" href="tel:+14793856923">Call the provider ↗</a></div></div>
 <div class="sign-art" aria-hidden="true">
 <svg viewBox="0 0 510 375" xmlns="http://www.w3.org/2000/svg" role="presentation">
 <circle cx="418" cy="82" r="54" fill="#e78568" opacity=".24"/><circle cx="75" cy="112" r="33" fill="#f8d98c" opacity=".18"/>
