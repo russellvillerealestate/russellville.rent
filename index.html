@@ -2242,6 +2242,99 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 @media(prefers-reduced-motion:reduce){.directory-endcap .endcap-routes a{transition:none}}
 @media print{.directory-endcap{background:#fff!important;color:#183b2e;box-shadow:none;border:1px solid #bbb;break-inside:avoid}.directory-endcap .endcap-scene{display:none}.directory-endcap .endcap-main{display:block;min-height:0}.directory-endcap .endcap-index{background:#fff!important;color:#183b2e}.directory-endcap .endcap-index :is(h3,strong,small,a,p){color:#183b2e!important}.directory-endcap .endcap-meta{background:#fff}}
 
+
+/* 2026-11-09 — River Valley folio index. The existing optional List view
+   becomes a photo-led reading mode; unchanged listing copy and interactions.
+   Reference: StayARV forest/ivory/gold, NN/g scanning, web.dev reflow,
+   WCAG 2.2 focus, legibility and no content truncation. */
+.rentals-grid[data-view="list"]{gap:clamp(17px,2.5vw,29px)}
+.rentals-grid[data-view="list"]>.rental-card{
+  position:relative;isolation:isolate;
+  grid-template-columns:minmax(210px,32%) minmax(0,1fr);
+  min-height:260px;align-items:stretch;overflow:hidden;
+  background:#fffdf8;border:1px solid #cbd9cd;border-radius:23px;
+  box-shadow:0 12px 36px #153b3015;
+  transition:border-color .22s ease,box-shadow .22s ease,transform .22s ease;
+}
+.rentals-grid[data-view="list"]>.rental-card::before{
+  content:"";position:absolute;inset:0 auto 0 0;z-index:2;
+  width:6px;background:#bf9150;pointer-events:none;
+}
+.rentals-grid[data-view="list"]>.rental-card:nth-of-type(4n+2)::before{background:#577f69}
+.rentals-grid[data-view="list"]>.rental-card:nth-of-type(4n+3)::before{background:#7c9b9c}
+.rentals-grid[data-view="list"]>.rental-card:nth-of-type(4n+4)::before{background:#ab7c64}
+.rentals-grid[data-view="list"]>.rental-card:hover{
+  transform:translateY(-3px);border-color:#a9bea9;box-shadow:0 20px 44px #153b3024;
+}
+.rentals-grid[data-view="list"]>.rental-card:focus-within{
+  border-color:#8f6a32;box-shadow:0 0 0 2px #ebc784,0 12px 36px #153b3015;
+}
+.rentals-grid[data-view="list"]>.rental-card>:is(.image-wrap,.category-art,.brand-feature,.media-fallback,.boat-closure-scene,.band-poster,.roadbook-brand){
+  width:100%;height:100%;min-height:260px;border-radius:0;
+}
+.rentals-grid[data-view="list"]>.rental-card>.image-wrap img{height:100%;object-fit:cover}
+.rentals-grid[data-view="list"]>.rental-card>.card-body{
+  min-width:0;padding:clamp(24px,3.7vw,44px) clamp(25px,4.25vw,52px);
+  background:linear-gradient(125deg,#fffefa 0%,#fbfaf4 100%);
+}
+.rentals-grid[data-view="list"]>.rental-card .card-body>.eyebrow{
+  margin:0 0 12px;color:#58715b;font-size:.72rem;font-weight:850;letter-spacing:.15em;line-height:1.5;
+}
+.rentals-grid[data-view="list"]>.rental-card .card-body h3{
+  max-width:28ch;margin:0 0 15px;color:#173c32;
+  font:400 clamp(1.85rem,3.15vw,2.75rem)/1.1 Georgia,"Times New Roman",serif;
+  letter-spacing:-.05em;text-wrap:balance;
+}
+.rentals-grid[data-view="list"]>.rental-card .card-body>p:not(.eyebrow){
+  max-width:68ch;margin:0 0 13px;color:#3c574a;font-size:.96rem;line-height:1.64;
+}
+.rentals-grid[data-view="list"]>.rental-card .card-body>p.status{
+  max-width:none;margin:4px 0 17px;padding:11px 15px;
+  border-left:3px solid #c69d58;border-radius:0 8px 8px 0;
+  background:#eef3eb;color:#3e5d4f!important;font-size:.83rem!important;line-height:1.59;
+}
+.rentals-grid[data-view="list"]>.rental-card .card-actions{
+  align-items:center;gap:12px;margin-top:auto;
+}
+.rentals-grid[data-view="list"]>.rental-card .card-link{
+  min-height:45px;align-items:center;color:#1b6048;
+  font-size:.87rem;font-weight:850;text-underline-offset:4px;
+}
+@media(max-width:860px){
+ .rentals-grid[data-view="list"]>.rental-card{grid-template-columns:minmax(145px,32%) minmax(0,1fr);min-height:222px}
+ .rentals-grid[data-view="list"]>.rental-card>:is(.image-wrap,.category-art,.brand-feature,.media-fallback,.boat-closure-scene,.band-poster,.roadbook-brand){min-height:222px}
+ .rentals-grid[data-view="list"]>.rental-card>.card-body{padding:24px 25px}
+ .rentals-grid[data-view="list"]>.rental-card .card-body h3{font-size:clamp(1.55rem,3.7vw,2.2rem)}
+}
+@media(max-width:560px){
+ .rentals-grid[data-view="list"]{gap:14px}
+ .rentals-grid[data-view="list"]>.rental-card{
+   grid-template-columns:105px minmax(0,1fr);min-height:0;
+   border-radius:16px;box-shadow:0 7px 18px #153b3015;
+ }
+ .rentals-grid[data-view="list"]>.rental-card::before{width:4px}
+ .rentals-grid[data-view="list"]>.rental-card>:is(.image-wrap,.category-art,.brand-feature,.media-fallback,.boat-closure-scene,.band-poster,.roadbook-brand){height:100%;min-height:176px}
+ .rentals-grid[data-view="list"]>.rental-card>.card-body{padding:17px 15px}
+ .rentals-grid[data-view="list"]>.rental-card .card-body>.eyebrow{font-size:.61rem;letter-spacing:.09em;margin-bottom:6px}
+ .rentals-grid[data-view="list"]>.rental-card .card-body h3{font-size:1.33rem;letter-spacing:-.04em;line-height:1.16;margin-bottom:9px}
+ .rentals-grid[data-view="list"]>.rental-card .card-body>p:not(.eyebrow){font-size:.85rem;line-height:1.48;margin-bottom:9px}
+ .rentals-grid[data-view="list"]>.rental-card .card-body>p.status{padding:7px 10px;font-size:.79rem!important;line-height:1.5;margin:5px 0 10px}
+ .rentals-grid[data-view="list"]>.rental-card .card-link{font-size:.83rem;min-height:44px}
+}
+@media(max-width:370px){
+ .rentals-grid[data-view="list"]>.rental-card{grid-template-columns:88px minmax(0,1fr)}
+ .rentals-grid[data-view="list"]>.rental-card>.card-body{padding:14px 12px}
+ .rentals-grid[data-view="list"]>.rental-card .card-body h3{font-size:1.22rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .rentals-grid[data-view="list"]>.rental-card{transition:none}
+ .rentals-grid[data-view="list"]>.rental-card:hover{transform:none}
+}
+@media print{
+ .rentals-grid[data-view="list"]>.rental-card{box-shadow:none;border:1px solid #aab8aa;break-inside:avoid}
+ .rentals-grid[data-view="list"]>.rental-card::before{display:none}
+}
+
 </style>
 </head>
 <body>
