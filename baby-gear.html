@@ -284,6 +284,41 @@ footer a{color:#ffe3a5}
  .trip-guide .guide-card:hover{transform:none}
 }
 
+
+/* 2026-11-10 / Family safety passport. Turns a previously dense safety paragraph
+   into a bold four-question visual field guide, retaining every original
+   caution verbatim. Scenic art is not inventory or safety certification.
+   Design continuity: live StayARV and Russellville.Rent (forest, brass, place-led
+   editorial composition); Nielsen Norman Group (scale/hierarchy/grouping,
+   nngroup.com/articles/principles-visual-design/); Google web.dev responsive
+   layouts (web.dev/learn/design); W3C WCAG 2.2 focus/reflow/target sizing.
+   No scripts, provider content, prices, links, or automation files modified. */
+.family-checkpoint{position:relative;isolation:isolate;overflow:hidden;margin:clamp(45px,7vw,85px) 0;border:1px solid #2f5a47;border-radius:23px;background:#113a30;box-shadow:0 23px 56px #112e252c;scroll-margin-top:28px}
+.family-checkpoint-cover{display:grid;grid-template-columns:minmax(0,1fr) minmax(175px,.4fr);gap:25px;align-items:center;position:relative;isolation:isolate;min-height:375px;padding:clamp(34px,5.2vw,65px);color:#fff8e8;background:linear-gradient(100deg,#0b302af7 0%,#123e31ec 54%,#153e32c7 100%),url("assets/lake-dardanelle-sunset.jpg") center 54%/cover no-repeat}
+.family-checkpoint-cover:before{content:"";position:absolute;inset:17px;z-index:-1;border:1px solid #f6d69a54;border-radius:14px;pointer-events:none}
+.family-checkpoint-story{position:relative;z-index:1;min-width:0}
+.family-checkpoint-overline{display:block;margin:0 0 17px;color:#f1d597;font-size:.7rem;font-weight:850;letter-spacing:.16em;line-height:1.5}
+.family-checkpoint-story h2{margin:0 0 22px;max-width:17ch;font:400 clamp(2.55rem,4.7vw,4.9rem)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.058em;text-wrap:balance;color:#fff9e9}
+.family-checkpoint-story h2 em{color:#f4d196;font-weight:400}
+.family-checkpoint-story>p{max-width:60ch;margin:0 0 23px;color:#e7eee3;font-size:clamp(.9rem,1.35vw,1.04rem);line-height:1.69}
+.family-checkpoint-scene{display:block;font-size:.65rem;color:#e4d9b9;letter-spacing:.04em;line-height:1.5}
+.family-checkpoint-art{display:block;justify-self:center;width:min(100%,245px);height:auto;filter:drop-shadow(0 15px 24px #071c1775)}
+.family-checkpoint-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:#49695a}
+.family-checkpoint-step{display:flex;flex-direction:column;min-width:0;min-height:270px;padding:clamp(20px,2.8vw,32px);background:#f7f8f0}
+.family-checkpoint-step:nth-child(2){background:#fcf1d9}
+.family-checkpoint-step:nth-child(3){background:#e8f0e7}
+.family-checkpoint-step:nth-child(4){background:#f1e8d8}
+.family-checkpoint-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin:0 0 23px;color:#285741}
+.family-checkpoint-top b{max-width:20ch;font-size:.65rem;font-weight:900;letter-spacing:.11em;line-height:1.5}
+.family-checkpoint-top svg{width:52px;height:52px;flex:none;color:#39725c}
+.family-checkpoint-step h3{margin:auto 0 11px;color:#164336;font:400 clamp(1.55rem,2.1vw,2.1rem)/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.044em}
+.family-checkpoint-step>p{margin:0;color:#395a4b;font-size:.84rem;line-height:1.62}
+.family-checkpoint-safety{margin:0;padding:clamp(21px,3vw,32px) clamp(25px,4vw,48px);background:#173e33;color:#e7f0e5;font-size:.82rem;line-height:1.73;border-top:1px solid #638573}
+.family-checkpoint-safety strong{color:#f5d79d}
+@media(max-width:1080px){.family-checkpoint-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.family-checkpoint-step{min-height:240px}}
+@media(max-width:700px){.family-checkpoint{border-radius:17px;margin:45px 0}.family-checkpoint-cover{grid-template-columns:1fr;min-height:0;padding:clamp(32px,6vw,45px) clamp(23px,5vw,35px)}.family-checkpoint-cover:before{inset:10px}.family-checkpoint-story h2{font-size:clamp(2.5rem,8.5vw,3.7rem)}.family-checkpoint-art{display:none}.family-checkpoint-grid{grid-template-columns:1fr}.family-checkpoint-step{min-height:0;padding:23px 24px}.family-checkpoint-top{margin-bottom:9px}.family-checkpoint-top svg{width:43px;height:43px}.family-checkpoint-step h3{margin:0 0 9px;font-size:1.9rem}.family-checkpoint-safety{padding:24px;font-size:.81rem}}
+@media print{.family-checkpoint{box-shadow:none;background:#fff;border:1px solid #888;break-inside:avoid}.family-checkpoint-cover{min-height:0;padding:22px;background:#fff!important;color:#173e32!important}.family-checkpoint-cover:before,.family-checkpoint-art{display:none}.family-checkpoint-story :is(h2,h2 em,p,.family-checkpoint-overline,.family-checkpoint-scene){color:#173e32!important}.family-checkpoint-grid{background:#fff}.family-checkpoint-step{background:#fff!important;border:1px solid #aaa;break-inside:avoid}.family-checkpoint-safety{background:#fff;color:#173e32}.family-checkpoint-safety strong{color:#173e32}}
+
 </style>
 </head>
 <body>
@@ -422,7 +457,40 @@ footer a{color:#ffe3a5}
  </div>
 </section>
 
-<div class="notes" id="trip-checklist"><h3>Confirm the gear, not just the destination.</h3><p>Check age and size compatibility, recalls, cleaning policy, instructions, pickup and drop-off arrangements, damage terms and total charges. A rental listing does not replace following each child's equipment safety instructions or applicable car-seat rules.</p></div>
+<section class="family-checkpoint" id="trip-checklist" aria-labelledby="family-checkpoint-title">
+  <div class="family-checkpoint-cover">
+    <div class="family-checkpoint-story">
+      <span class="family-checkpoint-overline">THE FAMILY TRAVEL PASSPORT / BEFORE YOU BOOK</span>
+      <h2 id="family-checkpoint-title">Confirm the gear.<br><em>Then enjoy the visit.</em></h2>
+      <p>Four conversations to have with the rental company before you rely on a piece of equipment. These prompts are not a safety inspection, product recommendation or confirmed rental.</p>
+      <span class="family-checkpoint-scene">Lake Dardanelle scenery · Not rental equipment or a provider location</span>
+    </div>
+    <svg class="family-checkpoint-art" viewBox="0 0 240 220" fill="none" aria-hidden="true" focusable="false"><circle cx="120" cy="108" r="90" stroke="#F5D9A5" stroke-opacity=".42" stroke-width="2"/><circle cx="120" cy="108" r="69" stroke="#F5D9A5" stroke-opacity=".23" stroke-width="2"/><rect x="61" y="61" width="118" height="103" rx="10" fill="#F5E2BD" stroke="#123D33" stroke-width="5"/><path d="M84 82h72M84 103h52M84 124h37" stroke="#467461" stroke-width="6" stroke-linecap="round"/><circle cx="162" cy="147" r="30" fill="#D8E9D9" stroke="#194F3F" stroke-width="5"/><path d="m148 147 9 10 19-22" stroke="#27644B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M87 50v22m66-22v22" stroke="#E9B879" stroke-width="6" stroke-linecap="round"/></svg>
+  </div>
+  <div class="family-checkpoint-grid" aria-label="Four questions for the rental provider">
+    <article class="family-checkpoint-step">
+      <span class="family-checkpoint-top"><b>01 / THE FIT</b><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 14h38v37H13zM22 14v9m20-9v9M13 30h38M19 40h26"/><path d="M27 14v9m10-9v9" stroke-width="2"/></svg></span>
+      <h3>Age &amp; size.</h3>
+      <p>Ask which exact equipment is appropriate for the child's age and size, and check the manufacturer's instructions.</p>
+    </article>
+    <article class="family-checkpoint-step">
+      <span class="family-checkpoint-top"><b>02 / THE CONDITION</b><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M32 7 52 16v15c0 13-9 21-20 27C21 52 12 44 12 31V16z"/><path d="m23 32 7 7 13-15"/></svg></span>
+      <h3>Recalls &amp; care.</h3>
+      <p>Confirm recall status, cleaning policy and instructions for the actual item you would receive.</p>
+    </article>
+    <article class="family-checkpoint-step">
+      <span class="family-checkpoint-top"><b>03 / THE HANDOFF</b><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 14h40v36H12zM12 26h40M20 9v11m24-11v11"/><path d="m23 38 7 7 14-15"/></svg></span>
+      <h3>Delivery &amp; return.</h3>
+      <p>Verify the arrival window, pickup and drop-off arrangements, and where the equipment will be handed over.</p>
+    </article>
+    <article class="family-checkpoint-step">
+      <span class="family-checkpoint-top"><b>04 / THE AGREEMENT</b><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 8h32v48l-8-5-8 5-8-5-8 5z"/><path d="M23 20h18m-18 8h18m-18 8h12"/></svg></span>
+      <h3>Fees &amp; damage.</h3>
+      <p>Request the complete charges, the published three-day minimum, and the written damage and return terms.</p>
+    </article>
+  </div>
+  <p class="family-checkpoint-safety"><strong>Equipment safety comes first.</strong> Check age and size compatibility, recalls, cleaning policy, instructions, pickup and drop-off arrangements, damage terms and total charges. A rental listing does not replace following each child's equipment safety instructions or applicable car-seat rules.</p>
+</section>
 
 <section class="family-next" aria-labelledby="family-next-title">
   <div class="family-next-cover">
