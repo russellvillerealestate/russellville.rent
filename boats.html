@@ -526,6 +526,116 @@ body{background:#f6f6f0}
 @media(max-width:960px){.hero{min-height:0}.marina-hero-photo{object-position:56% center}.hero::before{background:linear-gradient(120deg,rgba(6,29,27,.94),rgba(12,45,37,.77)),linear-gradient(0deg,rgba(8,32,27,.74),transparent 50%)}.hero h1{max-width:13ch}}
 @media(max-width:610px){.hero{padding:48px 26px 81px}.marina-hero-photo{object-position:64% center}.hero::before{background:linear-gradient(180deg,rgba(5,28,26,.93) 0%,rgba(10,44,36,.84) 47%,rgba(5,28,26,.97) 100%)}.hero h1{font-size:clamp(3.05rem,12vw,4.6rem);max-width:12ch}.marina-hero-photo-note{left:26px;right:26px;bottom:21px;font-size:.64rem}.marina-hero-photo-note span{padding-inline:3px}}
 @media print{.marina-hero-photo,.marina-hero-photo-note{display:none!important}.hero{background:#fff!important;color:#173c31!important;border:1px solid #888;min-height:0;padding:20px}.hero h1,.hero h1 em,.hero .eyebrow,.hero-intro{color:#173c31!important;text-shadow:none!important}.hero:before,.hero:after{display:none!important}}
+
+/* Nov 10: Lake directory verification desk.
+   StayARV's immersive place-led composition, applied to an evidence-first
+   local directory rather than implying a marina is open. Nielsen Norman Group:
+   explicit next steps and information scent; web.dev: fluid responsive reflow;
+   W3C WCAG 2.2: clear links, keyboard focus, target size and reduced motion.
+   No provider, marina status, contact, pricing, or safety instructions changed. */
+.marina-verify{
+  display:grid;grid-template-columns:minmax(0,1.09fr) minmax(0,.91fr);
+  isolation:isolate;overflow:hidden;margin:clamp(42px,5vw,66px) 0 12px;
+  border:1px solid #9ab19e;border-radius:27px;background:#153b33;
+  box-shadow:0 23px 54px #0c30232a;
+}
+.marina-verify-scene{
+  position:relative;isolation:isolate;display:flex;flex-direction:column;
+  justify-content:space-between;min-width:0;min-height:470px;gap:60px;
+  padding:clamp(28px,4.5vw,55px);
+  background:linear-gradient(180deg,rgba(8,35,30,.82),rgba(9,37,31,.45) 42%,rgba(7,30,28,.94)),
+    url("assets/lake-dardanelle-sunset.jpg") center 53%/cover no-repeat;
+  color:#fff9e9;
+}
+.marina-verify-scene:after{
+  content:"";position:absolute;right:-100px;bottom:-135px;width:390px;height:390px;
+  border:1px solid #f7d29d6b;border-radius:50%;
+  box-shadow:0 0 0 48px #f7d29d14,0 0 0 96px #f7d29d0b;
+  pointer-events:none;z-index:-1;
+}
+.marina-verify-kicker{
+  margin:0;color:#f9d99e;font-size:.69rem;font-weight:850;
+  letter-spacing:.19em;text-transform:uppercase;line-height:1.5;
+}
+.marina-verify-scene h2{
+  max-width:12ch;margin:16px 0 18px;color:#fff9eb;
+  font:400 clamp(2.55rem,4.6vw,4.8rem)/1.03 Georgia,"Times New Roman",serif;
+  letter-spacing:-.058em;text-wrap:balance;
+}
+.marina-verify-scene h2 em{display:block;color:#ffdda5;font-weight:400}
+.marina-verify-scene>div p{margin:0;max-width:42ch;color:#f1f1e5;font-size:.93rem;line-height:1.75}
+.marina-verify-caption{
+  display:block;max-width:47ch;padding-top:14px;border-top:1px solid #f8dfbb80;
+  color:#f1e3cc;font-size:.72rem;line-height:1.5;font-weight:650;
+}
+.marina-verify-desk{
+  display:flex;flex-direction:column;min-width:0;
+  padding:clamp(25px,3.8vw,46px);background:#f7f6ef;color:#183e33;
+}
+.marina-verify-label{
+  margin:0 0 10px;color:#806034;font-size:.68rem;font-weight:850;
+  letter-spacing:.17em;text-transform:uppercase;
+}
+.marina-verify-desk h3{
+  margin:0;color:#173c32;font:400 clamp(1.7rem,2.7vw,2.55rem)/1.13 Georgia,"Times New Roman",serif;
+  letter-spacing:-.043em;text-wrap:balance;
+}
+.marina-verify-intro{
+  margin:13px 0 22px;color:#455e50;font-size:.89rem;line-height:1.65;
+}
+.marina-verify-steps{counter-reset:verify-step;list-style:none;padding:0;margin:0 0 28px}
+.marina-verify-steps li{
+  counter-increment:verify-step;display:grid;grid-template-columns:38px minmax(0,1fr);
+  gap:13px;padding:16px 0;border-top:1px solid #d3ded2;
+}
+.marina-verify-steps li:before{
+  content:counter(verify-step,decimal-leading-zero);display:grid;place-items:center;
+  width:38px;height:38px;border-radius:11px;background:#dfebdf;color:#21533f;
+  font:400 1.15rem/1 Georgia,serif;
+}
+.marina-verify-steps strong{display:block;color:#173e32;font-size:.88rem;line-height:1.45}
+.marina-verify-steps span{display:block;margin-top:4px;color:#53685b;font-size:.8rem;line-height:1.55}
+.marina-verify-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:auto}
+.marina-verify-actions a{
+  display:flex;align-items:center;justify-content:center;min-height:49px;
+  padding:12px 13px;border:1px solid #24553f;border-radius:11px;
+  background:#183f35;color:#fffdf6;text-decoration:none;text-align:center;
+  font-size:.79rem;font-weight:850;line-height:1.35;
+  transition:background-color .18s,transform .18s;
+}
+.marina-verify-actions a:last-child{background:transparent;color:#1b4d3a}
+.marina-verify-actions a:hover{background:#286047;color:#fff}
+.marina-verify-actions a:focus-visible{outline:3px solid #a56820;outline-offset:3px}
+.marina-verify-actions a:hover{transform:translateY(-2px)}
+.marina-verify-warning{
+  margin:16px 0 0;padding:14px 16px;border-left:3px solid #aa732f;
+  background:#eee9de;color:#4b5044;font-size:.78rem;line-height:1.6;
+}
+@media(max-width:860px){
+  .marina-verify{grid-template-columns:1fr}
+  .marina-verify-scene{min-height:360px;gap:42px}
+  .marina-verify-scene h2{max-width:18ch}
+}
+@media(max-width:510px){
+  .marina-verify{border-radius:19px}
+  .marina-verify-scene{min-height:360px;padding:28px 22px}
+  .marina-verify-scene h2{font-size:clamp(2.6rem,11vw,3.65rem)}
+  .marina-verify-desk{padding:27px 22px}
+  .marina-verify-actions{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .marina-verify-actions a{transition:none}
+  .marina-verify-actions a:hover{transform:none}
+}
+@media print{
+  .marina-verify{display:block;box-shadow:none;border:1px solid #777;break-inside:avoid}
+  .marina-verify-scene{min-height:0;background:#fff;color:#183e33;padding:20px}
+  .marina-verify-scene h2,.marina-verify-scene h2 em,.marina-verify-scene>div p,
+  .marina-verify-kicker,.marina-verify-caption{color:#183e33}
+  .marina-verify-desk{padding:20px}
+  .marina-verify-actions a{border:1px solid #444;background:#fff;color:#183e33}
+}
+
 </style>
 </head>
 <body>
@@ -623,6 +733,32 @@ body{background:#f6f6f0}
     </a>
   </div>
   <p class="lake-pathways-note">These links are to separate directories, not facilities at either closed marina. Confirm availability, permitted access and any restrictions directly with the relevant operator.</p>
+</section>
+
+<section class="marina-verify" id="submit-provider" aria-labelledby="marina-verify-title">
+  <div class="marina-verify-scene">
+    <div>
+      <p class="marina-verify-kicker">RUSSELLVILLE.RENT / THE NEXT VERIFIED LISTING</p>
+      <h2 id="marina-verify-title">Know an operating rental? <em>Help us verify it.</em></h2>
+      <p>There are no verified active boat or marina rental providers in this directory. If you know an independent operator, send its public details so the listing can be checked before publication.</p>
+    </div>
+    <small class="marina-verify-caption">Lake Dardanelle scenery · Not a rental operator, available boat or reopened marina.</small>
+  </div>
+  <div class="marina-verify-desk">
+    <p class="marina-verify-label">THE RIVER VALLEY / PROVIDER VERIFICATION DESK</p>
+    <h3>Three details that help us check a new rental.</h3>
+    <p class="marina-verify-intro">Help keep the directory useful without assuming a boat, berth or marina is available. Submit public business information only.</p>
+    <ol class="marina-verify-steps">
+      <li><div><strong>Business identity &amp; contact</strong><span>Operator name, official website, and a public phone number or business contact page.</span></div></li>
+      <li><div><strong>Published rental offering</strong><span>A current public source describing what is rented, where and on what terms.</span></div></li>
+      <li><div><strong>Pickup &amp; lawful access</strong><span>Where customers are directed to pick up or launch, with any restrictions to verify.</span></div></li>
+    </ol>
+    <div class="marina-verify-actions">
+      <a href="/#list">List a rental for review <span aria-hidden="true">&nbsp;↗</span></a>
+      <a href="sms:+14799707301">Text a correction <span aria-hidden="true">&nbsp;↗</span></a>
+    </div>
+    <p class="marina-verify-warning"><strong>Important:</strong> A submission is not a booking or an approval. Russellville and Dardanelle marinas remain closed; it does not authorize entry or imply that either marina has reopened.</p>
+  </div>
 </section>
 <p class="note">Independent local directory. Information is drawn from public listings and may change. Some business services and contact details are not independently confirmed. Please confirm pricing, availability and terms directly with each provider. <a href="sms:+14799707301">Submit corrections</a>.</p>
 <footer>Russellville.Rent · <a href="/">Return to homepage</a></footer>
