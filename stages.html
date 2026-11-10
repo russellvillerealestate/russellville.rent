@@ -618,11 +618,46 @@ main.wrap{width:min(1230px,calc(100% - 56px))}
 @media(max-width:740px){.stage-scale-banner{grid-template-columns:1fr;gap:17px;min-height:0;padding:45px 29px 39px}.stage-scale-banner-copy{max-width:65ch}.stage-scale-panels{grid-template-columns:1fr}.stage-scale-card:last-child{grid-column:auto}.stage-scale-key{display:block}.stage-scale-key strong{display:block;margin-bottom:6px}}
 @media(max-width:520px){.stage-scale{border-radius:5px 22px 5px 22px}.stage-scale-banner{padding:38px 23px 32px}.stage-scale-banner h2{font-size:clamp(2.4rem,10.5vw,3.5rem)}.stage-scale-body{padding:17px}.stage-scale-card{padding:20px}.stage-scale-plan{max-width:320px}.stage-scale-dimensions{font-size:2.5rem}}
 
+
+/* 2026-11-10 / Persistent production-navigation ribbon.
+   StayARV's visible key-destination navigation adapted to a long provider
+   directory. NN/g information scent; web.dev responsive reflow; W3C WCAG
+   2.2 focus not obscured, reflow and target size. No script dependency. */
+.site-header{position:sticky;top:0;z-index:30;background:#0d292b;border-bottom:1px solid #d7b67973;box-shadow:0 9px 24px #0d272b24}
+.header-inner{min-height:79px;gap:clamp(12px,2.6vw,30px)}
+.stage-route-nav{display:flex;gap:5px;align-items:center;justify-content:center;flex:1;min-width:0}
+.stage-route-nav a{display:inline-flex;gap:9px;align-items:center;justify-content:center;min-height:46px;padding:10px clamp(10px,1.6vw,18px);border:1px solid transparent;border-radius:7px;color:#f6f6ec;text-decoration:none;font-size:.78rem;font-weight:800;white-space:nowrap;transition:background-color .18s ease,border-color .18s ease}
+.stage-route-nav a span{display:inline-grid;place-items:center;min-width:25px;height:25px;padding:0 4px;background:#f0c98722;border:1px solid #e6c88e5e;border-radius:50%;color:#ffe0a8;font-size:.67rem;letter-spacing:.04em;font-weight:850}
+.stage-route-nav a:hover{background:#254c48;border-color:#7faaa081}
+.stage-route-nav a:focus-visible{outline:3px solid #ffd999;outline-offset:2px;background:#254c48}
+.site-header .brand{flex:none}.site-header .back{flex:none;white-space:nowrap}
+html{scroll-padding-top:105px}
+#providers,#stage-scale,#planning,#stage-studio,.routes,.stage-contact-index,.grid>.card{scroll-margin-top:105px}
+@media(max-width:940px){
+ .site-header .wrap{width:min(100% - 30px,1120px)}
+ .site-header .header-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0 10px;padding:11px 0 8px;min-height:0}
+ .site-header .brand{grid-column:1;grid-row:1;align-self:center}
+ .site-header .back{grid-column:2;grid-row:1;font-size:.75rem;padding:7px 0}
+ .stage-route-nav{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin-top:10px}
+ .stage-route-nav a{font-size:.75rem;min-height:44px;line-height:1.15;padding:8px 6px;gap:7px;white-space:normal;text-align:center}
+ html{scroll-padding-top:143px}
+ #providers,#stage-scale,#planning,#stage-studio,.routes,.stage-contact-index,.grid>.card{scroll-margin-top:143px}
+}
+@media(max-width:490px){
+ .site-header .brand{font-size:1rem}.site-header .back{font-size:.68rem}
+ .stage-route-nav a{gap:4px;flex-direction:column;font-size:.69rem;min-height:55px;padding:7px 4px}
+ .stage-route-nav a span{height:20px;min-width:23px;font-size:.61rem}
+ html{scroll-padding-top:160px}
+ #providers,#stage-scale,#planning,#stage-studio,.routes,.stage-contact-index,.grid>.card{scroll-margin-top:160px}
+}
+@media(prefers-reduced-motion:reduce){.stage-route-nav a{transition:none}}
+@media print{.site-header{position:static;box-shadow:none}.stage-route-nav{display:none}}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#providers">Skip to stage providers</a>
-<header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">Russellville<span>.Rent</span></a><a class="back" href="/">← Browse all rentals</a></div></header>
+<header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">Russellville<span>.Rent</span></a><nav class="stage-route-nav" aria-label="Stage rental section navigation"><a href="#providers"><span aria-hidden="true">01</span> Find providers</a><a href="#stage-scale"><span aria-hidden="true">02</span> Compare sizes</a><a href="#planning"><span aria-hidden="true">03</span> Before booking</a></nav><a class="back" href="/">← Browse all rentals</a></div></header>
 <section class="hero" aria-labelledby="page-title">
 <div class="wrap hero-inner">
 <div>
