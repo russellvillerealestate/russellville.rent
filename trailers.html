@@ -401,6 +401,110 @@ html{scroll-padding-top:110px}
 }
 @media(prefers-reduced-motion:reduce){#local .provider{transition:none}#local .provider:hover{transform:none}}
 
+
+/* 2026-11-10 / Regional trailer service folios. Compared live StayARV and
+   Russellville.Rent. Research: Nielsen Norman Group information scent and
+   visual hierarchy; Google web.dev responsive reflow; W3C WCAG 2.2 focus,
+   readable text, reduced motion. Pure presentation of all six original regional
+   records. Geometric panels are not rental equipment photos or availability. */
+#nearby,#cold-storage,#rent-to-own,#commercial-freight{margin-bottom:clamp(43px,6vw,75px)}
+:is(#nearby,#cold-storage,#rent-to-own,#commercial-freight)>.section-heading{
+ display:grid;grid-template-columns:minmax(0,1.06fr) minmax(230px,.94fr);
+ align-items:end;gap:clamp(15px,3vw,34px);margin-bottom:21px;
+ padding:clamp(24px,3.3vw,40px);border:1px solid #d4dfd2;
+ border-radius:19px;background:linear-gradient(120deg,#eaf1e7,#fafaf3)}
+#rent-to-own>.section-heading{background:linear-gradient(120deg,#f6e9d3,#faf8f0);border-color:#e7d5b6}
+#commercial-freight>.section-heading{background:linear-gradient(120deg,#e4eeee,#f7f9f5)}
+:is(#nearby,#cold-storage,#rent-to-own,#commercial-freight)>.section-heading h2{
+ font:400 clamp(2.15rem,3.6vw,3.4rem)/1.06 Georgia,"Times New Roman",serif;
+ letter-spacing:-.055em;max-width:19ch;text-wrap:balance;color:#153e32}
+:is(#nearby,#cold-storage,#rent-to-own,#commercial-freight)>.section-heading p{
+ margin:0;max-width:55ch;color:#435e50;font-size:.91rem;line-height:1.7}
+:is(#nearby,#cold-storage,#rent-to-own,#commercial-freight)>.grid{grid-template-columns:minmax(0,1fr);gap:21px}
+:is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider{
+ display:grid;grid-template-columns:minmax(0,.31fr) minmax(0,.69fr);
+ min-height:312px;max-width:none;overflow:hidden;border-radius:20px;
+ border:1px solid #c5d9cb;background:#fffdf8;box-shadow:0 17px 38px #143a2a15}
+:is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider .number{
+ position:relative;isolation:isolate;display:flex;align-items:flex-end;
+ min-width:0;min-height:100%;padding:clamp(31px,3.6vw,45px);
+ text-align:left;border:0;color:#f4dfba;
+ background:radial-gradient(circle at 83% 20%,#527e67,transparent 47%),#173e35;
+ font:400 clamp(4rem,7vw,7.1rem)/.85 Georgia,"Times New Roman",serif;
+ letter-spacing:-.08em;overflow:hidden}
+:is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider .number::before{
+ position:absolute;top:29px;left:clamp(27px,3.6vw,45px);
+ right:15px;z-index:2;content:"NEARBY / PICKUP";
+ color:#f7dfb3;font:800 .67rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;
+ letter-spacing:.15em;text-transform:uppercase}
+:is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider .number::after{
+ content:"";position:absolute;width:250px;height:250px;right:-97px;top:40%;
+ border:1px solid #f9e5bd58;border-radius:50%;pointer-events:none;
+ box-shadow:0 0 0 28px #f9e5bd0c,0 0 0 67px #f9e5bd08}
+#cold-storage .provider .number{background:radial-gradient(circle at 83% 18%,#527c84,transparent 47%),#193f4c}
+#cold-storage .provider .number::before{content:"REGIONAL / COLD STORAGE"}
+#rent-to-own .provider .number{color:#fff0cd;background:radial-gradient(circle at 80% 23%,#98704d,transparent 47%),#523f35}
+#rent-to-own .provider .number::before{content:"SEPARATE / RENT TO OWN"}
+#commercial-freight .provider .number{background:radial-gradient(circle at 82% 20%,#577b7c,transparent 47%),#214149}
+#commercial-freight .provider .number::before{content:"REGIONAL / FREIGHT"}
+#nearby .provider:nth-child(even) .number,#cold-storage .provider:nth-child(even) .number{grid-column:2;grid-row:1}
+#nearby .provider:nth-child(even) .card-content,#cold-storage .provider:nth-child(even) .card-content{grid-column:1;grid-row:1}
+:is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider .card-content{
+ min-width:0;justify-content:center;padding:clamp(28px,4vw,53px);overflow-wrap:anywhere}
+:is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider h3{
+ margin:0 0 16px;max-width:28ch;color:#173e32;
+ font:400 clamp(1.7rem,3vw,2.6rem)/1.13 Georgia,"Times New Roman",serif;
+ letter-spacing:-.043em;text-wrap:balance}
+:is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider p{font-size:.91rem;line-height:1.73}
+:is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider .detail{
+ margin-top:14px;padding:13px 16px;border-left:4px solid #648a74;
+ background:#edf3e9;color:#375447;font-weight:700}
+#rent-to-own .provider .detail{border-left-color:#bd9560;background:#f8f0df}
+:is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider p:last-child{
+ display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-top:16px;line-height:1.4}
+:is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider p:last-child a{
+ display:inline-flex;align-items:center;justify-content:center;min-height:48px;
+ padding:9px 15px;line-height:1.35;max-width:100%;text-align:center;overflow-wrap:anywhere}
+:is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider:target{
+ outline:4px solid #ae7420;outline-offset:4px}
+@media(max-width:850px){
+ :is(#nearby,#cold-storage,#rent-to-own,#commercial-freight)>.section-heading{grid-template-columns:1fr}
+ :is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider{
+  grid-template-columns:1fr;min-height:0}
+ :is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider .number,
+ #nearby .provider:nth-child(even) .number,#cold-storage .provider:nth-child(even) .number{
+  grid-column:1;grid-row:1;min-height:193px;align-items:flex-end;
+  padding:65px 28px 24px;font-size:clamp(3.9rem,10vw,5.3rem)}
+ :is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider .card-content,
+ #nearby .provider:nth-child(even) .card-content,#cold-storage .provider:nth-child(even) .card-content{
+  grid-column:1;grid-row:2;padding:clamp(26px,4vw,37px)}
+ :is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider .number::before{left:28px;top:22px}
+}
+@media(max-width:480px){
+ :is(#nearby,#cold-storage,#rent-to-own,#commercial-freight)>.section-heading{padding:22px 20px;border-radius:14px}
+ :is(#nearby,#cold-storage,#rent-to-own,#commercial-freight)>.section-heading h2{font-size:clamp(1.95rem,7.4vw,2.4rem)}
+ :is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider{border-radius:14px}
+ :is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider .number,
+ #nearby .provider:nth-child(even) .number,#cold-storage .provider:nth-child(even) .number{
+  min-height:148px;padding:57px 22px 18px;font-size:3.8rem}
+ :is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider .number::before{
+  top:17px;left:22px;font-size:.59rem}
+ :is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider .card-content{padding:24px 21px}
+ :is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider h3{font-size:clamp(1.65rem,7vw,2.05rem)}
+ :is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider p:last-child a{flex:1 1 180px}
+}
+@media print{
+ :is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider{
+  grid-template-columns:78px minmax(0,1fr);box-shadow:none;min-height:0;break-inside:avoid}
+ :is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider .number,
+ #nearby .provider:nth-child(even) .number,#cold-storage .provider:nth-child(even) .number{
+  grid-column:1;grid-row:1;min-height:0;padding:16px 8px;background:#fff;color:#173e32;font-size:2rem}
+ :is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider .number::before,
+ :is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider .number::after{display:none}
+ :is(#nearby,#cold-storage,#rent-to-own,#commercial-freight) .provider .card-content,
+ #nearby .provider:nth-child(even) .card-content,#cold-storage .provider:nth-child(even) .card-content{
+  grid-column:2;grid-row:1;padding:18px}
+}
 </style></head><body>
 <a class="skip-link" href="#main">Skip to trailer rentals</a>
 <header><nav class="nav" aria-label="Site navigation"><a class="logo" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← Browse all rentals</a></nav></header>
