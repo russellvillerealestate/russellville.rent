@@ -523,6 +523,101 @@ main{max-width:1400px;padding:22px clamp(15px,2.2vw,34px) 90px}
   #directory .provider-folio-scene{display:none}
   #directory .provider-folio-body{padding:17px 20px}
 }
+
+/* Nov 10 2026 / The trail-clearance board. A high-contrast, four-part editorial
+   finish to the existing provider-checklist copy. Pure in-page navigation;
+   no claims of permitted trails, inventory, prices, or booking status.
+   Inspiration: StayARV's immersive contrast and whitespace. Research:
+   Nielsen Norman Group visual hierarchy, web.dev responsive design,
+   W3C WCAG 2.2 focus-visible, reflow and target size. */
+.trip-desk .notes{
+  display:grid;
+  grid-template-columns:minmax(215px,1.12fr) repeat(3,minmax(0,1fr));
+  gap:0;
+  padding:0;
+  margin:clamp(32px,4vw,50px) 0 0;
+  border:1px solid #d6e1ce;
+  border-radius:22px;
+  overflow:hidden;
+  background:#fffdf7;
+  counter-reset:trip;
+  box-shadow:0 18px 44px #061b1642
+}
+.trip-desk .notes-intro{
+  position:relative;isolation:isolate;overflow:hidden;
+  padding:clamp(26px,3vw,40px) clamp(22px,2.7vw,34px);
+  background:linear-gradient(155deg,#f5d69d,#eac17f);
+  color:#193c31
+}
+.trip-desk .notes-intro:after{
+  content:"";position:absolute;right:-88px;bottom:-110px;z-index:-1;
+  width:270px;height:270px;border:1px solid #466e5f44;border-radius:50%;
+  box-shadow:0 0 0 30px #466e5f13,0 0 0 64px #466e5f0b;pointer-events:none
+}
+.trip-desk .notes-overline{
+  display:block;font-size:.64rem;line-height:1.5;letter-spacing:.17em;
+  font-weight:850;color:#315344;max-width:24ch;margin-bottom:20px
+}
+.trip-desk .notes-intro h3{
+  margin:0 0 15px;color:#173a2e;
+  font:400 clamp(2rem,3.1vw,3rem)/1.07 Georgia,"Times New Roman",serif;
+  letter-spacing:-.05em;text-wrap:balance
+}
+.trip-desk .notes-intro h3 em{font-style:italic;color:#496b4f}
+.trip-desk .notes-intro p{margin:0 0 25px;color:#345342;font-size:.84rem;line-height:1.68}
+.trip-desk .notes-intro a{
+  display:inline-flex;align-items:center;justify-content:space-between;gap:18px;
+  min-height:48px;padding:10px 14px;border-radius:10px;
+  background:#173f34;color:white;text-decoration:none;font-size:.8rem;
+  line-height:1.35;font-weight:800
+}
+.trip-desk .notes-intro a:hover{background:#28604c}
+.trip-desk .notes-intro a:focus-visible{outline:3px solid #173f34;outline-offset:4px;box-shadow:0 0 0 7px #f5d69d}
+.trip-desk .notes section{
+  display:flex;flex-direction:column;min-width:0;
+  background:#fffdf7;border:0;border-left:1px solid #d7dfd5;
+  border-radius:0;padding:clamp(26px,2.7vw,34px) clamp(19px,2.1vw,29px)
+}
+.trip-desk .notes section:nth-of-type(2){background:#edf3eb}
+.trip-desk .notes section:nth-of-type(3){background:#f8f0e2}
+.trip-desk .notes section:before{
+  display:grid;place-items:center;width:52px;height:52px;flex:0 0 52px;
+  margin:0 0 30px;border:1px solid #95ae99;border-radius:50%;
+  background:#e8f0e5;color:#255a42;
+  font:400 1.45rem/1 Georgia,"Times New Roman",serif;
+  letter-spacing:-.045em
+}
+.trip-desk .notes section:nth-of-type(2):before{background:#dceadc}
+.trip-desk .notes section:nth-of-type(3):before{background:#f0dfbc;border-color:#ceb585;color:#755124}
+.trip-desk .notes section h3{
+  font:400 clamp(1.33rem,1.9vw,1.74rem)/1.18 Georgia,"Times New Roman",serif;
+  letter-spacing:-.035em;color:#193b2f;margin:0 0 13px
+}
+.trip-desk .notes section p{
+  margin:0;color:#425d4d;font-size:.83rem;line-height:1.7
+}
+@media(max-width:1150px){
+ .trip-desk .notes{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .trip-desk .notes-intro{grid-column:1/-1;padding:28px 32px}
+ .trip-desk .notes-intro h3{max-width:23ch}
+ .trip-desk .notes-intro p{max-width:63ch;margin-bottom:16px}
+ .trip-desk .notes section:first-of-type{border-left:0}
+}
+@media(max-width:730px){
+ .trip-desk .notes{grid-template-columns:minmax(0,1fr);border-radius:17px}
+ .trip-desk .notes-intro{grid-column:1;padding:29px 24px}
+ .trip-desk .notes-intro h3{font-size:clamp(2rem,9vw,3rem)}
+ .trip-desk .notes section{border-left:0;border-top:1px solid #d7dfd5;padding:23px 24px}
+ .trip-desk .notes section:before{margin-bottom:13px;width:42px;height:42px;flex-basis:42px;font-size:1.2rem}
+ .trip-desk .notes section h3{font-size:1.45rem}
+}
+@media print{
+ .trip-desk .notes{display:block;border:1px solid #777;box-shadow:none;background:#fff}
+ .trip-desk .notes-intro,.trip-desk .notes section{background:#fff!important;color:#111;border:0;border-bottom:1px solid #ccc;break-inside:avoid}
+ .trip-desk .notes-intro h3,.trip-desk .notes-intro p,.trip-desk .notes section h3,.trip-desk .notes section p{color:#111}
+ .trip-desk .notes-intro a{display:none}
+}
+
 </style></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-head"><a href="/">Russellville.Rent</a><a class="back" href="/">← All rental categories</a></header>
 <main id="main"><section class="hero" aria-labelledby="hero-title"><div class="hero-terrain" aria-hidden="true"><svg viewBox="0 0 1440 410" preserveAspectRatio="xMidYMax slice" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="trail-dusk" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c6c995" stop-opacity=".34"/><stop offset="1" stop-color="#214f3c" stop-opacity=".03"/></linearGradient></defs><circle cx="1155" cy="88" r="90" fill="#e7c78c" opacity=".23"/><path d="M0 265 118 173l95 66 128-145 138 143 112-75 136 95 114-113 132 122 145-102 137 91 135-83 50 41v191H0Z" fill="url(#trail-dusk)"/><path d="M0 312 146 216l126 65 118-83 132 101 112-49 144 59 121-88 129 81 134-97 178 112v93H0Z" fill="#6e9572" opacity=".27"/><path d="M0 355q152-85 306-37t278-17 268 34 278-9 310 19v65H0Z" fill="#224e3a" opacity=".67"/><path d="M0 389q242-40 447-7t414-15 579 17v26H0Z" fill="#102f28" opacity=".8"/><g fill="#153d2f" opacity=".68"><path d="m60 349 29-96 31 96h-21v57H78v-57Z"/><path d="m130 363 24-79 24 79h-17v43h-16v-43Z"/><path d="m1184 349 31-112 33 112h-22v61h-21v-61Z"/><path d="m1244 362 22-72 24 72h-15v48h-16v-48Z"/><path d="m1345 354 27-95 29 95h-20v56h-18v-56Z"/></g><path d="M-20 409q285-106 529-57t386-18 560 71" stroke="#cbaa78" stroke-opacity=".3" stroke-width="8" stroke-dasharray="3 20" fill="none"/></svg></div><div><p class="eyebrow">Russellville &amp; the Arkansas River Valley</p><h1 id="hero-title">Find a side-by-side.<br><em>Find your trail.</em></h1><p>Compare independently listed side-by-side rentals in the Ozarks, around Ozone and Mount Magazine. The operators below advertise rentals on their own websites; confirm dates, trail restrictions and exact pickup or delivery arrangements before traveling.</p><a href="#directory">Explore three providers <span aria-hidden="true">↗</span></a>
@@ -764,7 +859,13 @@ main{max-width:1400px;padding:22px clamp(15px,2.2vw,34px) 90px}
       </form>
     </div>
   </div>
-<div class="notes" aria-label="Before you reserve">
+<div class="notes" role="group" aria-labelledby="trail-clearance-title">
+  <div class="notes-intro">
+    <span class="notes-overline">THE TRAIL CLEARANCE / THREE QUESTIONS</span>
+    <h3 id="trail-clearance-title">Ready for <em>the road?</em></h3>
+    <p>Before the pickup, get three clear answers directly from the rental operator. Routes, rates and driver rules can change.</p>
+    <a href="#directory">Revisit the rental listings <span aria-hidden="true">↑</span></a>
+  </div>
 <section><h3>Ask where to ride.</h3><p>Verify permitted roads and trails, current forest restrictions, and whether the rental must remain on private property. Do not assume a rental can leave its property.</p></section>
 <section><h3>Confirm costs and coverage.</h3><p>Ask for total fees, damage deposits, insurance requirements, fuel terms, cancellation policy and any mileage or delivery charges.</p></section>
 <section><h3>Confirm driver eligibility.</h3><p>Age and driver’s license rules vary by provider. Ask about passengers, vehicle seating and appropriate safety gear before booking.</p></section>
