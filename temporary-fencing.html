@@ -5,6 +5,7 @@
 <title>Temporary fence rentals | Russellville.Rent</title>
 <meta name="description" content="Fence panels and temporary site fencing for construction, events and crowd control.">
 <link rel="canonical" href="https://russellville.rent/temporary-fencing.html">
+<link rel="preload" href="/assets/downtown-russellville-sunset.jpg" as="image" fetchpriority="high">
 <style>
 :root{--navy:#142d36;--deep:#0c222b;--ink:#172d33;--muted:#50656b;--line:#d5dfdd;--paper:#fffefa;--ground:#f3f5f0;--orange:#f2a65a}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit}a:focus-visible{outline:3px solid #d97b1d;outline-offset:4px;border-radius:3px}.skip{position:absolute;top:-80px;left:16px;z-index:20;background:#fff;color:var(--deep);padding:12px 18px}.skip:focus{top:12px}.wrap{width:min(1100px,calc(100% - 40px));margin-inline:auto}
@@ -252,6 +253,42 @@ main.wrap{padding-top:0}
 @media(max-width:480px){.fence-dispatch{padding:22px 16px;border-radius:18px;margin:23px 0 30px}.fence-dispatch-board{gap:12px}.fence-dispatch-links{padding:4px 10px 9px}.fence-dispatch-link{grid-template-columns:32px minmax(0,1fr) 15px;gap:9px;padding:14px 4px}.fence-dispatch-number{width:32px;height:32px;font-size:1rem}.fence-dispatch-arrow{font-size:1rem}.fence-dispatch-intro>p{font-size:.84rem}}
 @media(prefers-reduced-motion:reduce){.fence-dispatch-link{transition:none}}
 
+
+/* 2026-11-09 / River Valley site-plan cover.
+   StayARV's photographic, forest-and-gold editorial rhythm adapted to temporary fencing;
+   NN/g heading scan paths; web.dev LCP image discovery; WCAG 2.2 focus and reflow.
+   Scenic photograph is local context, NOT a provider installation or available inventory. */
+.hero{position:relative;isolation:isolate;background:#0b2d2b;
+ background-image:linear-gradient(100deg,#082622f7 0%,#0b342be6 44%,#103c348c 80%,#0a302bbd 100%),url("/assets/downtown-russellville-sunset.jpg");
+ background-position:center,center 52%;background-size:cover;border-radius:0 0 27px 27px}
+.hero:before{z-index:0;opacity:.26;background-image:linear-gradient(#e9d6b42e 1px,transparent 1px),linear-gradient(90deg,#e9d6b42e 1px,transparent 1px);background-size:54px 54px}
+.hero:after{z-index:0;opacity:1;inset:auto 0 0;height:150px;clip-path:none;background:linear-gradient(0deg,#082a26a8,transparent)}
+.hero-inner{position:relative;z-index:1;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(24px,4vw,60px);min-height:640px;padding-block:clamp(84px,8vw,122px) clamp(102px,9vw,144px)}
+.hero .kicker{color:#ffe0af;text-shadow:0 2px 11px #092824}
+.hero h1{font:400 clamp(3.45rem,6.8vw,6.65rem)/.96 Georgia,"Times New Roman",serif;letter-spacing:-.075em;max-width:11.2ch;text-wrap:balance;text-shadow:0 3px 21px #091e2070}
+.hero h1 em{font-weight:400;color:#f8d9a4}
+.hero .lead{max-width:53ch;color:#f3f4e9;line-height:1.73;text-shadow:0 2px 12px #061c1bc4;margin:29px 0 32px}
+.hero .hero-actions .btn{min-height:51px;border-radius:9px}
+.hero .btn-secondary{background:#103c36b8;border-color:#dae6d5}
+.hero .hero-actions .btn:focus-visible{outline:3px solid #f7d08e;outline-offset:4px}
+.hero-visual{position:relative;min-width:0}
+.hero-visual .drawing{display:flex;align-items:center;justify-content:center;min-height:350px;max-width:none;width:100%;border:1px solid #f1d7a57a;border-radius:21px;background:linear-gradient(135deg,#0c3b38ed,#165048cf);box-shadow:14px 18px 0 #ffdead21,0 29px 68px #041c20c2;transform:none;backdrop-filter:blur(4px)}
+.hero-visual .drawing:after{inset:12px;border-radius:13px;border-color:#ecd5a55c}
+.hero-visual .drawing svg{width:100%;max-height:315px}
+.hero-visual .drawing-badge{top:23px;right:23px;border-radius:7px}
+.hero-visual .drawing-label{bottom:22px;left:22px}
+.hero-visual-caption{max-width:47ch;margin:19px 0 0;color:#f8f2e7;font-size:.72rem;line-height:1.65;font-weight:700;text-shadow:0 1px 8px #061c1c}
+.quickline{position:relative;z-index:2;margin-top:-54px;border:0;background:transparent}
+.quickline-inner{display:grid;grid-template-columns:1fr 1.12fr 1.12fr;gap:0;align-items:stretch;min-height:112px;padding-block:0;background:#fffaf1;border:1px solid #e4d4b8;border-radius:18px;box-shadow:0 20px 44px #102e2b35;overflow:hidden}
+.quickline-inner>*{display:flex;align-items:center;min-width:0;margin:0;padding:22px clamp(17px,2.4vw,32px);font-size:.84rem;line-height:1.52}
+.quickline-inner>strong{background:#f2deb6;color:#173e34;font:400 clamp(1.25rem,2vw,1.75rem)/1.2 Georgia,serif;letter-spacing:-.04em}
+.quickline-inner>span{border-left:1px solid #e7dccb;color:#345349;font-weight:750}
+.quickline-inner>span:before{content:"";display:block;flex:none;width:9px;height:9px;border-radius:50%;background:#478366;margin:0 13px 0 0}
+.quickline-inner>span:last-child:before{background:#b27a3b}
+@media(max-width:850px){.hero-inner{min-height:0;grid-template-columns:1fr;padding-block:76px 108px;gap:30px}.hero-visual{width:min(100%,620px);margin-inline:auto}.hero-visual .drawing{min-height:260px;max-width:none}.hero-visual .drawing svg{max-height:250px}.hero{background-position:center,60% center}.quickline-inner{grid-template-columns:1fr 1fr;min-height:0}.quickline-inner>strong{grid-column:1/-1;min-height:70px}.quickline-inner>span{border-top:1px solid #e7dccb;min-height:74px}.quickline-inner>span:nth-child(2){border-left:0}}
+@media(max-width:520px){.hero{border-radius:0 0 19px 19px}.hero-inner{padding-block:57px 91px;gap:29px}.hero h1{font-size:clamp(3.12rem,13vw,4.22rem)}.hero .lead{font-size:1rem;margin:24px 0 28px}.hero .hero-actions .btn{flex:1 1 auto}.hero-visual .drawing{display:flex;min-height:0;padding:12px;border-radius:16px}.hero-visual .drawing svg{max-height:198px}.hero-visual .drawing-label{font-size:.53rem;bottom:14px;left:16px}.hero-visual .drawing-badge{font-size:.53rem;top:17px;right:17px}.hero-visual-caption{font-size:.68rem;margin-top:13px}.quickline{margin-top:-37px}.quickline-inner{grid-template-columns:1fr;border-radius:14px}.quickline-inner>*{padding:16px 20px;min-height:0}.quickline-inner>strong{grid-column:1;font-size:1.48rem;min-height:0}.quickline-inner>span{min-height:0;border-left:0;font-size:.82rem}}
+@media(prefers-reduced-motion:reduce){.hero .btn{transition:none}.hero .btn:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -259,7 +296,7 @@ main.wrap{padding-top:0}
 <header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">Russellville<span>.Rent</span></a><a class="back" href="/">← Browse all rentals</a></div></header>
 <section class="hero" aria-labelledby="page-title"><div class="wrap hero-inner">
 <div><p class="kicker">Russellville, Arkansas · The River Valley</p><h1 id="page-title">Temporary <em>fence rentals.</em></h1><p class="lead">Fence panels and temporary site fencing for construction, events and crowd control.</p><div class="hero-actions"><a class="btn btn-primary" href="#providers">Compare providers ↓</a><a class="btn btn-secondary" href="#quote-checklist">Plan your quote →</a></div></div>
-<div class="drawing" aria-hidden="true"><svg viewBox="0 0 500 350" role="img" aria-label="Decorative line drawing of freestanding temporary fence panels" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="mesh" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M12 0L24 12L12 24L0 12Z" fill="none" stroke="#b4d2d0" stroke-width="1" opacity=".6"/></pattern></defs><path d="M35 270H467M35 296H467" stroke="#6f9294" stroke-width="2" stroke-dasharray="7 8"/><rect x="72" y="75" width="354" height="194" rx="3" fill="url(#mesh)" stroke="#d4e9e4" stroke-width="6"/><path d="M72 76V288M249 76V288M426 76V288" stroke="#e7f2eb" stroke-width="9"/><path d="M50 288H94M227 288H271M404 288H448" stroke="#f2a65a" stroke-width="12" stroke-linecap="round"/><path d="M72 54V71M249 54V71M426 54V71" stroke="#f2a65a" stroke-width="7" stroke-linecap="round"/><path d="M72 43H426" stroke="#a8c4c4" stroke-width="1" stroke-dasharray="4 7"/><path d="M72 35V51M426 35V51" stroke="#a8c4c4" stroke-width="2"/><text x="249" y="29" text-anchor="middle" font-size="12" fill="#d4e9e4" font-family="system-ui">MODULAR FENCE PANELS</text></svg><span class="drawing-badge">Site &amp; event rentals</span><span class="drawing-label">Fence planning / River Valley</span></div>
+<div class="hero-visual"><div class="drawing" aria-hidden="true"><svg viewBox="0 0 500 350" role="img" aria-label="Decorative line drawing of freestanding temporary fence panels" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="mesh" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M12 0L24 12L12 24L0 12Z" fill="none" stroke="#b4d2d0" stroke-width="1" opacity=".6"/></pattern></defs><path d="M35 270H467M35 296H467" stroke="#6f9294" stroke-width="2" stroke-dasharray="7 8"/><rect x="72" y="75" width="354" height="194" rx="3" fill="url(#mesh)" stroke="#d4e9e4" stroke-width="6"/><path d="M72 76V288M249 76V288M426 76V288" stroke="#e7f2eb" stroke-width="9"/><path d="M50 288H94M227 288H271M404 288H448" stroke="#f2a65a" stroke-width="12" stroke-linecap="round"/><path d="M72 54V71M249 54V71M426 54V71" stroke="#f2a65a" stroke-width="7" stroke-linecap="round"/><path d="M72 43H426" stroke="#a8c4c4" stroke-width="1" stroke-dasharray="4 7"/><path d="M72 35V51M426 35V51" stroke="#a8c4c4" stroke-width="2"/><text x="249" y="29" text-anchor="middle" font-size="12" fill="#d4e9e4" font-family="system-ui">MODULAR FENCE PANELS</text></svg><span class="drawing-badge">Site &amp; event rentals</span><span class="drawing-label">Fence planning / River Valley</span></div><p class="hero-visual-caption">Concept illustration only · Not a photo of provider equipment. Confirm panel types and inventory with each operator.</p></div>
 </div></section>
 <div class="quickline"><div class="wrap quickline-inner"><strong>4 provider options</strong><span>Two providers advertise Russellville service</span><span>Confirm other providers’ delivery</span></div></div>
 <main class="wrap" id="fence-main">
