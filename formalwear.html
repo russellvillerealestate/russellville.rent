@@ -485,6 +485,111 @@ html{scroll-padding-top:28px}
  .provider-region-grid .provider-main,.provider-region-grid .provider-details{padding:15px 20px}
 }
 
+
+/* Occasion edit: fitting questions reimagined as a three-stop tailor's ribbon (2026-11-09).
+   Source direction: live StayARV's immersive editorial hierarchy; NN/g information
+   scent; web.dev layout stability; W3C WCAG 2.2 clear contrast and reflow.
+   Pure CSS, unchanged provider records, links, scripts and contact details. */
+.guide{
+  position:relative;isolation:isolate;overflow:hidden;
+  padding-block:clamp(70px,8vw,112px) clamp(75px,8.4vw,118px);
+  background:radial-gradient(ellipse at 95% 5%,#49705c 0%,transparent 48%),
+             linear-gradient(130deg,#102e27 0%,#1c4439 55%,#254f40 100%);
+  border-block:1px solid #244a3d;
+}
+.guide:before{
+  content:"";position:absolute;z-index:-1;right:-210px;top:-185px;
+  width:570px;height:570px;border:1px solid #e6c3903b;border-radius:50%;
+  box-shadow:0 0 0 55px #f8d9a50a,0 0 0 112px #f8d9a509;
+  pointer-events:none;
+}
+.guide .shell{position:relative}
+.guide-heading{
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(230px,.6fr);
+  align-items:end;gap:clamp(26px,5vw,75px);margin-bottom:clamp(29px,4vw,52px);
+}
+.guide-heading .eyebrow{font-size:.72rem;letter-spacing:.18em;color:#f2cb98}
+.guide-heading h2{
+  max-width:13ch;color:#fff8e8;
+  font:400 clamp(3.05rem,5.8vw,5.7rem)/.99 Georgia,"Times New Roman",serif;
+  letter-spacing:-.065em;text-wrap:balance;
+}
+.guide-heading p{
+  max-width:37ch;margin-bottom:8px;padding-left:21px;
+  border-left:2px solid #e6b978;color:#e2eadd;
+  font-size:clamp(.89rem,1.25vw,1rem);line-height:1.75;
+}
+.guide-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;overflow:hidden;border:1px solid #e5d9c0a6;border-radius:22px;
+  box-shadow:0 32px 65px #061a144a;
+}
+.guide-item{
+  position:relative;isolation:isolate;display:flex;flex-direction:column;
+  min-height:340px;min-width:0;padding:clamp(26px,3vw,41px);
+  border:0;border-radius:0;background:#f9f1e3;color:#193d32;
+}
+.guide-item:nth-child(2){background:#e4ede5}
+.guide-item:nth-child(3){background:#eedac9}
+.guide-item+.guide-item{border-left:1px solid #183d322b}
+.guide-item:before{
+  content:"";position:absolute;inset:0 0 auto;height:9px;
+  background:repeating-linear-gradient(90deg,#a87947 0 2px,transparent 2px 17px),
+             #dfc49d;opacity:.7;
+}
+.guide-item:after{
+  content:"";position:absolute;right:-45px;top:64px;z-index:-1;
+  width:190px;height:190px;border:1px solid #24554317;border-radius:50%;
+  box-shadow:0 0 0 27px #2455430b,0 0 0 54px #24554307;
+  pointer-events:none;
+}
+.guide-number{
+  display:block;color:#875b37;
+  font:400 clamp(5rem,8.3vw,8rem)/.84 Georgia,"Times New Roman",serif;
+  letter-spacing:-.09em;margin:0 0 auto;
+}
+.guide-item:nth-child(2) .guide-number{color:#336c55}
+.guide-item:nth-child(3) .guide-number{color:#955b43}
+.guide-item h3{
+  position:relative;z-index:1;max-width:14ch;
+  font:400 clamp(1.65rem,2.45vw,2.3rem)/1.1 Georgia,"Times New Roman",serif;
+  letter-spacing:-.045em;color:#153b31;margin:31px 0 11px;text-wrap:balance;
+}
+.guide-item p{
+  position:relative;z-index:1;max-width:35ch;margin:0;
+  color:#3d5149;font-size:.92rem;line-height:1.7;
+}
+@media(max-width:890px){
+  .guide-heading{grid-template-columns:1fr;gap:17px}
+  .guide-heading h2{max-width:18ch}
+  .guide-heading p{max-width:58ch}
+  .guide-grid{grid-template-columns:1fr}
+  .guide-item{display:grid;grid-template-columns:90px minmax(0,1fr);
+    grid-template-rows:auto auto;align-items:start;column-gap:26px;row-gap:8px;
+    min-height:0;padding:32px}
+  .guide-item+.guide-item{border-left:0;border-top:1px solid #183d322b}
+  .guide-number{grid-column:1;grid-row:1/3;font-size:5.4rem;margin:0}
+  .guide-item h3{grid-column:2;grid-row:1;margin:0;max-width:none;font-size:2rem}
+  .guide-item p{grid-column:2;grid-row:2}
+}
+@media(max-width:520px){
+  .guide{padding-block:59px 66px}
+  .guide-heading h2{font-size:clamp(2.75rem,11vw,3.75rem)}
+  .guide-heading p{padding-left:15px}
+  .guide-grid{border-radius:16px}
+  .guide-item{grid-template-columns:1fr;gap:10px;padding:27px 24px 31px}
+  .guide-number{grid-column:1;grid-row:1;font-size:4.6rem;margin-bottom:4px}
+  .guide-item h3{grid-column:1;grid-row:2;margin:0;font-size:1.85rem}
+  .guide-item p{grid-column:1;grid-row:3}
+}
+@media print{
+  .guide{background:#fff!important;color:#111!important;border-color:#aaa;padding-block:20px}
+  .guide:before,.guide-item:after{display:none}
+  .guide-heading h2,.guide-heading p{color:#111}
+  .guide-grid{box-shadow:none;border:1px solid #aaa}
+  .guide-item{min-height:0;background:#fff!important;break-inside:avoid}
+}
+
 </style>
 </head>
 <body>
