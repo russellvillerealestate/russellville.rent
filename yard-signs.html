@@ -519,6 +519,63 @@ footer a{font-weight:750}
  .occasion-strip .wrap>span{display:inline-block;min-height:0;margin:4px}
 }
 
+
+/* 2026-11-10: Celebration dispatch board. Original questions and all operator facts retained.
+   Design reference: StayARV's immersive forest/ivory hero and strong routes; NN/g hierarchy,
+   web.dev responsive reflow; W3C WCAG 2.2 visible focus/target size/reduced motion. */
+.planning-dispatch{position:relative;overflow:hidden;isolation:isolate;background:#103d34;border:0;color:#fff8e7}
+.planning-dispatch::before{content:"";position:absolute;inset:-25% auto auto -12%;width:min(66vw,800px);aspect-ratio:1;border:1px solid #f3d99b22;border-radius:50%;box-shadow:0 0 0 70px #f3d99b08,0 0 0 150px #f3d99b05;pointer-events:none;z-index:-1}
+.planning-dispatch .wrap.dispatch-layout{display:grid;grid-template-columns:minmax(270px,.86fr) minmax(0,1.14fr);gap:clamp(32px,6vw,90px);align-items:center;padding-block:clamp(72px,9vw,125px);width:min(1200px,calc(100% - 40px))}
+.planning-dispatch .dispatch-intro{min-width:0}
+.planning-dispatch .dispatch-intro>.eyebrow{color:#f1d490;margin-bottom:23px;font-size:.7rem;letter-spacing:.2em}
+.planning-dispatch .dispatch-edition{display:flex;align-items:center;gap:20px;width:min(100%,350px);color:#f1d490;margin-bottom:25px;font:400 clamp(2.8rem,6vw,5rem)/1 Georgia,serif;letter-spacing:-.06em}
+.planning-dispatch .dispatch-dash{height:1px;background:#e6d29a8c;flex:1;min-width:20px}
+.planning-dispatch h2{font:400 clamp(2.8rem,5vw,5.2rem)/1.035 Georgia,"Times New Roman",serif;letter-spacing:-.06em;color:#fff8e7;max-width:12ch;margin:0 0 24px;text-wrap:balance}
+.planning-dispatch .dispatch-lead{color:#d6e6dc;font-size:clamp(.98rem,1.5vw,1.11rem);line-height:1.65;max-width:46ch;margin:0 0 30px}
+.planning-dispatch .dispatch-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 23px}
+.planning-dispatch .dispatch-actions a{display:inline-flex;align-items:center;justify-content:space-between;gap:16px;min-height:48px;padding:12px 18px;border-radius:8px;text-decoration:none;font-size:.81rem;font-weight:850;line-height:1.4;transition:background-color .18s ease,transform .18s ease}
+.planning-dispatch .dispatch-actions a:hover{transform:translateY(-2px)}
+.planning-dispatch .dispatch-call{background:#f4d68c;color:#173d33;border:1px solid #f4d68c}
+.planning-dispatch .dispatch-call:hover{background:#ffe4a7}
+.planning-dispatch .dispatch-details{color:#fff8e7;border:1px solid #c1d7c8;background:#ffffff0d}
+.planning-dispatch .dispatch-details:hover{background:#ffffff20}
+.planning-dispatch .dispatch-actions a:focus-visible{outline:3px solid #fff8e7;outline-offset:4px}
+.planning-dispatch .dispatch-qualification{max-width:53ch;margin:0;color:#c8ddd0;font-size:.76rem;line-height:1.65}
+.planning-dispatch .steps.dispatch-steps{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:13px}
+.planning-dispatch .steps.dispatch-steps::before{content:"";position:absolute;top:45px;bottom:45px;left:51px;border-left:2px dashed #f2d69864;pointer-events:none}
+.planning-dispatch .step.dispatch-step{position:relative;display:grid;grid-template-columns:76px minmax(0,1fr) 25px;align-items:center;gap:clamp(14px,2.3vw,28px);padding:clamp(23px,3vw,35px);margin:0;min-height:174px;border:1px solid #e5dabf;background:#fffaf0;color:#1b4939;border-radius:15px;box-shadow:0 12px 27px #091e1940;transition:transform .2s ease,box-shadow .2s ease}
+.planning-dispatch .step.dispatch-step:nth-child(2){background:#e3eddf;border-color:#c9dcc7}
+.planning-dispatch .step.dispatch-step:nth-child(3){background:#f4dca7;border-color:#f4dca7}
+.planning-dispatch .step.dispatch-step:hover{transform:translateX(5px);box-shadow:0 17px 34px #071b173d}
+.planning-dispatch .dispatch-icon{position:relative;z-index:1;display:grid;place-items:center;width:74px;height:74px;border-radius:50%;background:#194a3d;color:#f9df9e;border:5px solid #fffaf0;box-shadow:0 0 0 1px #a8c6a5}
+.planning-dispatch .step.dispatch-step:nth-child(2) .dispatch-icon{border-color:#e3eddf}
+.planning-dispatch .step.dispatch-step:nth-child(3) .dispatch-icon{border-color:#f4dca7}
+.planning-dispatch .dispatch-icon svg{display:block;width:37px;height:37px}
+.planning-dispatch .step .num{display:block;color:#7b4d29;font-size:.69rem;font-weight:900;letter-spacing:.15em;margin:0 0 9px}
+.planning-dispatch .step h3{font:400 clamp(1.4rem,2.1vw,2rem)/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.035em;color:#173d33;margin:0 0 10px}
+.planning-dispatch .step p{font-size:.87rem;line-height:1.57;color:#39564a;margin:0;max-width:43ch}
+.planning-dispatch .dispatch-step-arrow{align-self:start;justify-self:end;font-size:1.3rem;color:#a06c3e;line-height:1}
+@media(max-width:920px){
+ .planning-dispatch .wrap.dispatch-layout{grid-template-columns:1fr;gap:40px;padding-block:65px}
+ .planning-dispatch .dispatch-intro{max-width:690px}
+ .planning-dispatch h2{max-width:16ch}
+ .planning-dispatch .dispatch-edition{font-size:3.8rem}
+}
+@media(max-width:600px){
+ .planning-dispatch .wrap.dispatch-layout{width:min(100% - 32px,1200px);padding-block:52px}
+ .planning-dispatch h2{font-size:clamp(2.5rem,11vw,3.7rem)}
+ .planning-dispatch .dispatch-edition{font-size:3.2rem;max-width:260px}
+ .planning-dispatch .dispatch-actions a{width:100%}
+ .planning-dispatch .step.dispatch-step{grid-template-columns:58px minmax(0,1fr);gap:12px;padding:21px 17px;min-height:150px}
+ .planning-dispatch .dispatch-icon{width:55px;height:55px;border-width:3px}
+ .planning-dispatch .dispatch-icon svg{width:29px;height:29px}
+ .planning-dispatch .steps.dispatch-steps::before{left:42px}
+ .planning-dispatch .dispatch-step-arrow{display:none}
+ .planning-dispatch .step h3{font-size:1.42rem}
+}
+@media(prefers-reduced-motion:reduce){.planning-dispatch .step.dispatch-step,.planning-dispatch .dispatch-actions a{transition:none}.planning-dispatch .step.dispatch-step:hover,.planning-dispatch .dispatch-actions a:hover{transform:none}}
+@media print{.planning-dispatch{background:#fff!important;color:#173d33!important;border-top:2px solid #173d33}.planning-dispatch::before,.planning-dispatch .dispatch-icon,.planning-dispatch .dispatch-step-arrow,.planning-dispatch .steps.dispatch-steps::before{display:none}.planning-dispatch .wrap.dispatch-layout{display:block;padding-block:18px}.planning-dispatch .dispatch-intro>*{color:#173d33!important}.planning-dispatch .steps.dispatch-steps{display:block}.planning-dispatch .step.dispatch-step{display:block;box-shadow:none;border:1px solid #b4c3b5;min-height:0;break-inside:avoid;margin:12px 0}.planning-dispatch .dispatch-actions{display:none!important}}
+
 </style>
 </head>
 <body>
@@ -653,11 +710,38 @@ footer a{font-weight:750}
 </section>
 <div class="note"><p>Independent local directory. Published prices are not guaranteed final quotes. Confirm date, design, setup requirements, taxes and service address with the operator. <a href="sms:+14799707301">Suggest a correction</a>.</p></div>
 </section>
-<section class="planning" aria-labelledby="planning-title"><div class="wrap"><p class="eyebrow" style="color:#966045">Before you book</p><h2 id="planning-title">Three things to have ready.</h2><div class="steps">
-<div class="step"><span class="num">01 / WHEN</span><h3>Your celebration date</h3><p>Ask about setup timing, pickup timing and availability for your preferred day.</p></div>
-<div class="step"><span class="num">02 / WHAT</span><h3>Your greeting idea</h3><p>Share the occasion, name or message, and any design preferences with the operator.</p></div>
-<div class="step"><span class="num">03 / WHERE</span><h3>Your service address</h3><p>Confirm that your address is covered and ask about placement requirements.</p></div>
-</div></div></section>
+<section class="planning planning-dispatch" aria-labelledby="planning-title">
+  <div class="wrap dispatch-layout">
+    <div class="dispatch-intro">
+      <p class="eyebrow">The River Valley / Celebration field notes</p>
+      <div class="dispatch-edition" aria-hidden="true"><span>01</span><span class="dispatch-dash"></span><span>03</span></div>
+      <h2 id="planning-title">Three things<br>to have ready.</h2>
+      <p class="dispatch-lead">Your date, your message and your address: the three details that make the first conversation with the yard-greeting operator more useful.</p>
+      <div class="dispatch-actions">
+        <a class="dispatch-call" href="tel:+14793856923">Call the local operator <span aria-hidden="true">↗</span></a>
+        <a class="dispatch-details" href="#provider">Review provider details <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="dispatch-qualification">Planning guide only. Confirm your design, delivery area, available date, final price and placement requirements directly with the operator.</p>
+    </div>
+    <div class="steps dispatch-steps" aria-label="Three details to prepare before calling">
+      <div class="step dispatch-step">
+        <div class="dispatch-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" focusable="false"><rect x="10" y="16" width="44" height="38" rx="7" stroke="currentColor" stroke-width="3"/><path d="M10 27h44M22 9v14M42 9v14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="m25 41 5 5 11-13" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="dispatch-step-copy"><span class="num">01 / WHEN</span><h3>Your celebration date</h3><p>Ask about setup timing, pickup timing and availability for your preferred day.</p></div>
+        <span class="dispatch-step-arrow" aria-hidden="true">↗</span>
+      </div>
+      <div class="step dispatch-step">
+        <div class="dispatch-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" focusable="false"><path d="M13 49h38M19 49V17h26v32M25 24h14M25 32h14M25 40h8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="m49 10 2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Z" fill="currentColor"/></svg></div>
+        <div class="dispatch-step-copy"><span class="num">02 / WHAT</span><h3>Your greeting idea</h3><p>Share the occasion, name or message, and any design preferences with the operator.</p></div>
+        <span class="dispatch-step-arrow" aria-hidden="true">↗</span>
+      </div>
+      <div class="step dispatch-step">
+        <div class="dispatch-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" focusable="false"><path d="M32 56s18-17 18-31a18 18 0 0 0-36 0c0 14 18 31 18 31Z" stroke="currentColor" stroke-width="3"/><circle cx="32" cy="25" r="7" stroke="currentColor" stroke-width="3"/></svg></div>
+        <div class="dispatch-step-copy"><span class="num">03 / WHERE</span><h3>Your service address</h3><p>Confirm that your address is covered and ask about placement requirements.</p></div>
+        <span class="dispatch-step-arrow" aria-hidden="true">↗</span>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
 <footer><div class="wrap"><span>© 2026 Russellville.Rent · Local rentals. Local connections.</span><a href="/">Return to homepage ↗</a></div></footer>
 
