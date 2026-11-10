@@ -346,6 +346,118 @@ footer a{font-weight:750;color:var(--forest)}
 @media(prefers-reduced-motion:reduce){.retail-atlas :is(a){scroll-behavior:auto}}
 @media print{.retail-atlas{display:block;box-shadow:none;break-inside:avoid}.retail-atlas-story{background:#fff!important;color:#173c31;padding:15px 20px}.retail-atlas-story h2,.retail-atlas-story h2 em,.retail-atlas-kicker,.retail-atlas-story>div>p:last-child{color:#173c31}.retail-atlas-sketch{display:none}.retail-atlas-directory{padding:15px 20px}}
 
+
+/* 2026-11-10: Home Edit agreement compass; editorial hierarchy drawn from
+   StayARV, NN/g, Google web.dev and W3C WCAG 2.2. No provider imagery used. */
+#questions.agreement-compass{
+ position:relative;isolation:isolate;overflow:hidden;color:#fffaf0;border:0;
+ background:radial-gradient(ellipse at -14% -10%,#2f6651 0%,transparent 65%),
+            radial-gradient(ellipse at 115% 110%,#285344 0%,transparent 64%),#13392f;
+}
+#questions.agreement-compass:before{
+ content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.18;
+ background:repeating-linear-gradient(120deg,transparent 0 90px,#9bc2a2 91px,transparent 92px 180px)
+}
+#questions .agreement-frame{
+ max-width:1320px;display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+ align-items:center;gap:clamp(36px,6.5vw,105px);padding-block:clamp(74px,10vw,142px)
+}
+#questions .agreement-intro{display:flex;flex-direction:column;align-items:flex-start;min-width:0}
+#questions .agreement-intro .eyebrow{
+ font-size:.72rem;letter-spacing:.18em;color:#edcd90;font-weight:850;margin:0 0 27px
+}
+#questions .agreement-mark{
+ display:flex;align-items:baseline;gap:2px;color:#f0d19c;
+ font:700 clamp(4.5rem,8.4vw,8rem)/1 Georgia,serif;letter-spacing:-.11em;margin:0 0 45px
+}
+#questions .agreement-mark span{font-size:.52em;letter-spacing:0}
+#questions .agreement-mark small{
+ font:800 .65rem/1.3 system-ui,sans-serif;letter-spacing:.18em;writing-mode:vertical-rl;
+ transform:rotate(180deg);margin-left:14px;color:#e0e7df
+}
+#questions h2{
+ font:500 clamp(2.7rem,4.65vw,5rem)/1.06 Georgia,serif;letter-spacing:-.055em;
+ max-width:11ch;margin:0;color:#fffaf0
+}
+#questions h2 em{display:block;font-weight:500;color:#eccc90}
+#questions .agreement-intro .summary{
+ font-size:clamp(1.02rem,1.3vw,1.18rem);line-height:1.72;
+ color:#e1ebe4;max-width:43ch;margin:25px 0 27px
+}
+#questions .agreement-return{
+ display:inline-flex;align-items:center;justify-content:space-between;gap:19px;
+ min-height:52px;background:#eccc90;color:#14382f;border-radius:4px;padding:13px 20px;
+ text-decoration:none;font-weight:850;font-size:.9rem;line-height:1.4;
+ box-shadow:0 4px 0 #092b24;transition:transform .2s ease,background .2s ease
+}
+#questions .agreement-return:hover{transform:translateY(-2px);background:#f6dfb4}
+#questions .agreement-return:focus-visible{outline:3px solid #fff;outline-offset:5px}
+#questions .agreement-footnote{
+ font-size:.83rem;line-height:1.7;max-width:44ch;color:#cfdfd5;
+ margin:32px 0 0;padding-top:18px;border-top:1px solid #648c7b
+}
+#questions .agreement-steps{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(260px,auto);
+ gap:clamp(13px,1.5vw,20px);list-style:none;padding:0;margin:0
+}
+#questions .agreement-steps .question{
+ position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;
+ min-width:0;min-height:260px;padding:clamp(25px,2.6vw,38px);border-radius:4px;
+ border:1px solid #d0c2a8;background:#f7f1e5;box-shadow:0 14px 35px #09241d45
+}
+#questions .agreement-steps .question:nth-child(2){background:#e4ecdd;border-color:#b4c4ac}
+#questions .agreement-steps .question:nth-child(3){background:#edddc5;border-color:#d0b799}
+#questions .agreement-steps .question:nth-child(4){background:#faf6ed}
+#questions .agreement-steps .question:before{
+ content:"";width:76px;height:76px;border:1px solid #426d5647;border-radius:50%;
+ position:absolute;top:-37px;right:-32px;box-shadow:0 0 0 17px #294c3620,0 0 0 35px #294c3610
+}
+#questions .agreement-steps .number{
+ font:850 .75rem/1.5 system-ui,sans-serif;letter-spacing:.13em;color:#355c4a;
+ padding-bottom:57px;margin:0 auto auto 0;display:block
+}
+#questions .agreement-steps h3{
+ font:600 clamp(1.58rem,2.05vw,2.13rem)/1.18 Georgia,serif;
+ letter-spacing:-.04em;color:#173d32;margin:0 0 13px
+}
+#questions .agreement-steps p{font-size:.93rem;line-height:1.62;color:#3f5145;max-width:34ch;margin:0}
+@media(max-width:980px){
+ #questions .agreement-frame{grid-template-columns:1fr;gap:44px;padding-block:75px}
+ #questions .agreement-intro{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:16px 32px}
+ #questions .agreement-intro .eyebrow{grid-column:1/-1;margin:0}
+ #questions .agreement-mark{grid-column:1;grid-row:2/5;margin:0}
+ #questions h2{grid-column:2;grid-row:2}
+ #questions .agreement-intro .summary{grid-column:2;grid-row:3;margin:0}
+ #questions .agreement-return{grid-column:2;grid-row:4;justify-self:start}
+ #questions .agreement-footnote{grid-column:1/-1;margin:12px 0 0}
+ #questions .agreement-steps{grid-auto-rows:minmax(225px,auto)}
+}
+@media(max-width:620px){
+ #questions .agreement-frame{padding-block:65px;gap:33px}
+ #questions .agreement-intro{display:flex;gap:0}
+ #questions .agreement-intro .eyebrow{margin-bottom:20px}
+ #questions .agreement-mark{font-size:5rem;margin:0 0 24px}
+ #questions h2{font-size:clamp(2.6rem,10vw,4rem)}
+ #questions .agreement-intro .summary{margin:21px 0 25px}
+ #questions .agreement-footnote{margin:25px 0 0}
+ #questions .agreement-steps{grid-template-columns:1fr;grid-auto-rows:auto;gap:12px}
+ #questions .agreement-steps .question{display:block;min-height:0;padding:26px}
+ #questions .agreement-steps .number{padding-bottom:27px}
+ #questions .agreement-steps h3{font-size:1.7rem}
+}
+@media(prefers-reduced-motion:reduce){
+ #questions .agreement-return{transition:none}
+ #questions .agreement-return:hover{transform:none}
+}
+@media print{
+ #questions.agreement-compass{background:#fff!important;color:#173d32!important;break-inside:avoid}
+ #questions.agreement-compass:before,#questions .agreement-mark,#questions .agreement-return{display:none}
+ #questions .agreement-frame{display:block;padding:25px 0}
+ #questions h2,#questions h2 em,#questions .agreement-intro .summary,#questions .agreement-footnote{color:#173d32!important}
+ #questions .agreement-steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}
+ #questions .agreement-steps .question{background:#fff!important;box-shadow:none;min-height:0;break-inside:avoid}
+}
+
 </style>
 </head>
 <body>
@@ -513,12 +625,24 @@ footer a{font-weight:750;color:var(--forest)}
 </div>
 </section>
 
-<section class="planning" id="questions" aria-labelledby="questions-title"><div class="wrap"><div><p class="eyebrow">A clearer comparison</p><h2 id="questions-title">Four questions before you sign.</h2><p class="summary">A lower periodic payment does not always mean a lower total cost. Ask for the complete agreement and compare like for like.</p></div><div class="questions">
-<div class="question"><span class="number">01 / TOTAL COST</span><h3>What will I pay in all?</h3><p>Ask about the total of payments, fees and any taxes.</p></div>
-<div class="question"><span class="number">02 / OWNERSHIP</span><h3>When would I own it?</h3><p>Clarify the ownership conditions and any early-purchase options.</p></div>
-<div class="question"><span class="number">03 / FLEXIBILITY</span><h3>What if I need to return it?</h3><p>Review return, cancellation and missed-payment terms.</p></div>
-<div class="question"><span class="number">04 / DELIVERY</span><h3>What comes with the item?</h3><p>Confirm delivery, setup, maintenance and condition.</p></div>
-</div></div></section>
+<section class="planning agreement-compass" id="questions" aria-labelledby="questions-title">
+<div class="wrap agreement-frame">
+  <div class="agreement-intro">
+    <p class="eyebrow">THE HOME EDIT / AGREEMENT CHECKPOINTS</p>
+    <span class="agreement-mark" aria-hidden="true">R<span>↗</span><small>04 / REVIEW</small></span>
+    <h2 id="questions-title">Four questions <em>before you sign.</em></h2>
+    <p class="summary">A lower periodic payment does not always mean a lower total cost. Ask for the complete agreement and compare like for like.</p>
+    <a class="agreement-return" href="#cost-estimator">Return to the total-cost worksheet <span aria-hidden="true">↗</span></a>
+    <p class="agreement-footnote">Bring these questions to each retailer. Exact agreement terms and answers must come directly from the provider.</p>
+  </div>
+  <ol class="questions agreement-steps">
+    <li class="question"><span class="number">01 / TOTAL COST</span><h3>What will I pay in all?</h3><p>Ask about the total of payments, fees and any taxes.</p></li>
+    <li class="question"><span class="number">02 / OWNERSHIP</span><h3>When would I own it?</h3><p>Clarify the ownership conditions and any early-purchase options.</p></li>
+    <li class="question"><span class="number">03 / FLEXIBILITY</span><h3>What if I need to return it?</h3><p>Review return, cancellation and missed-payment terms.</p></li>
+    <li class="question"><span class="number">04 / DELIVERY</span><h3>What comes with the item?</h3><p>Confirm delivery, setup, maintenance and condition.</p></li>
+  </ol>
+</div>
+</section>
 <aside class="notice wrap" aria-labelledby="notice-title"><div class="notice-box"><h2 id="notice-title">Independent directory · Verify before you visit</h2><p>Russellville.Rent is an independent directory. Some businesses are based outside Russellville, and delivery or business status may be unconfirmed. Please confirm operating status, service area, availability, pricing and terms directly with each provider. <a href="sms:+14799707301">Submit corrections</a>.</p></div></aside>
 </main>
 <footer><div class="wrap"><span>© 2026 Russellville.Rent · Local rentals. Local connections.</span><a href="/">Return to all rental categories ↗</a></div></footer>
