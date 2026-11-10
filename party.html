@@ -407,6 +407,171 @@ html{scroll-padding-top:125px}
  #provider-grid .provider:hover{transform:none}
 }
 
+
+/* 2026-11-10 / Party quick-scan ledger.
+   A later illustrated ticket style inadvertently overrode the compact grid view.
+   Restore a genuinely different dense, aligned contact index for all 52 providers,
+   while keeping full-detail tickets, filtering, saved lineup, and scripts unchanged.
+   References: StayARV scenic brand; NN/g scannability and alignment;
+   web.dev responsive reflow; WCAG 2.2 focus, targets and reduced motion. */
+#provider-grid.quick-scan{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:11px;
+}
+#provider-grid.quick-scan article.provider{
+  display:grid;
+  grid-template-columns:minmax(180px,.26fr) minmax(0,1fr);
+  align-items:stretch;
+  min-width:0;
+  border:1px solid #cedbcf;
+  border-radius:15px;
+  background:#fffefa;
+  box-shadow:0 7px 20px #14382b12;
+  overflow:visible;
+  transition:border-color .18s ease,box-shadow .18s ease;
+}
+#provider-grid.quick-scan article.provider:hover{
+  transform:none;
+  border-color:#7eaa8d;
+  box-shadow:0 12px 27px #14382b1d;
+}
+#provider-grid.quick-scan article.provider .card-heading{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  gap:11px;
+  min-width:0;
+  min-height:0;
+  padding:20px 21px;
+  border-right:1px solid #cbd9cb;
+  border-bottom:0;
+  border-radius:14px 0 0 14px;
+}
+#provider-grid.quick-scan article.provider .card-heading:before,
+#provider-grid.quick-scan article.provider .card-art{display:none}
+#provider-grid.quick-scan article.provider .card-heading .card-index{
+  font-size:.68rem;letter-spacing:.16em;
+  font-weight:900;color:#315344
+}
+#provider-grid.quick-scan article.provider .card-heading .card-category{
+  max-width:100%;font-size:.7rem;
+  line-height:1.45;white-space:normal
+}
+#provider-grid.quick-scan article.provider .card-heading .event-save{
+  text-align:center;white-space:normal
+}
+#provider-grid.quick-scan article.provider .card-content{
+  display:flex;
+  flex-wrap:wrap;
+  align-content:center;
+  align-items:center;
+  gap:11px 16px;
+  min-width:0;
+  padding:18px clamp(19px,3vw,34px);
+}
+#provider-grid.quick-scan article.provider .card-content h2{
+  flex:1 1 230px;
+  min-width:0;
+  margin:0;
+  color:#153d32;
+  font:400 clamp(1.28rem,2vw,1.68rem)/1.17 Georgia,"Times New Roman",serif;
+  letter-spacing:-.04em;
+  text-wrap:balance
+}
+#provider-grid.quick-scan article.provider .card-content>p:last-child{
+  flex:1 1 300px;
+  order:2;
+  min-width:0;
+  margin:0;
+  padding:0;
+  border:0;
+  color:#375749;
+  font-size:.83rem;
+  line-height:1.6;
+  overflow-wrap:anywhere
+}
+#provider-grid.quick-scan article.provider .card-content>p:not(:last-child){
+  order:4;
+  flex:1 1 100%;
+  min-width:0;
+  margin:0;
+  padding:16px 0 0;
+  border-top:1px solid #d6e3d9;
+  color:#375749;
+  font-size:.91rem;
+  line-height:1.75
+}
+#provider-grid.quick-scan article.provider .party-details-toggle{
+  display:inline-flex;
+  order:3;
+  min-height:48px;
+  margin-left:auto;
+  border-radius:10px;
+  border-color:#b4d1bd;
+  padding:10px 16px;
+  background:#e7f0e5;
+  color:#184737
+}
+#provider-grid.quick-scan article.provider .party-details-toggle:hover{
+  background:#d3e6d5
+}
+#provider-grid.quick-scan article.provider .party-details-toggle[aria-expanded="true"]{
+  border-color:#184737;background:#184737;color:#fff
+}
+#provider-grid.quick-scan article.provider:focus-within{
+  outline:3px solid #a66b24;outline-offset:3px
+}
+@media(max-width:830px){
+  #provider-grid.quick-scan article.provider{
+    grid-template-columns:minmax(0,1fr)
+  }
+  #provider-grid.quick-scan article.provider .card-heading{
+    flex-direction:row;justify-content:space-between;
+    align-items:center;flex-wrap:wrap;gap:8px 14px;
+    padding:13px 19px;
+    border-right:0;border-bottom:1px solid #cbd9cb;
+    border-radius:14px 14px 0 0
+  }
+  #provider-grid.quick-scan article.provider .card-content{
+    padding:19px 21px 22px
+  }
+  #provider-grid.quick-scan article.provider .card-content h2{
+    flex-basis:100%;font-size:clamp(1.37rem,4.2vw,1.65rem)
+  }
+  #provider-grid.quick-scan article.provider .card-content>p:last-child{
+    flex-basis:100%
+  }
+  #provider-grid.quick-scan article.provider .party-details-toggle{
+    margin-left:0
+  }
+}
+@media(max-width:470px){
+  #provider-grid.quick-scan{gap:9px}
+  #provider-grid.quick-scan article.provider .card-heading{padding:12px 15px}
+  #provider-grid.quick-scan article.provider .card-heading .card-category{
+    max-width:100%
+  }
+  #provider-grid.quick-scan article.provider .card-content{padding:17px 16px 20px}
+  #provider-grid.quick-scan article.provider .card-content h2{font-size:1.36rem}
+  #provider-grid.quick-scan article.provider .card-content>p:last-child{font-size:.81rem}
+  #provider-grid.quick-scan article.provider .party-details-toggle{width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  #provider-grid.quick-scan article.provider{transition:none}
+}
+@media print{
+  #provider-grid.quick-scan article.provider{
+    display:block;box-shadow:none;border:1px solid #999;break-inside:avoid
+  }
+  #provider-grid.quick-scan article.provider .card-heading{
+    border:0;border-bottom:1px solid #aaa;border-radius:0
+  }
+  #provider-grid.quick-scan article.provider .party-details-toggle{display:none!important}
+  #provider-grid.quick-scan article.provider .card-content>p[hidden]{display:block!important}
+}
+
 </style>
 </head>
 <body>
