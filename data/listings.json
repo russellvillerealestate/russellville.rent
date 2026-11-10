@@ -15,7 +15,7 @@
     "availability": "Check source",
     "image_url": "https://images.cdn.appfolio.com/nspm/images/ebd6c578-2eb6-4edb-9e1c-763913289a32/medium.jpeg",
     "image_verified": true,
-    "updated_at": "2026-11-09T22:24:40.499Z",
+    "updated_at": "2026-11-10T07:23:25.345Z",
     "seeded": false
   },
   {
@@ -114,25 +114,6 @@
     "image_verified": true
   },
   {
-    "id": "rvr-1416-e-o-st-russellville-ar-72801",
-    "address": "1416 E O St -",
-    "city": "Russellville",
-    "state": "AR",
-    "zip": "72801",
-    "rent": 1100,
-    "beds": null,
-    "baths": null,
-    "type": "Townhouse",
-    "manager": "River Valley Realty Management Service",
-    "source_name": "River Valley Realty",
-    "source_url": "https://www.rentrvr.com/listings/detail/9a4af6dc-5c0b-445b-a6c5-e7c5edb91efd",
-    "availability": "Check source",
-    "image_url": "https://images.cdn.appfolio.com/rivervalley/images/8bc65cba-1629-4d81-9d96-f261eafaa2cc/large.jpg",
-    "image_verified": true,
-    "updated_at": "2026-11-09T22:24:40.499Z",
-    "seeded": false
-  },
-  {
     "id": "natural-state-2711-west-12th-apt-3-russellville-ar-72801",
     "address": "2711 West 12th Apt#3",
     "city": "Russellville",
@@ -148,7 +129,7 @@
     "availability": "Check source",
     "image_url": "https://images.cdn.appfolio.com/nspm/images/d4be8255-176c-4a72-97a3-bc5e70742251/medium.jpg",
     "image_verified": true,
-    "updated_at": "2026-11-09T22:24:40.499Z",
+    "updated_at": "2026-11-10T07:23:25.345Z",
     "seeded": false
   },
   {
@@ -167,7 +148,7 @@
     "availability": "Check source",
     "image_url": "https://images.cdn.appfolio.com/rivervalley/images/9bbdb5ef-e82d-4caa-bef8-0c50db79f143/large.jpg",
     "image_verified": true,
-    "updated_at": "2026-11-09T22:24:40.499Z",
+    "updated_at": "2026-11-10T07:23:25.345Z",
     "seeded": false
   }
 ]
