@@ -2583,6 +2583,60 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   .contact--studio .contact-scene--postcard figcaption small{font-size:.69rem}
 }
 
+
+/* 2026-11-10 / Mobile rental route dock.
+   Live design reference: stayarv.com immersive forest/gold navigation, adapted
+   as a lightweight, native-anchor directory dock rather than a copied menu.
+   Evidence: Nielsen Norman Group navigation/info scent, web.dev visual
+   stability, WCAG 2.2 focus-visible, 24x24 target size, focus not obscured.
+   No JavaScript, provider data, filter state or automation changes. */
+.mobile-rental-dock{display:none}
+@media(max-width:710px){
+ body{padding-bottom:calc(91px + env(safe-area-inset-bottom,0px))}
+ html{scroll-padding-bottom:calc(104px + env(safe-area-inset-bottom,0px))}
+ .mobile-rental-dock{
+  position:fixed;left:50%;bottom:calc(9px + env(safe-area-inset-bottom,0px));
+  z-index:90;transform:translateX(-50%);display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;
+  width:min(calc(100% - 20px),520px);padding:6px;
+  border:1px solid #edd6a288;border-radius:19px;
+  background:linear-gradient(110deg,#0e322b,#1a4a3b);
+  box-shadow:0 15px 38px #09271eb5,0 0 0 1px #ffffff1e inset;
+ }
+ .mobile-rental-dock a{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:5px;min-width:0;min-height:61px;padding:8px 4px;
+  border-radius:13px;color:#f4f5eb;text-decoration:none;text-align:center;
+  font-size:.69rem;line-height:1.25;font-weight:800;
+  transition:background-color .15s ease,color .15s ease;
+ }
+ .mobile-rental-dock svg{
+  display:block;width:23px;height:23px;flex:none;fill:none;
+  stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;
+ }
+ .mobile-rental-dock__find{background:#f0d399;color:#14392e!important}
+ .mobile-rental-dock a:hover{background:#ffffff20}
+ .mobile-rental-dock__find:hover{background:#ffe5ad!important}
+ .mobile-rental-dock a:focus-visible{
+  outline:3px solid #ffe5ad;outline-offset:-3px;background:#265c49;
+  color:#fffefa;
+ }
+ .mobile-rental-dock__find:focus-visible{outline-color:#16392e;background:#ffe5ad}
+ /* The existing Explore menu takes precedence when expanded. */
+ body:has(.mobile-directory-menu[open]) .mobile-rental-dock{
+  visibility:hidden;pointer-events:none;
+ }
+}
+@media(max-width:360px){
+ .mobile-rental-dock{width:calc(100% - 12px);padding:5px;gap:2px}
+ .mobile-rental-dock a{font-size:.63rem;min-height:58px;padding:6px 2px}
+ .mobile-rental-dock svg{width:21px;height:21px}
+}
+@media(prefers-reduced-motion:reduce){
+ .mobile-rental-dock a{transition:none!important}
+}
+@media print{.mobile-rental-dock{display:none!important}body{padding-bottom:0!important}}
+
 </style>
 </head>
 <body>
@@ -2637,6 +2691,13 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
     </div>
   </div>
 </header>
+<!-- Thumb-reachable directory wayfinding; all four anchors work without JavaScript. -->
+<nav class="mobile-rental-dock" aria-label="Mobile rental wayfinding">
+  <a class="mobile-rental-dock__find" href="#browse"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m15.5 15.5 5 5"></path></svg><span>Find rentals</span></a>
+  <a href="#rental-results"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7.2" height="7.2" rx="1.5"></rect><rect x="13.8" y="3" width="7.2" height="7.2" rx="1.5"></rect><rect x="3" y="13.8" width="7.2" height="7.2" rx="1.5"></rect><rect x="13.8" y="13.8" width="7.2" height="7.2" rx="1.5"></rect></svg><span>Directory</span></a>
+  <a href="#list"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v16M4 12h16"></path><rect x="2" y="2" width="20" height="20" rx="5" opacity=".36"></rect></svg><span>List a rental</span></a>
+  <a href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v11H9l-5 4V5Z"></path><path d="M8 9h8m-8 3h5"></path></svg><span>Contact</span></a>
+</nav>
 <main id="main" class="wrap">
 <section class="hero welcome-hero" aria-labelledby="hero-title"><img class="hero-photo" src="assets/lake-dardanelle-sunset.jpg" alt="Sunset over the covered docks at Lake Dardanelle State Park, reflected in the still water" width="1920" height="910" fetchpriority="high">
 <div class="welcome-copy">
