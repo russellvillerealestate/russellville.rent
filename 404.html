@@ -81,6 +81,51 @@ footer a{font-weight:700}
 @media(max-width:380px){.site-header .shell{gap:5px}.brand{font-size:1.05rem}.brand .mark{margin-right:5px}.header-home{font-size:.67rem}.hero-actions{flex-direction:column}.hero-actions .button{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.route-card,.button{transition:none}.route-card:hover,.button:hover{transform:none}}
 @media print{.hero{background:#fff;color:#16372f}.hero-photo,.route-emblem,.hero::before,.hero::after{display:none}.hero h1 em{color:#16372f}.hero-copy{color:#16372f}.hero .shell{display:block}.route-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.route-card{box-shadow:none}.button{border-color:#16372f}}
+
+/* 2026-11-09 / Illustrated recovery atlas. Original first-party SVG category
+   symbols make six recovery destinations scannable at a glance.
+   References: live StayARV visual rhythm; Nielsen Norman Group visual hierarchy;
+   web.dev responsive reflow; W3C WCAG 2.2 focus and reduced motion.
+   Illustrations are category metaphors, never photos of rental inventory. */
+.route-grid{gap:18px}
+.route-card{
+  min-height:350px;padding:clamp(24px,2.9vw,34px);
+  border-radius:6px 25px 6px 25px;isolation:isolate;
+  box-shadow:0 16px 34px #15382e17;
+}
+.route-card:nth-child(2n){border-radius:25px 6px 25px 6px}
+.route-card::before{right:-62px;top:-62px;width:220px;height:220px;opacity:.8}
+.route-art{
+  display:grid;place-items:center;align-self:flex-end;
+  position:relative;width:min(75%,200px);height:130px;margin:4px 0 12px;
+  color:#2b6650;transform:translateZ(0);pointer-events:none;
+}
+.route-art::before{
+  content:"";position:absolute;inset:4px;border-radius:50%;
+  background:radial-gradient(circle,#c6dfc5 0%,#c9dfc04d 42%,transparent 72%);
+  z-index:-1;
+}
+.route-art svg{display:block;width:100%;height:100%;filter:drop-shadow(0 7px 5px #174b3120)}
+.route-card:nth-child(2) .route-art,.route-card:nth-child(5) .route-art{color:#795b39}
+.route-card:nth-child(3) .route-art,.route-card:nth-child(6) .route-art{color:#315e63}
+.route-card:nth-child(2) .route-art::before,.route-card:nth-child(5) .route-art::before{background:radial-gradient(circle,#efdbb8,transparent 72%)}
+.route-card:nth-child(3) .route-art::before,.route-card:nth-child(6) .route-art::before{background:radial-gradient(circle,#c4dfdf,transparent 72%)}
+.route-card h3{font-size:clamp(1.85rem,2.8vw,2.43rem);max-width:16ch;margin:auto 0 11px}
+.route-card p{font-size:.88rem;max-width:36ch}
+.route-card:focus-visible{outline:4px solid #b77d24;outline-offset:4px}
+@media(max-width:960px){.route-card{min-height:310px}.route-art{height:115px}}
+@media(max-width:660px){
+ .route-grid{gap:12px}
+ .route-card,.route-card:nth-child(2n){min-height:235px;display:grid;grid-template-columns:minmax(0,1fr) 110px;column-gap:12px;padding:22px;border-radius:15px}
+ .route-top{grid-column:1/-1}
+ .route-art{grid-column:2;grid-row:2 / span 2;width:100%;height:110px;align-self:center;margin:0}
+ .route-card h3{grid-column:1;grid-row:2;align-self:end;font-size:clamp(1.7rem,6vw,2.3rem);margin:12px 0 9px}
+ .route-card p{grid-column:1;grid-row:3}
+}
+@media(max-width:380px){.route-card,.route-card:nth-child(2n){grid-template-columns:minmax(0,1fr) 85px;padding:19px}.route-art{height:92px}.route-card h3{font-size:1.6rem}}
+@media(prefers-reduced-motion:reduce){.route-art{transform:none}}
+@media print{.route-card,.route-card:nth-child(2n){min-height:0;display:block;border-radius:8px;box-shadow:none}.route-art{display:none}}
+
 </style>
 </head>
 <body>
@@ -112,12 +157,12 @@ footer a{font-weight:700}
   <section class="routes shell" aria-labelledby="routes-title">
     <div class="routes-heading"><div><p class="eyebrow">THE RIVER VALLEY / SIX WAYS BACK</p><h2 id="routes-title">Find another way <em>in.</em></h2></div><p>Keep your search moving. Browse a category, then contact its provider directly to verify availability, prices and terms.</p></div>
     <nav class="route-grid" aria-label="Popular rental category destinations">
-      <a class="route-card" href="/long-term.html"><span class="route-top"><span>01 / SETTLE IN</span><span class="arrow" aria-hidden="true">↗</span></span><h3>Homes & apartments</h3><p>Find a place to live in the River Valley.</p></a>
-      <a class="route-card" href="/storage.html"><span class="route-top"><span>02 / MAKE ROOM</span><span class="arrow" aria-hidden="true">↗</span></span><h3>Storage</h3><p>Compare units, parking and extra space.</p></a>
-      <a class="route-card" href="/equipment.html"><span class="route-top"><span>03 / GET IT DONE</span><span class="arrow" aria-hidden="true">↗</span></span><h3>Tools & equipment</h3><p>Browse worksite, home and project rentals.</p></a>
-      <a class="route-card" href="/camping.html"><span class="route-top"><span>04 / GET OUTSIDE</span><span class="arrow" aria-hidden="true">↗</span></span><h3>Camping & RV sites</h3><p>Find independent campground and site listings.</p></a>
-      <a class="route-card" href="/party.html"><span class="route-top"><span>05 / GATHER</span><span class="arrow" aria-hidden="true">↗</span></span><h3>Events & parties</h3><p>Explore gathering supplies and celebrations.</p></a>
-      <a class="route-card" href="/cars.html"><span class="route-top"><span>06 / HIT THE ROAD</span><span class="arrow" aria-hidden="true">↗</span></span><h3>Car rentals</h3><p>Compare local and regional vehicle options.</p></a>
+      <a class="route-card" href="/long-term.html"><span class="route-top"><span>01 / SETTLE IN</span><span class="arrow" aria-hidden="true">↗</span></span><span class="route-art" aria-hidden="true"><svg viewBox="0 0 180 120" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round" focusable="false"><path d="M23 62 90 18l67 44M38 56v51h104V56M75 107V72h30v35M50 68h15m50 0h15"/><path d="M137 31h25m-12-12v24" opacity=".45"/></svg></span><h3>Homes & apartments</h3><p>Find a place to live in the River Valley.</p></a>
+      <a class="route-card" href="/storage.html"><span class="route-top"><span>02 / MAKE ROOM</span><span class="arrow" aria-hidden="true">↗</span></span><span class="route-art" aria-hidden="true"><svg viewBox="0 0 180 120" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round" focusable="false"><path d="M34 109V24h112v85M26 24h128M51 39h78v70H51zM51 55h78M51 70h78M51 85h78M51 100h78"/><circle cx="119" cy="93" r="2" fill="currentColor"/></svg></span><h3>Storage</h3><p>Compare units, parking and extra space.</p></a>
+      <a class="route-card" href="/equipment.html"><span class="route-top"><span>03 / GET IT DONE</span><span class="arrow" aria-hidden="true">↗</span></span><span class="route-art" aria-hidden="true"><svg viewBox="0 0 180 120" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round" focusable="false"><path d="m38 102 56-56M83 33a25 25 0 0 1 32-15l-15 15 7 11 18-4a25 25 0 0 1-29 28M33 104l-9 9 13 4 9-9M113 59l33 35M140 87l13 14-13 14-14-13z"/><path d="M50 32h18m-9-9v18" opacity=".55"/></svg></span><h3>Tools & equipment</h3><p>Browse worksite, home and project rentals.</p></a>
+      <a class="route-card" href="/camping.html"><span class="route-top"><span>04 / GET OUTSIDE</span><span class="arrow" aria-hidden="true">↗</span></span><span class="route-art" aria-hidden="true"><svg viewBox="0 0 180 120" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round" focusable="false"><path d="M17 105h146M34 105 65 48l33 57H34ZM51 74l14-26 14 26M65 48v57M102 98V51h46l14 47zM117 76h15M143 76h9"/><path d="M148 42V17m-17 25 17-25 17 25" opacity=".65"/></svg></span><h3>Camping & RV sites</h3><p>Find independent campground and site listings.</p></a>
+      <a class="route-card" href="/party.html"><span class="route-top"><span>05 / GATHER</span><span class="arrow" aria-hidden="true">↗</span></span><span class="route-art" aria-hidden="true"><svg viewBox="0 0 180 120" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round" focusable="false"><path d="M20 105h140M42 102V51h96v51M42 67h96M60 52V31m60 21V31M59 31h62"/><path d="m42 80 18 13 19-13 18 13 19-13 22 13"/><path d="M32 33c-12-19 9-34 21-18 11 15-6 24-16 25m5-1-9 21M143 30c-11-19 11-34 22-17 10 15-8 25-17 25m-2-1 8 23" opacity=".66"/></svg></span><h3>Events & parties</h3><p>Explore gathering supplies and celebrations.</p></a>
+      <a class="route-card" href="/cars.html"><span class="route-top"><span>06 / HIT THE ROAD</span><span class="arrow" aria-hidden="true">↗</span></span><span class="route-art" aria-hidden="true"><svg viewBox="0 0 180 120" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round" focusable="false"><path d="M15 98h150M32 85h116l-9-28-22-6H65L47 73H32v12zM66 51 78 31h35l18 26M58 57h72M72 57v21M131 57v21"/><circle cx="61" cy="91" r="13" fill="#e7eddf"/><circle cx="132" cy="91" r="13" fill="#e7eddf"/><path d="M13 36h26m-18-12h27" opacity=".55"/></svg></span><h3>Car rentals</h3><p>Compare local and regional vehicle options.</p></a>
     </nav>
   </section>
   <section class="return shell" aria-labelledby="return-title"><div class="return-panel"><div><p class="eyebrow" style="color:#f0d399">THE COMPLETE DIRECTORY</p><h2 id="return-title">There are more ways to go.</h2><p>All 35 rental categories are available on the homepage. No sign-in or reservation is required to browse.</p></div><a class="button primary" href="/#browse">See every category <span aria-hidden="true">↗</span></a></div></section>
