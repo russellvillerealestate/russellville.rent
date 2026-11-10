@@ -383,6 +383,81 @@ main{max-width:1160px;margin:0 auto;padding:0 28px}.hero{position:relative;isola
 }
 @media(prefers-reduced-motion:reduce){.path-filters .path-choice{transition:none}}
 
+
+/* 2026-11-10 River Valley camper reading desk. StayARV place-first identity;
+   NN/g layer-cake scanning and aligned lists; web.dev responsive design;
+   W3C WCAG 2.2 controls >= 48px, native focus and reduced motion.
+   Pure presentation of the same seven original records. */
+.rv-view-board{position:relative;overflow:hidden;isolation:isolate;display:grid;
+ grid-template-columns:minmax(0,1.15fr) minmax(290px,.85fr);align-items:center;
+ gap:clamp(24px,4vw,55px);margin:0 0 25px;padding:clamp(24px,3.5vw,38px);
+ border-radius:23px;border:1px solid #c4ab7f;
+ background:linear-gradient(115deg,#10372f 0%,#205543 75%,#315d47 100%);color:#fffaf0;
+ box-shadow:0 15px 38px #123f3221}
+.rv-view-board[hidden]{display:none!important}
+.rv-view-board:before{content:"";position:absolute;z-index:-1;right:-105px;bottom:-160px;
+ width:370px;height:370px;border:1px solid #f5daac55;border-radius:50%;
+ box-shadow:0 0 0 43px #efd29b12,0 0 0 86px #efd29b09;pointer-events:none}
+.rv-view-intro>span{display:block;color:#f5daa6;font-size:.63rem;font-weight:900;
+ letter-spacing:.18em;line-height:1.5;margin-bottom:10px}
+.rv-view-intro>strong{display:block;font:400 clamp(1.65rem,2.8vw,2.4rem)/1.12 Georgia,serif;letter-spacing:-.045em}
+.rv-view-intro em{color:#f6d7a3;font-weight:400}
+.rv-view-intro p{max-width:58ch;font-size:.79rem;line-height:1.6;color:#e2eee4;margin:11px 0 0}
+.rv-view-controls{display:grid;grid-template-columns:1fr 1fr;gap:9px;position:relative;z-index:1}
+.rv-view-controls button{min-width:0;min-height:75px;display:flex;flex-direction:column;
+ align-items:center;justify-content:center;gap:5px;padding:11px 10px;cursor:pointer;
+ border:1px solid #f4e1bb78;border-radius:14px;background:#ffffff19;color:#fffaf0;
+ font-size:.78rem;font-weight:850;line-height:1.3;text-align:center;
+ transition:background-color .18s,border-color .18s,transform .18s}
+.rv-view-controls button>span{font-size:1.3rem;line-height:1;font-weight:400}
+.rv-view-controls button:hover{background:#ffffff30}
+.rv-view-controls button[aria-pressed="true"]{background:#f1d39b;color:#193d32;border-color:#f1d39b;box-shadow:0 6px 16px #081d182d}
+.rv-view-controls button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+#rv-grid[data-view="scan"]{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:12px!important}
+#rv-grid[data-view="scan"]>article,
+#rv-grid[data-view="scan"]>article:nth-child(even){
+ display:grid!important;grid-template-columns:minmax(0,.45fr) minmax(0,.55fr)!important;
+ grid-template-rows:auto auto auto!important;gap:0 clamp(17px,3vw,36px)!important;
+ align-content:start;min-height:0!important;padding:25px 30px!important;
+ border:1px solid #cbd9ce!important;border-left:6px solid #ccaa73!important;
+ border-radius:17px!important;background:#fffefa!important;
+ box-shadow:0 6px 17px #173e340c!important;transform:none!important}
+#rv-grid[data-view="scan"]>article[data-type="marketplace"]{border-left-color:#5d938a!important;background:#f8fcfa!important}
+#rv-grid[data-view="scan"]>article[hidden]{display:none!important}
+#rv-grid[data-view="scan"]>article:before{display:none!important}
+#rv-grid[data-view="scan"]>article>.rv-card-scene{display:none!important}
+#rv-grid[data-view="scan"]>article>:not(.rv-card-scene){grid-column:auto!important;grid-row:auto!important;
+ max-width:none!important;margin-left:0!important;margin-right:0!important}
+#rv-grid[data-view="scan"]>article>.tag{grid-column:1!important;grid-row:1!important;align-self:start;justify-self:start;
+ margin:0 0 10px!important}
+#rv-grid[data-view="scan"]>article>h3{grid-column:1!important;grid-row:2/4!important;align-self:start;
+ margin:0!important;font:400 clamp(1.4rem,2.2vw,1.86rem)/1.17 Georgia,serif!important;letter-spacing:-.045em}
+#rv-grid[data-view="scan"]>article>p:not(.detail):not(:last-child){grid-column:2!important;grid-row:1!important;
+ margin:0 0 12px!important;font-size:.86rem;line-height:1.65}
+#rv-grid[data-view="scan"]>article>.detail{grid-column:2!important;grid-row:2!important;
+ margin:0 0 10px!important;padding:9px 0 0!important;font-size:.77rem}
+#rv-grid[data-view="scan"]>article>p:last-child{grid-column:2!important;grid-row:3!important;align-self:start;
+ margin:0!important;padding:10px 13px!important;line-height:1.9!important;font-size:.83rem}
+#rv-grid[data-view="scan"]>article:hover{box-shadow:0 10px 24px #173e341c!important;border-color:#9ab8a4!important}
+@media(max-width:830px){
+ .rv-view-board{grid-template-columns:1fr;gap:18px}
+ .rv-view-controls{max-width:540px;width:100%}
+ #rv-grid[data-view="scan"]>article,#rv-grid[data-view="scan"]>article:nth-child(even){
+  grid-template-columns:minmax(0,1fr)!important;grid-template-rows:auto!important;
+  padding:23px!important}
+ #rv-grid[data-view="scan"]>article>.tag,
+ #rv-grid[data-view="scan"]>article>h3,
+ #rv-grid[data-view="scan"]>article>p:not(.detail):not(:last-child),
+ #rv-grid[data-view="scan"]>article>.detail,
+ #rv-grid[data-view="scan"]>article>p:last-child{grid-column:1!important;grid-row:auto!important}
+ #rv-grid[data-view="scan"]>article>h3{margin:0 0 11px!important}
+}
+@media(max-width:500px){.rv-view-board{padding:23px 17px;border-radius:18px}
+ .rv-view-controls{grid-template-columns:1fr 1fr}
+ .rv-view-controls button{min-height:64px;font-size:.73rem}
+ #rv-grid[data-view="scan"]>article,#rv-grid[data-view="scan"]>article:nth-child(even){padding:19px!important}
+}
+@media(prefers-reduced-motion:reduce){.rv-view-controls button{transition:none}}
 </style></head><body>
 <a class="skip-link" href="#providers">Skip to rental listings</a>
 <header class="roadbook-header">
@@ -440,6 +515,14 @@ main{max-width:1160px;margin:0 auto;padding:0 28px}.hero{position:relative;isola
 <button type="button" class="path-show-all" data-rv-filter="all" aria-controls="rv-grid" aria-pressed="true">Show all seven listings <span aria-hidden="true">↗</span></button>
 </div><p class="path-caveat">All options require confirmation of dates, total cost and delivery to your specific location.</p><p class="rv-planner-jump">Need to contact a rental host? <a href="#rv-trip-planner">Build a copy-ready trip inquiry ↓</a></p></section>
 <section id="providers" aria-labelledby="providers-title"><div class="results-heading"><h2 id="providers-title">Compare RV rental options</h2><p id="rv-count" role="status" aria-live="polite" aria-atomic="true">Browse provider information below.</p></div>
+<!-- Progressive editorial / quick-scan switch; all canonical records and contact links stay visible in both modes. -->
+<div class="rv-view-board" id="rv-view-board" aria-label="Choose a camper rental reading layout" hidden>
+  <div class="rv-view-intro"><span>THE RIVER VALLEY / TWO WAYS TO READ</span><strong>Explore the story. <em>Or scan the facts.</em></strong><p>Seven operator and marketplace records, two ways to compare. Switch views without losing your search or filters.</p></div>
+  <div class="rv-view-controls" role="group" aria-label="Camper rental display">
+    <button type="button" data-rv-view="folio" aria-controls="rv-grid" aria-pressed="true"><span aria-hidden="true">▦</span> Illustrated guide</button>
+    <button type="button" data-rv-view="scan" aria-controls="rv-grid" aria-pressed="false"><span aria-hidden="true">☰</span> Quick comparison</button>
+  </div>
+</div>
 <nav class="rv-route-rail" aria-label="Camper rental chapter shortcuts">
   <div class="rv-route-intro"><span class="rv-route-overline">THE RIVER VALLEY ROADBOOK / YOUR NEXT STOP</span><strong>Keep moving<br><em>toward the trip.</em></strong><small>A camper and a campsite are separate reservations. Confirm availability and delivery directly.</small></div>
   <div class="rv-route-actions">
@@ -590,4 +673,22 @@ Thank you.</textarea>
   updateTripNote();
 
 })();
-</script></body></html>
+</script>
+<script>
+/* Display enhancement only. Original search, rental-path filters and inquiry builder remain untouched. */
+(() => {
+ const board=document.getElementById('rv-view-board');
+ const grid=document.getElementById('rv-grid');
+ if(!board||!grid)return;
+ const buttons=[...board.querySelectorAll('[data-rv-view]')];
+ if(buttons.length!==2)return;
+ buttons.forEach(button=>button.addEventListener('click',()=>{
+  const view=button.dataset.rvView;
+  if(view!=='folio'&&view!=='scan')return;
+  if(view==='scan')grid.dataset.view='scan';else delete grid.dataset.view;
+  buttons.forEach(item=>item.setAttribute('aria-pressed',String(item===button)));
+ }));
+ board.hidden=false;
+})();
+</script>
+</body></html>
