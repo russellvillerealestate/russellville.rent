@@ -444,6 +444,127 @@ main.wrap{padding-top:52px}
 @media(prefers-reduced-motion:reduce){.car-folios .card{transition:none}}
 @media print{.car-folios .card{display:block;box-shadow:none;break-inside:avoid}.car-folios .car-provider-scene{display:none}.car-folios .card-top,.car-folios .card-body{padding:17px 23px}.car-folios .card-top .eyebrow{text-align:left}}
 
+
+/* November 10 2026 — The comparison ledger.
+   Structural visual re-composition of existing three-provider comparison:
+   a full-width dark forest editorial chapter, gold typographic edition mark,
+   elevated readable matrix, and individual mobile comparison tickets.
+   Live comparison: stayarv.com / russellville.rent (Nov 10).
+   Design basis: Nielsen Norman Group visual hierarchy and scanning;
+   web.dev fluid responsive layouts; WCAG 2.2 contrast, focus, reflow,
+   reduced motion and minimum target sizes.
+   Existing car providers, offers, citations, links, table text, mobile
+   card text, inquiry scripts, and listing workflow are unchanged. */
+.compare-board{
+  position:relative;isolation:isolate;overflow:hidden;
+  margin:clamp(42px,6vw,75px) 0 24px;
+  padding:clamp(25px,4.4vw,52px);
+  border:1px solid #254c3d;border-radius:28px;
+  background:linear-gradient(124deg,#0c2f29 0%,#154638 61%,#295646 100%);
+  box-shadow:0 26px 55px #0e302534;
+}
+.compare-board::before{
+  content:"";position:absolute;right:-118px;top:-182px;z-index:-1;
+  width:485px;aspect-ratio:1;border:1px solid #e9cd8e33;
+  border-radius:50%;box-shadow:0 0 0 54px #e9cd8e08,0 0 0 105px #e9cd8e06;
+  pointer-events:none;
+}
+.compare-head{
+  position:relative;display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(180px,.7fr) auto;
+  align-items:end;gap:clamp(18px,3vw,40px);
+  margin-bottom:clamp(23px,3.4vw,38px);padding-bottom:clamp(20px,2.9vw,31px);
+  border-bottom:1px solid #f0d39c57;
+}
+.compare-head .eyebrow{
+  color:#f3d599;font-weight:850;letter-spacing:.19em;
+  text-transform:uppercase;
+}
+.compare-head h2{
+  max-width:13ch;color:#fff8e8;
+  font:400 clamp(2.6rem,5vw,4.8rem)/1.01 Georgia,"Times New Roman",serif;
+  letter-spacing:-.062em;text-wrap:balance;
+}
+.compare-head>p{
+  max-width:31ch;color:#e2f0e5;
+  font-size:clamp(.86rem,1.25vw,.99rem);
+  line-height:1.75;margin:0 0 3px;
+}
+.compare-edition{
+  display:flex;align-items:flex-end;gap:11px;
+  color:#f6db9f;border-left:1px solid #d8d6ae55;
+  padding:0 0 3px 20px;white-space:nowrap;
+}
+.compare-edition b{
+  font:400 clamp(2.65rem,4.6vw,4.5rem)/.78 Georgia,serif;
+  letter-spacing:-.075em;
+}
+.compare-edition small{
+  font-size:.6rem;line-height:1.45;font-weight:850;letter-spacing:.12em;
+  text-transform:uppercase;color:#ecedcf;
+}
+.compare-scroll{
+  position:relative;border:1px solid #6b927a;border-radius:17px;
+  background:#fffdf6;box-shadow:0 16px 35px #081e1940;
+}
+.compare-table{font-size:.87rem;line-height:1.58}
+.compare-table thead th{
+  background:#f0d89d;color:#17372d;
+  font-size:.87rem;line-height:1.4;
+  border-bottom:2px solid #b89a5d;
+}
+.compare-table thead th:first-child{background:#e8c37a;color:#17372d}
+.compare-table tbody th{
+  background:#e7f0e5;color:#244e3b;
+  letter-spacing:.01em;
+}
+.compare-table th,.compare-table td{padding:clamp(15px,1.7vw,22px) clamp(14px,1.7vw,21px)}
+.compare-table tbody tr:nth-child(even) td{background:#f6f7f1}
+.compare-table .known{background:#dbecdd;color:#1d573d}
+.compare-table a:focus-visible{outline:3px solid #b26c16;outline-offset:3px}
+.compare-footnote,.compare-board .compare-footnote{
+  margin:22px 2px 0;color:#e3f0e6;
+  font-size:.81rem;line-height:1.7;
+}
+.compare-board .compare-footnote strong{color:#ffdda0}
+@media(max-width:1000px){
+  .compare-head{grid-template-columns:minmax(0,1fr) minmax(160px,.65fr)}
+  .compare-edition{grid-column:1/-1;grid-row:2;justify-self:end;padding-left:18px}
+  .compare-head h2{font-size:clamp(2.6rem,5.5vw,4rem)}
+}
+@media(max-width:750px){
+  .compare-board{padding:clamp(20px,4.5vw,32px);border-radius:22px}
+  .compare-head{grid-template-columns:minmax(0,1fr);gap:12px;padding-bottom:25px}
+  .compare-head h2{max-width:14ch;font-size:clamp(2.45rem,8vw,3.75rem)}
+  .compare-head>p{max-width:56ch;margin:2px 0 0}
+  .compare-edition{
+    grid-column:auto;grid-row:auto;justify-self:start;
+    margin-top:8px;padding:0;border-left:0;
+  }
+  .compare-edition b{font-size:3.05rem}
+  .mobile-compare{position:relative;display:grid;gap:16px}
+  .mobile-pass{
+    border:1px solid #d3e2d0;border-radius:18px;
+    background:#fffdf6;box-shadow:0 16px 28px #071f1940;
+  }
+  .mobile-pass:before{width:7px}
+  .compare-board .compare-footnote{margin-top:23px}
+}
+@media(max-width:400px){
+  .compare-board{padding:19px 15px;border-radius:18px}
+  .compare-head h2{font-size:2.4rem}
+}
+@media print{
+  .compare-board{background:white;color:#14382f;border:1px solid #879789;box-shadow:none}
+  .compare-head h2,.compare-head>p,.compare-board .compare-footnote,
+  .compare-board .compare-footnote strong{color:#14382f}
+  .compare-head .eyebrow,.compare-edition{color:#345847}
+  .compare-edition small{color:#345847}
+  .compare-board::before{display:none}
+  .compare-scroll{box-shadow:none}
+  .mobile-pass{box-shadow:none}
+}
+
 </style>
 </head>
 <body>
@@ -521,7 +642,7 @@ main.wrap{padding-top:52px}
   <div class="intro-strip"><strong>Three rental providers serving Russellville</strong><span>Compare local contacts and ask each provider about current vehicles, availability, rates, insurance, and pickup arrangements.</span></div>
 
   <section class="compare-board" aria-labelledby="compare-title">
-    <div class="compare-head"><div><p class="eyebrow">Rental desk / At a glance</p><h2 id="compare-title">Compare before you call.</h2></div><p>Three local contacts, one clear view of the details currently listed.</p></div>
+    <div class="compare-head"><div><p class="eyebrow">Rental desk / At a glance</p><h2 id="compare-title">Compare before you call.</h2></div><p>Three local contacts, one clear view of the details currently listed.</p><span class="compare-edition" aria-hidden="true"><b>03</b><small>Russellville<br>rental desks</small></span></div>
     <p class="compare-hint" id="compare-scroll-hint">Scroll sideways to compare all three providers →</p>
     <div class="compare-scroll" role="region" tabindex="0" aria-label="Rental provider comparison, horizontally scrollable on small screens" aria-describedby="compare-scroll-hint"><table class="compare-table"><caption class="sr-only">Published car rental information for three Russellville providers. Unlisted terms require confirmation.</caption><thead><tr><th scope="col">What matters</th><th scope="col">24/7 Rent-A-Ride</th><th scope="col">Cogswell Motors Rentals</th><th scope="col">Enterprise Rent-A-Car</th></tr></thead><tbody><tr><th scope="row">Rental offering</th><td>Car rentals; specific vehicle classes not listed here.</td><td><span class="known">Vehicle types listed</span><br>Cars, trucks, minivans, sport utility vehicles and 15-passenger vans.</td><td>Local rental branch; specific vehicle classes not listed here.</td></tr><tr><th scope="row">Driver requirements</th><td class="unknown">Confirm directly</td><td><span class="known">Published terms</span><br>At least 21; valid driver's license and major credit card.</td><td class="unknown">Confirm directly</td></tr><tr><th scope="row">Included mileage</th><td class="unknown">Confirm directly</td><td><span class="known">Published standard allowance</span><br>200 miles/day, 1,400/week or 3,000/month, unless otherwise specified.</td><td class="unknown">Confirm directly</td></tr><tr><th scope="row">Russellville location</th><td>111 S Arkansas Ave</td><td>1900 E Main St</td><td>1903 S Arkansas Ave</td></tr><tr><th scope="row">Next step</th><td><a href="#rental-ride">View contact details ↗</a></td><td><a href="#cogswell-rentals">View rental terms &amp; contact ↗</a></td><td><a href="#enterprise-rentals">View branch details ↗</a></td></tr></tbody></table></div>
     <ol class="mobile-compare" aria-label="Car rental provider comparison">
