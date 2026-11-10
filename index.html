@@ -2335,6 +2335,168 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
  .rentals-grid[data-view="list"]>.rental-card::before{display:none}
 }
 
+
+/* 2026-11-09: River Valley Rental Exchange. StayARV-inspired scenic search
+   masthead, without copying site elements. NN/g visual hierarchy, Google
+   web.dev layout stability, WCAG 2.2 reflow/focus/motion. Downtown image
+   is existing scenery, never represented as available rental inventory. */
+#browse > .section-head{
+ position:relative;isolation:isolate;overflow:hidden;
+ display:grid;grid-template-columns:minmax(0,1fr) minmax(160px,.35fr);
+ align-items:center;gap:clamp(24px,4vw,66px);min-height:365px;
+ padding:clamp(38px,5.8vw,75px);margin:clamp(50px,7vw,98px) 0 0;
+ border:1px solid #496d54;border-bottom:0;border-radius:27px 27px 0 0;
+ background:linear-gradient(102deg,#0b2924f5 0%,#10372de8 48%,#123b32b5 100%),
+ url("assets/downtown-russellville-sunset.jpg") center 55% /cover no-repeat #10362c;
+ color:#fffaf0;box-shadow:0 23px 52px #163a3220;
+}
+#browse > .section-head::before{
+ content:"";position:absolute;inset:17px;z-index:-1;pointer-events:none;
+ border:1px solid #f6d69c45;border-radius:16px 16px 0 0;
+}
+#browse > .section-head::after{
+ content:"DOWNTOWN RUSSELLVILLE / SCENERY, NOT RENTAL INVENTORY";
+ position:absolute;right:clamp(27px,5vw,61px);bottom:24px;
+ color:#dce9d9;font-size:.58rem;font-weight:800;
+ letter-spacing:.12em;line-height:1.45;text-align:right;
+}
+#browse > .section-head>div{position:relative;z-index:1;min-width:0}
+#browse > .section-head .eyebrow{
+ margin:0 0 18px;color:#f0d49b;font-size:.7rem;font-weight:850;
+ letter-spacing:.2em;text-transform:uppercase;
+}
+#browse > .section-head h2{
+ max-width:12.2ch;margin:0 0 20px;
+ font:400 clamp(3.1rem,6vw,5.7rem)/1.02 Georgia,"Times New Roman",serif;
+ letter-spacing:-.065em;color:#fff9ee;text-wrap:balance;
+}
+#browse > .section-head p:not(.eyebrow){
+ max-width:44ch;margin:0;color:#e2ede4;
+ font-size:clamp(.93rem,1.2vw,1.07rem);line-height:1.65;
+}
+#browse > .section-head .browse-label{
+ display:flex;align-items:center;justify-content:center;justify-self:end;
+ white-space:normal;max-width:235px;min-height:155px;
+ padding:22px 26px;margin:0 0 16px;
+ border:1px solid #f4dcaa9c;border-radius:14px 32px 14px 32px;
+ background:#0d3229b8;box-shadow:0 14px 28px #061b1757;
+ color:#f8db9b;text-align:left;
+ font:400 clamp(1.58rem,2.5vw,2.1rem)/1.17 Georgia,"Times New Roman",serif;
+ letter-spacing:-.04em;
+}
+#browse > #filters{
+ position:relative;z-index:1;display:grid;
+ grid-template-columns:minmax(0,1.2fr) minmax(180px,.7fr) auto;
+ align-items:end;gap:clamp(12px,2vw,22px);margin:0;
+ padding:clamp(23px,3vw,37px);
+ border:1px solid #b5cbb7;border-top:5px solid #dfb96e;
+ border-radius:0 0 24px 24px;
+ background:linear-gradient(122deg,#fdfbf2,#eef3e9);
+ box-shadow:0 18px 36px #153a3121;
+}
+#browse > #filters[hidden],#browse > #quick-paths[hidden]{display:none!important}
+#browse > #filters label{
+ margin:0 0 10px;color:#214e3e;font-size:.69rem;
+ line-height:1.35;font-weight:900;letter-spacing:.11em;text-transform:uppercase;
+}
+#browse > #filters input,#browse > #filters select{
+ width:100%;min-width:0;min-height:60px;padding:13px 16px;
+ border:1px solid #98b19f;border-radius:11px;
+ background:#fff;color:#173d32;font-size:1rem;font-weight:650;
+ box-shadow:0 3px 9px #173d320c;
+}
+#browse > #filters input::placeholder{color:#60756a;opacity:1;font-weight:450}
+#browse > #filters input:focus-visible,
+#browse > #filters select:focus-visible,
+#browse > #filters button:focus-visible{
+ outline:3px solid #b06c1c;outline-offset:3px;
+}
+#browse > #filters .reset{
+ min-height:60px;padding:12px 23px;border-radius:11px;
+ border:1px solid #173f34;background:#173f34;color:#fffdf4;
+ font-size:.84rem;font-weight:850;white-space:nowrap;
+ transition:background-color .18s ease;
+}
+#browse > #filters .reset:hover{background:#265c49}
+#browse > #quick-paths{
+ display:grid;
+ grid-template-columns:minmax(90px,.85fr) repeat(6,minmax(0,1fr));
+ align-items:stretch;gap:9px;margin:19px 0 31px;padding:17px;
+ border:1px solid #cadaca;border-radius:18px;
+ background:linear-gradient(112deg,#e4ede2,#f5f0e5);
+ box-shadow:0 7px 24px #153a310e;
+}
+#browse > #quick-paths .quick-paths-label{
+ align-self:center;margin:0;padding:0 10px;
+ color:#315a45;font-size:.66rem;font-weight:900;
+ letter-spacing:.15em;line-height:1.6;text-transform:uppercase;
+}
+#browse > #quick-paths .quick-pick{
+ display:flex;flex-direction:column;justify-content:center;align-items:center;
+ gap:8px;min-width:0;min-height:101px;padding:12px 8px;
+ border:1px solid #c3d6c4;border-radius:12px;
+ background:#fffdf8;color:#214b3d;
+ box-shadow:0 3px 12px #163d320b;white-space:normal;
+ font-size:.79rem;font-weight:850;line-height:1.3;text-align:center;
+}
+#browse > #quick-paths .quick-pick-icon{
+ width:41px;height:41px;border-radius:13px;
+ background:var(--pick-tint,#e3eee4);
+}
+#browse > #quick-paths .quick-pick:hover{
+ transform:translateY(-3px);border-color:#7ba388;
+ box-shadow:0 10px 19px #143a3220;
+}
+#browse > #quick-paths .quick-pick[aria-pressed="true"]{
+ border-color:#173f35;background:#173f35;color:#fff7e4;
+}
+#browse > #quick-paths .quick-pick:focus-visible{
+ outline:3px solid #ad6419;outline-offset:3px;
+}
+@media(max-width:1000px){
+ #browse > .section-head{min-height:315px;padding:clamp(34px,4.5vw,54px)}
+ #browse > .section-head h2{font-size:clamp(3rem,6vw,4.4rem)}
+ #browse > .section-head .browse-label{min-height:125px;padding:20px;font-size:1.5rem}
+ #browse > #quick-paths{grid-template-columns:repeat(6,minmax(0,1fr))}
+ #browse > #quick-paths .quick-paths-label{grid-column:1/-1;padding:2px 4px 5px}
+}
+@media(max-width:710px){
+ #browse > .section-head{
+  grid-template-columns:minmax(0,1fr);min-height:300px;
+  padding:clamp(33px,6vw,48px) clamp(24px,5vw,37px) 67px;
+  border-radius:20px 20px 0 0;
+ }
+ #browse > .section-head h2{font-size:clamp(2.8rem,8.2vw,4.25rem)}
+ #browse > .section-head .browse-label{display:none}
+ #browse > .section-head::after{left:26px;right:26px;bottom:22px;text-align:left;font-size:.54rem}
+ #browse > #filters{grid-template-columns:minmax(0,1fr) minmax(180px,.9fr);padding:24px 21px;gap:16px;border-radius:0 0 19px 19px}
+ #browse > #filters .reset{grid-column:1/-1}
+ #browse > #quick-paths{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;padding:12px}
+ #browse > #quick-paths .quick-pick{min-height:95px}
+}
+@media(max-width:470px){
+ #browse > .section-head{min-height:0;padding:34px 23px 66px}
+ #browse > .section-head h2{font-size:clamp(2.55rem,11vw,3.35rem)}
+ #browse > .section-head p:not(.eyebrow){font-size:.91rem}
+ #browse > .section-head::before{inset:10px}
+ #browse > .section-head::after{left:23px;right:17px;font-size:.46rem;letter-spacing:.075em}
+ #browse > #filters{grid-template-columns:minmax(0,1fr);padding:20px 17px;gap:14px}
+ #browse > #filters .reset{grid-column:auto}
+ #browse > #quick-paths{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ #browse > #quick-paths .quick-pick{min-height:90px}
+ #browse > #quick-paths .quick-pick-icon{width:37px;height:37px}
+}
+@media(prefers-reduced-motion:reduce){
+ #browse > #filters .reset,#browse > #quick-paths .quick-pick{transition:none}
+ #browse > #quick-paths .quick-pick:hover{transform:none}
+}
+@media print{
+ #browse > .section-head{min-height:0;padding:30px;border:1px solid #999;border-radius:0;background:#fff;box-shadow:none;color:#111}
+ #browse > .section-head::before,#browse > .section-head::after{display:none}
+ #browse > .section-head h2,#browse > .section-head .eyebrow,#browse > .section-head p:not(.eyebrow){color:#111}
+ #browse > .section-head .browse-label{color:#111;background:#fff;box-shadow:none;border-color:#777}
+ #browse > #filters,#browse > #quick-paths{box-shadow:none;background:#fff}
+}
 </style>
 </head>
 <body>
