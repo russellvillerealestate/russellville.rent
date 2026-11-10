@@ -628,6 +628,51 @@ url("assets/downtown-russellville-sunset.jpg") center 55%/cover no-repeat;
 @media(max-width:640px){.move-roadbook{margin-top:25px;border-radius:19px}.move-roadbook:after{inset:7px;border-radius:12px}.move-roadbook-head{padding:32px 23px 25px}.move-roadbook h2{font-size:clamp(2.6rem,9vw,3.65rem)}.move-roadbook-grid{grid-template-columns:1fr;gap:10px;padding:0 20px 17px}.move-roadbook-stop{min-height:124px;grid-template-columns:minmax(0,1fr) 64px;grid-template-rows:auto auto auto;gap:5px 10px;padding:17px 18px}.move-roadbook-stop strong{grid-column:1;grid-row:2;max-width:19ch;padding:0;font-size:1.9rem}.move-roadbook-stop svg{position:static;grid-column:2;grid-row:1/3;opacity:1;width:64px}.move-roadbook-bottom{grid-row:3;margin:7px 0 0}.move-roadbook-note{padding:0 23px 26px}}
 @media(prefers-reduced-motion:reduce){.move-roadbook-stop{transition:none}.move-roadbook-stop:hover{transform:none}}
 </style>
+
+<style id="moving-view-ledger-20261110">
+/* 2026-11-10 / River Valley pickup ledger: substantial dual-view layout for
+   the original eight moving pickup folios. StayARV-inspired pine/brass editorial
+   composition; Nielsen Norman Group scanability, web.dev responsive reflow,
+   and WCAG 2.2 keyboard targets/focus + reduced motion. Existing provider
+   records, addresses, prices, source links, warnings and filters are unedited. */
+#move-view-bar[hidden]{display:none!important}
+.move-view-bar{position:relative;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(255px,.75fr);align-items:center;gap:clamp(20px,3vw,46px);margin:4px clamp(23px,5vw,57px) clamp(23px,4vw,44px);padding:clamp(23px,3.4vw,36px);border:1px solid #e5c997;border-radius:19px;background:linear-gradient(120deg,#fbf5e7 0%,#eee3c9 100%);color:#173d30;box-shadow:0 13px 28px #09261e36}
+.move-view-bar:before{content:"";position:absolute;left:30px;right:30px;top:0;height:4px;border-radius:0 0 5px 5px;background:#b67e3a}
+.move-view-kicker{display:block;margin-bottom:10px;color:#78522c;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:900}
+.move-view-copy strong{display:block;max-width:23ch;font:400 clamp(1.6rem,2.5vw,2.5rem)/1.09 Georgia,"Times New Roman",serif;letter-spacing:-.045em}
+.move-view-copy strong em{font-weight:400;color:#80531d}
+.move-view-copy p{max-width:59ch;margin:12px 0 0;color:#3a5b4a;font-size:.82rem;line-height:1.6}
+.move-view-action{min-width:0}
+.move-view-switch-label{display:block;margin-bottom:9px;color:#52614f;font-size:.73rem;font-weight:800}
+.move-view-switch{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;padding:5px;border-radius:14px;border:1px solid #bdc4aa;background:#e2e8d6}
+.move-view-switch button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:70px;padding:10px 8px;border:1px solid transparent;border-radius:10px;background:transparent;color:#355b45;cursor:pointer;font:800 .78rem/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;transition:background .18s,color .18s,box-shadow .18s}
+.move-view-switch button[aria-pressed="true"]{background:#174b3b;color:#fff;border-color:#174b3b;box-shadow:0 4px 12px #102e2329}
+.move-view-switch button:hover:not([aria-pressed="true"]){background:#f5f8ed}
+.move-view-switch button:focus-visible{outline:3px solid #a86519;outline-offset:3px}
+.move-view-glyph{font:400 1.44rem/1 Georgia,serif}
+.move-view-state{display:block;min-height:2.2em;margin-top:10px;color:#52654f;font-size:.71rem;line-height:1.45}
+body.move-scan-on #local .provider-list,body.move-scan-on #nearby .provider-list{grid-template-columns:minmax(0,1fr);gap:11px}
+body.move-scan-on #local .provider-list>.provider,body.move-scan-on #nearby .provider-list>.provider,
+body.move-scan-on #local .provider-list>.provider:first-child,body.move-scan-on #nearby .provider-list>.provider:last-child{display:grid;grid-column:auto;grid-template-columns:78px minmax(0,1fr);min-height:0;align-items:stretch;border:1px solid #c7d8c8;border-radius:13px;background:#fffdf7;box-shadow:0 8px 21px #112e2711;transition:background-color .18s,border-color .18s}
+body.move-scan-on #local .provider-list>.provider:hover,body.move-scan-on #nearby .provider-list>.provider:hover{background:#f0f6ec;transform:none;box-shadow:0 8px 21px #112e2719;border-color:#86a58f}
+body.move-scan-on #local .provider-list>.provider .number,body.move-scan-on #nearby .provider-list>.provider .number,
+body.move-scan-on #local .provider-list>.provider:first-child .number,body.move-scan-on #nearby .provider-list>.provider:last-child .number{display:grid;place-items:center;min-height:0;height:auto;padding:14px 10px;font:400 2rem/1 Georgia,"Times New Roman",serif;letter-spacing:-.05em}
+body.move-scan-on #local .provider .number:before,body.move-scan-on #nearby .provider .number:before,
+body.move-scan-on #local .provider .number:after,body.move-scan-on #nearby .provider .number:after,
+body.move-scan-on .provider .dispatch-art,body.move-scan-on .provider .dispatch-caption{display:none}
+body.move-scan-on #local .provider .provider-body,body.move-scan-on #nearby .provider .provider-body{display:flex;flex-direction:column;padding:18px clamp(15px,2.5vw,27px);gap:0}
+body.move-scan-on #local .provider h3,body.move-scan-on #nearby .provider h3{font:400 clamp(1.3rem,2.2vw,1.7rem)/1.2 Georgia,"Times New Roman",serif;letter-spacing:-.035em;margin:7px 0 6px;max-width:none}
+body.move-scan-on #local .provider .tag,body.move-scan-on #nearby .provider .tag{min-height:0;padding:0;background:transparent;border:0;font-size:.67rem;letter-spacing:.1em}
+body.move-scan-on #local .provider-body>p:not(.detail):not(:last-child),
+body.move-scan-on #nearby .provider-body>p:not(.detail):not(:last-child){display:none}
+body.move-scan-on #local .provider .detail,body.move-scan-on #nearby .provider .detail{padding:8px 0 0;margin:4px 0 10px;border-top:1px solid #e1e9df;font-size:.79rem;line-height:1.5}
+body.move-scan-on #local .provider p:last-child,body.move-scan-on #nearby .provider p:last-child{margin:0;padding:0;gap:7px}
+body.move-scan-on #local .provider p:last-child a,body.move-scan-on #nearby .provider p:last-child a{min-height:44px;padding:9px 12px;font-size:.77rem}
+@media(max-width:800px){.move-view-bar{grid-template-columns:1fr;gap:20px}.move-view-copy strong{max-width:none}.move-view-action{max-width:430px}}
+@media(max-width:620px){.move-view-bar{margin:0 16px 22px;padding:22px 18px;border-radius:13px}.move-view-switch button{min-height:64px}body.move-scan-on #local .provider-list>.provider,body.move-scan-on #nearby .provider-list>.provider,body.move-scan-on #local .provider-list>.provider:first-child,body.move-scan-on #nearby .provider-list>.provider:last-child{display:grid;grid-template-columns:54px minmax(0,1fr)}body.move-scan-on #local .provider-list>.provider .number,body.move-scan-on #nearby .provider-list>.provider .number,body.move-scan-on #local .provider-list>.provider:first-child .number,body.move-scan-on #nearby .provider-list>.provider:last-child .number{padding:12px 5px;font-size:1.5rem;min-height:0}body.move-scan-on #local .provider .provider-body,body.move-scan-on #nearby .provider .provider-body{padding:17px 15px}body.move-scan-on #local .provider h3,body.move-scan-on #nearby .provider h3{font-size:1.28rem;margin-bottom:8px}body.move-scan-on #local .provider p:last-child a,body.move-scan-on #nearby .provider p:last-child a{width:auto;flex:1 1 145px}}
+@media(prefers-reduced-motion:reduce){.move-view-switch button,body.move-scan-on #local .provider-list>.provider,body.move-scan-on #nearby .provider-list>.provider{transition:none}}
+@media print{.move-view-bar{display:none!important}body.move-scan-on #local .provider-body>p:not(.detail):not(:last-child),body.move-scan-on #nearby .provider-body>p:not(.detail):not(:last-child){display:block!important}body.move-scan-on #local .provider-list>.provider,body.move-scan-on #nearby .provider-list>.provider{break-inside:avoid;box-shadow:none}}
+</style>
 </head>
 <body><a class="skip" href="#main">Skip to rental options</a><header><div class="wrap"><a class="brand" href="/">Russellville<span>.Rent</span></a><a class="back" href="/">← Browse all rentals</a></div></header>
 <section class="hero" aria-labelledby="title"><div class="hero-scenery" aria-hidden="true"><svg viewBox="0 0 1600 650" preserveAspectRatio="xMidYMid slice" focusable="false" xmlns="http://www.w3.org/2000/svg">
@@ -706,6 +751,22 @@ url("assets/downtown-russellville-sunset.jpg") center 55%/cover no-repeat;
  <fieldset class="move-area"><legend>Choose a pickup area</legend><div class="move-area-options"><button class="move-area-btn" type="button" data-move-area="all" aria-controls="local nearby" aria-pressed="true">All areas</button><button class="move-area-btn" type="button" data-move-area="local" aria-controls="local nearby" aria-pressed="false">Russellville</button><button class="move-area-btn" type="button" data-move-area="regional" aria-controls="local nearby" aria-pressed="false">Nearby towns</button></div></fieldset>
  <div class="move-chooser-footer"><p id="move-chooser-count" role="status" aria-live="polite">Showing 8 of 8 pickup locations.</p><button id="move-chooser-reset" type="button">Show all options ↗</button></div>
  </div>
+
+  <div class="move-view-bar" id="move-view-bar" hidden>
+    <div class="move-view-copy">
+      <span class="move-view-kicker">THE RIVER VALLEY / PICKUP LEDGER</span>
+      <strong>Every pickup. <em>Two ways to see it.</em></strong>
+      <p>Start with a compact list of places, addresses and direct contacts. Switch to full details for service restrictions, office hours and reservation conditions.</p>
+    </div>
+    <div class="move-view-action">
+      <span class="move-view-switch-label" id="move-view-switch-label">Choose your reading view</span>
+      <div class="move-view-switch" role="group" aria-labelledby="move-view-switch-label">
+        <button type="button" data-move-view="full" aria-pressed="true" aria-controls="local nearby"><span class="move-view-glyph" aria-hidden="true">▤</span><span>Full details</span></button>
+        <button type="button" data-move-view="scan" aria-pressed="false" aria-controls="local nearby"><span class="move-view-glyph" aria-hidden="true">☷</span><span>Quick scan</span></button>
+      </div>
+      <span class="move-view-state" id="move-view-state" role="status" aria-live="polite" aria-atomic="true">All provider information is visible.</span>
+    </div>
+  </div>
 </section>
 <div id="move-chooser-empty" class="move-chooser-empty" hidden><strong>No pickup listings match these choices.</strong><p>Try another town or equipment type. Matches do not indicate live vehicle availability.</p></div>
 <section id="local" aria-labelledby="local-title"><div class="section-head"><div><h2 id="local-title">Start close to home.</h2><p>Three Russellville operators to contact about moving trucks or trailers. White Trailer Rental offers towable trailers; moving trucks are not advertised by that company. Confirm inventory and pickup details directly.</p></div><span class="section-label">01 / Russellville</span></div><div class="provider-list"><article class="provider" id="pickup-uhaul-russellville" tabindex="-1"><div class="number" aria-hidden="true">01<span class="dispatch-art"><svg viewBox="0 0 420 205" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><circle cx="327" cy="38" r="21" fill="#eac98a" opacity=".6"/><path d="M10 156L87 81l50 45 50-31 51 45" fill="none" stroke="#e3c88f" stroke-width="4" opacity=".38"/><path d="M16 177Q100 147 198 177T407 177" fill="none" stroke="#f4dda4" stroke-width="3" stroke-dasharray="10 9" opacity=".65"/><rect x="65" y="88" width="212" height="84" rx="9" fill="#ecd7ad" stroke="#ffeacc" stroke-width="4"/><path d="M84 108h173M84 125h173" stroke="#a78753" stroke-width="3" opacity=".5"/><path d="M277 120h53l28 35v17h-81z" fill="#cda16c" stroke="#ffeacc" stroke-width="4"/><path d="M297 129h28l18 22h-46z" fill="#336355"/><circle cx="117" cy="173" r="18" fill="#213a33" stroke="#f9e3bd" stroke-width="5"/><circle cx="312" cy="173" r="18" fill="#213a33" stroke="#f9e3bd" stroke-width="5"/><circle cx="117" cy="173" r="5" fill="#ecd8b0"/><circle cx="312" cy="173" r="5" fill="#ecd8b0"/></svg></span><span class="dispatch-caption">RUSSELLVILLE PICKUP / Illustrative equipment, not provider fleet</span></div><div class="provider-body"><span class="tag">Russellville pickup</span><h3>U-Haul Moving &amp; Storage of Russellville</h3><p>Moving trucks, trailers and portable moving containers. <strong>Official Russellville office hours:</strong> Monday–Thursday 7 a.m.–7 p.m., Friday 7 a.m.–8 p.m., Saturday 7 a.m.–7 p.m., and Sunday 9 a.m.–5 p.m. U-Haul also advertises <strong>24-hour customer returns</strong> at this location; this does not establish after-hours pickup or vehicle availability. Confirm reservation-specific return procedures and the total quote directly.</p><p class="detail">2821 E Main St, Russellville, AR 72802</p><p><a href="tel:+14794980933">479-498-0933</a> &nbsp; · &nbsp; <a href="https://www.uhaul.com/Locations/Truck-Rentals-near-Russellville-AR-72802/742075/" target="_blank" rel="noopener noreferrer">Provider website ↗</a></p></div></article><article class="provider" id="pickup-penske-russellville" tabindex="-1"><div class="number" aria-hidden="true">02<span class="dispatch-art"><svg viewBox="0 0 420 205" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><circle cx="327" cy="38" r="21" fill="#eac98a" opacity=".6"/><path d="M10 156L87 81l50 45 50-31 51 45" fill="none" stroke="#e3c88f" stroke-width="4" opacity=".38"/><path d="M16 177Q100 147 198 177T407 177" fill="none" stroke="#f4dda4" stroke-width="3" stroke-dasharray="10 9" opacity=".65"/><rect x="65" y="88" width="212" height="84" rx="9" fill="#ecd7ad" stroke="#ffeacc" stroke-width="4"/><path d="M84 108h173M84 125h173" stroke="#a78753" stroke-width="3" opacity=".5"/><path d="M277 120h53l28 35v17h-81z" fill="#cda16c" stroke="#ffeacc" stroke-width="4"/><path d="M297 129h28l18 22h-46z" fill="#336355"/><circle cx="117" cy="173" r="18" fill="#213a33" stroke="#f9e3bd" stroke-width="5"/><circle cx="312" cy="173" r="18" fill="#213a33" stroke="#f9e3bd" stroke-width="5"/><circle cx="117" cy="173" r="5" fill="#ecd8b0"/><circle cx="312" cy="173" r="5" fill="#ecd8b0"/></svg></span><span class="dispatch-caption">RUSSELLVILLE PICKUP / Illustrative equipment, not provider fleet</span></div><div class="provider-body"><span class="tag">Russellville pickup</span><h3>Penske Truck Rental — Space World Agent</h3><p>Penske officially lists a Russellville moving-truck rental agent at this location. The operator offers moving-truck reservations; confirm the truck sizes actually available locally, rental dates, rates, one-way eligibility and pickup arrangements directly with Penske. This is a Penske rental-agent location, not an assertion that every nationally advertised truck model is stocked here.</p><p class="detail">303 E Harrell Dr, Russellville, AR 72801</p><p><a href="tel:+14798800049">479-880-0049</a> &nbsp; · &nbsp; <a href="https://www.pensketruckrental.com/locations/us/arkansas/russellville/783020/" target="_blank" rel="noopener noreferrer">Official Penske Russellville location ↗</a></p></div></article><article class="provider" id="pickup-white-trailer" tabindex="-1"><div class="number" aria-hidden="true">03<span class="dispatch-art"><svg viewBox="0 0 420 205" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><circle cx="326" cy="42" r="21" fill="#eac98a" opacity=".6"/><path d="M16 153L88 83l53 39 47-34 58 50" fill="none" stroke="#e3c88f" stroke-width="4" opacity=".38"/><path d="M24 179h374" stroke="#f4dda4" stroke-width="3" opacity=".65"/><rect x="72" y="98" width="243" height="72" rx="7" fill="#ecd7ad" stroke="#ffeacc" stroke-width="4"/><path d="M85 115h217M85 132h217M85 150h217" stroke="#987d54" stroke-width="3" opacity=".45"/><path d="M313 160l51 15h29" fill="none" stroke="#f7e1b7" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="121" cy="174" r="17" fill="#213a33" stroke="#f9e3bd" stroke-width="5"/><circle cx="264" cy="174" r="17" fill="#213a33" stroke="#f9e3bd" stroke-width="5"/><circle cx="121" cy="174" r="5" fill="#ecd8b0"/><circle cx="264" cy="174" r="5" fill="#ecd8b0"/></svg></span><span class="dispatch-caption">RUSSELLVILLE PICKUP / Illustrative equipment, not provider fleet</span></div><div class="provider-body"><span class="tag">Russellville · trailer rentals only</span><h3>White Trailer Rental</h3><p>Russellville-based operator advertising bookable enclosed trailers, utility trailers, car haulers (including winch-equipped options), a dump trailer, gooseneck and other equipment-hauling trailers. It offers online reservations and daily or longer rentals. <strong>Moving trucks are not advertised.</strong> Confirm trailer size, towing capacity, hitch requirements, proof of insurance, rates and availability before booking. The operator now consistently lists 3845 E Main St on its official homepage and contact page; confirm the exact trailer pickup point and instructions before traveling.</p><p class="detail">3845 E Main St, Russellville, AR 72802 · Published contact address; pickup point UNCONFIRMED</p><p><a href="tel:+14795526080">479-552-6080</a> &nbsp; · &nbsp; <a href="https://whitetrailerrental.com/" target="_blank" rel="noopener noreferrer">Official trailer rentals ↗</a> &nbsp; · &nbsp; <a href="trailers.html#provider-hauling">Detailed trailer directory listing ↗</a></p></div></article></div></section>
@@ -910,6 +971,29 @@ url("assets/downtown-russellville-sunset.jpg") center 55%/cover no-repeat;
  });
  chooser.hidden=false;
  update();
+})();
+</script>
+
+<script>
+/* Progressive dual-view pickup ledger. Does not alter, move or clone listing
+   nodes, hide providers from filters, save selections or change source links. */
+(() => {
+  const bar=document.getElementById('move-view-bar');
+  if(!bar)return;
+  const buttons=[...bar.querySelectorAll('[data-move-view]')];
+  const status=document.getElementById('move-view-state');
+  function show(view) {
+    const compact=view==='scan';
+    document.body.classList.toggle('move-scan-on',compact);
+    buttons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.moveView===view)));
+    status.textContent=compact
+      ? 'Quick scan shows names, addresses and contacts. Select Full details to read conditions.'
+      : 'Full descriptions, service restrictions and provider contacts are visible.';
+  }
+  buttons.forEach(button=>button.addEventListener('click',()=>show(button.dataset.moveView)));
+  document.querySelectorAll('a[href^="#pickup-"]').forEach(link=>link.addEventListener('click',()=>show('full')));
+  bar.hidden=false;
+  show('full');
 })();
 </script>
 </body></html>
