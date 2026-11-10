@@ -2497,6 +2497,54 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
  #browse > .section-head .browse-label{color:#111;background:#fff;box-shadow:none;border-color:#777}
  #browse > #filters,#browse > #quick-paths{box-shadow:none;background:#fff}
 }
+
+/* 2026-11-10 / River Valley homes editorial folio.
+   Original scalable art, no third-party image request or inventory implication.
+   StayARV scenic design; NN/g visual hierarchy; web.dev reserved media geometry;
+   W3C WCAG 2.2 visible focus remains unchanged on the original CTA. */
+.rental-card[data-category="homes"]>.homes-fieldfolio{
+ position:relative;isolation:isolate;display:block;overflow:hidden;
+ min-height:245px;background:#174b3f;color:#fff7e6;
+}
+.rental-card[data-category="homes"]>.homes-fieldfolio>.homes-fieldfolio-scene{
+ position:absolute;inset:0;display:block;width:100%;height:100%;
+}
+.rental-card[data-category="homes"]>.homes-fieldfolio::before{
+ content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+ background:linear-gradient(90deg,#092f2cdf 0%,#0c3c33a8 44%,transparent 88%),
+ linear-gradient(0deg,#0b3027c2,transparent 36%);
+}
+.rental-card[data-category="homes"] .homes-fieldfolio-type{
+ position:absolute;z-index:2;top:clamp(19px,2.8vw,33px);left:clamp(20px,2.8vw,36px);right:18px;
+ display:flex;flex-direction:column;gap:clamp(22px,3.5vw,45px);
+ text-shadow:0 3px 17px #092b27c7;pointer-events:none;
+}
+.rental-card[data-category="homes"] .homes-fieldfolio-type small{
+ color:#f8ddb2;font-size:.64rem;font-weight:850;letter-spacing:.16em;line-height:1.45;
+}
+.rental-card[data-category="homes"] .homes-fieldfolio-type strong{
+ font:400 clamp(2.25rem,3.3vw,3.9rem)/1 Georgia,"Times New Roman",serif;
+ letter-spacing:-.064em;max-width:13ch;text-wrap:balance;
+}
+.rental-card[data-category="homes"] .homes-fieldfolio-type em{font-weight:400;color:#efd096}
+.rental-card[data-category="homes"] .homes-fieldfolio-note{
+ position:absolute;z-index:2;left:clamp(20px,2.8vw,36px);bottom:clamp(16px,2vw,27px);
+ color:#fff0d1;font-size:.55rem;font-weight:800;line-height:1.4;letter-spacing:.11em;
+ text-shadow:0 2px 8px #123c33;
+}
+.rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="homes"]>.homes-fieldfolio::after{content:none}
+@media(max-width:700px){
+ .rental-card[data-category="homes"] .homes-fieldfolio-type{gap:22px}
+ .rental-card[data-category="homes"] .homes-fieldfolio-type strong{font-size:clamp(2.2rem,7vw,3.05rem)}
+}
+@media(max-width:560px){
+ .rentals-grid[data-view="list"]>.rental-card[data-category="homes"]>.homes-fieldfolio{min-height:176px}
+ .rentals-grid[data-view="list"] .homes-fieldfolio-type,
+ .rentals-grid[data-view="list"] .homes-fieldfolio-note{display:none}
+ .rentals-grid[data-view="grid"]>.rental-card[data-category="homes"]>.homes-fieldfolio{min-height:245px}
+}
+@media print{.rental-card[data-category="homes"] .homes-fieldfolio-type strong{color:#fff}}
+
 </style>
 </head>
 <body>
@@ -2759,7 +2807,51 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
  <div class="chapter-illustration" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-homes"></use></svg><span class="chapter-sequence">01 / 04</span></div>
 </div>
 <article class="rental-card" data-category="homes">
-<div class="image-wrap"><img src="https://images.unsplash.com/photo-1768941124460-6fa7161715ff?auto=format&amp;fit=crop&amp;fm=jpg&amp;ixlib=rb-4.1.0&amp;q=82&amp;w=1600" alt="Illustrative photograph of residential houses" loading="lazy" width="640" height="380"></div>
+<div class="image-wrap homes-fieldfolio" role="img" aria-label="Original illustrative River Valley neighborhood with homes, apartments and wooded hills; conceptual artwork, not a real available property">
+<svg class="homes-fieldfolio-scene" viewBox="0 0 960 680" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="homes-foil-sky" x2=".5" y2="1"><stop stop-color="#204c4c"/><stop offset=".55" stop-color="#678f78"/><stop offset="1" stop-color="#e0c08a"/></linearGradient>
+<linearGradient id="homes-foil-meadow" x2=".3" y2="1"><stop stop-color="#477661"/><stop offset="1" stop-color="#123d31"/></linearGradient>
+<linearGradient id="homes-foil-stucco" x2="0" y2="1"><stop stop-color="#f8e8c5"/><stop offset="1" stop-color="#d3af7d"/></linearGradient>
+<pattern id="homes-foil-grain" width="31" height="31" patternUnits="userSpaceOnUse"><path d="M0 30H31M30 0V31" fill="none" stroke="#fff2d4" stroke-opacity=".07"/></pattern>
+</defs>
+<path fill="url(#homes-foil-sky)" d="M0 0h960v680H0z"/>
+<circle cx="762" cy="121" r="85" fill="#f8d998"/><circle cx="762" cy="121" r="116" stroke="#ffe4b1" stroke-opacity=".35" stroke-width="3" fill="none"/>
+<path d="M0 350 114 249 212 304 365 190 514 298 652 226 793 319 891 250 960 291V680H0Z" fill="#9cb298"/>
+<path d="M0 399 120 316 240 368 374 291 523 373 650 311 794 368 960 300V680H0Z" fill="#5d8970"/>
+<path d="M0 464Q150 393 274 434T533 408Q730 367 960 430V680H0Z" fill="#326b51"/>
+<path d="M0 521Q229 465 469 494T960 474V680H0Z" fill="url(#homes-foil-meadow)"/>
+<!-- One-family home, illustrated rather than photographed -->
+<rect x="122" y="398" width="262" height="181" fill="url(#homes-foil-stucco)" stroke="#235044" stroke-width="8"/>
+<path d="m95 408 157-112 153 112" stroke="#ffdfaa" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<path d="m98 409 153-107 152 107" stroke="#17463c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<rect x="224" y="474" width="65" height="104" fill="#356957" stroke="#205146" stroke-width="7"/><circle cx="275" cy="524" r="5" fill="#f2d39f"/>
+<rect x="148" y="442" width="56" height="55" fill="#8bb6a4" stroke="#245044" stroke-width="7"/>
+<path d="M176 444v53M149 469h55" stroke="#f7dcad" stroke-width="4"/>
+<rect x="314" y="442" width="45" height="55" fill="#8bb6a4" stroke="#245044" stroke-width="7"/>
+<path d="M337 444v53" stroke="#f7dcad" stroke-width="4"/>
+<path d="M108 580h288" stroke="#fbdeab" stroke-width="8" stroke-linecap="round"/>
+<!-- Multi-family building, illustrated rather than photographed -->
+<path d="M541 351 691 294l145 57" fill="#17463b" stroke="#f5d49b" stroke-width="10" stroke-linejoin="round"/>
+<rect x="565" y="358" width="251" height="223" rx="3" fill="#e6cba4" stroke="#244d42" stroke-width="8"/>
+<path d="M569 400h244M569 472h244M569 544h244" stroke="#b6916f" stroke-width="5"/>
+<g fill="#78a798" stroke="#2b574b" stroke-width="6">
+<rect x="593" y="398" width="52" height="52"/><rect x="665" y="398" width="52" height="52"/><rect x="737" y="398" width="52" height="52"/>
+<rect x="593" y="476" width="52" height="52"/><rect x="665" y="476" width="52" height="52"/><rect x="737" y="476" width="52" height="52"/>
+</g>
+<g stroke="#f7dbad" stroke-width="3"><path d="M619 399v51M691 399v51M763 399v51M619 477v51M691 477v51M763 477v51"/></g>
+<rect x="660" y="547" width="67" height="35" fill="#265d4e"/>
+<path d="M550 584h278" stroke="#f5d59e" stroke-width="8" stroke-linecap="round"/>
+<!-- A quiet walking path and landscaped street -->
+<path d="M0 628Q155 565 339 590T684 580Q803 579 960 561V680H0Z" fill="#17483a"/>
+<path d="M469 680q9-85 109-121" fill="none" stroke="#c5b38e" stroke-width="26"/>
+<path d="M469 680q9-85 109-121" fill="none" stroke="#fff0cd" stroke-width="3" stroke-dasharray="9 16"/>
+<path d="M436 582V461m-36 51 36-77 37 77m-59-24 22-61 24 61M886 579V476m-32 48 32-71 30 71m-51-19 21-58 20 58" fill="none" stroke="#0c3e32" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+<rect width="960" height="680" fill="url(#homes-foil-grain)"/>
+</svg>
+<span class="homes-fieldfolio-type" aria-hidden="true"><small>THE RIVER VALLEY / LIVING</small><strong>Find your<br><em>place.</em></strong></span>
+<small class="homes-fieldfolio-note" aria-hidden="true">ORIGINAL ART · NOT A RENTAL PROPERTY PHOTO</small>
+</div>
 <div class="card-body"><p class="eyebrow">Long-term rentals</p><h3>Long-term rentals</h3>
 <p>Houses, apartments, and places to settle in.</p>
 <p class="status">River Valley Realty · Natural State Property Management · River Valley Flats · The Dels (studio &amp; one-bedroom apartments) · Spring Lake I/II · Parker Place Apartments · Shadow Lake Apartments · Treeview Apartments · Shiloh Creek Apartments · StoneBrook Park</p>
