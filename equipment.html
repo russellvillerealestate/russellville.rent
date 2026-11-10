@@ -607,7 +607,233 @@ header.equipment-site-header .equipment-home-link:hover{background:#ffe9b8}
 @media(prefers-reduced-motion:reduce){.equipment-area-options button{transition:none}.equipment-area-options button:hover{transform:none}}
 @media print{.equipment-locality{break-inside:avoid;box-shadow:none}.equipment-locality-copy{background:#173d30!important;print-color-adjust:exact}}
 
-</style></head><body>
+</style><style>
+/* 2026-11-10 / Supplier dispatch ledger: a genuine contact-first second view.
+   Live inspiration: StayARV's pine, panoramic staging and large information hierarchy.
+   NN/g explicit distinctions; web.dev reflow; W3C WCAG 2.2 focus/target sizing.
+   Full records, published terms, links, filters and supplier-call-sheet remain intact. */
+#equipment-results.equipment-compact{
+ display:grid;
+ grid-template-columns:minmax(0,1fr);
+ gap:clamp(13px,2.2vw,20px);
+ align-items:stretch;
+}
+#equipment-results.equipment-compact>.equipment-dispatch{
+ grid-column:1/-1;
+}
+#equipment-results.equipment-compact>article{
+ display:grid!important;
+ grid-template-columns:minmax(0,.43fr) minmax(0,.57fr);
+ grid-template-rows:auto 1fr;
+ gap:0;
+ min-height:216px;
+ padding:0!important;
+ margin:0!important;
+ overflow:hidden;
+ border:1px solid #cadbd0!important;
+ border-left:1px solid #cadbd0!important;
+ border-top:1px solid #cadbd0!important;
+ border-radius:7px 24px 7px 24px!important;
+ background:#fdfdf7!important;
+ box-shadow:0 13px 30px #0c36291c;
+ transition:box-shadow .18s ease;
+}
+#equipment-results.equipment-compact>article:hover{
+ transform:none!important;
+ box-shadow:0 17px 37px #0c36292b;
+}
+#equipment-results.equipment-compact>article>.equipment-local-tag{
+ grid-column:1/-1;
+ grid-row:1;
+ display:flex;
+ align-items:center;
+ width:100%;
+ min-height:44px;
+ padding:10px 25px!important;
+ margin:0!important;
+ border:0;
+ border-bottom:1px solid #d3e2d7;
+ border-radius:0;
+ background:#e5efe6;
+ color:#1b5b42;
+ font-size:.68rem;
+ line-height:1.5;
+ font-weight:850;
+ letter-spacing:.08em;
+ text-transform:uppercase;
+}
+#equipment-results.equipment-compact>article[data-equipment-area="other"]>.equipment-local-tag{
+ background:#f5ead8;
+ color:#754d24;
+ border-color:#e8d9bf;
+}
+#equipment-results.equipment-compact>article::before{
+ position:absolute;
+ z-index:1;
+ top:70px;
+ right:auto;
+ left:24px;
+ display:block;
+ margin:0;
+ color:#f4d49e;
+ font:italic 400 2.35rem/1 Georgia,"Times New Roman",serif;
+ letter-spacing:-.055em;
+ text-shadow:0 2px 10px #10251c60;
+ pointer-events:none;
+}
+#equipment-results.equipment-compact>article>.equipment-folio-left{
+ grid-column:1;
+ grid-row:2;
+ display:flex;
+ flex-direction:column;
+ align-items:flex-start;
+ position:relative;
+ isolation:isolate;
+ min-width:0;
+ min-height:180px;
+ padding:72px 25px 23px;
+ background:radial-gradient(circle at 100% 0%,#488065 0,transparent 52%),linear-gradient(130deg,#103a31,#1b5343);
+ color:#fff;
+}
+#equipment-results.equipment-compact>article[data-equipment-area="other"]>.equipment-folio-left{
+ background:radial-gradient(circle at 100% 0%,#67744f 0,transparent 54%),linear-gradient(135deg,#173f34,#355043);
+}
+#equipment-results.equipment-compact>article>.equipment-folio-left::after{
+ content:"";
+ position:absolute;
+ inset:12px;
+ z-index:-1;
+ border:1px solid #f1d89a3e;
+ border-radius:2px 13px 2px 13px;
+ pointer-events:none;
+}
+#equipment-results.equipment-compact>article>.equipment-folio-left h2{
+ max-width:25ch;
+ margin:0 0 15px!important;
+ color:#fffbef!important;
+ font:400 clamp(1.46rem,2.6vw,2.16rem)/1.15 Georgia,"Times New Roman",serif!important;
+ letter-spacing:-.045em;
+ text-wrap:balance;
+ overflow-wrap:anywhere;
+}
+#equipment-results.equipment-compact>article>.equipment-folio-left .equipment-readmore{
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ margin:0 0 12px;
+ min-height:45px;
+ padding:11px 15px;
+ border:1px solid #f3d6a7;
+ border-radius:8px;
+ background:#f3d6a7;
+ color:#1a4033;
+ font-weight:850;
+ font-size:.78rem;
+}
+#equipment-results.equipment-compact>article>.equipment-folio-left .equipment-readmore:hover{background:#ffe7bb}
+#equipment-results.equipment-compact>article>.equipment-folio-left .equipment-pick{
+ max-width:100%;
+ margin:0;
+ min-height:44px;
+ border-color:#ffffff9c;
+ background:#ffffff15;
+ color:#fff;
+}
+#equipment-results.equipment-compact>article>.equipment-folio-left .equipment-pick[aria-pressed="true"]{
+ background:#e4f0dd;
+ color:#1b4b37;
+}
+#equipment-results.equipment-compact>article>.equipment-folio-right{
+ grid-column:2;
+ grid-row:2;
+ display:flex;
+ flex-direction:column;
+ align-items:stretch;
+ min-width:0;
+ padding:25px clamp(19px,3vw,34px);
+ background:linear-gradient(120deg,#fffdf8,#f2f6ee);
+}
+#equipment-results.equipment-compact>article>.equipment-folio-right>p:not(:last-of-type):not(.detail){display:none}
+#equipment-results.equipment-compact>article>.equipment-folio-right>p.detail{
+ margin:0 0 12px;
+ font-size:.78rem;
+ line-height:1.5;
+ color:#4a6358;
+}
+#equipment-results.equipment-compact>article>.equipment-folio-right>address{
+ margin:0 0 17px;
+ padding:11px 15px;
+ background:#e9f1e9;
+ border-left:4px solid #7a9a72;
+ border-radius:0 9px 9px 0;
+ font-size:.89rem;
+ line-height:1.7;
+ color:#204639;
+ overflow-wrap:anywhere;
+}
+#equipment-results.equipment-compact>article>.equipment-folio-right>address a{font-weight:850}
+#equipment-results.equipment-compact>article>.equipment-folio-right>p:last-of-type{
+ display:flex;
+ align-items:center;
+ flex-wrap:wrap;
+ gap:9px;
+ margin:auto 0 0!important;
+ padding:14px 0 0;
+ border-top:1px solid #d8e4d9;
+ font-size:0;
+}
+#equipment-results.equipment-compact>article>.equipment-folio-right>p:last-of-type a{
+ display:inline-flex;
+ align-items:center;
+ min-height:44px;
+ padding:9px 12px;
+ border:1px solid #cadbce;
+ border-radius:8px;
+ background:#fff;
+ color:#215541;
+ text-decoration:none;
+ font-size:.76rem;
+ font-weight:800;
+ line-height:1.35;
+ overflow-wrap:anywhere;
+}
+#equipment-results.equipment-compact>article>.equipment-folio-right>p:last-of-type a:hover{background:#e1ede2}
+#equipment-results.equipment-compact>article:target{outline:4px solid #ae6d23;outline-offset:4px}
+#equipment-results.equipment-compact>article :is(a,button):focus-visible{outline:3px solid #ba741b;outline-offset:4px}
+@media(max-width:760px){
+ #equipment-results.equipment-compact>article{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto}
+ #equipment-results.equipment-compact>article>.equipment-local-tag{grid-row:1}
+ #equipment-results.equipment-compact>article>.equipment-folio-left{
+  grid-column:1;grid-row:2;min-height:0;padding:68px 23px 23px;
+ }
+ #equipment-results.equipment-compact>article>.equipment-folio-right{
+  grid-column:1;grid-row:3;padding:23px;
+ }
+ #equipment-results.equipment-compact>article::before{top:66px;left:22px}
+}
+@media(max-width:440px){
+ #equipment-results.equipment-compact>article{border-radius:7px 17px 7px 17px!important}
+ #equipment-results.equipment-compact>article>.equipment-local-tag{padding-inline:18px!important}
+ #equipment-results.equipment-compact>article>.equipment-folio-left{padding-inline:19px}
+ #equipment-results.equipment-compact>article>.equipment-folio-right{padding:20px 17px}
+ #equipment-results.equipment-compact>article>.equipment-folio-right>p:last-of-type a{flex:1 1 100%}
+}
+@media(prefers-reduced-motion:reduce){
+ #equipment-results.equipment-compact>article{transition:none}
+}
+@media print{
+ #equipment-results.equipment-compact>article{
+  display:block!important;
+  background:#fff!important;
+  box-shadow:none!important;
+  break-inside:avoid;
+ }
+ #equipment-results.equipment-compact>article>.equipment-folio-left{background:#fff;color:#163e34;min-height:0}
+ #equipment-results.equipment-compact>article>.equipment-folio-left h2{color:#163e34!important}
+ #equipment-results.equipment-compact>article::before{color:#163e34;text-shadow:none}
+}
+</style>
+</head><body>
 <a class="equipment-skip" href="#equipment-results">Skip to equipment rental providers</a>
 <header class="equipment-site-header">
   <div class="equipment-nav-wrap">
