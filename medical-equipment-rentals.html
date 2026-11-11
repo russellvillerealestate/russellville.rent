@@ -505,6 +505,45 @@
   #providers .card-details{background:#fff!important}
 }
 
+
+/* 2026-11-11: Make the existing three pre-booking cautions a prominent, printable
+   River Valley dispatch folio rather than a low-contrast footnote.
+   Existing provider facts, rate examples, filter controls, and call-note scripts
+   are unchanged. Visual model: StayARV's immersive locality and typography;
+   NN/g visual hierarchy; web.dev LCP (reuse an existing asset, no font/script);
+   W3C WCAG 2.2 focus visibility, contrast, reflow and target sizing. */
+.steps.steps-med-route{position:relative;isolation:isolate;overflow:hidden;margin:clamp(70px,8vw,108px) 0 30px;padding:0;border:1px solid #244a3d;border-radius:27px;background:#103c32;color:#f9f8ec;box-shadow:0 20px 49px #153a2d21}
+.steps-med-cover{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.14fr) minmax(220px,.63fr);align-items:end;gap:clamp(18px,4vw,55px);min-height:305px;padding:clamp(31px,5vw,60px);background:linear-gradient(95deg,#08271fee 0%,#0b3328e6 46%,#0a302bbf 100%),url("assets/downtown-russellville-sunset.jpg") center 52%/cover no-repeat}
+.steps-med-cover:after{content:"";position:absolute;inset:17px;border:1px solid #f6dfb75c;border-radius:15px;pointer-events:none;z-index:-1}
+.steps-med-kicker{margin:0 0 14px;color:#f9dca6;font-size:.67rem;letter-spacing:.18em;text-transform:uppercase;font-weight:850}
+.steps-med-route h2{margin:0;color:#fffaf0;font:400 clamp(2.65rem,5.2vw,5rem)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.06em;max-width:12ch;text-wrap:balance}
+.steps-med-route h2 em{font-weight:400;color:#ffdb9d}
+.steps-med-intro{margin:0 0 8px;max-width:43ch;color:#edf4e8;font-size:.95rem;line-height:1.7}
+.steps-med-cover-caption{position:absolute;bottom:17px;right:clamp(25px,5vw,60px);color:#e5ede3;font-size:.64rem;letter-spacing:.035em}
+.steps-grid.steps-med-list{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin:0;padding:0;background:#cdd9c9}
+.steps-med-list .steps-med-item{min-width:0;display:flex;flex-direction:column;align-items:flex-start;min-height:305px;padding:clamp(23px,3vw,38px);background:#f9f5e9;color:#234638;border:0}
+.steps-med-list .steps-med-item:nth-child(2){background:#e9efe5}
+.steps-med-item-head{width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:13px;margin-bottom:24px}
+.steps-med-count{font:400 clamp(3rem,4.7vw,5rem)/.88 Georgia,"Times New Roman",serif;letter-spacing:-.07em;color:#285543}
+.steps-med-icon{display:grid;place-items:center;flex:none;width:58px;height:58px;border-radius:17px;background:#e0eadc;color:#325a48}
+.steps-med-item:nth-child(2) .steps-med-icon{background:#d7e5d6}
+.steps-med-icon svg{width:36px;height:36px}
+.steps-med-item h3{margin:0 0 12px;color:#153e31;font:400 clamp(1.55rem,2.1vw,2.05rem)/1.13 Georgia,"Times New Roman",serif;letter-spacing:-.04em;text-wrap:balance}
+.steps-med-item p{margin:0 0 24px;color:#38564a;font-size:.88rem;line-height:1.65;max-width:34ch}
+.steps-med-tag{display:inline-block;margin-top:auto;padding-top:11px;border-top:1px solid #a8bda9;color:#426654;font-size:.66rem;letter-spacing:.11em;text-transform:uppercase;font-weight:850}
+.steps-med-actions{display:flex;align-items:center;justify-content:space-between;gap:23px;padding:23px clamp(23px,4vw,45px)}
+.steps-med-actions p{margin:0;max-width:43ch;font-size:.78rem;color:#e5f0e5;line-height:1.6}
+.steps-med-actions>div{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.steps-med-actions a{display:inline-flex;align-items:center;justify-content:space-between;gap:15px;min-height:48px;padding:12px 17px;border-radius:999px;font-size:.77rem;line-height:1.3;font-weight:800;text-decoration:none;white-space:nowrap}
+.steps-med-action-primary{background:#f2d398;color:#17392d}
+.steps-med-action-secondary{border:1px solid #f5e3c3a6;color:#fff5da}
+.steps-med-actions a:hover{filter:brightness(1.09)}
+.steps-med-actions a:focus-visible{outline:3px solid #ffdb9d;outline-offset:4px}
+@media(max-width:900px){.steps-med-cover{grid-template-columns:1fr;min-height:0;gap:20px;padding-bottom:65px}.steps-med-route h2{max-width:none}.steps-med-intro{max-width:65ch}.steps-med-actions{flex-direction:column;align-items:stretch}.steps-med-actions p{max-width:none}}
+@media(max-width:700px){.steps.steps-med-route{margin-top:60px;border-radius:19px}.steps-grid.steps-med-list{grid-template-columns:1fr}.steps-med-list .steps-med-item{min-height:0;padding:25px}.steps-med-item-head{margin-bottom:14px}.steps-med-count{font-size:3.2rem}.steps-med-item p{max-width:65ch;margin-bottom:17px}.steps-med-cover{padding:34px 24px 67px}.steps-med-route h2{font-size:clamp(2.55rem,10vw,3.7rem)}.steps-med-cover-caption{right:25px;left:25px;bottom:19px}.steps-med-actions{padding:22px}.steps-med-actions>div{display:grid;grid-template-columns:1fr}.steps-med-actions a{white-space:normal;width:100%}}
+@media(prefers-reduced-motion:reduce){.steps-med-actions a{scroll-behavior:auto}}
+@media print{.steps.steps-med-route{margin:18px 0;box-shadow:none;border:1px solid #666;background:#fff;color:#173e32;break-inside:avoid}.steps-med-cover{min-height:0;display:block;padding:16px;background:#fff!important}.steps-med-kicker,.steps-med-route h2,.steps-med-route h2 em,.steps-med-intro{color:#173e32!important}.steps-med-cover:after,.steps-med-cover-caption,.steps-med-icon,.steps-med-actions{display:none}.steps-grid.steps-med-list{display:block;background:#fff}.steps-med-list .steps-med-item{display:block;min-height:0;padding:12px 18px;break-inside:avoid;border-top:1px solid #aaa;background:#fff!important}.steps-med-item-head{display:inline-block;width:auto;margin:0 15px 0 0}.steps-med-count{font-size:1.1rem}.steps-med-item h3{display:inline;font-size:1.25rem}.steps-med-item p{margin:5px 0}.steps-med-tag{display:none}}
+
 </style>
 </head>
 <body>
@@ -741,7 +780,19 @@
   </div>
 </section>
 
-<section class="steps" id="before-you-go" aria-labelledby="steps-title"><p class="eyebrow" style="color:#52705e">02 / Before booking</p><h2 id="steps-title">Confirm these details.</h2><div class="steps-grid"><div><strong>01 · Exact equipment</strong><span>Ask about dimensions, capacity, condition, accessories and current stock.</span></div><div><strong>02 · Delivery to Russellville</strong><span>Ask whether your specific address is served, and request the full pickup, setup and delivery quote.</span></div><div><strong>03 · Terms &amp; safe use</strong><span>Confirm rental duration, deposit, return policy and training or fitting requirements.</span></div></div></section>
+<section class="steps steps-med-route" id="before-you-go" aria-labelledby="steps-title">
+  <div class="steps-med-cover">
+    <div><p class="steps-med-kicker">02 / BEFORE BOOKING · RIVER VALLEY FIELD NOTES</p><h2 id="steps-title">Confirm these <em>details.</em></h2></div>
+    <p class="steps-med-intro">A three-part checklist before arranging equipment from a regional operator. No provider listed here has confirmed delivery to Russellville.</p>
+    <span class="steps-med-cover-caption">Downtown Russellville scenery · Not a provider or rental-equipment photograph</span>
+  </div>
+  <ol class="steps-grid steps-med-list" aria-label="Three things to confirm with a rental operator">
+    <li class="steps-med-item"><div class="steps-med-item-head"><span class="steps-med-count">01</span><span class="steps-med-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 9h30v46H17zM24 17h16M24 25h12M24 40h8m0 0 4 4 9-11"/><path d="M10 20v33h33"/></svg></span></div><h3>Exact equipment</h3><p>Ask about dimensions, capacity, condition, accessories and current stock.</p><span class="steps-med-tag">Specification &amp; condition</span></li>
+    <li class="steps-med-item"><div class="steps-med-item-head"><span class="steps-med-count">02</span><span class="steps-med-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 39h35V20H9zM44 28h7l6 9v10H44z"/><circle cx="21" cy="47" r="6"/><circle cx="49" cy="47" r="6"/><path d="M13 20V11h17m-3-4 5 4-5 4"/></svg></span></div><h3>Delivery to Russellville</h3><p>Ask whether your specific address is served, and request the full pickup, setup and delivery quote.</p><span class="steps-med-tag">Coverage &amp; total charges</span></li>
+    <li class="steps-med-item"><div class="steps-med-item-head"><span class="steps-med-count">03</span><span class="steps-med-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 8h27l8 8v39H15zM42 8v9h8M23 27h19M23 34h19M23 41h12"/><path d="m25 49 4 4 9-11"/></svg></span></div><h3>Terms &amp; safe use</h3><p>Confirm rental duration, deposit, return policy and training or fitting requirements.</p><span class="steps-med-tag">Written terms &amp; suitability</span></li>
+  </ol>
+  <div class="steps-med-actions"><p>Use these prompts when you contact a provider. The operator must confirm availability, safe fit, delivery and final terms.</p><div><a class="steps-med-action-primary" href="#call-desk">Build your call note <span aria-hidden="true">↗</span></a><a class="steps-med-action-secondary" href="medical-equipment-loans.html">Explore free lending <span aria-hidden="true">↗</span></a></div></div>
+</section>
 <p class="note">Independent directory, reviewed October 31, 2026. Listings describe operator-advertised rental services, not guaranteed local delivery or availability. For no-cost alternatives, see <a href="medical-equipment-loans.html">medical equipment lending programs</a>. <a href="sms:+14799707301">Suggest a correction</a>.</p>
 <footer><span>© 2026 Russellville.Rent · Independent rental directory</span><a href="/">Return to homepage ↗</a></footer>
 </div></main>
