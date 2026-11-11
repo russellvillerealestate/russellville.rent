@@ -581,6 +581,44 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
  .planning-fieldfolio-actions{display:none}
 }
 
+
+/* 2026-11-11: visual golf-cart reading modes. StayARV live scenic reference,
+   Nielsen Norman Group visual hierarchy, web.dev responsive composition,
+   and WCAG 2.2 native controls/focus/reduced motion. */
+.cart-view-switcher[hidden]{display:none!important}
+.cart-view-switcher{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(250px,.8fr);gap:clamp(20px,3.6vw,48px);align-items:center;margin:22px 0 32px;padding:clamp(25px,3.8vw,43px);border-radius:24px;border:1px solid #ebd5a57a;color:#fffdf6;background:linear-gradient(108deg,#0f392ff7,#153e34ef 54%,#164238d9),url("assets/downtown-russellville-sunset.jpg") center/cover no-repeat;box-shadow:0 19px 45px #0e362c23}
+.cart-view-switcher:before{content:"";position:absolute;z-index:-1;right:-100px;top:-175px;width:380px;height:380px;border:1px solid #f2d59c55;border-radius:50%;box-shadow:0 0 0 55px #f2d59c0d,0 0 0 105px #f2d59c08;pointer-events:none}
+.cart-view-overline{display:block;margin-bottom:12px;color:#f4d9a1;font-size:.66rem;font-weight:900;letter-spacing:.18em;line-height:1.5}
+.cart-view-switcher h3{margin:0;font:400 clamp(1.93rem,3.35vw,3.1rem)/1.08 Georgia,serif;letter-spacing:-.055em;color:#fffdfa;text-wrap:balance}
+.cart-view-switcher h3 em{font-weight:400;color:#f4d69b}
+.cart-view-switcher p{max-width:60ch;margin:14px 0 0;color:#e5f0e7;font-size:.85rem;line-height:1.65}
+.cart-view-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.cart-view-controls button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;min-height:98px;min-width:0;padding:14px 9px;border:1px solid #f6e0b882;border-radius:14px;background:#ffffff1c;color:#fffdf6;font:850 .8rem/1.32 system-ui,sans-serif;text-align:center;cursor:pointer;transition:background-color .18s,transform .18s}
+.cart-view-controls button span{font-size:1.65rem;font-weight:400;line-height:1}
+.cart-view-controls button:hover{background:#ffffff35;transform:translateY(-2px)}
+.cart-view-controls button[aria-pressed="true"]{background:#f4d49b;border-color:#f4d49b;color:#17392f;box-shadow:0 6px 15px #061f1a33}
+.cart-view-controls button:focus-visible{outline:3px solid #fff;outline-offset:4px}
+#providers[data-cart-view="compact"] .provider-grid{grid-template-columns:minmax(0,1fr);gap:14px}
+#providers[data-cart-view="compact"] .provider-grid>.provider{display:grid;grid-template-columns:minmax(160px,.36fr) minmax(0,1fr);grid-template-rows:auto;min-height:0;background:#fffefa;border-radius:19px;box-shadow:0 8px 23px #12382e14}
+#providers[data-cart-view="compact"] .provider-grid>.provider .provider-folio-scene{display:none!important}
+#providers[data-cart-view="compact"] .provider-grid>.provider .provider-top,
+#providers[data-cart-view="compact"] .provider-grid>.provider:nth-child(even) .provider-top{grid-column:1;grid-row:1;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:16px;padding:26px 22px;background:linear-gradient(135deg,#e6f0e7,#f4f3e9);border-right:1px solid #d1dfd3;border-bottom:0}
+#providers[data-cart-view="compact"] .provider-grid>.provider .provider-top .number{font-size:3rem;order:-1;color:#967039}
+#providers[data-cart-view="compact"] .provider-grid>.provider .provider-body,
+#providers[data-cart-view="compact"] .provider-grid>.provider:nth-child(even) .provider-body{grid-column:2;grid-row:1;padding:clamp(21px,2.5vw,32px);background:transparent}
+#providers[data-cart-view="compact"] .provider-grid>.provider .provider-body h3{max-width:none;font-size:clamp(1.55rem,2.25vw,2.05rem)}
+#providers[data-cart-view="compact"] .provider-grid>.provider .provider-body p{max-width:90ch;font-size:.88rem;line-height:1.6}
+#providers[data-cart-view="compact"] .provider-grid>.provider .status{margin-top:8px}
+@media(max-width:820px){.cart-view-switcher{grid-template-columns:1fr;gap:20px}.cart-view-controls{max-width:520px}}
+@media(max-width:620px){.cart-view-switcher{margin:13px 0 21px;padding:23px 18px;border-radius:16px}.cart-view-controls button{min-height:70px;font-size:.73rem;padding:9px}.cart-view-controls button span{font-size:1.3rem}
+ #providers[data-cart-view="compact"] .provider-grid>.provider{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto}
+ #providers[data-cart-view="compact"] .provider-grid>.provider .provider-top,
+ #providers[data-cart-view="compact"] .provider-grid>.provider:nth-child(even) .provider-top{grid-column:1;grid-row:1;flex-direction:row;justify-content:space-between;align-items:center;padding:14px 20px;border-right:0;border-bottom:1px solid #d1dfd3}
+ #providers[data-cart-view="compact"] .provider-grid>.provider .provider-top .number{order:1;font-size:2rem}
+ #providers[data-cart-view="compact"] .provider-grid>.provider .provider-body,
+ #providers[data-cart-view="compact"] .provider-grid>.provider:nth-child(even) .provider-body{grid-column:1;grid-row:2;padding:22px 20px}}
+@media(prefers-reduced-motion:reduce){.cart-view-controls button{transition:none}.cart-view-controls button:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -726,7 +764,18 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
   <a href="#provider-mid-state" data-cart-route="provider-mid-state"><span class="cart-route-stop">06 <i aria-hidden="true"></i></span><strong>Bryant</strong><small>Mid-State Golf Cars</small></a>
   <a class="cart-route-ask" href="#request-title"><span aria-hidden="true">↗</span><strong>Need a quote?</strong><small>Return to the inquiry builder</small></a>
 </nav>
-<div class="provider-grid">
+
+<section class="cart-view-switcher" id="cart-view-switcher" aria-labelledby="cart-view-title" hidden>
+ <div><span class="cart-view-overline">THE RIVER VALLEY / SIX-STOP RENTAL DESK</span>
+  <h3 id="cart-view-title">Take the scenic route.<br><em>Or scan the lineup.</em></h3>
+  <p>The same six operators, two ways to compare. Contacts, service qualifications, published terms and source links remain available in either layout.</p>
+ </div>
+ <div class="cart-view-controls" role="group" aria-label="Golf cart provider display">
+  <button type="button" data-cart-view="folio" aria-pressed="true" aria-controls="cart-provider-grid"><span aria-hidden="true">▦</span> Scenic profiles</button>
+  <button type="button" data-cart-view="compact" aria-pressed="false" aria-controls="cart-provider-grid"><span aria-hidden="true">☷</span> Quick comparison</button>
+ </div>
+</section>
+<div class="provider-grid" id="cart-provider-grid">
 <article class="provider" id="provider-river-valley">
 <div class="provider-top"><span class="location">Conway, Arkansas</span><span class="number" aria-hidden="true">01</span></div>
 <figure class="provider-folio-scene">
@@ -1039,5 +1088,26 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
   }
 }());
 </script>
+
+<script>
+/* Progressive enhancement only: provider HTML and all navigation remain intact. */
+(function(){
+ const panel=document.getElementById('cart-view-switcher');
+ const providers=document.getElementById('providers');
+ const grid=document.getElementById('cart-provider-grid');
+ if(!panel||!providers||!grid||grid.querySelectorAll('article.provider').length!==6)return;
+ const choices=[...panel.querySelectorAll('button[data-cart-view]')];
+ if(choices.length!==2)return;
+ choices.forEach(button=>button.addEventListener('click',()=>{
+  const view=button.dataset.cartView;
+  if(view!=='folio'&&view!=='compact')return;
+  if(view==='compact')providers.dataset.cartView='compact';
+  else delete providers.dataset.cartView;
+  choices.forEach(item=>item.setAttribute('aria-pressed',String(item===button)));
+ }));
+ panel.hidden=false;
+})();
+</script>
+
 </body>
 </html>
