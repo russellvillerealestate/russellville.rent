@@ -350,6 +350,34 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
 @media(max-width:520px){.bike-budget{padding:37px 0 48px}.bike-budget-head h2{font-size:clamp(2.3rem,10vw,3rem)}.bike-budget-entry,.bike-budget-ticket{padding:28px 22px}.bike-budget-double{grid-template-columns:1fr}.bike-budget-board{border-radius:17px}.bike-budget-ticket:before{inset:10px}.bike-budget-scene{max-height:115px}}
 @media print{.bike-budget{background:#fff;break-inside:avoid}.bike-budget-board{box-shadow:none}.bike-budget-ticket{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 
+
+/* 2026-11-11 / Four-stop ride-guide navigation.
+   Visual direction: stayarv.com immersive sense of place, adopted as a
+   high-contrast editorial route rail for a directory, not a resort.
+   Research: NN/g visual hierarchy; web.dev responsive design; WCAG 2.2
+   focus visibility, reflow, contrast and target size. No assets/scripts. */
+.ride-route-shell{position:relative;z-index:3;isolation:isolate;width:min(1320px,100%);margin:-69px auto 0;padding:0 clamp(18px,4vw,44px)}
+.ride-route-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid #d6d8ca;border-radius:23px;background:#fdfaf2;box-shadow:0 23px 52px #0a31252d}
+.ride-route-link{position:relative;min-width:0;min-height:176px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:clamp(21px,2.5vw,32px);border-right:1px solid #d8dfd2;color:#183e32;text-decoration:none;transition:background-color .18s ease}
+.ride-route-link:first-child{border-radius:22px 0 0 22px;background:#133c32;color:#fff8e9}
+.ride-route-link:last-child{border-right:0;border-radius:0 22px 22px 0}
+.ride-route-link:not(:first-child):hover{background:#e6eee5}
+.ride-route-link:first-child:hover{background:#205547}
+.ride-route-link:focus-visible{z-index:1;outline:4px solid #bf782c;outline-offset:-6px;border-radius:12px}
+.ride-route-step{display:block;color:#5c775e;font:850 .66rem/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.16em;text-transform:uppercase}
+.ride-route-link:first-child .ride-route-step{color:#f5d494}
+.ride-route-link strong{display:block;max-width:16ch;font:400 clamp(1.2rem,2vw,1.73rem)/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.04em;text-wrap:balance}
+.ride-route-hint{display:block;margin-top:auto;max-width:28ch;color:#52685a;font-size:.77rem;line-height:1.42}
+.ride-route-link:first-child .ride-route-hint{color:#e4eadd}
+.ride-route-arrow{position:absolute;right:22px;top:21px;font-size:1.2rem;line-height:1;color:#47755e}
+.ride-route-link:first-child .ride-route-arrow{color:#f6d695}
+.ride-route-caption{max-width:76ch;margin:14px 6px 0;color:#52685b;font-size:.77rem;line-height:1.55}
+#ride-finder-title,#rates,#bike-budget,#bike-access-atlas{scroll-margin-top:24px}
+@media(max-width:850px){.ride-route-shell{margin-top:-55px}.ride-route-nav{grid-template-columns:repeat(2,minmax(0,1fr))}.ride-route-link{min-height:142px;border-right:0;border-bottom:1px solid #d8dfd2}.ride-route-link:nth-child(odd){border-right:1px solid #d8dfd2}.ride-route-link:first-child{border-radius:22px 0 0 0}.ride-route-link:nth-child(2){border-radius:0 22px 0 0}.ride-route-link:nth-child(n+3){border-bottom:0}.ride-route-link:last-child{border-radius:0 0 22px 0}}
+@media(max-width:520px){.ride-route-shell{margin-top:-43px;padding:0 14px}.ride-route-nav{border-radius:17px}.ride-route-link{min-height:132px;padding:18px 15px;gap:7px}.ride-route-link:first-child{border-radius:16px 0 0 0}.ride-route-link:nth-child(2){border-radius:0 16px 0 0}.ride-route-link:last-child{border-radius:0 0 16px 0}.ride-route-link strong{font-size:1.16rem}.ride-route-step{font-size:.58rem;letter-spacing:.11em}.ride-route-hint{font-size:.69rem}.ride-route-arrow{right:13px;top:15px;font-size:1rem}.ride-route-caption{margin-top:12px;font-size:.73rem}}
+@media(prefers-reduced-motion:reduce){.ride-route-link{transition:none}}
+@media print{.ride-route-shell{display:none}}
+
 </style></head><body>
 <a class="skip" href="#rates">Skip to rental rates</a>
 <header><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
@@ -358,6 +386,16 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
 <div><p class="eyebrow">Russellville, Arkansas · Ride local</p><h1 id="page-title">Find your next ride.</h1><p class="lead">Mountain trails, city streets or a gravel-road outing: compare bicycle rental styles and posted daily prices from a local Russellville shop.</p><div class="actions"><a class="button gold" href="#rates">Compare daily rates ↓</a><a class="button ghost" href="tel:+14798904950">Call the bike shop ↗</a></div><div class="ride-facts" aria-label="Bicycle rental facts"><span><strong>05</strong> Published day rates</span><span><strong>01</strong> Russellville shop with posted rates</span><span><strong>↗</strong> Call to confirm availability</span></div></div>
 <div class="bike-art" aria-hidden="true"><svg viewBox="0 0 500 360" xmlns="http://www.w3.org/2000/svg"><circle class="wheel" cx="111" cy="264" r="79"/><circle class="wheel" cx="389" cy="264" r="79"/><path class="frame" d="M111 264 L205 132 L285 264 Z M205 132 L389 264 L285 264 M205 132 L195 113"/><path class="detail" d="M165 111 H224 M373 150 L389 264 M348 150 H385 M285 264 L302 283"/><circle class="hub" cx="111" cy="264" r="8"/><circle class="hub" cx="285" cy="264" r="8"/><circle class="hub" cx="389" cy="264" r="8"/></svg></div>
 </div></section>
+
+<nav class="ride-route-shell" aria-label="Bicycle rental guide sections">
+  <div class="ride-route-nav">
+    <a class="ride-route-link" href="#ride-finder-title"><span class="ride-route-step">01 / FIND YOUR RIDE</span><strong>Start with a riding style.</strong><span class="ride-route-hint">Mountain, electric, road or gravel</span><span class="ride-route-arrow" aria-hidden="true">↗</span></a>
+    <a class="ride-route-link" href="#rates"><span class="ride-route-step">02 / COMPARE</span><strong>See five day rates.</strong><span class="ride-route-hint">Published Russellville shop prices</span><span class="ride-route-arrow" aria-hidden="true">↗</span></a>
+    <a class="ride-route-link" href="#bike-budget"><span class="ride-route-step">03 / PLAN</span><strong>Sketch out a budget.</strong><span class="ride-route-hint">Illustrative math, not a quote</span><span class="ride-route-arrow" aria-hidden="true">↗</span></a>
+    <a class="ride-route-link" href="#bike-access-atlas"><span class="ride-route-step">04 / EXPLORE</span><strong>Find ways to access bikes.</strong><span class="ride-route-hint">Local, regional and campus programs</span><span class="ride-route-arrow" aria-hidden="true">↗</span></a>
+  </div>
+  <p class="ride-route-caption">A quick route through this independent guide. Rental availability, eligibility, rates and pickup details must be confirmed with each provider.</p>
+</nav>
 
 <section class="ride-finder" aria-labelledby="ride-finder-title"><div class="wrap">
 <div class="ride-finder-head"><div><p class="eyebrow">A quicker way to compare</p><h2 id="ride-finder-title">What kind of ride?</h2><p>Choose a riding style to narrow the five advertised daily rates. These groupings describe bike types, not trail suitability or confirmed availability.</p></div><button class="ride-reset" type="button" data-ride-filter="all" aria-controls="rate-grid" aria-pressed="true">Show all five rates</button></div>
