@@ -514,6 +514,38 @@ body[data-workspace-view="ledger"] .category .listing-card .workspace-save-btn{g
  .workspace-chapter-art{display:none}
 }
 
+
+/* 2026-11-10 · Lease-language field desk. Editorial comparison, not a contract interpretation.
+   Inspiration: stayarv.com immersive panels; NN/g visual hierarchy & grouping;
+   web.dev responsive design; WCAG 2.2 visible focus / reflow / 24px targets. */
+.lease-field-desk{position:relative;isolation:isolate;overflow:hidden;margin:clamp(52px,7vw,90px) auto 40px;padding:clamp(28px,5vw,65px);border-radius:28px;background:radial-gradient(ellipse at 16% 85%,#38665b 0%,transparent 38%),linear-gradient(135deg,#122f34 5%,#173f3d 65%,#0d2a31);color:#f7f5ec;box-shadow:0 25px 60px #153b3821}
+.lease-field-desk:before{content:"";position:absolute;inset:auto -140px -250px auto;width:540px;height:540px;border:1px solid #f3d69a38;border-radius:50%;box-shadow:0 0 0 57px #eecf9710,0 0 0 115px #eecf970a;pointer-events:none;z-index:-1}
+.lease-field-desk-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(230px,.8fr);align-items:end;gap:clamp(22px,4vw,70px);padding-bottom:30px;border-bottom:1px solid #f0e8d43a}
+.lease-field-kicker{display:block;margin:0 0 17px;color:#f0d49b;font-size:.7rem;letter-spacing:.19em;text-transform:uppercase;font-weight:800}
+.lease-field-desk h2{max-width:13ch;margin:0;color:#fffaf0;font:400 clamp(2.7rem,5.7vw,5.3rem)/1.01 Georgia,"Times New Roman",serif;letter-spacing:-.065em;text-wrap:balance}
+.lease-field-desk h2 em{color:#f3d497;font-style:italic}
+.lease-field-intro{max-width:41ch;margin:0 0 2px;color:#d7e6dc;font-size:clamp(.94rem,1.5vw,1.08rem);line-height:1.7}
+.lease-field-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:25px 0 24px;margin:0;list-style:none}
+.lease-field-grid>li{min-width:0}
+.lease-field-card{position:relative;display:flex;flex-direction:column;min-height:294px;height:100%;padding:clamp(22px,2.6vw,31px);background:#f9f7ef;color:#163e39;border:1px solid #f6ead2;border-radius:18px;box-shadow:0 9px 25px #082c2724}
+.lease-field-card:nth-child(2){background:#e9efe6;border-color:#e9efe6}
+.lease-field-card:nth-child(3){background:#f4e1c4;border-color:#f4e1c4}
+.lease-field-number{display:flex;align-items:center;justify-content:space-between;gap:14px;color:#4a7063;font-weight:850;letter-spacing:.15em;font-size:.69rem;text-transform:uppercase}
+.lease-field-icon{width:63px;height:63px;display:grid;place-items:center;margin-top:23px;border:1px solid #a7c0b6;border-radius:17px;color:#21574b}
+.lease-field-icon svg{width:39px;height:39px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.lease-field-card h3{margin:17px 0 7px;font:400 clamp(1.45rem,2.3vw,1.9rem)/1.13 Georgia,"Times New Roman",serif;letter-spacing:-.035em;color:#123a35}
+.lease-field-card p{margin:0;color:#476157;font-size:.88rem;line-height:1.55}
+.lease-field-end{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:22px;padding-top:19px;border-top:1px solid #f0e8d43a}
+.lease-field-end p{margin:0;max-width:76ch;color:#dae7dd;font-size:.82rem;line-height:1.6}
+.lease-field-action{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:48px;padding:11px 20px;border-radius:999px;background:#f0d49b;color:#153a34;text-decoration:none;font-size:.82rem;font-weight:850;white-space:nowrap;transition:background-color .18s ease,transform .18s ease}
+.lease-field-action:hover{background:#ffe2ab;transform:translateY(-2px)}
+.lease-field-action:focus-visible{outline:3px solid #fff;outline-offset:4px}
+@media(max-width:900px){.lease-field-desk-head{grid-template-columns:1fr;gap:18px}.lease-field-intro{max-width:65ch}.lease-field-card{min-height:282px}}
+@media(max-width:700px){.lease-field-desk{padding:28px 19px;border-radius:21px}.lease-field-grid{grid-template-columns:1fr;gap:11px}.lease-field-card{min-height:0;padding:20px 22px;display:grid;grid-template-columns:60px 1fr;grid-template-rows:auto auto auto;column-gap:18px}.lease-field-number{grid-column:1 / -1}.lease-field-icon{width:55px;height:55px;margin-top:14px;grid-column:1;grid-row:2 / span 2}.lease-field-icon svg{width:33px;height:33px}.lease-field-card h3{grid-column:2;grid-row:2;margin:13px 0 5px}.lease-field-card p{grid-column:2;grid-row:3}.lease-field-end{grid-template-columns:1fr}.lease-field-action{width:100%;white-space:normal}}
+@media(max-width:370px){.lease-field-card{grid-template-columns:1fr}.lease-field-icon,.lease-field-card h3,.lease-field-card p{grid-column:1;grid-row:auto}.lease-field-card h3{margin-top:12px}}
+@media(prefers-reduced-motion:reduce){.lease-field-action{transition:none}.lease-field-action:hover{transform:none}}
+@media print{.lease-field-desk{background:#fff!important;color:#162f2e;box-shadow:none;border:1px solid #b9c5bd;break-inside:avoid}.lease-field-desk h2,.lease-field-desk h2 em,.lease-field-kicker,.lease-field-intro,.lease-field-end p{color:#162f2e!important}.lease-field-action{color:#162f2e;border:1px solid #162f2e}}
+
 </style>
 </head>
 <body>
@@ -678,6 +710,42 @@ body[data-workspace-view="ledger"] .category .listing-card .workspace-save-btn{g
 <section class="category wrap" id="mobile" aria-labelledby="mobile-title">
 <div class="category-heading workspace-chapter-heading workspace-chapter-heading--04"><div class="workspace-chapter-copy"><span class="workspace-chapter-series">RIVER VALLEY / WORKSPACE CHAPTER 04 OF 04</span><p class="section-kicker">04 / Work on-site</p><h2 id="mobile-title">Mobile jobsite offices</h2><p class="workspace-chapter-description">Portable workspace options for temporary jobsites. Confirm delivery and setup separately.</p></div><div class="workspace-chapter-art" aria-hidden="true"><svg viewBox="0 0 440 280" focusable="false"><circle cx="336" cy="59" r="49" fill="#f1c780"/><path d="M0 209q85-72 176-15t264-18v104H0Z" fill="#80a18d" opacity=".55"/><path d="M0 236q140-25 249 1t191-6v49H0Z" fill="#1a5247" opacity=".7"/><rect x="79" y="111" width="280" height="104" rx="9" fill="#f5ecd9" stroke="#e7d19c" stroke-width="5"/><path d="M68 111 106 87h228l38 24" fill="#e0c493" stroke="#f4e6bf" stroke-width="5" stroke-linejoin="round"/><rect x="120" y="133" width="75" height="54" rx="3" fill="#3a7163"/><path d="M158 135v50m-36-26h70" stroke="#d8e9d9" stroke-width="4"/><rect x="246" y="127" width="66" height="88" fill="#3b6557"/><circle cx="301" cy="174" r="4" fill="#f2d39a"/><path d="M253 216v18h-73v13h-48" fill="none" stroke="#e7ca8c" stroke-width="8" stroke-linejoin="round"/><path d="M78 217h280" stroke="#f7eaca" stroke-width="7"/><path d="M103 254h291" stroke="#f9e5ba" stroke-width="4" stroke-dasharray="16 12"/></svg><span>Editorial illustration · Not a rental-property photo</span></div></div>
 <div class="cards cards--solo"><article class="listing-card"><span class="listing-type">Mobile office</span><h3>Scotty&#39;s Storage — Mobile Jobsite Offices</h3><p>Russellville-based provider of <strong>ground-level portable office rentals</strong> for construction jobsites, security offices and temporary workspaces. Its official office-rental page advertises <strong>9-, 10- and 12-foot mobile offices at $200/month</strong>, a <strong>20-foot mobile office at $250/month</strong>, a <strong>40-foot combined office/storage unit at $350/month</strong>, and a <strong>40-foot mobile office at $400/month</strong>. These are advertised base rental rates, not delivered quotes; confirm delivery charges, utility connections, setup requirements, minimum term, taxes, current pricing and availability directly. <strong>Cross-listed from portable storage; one existing local operator, not a new business.</strong></p><p class="detail">2720 Bernard Way, Russellville, AR 72802 · Arkansas delivery advertised by provider</p><p class="card-links"><a href="tel:+14798582550">479-858-2550</a> · <a href="https://www.scottysstorage.com/officerentals" target="_blank" rel="noopener noreferrer">Official mobile-office rental rates ↗</a> · <a href="/mobile-storage.html">Portable storage directory ↗</a></p></article></div></section>
+
+<!-- Visual field desk: generalized lease-language guidance only; all provider data remains untouched. -->
+<section class="lease-field-desk wrap" id="lease-field-desk" aria-labelledby="lease-field-title">
+  <div class="lease-field-desk-head">
+    <div>
+      <p class="lease-field-kicker">THE RIVER VALLEY / BEFORE YOU SIGN</p>
+      <h2 id="lease-field-title">The asking rent <em>isn't always the total.</em></h2>
+    </div>
+    <p class="lease-field-intro">Office listings use different pricing language. These three common formats help you frame the first conversation with a broker or property manager. Always request the complete written terms.</p>
+  </div>
+  <ol class="lease-field-grid" aria-label="Three common commercial lease price descriptions">
+    <li class="lease-field-card">
+      <span class="lease-field-number">01 / COST STRUCTURE <span aria-hidden="true">↗</span></span>
+      <span class="lease-field-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="9" y="8" width="30" height="32" rx="3"/><path d="M16 17h16M16 24h16M16 31h11"/></svg></span>
+      <h3>Gross lease</h3>
+      <p>Some operating expenses may be included in the quoted rent. Ask exactly which utilities, services and other charges are included or excluded.</p>
+    </li>
+    <li class="lease-field-card">
+      <span class="lease-field-number">02 / ADDED COSTS <span aria-hidden="true">↗</span></span>
+      <span class="lease-field-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 40h32M13 40V17l11-8 11 8v23M20 23h8m-8 7h8M8 19l16-13 16 13"/></svg></span>
+      <h3>Triple-net lease</h3>
+      <p>Property taxes, insurance and operating expenses may be charged in addition to base rent. Request an itemized estimate before comparing monthly costs.</p>
+    </li>
+    <li class="lease-field-card">
+      <span class="lease-field-number">03 / REQUEST A QUOTE <span aria-hidden="true">↗</span></span>
+      <span class="lease-field-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 10h32v24H23l-8 8v-8H8zM17 19h14M17 26h8"/></svg></span>
+      <h3>Rent on request</h3>
+      <p>No reliable public rate is shown. Ask for the rent amount, whether it is monthly or annual, the lease type, deposits and every additional recurring fee.</p>
+    </li>
+  </ol>
+  <div class="lease-field-end">
+    <p>These are general comparison prompts—not interpretations of any particular lease. Advertising does not establish current vacancy, permitted uses, final cost or agreement terms.</p>
+    <a class="lease-field-action" href="#offices">Review office listings <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+
 <p class="wrap no-results" id="no-results" hidden>No matching listings. Try a different provider, address or workspace type.</p>
 <aside class="wrap directory-note"><p class="note">Independent local directory. Rates are publicly advertised starting or standard rates, not confirmed quotes. Availability and terms may change. <a href="sms:+14799707301">Suggest another provider or correction</a>.</p></aside>
 </main>
