@@ -672,6 +672,87 @@ html{scroll-padding-top:114px}
  .round-board-grid>.round-board-card--birdie .round-board-facts{padding:10px 0;border-left:0;border-top:1px solid #aaa}
 }
 
+
+/* River Valley mobile golf rate atlas, November 11 2026.
+   Reference: live StayARV's large photo-forward sections; Nielsen Norman Group
+   information scent, web.dev responsive grids, W3C WCAG 2.2 focus and targets.
+   Every number already appears in the original provider profiles. */
+.mobile-rate-atlas{width:min(1180px,calc(100% - 38px));margin:clamp(58px,8vw,104px) auto;
+ display:grid;grid-template-columns:minmax(290px,.76fr) minmax(0,1.24fr);
+ border-radius:5px 32px 5px 32px;overflow:hidden;border:1px solid #c1d3c4;
+ background:#f5f6ee;box-shadow:0 22px 54px #0e372723}
+.mobile-rate-atlas__cover{min-height:585px;padding:clamp(30px,4vw,50px);display:flex;
+ flex-direction:column;justify-content:space-between;gap:35px;position:relative;color:#fff;
+ background:linear-gradient(155deg,#092c29f9,#103b32ee 59%,#224d3bbf),
+ url("assets/downtown-russellville-sunset.jpg") center/cover no-repeat}
+.mobile-rate-atlas__cover:after{content:"";position:absolute;inset:16px;
+ border:1px solid #e9cfa37d;border-radius:2px 23px 2px 23px;pointer-events:none}
+.mobile-rate-atlas__eyebrow{display:block;font-weight:850;color:#efcf96;letter-spacing:.18em;
+ text-transform:uppercase;line-height:1.5;font-size:.68rem}
+.mobile-rate-atlas__cover h2{margin:24px 0;max-width:13ch;
+ color:#fff;font:500 clamp(2.8rem,4.9vw,5rem)/1 Georgia,serif;
+ letter-spacing:-.065em;text-wrap:balance}
+.mobile-rate-atlas__cover h2 em{color:#f2d099;font-weight:400}
+.mobile-rate-atlas__cover p{margin:0;max-width:41ch;color:#e5eee4;line-height:1.78;font-size:.96rem}
+.mobile-rate-atlas__cover-foot{border-top:1px solid #e4d2ac67;padding-top:18px}
+.mobile-rate-atlas__cover-foot strong{color:#f5d6a2;display:block;margin-bottom:8px}
+.mobile-rate-atlas__cover-foot small{color:#e5eee4;line-height:1.6;display:block}
+.mobile-rate-atlas__body{min-width:0;padding:clamp(22px,3.4vw,42px);
+ background:linear-gradient(145deg,#fffdf6,#eaf1e8)}
+.mobile-rate-atlas__header{display:flex;justify-content:space-between;align-items:end;
+ gap:15px;border-bottom:1px solid #bed1c1;padding-bottom:15px;margin-bottom:20px}
+.mobile-rate-atlas__header h3{margin:0;font:500 clamp(1.55rem,2.6vw,2.2rem)/1.15 Georgia,serif;
+ letter-spacing:-.046em;color:#184233}
+.mobile-rate-atlas__header span{font-size:.65rem;line-height:1.55;letter-spacing:.1em;
+ font-weight:850;text-transform:uppercase;color:#57745b;text-align:right}
+.mobile-rate-atlas__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.mobile-rate-atlas__card{display:flex;flex-direction:column;min-width:0;min-height:236px;
+ padding:17px 17px 0;text-decoration:none;color:#1d4936;
+ background:#fffef8;border:1px solid #c3d3c4;border-radius:4px 18px 4px 18px;
+ overflow:hidden;box-shadow:0 5px 19px #143e2810;
+ transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.mobile-rate-atlas__card:nth-child(2),.mobile-rate-atlas__card:nth-child(3){background:#f0f3e9}
+.mobile-rate-atlas__card:hover{transform:translateY(-3px);
+ border-color:#829b82;box-shadow:0 14px 25px #0c3b2229}
+.mobile-rate-atlas__card:focus-visible{outline:3px solid #914e16;outline-offset:4px}
+.mobile-rate-atlas__top{display:flex;justify-content:space-between;gap:10px;
+ font-size:.63rem;line-height:1.35;font-weight:850;letter-spacing:.07em;text-transform:uppercase}
+.mobile-rate-atlas__top span:last-child{color:#885b2a;text-align:right}
+.mobile-rate-atlas__value{display:block;margin:18px 0 8px;
+ font:500 clamp(2.15rem,3vw,3.1rem)/1 Georgia,serif;letter-spacing:-.052em;color:#164331}
+.mobile-rate-atlas__value small{display:block;margin-top:7px;font:750 .72rem/1.3 system-ui,sans-serif;
+ letter-spacing:0;color:#4f6c58}
+.mobile-rate-atlas__card b{font-size:.94rem;line-height:1.4}
+.mobile-rate-atlas__card p{flex:1;font-size:.78rem;line-height:1.58;margin:9px 0 18px;color:#4b6452}
+.mobile-rate-atlas__card-link{display:flex;align-items:center;justify-content:space-between;
+ gap:7px;margin:0 -17px;padding:13px 17px;background:#214d3b;
+ color:#fff;font-weight:850;font-size:.77rem}
+.mobile-rate-atlas__fine{font-size:.76rem;line-height:1.75;color:#46614c;
+ border-top:1px solid #bed1c1;padding-top:17px;margin:18px 0 0}
+.mobile-rate-atlas__fine strong{color:#173e2e}
+@media(max-width:950px){.mobile-rate-atlas{grid-template-columns:1fr}
+ .mobile-rate-atlas__cover{min-height:0;padding:35px}
+ .mobile-rate-atlas__cover h2{max-width:19ch}}
+@media(max-width:630px){.mobile-rate-atlas{width:calc(100% - 28px);
+ border-radius:4px 21px 4px 21px}
+ .mobile-rate-atlas__cover{padding:30px 22px}
+ .mobile-rate-atlas__cover:after{inset:10px}
+ .mobile-rate-atlas__cover h2{font-size:clamp(2.6rem,10vw,3.8rem)}
+ .mobile-rate-atlas__body{padding:24px 17px}
+ .mobile-rate-atlas__header{align-items:start;flex-direction:column;gap:5px}
+ .mobile-rate-atlas__header span{text-align:left}
+ .mobile-rate-atlas__grid{grid-template-columns:1fr}
+ .mobile-rate-atlas__card{min-height:0}
+ .mobile-rate-atlas__value{font-size:2.7rem}}
+@media(prefers-reduced-motion:reduce){.mobile-rate-atlas__card{transition:none}
+ .mobile-rate-atlas__card:hover{transform:none}}
+@media print{.mobile-rate-atlas{display:block;box-shadow:none;border:1px solid #777}
+ .mobile-rate-atlas__cover{background:#fff;color:#000;min-height:0}
+ .mobile-rate-atlas__cover h2,.mobile-rate-atlas__cover h2 em,.mobile-rate-atlas__cover p,
+ .mobile-rate-atlas__eyebrow,.mobile-rate-atlas__cover-foot strong,
+ .mobile-rate-atlas__cover-foot small{color:#000}
+ .mobile-rate-atlas__card{break-inside:avoid;min-height:0}
+ .mobile-rate-atlas__card-link{color:#000;background:#eee}}
 </style></head>
 <body><a class="skip" href="#main">Skip to rental options</a>
 <header class="golf-site-header"><div class="header-inner golf-header-inner">
@@ -741,6 +822,35 @@ html{scroll-padding-top:114px}
 <section id="local" aria-labelledby="local-title"><div class="section-head"><div><span class="kicker">01 / Play on-site</span><h2 id="local-title">The Russellville option</h2></div><p>Permanent indoor simulator location</p></div><article class="card local-card"><div class="card-content"><span class="label">Local on-site experience</span><h3>Old Bank Golf — Russellville</h3><p>Book an indoor golf simulator bay at its permanent downtown location. The operator advertises more than 1,500 courses, mini-games and swing analysis. <strong>On-site bay reservations only; off-site simulator rentals are not advertised.</strong> Officially published hours: Sunday 9 a.m.–10 p.m.; Monday closed; Tuesday–Thursday 10:30 a.m.–10 p.m.; Friday 10:30 a.m.–midnight; Saturday 9 a.m.–midnight. Hours may change; confirm your date, tee time, availability, current pricing and any holiday hours directly before visiting.</p><p class="detail">216 W Main St, Russellville, AR · Local on-site experience</p><p class="links"><a href="tel:+14792195181">479-219-5181</a> · <a href="https://oldbankgolf.com/" target="_blank" rel="noopener noreferrer">Official reservations ↗</a></p></div><div class="local-art" aria-hidden="true"><span class="local-art-kicker">THE IN-TOWN ROUND / 01</span><svg viewBox="0 0 460 310" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M28 271V59L221 17 435 59V271L221 296Z" fill="#103c32" stroke="#eed6a3" stroke-width="5"/><path d="M54 248V78L221 42 410 78V248L221 273Z" fill="#78ad90" stroke="#eff3d0" stroke-width="3"/><path d="M54 205Q201 131 410 212V248L221 273 54 248Z" fill="#347655"/><path d="M54 229Q221 182 410 235" fill="none" stroke="#bed7a8" stroke-width="3"/><path d="M150 226 217 206 313 239 244 261Z" fill="#d6e5b6" stroke="#eef2d2" stroke-width="2"/><path d="M241 247q47-91 113-131" stroke="#f8dd9e" stroke-width="4" stroke-dasharray="7 10" fill="none"/><path d="M351 116v-57l31 11-31 11" fill="#f1d8a5" stroke="#f1d8a5" stroke-width="3"/><circle cx="244" cy="250" r="8" fill="#fffdf4"/><path d="M55 248 221 296 410 248" fill="none" stroke="#e8d1a1" stroke-width="3"/></svg><p>A round without leaving town.</p><span class="local-art-note">Illustrated simulator bay · not provider photography</span></div></article></section>
 <section id="mobile" aria-labelledby="mobile-title"><div class="section-head"><div><span class="kicker">02 / Bring the experience to you</span><h2 id="mobile-title">Mobile event simulators</h2></div><p>Russellville delivery not yet verified</p></div><div class="mobile-grid"><article class="card" id="tee-time-willy"><div class="card-top"><span>Arkansas · Mobile events</span><b aria-hidden="true">02</b></div><div class="event-card-scene event-card-scene--tee" aria-hidden="true"><svg viewBox="0 0 560 190" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M0 155Q123 124 245 156T560 148V190H0Z" fill="#457a5b"/><rect x="151" y="20" width="236" height="142" rx="10" fill="#163e34" stroke="#eed7a4" stroke-width="5"/><rect x="167" y="36" width="204" height="111" rx="6" fill="#91ba9e"/><path d="M168 119Q280 53 370 119V148H168Z" fill="#377a54"/><path d="M271 132 333 65" stroke="#ffe4a8" stroke-width="3" stroke-dasharray="6 7"/><path d="M333 70V43m0 4 23 7-23 8" stroke="#ffe4a8" stroke-width="3" fill="none"/><circle cx="272" cy="136" r="8" fill="#fff"/><path d="M91 151V68l-30 82M91 68l30 83M444 151V68l-30 82m30-82 30 83" stroke="#d5e6be" stroke-width="6" stroke-linecap="round"/><path d="M42 160h477" stroke="#eed7a4" stroke-width="4"/></svg><span>Illustrative event setup · not operator equipment</span></div><div class="card-content"><h3>Tee Time Willy's — Arkansas mobile events</h3><p>Officially offers a mobile golf simulator for private parties, corporate events and fundraisers, with full event setup, a spectator display and on-site support. As checked November 2, 2026, the operator advertises a standard four-hour package at $1,000, a limited-time $800 offer and additional event hours at $150 each. The promotion, minimum, rates and package contents can change; verify the current total directly. The standard package includes one right-handed club set; left-handed, women’s and children’s sets can be requested, but their availability and any additional charge require confirmation. The operator recommends approximately 15 by 18 feet of floor area with enough ceiling height for a full golf swing; confirm exact requirements before booking.</p><div class="warning">Russellville delivery UNCONFIRMED. Ask about travel charges, setup space and dates.</div><p class="detail">Arkansas regional service · Exact base location not verified · Russellville delivery UNCONFIRMED</p><p class="links"><a href="https://teetimewillys.com/" target="_blank" rel="noopener noreferrer">Official packages and quote ↗</a></p></div></article><article class="card" id="puttees"><div class="card-top"><span>Searcy · Mobile events</span><b aria-hidden="true">03</b></div><div class="event-card-scene event-card-scene--puttees" aria-hidden="true"><svg viewBox="0 0 560 190" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M0 131Q130 72 265 125T560 123V190H0Z" fill="#5b906d"/><path d="M0 158Q140 123 280 165T560 159" stroke="#e5e6b9" stroke-width="5" fill="none"/><ellipse cx="296" cy="158" rx="185" ry="29" fill="#235b45"/><ellipse cx="289" cy="155" rx="138" ry="19" fill="#6ca17c"/><path d="M300 146 324 36" stroke="#f9e9c2" stroke-width="6" stroke-linecap="round"/><path d="M324 37 395 52 325 69Z" fill="#edc990"/><path d="M174 156q55-103 163-98" stroke="#f4d59c" stroke-width="3" stroke-dasharray="6 9" fill="none"/><circle cx="174" cy="157" r="9" fill="#fffdf5"/></svg><span>Illustrative golfing scene · not operator equipment</span></div><div class="card-content"><h3>Puttees — Searcy</h3><div class="rate"><strong>$125 / hour</strong><small>First three hours; fourth $115, fifth $100; fees extra</small></div><p>Mobile golf simulator and optional yard games for events. The operator's official site advertises optional yard-game add-on bundles of <strong>three games for $99</strong> or <strong>all six for $175</strong>, in addition to the simulator booking. Official simulator rates: $125 per hour for the first three hours ($375 minimum), then $115 for hour four and $100 for hour five. Events of six hours or longer require a custom quote. Round-trip mileage is billed at $0.40 per mile; an outdoor setup adds $100. Verify current rates and the full delivered price directly.</p><div class="warning">Russellville delivery UNCONFIRMED. Confirm total delivered cost.</div><p class="detail">Searcy, Arkansas · Russellville delivery UNCONFIRMED</p><p class="links"><a href="tel:+15018587136">501-858-7136</a> · <a href="https://puttees.org/" target="_blank" rel="noopener noreferrer">Official booking and rates ↗</a></p></div></article><article class="card" id="tee-time-nwa"><div class="card-top"><span>Northwest Arkansas · Regional mobile events</span><b aria-hidden="true">04</b></div><div class="event-card-scene event-card-scene--tee" aria-hidden="true"><svg viewBox="0 0 560 190" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M0 155Q125 100 280 152T560 143V190H0Z" fill="#457a5b"/><rect x="151" y="20" width="236" height="142" rx="10" fill="#163e34" stroke="#eed7a4" stroke-width="5"/><rect x="167" y="36" width="204" height="111" rx="6" fill="#91ba9e"/><path d="M168 119Q280 53 370 119V148H168Z" fill="#377a54"/><path d="M271 132 333 65" stroke="#ffe4a8" stroke-width="3" stroke-dasharray="6 7"/><path d="M333 70V43m0 4 23 7-23 8" stroke="#ffe4a8" stroke-width="3" fill="none"/><circle cx="272" cy="136" r="8" fill="#fff"/><path d="M91 151V68l-30 82M91 68l30 83M444 151V68l-30 82m30-82 30 83" stroke="#d5e6be" stroke-width="6" stroke-linecap="round"/></svg><span>Illustrative simulator scene · not operator equipment</span></div><div class="card-content"><h3>Tee Time NWA — Northwest Arkansas (Regional)</h3><p>Officially advertises portable golf-simulator rentals for parties, corporate events, tournaments and extended home or business use. Its website lists <strong>private events starting at $550</strong>, without specifying that starting package&#39;s duration or a Russellville delivery quote. The provider names Fayetteville, Springdale, Rogers, Bentonville and surrounding Northwest Arkansas cities as its service area; <strong>Russellville is not listed</strong>. Confirm whether it will travel to your location, available dates, package duration, setup requirements, mileage charges and total price before planning an event.</p><div class="warning">Russellville delivery UNCONFIRMED. Northwest Arkansas service advertised, not a verified Russellville storefront.</div><p class="detail">Northwest Arkansas regional provider · Russellville delivery UNCONFIRMED</p><p class="links"><a href="tel:+14794097041">479-409-7041</a> · <a href="https://www.teetimenwa.com/" target="_blank" rel="noopener noreferrer">Official rentals, rates and service area ↗</a></p></div></article><article class="card" id="birdie-shack"><div class="card-top"><span>Little Rock · Mobile events</span><b aria-hidden="true">05</b></div><div class="event-card-scene event-card-scene--tee" aria-hidden="true"><svg viewBox="0 0 560 190" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M0 155Q125 100 280 152T560 143V190H0Z" fill="#457a5b"/><rect x="151" y="20" width="236" height="142" rx="10" fill="#163e34" stroke="#eed7a4" stroke-width="5"/><rect x="167" y="36" width="204" height="111" rx="6" fill="#91ba9e"/><path d="M168 119Q280 53 370 119V148H168Z" fill="#377a54"/><path d="M271 132 333 65" stroke="#ffe4a8" stroke-width="3" stroke-dasharray="6 7"/><path d="M333 70V43m0 4 23 7-23 8" stroke="#ffe4a8" stroke-width="3" fill="none"/><circle cx="272" cy="136" r="8" fill="#fff"/><path d="M91 151V68l-30 82M91 68l30 83M444 151V68l-30 82m30-82 30 83" stroke="#d5e6be" stroke-width="6" stroke-linecap="round"/></svg><span>Illustrative mobile golf scene · not operator equipment</span></div><div class="card-content"><h3>The Birdie Shack — Little Rock (Regional)</h3><p>The operator's official website advertises a mobile golf simulator experience for private parties, corporate gatherings and indoor or outdoor events, with golf-instruction assistance at events. The business says it was founded in 2026 and serves Little Rock and surrounding communities. It describes a <strong>traveling event service rather than a walk-in rental location</strong>. The operator's <a href="https://thebirdieshack.com/services" target="_blank" rel="noopener noreferrer">official event packages</a> advertise <strong>$500 for two hours</strong>, <strong>$750 for three hours</strong> and <strong>$900 for four hours</strong>, with additional-time packages by inquiry. The operator states that golf balls, right- and left-handed club sets and professional golf-instructor assistance are included. <strong>These are published base package prices, not Russellville delivered totals</strong>. Confirm the event date, availability, rental requirements, power and space needs, travel/setup charges and final written quote directly.</p><div class="warning">Russellville delivery UNCONFIRMED. Ask whether the operator serves your venue and what travel and setup charges apply.</div><p class="detail">Little Rock-area mobile provider · Russellville delivery UNCONFIRMED · No public pickup storefront advertised</p><p class="links"><a href="https://thebirdieshack.com/" target="_blank" rel="noopener noreferrer">Official mobile simulator information ↗</a></p></div></article></div></section>
 
+
+<section class="mobile-rate-atlas" aria-labelledby="mobile-rate-atlas-title">
+ <div class="mobile-rate-atlas__cover">
+  <div><span class="mobile-rate-atlas__eyebrow">The River Valley / Mobile-event rate ledger</span>
+   <h2 id="mobile-rate-atlas-title">Four prices. <em>Different starting lines.</em></h2>
+   <p>See the published examples for four distinct mobile golf experiences together. These are not equivalent packages, date-specific prices or delivered Russellville quotes.</p>
+  </div>
+  <div class="mobile-rate-atlas__cover-foot"><strong>Check the delivery first.</strong>
+   <small>Russellville delivery and event-date availability remain unconfirmed for all four regional operators. The separate downtown indoor bay has no published price in this directory.</small></div>
+ </div>
+ <div class="mobile-rate-atlas__body">
+  <div class="mobile-rate-atlas__header"><h3>Published rate examples</h3><span>Four operators / Four different terms</span></div>
+  <div class="mobile-rate-atlas__grid">
+   <a class="mobile-rate-atlas__card" href="#tee-time-willy"><span class="mobile-rate-atlas__top"><span>01 / Arkansas</span><span>Delivery unconfirmed</span></span>
+    <strong class="mobile-rate-atlas__value">$1,000 <small>standard / 4 hours</small></strong><b>Tee Time Willy's</b>
+    <p>A limited-time $800 four-hour promotion is also advertised; verify whether it still applies and ask about travel.</p><span class="mobile-rate-atlas__card-link">See event details <span aria-hidden="true">↗</span></span></a>
+   <a class="mobile-rate-atlas__card" href="#puttees"><span class="mobile-rate-atlas__top"><span>02 / Searcy</span><span>Delivery unconfirmed</span></span>
+    <strong class="mobile-rate-atlas__value">$375 <small>base / 3-hour minimum</small></strong><b>Puttees</b>
+    <p>Published hourly tiers are separate from mileage and optional outdoor setup. Explore the duration example below.</p><span class="mobile-rate-atlas__card-link">See published tiers <span aria-hidden="true">↗</span></span></a>
+   <a class="mobile-rate-atlas__card" href="#tee-time-nwa"><span class="mobile-rate-atlas__top"><span>03 / Northwest Arkansas</span><span>Russellville not listed</span></span>
+    <strong class="mobile-rate-atlas__value">From $550 <small>private event / duration not stated</small></strong><b>Tee Time NWA</b>
+    <p>The published starting rate has no stated duration. Ask whether this operator will travel beyond its listed region.</p><span class="mobile-rate-atlas__card-link">Check service area <span aria-hidden="true">↗</span></span></a>
+   <a class="mobile-rate-atlas__card" href="#birdie-shack"><span class="mobile-rate-atlas__top"><span>04 / Little Rock area</span><span>Delivery unconfirmed</span></span>
+    <strong class="mobile-rate-atlas__value">$500 <small>package / 2 hours</small></strong><b>The Birdie Shack</b>
+    <p>Also advertises $750 for three hours and $900 for four. Confirm travel and setup charges for your location.</p><span class="mobile-rate-atlas__card-link">See other durations <span aria-hidden="true">↗</span></span></a>
+  </div>
+  <p class="mobile-rate-atlas__fine"><strong>Not a price ranking or like-for-like comparison.</strong> Durations, staffing, promotions, inclusions, travel, minimums and service areas vary. These are published examples, not live quotes. Confirm delivery, current rates, date availability and total written charges directly with each provider.</p>
+ </div>
+</section>
 <section class="quote-estimator" id="sample-budget" aria-labelledby="quote-title">
 <div class="quote-header"><div><span class="kicker">03 / Event budget preview</span><h2 id="quote-title">The event-hour scorecard.</h2><p>Puttees publishes tiered event rates for three to five hours; six or more hours require an individual quote. Explore example base amounts before asking for a delivered total. <strong>This is not a booking tool or a confirmed total.</strong></p></div><div class="quote-stamp" aria-hidden="true">Sample<br>math<br>only</div></div>
 <div class="quote-grid">
