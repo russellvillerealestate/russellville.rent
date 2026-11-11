@@ -372,6 +372,90 @@ main.wrap{padding-top:28px}
 @media(max-width:355px){.stay-mood-routes{grid-template-columns:1fr}.stay-mood-routes a{min-height:108px}.stay-mood-routes small{max-width:none}}
 @media(prefers-reduced-motion:reduce){.stay-mood-routes a{transition:none}.stay-mood-routes a:hover{transform:none}}
 
+
+/* 2026-11-11 Stay chapter navigation: StayARV-inspired pine and brass; references:
+   Nielsen Norman Group visual hierarchy, web.dev responsive design, WCAG 2.2
+   keyboard focus, target size, reduced motion and no obscured focus. */
+.stay-journey{
+ background:linear-gradient(118deg,#0c332d,#18493b 65%,#245341);
+ border-color:#d2b878;border-top:5px solid #e8c98b;
+ box-shadow:0 19px 42px #102f2866;
+}
+.stay-journey a{color:#fff9e9;gap:clamp(12px,1.8vw,23px);transition:background-color .18s ease}
+.stay-journey a+a{border-color:#e9d49b3c}
+.stay-journey a:hover{background:#285c49}
+.stay-journey a:focus-visible{outline:3px solid #ffe7ad;outline-offset:-4px;background:#285c49}
+.stay-journey .journey-number{
+ display:grid;place-items:center;width:54px;height:54px;align-self:center;
+ border:1px solid #f0d59d7a;border-radius:50%;color:#f4d89b;
+ font:400 1.75rem/1 Georgia,"Times New Roman",serif;
+}
+.stay-journey strong{
+ color:#fffaf0;font:400 clamp(1.1rem,1.5vw,1.32rem)/1.2 Georgia,"Times New Roman",serif;
+ letter-spacing:-.025em;
+}
+.stay-journey small{color:#d9e6db;font-size:.78rem}
+.stay-journey .journey-arrow{color:#f2d49a;font-size:1.15rem}
+.stay-mobile-dock{display:none}
+@media(max-width:740px){
+ body{padding-bottom:calc(95px + env(safe-area-inset-bottom,0px))}
+ html{scroll-padding-bottom:calc(103px + env(safe-area-inset-bottom,0px))}
+ #stay-controls,#stay-grid,#stay-board{scroll-margin-top:22px}
+ .stay-journey{border-top-width:4px}
+ .stay-journey a{min-height:73px;padding:12px 18px}
+ .stay-journey .journey-number{width:40px;height:40px;font-size:1.35rem}
+ .stay-journey strong{font-size:1.08rem}
+ .stay-journey small{font-size:.72rem}
+ .stay-mobile-dock{
+  position:fixed;bottom:calc(9px + env(safe-area-inset-bottom,0px));
+  left:50%;z-index:100;transform:translateX(-50%);
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;
+  width:min(calc(100% - 20px),530px);padding:6px;
+  border:1px solid #eacb89;border-radius:19px;
+  background:linear-gradient(118deg,#0d352d,#194c3c);
+  box-shadow:0 16px 35px #09271db8,0 0 0 1px #ffffff17 inset;
+ }
+ .stay-mobile-dock a{
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  min-width:0;min-height:62px;gap:5px;padding:8px 3px;
+  border-radius:13px;text-decoration:none;text-align:center;
+  color:#f8f8ef;font-size:.68rem;font-weight:800;line-height:1.25;
+  transition:background-color .16s ease;
+ }
+ .stay-mobile-dock a svg{
+  display:block;flex:none;width:23px;height:23px;fill:none;
+  stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round
+ }
+ .stay-mobile-dock a.stay-mobile-dock__search{background:#f2d497;color:#15372e}
+ .stay-mobile-dock a:hover{background:#ffffff1d}
+ .stay-mobile-dock a.stay-mobile-dock__search:hover{background:#ffe3a8}
+ .stay-mobile-dock a:focus-visible{
+  outline:3px solid #ffe2a6;outline-offset:-3px;
+  background:#2e654e;color:#fff
+ }
+ .stay-mobile-dock a.stay-mobile-dock__search:focus-visible{
+  outline-color:#17392d;background:#f8daa0;color:#17392d
+ }
+}
+@media(max-width:360px){
+ .stay-mobile-dock{width:calc(100% - 12px);gap:2px;padding:5px}
+ .stay-mobile-dock a{min-height:59px;font-size:.62rem;padding-inline:2px}
+ .stay-mobile-dock a svg{width:21px;height:21px}
+}
+@media(max-width:740px) and (max-height:400px){
+ body{padding-bottom:0}
+ .stay-mobile-dock{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ .stay-journey a,.stay-mobile-dock a{transition:none}
+}
+@media print{
+ body{padding-bottom:0!important}
+ .stay-mobile-dock{display:none!important}
+ .stay-journey{background:#fff!important;box-shadow:none;border-color:#666}
+ .stay-journey a,.stay-journey strong,.stay-journey small,.stay-journey .journey-number,.stay-journey .journey-arrow{color:#143d33}
+}
+
 </style>
 </head>
 <body>
@@ -399,6 +483,14 @@ main.wrap{padding-top:28px}
 <a href="#stay-controls"><span class="journey-number" aria-hidden="true">02</span><span><strong>Find the right stay</strong><small>Search towns, amenities and stay types</small></span><span class="journey-arrow" aria-hidden="true">↗</span></a>
 <a href="#stay-grid"><span class="journey-number" aria-hidden="true">03</span><span><strong>Contact the operator</strong><small>Review details, terms and booking links</small></span><span class="journey-arrow" aria-hidden="true">↗</span></a>
 </nav></div>
+
+<!-- Native anchor stay navigation; saved entry upgrades to existing browser-only shortlist. -->
+<nav class="stay-mobile-dock" aria-label="Quick stay directory navigation">
+ <a class="stay-mobile-dock__search" href="#stay-controls"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span>Find</span></a>
+ <a href="#stay-grid"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>Browse</span></a>
+ <a href="#stay-grid" id="stay-mobile-saved" aria-label="Browse stays to save"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12v18l-6-4-6 4V3Z"/></svg><span>Saved</span></a>
+ <a href="/"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m3 11 9-8 9 8M6 10v11h12V10M10 21v-7h4v7"/></svg><span>All rentals</span></a>
+</nav>
 <main class="wrap" id="listings">
 <div class="section-heading"><div><div class="kicker" style="color:#45765b">Choose your next stay</div><h2>Cabins &amp; furnished getaways</h2></div><p class="muted">Each property is listed once per operator.</p></div>
 
@@ -788,6 +880,16 @@ refresh();
    search.dispatchEvent(new Event("input", {bubbles:true}));
   });
  });
+})();
+</script>
+<script>
+/* Saved stay shortcut remains usable without scripting. */
+(() => {
+ const link=document.getElementById("stay-mobile-saved");
+ const board=document.getElementById("stay-board");
+ if(!link||!board||board.hidden)return;
+ link.href="#stay-board";
+ link.setAttribute("aria-label","Open your saved stay shortlist");
 })();
 </script>
 </body></html>
