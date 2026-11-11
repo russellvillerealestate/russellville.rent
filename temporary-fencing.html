@@ -289,6 +289,138 @@ main.wrap{padding-top:0}
 @media(max-width:520px){.hero{border-radius:0 0 19px 19px}.hero-inner{padding-block:57px 91px;gap:29px}.hero h1{font-size:clamp(3.12rem,13vw,4.22rem)}.hero .lead{font-size:1rem;margin:24px 0 28px}.hero .hero-actions .btn{flex:1 1 auto}.hero-visual .drawing{display:flex;min-height:0;padding:12px;border-radius:16px}.hero-visual .drawing svg{max-height:198px}.hero-visual .drawing-label{font-size:.53rem;bottom:14px;left:16px}.hero-visual .drawing-badge{font-size:.53rem;top:17px;right:17px}.hero-visual-caption{font-size:.68rem;margin-top:13px}.quickline{margin-top:-37px}.quickline-inner{grid-template-columns:1fr;border-radius:14px}.quickline-inner>*{padding:16px 20px;min-height:0}.quickline-inner>strong{grid-column:1;font-size:1.48rem;min-height:0}.quickline-inner>span{min-height:0;border-left:0;font-size:.82rem}}
 @media(prefers-reduced-motion:reduce){.hero .btn{transition:none}.hero .btn:hover{transform:none}}
 
+
+/* 2026-11-11 / Quote field folio. Compared both live StayARV and
+   Russellville.Rent. Scenic editorial hierarchy informed by Nielsen Norman
+   Group; fluid reflow by Google web.dev; visible focus and readable contrast
+   by WCAG 2.2. Existing downtown photo is illustrative, not provider stock.
+   This replaces a small checklist without modifying supplier data or scripts. */
+.check.check--fieldfolio{
+ display:grid;grid-template-columns:minmax(0,1.03fr) minmax(0,.97fr);
+ gap:0;margin:clamp(43px,6vw,70px) 0 0;padding:0;min-height:565px;
+ overflow:hidden;background:#f7f7ef;border:1px solid #9bb19e;border-radius:25px;
+ box-shadow:0 24px 52px #12372c28
+}
+.fieldfolio-scene{
+ position:relative;isolation:isolate;display:flex;flex-direction:column;
+ justify-content:space-between;overflow:hidden;min-width:0;padding:clamp(27px,4vw,46px);
+ background:linear-gradient(180deg,#0b302cea,#0e4037a9 48%,#082b29f2),
+ url("assets/downtown-russellville-sunset.jpg") center 55%/cover no-repeat;color:#fff9e8
+}
+.fieldfolio-scene:after{
+ content:"";position:absolute;inset:15px;z-index:-1;pointer-events:none;
+ border:1px solid #f4dab08a;border-radius:16px
+}
+.fieldfolio-topline{
+ display:flex;justify-content:space-between;gap:15px;position:relative;z-index:2;
+ color:#f8dfaa;font-size:.65rem;font-weight:900;letter-spacing:.13em;line-height:1.5
+}
+.fieldfolio-fence{
+ display:grid;grid-template-columns:repeat(3,1fr);gap:4px;
+ position:absolute;top:15%;left:12%;right:12%;height:34%;
+ opacity:.68;transform:perspective(500px) rotateY(-8deg);pointer-events:none
+}
+.fieldfolio-fence span{
+ display:block;position:relative;border:5px solid #f6dfa9;border-top-width:7px;
+ background:repeating-linear-gradient(45deg,transparent 0 13px,#d1e5d284 14px 16px,transparent 17px 30px),
+ repeating-linear-gradient(-45deg,transparent 0 13px,#d1e5d284 14px 16px,transparent 17px 30px);
+ box-shadow:0 12px 22px #061e1b80
+}
+.fieldfolio-fence span:before,.fieldfolio-fence span:last-child:after{
+ content:"";position:absolute;top:-20px;bottom:-20px;left:-12px;
+ width:8px;border-radius:4px;background:#f4d8a1
+}
+.fieldfolio-fence span:last-child:after{left:auto;right:-12px}
+.fieldfolio-headline{position:relative;z-index:1;margin-top:auto;padding-top:200px}
+.check--fieldfolio .fieldfolio-headline .section-label{
+ margin:0 0 13px;color:#f8dcaa;font-size:.7rem;font-weight:850;
+ letter-spacing:.15em;text-transform:uppercase
+}
+.check--fieldfolio .fieldfolio-headline h2{
+ max-width:14ch;margin:0;color:#fff9e9;
+ font:400 clamp(2.7rem,4.8vw,4.8rem)/1.03 Georgia,"Times New Roman",serif;
+ letter-spacing:-.065em;text-wrap:balance
+}
+.check--fieldfolio .fieldfolio-headline p:not(.section-label){
+ max-width:42ch;margin:17px 0 21px;font-size:.94rem;line-height:1.7;color:#eff4e9
+}
+.fieldfolio-headline a{
+ display:inline-flex;align-items:center;justify-content:space-between;gap:20px;
+ min-height:48px;padding:11px 17px;background:#f4d9a0;border:1px solid #f4d9a0;
+ border-radius:10px;color:#173a30;text-decoration:none;font-size:.85rem;font-weight:850
+}
+.fieldfolio-headline a:hover{background:#ffe9be}
+.fieldfolio-headline a:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.fieldfolio-scene>small{
+ position:relative;z-index:1;display:block;margin-top:24px;
+ padding-top:13px;border-top:1px solid #f4deb987;
+ color:#f1e5cf;font-size:.7rem;line-height:1.55
+}
+.fieldfolio-desk{
+ display:flex;flex-direction:column;justify-content:center;
+ min-width:0;padding:clamp(28px,4.2vw,53px);color:#173d32
+}
+.fieldfolio-intro>span{display:block;margin-bottom:13px;color:#836030;font-size:.69rem;font-weight:900;letter-spacing:.14em}
+.fieldfolio-intro h3{
+ max-width:17ch;margin:0;color:#173e32;
+ font:400 clamp(2rem,3.3vw,3.1rem)/1.09 Georgia,"Times New Roman",serif;
+ letter-spacing:-.052em;text-wrap:balance
+}
+.check--fieldfolio .fieldfolio-intro p{
+ margin:14px 0 25px;max-width:48ch;font-size:.89rem;line-height:1.6;color:#516a5c
+}
+.check--fieldfolio .fieldfolio-list{
+ counter-reset:quote-detail;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:12px;list-style:none;margin:0;padding:0
+}
+.check--fieldfolio .fieldfolio-list li{
+ counter-increment:quote-detail;display:flex;flex-direction:column;
+ justify-content:space-between;gap:17px;min-height:156px;min-width:0;
+ padding:21px 18px;border:1px solid #d2ddd0;border-radius:14px;
+ background:#fffefa;color:#254d3a;font-size:.94rem;font-weight:750;
+ line-height:1.45;box-shadow:0 7px 17px #12362f0d
+}
+.check--fieldfolio .fieldfolio-list li:nth-child(2),
+.check--fieldfolio .fieldfolio-list li:nth-child(3){background:#eef3eb}
+.check--fieldfolio .fieldfolio-list li:before{
+ content:counter(quote-detail,decimal-leading-zero);display:block;margin:0;
+ color:#8e6130;font:400 1.55rem/1 Georgia,serif
+}
+.check--fieldfolio .fieldfolio-foot{
+ max-width:none;margin:23px 0 0;padding-top:15px;border-top:1px solid #c8d9c9;
+ color:#516658;font-size:.77rem;line-height:1.6
+}
+@media(max-width:900px){
+ .check.check--fieldfolio{grid-template-columns:1fr;min-height:0}
+ .fieldfolio-scene{min-height:480px}
+ .fieldfolio-desk{padding:35px 29px 39px}
+}
+@media(max-width:540px){
+ .check.check--fieldfolio{margin-top:42px;border-radius:18px}
+ .fieldfolio-scene{min-height:480px;padding:26px 22px}
+ .fieldfolio-scene:after{inset:10px;border-radius:10px}
+ .fieldfolio-topline{font-size:.56rem;letter-spacing:.075em}
+ .fieldfolio-fence{height:29%;top:17%;left:10%;right:10%}
+ .fieldfolio-headline{padding-top:190px}
+ .check--fieldfolio .fieldfolio-headline h2{font-size:clamp(2.8rem,11vw,3.9rem)}
+ .fieldfolio-desk{padding:30px 20px}
+ .check--fieldfolio .fieldfolio-list{grid-template-columns:1fr;gap:9px}
+ .check--fieldfolio .fieldfolio-list li{
+   min-height:80px;flex-direction:row;align-items:center;
+   justify-content:flex-start;gap:19px;padding:16px 18px
+ }
+ .check--fieldfolio .fieldfolio-list li:before{flex:0 0 35px}
+}
+@media print{
+ .check.check--fieldfolio{display:block;min-height:0;box-shadow:none;background:#fff;border:1px solid #777}
+ .fieldfolio-scene{min-height:0;padding:21px;background:#fff!important;color:#173e32}
+ .fieldfolio-scene:after,.fieldfolio-fence{display:none}
+ .fieldfolio-headline{padding:10px 0 0}
+ .check--fieldfolio .fieldfolio-scene :is(.fieldfolio-topline,.section-label,h2,p,small){color:#173e32!important}
+ .fieldfolio-headline a{background:#fff;border:1px solid #555;color:#173e32}
+ .fieldfolio-desk{padding:22px}
+ .check--fieldfolio .fieldfolio-list li{min-height:85px;break-inside:avoid}
+}
 </style>
 </head>
 <body>
@@ -473,7 +605,29 @@ main.wrap{padding-top:0}
   </div>
 </section>
 
-<section class="check" id="quote-checklist" aria-labelledby="quote-title"><div><p class="section-label">02 / Before you book</p><h2 id="quote-title">A clearer quote starts here.</h2><p>Have these details ready when you contact a provider. Availability and delivery to your address must be confirmed.</p></div><ul><li>Approximate fence length</li><li>Rental start date &amp; duration</li><li>Gates, barricades or screens needed</li><li>Delivery, installation &amp; removal</li></ul></section>
+<section class="check check--fieldfolio" id="quote-checklist" aria-labelledby="quote-title">
+  <div class="fieldfolio-scene">
+    <div class="fieldfolio-topline"><span>RIVER VALLEY FIELD NOTES</span><span>02 / YOUR QUOTE</span></div>
+    <div class="fieldfolio-fence" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="fieldfolio-headline">
+      <p class="section-label">02 / Before you book</p>
+      <h2 id="quote-title">A clearer quote starts here.</h2>
+      <p>Have these details ready when you contact a provider. Availability and delivery to your address must be confirmed.</p>
+      <a href="#providers">Return to supplier listings <span aria-hidden="true">↗</span></a>
+    </div>
+    <small>Original fence illustration and River Valley scenery. Not actual supplier inventory.</small>
+  </div>
+  <div class="fieldfolio-desk">
+    <div class="fieldfolio-intro"><span>FOUR DETAILS / ONE COMPLETE REQUEST</span><h3>Ready for the call.</h3><p>Use these prompts alongside your private inquiry brief above.</p></div>
+    <ul class="fieldfolio-list">
+      <li>Approximate fence length</li>
+      <li>Rental start date &amp; duration</li>
+      <li>Gates, barricades or screens needed</li>
+      <li>Delivery, installation &amp; removal</li>
+    </ul>
+    <p class="fieldfolio-foot">Confirm delivery, available materials, installation and removal, and the full quoted rental price directly with the provider.</p>
+  </div>
+</section>
 <p class="note">Russellville.Rent is an independent directory. Some businesses are based outside Russellville, and delivery or business status may be unconfirmed. Please confirm operating status, service area, availability, pricing and terms directly with each provider. <a href="sms:+14799707301">Submit corrections</a>.</p>
 </main><footer><div class="wrap"><a href="/">Return to all rental categories</a> · Russellville.Rent</div></footer>
 
