@@ -599,6 +599,105 @@ main .grid>#russellville-kayaks .paddle-folio-head:before{
 @media(max-width:360px){.lake-access-scene h2{font-size:2.6rem}.lake-access-desk{padding:22px 16px}.lake-access-route{grid-template-columns:31px minmax(0,1fr);gap:9px}.lake-access-route-index{width:30px;height:30px}.lake-access-route-arrow{display:none}}
 @media(prefers-reduced-motion:reduce){.lake-access-route{transition:none}.lake-access-route:hover{transform:none}}
 @media print{.lake-access-editorial{display:block;border:1px solid #888;box-shadow:none}.lake-access-scene{min-height:0}.lake-access-scene:before,.lake-access-scene:after{display:none}.lake-access-scene,.lake-access-desk{background:#fff;color:#123f30}.lake-access-scene h2,.lake-access-scene h2 em,.lake-access-scene p,.lake-access-desk-head h3,.lake-access-desk-head p,.lake-access-desk-head>span,.lake-access-caution,.lake-access-route,.lake-access-route-copy strong,.lake-access-route-copy small{color:#123f30!important}.lake-access-route{border:1px solid #777}}
+
+/* 2026-11-11 — Waterway atlas: make the complete ten-provider itinerary
+   discoverable without concealed horizontal scrolling or a sticky obstruction.
+   Reference: StayARV's immersive, generous scenic hierarchy; Nielsen Norman
+   Group information scent; web.dev responsive reflow; WCAG 2.2 keyboard focus
+   and 44px minimum targets. All original links and filters remain intact. */
+.paddle-directory-stage .paddle-course{
+  position:relative;top:auto;z-index:auto;overflow:hidden;
+  display:block;margin:10px 0 32px;padding:0;
+  border:1px solid #789786;border-radius:25px;
+  background:#123a34;box-shadow:0 23px 50px #153a3040;
+}
+.paddle-course .paddle-course-mast{
+  position:relative;isolation:isolate;display:flex;align-items:flex-end;
+  flex-wrap:wrap;min-height:228px;padding:clamp(27px,4.7vw,56px);
+  gap:22px;border-bottom:1px solid #e8cc9c69;
+  background:linear-gradient(90deg,#0c2e2be8 0%,#0b322acc 55%,#102d294c 100%),url('/assets/lake-dardanelle-sunset.jpg') center 53%/cover;
+}
+.paddle-course .paddle-course-identity{position:relative;z-index:1;flex:1 1 370px;gap:5px}
+.paddle-course .paddle-course-overline{color:#ffe0a8;font-size:.67rem;letter-spacing:.18em}
+.paddle-course .paddle-course-identity strong{
+  max-width:12ch;color:#fffaf0;font:400 clamp(2.5rem,4.7vw,4.6rem)/1.04 Georgia,"Times New Roman",serif;
+  letter-spacing:-.065em;text-wrap:balance;
+}
+.paddle-course .paddle-course-instruction{color:#e5eee5;font-size:.9rem;margin-top:7px}
+.paddle-course .paddle-course-water{display:none}
+.paddle-course .paddle-course-reset{
+  align-self:flex-end;position:relative;z-index:1;min-height:48px;
+  border-radius:999px;padding:13px 20px;background:#f3d59b;color:#133d34!important;
+}
+.paddle-course .paddle-course-track{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;padding:16px;background:linear-gradient(155deg,#17463b,#102f2b);
+  overflow:visible;scroll-snap-type:none;
+}
+.paddle-course .paddle-course-link{
+  display:flex;flex:none;min-width:0;min-height:133px;gap:11px;
+  justify-content:space-between;
+  padding:21px 34px 19px 20px;border:1px solid #618475;
+  border-radius:15px;background:#235447;color:#fffaf0!important;
+  scroll-snap-align:none;
+}
+.paddle-course .paddle-course-link:first-child{
+  grid-column:span 2;min-height:164px;
+  background:radial-gradient(circle at 88% 19%,#f0d19444,transparent 43%),linear-gradient(130deg,#446d54,#173d34);
+  border-color:#8eae83;
+}
+.paddle-course .paddle-course-link:first-child strong{
+  font:400 clamp(1.75rem,2.7vw,2.8rem)/1.08 Georgia,serif;letter-spacing:-.04em;
+}
+.paddle-course .paddle-course-count{font-size:.64rem;letter-spacing:.07em;color:#dbe9da}
+.paddle-course .paddle-course-link strong{
+  display:block;font-size:clamp(.95rem,1.3vw,1.16rem);
+  line-height:1.2;overflow-wrap:anywhere;text-wrap:balance;
+}
+.paddle-course .paddle-course-arrow{right:13px;bottom:13px}
+.paddle-course .paddle-course-link[aria-current="location"]{
+  color:#173e33!important;background:#f4dcae;border-color:#fff0c8;
+  box-shadow:inset 0 -4px 0 #b37b3e;
+}
+.paddle-course .paddle-course-link[aria-current="location"] .paddle-course-count{color:#58634a}
+.paddle-course .paddle-course-link:hover{
+  border-color:#f1d39e;transform:translateY(-2px);box-shadow:0 8px 18px #071c184f;
+}
+.paddle-course .paddle-course-link[aria-current="location"]:hover{background:#ffebc5}
+.paddle-directory-stage .paddle-card{scroll-margin-top:28px}
+@media(max-width:990px){
+  .paddle-course .paddle-course-track{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .paddle-course .paddle-course-link:first-child{grid-column:span 2}
+}
+@media(max-width:700px){
+  .paddle-course .paddle-course-mast{min-height:205px;padding:30px 23px;gap:20px}
+  .paddle-course .paddle-course-identity{flex-basis:100%}
+  .paddle-course .paddle-course-identity strong{font-size:clamp(2.5rem,9vw,3.8rem)}
+  .paddle-course .paddle-course-track{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;padding:11px}
+  .paddle-course .paddle-course-link{min-height:119px;padding:18px 28px 18px 15px}
+  .paddle-course .paddle-course-link:first-child{grid-column:span 2;min-height:129px}
+  .paddle-course .paddle-course-link strong{font-size:1rem}
+  .paddle-course .paddle-course-reset{margin-left:0}
+}
+@media(max-width:420px){
+  .paddle-directory-stage .paddle-course{border-radius:17px}
+  .paddle-course .paddle-course-mast{padding:27px 19px}
+  .paddle-course .paddle-course-track{grid-template-columns:minmax(0,1fr);gap:8px}
+  .paddle-course .paddle-course-link,
+  .paddle-course .paddle-course-link:first-child{grid-column:auto;min-height:91px}
+  .paddle-course .paddle-course-link:first-child strong{font-size:1.8rem}
+  .paddle-course .paddle-course-link strong{font-size:1.08rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .paddle-course .paddle-course-link{transition:none!important}
+  .paddle-course .paddle-course-link:hover{transform:none}
+}
+@media print{
+  .paddle-directory-stage .paddle-course{position:static;box-shadow:none}
+  .paddle-course .paddle-course-mast{background:#143d33;min-height:0;padding:18px}
+  .paddle-course .paddle-course-track{grid-template-columns:repeat(2,minmax(0,1fr));background:#fff}
+  .paddle-course .paddle-course-link{color:#173d33!important;background:#fff;border-color:#777}
+}
 </style>
 </head><body>
 <a class="paddle-skip" href="#russellville-kayaks">Skip to paddling providers</a>
@@ -722,7 +821,7 @@ main .grid>#russellville-kayaks .paddle-folio-head:before{
     <div class="paddle-course-identity">
       <span class="paddle-course-overline">THE RIVER VALLEY / WATERWAY INDEX</span>
       <strong>Follow the water<span aria-hidden="true">.</span></strong>
-      <span class="paddle-course-instruction">Ten options · Scroll the stops to explore <span aria-hidden="true">→</span></span>
+      <span class="paddle-course-instruction">Ten stops · All options at a glance</span>
     </div>
     <div class="paddle-course-water" aria-hidden="true"><svg viewBox="0 0 180 46" focusable="false"><path d="M-8 17C20-2 40 36 70 17S116-2 145 17 176 34 188 13" fill="none" stroke="#f2ce91" stroke-width="3"/><path d="M-8 31C20 12 40 50 70 31S116 12 145 31 176 48 188 27" fill="none" stroke="#9ccbbb" stroke-width="2" opacity=".8"/></svg></div>
     <a href="#paddle-explorer" class="paddle-course-reset" data-course-all>All ten options <span aria-hidden="true">↗</span></a>
