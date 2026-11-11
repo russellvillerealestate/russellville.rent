@@ -604,6 +604,46 @@
 @media(max-width:850px){.band-route-opening{grid-template-columns:1fr minmax(170px,.5fr)}.band-route-signal{padding:15px}.band-route-opening h2{font-size:clamp(2.5rem,5.3vw,3.7rem)}}
 @media(max-width:650px){.guide-strip.band-route{grid-template-columns:1fr;margin:17px 0 0;gap:10px}.band-route-opening{grid-template-columns:1fr;gap:0;min-height:0;border-radius:17px}.band-route-story{padding:30px 24px 16px}.band-route-opening h2{font-size:clamp(2.5rem,10vw,3.6rem)}.band-route-signal{display:none}.band-route-label{display:block;padding-top:23px}.band-route-label span{display:block;margin-top:5px}.band-route-steps{grid-template-columns:1fr;gap:9px}.band-route-steps>a{min-height:0;padding:17px 16px;grid-template-columns:35px minmax(0,1fr) 18px}.band-route-steps strong{font-size:1.3rem;margin:2px 0 5px}.band-route-step-number{width:35px;height:35px}.guide-strip.band-route>a{min-height:88px}}
 @media(prefers-reduced-motion:reduce){.band-route-steps>a{transition:none}.band-route-steps>a:hover{transform:none}}
+
+/* 2026-11-10 River Valley band-rental score: original vector editorial
+   treatment of the existing four-question checklist. StayARV forest/brass
+   composition, NN/g scannable hierarchy, web.dev zero-request SVG graphics,
+   WCAG 2.2 focus visibility/reflow and touch target sizing. */
+.checklist.band-score{display:block;overflow:hidden;padding:0;margin:clamp(48px,7vw,88px) 0 42px;background:#10372e;border:1px solid #355a4a;border-radius:23px;box-shadow:0 26px 56px #092e262f;scroll-margin-top:28px}
+.band-score-cover{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(200px,.8fr);align-items:center;gap:clamp(22px,4vw,50px);padding:clamp(32px,5vw,65px);min-height:390px;color:#fff9ec;background:linear-gradient(105deg,#0a2e28fc 0%,#123d33f2 55%,#174035bd 100%),url("assets/lake-dardanelle-sunset.jpg") center 55%/cover no-repeat}
+.band-score-cover:before{content:"";position:absolute;inset:14px;z-index:-1;border:1px solid #f3d49e63;border-radius:14px;pointer-events:none}
+.band-score-intro{position:relative;z-index:1;min-width:0}
+.band-score-kicker{color:#f3d79f;font-size:.68rem;font-weight:850;letter-spacing:.15em;line-height:1.5;margin:0 0 20px}
+.band-score-intro .eyebrow{color:#f9d9a1;margin:0}
+.band-score-intro h2{font:400 clamp(2.65rem,5vw,5rem)/1.035 Georgia,"Times New Roman",serif;max-width:14ch;letter-spacing:-.06em;color:#fff7e9;margin:15px 0 22px;text-wrap:balance}
+.band-score-intro .checklist-intro{margin:0 0 24px;max-width:55ch;font-size:clamp(.94rem,1.3vw,1.05rem);line-height:1.65;color:#e6f0e6}
+.band-score-intro small{display:block;margin-top:20px;color:#dde6d9;font-size:.68rem;line-height:1.5}
+.band-score-nav{display:flex;flex-wrap:wrap;gap:10px}
+.band-score-nav a{display:inline-flex;align-items:center;justify-content:space-between;gap:15px;min-height:48px;padding:12px 17px;border-radius:10px;background:#f3d497;color:#173b2d;text-decoration:none;font-weight:850;font-size:.83rem;transition:background .18s,transform .18s}
+.band-score-nav a:nth-child(2){background:#ffffff1b;border:1px solid #ffffff85;color:#fff}
+.band-score-nav a:hover{background:#ffe8b6;transform:translateY(-2px)}
+.band-score-nav a:nth-child(2):hover{background:#ffffff32}
+.band-score-nav a:focus-visible,.band-score-foot a:focus-visible{outline:3px solid #ffde90;outline-offset:4px}
+.band-score-art{display:grid;justify-items:center;align-content:center;gap:8px;min-width:0}
+.band-score-art>span{font-size:.65rem;color:#ffe6b4;font-weight:850;letter-spacing:.15em}
+.band-score-art svg{display:block;width:min(100%,360px);height:auto;filter:drop-shadow(0 16px 25px #061c1577)}
+.band-score-art strong{color:#f8e0b3;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-align:center}
+.band-score-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:#5a7d6b}
+.band-score-item{display:flex;flex-direction:column;min-width:0;min-height:264px;padding:clamp(21px,2.8vw,34px);background:#f8f5e9}
+.band-score-item:nth-child(2){background:#eaf2e8}.band-score-item:nth-child(3){background:#faf0dc}.band-score-item:nth-child(4){background:#e7ede3}
+.band-score-item-top{display:flex;justify-content:space-between;gap:12px;align-items:start;margin-bottom:20px;color:#375e4b}
+.band-score-item-top b{font-size:.66rem;letter-spacing:.13em;line-height:1.5}
+.band-score-item-top i{font:italic 400 2.55rem/1 Georgia,serif;color:#a6814a}
+.band-score-item h3{margin:auto 0 12px;color:#123b30;font:400 clamp(1.5rem,2.1vw,2.1rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.045em}
+.band-score-item p{margin:0;color:#3c5b4a;font-size:.84rem;line-height:1.65}
+.band-score-foot{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:19px clamp(23px,4vw,45px);background:#143b30;color:#f1ddb6}
+.band-score-foot strong{font-size:.68rem;letter-spacing:.12em;line-height:1.5}
+.band-score-foot a{display:inline-flex;justify-content:center;align-items:center;gap:15px;min-height:44px;color:#fff6e5;font-size:.84rem;font-weight:850;text-underline-offset:4px}
+@media(max-width:990px){.band-score-cover{grid-template-columns:minmax(0,1fr) minmax(165px,.5fr)}.band-score-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.band-score-item{min-height:220px}}
+@media(max-width:690px){.checklist.band-score{border-radius:17px;margin:42px 0}.band-score-cover{grid-template-columns:1fr;min-height:0;padding:32px 23px 36px}.band-score-cover:before{inset:9px}.band-score-intro h2{font-size:clamp(2.5rem,10vw,3.6rem)}.band-score-art{display:none}.band-score-nav{flex-direction:column}.band-score-nav a{justify-content:space-between}.band-score-grid{grid-template-columns:1fr}.band-score-item{min-height:0;padding:23px 24px}.band-score-item-top{margin-bottom:11px}.band-score-item h3{font-size:1.8rem;margin:0 0 9px}.band-score-foot{display:grid;gap:8px;padding:21px 24px}.band-score-foot a{justify-content:start}}
+@media(prefers-reduced-motion:reduce){.band-score-nav a{transition:none}.band-score-nav a:hover{transform:none}}
+@media print{.checklist.band-score{box-shadow:none;border:1px solid #777;background:#fff;break-inside:avoid}.band-score-cover{background:#fff!important;color:#153e30;min-height:0;padding:26px}.band-score-cover:before,.band-score-art{display:none}.band-score-intro :is(h2,.eyebrow,.checklist-intro,.band-score-kicker,small){color:#153e30!important}.band-score-nav a{background:#fff!important;border:1px solid #888;color:#153e30!important}.band-score-grid{background:#fff}.band-score-item{min-height:0;background:#fff!important;border:1px solid #aaa;break-inside:avoid}.band-score-foot{background:#fff;color:#153e30}.band-score-foot a{color:#153e30}}
+
 </style>
 </head>
 <body>
@@ -901,20 +941,46 @@ Could you confirm current availability, the monthly price and all fees, how paym
       </div>
     </section>
 
-    <section class="checklist" id="questions" aria-labelledby="questions-title">
-      <div>
-        <p class="eyebrow">Before you enroll</p>
-        <h2 id="questions-title">Four questions worth asking.</h2>
-        <p class="checklist-intro">Instrument programs are not short-term event sound-equipment rentals. Confirm the agreement that fits your student and school.</p>
+    <section class="checklist band-score" id="questions" aria-labelledby="questions-title">
+      <div class="band-score-cover">
+        <div class="band-score-intro">
+          <p class="band-score-kicker">RIVER VALLEY / THE STUDENT BAND FIELD NOTES · FOUR MEASURES</p>
+          <p class="eyebrow">Before you enroll</p>
+          <h2 id="questions-title">Four questions worth asking.</h2>
+          <p class="checklist-intro">Instrument programs are not short-term event sound-equipment rentals. Confirm the agreement that fits your student and school.</p>
+          <nav class="band-score-nav" aria-label="Band rental planning shortcuts">
+            <a href="#contract-scorecard">Return to quote comparison <span aria-hidden="true">↗</span></a>
+            <a href="#inquiry-desk">Prepare a rental inquiry <span aria-hidden="true">↗</span></a>
+          </nav>
+          <small>Conceptual musical artwork · Not rental inventory, a contract or a school recommendation.</small>
+        </div>
+        <div class="band-score-art" aria-hidden="true">
+          <span>THE RENTAL SOUND CHECK</span>
+          <svg viewBox="0 0 360 270" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
+            <circle cx="171" cy="125" r="116" stroke="#F6DFB0" stroke-opacity=".3" stroke-width="2"/>
+            <circle cx="171" cy="125" r="90" stroke="#F6DFB0" stroke-opacity=".15" stroke-width="2"/>
+            <rect x="30" y="66" width="285" height="154" rx="9" fill="#F7EBD2" stroke="#D4BB82" stroke-width="3" transform="rotate(-7 30 66)"/>
+            <path d="m48 97 265-32M51 117 316 85M54 137 319 105M57 157 322 125M60 177 325 145" stroke="#3C5A4D" stroke-width="2.5" opacity=".66"/>
+            <path d="m88 77 10 85m51-91 10 76m55-82 10 71m54-74 10 69" stroke="#204735" stroke-width="4" stroke-linecap="round"/>
+            <ellipse cx="98" cy="162" rx="18" ry="10" transform="rotate(-15 98 162)" fill="#224A36"/>
+            <ellipse cx="159" cy="147" rx="18" ry="10" transform="rotate(-15 159 147)" fill="#224A36"/>
+            <ellipse cx="224" cy="136" rx="18" ry="10" transform="rotate(-15 224 136)" fill="#224A36"/>
+            <ellipse cx="288" cy="131" rx="18" ry="10" transform="rotate(-15 288 131)" fill="#224A36"/>
+            <circle cx="297" cy="205" r="40" fill="#F1CB88" stroke="#173D31" stroke-width="4"/>
+            <path d="m278 205 13 13 27-30" stroke="#173D31" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <strong>Cost / Care / Delivery / School fit</strong>
+        </div>
       </div>
-      <div class="checklist-grid">
-        <div class="check-item"><span>01 / COST</span><h3>What is the total cost?</h3><p>Ask about monthly payments, fees, purchase credits and the full ownership amount.</p></div>
-        <div class="check-item"><span>02 / CARE</span><h3>What repairs are covered?</h3><p>Check maintenance, replacement and damage coverage before signing.</p></div>
-        <div class="check-item"><span>03 / LOGISTICS</span><h3>How does delivery work?</h3><p>Confirm pickup, school delivery routes and return arrangements for your address.</p></div>
-        <div class="check-item"><span>04 / SCHOOL FIT</span><h3>Is it the right instrument?</h3><p>Verify the required model, instrument selection and compatibility with the band program.</p></div>
+      <div class="band-score-grid" aria-label="Questions to ask before renting an instrument">
+        <article class="band-score-item"><span class="band-score-item-top"><b>01 / COST</b><i aria-hidden="true">Ⅰ</i></span><h3>What is the total cost?</h3><p>Ask about monthly payments, fees, purchase credits and the full ownership amount.</p></article>
+        <article class="band-score-item"><span class="band-score-item-top"><b>02 / CARE</b><i aria-hidden="true">Ⅱ</i></span><h3>What repairs are covered?</h3><p>Check maintenance, replacement and damage coverage before signing.</p></article>
+        <article class="band-score-item"><span class="band-score-item-top"><b>03 / LOGISTICS</b><i aria-hidden="true">Ⅲ</i></span><h3>How does delivery work?</h3><p>Confirm pickup, school delivery routes and return arrangements for your address.</p></article>
+        <article class="band-score-item"><span class="band-score-item-top"><b>04 / SCHOOL FIT</b><i aria-hidden="true">Ⅳ</i></span><h3>Is it the right instrument?</h3><p>Verify the required model, instrument selection and compatibility with the band program.</p></article>
       </div>
+      <div class="band-score-foot"><strong>FOUR QUESTIONS · ONE CLEARER FIRST CALL</strong><a href="#providers">See all three band programs <span aria-hidden="true">↗</span></a></div>
     </section>
-    <aside class="note">Independent directory. Rent-to-own plans differ from temporary instrument rentals; ask about total cost, fees, repairs, return policies and school compatibility. <a href="sms:+14799707301">Suggest a correction</a>.</aside>
+        <aside class="note">Independent directory. Rent-to-own plans differ from temporary instrument rentals; ask about total cost, fees, repairs, return policies and school compatibility. <a href="sms:+14799707301">Suggest a correction</a>.</aside>
   </main>
   <footer class="wrap"><span>Russellville.Rent · Independent local rental directory</span><a href="/">Return to homepage</a></footer>
 
