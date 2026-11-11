@@ -177,6 +177,32 @@ footer a{font-weight:700}
 @media(max-width:620px){.recovery-atlas{padding-bottom:58px}.recovery-atlas-shell{border-radius:5px 20px 5px 20px}.recovery-atlas-hero{padding:40px 24px}.recovery-atlas-hero:before{inset:10px}.recovery-atlas-hero h2{font-size:clamp(2.5rem,11vw,3.7rem)}.recovery-atlas-inner{padding:20px 16px}.recovery-chapters{grid-template-columns:1fr;gap:10px}.recovery-chapter summary{min-height:120px;padding:20px 23px}.recovery-atlas-overview{align-items:flex-start;flex-direction:column}.recovery-finder{align-items:stretch;flex-direction:column;padding:15px}.recovery-finder button{width:100%}}
 @media(prefers-reduced-motion:reduce){.recovery-chapter[open] summary b{transform:none}}
 @media print{.recovery-atlas-shell{box-shadow:none}.recovery-atlas-hero{display:block;background:#fff;color:#1e4b38}.recovery-atlas-hero h2 em,.recovery-atlas-hero p:not(.recovery-atlas-kicker){color:#1e4b38}.recovery-finder{display:none!important}.recovery-chapters{grid-template-columns:1fr 1fr}.recovery-chapter{break-inside:avoid;box-shadow:none}}
+
+/* 2026-11-10 Contextual 404 route folio. NN/g visual hierarchy;
+   web.dev responsive design; WCAG 2.2 keyboard focus, reflow and targets. */
+.recovery-suggest[hidden]{display:none!important}
+.recovery-suggest{display:grid;grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr);margin-top:36px;overflow:hidden;border:1px solid #bbcebe;border-radius:23px;background:#fffdf6;box-shadow:0 20px 50px #143d3022}
+.recovery-suggest-cover{display:flex;flex-direction:column;justify-content:space-between;gap:25px;min-height:365px;padding:clamp(29px,4.4vw,53px);color:#fff9ec;background:linear-gradient(108deg,#103c34ee,#164436c9),url("/assets/lake-dardanelle-sunset.jpg") center 56%/cover no-repeat}
+.recovery-suggest-kicker{display:block;font-size:.66rem;font-weight:900;letter-spacing:.17em;color:#f4d399;text-transform:uppercase}
+.recovery-suggest h2{color:#fffaf0;font:400 clamp(2.3rem,4vw,4.25rem)/1.04 Georgia,serif;letter-spacing:-.06em;max-width:13ch;margin:26px 0 19px;text-wrap:balance}
+.recovery-suggest h2 em{font-weight:400;color:#f5d49c}
+.recovery-suggest-cover p{max-width:41ch;margin:0;color:#e8f0e6;font-size:.91rem;line-height:1.68}
+.recovery-suggest-cover small{display:block;border-top:1px solid #f5dbac81;padding-top:15px;color:#e9dfc9;font-size:.7rem;line-height:1.55}
+.recovery-suggest-right{padding:clamp(22px,3.5vw,45px);min-width:0}
+.recovery-suggest-overline{color:#856135;font-size:.7rem;font-weight:900;letter-spacing:.14em}
+.recovery-suggest-nav{display:grid;gap:12px;margin:26px 0 20px}
+.recovery-suggest-nav a{display:grid;grid-template-columns:38px minmax(0,1fr) 20px;align-items:center;gap:12px;min-height:76px;padding:13px 17px;border:1px solid #c9dacb;border-radius:13px;background:#edf4e9;color:#174634;text-decoration:none;transition:transform .18s,background-color .18s,border-color .18s}
+.recovery-suggest-nav a:nth-child(2){background:#f9f0df;border-color:#e4d0ae}
+.recovery-suggest-nav a:hover{transform:translateX(3px);background:#e2eede;border-color:#82a88b}
+.recovery-suggest-nav a:focus-visible{outline:3px solid #ad7326;outline-offset:4px}
+.recovery-suggest-nav .num{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:#184b38;color:#f5ddac;font:400 1.12rem Georgia,serif}
+.recovery-suggest-nav .name{font:400 clamp(1.13rem,1.7vw,1.5rem)/1.24 Georgia,serif;overflow-wrap:anywhere}
+.recovery-suggest-nav .arrow{color:#315f44;font-size:1.18rem}
+.recovery-suggest-right>p{color:#587060;font-size:.76rem;line-height:1.6;margin:0}
+@media(max-width:850px){.recovery-suggest{grid-template-columns:1fr}.recovery-suggest-cover{min-height:240px}.recovery-suggest h2{max-width:none;margin:16px 0}}
+@media(max-width:550px){.recovery-suggest{margin-top:24px;border-radius:17px}.recovery-suggest-cover{padding:29px 23px;min-height:0}.recovery-suggest h2{font-size:clamp(2.3rem,9vw,3.2rem)}.recovery-suggest-right{padding:24px 17px}.recovery-suggest-nav a{grid-template-columns:35px minmax(0,1fr) 19px;min-height:66px;gap:9px;padding:11px}.recovery-suggest-nav .num{width:35px;height:35px}.recovery-suggest-nav .name{font-size:1.12rem}}
+@media(prefers-reduced-motion:reduce){.recovery-suggest-nav a{transition:none}.recovery-suggest-nav a:hover{transform:none}}
+@media print{.recovery-suggest{box-shadow:none}.recovery-suggest-cover{background:#fff;color:#1b4738;min-height:0}.recovery-suggest-cover :is(h2,h2 em,p,small,.recovery-suggest-kicker){color:#1b4738}}
 </style>
 </head>
 <body>
@@ -205,7 +231,18 @@ footer a{font-weight:700}
     <span class="photo-caption">Lake Dardanelle scenery · Not a rental listing</span>
   </section>
   <div class="under-hero"><div class="shell"><strong aria-hidden="true">↗</strong><p><b>This address couldn't be found.</b> We haven't checked availability or reserved anything. These links take you to existing rental categories.</p></div></div>
-  <section class="routes shell" aria-labelledby="routes-title">
+  
+<!-- This folio is populated from the current atlas only when a URL has recognizable keywords. -->
+<section class="recovery-suggest shell" id="route-suggestions" aria-labelledby="suggestion-heading" hidden>
+ <div class="recovery-suggest-cover"><div><span class="recovery-suggest-kicker">THE RIVER VALLEY / YOUR NEXT TURN</span>
+ <h2 id="suggestion-heading">Maybe this is <em>your next turn.</em></h2>
+ <p id="suggestion-context">The address you tried resembles an existing rental category.</p></div>
+ <small>Lake Dardanelle scenery is editorial · These are directory links, not confirmed availability</small></div>
+ <div class="recovery-suggest-right"><strong class="recovery-suggest-overline">POSSIBLE CATEGORY MATCHES</strong>
+ <nav class="recovery-suggest-nav" id="suggestion-nav" aria-label="Suggested rental category destinations"></nav>
+ <p>Suggestions use words in the address and existing directory. If these are not right, browse all categories below.</p></div>
+</section>
+<section class="routes shell" aria-labelledby="routes-title">
     <div class="routes-heading"><div><p class="eyebrow">THE RIVER VALLEY / SIX WAYS BACK</p><h2 id="routes-title">Find another way <em>in.</em></h2></div><p>Keep your search moving. Browse a category, then contact its provider directly to verify availability, prices and terms.</p></div>
     <nav class="route-grid" aria-label="Popular rental category destinations">
       <a class="route-card" href="/long-term.html"><span class="route-top"><span>01 / SETTLE IN</span><span class="arrow" aria-hidden="true">↗</span></span><span class="route-art" aria-hidden="true"><svg viewBox="0 0 180 120" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round" focusable="false"><path d="M23 62 90 18l67 44M38 56v51h104V56M75 107V72h30v35M50 68h15m50 0h15"/><path d="M137 31h25m-12-12v24" opacity=".45"/></svg></span><h3>Homes & apartments</h3><p>Find a place to live in the River Valley.</p></a>
@@ -272,6 +309,60 @@ footer a{font-weight:700}
  finder.hidden=false;input.addEventListener('input',update);
  clear.addEventListener('click',()=>{input.value='';update();input.focus();});
  update();
+})();
+</script>
+
+<script>
+/* Progressive enhancement: no provider records, remote requests or user data stored. */
+(() => {
+ const panel=document.getElementById('route-suggestions');
+ const nav=document.getElementById('suggestion-nav');
+ const context=document.getElementById('suggestion-context');
+ if(!panel||!nav||!context)return;
+ let slug='';
+ try{slug=decodeURIComponent(location.pathname.split('/').filter(Boolean).pop()||'');}catch{return;}
+ slug=slug.replace(/\.html?$/i,'').replace(/[^a-zA-Z0-9_-]+/g,' ').replace(/[_-]+/g,' ').trim().slice(0,70);
+ const skip=new Set(['rent','rental','rentals','russellville','arkansas','near','local','page','index','html','with','from','and','the','for']);
+ const tokens=slug.toLowerCase().split(' ').filter(word=>word.length>2&&!skip.has(word));
+ if(!tokens.length)return;
+ const aliases={
+  home:'long-term',homes:'long-term',apartment:'long-term',apartments:'long-term',
+  kayak:'paddling',kayaks:'paddling',canoe:'paddling',paddleboard:'paddling',
+  camper:'rv-rentals',campers:'rv-rentals',motorhome:'rv-rentals',
+  campground:'camping',campsite:'camping',campsites:'camping',
+  wedding:'venues',ballroom:'venues',photobooth:'photo-booths',
+  warehouse:'storage',dumpster:'dumpsters',trailer:'trailers',
+  car:'cars',boat:'boats',stroller:'baby-gear',tuxedo:'formalwear',
+  wheelchair:'medical-equipment-rentals'
+ };
+ const candidates=[...document.querySelectorAll('.recovery-chapter li[data-terms]')].map(item=>{
+   const original=item.querySelector('a'),href=original?.getAttribute('href')||'';
+   if(!/^[a-z0-9-]+\.html$/i.test(href))return null;
+   const stem=href.slice(0,-5),label=original.children[1]?.textContent?.trim()||original.textContent.trim();
+   const title=' '+label.toLowerCase().replace(/[^a-z0-9]+/g,' ')+' ';
+   const description=' '+(item.dataset.terms||'').toLowerCase().replace(/[^a-z0-9]+/g,' ')+' ';
+   let score=0;
+   for(const token of tokens){
+     if(stem.split('-').includes(token))score+=7;
+     else if(stem.split('-').some(part=>part.length>2&&(part.startsWith(token)||token.startsWith(part))))score+=4;
+     if(title.includes(' '+token+' '))score+=5;
+     else if(description.includes(' '+token+' '))score+=2;
+     if(aliases[token]===stem)score+=10;
+   }
+   return {href,label,score};
+ }).filter(candidate=>candidate&&candidate.score>=3).sort((a,b)=>b.score-a.score||a.label.localeCompare(b.label));
+ if(!candidates.length)return;
+ const fragment=document.createDocumentFragment();
+ candidates.slice(0,3).forEach((item,i)=>{
+   const a=document.createElement('a');a.href='/'+item.href;
+   const num=document.createElement('span');num.className='num';num.textContent=String(i+1).padStart(2,'0');
+   const name=document.createElement('span');name.className='name';name.textContent=item.label;
+   const arrow=document.createElement('span');arrow.className='arrow';arrow.setAttribute('aria-hidden','true');arrow.textContent='↗';
+   a.append(num,name,arrow);fragment.append(a);
+ });
+ nav.append(fragment);
+ context.textContent='The address you tried ('+slug+') resembles these existing rental categories.';
+ panel.hidden=false;
 })();
 </script>
 </body>
