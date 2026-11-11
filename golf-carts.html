@@ -517,6 +517,70 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
  #providers .cart-route-nav>a{flex-basis:142px;padding:12px 13px}
 }
 @media(prefers-reduced-motion:reduce){#providers .cart-route-nav>a{transition:none}}
+
+/* 2026-11-10 / Scenic four-point pre-reservation field folio.
+   Compared live StayARV/Russellville.Rent. Visual grouping: NN/g visual hierarchy.
+   Adaptive layout: web.dev responsive design. Visible focus/touch targets: WCAG 2.2.
+   Landscape is existing local artwork; it does not depict an operator or confirm service. */
+.planning.planning-fieldfolio{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:0;margin-top:58px;padding:0;border:1px solid #b9ceba;border-radius:27px;overflow:hidden;background:#edf1e7;box-shadow:0 22px 48px #14392b24;isolation:isolate}
+.planning-fieldfolio-visual{min-width:0;min-height:570px;padding:clamp(25px,3.5vw,43px);display:flex;flex-direction:column;justify-content:space-between;position:relative;isolation:isolate;color:#fff;background:#0d3029}
+.planning-fieldfolio-visual:before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,#082620e8 0%,#10372a7a 48%,#082620f0 100%),url("assets/lake-dardanelle-sunset.jpg") center center/cover no-repeat}
+.planning-fieldfolio-visual:after{content:"";position:absolute;inset:24px;z-index:-1;pointer-events:none;border:1px solid #f4e7c15c;border-radius:13px}
+.planning-fieldfolio-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.61rem;line-height:1.4;font-weight:850;letter-spacing:.14em;color:#fff0c5}
+.planning-fieldfolio-copy{padding:48px 2px 55px}
+.planning-fieldfolio .planning-fieldfolio-copy .eyebrow{color:#f2d293;font-size:.72rem;letter-spacing:.2em}
+.planning-fieldfolio .planning-fieldfolio-copy h2{margin:14px 0 23px;font:400 clamp(2.8rem,5vw,4.45rem)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.055em;color:white;text-wrap:balance}
+.planning-fieldfolio-copy h2 em{font-weight:400;color:#ffde9d}
+.planning .planning-fieldfolio-copy p:not(.eyebrow){max-width:29ch;font-size:1.04rem;line-height:1.65;color:#f2f5ed}
+.planning.planning-fieldfolio .planning-fieldfolio-caption{position:relative;margin:0;font-size:.69rem;line-height:1.55;color:#ecf0de;max-width:36ch}
+.planning-fieldfolio-board{min-width:0;padding:clamp(26px,3.6vw,43px);display:flex;flex-direction:column;gap:24px}
+.planning-fieldfolio-board-head{display:flex;justify-content:space-between;gap:12px;padding-bottom:18px;border-bottom:1px solid #bdcfbf;color:#335e4c;font-size:.64rem;font-weight:850;letter-spacing:.14em}
+.planning-fieldfolio .checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;counter-reset:questions;margin:0}
+.planning-fieldfolio .checklist li{position:relative;counter-increment:questions;min-width:0;min-height:170px;display:flex;flex-direction:column;gap:22px;align-items:flex-start;justify-content:space-between;padding:22px 20px 21px;border-radius:15px;border:1px solid #d5dfcd;background:#fffdf8;color:#244b3b;font-size:clamp(.91rem,1.4vw,1.02rem);font-weight:720;line-height:1.46;box-shadow:0 5px 14px #17392c09}
+.planning-fieldfolio .checklist li:nth-child(2),.planning-fieldfolio .checklist li:nth-child(3){background:#dfe9db}
+.planning-fieldfolio .checklist li:before{content:counter(questions,decimal-leading-zero);width:46px;height:46px;display:grid;place-items:center;border-radius:50%;border:1px solid #b9cdb6;color:#2d604b;background:#f2f6ed;font:700 1.15rem/1 Georgia,serif}
+.planning-fieldfolio-next{margin-top:auto;padding-top:22px;border-top:1px solid #bdcfbf}
+.planning.planning-fieldfolio .planning-fieldfolio-next p{font-size:.83rem;line-height:1.6;color:#456454;margin:0 0 16px}
+.planning-fieldfolio-next p strong{color:#234938}
+.planning-fieldfolio-actions{display:flex;flex-wrap:wrap;gap:9px}
+.planning-fieldfolio-actions a{min-height:46px;display:inline-flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 17px;border:1px solid #1f4a3a;border-radius:9px;background:#1c4739;color:#fff;font-size:.77rem;line-height:1.2;font-weight:820;text-decoration:none;transition:background .18s ease,transform .18s ease}
+.planning-fieldfolio-actions a:last-child{background:transparent;color:#244b3b;border-color:#a5baa9}
+.planning-fieldfolio-actions a:hover{background:#2c6550;transform:translateY(-2px)}
+.planning-fieldfolio-actions a:last-child:hover{background:#dce7d9}
+.planning-fieldfolio-actions a:focus-visible{outline:3px solid #b27325;outline-offset:3px}
+@media(max-width:900px){
+ .planning.planning-fieldfolio{grid-template-columns:1fr}
+ .planning-fieldfolio-visual{min-height:365px}
+ .planning-fieldfolio-copy{padding:35px 2px}
+ .planning-fieldfolio .planning-fieldfolio-copy h2{font-size:clamp(2.8rem,8vw,4rem)}
+ .planning-fieldfolio .checklist li{min-height:145px}
+}
+@media(max-width:560px){
+ .planning.planning-fieldfolio{margin-top:38px;border-radius:19px}
+ .planning-fieldfolio-visual{min-height:360px;padding:25px}
+ .planning-fieldfolio-visual:after{inset:13px}
+ .planning-fieldfolio-top{font-size:.5rem}
+ .planning-fieldfolio-copy{padding:28px 0}
+ .planning-fieldfolio .planning-fieldfolio-copy h2{font-size:clamp(2.65rem,11vw,3.7rem)}
+ .planning-fieldfolio-board{padding:25px 18px;gap:17px}
+ .planning-fieldfolio .checklist{grid-template-columns:1fr;gap:9px}
+ .planning-fieldfolio .checklist li{min-height:0;flex-direction:row;align-items:center;gap:14px;padding:18px 16px}
+ .planning-fieldfolio .checklist li:before{flex:0 0 42px;width:42px;height:42px}
+ .planning-fieldfolio-actions{flex-direction:column}
+ .planning-fieldfolio-actions a{width:100%}
+}
+@media(prefers-reduced-motion:reduce){.planning-fieldfolio-actions a{transition:none}.planning-fieldfolio-actions a:hover{transform:none}}
+@media print{
+ .planning.planning-fieldfolio{display:block;box-shadow:none;border:1px solid #999;break-inside:avoid}
+ .planning-fieldfolio-visual{min-height:0;padding:18px;color:#173b32;background:none}
+ .planning-fieldfolio-visual:before,.planning-fieldfolio-visual:after{display:none}
+ .planning-fieldfolio .planning-fieldfolio-copy h2,.planning-fieldfolio-copy h2 em,.planning .planning-fieldfolio-copy p:not(.eyebrow),.planning.planning-fieldfolio .planning-fieldfolio-caption,.planning-fieldfolio .planning-fieldfolio-copy .eyebrow{color:#173b32}
+ .planning-fieldfolio-copy{padding:8px 0}
+ .planning-fieldfolio-top{color:#173b32}
+ .planning-fieldfolio-board{padding:16px}
+ .planning-fieldfolio-actions{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -864,9 +928,32 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
 </article>
 </div>
 </section>
-<section class="planning" id="before-you-reserve" aria-labelledby="planning-title">
-<div><p class="eyebrow">Before you reserve</p><h2 id="planning-title">Four things to confirm</h2><p>Ask these questions before paying or arranging an event around a golf cart rental.</p></div>
-<ol class="checklist"><li>Can you deliver to Russellville or is pickup required?</li><li>Which models and quantities are available for my dates?</li><li>What are the rental price, transport fees and deposit?</li><li>What insurance, driver and return terms apply?</li></ol>
+<section class="planning planning-fieldfolio" id="before-you-reserve" aria-labelledby="planning-title">
+  <div class="planning-fieldfolio-visual">
+    <div class="planning-fieldfolio-top"><span>R↗ / RIVER VALLEY RENTAL GUIDE</span><span>04 / FINAL CHECK</span></div>
+    <div class="planning-fieldfolio-copy">
+      <p class="eyebrow">Before you reserve</p>
+      <h2 id="planning-title">Four things<br><em>to confirm.</em></h2>
+      <p>Ask these questions before paying or arranging an event around a golf cart rental.</p>
+    </div>
+    <p class="planning-fieldfolio-caption">Lake Dardanelle scenery · Not a rental fleet, available cart or delivery promise</p>
+  </div>
+  <div class="planning-fieldfolio-board">
+    <div class="planning-fieldfolio-board-head"><span>YOUR FOUR-POINT CALL SHEET</span><span>01 — 04</span></div>
+    <ol class="checklist">
+      <li>Can you deliver to Russellville or is pickup required?</li>
+      <li>Which models and quantities are available for my dates?</li>
+      <li>What are the rental price, transport fees and deposit?</li>
+      <li>What insurance, driver and return terms apply?</li>
+    </ol>
+    <div class="planning-fieldfolio-next">
+      <p><strong>Nothing is reserved here.</strong> All six operators are outside Russellville; confirm service coverage, inventory and charges directly before making plans.</p>
+      <div class="planning-fieldfolio-actions">
+        <a href="#request-title">Prepare your inquiry <span aria-hidden="true">↗</span></a>
+        <a href="#providers">See provider contacts <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </div>
 </section>
 <p class="note">Independent local directory. Rental service and Russellville delivery are not guaranteed. Confirm current inventory, transport coverage, pricing, availability and terms directly with each provider. <a href="sms:+14799707301">Suggest a correction</a>.</p>
 <footer>Russellville.Rent · <a href="/">Return to homepage</a></footer>
