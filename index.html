@@ -2840,6 +2840,156 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
  .rental-card[data-category="commercial"]>.office-folio>span{color:#fff}
 }
 
+
+/* 2026-11-11: Cross-category event field guide.
+   StayARV's immersive place-led cover informs the large local editorial panel;
+   adapted to six independent rental directories, never an invented package.
+   NN/g https://www.nngroup.com/articles/visual-hierarchy-ux-definition/
+   Google web.dev responsive layout and W3C WCAG 2.2 focus/reflow/target size.
+   All 35 original categories, rental records, filters, scripts, and workflow unchanged. */
+.event-journey{
+  display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);
+  align-items:stretch;overflow:hidden;min-width:0;
+  margin:clamp(42px,6vw,78px) 0 40px;
+  border-radius:24px;background:#f8f5e8;
+  border:1px solid #b8cbbd;box-shadow:0 22px 57px #12372d22;
+}
+.event-journey-cover{
+  position:relative;isolation:isolate;display:flex;flex-direction:column;
+  justify-content:space-between;min-height:610px;min-width:0;
+  padding:clamp(29px,4.4vw,57px);
+  color:#fff9ed;
+  background:linear-gradient(150deg,#0b2c29f5 0%,#124337ec 42%,#173c36b5 100%),
+    url("assets/downtown-russellville-sunset.jpg") center 58%/cover no-repeat;
+}
+.event-journey-cover::before{
+  content:"";position:absolute;inset:16px;border:1px solid #e6d7b66e;
+  border-radius:15px;pointer-events:none;z-index:-1;
+}
+.event-journey-kicker{
+  display:block;position:relative;z-index:1;max-width:30ch;
+  font-size:.68rem;letter-spacing:.18em;line-height:1.6;font-weight:850;
+  color:#f7dba5;
+}
+.event-journey-emblem{
+  position:absolute;right:clamp(32px,4vw,54px);top:clamp(42px,5vw,68px);
+  display:grid;place-items:center;width:78px;height:78px;
+  border:1px solid #f9dfab8c;border-radius:50%;
+  color:#f8e9c8;font:400 2.7rem/1 Georgia,serif;letter-spacing:-.11em;
+}
+.event-journey-emblem span{font-size:1.3rem;align-self:start;letter-spacing:0}
+.event-journey-cover-copy{position:relative;max-width:470px;margin-top:auto;padding-top:65px}
+.event-journey-number{
+  margin:0 0 20px;color:#edd69d;
+  font-size:.73rem;letter-spacing:.18em;font-weight:800;
+}
+.event-journey h2{
+  margin:0 0 24px;max-width:12ch;color:#fff9ef;
+  font:400 clamp(2.85rem,4.9vw,5.3rem)/1.035 Georgia,"Times New Roman",serif;
+  letter-spacing:-.065em;text-wrap:balance;
+}
+.event-journey h2 em{color:#f4d59d;font-weight:400}
+.event-journey-cover-copy>p:not(.event-journey-number){
+  max-width:40ch;margin:0 0 25px;font-size:.96rem;line-height:1.8;color:#e4f0e5;
+}
+.event-journey-primary{
+  display:inline-flex;align-items:center;justify-content:space-between;gap:25px;
+  min-height:52px;padding:13px 19px;border-radius:8px;
+  color:#183c30;background:#f3d697;text-decoration:none;
+  font-size:.84rem;font-weight:850;
+  transition:background-color .18s ease,transform .18s ease;
+}
+.event-journey-primary:hover{background:#ffeba9;transform:translateY(-2px)}
+.event-journey-photo-note{
+  position:relative;margin-top:38px;padding-top:17px;
+  border-top:1px solid #f1e8ca63;color:#e1e8d9;
+  font-size:.68rem;letter-spacing:.02em;line-height:1.5;
+}
+.event-journey-directory{min-width:0;padding:clamp(25px,3.5vw,45px) clamp(21px,3.5vw,44px)}
+.event-journey-directory-head{border-bottom:1px solid #cadacb;padding-bottom:22px;margin-bottom:16px}
+.event-journey-directory-head>span{
+  display:block;color:#6f6248;font-size:.67rem;line-height:1.5;
+  font-weight:850;letter-spacing:.16em;
+}
+.event-journey-directory-head>strong{
+  display:block;margin:12px 0 9px;color:#163f34;
+  font:400 clamp(1.7rem,2.35vw,2.35rem)/1.14 Georgia,"Times New Roman",serif;
+  letter-spacing:-.045em;
+}
+.event-journey-directory-head>p{margin:0;max-width:52ch;color:#496457;font-size:.83rem;line-height:1.65}
+.event-journey-routes{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+.event-journey-routes a{
+  position:relative;min-width:0;min-height:124px;display:flex;flex-direction:column;
+  justify-content:space-between;gap:13px;
+  padding:17px 16px 15px;border:1px solid #cad8cb;border-radius:11px;
+  text-decoration:none;background:#fffefa;color:#164233;
+  transition:border-color .18s ease,background-color .18s ease,transform .18s ease;
+}
+.event-journey-routes a:nth-child(2),.event-journey-routes a:nth-child(5){background:#e8f0e7}
+.event-journey-routes a:nth-child(3){background:#e9e7d8}
+.event-journey-routes a:hover{border-color:#467a5e;background:#f4f1de;transform:translateY(-2px)}
+.event-journey-route-number{
+  font-size:.62rem;line-height:1.4;font-weight:850;
+  color:#5d7666;letter-spacing:.10em;
+}
+.event-journey-routes strong{
+  display:block;max-width:18ch;padding-right:10px;
+  font-size:clamp(.92rem,1.12vw,1.06rem);line-height:1.28;letter-spacing:-.024em;
+}
+.event-journey-route-arrow{
+  position:absolute;right:14px;bottom:13px;font-size:1.13rem;color:#2f6d4b;
+}
+.event-journey :is(a):focus-visible{outline:3px solid #a46117;outline-offset:4px;z-index:2}
+.event-journey-caveat{
+  margin:17px 0 0;color:#53665a;font-size:.7rem;line-height:1.7;
+}
+@media(max-width:930px){
+  .event-journey{grid-template-columns:1fr}
+  .event-journey-cover{min-height:400px}
+  .event-journey-cover-copy{max-width:620px}
+  .event-journey h2{max-width:17ch;font-size:clamp(2.75rem,5.9vw,4.5rem)}
+  .event-journey-directory{padding:30px}
+  .event-journey-routes{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:650px){
+  .event-journey{margin:38px 0 30px;border-radius:16px}
+  .event-journey-cover{min-height:420px;padding:30px 23px}
+  .event-journey-cover::before{inset:9px;border-radius:10px}
+  .event-journey-kicker{max-width:22ch;font-size:.59rem}
+  .event-journey-emblem{width:54px;height:54px;right:28px;top:35px;font-size:1.85rem}
+  .event-journey-emblem span{font-size:.95rem}
+  .event-journey-cover-copy{padding-top:55px}
+  .event-journey h2{font-size:clamp(2.65rem,10.5vw,3.6rem)}
+  .event-journey-cover-copy>p:not(.event-journey-number){font-size:.88rem}
+  .event-journey-primary{width:100%}
+  .event-journey-photo-note{margin-top:25px}
+  .event-journey-directory{padding:25px 18px}
+  .event-journey-routes{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .event-journey-routes a{min-height:120px;padding:15px 13px}
+  .event-journey-routes strong{font-size:.89rem}
+}
+@media(max-width:390px){
+  .event-journey-routes{grid-template-columns:1fr}
+  .event-journey-routes a{min-height:81px;gap:9px}
+  .event-journey-route-arrow{bottom:15px}
+}
+@media(prefers-reduced-motion:reduce){
+  .event-journey-primary,.event-journey-routes a{transition:none}
+  .event-journey-primary:hover,.event-journey-routes a:hover{transform:none}
+}
+@media print{
+  .event-journey{display:block;border:1px solid #777;box-shadow:none}
+  .event-journey-cover{min-height:0;background:#fff!important;color:#183c31!important;padding:20px}
+  .event-journey-cover::before,.event-journey-emblem{display:none}
+  .event-journey-cover :is(h2,h2 em,p,span){color:#183c31!important}
+  .event-journey-primary{color:#183c31;background:#fff;border:1px solid #999}
+  .event-journey-directory{padding:20px}
+  .event-journey-routes a{min-height:0;break-inside:avoid}
+}
+
 </style>
 </head>
 <body>
@@ -3009,6 +3159,37 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   </div>
   <p class="discovery-caption">River Valley photographs and original illustrative scenes are for navigation—not pictures of rental providers or proof of availability.</p>
 
+</section>
+
+<!-- Event field guide: cross-category navigation only; no event package, provider endorsement or booking promise. -->
+<section class="event-journey" id="event-field-guide" aria-labelledby="event-journey-title">
+  <div class="event-journey-cover">
+    <span class="event-journey-kicker">THE RIVER VALLEY / ONE EVENT, SIX PATHS</span>
+    <span class="event-journey-emblem" aria-hidden="true">R<span>↗</span></span>
+    <div class="event-journey-cover-copy">
+      <p class="event-journey-number">FIELD GUIDE / 01</p>
+      <h2 id="event-journey-title">Bring the people.<br><em>Find the pieces.</em></h2>
+      <p>A wedding, school gathering or neighborhood celebration can mean more than one rental. Start with the big decisions, then explore the details.</p>
+      <a href="venues.html" class="event-journey-primary">Start with a venue <span aria-hidden="true">↗</span></a>
+    </div>
+    <span class="event-journey-photo-note">Downtown Russellville scenery · Not a pictured rental venue</span>
+  </div>
+  <div class="event-journey-directory">
+    <div class="event-journey-directory-head">
+      <span>THE EVENT PLANNING DESK</span>
+      <strong>Six ways to build the day.</strong>
+      <p>Open each existing category to compare providers and ask about services, delivery, availability and full prices.</p>
+    </div>
+    <nav class="event-journey-routes" aria-label="Event planning rental categories">
+      <a href="venues.html"><span class="event-journey-route-number">01 / THE PLACE</span><strong>Venues &amp; gathering spaces</strong><span class="event-journey-route-arrow" aria-hidden="true">↗</span></a>
+      <a href="party.html"><span class="event-journey-route-number">02 / THE SETUP</span><strong>Party equipment &amp; supplies</strong><span class="event-journey-route-arrow" aria-hidden="true">↗</span></a>
+      <a href="audio-visual.html"><span class="event-journey-route-number">03 / THE ATMOSPHERE</span><strong>Sound, lights &amp; screens</strong><span class="event-journey-route-arrow" aria-hidden="true">↗</span></a>
+      <a href="photo-booths.html"><span class="event-journey-route-number">04 / THE MEMORIES</span><strong>Photo booths</strong><span class="event-journey-route-arrow" aria-hidden="true">↗</span></a>
+      <a href="restrooms.html"><span class="event-journey-route-number">05 / THE PRACTICALS</span><strong>Portable restrooms</strong><span class="event-journey-route-arrow" aria-hidden="true">↗</span></a>
+      <a href="stages.html"><span class="event-journey-route-number">06 / THE PROGRAM</span><strong>Stages &amp; platforms</strong><span class="event-journey-route-arrow" aria-hidden="true">↗</span></a>
+    </nav>
+    <p class="event-journey-caveat">Independent rental directories, not a bundled service. Categories may include regional providers. Confirm every provider's service area and terms directly.</p>
+  </div>
 </section>
 <div class="atlas-entry">
  <a href="#browse" data-atlas-open class="atlas-entry-link">
