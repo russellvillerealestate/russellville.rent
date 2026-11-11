@@ -2637,6 +2637,29 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 }
 @media print{.mobile-rental-dock{display:none!important}body{padding-bottom:0!important}}
 
+
+/* 2026-11-11: Unify mobile docks: functional search/saved dock when ready;
+   fallback anchor dock without scripts. StayARV forest/brass inspiration.
+   Consulted NN/g navigation, web.dev reflow, W3C WCAG 2.2 focus. */
+@media(max-width:600px){
+  body:has(#mobile-dock:not([hidden])) .mobile-rental-dock{display:none}
+  .mobile-dock:not([hidden]){z-index:92;background:linear-gradient(112deg,#0d322a,#1b4a3b);border:1px solid #e4c68a;box-shadow:0 14px 35px #08231c80,0 0 0 1px #ffffff18 inset}
+  .mobile-dock a{color:#f4f5eb;font-size:.72rem;min-height:62px;transition:background-color .16s ease,color .16s ease}
+  .mobile-dock a:hover{background:#ffffff1d;color:#fff}
+  .mobile-dock a:focus-visible{outline:3px solid #f8d991;outline-offset:-2px}
+  .mobile-dock a.mobile-dock-search{background:#f1d396;color:#15382e;box-shadow:0 4px 12px #061f1940}
+  .mobile-dock a.mobile-dock-search:hover{background:#ffe6ae;color:#15382e}
+  .mobile-dock a.mobile-dock-search:focus-visible{outline-color:#17382e}
+  .mobile-dock a.mobile-dock-saved{color:#f4f5eb}
+  .mobile-dock a.mobile-dock-saved:hover{background:#ffffff1d;color:#fff}
+  .mobile-dock .mobile-saved-count{background:#e7d4a8;color:#183a30}
+  .mobile-dock a.mobile-dock-saved[data-has-saved="true"] .mobile-saved-count{background:#f1d396;color:#163a2e}
+  body:has(.mobile-directory-menu[open]) .mobile-dock:not([hidden]),
+  body:has(#mobile-search-sheet[open]) .mobile-dock:not([hidden]){visibility:hidden;pointer-events:none}
+  body{padding-bottom:calc(103px + env(safe-area-inset-bottom,0px))}
+}
+@media(max-width:600px) and (max-height:400px){.mobile-rental-dock{display:none}body{padding-bottom:0}}
+@media(prefers-reduced-motion:reduce){.mobile-dock a{transition:none}}
 </style>
 </head>
 <body>
