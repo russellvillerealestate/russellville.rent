@@ -655,6 +655,106 @@ h1{font-size:clamp(3.4rem,6.4vw,6.2rem);line-height:1.035;max-width:12ch;letter-
  #programs .folio-copy,#programs .program-card--ican .folio-copy{display:block;padding:15px}
 }
 
+
+/* 2026-11-10 | Call-first field card: a legible, printable handoff to lending
+   program contacts, not a photograph of stock or a medical recommendation.
+   Live inspiration: stayarv.com / russellville.rent. Research:
+   NN/g 5 principles visual design (reviewed 2026-09-01);
+   web.dev responsive design basics; W3C WCAG 2.2 focus/target size.
+   No provider details, program conditions, or JavaScript altered. */
+.steps{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);align-items:stretch;
+ gap:clamp(22px,4vw,58px);padding:clamp(24px,3.8vw,50px);
+ background:linear-gradient(101deg,#0b302af5 0%,#12483ce8 66%,#1d5242db 100%),
+ url("assets/lake-dardanelle-sunset.jpg") center/cover no-repeat}
+.steps:before{inset:14px;border-color:#e9e0bf4d}
+.steps-copy{position:relative;display:flex;flex-direction:column;align-items:flex-start;
+ justify-content:center;min-width:0;padding:clamp(5px,2vw,24px) 0}
+.steps-masthead{display:flex;justify-content:space-between;align-items:center;gap:18px;
+ width:100%;margin:0 0 clamp(40px,5vw,80px);padding-bottom:14px;
+ border-bottom:1px solid #ddedda66;color:#f4ddb0;font-size:.64rem;
+ font-weight:850;letter-spacing:.15em;line-height:1.6}
+.steps-masthead span{font:400 1.9rem/1 Georgia,serif;color:#f6d996}
+.steps .eyebrow{font-size:.74rem}
+.steps h2{max-width:13ch;font-size:clamp(2.9rem,4.35vw,4.5rem);line-height:1.04}
+.steps-intro{max-width:47ch;font-size:.98rem;line-height:1.68;margin-bottom:24px}
+.steps-actions{display:flex;flex-wrap:wrap;align-items:center;gap:11px;margin-bottom:clamp(25px,4vw,52px)}
+.steps-actions a{display:inline-flex;align-items:center;justify-content:center;gap:16px;
+ min-height:48px;padding:10px 17px;border-radius:999px;text-decoration:none;
+ font-size:.82rem;line-height:1.35;font-weight:800;transition:background .18s,transform .18s}
+.steps-primary-link{background:#f0d095;color:#153c32}
+.steps-primary-link:hover{background:#ffe6b7;transform:translateY(-2px)}
+.steps-secondary-link{border:1px solid #e5ecdabb;color:#fff;background:#092d2788}
+.steps-secondary-link:hover{background:#ffffff25;transform:translateY(-2px)}
+.steps-actions a:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.steps-place{margin-top:auto;max-width:36ch}
+.steps-paper{position:relative;align-self:center;width:100%;padding:clamp(22px,2.8vw,37px);
+ background:#fff9eb;color:#173b32;border:1px solid #f7e5bc;border-radius:5px 25px 24px 24px;
+ box-shadow:0 24px 50px #031b1899,0 0 0 9px #d5dfcb1c;transform:rotate(1deg)}
+.steps-paper:before{content:"";position:absolute;right:0;top:0;width:40px;height:40px;
+ background:linear-gradient(45deg,#e8d3a8 50%,#173c32 51%);border-radius:0 24px 0 5px;
+ box-shadow:-2px 2px 7px #182e241c}
+.steps-paper-head{display:flex;justify-content:space-between;gap:15px;align-items:start;
+ margin:0 0 23px;padding:0 34px 13px 0;border-bottom:2px solid #294f4033;
+ color:#254e3a;font-size:.67rem;font-weight:850;line-height:1.5;letter-spacing:.13em}
+.steps-paper-head strong{color:#755329;white-space:nowrap}
+.steps-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:11px}
+.steps-grid>div,.steps-grid>div:nth-child(2),.steps-grid>div:nth-child(3){
+ position:relative;display:flex;flex-direction:column;justify-content:center;gap:6px;
+ min-height:124px;padding:17px 19px 17px clamp(62px,6.2vw,79px);
+ border:1px solid #d5e2d3;border-radius:13px;background:#fffdf8;
+ box-shadow:0 4px 12px #1b352a0b}
+.steps-grid>div:nth-child(2){background:#e9f1e7}
+.steps-grid>div:nth-child(3){background:#f9f0db}
+.steps-grid>div:before{position:absolute;left:16px;top:19px;display:grid;place-items:center;
+ width:36px;height:36px;border-radius:50%;background:#1c5541;color:#fff;
+ font:700 .78rem/1 system-ui,sans-serif;letter-spacing:.04em}
+.steps-grid>div:nth-child(1):before{content:"01"}
+.steps-grid>div:nth-child(2):before{content:"02"}
+.steps-grid>div:nth-child(3):before{content:"03"}
+.steps-grid strong{font-size:clamp(1.13rem,1.7vw,1.45rem);line-height:1.22}
+.steps-grid span{font-size:.86rem;line-height:1.54}
+.steps-paper-foot{margin:20px 0 0;padding-top:15px;border-top:1px solid #d7dccd;
+ color:#486055;font-size:.76rem;line-height:1.6}
+@media(max-width:920px){
+ .steps{grid-template-columns:1fr;gap:26px}
+ .steps-copy{padding:7px 0}
+ .steps-masthead{margin-bottom:24px}
+ .steps-intro{max-width:65ch}
+ .steps-actions{margin-bottom:22px}
+ .steps-paper{max-width:680px;transform:none}
+}
+@media(max-width:540px){
+ .steps{padding:23px 18px}
+ .steps:before{inset:8px}
+ .steps h2{font-size:clamp(2.55rem,10vw,3.25rem)}
+ .steps-paper{padding:22px 15px;border-radius:8px 18px 17px 17px}
+ .steps-paper:before{width:24px;height:24px;border-radius:0 15px 0 5px}
+ .steps-paper-head{font-size:.58rem;gap:6px;padding-right:22px}
+ .steps-grid>div,.steps-grid>div:nth-child(2),.steps-grid>div:nth-child(3){
+  min-height:0;padding:17px 13px 17px 55px}
+ .steps-grid>div:before{left:11px;top:16px;width:31px;height:31px}
+ .steps-actions a{width:100%}
+}
+@media(prefers-reduced-motion:reduce){.steps-actions a{transition:none}.steps-actions a:hover{transform:none}}
+@media print{
+ .steps{display:grid!important;grid-template-columns:1fr;gap:12px;
+  padding:14px!important;margin:25px 0!important;break-inside:avoid;
+  background:white!important;color:#173b32!important;border:1px solid #789081;box-shadow:none}
+ .steps:before,.steps-paper:before{display:none}
+ .steps-copy{display:block;padding:0}
+ .steps-masthead,.steps .eyebrow,.steps h2,.steps-intro,.steps-place{color:#173b32!important}
+ .steps-masthead{margin-bottom:8px}
+ .steps h2{font-size:1.65rem;margin:5px 0}
+ .steps-intro{font-size:.83rem}
+ .steps-actions{display:none}
+ .steps-place{display:none}
+ .steps-paper{transform:none;padding:12px;max-width:none;background:white!important;
+  color:#173b32!important;box-shadow:none;border:1px solid #789081}
+ .steps-grid>div,.steps-grid>div:nth-child(2),.steps-grid>div:nth-child(3){
+  min-height:0;background:white!important;box-shadow:none;break-inside:avoid}
+ .steps-grid>div:before{background:#e8eee7;color:#173b32}
+}
+
 </style>
 </head>
 <body>
@@ -766,7 +866,28 @@ h1{font-size:clamp(3.4rem,6.4vw,6.2rem);line-height:1.035;max-width:12ch;letter-
 </div>
 </article>
 </div></section>
-<section class="steps" id="before-you-go" aria-labelledby="steps-title"><div class="steps-copy"><p class="eyebrow">02 / Before you travel</p><h2 id="steps-title">Three things to ask first.</h2><p class="steps-intro">Call before making the trip. A quick conversation can establish what is available, who qualifies, and whether an item will be suitable before anyone leaves home.</p><span class="steps-place">River Valley scenic photograph · not a lending-program location</span></div><div class="steps-grid"><div><strong>01 · Is the item available?</strong><span>Ask about the exact equipment, size and condition. Local inventory may be limited.</span></div><div><strong>02 · How does the loan work?</strong><span>Confirm eligibility, loan duration and any pickup or return requirements.</span></div><div><strong>03 · Will it fit the user?</strong><span>Confirm safe fit and suitability with the program before using equipment.</span></div></div></section>
+<section class="steps" id="before-you-go" aria-labelledby="steps-title">
+  <div class="steps-copy">
+    <p class="steps-masthead">RIVER VALLEY / COMMUNITY RESOURCE FIELD CARD <span aria-hidden="true">R↗</span></p>
+    <p class="eyebrow">02 / Before you travel</p>
+    <h2 id="steps-title">Three things to ask first.</h2>
+    <p class="steps-intro">Call before making the trip. A quick conversation can establish what is available, who qualifies, and whether an item will be suitable before anyone leaves home.</p>
+    <div class="steps-actions" aria-label="Continue planning a lending request">
+      <a class="steps-primary-link" href="#call-studio">Prepare a call note <span aria-hidden="true">↗</span></a>
+      <a class="steps-secondary-link" href="#programs">Compare three programs <span aria-hidden="true">↗</span></a>
+    </div>
+    <span class="steps-place">River Valley scenic photograph · not a lending-program location</span>
+  </div>
+  <div class="steps-paper" aria-label="Three-question checklist for calling lending programs">
+    <div class="steps-paper-head"><span>THE CALL-FIRST CHECKLIST</span><strong>03 QUESTIONS</strong></div>
+    <div class="steps-grid">
+      <div><strong>01 · Is the item available?</strong><span>Ask about the exact equipment, size and condition. Local inventory may be limited.</span></div>
+      <div><strong>02 · How does the loan work?</strong><span>Confirm eligibility, loan duration and any pickup or return requirements.</span></div>
+      <div><strong>03 · Will it fit the user?</strong><span>Confirm safe fit and suitability with the program before using equipment.</span></div>
+    </div>
+    <p class="steps-paper-foot">This card is a conversation guide, not an equipment approval or inventory check. Call the program before visiting.</p>
+  </div>
+</section>
 <p class="note">Independent directory. Program inventory and terms can change. Verify equipment condition, size, safe fit, loan requirements, and pickup or delivery with each program. No program guarantees availability. <a href="sms:+14799707301">Suggest a correction</a>.</p>
 <footer><span>© 2026 Russellville.Rent · Independent rental directory</span><a href="/">Return to homepage ↗</a></footer>
 </div></main>
