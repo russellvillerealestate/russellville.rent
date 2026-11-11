@@ -505,6 +505,36 @@ html{scroll-padding-top:110px}
  #nearby .provider:nth-child(even) .card-content,#cold-storage .provider:nth-child(even) .card-content{
   grid-column:2;grid-row:1;padding:18px}
 }
+
+/* 2026-11-10 illustrated trailer handoff; before each redesign reviewed live
+ stayarv.com and russellville.rent; NN/g visual hierarchy
+ https://www.nngroup.com/articles/principles-visual-design/
+ Google web.dev responsive design https://web.dev/articles/responsive-web-design-basics
+ W3C WCAG 2.2 focus/targets https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/
+ Original provider facts, four questions, copy action, meter and link structure intact. */
+.preflight{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);margin:clamp(38px,6vw,70px) 0 40px;border:1px solid #b9ceb9;border-radius:7px 29px 7px 29px;box-shadow:0 22px 55px #0b2c2929}
+.preflight-intro{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:clamp(32px,4vw,52px);background:radial-gradient(circle at 90% 2%,#426e55,transparent 47%),linear-gradient(155deg,#113a35,#0e2d2e)}
+.preflight-intro::after{display:none}.preflight-intro .eyebrow{letter-spacing:.17em;text-transform:uppercase;font-size:.7rem}
+.preflight h2{font-size:clamp(2.9rem,4.4vw,5rem);max-width:12ch;line-height:1.01;letter-spacing:-.068em}
+.preflight-intro p{font-size:.97rem;line-height:1.7;max-width:38ch}.preflight-stamp{min-height:44px;background:#ffffff0c}
+.preflight-illustration{margin:30px 0 0;width:100%;overflow:hidden;border:1px solid #eed0a06b;border-radius:5px 20px 5px 20px;background:#1b453b}
+.preflight-illustration svg{display:block;width:100%;height:auto;aspect-ratio:720/330}
+.preflight-illustration figcaption{display:block;background:#0d302c;color:#ead9ae;font-size:.68rem;line-height:1.5;letter-spacing:.025em;padding:11px 16px}
+.preflight-panel{display:flex;flex-direction:column;justify-content:center;padding:clamp(27px,3.8vw,49px);background:#f8f7f0}
+.preflight-progress-head{padding-bottom:11px;border-bottom:1px solid #d6dfd1}.preflight progress{height:10px;margin:14px 0 25px}
+.preflight fieldset{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;counter-reset:preflight}
+.preflight-check{counter-increment:preflight;position:relative;display:flex;flex-direction:column;gap:17px;min-width:0;min-height:194px;padding:21px 18px;border:1px solid #d4dfd1;border-radius:5px 16px 5px 16px;background:#fffefa;box-shadow:0 5px 14px #173c310b;transition:border-color .18s,background .18s}
+.preflight-check::after{content:counter(preflight,decimal-leading-zero);position:absolute;right:17px;top:18px;color:#799b85;font:600 1.45rem/1 Georgia,serif;pointer-events:none}
+.preflight-check:focus-within{border-color:#a56b21}.preflight-check:has(input:checked){background:#e7f0e6;border-color:#6e9d7d}
+.preflight-check input{flex:0 0 auto;margin:0;width:30px;height:30px}
+.preflight-check-text strong{font:750 1.04rem/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;max-width:22ch}
+.preflight-check-text small{font-size:.8rem;line-height:1.55}.preflight-actions{margin-top:23px}
+.preflight-copy{border-radius:100px;min-height:48px;padding:13px 24px}
+@media(max-width:1050px){.preflight{grid-template-columns:1fr}.preflight-intro{min-height:0}.preflight-illustration{max-width:580px}.preflight h2{font-size:clamp(3.1rem,7vw,5rem)}}
+@media(max-width:580px){.preflight-intro{padding:29px 23px}.preflight-panel{padding:25px 20px}.preflight h2{font-size:clamp(2.65rem,10.5vw,3.8rem)}.preflight fieldset{grid-template-columns:1fr}.preflight-check{min-height:0;padding:18px 17px;gap:11px}.preflight-check-text strong{max-width:none}.preflight-illustration{margin-top:24px}}
+@media(prefers-reduced-motion:reduce){.preflight-check{transition:none}}
+@media print{.preflight{display:block;border-radius:0;box-shadow:none;border:1px solid #777;background:white;color:#111}.preflight-intro{background:white;color:#111;padding:20px}.preflight-intro h2,.preflight-intro p,.preflight-intro .eyebrow{color:#111}.preflight-illustration{display:none}.preflight-panel{padding:20px;background:white}.preflight-check{box-shadow:none;border-color:#999;break-inside:avoid}.preflight-stamp{color:#111;border-color:#999}}
+
 </style></head><body>
 <a class="skip-link" href="#main">Skip to trailer rentals</a>
 <header><nav class="nav" aria-label="Site navigation"><a class="logo" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← Browse all rentals</a></nav></header>
@@ -672,7 +702,27 @@ html{scroll-padding-top:110px}
 <section class="group" id="rent-to-own" aria-labelledby="program-title"><div class="section-heading"><div><span class="eyebrow">04 / Different agreement</span><h2 id="program-title">Rent-to-own, not short-term</h2></div><p>This dealer advertises a rent-to-own program, not a conventional short-term trailer rental.</p></div><div class="grid single"><article class="provider program" id="trailer-dispatch-rent-to-own-1"><div class="number" aria-hidden="true">10</div><div class="card-content"><p class="card-label">Russellville · Rent-to-own only</p><h3>Grace Pro Trailers — Rent-to-Own</h3><p>Russellville trailer dealer advertising a rent-to-own program alongside traditional purchase financing. Its inventory includes enclosed, cargo, concession and other trailers for sale; ask which models qualify for rent-to-own and confirm contract length, total cost, payment requirements and current eligibility directly. <strong>Not advertised as a short-term trailer rental.</strong></p><p class="detail">215 W Tacoma Ave, Russellville, AR 72801 · Local dealer; rent-to-own terms require confirmation</p><p><a href="tel:+14792808690">479-280-8690</a> &nbsp; · &nbsp; <a href="https://www.graceprotrailers.com/rent-to-own/" target="_blank" rel="noopener noreferrer">Official rent-to-own program ↗</a></p></div></article></div></section>
 <section class="group" id="commercial-freight" aria-labelledby="freight-title"><div class="section-heading"><div><span class="eyebrow">05 / Commercial freight specialty</span><h2 id="freight-title">Commercial freight trailer rentals</h2></div><p>Business-use trailers, not household moving or local utility trailers. Confirm service coverage and equipment location before planning a pickup. <strong>Need stationary on-site storage instead of a road-use freight trailer?</strong> Russellville-based <a href="mobile-storage.html#provider-1">Scotty’s Storage</a> separately advertises 48- and 53-foot dry-van <em>storage</em> trailer rentals; highway hauling or self-tow use is not confirmed. <a href="https://www.scottysstorage.com/" target="_blank" rel="noopener noreferrer">Official storage-trailer information ↗</a></p></div><div class="grid single"><article class="provider" id="trailer-dispatch-commercial-freight-1"><div class="number" aria-hidden="true">11</div><div class="card-content"><p class="card-label">Commercial provider · Nationwide inquiries · Russellville service UNCONFIRMED</p><h3>Broadline Equipment — Commercial Freight Trailers</h3><p>Officially advertises commercial trailer rental and longer-term equipment leasing for working businesses. Its current trailer categories include 48- and 53-foot step decks and flatbeds, removable-gooseneck trailers, and 53-foot enclosed dry vans. The operator describes a growing presence in Northwest Arkansas and nationwide business service; <strong>rental or delivery specifically in Russellville is UNCONFIRMED</strong>. Ask where the equipment is located, whether Russellville service is offered, current availability, commercial insurance and application requirements, deposits and total rental terms. Its planned construction, storage and party equipment lines are <strong>not</strong> listed as currently available rentals.</p><p class="detail">Regional commercial-freight inquiry only · No Russellville branch or pickup location verified</p><p><a href="tel:+14793339036">479-333-9036</a> &nbsp; · &nbsp; <a href="https://www.broadlineequipment.com/" target="_blank" rel="noopener noreferrer">Official trailer equipment and rental information ↗</a></p></div></article></div></section>
 <section class="preflight" aria-labelledby="preflight-title">
-<div class="preflight-intro"><span class="eyebrow">Take the right questions with you</span><h2 id="preflight-title">Your trailer<br>rental call sheet.</h2><p>Four details worth confirming before you drive to a pickup location. Check off each question as the rental provider answers it.</p><span class="preflight-stamp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18M5 15h14l-2-6H7l-2 6ZM8 9V6h8v3M7 18a2 2 0 0 0 4 0m4 0a2 2 0 0 0 4 0"/></svg> Confirm before towing</span></div>
+<div class="preflight-intro"><span class="eyebrow">Take the right questions with you</span><h2 id="preflight-title">Your trailer<br>rental call sheet.</h2><p>Four details worth confirming before you drive to a pickup location. Check off each question as the rental provider answers it.</p><span class="preflight-stamp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18M5 15h14l-2-6H7l-2 6ZM8 9V6h8v3M7 18a2 2 0 0 0 4 0m4 0a2 2 0 0 0 4 0"/></svg> Confirm before towing</span>
+<figure class="preflight-illustration">
+<svg viewBox="0 0 720 330" role="img" aria-labelledby="preflight-art-title" xmlns="http://www.w3.org/2000/svg">
+<title id="preflight-art-title">Original illustration of a utility trailer against wooded River Valley hills</title>
+<rect width="720" height="330" fill="#2c5849"/><circle cx="549" cy="80" r="48" fill="#f1d69b"/>
+<path d="M0 188Q125 132 248 176t230-12 242-4v170H0Z" fill="#497360"/>
+<path d="M0 237q160-54 322-2t398-22v117H0Z" fill="#163a33"/>
+<g stroke="#9fb99c" stroke-width="3" opacity=".65" fill="none"><path d="m33 203 18-44 18 44m-18-16v71m601-62 19-44 19 44m-19-16v73M95 213l18-45 18 45m-18-16v49"/></g>
+<path d="M0 279q180-24 365-5t355-7v63H0Z" fill="#0d302c"/>
+<g stroke="#f4e5c5" stroke-linejoin="round" stroke-linecap="round">
+<path d="M120 156h425l-30 109H151z" fill="#d6b784" stroke-width="5"/>
+<path d="M146 173h370l-22 75H165z" fill="#bb9465" stroke-width="3"/>
+<path d="M137 143h392m-371 38h343m-305 0v64m92-64v64m92-64v64" fill="none" stroke-width="4"/>
+<path d="M545 199h71l21 21v16h-95" fill="none" stroke-width="6"/>
+<path d="M92 259h452m-425-9-26 11m452 0 29-14" fill="none" stroke-width="5"/>
+<circle cx="224" cy="264" r="30" fill="#183a35" stroke-width="7"/><circle cx="443" cy="264" r="30" fill="#183a35" stroke-width="7"/>
+<circle cx="224" cy="264" r="11" fill="#f5e0b4" stroke-width="4"/><circle cx="443" cy="264" r="11" fill="#f5e0b4" stroke-width="4"/>
+</g><path d="M40 300h640" stroke="#d7c59d" stroke-width="2" stroke-dasharray="8 11" opacity=".75"/>
+</svg>
+<figcaption>Original planning illustration · Not a provider trailer, equipment specification, or confirmed inventory.</figcaption>
+</figure></div>
 <div class="preflight-panel"><div class="preflight-progress-head"><span>Questions addressed</span><strong id="preflight-count" role="status" aria-live="polite" aria-atomic="true">0 of 4</strong></div><progress id="preflight-meter" max="4" value="0" aria-label="Trailer rental questions addressed">0 of 4</progress>
 <fieldset id="preflight-questions"><legend>Trailer rental questions to ask</legend>
 <label class="preflight-check"><input type="checkbox" data-preflight><span class="preflight-check-text"><strong>Exact trailer &amp; rate</strong><small>Ask about model, load capacity, available dates and the complete rental price.</small></span></label>
