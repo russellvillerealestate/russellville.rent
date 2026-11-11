@@ -464,6 +464,47 @@ footer a{font-weight:750}
 @media(prefers-reduced-motion:reduce){.booth-plan-copy{transition:none}.booth-plan-copy:hover{transform:none}}
 @media print{.booth-plan{display:block;box-shadow:none;break-inside:avoid}.booth-plan-visual{display:none}.booth-plan-workspace{padding:20px;background:#fff}.booth-plan-copy{display:none}}
 
+
+/* 2026-11-11 / A second reading route for the full photo-booth directory.
+   The default StayARV-inspired editorial folios remain intact; quick comparison
+   uses the very same 17 canonical provider records and experience filters.
+   Nielsen Norman Group: descriptive headings support layer-cake scanning.
+   Google web.dev: responsive grids/reflow. W3C WCAG 2.2: 24px targets,
+   visible focus, logical reading order, and reduced-motion interaction. */
+.booth-viewbar[hidden]{display:none!important}
+.booth-viewbar{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(22px,4vw,60px);align-items:center;overflow:hidden;margin:0 0 48px;padding:clamp(27px,4.2vw,48px);border:1px solid #517766;border-radius:25px;background:linear-gradient(123deg,#0b322b 0%,#194b3f 62%,#285947 100%);color:#fff7e6;box-shadow:0 18px 41px #123c2d24}
+.booth-viewbar:before{content:"";position:absolute;z-index:-1;top:-150px;left:-70px;width:360px;height:360px;border:1px solid #f4d39b36;border-radius:50%;box-shadow:0 0 0 51px #f4d39b0d,0 0 0 99px #f4d39b06;pointer-events:none}
+.booth-viewbar-kicker{display:block;margin:0 0 13px;color:#f3d298;font-size:.67rem;font-weight:900;letter-spacing:.17em;text-transform:uppercase}
+.booth-viewbar h2{margin:0 0 13px;max-width:16ch;font:400 clamp(2.05rem,3.8vw,3.4rem)/1.07 Georgia,"Times New Roman",serif;letter-spacing:-.055em;text-wrap:balance}
+.booth-viewbar h2 em{font-style:italic;color:#f1ce95}
+.booth-viewbar-copy>p{margin:0;max-width:43ch;color:#deede2;font-size:.89rem;line-height:1.68}
+.booth-view-options{display:grid;grid-template-columns:1fr 1fr;gap:11px;align-items:stretch}
+.booth-view-options button{position:relative;min-width:0;min-height:188px;display:flex;flex-direction:column;align-items:start;gap:11px;padding:23px 20px;border:2px solid #e4e9dc52;border-radius:16px;background:#ffffff12;color:#fff7e8;cursor:pointer;text-align:left;font:inherit;transition:background .2s ease,transform .2s ease,border-color .2s ease}
+.booth-view-options button:hover{transform:translateY(-3px);background:#ffffff1c}
+.booth-view-options button[aria-pressed="true"]{border-color:#f1cf96;background:#f3d7a4;color:#15382c;box-shadow:0 9px 25px #061f1840}
+.booth-view-options button:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.booth-view-options button>span{font-size:.66rem;font-weight:900;letter-spacing:.17em;text-transform:uppercase;color:#f0d7ac}
+.booth-view-options button[aria-pressed="true"]>span{color:#715324}
+.booth-view-options button strong{display:block;max-width:12ch;margin-top:auto;font:400 clamp(1.28rem,2vw,1.67rem)/1.13 Georgia,serif;letter-spacing:-.035em}
+.booth-view-options button small{font-size:.75rem;line-height:1.45;color:#d6e7dc}
+.booth-view-options button[aria-pressed="true"] small{color:#49604d}
+/* Quick mode changes composition, not provider text, links, pricing or filtering. */
+.booth-view-scan #russellville .cards,.booth-view-scan #more .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:stretch}
+.booth-view-scan #russellville .provider-featured,.booth-view-scan #russellville .provider-featured:nth-child(2),.booth-view-scan #more .provider{display:flex;flex-direction:column;align-items:stretch;gap:0;min-width:0;min-height:0;padding:25px!important;border:1px solid #cbdad0;border-top:5px solid #b98448;border-radius:17px;background:#fffdf8;box-shadow:0 9px 25px #103b2a13}
+.booth-view-scan #russellville .provider-featured:nth-child(2),.booth-view-scan #more .provider[data-experience~="video"]{border-top-color:#688a9d}
+.booth-view-scan #more .provider[data-experience~="creative"]{border-top-color:#9c738f}
+.booth-view-scan #russellville .provider-featured .local-stage,.booth-view-scan #more .provider .regional-film{display:none}
+.booth-view-scan #russellville .provider-featured>:not(.local-stage),.booth-view-scan #russellville .provider-featured:nth-child(2)>:not(.local-stage),.booth-view-scan #more .provider>:not(.regional-film){grid-column:auto!important;grid-row:auto!important;margin-left:0!important;margin-right:0!important}
+.booth-view-scan #russellville .provider-featured>.provider-tag,.booth-view-scan #more .provider>.provider-tag{align-self:flex-start;margin-top:0!important;margin-bottom:15px}
+.booth-view-scan #russellville .provider-featured>h2,.booth-view-scan #more .provider>h2{font:400 clamp(1.38rem,2.2vw,1.82rem)/1.2 Georgia,serif;letter-spacing:-.04em;margin:0 0 16px!important;color:#193d31}
+.booth-view-scan #russellville .provider-featured>p:not(.area),.booth-view-scan #more .provider>p:not(.area){font-size:.86rem;line-height:1.65}
+.booth-view-scan #russellville .provider-featured>.area,.booth-view-scan #more .provider>.area{margin-top:auto!important;padding:12px 0 10px;border-left:0;border-top:1px solid #d6e1d6;background:transparent;font-weight:750;color:#4b6156}
+.booth-view-scan #russellville .provider-featured>p:last-child,.booth-view-scan #more .provider>p:last-child{margin-bottom:0!important;padding-top:12px;overflow-wrap:anywhere}
+@media(max-width:920px){.booth-viewbar{grid-template-columns:1fr}.booth-viewbar h2{max-width:none}.booth-view-options button{min-height:150px}}
+@media(max-width:790px){.booth-view-scan #russellville .cards,.booth-view-scan #more .cards{grid-template-columns:1fr}}
+@media(max-width:520px){.booth-viewbar{margin-bottom:36px;padding:24px 19px;border-radius:18px}.booth-viewbar h2{font-size:2.2rem}.booth-view-options{gap:8px}.booth-view-options button{min-height:140px;padding:17px 14px}.booth-view-options button strong{font-size:1.27rem}.booth-view-options button small{font-size:.71rem}.booth-view-scan #russellville .provider-featured,.booth-view-scan #russellville .provider-featured:nth-child(2),.booth-view-scan #more .provider{padding:21px!important}}
+@media(prefers-reduced-motion:reduce){.booth-view-options button{transition:none}.booth-view-options button:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -504,6 +545,18 @@ footer a{font-weight:750}
       </div>
     </nav>
     <p class="booth-atlas-fine">Regional operators are not confirmed to deliver to Russellville. Check event-address service, pricing, travel charges, setup and dates directly.</p>
+  </div>
+</section>
+
+<section class="booth-viewbar" id="booth-viewbar" aria-labelledby="booth-view-title" hidden>
+  <div class="booth-viewbar-copy">
+    <span class="booth-viewbar-kicker">The event edit / Two ways to browse</span>
+    <h2 id="booth-view-title">See the story.<br><em>Scan the details.</em></h2>
+    <p>Choose the illustrated provider guides or compare the same contacts in a tighter two-column directory. Your photo-booth experience filter stays in place.</p>
+  </div>
+  <div class="booth-view-options" role="group" aria-label="Photo booth provider layout">
+    <button type="button" data-booth-view="editorial" aria-pressed="true"><span>01 / Scenic guide</span><strong>Illustrated view</strong><small>Full editorial provider profiles</small></button>
+    <button type="button" data-booth-view="scan" aria-pressed="false"><span>02 / At a glance</span><strong>Compare details</strong><small>Compact, readable contact cards</small></button>
   </div>
 </section>
 
@@ -694,6 +747,23 @@ footer a{font-weight:750}
     }
   });
   compose();
+})();
+</script>
+
+<script>
+/* Progressive provider layout control: preserves all original records and filters. */
+(() => {
+  const main=document.getElementById('main');
+  const bar=document.getElementById('booth-viewbar');
+  if(!main||!bar)return;
+  const buttons=Array.from(bar.querySelectorAll('button[data-booth-view]'));
+  if(buttons.length!==2)return;
+  buttons.forEach(button=>button.addEventListener('click',()=>{
+    const selected=button.dataset.boothView;
+    main.classList.toggle('booth-view-scan',selected==='scan');
+    buttons.forEach(option=>option.setAttribute('aria-pressed',String(option===button)));
+  }));
+  bar.hidden=false;
 })();
 </script>
 
