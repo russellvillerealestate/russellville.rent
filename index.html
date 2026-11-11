@@ -2745,6 +2745,101 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   #rental-results > .directory-chapter .chapter-intro>p{max-width:39ch}
 }
 
+
+/* 2026-11-11 / Workspace atlas: elevate the plain commercial category into a
+   substantial architectural editorial spread. Compared live stayarv.com and
+   russellville.rent; principles: NN/g information scent and visual hierarchy,
+   web.dev responsive compositing, W3C WCAG 2.2 reflow and visible focus.
+   Original illustration only; no actual office, provider inventory, pricing,
+   vacancy or availability is depicted. Source records and functionality intact. */
+.rental-card[data-category="commercial"]{border-color:#9db8aa;overflow:hidden}
+.rental-card[data-category="commercial"]>.office-folio{
+  position:relative;isolation:isolate;display:block;overflow:hidden;
+  min-width:0;height:260px;min-height:245px;padding:0;
+  background:#183e38;color:#fff8e6;
+}
+.rental-card[data-category="commercial"]>.office-folio::before{
+  content:"";position:absolute;inset:0;z-index:1;
+  width:auto;height:auto;border:0;border-radius:0;box-shadow:none;
+  background:linear-gradient(90deg,rgba(7,34,30,.91),rgba(12,50,44,.64) 53%,rgba(12,50,44,.09)),
+             linear-gradient(0deg,rgba(8,36,30,.78),transparent 40%);
+  pointer-events:none;
+}
+.rental-card[data-category="commercial"]>.office-folio::after{
+  content:"";position:absolute;inset:13px;z-index:1;width:auto;height:auto;
+  border:1px solid #f4dca965;border-radius:12px;box-shadow:none;pointer-events:none;
+}
+.office-folio-scene{position:absolute;inset:0;display:block;width:100%;height:100%;transition:transform .45s ease}
+.rental-card[data-category="commercial"]:hover .office-folio-scene{transform:scale(1.055)}
+.rental-card[data-category="commercial"]>.office-folio>span{position:absolute;z-index:2;left:clamp(23px,3vw,37px);right:22px;display:block}
+.rental-card[data-category="commercial"] .office-folio-kicker{
+  top:clamp(24px,3vw,37px);color:#f4dca9;font:850 .64rem/1.5 system-ui,sans-serif;
+  letter-spacing:.16em;
+}
+.rental-card[data-category="commercial"] .office-folio-title{
+  top:34%;max-width:430px;color:#fff9ed;
+  font:400 clamp(2.3rem,4vw,4.3rem)/.98 Georgia,serif;letter-spacing:-.062em;
+  text-shadow:0 3px 20px #082821;
+}
+.rental-card[data-category="commercial"] .office-folio-title em{color:#f6d59a;font-style:italic}
+.rental-card[data-category="commercial"] .office-folio-caption{
+  bottom:clamp(25px,3vw,34px);color:#f3e9d4;font:780 .57rem/1.5 system-ui,sans-serif;
+  letter-spacing:.1em;text-shadow:0 2px 8px #092d27;
+}
+@media(min-width:601px){
+  .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="commercial"]{
+    display:grid;grid-column:span 2;grid-template-columns:minmax(0,1.07fr) minmax(0,.93fr);
+    min-width:0;min-height:365px;border-radius:23px;
+    box-shadow:0 17px 44px #143a301a;
+  }
+  .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="commercial"]>.office-folio{
+    height:100%;min-height:365px;
+  }
+  .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="commercial"]>.card-body{
+    justify-content:center;padding:clamp(23px,3vw,41px);background:#f8f5e8;
+  }
+  .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="commercial"] .card-body h3{
+    font:400 clamp(1.85rem,2.8vw,2.55rem)/1.12 Georgia,serif;letter-spacing:-.048em;
+  }
+  .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="commercial"] .card-link{
+    align-items:center;min-height:48px;margin-top:auto;padding:12px 14px;
+    background:#174c3b;color:#fff9ed;border-radius:10px;
+  }
+  .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="commercial"] .card-link:hover{background:#27634c}
+}
+@media(min-width:601px) and (max-width:800px){
+  .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="commercial"]{
+    display:flex;flex-direction:column;
+  }
+  .rentals-grid[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="commercial"]>.office-folio{
+    height:270px;min-height:270px;
+  }
+}
+@media(max-width:600px){
+  .rental-card[data-category="commercial"]>.office-folio{height:265px;min-height:265px}
+  .rental-card[data-category="commercial"] .office-folio-title{font-size:clamp(2.25rem,9vw,3rem)}
+  .rental-card[data-category="commercial"] .office-folio-caption{font-size:.51rem}
+}
+.rentals-grid[data-view="list"]>.rental-card[data-category="commercial"]>.office-folio{
+  height:100%;min-height:185px;
+}
+.rentals-grid[data-view="list"]>.rental-card[data-category="commercial"] .office-folio-title,
+.rentals-grid[data-view="list"]>.rental-card[data-category="commercial"] .office-folio-kicker,
+.rentals-grid[data-view="list"]>.rental-card[data-category="commercial"] .office-folio-caption{display:none}
+@media(max-width:600px){
+ .rentals-grid[data-view="list"]>.rental-card[data-category="commercial"]>.office-folio{min-height:155px}
+}
+@media(prefers-reduced-motion:reduce){
+ .office-folio-scene{transition:none}
+ .rental-card[data-category="commercial"]:hover .office-folio-scene{transform:none}
+}
+@media print{
+ .rental-card[data-category="commercial"]>.office-folio{background:#fff;min-height:170px}
+ .rental-card[data-category="commercial"]>.office-folio::before{background:linear-gradient(90deg,#183e38b8,transparent)}
+ .office-folio-scene{filter:grayscale(1)}
+ .rental-card[data-category="commercial"]>.office-folio>span{color:#fff}
+}
+
 </style>
 </head>
 <body>
@@ -3085,7 +3180,37 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <p class="status">Added Space Storage · London RV Park &amp; Storage (units &amp; boat/trailer parking) · Highway 64 Self Storage (units &amp; parking) · Bradley Cove Storage · Valley Commercial Plaza (Weir Rd) · All Secure Mini Storage · StorMark (Dardanelle) · Smith Storage (Morrilton)</p>
 <a class="card-link" href="storage.html">Browse storage providers <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="commercial">
-<div class="category-art icon-tile" style="--tile-ink:#405d5b;--tile-bg:#e2ebe8" role="img" aria-label="Illustration representing office and coworking space"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-commercial"></use></svg><small>OFFICES &amp; COWORKING</small></div>
+<div class="category-art office-folio" role="img" aria-label="Original illustrated modern office buildings in a River Valley landscape. Concept art, not a photographed available commercial rental.">
+  <svg class="office-folio-scene" viewBox="0 0 720 430" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="office-sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#173e38"/><stop offset=".62" stop-color="#2d685f"/><stop offset="1" stop-color="#91ac88"/></linearGradient>
+      <linearGradient id="office-front" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d8dac3"/><stop offset="1" stop-color="#9eac9f"/></linearGradient>
+      <pattern id="office-windows" width="48" height="51" patternUnits="userSpaceOnUse"><rect x="10" y="12" width="27" height="31" rx="2" fill="#32574f"/><path d="M23.5 12v31M10 25h27" stroke="#b5c7aa" stroke-width="2"/></pattern>
+    </defs>
+    <rect width="720" height="430" fill="url(#office-sky)"/>
+    <circle cx="571" cy="85" r="62" fill="#f3d79c" opacity=".92"/>
+    <circle cx="571" cy="85" r="89" fill="none" stroke="#f7e8c5" opacity=".22" stroke-width="2"/>
+    <path d="M0 246 113 192l79 35 135-78 117 61 123-47 153 73v194H0Z" fill="#64927a" opacity=".6"/>
+    <path d="M0 300 108 257l123 47 102-67 149 63 127-53 111 51v132H0Z" fill="#245b52"/>
+    <g stroke="#e2e5c6" stroke-width="4" stroke-linejoin="round">
+      <path d="M257 176h202v215H257z" fill="url(#office-front)"/>
+      <path d="M288 138h144v38H288z" fill="#e3d9b7"/>
+      <path d="M281 161h158" stroke="#66847c" stroke-width="6"/>
+      <path d="M279 196h158v148H279z" fill="url(#office-windows)" stroke="none"/>
+      <path d="M443 231h135v160H443z" fill="#bac8b0"/>
+      <path d="M463 249h96v109h-96z" fill="url(#office-windows)" stroke="none"/>
+      <path d="M181 263h91v128h-91z" fill="#c2ceb7"/>
+      <path d="M201 282h52v83h-52z" fill="url(#office-windows)" stroke="none"/>
+      <path d="M336 391v-58h48v58" fill="#376358" stroke="#e9dfc7" stroke-width="5"/>
+    </g>
+    <path d="M0 392c166-24 324-18 472 0s173 12 248-11v49H0Z" fill="#0e3933" opacity=".8"/>
+    <path d="M90 404h554" stroke="#edddae" stroke-opacity=".45" stroke-width="2" stroke-dasharray="12 18"/>
+    <g fill="#e0d2a5" opacity=".75"><circle cx="206" cy="373" r="4"/><circle cx="266" cy="369" r="4"/><circle cx="469" cy="370" r="4"/></g>
+  </svg>
+  <span class="office-folio-kicker">THE RIVER VALLEY / WORKSPACE ATLAS</span>
+  <span class="office-folio-title">Room to<br><em>do more.</em></span>
+  <span class="office-folio-caption">ORIGINAL ARCHITECTURAL ART · NOT A RENTAL PROPERTY PHOTO</span>
+</div>
 <div class="card-body"><p class="eyebrow">Commercial spaces</p><h3>Offices &amp; coworking</h3>
 <p>Private offices, coworking desks, conference rooms and commercial spaces in Russellville.</p>
 <p class="status">Co-Create Innovation Hub · Hidden Gem Suites · 102 S Sidney Ave office/medical suite (broker-listed; vacancy unconfirmed) · 401 N Independence Ave retail suite (broker-listed; vacancy unconfirmed)</p>
