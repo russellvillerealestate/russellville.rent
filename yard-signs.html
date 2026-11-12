@@ -576,6 +576,114 @@ footer a{font-weight:750}
 @media(prefers-reduced-motion:reduce){.planning-dispatch .step.dispatch-step,.planning-dispatch .dispatch-actions a{transition:none}.planning-dispatch .step.dispatch-step:hover,.planning-dispatch .dispatch-actions a:hover{transform:none}}
 @media print{.planning-dispatch{background:#fff!important;color:#173d33!important;border-top:2px solid #173d33}.planning-dispatch::before,.planning-dispatch .dispatch-icon,.planning-dispatch .dispatch-step-arrow,.planning-dispatch .steps.dispatch-steps::before{display:none}.planning-dispatch .wrap.dispatch-layout{display:block;padding-block:18px}.planning-dispatch .dispatch-intro>*{color:#173d33!important}.planning-dispatch .steps.dispatch-steps{display:block}.planning-dispatch .step.dispatch-step{display:block;box-shadow:none;border:1px solid #b4c3b5;min-height:0;break-inside:avoid;margin:12px 0}.planning-dispatch .dispatch-actions{display:none!important}}
 
+
+/* 2026-11-12: Occasion-responsive illustrated greeting studio.
+   Place-led editorial continuity: https://stayarv.com/
+   Visual hierarchy: https://www.nngroup.com/articles/visual-hierarchy-ux-definition/
+   Responsive composition: https://web.dev/learn/design/responsive-images
+   Focus / target size: https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html
+   Decorative treatments are concepts, not operator-provided sign designs or inventory. */
+.greeting-studio{transition:background-color .28s ease}
+.greeting-studio[data-occasion="birthday"]{background:#e9f0e8}
+.greeting-studio[data-occasion="graduation"]{background:#e9edf3}
+.greeting-studio[data-occasion="baby"]{background:#f2ecf3}
+.greeting-studio[data-occasion="school"]{background:#e9f0e3}
+.studio-scene{
+  --sky-top:#e7e8b5;--sky-bottom:#9bcbbb;--lawn:#477f59;
+  --paper:#fff9e9;--border:#f5cf8b;--footing:#caa86d;
+  --headline:#173e35;--kicker:#a44836;--footer:#2c6851;
+  background:radial-gradient(circle at 82% 16%,#fff6ce 0 8%,transparent 8.2%),linear-gradient(180deg,var(--sky-top) 0%,var(--sky-bottom) 70%,var(--lawn) 70%,#2e6544 100%);
+}
+.studio-scene[data-occasion="graduation"]{
+  --sky-top:#a8c8d5;--sky-bottom:#dce6eb;--lawn:#385a58;
+  --paper:#f5f8f3;--border:#d5b77e;--footing:#ad8955;
+  --headline:#183d44;--kicker:#435d74;--footer:#325c56;
+}
+.studio-scene[data-occasion="baby"]{
+  --sky-top:#d9cbe5;--sky-bottom:#f7e4e4;--lawn:#748e76;
+  --paper:#fffaf7;--border:#caa9bd;--footing:#a97e91;
+  --headline:#4b3d5b;--kicker:#935773;--footer:#64507a;
+}
+.studio-scene[data-occasion="school"]{
+  --sky-top:#dbe6b6;--sky-bottom:#b6d6b5;--lawn:#3b7653;
+  --paper:#fbf8e8;--border:#f2c968;--footing:#ac843c;
+  --headline:#1b4d39;--kicker:#8b5327;--footer:#365f35;
+}
+.studio-scene:before{
+  height:78px;opacity:.75;clip-path:polygon(0 0,100% 0,100% 23%,0 100%);
+  background:repeating-linear-gradient(108deg,transparent 0 34px,#fff7d0 34px 56px,#df846e 56px 78px,#efcc7d 78px 100px,transparent 100px 135px)
+}
+.studio-scene[data-occasion="graduation"]:before{
+  background:repeating-linear-gradient(108deg,transparent 0 35px,#ffffff 35px 57px,#294d5e 57px 79px,#d3b779 79px 101px,transparent 101px 135px)
+}
+.studio-scene[data-occasion="baby"]:before{
+  background:repeating-linear-gradient(108deg,transparent 0 35px,#ffffff 35px 58px,#d9a5be 58px 81px,#a9c9c0 81px 103px,transparent 103px 137px)
+}
+.studio-scene[data-occasion="school"]:before{
+  background:repeating-linear-gradient(108deg,transparent 0 35px,#fcf2b7 35px 57px,#3d7957 57px 79px,#e0a359 79px 101px,transparent 101px 135px)
+}
+.studio-scene:after{background:#356d4d}
+.studio-scene[data-occasion="graduation"]:after{background:#325956}
+.studio-scene[data-occasion="baby"]:after{background:#698973}
+.studio-scene[data-occasion="school"]:after{background:#2d6a4a}
+.studio-theme-stamp,.studio-theme-symbol{position:absolute;z-index:1;pointer-events:none}
+.studio-theme-stamp{
+  top:21px;left:22px;padding:8px 12px;border:1px solid #244e4357;border-radius:999px;
+  background:#fffaefe8;color:#244e42;font-size:.62rem;letter-spacing:.16em;
+  font-weight:900;line-height:1.2;box-shadow:0 7px 15px #173b2a16
+}
+.studio-theme-stamp:before{content:"01 / MAKE A WISH"}
+.studio-scene[data-occasion="graduation"] .studio-theme-stamp:before{content:"02 / A BIG ACHIEVEMENT"}
+.studio-scene[data-occasion="baby"] .studio-theme-stamp:before{content:"03 / WELCOME HOME"}
+.studio-scene[data-occasion="school"] .studio-theme-stamp:before{content:"04 / TEAM SPIRIT"}
+.studio-theme-symbol{
+  top:53px;right:25px;display:grid;place-items:center;width:92px;height:92px;
+  border:2px solid #fff9eea8;border-radius:26px;transform:rotate(12deg);
+  background:#ffffff43;color:#a4563d;box-shadow:0 12px 25px #24483a15
+}
+.studio-theme-symbol:before{content:"✷";font:400 4rem/1 Georgia,serif}
+.studio-scene[data-occasion="graduation"] .studio-theme-symbol{color:#31546a;border-radius:9px;transform:rotate(-9deg)}
+.studio-scene[data-occasion="graduation"] .studio-theme-symbol:before{content:"★"}
+.studio-scene[data-occasion="baby"] .studio-theme-symbol{color:#805778;border-radius:50%;transform:rotate(-5deg)}
+.studio-scene[data-occasion="baby"] .studio-theme-symbol:before{content:"☾"}
+.studio-scene[data-occasion="school"] .studio-theme-symbol{color:#2f6743;border-radius:14px;transform:rotate(8deg)}
+.studio-scene[data-occasion="school"] .studio-theme-symbol:before{content:"✦"}
+.studio-sign{
+  z-index:2;background:var(--paper);border-color:var(--border);
+  box-shadow:0 13px 0 var(--footing),0 26px 34px #264d3555;
+  transform:rotate(-2deg);transition:background-color .25s,border-color .25s,transform .25s
+}
+.studio-scene[data-occasion="graduation"] .studio-sign{transform:rotate(2deg)}
+.studio-scene[data-occasion="baby"] .studio-sign{border-radius:30px;transform:rotate(-1deg)}
+.studio-scene[data-occasion="school"] .studio-sign{transform:rotate(1.5deg)}
+.studio-sign-kicker{color:var(--kicker)}
+.studio-sign-name{color:var(--headline);font-size:clamp(1.9rem,3.7vw,3.1rem)}
+.studio-sign-footer{color:var(--footer)}
+.studio-scene-caption{
+  z-index:2;max-width:370px;background:#fffdf1ef;
+  border:1px solid #ffffffad;box-shadow:0 4px 15px #173d3622
+}
+.greeting-studio[data-occasion="graduation"] .occasion-choice input:checked+span{background:#264b5c;border-color:#264b5c;color:#fff}
+.greeting-studio[data-occasion="baby"] .occasion-choice input:checked+span{background:#674d72;border-color:#674d72;color:#fff}
+.greeting-studio[data-occasion="school"] .occasion-choice input:checked+span{background:#245e40;border-color:#245e40;color:#fff}
+@media(max-width:850px){
+  .studio-theme-symbol{width:78px;height:78px;top:45px}
+  .studio-theme-symbol:before{font-size:3.3rem}
+}
+@media(max-width:470px){
+  .studio-theme-stamp{top:13px;left:14px;font-size:.52rem;padding:7px 9px}
+  .studio-theme-symbol{top:43px;right:12px;width:48px;height:48px;border-width:1px;border-radius:12px}
+  .studio-theme-symbol:before{font-size:2rem}
+  .studio-sign-name{font-size:clamp(1.75rem,8vw,2.5rem)}
+}
+@media(prefers-reduced-motion:reduce){
+  .greeting-studio,.studio-sign{transition:none}
+  .studio-sign,.studio-scene[data-occasion="graduation"] .studio-sign,
+  .studio-scene[data-occasion="baby"] .studio-sign,
+  .studio-scene[data-occasion="school"] .studio-sign{transform:none}
+}
+@media print{.studio-theme-stamp,.studio-theme-symbol{display:none}.studio-sign{transform:none!important;box-shadow:none}}
+
 </style>
 </head>
 <body>
@@ -634,7 +742,7 @@ footer a{font-weight:750}
 <p class="studio-status" id="greeting-status" role="status" aria-live="polite"></p>
 <div class="studio-fallback" id="greeting-fallback" hidden><label for="greeting-fallback-text">Select and copy your inquiry</label><textarea id="greeting-fallback-text" readonly></textarea></div>
 </form></div>
-<div class="studio-scene" aria-label="Illustrative yard sign concept preview"><div class="studio-stars" aria-hidden="true"><span>✦</span><span>✷</span><span>✦</span></div>
+<div class="studio-scene" data-occasion="birthday" aria-label="Illustrative yard sign concept preview"><span class="studio-theme-stamp" aria-hidden="true"></span><span class="studio-theme-symbol" aria-hidden="true"></span><div class="studio-stars" aria-hidden="true"><span>✦</span><span>✷</span><span>✦</span></div>
 <div class="studio-sign"><span class="studio-sign-kicker" id="preview-kicker">HAPPY BIRTHDAY</span><strong class="studio-sign-name" id="preview-name">YOUR NAME</strong><span class="studio-sign-footer" id="preview-footer">MAKE A WISH</span></div>
 <p class="studio-scene-caption">Idea only · Actual lettering, signs and availability vary by provider.</p>
 </div></div></section>
@@ -754,6 +862,7 @@ footer a{font-weight:750}
   const kicker = document.getElementById("preview-kicker");
   const displayName = document.getElementById("preview-name");
   const footer = document.getElementById("preview-footer");
+  const scene = section.querySelector(".studio-scene");
   const status = document.getElementById("greeting-status");
   const copyButton = document.getElementById("copy-greeting");
   const fallback = document.getElementById("greeting-fallback");
@@ -765,7 +874,7 @@ footer a{font-weight:750}
     baby: ["New baby", "HELLO, BABY", "WELCOME TO THE WORLD"],
     school: ["School event", "GO TEAM!", "LET'S CELEBRATE"]
   };
-  if (!nameInput || !kicker || !displayName || !footer || !status || !copyButton || !fallback || !fallbackText || !choices.length) return;
+  if (!nameInput || !kicker || !displayName || !footer || !status || !copyButton || !fallback || !fallbackText || !choices.length || !scene) return;
   function selection() {
     const checked = choices.find(choice => choice.checked);
     return presets[checked && checked.value] || presets.birthday;
@@ -783,6 +892,10 @@ footer a{font-weight:750}
   }
   function refresh() {
     const occasion = selection();
+    const selected = choices.find(choice => choice.checked);
+    const theme = selected ? selected.value : "birthday";
+    section.dataset.occasion = theme;
+    scene.dataset.occasion = theme;
     kicker.textContent = occasion[1];
     displayName.textContent = nameInput.value.trim().replace(/\s+/g, " ").slice(0, 24) || "YOUR NAME";
     footer.textContent = occasion[2];
