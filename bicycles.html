@@ -378,6 +378,100 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
 @media(prefers-reduced-motion:reduce){.ride-route-link{transition:none}}
 @media print{.ride-route-shell{display:none}}
 
+
+/* 2026-11-12 / Local rental arrival: a distinct, photograph-led reservation
+   handoff after price comparison, without altering any rate or operator claim.
+   Reference: StayARV's immersive landscape and ample spacing; NN/g wayfinding,
+   web.dev responsive images; WCAG 2.2 reflow and visible focus. */
+.shop.shop-arrival{
+  position:relative;isolation:isolate;overflow:hidden;
+  border:0;color:#fffdf0;background:#0a302a;
+}
+.shop.shop-arrival::before{
+  content:"";position:absolute;inset:0;z-index:-2;
+  background:linear-gradient(105deg,rgba(7,37,33,.97) 0%,rgba(7,42,37,.93) 45%,rgba(7,42,37,.77) 100%),
+    url("assets/lake-dardanelle-docks.jpg") center 58%/cover no-repeat;
+}
+.shop.shop-arrival::after{
+  content:"";position:absolute;right:-130px;top:-210px;
+  width:510px;height:510px;border:1px solid #f5d69857;border-radius:50%;
+  box-shadow:0 0 0 60px #f5d6980d,0 0 0 120px #f5d69808;
+  pointer-events:none;z-index:-1;
+}
+.shop.shop-arrival .wrap{
+  position:relative;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);
+  gap:clamp(30px,5.7vw,90px);align-items:center;
+  padding-top:clamp(85px,10vw,145px);padding-bottom:clamp(85px,10vw,145px);
+}
+.shop-arrival .shop-story{min-width:0}
+.shop-arrival .shop-edition{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  max-width:510px;margin-bottom:35px;padding-bottom:17px;
+  border-bottom:1px solid #f2d6a46b;
+  color:#f1d5a1;font-size:.66rem;line-height:1.45;
+  letter-spacing:.17em;font-weight:850;
+}
+.shop-arrival .shop-edition span:last-child{white-space:nowrap}
+.shop-arrival .shop-story>.eyebrow{color:#f3d99f}
+.shop-arrival h2{
+  margin:8px 0 25px;max-width:11ch;color:#fffaf0;
+  font:400 clamp(3.25rem,5.7vw,6rem)/1.03 Georgia,"Times New Roman",serif;
+  letter-spacing:-.07em;text-wrap:balance;
+}
+.shop-arrival .shop-story>p:not(.eyebrow):not(.shop-scene-credit){
+  max-width:49ch;color:#edf2e9;font-size:clamp(1rem,1.2vw,1.12rem);line-height:1.75;
+}
+.shop-arrival .actions{gap:12px;margin-top:30px}
+.shop-arrival .actions .button{min-height:52px;border-radius:100px;padding:12px 21px}
+.shop-arrival .actions .button.dark{background:#f4d394;color:#16392f;border-color:#f4d394}
+.shop-arrival .actions .button.light{background:transparent;color:#fffdf2;border:1px solid #e2eddbb5}
+.shop-arrival .shop-scene-credit{
+  margin-top:34px;padding-top:16px;max-width:47ch;
+  border-top:1px solid #ffffff42;color:#e8e9dd;font-size:.72rem;line-height:1.55;
+}
+.shop-arrival .shop-reservation-desk{
+  min-width:0;background:#fffcf4;border:1px solid #f7ddb2;
+  border-radius:24px;padding:clamp(29px,3.7vw,53px);
+  box-shadow:18px 20px 0 #f0cf8a1f,0 30px 60px #031d194f;
+  transform:rotate(1deg);
+}
+.shop-arrival .shop-card-kicker{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  margin-bottom:26px;padding-bottom:17px;border-bottom:1px solid #d8dfd3;
+  color:#2c5b48;font-size:.64rem;letter-spacing:.16em;font-weight:850;
+}
+.shop-arrival .shop-card-kicker span:last-child{
+  display:grid;place-items:center;width:38px;height:38px;flex-shrink:0;
+  border-radius:50%;background:#183e32;color:#f0d59e;letter-spacing:0;font-size:1rem;
+}
+.shop-arrival .shop-reservation-desk dt{color:#4a6b58}
+.shop-arrival .shop-reservation-desk dd{color:#234239;overflow-wrap:anywhere}
+.shop-arrival .shop-reservation-desk a{color:#195f49;text-underline-offset:3px}
+.shop-arrival a:focus-visible{outline:3px solid #ffd78c;outline-offset:4px}
+.shop-arrival .shop-reservation-desk a:focus-visible{outline-color:#a65c14}
+@media(max-width:850px){
+  .shop.shop-arrival .wrap{grid-template-columns:minmax(0,1fr);max-width:690px;gap:39px}
+  .shop-arrival h2{max-width:none;font-size:clamp(3.2rem,8vw,5.5rem)}
+  .shop-arrival .shop-reservation-desk{transform:none}
+}
+@media(max-width:550px){
+  .shop.shop-arrival .wrap{padding-top:72px;padding-bottom:73px;gap:29px}
+  .shop-arrival h2{font-size:clamp(2.85rem,12vw,4rem)}
+  .shop-arrival .shop-edition{margin-bottom:24px;font-size:.57rem;gap:9px;letter-spacing:.1em}
+  .shop-arrival .actions{flex-direction:column;align-items:stretch}
+  .shop-arrival .actions .button{width:100%;white-space:normal;text-align:center}
+  .shop-arrival .shop-reservation-desk{padding:26px 23px;border-radius:17px;box-shadow:8px 10px 0 #f0cf8a1c}
+  .shop-arrival .shop-card-kicker{font-size:.56rem}
+}
+@media(prefers-reduced-motion:reduce){.shop-arrival .shop-reservation-desk{transform:none}}
+@media print{
+  .shop.shop-arrival{background:white!important;color:#173e32!important}
+  .shop.shop-arrival::before,.shop.shop-arrival::after{display:none}
+  .shop.shop-arrival .wrap{display:block;padding:25px 0}
+  .shop-arrival :is(h2,.shop-story>p,.shop-edition){color:#173e32!important}
+  .shop-arrival .shop-reservation-desk{box-shadow:none;border:1px solid #71937b;transform:none}
+  .shop-arrival .shop-scene-credit{display:none}
+}
 </style></head><body>
 <a class="skip" href="#rates">Skip to rental rates</a>
 <header><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
@@ -489,9 +583,9 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
   </div>
 </section>
 
-<section class="shop" aria-labelledby="shop-title"><div class="wrap">
-<div><p class="eyebrow">One local rental provider</p><h2 id="shop-title">Jackalope Cycling<br>Russellville</h2><p>Locally operated bicycle shop. The shop asks customers to telephone to reserve. Confirm bike size, pickup, helmet and accessory policies, deposits and final rental terms directly.</p><div class="actions"><a class="button dark" href="tel:+14798904950">Call (479) 890-4950 ↗</a><a class="button light" href="https://jackalopecycling.com/pages/services" target="_blank" rel="noopener noreferrer">Official bike rentals and posted rates ↗</a></div></div>
-<div class="shop-card"><dl><dt>Local storefront</dt><dd>112 N Commerce Ave<br>Russellville, AR 72801</dd><dt>Phone to reserve</dt><dd><a href="tel:+14798904950">(479) 890-4950</a></dd><dt>Advertised storefront hours</dt><dd>Tuesday–Friday, 10 a.m.–6 p.m.; Saturday, 9 a.m.–4 p.m.; closed Sunday and Monday. <a href="https://electra.trekbikes.com/us/en_US/store/410846/" target="_blank" rel="noopener noreferrer">Manufacturer-authorized retailer hours ↗</a>. These are shop hours, not confirmed rental pickup times; call to reserve.</dd><dt>Shop information</dt><dd><a href="https://jackalopecycling.com/pages/contact" target="_blank" rel="noopener noreferrer">Official contact and hours ↗</a></dd><dt>Delivery</dt><dd>Not confirmed</dd></dl></div>
+<section class="shop shop-arrival" aria-labelledby="shop-title"><div class="wrap">
+<div class="shop-story"><div class="shop-edition" aria-hidden="true"><span>THE RIVER VALLEY / LOCAL RIDES</span><span>01 / 01</span></div><p class="eyebrow">One local rental provider</p><h2 id="shop-title">Jackalope Cycling<br>Russellville</h2><p>Locally operated bicycle shop. The shop asks customers to telephone to reserve. Confirm bike size, pickup, helmet and accessory policies, deposits and final rental terms directly.</p><div class="actions"><a class="button dark" href="tel:+14798904950">Call (479) 890-4950 ↗</a><a class="button light" href="https://jackalopecycling.com/pages/services" target="_blank" rel="noopener noreferrer">Official bike rentals and posted rates ↗</a></div><p class="shop-scene-credit">Lake Dardanelle scenery · Not a photograph of Jackalope Cycling or an available rental bicycle.</p></div>
+<div class="shop-card shop-reservation-desk"><div class="shop-card-kicker" aria-hidden="true"><span>YOUR LOCAL RENTAL CONTACT</span><span>R↗</span></div><dl><dt>Local storefront</dt><dd>112 N Commerce Ave<br>Russellville, AR 72801</dd><dt>Phone to reserve</dt><dd><a href="tel:+14798904950">(479) 890-4950</a></dd><dt>Advertised storefront hours</dt><dd>Tuesday–Friday, 10 a.m.–6 p.m.; Saturday, 9 a.m.–4 p.m.; closed Sunday and Monday. <a href="https://electra.trekbikes.com/us/en_US/store/410846/" target="_blank" rel="noopener noreferrer">Manufacturer-authorized retailer hours ↗</a>. These are shop hours, not confirmed rental pickup times; call to reserve.</dd><dt>Shop information</dt><dd><a href="https://jackalopecycling.com/pages/contact" target="_blank" rel="noopener noreferrer">Official contact and hours ↗</a></dd><dt>Delivery</dt><dd>Not confirmed</dd></dl></div>
 </div></section>
 <section class="bike-folio-intro wrap" aria-labelledby="bike-folio-intro-title"><div><p class="bike-folio-overline">THE RIVER VALLEY / THREE MORE PLACES TO ASK</p><h2 id="bike-folio-intro-title">Beyond the hometown shop.<br><em>Know before you go.</em></h2></div><p>These options are different from a public bike-rental counter: two regional on-site rentals and an eligibility-restricted university checkout. Review each provider’s actual terms before making the trip.</p></section>
 <section class="student-checkout wrap bike-provider-folio" aria-labelledby="regional-bike-title"><figure class="bike-folio-scene bike-folio-scene--mountain" aria-hidden="true"><span class="bike-folio-number">02 / FIELD STOP</span><svg viewBox="0 0 440 235" preserveAspectRatio="xMidYMid slice" focusable="false" xmlns="http://www.w3.org/2000/svg"><circle cx="356" cy="68" r="40" fill="#f6ce8a"/><path d="M0 234V146L85 65l70 87 87-106 87 102 56-62 55 60v88Z" fill="#7fa28f"/><path d="M0 235V183l112-73 88 76 104-88 136 104v33Z" fill="#426b5c"/><path d="M0 235v-20q140-70 260-9t180-27v56Z" fill="#1d4e41"/><path d="M0 221Q195 174 440 222" fill="none" stroke="#f0cb8f" stroke-width="6" stroke-dasharray="22 14"/></svg><figcaption><strong>Clarksville</strong><span>ON-SITE MOUNTAIN-BIKE RENTAL</span><small>Illustrative scenery · Not a provider or inventory photograph</small></figcaption></figure><div class="student-panel"><p class="eyebrow">Regional on-site mountain-bike rental · Clarksville</p><h2 id="regional-bike-title">Horsehead Lake Lodge — Mountain-bike rentals</h2><p>The lodge’s official mountain-biking guide advertises <strong>on-site mountain-bike rentals with helmets and safety gear</strong> near Clarksville. Bicycle models, rental prices, dates, inventory and eligibility for non-overnight guests are <strong>UNCONFIRMED</strong>; call to verify current service before traveling. This is a regional on-site rental, <strong>not Russellville delivery</strong>.</p><p class="student-detail"><strong>Location:</strong> 213 County Road 3190, Clarksville, AR 72830 · <strong>Phone:</strong> <a href="tel:+14792140218">479-214-0218</a> · <strong>Source:</strong> operator’s own rental guide.</p><a class="button light" href="https://horseheadlakelodge.com/mountain-biking-lodge-retreat/" target="_blank" rel="noopener noreferrer">Official mountain-bike rental information ↗</a></div></section>
