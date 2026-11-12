@@ -3241,6 +3241,96 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 @media(max-width:420px){.welcome-hero .welcome-popular{gap:8px}.welcome-hero .welcome-popular a{grid-template-columns:32px minmax(0,1fr);gap:6px;padding:10px 8px;min-height:76px}.welcome-hero .welcome-route-icon{width:31px;height:37px}.welcome-hero .welcome-route-icon svg{width:24px;height:24px}.welcome-hero .welcome-route-copy strong{font-size:.79rem}.welcome-hero .welcome-route-copy small{font-size:.63rem}.welcome-hero .welcome-route-arrow{display:none}}
 @media(prefers-reduced-motion:reduce){.welcome-hero .welcome-popular a{transition:none!important}.welcome-hero .welcome-popular a:hover{transform:none}}
 
+
+/* November 12, 2026 / The local rental search studio.
+   Compared live StayARV and Russellville.Rent and recent main commits.
+   References: NN/g visual hierarchy, web.dev responsive design, W3C WCAG 2.2.
+   Reuses existing Lake Dardanelle scenery; no provider/listing data changes. */
+#browse>.filters:not([hidden]){
+ display:grid;grid-template-columns:minmax(215px,.82fr) minmax(250px,1.25fr) minmax(185px,.78fr);
+ grid-template-rows:minmax(103px,auto) minmax(103px,auto);
+ align-items:stretch;gap:14px 17px;margin:27px 0 0;padding:17px;
+ background:linear-gradient(135deg,#e5eee4,#f6f2e4);border:1px solid #bdcaa7;
+ border-radius:23px 23px 13px 13px;box-shadow:0 16px 40px #113d2d1b
+}
+#browse .filters>.finder-intro{
+ grid-column:1;grid-row:1/3;display:flex;flex-direction:column;justify-content:center;
+ min-width:0;min-height:240px;padding:clamp(21px,2.7vw,35px);
+ border:1px solid #e5c78685;border-radius:15px;overflow:hidden;
+ background:linear-gradient(110deg,#092a25f2,#164436d4 65%,#123b30b5),url("assets/lake-dardanelle-sunset.jpg") 61% 62%/cover no-repeat;
+ color:#fff9e9
+}
+#browse .finder-intro-kicker{font-size:.62rem;line-height:1.45;letter-spacing:.13em;font-weight:850;color:#f4d8a2}
+#browse .finder-intro h3{font:400 clamp(2rem,3.1vw,3.25rem)/1.05 Georgia,"Times New Roman",serif;letter-spacing:-.052em;margin:18px 0 11px;text-wrap:balance;color:#fff9e9}
+#browse .finder-intro h3 em{font-weight:400;color:#f1d196}
+#browse .finder-intro p{max-width:34ch;margin:0;font-size:.86rem;line-height:1.65;color:#ecf2e7}
+#browse .finder-intro small{display:block;margin-top:auto;padding-top:18px;color:#e9dfc7;font-size:.61rem;line-height:1.4}
+#browse .filters>div:nth-child(2){grid-column:2/4;grid-row:1}
+#browse .filters>div:nth-child(3){grid-column:2;grid-row:2}
+#browse .filters>button.reset{grid-column:3;grid-row:2;align-self:end}
+#browse .filters>div:nth-child(2),#browse .filters>div:nth-child(3){min-width:0;display:flex;flex-direction:column;justify-content:end}
+#browse .filters label{font-size:.7rem;color:#2d5842;letter-spacing:.07em;text-transform:uppercase;margin:0 0 8px}
+#browse .filters input,#browse .filters select{min-height:57px;border:1.5px solid #9ab7a0;border-radius:11px;background:#fffef9;color:#173f34;padding:13px 16px;font-size:1rem;box-shadow:0 3px 10px #143c280c}
+#browse .filters input:focus-visible,#browse .filters select:focus-visible{outline:3px solid #a86816;outline-offset:3px;border-color:#245f49}
+#browse .filters>button.reset{min-height:57px;border:1px solid #255b45;border-radius:11px;background:#214f3e;color:#fffef8;font-size:.84rem;font-weight:850;cursor:pointer;transition:background-color .18s}
+#browse .filters>button.reset:hover{background:#326e54}
+#browse>.quick-paths:not([hidden]){
+ display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;
+ margin:-1px 10px 27px;padding:14px 17px 16px;
+ border:1px solid #c7d7c5;border-top:0;border-radius:0 0 18px 18px;
+ background:linear-gradient(110deg,#e7ede2,#f5f1e4);box-shadow:0 10px 23px #123d2c0d
+}
+#browse .quick-paths-label{grid-column:1/-1;width:auto;margin:0;color:#4c6e55;letter-spacing:.15em}
+#browse .quick-pick{
+ display:flex;flex-direction:column;min-width:0;min-height:83px;gap:5px;padding:10px 7px;
+ border-radius:12px;white-space:normal;color:#234f3a;background:#fffef7;
+ border:1px solid #c8d8c8;font-size:.8rem;font-weight:850;line-height:1.2;box-shadow:0 3px 8px #153e2714
+}
+#browse .quick-pick .quick-pick-icon{width:33px;height:33px;color:#24563d;background:var(--pick-tint,#e7eee4)}
+#browse .quick-pick[aria-pressed="true"]{background:#194c3b;color:#fffdf2;border-color:#194c3b;box-shadow:0 0 0 2px #f3d695 inset}
+#browse .quick-pick[aria-pressed="true"] .quick-pick-icon{background:#f0d7a4;color:#173e30}
+#browse .quick-pick:focus-visible{outline:3px solid #aa6616;outline-offset:3px}
+#browse>.intent-explorer:not([hidden]){margin-top:20px;padding:clamp(18px,2.6vw,32px);border-radius:19px}
+#browse .intent-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+#browse .intent-grid>.intent-card{grid-column:auto;min-height:206px;padding:22px 18px;border-radius:16px}
+#browse .intent-grid .intent-symbol{width:44px;height:44px;border-radius:12px}
+#browse .intent-grid .intent-symbol svg{width:28px;height:28px}
+#browse .intent-grid .intent-title{font-size:clamp(1.4rem,2vw,1.8rem);margin-top:13px}
+#browse .intent-grid .intent-detail{font-size:.74rem;line-height:1.45;margin-top:7px}
+#browse .intent-grid .intent-foot{margin-top:auto;padding-top:12px;font-size:.73rem}
+@media(max-width:1020px){
+ #browse>.filters:not([hidden]){grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto auto auto}
+ #browse .filters>.finder-intro{grid-column:1/-1;grid-row:1;min-height:195px}
+ #browse .finder-intro h3{max-width:22ch;font-size:2.65rem}
+ #browse .filters>div:nth-child(2){grid-column:1/-1;grid-row:2}
+ #browse .filters>div:nth-child(3){grid-column:1;grid-row:3}
+ #browse .filters>button.reset{grid-column:2;grid-row:3}
+ #browse>.quick-paths:not([hidden]){grid-template-columns:repeat(3,minmax(0,1fr))}
+ #browse .intent-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #browse .intent-grid>.intent-card{min-height:170px}
+}
+@media(max-width:620px){
+ #browse>.filters:not([hidden]){grid-template-columns:minmax(0,1fr);grid-template-rows:auto;gap:13px;padding:12px;border-radius:17px 17px 11px 11px}
+ #browse .filters>.finder-intro{grid-column:1;grid-row:auto;min-height:172px;padding:24px 19px}
+ #browse .finder-intro h3{font-size:clamp(2rem,9vw,2.6rem);margin:13px 0 8px}
+ #browse .finder-intro p{font-size:.79rem}
+ #browse .finder-intro small{padding-top:9px}
+ #browse .filters>div:nth-child(2),#browse .filters>div:nth-child(3),#browse .filters>button.reset{grid-column:1;grid-row:auto}
+ #browse .filters input,#browse .filters select,#browse .filters>button.reset{min-height:50px}
+ #browse>.quick-paths:not([hidden]){grid-template-columns:repeat(3,minmax(0,1fr));margin:-1px 5px 22px;padding:12px 10px;gap:7px}
+ #browse .quick-pick{min-height:71px;font-size:.75rem;padding:8px 4px}
+ #browse .quick-pick .quick-pick-icon{width:27px;height:27px}
+ #browse .intent-grid{grid-template-columns:minmax(0,1fr);gap:9px}
+ #browse .intent-grid>.intent-card{display:grid;grid-template-columns:42px minmax(0,1fr);grid-template-rows:auto auto auto;align-items:center;column-gap:13px;min-height:112px;padding:14px}
+ #browse .intent-grid .intent-symbol{grid-column:1;grid-row:1/4;align-self:center;width:42px;height:42px}
+ #browse .intent-grid .intent-title{grid-column:2;grid-row:1;margin:0;font-size:1.45rem}
+ #browse .intent-grid .intent-detail{grid-column:2;grid-row:2;margin:2px 0 0;font-size:.69rem}
+ #browse .intent-grid .intent-foot{grid-column:2;grid-row:3;margin-top:6px;padding-top:6px;font-size:.67rem}
+}
+@media(max-width:390px){#browse>.quick-paths:not([hidden]){grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){#browse .filters>button.reset{transition:none}}
+@media print{#browse .finder-intro{background:#fff!important;color:#111!important}#browse .finder-intro :is(h3,p,small,span){color:#111!important}}
+
 </style>
 </head>
 <body>
@@ -3439,7 +3529,13 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
  <nav id="recent-trail-grid" class="recent-trail-grid" aria-label="Recently opened rental categories"></nav>
  <p class="recent-trail-foot">Remembered only in this browser tab; no account or request is created.</p>
 </section>
-<form class="filters" id="filters" role="search" hidden><div><label for="search">Search rentals</label><input type="search" id="search" placeholder="Try houses, cars, kayaks, storage…" autocomplete="off"></div><div><label for="category">Category</label><select id="category"><option value="all">All categories</option><option value="homes">Long-term rentals</option><option value="storage">Storage</option><option value="tools">Tools &amp; equipment</option><option value="paddling">Kayaks, canoes &amp; paddleboards</option><option value="bicycles">Bicycles &amp; e-bikes</option><option value="atv-utv">Side-by-side &amp; off-road rentals</option><option value="rvs">RV site rentals</option><option value="rv-rentals">RV &amp; camper vehicle rentals</option><option value="cars">Car rentals</option><option value="boats">Boats</option><option value="party">Party &amp; event rentals</option><option value="commercial">Commercial spaces</option><option value="stays">Short-term stays</option><option value="camping">Camping &amp; RV sites</option><option value="trailers">Trailer rentals</option><option value="mobile-storage">Portable storage</option><option value="dumpsters">Dumpster rentals</option><option value="venues">Event venues</option><option value="moving">Moving trucks</option><option value="restrooms">Portable restroom rentals</option><option value="photo-booths">Photo booth rentals</option><option value="temporary-fencing">Temporary fencing rentals</option><option value="formalwear">Formalwear rentals</option><option value="sheds">Portable building rentals</option><option value="household-rentals">Furniture &amp; appliance rentals</option><option value="audio-visual">Audio &amp; visual rentals</option><option value="instruments">Band instrument rentals</option><option value="yard-signs">Yard sign rentals</option><option value="golf-carts">Golf cart rentals</option><option value="stages">Stage &amp; platform rentals</option><option value="golf-simulators">Golf simulator rentals</option><option value="medical-equipment-rentals">Medical equipment rentals</option><option value="medical-equipment-loans">Medical equipment loans</option><option value="baby-gear">Baby gear rentals</option><option value="other">Other local rentals</option></select></div><button type="reset" class="button reset">Clear filters</button></form>
+<form class="filters" id="filters" role="search" hidden>
+<div class="finder-intro">
+ <span class="finder-intro-kicker">RUSSELLVILLE.RENT / LOCAL RENTAL FINDER</span>
+ <h3>Find your next <em>good fit.</em></h3>
+ <p>Search all 35 rental categories, choose a rental type, or take a shortcut below.</p>
+ <small>Lake Dardanelle scenery · Not a rental provider or inventory photograph</small>
+</div><div><label for="search">Search rentals</label><input type="search" id="search" placeholder="Try houses, cars, kayaks, storage…" autocomplete="off"></div><div><label for="category">Category</label><select id="category"><option value="all">All categories</option><option value="homes">Long-term rentals</option><option value="storage">Storage</option><option value="tools">Tools &amp; equipment</option><option value="paddling">Kayaks, canoes &amp; paddleboards</option><option value="bicycles">Bicycles &amp; e-bikes</option><option value="atv-utv">Side-by-side &amp; off-road rentals</option><option value="rvs">RV site rentals</option><option value="rv-rentals">RV &amp; camper vehicle rentals</option><option value="cars">Car rentals</option><option value="boats">Boats</option><option value="party">Party &amp; event rentals</option><option value="commercial">Commercial spaces</option><option value="stays">Short-term stays</option><option value="camping">Camping &amp; RV sites</option><option value="trailers">Trailer rentals</option><option value="mobile-storage">Portable storage</option><option value="dumpsters">Dumpster rentals</option><option value="venues">Event venues</option><option value="moving">Moving trucks</option><option value="restrooms">Portable restroom rentals</option><option value="photo-booths">Photo booth rentals</option><option value="temporary-fencing">Temporary fencing rentals</option><option value="formalwear">Formalwear rentals</option><option value="sheds">Portable building rentals</option><option value="household-rentals">Furniture &amp; appliance rentals</option><option value="audio-visual">Audio &amp; visual rentals</option><option value="instruments">Band instrument rentals</option><option value="yard-signs">Yard sign rentals</option><option value="golf-carts">Golf cart rentals</option><option value="stages">Stage &amp; platform rentals</option><option value="golf-simulators">Golf simulator rentals</option><option value="medical-equipment-rentals">Medical equipment rentals</option><option value="medical-equipment-loans">Medical equipment loans</option><option value="baby-gear">Baby gear rentals</option><option value="other">Other local rentals</option></select></div><button type="reset" class="button reset">Clear filters</button></form>
 
 <div class="quick-paths" id="quick-paths" role="group" aria-label="Quick rental category filters" hidden>
   <span class="quick-paths-label">QUICK START</span>
