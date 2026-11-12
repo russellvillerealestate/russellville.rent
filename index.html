@@ -3212,6 +3212,35 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 @media(max-width:420px){.event-guide-bridge{grid-template-columns:1fr;gap:12px}.event-guide-bridge-mark{display:none}.event-guide-bridge-action{grid-column:1}.event-guide-bridge-copy small{font-size:.59rem}}
 @media(prefers-reduced-motion:reduce){.event-guide-bridge{transition:none}.event-guide-bridge:hover{transform:none}}
 @media print{.event-guide-bridge{display:none}.event-journey{break-inside:avoid}}
+
+/* November 12, 2026 / Responsive first-fold rental finder route board.
+   Compared live stayarv.com and russellville.rent. Research:
+   NN/g https://www.nngroup.com/articles/visual-hierarchy-ux-definition/
+   web.dev https://web.dev/learn/design/
+   WCAG 2.2 https://www.w3.org/TR/WCAG22/
+   Retains original 4 destinations, all directory records and interactive search. */
+.welcome-hero .welcome-popular{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding-top:18px;border-top:1px solid #d8e3d8}
+.welcome-hero .welcome-popular-label{grid-column:1/-1;display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:2px 12px;margin-bottom:2px}
+.welcome-hero .welcome-popular-label>span{font-size:.61rem;letter-spacing:.16em;font-weight:850;color:#526e5d}
+.welcome-hero .welcome-popular-label>small{font-size:.68rem;color:#5b7264}
+.welcome-hero .welcome-popular a{display:grid;grid-template-columns:38px minmax(0,1fr) 11px;align-items:center;justify-content:stretch;gap:9px;min-width:0;min-height:78px;padding:12px 10px;border:1px solid #d5dfce;border-radius:14px;background:linear-gradient(140deg,#f6f8f0,#edf3e9);color:#173f35;text-align:left;text-decoration:none;box-shadow:0 3px 10px #163b3010;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.welcome-hero .welcome-popular a:nth-of-type(2){background:linear-gradient(140deg,#f4f3e8,#eaf0e3)}
+.welcome-hero .welcome-popular a:nth-of-type(3){background:linear-gradient(140deg,#f3eedf,#f8f3e7)}
+.welcome-hero .welcome-popular a:nth-of-type(4){background:linear-gradient(140deg,#f6eee6,#f8f3e8)}
+.welcome-hero .welcome-route-icon{display:grid;place-items:center;width:38px;height:43px;border-radius:11px;background:#dce9da;color:#286045}
+.welcome-hero .welcome-popular a:nth-of-type(2) .welcome-route-icon{background:#e0e6d4;color:#4b6045}
+.welcome-hero .welcome-popular a:nth-of-type(3) .welcome-route-icon{background:#eee3c7;color:#795a30}
+.welcome-hero .welcome-popular a:nth-of-type(4) .welcome-route-icon{background:#f0e1d2;color:#8a553e}
+.welcome-hero .welcome-route-icon svg{display:block;width:28px;height:28px;fill:none;stroke:currentColor}
+.welcome-hero .welcome-route-copy{display:flex;flex-direction:column;align-items:start;min-width:0;line-height:1.15}
+.welcome-hero .welcome-route-copy strong{font-size:.84rem;font-weight:850;overflow-wrap:anywhere}
+.welcome-hero .welcome-route-copy small{margin-top:4px;font-size:.66rem;line-height:1.24;color:#526b5d}
+.welcome-hero .welcome-route-arrow{align-self:start;font-size:.91rem;font-weight:900;line-height:1;color:#45745d}
+.welcome-hero .welcome-popular a:hover{background:#e6f0e3;border-color:#779f80;box-shadow:0 9px 17px #163b3024;transform:translateY(-2px)}
+.welcome-hero .welcome-popular a:focus-visible{outline:3px solid #a86816;outline-offset:3px}
+@media(max-width:420px){.welcome-hero .welcome-popular{gap:8px}.welcome-hero .welcome-popular a{grid-template-columns:32px minmax(0,1fr);gap:6px;padding:10px 8px;min-height:76px}.welcome-hero .welcome-route-icon{width:31px;height:37px}.welcome-hero .welcome-route-icon svg{width:24px;height:24px}.welcome-hero .welcome-route-copy strong{font-size:.79rem}.welcome-hero .welcome-route-copy small{font-size:.63rem}.welcome-hero .welcome-route-arrow{display:none}}
+@media(prefers-reduced-motion:reduce){.welcome-hero .welcome-popular a{transition:none!important}.welcome-hero .welcome-popular a:hover{transform:none}}
+
 </style>
 </head>
 <body>
@@ -3290,13 +3319,13 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
     </div>
     <button class="hero-find-submit" type="submit">Find rentals ↗</button>
   </form>
-  <div class="welcome-popular" aria-label="Direct links to popular rental categories">
-    <span>GO DIRECTLY TO</span>
-    <a href="long-term.html">Homes <span aria-hidden="true">↗</span></a>
-    <a href="storage.html">Storage <span aria-hidden="true">↗</span></a>
-    <a href="equipment.html">Equipment <span aria-hidden="true">↗</span></a>
-    <a href="party.html">Events <span aria-hidden="true">↗</span></a>
-  </div>
+  <nav class="welcome-popular" aria-label="Direct links to popular rental categories">
+    <div class="welcome-popular-label"><span>TAKE THE SHORT WAY</span><small>Browse a category directly</small></div>
+    <a href="long-term.html"><span class="welcome-route-icon" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-homes"></use></svg></span><span class="welcome-route-copy"><strong>Homes</strong><small>Settle in</small></span><span class="welcome-route-arrow" aria-hidden="true">↗</span></a>
+    <a href="storage.html"><span class="welcome-route-icon" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-storage"></use></svg></span><span class="welcome-route-copy"><strong>Storage</strong><small>Make room</small></span><span class="welcome-route-arrow" aria-hidden="true">↗</span></a>
+    <a href="equipment.html"><span class="welcome-route-icon" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-tools"></use></svg></span><span class="welcome-route-copy"><strong>Equipment</strong><small>Get it done</small></span><span class="welcome-route-arrow" aria-hidden="true">↗</span></a>
+    <a href="party.html"><span class="welcome-route-icon" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-party"></use></svg></span><span class="welcome-route-copy"><strong>Events</strong><small>Come together</small></span><span class="welcome-route-arrow" aria-hidden="true">↗</span></a>
+  </nav>
   <span class="sr-only" id="search-preview-help">Type to see direct links to matching rental categories. Press Down Arrow to focus the first match, or Enter to filter all categories.</span>
 </section>
 
