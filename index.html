@@ -2990,6 +2990,154 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   .event-journey-routes a{min-height:0;break-inside:avoid}
 }
 
+
+/* 2026-11-11 | The standing River Valley chapter compass.
+   Compared live https://stayarv.com/ and https://russellville.rent/ before redesign.
+   Transform the existing four-chapter horizontal bar into a place-led, vertical
+   reading companion on spacious desktop viewports. No new categories, providers,
+   claims, images, links or data. No-JavaScript anchors remain usable.
+   References: Nielsen Norman Group visual hierarchy and information scent
+   https://www.nngroup.com/articles/visual-hierarchy-ux-definition/ ;
+   Google web.dev adaptive layouts https://web.dev/learn/design/ ;
+   W3C WCAG 2.2 reflow, visible focus, and pointer targets
+   https://www.w3.org/TR/WCAG22/ .
+   Return to full-width layouts when filtering, comparing as a list, or on
+   smaller/shorter screens. This avoids a persistent horizontal obstruction. */
+@media (min-width:1160px) and (min-height:700px){
+  #browse{
+    display:grid;
+    grid-template-columns:clamp(228px,21vw,250px) minmax(0,1fr);
+    column-gap:clamp(19px,2.5vw,31px);
+    align-items:start;
+  }
+  #browse > :not(.chapter-wayfinder):not(#rental-results){
+    grid-column:1/-1;
+    min-width:0;
+  }
+  #browse > .chapter-wayfinder{
+    grid-column:1;
+    align-self:start;
+    position:sticky;
+    top:18px;
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    min-width:0;
+    margin:0;
+    padding:21px 17px 20px;
+    border-radius:21px;
+    background:radial-gradient(circle at 96% 0%,#376c5280,transparent 46%),
+               linear-gradient(157deg,#102c28,#194c3b 74%,#255943);
+    box-shadow:0 18px 39px #0b2e2930;
+  }
+  #browse > .chapter-wayfinder::before{
+    content:"";
+    position:absolute;
+    inset:8px;
+    border:1px solid #e5d6ac3c;
+    border-radius:15px;
+    pointer-events:none;
+  }
+  #browse .chapter-wayfinder__head{
+    position:relative;
+    z-index:1;
+    padding:8px 5px 18px;
+    border-bottom:1px solid #eedbb45e;
+  }
+  #browse .chapter-wayfinder__head small{
+    font-size:.59rem;
+    letter-spacing:.14em;
+    line-height:1.7;
+  }
+  #browse .chapter-wayfinder__head strong{
+    font-size:clamp(1.65rem,2.3vw,2.1rem);
+    line-height:1.05;
+    letter-spacing:-.052em;
+  }
+  #browse .chapter-wayfinder__head p{
+    margin:12px 0 0;
+    font-size:.73rem;
+    line-height:1.55;
+  }
+  #browse .chapter-wayfinder__links{
+    position:relative;
+    z-index:1;
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    gap:9px;
+    min-width:0;
+    padding-top:16px;
+  }
+  #browse .chapter-wayfinder__link{
+    min-width:0;
+    min-height:92px;
+    padding:13px 13px 12px;
+    gap:7px;
+    border-radius:12px;
+    background:#f8f6e812;
+    border:1px solid #e2d7b348;
+  }
+  #browse .chapter-wayfinder__link[aria-current="location"]{
+    background:#f4db9d;
+    color:#173b30;
+    border-color:#f4db9d;
+    box-shadow:0 7px 16px #081d1b26;
+  }
+  #browse .chapter-wayfinder__meta{
+    font-size:.65rem;
+  }
+  #browse .chapter-wayfinder__label{
+    font-size:clamp(.94rem,1.08vw,1.08rem);
+    line-height:1.21;
+  }
+  #browse > #rental-results{
+    grid-column:2;
+    min-width:0;
+    align-self:start;
+  }
+  #browse #rental-results > .directory-chapter[id^="rental-chapter-"]{
+    scroll-margin-top:25px;
+  }
+  /* In search/intent/list modes, preserve the original full-width directory.
+     Those modes do not benefit from a permanent chapter rail. */
+  #browse:has(> #rental-results[data-layout="uniform"]),
+  #browse:has(> #rental-results[data-view="list"]),
+  #browse:has(> .chapter-wayfinder[hidden]){
+    display:block;
+  }
+  #browse:has(> #rental-results[data-layout="uniform"]) > .chapter-wayfinder,
+  #browse:has(> #rental-results[data-view="list"]) > .chapter-wayfinder{
+    position:relative;
+    top:auto;
+    display:grid;
+    grid-template-columns:minmax(190px,.98fr) minmax(0,3.3fr);
+    margin:26px 0 21px;
+    padding:15px;
+  }
+  #browse:has(> #rental-results[data-layout="uniform"]) .chapter-wayfinder__head,
+  #browse:has(> #rental-results[data-view="list"]) .chapter-wayfinder__head{
+    border-bottom:0;
+    padding:13px 8px 13px 17px;
+  }
+  #browse:has(> #rental-results[data-layout="uniform"]) .chapter-wayfinder__links,
+  #browse:has(> #rental-results[data-view="list"]) .chapter-wayfinder__links{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    padding:0;
+  }
+  #browse:has(> #rental-results[data-layout="uniform"]) .chapter-wayfinder__link,
+  #browse:has(> #rental-results[data-view="list"]) .chapter-wayfinder__link{
+    min-height:91px;
+  }
+  #browse:has(> #rental-results[data-layout="uniform"]) .chapter-wayfinder__head strong,
+  #browse:has(> #rental-results[data-view="list"]) .chapter-wayfinder__head strong{
+    font-size:clamp(1.5rem,2.6vw,2.55rem);
+  }
+}
+@media print{
+  #browse{display:block!important}
+  #browse > .chapter-wayfinder{position:static!important}
+}
+
 </style>
 </head>
 <body>
