@@ -743,6 +743,53 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
 @media(prefers-reduced-motion:no-preference){.equipment-lens-card{transition:transform .2s ease,box-shadow .2s ease}.equipment-lens-card:hover{transform:translateY(-5px);box-shadow:0 19px 35px #051d1675}}
 @media(max-width:760px){.equipment-lens-head{grid-template-columns:1fr}.equipment-lens-cards{grid-template-columns:1fr}.equipment-lens-card{min-height:0;display:grid;grid-template-columns:80px minmax(0,1fr);gap:8px 20px;padding:20px}.equipment-lens-mark{grid-column:1;grid-row:1 / 4;margin:0;font-size:5rem;align-self:center}.equipment-lens-card strong,.equipment-lens-card small,.equipment-lens-go{grid-column:2}.equipment-lens-card strong{grid-row:1}.equipment-lens-card small{grid-row:2;margin:0}.equipment-lens-go{grid-row:3;padding-top:4px}.equipment-lens{padding:31px 23px}}
 @media(max-width:420px){.equipment-lens{padding:28px 17px;border-radius:18px}.equipment-lens:after{inset:8px}.equipment-lens-head{margin:0 4px 25px}.equipment-lens h2{font-size:clamp(2.35rem,11vw,3.2rem)}.equipment-lens-card{grid-template-columns:48px minmax(0,1fr);gap:8px 13px;padding:18px}.equipment-lens-mark{font-size:3.8rem}.equipment-lens-card strong{font-size:1.55rem}}
+
+/* 2026-11-11 | Optional two-view provider ledger.
+   Side-by-side comparison: live StayARV's place-led editorial hierarchy and
+   Russellville.Rent's existing 10-provider restroom directory. Keep the
+   detailed folio as default. Compact view removes only conceptual artwork
+   and excess space; all original qualifications, service details, contacts,
+   and interactive call-plan controls remain visible and operative.
+   Principles: Nielsen Norman Group visual hierarchy and scanability;
+   Google web.dev responsive reflow; W3C WCAG 2.2 visible focus and targets.
+   No provider, script, asset, pricing, automation or source text replaced. */
+.restroom-view-desk{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:20px 34px;overflow:hidden;margin:clamp(38px,6vw,75px) 0 0;padding:clamp(29px,4.6vw,50px);border:1px solid #335d51;border-radius:6px 28px 6px 28px;color:#f9f8ed;background:#123b32;box-shadow:0 20px 50px #0e3c3030}
+.restroom-view-desk:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(108deg,#0d352df6 4%,#144a3ee9 72%,#1c4b3dc8),url("assets/downtown-russellville-sunset.jpg") center 55%/cover no-repeat}
+.restroom-view-desk:after{content:"";position:absolute;inset:13px;border:1px solid #f0d4a14d;border-radius:3px 18px 3px 18px;pointer-events:none}
+.restroom-view-desk[hidden]{display:none!important}
+.restroom-view-copy,.restroom-view-controls,.restroom-view-note{position:relative;z-index:1}
+.restroom-view-kicker{color:#f6d395;font-size:.68rem;font-weight:900;letter-spacing:.18em}
+.restroom-view-copy h2{font:400 clamp(2.4rem,4.2vw,4.25rem)/1.02 Georgia,serif;letter-spacing:-.052em;text-wrap:balance;margin:17px 0}
+.restroom-view-copy h2 em{font-style:italic;color:#efd195}
+.restroom-view-copy p{color:#e0eee5;max-width:48ch;font-size:.88rem;line-height:1.7;margin:0}
+.restroom-view-controls{display:grid;gap:12px}
+.restroom-view-controls button{display:flex;align-items:center;gap:19px;min-height:80px;padding:16px 19px;text-align:left;border:1px solid #d6e4d3;border-radius:13px;background:#f7f8f0;color:#234637;font:inherit;cursor:pointer;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+.restroom-view-controls button[aria-pressed="true"]{background:#eed39c;color:#153a30;border:2px solid #f9e4b5;box-shadow:inset 0 0 0 2px #22504414}
+.restroom-view-controls button:hover{background:#e5eee4;transform:translateX(3px)}
+.restroom-view-controls button[aria-pressed="true"]:hover{background:#f5dfb1}
+.restroom-view-controls button:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.restroom-view-controls strong{display:block;font-size:1.02rem;line-height:1.2}
+.restroom-view-controls small{display:block;margin-top:4px;font-size:.77rem;color:#456155;line-height:1.4}
+.restroom-view-symbol{display:grid;place-items:center;flex:none;width:48px;height:48px;border:1px solid #94b4a2;border-radius:11px;font-size:1.9rem;color:#205445}
+.restroom-view-note{grid-column:1/-1;margin:4px 0 0;padding-top:17px;border-top:1px solid #c8dfc141;font-size:.72rem;line-height:1.6;color:#e1eddf}
+body.restroom-scan #local .provider-list,body.restroom-scan #regional .provider-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+body.restroom-scan #local .provider-list>.provider,body.restroom-scan #regional .provider-list>.provider{display:flex!important;flex-direction:column;grid-template-columns:none!important;grid-template-areas:none!important;min-width:0;min-height:0;margin:0;border:1px solid #c4d6c8;border-radius:16px;background:#fffefa;box-shadow:0 7px 20px #143c3014;transform:none!important;overflow:hidden}
+body.restroom-scan #local .provider-list>.provider[hidden],body.restroom-scan #regional .provider-list>.provider[hidden]{display:none!important}
+body.restroom-scan #local .provider-list>.provider .provider-index,body.restroom-scan #regional .provider-list>.provider .provider-index{position:static!important;display:flex;align-items:center;min-height:0!important;height:auto;width:auto;inset:auto;grid-area:auto;align-self:auto;justify-content:flex-start;padding:13px 22px;background:#19493b!important;color:#f6d79b!important;font:400 1.45rem/1 Georgia,serif!important;opacity:1;transform:none;text-shadow:none}
+body.restroom-scan #regional .provider-list>.provider .provider-index{background:#5a4937!important}
+body.restroom-scan .provider-index:before,body.restroom-scan .provider-index:after{content:none!important;display:none!important}
+body.restroom-scan .folio-scene,body.restroom-scan .provider-scene{display:none!important}
+body.restroom-scan #local .provider-list>.provider .provider-content,body.restroom-scan #regional .provider-list>.provider .provider-content{display:flex;flex-direction:column;min-width:0;flex:1;grid-area:auto;padding:22px 23px 24px!important;background:#fffefa!important}
+body.restroom-scan .provider h3,body.restroom-scan #regional .provider-list>.provider h3,body.restroom-scan #local .provider-list>.provider h3{font:400 clamp(1.3rem,2vw,1.65rem)/1.2 Georgia,serif;letter-spacing:-.035em;color:#173e32;margin:0 0 12px}
+body.restroom-scan .provider-description,body.restroom-scan #regional .provider-list>.provider .provider-description{font-size:.86rem;line-height:1.65;margin:0 0 16px}
+body.restroom-scan .provider-area,body.restroom-scan #regional .provider-list>.provider .provider-area{margin-top:auto;border-top:1px solid #dbe8db;padding:13px 0 0;font-size:.8rem}
+body.restroom-scan .provider-actions,body.restroom-scan #regional .provider-list>.provider .provider-actions{margin:15px 0 0;align-items:center}
+body.restroom-scan .call-add{margin-top:17px}
+@media(max-width:800px){.restroom-view-desk{grid-template-columns:1fr}.restroom-view-copy h2{max-width:18ch}.restroom-view-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.restroom-view-controls button{flex-direction:column;align-items:flex-start;gap:11px}body.restroom-scan #local .provider-list,body.restroom-scan #regional .provider-list{grid-template-columns:1fr}}
+@media(max-width:460px){.restroom-view-desk{padding:28px 21px;border-radius:17px}.restroom-view-desk:after{inset:8px}.restroom-view-controls{gap:8px}.restroom-view-controls button{padding:12px;min-height:115px}.restroom-view-controls strong{font-size:.88rem}.restroom-view-controls small{font-size:.7rem}.restroom-view-symbol{width:36px;height:36px;font-size:1.45rem}body.restroom-scan #local .provider-list>.provider .provider-content,body.restroom-scan #regional .provider-list>.provider .provider-content{padding:22px 20px!important}}
+@media(prefers-reduced-motion:reduce){.restroom-view-controls button{transition:none}.restroom-view-controls button:hover{transform:none}}
+@media print{.restroom-view-desk{display:none!important}body.restroom-scan #local .provider-list,body.restroom-scan #regional .provider-list{grid-template-columns:1fr}body.restroom-scan #local .provider-list>.provider,body.restroom-scan #regional .provider-list>.provider{box-shadow:none;break-inside:avoid}}
+
 </style>
 </head>
 <body>
@@ -892,6 +939,21 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
   </div>
  </div>
 </nav>
+
+
+<!-- Optional display switch: the default detailed provider records and their content remain unchanged. -->
+<section class="restroom-view-desk" id="restroom-view-desk" aria-labelledby="restroom-view-title" hidden>
+ <div class="restroom-view-copy">
+  <span class="restroom-view-kicker">THE RIVER VALLEY / PROVIDER READING ROOM</span>
+  <h2 id="restroom-view-title">The full picture. <em>Or the quick scan.</em></h2>
+  <p>Choose how to compare all ten provider records. The compact ledger removes decorative scenery, not provider descriptions, contacts, qualifications or safety notes.</p>
+ </div>
+ <div class="restroom-view-controls" role="group" aria-label="Provider listing display">
+  <button type="button" data-restroom-view="guide" aria-pressed="true" aria-controls="local regional"><span class="restroom-view-symbol" aria-hidden="true">▦</span><span><strong>Illustrated guide</strong><small>Scenic provider profiles</small></span></button>
+  <button type="button" data-restroom-view="scan" aria-pressed="false" aria-controls="local regional"><span class="restroom-view-symbol" aria-hidden="true">☷</span><span><strong>Quick scan</strong><small>Compact two-column ledger</small></span></button>
+ </div>
+ <p class="restroom-view-note">The same ten published listings in both views · Search filters and saved call plans still work · No availability is implied.</p>
+</section>
 
 <section class="section" id="local" aria-labelledby="local-title">
 <div class="section-head"><div><p class="section-kicker">Start close to home</p><h2 id="local-title">Russellville &amp; nearby</h2><p>Two Russellville-based listings plus a Dardanelle event-rental provider advertising Russellville service. Confirm each business’s current availability.</p></div><span class="section-index" aria-hidden="true">01</span></div>
@@ -1312,5 +1374,23 @@ a:focus-visible{outline:3px solid #b86a19;outline-offset:4px;border-radius:4px}
  });
 })();
 </script>
+
+<script>
+/* Progressive enhancement: keep full details available without JavaScript. */
+(() => {
+ const desk=document.getElementById("restroom-view-desk");
+ const buttons=[...document.querySelectorAll("[data-restroom-view]")];
+ const providers=document.querySelectorAll(".provider-list .provider");
+ if(!desk||buttons.length!==2||providers.length!==10)return;
+ const setView=view=>{
+   document.body.classList.toggle("restroom-scan",view==="scan");
+   buttons.forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.restroomView===view)));
+ };
+ buttons.forEach(button=>button.addEventListener("click",()=>setView(button.dataset.restroomView)));
+ setView("guide");
+ desk.hidden=false;
+})();
+</script>
+
 </body>
 </html>
