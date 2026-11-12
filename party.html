@@ -572,6 +572,124 @@ html{scroll-padding-top:125px}
   #provider-grid.quick-scan article.provider .card-content>p[hidden]{display:block!important}
 }
 
+
+/* 2026-11-12 — Event booking field guide: editorial poster + four-step production run sheet.
+   Inspiration: live StayARV and Russellville.Rent; NN/g visual hierarchy;
+   web.dev responsive layouts; WCAG 2.2 focus and readable contrast.
+   SVG is original, decorative, and explicitly not provider inventory. */
+.guide.guide-stage{
+ display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:0;
+ padding:0!important;margin:clamp(46px,7vw,88px) 0 37px;border-radius:24px;
+ border:1px solid #c5d7c8;background:#f3f0e5;color:#203f33;
+ overflow:hidden;align-items:stretch;box-shadow:0 22px 56px #112f281e
+}
+.guide-stage-cover{
+ position:relative;isolation:isolate;display:flex;flex-direction:column;min-width:0;
+ background:radial-gradient(circle at 97% 13%,#46776199,transparent 44%),linear-gradient(145deg,#123d32,#173d37 65%,#1e584a);
+ color:#fff;padding:clamp(30px,4.7vw,56px) clamp(26px,3.6vw,48px) 22px;
+ min-height:565px
+}
+.guide-stage-cover:before{
+ content:"";position:absolute;z-index:-1;top:29px;right:-104px;width:288px;height:288px;
+ border:1px solid #f3d6a44f;border-radius:50%;
+ box-shadow:0 0 0 43px #f3d6a411,0 0 0 89px #f3d6a40a;pointer-events:none
+}
+.guide-stage-overline{
+ display:block;margin-bottom:clamp(30px,6vw,65px);font-size:.67rem;font-weight:850;
+ letter-spacing:.15em;line-height:1.5;color:#f5d59d
+}
+.guide-stage-cover .eyebrow{
+ margin:0 0 12px;color:#f3d6a4;font-size:.72rem;letter-spacing:.055em;line-height:1.5
+}
+.guide-stage-cover h2{
+ margin:0!important;max-width:13ch;color:#fffaf0;
+ font:400 clamp(2.55rem,4.3vw,4.35rem)/1.06 Georgia,"Times New Roman",serif!important;
+ letter-spacing:-.06em;text-wrap:balance
+}
+.guide-stage-cover h2 em{display:block;font-style:normal;color:#f6d6a0}
+.guide-stage-intro{max-width:42ch;margin:21px 0 0;font-size:.88rem;line-height:1.75;color:#e0eee5}
+.guide-stage-art{position:relative;margin:auto -15px -16px;min-height:195px}
+.guide-stage-art svg{width:100%;height:auto;max-height:275px;display:block}
+.guide-stage-art span{
+ position:absolute;bottom:5px;left:15px;font-size:.65rem;line-height:1.45;
+ letter-spacing:.04em;color:#d8e7dc
+}
+.guide-stage-sheet{min-width:0;padding:clamp(28px,4.4vw,55px) clamp(22px,4vw,49px);
+ display:flex;flex-direction:column;background:linear-gradient(152deg,#f8f4e9,#e9eee5)}
+.guide-stage-sheet-head{
+ display:flex;justify-content:space-between;align-items:center;gap:12px;
+ padding-bottom:19px;border-bottom:1px solid #bdcebf
+}
+.guide-stage-sheet-head span{font-size:.66rem;font-weight:900;letter-spacing:.16em;color:#285b46}
+.guide-stage-sheet-head strong{font-size:.67rem;letter-spacing:.07em;color:#6c624a;white-space:nowrap}
+.guide.guide-stage ul{
+ display:grid;grid-template-columns:1fr;gap:0;list-style:none;counter-reset:event-question;
+ margin:0;padding:0
+}
+.guide.guide-stage li{
+ counter-increment:event-question;display:grid;grid-template-columns:54px minmax(0,1fr);
+ column-gap:14px;align-content:center;min-width:0;
+ padding:22px 4px 23px 0;margin:0;border:0;border-bottom:1px solid #c9d7c9;
+ border-radius:0;background:transparent;color:#405d4e;
+ font-size:.87rem;line-height:1.65
+}
+.guide.guide-stage li:before{
+ content:counter(event-question,decimal-leading-zero);
+ grid-row:1/3;align-self:start;display:block;
+ font:400 2.3rem/1 Georgia,"Times New Roman",serif;letter-spacing:-.075em;color:#927037
+}
+.guide.guide-stage li strong{
+ display:block;grid-column:2;margin:0 0 4px;color:#163f32;
+ font:400 clamp(1.23rem,2vw,1.56rem)/1.18 Georgia,"Times New Roman",serif;
+ letter-spacing:-.035em
+}
+.guide-stage-sheet-foot{
+ display:flex;flex-direction:column;gap:16px;align-items:flex-start;margin-top:auto;padding-top:23px
+}
+.guide-stage-sheet-foot>span{font-size:.75rem;line-height:1.6;color:#506958;max-width:50ch}
+.guide-stage-sheet-foot a{
+ display:inline-flex;gap:20px;justify-content:space-between;align-items:center;
+ min-height:48px;padding:12px 18px;border-radius:9px;background:#194b3d;
+ color:#fff!important;text-decoration:none;font-size:.78rem;font-weight:850;
+ transition:background-color .18s,transform .18s
+}
+.guide-stage-sheet-foot a:hover{background:#276852;transform:translateY(-2px)}
+.guide-stage-sheet-foot a:focus-visible{outline:3px solid #9e6518;outline-offset:4px}
+@media(max-width:900px){
+ .guide.guide-stage{grid-template-columns:1fr}
+ .guide-stage-cover{min-height:0;padding-bottom:20px}
+ .guide-stage-overline{margin-bottom:25px}
+ .guide-stage-cover h2{max-width:19ch}
+ .guide-stage-art{margin:13px 0 -18px;max-width:560px;min-height:0}
+ .guide-stage-art svg{max-height:190px}
+ .guide-stage-sheet{padding:31px}
+}
+@media(max-width:550px){
+ .guide.guide-stage{margin-top:45px;border-radius:19px}
+ .guide-stage-cover{padding:30px 24px 16px}
+ .guide-stage-cover h2{font-size:clamp(2.3rem,10vw,3.3rem)!important}
+ .guide-stage-intro{font-size:.85rem}
+ .guide-stage-art{margin:8px -12px -8px}
+ .guide-stage-art span{font-size:.6rem}
+ .guide-stage-sheet{padding:27px 21px}
+ .guide-stage-sheet-head{align-items:flex-start;flex-direction:column;gap:4px}
+ .guide.guide-stage li{grid-template-columns:40px minmax(0,1fr);gap:10px;padding:20px 0}
+ .guide.guide-stage li:before{font-size:1.85rem}
+ .guide.guide-stage li strong{font-size:1.3rem}
+ .guide-stage-sheet-foot a{width:100%}
+}
+@media(prefers-reduced-motion:reduce){.guide-stage-sheet-foot a{transition:none}.guide-stage-sheet-foot a:hover{transform:none}}
+@media print{
+ .guide.guide-stage{display:block;box-shadow:none;background:#fff;border:1px solid #888}
+ .guide-stage-cover{min-height:0;background:#fff!important;color:#163f32!important;padding:20px}
+ .guide-stage-cover:before,.guide-stage-art{display:none!important}
+ .guide-stage-cover :is(h2,h2 em,.eyebrow,.guide-stage-overline,.guide-stage-intro){color:#163f32!important}
+ .guide-stage-overline{margin-bottom:10px}
+ .guide-stage-sheet{background:#fff;padding:16px 22px}
+ .guide.guide-stage li{break-inside:avoid}
+ .guide-stage-sheet-foot a{display:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -747,7 +865,44 @@ html{scroll-padding-top:125px}
 <article class="provider" data-categories="decor" data-art="decor"><div class="card-heading"><span class="card-index">50 / 53</span><span class="card-category">Mobile bar rentals</span><span class="card-art" aria-hidden="true"><svg viewBox="0 0 170 112" focusable="false"><use href="#party-illus-decor"></use></svg></span></div><div class="card-content"><h2>Sippy Sales Bar Catering — Little Rock (Mobile Bar Rental)</h2><p>Little Rock-based mobile event provider whose official website advertises a <strong>rent-a-bar package starting at $200</strong> with bar transport, setup and breakdown. The company separately advertises staffed mobile-bar and bartending services; the $200 starting figure is for the advertised bar-rental option, <strong>not a confirmed full-service package or delivered Russellville quote</strong>. <strong>Delivery to Russellville is UNCONFIRMED</strong>; no Russellville service area, local branch or event-date availability has been established. Confirm whether the bar rental can be delivered to your event location, any travel and additional fees, equipment dimensions, reservation terms and total price directly.</p><p class="detail">Little Rock, AR · Regional provider; Russellville delivery UNCONFIRMED</p><p><a href="tel:+15015936727">501-593-6727</a> · <a href="https://www.sippysalesbarcatering.com/" target="_blank" rel="noopener noreferrer">Official bar-rental options and quote request ↗</a></p></div></article>
 <article class="provider" data-categories="tables decor supplies" data-art="tables"><div class="card-heading"><span class="card-index">51 / 53</span><span class="card-category">Event equipment, photo booths &amp; audio/visual</span><span class="card-art" aria-hidden="true"><svg viewBox="0 0 170 112" focusable="false"><use href="#party-illus-tables"></use></svg></span></div><div class="card-content"><h2>Chic Party Rentals — Little Rock (Regional)</h2><p>Little Rock-based event-rental provider officially advertising tables, chairs, 10 × 10- and 10 × 20-foot pop-up tents, linens, concession machines, catering equipment and digital photo booth experiences. Its official audio/visual catalog also lists speakers, wireless microphones, projectors, a 100-inch projector screen, lighting and a podium. The business describes its service area as Central Arkansas and surrounding areas, but <strong>Russellville delivery is UNCONFIRMED</strong>; no Russellville storefront or local rental inventory is established. Verify whether your event address is served, item availability, pickup or delivery, setup, taxes, deposits and the total quote directly. Photo booth and equipment rentals are options from the same operator, not separate businesses.</p><p class="detail">Little Rock, AR · Regional operator; Russellville delivery UNCONFIRMED</p><p><a href="tel:+15014850158">501-485-0158</a> · <a href="https://www.chicpartyrentalslr.com/" target="_blank" rel="noopener noreferrer">Official rental inventory &amp; contact ↗</a> · <a href="https://www.chicpartyrentalslr.com/category/audio-visual-equipment" target="_blank" rel="noopener noreferrer">Official audio/visual equipment listings ↗</a></p></div></article><article class="provider" id="party-provider-party-time" tabindex="-1" data-categories="tables decor supplies" data-art="tables"><div class="card-heading"><span class="card-index">52 / 53</span><span class="card-category">Tents, tables, seating &amp; event furnishings</span><span class="card-art" aria-hidden="true"><svg viewBox="0 0 170 112" focusable="false"><use href="#party-illus-tables"></use></svg></span></div><div class="card-content"><h2>Party Time Rental and Events — Little Rock (Regional)</h2><p>Little Rock-based event-rental provider officially advertising tents, tables, folding, Chiavari and cross-back chairs, lounge furniture, linens, dance floors, bars, lighting, serving equipment and event d&eacute;cor. Its official website advertises delivery, setup and breakdown for events in Little Rock and Central Arkansas and references serving Arkansas statewide, but does not explicitly confirm service at Russellville event addresses. <strong>Russellville delivery UNCONFIRMED.</strong> Confirm whether the operator serves your location and verify inventory, travel and setup charges, deposits, pickup arrangements, dates and final pricing before booking. This is a regional business, not a Russellville storefront.</p><p class="detail">Little Rock, AR · Showroom: 10720 N Rodney Parham Rd, Suite 11D · Russellville delivery UNCONFIRMED</p><p><a href="tel:+15012243133">501-224-3133</a> · <a href="https://www.partytimerentalandevents.com/inventory/" target="_blank" rel="noopener noreferrer">Official rental inventory ↗</a> · <a href="https://www.partytimerentalandevents.com/contact-us/" target="_blank" rel="noopener noreferrer">Official location, hours &amp; quote request ↗</a></p></div></article><article class="provider" id="party-provider-central-arkansas-inflatables" data-categories="inflatables tables onsite" data-art="inflatables"><div class="card-heading"><span class="card-index">53 / 53</span><span class="card-category">Inflatables, tables &amp; on-site parties</span><span class="card-art" aria-hidden="true"><svg viewBox="0 0 170 112" focusable="false"><use href="#party-illus-inflatables"></use></svg></span></div><div class="card-content"><h2>Central Arkansas Inflatables — Bryant (Regional)</h2><p>The operator officially advertises delivered bounce houses, wet and dry slides, obstacle courses, party games, tables and chairs across Central Arkansas. Its published service-area list includes Little Rock, Benton, Bryant, Conway, Hot Springs and other communities, but <strong>does not name Russellville: Russellville delivery is UNCONFIRMED.</strong> It also operates a separate indoor inflatable party park in Bryant; that facility is not a Russellville rental location. <strong>Official advertised catalog prices checked November 12, 2026:</strong> standard chair $3, 6-foot table $12, Pink XL Princess Dream bounce-house-and-slide combo $275, 46-foot wet/dry obstacle course $400, and 18-foot Ocean Oasis dual-lane water slide $350. These are item listings, not quotes or confirmations of seasonal stock; Russellville delivery and all additional travel, setup, tax and other charges remain <strong>UNCONFIRMED</strong>. Confirm whether event delivery to Russellville is offered, along with item availability, dates and final pricing. Do not assume an online item price includes long-distance delivery.</p><p class="detail">Bryant, AR · Indoor party park: 6221 Highway 5 N, Bryant, AR 72022 · No Russellville storefront verified · Russellville delivery UNCONFIRMED</p><p><a href="tel:+15017798433">501-779-8433</a> · <a href="https://centralarkansasinflatables.com/" target="_blank" rel="noopener noreferrer">Official rental inventory &amp; service areas ↗</a></p></div></article></div>
 <div class="empty" id="empty" hidden><h3>No providers match those filters.</h3><p>Try a different search term or clear the filters to see every option.</p></div></section>
-<section class="guide" id="guide" aria-labelledby="guide-title"><div><p class="eyebrow">A little planning goes a long way</p><h2 id="guide-title">Four questions before you reserve.</h2></div><ul><li><strong>Dates &amp; availability</strong>Is the exact item or party package available when you need it?</li><li><strong>Delivery &amp; setup</strong>Does the provider serve your address, and what setup is included?</li><li><strong>Full price</strong>What do delivery, taxes, deposits and add-ons cost?</li><li><strong>Weather &amp; cancellation</strong>What happens if conditions or plans change?</li></ul></section>
+<section class="guide guide-stage" id="guide" aria-labelledby="guide-title">
+  <div class="guide-stage-cover">
+    <span class="guide-stage-overline">THE RIVER VALLEY / EVENT FIELD GUIDE</span>
+    <p class="eyebrow">A little planning goes a long way</p>
+    <h2 id="guide-title">Four questions <em>before you reserve.</em></h2>
+    <p class="guide-stage-intro">A good celebration starts with clear answers. Use this short run sheet when contacting the providers listed above.</p>
+    <div class="guide-stage-art" aria-hidden="true">
+      <svg viewBox="0 0 520 250" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
+        <circle cx="397" cy="61" r="41" fill="#E9BC75"/>
+        <path d="M0 140c67-33 128-33 194-3 62 28 130 13 190-9 58-21 101-17 136-1v123H0Z" fill="#3B7760"/>
+        <path d="M0 179c78-20 126-14 205 12 76 24 162-17 226-13 47 2 70 13 89 17v55H0Z" fill="#194B41"/>
+        <path d="M44 124 135 66l91 58" stroke="#F3D6A4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M62 126h145v78H62z" fill="#F8E9C6"/>
+        <path d="M62 145h145" stroke="#487766" stroke-width="5"/>
+        <path d="M83 126v78m42-78v78m42-78v78" stroke="#B39B6E" stroke-width="4"/>
+        <path d="M265 109h194M281 109l19 80m143-80-19 80M355 109v92" stroke="#F5D7A3" stroke-width="6" stroke-linecap="round"/>
+        <path d="M272 117c12 21 34 25 49 0 13 24 36 25 47 0 13 23 35 22 49 0 13 21 29 21 37 0" stroke="#F8EAD0" stroke-width="5"/>
+        <path d="M297 174h134M322 174v29m83-29v29" stroke="#D6C495" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="324" cy="89" r="7" fill="#E9BC75"/><circle cx="376" cy="71" r="7" fill="#F8EAD0"/><circle cx="433" cy="91" r="7" fill="#E9BC75"/>
+        <path d="M24 224c77-9 139-7 207 5 96 16 178-5 268 1" stroke="#8DB39F" stroke-width="3" stroke-dasharray="6 10"/>
+      </svg>
+      <span>Illustrative celebration scene · Not rental inventory</span>
+    </div>
+  </div>
+  <div class="guide-stage-sheet">
+    <div class="guide-stage-sheet-head"><span>BEFORE YOU BOOK</span><strong>01 — 04 / CONTACT CHECKLIST</strong></div>
+    <ul>
+      <li><strong>Dates &amp; availability</strong>Is the exact item or party package available when you need it?</li>
+      <li><strong>Delivery &amp; setup</strong>Does the provider serve your address, and what setup is included?</li>
+      <li><strong>Full price</strong>What do delivery, taxes, deposits and add-ons cost?</li>
+      <li><strong>Weather &amp; cancellation</strong>What happens if conditions or plans change?</li>
+    </ul>
+    <div class="guide-stage-sheet-foot">
+      <span>Ask each operator directly; this directory does not confirm availability or booking terms.</span>
+      <a href="#providers">Explore party rental listings <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
 <p class="note">Planning portable toilets, accessible restroom units or handwashing stations for your event? <a href="restrooms.html">Browse portable restroom rentals ↗</a>. Independent local directory; confirm services and contact details directly. <a href="sms:+14799707301">Suggest a correction</a>.</p>
 <footer><a href="/">Return to all rentals</a></footer>
 </main>
