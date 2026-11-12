@@ -3138,6 +3138,60 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   #browse > .chapter-wayfinder{position:static!important}
 }
 
+
+/* November 11 2026 | Take-along rental field guide.
+   Compared live StayARV and Russellville.Rent. Adapted StayARV's forest/cream
+   visual hierarchy to a portable saved-category reference, never a booking.
+   Nielsen Norman Group visual hierarchy, web.dev adaptive layout,
+   W3C WCAG 2.2 focus visibility and mobile target sizing.
+   All source card links, existing save keys, search and workflow stay intact. */
+.saved-field-kit[hidden]{display:none!important}
+.saved-field-kit{margin-top:22px;min-width:0;overflow:hidden;padding:clamp(18px,2.2vw,27px);border:1px solid #b7ceb9;border-radius:18px;background:radial-gradient(circle at 100% 0%,#f7e5b8 0%,transparent 44%),linear-gradient(135deg,#e6eee3,#fbf7eb)}
+.saved-field-kit-head{display:grid;grid-template-columns:48px minmax(0,1fr);align-items:start;gap:16px}
+.saved-field-kit-mark{display:grid;place-items:center;width:48px;height:48px;border-radius:13px;background:#184b3c;color:#f6dc9c;font:400 1.4rem/1 Georgia,serif;transform:rotate(-4deg)}
+.saved-field-kit-kicker{margin:0 0 7px;color:#436651;font-size:.6rem;letter-spacing:.12em;font-weight:850}
+.saved-field-kit h4{margin:0;color:#173e34;font:400 clamp(1.48rem,2.2vw,2.1rem)/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.045em;text-wrap:balance}
+.saved-field-kit-head p:last-child{margin:10px 0 0;color:#466153;font-size:.81rem;line-height:1.62}
+.saved-field-kit-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.saved-field-kit-actions button{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:50px;padding:11px 15px;border:1px solid #174f3d;border-radius:11px;background:#174f3d;color:#fffefa;text-align:left;font-size:.79rem;font-weight:800;cursor:pointer;transition:transform .18s,background-color .18s}
+.saved-field-kit-actions button:last-child{background:#fffef8;color:#1d4a39;border-color:#a2b9a4}
+.saved-field-kit-actions button:hover{background:#2c6a50;transform:translateY(-2px)}
+.saved-field-kit-actions button:last-child:hover{background:#f6e9ca}
+.saved-field-kit-actions button:focus-visible{outline:3px solid #ac6416;outline-offset:4px}
+.saved-field-kit-status{margin:10px 0 0;color:#1c6548;font-weight:750;font-size:.78rem;line-height:1.4}
+.saved-field-kit-status:empty{display:none}
+.saved-copy-fallback{display:block;width:100%;margin:13px 0 0;min-height:160px;border-radius:10px;border:2px solid #8ba993;background:white;color:#1f4636;padding:12px;resize:vertical;font:400 .75rem/1.5 ui-monospace,monospace}
+.saved-copy-fallback[hidden]{display:none!important}
+.saved-field-kit-fine{margin:13px 0 0;padding-top:12px;border-top:1px solid #cbd9c8;color:#53695b;font-size:.72rem;line-height:1.5}
+.print-passport{display:none!important}
+@media(max-width:480px){
+ .saved-field-kit{padding:20px 17px;border-radius:14px}
+ .saved-field-kit-head{grid-template-columns:39px minmax(0,1fr);gap:12px}
+ .saved-field-kit-mark{width:39px;height:39px;font-size:1.2rem}
+ .saved-field-kit h4{font-size:1.65rem}
+ .saved-field-kit-actions{grid-template-columns:1fr}
+ .saved-field-kit-actions button{min-height:49px}
+}
+@media(prefers-reduced-motion:reduce){.saved-field-kit-actions button{transition:none}.saved-field-kit-actions button:hover{transform:none}}
+@media print{
+ @page{size:letter;margin:14mm}
+ body.printing-passport{background:white!important;color:#173e34!important;font:12pt/1.45 Georgia,"Times New Roman",serif!important}
+ body.printing-passport > :not(#print-passport){display:none!important}
+ body.printing-passport #print-passport{display:block!important;width:100%;max-width:none;margin:0;padding:0;border:0;background:white;color:#173e34;box-shadow:none}
+ body.printing-passport .print-passport-head{padding:0 0 19px;border-bottom:2px solid #21503e}
+ body.printing-passport .print-passport-brand{display:block;color:#21503e;font:800 9pt/1.5 system-ui,sans-serif;letter-spacing:.12em}
+ body.printing-passport .print-passport-head h1{max-width:none;margin:13px 0 10px;color:#163d30;font:400 31pt/1.02 Georgia,serif;letter-spacing:-.04em}
+ body.printing-passport .print-passport-head p{max-width:70ch;margin:0 0 12px;color:#354f42;font:10pt/1.5 system-ui,sans-serif}
+ body.printing-passport .print-passport-head strong{font:800 9pt system-ui,sans-serif;letter-spacing:.08em}
+ body.printing-passport .print-passport-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:21px 0;padding:0;list-style:none}
+ body.printing-passport .print-passport-list>li{min-width:0;padding:16px;border:1px solid #9db4a5;border-left:4px solid #34634c;border-radius:8px;break-inside:avoid;page-break-inside:avoid}
+ body.printing-passport .print-passport-number{display:block;color:#6d5b37;font:400 18pt/1 Georgia,serif}
+ body.printing-passport .print-passport-list h2{margin:9px 0 6px;color:#153f32;font:400 17pt/1.12 Georgia,serif;overflow-wrap:anywhere}
+ body.printing-passport .print-passport-list p{margin:0 0 12px;color:#354d40;font:9pt/1.45 system-ui,sans-serif}
+ body.printing-passport .print-passport-list a{display:block;color:#164b3a;font:700 8pt/1.4 system-ui,sans-serif;overflow-wrap:anywhere;text-decoration:underline}
+ body.printing-passport .print-passport-foot{display:block;padding-top:13px;border-top:1px solid #a8baa9;color:#455e4e;font:9pt/1.5 system-ui,sans-serif}
+}
+
 </style>
 </head>
 <body>
@@ -3398,7 +3452,20 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <p class="sr-only" id="saved-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
 <section class="saved-panel" id="saved-panel" aria-labelledby="saved-panel-title" hidden>
   <div class="saved-panel-intro"><p class="saved-panel-kicker">YOUR RIVER VALLEY SHORTLIST</p><h3 id="saved-panel-title">Keep your favorites close.</h3><p>Save up to eight rental categories for quick return visits. No account or booking request is created.</p></div>
-  <div class="saved-panel-content"><ol class="saved-links" id="saved-links" aria-label="Your saved rental categories"></ol><p class="saved-empty" id="saved-empty">No categories saved yet. Use the Save buttons on any rental card.</p><div class="saved-panel-footer"><small id="saved-storage-note">Saved in this browser when storage is available.</small><button class="saved-clear" id="saved-clear" type="button" hidden>Clear all saved</button></div></div>
+  <div class="saved-panel-content"><ol class="saved-links" id="saved-links" aria-label="Your saved rental categories"></ol><p class="saved-empty" id="saved-empty">No categories saved yet. Use the Save buttons on any rental card.</p><section class="saved-field-kit" id="saved-field-kit" aria-labelledby="saved-field-kit-title" hidden>
+  <div class="saved-field-kit-head">
+    <span class="saved-field-kit-mark" aria-hidden="true">R↗</span>
+    <div><p class="saved-field-kit-kicker">THE RIVER VALLEY / TAKE-ALONG GUIDE</p><h4 id="saved-field-kit-title">Your plan, ready to go.</h4><p>Take your saved category links on the road. Copy them into a message or print a personal field guide—no account or reservation created.</p></div>
+  </div>
+  <div class="saved-field-kit-actions">
+    <button class="saved-field-kit-copy" id="saved-copy" type="button">Copy my rental links <span aria-hidden="true">↗</span></button>
+    <button class="saved-field-kit-print" id="saved-print" type="button">Print my field guide <span aria-hidden="true">↗</span></button>
+  </div>
+  <p class="saved-field-kit-status" id="saved-field-kit-status" role="status" aria-live="polite" aria-atomic="true"></p>
+  <label class="sr-only" for="saved-copy-fallback">Select and copy your saved category links</label>
+  <textarea id="saved-copy-fallback" class="saved-copy-fallback" readonly rows="8" hidden></textarea>
+  <p class="saved-field-kit-fine">These are directory shortcuts, not quotes or bookings. Confirm availability, prices, and terms directly with each provider.</p>
+</section><div class="saved-panel-footer"><small id="saved-storage-note">Saved in this browser when storage is available.</small><button class="saved-clear" id="saved-clear" type="button" hidden>Clear all saved</button></div></div>
 </section>
 
 
@@ -3887,7 +3954,11 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 </footer>
 <details class="photo-credits"><summary>Local photo credits</summary><p>Lake Dardanelle sunset and downtown sunset photographs supplied for Russellville.Rent. Wilson Hall: <a href="https://commons.wikimedia.org/wiki/File:Wilson_Hall%E2%80%94Arkansas_Tech_University.JPG">Valis55, Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>. Photos cropped for the layout; the Wilson Hall crop is shared under the same license. Water-tower photo from the existing Russellville.Rent collection.</p></details>
 </main>
-
+<section id="print-passport" class="print-passport" aria-label="Printable saved rental field guide" hidden>
+  <div class="print-passport-head"><span class="print-passport-brand">R↗ RUSSELLVILLE.RENT / YOUR RIVER VALLEY FIELD NOTES</span><h1>Your rental field guide.</h1><p>Personal directory shortcuts to take with you. Select a category to find provider information; confirm prices, terms and availability with each business.</p><strong id="print-passport-count"></strong></div>
+  <ol id="print-passport-list" class="print-passport-list"></ol>
+  <footer class="print-passport-foot">Russellville.Rent · Local rental categories, not reservations or availability guarantees. Keep this guide for reference and contact providers directly.</footer>
+</section>
 
 <dialog class="atlas-dialog" id="atlas-dialog" aria-labelledby="atlas-title" aria-describedby="atlas-description">
  <div class="atlas-shell">
@@ -4092,6 +4163,9 @@ function renderSavedCategories(){
   });
   savedEmpty.hidden = savedCategories.length > 0;
   savedClear.hidden = savedCategories.length === 0;
+  savedFieldKit.hidden = savedCategories.length === 0;
+  savedCopyFallback.hidden = true;
+  savedFieldStatus.textContent = "";
   cards.forEach(card => {
     const button = card.querySelector(".save-category");
     const isSaved = savedCategories.includes(card.dataset.category);
@@ -4166,6 +4240,66 @@ savedClear.addEventListener("click", () => {
 renderSavedCategories();
 savedToggle.hidden = false;
 
+/* Take-along field notes use only the original saved category card links.
+   Nothing is transmitted, booked, priced, or saved to a new storage key. */
+const savedFieldKit=document.getElementById("saved-field-kit");
+const savedCopy=document.getElementById("saved-copy");
+const savedPrint=document.getElementById("saved-print");
+const savedFieldStatus=document.getElementById("saved-field-kit-status");
+const savedCopyFallback=document.getElementById("saved-copy-fallback");
+const printPassport=document.getElementById("print-passport");
+const printPassportList=document.getElementById("print-passport-list");
+function currentSavedCardData(){
+  return savedCategories.map(key=>{
+    const card=categoryCards.get(key);
+    if(!card)return null;
+    const source=card.querySelector(".card-link[href]");
+    const title=card.querySelector("h3");
+    if(!source||!title)return null;
+    const description=[...card.querySelectorAll(".card-body > p")].find(p=>!p.matches(".eyebrow,.status"));
+    return {title:title.textContent.trim(),description:description?description.textContent.trim():"Browse this rental category.",url:source.href};
+  }).filter(Boolean);
+}
+function savedPlanText(){
+  return ["RUSSELLVILLE.RENT | MY RENTAL FIELD GUIDE",
+    ...currentSavedCardData().map((entry,i)=>(i+1)+". "+entry.title+"\n"+entry.url),
+    "Directory links only. Confirm pricing, availability and terms with each provider."
+  ].join("\n\n");
+}
+savedCopy.addEventListener("click",async()=>{
+  const text=savedPlanText();
+  savedCopyFallback.hidden=true;
+  try{
+    if(!navigator.clipboard?.writeText)throw new Error("Clipboard unavailable");
+    await navigator.clipboard.writeText(text);
+    savedFieldStatus.textContent="Your saved category links were copied.";
+  }catch(error){
+    savedCopyFallback.value=text;
+    savedCopyFallback.hidden=false;
+    savedFieldStatus.textContent="Select and copy your category links from the box below.";
+    savedCopyFallback.focus();
+    savedCopyFallback.select();
+  }
+});
+savedPrint.addEventListener("click",()=>{
+  const entries=currentSavedCardData();
+  if(!entries.length)return;
+  printPassportList.replaceChildren();
+  document.getElementById("print-passport-count").textContent=entries.length+(entries.length===1?" SAVED CATEGORY":" SAVED CATEGORIES");
+  entries.forEach((entry,i)=>{
+    const item=document.createElement("li");
+    const number=document.createElement("span");number.className="print-passport-number";number.textContent=String(i+1).padStart(2,"0");
+    const title=document.createElement("h2");title.textContent=entry.title;
+    const description=document.createElement("p");description.textContent=entry.description;
+    const link=document.createElement("a");link.href=entry.url;link.textContent=entry.url;
+    item.append(number,title,description,link);printPassportList.appendChild(item);
+  });
+  printPassport.hidden=false;
+  document.body.classList.add("printing-passport");
+  const resetPrint=()=>{document.body.classList.remove("printing-passport");printPassport.hidden=true;};
+  window.addEventListener("afterprint",resetPrint,{once:true});
+  try{window.print();}catch(error){resetPrint();savedFieldStatus.textContent="Printing is unavailable in this browser; use Copy my rental links instead.";}
+});
 
 const shareButton = document.getElementById("share-view");
 const shareLabel = document.getElementById("share-view-label");
