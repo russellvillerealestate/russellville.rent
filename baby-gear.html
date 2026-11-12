@@ -349,6 +349,13 @@ footer a{color:#ffe3a5}
 @media(max-width:580px){.hero-facts.family-passport{width:calc(100% - 32px);margin:8px auto 25px;border-radius:17px}.family-passport-heading{padding:26px 24px}.family-passport-heading>strong{font-size:2.65rem}.family-passport-seal{display:none}.family-passport-points{grid-template-columns:1fr;padding:9px 22px}.family-passport-point{flex-direction:row;align-items:center;gap:21px;padding:14px 0;border-right:0;border-bottom:1px solid #d9dfd0}.family-passport-point:last-child{border-bottom:0}.family-passport-points .family-passport-point strong{flex:0 0 53px;font-size:2.5rem}.family-passport-point>span{font-size:.84rem}.family-passport-timing{padding:17px 22px 21px}.family-passport-timing>div{flex-direction:column;gap:8px}}
 @media print{.hero-facts.family-passport{width:100%;box-shadow:none;border:1px solid #888;break-inside:avoid}.family-passport-heading,.family-passport-timing{background:#fff!important;color:#173e34!important}.family-passport-heading :is(strong,em,p,.family-passport-kicker){color:#173e34!important}.family-passport-seal{display:none}}
 
+
+/* Specificity guard: the legacy .hero-facts span strip applies to all nested
+   spans; reset it inside the new passport so neither the seal nor mobile
+   labels inherit flex-basis, padding and border from the old strip. */
+.hero-facts.family-passport span{display:block;flex-basis:auto;margin:0;padding:0;border:0;gap:0;align-items:initial}
+.hero-facts.family-passport .family-passport-seal{display:grid}
+@media(max-width:580px){.hero-facts.family-passport .family-passport-seal{display:none}}
 </style>
 </head>
 <body>
