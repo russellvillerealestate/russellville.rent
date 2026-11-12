@@ -546,6 +546,161 @@ body[data-workspace-view="ledger"] .category .listing-card .workspace-save-btn{g
 @media(prefers-reduced-motion:reduce){.lease-field-action{transition:none}.lease-field-action:hover{transform:none}}
 @media print{.lease-field-desk{background:#fff!important;color:#162f2e;box-shadow:none;border:1px solid #b9c5bd;break-inside:avoid}.lease-field-desk h2,.lease-field-desk h2 em,.lease-field-kicker,.lease-field-intro,.lease-field-end p{color:#162f2e!important}.lease-field-action{color:#162f2e;border:1px solid #162f2e}}
 
+
+/* 2026-11-12 | Office leasing folios: transform dense default-grid results into
+   scannable, numbered architectural briefs without touching provider facts.
+   The existing compact ledger toggle remains a distinct, unmodified mode.
+   Compared live stayarv.com and russellville.rent before designing.
+   Research: https://www.nngroup.com/articles/visual-hierarchy-ux-definition/
+   https://web.dev/articles/responsive-web-design-basics
+   https://www.w3.org/WAI/WCAG22/quickref/
+   No new assets, fonts, scripts, booking claims or network requests. */
+body:not([data-workspace-view="ledger"]) #offices .cards{
+ counter-reset:office-folio;
+ gap:clamp(17px,2.7vw,28px);
+ align-items:stretch;
+}
+body:not([data-workspace-view="ledger"]) #offices .listing-card{
+ position:relative;
+ counter-increment:office-folio;
+ padding:clamp(25px,3vw,36px);
+ border:1px solid #c8d9d0;
+ border-radius:7px 28px 7px 28px;
+ background:
+  radial-gradient(circle at 94% 2%,#e7efe564 0,transparent 43%),
+  linear-gradient(143deg,#fffefa,#f9fbf7);
+ box-shadow:0 16px 40px #10392e12;
+ transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+body:not([data-workspace-view="ledger"]) #offices .listing-card:nth-child(3n+2){
+ background:radial-gradient(circle at 95% 0,#e4eadf 0,transparent 42%),#f5f3e9;
+ border-color:#d1d7c6;
+}
+body:not([data-workspace-view="ledger"]) #offices .listing-card:nth-child(3n+3){
+ background:radial-gradient(circle at 96% 0,#e7e8df 0,transparent 44%),#f4f8f4;
+}
+body:not([data-workspace-view="ledger"]) #offices .listing-card::before{
+ content:"THE WORK ATLAS / SPACE " counter(office-folio,decimal-leading-zero);
+ display:block;
+ padding:0 0 17px;
+ margin:0 0 21px;
+ border-bottom:1px solid #b8cabc;
+ color:#476651;
+ font:850 .68rem/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;
+ letter-spacing:.14em;
+}
+body:not([data-workspace-view="ledger"]) #offices .listing-card .listing-type{
+ border-radius:5px;
+ padding:7px 11px;
+ background:#dcebe0;
+ color:#22543c;
+ letter-spacing:.095em;
+}
+body:not([data-workspace-view="ledger"]) #offices .listing-card h3{
+ font:400 clamp(1.55rem,2.35vw,2.13rem)/1.16 Georgia,"Times New Roman",serif;
+ letter-spacing:-.042em;
+ color:#163d34;
+ margin:18px 0 19px;
+ text-wrap:balance;
+}
+body:not([data-workspace-view="ledger"]) #offices .listing-card p:not(.detail):not(.card-links){
+ color:#344d44;
+ font-size:.91rem;
+ line-height:1.75;
+}
+body:not([data-workspace-view="ledger"]) #offices .listing-card .detail{
+ margin-top:auto;
+ border-top:1px solid #bfd2c4;
+ padding-top:17px;
+ color:#385948;
+ font-weight:720;
+ font-size:.82rem;
+}
+body:not([data-workspace-view="ledger"]) #offices .listing-card .card-links{
+ margin-top:13px;
+ padding-top:13px;
+ border-top:1px solid #d8e3d9;
+ line-height:1.7;
+}
+body:not([data-workspace-view="ledger"]) #offices .listing-card .card-links a{
+ display:inline-flex;
+ align-items:center;
+ max-width:100%;
+ min-height:44px;
+ margin:3px 3px 3px 0;
+ padding:8px 13px;
+ border:1px solid #b9d0c0;
+ border-radius:9px;
+ background:#ecf3e9;
+ color:#1a5841;
+ font-size:.8rem;
+ line-height:1.42;
+ text-decoration:none;
+ overflow-wrap:anywhere;
+}
+body:not([data-workspace-view="ledger"]) #offices .listing-card .card-links a[href^="tel:"]{
+ background:#194e3f;
+ border-color:#194e3f;
+ color:#fffdf3;
+}
+body:not([data-workspace-view="ledger"]) #offices .listing-card .card-links a:hover{
+ background:#d8eadc;
+ border-color:#64977d;
+ text-decoration:underline;
+}
+body:not([data-workspace-view="ledger"]) #offices .listing-card .card-links a[href^="tel:"]:hover{
+ background:#2d6853;
+ color:#fffdf3;
+}
+body:not([data-workspace-view="ledger"]) #offices .listing-card a:focus-visible,
+body:not([data-workspace-view="ledger"]) #offices .listing-card button:focus-visible{
+ outline:3px solid #a55f13;
+ outline-offset:3px;
+}
+@media(min-width:980px){
+ body:not([data-workspace-view="ledger"]) #offices .listing-card:hover{
+  transform:translateY(-4px);
+  border-color:#87ad96;
+  box-shadow:0 23px 47px #10392e22;
+ }
+}
+@media(max-width:640px){
+ body:not([data-workspace-view="ledger"]) #offices .cards{gap:14px}
+ body:not([data-workspace-view="ledger"]) #offices .listing-card{
+  padding:23px 21px;
+  border-radius:6px 20px 6px 20px;
+ }
+ body:not([data-workspace-view="ledger"]) #offices .listing-card::before{
+  margin-bottom:17px;
+  padding-bottom:12px;
+ }
+ body:not([data-workspace-view="ledger"]) #offices .listing-card h3{
+  font-size:clamp(1.45rem,7vw,1.95rem);
+  margin:14px 0;
+ }
+ body:not([data-workspace-view="ledger"]) #offices .listing-card .card-links a{
+  min-height:48px;
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ body:not([data-workspace-view="ledger"]) #offices .listing-card{transition:none}
+ body:not([data-workspace-view="ledger"]) #offices .listing-card:hover{transform:none}
+}
+@media print{
+ body:not([data-workspace-view="ledger"]) #offices .listing-card{
+  background:white!important;
+  box-shadow:none;
+  border:1px solid #888;
+  break-inside:avoid;
+ }
+ body:not([data-workspace-view="ledger"]) #offices .listing-card .card-links a{
+  background:white!important;
+  border:0;
+  color:#173d32!important;
+  padding:0 5px 0 0;
+ }
+}
+
 </style>
 </head>
 <body>
