@@ -3331,6 +3331,37 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 @media(prefers-reduced-motion:reduce){#browse .filters>button.reset{transition:none}}
 @media print{#browse .finder-intro{background:#fff!important;color:#111!important}#browse .finder-intro :is(h3,p,small,span){color:#111!important}}
 
+
+/* 2026-11-12: Furniture/appliance category living-room field folio.
+   StayARV-inspired image-led hierarchy; original concept art, not an inventory
+   claim. NN/g visual hierarchy, web.dev visual stability, W3C WCAG 2.2
+   reflow, focus and reduced motion. All provider copy and existing links stay. */
+.household-folio{display:block;position:relative;isolation:isolate;overflow:hidden;background:#d9c7a5;color:#fff8e5}
+.household-folio::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,#0c3028d1 0%,#0c302873 45%,transparent 84%)}
+.household-folio::after{content:"";position:absolute;inset:13px;z-index:1;pointer-events:none;border:1px solid #f5daa491;border-radius:11px}
+.household-folio-scene{position:absolute;inset:0;width:100%;height:100%;display:block;transition:transform .3s ease}
+.household-folio-copy{position:absolute;z-index:2;top:clamp(24px,3.5vw,41px);left:clamp(24px,3.5vw,42px);right:18px;display:flex;flex-direction:column;gap:14px;text-shadow:0 3px 14px #0c3028bb}
+.household-folio-copy>span{font-size:.67rem;line-height:1.5;font-weight:850;letter-spacing:.17em;color:#f7e3bc}
+.household-folio-copy strong{max-width:8ch;font:400 clamp(2.5rem,4.8vw,5.1rem)/.99 Georgia,"Times New Roman",serif;letter-spacing:-.06em;text-wrap:balance}
+.household-folio-copy em{font-style:italic;color:#f5ce8f}
+.household-folio-foot{position:absolute;z-index:2;bottom:23px;left:clamp(24px,3.5vw,42px);right:20px;font-size:.57rem;letter-spacing:.13em;line-height:1.5;font-weight:800;color:#fff1da;text-shadow:0 2px 8px #0c3028}
+.household-folio-icon{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="household-rentals"]{border-color:#b4c4b3}
+@media(min-width:1001px){
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="household-rentals"]{grid-column:span 2;display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);min-height:390px;border-radius:22px;box-shadow:0 19px 48px #173b3120}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="household-rentals"]>.household-folio{height:100%;min-height:390px}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="household-rentals"]>.card-body{justify-content:center;padding:clamp(28px,3.4vw,44px);background:#fbf7ec}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="household-rentals"] h3{font:400 clamp(1.8rem,2.9vw,2.7rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.048em}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="household-rentals"] .card-link{min-height:48px;align-items:center;padding:12px 14px;background:#1a4c3b;color:#fffaf0;border-radius:9px}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="household-rentals"] .card-link:hover{background:#2b664e}
+}
+@media(max-width:1000px){.household-folio-copy strong{font-size:clamp(2rem,4.4vw,3.3rem)}}
+@media(max-width:600px){.rental-card[data-category="household-rentals"]>.household-folio{height:255px}.household-folio-copy{left:22px;top:20px;gap:7px}.household-folio-copy strong{font-size:2.5rem}.household-folio-foot{left:22px;bottom:19px}}
+#rental-results[data-view="list"]>.rental-card[data-category="household-rentals"]>.household-folio{height:100%;min-height:180px}
+#rental-results[data-view="list"] .household-folio-copy strong{font-size:clamp(1.65rem,2.3vw,2.2rem)}
+@media(prefers-reduced-motion:reduce){.household-folio-scene{transition:none}}
+@media print{.household-folio{background:white!important}.household-folio-scene{filter:grayscale(1)}.household-folio-copy,.household-folio-foot{display:none}}
+
 </style>
 </head>
 <body>
@@ -3754,7 +3785,35 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 <p class="status">Derksen dealers · Affordable Buildings · Frontier Shed Co. · Arkansas Metal Structures (Clarksville)</p>
 <a class="card-link" href="sheds.html">Browse portable building rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="household-rentals">
-<div class="category-art icon-tile" style="--tile-ink:#7d5945;--tile-bg:#f2e4d9" role="img" aria-label="Furniture sofa"><svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-household-rentals"></use></svg><small>HOME RENTALS</small></div>
+<div class="category-art household-folio" role="img" aria-label="Original illustration of a furnished living room, window overlooking the River Valley, sofa, floor lamp, table and refrigerator. Concept art, not actual available provider inventory.">
+<svg class="household-folio-scene" viewBox="0 0 760 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+<rect width="760" height="480" fill="#e9d7b5"/>
+<path d="M0 0h760v480H0Z" fill="#eddfc1"/><path d="M0 315h760v165H0Z" fill="#aa8d6d"/>
+<rect x="49" y="41" width="310" height="225" rx="5" fill="#e6e9d9" stroke="#355749" stroke-width="13"/>
+<rect x="62" y="54" width="284" height="198" fill="#85ab9c"/>
+<circle cx="268" cy="104" r="39" fill="#f5d796"/>
+<path d="M62 194 112 128l63 44 60-74 62 56 49-27v125H62Z" fill="#a2b99e"/>
+<path d="m62 215 60-56 62 30 72-51 90 40v74H62Z" fill="#4c7764"/>
+<path d="M204 54v198M62 153h284" stroke="#e9e5cf" stroke-width="10"/>
+<path d="M0 338h760M0 401h760" stroke="#d0ad89" stroke-width="4" opacity=".75"/>
+<rect x="529" y="94" width="139" height="249" rx="11" fill="#eeeade" stroke="#325c4d" stroke-width="8"/>
+<path d="M536 213h125m-24-45v23m0 46v23" stroke="#789c8e" stroke-width="7" stroke-linecap="round"/>
+<path d="M478 326V137l-36-37m36 37 38-37" stroke="#315748" stroke-width="10" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+<path d="M449 106q28-47 58 0Z" fill="#e8be7f"/>
+<path d="M460 328h37" stroke="#315748" stroke-width="9" stroke-linecap="round"/>
+<rect x="107" y="286" width="343" height="100" rx="24" fill="#245749" stroke="#143e33" stroke-width="7"/>
+<rect x="118" y="254" width="154" height="73" rx="20" fill="#3d8067" stroke="#1c4c3f" stroke-width="7"/>
+<rect x="281" y="254" width="155" height="73" rx="20" fill="#3d8067" stroke="#1c4c3f" stroke-width="7"/>
+<path d="M128 379v24m303-24v24" stroke="#173d32" stroke-width="15" stroke-linecap="round"/>
+<ellipse cx="332" cy="408" rx="126" ry="21" fill="#547260" opacity=".27"/>
+<ellipse cx="329" cy="397" rx="85" ry="17" fill="#ecd5ac" stroke="#a57a50" stroke-width="6"/>
+<path d="M273 402v35m111-35v35" stroke="#916f4c" stroke-width="9"/>
+<rect x="293" y="375" width="47" height="13" rx="4" fill="#fff0d3"/>
+</svg>
+<div class="household-folio-copy" aria-hidden="true"><span>R↗ / EVERYDAY LIVING</span><strong>Room to <em>live.</em></strong></div>
+<span class="household-folio-foot" aria-hidden="true">ILLUSTRATED INTERIOR · NOT PROVIDER INVENTORY</span>
+<svg class="directory-pictogram household-folio-icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-household-rentals"></use></svg>
+</div>
 <div class="card-body"><p class="eyebrow">Furniture &amp; appliance rentals</p><h3>Furniture &amp; appliance rentals</h3>
 <p>Rent-to-own furniture, appliances, TVs and electronics.</p>
 <p class="status">Rent-A-Center · Aaron's · Bestway · Hank's (Acima lease-to-own)</p>
