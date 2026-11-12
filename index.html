@@ -4237,9 +4237,6 @@ savedClear.addEventListener("click", () => {
   savedToggle.focus();
   savedFeedback.textContent = "All saved rental categories cleared.";
 });
-renderSavedCategories();
-savedToggle.hidden = false;
-
 /* Take-along field notes use only the original saved category card links.
    Nothing is transmitted, booked, priced, or saved to a new storage key. */
 const savedFieldKit=document.getElementById("saved-field-kit");
@@ -4300,6 +4297,8 @@ savedPrint.addEventListener("click",()=>{
   window.addEventListener("afterprint",resetPrint,{once:true});
   try{window.print();}catch(error){resetPrint();savedFieldStatus.textContent="Printing is unavailable in this browser; use Copy my rental links instead.";}
 });
+renderSavedCategories();
+savedToggle.hidden = false;
 
 const shareButton = document.getElementById("share-view");
 const shareLabel = document.getElementById("share-view-label");
