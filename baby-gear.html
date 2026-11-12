@@ -319,6 +319,36 @@ footer a{color:#ffe3a5}
 @media(max-width:700px){.family-checkpoint{border-radius:17px;margin:45px 0}.family-checkpoint-cover{grid-template-columns:1fr;min-height:0;padding:clamp(32px,6vw,45px) clamp(23px,5vw,35px)}.family-checkpoint-cover:before{inset:10px}.family-checkpoint-story h2{font-size:clamp(2.5rem,8.5vw,3.7rem)}.family-checkpoint-art{display:none}.family-checkpoint-grid{grid-template-columns:1fr}.family-checkpoint-step{min-height:0;padding:23px 24px}.family-checkpoint-top{margin-bottom:9px}.family-checkpoint-top svg{width:43px;height:43px}.family-checkpoint-step h3{margin:0 0 9px;font-size:1.9rem}.family-checkpoint-safety{padding:24px;font-size:.81rem}}
 @media print{.family-checkpoint{box-shadow:none;background:#fff;border:1px solid #888;break-inside:avoid}.family-checkpoint-cover{min-height:0;padding:22px;background:#fff!important;color:#173e32!important}.family-checkpoint-cover:before,.family-checkpoint-art{display:none}.family-checkpoint-story :is(h2,h2 em,p,.family-checkpoint-overline,.family-checkpoint-scene){color:#173e32!important}.family-checkpoint-grid{background:#fff}.family-checkpoint-step{background:#fff!important;border:1px solid #aaa;break-inside:avoid}.family-checkpoint-safety{background:#fff;color:#173e32}.family-checkpoint-safety strong{color:#173e32}}
 
+
+/* 2026-11-12 family travel passport: compared live stayarv.com and
+   russellville.rent. Adapted immersive forest/cream hierarchy to booking
+   facts rather than provider inventory. Existing caveats and provider content
+   remain. NN/g visual hierarchy (nngroup.com/articles/visual-hierarchy-ux-definition/);
+   Google web.dev CLS (web.dev/articles/cls); W3C WCAG 2.2 (w3.org/TR/WCAG22/).
+   Static intrinsic layout, responsive reflow, no new external assets. */
+.hero-facts.family-passport{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.55fr);gap:0;max-width:1130px;width:calc(100% - clamp(40px,8vw,100px));margin:14px auto 34px;padding:0;overflow:hidden;border:1px solid #decaa6;border-radius:23px;background:#f9f5eb;color:#173e34;box-shadow:0 21px 44px #041d174e;letter-spacing:normal;font-size:1rem}
+.family-passport-heading{position:relative;display:flex;flex-direction:column;justify-content:center;min-width:0;padding:clamp(28px,3.6vw,48px);background:radial-gradient(circle at 97% 92%,#2f6556,transparent 42%),linear-gradient(140deg,#0d312a,#1a4d3e);color:#fff9e9}
+.family-passport-kicker{color:#f2cf92;font-size:.62rem;font-weight:850;letter-spacing:.16em;line-height:1.6}
+.family-passport-heading>strong{display:block;margin:18px 0 19px;color:#fff8e5;font:400 clamp(2.45rem,3.8vw,4.1rem)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.057em}
+.family-passport-heading>strong em{color:#f2d49d}
+.family-passport-heading p{max-width:31ch;margin:0;color:#e0eee4;font-size:.82rem;line-height:1.72}
+.family-passport-seal{position:absolute;right:19px;bottom:19px;width:44px;height:44px;display:grid;place-items:center;border:1px solid #f1d49b8c;border-radius:50%;color:#f3d59f;font:italic 1.1rem Georgia,serif;transform:rotate(-9deg)}
+.family-passport-content{display:flex;min-width:0;flex-direction:column}
+.family-passport-points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));flex:1;min-width:0;padding:clamp(18px,2.4vw,32px) clamp(12px,2vw,29px)}
+.family-passport-point{display:flex;flex-direction:column;gap:13px;min-width:0;padding:13px clamp(12px,1.7vw,23px);border-right:1px solid #d9dfd0}
+.family-passport-point:last-child{border-right:0}
+.family-passport-points .family-passport-point strong{display:block;color:#205e48;font:400 clamp(2.8rem,4.1vw,4.2rem)/1 Georgia,serif}
+.family-passport-point>span{color:#365c4a;font-size:.83rem;line-height:1.53;font-weight:730}
+.family-passport-timing{padding:19px clamp(24px,3vw,40px) 23px;border-top:1px solid #e4ddcd;background:#e7efe5}
+.family-passport-timing-label{display:block;margin-bottom:10px;color:#315c47;font-size:.63rem;font-weight:850;letter-spacing:.12em;line-height:1.6}
+.family-passport-timing>div{display:flex;flex-wrap:wrap;column-gap:32px;row-gap:9px}
+.family-passport-timing strong{display:flex;align-items:baseline;gap:8px;color:#194a38;font:400 clamp(1.45rem,2.2vw,2rem)/1.2 Georgia,serif}
+.family-passport-timing strong small{color:#426351;font:700 .72rem/1.4 system-ui,sans-serif}
+.family-passport-timing p{margin:10px 0 0;color:#4b6859;font-size:.71rem;line-height:1.55}
+@media(max-width:950px){.hero-facts.family-passport{grid-template-columns:1fr;max-width:700px}.family-passport-heading{padding:28px 31px}.family-passport-heading>strong{margin:9px 0 11px;font-size:clamp(2.35rem,6vw,3.4rem)}.family-passport-heading p{max-width:58ch}}
+@media(max-width:580px){.hero-facts.family-passport{width:calc(100% - 32px);margin:8px auto 25px;border-radius:17px}.family-passport-heading{padding:26px 24px}.family-passport-heading>strong{font-size:2.65rem}.family-passport-seal{display:none}.family-passport-points{grid-template-columns:1fr;padding:9px 22px}.family-passport-point{flex-direction:row;align-items:center;gap:21px;padding:14px 0;border-right:0;border-bottom:1px solid #d9dfd0}.family-passport-point:last-child{border-bottom:0}.family-passport-points .family-passport-point strong{flex:0 0 53px;font-size:2.5rem}.family-passport-point>span{font-size:.84rem}.family-passport-timing{padding:17px 22px 21px}.family-passport-timing>div{flex-direction:column;gap:8px}}
+@media print{.hero-facts.family-passport{width:100%;box-shadow:none;border:1px solid #888;break-inside:avoid}.family-passport-heading,.family-passport-timing{background:#fff!important;color:#173e34!important}.family-passport-heading :is(strong,em,p,.family-passport-kicker){color:#173e34!important}.family-passport-seal{display:none}}
+
 </style>
 </head>
 <body>
@@ -384,11 +414,26 @@ footer a{color:#ffe3a5}
       <div class="art-caption"><span>Illustrative scene — not provider inventory</span><span aria-hidden="true">✳</span></div>
     </div>
   </div>
-  <div class="wrap hero-facts" aria-label="Directory limitations">
-    <span><strong>01</strong> Provider advertising Russellville service</span>
-    <span><strong>?</strong> Local storefront not independently verified</span>
-    <span><strong>→</strong> Confirm gear, delivery and total price</span>
-  </div>
+  <aside class="hero-facts family-passport" aria-label="Baby gear travel planning facts">
+    <div class="family-passport-heading">
+      <span class="family-passport-kicker">THE RIVER VALLEY / FAMILY TRAVEL NOTES</span>
+      <strong>Bring less.<br><em>Know more.</em></strong>
+      <p>Start with the published terms, then confirm everything directly. This is a planning guide, not a reservation or live inventory.</p>
+      <span class="family-passport-seal" aria-hidden="true">R ↗</span>
+    </div>
+    <div class="family-passport-content">
+      <div class="family-passport-points" aria-label="Directory limitations and next steps">
+        <div class="family-passport-point"><strong>01</strong><span>Provider advertising Russellville service</span></div>
+        <div class="family-passport-point"><strong>?</strong><span>Local storefront not independently verified</span></div>
+        <div class="family-passport-point"><strong>→</strong><span>Confirm gear, delivery and total price</span></div>
+      </div>
+      <div class="family-passport-timing">
+        <span class="family-passport-timing-label">PUBLISHED BOOKING NOTES / VERIFY WITH PROVIDER</span>
+        <div><strong>3 days <small>minimum rental charge</small></strong><strong>3–4 days <small>recommended advance notice</small></strong></div>
+        <p>Published general terms, not confirmation of a date, equipment or Russellville delivery slot.</p>
+      </div>
+    </div>
+  </aside>
 </section>
 <section class="trip-guide" id="route-guide" aria-labelledby="route-title">
   <div class="wrap">
