@@ -3192,6 +3192,26 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
  body.printing-passport .print-passport-foot{display:block;padding-top:13px;border-top:1px solid #a8baa9;color:#455e4e;font:9pt/1.5 system-ui,sans-serif}
 }
 
+
+/* 2026-11-11 | Directory-first homepage information architecture.
+   Inspired by StayARV's clear hero hierarchy; NN/g visual hierarchy,
+   web.dev responsive patterns and W3C WCAG 2.2 focus / target guidance.
+   The existing full event guide is retained after all 35 categories. */
+.event-guide-bridge{display:grid;grid-template-columns:54px minmax(0,1fr) auto;align-items:center;gap:clamp(13px,2vw,27px);margin:17px 0 8px;padding:18px clamp(20px,3vw,32px);background:linear-gradient(115deg,#113b31,#215746);border:1px solid #b4bd9d;border-radius:16px;color:#fef9ea;text-decoration:none;box-shadow:0 12px 28px #10392f1b;transition:background-color .18s,transform .18s}
+.event-guide-bridge-mark{display:grid;place-items:center;width:54px;height:54px;border:1px solid #f0d39d80;border-radius:13px;color:#f2d49c;font:400 1.55rem/1 Georgia,serif}
+.event-guide-bridge-copy{display:grid;gap:3px;min-width:0}
+.event-guide-bridge-copy small{color:#e7d19e;font-size:.63rem;font-weight:850;letter-spacing:.12em;line-height:1.4}
+.event-guide-bridge-copy strong{color:#fff9e9;font:400 clamp(1.35rem,2.2vw,1.9rem)/1.14 Georgia,serif;letter-spacing:-.035em}
+.event-guide-bridge-copy>span{color:#e0eee2;font-size:.79rem;line-height:1.5}
+.event-guide-bridge-action{display:flex;align-items:center;gap:15px;min-height:44px;padding:10px 14px;border-radius:9px;background:#f2d9a0;color:#13382d;font-size:.83rem;font-weight:850;white-space:nowrap}
+.event-guide-bridge:hover{background:#1e5746;transform:translateY(-2px)}
+.event-guide-bridge:hover .event-guide-bridge-action{background:#fff0bf}
+.event-guide-bridge:focus-visible{outline:4px solid #ad671b;outline-offset:4px}
+#event-field-guide{scroll-margin-top:25px}
+@media(max-width:750px){.event-guide-bridge{grid-template-columns:43px minmax(0,1fr);gap:12px 14px;padding:18px}.event-guide-bridge-mark{width:43px;height:43px;font-size:1.3rem}.event-guide-bridge-action{grid-column:2;justify-self:start;margin-top:5px}.event-guide-bridge-copy strong{font-size:1.4rem}}
+@media(max-width:420px){.event-guide-bridge{grid-template-columns:1fr;gap:12px}.event-guide-bridge-mark{display:none}.event-guide-bridge-action{grid-column:1}.event-guide-bridge-copy small{font-size:.59rem}}
+@media(prefers-reduced-motion:reduce){.event-guide-bridge{transition:none}.event-guide-bridge:hover{transform:none}}
+@media print{.event-guide-bridge{display:none}.event-journey{break-inside:avoid}}
 </style>
 </head>
 <body>
@@ -3364,35 +3384,14 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 </section>
 
 <!-- Event field guide: cross-category navigation only; no event package, provider endorsement or booking promise. -->
-<section class="event-journey" id="event-field-guide" aria-labelledby="event-journey-title">
-  <div class="event-journey-cover">
-    <span class="event-journey-kicker">THE RIVER VALLEY / ONE EVENT, SIX PATHS</span>
-    <span class="event-journey-emblem" aria-hidden="true">R<span>↗</span></span>
-    <div class="event-journey-cover-copy">
-      <p class="event-journey-number">FIELD GUIDE / 01</p>
-      <h2 id="event-journey-title">Bring the people.<br><em>Find the pieces.</em></h2>
-      <p>A wedding, school gathering or neighborhood celebration can mean more than one rental. Start with the big decisions, then explore the details.</p>
-      <a href="venues.html" class="event-journey-primary">Start with a venue <span aria-hidden="true">↗</span></a>
-    </div>
-    <span class="event-journey-photo-note">Downtown Russellville scenery · Not a pictured rental venue</span>
-  </div>
-  <div class="event-journey-directory">
-    <div class="event-journey-directory-head">
-      <span>THE EVENT PLANNING DESK</span>
-      <strong>Six ways to build the day.</strong>
-      <p>Open each existing category to compare providers and ask about services, delivery, availability and full prices.</p>
-    </div>
-    <nav class="event-journey-routes" aria-label="Event planning rental categories">
-      <a href="venues.html"><span class="event-journey-route-number">01 / THE PLACE</span><strong>Venues &amp; gathering spaces</strong><span class="event-journey-route-arrow" aria-hidden="true">↗</span></a>
-      <a href="party.html"><span class="event-journey-route-number">02 / THE SETUP</span><strong>Party equipment &amp; supplies</strong><span class="event-journey-route-arrow" aria-hidden="true">↗</span></a>
-      <a href="audio-visual.html"><span class="event-journey-route-number">03 / THE ATMOSPHERE</span><strong>Sound, lights &amp; screens</strong><span class="event-journey-route-arrow" aria-hidden="true">↗</span></a>
-      <a href="photo-booths.html"><span class="event-journey-route-number">04 / THE MEMORIES</span><strong>Photo booths</strong><span class="event-journey-route-arrow" aria-hidden="true">↗</span></a>
-      <a href="restrooms.html"><span class="event-journey-route-number">05 / THE PRACTICALS</span><strong>Portable restrooms</strong><span class="event-journey-route-arrow" aria-hidden="true">↗</span></a>
-      <a href="stages.html"><span class="event-journey-route-number">06 / THE PROGRAM</span><strong>Stages &amp; platforms</strong><span class="event-journey-route-arrow" aria-hidden="true">↗</span></a>
-    </nav>
-    <p class="event-journey-caveat">Independent rental directories, not a bundled service. Categories may include regional providers. Confirm every provider's service area and terms directly.</p>
-  </div>
-</section>
+<!-- Compact entry point keeps event planning discoverable while moving the
+     full six-category guide after the primary 35-category rental directory. -->
+<a class="event-guide-bridge" href="#event-field-guide">
+  <span class="event-guide-bridge-mark" aria-hidden="true">R↗</span>
+  <span class="event-guide-bridge-copy"><small>PLANNING A GATHERING? / THE EVENT FIELD GUIDE</small><strong>Six rental categories. One clearer plan.</strong><span>Venue, equipment, sound, photo booths, restrooms and stages.</span></span>
+  <span class="event-guide-bridge-action">Explore the guide <span aria-hidden="true">↗</span></span>
+</a>
+
 <div class="atlas-entry">
  <a href="#browse" data-atlas-open class="atlas-entry-link">
   <span class="atlas-entry-symbols" aria-hidden="true"><svg viewBox="0 0 64 64"><use href="#rental-pictogram-homes"></use></svg><svg viewBox="0 0 64 64"><use href="#rental-pictogram-tools"></use></svg><svg viewBox="0 0 64 64"><use href="#rental-pictogram-paddling"></use></svg><svg viewBox="0 0 64 64"><use href="#rental-pictogram-party"></use></svg></span>
@@ -3920,6 +3919,35 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
     </svg>
     <figcaption><span>HERE IN THE RIVER VALLEY</span><strong>A hometown connection.</strong><small>Original illustrated message · Not a rental provider, available listing or booking confirmation</small></figcaption>
   </figure>
+</section>
+<section class="event-journey" id="event-field-guide" aria-labelledby="event-journey-title">
+  <div class="event-journey-cover">
+    <span class="event-journey-kicker">THE RIVER VALLEY / ONE EVENT, SIX PATHS</span>
+    <span class="event-journey-emblem" aria-hidden="true">R<span>↗</span></span>
+    <div class="event-journey-cover-copy">
+      <p class="event-journey-number">FIELD GUIDE / 01</p>
+      <h2 id="event-journey-title">Bring the people.<br><em>Find the pieces.</em></h2>
+      <p>A wedding, school gathering or neighborhood celebration can mean more than one rental. Start with the big decisions, then explore the details.</p>
+      <a href="venues.html" class="event-journey-primary">Start with a venue <span aria-hidden="true">↗</span></a>
+    </div>
+    <span class="event-journey-photo-note">Downtown Russellville scenery · Not a pictured rental venue</span>
+  </div>
+  <div class="event-journey-directory">
+    <div class="event-journey-directory-head">
+      <span>THE EVENT PLANNING DESK</span>
+      <strong>Six ways to build the day.</strong>
+      <p>Open each existing category to compare providers and ask about services, delivery, availability and full prices.</p>
+    </div>
+    <nav class="event-journey-routes" aria-label="Event planning rental categories">
+      <a href="venues.html"><span class="event-journey-route-number">01 / THE PLACE</span><strong>Venues &amp; gathering spaces</strong><span class="event-journey-route-arrow" aria-hidden="true">↗</span></a>
+      <a href="party.html"><span class="event-journey-route-number">02 / THE SETUP</span><strong>Party equipment &amp; supplies</strong><span class="event-journey-route-arrow" aria-hidden="true">↗</span></a>
+      <a href="audio-visual.html"><span class="event-journey-route-number">03 / THE ATMOSPHERE</span><strong>Sound, lights &amp; screens</strong><span class="event-journey-route-arrow" aria-hidden="true">↗</span></a>
+      <a href="photo-booths.html"><span class="event-journey-route-number">04 / THE MEMORIES</span><strong>Photo booths</strong><span class="event-journey-route-arrow" aria-hidden="true">↗</span></a>
+      <a href="restrooms.html"><span class="event-journey-route-number">05 / THE PRACTICALS</span><strong>Portable restrooms</strong><span class="event-journey-route-arrow" aria-hidden="true">↗</span></a>
+      <a href="stages.html"><span class="event-journey-route-number">06 / THE PROGRAM</span><strong>Stages &amp; platforms</strong><span class="event-journey-route-arrow" aria-hidden="true">↗</span></a>
+    </nav>
+    <p class="event-journey-caveat">Independent rental directories, not a bundled service. Categories may include regional providers. Confirm every provider's service area and terms directly.</p>
+  </div>
 </section>
 <!-- Closing River Valley editorial guide: locally hosted scenic photo, not a rental listing. -->
 <footer class="directory-endcap" aria-labelledby="endcap-title">
