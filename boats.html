@@ -732,6 +732,87 @@ body{background:#f6f6f0}
  #closure-details .notice{box-shadow:none;break-inside:avoid}
 }
 
+
+/* 2026-11-12 / Marina closure navigation — harbor noticeboard.
+   Compared live stayarv.com and russellville.rent before this change.
+   Translating StayARV's immersive information card treatment into two large
+   actionable safety notices. Existing closure text/dates, published sources,
+   access restrictions and every other directory section are retained.
+   References: NN/g visual hierarchy and information scent; web.dev responsive
+   layout and no new image/font downloads; W3C WCAG 2.2 focus visible/reflow.
+   The cards navigate to the separate, existing federal notices, not bookings. */
+.status-panel{
+ display:flex;flex-direction:column;gap:11px;padding:clamp(17px,2vw,25px);
+ background:linear-gradient(153deg,#092a25f5,#154339f2);
+ border-color:#e8d5a963;border-radius:22px;
+}
+.status-panel h2{
+ margin:0 0 4px;padding:0 0 12px;
+ border-bottom:1px solid #d9cfaa59;color:#f9dfaa;
+}
+.status-panel .status-row.status-route{
+ display:grid;grid-template-columns:14px minmax(0,1fr);gap:13px;
+ align-items:start;min-height:119px;margin:0;
+ padding:clamp(17px,2vw,24px);
+ border:1px solid #f7ead34c;border-radius:15px;
+ background:linear-gradient(120deg,#f9f0dc,#fffdf4);
+ color:#143b32;text-decoration:none;box-shadow:0 7px 20px #041d1b24;
+ transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+}
+.status-panel .status-route .status-dot{
+ margin-top:7px;width:11px;height:11px;
+ background:#b5662b;box-shadow:0 0 0 5px #b5662b20;
+}
+.status-panel .status-route-body{display:flex;flex-direction:column;min-width:0}
+.status-panel .status-route strong{
+ font:400 clamp(1.24rem,1.85vw,1.55rem)/1.17 Georgia,"Times New Roman",serif;
+ color:#173d32;letter-spacing:-.035em;
+}
+.status-panel .status-route small{
+ display:flex;flex-wrap:wrap;align-items:center;gap:5px;
+ margin-top:9px;color:#6c532f;font-size:.72rem;line-height:1.45;
+}
+.status-panel .status-word{
+ display:inline-block;border-radius:100px;padding:3px 9px;
+ background:#8a4723;color:#fff4e7;font-size:.62rem;
+ font-weight:850;letter-spacing:.08em;text-transform:uppercase;
+}
+.status-panel .status-route-cue{
+ display:inline-flex;align-items:center;gap:8px;
+ margin-top:auto;padding-top:16px;
+ color:#215b45;font-size:.75rem;font-weight:800;
+ text-decoration:underline;text-underline-offset:3px;
+}
+.status-panel .status-route:hover{
+ transform:translateY(-2px);border-color:#e3bb74;
+ box-shadow:0 12px 24px #061f1b32;
+}
+.status-panel .status-route:focus-visible{
+ outline:4px solid #ffd48a;outline-offset:3px;
+}
+.status-panel .marina-help-strip{margin-top:7px}
+#dardanelle-closure{scroll-margin-top:28px}
+@media(max-width:850px){
+ .status-panel{display:flex;grid-template-columns:none;gap:10px}
+ .status-panel h2{grid-column:auto}
+ .status-panel .status-row.status-route{min-height:0}
+}
+@media(max-width:560px){
+ .status-panel{padding:16px;border-radius:17px}
+ .status-panel .status-row.status-route{padding:17px;gap:11px}
+ .status-panel .status-route strong{font-size:1.3rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .status-panel .status-route{transition:none}
+ .status-panel .status-route:hover{transform:none}
+}
+@media print{
+ .status-panel .status-row.status-route{
+  background:white;color:#173d32;border:1px solid #777;box-shadow:none;
+ }
+ .status-panel .status-route-cue{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -743,8 +824,8 @@ body{background:#f6f6f0}
 <div><p class="eyebrow">Russellville, Arkansas · Lake Dardanelle</p><h1 id="page-title">Boat &amp; marina <em>rentals</em></h1><p class="hero-intro">Current rental availability and official closure information. There are no verified active boat or marina rental providers listed here.</p></div>
 <aside class="status-panel" aria-label="Marina closure status">
 <h2>Marina status at a glance</h2>
-<div class="status-row"><span class="status-dot" aria-hidden="true"></span><div><strong>Russellville Marina</strong><small>Closed · October 23, 2026</small></div></div>
-<div class="status-row"><span class="status-dot" aria-hidden="true"></span><div><strong>Dardanelle Marina</strong><small>Closed · December 31, 2025</small></div></div>
+<a class="status-row status-route" href="#closure-details"><span class="status-dot" aria-hidden="true"></span><span class="status-route-body"><strong>Russellville Marina</strong><small><span class="status-word">Closed</span> · <time datetime="2026-10-23">October 23, 2026</time></small><span class="status-route-cue">Read full closure notice <span aria-hidden="true">↗</span></span></span></a>
+<a class="status-row status-route" href="#dardanelle-closure"><span class="status-dot" aria-hidden="true"></span><span class="status-route-body"><strong>Dardanelle Marina</strong><small><span class="status-word">Closed</span> · <time datetime="2025-12-31">December 31, 2025</time></small><span class="status-route-cue">Read separate closure notice <span aria-hidden="true">↗</span></span></span></a>
 <div class="marina-help-strip" role="group" aria-label="Russellville Marina property access information">
   <span class="marina-help-kicker">FOR BOAT OWNERS / ACCESS BY APPOINTMENT</span>
   <p><strong>Have belongings at the marina?</strong> The general removal window ended October 30, 2026. Coordinate with the Corps before attempting access.</p>
@@ -776,7 +857,7 @@ body{background:#f6f6f0}
 <div class="notice notice--critical"><div class="notice-label">Full closure · Russellville Marina</div><p><strong>Important closure notice — October 23, 2026:</strong> The U.S. Army Corps of Engineers ordered a full closure of Russellville Marina, including its grounds, docks, cabins, store, repair shop and all commercial operations. <strong>Boat and cabin rentals at this marina are not available.</strong> <strong>Background:</strong> The Corps first closed unsafe docks on July 8, 2026, citing damage from a February winter storm compounded by deferred maintenance. The operator had not completed required safety measures and corrective repairs before the October 23 full closure. <a href="https://www.swl.usace.army.mil/Media/News-Releases/Article/4538674/russellville-marina-docks-temporarily-closed-as-of-july-8-2026/" target="_blank" rel="noopener noreferrer">Official July dock-safety notice ↗</a> The operator website may still advertise rentals, but the federal closure supersedes that information. Do not attempt to access closed facilities.</p></div>
 <div class="notice-grid">
 <div class="notice notice--access" id="property-access"><div class="notice-label">Personal property access</div><p><strong>Boat owners and marina patrons:</strong> The general property-removal window <strong>ended October 30, 2026</strong>. Removal from open marina areas is now <strong>by appointment only</strong>, coordinated through the U.S. Army Corps of Engineers. Previously closed docks must not be entered without explicit coordination. <strong>Property remaining after July 7, 2027 may be subject to federal impoundment and removal.</strong> For access instructions, contact the <strong>Russellville Site Office at <a href="tel:+15013401762">501-340-1762</a></strong> or the <strong>Corps Real Estate Division at <a href="tel:+15013245716">501-324-5716</a></strong> (weekdays, 8 a.m.–4 p.m.). Do not enter closed or unsafe facilities. <a href="https://www.arkansasbusiness.com/article/russellville-marina-closed-due-to-safety-violations-lease-default/" target="_blank" rel="noopener noreferrer">October 23 closure report ↗</a> · <a href="https://www.swl.usace.army.mil/Media/News-Releases/Article/4538674/russellville-marina-docks-temporarily-closed-as-of-july-8-2026/" target="_blank" rel="noopener noreferrer">Official Corps site-office contacts ↗</a></p></div>
-<div class="notice notice--secondary"><div class="notice-label">Separate closure · Dardanelle Marina</div><p><strong>Separate Dardanelle Marina closure:</strong> The U.S. Army Corps of Engineers also closed Dardanelle Marina (Theriot Marina) on December 31, 2025 after its lease was not renewed because of public-safety and lease-compliance issues. It is <strong>not an active boat-rental option</strong>. <a href="https://www.swl.usace.army.mil/Media/News-Releases/Article/4373614/public-notice-dardanelle-marina-closed-as-of-dec-31-2025/" target="_blank" rel="noopener noreferrer">Official Corps closure notice, January 8, 2026 ↗</a>.</p></div>
+<div class="notice notice--secondary" id="dardanelle-closure"><div class="notice-label">Separate closure · Dardanelle Marina</div><p><strong>Separate Dardanelle Marina closure:</strong> The U.S. Army Corps of Engineers also closed Dardanelle Marina (Theriot Marina) on December 31, 2025 after its lease was not renewed because of public-safety and lease-compliance issues. It is <strong>not an active boat-rental option</strong>. <a href="https://www.swl.usace.army.mil/Media/News-Releases/Article/4373614/public-notice-dardanelle-marina-closed-as-of-dec-31-2025/" target="_blank" rel="noopener noreferrer">Official Corps closure notice, January 8, 2026 ↗</a>.</p></div>
 </div>
 </section>
 
