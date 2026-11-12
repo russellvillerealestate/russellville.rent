@@ -1020,6 +1020,49 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
   .listings.is-compact .card-actions,.listings.is-compact .compare-pick{display:none}
 }
 
+
+/* 2026-11-11 / Moving-day guide: a place-led, independent directory journey.
+   Creative reference: https://stayarv.com/ (immersive editorial cover),
+   https://www.nngroup.com/articles/visual-hierarchy-ux-definition/,
+   https://web.dev/learn/design/responsive-images/ and WCAG 2.2
+   https://www.w3.org/TR/WCAG22/ (focus, reflow, target size).
+   No inventory, provider records, prices or booking status altered. */
+.settle-move{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);overflow:hidden;isolation:isolate;margin:clamp(46px,7vw,86px) 0 46px;border:1px solid #a9c3af;border-radius:27px;background:#f9f6e9;box-shadow:0 24px 56px #0f3b301b}
+.settle-move-cover{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:34px;min-height:615px;min-width:0;padding:clamp(27px,4.4vw,53px);color:#fff9e9;background:radial-gradient(circle at 90% 11%,#8b9c6466,transparent 38%),linear-gradient(155deg,#102d2b 0%,#145140 59%,#26604a 100%)}
+.settle-move-cover:before{content:"";position:absolute;inset:15px;border:1px solid #f7e7bd50;border-radius:17px;pointer-events:none}
+.settle-move-cover-head{display:flex;align-items:start;justify-content:space-between;gap:16px}
+.settle-move-kicker{font-size:.66rem;font-weight:800;letter-spacing:.16em;line-height:1.5;text-transform:uppercase;color:#f2d5a0}
+.settle-move-mark{display:grid;place-items:center;width:56px;height:56px;flex:none;border:1px solid #f7e9bc75;border-radius:50%;font:400 1.55rem/1 Georgia,serif;color:#f2d5a0}
+.settle-move-cover h2{max-width:13ch;margin:0;font:400 clamp(2.7rem,4.5vw,4.65rem)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.062em;text-wrap:balance}
+.settle-move-cover h2 em{font-weight:400;color:#f2d5a0}
+.settle-move-cover-text{max-width:48ch;margin:20px 0 0;color:#edf5e9;font-size:.97rem;line-height:1.7}
+.settle-move-art{display:block;width:100%;max-width:590px;height:auto;margin:0 0 -18px;overflow:visible;filter:drop-shadow(0 13px 18px #092e284a)}
+.settle-move-cover-note{position:relative;display:block;padding-top:15px;border-top:1px solid #e9e5ca51;color:#e4ecdf;font-size:.73rem;line-height:1.55}
+.settle-move-directory{display:flex;flex-direction:column;gap:18px;padding:clamp(27px,3.6vw,44px);min-width:0}
+.settle-move-directory-head{padding-bottom:20px;border-bottom:1px solid #c9d7c5}
+.settle-move-directory-head>span{display:block;font-size:.66rem;font-weight:850;letter-spacing:.15em;color:#527358}
+.settle-move-directory-head>strong{display:block;margin:12px 0;font:400 clamp(1.8rem,2.6vw,2.65rem)/1.09 Georgia,"Times New Roman",serif;letter-spacing:-.04em;color:#173d32}
+.settle-move-directory-head>p{max-width:51ch;margin:0;color:#4b6155;font-size:.86rem;line-height:1.65}
+.settle-move-routes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;flex:1}
+.settle-move-routes a{position:relative;display:flex;flex-direction:column;gap:11px;min-width:0;min-height:187px;padding:19px 19px 17px;background:#f1eee0;color:#193c32;border:1px solid #ccd6c5;border-radius:13px;text-decoration:none;transition:background .18s,border-color .18s,transform .18s}
+.settle-move-routes a:nth-child(2),.settle-move-routes a:nth-child(3){background:#e5eee4}
+.settle-move-routes a:hover{background:#f9e9c8;border-color:#5d8267;transform:translateY(-2px)}
+.settle-move-routes a:focus-visible,.settle-move-return:focus-visible{outline:3px solid #995919;outline-offset:3px}
+.settle-move-route-top{display:flex;align-items:center;justify-content:space-between;gap:9px}
+.settle-move-route-top span{font-size:.64rem;letter-spacing:.12em;font-weight:850;color:#586f5c}
+.settle-move-route-top svg{width:41px;height:41px;flex:none;fill:none;stroke:#355e4c;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.settle-move-routes strong{display:block;margin-top:auto;font:400 clamp(1.25rem,1.6vw,1.56rem)/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.025em}
+.settle-move-routes .settle-move-route-copy{max-width:25ch;font-size:.76rem;line-height:1.55;color:#4b6558}
+.settle-move-route-arrow{position:absolute;top:16px;right:18px;font-size:1rem;color:#53785f}
+.settle-move-foot{display:flex;align-items:center;justify-content:space-between;gap:13px;padding-top:10px;border-top:1px solid #c9d7c5}
+.settle-move-foot p{max-width:46ch;margin:0;color:#576b5d;font-size:.74rem;line-height:1.5}
+.settle-move-return{display:inline-flex;align-items:center;justify-content:center;flex:none;min-height:45px;padding:10px 15px;border-radius:999px;background:#174936;color:#fff9e9;text-align:center;text-decoration:none;font-size:.76rem;font-weight:800}
+.settle-move-return:hover{background:#28624c}
+@media(max-width:1020px){.settle-move{grid-template-columns:1fr}.settle-move-cover{min-height:0;gap:20px}.settle-move-cover h2{max-width:17ch}.settle-move-art{max-width:440px;align-self:end;margin-top:-40px}.settle-move-directory{padding:29px}.settle-move-routes a{min-height:160px}}
+@media(max-width:600px){.settle-move{margin:42px 0 34px;border-radius:18px}.settle-move-cover{padding:29px 23px;gap:24px}.settle-move-cover:before{inset:9px;border-radius:11px}.settle-move-kicker{font-size:.59rem;max-width:22ch}.settle-move-cover h2{font-size:clamp(2.6rem,11vw,3.75rem)}.settle-move-cover-text{font-size:.88rem}.settle-move-art{margin:0 -8px -6px 0;width:100%}.settle-move-directory{padding:24px 16px}.settle-move-routes{grid-template-columns:1fr;gap:9px}.settle-move-routes a{min-height:118px;padding:15px 16px;gap:6px}.settle-move-route-top svg{width:32px;height:32px}.settle-move-routes strong{font-size:1.37rem;margin-top:0}.settle-move-routes .settle-move-route-copy{max-width:none}.settle-move-foot{flex-direction:column;align-items:stretch}.settle-move-return{width:100%}}
+@media(prefers-reduced-motion:reduce){.settle-move-routes a{transition:none}.settle-move-routes a:hover{transform:none}}
+@media print{.settle-move{display:block;border:1px solid #777;box-shadow:none}.settle-move-cover{min-height:0;color:#173d32;background:#fff!important}.settle-move-cover h2,.settle-move-cover h2 em,.settle-move-cover-text,.settle-move-cover-note,.settle-move-kicker{color:#173d32!important}.settle-move-art,.settle-move-mark{display:none}.settle-move-routes a{min-height:0;break-inside:avoid}.settle-move-return{color:#173d32;background:#fff;border:1px solid #777}}
+
 </style></head>
 <body>
 <a class="skip" href="#main">Skip to listings</a>
@@ -1294,6 +1337,49 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
         <span>No application or inquiry is submitted here. Verify all answers with the listed operator.</span>
         <a href="#listings">Back to rental results ↑</a>
       </div>
+    </div>
+  </section>
+
+
+  <!-- 2026-11-11: Cross-category moving-day editorial wayfinder. -->
+  <section class="settle-move" aria-labelledby="settle-move-title">
+    <div class="settle-move-cover">
+      <div class="settle-move-cover-head"><span class="settle-move-kicker">THE RIVER VALLEY / AFTER THE LEASE</span><span class="settle-move-mark" aria-hidden="true">R↗</span></div>
+      <div>
+        <h2 id="settle-move-title">Find the place.<br><em>Move with a plan.</em></h2>
+        <p class="settle-move-cover-text">A home search is just the first chapter. Once your next place is confirmed, build the rest of moving day with local rental categories.</p>
+      </div>
+      <svg class="settle-move-art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530 244" aria-hidden="true" focusable="false">
+        <path d="M0 164 74 111l61 28 82-87 102 101 77-65 134 75v81H0Z" fill="#789879" opacity=".5"/>
+        <path d="M0 197 105 153l100 27 95-48 93 36 137-45v121H0Z" fill="#2f6f55"/>
+        <circle cx="420" cy="53" r="35" fill="#f2ce82" opacity=".94"/>
+        <path d="M0 228c100-61 191 20 265-8s146-47 265-6v30H0Z" fill="#1b5040"/>
+        <path d="M-22 257c98-108 190-27 268-97 66-57 141-1 309-94" fill="none" stroke="#efdeab" stroke-width="29" stroke-linecap="round" opacity=".85"/>
+        <path d="M-22 257c98-108 190-27 268-97 66-57 141-1 309-94" fill="none" stroke="#315a4d" stroke-width="3" stroke-dasharray="13 13" stroke-linecap="round" opacity=".75"/>
+        <g transform="translate(66 66)" fill="none" stroke="#f6e8c7" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m0 68 56-50 56 50M12 61v72h88V61M45 133V83h23v50M77 76h12v16H77M19 76h12v16H19"/>
+        </g>
+        <g transform="translate(327 133)" stroke="#f9ebce" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 17h89v46H7zM96 33h30l19 20v10H96zM109 33v17h29M18 28h68" fill="#d3a469" stroke="#f9ebce"/>
+          <path d="M22 63h113" fill="none"/>
+          <circle cx="32" cy="67" r="12" fill="#153c34"/><circle cx="115" cy="67" r="12" fill="#153c34"/>
+        </g>
+      </svg>
+      <span class="settle-move-cover-note">Original illustrative scene, not a rental property, vehicle listing or availability image.</span>
+    </div>
+    <div class="settle-move-directory">
+      <div class="settle-move-directory-head">
+        <span>THE MOVING-DAY FIELD GUIDE / FOUR PATHS</span>
+        <strong>Everything around the move.</strong>
+        <p>Each stop leads to an independent directory. No provider bundle, live vacancy, delivery service or rate is implied.</p>
+      </div>
+      <nav class="settle-move-routes" aria-label="Rental categories for moving day">
+        <a href="moving.html"><span class="settle-move-route-top"><span>01 / TRANSPORT</span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 10h27v25H4zM31 21h8l6 9v5H31M12 35v5m26-5v5"/><circle cx="13" cy="37" r="5"/><circle cx="38" cy="37" r="5"/></svg></span><strong>Move the load.</strong><span class="settle-move-route-copy">Compare moving-truck rental and pickup options.</span><span class="settle-move-route-arrow" aria-hidden="true">↗</span></a>
+        <a href="trailers.html"><span class="settle-move-route-top"><span>02 / HAULING</span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 11h27v23H4zM9 19h17M9 25h17M31 28h7l5 6h3M31 34h15"/><circle cx="15" cy="37" r="5"/><circle cx="34" cy="37" r="5"/></svg></span><strong>Bring a trailer.</strong><span class="settle-move-route-copy">Find trailer rental providers for a suitable haul.</span><span class="settle-move-route-arrow" aria-hidden="true">↗</span></a>
+        <a href="storage.html"><span class="settle-move-route-top"><span>03 / EXTRA ROOM</span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 15h36v28H6zM4 15 8 6h32l4 9M11 22h26M11 28h26M11 34h26M21 15v28"/></svg></span><strong>Make room.</strong><span class="settle-move-route-copy">Explore self-storage and vehicle storage choices.</span><span class="settle-move-route-arrow" aria-hidden="true">↗</span></a>
+        <a href="household-rentals.html"><span class="settle-move-route-top"><span>04 / SETTLE IN</span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M11 24V15a6 6 0 0 1 6-6h14a6 6 0 0 1 6 6v9M8 24h32v13H8zM12 37v5m24-5v5M8 28H5v-7a5 5 0 0 1 10 0v3M40 28h3v-7a5 5 0 0 0-10 0v3"/></svg></span><strong>Set up home.</strong><span class="settle-move-route-copy">Browse furniture and appliance rental-to-own providers.</span><span class="settle-move-route-arrow" aria-hidden="true">↗</span></a>
+      </nav>
+      <div class="settle-move-foot"><p>Confirm rates, availability, transport requirements and terms separately. Rent-to-own agreements differ from short-term rentals.</p><a class="settle-move-return" href="#listings">Return to home listings ↑</a></div>
     </div>
   </section>
 
