@@ -1063,6 +1063,34 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
 @media(prefers-reduced-motion:reduce){.settle-move-routes a{transition:none}.settle-move-routes a:hover{transform:none}}
 @media print{.settle-move{display:block;border:1px solid #777;box-shadow:none}.settle-move-cover{min-height:0;color:#173d32;background:#fff!important}.settle-move-cover h2,.settle-move-cover h2 em,.settle-move-cover-text,.settle-move-cover-note,.settle-move-kicker{color:#173d32!important}.settle-move-art,.settle-move-mark{display:none}.settle-move-routes a{min-height:0;break-inside:avoid}.settle-move-return{color:#173d32;background:#fff;border:1px solid #777}}
 
+
+/* 2026-11-12: Task-led no-result folio inspired by StayARV's editorial visual system.
+   NN/g recovery from errors / user control; web.dev responsive reflow;
+   W3C WCAG 2.2 keyboard focus and targets. No change to listing data or scripts. */
+#empty.rental-empty-journey{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);padding:0;overflow:hidden;min-width:0;margin:28px 0 32px;background:#123b31;color:#fff9e8;border:1px solid #d1dfd0;border-radius:24px;text-align:left;box-shadow:0 20px 50px #143a302b}
+#empty.rental-empty-journey[hidden]{display:none!important}
+.rental-empty-copy{padding:clamp(28px,4.5vw,57px);min-width:0;display:flex;flex-direction:column;align-items:flex-start}
+.rental-empty-kicker{font-size:.68rem;font-weight:850;letter-spacing:.16em;line-height:1.6;color:#f5d492}
+#empty.rental-empty-journey h3{margin:clamp(22px,4vw,42px) 0 16px;font:400 clamp(2.65rem,5.5vw,5rem)/1.05 Georgia,"Times New Roman",serif;letter-spacing:-.06em;color:#fff9e8;max-width:13ch;text-wrap:balance}
+#empty.rental-empty-journey .rental-empty-copy>p{margin:0;color:#e8f1e8;max-width:45ch;line-height:1.7}
+.rental-empty-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:27px}
+.rental-empty-actions a,#empty .rental-empty-contact{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:48px;padding:11px 18px;border-radius:999px;font-size:.81rem;font-weight:800;line-height:1.35;text-align:center;text-decoration:none}
+.rental-empty-primary{background:#f1d198;color:#14392f}.rental-empty-primary:hover{background:#ffe6ba}
+.rental-empty-secondary{border:1px solid #c9ddce;color:#fff9e8}.rental-empty-secondary:hover{background:#ffffff1d}
+#empty .rental-empty-help{border-top:1px solid #ffffff47;padding-top:19px;margin-top:30px!important;color:#d2e1d4!important;font-size:.8rem}
+#empty .rental-empty-contact{margin-top:18px;border:1px solid #f1d198;background:transparent;color:#f6dca9}
+#empty .rental-empty-contact:hover{background:#ffffff1a}
+#empty .rental-empty-actions a:focus-visible,#empty .rental-empty-contact:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.rental-empty-scene{min-width:0;min-height:490px;display:flex;flex-direction:column;padding:23px 25px 29px;background:radial-gradient(circle at 92% 8%,#f6e4bf,transparent 43%),#e7eee1;color:#214c3d}
+.rental-empty-scene-top{display:flex;justify-content:space-between;gap:12px;padding-bottom:15px;border-bottom:1px solid #aac3ae;font-size:.64rem;font-weight:850;letter-spacing:.12em}
+.rental-empty-scene svg{display:block;width:100%;height:auto;max-height:340px;margin:auto;filter:drop-shadow(0 15px 15px #254c3626)}
+.rental-empty-scene-caption{display:flex;flex-direction:column;gap:6px;padding-top:15px;border-top:1px solid #aac3ae}
+.rental-empty-scene-caption strong{font:400 clamp(1.4rem,2vw,1.9rem)/1.2 Georgia,serif;letter-spacing:-.035em}
+.rental-empty-scene-caption span{font-size:.72rem;line-height:1.5;color:#49675a}
+@media(max-width:850px){#empty.rental-empty-journey{grid-template-columns:1fr}.rental-empty-scene{min-height:0;padding:17px 25px 22px}.rental-empty-scene svg{max-height:225px;max-width:420px}#empty.rental-empty-journey h3{max-width:none}}
+@media(max-width:500px){#empty.rental-empty-journey{border-radius:18px;margin:23px 0}.rental-empty-copy{padding:29px 23px}#empty.rental-empty-journey h3{font-size:clamp(2.65rem,12vw,3.6rem)}.rental-empty-actions,.rental-empty-actions a,#empty .rental-empty-contact{width:100%}.rental-empty-scene svg{max-height:190px}}
+@media print{#empty.rental-empty-journey{background:white;color:#163c30;box-shadow:none;border:1px solid #aaa}#empty.rental-empty-journey h3,#empty.rental-empty-journey .rental-empty-copy>p,#empty .rental-empty-help,.rental-empty-kicker{color:#163c30!important}.rental-empty-scene{display:none}.rental-empty-actions a,#empty .rental-empty-contact{border:1px solid #aaa!important;color:#163c30!important;background:white!important}}
+
 </style></head>
 <body>
 <a class="skip" href="#main">Skip to listings</a>
@@ -1301,10 +1329,39 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
       <div class="compare-choices" id="compareChoices"></div>
       <p class="compare-desk-note">This is not an availability check, booking or application. Monthly rent may exclude utilities, deposits or other fees; generic images do not show the actual property. Confirm all terms with the source.</p>
     </section>
-    <div id="empty" class="empty" hidden>
-      <h3>No matching rentals.</h3>
-      <p>Change the filters or text Russellville.Rent and tell us what you need.</p>
-      <a class="button ghost" href="sms:+14799707301">Text Russellville.Rent</a>
+    <!-- Task-led no-results recovery; scenery is illustrative, not inventory. -->
+    <div id="empty" class="empty rental-empty-journey" hidden>
+      <div class="rental-empty-copy">
+        <span class="rental-empty-kicker">R↗ / THE RIVER VALLEY RENTAL DESK</span>
+        <h3>No matching rentals.</h3>
+        <p>Change the filters or text Russellville.Rent and tell us what you need.</p>
+        <div class="rental-empty-actions">
+          <a class="rental-empty-primary" href="#filters">Adjust your search <span aria-hidden="true">↗</span></a>
+          <a class="rental-empty-secondary" href="#sources">Check listing sources <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="rental-empty-help">A narrow search may have no indexed listings. Try a wider rent range or fewer requirements. Vacancies are not verified in real time.</p>
+        <a class="rental-empty-contact button ghost" href="sms:+14799707301">Text Russellville.Rent <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="rental-empty-scene" aria-hidden="true">
+        <div class="rental-empty-scene-top"><span>THE SEARCH CONTINUES</span><span>01 / R↗</span></div>
+        <svg viewBox="0 0 500 370" xmlns="http://www.w3.org/2000/svg" focusable="false">
+          <circle cx="376" cy="86" r="60" fill="#efd09a"/>
+          <path d="M0 201Q92 113 173 170t155-27q95-54 172 24v203H0Z" fill="#a6bfa8"/>
+          <path d="M0 241q128-82 249-17t251-26v172H0Z" fill="#6e9b80"/>
+          <path d="M0 301q109-51 214-10t286-34v113H0Z" fill="#346752"/>
+          <path d="M0 343q126-21 248-2t252-31v60H0Z" fill="#204e3f"/>
+          <path d="m114 198 138-106 140 106" stroke="#173e34" stroke-width="14" fill="none" stroke-linejoin="round"/>
+          <path d="m131 198 121-92 122 92v141H131Z" fill="#f9efdb" stroke="#173e34" stroke-width="8"/>
+          <rect x="232" y="241" width="61" height="98" rx="3" fill="#2d6653"/>
+          <circle cx="280" cy="291" r="4.5" fill="#f4d18c"/>
+          <rect x="159" y="225" width="54" height="48" fill="#a0c6b8" stroke="#2b6152" stroke-width="7"/>
+          <path d="M186 225v48m-27-24h54" stroke="#f8e8ca" stroke-width="4"/>
+          <rect x="314" y="225" width="37" height="48" fill="#a0c6b8" stroke="#2b6152" stroke-width="7"/>
+          <path d="M332 225v48" stroke="#f8e8ca" stroke-width="4"/>
+          <path d="M74 343h355" stroke="#efd09a" stroke-width="7" stroke-linecap="round"/>
+        </svg>
+        <div class="rental-empty-scene-caption"><strong>Still looking for the right place?</strong><span>River Valley illustration · Not an available property or listing photograph.</span></div>
+      </div>
     </div>
 
     <div class="notice">
