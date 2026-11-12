@@ -505,13 +505,82 @@ footer a{font-weight:750}
 @media(max-width:520px){.booth-viewbar{margin-bottom:36px;padding:24px 19px;border-radius:18px}.booth-viewbar h2{font-size:2.2rem}.booth-view-options{gap:8px}.booth-view-options button{min-height:140px;padding:17px 14px}.booth-view-options button strong{font-size:1.27rem}.booth-view-options button small{font-size:.71rem}.booth-view-scan #russellville .provider-featured,.booth-view-scan #russellville .provider-featured:nth-child(2),.booth-view-scan #more .provider{padding:21px!important}}
 @media(prefers-reduced-motion:reduce){.booth-view-options button{transition:none}.booth-view-options button:hover{transform:none}}
 
+
+/* 2026-11-12 / photo-booth mobile contact-sheet cover.
+   Preserve the existing scenic photo, three directory shortcuts, and provider
+   atlas. Previously mobile hid the page's distinctive event photo-strip motif.
+   Recompose it as a compact horizontal three-frame contact sheet, without new
+   imagery, fonts, JavaScript, inventory claims, or layout-shifting downloads.
+   Design: StayARV immersive locality; NN/g hierarchy; web.dev visual stability;
+   W3C WCAG 2.2 focus, reflow, and reduced-motion safeguards. */
+.booth-hero-provenance{
+ display:flex;align-items:center;flex-wrap:wrap;gap:9px;
+ max-width:69ch;margin:30px 0 0;padding:16px 0 0;
+ border-top:1px solid #f1d9a46e;color:#e8eee3;
+ font-size:.72rem;line-height:1.6;letter-spacing:.015em;
+}
+.booth-hero-provenance:before{
+ content:"";display:inline-block;width:8px;height:8px;flex:none;
+ border-radius:50%;background:#f3d494;box-shadow:0 0 0 4px #f3d49422;
+}
+.booth-hero-provenance span{color:#f1ce93}
+@media(min-width:701px){
+ .hero .photo-strip{width:min(295px,93%);transform:rotate(6deg)}
+ .hero .photo-frame{height:108px}
+}
+@media(max-width:700px){
+ .hero .hero-grid{
+   display:flex;flex-direction:column;align-items:stretch;
+   padding-top:clamp(48px,9vw,76px);padding-bottom:115px;gap:0;
+ }
+ .hero .booth-hero-provenance{margin-top:24px;font-size:.69rem}
+ .hero .photo-scene{
+   display:grid;place-items:center;position:relative;
+   width:min(100%,460px);min-height:179px;margin:26px auto 0;
+   filter:none;
+ }
+ .hero .photo-scene:before,.hero .photo-scene:after{display:none}
+ .hero .photo-strip{
+   display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+   gap:9px;width:min(100%,450px);max-width:450px;
+   padding:12px 12px 25px;border:1px solid #f1ddbd;
+   border-radius:8px;background:#fff8ea;transform:rotate(-2deg);
+   box-shadow:9px 10px 0 #dba77b3b,0 17px 32px #061b1c82;
+ }
+ .hero .photo-frame{
+   min-width:0;height:95px;margin:0;border-radius:3px;
+   border:1px solid #163e3540;
+ }
+ .hero .photo-frame:before{width:48px;height:48px;top:11px;left:15px}
+ .hero .photo-frame:after{width:120px;height:87px;bottom:-62px}
+ .hero .photo-strip-label{
+   display:block;grid-column:1/-1;margin-top:1px;
+   text-align:center;font-size:13px;line-height:1.15;
+ }
+}
+@media(max-width:440px){
+ .hero .hero-grid{padding-bottom:104px}
+ .hero .photo-scene{min-height:140px;margin-top:21px}
+ .hero .photo-strip{gap:6px;padding:9px 9px 18px}
+ .hero .photo-frame{height:68px}
+ .hero .photo-frame:before{width:37px;height:37px;top:6px;left:9px}
+ .hero .photo-frame:after{width:90px;height:70px;bottom:-49px}
+ .hero .photo-strip-label{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero .photo-strip{transform:none}
+}
+@media print{
+ .booth-hero-provenance,.hero .photo-scene{display:none!important}
+}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to rental options</a>
 <header><div class="wrap header-inner"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
 <section class="hero" aria-labelledby="page-title"><div class="wrap hero-grid">
-<div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Make the moment <em>memorable.</em></h1><p class="hero-copy">Photo and video booth rentals for weddings, school functions and celebrations. Explore local and regional options, then confirm packages and travel details with each provider.</p><nav class="hero-nav" aria-label="Jump to rental options"><a href="#russellville">Russellville service advertised ↓</a><a href="#more">More providers ↓</a><a href="#price-snapshots">Published prices ↓</a></nav></div>
+<div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Make the moment <em>memorable.</em></h1><p class="hero-copy">Photo and video booth rentals for weddings, school functions and celebrations. Explore local and regional options, then confirm packages and travel details with each provider.</p><nav class="hero-nav" aria-label="Jump to rental options"><a href="#russellville">Russellville service advertised ↓</a><a href="#more">More providers ↓</a><a href="#price-snapshots">Published prices ↓</a></nav><p class="booth-hero-provenance">Downtown Russellville scenery <span aria-hidden="true">/</span> Illustrated photo strip, not provider equipment or availability</p></div>
 <div class="photo-scene" aria-hidden="true"><div class="photo-strip"><div class="photo-frame"></div><div class="photo-frame"></div><div class="photo-frame"></div><div class="photo-strip-label">Your moment, captured.</div></div></div>
 </div></section>
 <main id="main" class="wrap content"><nav class="moment-wayfinder" aria-label="Choose where to start with photo booth rentals">
