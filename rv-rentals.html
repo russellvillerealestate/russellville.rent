@@ -603,6 +603,107 @@ main{max-width:1160px;margin:0 auto;padding:0 28px}.hero{position:relative;isola
   .trip-map-link{display:none}
 }
 
+
+/* Lakefront roadbook: turn the existing hero into a photograph-led arrival scene.
+   Photo is local scenery, not a rental vehicle/campsite. No new dependency.
+   Visual hierarchy: NN/g; restrained image performance: web.dev; legibility/reflow: WCAG 2.2. */
+.hero{
+  isolation:isolate;
+  background:#082d29;
+  box-shadow:0 24px 55px #0b322b24;
+}
+.hero:before{
+  background:
+    linear-gradient(101deg,#092b28 0%,#0b322df2 39%,#0d3529cc 66%,#16392885 100%),
+    url("assets/lake-dardanelle-docks.jpg") center 58%/cover no-repeat;
+}
+.hero:after{
+  right:-158px;bottom:-230px;width:510px;height:510px;
+  border-color:#f4d5a25c;
+  box-shadow:0 0 0 53px #f5d2a110,0 0 0 106px #f5d2a10b;
+}
+.hero>div:first-child{position:relative;z-index:1;min-width:0}
+.hero .eyebrow{display:inline-block;padding-bottom:9px;border-bottom:1px solid #f0d49b7c}
+.hero h1{max-width:620px;font-size:clamp(3.4rem,5.9vw,6.2rem);letter-spacing:-.065em;text-shadow:0 4px 24px #001b1980}
+.hero h1 em{color:#f5d79a}
+.hero .hero-intro{max-width:54ch;font-size:clamp(1rem,1.25vw,1.13rem);line-height:1.75;color:#f4f4e7;text-shadow:0 2px 10px #001b1980}
+.hero .hero-button.primary{box-shadow:0 9px 23px #051d184b}
+.hero-visual{
+  z-index:1;
+  position:relative;
+  padding:clamp(16px,2.2vw,27px) clamp(14px,2.2vw,25px) 22px;
+  border:1px solid #f8e4bf86;
+  border-radius:34px 34px 12px 34px;
+  background:linear-gradient(155deg,#123f36e3,#072c28ed);
+  box-shadow:0 24px 48px #001c1d70,inset 0 1px #fff3d235;
+  filter:none;
+  transform:rotate(1deg);
+}
+.hero-visual:before{
+  content:"RIVER VALLEY / CAMPER FIELD NOTES";
+  display:block;
+  color:#f4dba9;
+  letter-spacing:.19em;
+  font-size:.57rem;
+  font-weight:900;
+  padding:0 0 8px 4px;
+}
+.hero-visual svg{max-height:360px;filter:drop-shadow(0 11px 15px #011c1c5c)}
+.hero-art-caption{margin:-5px 0 0;color:#f5d49a;letter-spacing:.13em}
+.hero-photo-note{
+  display:block;
+  max-width:39ch;
+  margin:12px auto 0;
+  padding-top:11px;
+  border-top:1px solid #f4dfb54a;
+  color:#e5eee2;
+  font-size:.69rem;
+  line-height:1.55;
+  text-align:center;
+}
+.hero-facts{
+  z-index:1;
+  margin-top:10px;
+  border:1px solid #f7e7c278;
+  background:linear-gradient(95deg,#052b29f0,#123c33ed);
+  box-shadow:0 14px 32px #06221a5e;
+}
+.hero-facts>div{padding:19px clamp(16px,2vw,25px)}
+.hero-facts strong{color:#f7dea4;font-size:clamp(1.15rem,1.7vw,1.44rem)}
+@media(min-width:961px){
+  .hero{
+    min-height:675px;
+    grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);
+    gap:clamp(25px,3.5vw,53px);
+    padding:86px clamp(42px,5vw,70px) 116px;
+  }
+  .hero-visual{align-self:center}
+}
+@media(max-width:960px){
+  .hero{
+    padding:60px clamp(24px,5vw,50px) 95px;
+    gap:30px;
+  }
+  .hero:before{
+    background:
+      linear-gradient(135deg,#092b28f7 0%,#0a302ae8 51%,#123e32b5 100%),
+      url("assets/lake-dardanelle-docks.jpg") center 58%/cover no-repeat;
+  }
+  .hero-visual{transform:none;max-width:510px}
+  .hero-facts{margin-top:0}
+}
+@media(max-width:700px){
+  .hero{padding:43px 25px 76px}
+  .hero h1{font-size:clamp(2.9rem,10.8vw,4.5rem)}
+  .hero-visual{width:min(100%,450px);padding:15px 12px 18px;border-radius:22px 22px 9px 22px}
+  .hero-visual svg{max-height:290px}
+  .hero-visual:before{font-size:.53rem;letter-spacing:.13em}
+  .hero-photo-note{font-size:.66rem}
+  .hero-facts{border-radius:13px}
+  .hero-facts>div{padding:15px 17px}
+}
+@media(prefers-reduced-motion:reduce){.hero-visual{transform:none}}
+
 </style></head><body>
 <a class="skip-link" href="#providers">Skip to rental listings</a>
 <header class="roadbook-header">
@@ -638,7 +739,7 @@ main{max-width:1160px;margin:0 auto;padding:0 28px}.hero{position:relative;isola
 <circle cx="192" cy="326" r="39" fill="#0e2928" stroke="#e8c98e" stroke-width="8"/><circle cx="192" cy="326" r="15" fill="#d8e5d5"/>
 <circle cx="414" cy="326" r="39" fill="#0e2928" stroke="#e8c98e" stroke-width="8"/><circle cx="414" cy="326" r="15" fill="#d8e5d5"/>
 <path d="M110 325h35m304 0h30" stroke="#f9e7c4" stroke-width="6" stroke-linecap="round"/>
-</svg><span class="hero-art-caption">Your trip · Your pace · Arkansas</span></div><div class="hero-facts" aria-label="Rental directory at a glance"><div><strong>Two booking paths</strong><span>Direct Arkansas rental operators or individual marketplace hosts</span></div><div><strong>Seven directory options</strong><span>Compare providers and marketplaces without claiming live inventory</span></div><div><strong>Delivery unconfirmed</strong><span>Confirm the destination and reserve your campsite separately</span></div></div></section>
+</svg><span class="hero-art-caption">Your trip · Your pace · Arkansas</span><span class="hero-photo-note">Lake Dardanelle scenery and a conceptual camper illustration. Neither depicts an available rental, a provider, or a reserved campsite.</span></div><div class="hero-facts" aria-label="Rental directory at a glance"><div><strong>Two booking paths</strong><span>Direct Arkansas rental operators or individual marketplace hosts</span></div><div><strong>Seven directory options</strong><span>Compare providers and marketplaces without claiming live inventory</span></div><div><strong>Delivery unconfirmed</strong><span>Confirm the destination and reserve your campsite separately</span></div></div></section>
 <section class="finder" id="rental-finder" aria-label="Search recreational vehicle rentals"><div class="finder-head"><label for="rv-search">Search rental options</label><p class="finder-hint">Try “delivery”, “camper”, “marketplace” or a provider name.</p></div><div class="finder-row"><input id="rv-search" type="search" autocomplete="off" placeholder="Search campers, motorhomes, delivery…" aria-controls="rv-grid"><button id="rv-clear" type="button">Clear search</button></div>
 <div class="path-guide"><div><span class="path-guide-kicker">The booking compass / Three starting points</span><strong>Find the right first call.</strong></div><span>Start with a nearby inquiry, compare direct Arkansas rental operators, or browse individual marketplace hosts. The nearby lead is also included under direct operators; no option confirms live inventory or delivery.</span></div>
 <div class="path-filters" id="rv-paths" role="group" aria-label="Filter by rental path" hidden>
