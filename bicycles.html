@@ -472,6 +472,47 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
   .shop-arrival .shop-reservation-desk{box-shadow:none;border:1px solid #71937b;transform:none}
   .shop-arrival .shop-scene-credit{display:none}
 }
+
+/* 2026-11-12: original editorial cross-category wayfinding.
+   StayARV-inspired immersive landscape + pine/brass visual hierarchy.
+   Research: NN/g visual hierarchy, web.dev responsive images, W3C WCAG 2.2 reflow/targets. */
+.bike-next{background:#e9eee5;border-top:1px solid #cbdacb;padding:clamp(64px,8vw,118px) 0}
+.bike-next-inner{max-width:1320px;margin:0 auto;padding:0 clamp(18px,4vw,44px);display:grid;grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);gap:clamp(22px,4.5vw,66px);align-items:stretch}
+.bike-next-scene{isolation:isolate;position:relative;overflow:hidden;min-height:590px;border-radius:28px;display:flex;align-items:flex-end;background:#183e34;color:white;box-shadow:0 20px 45px #153b3027}
+.bike-next-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:-2}
+.bike-next-scene:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#12362c2b 0%,#0a29276b 34%,#09251ef2 100%)}
+.bike-next-scene-content{padding:clamp(29px,4.3vw,58px)}
+.bike-next-scene-kicker,.bike-next-kicker{font-size:.71rem;letter-spacing:.17em;text-transform:uppercase;font-weight:850}
+.bike-next-scene-kicker{color:#f5d797}
+.bike-next-scene h2{font:400 clamp(2.9rem,5vw,5.8rem)/1.01 Georgia,"Times New Roman",serif;letter-spacing:-.065em;margin:15px 0 20px;max-width:12ch;text-wrap:balance}
+.bike-next-scene h2 em{color:#f2d292}
+.bike-next-scene-content>p:not(.bike-next-scene-kicker){max-width:40ch;color:#edf3e9;font-size:1rem;line-height:1.6}
+.bike-next-photo-note{display:block;margin-top:30px;padding-top:15px;border-top:1px solid #ffffff61;color:#eff3e8;font-size:.7rem;line-height:1.5}
+.bike-next-paths{display:flex;flex-direction:column;justify-content:center;min-width:0}
+.bike-next-kicker{margin:0 0 14px;color:#426855}
+.bike-next-paths>h2{font:400 clamp(2.5rem,4.3vw,4.8rem)/1.05 Georgia,"Times New Roman",serif;letter-spacing:-.052em;margin:0;max-width:14ch;text-wrap:balance;color:#163e32}
+.bike-next-paths>p{color:#466257;line-height:1.65;max-width:55ch;font-size:.97rem;margin:16px 0 28px}
+.bike-next-link{display:grid;grid-template-columns:60px minmax(0,1fr) 45px;gap:16px;align-items:center;min-height:132px;padding:23px 24px;margin-bottom:12px;background:#fffdf8;border:1px solid #cedacd;border-radius:19px;text-decoration:none;color:#173c32;box-shadow:0 6px 23px #123c3210;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+.bike-next-link:hover{transform:translateX(5px);border-color:#8eae98;box-shadow:0 12px 34px #123c3225}
+.bike-next-link:focus-visible{outline:3px solid #a96b16;outline-offset:3px}
+.bike-next-link:nth-of-type(2){background:#173d32;color:#fff;border-color:#173d32}
+.bike-next-link:nth-of-type(3){background:#f4e9d0;border-color:#decba2}
+.bike-next-num{font:400 2.8rem/1 Georgia,serif;letter-spacing:-.075em;color:#8cae96}
+.bike-next-link:nth-of-type(2) .bike-next-num{color:#edd195}
+.bike-next-link:nth-of-type(3) .bike-next-num{color:#856128}
+.bike-next-label{display:block;font-size:.65rem;letter-spacing:.13em;text-transform:uppercase;font-weight:800;opacity:.78;margin-bottom:7px}
+.bike-next-link h3{font:400 clamp(1.45rem,2.5vw,2.1rem)/1.1 Georgia,serif;letter-spacing:-.04em;margin:0 0 6px}
+.bike-next-desc{display:block;max-width:42ch;line-height:1.46;font-size:.8rem;opacity:.86}
+.bike-next-arrow{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#e3ebdf;color:#194c36;font-size:1.35rem;transition:transform .22s ease}
+.bike-next-link:nth-of-type(2) .bike-next-arrow{background:#eed397;color:#173d32}
+.bike-next-link:nth-of-type(3) .bike-next-arrow{background:#e5d0a1;color:#5e4925}
+.bike-next-link:hover .bike-next-arrow{transform:translate(3px,-3px)}
+.bike-next-disclaimer{font-size:.76rem!important;max-width:58ch!important;color:#526a5f!important;margin:13px 0 0!important}
+@media(max-width:880px){.bike-next-inner{grid-template-columns:1fr}.bike-next-scene{min-height:420px}.bike-next-scene h2{font-size:clamp(3.1rem,7vw,5.2rem)}.bike-next-paths>h2{max-width:none}.bike-next-paths>p{max-width:65ch}}
+@media(max-width:480px){.bike-next{padding:50px 0}.bike-next-scene{min-height:390px;border-radius:19px}.bike-next-scene-content{padding:27px}.bike-next-scene h2{font-size:clamp(2.85rem,11.4vw,4.2rem)}.bike-next-link{grid-template-columns:39px minmax(0,1fr) 34px;gap:11px;padding:20px 15px;min-height:115px}.bike-next-num{font-size:2.1rem}.bike-next-arrow{width:33px;height:33px;font-size:1.1rem}.bike-next-link h3{font-size:1.45rem}.bike-next-desc{font-size:.76rem}.bike-next-paths>h2{font-size:2.6rem}}
+@media(prefers-reduced-motion:reduce){.bike-next-link,.bike-next-arrow{transition:none!important}.bike-next-link:hover,.bike-next-link:hover .bike-next-arrow{transform:none}}
+@media print{.bike-next{background:white;padding:25px 0}.bike-next-scene{min-height:0;color:#173c32;background:white;box-shadow:none}.bike-next-scene:before,.bike-next-photo{display:none}.bike-next-scene-kicker,.bike-next-scene h2 em{color:#173c32}.bike-next-scene-content>p:not(.bike-next-scene-kicker),.bike-next-photo-note{color:#173c32}.bike-next-inner{display:block}.bike-next-link,.bike-next-link:nth-of-type(2),.bike-next-link:nth-of-type(3){color:#173c32;background:white;box-shadow:none;break-inside:avoid}.bike-next-link:nth-of-type(2) .bike-next-num{color:#49675b}}
+
 </style></head><body>
 <a class="skip" href="#rates">Skip to rental rates</a>
 <header><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
@@ -591,6 +632,43 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
 <section class="student-checkout wrap bike-provider-folio" aria-labelledby="regional-bike-title"><figure class="bike-folio-scene bike-folio-scene--mountain" aria-hidden="true"><span class="bike-folio-number">02 / FIELD STOP</span><svg viewBox="0 0 440 235" preserveAspectRatio="xMidYMid slice" focusable="false" xmlns="http://www.w3.org/2000/svg"><circle cx="356" cy="68" r="40" fill="#f6ce8a"/><path d="M0 234V146L85 65l70 87 87-106 87 102 56-62 55 60v88Z" fill="#7fa28f"/><path d="M0 235V183l112-73 88 76 104-88 136 104v33Z" fill="#426b5c"/><path d="M0 235v-20q140-70 260-9t180-27v56Z" fill="#1d4e41"/><path d="M0 221Q195 174 440 222" fill="none" stroke="#f0cb8f" stroke-width="6" stroke-dasharray="22 14"/></svg><figcaption><strong>Clarksville</strong><span>ON-SITE MOUNTAIN-BIKE RENTAL</span><small>Illustrative scenery · Not a provider or inventory photograph</small></figcaption></figure><div class="student-panel"><p class="eyebrow">Regional on-site mountain-bike rental · Clarksville</p><h2 id="regional-bike-title">Horsehead Lake Lodge — Mountain-bike rentals</h2><p>The lodge’s official mountain-biking guide advertises <strong>on-site mountain-bike rentals with helmets and safety gear</strong> near Clarksville. Bicycle models, rental prices, dates, inventory and eligibility for non-overnight guests are <strong>UNCONFIRMED</strong>; call to verify current service before traveling. This is a regional on-site rental, <strong>not Russellville delivery</strong>.</p><p class="student-detail"><strong>Location:</strong> 213 County Road 3190, Clarksville, AR 72830 · <strong>Phone:</strong> <a href="tel:+14792140218">479-214-0218</a> · <strong>Source:</strong> operator’s own rental guide.</p><a class="button light" href="https://horseheadlakelodge.com/mountain-biking-lodge-retreat/" target="_blank" rel="noopener noreferrer">Official mountain-bike rental information ↗</a></div></section>
 <section class="student-checkout wrap bike-provider-folio" aria-labelledby="weekender-bike-title"><figure class="bike-folio-scene bike-folio-scene--lake" aria-hidden="true"><span class="bike-folio-number">03 / FIELD STOP</span><svg viewBox="0 0 440 235" preserveAspectRatio="xMidYMid slice" focusable="false" xmlns="http://www.w3.org/2000/svg"><circle cx="346" cy="63" r="42" fill="#f2cf95"/><path d="M0 155 82 87l67 56 84-83 93 85 51-43 63 59v74H0Z" fill="#8fb19e"/><path d="M0 174 132 114l97 58 103-74 108 66v71H0Z" fill="#4e7b6f"/><path d="M0 176q100-30 214 4t226-6v61H0Z" fill="#86b2b3"/><path d="M0 205q105-24 220 5t220-8" stroke="#e1e8cf" stroke-width="5" fill="none"/><path d="M135 199v-57l38-30 39 30v57h-77Zm0-57h77" fill="#f2d5a1" stroke="#274f46" stroke-width="4"/><path d="M158 199v-30h24v30" fill="#9b6b4b"/></svg><figcaption><strong>Plainview</strong><span>GUEST-AREA BICYCLE RENTAL</span><small>Illustrative scenery · Not a provider or inventory photograph</small></figcaption></figure><div class="student-panel"><p class="eyebrow">Regional on-site bicycle rental · Plainview</p><h2 id="weekender-bike-title">The Weekender Cabins and RV Retreat — Bicycle rentals</h2><p>The property owner's published cabin listing advertises <strong>bike rentals</strong> as well as kayak rentals at the Plainview campground near Lake Nimrod. This is an on-site regional option, <strong>not a Russellville rental shop or a confirmed delivery service</strong>. Bike types, rates, inventory, current availability and eligibility for visitors not staying overnight are <strong>UNCONFIRMED</strong>; contact the operator before traveling.</p><p class="student-detail"><strong>Location:</strong> 920 Gossage Circle, Plainview, AR 72857 · <strong>Phone:</strong> <a href="tel:+18008176148">800-817-6148</a> · <strong>Source:</strong> operator-authored cabin listing and official park website.</p><a class="button light" href="https://www.airbnb.com/rooms/1110237184969314257" target="_blank" rel="noopener noreferrer">Host's bicycle-rental description ↗</a> <a class="button light" href="https://theweekender-plainview.com/" target="_blank" rel="noopener noreferrer">Official campground contact ↗</a></div></section>
 <section class="student-checkout wrap bike-provider-folio" aria-labelledby="student-title"><figure class="bike-folio-scene bike-folio-scene--campus" aria-hidden="true"><span class="bike-folio-number">04 / FIELD STOP</span><svg viewBox="0 0 440 235" preserveAspectRatio="xMidYMid slice" focusable="false" xmlns="http://www.w3.org/2000/svg"><circle cx="348" cy="60" r="37" fill="#e7ca90"/><path d="M0 235V172L97 126l78 28 118-56 147 70v67Z" fill="#719785"/><path d="M0 215q160-45 280-9t160-19v48H0Z" fill="#2e6455"/><path d="m102 122 125-64 127 64v12H102Z" fill="#f0d7ad" stroke="#214e43" stroke-width="5"/><path d="M128 136h197v79H128z" fill="#dfe6d1" stroke="#214e43" stroke-width="5"/><path d="M155 151h24v32h-24zm52 0h24v32h-24zm52 0h24v32h-24z" fill="#6b938a"/><path d="M209 215v-30h35v30" fill="#926e52"/><path d="M108 215h236" stroke="#f1d7ad" stroke-width="6"/></svg><figcaption><strong>Arkansas Tech</strong><span>ELIGIBILITY-RESTRICTED CHECKOUT</span><small>Illustrative scenery · Not a provider or inventory photograph</small></figcaption></figure><div class="student-panel"><p class="eyebrow">Campus-only · Free for enrolled students</p><h2 id="student-title">Arkansas Tech University Outdoor Recreation</h2><p>Arkansas Tech University officially offers <strong>free bicycle checkouts for currently enrolled students</strong>, alongside kayaks, canoes, tents, hammocks and other outdoor gear. Its official Campus Recreation resources also allow faculty and staff with an employee recreation membership to use Outdoor Recreation equipment checkouts; membership terms and any staff checkout charges require confirmation. This is a restricted campus lending program, <strong>not a public bike-rental shop</strong>. A valid university identification card and applicable waivers or safety orientations are required. Return equipment on time; late, lost or damaged items may incur charges. Confirm eligibility, available bicycles and checkout periods with campus staff.</p><p class="student-detail"><strong>Location:</strong> 215 West O Street, Russellville, Arkansas 72801 · <strong>Regular hours:</strong> Monday–Friday, 10 a.m.–6 p.m.; summer hours differ. Equipment availability unconfirmed.</p><a class="button light" href="https://www.atu.edu/campuslife/campusrecreation/outdoorrecreation.php" target="_blank" rel="noopener noreferrer">Official campus checkout guidelines ↗</a> <a class="button light" href="https://www.atu.edu/campuslife/campusrecreation/resources.php" target="_blank" rel="noopener noreferrer">Employee eligibility ↗</a></div></section>
+
+<!-- More ways into the River Valley, linked to existing categories; not provider recommendations. -->
+<section class="bike-next" id="bike-next-adventure" aria-labelledby="bike-next-title">
+  <div class="bike-next-inner">
+    <div class="bike-next-scene">
+      <img class="bike-next-photo" src="assets/lake-dardanelle-sunset.jpg" alt="Lake Dardanelle at sunset" loading="lazy" decoding="async">
+      <div class="bike-next-scene-content">
+        <p class="bike-next-scene-kicker">The River Valley / Beyond the ride</p>
+        <h2>Keep the <em>day going.</em></h2>
+        <p>From the trail to the water, there is more to explore around here. Pick another rental category and plan the next part of your trip.</p>
+        <small class="bike-next-photo-note">Lake Dardanelle scenery · Not a rental provider, inventory image or availability confirmation</small>
+      </div>
+    </div>
+    <div class="bike-next-paths">
+      <p class="bike-next-kicker">Three routes / One local directory</p>
+      <h2 id="bike-next-title">The adventure doesn't end at the bike rack.</h2>
+      <p>Follow the next chapter. These are direct links to existing Russellville.Rent guides, not quotes or bookings.</p>
+      <a class="bike-next-link" href="paddling.html">
+        <span class="bike-next-num" aria-hidden="true">01</span>
+        <span><span class="bike-next-label">On the water</span><h3>Kayaks &amp; paddling</h3><span class="bike-next-desc">Discover paddling rental providers and local access questions.</span></span>
+        <span class="bike-next-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="bike-next-link" href="camping.html">
+        <span class="bike-next-num" aria-hidden="true">02</span>
+        <span><span class="bike-next-label">Stay outside</span><h3>Camping &amp; stays</h3><span class="bike-next-desc">Explore camping options and the details to confirm before arriving.</span></span>
+        <span class="bike-next-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="bike-next-link" href="atv-utv-rentals.html">
+        <span class="bike-next-num" aria-hidden="true">03</span>
+        <span><span class="bike-next-label">Go farther</span><h3>ATV &amp; UTV rentals</h3><span class="bike-next-desc">Find off-road vehicle rental guides and operator restrictions.</span></span>
+        <span class="bike-next-arrow" aria-hidden="true">↗</span>
+      </a>
+      <p class="bike-next-disclaimer">Availability, prices, eligibility, riding permissions, equipment and terms must be verified directly with each listed provider.</p>
+    </div>
+  </div>
+</section>
+
 <aside class="notice wrap"><p><strong>Before you go:</strong> Russellville.Rent is an independent local directory, not the rental operator. Rental inventory, prices, eligibility, bicycle fit, equipment condition and availability must be confirmed with each provider. <a href="sms:+14799707301">Suggest a correction</a>.</p></aside>
 </main><footer><div class="wrap"><span>© 2026 Russellville.Rent · Local rentals. Local connections.</span><a href="/">Return to homepage ↗</a></div></footer>
 <script>
