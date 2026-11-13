@@ -3607,6 +3607,38 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 @media(prefers-reduced-motion:reduce){.move-guide-door,.move-journey-routes a{transition:none!important}.move-guide-door:hover,.move-journey-routes a:hover{transform:none!important}}
 @media print{.move-journey{break-inside:avoid;box-shadow:none}.move-journey-cover:before{background:#163e34}.move-journey-routes a{break-inside:avoid}.move-guide-door{box-shadow:none}}
 
+
+/* 2026-11-13 — Mobile wayfinding: persistent close affordance and clear
+   menu hierarchy. Reference: StayARV visual rhythm; NN/g visual hierarchy;
+   web.dev responsive controls; WCAG 2.2 keyboard/focus/target-size guidance. */
+@media(max-width:760px){
+  .directory-masthead .mobile-menu-utility{
+    position:sticky;top:0;z-index:8;display:flex;align-items:center;justify-content:space-between;gap:12px;
+    min-height:61px;padding:7px clamp(13px,3vw,22px) 7px clamp(18px,3.5vw,26px);
+    background:#f9f6ec;border-bottom:1px solid #d9c9a5;
+    box-shadow:0 4px 14px #0b33251b;
+  }
+  .directory-masthead .mobile-menu-utility-label{
+    display:inline-flex;align-items:center;gap:10px;color:#2d5a47;font-size:.63rem;
+    font-weight:850;letter-spacing:.12em;line-height:1.35;
+  }
+  .directory-masthead .mobile-menu-utility-label>span{
+    display:grid;place-items:center;width:33px;height:33px;border-radius:10px;
+    background:#173f34;color:#f1d398;font-size:1rem;letter-spacing:-.05em;
+  }
+  .directory-masthead .mobile-menu-close{
+    display:inline-flex;align-items:center;justify-content:center;gap:11px;
+    min-height:46px;min-width:91px;padding:8px 11px 8px 15px;
+    border:1px solid #bca472;border-radius:11px;background:#f2ddab;color:#153b31;
+    font-size:.79rem;font-weight:850;cursor:pointer;
+    transition:background-color .18s ease;
+  }
+  .directory-masthead .mobile-menu-close span{font-size:1.42rem;font-weight:400;line-height:1}
+  .directory-masthead .mobile-menu-close:hover{background:#ffeab9}
+  .directory-masthead .mobile-menu-close:focus-visible{outline:3px solid #9a5f13;outline-offset:3px}
+}
+@media(min-width:761px){.directory-masthead .mobile-menu-utility{display:none}}
+@media(prefers-reduced-motion:reduce){.directory-masthead .mobile-menu-close{transition:none}}
 </style>
 </head>
 <body>
@@ -3627,6 +3659,10 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
     <details class="mobile-directory-menu">
       <summary><span class="mobile-menu-burger" aria-hidden="true"><span></span><span></span><span></span></span>Explore <span class="mobile-menu-chevron" aria-hidden="true">⌄</span></summary>
       <div class="mobile-menu-panel">
+        <div class="mobile-menu-utility">
+          <span class="mobile-menu-utility-label"><span aria-hidden="true">R↗</span> THE RIVER VALLEY / EXPLORE</span>
+          <button type="button" class="mobile-menu-close" aria-label="Close Explore menu">Close <span aria-hidden="true">×</span></button>
+        </div>
         <div class="mobile-menu-intro"><span>RIVER VALLEY / RENTAL DIRECTORY</span><strong>Find what you need.<br><em>Close to home.</em></strong><p>Choose a category or open the full rental directory.</p></div>
         <nav class="mobile-menu-categories" aria-label="Popular rental categories">
           <a href="long-term.html"><span class="mobile-route-art" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-homes"></use></svg></span><span>01 / Settle in</span><strong>Homes &amp; apartments ↗</strong></a>
@@ -5432,6 +5468,34 @@ filterRentals();
   paint();
  });
  paint();
+})();
+</script>
+
+<script>
+/* Keep in-page links and keyboard escape usable when the mobile Explore
+   panel overlays the directory. Native <details> remains functional without JS. */
+(function(){
+  "use strict";
+  const menu=document.querySelector(".directory-masthead .mobile-directory-menu");
+  if(!menu)return;
+  const summary=menu.querySelector("summary");
+  const close=menu.querySelector(".mobile-menu-close");
+  if(!summary||!close)return;
+  function dismiss(restoreFocus){
+    if(!menu.open)return;
+    menu.open=false;
+    if(restoreFocus)summary.focus();
+  }
+  close.addEventListener("click",function(){dismiss(true);});
+  menu.addEventListener("click",function(event){
+    if(event.target instanceof Element&&event.target.closest("a[href]"))dismiss(false);
+  });
+  menu.addEventListener("keydown",function(event){
+    if(event.key==="Escape"&&menu.open){
+      event.preventDefault();
+      dismiss(true);
+    }
+  });
 })();
 </script>
 </body>
