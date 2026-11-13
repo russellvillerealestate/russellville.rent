@@ -756,11 +756,68 @@ h1{font-size:clamp(3.4rem,6.4vw,6.2rem);line-height:1.035;max-width:12ch;letter-
 }
 
 .local-resource-referral{max-width:1000px;margin:24px auto;padding:22px 25px;border:1px solid #d5e1d8;border-radius:18px;background:#f0f4ed;color:#1e3933}.local-resource-referral h2{font:600 clamp(1.35rem,2.5vw,1.75rem)/1.2 Georgia,"Times New Roman",serif;margin:0 0 10px}.local-resource-referral p{margin:8px 0;line-height:1.65}.local-resource-referral a{color:#153e38;font-weight:700;text-underline-offset:3px}
+
+/* 2026-11-13: Four-stop resource masthead. Visual reference: stayarv.com;
+   Nielsen Norman Group visual hierarchy, Google web.dev responsive layout,
+   W3C WCAG 2.2 reflow, focus indicators and pointer target size.
+   Editorial navigation only; loan policies, provider data and JS unchanged. */
+.site-header.resource-masthead{background:#0b2b28;border-bottom:0}
+.site-header .resource-masthead-top{min-height:88px;gap:20px;padding-block:14px}
+.resource-identity{display:inline-flex;align-items:center;gap:13px;min-width:0;line-height:1.08}
+.resource-brand-mark{display:grid;place-items:center;flex:none;width:51px;height:51px;border:1px solid #efcf9694;border-radius:14px 14px 5px 14px;background:#18483d;color:#f3d39c;font:700 1.55rem/1 Georgia,serif;letter-spacing:-.07em}
+.resource-identity-text{display:grid;gap:6px;min-width:0;color:#fffaf0}
+.resource-identity-text strong{font-size:1.31rem;letter-spacing:-.055em;white-space:nowrap}
+.resource-identity-text small{color:#cce0d5;font:800 .61rem/1.3 system-ui,sans-serif;letter-spacing:.125em}
+.resource-identity-text strong span{color:#f3d39c}
+.resource-home{flex:none;gap:10px;min-height:45px;border-color:#f2ddad85;color:#fdf0d4;white-space:nowrap}
+.resource-wayfinding{border-top:1px solid #ffffff21;border-bottom:3px solid #e0c38d;background:#eaf0e5;color:#214638}
+.site-header .resource-wayfinding-inner{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;min-height:0;align-items:stretch}
+.resource-wayfinding a{position:relative;display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:0;min-height:92px;padding:15px clamp(13px,2vw,24px);border-left:1px solid #c8d7c8;text-decoration:none;color:#1e4739;transition:background .18s ease}
+.resource-wayfinding a:last-child{border-right:1px solid #c8d7c8}
+.resource-wayfinding a:hover{background:#fdf7e9}
+.resource-wayfinding a span{font-size:.65rem;font-weight:850;line-height:1.3;letter-spacing:.14em;color:#526f5d}
+.resource-wayfinding a strong{font:700 clamp(.89rem,1.2vw,1.05rem)/1.3 system-ui,sans-serif;letter-spacing:-.02em}
+.resource-wayfinding a:after{content:"↗";position:absolute;right:15px;top:14px;font-size:.95rem;font-weight:800;color:#366c4e}
+.resource-wayfinding a:focus-visible,.resource-masthead a:focus-visible{outline:3px solid #c17b27;outline-offset:-5px;border-radius:3px}
+@media(max-width:780px){
+ .resource-identity-text small{font-size:.54rem}
+ .site-header .resource-wayfinding-inner{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .resource-wayfinding a{min-height:76px;padding:12px 17px;border-bottom:1px solid #c8d7c8}
+ .resource-wayfinding a:nth-child(even){border-right:1px solid #c8d7c8}
+ .resource-wayfinding a:nth-last-child(-n+2){border-bottom:0}
+ .resource-wayfinding a strong{font-size:.87rem;padding-right:15px}
+}
+@media(max-width:500px){
+ .site-header .resource-masthead-top{min-height:71px;gap:8px;padding-block:10px}
+ .resource-brand-mark{width:37px;height:37px;border-radius:10px 10px 4px 10px;font-size:1.1rem}
+ .resource-identity{gap:7px}
+ .resource-identity-text strong{font-size:1.02rem}
+ .resource-identity-text small{display:none}
+ .resource-home{min-height:41px;padding:7px 9px;font-size:.68rem;gap:3px}
+ .resource-wayfinding a{min-height:72px;padding:10px 12px}
+ .resource-wayfinding a span{font-size:.55rem}
+ .resource-wayfinding a strong{font-size:.81rem;line-height:1.3;padding-right:9px}
+ .resource-wayfinding a:after{right:9px;top:9px;font-size:.82rem}
+}
+@media(prefers-reduced-motion:reduce){.resource-wayfinding a{transition:none}}
+@media print{.resource-wayfinding{display:none!important}}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to programs</a>
-<header class="site-header"><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
+<header class="site-header resource-masthead">
+<div class="wrap resource-masthead-top">
+<a class="brand resource-identity" href="/" aria-label="Russellville.Rent home"><span class="resource-brand-mark" aria-hidden="true">R↗</span><span class="resource-identity-text"><strong>Russellville<span>.Rent</span></strong><small>THE RIVER VALLEY / COMMUNITY EQUIPMENT</small></span></a>
+<a class="back resource-home" href="/#browse">All rental categories <span aria-hidden="true">↗</span></a>
+</div>
+<nav class="resource-wayfinding" aria-label="Navigate equipment loan resources">
+<div class="wrap resource-wayfinding-inner">
+<a href="#route-title"><span>01 / START HERE</span><strong>Compare lending routes</strong></a>
+<a href="#call-studio"><span>02 / PREPARE</span><strong>Build your call note</strong></a>
+<a href="#programs"><span>03 / CONTACT</span><strong>View program details</strong></a>
+<a href="#before-you-go"><span>04 / CONFIRM</span><strong>Before you travel</strong></a>
+</div></nav></header>
 <main id="main">
 <section class="hero" aria-labelledby="page-title"><div class="wrap">
 <div><p class="eyebrow">Russellville, Arkansas · Community resources</p><h1 id="page-title">Equipment support, <em>within reach.</em></h1>
