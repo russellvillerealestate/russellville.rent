@@ -812,13 +812,41 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
   .preflight-steps li{break-inside:avoid}
 }
 
+
+/* 2026-11-13 / Event-desk arrival caption: make local photo provenance
+   visible at the decision point, without implying the pictured scene is
+   operator equipment. Reuse the existing scenic image (no new asset).
+   NN/g: information scent; web.dev: explicit image aspect ratio;
+   WCAG 2.2: legibility, responsive reflow and stable pointer targets. */
+.hero-photo-credit{
+  display:inline-flex;align-items:center;gap:12px;
+  max-width:54ch;margin:27px 0 0;padding-top:15px;
+  border-top:1px solid #f0d49a80;color:#f1f2e7;
+  font-size:.72rem;font-weight:750;letter-spacing:.025em;
+  line-height:1.6;text-wrap:pretty;
+}
+.hero-photo-credit:before{
+  content:"R↗";display:grid;place-items:center;flex:none;
+  width:37px;height:37px;border:1px solid #f5dba9a6;
+  border-radius:11px 11px 3px 11px;color:#f5dba9;
+  background:#123c3199;font:700 .85rem/1 Georgia,serif;
+}
+@media(max-width:600px){
+  .hero-photo-credit{margin-top:22px;font-size:.69rem;gap:9px}
+  .hero-photo-credit:before{width:32px;height:32px}
+}
+@media print{
+  .hero-photo-credit{color:#163b30;border-color:#799182}
+  .hero-photo-credit:before{display:none}
+}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to rental providers</a>
 <header class="site-head"><div class="shell"><a class="brand" href="/">Russellville<span>.Rent</span></a><a class="back" href="/">← Browse all rentals</a></div></header>
-<section class="hero" aria-labelledby="page-title"><img class="hero-photo" src="assets/downtown-russellville-sunset.jpg" alt="" fetchpriority="high" decoding="async"><div class="shell hero-grid">
-<div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley · Event rentals</p><h1 id="page-title">Audio, visual <br><em>and event equipment</em> <br>rentals</h1><p class="hero-copy">Sound equipment, microphones, lighting, projectors and production gear for Russellville events. Compare what providers advertise—and what still needs to be confirmed.</p><div class="hero-actions"><a class="action primary" href="#confirmed">Explore confirmed delivery ↓</a><a class="action secondary" href="#more-options">Other providers ↓</a></div></div>
+<section class="hero" aria-labelledby="page-title"><img class="hero-photo" src="assets/downtown-russellville-sunset.jpg" alt="" width="1200" height="544" fetchpriority="high" decoding="async"><div class="shell hero-grid">
+<div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley · Event rentals</p><h1 id="page-title">Audio, visual <br><em>and event equipment</em> <br>rentals</h1><p class="hero-copy">Sound equipment, microphones, lighting, projectors and production gear for Russellville events. Compare what providers advertise—and what still needs to be confirmed.</p><div class="hero-actions"><a class="action primary" href="#confirmed">Explore confirmed delivery ↓</a><a class="action secondary" href="#more-options">Other providers ↓</a></div><p class="hero-photo-credit">Downtown Russellville at sunset <span aria-hidden="true">·</span> Local scenery, not a listed rental or a provider event</p></div>
 <div class="sound-art" aria-hidden="true"><div class="wave"><i style="--h:34px"></i><i style="--h:62px"></i><i style="--h:94px"></i><i style="--h:49px"></i><i style="--h:126px"></i><i style="--h:76px"></i><i style="--h:154px"></i><i style="--h:92px"></i><i style="--h:120px"></i><i style="--h:48px"></i><i style="--h:90px"></i><i style="--h:60px"></i><i style="--h:36px"></i></div><span class="art-label">SOUND / LIGHT / PRODUCTION</span></div>
 </div></section>
 <div class="shell quick-guide">
