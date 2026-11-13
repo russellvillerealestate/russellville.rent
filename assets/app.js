@@ -86,6 +86,8 @@ function render(){
   document.querySelectorAll(".property-photo").forEach(img=>img.addEventListener("error",()=>{if(img.src!==FALLBACK_IMAGE)img.src=FALLBACK_IMAGE;}));
   $("empty").hidden=state.filtered.length!==0;
   $("resultCount").textContent=`${state.filtered.length} rental${state.filtered.length===1?"":"s"} shown`;
+  const consoleMatch=$("consoleMatchCount");
+  if(consoleMatch)consoleMatch.textContent=String(state.filtered.length);
   $("inventoryCount").textContent=state.listings.length;
   const managers=new Set(state.listings.map(x=>x.manager));
   $("managerCount").textContent=managers.size;
