@@ -3463,6 +3463,101 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 @media(prefers-reduced-motion:reduce){#rental-results[data-view="grid"][data-layout="editorial"] .other-field-folio{scroll-behavior:auto}}
 @media print{.other-field-scene,.other-field-overlay{display:none!important}#rental-results .other-field-folio{background:#fff!important}}
 
+
+/* 2026-11-12 River Valley discovery composition: scenic lead + supporting paths.
+   Compared the live StayARV and Russellville.Rent layouts before this change.
+   A larger local-photo lead establishes hierarchy; four original filter routes
+   retain their text, data attributes and JavaScript behaviors. Nielsen Norman
+   Group visual hierarchy; web.dev CLS (existing dimensioned images);
+   W3C WCAG 2.2 visible focus and reduced-motion behavior remain unchanged. */
+@media (min-width:1100px){
+  .discovery-grid{
+    grid-template-columns:repeat(12,minmax(0,1fr));
+    grid-template-rows:minmax(245px,auto) minmax(245px,auto) minmax(288px,auto);
+    gap:18px;
+  }
+  .discovery-grid>.discovery-card{min-height:0}
+  .discovery-grid>.discovery-card--home{
+    grid-column:span 7;grid-row:span 2;
+    padding:clamp(30px,4.3vw,55px);
+    border-radius:30px 8px 8px 30px;
+  }
+  .discovery-grid>.discovery-card--water,
+  .discovery-grid>.discovery-card--gear{
+    grid-column:span 5;
+    border-radius:8px 26px 8px 8px;
+    padding:26px 30px;
+  }
+  .discovery-grid>.discovery-card--party{
+    grid-column:1 / -1;grid-row:auto;
+    min-height:288px;
+    padding:34px 45px;
+    border-radius:8px 8px 30px 30px;
+  }
+  .discovery-grid>.discovery-card--home h3{
+    font-size:clamp(3.35rem,5.3vw,5.3rem);
+    max-width:12ch;line-height:1.01;
+  }
+  .discovery-grid>.discovery-card--home .path-description{font-size:1.05rem}
+  .discovery-grid>.discovery-card--home .path-kicker{font-size:.79rem}
+  .discovery-grid>.discovery-card--party h3{font-size:clamp(2.8rem,4vw,4rem)}
+  .discovery-grid>.discovery-card--home::before{
+    background:linear-gradient(180deg,#092f2878 0%,#0b302656 38%,#0a2b24ee 100%);
+  }
+  .discovery-grid>.discovery-card--party::before{
+    background:linear-gradient(90deg,#1d2735e8,#222a3b84 57%,#28233b66),
+               linear-gradient(0deg,#181b2b9c,transparent 65%);
+  }
+}
+/* The lake-category thumbnail becomes a true compact list image, rather than
+   imposing the 205px editorial tile height on short search-result rows. */
+#rental-results[data-view="list"]>.rental-card[data-category="paddling"]>.paddling-feature{
+  height:100%;min-height:185px;border-bottom:0;border-right:1px solid #d7e2d6;
+}
+#rental-results[data-view="list"] .paddling-feature-story{
+  padding:13px 14px 9px;justify-content:flex-end;
+}
+#rental-results[data-view="list"] .paddling-feature-story strong{
+  font-size:clamp(1.15rem,1.6vw,1.45rem);line-height:1.05;
+}
+#rental-results[data-view="list"] .paddling-feature-overline,
+#rental-results[data-view="list"] .paddling-feature-credit{
+  display:none;
+}
+#rental-results[data-view="list"] .paddling-feature-identity{
+  min-height:60px;padding:7px 9px;gap:7px;
+}
+#rental-results[data-view="list"] .paddling-feature-identity img{
+  width:38px;height:38px;
+}
+#rental-results[data-view="list"] .paddling-feature-identity strong{font-size:.7rem}
+#rental-results[data-view="list"] .paddling-feature-identity small,
+#rental-results[data-view="list"] .paddling-feature-arrow{display:none}
+@media(max-width:600px){
+  #rental-results[data-view="list"]>.rental-card[data-category="paddling"]>.paddling-feature{
+    min-height:155px;
+  }
+  #rental-results[data-view="list"] .paddling-feature-story{
+    padding:10px 7px;
+  }
+  #rental-results[data-view="list"] .paddling-feature-story strong{
+    font-size:.92rem;line-height:1.1;
+  }
+  #rental-results[data-view="list"] .paddling-feature-identity{
+    justify-content:center;padding:5px;
+  }
+  #rental-results[data-view="list"] .paddling-feature-identity img{
+    width:43px;height:43px;
+  }
+  #rental-results[data-view="list"] .paddling-feature-identity>span:nth-child(2){
+    display:none;
+  }
+}
+@media print{
+  .discovery-grid>.discovery-card{break-inside:avoid}
+  #rental-results[data-view="list"] .paddling-feature-identity{background:#fff}
+}
+
 </style>
 </head>
 <body>
