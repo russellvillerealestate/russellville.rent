@@ -3688,6 +3688,72 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
  #browse-toolbar:not([hidden]){position:static!important;box-shadow:none!important;backdrop-filter:none!important}
  .browse-toolbar-edit{display:none}
 }
+
+/* 2026-11-13 — Phone-first discovery: an editorial, swipeable set of four
+   existing rental paths rather than a long stack of indistinguishable tiles.
+   Live inspiration: StayARV's immersive photo-led hierarchy; adapted to a
+   multi-category directory. Existing four links, search, filters, saved routes
+   and listing data stay exactly as before. The adjacent card, scrollbar and
+   visible instruction make horizontal discovery explicit (not auto-rotating).
+   Research: Nielsen Norman Group visual hierarchy and carousel usability;
+   web.dev responsive design; WCAG 2.2 visible focus / target sizing / reflow. */
+.discovery-swipe-guide{display:none}
+@media(max-width:650px){
+  .discovery-heading{margin-bottom:12px}
+  .discovery-swipe-guide{
+    display:flex;align-items:center;gap:10px;margin:0 0 11px;
+    color:#385d4d;font-size:.77rem;font-weight:760;letter-spacing:.015em;
+  }
+  .discovery-swipe-guide span{
+    display:inline-grid;place-items:center;flex:none;
+    width:31px;height:31px;border-radius:50%;
+    background:#1b4a3b;color:#fff1ce;font-size:1.1rem;
+  }
+  .discovery-grid{
+    display:grid;grid-template-columns:none;grid-auto-flow:column;
+    grid-auto-columns:minmax(232px,82%);gap:13px;
+    padding:5px 5px 18px;overflow-x:auto;overflow-y:hidden;
+    scroll-snap-type:x proximity;scroll-padding-inline:5px;
+    overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;
+    scrollbar-width:thin;scrollbar-color:#7d9d88 #e4eae0;
+  }
+  .discovery-grid::-webkit-scrollbar{height:8px}
+  .discovery-grid::-webkit-scrollbar-track{background:#e4eae0;border-radius:99px}
+  .discovery-grid::-webkit-scrollbar-thumb{background:#7d9d88;border-radius:99px}
+  .discovery-grid>.discovery-card{
+    grid-column:auto;grid-row:auto;min-width:0;min-height:345px;
+    padding:24px;border-radius:23px;scroll-snap-align:start;
+    box-shadow:0 11px 24px #18382b1a;
+  }
+  .discovery-grid>.discovery-card h3{
+    font-size:clamp(2.1rem,8vw,3rem);line-height:1.04;
+  }
+  .discovery-grid>.discovery-card .path-kicker{font-size:.72rem}
+  .discovery-grid>.discovery-card .path-description{font-size:.86rem}
+  .discovery-grid>.discovery-card .path-arrow{width:46px;height:46px}
+  .discovery-grid>.discovery-card:focus-visible{
+    outline:3px solid #9a5e12;outline-offset:-5px;
+  }
+  .discovery-caption{margin-top:11px}
+}
+@media(max-width:360px){
+  .discovery-grid{grid-auto-columns:minmax(226px,86%)}
+  .discovery-grid>.discovery-card{min-height:318px;padding:20px}
+  .discovery-grid>.discovery-card h3{font-size:2.08rem}
+}
+@media print{
+  .discovery-swipe-guide{display:none!important}
+  .discovery-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-auto-flow:row!important;grid-auto-columns:auto!important;
+    overflow:visible!important;scroll-snap-type:none!important;
+  }
+  .discovery-grid>.discovery-card{
+    grid-column:auto!important;grid-row:auto!important;
+    min-height:190px!important;break-inside:avoid;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -3810,6 +3876,7 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 
 <section class="discovery" aria-labelledby="discovery-title">
   <div class="discovery-heading"><div><p class="eyebrow">MADE FOR THE RIVER VALLEY / FOUR WAYS IN</p><h2 id="discovery-title">Whatever your next chapter looks like.</h2></div><p>Start with what you have in mind. Choose a path to filter the directory, or explore all 35 categories below.</p></div>
+  <p class="discovery-swipe-guide"><span aria-hidden="true">↔</span> Four ways to begin · swipe to explore</p>
   <div class="discovery-grid">
     <a class="discovery-card discovery-card--home" href="#browse" data-discovery-category="homes">
       <img src="assets/downtown-russellville-sunset.jpg" alt="" width="1200" height="544" loading="lazy">
