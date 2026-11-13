@@ -3558,6 +3558,55 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   #rental-results[data-view="list"] .paddling-feature-identity{background:#fff}
 }
 
+
+/* 2026-11-13 · River Valley moving-day field guide.
+   A distinct scenic/editorial companion to the event guide, using local existing imagery.
+   NN/g visual hierarchy & scanning, web.dev responsive image design, WCAG 2.2 reflow/focus/targets.
+   No booking, inventory, delivery or price claims; no scripts or third-party requests. */
+.move-guide-door{display:flex;align-items:center;gap:clamp(14px,2.5vw,28px);margin:16px 0;padding:20px clamp(20px,3vw,33px);border:1px solid #d2ded1;border-radius:17px;background:linear-gradient(110deg,#e2eee4,#f3eee0);text-decoration:none;box-shadow:0 7px 22px #142e2912;transition:transform .2s,box-shadow .2s,border-color .2s}
+.move-guide-door:hover{transform:translateY(-2px);box-shadow:0 12px 27px #142e291e;border-color:#a5bea9}
+.move-guide-door-mark{flex:0 0 auto;display:grid;place-items:center;width:60px;height:60px;border-radius:13px;background:#143e34;color:#ffe3a7;font:400 2.3rem/1 Georgia,serif}
+.move-guide-door-copy{display:grid;gap:2px;min-width:0;flex:1}
+.move-guide-door-copy small{font-size:.65rem;line-height:1.5;letter-spacing:.14em;font-weight:850;color:#396952}
+.move-guide-door-copy strong{font:400 clamp(1.32rem,2.25vw,1.8rem)/1.15 Georgia,serif;letter-spacing:-.035em;color:#153b32}
+.move-guide-door-copy>span{font-size:.8rem;line-height:1.5;color:#4d6658}
+.move-guide-door-action{flex:0 0 auto;color:#143e34;font-size:.81rem;font-weight:850}
+.move-journey{margin:clamp(46px,6vw,78px) 0;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);background:#eae9df;border:1px solid #cbd7ce;border-radius:26px;overflow:hidden;box-shadow:0 22px 54px #17362b1a;scroll-margin-top:100px}
+.move-journey-cover{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;gap:50px;min-height:620px;padding:clamp(29px,4vw,58px);color:#fff9eb;background:#102b29}
+.move-journey-cover:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#0a2925db 0%,#0e312dc9 50%,#0a2925ef 100%),url("assets/downtown-russellville-sunset.jpg") center 42%/cover no-repeat}
+.move-journey-cover:after{content:"";position:absolute;inset:17px;border:1px solid #f7dfae69;border-radius:14px;pointer-events:none}
+.move-journey-mark{display:flex;justify-content:space-between;align-items:center;gap:20px;color:#ffe1a8}
+.move-journey-mark span{font-size:.64rem;font-weight:850;letter-spacing:.19em;line-height:1.5}
+.move-journey-mark strong{font:400 2.8rem/1 Georgia,serif;letter-spacing:-.1em}
+.move-journey-cover h2{font:400 clamp(3.1rem,5.3vw,5.5rem)/.99 Georgia,"Times New Roman",serif;letter-spacing:-.07em;margin:0 0 23px;color:#fff9eb;text-wrap:balance}
+.move-journey-cover h2 em{color:#ffe0a2;font-style:italic}
+.move-journey-cover p{max-width:43ch;font-size:clamp(.97rem,1.35vw,1.09rem);line-height:1.68;color:#eaf0e7;margin:0 0 27px}
+.move-journey-cover a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 22px;border-radius:999px;background:#f0d08a;color:#14352d;font-size:.87rem;font-weight:850;text-decoration:none}
+.move-journey-cover a:hover{background:#ffe2a8}
+.move-journey-caption{font-size:.7rem;line-height:1.5;letter-spacing:.02em;color:#e4eade}
+.move-journey-panel{padding:clamp(27px,4vw,53px);display:flex;flex-direction:column}
+.move-journey-overline{display:block;font-size:.65rem;font-weight:850;letter-spacing:.17em;line-height:1.5;color:#386c56}
+.move-journey-panel h3{font:400 clamp(2rem,3.5vw,3rem)/1.07 Georgia,serif;letter-spacing:-.055em;margin:12px 0 12px;color:#143c32}
+.move-journey-panel>p{font-size:.89rem;line-height:1.65;color:#466155;max-width:54ch;margin:0 0 25px}
+.move-journey-routes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;flex:1}
+.move-journey-routes a{display:flex;flex-direction:column;min-width:0;min-height:220px;padding:clamp(19px,2vw,27px);border:1px solid #d5dfd3;border-radius:16px;background:#fffef8;color:#173c33;text-decoration:none;transition:transform .2s,box-shadow .2s,border-color .2s}
+.move-journey-routes a:nth-child(2){background:#e0eae0}
+.move-journey-routes a:nth-child(3){background:#eee4d2}
+.move-journey-routes a:nth-child(4){background:#163e34;color:#fff9e9;border-color:#163e34}
+.move-journey-routes a:hover{transform:translateY(-3px);box-shadow:0 11px 24px #102e2423;border-color:#8da99a}
+.move-journey-route-top{display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:.68rem;letter-spacing:.12em;font-weight:850}
+.move-journey-route-top b{font:400 1.5rem/1 Georgia,serif;letter-spacing:-.035em}
+.move-journey-routes strong{display:block;margin:22px 0 8px;font:400 clamp(1.37rem,2.1vw,1.95rem)/1.14 Georgia,serif;letter-spacing:-.045em}
+.move-journey-routes .move-journey-route-description{display:block;font-size:.79rem;line-height:1.55;color:#52685d;margin-bottom:13px}
+.move-journey-routes a:nth-child(4) .move-journey-route-description{color:#d8e6dd}
+.move-journey-route-arrow{display:block;margin-top:auto;padding-top:11px;border-top:1px solid #c7d5c8;font-size:.76rem;font-weight:850}
+.move-journey-routes a:nth-child(4) .move-journey-route-arrow{border-color:#ffffff50;color:#ffe0a2}
+.move-journey-note{margin:21px 0 0!important;font-size:.73rem!important;line-height:1.6!important;color:#52665b!important}
+@media(max-width:960px){.move-journey{grid-template-columns:1fr;scroll-margin-top:20px}.move-journey-cover{min-height:405px;gap:30px}.move-journey-panel{padding:34px}.move-journey-routes a{min-height:186px}}
+@media(max-width:600px){.move-guide-door{padding:17px;gap:12px;flex-wrap:wrap}.move-guide-door-mark{width:48px;height:48px;font-size:1.85rem}.move-guide-door-copy{flex-basis:calc(100% - 60px)}.move-guide-door-action{margin-left:60px}.move-journey{border-radius:18px}.move-journey-cover{min-height:420px;padding:30px 25px}.move-journey-cover:after{inset:12px}.move-journey-cover h2{font-size:clamp(3rem,10.5vw,4.45rem)}.move-journey-panel{padding:25px 18px}.move-journey-routes{grid-template-columns:1fr;gap:10px}.move-journey-routes a{min-height:0;padding:19px 22px}.move-journey-routes strong{margin:13px 0 6px}.move-journey-route-arrow{padding-top:8px}}
+@media(prefers-reduced-motion:reduce){.move-guide-door,.move-journey-routes a{transition:none!important}.move-guide-door:hover,.move-journey-routes a:hover{transform:none!important}}
+@media print{.move-journey{break-inside:avoid;box-shadow:none}.move-journey-cover:before{background:#163e34}.move-journey-routes a{break-inside:avoid}.move-guide-door{box-shadow:none}}
+
 </style>
 </head>
 <body>
@@ -3736,6 +3785,14 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   <span class="event-guide-bridge-mark" aria-hidden="true">R↗</span>
   <span class="event-guide-bridge-copy"><small>PLANNING A GATHERING? / THE EVENT FIELD GUIDE</small><strong>Six rental categories. One clearer plan.</strong><span>Venue, equipment, sound, photo booths, restrooms and stages.</span></span>
   <span class="event-guide-bridge-action">Explore the guide <span aria-hidden="true">↗</span></span>
+</a>
+
+
+<!-- Cross-category moving-day route: existing directory links only; no bookings or bundled offers. -->
+<a class="move-guide-door" href="#moving-field-guide">
+ <span class="move-guide-door-mark" aria-hidden="true">M<span style="color:#ffe1a1">↗</span></span>
+ <span class="move-guide-door-copy"><small>PLANNING A MOVE? / THE RIVER VALLEY ROADBOOK</small><strong>Four rental paths. One moving-day plan.</strong><span>Hauling, storage, portable space and cleanup—each with providers to contact directly.</span></span>
+ <span class="move-guide-door-action">Open the guide <span aria-hidden="true">↗</span></span>
 </a>
 
 <div class="atlas-entry">
@@ -4334,6 +4391,32 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
     <figcaption><span>HERE IN THE RIVER VALLEY</span><strong>A hometown connection.</strong><small>Original illustrated message · Not a rental provider, available listing or booking confirmation</small></figcaption>
   </figure>
 </section>
+
+<!-- River Valley moving field guide: informative editorial navigation, no asserted rental availability. -->
+<section class="move-journey" id="moving-field-guide" aria-labelledby="moving-field-title">
+ <div class="move-journey-cover">
+  <div class="move-journey-mark"><span>RUSSELLVILLE / THE RIVER VALLEY<br>MOVING DAY FIELD GUIDE · 01</span><strong aria-hidden="true">R↗</strong></div>
+  <div>
+   <h2 id="moving-field-title">New address.<br><em>Clear path.</em></h2>
+   <p>A move usually takes more than a truck. Find the people and equipment for the next step—without losing the big picture.</p>
+   <a href="moving.html">Start with moving trucks &amp; trailers <span aria-hidden="true">&nbsp;↗</span></a>
+  </div>
+  <span class="move-journey-caption">Downtown Russellville photography · Regional scenery, not a rental truck, storage facility or provider photograph</span>
+ </div>
+ <div class="move-journey-panel">
+  <span class="move-journey-overline">THE LOCAL MOVE / FOUR SEPARATE DIRECTORIES</span>
+  <h3>Put the pieces in place.</h3>
+  <p>Pick the task in front of you. Each path opens an existing River Valley rental directory with operator information and the terms you should confirm.</p>
+  <nav class="move-journey-routes" aria-label="Moving day rental categories">
+   <a href="moving.html"><span class="move-journey-route-top">01 / TRANSPORT <b aria-hidden="true">↗</b></span><strong>Carry the load.</strong><span class="move-journey-route-description">Moving-truck pickup locations and trailer-only options. Check vehicle type and pickup requirements.</span><span class="move-journey-route-arrow">Moving rentals ↗</span></a>
+   <a href="storage.html"><span class="move-journey-route-top">02 / KEEP <b aria-hidden="true">↗</b></span><strong>Make room.</strong><span class="move-journey-route-description">Self-storage units, climate-controlled options and advertised vehicle parking.</span><span class="move-journey-route-arrow">Storage providers ↗</span></a>
+   <a href="mobile-storage.html"><span class="move-journey-route-top">03 / OVERFLOW <b aria-hidden="true">↗</b></span><strong>Bring space closer.</strong><span class="move-journey-route-description">Portable containers, moving cubes and temporary storage inquiries. Confirm service area and delivery.</span><span class="move-journey-route-arrow">Portable storage ↗</span></a>
+   <a href="dumpsters.html"><span class="move-journey-route-top">04 / CLEANUP <b aria-hidden="true">↗</b></span><strong>Leave it clear.</strong><span class="move-journey-route-description">Cleanup dumpsters and roll-offs, with some specialized services. Check accepted materials and fees.</span><span class="move-journey-route-arrow">Dumpster rentals ↗</span></a>
+  </nav>
+  <p class="move-journey-note">These are independent directory categories, not a moving package or a quote. Provider service areas, vehicle and container availability, delivery, pricing, restrictions and rental terms must be confirmed directly. Some listings are regional or unverified for local delivery.</p>
+ </div>
+</section>
+
 <section class="event-journey" id="event-field-guide" aria-labelledby="event-journey-title">
   <div class="event-journey-cover">
     <span class="event-journey-kicker">THE RIVER VALLEY / ONE EVENT, SIX PATHS</span>
