@@ -704,6 +704,13 @@ main .grid>#russellville-kayaks .paddle-folio-head:before{
    paddling records. The original folios remain the no-script and default view.
    Design informed by StayARV's pine-and-parchment scale, NN/g hierarchy,
    web.dev responsive reflow, and WCAG 2.2 visible focus/target sizes. */
+/* Progressive enhancement: keep the scenic/quick-scan switch out of initial paint
+   until its JavaScript has attached all controls and expanded-detail handlers.
+   Without an author-level guard, display:grid overrides the browser's [hidden]
+   rule; the otherwise inactive interface appears with scripting disabled.
+   Preserves the existing River Valley reading-room design and both views.
+   Reference: WCAG 2.2 operable controls, NN/g progressive disclosure, web.dev. */
+.paddle-compare-desk[hidden]{display:none!important}
 .paddle-compare-desk{display:grid;grid-template-columns:minmax(0,1fr) minmax(255px,.42fr);gap:clamp(20px,4vw,55px);align-items:center;margin:8px 0 24px;padding:clamp(24px,4vw,43px);border:1px solid #8ba895;border-radius:24px;background:linear-gradient(115deg,#0c332e 0%,#22594c 66%,#174538 100%);color:#f9f6ea;box-shadow:0 16px 42px #133d322b;position:relative;overflow:hidden}
 .paddle-compare-desk:before{content:"";position:absolute;inset:auto -35px -140px auto;width:340px;height:340px;border:1px solid #e5d3aa2f;border-radius:50%;box-shadow:0 0 0 50px #e5d3aa0d,0 0 0 100px #e5d3aa09;pointer-events:none}
 .paddle-compare-desk-copy,.paddle-compare-controls{position:relative;z-index:1;min-width:0}
