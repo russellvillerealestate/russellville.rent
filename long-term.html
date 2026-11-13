@@ -1138,6 +1138,67 @@ body.has-comparison{padding-bottom:115px}
 @media(prefers-reduced-motion:reduce){.compare-tray{animation:none}.compare-tray-open{transition:none}.compare-tray-open:hover{transform:none}}
 @media print{.compare-tray{display:none!important}body.has-comparison{padding-bottom:0!important}}
 
+
+/* 2026-11-13 / The responsive search-count folio.
+   Inspired by StayARV's confident editorial hero, not copied from it.
+   NN/g visual hierarchy; web.dev responsive design; WCAG 2.2 reflow,
+   visible focus and meaningful control labels. Existing filters and cards unchanged. */
+.rental-console-head{align-items:stretch}
+.rental-console-glance{
+  position:relative;flex:0 0 clamp(245px,26%,305px);min-width:0;
+  display:flex;flex-direction:column;justify-content:space-between;gap:15px;
+  padding:clamp(22px,2.8vw,30px);border:1px solid #f6dda8;
+  border-radius:18px;background:#f8eed7;color:#163d31;
+  box-shadow:0 13px 29px #061d182e;
+}
+.rental-console-glance:before{
+  content:"";position:absolute;inset:7px;border:1px solid #bb9f675c;
+  border-radius:12px;pointer-events:none
+}
+.rental-console-head .rental-console-glance .rental-console-landmark{
+  display:block;margin:0;color:#4c6553;font-size:.61rem;letter-spacing:.14em;white-space:normal
+}
+.rental-console-glance-stat{display:flex;align-items:center;gap:14px;border-block:1px solid #ceb789;padding:16px 0}
+.rental-console-glance-stat strong{
+  min-width:1.2em;font:400 clamp(3.8rem,6vw,5.4rem)/.95 Georgia,"Times New Roman",serif;
+  color:#184937;letter-spacing:-.075em;font-variant-numeric:tabular-nums
+}
+.rental-console-glance-stat span{max-width:13ch;font-size:.8rem;line-height:1.45;font-weight:780;color:#3b5c4b}
+.rental-console-glance-link{
+  display:inline-flex;align-items:center;justify-content:space-between;gap:10px;
+  min-height:48px;padding:12px 15px;border-radius:9px;background:#1c503d;
+  color:#fff9e9;font-size:.83rem;font-weight:850;text-decoration:none;
+  transition:background-color .18s ease,transform .18s ease
+}
+.rental-console-glance-link:hover{background:#2d6951;transform:translateY(-1px)}
+.rental-console-glance-link:focus-visible{outline:3px solid #8d5f14;outline-offset:3px}
+.rental-console-glance>small{font-size:.68rem;line-height:1.5;color:#4d6656}
+@media(max-width:930px){
+ .rental-console-head{flex-wrap:wrap}
+ .rental-console-glance{flex:1 1 100%;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 18px;align-items:center}
+ .rental-console-head .rental-console-glance .rental-console-landmark{grid-column:1 / -1}
+ .rental-console-glance-stat{border:0;padding:4px 0}
+ .rental-console-glance-stat strong{font-size:3.5rem}
+ .rental-console-glance-link{min-width:180px}
+ .rental-console-glance>small{grid-column:1 / -1}
+}
+@media(max-width:560px){
+ .rental-console-glance{grid-template-columns:1fr;padding:20px;gap:8px;border-radius:14px}
+ .rental-console-glance-stat{gap:17px}
+ .rental-console-glance-stat strong{font-size:4.3rem}
+ .rental-console-glance-stat span{max-width:none}
+ .rental-console-glance-link{justify-content:center;width:100%}
+ .rental-console-glance>small{grid-column:auto}
+}
+@media(prefers-reduced-motion:reduce){
+ .rental-console-glance-link{transition:none}
+ .rental-console-glance-link:hover{transform:none}
+}
+@media print{
+ .rental-console-glance{box-shadow:none;background:#fff;color:#163d31;border:1px solid #666}
+ .rental-console-glance-link{background:#fff;color:#163d31;border:1px solid #666}
+}
+
 </style></head>
 <body>
 <a class="skip" href="#main">Skip to listings</a>
@@ -1147,16 +1208,16 @@ body.has-comparison{padding-bottom:115px}
     <a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a>
     <nav class="desktop-nav" aria-label="Main navigation">
       <a href="/">All rental categories</a>
-      <a href="#main">Find a long-term rental</a>
+      <a href="#filters">Find a long-term rental</a>
       <a href="#sources">Listing sources</a>
       <a class="nav-cta" href="#property-managers">List properties</a>
     </nav>
     <nav class="mobile-nav" aria-label="Mobile navigation">
-      <a class="mobile-search-link" href="#main">Find rentals</a>
+      <a class="mobile-search-link" href="#filters">Find rentals</a>
       <details class="mobile-nav-disclosure">
         <summary>Menu</summary>
         <div class="mobile-nav-panel">
-          <a href="#main"><span aria-hidden="true">01</span> Search rental homes</a>
+          <a href="#filters"><span aria-hidden="true">01</span> Search rental homes</a>
           <a href="#sources"><span aria-hidden="true">02</span> Listing sources</a>
           <a href="#property-managers"><span aria-hidden="true">03</span> List your property</a>
           <a href="/"><span aria-hidden="true">04</span> All rental categories</a>
@@ -1173,7 +1234,7 @@ body.has-comparison{padding-bottom:115px}
     <h1 id="hero-title">Find a place to live.<br>Without checking ten websites.</h1>
     <p class="hero-copy">Search rental homes and apartments from multiple local property managers in one place. Compare the basics here, then verify the current details with the listing source.</p>
     <div class="hero-actions">
-      <a class="button primary" href="#main">Search rentals ↓</a>
+      <a class="button primary" href="#filters">Search rentals ↓</a>
       <a class="button secondary" href="sms:+14799707301">Tell us what you need</a>
     </div>
   </div>
@@ -1259,7 +1320,15 @@ body.has-comparison{padding-bottom:115px}
           <h3>Make the search <em>yours.</em></h3>
           <p>Look up a property or manager, then narrow down the spaces that fit your budget and day-to-day needs.</p>
         </div>
-        <span class="rental-console-landmark">RUSSELLVILLE, ARKANSAS <span aria-hidden="true">↗</span></span>
+        <aside class="rental-console-glance" aria-label="Matching rental records">
+          <span class="rental-console-landmark">RUSSELLVILLE, ARKANSAS <span aria-hidden="true">↗</span></span>
+          <div class="rental-console-glance-stat">
+            <strong id="consoleMatchCount" aria-live="off">—</strong>
+            <span>indexed rentals match your search</span>
+          </div>
+          <a href="#listings" class="rental-console-glance-link">View matching rentals <span aria-hidden="true">↗</span></a>
+          <small>Directory matches only. Confirm availability and terms with each source.</small>
+        </aside>
       </div>
       <div class="rental-console-body">
         <div class="rental-console-find">
