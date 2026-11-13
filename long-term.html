@@ -1091,6 +1091,53 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
 @media(max-width:500px){#empty.rental-empty-journey{border-radius:18px;margin:23px 0}.rental-empty-copy{padding:29px 23px}#empty.rental-empty-journey h3{font-size:clamp(2.65rem,12vw,3.6rem)}.rental-empty-actions,.rental-empty-actions a,#empty .rental-empty-contact{width:100%}.rental-empty-scene svg{max-height:190px}}
 @media print{#empty.rental-empty-journey{background:white;color:#163c30;box-shadow:none;border:1px solid #aaa}#empty.rental-empty-journey h3,#empty.rental-empty-journey .rental-empty-copy>p,#empty .rental-empty-help,.rental-empty-kicker{color:#163c30!important}.rental-empty-scene{display:none}.rental-empty-actions a,#empty .rental-empty-contact{border:1px solid #aaa!important;color:#163c30!important;background:white!important}}
 
+
+/* 2026-11-12 / Pinned-rental quick route: an unobtrusive StayARV-inspired
+   forest-and-brass wayfinder between listing cards and the existing comparison.
+   Nielsen Norman Group visual hierarchy; web.dev responsive reflow; W3C WCAG 2.2
+   focus visibility, 24px targets, and reduced motion. No listing facts changed. */
+.compare-tray[hidden]{display:none!important}
+.compare-tray{
+  position:fixed;right:clamp(14px,3vw,34px);bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:65;
+  display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:15px;
+  width:min(480px,calc(100% - 28px));padding:13px 14px;
+  background:linear-gradient(122deg,#103c33 0%,#195440 76%,#21644b 100%);
+  border:1px solid #e5c47d;border-top:4px solid #e9ce92;border-radius:18px;
+  color:#fff9ea;box-shadow:0 17px 38px #102d2b6b,0 0 0 1px #ffffff14 inset;
+  animation:compare-tray-enter .22s ease-out;
+}
+.compare-tray-emblem{
+  display:grid;place-items:center;width:49px;height:49px;border-radius:50%;
+  border:1px solid #ebd3a68a;background:#ffffff0c;color:#f2d396;
+  font:400 1.4rem/1 Georgia,"Times New Roman",serif;
+}
+.compare-tray-story{display:flex;flex-direction:column;gap:4px;min-width:0}
+.compare-tray-story small{font-size:.57rem;font-weight:850;line-height:1.4;letter-spacing:.13em;color:#f0d8a6}
+.compare-tray-story strong{font:400 clamp(1.07rem,2vw,1.37rem)/1.2 Georgia,"Times New Roman",serif;letter-spacing:-.025em;color:#fffdf3}
+.compare-tray-open{
+  display:inline-flex;justify-content:center;align-items:center;gap:8px;min-height:48px;
+  padding:11px 14px;border-radius:10px;background:#f0d193;color:#173b2e;
+  font-size:.8rem;font-weight:850;line-height:1.1;text-decoration:none;white-space:nowrap;
+  transition:background-color .18s ease,transform .18s ease;
+}
+.compare-tray-open:hover{background:#ffe3ad;transform:translateY(-1px)}
+.compare-tray-open:focus-visible{outline:3px solid #fff;outline-offset:3px}
+body.has-comparison{padding-bottom:115px}
+#compareDesk{scroll-margin-top:96px}
+@keyframes compare-tray-enter{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:520px){
+ .compare-tray{right:50%;transform:translateX(50%);bottom:calc(11px + env(safe-area-inset-bottom,0px));gap:10px;padding:11px}
+ .compare-tray-emblem{display:none}
+ .compare-tray-story small{font-size:.53rem}
+ .compare-tray-story strong{font-size:1.15rem}
+ .compare-tray-open{padding:10px 12px}
+ body.has-comparison{padding-bottom:104px}
+ @keyframes compare-tray-enter{from{opacity:0;transform:translate(50%,10px)}to{opacity:1;transform:translate(50%,0)}}
+}
+@media(max-width:365px){.compare-tray-open-full{display:none}.compare-tray-story strong{font-size:1.06rem}.compare-tray{gap:7px}}
+@media(prefers-reduced-motion:reduce){.compare-tray{animation:none}.compare-tray-open{transition:none}.compare-tray-open:hover{transform:none}}
+@media print{.compare-tray{display:none!important}body.has-comparison{padding-bottom:0!important}}
+
 </style></head>
 <body>
 <a class="skip" href="#main">Skip to listings</a>
@@ -1324,6 +1371,16 @@ button.search-chip:hover{background:#d6e9d8;border-color:#8ba994}
       <p id="compareStatus" class="compare-status" role="status" aria-live="polite"></p>
     </div>
     <div id="listings" class="listings" aria-live="polite"></div>
+
+    <!-- Persistent shortlist shortcut: a visual bridge from pinned cards to the existing comparison. -->
+    <aside class="compare-tray" id="compareTray" aria-label="Pinned rental comparison shortcut" hidden>
+      <span class="compare-tray-emblem" aria-hidden="true">R↗</span>
+      <span class="compare-tray-story">
+        <small>THE RIVER VALLEY / YOUR SHORTLIST</small>
+        <strong><span id="compareTrayCount">0</span> of 3 rentals pinned</strong>
+      </span>
+      <a class="compare-tray-open" href="#compareDesk">Review <span class="compare-tray-open-full">comparison</span><span aria-hidden="true">↗</span></a>
+    </aside>
     <section class="compare-desk" id="compareDesk" aria-labelledby="compareHeading" hidden>
       <div class="compare-desk-header"><div><p class="eyebrow">Your shortlist / The River Valley</p><h2 id="compareHeading">The right place is in the <em>details.</em></h2><p>Compare what current sources publish, then check actual openings and terms with the manager.</p></div><button type="button" class="compare-clear" id="compareClear">Clear comparison</button></div>
       <div class="compare-choices" id="compareChoices"></div>

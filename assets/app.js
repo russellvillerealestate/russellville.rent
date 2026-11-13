@@ -220,6 +220,13 @@ function drawComparison(){
   $("compareDesk").hidden=selected.length===0;
   $("compareJump").hidden=selected.length===0;
   $("compareCount").textContent=String(selected.length);
+  // The floating shortcut only appears for a real, nonempty pinned comparison.
+  const tray=$("compareTray");
+  if(tray){
+    tray.hidden=selected.length===0;
+    $("compareTrayCount").textContent=String(selected.length);
+    document.body.classList.toggle("has-comparison",selected.length>0);
+  }
   $("compareChoices").innerHTML=selected.map(compareOption).join("");
   document.querySelectorAll(".compare-pick[data-compare-id]").forEach(button=>{
     const on=state.compareIds.has(button.dataset.compareId);
