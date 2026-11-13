@@ -1176,7 +1176,7 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
   if(!modes||!list||!state||!fallback)return;
   const buttons=Array.from(modes.querySelectorAll("[data-production-filter]"));
   const cards=Array.from(list.querySelectorAll(":scope > li[data-production-mode]"));
-  if(cards.length!==9)return;
+  if(cards.length!==10)return;
   const labels={all:"all ten",equipment:"the equipment-only",screens:"the two screen and projection",staffed:"the six staffed and DJ-led"};
   function filter(kind){
     cards.forEach(card=>{card.hidden=kind!=="all"&&card.dataset.productionMode!==kind;});
