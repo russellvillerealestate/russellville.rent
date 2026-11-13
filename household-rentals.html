@@ -458,6 +458,113 @@ footer a{font-weight:750;color:var(--forest)}
  #questions .agreement-steps .question{background:#fff!important;box-shadow:none;min-height:0;break-inside:avoid}
 }
 
+
+/* 2026-11-13 | Home Edit storefront gallery:
+   StayARV-inspired immersive introduction and large, scannable route cards.
+   Native provider and telephone links, filtering and substantive details stay
+   unchanged. NN/g: strong wayfinding hierarchy; web.dev: responsive reflow;
+   W3C WCAG 2.2: visible focus, sufficiently large touch targets and reduced motion.
+   Scoped to wide screens; original stacked layout and print remain intact. */
+@media screen and (min-width:1040px){
+  .retail-atlas{
+    display:block;
+    border-radius:28px;
+    box-shadow:0 30px 72px #143b3026;
+  }
+  .retail-atlas-story{
+    display:grid;
+    grid-template-columns:minmax(0,1.22fr) minmax(280px,.78fr);
+    align-items:end;
+    min-height:410px;
+    gap:clamp(30px,4vw,60px);
+    padding:clamp(38px,5vw,68px);
+    background:radial-gradient(circle at 86% 18%,#57735855,transparent 37%),
+      linear-gradient(128deg,#0e302b 0%,#1a4d3c 65%,#1f5947 100%);
+  }
+  .retail-atlas-story h2{
+    max-width:15ch;
+    font-size:clamp(3.3rem,5.1vw,5.1rem);
+    line-height:1.035;
+    margin:22px 0 22px;
+  }
+  .retail-atlas-story>div>p:last-child{max-width:56ch}
+  .retail-atlas-sketch{
+    margin:0;
+    padding:22px 0 0;
+    border-top:1px solid #b9d0b37a;
+    align-self:center;
+    min-width:0;
+  }
+  .retail-atlas-sketch svg{max-height:230px}
+  .retail-atlas-directory{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:15px;
+    padding:clamp(26px,3.4vw,45px);
+    background:linear-gradient(145deg,#f8f6ee,#f2f3eb);
+  }
+  .retail-atlas-label{
+    grid-column:1/-1;
+    margin-bottom:8px;
+    padding:4px 0 20px;
+    border-bottom:1px solid #c7d3c7;
+  }
+  .retail-atlas-route{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0;
+    min-width:0;
+    min-height:270px;
+    padding:26px 25px 23px;
+    border:1px solid #d4ded0;
+    border-radius:18px;
+    background:#fffdf7;
+    box-shadow:0 9px 23px #153b3010;
+    transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+  }
+  .retail-atlas-route:last-child{
+    border-bottom:1px solid #d4ded0;
+    padding-bottom:23px;
+  }
+  .retail-atlas-route:nth-child(3n){background:#edf1e9}
+  .retail-atlas-route:nth-child(4n){background:#f4eee2}
+  .retail-atlas-route:focus-within{
+    border-color:#aa7a2f;
+    box-shadow:0 0 0 2px #deb779,0 9px 23px #153b3010;
+  }
+  .retail-atlas-num{
+    align-self:auto;
+    padding:0;
+    margin-bottom:22px;
+    color:#896e3d;
+    font:400 3.15rem/1 Georgia,"Times New Roman",serif;
+    letter-spacing:-.065em;
+  }
+  .retail-atlas-info{flex:1;display:flex;flex-direction:column}
+  .retail-atlas-info a{
+    display:inline-block;
+    font:400 clamp(1.42rem,2vw,1.73rem)/1.16 Georgia,"Times New Roman",serif;
+    letter-spacing:-.04em;
+    overflow-wrap:normal;
+  }
+  .retail-atlas-info p{margin:12px 0 17px;font-size:.81rem;line-height:1.5}
+  .retail-atlas-call{
+    margin-top:16px;
+    min-height:47px;
+    padding:11px 18px;
+    border-radius:9px;
+  }
+  .retail-atlas-route:hover{
+    transform:translateY(-3px);
+    border-color:#b3c7af;
+    box-shadow:0 18px 30px #153b3020;
+  }
+}
+@media screen and (min-width:1040px) and (prefers-reduced-motion:reduce){
+  .retail-atlas-route{transition:none}
+  .retail-atlas-route:hover{transform:none}
+}
 </style>
 </head>
 <body>
