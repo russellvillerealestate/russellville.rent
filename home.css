@@ -4244,3 +4244,51 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   .directory-masthead .masthead-route-links a{transition:none!important}
   .directory-masthead .masthead-route-links a:hover{transform:none!important}
 }
+
+/* 2026-11-14 / Search-first River Valley hero.
+   At tablet and phone widths, visitors now reach the working rental finder
+   immediately after the welcome message, before secondary calls to action.
+   Desktop keeps StayARV-inspired scenic split composition; keyboard focus
+   follows document order on every viewport, avoiding CSS-only reordering.
+   References: Nielsen Norman Group visual hierarchy; web.dev responsive
+   design; WCAG 2.2 meaningful sequence, focus visibility and reflow.
+   No provider, directory, filter, link, price or workflow data changed. */
+@media (min-width:991px){
+  .hero.welcome-hero{
+    grid-template-areas:"welcome search" "actions search";
+    grid-template-rows:auto auto;
+    align-content:center;
+    row-gap:0;
+  }
+  .hero.welcome-hero .welcome-copy{grid-area:welcome;align-self:end}
+  .hero.welcome-hero .welcome-search-shell{grid-area:search;align-self:center}
+  .hero.welcome-hero .welcome-actions{grid-area:actions;align-self:start;min-width:0}
+  .hero.welcome-hero .welcome-actions .hero-note{margin-top:clamp(24px,3vw,38px)}
+}
+@media (max-width:990px){
+  .hero.welcome-hero{display:flex;flex-direction:column;align-items:stretch;gap:0}
+  .hero.welcome-hero .welcome-copy{width:100%;max-width:660px}
+  .hero.welcome-hero .welcome-copy .intro{margin-bottom:22px}
+  .hero.welcome-hero .welcome-search-shell{width:100%;max-width:660px;align-self:flex-start}
+  .hero.welcome-hero .welcome-actions{width:100%;max-width:660px;margin-top:24px}
+  .hero.welcome-hero .welcome-actions .actions{display:flex;flex-wrap:wrap;gap:12px}
+  .hero.welcome-hero .welcome-actions .hero-note{
+    margin:24px 0 0;padding-top:16px;
+  }
+}
+@media (max-width:600px){
+  .hero.welcome-hero{padding:28px 19px 24px}
+  .hero.welcome-hero h1{font-size:clamp(2.45rem,9.3vw,3.8rem);line-height:1.045}
+  .hero.welcome-hero .welcome-copy .intro{
+    margin:16px 0 20px;font-size:.96rem;line-height:1.52;
+  }
+  .hero.welcome-hero .welcome-actions{margin-top:19px}
+  .hero.welcome-hero .welcome-actions .actions{gap:9px}
+  .hero.welcome-hero .welcome-actions .actions .button{
+    min-height:44px;font-size:.85rem;padding:11px 17px;
+  }
+  .hero.welcome-hero .welcome-actions .hero-note{margin-top:19px}
+}
+@media (max-width:380px){
+  .hero.welcome-hero .welcome-actions .actions .button{flex:1 1 auto}
+}
