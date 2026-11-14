@@ -731,6 +731,45 @@ main.wrap{padding-top:52px}
 @media(prefers-reduced-motion:reduce){.roadbook-links a{transition:none}.roadbook-links a:first-child:hover{transform:none}}
 @media print{.departure-roadbook{background:#fff;box-shadow:none;border:1px solid #7f9085;break-inside:avoid}.roadbook-cover{min-height:0;padding:20px;background:#fff!important;color:#153d32}.roadbook-cover:before,.roadbook-stamp,.roadbook-links{display:none}.departure-roadbook .eyebrow,.departure-roadbook h2,.departure-roadbook .roadbook-intro>p:not(.eyebrow),.roadbook-intro small{color:#153d32}.departure-roadbook .check-grid{background:#fff}.departure-roadbook .check-item{background:#fff!important;border:1px solid #aaa;break-inside:avoid}.departure-roadbook .roadbook-fineprint{color:#153d32}}
 
+
+/* River Valley travel continuation: editorial full-bleed imagery, three relevant
+   directory routes, and a local-first exit. Scenic art is not rental inventory.
+   References: live StayARV / Russellville.Rent (Nov 14 2026);
+   Nielsen Norman Group hierarchy; web.dev layout-shift image sizing;
+   W3C WCAG 2.2 focus visibility and responsive target sizing. */
+.road-continue{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);overflow:hidden;isolation:isolate;margin:clamp(62px,8vw,105px) 0 42px;border-radius:28px;background:#163b32;box-shadow:0 27px 60px #12382d26}
+.road-continue-scene{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;min-height:640px;padding:clamp(32px,5vw,61px);color:#fffdf2;background:#214b43}
+.road-continue-photo{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% 55%}
+.road-continue-scene:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,#082d2c18 4%,#092f2d80 45%,#09251ff2 100%);pointer-events:none}
+.road-continue-eyebrow,.road-continue-routes-kicker{font-size:.68rem;line-height:1.5;font-weight:850;letter-spacing:.18em;text-transform:uppercase}
+.road-continue-eyebrow{color:#f4d99d;margin:0 0 17px}
+.road-continue-scene h2{font:400 clamp(3.15rem,5.2vw,5.8rem)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.065em;margin:0;max-width:11ch;text-wrap:balance}
+.road-continue-scene h2 em{color:#f4d7a1;font-style:italic}
+.road-continue-scene-copy{font-size:1.01rem;line-height:1.65;max-width:40ch;color:#f5f2e5;margin:21px 0 0}
+.road-continue-caption{font-size:.67rem;line-height:1.5;letter-spacing:.055em;color:#e6e6d1;margin:38px 0 0;max-width:48ch}
+.road-continue-paths{display:flex;flex-direction:column;min-width:0;padding:clamp(32px,4.4vw,56px);background:#fcf9f1;color:#173c33}
+.road-continue-routes-kicker{color:#865c2e;margin:0 0 7px}
+.road-continue-paths h3{font:400 clamp(2rem,3vw,3.15rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.045em;margin:0 0 12px}
+.road-continue-routes-intro{font-size:.89rem;color:#546a5f;line-height:1.6;max-width:44ch;margin:0 0 25px}
+.road-continue-route{display:grid;grid-template-columns:43px minmax(0,1fr) 34px;gap:14px;align-items:center;min-height:123px;border-top:1px solid #d6dfd4;padding:22px 0;color:#173c33;text-decoration:none;transition:padding .2s ease,background-color .2s ease}
+.road-continue-route:last-of-type{border-bottom:1px solid #d6dfd4}
+.road-continue-route-index{font:400 1.45rem/1 Georgia,serif;color:#a17b47;align-self:start;margin-top:5px}
+.road-continue-route-kind{display:block;font-size:.67rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase;color:#597663;margin-bottom:5px}
+.road-continue-route strong{display:block;font:400 clamp(1.45rem,2.2vw,1.94rem)/1.13 Georgia,serif;letter-spacing:-.04em}
+.road-continue-route-description{display:block;font-size:.78rem;line-height:1.5;color:#52685b;margin-top:8px}
+.road-continue-route-arrow{display:grid;place-items:center;width:34px;height:34px;border:1px solid #b9cbb8;border-radius:50%;font-size:1.15rem;transition:transform .2s ease}
+.road-continue-route:hover{padding-left:8px;background:#f5f4e9}
+.road-continue-route:hover .road-continue-route-arrow{transform:translate(2px,-2px)}
+.road-continue-route:focus-visible,.road-continue-all:focus-visible{outline:3px solid #9c631b;outline-offset:4px;border-radius:5px}
+.road-continue-foot{margin-top:auto;padding-top:27px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px}
+.road-continue-foot p{flex:1 1 180px;margin:0;color:#576b60;font-size:.78rem;line-height:1.55}
+.road-continue-all{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 19px;border-radius:999px;background:#173c33;color:#fffdf3;text-decoration:none;font-size:.8rem;font-weight:850;white-space:normal}
+.road-continue-all:hover{background:#2c604c}
+@media(max-width:930px){.road-continue{grid-template-columns:1fr}.road-continue-scene{min-height:420px}.road-continue-scene h2{max-width:17ch}.road-continue-paths{padding:35px clamp(26px,5vw,48px)}.road-continue-foot{margin-top:15px}}
+@media(max-width:560px){.road-continue{margin-top:58px;border-radius:19px}.road-continue-scene{min-height:420px;padding:30px 25px}.road-continue-scene h2{font-size:clamp(2.9rem,11vw,4.1rem)}.road-continue-scene-copy{font-size:.91rem}.road-continue-caption{margin-top:25px}.road-continue-paths{padding:33px 24px}.road-continue-route{grid-template-columns:29px minmax(0,1fr) 29px;gap:11px;min-height:116px}.road-continue-route-index{font-size:1.15rem}.road-continue-route-arrow{width:29px;height:29px}.road-continue-route strong{font-size:1.47rem}.road-continue-foot{align-items:stretch}.road-continue-all{width:100%}}
+@media(prefers-reduced-motion:reduce){.road-continue-route,.road-continue-route-arrow{transition:none}.road-continue-route:hover{padding-left:0}.road-continue-route:hover .road-continue-route-arrow{transform:none}}
+@media print{.road-continue{box-shadow:none;break-inside:avoid}.road-continue-scene{min-height:0;background:#143a32!important;color:#fff!important}.road-continue-photo{display:none}.road-continue-route{break-inside:avoid}}
+
 </style>
 </head>
 <body>
@@ -1026,7 +1065,41 @@ main.wrap{padding-top:52px}
     </div>
     <p class="roadbook-fineprint">This independent directory does not confirm vehicle availability, insurance coverage or final terms. Check all details directly with each rental provider.</p>
   </section>
-  <section class="contact" aria-labelledby="more-title"><div><h2 id="more-title">Need something else to rent?</h2><p>We’re building a practical local directory for Russellville and the surrounding River Valley.</p></div><a class="button gold" href="/#browse">Explore more rentals <span aria-hidden="true">↗</span></a></section>
+  <!-- Editorial exit route: scenery and directory categories, not provider inventory. -->
+  <section class="road-continue" aria-labelledby="road-continue-title">
+    <div class="road-continue-scene">
+      <img class="road-continue-photo" src="assets/lake-dardanelle-sunset.jpg" width="1920" height="910" loading="lazy" decoding="async" alt="">
+      <p class="road-continue-eyebrow">The River Valley / After the drive</p>
+      <h2 id="road-continue-title">The trip doesn't stop <em>at the keys.</em></h2>
+      <p class="road-continue-scene-copy">A car gets you on the road. Find the rest of what your plans call for, from a place to stay to room for the things you're bringing.</p>
+      <p class="road-continue-caption">Lake Dardanelle scenery · Not a rental vehicle, provider photograph or availability confirmation</p>
+    </div>
+    <div class="road-continue-paths">
+      <p class="road-continue-routes-kicker">Three next chapters / One local directory</p>
+      <h3>Where to next?</h3>
+      <p class="road-continue-routes-intro">Continue with an existing rental guide. These are directory links, not quotes, bookings or confirmed inventory.</p>
+      <a class="road-continue-route" href="/short-term-stays.html">
+        <span class="road-continue-route-index" aria-hidden="true">01</span>
+        <span><span class="road-continue-route-kind">Stay awhile</span><strong>Short-term stays</strong><span class="road-continue-route-description">Explore lodging options for a longer visit.</span></span>
+        <span class="road-continue-route-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="road-continue-route" href="/moving.html">
+        <span class="road-continue-route-index" aria-hidden="true">02</span>
+        <span><span class="road-continue-route-kind">More room to move</span><strong>Moving trucks</strong><span class="road-continue-route-description">Compare separate truck-rental contacts for hauling.</span></span>
+        <span class="road-continue-route-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="road-continue-route" href="/trailers.html">
+        <span class="road-continue-route-index" aria-hidden="true">03</span>
+        <span><span class="road-continue-route-kind">Bring the gear</span><strong>Trailer rentals</strong><span class="road-continue-route-description">Review trailer options and ask about towing requirements.</span></span>
+        <span class="road-continue-route-arrow" aria-hidden="true">↗</span>
+      </a>
+      <div class="road-continue-foot">
+        <p><strong>Need something else to rent?</strong> We're building a practical local directory for Russellville and the surrounding River Valley. Confirm pricing, terms and availability with each provider.</p>
+        <a class="road-continue-all" href="/#browse">Explore all rental categories <span aria-hidden="true">&nbsp;↗</span></a>
+      </div>
+    </div>
+  </section>
+
   <footer><span>© 2026 Russellville.Rent</span><span>Local rentals. Local connections. Russellville, Arkansas.</span><a href="/#contact">Request a listing or correction</a></footer>
 </main>
 
