@@ -932,6 +932,117 @@ body{background:#f6f6f0}
   .lake-alternative-feature .alt-link{display:none}
 }
 
+
+/* November 14, 2026 — Lake alternatives / photographic editorial atlas.
+   Inspected live StayARV and Russellville.Rent; adapted the immersive local
+   landscape + forest/cream hierarchy to three EXISTING cross-directory links.
+   NN/g proximity: enlarge the primary water route while visually grouping two
+   companion routes. web.dev: retain width/height to reserve media proportions.
+   WCAG 2.2: original full-card links and focus rings remain, text stays legible
+   over a dark photographic scrim, and mobile/print use the prior flat layout.
+   Neither the closed-marina warning nor any provider/availability facts change. */
+.lake-path-photograph,.lake-path-photo-caption{display:none}
+@media(min-width:960px){
+  .lake-pathways{margin-top:clamp(46px,5vw,70px)}
+  .lake-pathways-heading{margin-bottom:25px}
+  .lake-pathways-grid{
+    grid-template-columns:minmax(0,1.33fr) minmax(0,1fr);
+    grid-template-rows:repeat(2,minmax(215px,auto));
+    gap:17px;align-items:stretch
+  }
+  .lake-pathways-grid>.lake-path--paddle{
+    grid-column:1;grid-row:1/span 2;min-height:472px;
+    justify-content:space-between;isolation:isolate;
+    border-color:#618f81;background:#123b35;color:#fffaf0;
+    box-shadow:0 22px 46px #12392c30
+  }
+  .lake-pathways-grid>.lake-path--paddle:before{
+    content:"";position:absolute;z-index:-1;inset:0;
+    background:linear-gradient(180deg,rgba(8,35,30,.13) 0%,rgba(8,35,30,.27) 28%,rgba(8,35,30,.89) 74%,rgba(8,35,30,.97) 100%);
+    pointer-events:none
+  }
+  .lake-path--paddle>.lake-path-photograph{
+    display:block;position:absolute;inset:0;z-index:-2;
+    width:100%;height:100%;object-fit:cover;object-position:46% 55%
+  }
+  .lake-path--paddle>.lake-path-photo-caption{
+    display:block;position:absolute;z-index:2;right:20px;top:20px;
+    padding:7px 10px;border:1px solid #ffffff66;border-radius:6px;
+    background:#13392fdd;color:#fff8e7;
+    font-size:.56rem;line-height:1.4;letter-spacing:.1em;font-weight:800
+  }
+  .lake-path--paddle>.lake-path-scene{
+    z-index:1;flex:none;height:158px;margin:25px 0 0;
+    padding-left:25px;display:flex;justify-content:flex-start;
+    background:transparent;color:#fff1cf
+  }
+  .lake-path--paddle>.lake-path-scene:before,
+  .lake-path--paddle>.lake-path-scene:after{opacity:.22}
+  .lake-path--paddle>.lake-path-scene svg{
+    width:145px;height:125px;max-width:100%;color:#f7d49c;
+    filter:drop-shadow(0 6px 10px #0b292b70)
+  }
+  .lake-path--paddle>.lake-path-body{
+    position:relative;z-index:2;flex:none;gap:13px;
+    padding:25px clamp(26px,3.5vw,43px) 33px
+  }
+  .lake-path--paddle .lake-path-kicker{color:#f6d59c}
+  .lake-path--paddle .lake-path-name{
+    color:#fffaf0;font-size:clamp(2.1rem,3.65vw,3.5rem);
+    line-height:1.07;max-width:12ch;text-wrap:balance
+  }
+  .lake-path--paddle .lake-path-description{
+    color:#e6efe8;max-width:38ch;font-size:.92rem
+  }
+  .lake-path--paddle .lake-path-action{
+    border-color:#f4e7c45e;color:#fff5dc;margin-top:7px;
+    font-size:.87rem
+  }
+  .lake-path--paddle .lake-path-action span:last-child{
+    background:#f4d18d;color:#183c32;width:42px;height:42px;font-size:1.35rem
+  }
+  .lake-pathways-grid>.lake-path--camp,
+  .lake-pathways-grid>.lake-path--stay{
+    grid-column:2;display:grid;grid-template-columns:116px minmax(0,1fr);
+    align-items:stretch;min-height:222px
+  }
+  .lake-pathways-grid>.lake-path--camp{grid-row:1}
+  .lake-pathways-grid>.lake-path--stay{grid-row:2}
+  .lake-path--camp>.lake-path-scene,
+  .lake-path--stay>.lake-path-scene{
+    height:auto;min-height:100%;border-radius:0;
+    border-right:1px solid #d8e2d6
+  }
+  .lake-path--camp>.lake-path-scene svg,
+  .lake-path--stay>.lake-path-scene svg{width:95px;height:100px}
+  .lake-path--camp>.lake-path-body,
+  .lake-path--stay>.lake-path-body{
+    padding:19px 20px;gap:8px
+  }
+  .lake-path--camp .lake-path-name,
+  .lake-path--stay .lake-path-name{font-size:clamp(1.3rem,1.8vw,1.6rem)}
+  .lake-path--camp .lake-path-action,
+  .lake-path--stay .lake-path-action{font-size:.75rem;padding-top:10px}
+}
+@media print{
+  .lake-pathways-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    grid-template-rows:auto!important}
+  .lake-pathways-grid>.lake-path{display:flex!important;grid-column:auto!important;
+    grid-row:auto!important;min-height:0!important;background:#fff!important;
+    color:#183b32!important;box-shadow:none!important}
+  .lake-path--paddle>.lake-path-photograph,
+  .lake-path--paddle>.lake-path-photo-caption{display:none!important}
+  .lake-pathways-grid>.lake-path--paddle:before{display:none!important}
+  .lake-pathways-grid>.lake-path--paddle .lake-path-scene{
+    height:145px!important;margin:0!important;padding:0!important;
+    display:grid!important;place-items:center!important;background:#e1efe6!important
+  }
+  .lake-pathways-grid>.lake-path .lake-path-body{padding:19px!important}
+  .lake-pathways-grid>.lake-path .lake-path-name{font-size:1.35rem!important;color:#17392d!important}
+  .lake-pathways-grid>.lake-path .lake-path-description,
+  .lake-pathways-grid>.lake-path .lake-path-action{color:#435a50!important}
+}
+
 </style>
 </head>
 <body>
@@ -1018,6 +1129,8 @@ body{background:#f6f6f0}
   </div>
   <div class="lake-pathways-grid">
     <a class="lake-path lake-path--paddle" href="/paddling.html">
+      <img class="lake-path-photograph" src="assets/lake-dardanelle-docks.jpg" width="1920" height="1440" loading="lazy" decoding="async" alt="">
+      <span class="lake-path-photo-caption" aria-hidden="true">LAKE DARDANELLE SCENERY · NOT RENTAL INVENTORY</span>
       <span class="lake-path-scene" aria-hidden="true"><svg viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 99c16-7 29-7 45 0s29 7 45 0 29-7 45 0 29 7 59 0M13 113c16-7 29-7 45 0s29 7 45 0 29-7 45 0 29 7 59 0" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".45"/><path d="M23 70c34 19 134 19 175 0l-9 17c-47 14-112 14-158 0L23 70Z" fill="currentColor" opacity=".92"/><path d="M34 69c42 10 115 10 151 0" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".75"/><path d="m117 24-15 45m-12-57 22 9-7 14-22-9 7-14Zm18 54 20 10-7 14-20-10 7-14Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round" fill="#fff"/></svg></span>
       <span class="lake-path-body"><span class="lake-path-kicker">01 / On the water</span><span class="lake-path-name">Kayaks &amp; paddleboards</span><span class="lake-path-description">Explore separately listed paddling operators and confirm current launch access.</span><span class="lake-path-action"><span>Explore paddling rentals</span><span aria-hidden="true">↗</span></span></span>
     </a>
