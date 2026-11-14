@@ -564,6 +564,43 @@ main.wrap{padding-top:0}
  .fieldfolio-desk{padding:22px}
  .check--fieldfolio .fieldfolio-list li{min-height:85px;break-inside:avoid}
 }
+
+/* 2026-11-13 / Project continuity: an editorial next-chapter feature.
+   Compared the live StayARV and Russellville.Rent experiences before design.
+   The hometown photograph is explicitly scenery, never supplier inventory.
+   Existing supplier data, quote form, source links and scripts remain intact.
+   Grounding: NN/g visual hierarchy and information scent, web.dev image/layout
+   stability, and W3C WCAG 2.2 visible focus and pointer-target guidance. */
+.fence-next{margin:clamp(42px,6vw,82px) 0 42px;border:1px solid #d7dfd3;border-radius:26px;background:#f8f5eb;box-shadow:0 20px 48px #0e382c1c;overflow:hidden}
+.fence-next-cover{position:relative;isolation:isolate;min-height:350px;display:flex;align-items:center;padding:clamp(30px,5vw,62px);color:#fff9ed;background:linear-gradient(95deg,rgba(8,32,28,.97) 0%,rgba(10,40,33,.9) 45%,rgba(10,47,39,.38) 100%),url("assets/downtown-russellville-sunset.jpg") center 52%/cover no-repeat}
+.fence-next-cover:after{content:"";position:absolute;inset:13px;border:1px solid #f8e4bd63;border-radius:16px;z-index:-1;pointer-events:none}
+.fence-next-copy{position:relative;z-index:1;max-width:740px}
+.fence-next-kicker{display:block;margin:0 0 20px;color:#f4ce8b;font-size:.66rem;font-weight:850;letter-spacing:.19em;line-height:1.5;text-transform:uppercase}
+.fence-next-cover h2{max-width:16ch;margin:0;color:#fff8e9;font:400 clamp(2.8rem,5.1vw,5.15rem)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.06em;text-wrap:balance}
+.fence-next-cover h2 em{font-weight:400;color:#f4d89c}
+.fence-next-copy>p{max-width:60ch;margin:20px 0 0;color:#e8f0e4;font-size:.96rem;line-height:1.75}
+.fence-next-caption{display:block;margin-top:23px;color:#e3e9df;font-size:.69rem;line-height:1.5}
+.fence-next-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:-29px 0 0;padding:0 clamp(16px,3vw,38px)}
+.fence-next-card{display:flex;flex-direction:column;align-items:flex-start;gap:13px;min-width:0;min-height:260px;padding:clamp(22px,2.5vw,30px);border:1px solid #d9e2d6;border-radius:18px;background:#fffdf6;color:#254b3d;text-decoration:none;box-shadow:0 9px 23px #10352b16;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.fence-next-card:first-child{background:linear-gradient(142deg,#1b4b3b,#0f3129);color:#fff8e7;border-color:#225e49;box-shadow:0 14px 28px #082d2440}
+.fence-next-card:hover{transform:translateY(-5px);border-color:#b89054;box-shadow:0 17px 36px #10352b26}
+.fence-next-card:focus-visible{outline:3px solid #b97719;outline-offset:-5px}
+.fence-next-card:first-child:focus-visible{outline-color:#f7d88a}
+.fence-next-card-top{display:flex;width:100%;justify-content:space-between;align-items:center;gap:12px;color:#557461;font-size:.63rem;letter-spacing:.15em;font-weight:850;line-height:1.4}
+.fence-next-card:first-child .fence-next-card-top{color:#eed399}
+.fence-next-icon{display:grid;place-items:center;flex:none;width:54px;height:54px;border-radius:15px;background:#e8efe5;color:#285646}
+.fence-next-card:first-child .fence-next-icon{background:#ffffff18;color:#f5d59e}
+.fence-next-icon svg{display:block;width:33px;height:33px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+.fence-next-card strong{display:block;max-width:15ch;font:400 clamp(1.65rem,2.3vw,2.25rem)/1.08 Georgia,"Times New Roman",serif;letter-spacing:-.04em}
+.fence-next-card-desc{display:block;font-size:.81rem;line-height:1.6;color:#5b6f60}
+.fence-next-card:first-child .fence-next-card-desc{color:#e0ede3}
+.fence-next-card-go{display:block;margin-top:auto;padding-top:7px;font-size:.74rem;line-height:1.5;font-weight:850;letter-spacing:.015em;color:#1d5d45}
+.fence-next-card:first-child .fence-next-card-go{color:#f2d396}
+.fence-next-foot{margin:0;padding:21px clamp(22px,4vw,40px) 26px;color:#567063;font-size:.76rem;line-height:1.6}
+@media(max-width:860px){.fence-next-cover{min-height:310px}.fence-next-grid{gap:10px}.fence-next-card{padding:21px 17px;min-height:250px}.fence-next-card strong{font-size:1.55rem}}
+@media(max-width:690px){.fence-next{border-radius:19px;margin:38px 0 28px}.fence-next-cover{min-height:0;padding:46px 25px 60px;background-position:55% 50%}.fence-next-cover:after{inset:9px;border-radius:12px}.fence-next-cover h2{font-size:clamp(2.5rem,10vw,3.65rem)}.fence-next-copy>p{font-size:.9rem}.fence-next-grid{grid-template-columns:1fr;margin-top:-22px;padding:0 15px;gap:11px}.fence-next-card{min-height:0;padding:21px 22px;gap:10px}.fence-next-card strong{max-width:none;font-size:1.7rem}.fence-next-card-desc{font-size:.82rem}.fence-next-icon{width:47px;height:47px}.fence-next-foot{padding:18px 22px 23px}}
+@media(prefers-reduced-motion:reduce){.fence-next-card{transition:none}.fence-next-card:hover{transform:none}}
+@media print{.fence-next{border:1px solid #888;box-shadow:none;break-inside:avoid}.fence-next-cover{background:#fff!important;color:#173f35!important;min-height:0;padding:22px}.fence-next-cover h2,.fence-next-cover h2 em,.fence-next-copy>p,.fence-next-kicker,.fence-next-caption{color:#173f35!important}.fence-next-grid{margin:0;padding:12px;gap:8px}.fence-next-card,.fence-next-card:first-child{background:#fff!important;color:#173f35!important;box-shadow:none;min-height:0;border:1px solid #888;break-inside:avoid}.fence-next-card :is(.fence-next-card-top,.fence-next-card-desc,.fence-next-card-go){color:#173f35!important}}
 </style>
 </head>
 <body>
@@ -770,6 +807,38 @@ main.wrap{padding-top:0}
     </ul>
     <p class="fieldfolio-foot">Confirm delivery, available materials, installation and removal, and the full quoted rental price directly with the provider.</p>
   </div>
+</section>
+
+<section class="fence-next" aria-labelledby="fence-next-title">
+  <div class="fence-next-cover">
+    <div class="fence-next-copy">
+      <span class="fence-next-kicker">RUSSELLVILLE.RENT / THE PROJECT FIELD GUIDE</span>
+      <h2 id="fence-next-title">The perimeter is one part.<br><em>Keep the whole site ready.</em></h2>
+      <p>Once the fence plan is underway, take the next practical step. Explore separate River Valley rental guides for debris removal, hauling and on-site facilities.</p>
+      <small class="fence-next-caption">Downtown Russellville scenery · Not a rental provider, equipment photo or availability claim</small>
+    </div>
+  </div>
+  <nav class="fence-next-grid" aria-label="Related project rental directories">
+    <a class="fence-next-card" href="dumpsters.html">
+      <span class="fence-next-card-top"><span>01 / CLEANUP</span><span class="fence-next-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M9 22h46l-6 29H15L9 22Zm-3-7h52M22 15V9h20v6M22 29l3 15m17-15-3 15"/></svg></span></span>
+      <strong>Keep cleanup moving.</strong>
+      <span class="fence-next-card-desc">Compare roll-off and dumpster rental contacts for debris and jobsite cleanup.</span>
+      <span class="fence-next-card-go">Explore dumpster rentals <span aria-hidden="true">↗</span></span>
+    </a>
+    <a class="fence-next-card" href="trailers.html">
+      <span class="fence-next-card-top"><span>02 / HAULING</span><span class="fence-next-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M5 18h39v26H5V18Zm39 16h9l7 9M44 43h16M13 44h26M11 51a6 6 0 1 0 12 0 6 6 0 0 0-12 0Zm33 0a6 6 0 1 0 12 0 6 6 0 0 0-12 0Z"/></svg></span></span>
+      <strong>Bring the load.</strong>
+      <span class="fence-next-card-desc">Find trailer rental providers to ask about moving materials and equipment.</span>
+      <span class="fence-next-card-go">Explore trailer rentals <span aria-hidden="true">↗</span></span>
+    </a>
+    <a class="fence-next-card" href="restrooms.html">
+      <span class="fence-next-card-top"><span>03 / SITE ESSENTIALS</span><span class="fence-next-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M16 9h32v46H16V9Zm8 8h16v9H24v-9Zm8 19v11m-6-6h12M9 55h46"/></svg></span></span>
+      <strong>Plan for people.</strong>
+      <span class="fence-next-card-desc">Compare portable restroom options for construction and event sites.</span>
+      <span class="fence-next-card-go">Explore restroom rentals <span aria-hidden="true">↗</span></span>
+    </a>
+  </nav>
+  <p class="fence-next-foot">Each guide is an independent directory, not a bundled service or reservation. Confirm local delivery, inventory, availability, prices and terms directly with every provider.</p>
 </section>
 <p class="note">Russellville.Rent is an independent directory. Some businesses are based outside Russellville, and delivery or business status may be unconfirmed. Please confirm operating status, service area, availability, pricing and terms directly with each provider. <a href="sms:+14799707301">Submit corrections</a>.</p>
 </main><footer><div class="wrap"><a href="/">Return to all rental categories</a> · Russellville.Rent</div></footer>
