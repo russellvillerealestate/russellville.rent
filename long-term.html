@@ -1199,6 +1199,128 @@ body.has-comparison{padding-bottom:115px}
  .rental-console-glance-link{background:#fff;color:#163d31;border:1px solid #666}
 }
 
+
+/* 2026-11-13 / River Valley next-chapter atlas.
+   Replace a single generic return link with three clearly labeled adjacent
+   rental journeys. Inspired by StayARV's cinematic editorial pacing, not copied.
+   NN/g clear information scent; web.dev dimensioned responsive imagery; WCAG 2.2
+   visible keyboard focus and comfortably sized touch targets. */
+.rental-alternatives{
+  display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);
+  min-height:570px;margin:clamp(45px,7vw,95px) 0 30px;padding:0;
+  border:1px solid #ceded3;border-radius:26px;overflow:hidden;
+  background:#f9f7ef;box-shadow:0 26px 66px #173c311b;
+}
+.rental-alternatives-scene{
+  position:relative;isolation:isolate;display:flex;align-items:flex-end;
+  min-width:0;min-height:570px;overflow:hidden;background:#173e35;color:#fff;
+}
+.rental-alternatives-scene img{
+  position:absolute;inset:0;z-index:-2;width:100%;height:100%;
+  object-fit:cover;object-position:53% 50%;
+}
+.rental-alternatives-scene:before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,#123a2b16 8%,#122f2a72 52%,#0b2a25f2 100%);
+}
+.rental-alternatives-story{padding:clamp(29px,4.6vw,59px);max-width:670px}
+.rental-alternatives-kicker{
+  display:block;width:fit-content;margin-bottom:18px;padding:7px 12px;
+  border:1px solid #f3dfb678;color:#ffe2a4;background:#092b26a8;
+  font-size:.67rem;font-weight:800;letter-spacing:.17em;
+}
+.rental-alternatives-story h2{
+  max-width:12ch;margin:0;color:#fff8e8;
+  font:400 clamp(3.25rem,5.4vw,5.5rem)/.99 Georgia,"Times New Roman",serif;
+  letter-spacing:-.065em;text-wrap:balance;
+}
+.rental-alternatives-story h2 em{color:#f5d39b;font-weight:400}
+.rental-alternatives-story p{max-width:46ch;margin:21px 0 24px;color:#f4f2e9;font-size:1rem;line-height:1.7}
+.rental-alternatives-story small{
+  display:block;max-width:50ch;color:#e4e7db;font-size:.71rem;line-height:1.5;
+}
+.rental-alternatives-desk{display:flex;flex-direction:column;min-width:0;padding:clamp(28px,3.5vw,49px)}
+.rental-alternatives-head>span{
+  display:block;margin-bottom:11px;color:#68836b;
+  font-size:.66rem;font-weight:850;letter-spacing:.16em;
+}
+.rental-alternatives-head h3{
+  margin:0 0 12px;color:#173d32;font:400 clamp(2.25rem,3.35vw,3.25rem)/1.06 Georgia,"Times New Roman",serif;
+  letter-spacing:-.048em;
+}
+.rental-alternatives-head p{max-width:44ch;margin:0 0 22px;color:#52685d;font-size:.9rem;line-height:1.65}
+.rental-alternatives-list{display:grid;gap:10px}
+.rental-alternatives-list a{
+  position:relative;display:grid;grid-template-columns:minmax(0,1fr) 30px;
+  gap:4px 10px;align-content:center;min-height:100px;padding:17px 19px;
+  border:1px solid #d9e1d6;border-radius:14px;
+  color:#173e33;background:#fff;text-decoration:none;
+  box-shadow:0 5px 14px #1b48300b;
+  transition:background-color .2s,border-color .2s,transform .2s,box-shadow .2s;
+}
+.rental-alternatives-index{
+  grid-column:1;display:block;color:#637b62;
+  font-size:.62rem;font-weight:850;letter-spacing:.14em;
+}
+.rental-alternatives-list strong{
+  grid-column:1;display:block;color:#173e33;
+  font:400 clamp(1.2rem,1.6vw,1.5rem)/1.14 Georgia,"Times New Roman",serif;
+  letter-spacing:-.025em;
+}
+.rental-alternatives-summary{grid-column:1;color:#576b60;font-size:.76rem;line-height:1.4}
+.rental-alternatives-arrow{
+  grid-column:2;grid-row:1/4;align-self:center;justify-self:end;
+  display:grid;place-items:center;width:30px;height:30px;border-radius:50%;
+  background:#e6eee3;color:#245b44;font-size:1rem;
+}
+.rental-alternatives-list a:hover{
+  background:#f4f7ef;border-color:#a3bba7;transform:translateX(4px);
+  box-shadow:0 8px 21px #1b483018;
+}
+.rental-alternatives-list a:focus-visible,
+.rental-alternatives-bottom a:focus-visible{outline:3px solid #aa6c17;outline-offset:3px}
+.rental-alternatives-bottom{
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;
+  gap:12px;margin-top:auto;padding-top:25px;
+}
+.rental-alternatives-bottom a{
+  display:inline-flex;align-items:center;gap:9px;min-height:44px;
+  border-bottom:2px solid #c5a063;color:#174b3a;font-size:.84rem;font-weight:850;text-decoration:none;
+}
+.rental-alternatives-bottom a:hover{border-color:#174b3a}
+.rental-alternatives-bottom small{flex:1 1 100%;font-size:.7rem;line-height:1.5;color:#66766b}
+@media(max-width:900px){
+  .rental-alternatives{grid-template-columns:1fr;min-height:0}
+  .rental-alternatives-scene{min-height:390px}
+  .rental-alternatives-scene img{object-position:center 56%}
+  .rental-alternatives-story h2{max-width:15ch}
+  .rental-alternatives-desk{padding:32px}
+  .rental-alternatives-list{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .rental-alternatives-list a{min-height:180px;grid-template-columns:1fr;align-content:space-between}
+  .rental-alternatives-arrow{position:absolute;right:15px;top:15px}
+}
+@media(max-width:610px){
+  .rental-alternatives{margin-top:45px;border-radius:18px}
+  .rental-alternatives-scene{min-height:405px}
+  .rental-alternatives-story{padding:29px 24px}
+  .rental-alternatives-story h2{font-size:clamp(2.65rem,10.5vw,3.7rem)}
+  .rental-alternatives-story p{font-size:.9rem}
+  .rental-alternatives-desk{padding:25px 19px}
+  .rental-alternatives-list{grid-template-columns:1fr}
+  .rental-alternatives-list a{min-height:100px;display:grid;grid-template-columns:minmax(0,1fr) 30px}
+  .rental-alternatives-arrow{position:static;grid-column:2;grid-row:1/4}
+  .rental-alternatives-head h3{font-size:2.45rem}
+}
+@media(prefers-reduced-motion:reduce){.rental-alternatives-list a{transition:none}.rental-alternatives-list a:hover{transform:none}}
+@media print{
+  .rental-alternatives{display:block;box-shadow:none;border-color:#888}
+  .rental-alternatives-scene{min-height:0;color:#111;background:#fff}
+  .rental-alternatives-scene img,.rental-alternatives-scene:before{display:none}
+  .rental-alternatives-story h2,.rental-alternatives-story p,.rental-alternatives-story small{color:#111}
+  .rental-alternatives-list{grid-template-columns:1fr}
+  .rental-alternatives-list a{min-height:0;box-shadow:none;break-inside:avoid}
+}
+
 </style></head>
 <body>
 <a class="skip" href="#main">Skip to listings</a>
@@ -1686,11 +1808,48 @@ body.has-comparison{padding-bottom:115px}
     </div>
   </section>
 
-  <section class="more-rentals" aria-labelledby="more-title">
-    <p class="eyebrow">Russellville.Rent</p>
-    <h2 id="more-title">Looking for another kind of rental?</h2>
-    <div class="more-links"><a href="/">Back to all rental categories ↗</a></div>
-  </section>
+  <section class="more-rentals rental-alternatives" aria-labelledby="more-title">
+  <div class="rental-alternatives-scene">
+    <img src="assets/lake-dardanelle-docks.jpg" alt="The covered docks and evening light on Lake Dardanelle" width="1920" height="1440" loading="lazy" decoding="async">
+    <div class="rental-alternatives-story">
+      <span class="rental-alternatives-kicker">RIVER VALLEY / BEYOND THE LEASE</span>
+      <h2 id="more-title">Different plans.<br><em>Same hometown.</em></h2>
+      <p>Not looking for a long-term lease? The local directory has other paths for a shorter stay, outdoor trip or flexible workspace.</p>
+      <small>Lake Dardanelle scenery · Not a rental property, provider photo or availability confirmation</small>
+    </div>
+  </div>
+  <div class="rental-alternatives-desk">
+    <div class="rental-alternatives-head">
+      <span>YOUR NEXT CHAPTER / THREE MORE ROUTES</span>
+      <h3>Find another way in.</h3>
+      <p>Choose the kind of rental you need. Each category has independent providers to contact for actual availability, rates and terms.</p>
+    </div>
+    <nav class="rental-alternatives-list" aria-label="Related rental categories beyond long-term housing">
+      <a href="short-term-stays.html">
+        <span class="rental-alternatives-index">01 / SHORT STAYS</span>
+        <strong>Cabins &amp; furnished stays</strong>
+        <span class="rental-alternatives-summary">Find local and regional short-term lodging options.</span>
+        <span class="rental-alternatives-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a href="camping.html">
+        <span class="rental-alternatives-index">02 / OUTDOORS</span>
+        <strong>Campgrounds &amp; RV parks</strong>
+        <span class="rental-alternatives-summary">Explore camping and recreational vehicle sites.</span>
+        <span class="rental-alternatives-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a href="office-space.html">
+        <span class="rental-alternatives-index">03 / WORKSPACE</span>
+        <strong>Offices &amp; coworking</strong>
+        <span class="rental-alternatives-summary">Look for a place to work rather than live.</span>
+        <span class="rental-alternatives-arrow" aria-hidden="true">↗</span>
+      </a>
+    </nav>
+    <div class="rental-alternatives-bottom">
+      <a href="/">Browse all rental categories <span aria-hidden="true">↗</span></a>
+      <small>These are directory links, not bookings, live vacancies or price quotes.</small>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer>
