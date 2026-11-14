@@ -650,6 +650,37 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
  .jump-deck a{min-height:100px!important;break-inside:avoid}
 }
 
+
+/* The event-onward chapter makes separate services discoverable without
+   implying shared providers. Composition informed by live StayARV's scenic
+   hero and generous spacing; NN/g visual hierarchy; web.dev reflow and
+   stable imagery; WCAG 2.2 visible focus and comfortably sized targets. */
+.cart-onward{display:grid;grid-template-columns:minmax(0,.89fr) minmax(0,1.11fr);min-width:0;overflow:hidden;margin:38px 0 43px;border-radius:25px;background:#f3f0e5;box-shadow:0 20px 48px #113b301d;border:1px solid #d2dcd0}
+.cart-onward-photo{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;min-height:560px;padding:29px;background:#193f35 url("assets/downtown-russellville-sunset.jpg") center center/cover no-repeat;color:#fff7df}
+.cart-onward-photo:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#0e342bdc 0%,#0b322b23 43%,#092820df 100%)}
+.cart-onward-photo-top{display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:.63rem;letter-spacing:.14em;font-weight:850;line-height:1.5}
+.cart-onward-photo-top>span{color:#ffe2a2}
+.cart-onward-photo-monogram{align-self:center;margin:auto;font:400 clamp(7rem,12vw,12rem)/1 Georgia,serif;letter-spacing:-.12em;text-shadow:0 12px 30px #09282067;color:#fff8e3ec}
+.cart-onward-photo-monogram span{font:400 .46em/1 system-ui,sans-serif;vertical-align:top;letter-spacing:0;color:#f4d39a}
+.cart-onward-photo-caption{margin:0;font:400 1.15rem/1.4 Georgia,serif}
+.cart-onward-photo-caption small{display:block;margin-top:5px;font:650 .68rem/1.5 system-ui,sans-serif;color:#e3e9dd}
+.cart-onward-content{display:flex;flex-direction:column;min-width:0;padding:clamp(30px,4.4vw,55px);background:radial-gradient(circle at 99% 0%,#f1dfa94f,transparent 47%),#f8f6ee}
+.cart-onward-eyebrow{font-size:.68rem;letter-spacing:.15em;font-weight:850;color:#6b7146;margin:0 0 17px}
+.cart-onward h2{font:400 clamp(2.45rem,4.3vw,4.2rem)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.055em;color:#163e34;margin:0 0 18px}
+.cart-onward h2 em{color:#927038;font-style:italic;font-weight:400}
+.cart-onward-lead{font-size:.95rem;line-height:1.65;color:#4a6155;max-width:48ch;margin:0 0 23px}
+.cart-onward-routes{display:grid;gap:9px}
+.cart-onward-routes a{display:grid;grid-template-columns:31px minmax(0,1fr) 40px;align-items:center;gap:13px;min-width:0;min-height:83px;padding:12px 14px;border:1px solid #d2dfd1;border-radius:13px;background:#fff;color:#143f31;text-decoration:none;transition:transform .18s,background-color .18s,border-color .18s,box-shadow .18s}
+.cart-onward-routes a:hover{transform:translateX(4px);background:#f2f8ed;border-color:#90aa91;box-shadow:0 9px 18px #143e3214}
+.cart-onward-routes a:focus-visible{outline:3px solid #a56512;outline-offset:3px}
+.cart-onward-number{align-self:start;padding-top:5px;font:700 .77rem Georgia,serif;color:#a17c3b}
+.cart-onward-route-copy strong{display:block;font:400 clamp(1.16rem,1.6vw,1.42rem)/1.2 Georgia,serif;letter-spacing:-.015em}
+.cart-onward-route-copy small{display:block;font:.73rem/1.5 system-ui,sans-serif;color:#526b5e;margin-top:5px}
+.cart-onward-arrow{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;border:1px solid #cdd9c8;background:#edf3e8;font-size:1.2rem}
+.cart-onward-caveat{font-size:.72rem;line-height:1.55;color:#5a6c60;margin:19px 0 0}
+@media(max-width:800px){.cart-onward{grid-template-columns:minmax(0,1fr)}.cart-onward-photo{min-height:300px}.cart-onward-photo-monogram{font-size:8rem}.cart-onward-content{padding:33px}}
+@media(max-width:440px){.cart-onward{border-radius:17px;margin:28px 0 35px}.cart-onward-photo{min-height:250px;padding:20px}.cart-onward-photo-monogram{font-size:6rem}.cart-onward-photo-top{font-size:.54rem;letter-spacing:.07em}.cart-onward-photo-caption{font-size:.98rem}.cart-onward-content{padding:27px 20px}.cart-onward h2{font-size:2.4rem}.cart-onward-routes a{gap:8px;padding:11px;grid-template-columns:23px minmax(0,1fr) 35px}.cart-onward-arrow{width:34px;height:34px}}
+@media(prefers-reduced-motion:reduce){.cart-onward-routes a{transition:none}.cart-onward-routes a:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -1069,6 +1100,26 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
         <a href="#providers">See provider contacts <span aria-hidden="true">↗</span></a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Regional event routes: editorial wayfinding only; no shared inventory or delivery claims. -->
+<section class="cart-onward" aria-labelledby="cart-onward-title">
+  <div class="cart-onward-photo">
+    <span class="cart-onward-photo-top">R↗ &nbsp; / &nbsp; THE RIVER VALLEY EDITION <span>05 / ONWARD</span></span>
+    <span class="cart-onward-photo-monogram" aria-hidden="true">R<span>↗</span></span>
+    <p class="cart-onward-photo-caption">Downtown Russellville at sunset<br><small>Regional scenery · Not a rental cart or provider photograph</small></p>
+  </div>
+  <div class="cart-onward-content">
+    <p class="cart-onward-eyebrow">THE NEXT CHAPTER / EVENT PLANNING</p>
+    <h2 id="cart-onward-title">One moving piece.<br><em>A whole occasion.</em></h2>
+    <p class="cart-onward-lead">A golf cart can be one part of a larger event. Continue with three separate rental directories to plan the setting, the setup and guest essentials.</p>
+    <div class="cart-onward-routes" aria-label="Related event rental directories">
+      <a href="venues.html"><span class="cart-onward-number">01</span><span class="cart-onward-route-copy"><strong>Find the place</strong><small>Venues &amp; gathering spaces</small></span><span class="cart-onward-arrow" aria-hidden="true">↗</span></a>
+      <a href="party.html"><span class="cart-onward-number">02</span><span class="cart-onward-route-copy"><strong>Bring the celebration together</strong><small>Party &amp; event rentals</small></span><span class="cart-onward-arrow" aria-hidden="true">↗</span></a>
+      <a href="restrooms.html"><span class="cart-onward-number">03</span><span class="cart-onward-route-copy"><strong>Plan the guest essentials</strong><small>Portable restroom rentals</small></span><span class="cart-onward-arrow" aria-hidden="true">↗</span></a>
+    </div>
+    <p class="cart-onward-caveat">Each directory lists independent providers. Confirm service areas, availability, fees and terms directly; no joint packages or delivery are implied.</p>
   </div>
 </section>
 <p class="note">Independent local directory. Rental service and Russellville delivery are not guaranteed. Confirm current inventory, transport coverage, pricing, availability and terms directly with each provider. <a href="sms:+14799707301">Suggest a correction</a>.</p>
