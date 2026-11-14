@@ -3829,6 +3829,133 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 @media(prefers-reduced-motion:reduce){.field-guide-grid a{transition:none!important}.field-guide-grid a:hover{transform:none!important}}
 @media print{.field-guide-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto}.field-guide-grid>.event-guide-bridge,.field-guide-grid>.move-guide-door,.field-guide-grid>.atlas-entry{grid-column:auto;grid-row:auto;min-height:0;break-inside:avoid}.field-guide-grid .atlas-entry-link{min-height:0}.field-guide-grid .event-guide-bridge-copy strong{font-size:2rem}}
 
+
+/* 2026-11-14 / The River Valley compact route atlas for mobile Explore.
+   Reference checked live: StayARV immersive hero and Russellville.Rent existing
+   category menu. Redesigns the existing six route links, not directory records.
+   Research: NN/g visual hierarchy https://www.nngroup.com/articles/visual-hierarchy-ux-definition/ ;
+   web.dev responsive layout https://web.dev/learn/design/ ;
+   WCAG 2.2 target size and focus https://www.w3.org/TR/WCAG22/ .
+   The original native details navigation, anchors and keyboard handling remain. */
+@media (max-width:760px){
+  .directory-masthead .mobile-menu-panel{
+    width:min(95vw,630px);
+    max-height:min(91dvh,820px);
+    border-radius:20px;
+    border:1px solid #e2cda5;
+    background:#f8f6ee;
+    box-shadow:0 31px 78px #061e18a8;
+  }
+  .directory-masthead .mobile-menu-intro{
+    min-height:167px;
+    padding:22px clamp(19px,4vw,29px) 20px;
+    border-bottom:4px solid #d8b77c;
+    background:linear-gradient(102deg,#082b26f2 0%,#103c33dc 54%,#154d3b93 100%),url("assets/lake-dardanelle-sunset.jpg") center 56%/cover no-repeat;
+  }
+  .directory-masthead .mobile-menu-intro>span{font-size:.58rem;letter-spacing:.17em}
+  .directory-masthead .mobile-menu-intro strong{
+    margin:10px 0 8px;
+    max-width:21ch;
+    font-size:clamp(2rem,6.2vw,2.85rem);
+    line-height:1.05;
+  }
+  .directory-masthead .mobile-menu-intro p{margin:0;max-width:42ch;font-size:.75rem;line-height:1.45}
+  .directory-masthead .mobile-menu-categories{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+    padding:16px 17px 15px;
+  }
+  .directory-masthead .mobile-menu-categories a{
+    --route-accent:#78977f;
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    position:relative;
+    gap:7px;
+    min-height:133px;
+    padding:17px 13px 15px;
+    border:1px solid #d4ded0;
+    border-left:4px solid var(--route-accent);
+    border-radius:12px;
+    background:#fffefa;
+    box-shadow:0 4px 12px #163b3010;
+    transform:none;
+  }
+  .directory-masthead .mobile-menu-categories a:nth-child(2){--route-accent:#a8b98a;background:#f5f7ef}
+  .directory-masthead .mobile-menu-categories a:nth-child(3){--route-accent:#c5a368;background:#faf5e9}
+  .directory-masthead .mobile-menu-categories a:nth-child(4){--route-accent:#74a9a4;background:#edf5f2}
+  .directory-masthead .mobile-menu-categories a:nth-child(5){--route-accent:#c88e7d;background:#fbf3eb}
+  .directory-masthead .mobile-menu-categories a:nth-child(6){--route-accent:#8f9faf;background:#f1f5f7}
+  .directory-masthead .mobile-route-art{
+    position:absolute;
+    top:10px;
+    right:11px;
+    width:37px;
+    height:37px;
+    padding:4px;
+    border-radius:10px;
+    background:#e6ede0;
+    border-color:#d8e1d3;
+    color:#285743;
+  }
+  .directory-masthead .mobile-route-art svg{width:27px;height:27px}
+  .directory-masthead .mobile-menu-categories a>span:nth-child(2){
+    max-width:calc(100% - 39px);
+    margin:0;
+    font-size:.57rem;
+    line-height:1.5;
+    letter-spacing:.075em;
+    color:#587261;
+  }
+  .directory-masthead .mobile-menu-categories a strong{
+    margin-top:auto;
+    max-width:100%;
+    font:400 clamp(1.23rem,3.7vw,1.65rem)/1.09 Georgia,"Times New Roman",serif;
+    letter-spacing:-.045em;
+    color:#153d30;
+  }
+  .directory-masthead .mobile-menu-categories a:hover{
+    border-color:#90a997;
+    border-left-color:var(--route-accent);
+    background:#f0f4eb;
+    box-shadow:0 9px 18px #153c2f1c;
+    transform:translateY(-2px);
+  }
+  .directory-masthead .mobile-menu-actions{
+    gap:8px;
+    padding:11px 17px 11px;
+    border-top:1px solid #d6ddcf;
+  }
+  .directory-masthead .mobile-menu-actions a{
+    display:flex;justify-content:center;align-items:center;
+    min-width:0;min-height:48px;
+    border-radius:10px;
+    font-size:.75rem;
+    text-align:center;
+  }
+  .directory-masthead .mobile-menu-actions .mobile-menu-all{
+    min-height:54px;
+    font-size:.84rem;
+  }
+  .directory-masthead .mobile-menu-foot{padding:0 18px 17px;font-size:.67rem}
+}
+@media (max-width:410px){
+  .directory-masthead .mobile-menu-panel{width:calc(100vw - 14px);border-radius:17px}
+  .directory-masthead .mobile-menu-intro{min-height:152px;padding:18px 20px}
+  .directory-masthead .mobile-menu-intro strong{font-size:clamp(1.95rem,8vw,2.36rem);margin:7px 0}
+  .directory-masthead .mobile-menu-categories{gap:8px;padding:12px 12px}
+  .directory-masthead .mobile-menu-categories a{min-height:125px;padding:14px 11px 12px}
+  .directory-masthead .mobile-menu-categories a strong{font-size:clamp(1.15rem,4.35vw,1.34rem)}
+  .directory-masthead .mobile-route-art{top:9px;right:8px;width:33px;height:33px}
+  .directory-masthead .mobile-route-art svg{width:24px;height:24px}
+  .directory-masthead .mobile-menu-categories a>span:nth-child(2){max-width:calc(100% - 32px);font-size:.52rem;letter-spacing:.03em}
+  .directory-masthead .mobile-menu-actions{padding:10px 12px}
+  .directory-masthead .mobile-menu-foot{padding:0 13px 15px}
+}
+@media (prefers-reduced-motion:reduce) and (max-width:760px){
+  .directory-masthead .mobile-menu-categories a:hover{transform:none}
+}
+
 </style>
 </head>
 <body>
