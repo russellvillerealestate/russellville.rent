@@ -644,6 +644,40 @@
 @media(prefers-reduced-motion:reduce){.band-score-nav a{transition:none}.band-score-nav a:hover{transform:none}}
 @media print{.checklist.band-score{box-shadow:none;border:1px solid #777;background:#fff;break-inside:avoid}.band-score-cover{background:#fff!important;color:#153e30;min-height:0;padding:26px}.band-score-cover:before,.band-score-art{display:none}.band-score-intro :is(h2,.eyebrow,.checklist-intro,.band-score-kicker,small){color:#153e30!important}.band-score-nav a{background:#fff!important;border:1px solid #888;color:#153e30!important}.band-score-grid{background:#fff}.band-score-item{min-height:0;background:#fff!important;border:1px solid #aaa;break-inside:avoid}.band-score-foot{background:#fff;color:#153e30}.band-score-foot a{color:#153e30}}
 
+
+/* 2026-11-14 / The Encore: a photo-led editorial bridge from student instrument
+   rentals to independent event guides. StayARV-inspired visual rhythm adapted
+   to a multi-category directory. NN/g hierarchy and information scent;
+   web.dev responsive imagery/layout stability; W3C WCAG 2.2 focus/targets.
+   Scenic image is local editorial context, never provider inventory. */
+.band-encore{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);overflow:hidden;margin:clamp(55px,7vw,90px) 0 36px;border:1px solid #d7dfd4;border-radius:28px;background:#f7f2e7;box-shadow:0 24px 58px #16362c21}
+.band-encore-scene{display:flex;flex-direction:column;justify-content:space-between;min-width:0;min-height:510px;gap:55px;padding:clamp(28px,4vw,52px);color:#fff9e9;background:linear-gradient(180deg,#0d2e29b8 0%,#0a2e28be 35%,#071f1bef 100%),url("assets/downtown-russellville-sunset.jpg") center 52%/cover no-repeat}
+.band-encore-kicker,.band-encore-edition,.band-encore-routes-label{display:block;font-size:.68rem;font-weight:850;letter-spacing:.17em;text-transform:uppercase}
+.band-encore-kicker{color:#f3d39f}
+.band-encore-edition{color:#edc487;margin-bottom:17px}
+.band-encore-scene h2{max-width:13ch;margin:0 0 19px;color:#fffaf0;font:400 clamp(2.7rem,4.3vw,4.7rem)/1.03 Georgia,"Times New Roman",serif;letter-spacing:-.06em;text-wrap:balance}
+.band-encore-scene h2 em{color:#f5d18f;font-weight:400}
+.band-encore-scene p{max-width:50ch;margin:0;color:#e9efe5;font-size:1rem;line-height:1.65}
+.band-encore-scene small{max-width:56ch;color:#e0e9dd;font-size:.71rem;line-height:1.55}
+.band-encore-routes{display:flex;flex-direction:column;gap:19px;min-width:0;padding:clamp(25px,3.3vw,44px);background:linear-gradient(150deg,#f9f6ec,#e8eee5)}
+.band-encore-routes-label{color:#54715c}
+.band-encore-routes-title{display:block;margin:8px 0 0;color:#193c32;font:400 clamp(1.75rem,2.6vw,2.5rem)/1.08 Georgia,"Times New Roman",serif;letter-spacing:-.04em}
+.band-encore-links{display:grid;gap:11px}
+.band-encore-route{display:grid;grid-template-columns:39px minmax(0,1fr) 26px;align-items:center;gap:14px;min-width:0;min-height:105px;padding:17px;border:1px solid #d5dfd3;border-radius:15px;background:#fffdf8;color:#173e33;text-decoration:none;box-shadow:0 6px 19px #1b3e3209;transition:border-color .2s ease,background .2s ease,transform .2s ease}
+.band-encore-route:nth-child(2){background:#f0f4ec}
+.band-encore-route:nth-child(3){background:#f7eddf}
+.band-encore-route:hover{transform:translateX(4px);border-color:#8da993;background:#fff}
+.band-encore-route:focus-visible{outline:3px solid #a86816;outline-offset:3px}
+.band-encore-number{display:grid;place-items:center;width:39px;height:39px;border-radius:50%;background:#1c4a3a;color:#f8d898;font-weight:850;font-size:.76rem}
+.band-encore-route-text{display:flex;flex-direction:column;min-width:0;gap:5px}
+.band-encore-route-text strong{font-size:1.06rem;line-height:1.25;letter-spacing:-.02em}
+.band-encore-route-text small{color:#4f675b;font-size:.79rem;line-height:1.45}
+.band-encore-arrow{justify-self:end;color:#356c4e;font-size:1.45rem;font-weight:800}
+.band-encore-disclaimer{margin:auto 0 0;color:#566f60;font-size:.75rem;line-height:1.6}
+@media(max-width:860px){.band-encore{grid-template-columns:1fr}.band-encore-scene{min-height:395px;gap:36px}.band-encore-scene h2{max-width:17ch}.band-encore-routes{padding:30px}.band-encore-links{grid-template-columns:repeat(3,minmax(0,1fr))}.band-encore-route{grid-template-columns:1fr;align-content:start;justify-items:start;gap:11px;min-height:190px}.band-encore-arrow{justify-self:start}}
+@media(max-width:620px){.band-encore{margin:52px 0 27px;border-radius:18px}.band-encore-scene{min-height:390px;padding:30px 24px;gap:34px}.band-encore-scene h2{font-size:clamp(2.65rem,10.5vw,4.05rem)}.band-encore-routes{padding:24px 18px;gap:16px}.band-encore-links{grid-template-columns:1fr}.band-encore-route{grid-template-columns:36px minmax(0,1fr) 24px;align-items:center;min-height:101px;padding:16px;gap:12px}.band-encore-number{width:36px;height:36px}.band-encore-arrow{justify-self:end}}
+@media(prefers-reduced-motion:reduce){.band-encore-route{transition:none}.band-encore-route:hover{transform:none}}
+@media print{.band-encore{display:block;box-shadow:none;break-inside:avoid}.band-encore-scene{min-height:0;background:#fff!important;color:#193c32;padding:18px}.band-encore-scene :is(h2,h2 em,p,small,.band-encore-kicker,.band-encore-edition){color:#193c32!important}.band-encore-routes{padding:18px;background:#fff}.band-encore-route{break-inside:avoid;box-shadow:none}}
 </style>
 </head>
 <body>
@@ -1006,6 +1040,28 @@ Could you confirm current availability, the monthly price and all fees, how paym
         <article class="band-score-item"><span class="band-score-item-top"><b>04 / SCHOOL FIT</b><i aria-hidden="true">Ⅳ</i></span><h3>Is it the right instrument?</h3><p>Verify the required model, instrument selection and compatibility with the band program.</p></article>
       </div>
       <div class="band-score-foot"><strong>FOUR QUESTIONS · ONE CLEARER FIRST CALL</strong><a href="#providers">See all three band programs <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <!-- A separate next chapter: no event suppliers are affiliated with student band rentals. -->
+    <section class="band-encore" aria-labelledby="band-encore-title">
+      <div class="band-encore-scene">
+        <span class="band-encore-kicker">R↗ / The River Valley rental atlas</span>
+        <div>
+          <span class="band-encore-edition">From practice to performance / The next chapter</span>
+          <h2 id="band-encore-title">From the first note <em>to the big night.</em></h2>
+          <p>Student instrument rentals are one part of the story. Planning a separate concert, school event or gathering? These other directory guides help you find the next contact.</p>
+        </div>
+        <small>Downtown Russellville scenery · Not a venue, stage or rental-provider photograph</small>
+      </div>
+      <div class="band-encore-routes">
+        <div><span class="band-encore-routes-label">Continue exploring / Three independent guides</span><strong class="band-encore-routes-title">Take the next step.</strong></div>
+        <nav class="band-encore-links" aria-label="Related event rental categories">
+          <a class="band-encore-route" href="stages.html"><span class="band-encore-number" aria-hidden="true">01</span><span class="band-encore-route-text"><strong>Stages &amp; platforms</strong><small>Compare regional stage contacts and on-site venues.</small></span><span class="band-encore-arrow" aria-hidden="true">↗</span></a>
+          <a class="band-encore-route" href="audio-visual.html"><span class="band-encore-number" aria-hidden="true">02</span><span class="band-encore-route-text"><strong>Sound &amp; lighting</strong><small>Explore separate event audio and visual equipment rentals.</small></span><span class="band-encore-arrow" aria-hidden="true">↗</span></a>
+          <a class="band-encore-route" href="venues.html"><span class="band-encore-number" aria-hidden="true">03</span><span class="band-encore-route-text"><strong>Places to gather</strong><small>Browse local and regional event venue options.</small></span><span class="band-encore-arrow" aria-hidden="true">↗</span></a>
+        </nav>
+        <p class="band-encore-disclaimer">These guides are separate from student instrument programs. Confirm prices, dates, services and any delivery requirements directly with each operator.</p>
+      </div>
     </section>
         <aside class="note">Independent directory. Rent-to-own plans differ from temporary instrument rentals; ask about total cost, fees, repairs, return policies and school compatibility. <a href="sms:+14799707301">Suggest a correction</a>.</aside>
   </main>
