@@ -574,6 +574,149 @@ footer a{font-weight:750}
  .booth-hero-provenance,.hero .photo-scene{display:none!important}
 }
 
+
+/* 2026-11-14 | The afterglow / event-directory continuation.
+   Design assessment: live StayARV's immersive photographic chapters beside
+   Russellville.Rent's original multi-category finder. Carry the photographic
+   hierarchy into a distinctly photo-booth contact-sheet inspired conclusion,
+   not a copied RV section. Nielsen Norman Group visual hierarchy/information
+   scent, web.dev responsive images and stable aspect ratios, W3C WCAG 2.2
+   keyboard focus/target sizing/reflow and reduced motion.
+   Existing providers, pricing, filters, scripts, and listings workflow untouched. */
+.afterglow-routes{
+ display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);
+ min-width:0;overflow:hidden;margin:clamp(62px,8vw,108px) 0 46px;
+ border-radius:28px;border:1px solid #1d5244;
+ background:#143c32;color:#fffbef;
+ box-shadow:0 24px 54px #0b342725;
+}
+.afterglow-photo{
+ position:relative;isolation:isolate;min-width:0;min-height:640px;
+ margin:0;overflow:hidden;background:#2a554b;
+}
+.afterglow-photo img{
+ position:absolute;inset:0;width:100%;height:100%;display:block;
+ object-fit:cover;object-position:49% center;filter:saturate(.86);
+}
+.afterglow-photo:after{
+ content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+ background:linear-gradient(180deg,#082f292b 0%,#082f292c 38%,#082f29e8 100%);
+}
+.afterglow-photo-top{
+ position:absolute;z-index:1;top:24px;left:24px;right:24px;
+ display:flex;justify-content:space-between;gap:10px;
+ font-size:.66rem;font-weight:850;letter-spacing:.13em;line-height:1.4;
+ color:#fff2d6;
+}
+.afterglow-photo-top strong{
+ display:grid;place-items:center;width:45px;height:45px;flex:none;
+ border:1px solid #f7e5bd95;border-radius:50%;font-size:1.05rem;
+ background:#103b31b8;letter-spacing:-.06em;
+}
+.afterglow-photo-bottom{
+ position:absolute;z-index:1;left:clamp(24px,4vw,47px);
+ right:clamp(24px,4vw,47px);bottom:34px;color:#fff7e7;
+}
+.afterglow-photo-bottom span{
+ display:block;padding-bottom:14px;margin-bottom:14px;
+ border-bottom:1px solid #f9e5bb75;color:#f4dba8;
+ font-size:.69rem;font-weight:850;letter-spacing:.17em;
+}
+.afterglow-photo-bottom strong{
+ display:block;font:400 clamp(2.2rem,4vw,3.6rem)/1.04 Georgia,"Times New Roman",serif;
+ letter-spacing:-.054em;max-width:15ch;text-wrap:balance;
+}
+.afterglow-photo figcaption{
+ position:absolute;z-index:1;left:clamp(24px,4vw,47px);
+ right:clamp(24px,4vw,47px);bottom:10px;
+ font-size:.65rem;line-height:1.45;color:#f1e9d4;
+}
+.afterglow-copy{
+ min-width:0;padding:clamp(29px,4vw,49px);
+ background:radial-gradient(circle at 100% 0,#4c786444,transparent 43%),
+ linear-gradient(165deg,#143c32,#0d3129);
+}
+.afterglow-kicker{
+ margin:0 0 17px;color:#efce8e;font-size:.69rem;font-weight:850;
+ letter-spacing:.17em;line-height:1.5;text-transform:uppercase;
+}
+.afterglow-copy h2{
+ margin:0 0 17px;color:#fff8e9;
+ font:400 clamp(2.35rem,4vw,3.8rem)/1.05 Georgia,"Times New Roman",serif;
+ letter-spacing:-.06em;max-width:16ch;text-wrap:balance;
+}
+.afterglow-copy h2 em{color:#eec888;font-weight:400}
+.afterglow-intro{margin:0 0 27px;max-width:52ch;color:#dcebe1;font-size:.91rem;line-height:1.7}
+.afterglow-links{display:grid;gap:11px}
+.afterglow-links a{
+ display:grid;grid-template-columns:42px minmax(0,1fr) 30px;
+ align-items:center;column-gap:14px;min-width:0;min-height:111px;
+ padding:16px 17px;border-radius:14px;
+ border:1px solid #cfdfca65;background:#f7f5ec0d;color:#fffdf4;
+ text-decoration:none;
+ transition:background .18s ease,transform .18s ease,border-color .18s ease;
+}
+.afterglow-links a:hover{
+ background:#f3e3b320;border-color:#e8ce98;transform:translateX(3px);
+}
+.afterglow-links a:focus-visible{outline:3px solid #f6d38d;outline-offset:3px}
+.afterglow-link-num{
+ display:grid;place-items:center;width:41px;height:41px;border-radius:50%;
+ background:#e6ce9d;color:#15392d;font-size:.73rem;font-weight:900;
+}
+.afterglow-link-body{display:flex;flex-direction:column;gap:4px;min-width:0}
+.afterglow-link-body small{
+ color:#efd7aa;font-size:.61rem;font-weight:850;
+ line-height:1.4;letter-spacing:.12em;text-transform:uppercase;
+}
+.afterglow-link-body strong{
+ color:#fff9ed;font:400 clamp(1.35rem,2vw,1.75rem)/1.18 Georgia,"Times New Roman",serif;
+ letter-spacing:-.035em;
+}
+.afterglow-link-body span{color:#dfe9df;font-size:.76rem;line-height:1.5}
+.afterglow-arrow{font-size:1.45rem;color:#f7dba1;text-align:right}
+.afterglow-fine{
+ margin:20px 0 0;padding-top:16px;border-top:1px solid #e0eac03d;
+ color:#d1e2d5;font-size:.72rem;line-height:1.65;
+}
+@media(max-width:800px){
+ .afterglow-routes{grid-template-columns:minmax(0,1fr);margin-top:56px}
+ .afterglow-photo{min-height:315px}
+ .afterglow-photo img{object-position:center 47%}
+ .afterglow-photo-bottom{bottom:34px}
+ .afterglow-photo-bottom strong{font-size:clamp(2.3rem,7vw,3rem)}
+ .afterglow-copy{padding:clamp(25px,5vw,42px)}
+ .afterglow-copy h2{max-width:22ch}
+}
+@media(max-width:500px){
+ .afterglow-routes{border-radius:20px;margin-bottom:32px}
+ .afterglow-photo{min-height:270px}
+ .afterglow-photo-top{top:16px;left:17px;right:17px}
+ .afterglow-photo-top strong{width:38px;height:38px}
+ .afterglow-photo-bottom{left:20px;right:20px;bottom:35px}
+ .afterglow-photo-bottom span{font-size:.58rem}
+ .afterglow-photo-bottom strong{font-size:2.3rem}
+ .afterglow-photo figcaption{left:20px;right:20px;font-size:.58rem}
+ .afterglow-copy{padding:28px 19px}
+ .afterglow-copy h2{font-size:clamp(2.15rem,9vw,2.7rem)}
+ .afterglow-links a{min-height:113px;grid-template-columns:34px minmax(0,1fr) 21px;gap:10px;padding:13px 11px}
+ .afterglow-link-num{width:34px;height:34px}
+ .afterglow-link-body strong{font-size:1.32rem}
+ .afterglow-link-body span{font-size:.72rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .afterglow-links a{transition:none}
+ .afterglow-links a:hover{transform:none}
+}
+@media print{
+ .afterglow-routes{display:block;background:#fff!important;color:#153a2d;box-shadow:none;border-color:#888}
+ .afterglow-photo{display:none}
+ .afterglow-copy{background:#fff;padding:25px}
+ .afterglow-copy h2,.afterglow-copy h2 em,.afterglow-intro,.afterglow-kicker,.afterglow-fine{color:#153a2d}
+ .afterglow-links a{background:#fff;color:#153a2d;border:1px solid #777;break-inside:avoid}
+ .afterglow-link-body strong,.afterglow-link-body small,.afterglow-link-body span,.afterglow-arrow{color:#153a2d}
+}
+
 </style>
 </head>
 <body>
@@ -686,6 +829,28 @@ footer a{font-weight:750}
     <p class="booth-plan-privacy" id="booth-plan-privacy">Drafted only in this browser tab. Nothing is submitted, saved, or sent to a provider. Contact details and actual availability remain with each listed operator.</p>
     <noscript><p class="booth-plan-privacy">The live draft and copy button require JavaScript. You can still copy the sample question above and contact providers directly.</p></noscript>
   </div>
+</section>
+
+
+<!-- Independent event-planning routes; photography is local scenery, not booth or provider inventory. -->
+<section class="afterglow-routes" aria-labelledby="afterglow-title">
+ <figure class="afterglow-photo">
+  <img src="assets/downtown-russellville-sunset.jpg" alt="" width="1200" height="544" loading="lazy" decoding="async">
+  <div class="afterglow-photo-top"><span>RIVER VALLEY / THE EVENT AFTERGLOW</span><strong aria-hidden="true">R↗</strong></div>
+  <div class="afterglow-photo-bottom"><span>ONE OCCASION / MANY LITTLE MOMENTS</span><strong>Give the whole day a place to shine.</strong></div>
+  <figcaption>Downtown Russellville scenery · Not an event, venue, provider or available rental.</figcaption>
+ </figure>
+ <div class="afterglow-copy">
+  <p class="afterglow-kicker">THE RIVER VALLEY / KEEP PLANNING</p>
+  <h2 id="afterglow-title">The picture is only <em>part of the story.</em></h2>
+  <p class="afterglow-intro">You have the photo booth options. Now explore three separate rental categories that can help you plan the rest of the occasion, without losing your place in this directory.</p>
+  <nav class="afterglow-links" aria-label="Explore related event rental categories">
+   <a href="venues.html"><span class="afterglow-link-num" aria-hidden="true">01</span><span class="afterglow-link-body"><small>THE SETTING</small><strong>Find the right venue</strong><span>Explore places to bring everyone together.</span></span><span class="afterglow-arrow" aria-hidden="true">↗</span></a>
+   <a href="party.html"><span class="afterglow-link-num" aria-hidden="true">02</span><span class="afterglow-link-body"><small>THE DETAILS</small><strong>Build the event</strong><span>Browse party equipment and event rentals.</span></span><span class="afterglow-arrow" aria-hidden="true">↗</span></a>
+   <a href="yard-signs.html"><span class="afterglow-link-num" aria-hidden="true">03</span><span class="afterglow-link-body"><small>THE WELCOME</small><strong>Mark the occasion</strong><span>See independent celebration-sign services.</span></span><span class="afterglow-arrow" aria-hidden="true">↗</span></a>
+  </nav>
+  <p class="afterglow-fine">Each link opens a different directory. These providers are not a bundled package; verify service area, date availability, total cost and terms directly.</p>
+ </div>
 </section>
 
 <div class="note"><p>Russellville.Rent is an independent directory. Some businesses are based outside Russellville, and delivery or business status may be unconfirmed. Please confirm operating status, service area, availability, pricing and terms directly with each provider. <a href="sms:+14799707301">Submit corrections</a>.</p></div>
