@@ -619,6 +619,37 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
  #providers[data-cart-view="compact"] .provider-grid>.provider:nth-child(even) .provider-body{grid-column:1;grid-row:2;padding:22px 20px}}
 @media(prefers-reduced-motion:reduce){.cart-view-controls button{transition:none}.cart-view-controls button:hover{transform:none}}
 
+
+/* Mobile editorial route-deck: compare live StayARV and Russellville.Rent;
+   keep all four destinations, directory content and native link behavior.
+   NN/g visual hierarchy; web.dev responsive stability; WCAG 2.2 focus and touch. */
+.jump-deck-hint{display:none}
+@media(max-width:640px){
+ .jump-deck-hint{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:27px 4px 8px;color:#315d48;font-size:.72rem;font-weight:850;letter-spacing:.1em;line-height:1.4}
+ .jump-deck-hint span{display:grid;place-items:center;flex:none;width:35px;height:35px;border-radius:50%;background:#174636;color:#f5d59a;font-size:1.3rem;letter-spacing:0}
+ .jump-deck{display:grid;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(225px,78%);gap:12px;margin:0 0 43px;padding:6px 6px 18px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;scroll-padding-inline:6px;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#849c86 #e3ebe1}
+ .jump-deck::-webkit-scrollbar{height:8px}
+ .jump-deck::-webkit-scrollbar-track{background:#e3ebe1;border-radius:99px}
+ .jump-deck::-webkit-scrollbar-thumb{background:#849c86;border-radius:99px}
+ .jump-deck a{grid-column:auto;min-width:0;min-height:182px;padding:23px 24px;border-radius:19px;background:linear-gradient(145deg,#fffdf5,#e6efe4);border-color:#c8d8c8;box-shadow:0 10px 24px #12372d1b;scroll-snap-align:start;scroll-margin-inline:6px}
+ .jump-deck a:first-child{background:linear-gradient(140deg,#123d31,#285b46);border-color:#194e3a;color:#fff9e9}
+ .jump-deck a:first-child .jump-index,.jump-deck a:first-child .jump-arrow{color:#f3d399}
+ .jump-deck strong{max-width:18ch;font-size:clamp(1.45rem,5.6vw,1.9rem)}
+ .jump-deck .jump-arrow{right:22px;bottom:17px;font-size:1.6rem}
+ .jump-deck a:focus-visible{outline:3px solid #a56314;outline-offset:-5px}
+ .jump-deck a:first-child:focus-visible{outline-color:#f3d399}
+}
+@media(max-width:360px){
+ .jump-deck{grid-auto-columns:minmax(218px,84%)}
+ .jump-deck a{min-height:169px;padding:19px 20px}
+ .jump-deck strong{font-size:1.5rem}
+}
+@media print{
+ .jump-deck-hint{display:none!important}
+ .jump-deck{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-flow:row!important;grid-auto-columns:auto!important;overflow:visible!important;scroll-snap-type:none!important}
+ .jump-deck a{min-height:100px!important;break-inside:avoid}
+}
+
 </style>
 </head>
 <body>
@@ -672,6 +703,7 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
 <div class="quick-fact"><strong>Delivery unconfirmed</strong><span>Ask before making plans</span></div>
 </div>
 
+<p class="jump-deck-hint">FOUR STOPS / SWIPE TO EXPLORE <span aria-hidden="true">↔</span></p>
 <nav class="jump-deck" aria-label="Explore this golf cart rental guide">
 <a href="#delivery"><span class="jump-index">01 / SERVICE</span><strong>Check delivery</strong><span class="jump-arrow" aria-hidden="true">↗</span></a>
 <a href="#request-title"><span class="jump-index">02 / INQUIRY</span><strong>Prepare your request</strong><span class="jump-arrow" aria-hidden="true">↗</span></a>
