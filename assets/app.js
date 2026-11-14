@@ -1,7 +1,19 @@
 const state={listings:[],filtered:[],compareIds:new Set()};
 const $=id=>document.getElementById(id);
 const money=n=>n?new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(n):"Call";
-const FALLBACK_IMAGE="https://images.unsplash.com/photo-1768941124460-6fa7161715ff?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=82&w=1600";
+const PROPERTY_ART="<div class=\"property-placeholder\" role=\"img\" aria-label=\"Illustrated River Valley homes, not a photograph of the listed rental\">\n<span class=\"property-placeholder-head\">R↗ / THE RIVER VALLEY RENTAL ATLAS</span>\n<svg viewBox=\"0 0 640 360\" preserveAspectRatio=\"xMidYMax slice\" aria-hidden=\"true\" focusable=\"false\">\n<path d=\"M0 240Q110 150 232 218T462 201T640 205V360H0Z\" fill=\"#91b9a1\"/>\n<path d=\"M0 265Q112 207 210 253T430 229T640 257V360H0Z\" fill=\"#4b8d75\"/>\n<path d=\"M0 318Q176 275 321 315T640 292V360H0Z\" fill=\"#25624d\"/>\n<path d=\"M123 220 233 134l112 86v130H123Z\" fill=\"#f6ead0\" stroke=\"#204b3d\" stroke-width=\"8\"/>\n<path d=\"m106 222 127-105 132 105\" fill=\"none\" stroke=\"#1a4a3a\" stroke-width=\"17\" stroke-linejoin=\"round\"/>\n<path d=\"M200 277h68v73h-68z\" fill=\"#517862\"/>\n<rect x=\"144\" y=\"242\" width=\"38\" height=\"38\" rx=\"4\" fill=\"#d9c18d\"/>\n<rect x=\"290\" y=\"242\" width=\"35\" height=\"38\" rx=\"4\" fill=\"#d9c18d\"/>\n<path d=\"M408 253 481 198l80 55v96H408Z\" fill=\"#e1d1ae\" stroke=\"#205141\" stroke-width=\"7\"/>\n<path d=\"m395 254 85-68 95 68\" fill=\"none\" stroke=\"#205141\" stroke-width=\"12\" stroke-linejoin=\"round\"/>\n<rect x=\"464\" y=\"280\" width=\"39\" height=\"69\" rx=\"2\" fill=\"#719982\"/>\n<path d=\"M82 338v-77m-25 34h51m-45-18h35M582 341v-92m-30 38h65m-57-20h48\" fill=\"none\" stroke=\"#164b3c\" stroke-width=\"12\" stroke-linecap=\"round\"/>\n</svg><span class=\"property-placeholder-foot\">Illustration / No verified property photo</span></div>";
+const hasVerifiedPhoto=item=>Boolean(item.image_url)&&item.image_verified!==false;
+function replaceFailedPhoto(img){
+  const figure=img.closest("figure");
+  const temp=document.createElement("div");
+  temp.innerHTML=PROPERTY_ART;
+  img.replaceWith(temp.firstElementChild);
+  if(figure){
+    const caption=figure.querySelector("figcaption");
+    if(caption)caption.textContent="Image unavailable · illustrated local guide";
+  }
+}
+
 const safe=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
 const ageLabel=item=>{
   if(!item.updated_at) return "Availability should be verified";
@@ -18,8 +30,9 @@ function card(item){
     item.type||null
   ].filter(Boolean).map(s=>`<span>${safe(s)}</span>`).join("");
   const sms=`sms:+14799707301?&body=${encodeURIComponent("I'm interested in "+item.address+" listed on Russellville.Rent. Can you help me verify availability?")}`;
+  const photoHTML=hasVerifiedPhoto(item)?`<img class="property-photo" src="${safe(item.image_url)}" alt="Listing-source photograph for ${safe(item.address)}" loading="lazy" decoding="async" width="640" height="400">`:PROPERTY_ART;
   return `<article class="card">
-    <div class="property-art"><img class="property-photo" src="${safe(item.image_url||FALLBACK_IMAGE)}" alt="${safe(item.image_verified===false?'Generic rental home image':'Photo of '+item.address)}" loading="lazy"><span class="source-badge">${safe(item.source_name)}</span>${item.image_verified===false?'<span class="photo-note">Generic photo</span>':''}</div>
+    <div class="property-art">${photoHTML}<span class="source-badge">${safe(item.source_name)}</span>${!hasVerifiedPhoto(item)?'<span class="photo-note">Illustration only</span>':''}</div>
     <div class="card-body">
       <div class="price">${money(item.rent)} <small>/ month</small></div>
       <div class="specs">${specs}</div>
@@ -83,7 +96,7 @@ function renderRentLandscape(){
 
 function render(){
   $("listings").innerHTML=state.filtered.map(card).join("");
-  document.querySelectorAll(".property-photo").forEach(img=>img.addEventListener("error",()=>{if(img.src!==FALLBACK_IMAGE)img.src=FALLBACK_IMAGE;}));
+  document.querySelectorAll(".property-photo").forEach(img=>img.addEventListener("error",()=>replaceFailedPhoto(img),{once:true}));
   $("empty").hidden=state.filtered.length!==0;
   $("resultCount").textContent=`${state.filtered.length} rental${state.filtered.length===1?"":"s"} shown`;
   const consoleMatch=$("consoleMatchCount");
@@ -193,12 +206,12 @@ function bindSearchSummary(){
 
 /* Presentation-only comparison of indexed listings; no new provider claims. */
 function compareOption(item,n){
-  const photo=item.image_url||FALLBACK_IMAGE;
+  const photoHTML=hasVerifiedPhoto(item)?`<img loading="lazy" decoding="async" width="640" height="400" src="${safe(item.image_url)}" alt="Listing-source photograph for ${safe(item.address)}">`:PROPERTY_ART;
   const rate=item.rent?money(item.rent):"Ask source";
   const display=v=>v==null?"Ask source":String(v);
-  const photoLabel=item.image_verified===false?"Generic image – not this property":"Listing-source image";
+  const photoLabel=hasVerifiedPhoto(item)?"Listing-source photograph":"Illustration · no verified property photo";
   return `<article class="compare-option">
-    <figure class="compare-option-visual"><img loading="lazy" src="${safe(photo)}" alt="${safe(item.image_verified===false?"Generic rental illustration":"Photo of "+item.address)}"><figcaption>${safe(photoLabel)}</figcaption></figure>
+    <figure class="compare-option-visual">${photoHTML}<figcaption>${safe(photoLabel)}</figcaption></figure>
     <div class="compare-option-body">
       <span class="compare-option-index">OPTION ${n+1} / ${safe(item.type||"Rental")}</span>
       <h3>${safe(item.address)}</h3>
@@ -236,7 +249,7 @@ function drawComparison(){
     button.firstElementChild.textContent=on?"Pinned to compare":"Pin to compare";
     button.lastElementChild.textContent=on?"✓":"+";
   });
-  $("compareChoices").querySelectorAll(".compare-option-visual img").forEach(img=>img.addEventListener("error",()=>{if(img.src!==FALLBACK_IMAGE)img.src=FALLBACK_IMAGE;}));
+  $("compareChoices").querySelectorAll(".compare-option-visual img").forEach(img=>img.addEventListener("error",()=>replaceFailedPhoto(img),{once:true}));
 }
 function onCompareClick(event){
   const button=event.target.closest("button[data-compare-id]");
