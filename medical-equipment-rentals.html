@@ -544,6 +544,46 @@
 @media(prefers-reduced-motion:reduce){.steps-med-actions a{scroll-behavior:auto}}
 @media print{.steps.steps-med-route{margin:18px 0;box-shadow:none;border:1px solid #666;background:#fff;color:#173e32;break-inside:avoid}.steps-med-cover{min-height:0;display:block;padding:16px;background:#fff!important}.steps-med-kicker,.steps-med-route h2,.steps-med-route h2 em,.steps-med-intro{color:#173e32!important}.steps-med-cover:after,.steps-med-cover-caption,.steps-med-icon,.steps-med-actions{display:none}.steps-grid.steps-med-list{display:block;background:#fff}.steps-med-list .steps-med-item{display:block;min-height:0;padding:12px 18px;break-inside:avoid;border-top:1px solid #aaa;background:#fff!important}.steps-med-item-head{display:inline-block;width:auto;margin:0 15px 0 0}.steps-med-count{font-size:1.1rem}.steps-med-item h3{display:inline;font-size:1.25rem}.steps-med-item p{margin:5px 0}.steps-med-tag{display:none}}
 
+
+/* 2026-11-14 Regional Equipment Atlas: a responsive comparison of existing
+   provider categories only, never stock, pricing or delivery commitments.
+   Direction: live StayARV/Russellville.Rent, NN/g visual hierarchy,
+   web.dev responsive overflow and WCAG 2.2 keyboard/reflow/target sizing. */
+.med-compare[hidden]{display:none!important}
+.med-compare{position:relative;isolation:isolate;overflow:hidden;margin:32px 0 43px;padding:clamp(23px,4vw,42px);background:#12382f;color:#f9f6eb;border:1px solid #255d49;border-radius:25px;box-shadow:0 19px 45px #123c3028}
+.med-compare:before{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(circle at 98% -14%,#6d927457,transparent 42%),linear-gradient(140deg,#163f35,#0b302d)}
+.med-compare-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(225px,.85fr);gap:clamp(16px,3vw,45px);align-items:end;margin:0 0 22px}
+.med-compare-kicker{display:block;color:#efc990;font-size:.65rem;letter-spacing:.17em;font-weight:850;text-transform:uppercase;margin-bottom:9px}
+.med-compare h3{font:400 clamp(1.75rem,3.4vw,2.8rem)/1.09 Georgia,"Times New Roman",serif;letter-spacing:-.045em;color:#fff9e9;margin:0;text-wrap:balance}
+.med-compare h3 em{color:#f2d299;font-style:italic}
+.med-compare-heading p{color:#e1ebe2;font-size:.85rem;line-height:1.7;margin:0;max-width:49ch}
+.med-compare-scroll{overflow-x:auto;overscroll-behavior-inline:contain;border:1px solid #658171;border-radius:14px;background:#f9faf4;scrollbar-color:#94aa95 #e8eee4}
+.med-compare table{width:100%;min-width:690px;border-collapse:separate;border-spacing:0;table-layout:fixed;color:#1d4035;font-size:.84rem;line-height:1.48}
+.med-compare th,.med-compare td{padding:16px 14px;border-bottom:1px solid #d7e3d7;border-right:1px solid #e0e8de;text-align:center;vertical-align:middle;overflow-wrap:anywhere}
+.med-compare tr>:last-child{border-right:0}
+.med-compare tbody tr:last-child>*{border-bottom:0}
+.med-compare thead th{background:#e0e9dd;font-size:.8rem;font-weight:780;vertical-align:bottom}
+.med-compare thead th:first-child{width:26%;text-align:left}
+.med-compare tbody th{position:sticky;left:0;background:#eef3e9;color:#1a4434;text-align:left;font-weight:760;z-index:1}
+.med-compare tbody tr:nth-child(even) th{background:#e8eee4}
+.med-compare tbody tr:nth-child(even) td{background:#f3f6ef}
+.med-compare tbody tr[data-active="true"] th{background:#eacb87;color:#1d3b2b}
+.med-compare tbody tr[data-active="true"] td{background:#fff0d0}
+.med-compare thead a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:7px 2px;color:#174c3a!important;text-underline-offset:3px;font-weight:800}
+.med-compare thead a:hover{text-decoration-thickness:2px}
+.med-compare thead a:focus-visible{outline:3px solid #a46016;outline-offset:3px;border-radius:5px}
+.med-compare-status{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:999px;padding:7px 11px;font-size:.73rem;font-weight:780;white-space:nowrap}
+.med-compare-status--yes{background:#d5e9d8;color:#1c603e;border:1px solid #a9cdb0}
+.med-compare-status--other{background:#edf0ea;color:#5a6f60;border:1px solid #d6e1d7}
+.med-compare-notes{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-top:17px}
+.med-compare-notes p{margin:0;max-width:72ch;color:#e3eee4;font-size:.73rem;line-height:1.65}
+.med-compare-notes a{display:inline-flex;align-items:center;min-height:44px;color:#f7d99e!important;font-weight:750;font-size:.78rem;text-underline-offset:4px;white-space:nowrap}
+.med-compare-notes a:focus-visible{outline:3px solid #f8d99d;outline-offset:3px}
+.med-compare-scroll-hint{display:none;color:#f5d69b!important;font-weight:760;font-size:.7rem!important;margin:0 0 10px}
+.med-visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:780px){.med-compare-heading{grid-template-columns:1fr;gap:11px}.med-compare-notes{flex-direction:column}.med-compare-scroll-hint{display:block}}
+@media(max-width:600px){.med-compare{padding:23px 17px;margin:26px 0 33px;border-radius:19px}.med-compare table{min-width:610px}.med-compare th,.med-compare td{padding:13px 10px}.med-compare h3{font-size:2.05rem}.med-compare-status{font-size:.69rem;padding:6px 8px}}
+@media print{.med-compare{background:#fff!important;color:#173d32!important;box-shadow:none;border:1px solid #8da99a;break-inside:avoid}.med-compare h3,.med-compare h3 em,.med-compare-kicker,.med-compare-heading p,.med-compare-notes p,.med-compare-notes a{color:#173d32!important}.med-compare-scroll{overflow:visible}.med-compare table{min-width:0}.med-compare-scroll-hint{display:none}}
 </style>
 </head>
 <body>
@@ -614,6 +654,16 @@
 <div class="finder-footer"><p id="filter-status" role="status" aria-live="polite" aria-atomic="true">Showing all 3 regional providers.</p><button type="button" id="clear-filter" class="clear-filter" hidden>Show all providers ↗</button></div>
 </section>
 <section id="providers" aria-labelledby="providers-title"><div class="section-head"><div><p class="eyebrow" style="color:#52705e">01 / Verified rental offerings</p><h2 id="providers-title">Compare regional providers.</h2></div><p>Three distinct rental operators. Published examples are not real-time inventory or binding quotes.</p></div>
+
+<section class="med-compare" id="med-compare" aria-labelledby="med-compare-title" hidden>
+  <div class="med-compare-heading">
+    <div><span class="med-compare-kicker">The River Valley / Equipment atlas · Side by side</span><h3 id="med-compare-title">The catalog,<br><em>at a glance.</em></h3></div>
+    <p>Five equipment groups across the regional operators listed here. Compare published rental categories before opening a full record or calling a branch.</p>
+  </div>
+  <p class="med-compare-scroll-hint">Swipe sideways to see every provider →</p>
+  <div class="med-compare-scroll" tabindex="0" role="region" aria-label="Scrollable comparison of advertised equipment categories by provider"><table id="med-compare-table"></table></div>
+  <div class="med-compare-notes"><p><strong>Directory categories, not live inventory.</strong> “Listed” means a provider is categorized here as advertising that equipment; “Not shown” does not mean the provider cannot supply it. All stock, safety requirements, costs and Russellville delivery remain unconfirmed.</p><a href="#med-call-form">Prepare an inquiry ↗</a></div>
+</section>
 <nav class="jump med-dispatch" aria-label="Regional medical equipment rental contacts">
 <div class="med-dispatch-head">
   <div><span class="med-dispatch-kicker">THE RENTAL SWITCHBOARD / THREE REGIONAL OPERATORS</span><h3>Start with a call.<br><em>Confirm the details.</em></h3></div>
@@ -892,4 +942,42 @@ document.querySelectorAll('[data-quick-category]').forEach(function(path){
 })();
 </script>
 
+
+<script>
+/* Progressive enhancement: read existing provider card categories, with no
+   independent list of operators or implied stock guarantees. */
+(function(){
+  const section=document.getElementById('med-compare');
+  const table=document.getElementById('med-compare-table');
+  const cards=Array.from(document.querySelectorAll('#providers .card[data-equipment][id]'));
+  if(!section||!table||!cards.length)return;
+  const groups=[['mobility','Wheelchairs & scooters'],['beds','Hospital beds'],['ramps','Ramps & knee walkers'],['lifts','Patient lifts'],['chairs','Lift chairs']];
+  const make=(tag,value,klass)=>{const node=document.createElement(tag);if(value!==null)node.textContent=value;if(klass)node.className=klass;return node;};
+  const caption=make('caption','Advertised rental equipment categories, compared by regional operator','med-visually-hidden');
+  const head=document.createElement('thead'),top=document.createElement('tr');
+  const corner=make('th','Equipment category');corner.scope='col';top.append(corner);
+  for(const card of cards){
+    const cell=make('th',null),link=make('a',card.querySelector('h3')?.textContent.trim()||card.id);
+    cell.scope='col';link.href='#'+card.id;cell.append(link);top.append(cell);
+  }
+  head.append(top);
+  const body=document.createElement('tbody');
+  for(const [key,name] of groups){
+    const row=document.createElement('tr');row.dataset.medCategory=key;
+    const heading=make('th',name);heading.scope='row';row.append(heading);
+    for(const card of cards){
+      const listed=(card.dataset.equipment||'').split(/\s+/).includes(key);
+      const cell=document.createElement('td');
+      cell.append(make('span',listed?'✓ Listed':'— Not shown','med-compare-status '+(listed?'med-compare-status--yes':'med-compare-status--other')));
+      row.append(cell);
+    }
+    body.append(row);
+  }
+  table.replaceChildren(caption,head,body);
+  section.hidden=false;
+  const sync=category=>body.querySelectorAll('tr').forEach(row=>row.dataset.active=String(category!=='all'&&row.dataset.medCategory===category));
+  document.querySelectorAll('.equipment-choice[data-category]').forEach(control=>control.addEventListener('click',()=>sync(control.dataset.category)));
+  document.getElementById('clear-filter')?.addEventListener('click',()=>sync('all'));
+})();
+</script>
 </body></html>
