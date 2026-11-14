@@ -4181,7 +4181,7 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
     display:block;
     font:850 .58rem/1 system-ui,sans-serif;
     letter-spacing:.16em;
-    color:#88744c;
+    color:#6b5832;
   }
   .directory-masthead .masthead-route-links a:nth-child(1)::before{content:"01 / LIVE"}
   .directory-masthead .masthead-route-links a:nth-child(2)::before{content:"02 / STORE"}
