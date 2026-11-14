@@ -1382,7 +1382,7 @@ body.restroom-scan .call-add{margin-top:17px}
  const desk=document.getElementById("restroom-view-desk");
  const buttons=[...document.querySelectorAll("[data-restroom-view]")];
  const providers=document.querySelectorAll(".provider-list .provider");
- if(!desk||buttons.length!==2||providers.length!==10)return;
+ if(!desk||buttons.length!==2||providers.length!==11)return;
  const setView=view=>{
    document.body.classList.toggle("restroom-scan",view==="scan");
    buttons.forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.restroomView===view)));
