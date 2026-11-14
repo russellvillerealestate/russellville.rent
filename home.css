@@ -4087,3 +4087,160 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 @media print{
   #browse:has(> #rental-results[data-layout="editorial"][data-view="grid"]) > .chapter-wayfinder{position:static!important}
 }
+
+
+/* 2026-11-14 / River Valley route tickets.
+   Visual concept: make the existing desktop quick-category rail a small
+   travel atlas: numbered paper tickets, one scenic editorial anchor, a
+   distinct full-directory ticket. All hrefs and category names are retained.
+   Compared live https://stayarv.com/ and https://russellville.rent/ before
+   redesign. References: NN/g homepage visual hierarchy and clear next
+   actions; web.dev responsive reflow and stable media; WCAG 2.2 visible
+   focus, accessible pointer targets and reduced motion.
+   Mobile Explore and the listing automation remain untouched. */
+@media (min-width:761px){
+  .directory-masthead .masthead-routes{
+    background:linear-gradient(115deg,#e3d7bd 0%,#f4eddb 53%,#f8f3e8 100%);
+    border-top:1px solid #d0b987;
+    border-bottom:1px solid #cfbea0;
+  }
+  .directory-masthead .masthead-routes-inner{
+    align-items:stretch;
+    gap:clamp(10px,1.65vw,24px);
+    min-height:112px;
+    padding-top:10px;
+    padding-bottom:10px;
+  }
+  .directory-masthead .masthead-route-label{
+    flex:0 0 165px;
+    align-self:stretch;
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    flex-direction:column;
+    gap:8px;
+    padding:13px;
+    border-radius:12px;
+    border:1px solid #f9ebc178;
+    color:#fff4d6;
+    background:
+      linear-gradient(155deg,#0a2823dc 0%,#174a3db8 68%,#153f31db 100%),
+      url("assets/lake-dardanelle-docks.jpg") center 53%/cover;
+    box-shadow:inset 0 0 0 1px #071f1820;
+  }
+  .directory-masthead .masthead-route-label > span:last-child{
+    color:#f5e5c4;
+    line-height:1.2;
+    letter-spacing:.11em;
+    font-size:.55rem;
+    white-space:normal;
+  }
+  .directory-masthead .masthead-route-glyph{
+    width:30px;
+    height:30px;
+    border-radius:8px;
+    background:#f4d99c;
+    color:#153f32;
+    font-size:1rem;
+  }
+  .directory-masthead .masthead-route-links{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr)) minmax(105px,1.15fr);
+    align-items:stretch;
+    flex:1;
+    gap:5px;
+    padding:0;
+    overflow:visible;
+    scrollbar-width:thin;
+    min-width:0;
+  }
+  .directory-masthead .masthead-route-links a{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:6px;
+    min-width:0;
+    min-height:90px;
+    padding:12px 11px 11px;
+    border:1px solid #c9c9b5;
+    border-radius:11px;
+    background:#fffdf7d6;
+    color:#203f35;
+    font-size:clamp(.72rem,1.05vw,.85rem);
+    font-weight:790;
+    letter-spacing:-.015em;
+    line-height:1.18;
+    white-space:normal;
+    text-align:left;
+    text-decoration:none;
+    box-shadow:0 2px 0 #b9b9a033;
+    transition:background .18s ease,border-color .18s ease,transform .18s ease,box-shadow .18s ease;
+  }
+  .directory-masthead .masthead-route-links a::before{
+    display:block;
+    font:850 .58rem/1 system-ui,sans-serif;
+    letter-spacing:.16em;
+    color:#88744c;
+  }
+  .directory-masthead .masthead-route-links a:nth-child(1)::before{content:"01 / LIVE"}
+  .directory-masthead .masthead-route-links a:nth-child(2)::before{content:"02 / STORE"}
+  .directory-masthead .masthead-route-links a:nth-child(3)::before{content:"03 / BUILD"}
+  .directory-masthead .masthead-route-links a:nth-child(4)::before{content:"04 / EXPLORE"}
+  .directory-masthead .masthead-route-links a:nth-child(5)::before{content:"05 / GATHER"}
+  .directory-masthead .masthead-route-links a:nth-child(6)::before{content:"06 / DRIVE"}
+  .directory-masthead .masthead-route-links a:hover{
+    background:#fff;
+    border-color:#8c9b79;
+    box-shadow:0 9px 19px #18372c25;
+    transform:translateY(-3px);
+  }
+  .directory-masthead .masthead-route-links .masthead-route-all{
+    margin:0;
+    padding:12px 11px 11px;
+    border-color:#1c503f;
+    border-radius:11px;
+    background:linear-gradient(140deg,#15382f,#245a44);
+    color:#fff6df;
+    font-size:clamp(.75rem,1.05vw,.88rem);
+  }
+  .directory-masthead .masthead-route-links .masthead-route-all::before{
+    content:"R↗ / INDEX";
+    color:#f4d494;
+  }
+  .directory-masthead .masthead-route-links .masthead-route-all:hover{
+    background:linear-gradient(140deg,#265747,#327254);
+    color:white;
+    border-color:#37795c;
+  }
+  .directory-masthead .masthead-route-links a:focus-visible{
+    outline:3px solid #9c5b0d;
+    outline-offset:2px;
+    position:relative;
+    z-index:1;
+  }
+}
+@media (min-width:761px) and (max-width:1150px){
+  .directory-masthead .masthead-route-label{flex-basis:44px;padding:7px;justify-content:center;align-items:center}
+  .directory-masthead .masthead-route-glyph{width:29px;height:31px}
+  .directory-masthead .masthead-route-label > span:last-child{display:none}
+}
+@media (min-width:761px) and (max-width:1020px){
+  .directory-masthead .masthead-route-links{
+    display:flex;
+    align-items:stretch;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x proximity;
+    padding:0 0 3px;
+  }
+  .directory-masthead .masthead-route-links a{
+    flex:0 0 112px;
+    scroll-snap-align:start;
+  }
+  .directory-masthead .masthead-route-links .masthead-route-all{flex-basis:120px}
+}
+@media (prefers-reduced-motion:reduce){
+  .directory-masthead .masthead-route-links a{transition:none!important}
+  .directory-masthead .masthead-route-links a:hover{transform:none!important}
+}
