@@ -618,6 +618,43 @@ main{max-width:1400px;padding:22px clamp(15px,2.2vw,34px) 90px}
  .trip-desk .notes-intro a{display:none}
 }
 
+
+/* 2026-11-13: Off-road directory's photographic next chapter.
+   Reference: StayARV's immersive lake hero / editorial routes.
+   Research: NN/g visual hierarchy; web.dev responsive reflow; WCAG 2.2
+   target size and focus visibility. Existing listings and scripts untouched.
+   Photo is local scenery, explicitly not a designated vehicle trail. */
+.trail-next{margin:clamp(44px,6.4vw,84px) 0 36px;overflow:hidden;border:1px solid #294d3e;border-radius:27px;background:#153a30;box-shadow:0 27px 61px #123a2d25;color:#fff9ee}
+.trail-next-cover{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(220px,.75fr);align-items:end;gap:clamp(30px,5vw,68px);min-height:440px;padding:clamp(30px,5vw,67px);background:linear-gradient(90deg,#092820f5 0%,#0d3029df 40%,#183f33a6 72%,#173b3280 100%),url("assets/lake-dardanelle-sunset.jpg") center 52%/cover no-repeat;isolation:isolate}
+.trail-next-story{max-width:700px;min-width:0}
+.trail-next-kicker{margin:0 0 19px;color:#f0cf96;font-size:.69rem;font-weight:850;line-height:1.5;letter-spacing:.19em;text-transform:uppercase}
+.trail-next-story h2{margin:0;color:#fff9ef;font:400 clamp(3rem,5.4vw,5.9rem)/.99 Georgia,"Times New Roman",serif;letter-spacing:-.065em;text-wrap:balance}
+.trail-next-story h2 em{color:#f7cf8a;font-weight:400}
+.trail-next-story>p:not(.trail-next-kicker){margin:23px 0 26px;color:#edf2e6;font-size:clamp(.94rem,1.25vw,1.05rem);line-height:1.76;max-width:54ch}
+.trail-next-return{display:inline-flex;align-items:center;justify-content:space-between;gap:22px;min-height:48px;padding:12px 16px;border:1px solid #f6d594a8;border-radius:9px;color:#fff5e0;text-decoration:none;font-size:.84rem;font-weight:800}
+.trail-next-return:hover{background:#fff9e524}
+.trail-next-return:focus-visible,.trail-next-route:focus-visible{outline:3px solid #ffdc95;outline-offset:-5px;box-shadow:inset 0 0 0 7px #123d34}
+.trail-next-postcard{align-self:end;justify-self:end;display:flex;flex-direction:column;gap:10px;max-width:270px;padding:24px;border:1px solid #ffffff70;border-radius:17px;background:#0b2d28ad;backdrop-filter:blur(4px)}
+.trail-next-postcard span{color:#f0d49e;font-size:.65rem;font-weight:850;letter-spacing:.15em}
+.trail-next-postcard strong{font:400 clamp(1.5rem,2.4vw,2.2rem)/1.12 Georgia,serif;letter-spacing:-.035em}
+.trail-next-postcard small{color:#e9f1e7;font-size:.72rem;line-height:1.55}
+.trail-next-routes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:#567467}
+.trail-next-route{display:flex;flex-direction:column;align-items:flex-start;min-width:0;min-height:263px;padding:clamp(23px,3vw,38px);background:#faf4e6;color:#1c4537;text-decoration:none;transition:background-color .2s,transform .2s}
+.trail-next-route:nth-child(2){background:#e5e9dc}
+.trail-next-route:nth-child(3){background:#d8e8dc}
+.trail-next-route:hover{background:#fffaf0}
+.trail-next-number{font-size:.67rem;font-weight:850;letter-spacing:.14em;color:#55735e;margin-bottom:19px}
+.trail-next-route strong{font:400 clamp(1.75rem,2.5vw,2.75rem)/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.047em;text-wrap:balance}
+.trail-next-route small{display:block;margin:11px 0 20px;color:#3c5f4d;font-size:.85rem;line-height:1.55;max-width:34ch}
+.trail-next-action{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;margin-top:auto;padding-top:13px;border-top:1px solid #a1b8a4;color:#1b503d;font-size:.82rem;font-weight:850}
+.trail-next-route:hover .trail-next-action span{transform:translate(3px,-3px)}
+.trail-next-action span{transition:transform .2s}
+.trail-next-note{margin:0;padding:15px clamp(23px,3vw,38px) 18px;color:#dce9df;background:#153a30;font-size:.75rem;line-height:1.6}
+@media(max-width:900px){.trail-next-cover{grid-template-columns:minmax(0,1fr) minmax(190px,.52fr);gap:24px;padding:38px 32px}.trail-next-story h2{font-size:clamp(2.7rem,6vw,4.5rem)}.trail-next-postcard{padding:18px}.trail-next-postcard strong{font-size:1.6rem}}
+@media(max-width:700px){.trail-next{border-radius:19px;margin:42px 0 27px}.trail-next-cover{display:block;min-height:0;padding:38px 24px 31px;background:linear-gradient(90deg,#092820f2,#123a30c9),url("assets/lake-dardanelle-sunset.jpg") 58% center/cover no-repeat}.trail-next-story h2{font-size:clamp(2.8rem,10.5vw,4.5rem)}.trail-next-postcard{max-width:none;margin-top:26px;display:grid;grid-template-columns:1fr;gap:7px;padding:16px 18px}.trail-next-postcard strong{font-size:1.48rem}.trail-next-routes{grid-template-columns:1fr}.trail-next-route{min-height:0;padding:24px 23px}.trail-next-number{margin-bottom:8px}.trail-next-route strong{font-size:2rem}.trail-next-route small{margin:9px 0 17px}.trail-next-note{padding:17px 23px}}
+@media(prefers-reduced-motion:reduce){.trail-next-route,.trail-next-action span{transition:none}.trail-next-route:hover .trail-next-action span{transform:none}}
+@media print{.trail-next{box-shadow:none;border:1px solid #888}.trail-next-cover{background:#fff!important;color:#163c30;min-height:0}.trail-next-story h2,.trail-next-story h2 em,.trail-next-story>p:not(.trail-next-kicker),.trail-next-kicker,.trail-next-postcard,.trail-next-return{color:#163c30}.trail-next-routes{background:#fff}.trail-next-route{background:#fff!important;border:1px solid #aaa;min-height:0;break-inside:avoid}.trail-next-note{color:#163c30;background:#fff}}
+
 </style></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-head"><a href="/">Russellville.Rent</a><a class="back" href="/">← All rental categories</a></header>
 <main id="main"><section class="hero" aria-labelledby="hero-title"><div class="hero-terrain" aria-hidden="true"><svg viewBox="0 0 1440 410" preserveAspectRatio="xMidYMax slice" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="trail-dusk" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c6c995" stop-opacity=".34"/><stop offset="1" stop-color="#214f3c" stop-opacity=".03"/></linearGradient></defs><circle cx="1155" cy="88" r="90" fill="#e7c78c" opacity=".23"/><path d="M0 265 118 173l95 66 128-145 138 143 112-75 136 95 114-113 132 122 145-102 137 91 135-83 50 41v191H0Z" fill="url(#trail-dusk)"/><path d="M0 312 146 216l126 65 118-83 132 101 112-49 144 59 121-88 129 81 134-97 178 112v93H0Z" fill="#6e9572" opacity=".27"/><path d="M0 355q152-85 306-37t278-17 268 34 278-9 310 19v65H0Z" fill="#224e3a" opacity=".67"/><path d="M0 389q242-40 447-7t414-15 579 17v26H0Z" fill="#102f28" opacity=".8"/><g fill="#153d2f" opacity=".68"><path d="m60 349 29-96 31 96h-21v57H78v-57Z"/><path d="m130 363 24-79 24 79h-17v43h-16v-43Z"/><path d="m1184 349 31-112 33 112h-22v61h-21v-61Z"/><path d="m1244 362 22-72 24 72h-15v48h-16v-48Z"/><path d="m1345 354 27-95 29 95h-20v56h-18v-56Z"/></g><path d="M-20 409q285-106 529-57t386-18 560 71" stroke="#cbaa78" stroke-opacity=".3" stroke-width="8" stroke-dasharray="3 20" fill="none"/></svg></div><div><p class="eyebrow">Russellville &amp; the Arkansas River Valley</p><h1 id="hero-title">Find a side-by-side.<br><em>Find your trail.</em></h1><p>Compare independently listed side-by-side rentals in the Ozarks, around Ozone and Mount Magazine. The operators below advertise rentals on their own websites; confirm dates, trail restrictions and exact pickup or delivery arrangements before traveling.</p><a href="#directory">Explore three providers <span aria-hidden="true">↗</span></a>
@@ -871,6 +908,30 @@ main{max-width:1400px;padding:22px clamp(15px,2.2vw,34px) 90px}
 <section><h3>Confirm driver eligibility.</h3><p>Age and driver’s license rules vary by provider. Ask about passengers, vehicle seating and appropriate safety gear before booking.</p></section>
 </div>
 </section>
+
+<!-- StayARV-inspired editorial next chapter: independent guides, never trail or booking claims. -->
+<section class="trail-next" aria-labelledby="trail-next-title">
+  <div class="trail-next-cover">
+    <div class="trail-next-story">
+      <p class="trail-next-kicker">The River Valley / After the ride</p>
+      <h2 id="trail-next-title">One adventure.<br><em>More ways outside.</em></h2>
+      <p>Once you've checked the rental rules and where you can actually drive, keep exploring. These are separate rental guides for other kinds of Arkansas days, not extensions of an off-road rental or approved ATV routes.</p>
+      <a class="trail-next-return" href="#directory">Return to off-road operators <span aria-hidden="true">↑</span></a>
+    </div>
+    <div class="trail-next-postcard" aria-label="Scenic photograph context">
+      <span>FIELD NOTE / 01</span>
+      <strong>There's more than one way to get outside.</strong>
+      <small>Lake Dardanelle scenery, not an off-road trail or rental location.</small>
+    </div>
+  </div>
+  <nav class="trail-next-routes" aria-label="Explore other outdoor rental categories">
+    <a class="trail-next-route" href="paddling.html"><span class="trail-next-number">01 / ON THE WATER</span><strong>Take to the lake.</strong><small>Find kayak and paddling rental options in a separate directory.</small><span class="trail-next-action">Explore paddling <span aria-hidden="true">↗</span></span></a>
+    <a class="trail-next-route" href="camping.html"><span class="trail-next-number">02 / STAY AWHILE</span><strong>Make it a weekend.</strong><small>Explore camping and outdoor stays, with terms confirmed by each operator.</small><span class="trail-next-action">Explore camping <span aria-hidden="true">↗</span></span></a>
+    <a class="trail-next-route" href="bicycles.html"><span class="trail-next-number">03 / ANOTHER RIDE</span><strong>Go on two wheels.</strong><small>Compare bicycle rental styles and posted prices from the bike guide.</small><span class="trail-next-action">Explore bicycles <span aria-hidden="true">↗</span></span></a>
+  </nav>
+  <p class="trail-next-note">Editorial scenery and independent category links only. Nothing here establishes ATV trail access, equipment availability, service coverage, pricing or a combined booking.</p>
+</section>
+
 <p class="disclaimer">Independent regional rental directory, last source review October 31, 2026. This directory is not a booking service. Provider descriptions, rates, availability, policies and trail conditions can change. All services specifically delivered to Russellville are <strong>UNCONFIRMED</strong> unless separately stated by an official provider source. <a href="sms:+14799707301">Submit a correction</a>.</p>
 <footer><a href="/">← Back to the Russellville.Rent directory</a></footer>
 </main><script>
