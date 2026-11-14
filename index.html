@@ -3757,6 +3757,78 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   }
 }
 
+
+/* 2026-11-14 — River Valley field-guide gallery.
+   StayARV-inspired photographic storytelling, adapted to three existing directory
+   journeys. A scenic event cover is explicitly labeled as regional imagery.
+   Existing targets, provider data, filters, and the atlas dialog are untouched.
+   Principles: NN/g visual hierarchy; web.dev responsive images/layout stability;
+   WCAG 2.2 visible focus and usable target sizes. */
+.field-guide-shelf{margin:clamp(52px,7vw,91px) 0 clamp(40px,6vw,77px)}
+.field-guide-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:24px}
+.field-guide-heading .field-guide-kicker{display:block;color:#516f5e;font-size:.69rem;font-weight:850;letter-spacing:.17em;text-transform:uppercase;margin-bottom:11px}
+.field-guide-heading h2{margin:0;max-width:590px;color:#153e34;font:400 clamp(2.35rem,4.45vw,4.1rem)/1.03 Georgia,"Times New Roman",serif;letter-spacing:-.056em;text-wrap:balance}
+.field-guide-heading h2 em{font-weight:400;color:#83632d}
+.field-guide-heading p{max-width:310px;flex:0 1 310px;margin:0 0 4px;color:#536b60;font-size:.93rem;line-height:1.6}
+.field-guide-grid{display:grid;grid-template-columns:minmax(0,1.32fr) minmax(0,1fr);grid-template-rows:repeat(2,minmax(255px,auto));gap:18px}
+.field-guide-grid>.event-guide-bridge{grid-column:1;grid-row:1 / span 2;display:flex;flex-direction:column;align-items:flex-start;min-height:548px;margin:0;padding:clamp(26px,3.5vw,43px);border-radius:23px;border:1px solid #d6c29a;overflow:hidden;position:relative;isolation:isolate;background:linear-gradient(180deg,#0c292793 0%,#102c286b 29%,#092822ee 100%),url("assets/downtown-russellville-sunset.jpg") center/cover;color:#fff8e9;box-shadow:0 22px 50px #153a3324}
+.field-guide-grid>.event-guide-bridge:before{content:"";position:absolute;inset:14px;border:1px solid #f7e9d246;border-radius:14px;pointer-events:none;z-index:-1}
+.field-guide-grid .event-guide-bridge-mark{display:grid;width:65px;height:65px;border-radius:17px;background:#102f2bd4;border-color:#f9dda3b2;color:#ffdb96;font-size:2rem}
+.field-guide-grid .event-guide-bridge-copy{margin-top:auto;gap:13px;max-width:570px}
+.field-guide-grid .event-guide-bridge-copy small{font-size:.69rem;letter-spacing:.17em;color:#f7db9c}
+.field-guide-grid .event-guide-bridge-copy strong{font:400 clamp(2.5rem,4.6vw,4.8rem)/.99 Georgia,"Times New Roman",serif;letter-spacing:-.063em;text-wrap:balance}
+.field-guide-grid .event-guide-bridge-copy>span{max-width:450px;color:#e2eae0;font-size:.94rem}
+.field-guide-grid .event-guide-bridge-action{margin-top:22px;border-radius:100px;background:#f2d49b;color:#14392d;min-height:48px;padding:11px 20px}
+.field-guide-grid .field-guide-photo-caption{margin-top:17px;color:#e8e7de;font-size:.65rem;line-height:1.4}
+.field-guide-grid>.move-guide-door{grid-column:2;grid-row:1;display:flex;flex-direction:column;align-items:flex-start;min-height:255px;margin:0;padding:clamp(23px,2.7vw,34px);border-radius:23px;position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(circle at 93% 10%,#d4e6d1 0%,transparent 50%),linear-gradient(135deg,#f4efe1,#dfe9db);border-color:#c7dac4;box-shadow:0 11px 30px #153a3316}
+.field-guide-grid>.move-guide-door:before{content:"";position:absolute;width:240px;height:240px;border:1px solid #426c552a;border-radius:50%;top:-95px;right:-90px;box-shadow:0 0 0 38px #426c550c,0 0 0 76px #426c5509;pointer-events:none;z-index:-1}
+.field-guide-grid .move-guide-door-mark{width:53px;height:53px;font-size:2rem;border-radius:14px}
+.field-guide-grid .move-guide-door-copy{flex:none;margin:12px 0 17px;gap:7px}
+.field-guide-grid .move-guide-door-copy strong{font:400 clamp(1.6rem,2.3vw,2.5rem)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.05em}
+.field-guide-grid .move-guide-door-copy>span{font-size:.81rem;line-height:1.55}
+.field-guide-grid .move-guide-door-action{margin: auto 0 0;align-self:flex-start;padding:10px 17px;background:#153f34;color:#f9edcc;border-radius:100px;min-height:44px;font-size:.77rem}
+.field-guide-grid>.atlas-entry{grid-column:2;grid-row:2;margin:0;min-width:0}
+.field-guide-grid .atlas-entry-link{height:100%;min-height:255px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:13px;padding:clamp(23px,2.7vw,34px);border-radius:23px;position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(circle at 95% 0%,#42715a 0%,transparent 45%),linear-gradient(120deg,#102f2b,#1d4c3c);box-shadow:0 11px 30px #153a3321}
+.field-guide-grid .atlas-entry-symbols{display:flex;gap:6px;transform:rotate(-3deg);margin-bottom:3px}
+.field-guide-grid .atlas-entry-symbols svg{width:40px;height:40px;padding:8px;border-radius:10px}
+.field-guide-grid .atlas-entry-copy{gap:8px}
+.field-guide-grid .atlas-entry-copy strong{font:400 clamp(1.7rem,2.4vw,2.6rem)/1.07 Georgia,"Times New Roman",serif;letter-spacing:-.052em}
+.field-guide-grid .atlas-entry-copy>span{font-size:.81rem;line-height:1.5}
+.field-guide-grid .atlas-entry-cta{margin-top:auto;min-height:44px;border-radius:100px;padding:10px 16px}
+.field-guide-grid a:focus-visible{outline:4px solid #b27321;outline-offset:5px}
+.field-guide-grid a:hover{transform:translateY(-3px)}
+@media(max-width:950px){
+  .field-guide-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}
+  .field-guide-grid>.event-guide-bridge{grid-column:1 / -1;grid-row:auto;min-height:420px}
+  .field-guide-grid>.move-guide-door{grid-column:1;grid-row:auto;min-height:310px}
+  .field-guide-grid>.atlas-entry{grid-column:2;grid-row:auto}
+  .field-guide-grid .atlas-entry-link{min-height:310px}
+  .field-guide-grid .event-guide-bridge-copy strong{font-size:clamp(2.8rem,5.3vw,4rem)}
+}
+@media(max-width:650px){
+  .field-guide-shelf{margin:43px 0 39px}
+  .field-guide-heading{display:block;margin-bottom:18px}
+  .field-guide-heading h2{font-size:clamp(2.5rem,10vw,3.45rem)}
+  .field-guide-heading p{max-width:520px;margin-top:12px;font-size:.87rem}
+  .field-guide-grid{grid-template-columns:minmax(0,1fr);gap:13px}
+  .field-guide-grid>.event-guide-bridge{grid-column:1;min-height:440px;padding:26px 23px}
+  .field-guide-grid>.event-guide-bridge:before{inset:9px;border-radius:15px}
+  .field-guide-grid .event-guide-bridge-copy strong{font-size:clamp(2.45rem,10vw,3.65rem)}
+  .field-guide-grid .event-guide-bridge-copy>span{font-size:.84rem}
+  .field-guide-grid .event-guide-bridge-action{grid-column:auto;margin-top:17px}
+  .field-guide-grid>.move-guide-door{grid-column:1;min-height:260px;padding:25px 23px;flex-wrap:nowrap}
+  .field-guide-grid .move-guide-door-copy{margin:15px 0 16px;flex-basis:auto}
+  .field-guide-grid .move-guide-door-copy strong{font-size:2rem}
+  .field-guide-grid .move-guide-door-action{margin:auto 0 0}
+  .field-guide-grid>.atlas-entry{grid-column:1}
+  .field-guide-grid .atlas-entry-link{min-height:260px;padding:25px 23px;display:flex;gap:12px}
+  .field-guide-grid .atlas-entry-symbols svg{width:38px;height:38px}
+  .field-guide-grid .atlas-entry-copy strong{font-size:2rem}
+  .field-guide-grid .atlas-entry-cta{grid-column:auto;margin-top:auto}
+}
+@media(prefers-reduced-motion:reduce){.field-guide-grid a{transition:none!important}.field-guide-grid a:hover{transform:none!important}}
+@media print{.field-guide-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto}.field-guide-grid>.event-guide-bridge,.field-guide-grid>.move-guide-door,.field-guide-grid>.atlas-entry{grid-column:auto;grid-row:auto;min-height:0;break-inside:avoid}.field-guide-grid .atlas-entry-link{min-height:0}.field-guide-grid .event-guide-bridge-copy strong{font-size:2rem}}
+
 </style>
 </head>
 <body>
@@ -3933,6 +4005,13 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 
 </section>
 
+<!-- Three existing planning doors, arranged as a photographed River Valley field-guide gallery. -->
+<section class="field-guide-shelf" aria-labelledby="field-guide-shelf-title">
+  <div class="field-guide-heading">
+    <div><span class="field-guide-kicker">THE RIVER VALLEY / FIELD GUIDES</span><h2 id="field-guide-shelf-title">Make a plan.<br><em>Find the pieces.</em></h2></div>
+    <p>From a neighborhood celebration to a moving day, take a guided route through the existing local rental categories.</p>
+  </div>
+  <div class="field-guide-grid">
 <!-- Event field guide: cross-category navigation only; no event package, provider endorsement or booking promise. -->
 <!-- Compact entry point keeps event planning discoverable while moving the
      full six-category guide after the primary 35-category rental directory. -->
@@ -3940,6 +4019,7 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   <span class="event-guide-bridge-mark" aria-hidden="true">R↗</span>
   <span class="event-guide-bridge-copy"><small>PLANNING A GATHERING? / THE EVENT FIELD GUIDE</small><strong>Six rental categories. One clearer plan.</strong><span>Venue, equipment, sound, photo booths, restrooms and stages.</span></span>
   <span class="event-guide-bridge-action">Explore the guide <span aria-hidden="true">↗</span></span>
+  <span class="field-guide-photo-caption">Downtown Russellville scenery · Not a rental venue or provider photograph</span>
 </a>
 
 
@@ -3957,6 +4037,8 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   <span class="atlas-entry-cta">See every category <span aria-hidden="true">↗</span></span>
  </a>
 </div>
+  </div>
+</section>
 
 <section id="browse" aria-labelledby="browse-title"><div class="section-head"><div><p class="eyebrow">Find it around here</p><h2 id="browse-title">What are you looking for?</h2><p>Explore rental options, or ask us about a category we’re building.</p></div><span class="browse-label">35 categories. One local hub.</span></div>
 
