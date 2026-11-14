@@ -1362,7 +1362,17 @@ function updateSearchPreview(){
    return {card,title,label,key,score};
  }).filter(Boolean).sort((a,b)=>b.score-a.score);
  searchPreviewList.replaceChildren();
- matches.slice(0,4).forEach(item=>{
+ // A dead-end search should offer real, existing category routes—not invented listings.
+ const noDirectMatch=matches.length===0;
+ const fallbackKeys=["homes","storage","tools","party"];
+ const displayMatches=noDirectMatch?fallbackKeys.map(key=>{
+   const card=cards.find(item=>item.dataset.category===key);
+   if(!card)return null;
+   return {card,key,title:card.querySelector(".card-body h3")?.textContent.trim()||key,
+     label:card.querySelector(".card-body .eyebrow")?.textContent.trim()||"Rental category"};
+ }).filter(Boolean):matches.slice(0,4);
+ searchPreviewList.classList.toggle("search-preview-list--fallback",noDirectMatch);
+ displayMatches.forEach(item=>{
    const source=item.card.querySelector(".card-link[href]");
    if(!source)return;
    const link=document.createElement("a");link.className="search-match";link.href=source.href;
@@ -1382,10 +1392,12 @@ function updateSearchPreview(){
    const label=document.createElement("small");label.textContent=item.label;
    copy.append(heading,label);link.append(top,copy);searchPreviewList.appendChild(link);
  });
- if(!matches.length){
-   const empty=document.createElement("p");empty.className="search-preview-empty";
-   empty.textContent="No direct category matches. Try a broader term, or browse the full directory below.";
-   searchPreviewList.appendChild(empty);
+ if(noDirectMatch){
+   const empty=document.createElement("div");empty.className="search-preview-empty";
+   const heading=document.createElement("strong");heading.textContent="No direct match. Another way in?";
+   const guidance=document.createElement("span");guidance.textContent="Try one of these existing rental categories, or browse the complete directory. Pricing and availability are confirmed with each provider.";
+   empty.append(heading,guidance);
+   searchPreviewList.prepend(empty);
  }
  searchPreviewStatus.textContent=matches.length===0?"No matching categories":matches.length+" matching "+(matches.length===1?"category":"categories")+(matches.length>4?" · top four shown":"");
  searchPreview.hidden=false;
