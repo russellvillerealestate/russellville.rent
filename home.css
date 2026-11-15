@@ -5810,3 +5810,103 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="baby-gear"]>.family-field-art{height:105px!important;min-height:0!important;background:#fff!important;color:#214c3f!important}
  #rental-results[data-view="grid"][data-layout="editorial"] .family-field-art>.directory-pictogram{display:block!important;position:relative!important}
 }
+
+/* 2026-11-15 / The event-and-jobsite essentials folio.
+   Original conceptual facilities against a River Valley landscape, never
+   claimed provider equipment or guaranteed local delivery.
+   Live comparison: https://stayarv.com/ and https://russellville.rent/
+   Design evidence: https://www.nngroup.com/articles/visual-hierarchy-ux-definition/
+   https://web.dev/learn/design/responsive-images
+   https://www.w3.org/WAI/WCAG22/Understanding/reflow.html
+   Only the editorial grid changes; maintain all provider facts, filters, list
+   layouts, saved categories, scripts, print and listing-update automation. */
+.restroom-field-scene,.restroom-field-overline,.restroom-field-headline,
+.restroom-field-credit,.restroom-field-checks{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="restrooms"]{
+ grid-column:span 2;display:grid;grid-template-columns:minmax(0,52%) minmax(0,48%);
+ overflow:hidden;border:1px solid #a6b8a7;border-radius:24px;background:#f5f3e8;
+ box-shadow:0 18px 45px #123e3328
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="restrooms"]>.restroom-field-art{
+ display:flex;position:relative;isolation:isolate;align-items:flex-start;flex-direction:column;
+ justify-content:space-between;gap:18px;width:100%;height:auto;min-height:470px;
+ padding:clamp(25px,3.4vw,41px);color:#fff9eb;background:#143e38;text-align:left
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .restroom-field-art::before{
+ content:"";display:block;position:absolute;inset:0;z-index:-1;width:auto;height:auto;
+ border:0;border-radius:0;background:linear-gradient(180deg,#0c312eeb,#0b353370 39%,#102d2c05 57%,#0c2c29ed 100%);pointer-events:none
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .restroom-field-art::after{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"] .restroom-field-art>.restroom-field-scene{
+ display:block;position:absolute;inset:0;z-index:-2;width:100%;height:100%;
+ max-width:none;object-fit:cover;transform:scale(1);transition:transform .55s ease
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="restrooms"]:hover .restroom-field-scene{transform:scale(1.025)}
+#rental-results[data-view="grid"][data-layout="editorial"] .restroom-field-art>.directory-pictogram,
+#rental-results[data-view="grid"][data-layout="editorial"] .restroom-field-art>small{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"] .restroom-field-art>.restroom-field-overline{
+ display:block;position:relative;color:#f9dcab;text-shadow:0 2px 9px #0b2f28;
+ font:800 .65rem/1.5 system-ui,-apple-system,sans-serif;letter-spacing:.14em
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .restroom-field-art>.restroom-field-headline{
+ display:block;position:relative;margin:auto 0 5px;max-width:14ch;color:#fff9e8;
+ font:400 clamp(2.45rem,4.3vw,4.1rem)/1.03 Georgia,"Times New Roman",serif;
+ letter-spacing:-.059em;text-wrap:balance;text-shadow:0 3px 15px #10302b99
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .restroom-field-headline em{color:#f6d8a5;font-weight:400}
+#rental-results[data-view="grid"][data-layout="editorial"] .restroom-field-art>.restroom-field-credit{
+ display:block;position:relative;color:#f7ead1;text-shadow:0 2px 8px #0b2f28;
+ font:750 .61rem/1.4 system-ui,-apple-system,sans-serif;letter-spacing:.095em
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="restrooms"]>.card-body{
+ min-width:0;padding:clamp(26px,3.7vw,44px);gap:10px;justify-content:center;
+ background:linear-gradient(140deg,#fffdf5,#eef1e9)
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="restrooms"] .card-body h3{
+ font:400 clamp(1.9rem,3.2vw,2.8rem)/1.12 Georgia,"Times New Roman",serif;
+ letter-spacing:-.045em;color:#24483c;text-wrap:balance
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .restroom-field-checks{
+ display:grid;grid-template-columns:minmax(0,1fr);gap:8px;list-style:none;margin:9px 0 15px;
+ padding:14px 0;border-top:1px solid #d3ddd0;border-bottom:1px solid #d3ddd0
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .restroom-field-checks li{
+ display:flex;align-items:baseline;gap:12px;min-width:0;color:#2c5345;
+ font-size:.8rem;font-weight:750;line-height:1.4
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .restroom-field-checks li span{
+ flex:0 0 24px;color:#986a35;font-size:.66rem;font-weight:850;letter-spacing:.07em
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="restrooms"] .card-body>.card-link{
+ display:flex;min-height:50px;align-items:center;margin-top:5px;padding:13px 17px;
+ border:0;border-radius:11px;background:#214d3f;color:#fffdf3;text-decoration:none
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="restrooms"] .card-body>.card-link:hover{background:#346651}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="restrooms"] .card-body>.card-link:focus-visible{
+ outline:3px solid #a96816;outline-offset:4px
+}
+@media(max-width:900px){
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="restrooms"]{grid-template-columns:minmax(0,1fr)}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="restrooms"]>.restroom-field-art{min-height:340px;padding:29px}
+ #rental-results[data-view="grid"][data-layout="editorial"] .restroom-field-art>.restroom-field-headline{font-size:clamp(2.35rem,6vw,3.5rem)}
+}
+@media(max-width:600px){
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="restrooms"]{grid-column:1/-1;border-radius:18px}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="restrooms"]>.restroom-field-art{min-height:310px;padding:24px}
+ #rental-results[data-view="grid"][data-layout="editorial"] .restroom-field-art>.restroom-field-headline{font-size:clamp(2.3rem,9vw,3.05rem)}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="restrooms"]>.card-body{padding:27px 24px}
+}
+@media(prefers-reduced-motion:reduce){
+ #rental-results .restroom-field-scene{transition:none!important}
+ #rental-results>.rental-card:hover .restroom-field-scene{transform:none!important}
+}
+@media print{
+ .restroom-field-scene,.restroom-field-overline,.restroom-field-headline,.restroom-field-credit,.restroom-field-checks{display:none!important}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="restrooms"]{
+   display:block!important;border:1px solid #aaa!important;box-shadow:none!important
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="restrooms"]>.restroom-field-art{
+   height:105px!important;min-height:0!important;background:#fff!important;color:#214d3f!important
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .restroom-field-art>.directory-pictogram{display:block!important;position:relative!important}
+}
