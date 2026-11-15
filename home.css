@@ -5910,3 +5910,102 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
  }
  #rental-results[data-view="grid"][data-layout="editorial"] .restroom-field-art>.directory-pictogram{display:block!important;position:relative!important}
 }
+
+
+/* 2026-11-15 / Twilight tee: an original, no-photo simulator discovery spread.
+   Compared https://stayarv.com/ with https://russellville.rent/
+   Evidence: Nielsen Norman Group visual hierarchy; Google web.dev responsive
+   media; W3C WCAG 2.2 reflow and focus visibility. No availability, price or
+   local-delivery claims were changed. All existing cards and scripts remain.
+   Scoped to the default editorial grid; list and filtered modes keep their
+   original concise representation. */
+.sim-night-scene,.sim-night-overline,.sim-night-headline,
+.sim-night-credit,.sim-night-questions{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="golf-simulators"]{
+ grid-column:1/-1;display:grid;grid-template-columns:minmax(0,57%) minmax(0,43%);
+ border:1px solid #7b9b8e;border-radius:25px;background:#f8f3e7;overflow:hidden;
+ box-shadow:0 20px 50px #0b332a26
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="golf-simulators"]>.sim-night-art{
+ position:relative;isolation:isolate;display:flex;align-items:flex-start;justify-content:space-between;
+ flex-direction:column;gap:18px;min-width:0;height:auto;min-height:450px;
+ padding:clamp(27px,4vw,46px);background:#142f30;color:#fffaf0;text-align:left
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .sim-night-art::before{
+ content:"";position:absolute;inset:0;z-index:-1;width:auto;height:auto;
+ border:0;border-radius:0;background:linear-gradient(180deg,#0b2529d9 0%,#102c3055 31%,#102d3018 56%,#082729e8 100%);pointer-events:none
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .sim-night-art::after{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"] .sim-night-art>.sim-night-scene{
+ display:block;position:absolute;inset:0;z-index:-2;max-width:none;width:100%;height:100%;
+ object-fit:cover;transition:transform .5s ease
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="golf-simulators"]:hover .sim-night-scene{transform:scale(1.025)}
+#rental-results[data-view="grid"][data-layout="editorial"] .sim-night-art>.directory-pictogram,
+#rental-results[data-view="grid"][data-layout="editorial"] .sim-night-art>small{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"] .sim-night-art>.sim-night-overline{
+ display:block;position:relative;color:#f6dba2;font:850 .68rem/1.45 system-ui,sans-serif;
+ letter-spacing:.14em;text-shadow:0 2px 10px #071e23
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .sim-night-art>.sim-night-headline{
+ display:block;position:relative;max-width:18ch;margin:auto 0 5px;color:#fffaf0;
+ font:400 clamp(2.6rem,4.5vw,4.5rem)/1.06 Georgia,"Times New Roman",serif;
+ letter-spacing:-.06em;text-wrap:balance;text-shadow:0 3px 16px #092429b8
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .sim-night-headline em{
+ color:#f3d297;font-weight:400
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .sim-night-art>.sim-night-credit{
+ display:block;position:relative;color:#e9e3cd;text-shadow:0 2px 10px #092429;
+ font:750 .66rem/1.45 system-ui,sans-serif;letter-spacing:.025em
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="golf-simulators"]>.card-body{
+ min-width:0;padding:clamp(28px,4.1vw,50px);justify-content:center;gap:10px;
+ background:linear-gradient(155deg,#faf9f0,#eef2e8)
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="golf-simulators"] .card-body h3{
+ color:#18473e;font:400 clamp(2rem,3.2vw,3.1rem)/1.11 Georgia,"Times New Roman",serif;
+ letter-spacing:-.052em;text-wrap:balance
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .sim-night-questions{
+ display:grid;gap:10px;margin:7px 0 12px;padding:17px 0;
+ border-block:1px solid #cbdad0;list-style:none
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .sim-night-questions li{
+ display:grid;grid-template-columns:25px minmax(0,1fr);gap:12px;color:#2b5147;
+ font-size:.84rem;font-weight:650;line-height:1.45
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .sim-night-questions span{
+ color:#9a6838;font-size:.71rem;font-weight:850;letter-spacing:.04em
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="golf-simulators"] .card-body>.card-link{
+ display:flex;align-items:center;min-height:50px;margin-top:6px;padding:12px 18px;
+ border:0;border-radius:11px;background:#174b42;color:#fffdf2;text-decoration:none
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="golf-simulators"] .card-body>.card-link:hover{background:#2e6558}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="golf-simulators"] .card-body>.card-link:focus-visible{outline:3px solid #a45f19;outline-offset:4px}
+@media(max-width:900px){
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="golf-simulators"]{grid-template-columns:minmax(0,1fr)}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="golf-simulators"]>.sim-night-art{min-height:370px;padding:33px}
+ #rental-results[data-view="grid"][data-layout="editorial"] .sim-night-art>.sim-night-headline{font-size:clamp(2.5rem,6.2vw,3.8rem)}
+}
+@media(max-width:600px){
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="golf-simulators"]{border-radius:18px}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="golf-simulators"]>.sim-night-art{min-height:330px;padding:25px}
+ #rental-results[data-view="grid"][data-layout="editorial"] .sim-night-art>.sim-night-headline{font-size:clamp(2.3rem,9vw,3.25rem)}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="golf-simulators"]>.card-body{padding:28px 24px}
+}
+@media(prefers-reduced-motion:reduce){
+ #rental-results .sim-night-scene{transition:none!important}
+ #rental-results>.rental-card:hover .sim-night-scene{transform:none!important}
+}
+@media print{
+ .sim-night-scene,.sim-night-overline,.sim-night-headline,.sim-night-credit,.sim-night-questions{display:none!important}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="golf-simulators"]{
+  display:block!important;border:1px solid #aaa!important;box-shadow:none!important
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="golf-simulators"]>.sim-night-art{
+  height:105px!important;min-height:0!important;background:#fff!important;color:#174b42!important
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .sim-night-art>.directory-pictogram{display:block!important;position:relative!important}
+}
