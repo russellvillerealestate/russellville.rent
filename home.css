@@ -5596,3 +5596,120 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   display:block!important;position:relative!important;transform:none!important
  }
 }
+
+
+/* 2026-11-15 | Mobile storage space folio. Inspected live stayarv.com and
+   russellville.rent before redesign. StayARV-informed immersive scale, original
+   conceptual vector artwork; no inventory/delivery claim. Sources: NN/g visual
+   hierarchy; web.dev responsive design and CLS; W3C WCAG 2.2 reflow, visible
+   focus and reduced motion. Only unfiltered editorial grid enlarges; existing
+   listings, filters, search, saved categories, list/print and workflow remain. */
+.portable-space-overline,.portable-space-scene,.portable-space-headline,
+.portable-space-caption,.portable-space-checks{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="mobile-storage"]{
+  grid-column:span 2;display:grid;grid-template-columns:minmax(0,44%) minmax(0,56%);
+  background:#fcf9f1;border:1px solid #a1b3a4;border-radius:24px;
+  box-shadow:0 20px 46px #183a3424;overflow:hidden
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="mobile-storage"]>.portable-space-poster{
+  position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:flex-start;
+  justify-content:space-between;gap:22px;min-width:0;min-height:515px;
+  width:100%;height:auto;padding:clamp(25px,3.2vw,38px);
+  color:#fffcf1;background:#153c38;text-align:left
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .portable-space-poster::before{
+  display:block;position:absolute;inset:0;z-index:-1;content:"";
+  width:auto;height:auto;border:0;border-radius:0;
+  background:linear-gradient(180deg,#0e3335df 0%,#0e33357a 38%,#102d2a05 63%,#0b272ae3 100%);
+  pointer-events:none
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .portable-space-poster::after{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"] .portable-space-poster>.portable-space-scene{
+  display:block;position:absolute;inset:0;z-index:-2;width:100%;height:100%;
+  object-fit:cover;transform:scale(1);transition:transform .6s ease
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="mobile-storage"]:hover .portable-space-scene{
+  transform:scale(1.035)
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .portable-space-poster>.directory-pictogram,
+#rental-results[data-view="grid"][data-layout="editorial"] .portable-space-poster>small{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"] .portable-space-poster>.portable-space-overline{
+  display:block;position:relative;max-width:100%;color:#ffdfa0;
+  font:800 .62rem/1.45 system-ui,-apple-system,sans-serif;letter-spacing:.16em
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .portable-space-poster>.portable-space-headline{
+  display:block;position:relative;max-width:13ch;margin:auto 0 9px;
+  color:#fff8e9;font:400 clamp(2.1rem,3.75vw,3.25rem)/1.03 Georgia,"Times New Roman",serif;
+  letter-spacing:-.052em;text-wrap:balance;text-shadow:0 2px 14px #0e302b8c
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .portable-space-headline em{
+  color:#f5d8a3;font-style:italic
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .portable-space-poster>.portable-space-caption{
+  display:block;position:relative;max-width:34ch;color:#fff9e9;
+  font:650 .66rem/1.5 system-ui,-apple-system,sans-serif;letter-spacing:.015em
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="mobile-storage"]>.card-body{
+  min-width:0;padding:clamp(24px,3.4vw,42px);
+  background:linear-gradient(145deg,#fffdf8,#f1f1e7)
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="mobile-storage"] .card-body h3{
+  color:#1e4036;font:400 clamp(1.9rem,2.8vw,2.45rem)/1.13 Georgia,"Times New Roman",serif;
+  letter-spacing:-.045em;text-wrap:balance
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="mobile-storage"] .card-body>.status{
+  line-height:1.65
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .portable-space-checks{
+  display:grid;grid-template-columns:1fr;gap:7px;list-style:none;
+  margin:0 0 19px;padding:13px 0;border-top:1px solid #d4dbce;border-bottom:1px solid #d4dbce
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .portable-space-checks li{
+  display:flex;align-items:baseline;gap:12px;min-width:0;color:#285045;
+  font-size:.8rem;font-weight:750;line-height:1.4
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .portable-space-checks li span{
+  flex:0 0 23px;color:#956c39;font-size:.63rem;font-weight:900;letter-spacing:.08em
+}
+@media(max-width:840px){
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="mobile-storage"]{
+   grid-template-columns:minmax(0,1fr)
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="mobile-storage"]>.portable-space-poster{
+   min-height:330px;padding:28px
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .portable-space-poster>.portable-space-headline{
+   font-size:clamp(2.1rem,5vw,3rem);margin:16px 0 auto
+ }
+}
+@media(max-width:600px){
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="mobile-storage"]{
+   grid-column:1/-1;border-radius:18px
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="mobile-storage"]>.portable-space-poster{
+   min-height:300px;padding:24px
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="mobile-storage"]>.card-body{
+   padding:27px 24px
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .portable-space-poster>.portable-space-headline{
+   font-size:clamp(2.15rem,9vw,2.8rem)
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ #rental-results .portable-space-scene{transition:none!important}
+ #rental-results>.rental-card:hover .portable-space-scene{transform:none!important}
+}
+@media print{
+ .portable-space-scene,.portable-space-headline,.portable-space-overline,
+ .portable-space-caption,.portable-space-checks{display:none!important}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="mobile-storage"]{
+   display:block!important;border:1px solid #aaa!important;box-shadow:none!important
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="mobile-storage"]>.portable-space-poster{
+   min-height:0!important;height:105px!important;background:#fff!important;color:#173f33!important
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .portable-space-poster>.directory-pictogram{
+   display:block!important;position:relative!important
+ }
+}
