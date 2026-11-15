@@ -6222,3 +6222,158 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
  #rental-results[data-view="grid"][data-layout="editorial"] .fencefolio-art>span:not(.fencefolio-overline):not(.fencefolio-caption),
  #rental-results[data-view="grid"][data-layout="editorial"] .fencefolio-art>small{position:relative!important;inset:auto!important}
 }
+
+
+/* 2026-11-15 · The keepsake edition: photographic photo-booth discovery folio.
+   Compared live StayARV's immersive local scenery with the Russellville.Rent
+   atlas. A wide, editorial event chapter still links to the original provider
+   directory; a contextual town photograph is NOT an event or booth photograph.
+   Original RBS identity, provider facts and the full listing link remain intact.
+   Inspiration: NN/g visual hierarchy (contrast, scale, grouping);
+   Google web.dev responsive design and image geometry; W3C WCAG 2.2
+   reflow (1.4.10), visible focus (2.4.7) and target size (2.5.8).
+   Only unfiltered editorial grid is expanded; filtered/list/print stay compact. */
+.boothfolio-kicker,.boothfolio-title,.boothfolio-photo-note,.boothfolio-checks{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="photo-booths"]{
+  grid-column:1/-1;display:grid;grid-template-columns:minmax(0,53%) minmax(0,47%);
+  border:1px solid #aac0b1;border-radius:24px;overflow:hidden;background:#fffdf8;
+  box-shadow:0 20px 50px #143a3224
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="photo-booths"]>.boothfolio{
+  isolation:isolate;position:relative;display:flex;flex-direction:column;
+  align-items:flex-start;justify-content:flex-end;gap:15px;min-width:0;
+  width:100%;height:auto;min-height:510px;padding:clamp(28px,4.2vw,48px);
+  text-align:left;border:0;color:#fff8e9;
+  background:linear-gradient(180deg,#122f29b5 0%,#13372d65 35%,#071c1cef 100%),
+    url("assets/downtown-russellville-sunset.jpg") center / cover no-repeat
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="photo-booths"]>.boothfolio::before{
+  content:"";position:absolute;inset:17px;z-index:-1;
+  border:1px solid #f5e5b879;border-radius:10px;pointer-events:none
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="photo-booths"]>.boothfolio::after{
+  content:"";position:absolute;right:35px;bottom:90px;width:65px;height:84px;
+  border:7px solid #fff6de9c;border-bottom-width:23px;
+  border-radius:3px;transform:rotate(10deg);opacity:.55;
+  pointer-events:none;z-index:-1
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .boothfolio>.boothfolio-kicker{
+  display:block;position:absolute;left:clamp(28px,4.2vw,48px);top:36px;
+  max-width:66%;font-size:.68rem;line-height:1.6;font-weight:850;
+  letter-spacing:.15em;color:#f9dea9;text-transform:uppercase
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .boothfolio>.boothfolio-title{
+  display:block;position:relative;z-index:1;max-width:10ch;
+  margin-top:auto;color:#fffdf2;letter-spacing:-.058em;
+  font:400 clamp(3rem,5vw,5.6rem)/.98 Georgia,"Times New Roman",serif;
+  text-wrap:balance;text-shadow:0 4px 24px #06221ed6
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .boothfolio>.boothfolio-title em{
+  font-weight:400;color:#f2d5a0
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .boothfolio>.boothfolio-photo-note{
+  display:block;position:relative;z-index:1;margin-top:3px;
+  max-width:50ch;color:#f7e8cd;font-size:.65rem;line-height:1.5;
+  font-weight:700;letter-spacing:.02em;text-shadow:0 2px 10px #061c1b
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .boothfolio>img{
+  position:absolute;right:30px;top:75px;z-index:1;width:116px;height:82px;
+  padding:9px;border:1px solid #f0debc;border-radius:10px;
+  background:#fffef7;box-shadow:0 8px 27px #071d1b8a;object-fit:contain
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .boothfolio>img+span{
+  position:absolute;right:25px;top:166px;z-index:1;width:126px;max-width:126px;
+  color:#fef7e8;text-align:center;font-size:.67rem;line-height:1.35;
+  text-shadow:0 2px 8px #071d1b
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .boothfolio>small{
+  position:absolute;right:25px;top:195px;z-index:1;width:126px;
+  padding:4px 3px;background:#fff3da;border-radius:5px;
+  color:#285044;text-align:center;font-size:.48rem;letter-spacing:.07em
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="photo-booths"]>.card-body{
+  min-width:0;justify-content:center;gap:11px;
+  padding:clamp(28px,4vw,50px);
+  background:radial-gradient(ellipse at 100% 0%,#e7f0e6 0%,transparent 54%),#fffdf8
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="photo-booths"]>.card-body h3{
+  color:#1a4b3e;font:400 clamp(2rem,3.1vw,3rem)/1.1 Georgia,"Times New Roman",serif;
+  letter-spacing:-.045em;text-wrap:balance
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .boothfolio-checks{
+  display:grid;gap:9px;list-style:none;
+  margin:8px 0;padding:15px 0;border-block:1px solid #cbdbce
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .boothfolio-checks li{
+  display:grid;grid-template-columns:28px minmax(0,1fr);
+  align-items:start;gap:10px;color:#254b3f;font-size:.85rem;
+  line-height:1.43;font-weight:660
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .boothfolio-checks li span{
+  color:#95652d;font-size:.72rem;font-weight:850;letter-spacing:.05em
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="photo-booths"] .card-link{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:10px;min-height:49px;padding:13px 17px;margin-top:8px;
+  border:0;border-radius:11px;background:#1d5646;color:#fffdf3;
+  text-decoration:none;line-height:1.35
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="photo-booths"] .card-link:hover{background:#2b6c53}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="photo-booths"] .card-link:focus-visible{
+  outline:3px solid #a86419;outline-offset:4px
+}
+@media(max-width:900px){
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="photo-booths"]{
+    grid-template-columns:minmax(0,1fr)
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="photo-booths"]>.boothfolio{min-height:380px}
+  #rental-results[data-view="grid"][data-layout="editorial"] .boothfolio>.boothfolio-title{
+    font-size:clamp(2.9rem,7vw,4.1rem)
+  }
+}
+@media(max-width:600px){
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="photo-booths"]{border-radius:18px}
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="photo-booths"]>.boothfolio{
+    min-height:365px;padding:25px
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .boothfolio>.boothfolio-kicker{
+    top:25px;left:25px;max-width:58%;font-size:.58rem
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .boothfolio>.boothfolio-title{
+    font-size:clamp(2.4rem,10.3vw,3.6rem)
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .boothfolio>img{
+    right:22px;top:65px;width:92px;height:65px
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .boothfolio>img+span{
+    right:16px;top:138px;width:104px;max-width:104px;font-size:.58rem
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .boothfolio>small{
+    right:17px;top:162px;width:102px;font-size:.44rem
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .boothfolio::after{
+    right:30px;bottom:70px;width:43px;height:56px
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="photo-booths"]>.card-body{
+    padding:29px 24px
+  }
+}
+@media print{
+  .boothfolio-kicker,.boothfolio-title,.boothfolio-photo-note,.boothfolio-checks{display:none!important}
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="photo-booths"]{
+    display:block!important;box-shadow:none!important;border:1px solid #777!important
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="photo-booths"]>.boothfolio{
+    min-height:0!important;height:125px!important;padding:10px!important;
+    background:#fff!important;color:#17392f!important;display:flex!important;
+    flex-direction:column!important;align-items:center!important;justify-content:center!important
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .boothfolio::before,
+  #rental-results[data-view="grid"][data-layout="editorial"] .boothfolio::after{display:none!important}
+  #rental-results[data-view="grid"][data-layout="editorial"] .boothfolio>img,
+  #rental-results[data-view="grid"][data-layout="editorial"] .boothfolio>img+span,
+  #rental-results[data-view="grid"][data-layout="editorial"] .boothfolio>small{
+    position:static!important;inset:auto!important;box-shadow:none!important;
+    color:#17392f!important;text-shadow:none!important
+  }
+}
