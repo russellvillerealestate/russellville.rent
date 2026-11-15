@@ -4960,3 +4960,152 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 @media print{
   .trailer-route-eyebrow,.trailer-route-title,.trailer-route-photo-note{display:none!important}
 }
+
+
+/* 2026-11-15 | A gathering-day feature, not a photograph of rental inventory.
+   Reviewed live stayarv.com and russellville.rent before design. Borrowed
+   StayARV's large local-photo / restrained typography hierarchy, not its layout.
+   The site's existing Lake Dardanelle sunset is visibly identified as scenery.
+   The original Happy Jumpers logo and directory copy remain intact. Only
+   unfiltered editorial grid receives the large feature: filtered results,
+   compact/list view, provider details and listing automation are unchanged.
+   Sources: NN/g Good Visual Design (hierarchy & grid), web.dev Responsive
+   Web Design Basics (reflow, sizing), W3C WCAG 2.2 (1.4.10, 2.4.7, 2.5.8).
+   No new request, animation, font, script or external tracking. */
+.party-riverlight-eyebrow,
+.party-riverlight-title,
+.party-riverlight-photo-note{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="party"]{
+  border:1px solid #b2a18e;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 22px 55px #182e2b26;
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="party"]>.party-riverlight{
+  position:relative;isolation:isolate;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  align-items:flex-start;gap:8px;text-align:left;
+  height:auto;min-height:355px;min-width:0;
+  padding:clamp(28px,3.2vw,42px);
+  background:#193e3b;color:#fff8eb;border:0;
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="party"]>.party-riverlight::before{
+  inset:0;
+  background:
+    linear-gradient(180deg,#0b2b2fbb 0%,#0c302fbb 39%,#082823f2 100%),
+    url("assets/lake-dardanelle-sunset.jpg") center 54% / cover no-repeat;
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="party"]>.party-riverlight::after{
+  inset:14px;border:1px solid #f5dbaa78;border-radius:9px;
+  background:none;pointer-events:none;
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .party-riverlight>.party-riverlight-eyebrow{
+  display:block;position:absolute;left:clamp(28px,3.2vw,42px);right:28px;top:29px;
+  max-width:36ch;margin:0;padding:0;
+  color:#ffe1ad;background:none;border-radius:0;box-shadow:none;
+  font:.8 0.65rem/1.55 system-ui,sans-serif;
+  font-weight:820;letter-spacing:.16em;text-transform:uppercase;
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .party-riverlight>.party-riverlight-title{
+  display:block;margin:auto 0 16px;max-width:15ch;
+  color:#fffdf4;text-align:left;text-shadow:0 3px 19px #05251fe6;
+  font:400 clamp(2.5rem,3.8vw,4rem)/1.02 Georgia,"Times New Roman",serif;
+  letter-spacing:-.055em;
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .party-riverlight>.party-riverlight-title em{
+  color:#f4d9a5;font-weight:400;
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .party-riverlight>img,
+#rental-results[data-view="grid"][data-layout="editorial"] .party-riverlight>.logo-fallback-icon{
+  position:relative;z-index:1;flex:none;
+  width:108px;height:72px;max-width:100%;max-height:none;
+  padding:8px;border:1px solid #f5dfb8;border-radius:10px;
+  background:#fffcf4;object-fit:contain;
+  box-shadow:0 8px 23px #071e1ad1;
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .party-riverlight>img+span,
+#rental-results[data-view="grid"][data-layout="editorial"] .party-riverlight>.logo-fallback-icon+span{
+  padding:0;border-radius:0;background:none;box-shadow:none;
+  color:#fffdf1;font-size:1.04rem;font-weight:800;line-height:1.3;
+  text-shadow:0 2px 10px #061f1b;
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .party-riverlight>small{
+  padding:0;border-radius:0;background:none;
+  color:#f4ddba;font-size:.61rem;line-height:1.5;letter-spacing:.12em;
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .party-riverlight>.party-riverlight-photo-note{
+  display:block;max-width:43ch;margin-top:11px;padding:0;
+  border-radius:0;background:none;box-shadow:none;
+  color:#f5e6ce;font-size:.64rem;font-weight:600;line-height:1.5;
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="party"]>.card-body{
+  min-width:0;justify-content:center;gap:6px;
+  padding:clamp(27px,3.4vw,46px);
+  background:linear-gradient(135deg,#fffaf0,#f5eee5);
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="party"] .card-body h3{
+  font:400 clamp(2.05rem,3.1vw,3.05rem)/1.08 Georgia,"Times New Roman",serif;
+  letter-spacing:-.052em;color:#3e3b36;text-wrap:balance;
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="party"] .card-body>p:not(.eyebrow){
+  max-width:57ch;line-height:1.65;
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="party"] .card-actions .card-link,
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="party"] .card-body>.card-link{
+  min-height:51px;display:flex;align-items:center;
+  padding:12px 16px;border:0;border-radius:10px;
+  color:#fff9ef;background:#255244;text-decoration:none;
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="party"] .card-link:hover{
+  background:#326e58;
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="party"] .card-link:focus-visible{
+  outline:3px solid #a76b1c;outline-offset:4px;
+}
+@media screen and (min-width:760px){
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="party"]{
+    display:grid;grid-template-columns:minmax(0,.97fr) minmax(0,1.03fr);
+    min-height:500px;
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="party"]>.party-riverlight{
+    min-height:500px;height:100%;
+  }
+}
+@media screen and (max-width:759px){
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="party"]>.party-riverlight{
+    min-height:350px;padding:30px 26px 25px;
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .party-riverlight>.party-riverlight-eyebrow{
+    left:26px;top:26px;right:24px;font-size:.59rem;
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .party-riverlight>.party-riverlight-title{
+    font-size:clamp(2.45rem,7.3vw,3.4rem);
+  }
+}
+@media screen and (max-width:600px){
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="party"]>.party-riverlight{
+    min-height:335px;padding:26px 23px 23px;
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .party-riverlight>.party-riverlight-eyebrow{
+    left:23px;top:24px;right:20px;
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .party-riverlight>.party-riverlight-title{
+    font-size:clamp(2.28rem,9vw,3.05rem);
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="party"]>.card-body{
+    padding:27px 23px;
+  }
+}
+@media print{
+  .party-riverlight-eyebrow,.party-riverlight-title,.party-riverlight-photo-note{display:none!important}
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="party"]>.party-riverlight{
+    min-height:0!important;background:#fff!important;color:#173c33!important;
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="party"]>.party-riverlight::before,
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="party"]>.party-riverlight::after{
+    display:none!important;
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .party-riverlight>img+span{
+    color:#173c33!important;text-shadow:none;
+  }
+}
