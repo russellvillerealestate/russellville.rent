@@ -6479,3 +6479,89 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
     scroll-margin-top:235px;
   }
 }
+
+/* 2026-11-15 | Portable-building architectural field guide.
+   Compared live stayarv.com and russellville.rent; follow the former's
+   immersive scale while retaining the latter's real dealer facts.
+   Original artwork is illustrative, not a photo of inventory.
+   NN/g visual hierarchy: scale, contrast and grouped information;
+   web.dev responsive reflow; WCAG 2.2 focus and motion preferences.
+   Original logo is retained, including in compact/search/list/print views.
+   No data, search logic or listing automation changes. */
+.sheds-folio{display:none}
+@media screen and (min-width:1001px){
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="sheds"]{
+  grid-column:span 2;display:grid;
+  grid-template-columns:minmax(0,1.07fr) minmax(0,.93fr);
+  grid-template-rows:minmax(440px,auto);min-width:0;
+  border:1px solid #a2b9a5;border-radius:22px;
+  box-shadow:0 22px 52px #153b3125;overflow:hidden;
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="sheds"]>.sheds-folio{
+  position:relative;isolation:isolate;display:block;min-height:440px;overflow:hidden;
+  grid-column:1;grid-row:1;background:#1c4b3c;color:#fff9e9;
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .sheds-folio-scene{
+  position:absolute;inset:0;display:block;width:100%;height:100%;
+  transition:transform .4s ease;
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .sheds-folio::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,#102e29e8 0%,#102e297a 36%,transparent 61%,#102e29bd 100%);
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .sheds-folio-heading{
+  position:absolute;z-index:1;top:clamp(25px,3vw,43px);left:clamp(25px,3vw,42px);right:22px;
+  display:flex;flex-direction:column;gap:13px;
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .sheds-folio-heading>span{
+  color:#f9dc9e;font-size:.63rem;font-weight:850;letter-spacing:.15em;line-height:1.45;
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .sheds-folio-heading>strong{
+  max-width:13ch;font:400 clamp(2.3rem,3.5vw,3.85rem)/1.04 Georgia,"Times New Roman",serif;
+  letter-spacing:-.055em;text-wrap:balance;text-shadow:0 2px 7px #09241d;
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .sheds-folio-heading em{font-style:italic;color:#ffdda0}
+ #rental-results[data-view="grid"][data-layout="editorial"] .sheds-folio-note{
+  position:absolute;z-index:1;left:25px;right:24px;bottom:126px;
+  margin:0;color:#fff6e6;font-size:.64rem;line-height:1.5;text-shadow:0 2px 6px #0b261e;
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="sheds"]>.brand-feature{
+  grid-column:1;grid-row:1;z-index:2;align-self:end;justify-self:stretch;
+  display:grid;grid-template-columns:68px minmax(0,1fr);grid-template-rows:auto auto;
+  align-content:center;align-items:center;justify-items:start;gap:5px 13px;
+  min-height:0;height:94px;margin:0 20px 19px;padding:12px 17px;
+  text-align:left;overflow:hidden;border-radius:13px;
+  border:1px solid #ffffffd9;background:#fffdf2f0;box-shadow:0 11px 26px #061f1a64;
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="sheds"]>.brand-feature::before,
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="sheds"]>.brand-feature::after{display:none}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="sheds"]>.brand-feature img{
+  grid-column:1;grid-row:1/3;width:68px;max-width:68px;height:56px;max-height:56px;
+  object-fit:contain;filter:none;transform:none;
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="sheds"]>.brand-feature span{
+  grid-column:2;grid-row:1;min-width:0;padding:0;background:none;box-shadow:none;
+  border-radius:0;text-align:left;color:#1c4638;font-size:.83rem;line-height:1.2;
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="sheds"]>.brand-feature small{
+  grid-column:2;grid-row:2;padding:0;background:none;color:#61705d;letter-spacing:.08em;
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="sheds"]>.card-body{
+  grid-column:2;grid-row:1;min-width:0;justify-content:center;
+  padding:clamp(30px,3.7vw,48px);
+  background:radial-gradient(ellipse at 90% 0%,#e9efe5,transparent 55%),#fffdf7;
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="sheds"]>.card-body h3{
+  color:#1b483a;font:400 clamp(1.9rem,2.8vw,2.95rem)/1.1 Georgia,"Times New Roman",serif;
+  letter-spacing:-.05em;text-wrap:balance;
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="sheds"]>.card-body .card-link{
+  min-height:45px;display:inline-flex;align-items:center;font-weight:800;
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="sheds"]:hover .sheds-folio-scene{transform:scale(1.035)}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="sheds"] .card-link:focus-visible{outline:3px solid #a86816;outline-offset:4px}
+}
+@media screen and (min-width:1001px) and (prefers-reduced-motion:reduce){
+ #rental-results .rental-card[data-category="sheds"] .sheds-folio-scene{transition:none!important;transform:none!important}
+}
+@media print{.sheds-folio{display:none!important}}
