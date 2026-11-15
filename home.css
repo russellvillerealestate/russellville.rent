@@ -6009,3 +6009,98 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
  }
  #rental-results[data-view="grid"][data-layout="editorial"] .sim-night-art>.directory-pictogram{display:block!important;position:relative!important}
 }
+
+/* 2026-11-15: River Valley cycling editorial folio.
+   Compared live https://stayarv.com/ and https://russellville.rent/.
+   References: NN/g visual hierarchy, web.dev responsive imagery,
+   W3C WCAG 2.2 reflow and focus guidance.
+   Conceptual art, not an official route or verified provider inventory.
+   Editorial view only: list/filter/saved/print retain original card. */
+.ride-folio-copy,.ride-folio-checklist{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="bicycles"]{
+ grid-column:1/-1;display:grid;grid-template-columns:minmax(0,54%) minmax(0,46%);
+ overflow:hidden;border:1px solid #90a9a0;border-radius:24px;
+ background:#f4f5ed;box-shadow:0 18px 46px #10392f27
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="bicycles"]>.riverfield-tile{
+ display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;
+ height:auto;min-width:0;min-height:450px;padding:clamp(27px,3.4vw,44px);
+ color:#fff9e7;background:#163d35;text-align:left
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="bicycles"]>.riverfield-tile::after{
+ background:linear-gradient(180deg,#12382fa8 0%,#12382f30 39%,#0b312aea 100%)
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="bicycles"]>.riverfield-tile>.riverfield-eyebrow,
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="bicycles"]>.riverfield-tile>.directory-pictogram,
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="bicycles"]>.riverfield-tile>small{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="bicycles"] .ride-folio-copy{
+ position:relative;z-index:2;display:flex;flex:1;flex-direction:column;
+ justify-content:space-between;gap:20px;max-width:100%
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .ride-folio-kicker{
+ color:#fff0c2;font:850 .67rem/1.5 system-ui,sans-serif;letter-spacing:.13em;
+ text-shadow:0 2px 10px #102b27
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .ride-folio-copy>strong{
+ margin:auto 0 0;color:#fffbea;max-width:15ch;
+ font:400 clamp(2.8rem,5vw,5.2rem)/1.02 Georgia,"Times New Roman",serif;
+ letter-spacing:-.06em;text-wrap:balance;text-shadow:0 3px 17px #102a26
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .ride-folio-copy>strong em{color:#f5d19b;font-weight:400}
+#rental-results[data-view="grid"][data-layout="editorial"] .ride-folio-credit{
+ max-width:48ch;color:#f8eddd;font:700 .65rem/1.45 system-ui,sans-serif;
+ text-shadow:0 2px 9px #102b27
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="bicycles"]>.card-body{
+ min-width:0;justify-content:center;gap:10px;
+ padding:clamp(28px,4vw,48px);background:linear-gradient(145deg,#fffcf4,#ecf3e9)
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="bicycles"] .card-body h3{
+ color:#19473a;font:400 clamp(2rem,3.3vw,3.1rem)/1.11 Georgia,"Times New Roman",serif;
+ letter-spacing:-.045em;text-wrap:balance
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .ride-folio-checklist{
+ display:block;margin:6px 0 9px;padding:15px 0;
+ border-block:1px solid #c5d9cd
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .ride-folio-checklist>span{
+ display:block;font:850 .63rem/1.5 system-ui,sans-serif;
+ letter-spacing:.09em;color:#946532
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .ride-folio-checklist ol{
+ display:grid;gap:8px;margin:12px 0 0;padding:0;list-style:none
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .ride-folio-checklist li{
+ display:grid;grid-template-columns:25px minmax(0,1fr);gap:10px;
+ color:#295246;font-size:.83rem;line-height:1.45;font-weight:680
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .ride-folio-checklist b{
+ color:#95602e;font-size:.68rem;letter-spacing:.04em
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="bicycles"] .card-body>.card-link{
+ display:flex;min-height:49px;align-items:center;margin-top:5px;padding:12px 18px;
+ background:#205542;border:0;border-radius:11px;color:#fffdf3;text-decoration:none
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="bicycles"] .card-body>.card-link:hover{background:#306b52}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="bicycles"] .card-body>.card-link:focus-visible{outline:3px solid #a5621c;outline-offset:4px}
+@media(max-width:900px){
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="bicycles"]{grid-template-columns:minmax(0,1fr)}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="bicycles"]>.riverfield-tile{min-height:360px;padding:30px}
+ #rental-results[data-view="grid"][data-layout="editorial"] .ride-folio-copy>strong{font-size:clamp(2.65rem,7vw,3.95rem)}
+}
+@media(max-width:600px){
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="bicycles"]{border-radius:18px}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="bicycles"]>.riverfield-tile{min-height:320px;padding:24px}
+ #rental-results[data-view="grid"][data-layout="editorial"] .ride-folio-copy>strong{font-size:clamp(2.5rem,11vw,3.35rem)}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="bicycles"]>.card-body{padding:27px 24px}
+}
+@media(prefers-reduced-motion:reduce){
+ #rental-results .rental-card[data-category="bicycles"] .riverfield-scene{transition:none!important}
+ #rental-results .rental-card[data-category="bicycles"]:hover .riverfield-scene{transform:none!important}
+}
+@media print{
+ .ride-folio-copy,.ride-folio-checklist{display:none!important}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="bicycles"]{display:block!important;border:1px solid #aaa!important;box-shadow:none!important}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="bicycles"]>.riverfield-tile{height:105px!important;min-height:0!important;background:#fff!important}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="bicycles"]>.riverfield-tile>.directory-pictogram{display:block!important;top:auto!important;right:auto!important;position:relative!important;transform:none!important}
+}
