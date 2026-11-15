@@ -5375,3 +5375,118 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   .lending-poster-headline,.lending-poster-kicker,.lending-poster-note,.lending-questions{display:none!important}
   #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-loans"]>.lending-poster{background:#fff!important;color:#173c33!important;min-height:0!important}
 }
+
+
+/* 2026-11-15 / Yard greeting illustration: a locally appropriate celebration
+   folio, not an operator design catalog or evidence of available inventory.
+   Compared live stayarv.com and russellville.rent; borrowed the reference's
+   bold scale and generous composition but created an original graphic.
+   NN/g: visual hierarchy through contrast/scale/grouping; web.dev: intrinsic
+   artwork dimensions and stable layout; W3C WCAG 2.2: focus, reflow, target
+   size, and reduced motion. No JavaScript, external media or new requests.
+   Scoped to the default unfiltered editorial grid. Filtered grid/list and
+   print keep their existing compact category links and honest caveats. */
+.greeting-poster-scene,.greeting-poster-kicker,.greeting-poster-title,
+.greeting-poster-note,.greeting-checkpoints{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="yard-signs"]{
+  border:1px solid #d6b88e;border-radius:23px;overflow:hidden;
+  background:#fffaf1;box-shadow:0 19px 49px #234d3a20
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="yard-signs"]>.greeting-poster{
+  position:relative;isolation:isolate;display:flex;flex-direction:column;
+  justify-content:space-between;align-items:flex-start;gap:16px;min-width:0;
+  width:100%;height:auto;min-height:485px;padding:clamp(27px,3.2vw,42px);
+  background:#174c43;color:#fff8e9;text-align:left
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="yard-signs"]>.greeting-poster::before{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="yard-signs"]>.greeting-poster::after{
+  content:"";position:absolute;inset:0;z-index:0;width:auto;height:auto;
+  border:0;border-radius:0;pointer-events:none;
+  background:linear-gradient(180deg,#092d2ac9 0%,transparent 32%,#0d332b4d 57%,#082b27eb 100%)
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .greeting-poster>.greeting-poster-scene{
+  display:block;position:absolute;inset:0;z-index:-1;
+  width:100%;height:100%;max-width:none;object-fit:cover
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .greeting-poster>.directory-pictogram,
+#rental-results[data-view="grid"][data-layout="editorial"] .greeting-poster>small{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"] .greeting-poster>.greeting-poster-kicker{
+  display:block;position:relative;z-index:2;max-width:33ch;
+  font-size:.68rem;line-height:1.5;font-weight:850;letter-spacing:.16em;
+  color:#f6d99e;text-transform:uppercase
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .greeting-poster>.greeting-poster-title{
+  display:block;position:relative;z-index:2;margin:auto 0 0;max-width:15ch;
+  font:400 clamp(2.5rem,4vw,4.15rem)/1.03 Georgia,"Times New Roman",serif;
+  letter-spacing:-.055em;color:#fffaf1;text-shadow:0 3px 14px #061b19
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .greeting-poster>.greeting-poster-title em{
+  color:#f3d39d;font-weight:400
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .greeting-poster>.greeting-poster-note{
+  display:block;position:relative;z-index:2;margin-top:6px;max-width:45ch;
+  color:#f5e7d0;font-size:.68rem;line-height:1.5;font-weight:700
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="yard-signs"]>.card-body{
+  min-width:0;justify-content:center;gap:6px;
+  padding:clamp(27px,3.5vw,45px);background:#fffaf1
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="yard-signs"] .card-body h3{
+  font:400 clamp(2rem,3vw,3rem)/1.08 Georgia,"Times New Roman",serif;
+  letter-spacing:-.048em;color:#29483c;text-wrap:balance
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="yard-signs"] .card-body>p:not(.eyebrow){
+  max-width:57ch;line-height:1.65
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .greeting-checkpoints{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;list-style:none;padding:0;margin:10px 0 15px
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .greeting-checkpoints li{
+  min-width:0;padding:12px 11px;background:#f5ecd9;border:1px solid #e8d6b7;
+  border-radius:9px;color:#584a36;font-size:.71rem;font-weight:750;line-height:1.45
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .greeting-checkpoints li span{
+  display:block;margin-bottom:6px;color:#8b5b38;font-weight:900;
+  font-size:.68rem;letter-spacing:.08em
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="yard-signs"] .card-body>.card-link{
+  min-height:52px;display:flex;align-items:center;
+  margin-top:6px;padding:13px 18px;background:#245b47;color:#fffaf1;
+  border:0;border-radius:10px;text-decoration:none
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="yard-signs"] .card-body>.card-link:hover{background:#34745c}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="yard-signs"] .card-body>.card-link:focus-visible{
+  outline:3px solid #a96b16;outline-offset:4px
+}
+@media(min-width:901px){
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="yard-signs"]{
+    grid-column:span 2;display:grid;grid-template-columns:minmax(0,.97fr) minmax(0,1.03fr)
+  }
+}
+@media(min-width:601px) and (max-width:900px){
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="yard-signs"]{grid-column:span 2}
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="yard-signs"]>.greeting-poster{min-height:380px}
+}
+@media(max-width:600px){
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="yard-signs"]>.greeting-poster{
+    min-height:360px;padding:26px 23px
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .greeting-poster>.greeting-poster-title{
+    font-size:clamp(2.25rem,9vw,3.25rem)
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="yard-signs"]>.card-body{padding:27px 23px}
+  #rental-results[data-view="grid"][data-layout="editorial"] .greeting-checkpoints{grid-template-columns:1fr;gap:7px}
+  #rental-results[data-view="grid"][data-layout="editorial"] .greeting-checkpoints li{display:flex;align-items:center;gap:11px;padding:11px 13px}
+  #rental-results[data-view="grid"][data-layout="editorial"] .greeting-checkpoints li span{margin:0}
+}
+@media print{
+  .greeting-poster-scene,.greeting-poster-kicker,.greeting-poster-title,
+  .greeting-poster-note,.greeting-checkpoints{display:none!important}
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="yard-signs"]>.greeting-poster{
+    min-height:0!important;background:#fff!important;color:#173f33!important
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .greeting-poster>.directory-pictogram{
+    display:block!important;position:relative!important;transform:none!important
+  }
+}
