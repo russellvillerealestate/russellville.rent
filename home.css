@@ -4836,3 +4836,127 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   #rental-results .moving-postcard-script,
   #rental-results .moving-postcard-disclaimer{display:none!important}
 }
+
+
+/* 2026-11-15 / The hauling route: a photographic River Valley editorial feature.
+   Compared both live https://stayarv.com/ and https://russellville.rent/
+   before design; use the former's immersive scale, not its exact layout.
+   The existing Lake Dardanelle photograph is contextual local scenery only:
+   visible caption distinguishes it from any trailer or provider inventory.
+   Existing U-Haul featured logo, provider text, pricing caveats, URL and search
+   controls are unchanged. The feature appears only in the unfiltered editorial
+   grid; ordinary filtered grid, list view and print retain compact cards.
+   Guidance: Nielsen Norman Group visual hierarchy; Google web.dev responsive
+   design and intrinsic image sizing; W3C WCAG 2.2 1.4.10 reflow, 2.4.7
+   focus visibility and 2.5.8 target size. No animation is required. */
+.trailer-route-eyebrow,.trailer-route-title,.trailer-route-photo-note{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="trailers"]{
+  border:1px solid #739a88;border-radius:24px;overflow:hidden;
+  box-shadow:0 22px 52px #113b3223;
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="trailers"]>.trailer-route-poster{
+  isolation:isolate;position:relative;display:flex;flex-direction:column;
+  justify-content:flex-end;align-items:flex-start;gap:8px;
+  height:auto;min-height:335px;min-width:0;
+  padding:clamp(25px,3.2vw,42px);text-align:left;
+  border:0;border-radius:0;
+  background:
+    linear-gradient(180deg,#092d29b8 0%,#092e29b3 40%,#08231fe8 100%),
+    url("assets/lake-dardanelle-docks.jpg") center 55% / cover no-repeat;
+  color:#fff9e9;
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="trailers"]>.trailer-route-poster::after{
+  content:"";position:absolute;inset:15px;
+  border:1px solid #f3daa569;border-radius:8px;pointer-events:none;
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .trailer-route-poster>.trailer-route-eyebrow{
+  display:block;position:absolute;top:32px;left:clamp(25px,3.2vw,42px);
+  right:35px;max-width:38ch;
+  color:#f5e1b8;font-size:.64rem;font-weight:820;
+  letter-spacing:.16em;line-height:1.6;text-transform:uppercase;
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .trailer-route-poster>.trailer-route-title{
+  display:block;margin:auto 0 14px;max-width:15ch;
+  color:#fff9ed;font:400 clamp(2.45rem,4vw,4.1rem)/1.04 Georgia,"Times New Roman",serif;
+  letter-spacing:-.052em;text-shadow:0 3px 18px #071f1a;
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .trailer-route-poster>.trailer-route-title em{
+  color:#f1d6a5;font-weight:400;
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .trailer-route-poster>img{
+  position:relative;z-index:1;width:112px;height:65px;max-width:100%;
+  padding:9px;object-fit:contain;flex:none;
+  background:#fffdf8;border:1px solid #f0dcb9;border-radius:9px;
+  box-shadow:0 8px 18px #041c17a6;
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .trailer-route-poster>img+span{
+  color:#fffdf2;font-size:.92rem;font-weight:830;line-height:1.3;
+  text-shadow:0 2px 12px #041f18;
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .trailer-route-poster>small{
+  color:#f2dfb9;font-size:.58rem;line-height:1.5;font-weight:780;
+  letter-spacing:.15em;
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .trailer-route-poster>.trailer-route-photo-note{
+  display:block;margin-top:13px;max-width:40ch;color:#f1e6d1;
+  font-size:.62rem;line-height:1.5;font-weight:650;
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="trailers"]>.card-body{
+  min-width:0;justify-content:center;gap:5px;
+  padding:clamp(26px,3.3vw,46px);
+  background:linear-gradient(135deg,#fffaf0,#f0f5eb);
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="trailers"] .card-body h3{
+  margin-bottom:12px;color:#143b31;
+  font:400 clamp(2rem,3.2vw,2.9rem)/1.08 Georgia,"Times New Roman",serif;
+  letter-spacing:-.055em;text-wrap:balance;
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="trailers"] .card-body>p:not(.eyebrow){
+  max-width:55ch;line-height:1.65;
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="trailers"] .card-link{
+  display:flex;align-items:center;min-height:52px;margin-top:auto;
+  padding:12px 17px;border:0;border-radius:9px;
+  color:#fff9ef;background:#17483b;text-decoration:none;
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="trailers"] .card-link:hover{
+  background:#276451;
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="trailers"] .card-link:focus-visible{
+  outline:3px solid #ab691c;outline-offset:4px;
+}
+@media screen and (min-width:901px){
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="trailers"]{
+    grid-column:span 2;display:grid;
+    grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);
+    min-height:490px;
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="trailers"]>.trailer-route-poster{
+    min-height:490px;height:100%;
+  }
+}
+@media screen and (min-width:601px) and (max-width:900px){
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="trailers"]{
+    grid-column:span 2;
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="trailers"]>.trailer-route-poster{
+    min-height:315px;
+  }
+}
+@media screen and (max-width:600px){
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="trailers"]>.trailer-route-poster{
+    min-height:318px;padding:29px 23px 24px;
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .trailer-route-poster>.trailer-route-eyebrow{
+    top:27px;left:23px;right:23px;font-size:.57rem;
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .trailer-route-poster>.trailer-route-title{
+    font-size:clamp(2.15rem,9.1vw,3.1rem);
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="trailers"]>.card-body{
+    padding:27px 23px;
+  }
+}
+@media print{
+  .trailer-route-eyebrow,.trailer-route-title,.trailer-route-photo-note{display:none!important}
+}
