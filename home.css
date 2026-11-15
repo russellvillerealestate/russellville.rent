@@ -5713,3 +5713,100 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
    display:block!important;position:relative!important
  }
 }
+
+
+/* November 15, 2026: Family travel field folio. Both live sites inspected:
+   StayARV is the reference for immersive scenery and spatial typography;
+   Russellville.Rent's category data remains authoritative. Original crib and
+   stroller art is conceptual, not inventory. Consulted NN/g visual hierarchy,
+   web.dev responsive design and W3C WCAG 2.2 reflow/focus. Editorial only:
+   retain list, search, filter, saved-category, print and workflow behavior. */
+.family-field-scene,.family-field-overline,.family-field-headline,
+.family-field-fineprint,.family-field-checks{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="baby-gear"]{
+ grid-column:span 2;display:grid;grid-template-columns:minmax(0,49%) minmax(0,51%);
+ border:1px solid #b0bda9;border-radius:24px;background:#faf8ee;
+ box-shadow:0 20px 46px #183c3424;overflow:hidden
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="baby-gear"]>.family-field-art{
+ position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:flex-start;
+ width:100%;height:auto;min-height:445px;gap:18px;padding:clamp(25px,3.4vw,43px);
+ background:#254d42;color:#fff8e6;text-align:left
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .family-field-art::before{
+ content:"";display:block;position:absolute;z-index:-1;inset:0;
+ width:auto;height:auto;border:0;border-radius:0;pointer-events:none;
+ background:linear-gradient(180deg,#173c37e0 0%,#173c3760 30%,#173c3700 51%,#12372be6 100%)
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .family-field-art::after{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"] .family-field-art>.family-field-scene{
+ display:block;position:absolute;z-index:-2;inset:0;
+ width:100%;height:100%;max-width:none;object-fit:cover;
+ transform:scale(1);transition:transform .55s ease
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="baby-gear"]:hover .family-field-scene{transform:scale(1.025)}
+#rental-results[data-view="grid"][data-layout="editorial"] .family-field-art>.directory-pictogram,
+#rental-results[data-view="grid"][data-layout="editorial"] .family-field-art>small{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"] .family-field-art>.family-field-overline{
+ display:block;position:relative;color:#ffe0a8;font:850 .66rem/1.5 system-ui,sans-serif;
+ letter-spacing:.14em;text-shadow:0 2px 8px #19372a
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .family-field-art>.family-field-headline{
+ display:block;position:relative;max-width:13ch;margin:auto 0 0;
+ color:#fff9eb;font:400 clamp(2.6rem,4.4vw,4.3rem)/1.04 Georgia,"Times New Roman",serif;
+ letter-spacing:-.058em;text-wrap:balance;text-shadow:0 3px 16px #123527a8
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .family-field-headline em{font-weight:400;color:#f5d9a4}
+#rental-results[data-view="grid"][data-layout="editorial"] .family-field-art>.family-field-fineprint{
+ display:block;position:relative;max-width:38ch;color:#f9ecdc;
+ font:650 .68rem/1.5 system-ui,sans-serif;text-shadow:0 2px 8px #123527
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="baby-gear"]>.card-body{
+ min-width:0;padding:clamp(25px,3.8vw,45px);gap:9px;justify-content:center;
+ background:linear-gradient(135deg,#fffdf6,#eff0e4)
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="baby-gear"] .card-body h3{
+ color:#25483c;font:400 clamp(1.85rem,3vw,2.9rem)/1.13 Georgia,"Times New Roman",serif;
+ letter-spacing:-.045em;text-wrap:balance
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .family-field-checks{
+ display:grid;grid-template-columns:1fr;gap:8px;list-style:none;margin:10px 0;padding:13px 0;
+ border-top:1px solid #d5ded1;border-bottom:1px solid #d5ded1
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .family-field-checks li{
+ display:flex;align-items:baseline;gap:12px;min-width:0;
+ font-size:.79rem;line-height:1.4;font-weight:730;color:#2d5143
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .family-field-checks li span{
+ color:#8d6234;font-size:.65rem;font-weight:850;letter-spacing:.07em;flex:0 0 24px
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="baby-gear"] .card-body>.card-link{
+ display:flex;align-items:center;min-height:52px;margin-top:6px;padding:13px 17px;
+ border:0;border-radius:11px;background:#214c3f;color:#fffdf4;text-decoration:none
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="baby-gear"] .card-body>.card-link:hover{background:#346651}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="baby-gear"] .card-body>.card-link:focus-visible{
+ outline:3px solid #b86c1e;outline-offset:4px
+}
+@media(max-width:900px){
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="baby-gear"]{grid-template-columns:minmax(0,1fr)}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="baby-gear"]>.family-field-art{min-height:365px;padding:28px}
+ #rental-results[data-view="grid"][data-layout="editorial"] .family-field-art>.family-field-headline{font-size:clamp(2.4rem,6vw,3.6rem)}
+}
+@media(max-width:600px){
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="baby-gear"]{grid-column:1/-1;border-radius:18px}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="baby-gear"]>.family-field-art{min-height:325px;padding:24px}
+ #rental-results[data-view="grid"][data-layout="editorial"] .family-field-art>.family-field-headline{font-size:clamp(2.3rem,9vw,3.15rem)}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="baby-gear"]>.card-body{padding:27px 24px}
+}
+@media(prefers-reduced-motion:reduce){
+ #rental-results .family-field-scene{transition:none!important}
+ #rental-results>.rental-card:hover .family-field-scene{transform:none!important}
+}
+@media print{
+ .family-field-scene,.family-field-overline,.family-field-headline,
+ .family-field-fineprint,.family-field-checks{display:none!important}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="baby-gear"]{display:block!important;border:1px solid #aaa!important;box-shadow:none!important}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="baby-gear"]>.family-field-art{height:105px!important;min-height:0!important;background:#fff!important;color:#214c3f!important}
+ #rental-results[data-view="grid"][data-layout="editorial"] .family-field-art>.directory-pictogram{display:block!important;position:relative!important}
+}
