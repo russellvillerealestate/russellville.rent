@@ -5250,3 +5250,128 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
     min-height:0!important;background:#fff!important;color:#204638!important;
   }
 }
+
+
+/* November 15, 2026: accessible community-lending editorial feature.
+   Visual direction compared with live stayarv.com; no actual facility photo.
+   Sources: Nielsen Norman Group visual hierarchy; web.dev layout stability;
+   W3C Web Content Accessibility Guidelines 2.2 (reflow, focus, targets).
+   Enhanced editorial grid only; filtered grid/list keep normal card layout. */
+.lending-poster-kicker,.lending-poster-headline,.lending-poster-note,
+.lending-questions,.lending-rental-caveat{display:none}
+.lending-rental-route{display:block;margin:11px 0 0;color:#245b4b;
+  font-size:.78rem;font-weight:690;line-height:1.5;text-decoration:none}
+.lending-rental-route span{text-decoration:underline;text-underline-offset:3px}
+.lending-rental-route:hover span{text-decoration-thickness:2px}
+.lending-rental-route:focus-visible{outline:3px solid #a66a16;outline-offset:4px}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-loans"]{
+  border:1px solid #a4bdaa;border-radius:24px;overflow:hidden;
+  box-shadow:0 18px 46px #103d3224
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-loans"]>.lending-poster{
+  position:relative;isolation:isolate;display:flex;align-items:flex-start;
+  flex-direction:column;justify-content:flex-end;gap:15px;
+  min-width:0;min-height:440px;height:auto;padding:clamp(28px,3.6vw,47px);
+  background:radial-gradient(circle at 79% 22%,#ebc88d 0 7%,transparent 7.2%),
+    radial-gradient(circle at 78% 21%,transparent 0 17%,#e5cd914a 17.2% 17.5%,transparent 17.7%),
+    linear-gradient(138deg,#153b37 0%,#286253 61%,#0b2f2d 100%);
+  color:#fffbed;text-align:left
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .lending-poster::before{
+  content:"";position:absolute;inset:16px;z-index:0;
+  border:1px solid #f4dbaf75;border-radius:10px;
+  background:none;width:auto;height:auto;pointer-events:none
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .lending-poster::after{
+  content:"";position:absolute;z-index:0;right:-60px;bottom:-110px;
+  width:320px;height:280px;background:none;border:2px solid #f0d7a052;
+  border-radius:50%;pointer-events:none
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .lending-poster-kicker{
+  display:block;position:relative;z-index:1;align-self:stretch;
+  margin:0 0 auto;color:#f5dda9;font-size:.65rem;
+  font-weight:840;line-height:1.5;letter-spacing:.15em
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .lending-poster>.directory-pictogram{
+  display:block;position:relative;z-index:1;flex:none;
+  width:90px;height:90px;padding:19px;border:1px solid #e6e9c5;
+  border-radius:17px;background:#f1eddd;color:#205445;
+  transform:none;box-shadow:0 12px 26px #081f1a7d
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-loans"]:hover .directory-pictogram{transform:none}
+#rental-results[data-view="grid"][data-layout="editorial"] .lending-poster-headline{
+  display:block;position:relative;z-index:1;max-width:15ch;
+  color:#fffdf4;font:400 clamp(2.5rem,4vw,4.05rem)/1.05 Georgia,"Times New Roman",serif;
+  letter-spacing:-.055em;text-wrap:balance;text-shadow:0 3px 18px #061d18
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .lending-poster-headline em{color:#f7dba2;font-weight:400}
+#rental-results[data-view="grid"][data-layout="editorial"] .lending-poster-note{
+  display:block;position:relative;z-index:1;font-size:.64rem;
+  font-weight:700;color:#f5e6ca;line-height:1.5
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .lending-poster>small{
+  position:relative;z-index:1;margin:0;padding:0;border:0;
+  background:none;color:#f8e8c6;font-size:.64rem;
+  font-weight:840;letter-spacing:.14em
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-loans"]>.card-body{
+  min-width:0;justify-content:center;gap:7px;
+  padding:clamp(27px,3.5vw,46px);
+  background:linear-gradient(135deg,#fffdf5,#e8f1e6)
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-loans"] h3{
+  font:400 clamp(2rem,3vw,2.9rem)/1.1 Georgia,"Times New Roman",serif;
+  letter-spacing:-.05em;color:#224838;text-wrap:balance
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-loans"] .card-body>p:not(.eyebrow){
+  max-width:57ch;line-height:1.6
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .lending-questions{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;padding:0;margin:12px 0;list-style:none;counter-reset:lendingstep
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .lending-questions li{
+  counter-increment:lendingstep;min-width:0;
+  padding:13px 10px;border:1px solid #c5d9c7;border-radius:9px;
+  background:#e3eee3;color:#244939;font-size:.71rem;
+  font-weight:750;line-height:1.4
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .lending-questions li::before{
+  content:"0" counter(lendingstep);display:block;margin-bottom:6px;
+  color:#77602e;font-weight:900;font-size:.64rem;letter-spacing:.1em
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-loans"] .card-body>.card-link{
+  display:flex;align-items:center;min-height:52px;
+  margin:5px 0 0;padding:13px 17px;border:0;border-radius:11px;
+  background:#265740;color:#fffaf1;text-decoration:none
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-loans"] .card-body>.card-link:hover{background:#347052}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-loans"] .card-body>.card-link:focus-visible{outline:3px solid #ac721c;outline-offset:4px}
+#rental-results[data-view="grid"][data-layout="editorial"] .lending-rental-caveat{
+  display:block;margin:1px 0 0;color:#547366;
+  font-size:.7rem;line-height:1.5
+}
+@media (min-width:901px){
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-loans"]{
+    grid-column:span 2;display:grid;
+    grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);min-height:525px
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-loans"]>.lending-poster{height:100%;min-height:525px}
+}
+@media (min-width:601px) and (max-width:900px){
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-loans"]{grid-column:span 2}
+}
+@media (max-width:600px){
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-loans"]>.lending-poster{
+    min-height:360px;padding:27px 24px
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .lending-poster-headline{font-size:clamp(2.25rem,9vw,3.1rem)}
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-loans"]>.card-body{padding:27px 23px}
+  #rental-results[data-view="grid"][data-layout="editorial"] .lending-questions{grid-template-columns:1fr;gap:7px}
+  #rental-results[data-view="grid"][data-layout="editorial"] .lending-questions li{display:flex;align-items:center;gap:11px;padding:11px 13px}
+  #rental-results[data-view="grid"][data-layout="editorial"] .lending-questions li::before{margin:0}
+}
+@media print{
+  .lending-poster-headline,.lending-poster-kicker,.lending-poster-note,.lending-questions{display:none!important}
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-loans"]>.lending-poster{background:#fff!important;color:#173c33!important;min-height:0!important}
+}
