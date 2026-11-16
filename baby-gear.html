@@ -420,10 +420,44 @@ footer a{color:#ffe3a5}
  .family-next-card :is(.family-next-card-index,.family-next-scene,h3,p,.family-next-card-action){color:#173e33!important}
 }
 
+
+/* Nov 16, 2026: Visible mobile family travel companion. The existing three
+   in-page destinations remain unchanged. Compared live StayARV and
+   Russellville.Rent; NN/g visible navigation; web.dev responsive UI;
+   W3C WCAG 2.2 keyboard focus, reflow and minimum touch targets.
+   No assets, dependencies, forms, provider content or scripts added. */
+.family-mobile-companion{display:none}
+@media(max-width:760px) and (min-height:510px){
+ body{padding-bottom:calc(106px + env(safe-area-inset-bottom,0px))}
+ .family-mobile-companion{position:fixed;z-index:60;left:calc(10px + env(safe-area-inset-left,0px));right:calc(10px + env(safe-area-inset-right,0px));bottom:calc(9px + env(safe-area-inset-bottom,0px));display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;padding:8px;border:1px solid #e8d29c80;border-radius:20px;background:linear-gradient(130deg,#0d3029,#1a503f);box-shadow:0 15px 36px #08251f66,0 0 0 1px #ffffff18;color:#fcf6e5}
+ .family-mobile-companion a{min-width:0;min-height:66px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:3px;padding:8px 5px;border-radius:13px;border:1px solid transparent;color:#fff8e8;text-decoration:none;text-align:center;transition:background-color .18s,border-color .18s}
+ .family-mobile-companion a:hover{background:#ffffff16;border-color:#e8d29c65}
+ .family-mobile-companion a:focus-visible{outline:3px solid #ffdd8e;outline-offset:2px}
+ .family-mobile-companion a:nth-child(2){background:#f0d28d;color:#163b30}
+ .family-mobile-companion a:nth-child(2):hover{background:#ffe5a4}
+ .family-mobile-companion svg{display:block;width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+ .family-mobile-companion strong{display:block;font-size:.78rem;font-weight:800;line-height:1.1;letter-spacing:-.015em}
+ .family-mobile-companion small{display:block;font-size:.53rem;line-height:1.2;font-weight:800;letter-spacing:.11em;opacity:.85}
+ #providers,#family-trip-note,#trip-checklist{scroll-margin-top:20px}
+}
+@media(max-width:350px) and (min-height:510px){
+ .family-mobile-companion{left:6px;right:6px;padding:6px;gap:3px}
+ .family-mobile-companion a{min-height:64px}
+ .family-mobile-companion strong{font-size:.7rem}
+ .family-mobile-companion small{font-size:.47rem}
+}
+@media(prefers-reduced-motion:reduce){.family-mobile-companion a{transition:none}}
+@media print{.family-mobile-companion{display:none!important}}
+
 </style>
 </head>
 <body>
 <a class="skip-link" href="#providers">Skip to provider</a><header><div class="wrap top"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span class="brand-dot">.</span>Rent</a><nav class="top-nav" aria-label="Page navigation"><a href="#providers">Provider</a><a href="#trip-checklist">Travel checklist</a><a class="back" href="/#browse">← All rental categories</a></nav></div></header>
+<nav class="family-mobile-companion" aria-label="Family travel quick links">
+ <a href="#providers"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M4 8h16v12H4zM7 8V5h10v3M8 12h8M8 16h8"/></svg><small>01 / FIND</small><strong>Baby gear</strong></a>
+ <a href="#family-trip-note"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h7M9 16h5"/></svg><small>02 / PLAN</small><strong>Trip note</strong></a>
+ <a href="#trip-checklist"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 9l2 2 4-4M8 16h8"/></svg><small>03 / CHECK</small><strong>Safety</strong></a>
+</nav>
 <section class="hero" aria-labelledby="family-hero-title">
   <div class="hero-ambient" aria-hidden="true"></div>
   <div class="wrap hero-grid">
