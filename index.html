@@ -1296,6 +1296,15 @@
   </div>
   <p class="mobile-sheet-context" id="mobile-sheet-context">Search across local rental categories.</p>
   <div class="mobile-sheet-summary" role="status" aria-live="polite" aria-atomic="true"><strong id="mobile-sheet-count">35</strong><span id="mobile-sheet-count-label">matching rental categories</span></div>
+
+  <section class="mobile-sheet-preview" aria-labelledby="mobile-sheet-preview-title">
+    <div class="mobile-sheet-preview-head">
+      <div><span class="mobile-sheet-preview-kicker">R↗ / YOUR ROUTE STARTS HERE</span><h3 id="mobile-sheet-preview-title">A few good first stops.</h3></div>
+      <small id="mobile-sheet-preview-more">Direct category links</small>
+    </div>
+    <div class="mobile-sheet-preview-list" id="mobile-sheet-preview-list"></div>
+    <p class="mobile-sheet-preview-note">Go straight to a rental category. Verify availability, prices and terms with each provider.</p>
+  </section>
   <div class="mobile-sheet-actions"><button class="mobile-sheet-reset" id="mobile-sheet-reset" type="button">Clear filters</button><button class="mobile-sheet-apply" id="mobile-sheet-show" type="button">View matching categories ↗</button></div>
 </dialog>
 
@@ -1908,16 +1917,57 @@ filterRentals();
   const totalLabel=document.getElementById("mobile-sheet-count-label");
   const context=document.getElementById("mobile-sheet-context");
   const show=document.getElementById("mobile-sheet-show");
+  const preview=document.getElementById("mobile-sheet-preview-list");
+  const previewMore=document.getElementById("mobile-sheet-preview-more");
   function syncSheet(){
     query.value=search.value;
     type.value=category.value;
-    const matches=cards.filter(card=>!card.hidden).length;
+    const matchedCards=cards.filter(card=>!card.hidden);
+    const matches=matchedCards.length;
     total.textContent=String(matches);
     totalLabel.textContent=matches===1?"matching rental category":"matching rental categories";
     context.textContent=activeIntent==="all"
       ?"Search terms and categories filter the directory instantly."
       :"Currently exploring “"+intentLabels[activeIntent]+"”. Editing either field searches all pathways.";
     show.textContent="View "+matches+" "+(matches===1?"category":"categories")+" ↗";
+    // Show working direct-category links as mobile filters change.
+    // Names and URLs are derived from the untouched rental cards.
+    preview.replaceChildren();
+    matchedCards.slice(0,3).forEach((card,index)=>{
+      const source=card.querySelector(".card-link[href]");
+      const heading=card.querySelector("h3");
+      if(!source||!heading)return;
+      const link=document.createElement("a");
+      link.className="mobile-sheet-match";
+      link.href=source.getAttribute("href");
+      link.setAttribute("aria-label","Open "+heading.textContent.trim()+" rental category");
+      const number=document.createElement("span");
+      number.className="mobile-sheet-match-number";
+      number.textContent=String(index+1).padStart(2,"0");
+      number.setAttribute("aria-hidden","true");
+      const details=document.createElement("span");
+      details.className="mobile-sheet-match-details";
+      const title=document.createElement("strong");
+      title.textContent=heading.textContent.trim();
+      const hint=document.createElement("small");
+      hint.textContent="Explore category";
+      details.append(title,hint);
+      const arrow=document.createElement("span");
+      arrow.className="mobile-sheet-match-arrow";
+      arrow.textContent="↗";
+      arrow.setAttribute("aria-hidden","true");
+      link.append(number,details,arrow);
+      preview.appendChild(link);
+    });
+    if(!matches){
+      const empty=document.createElement("p");
+      empty.className="mobile-sheet-preview-empty";
+      empty.textContent="No matching categories. Try another search or clear the filters.";
+      preview.appendChild(empty);
+    }
+    previewMore.textContent=matches>3
+      ? "3 of "+matches+" routes"
+      : matches ? "Direct category links" : "Try another search";
   }
   function updateFromSheet(){
     search.value=query.value;
@@ -1934,6 +1984,7 @@ filterRentals();
     sheet.showModal();
     query.focus({preventScroll:true});
   });
+  preview.addEventListener("click",event=>{if(event.target.closest("a"))sheet.close();});
   query.addEventListener("input",updateFromSheet);
   type.addEventListener("change",updateFromSheet);
   document.getElementById("mobile-sheet-reset").addEventListener("click",()=>{

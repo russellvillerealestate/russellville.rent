@@ -6806,3 +6806,51 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
  .directory-masthead .mobile-menu-actions a.mobile-menu-saved-folio{transition:none}
 }
 @media print{.directory-masthead .mobile-menu-actions a.mobile-menu-saved-folio{display:none!important}}
+
+
+/* 2026-11-16: Search-to-category folio inside the working mobile filter tray.
+   Matches and destinations are read from existing rental cards; this is not
+   a booking or inventory search. Inspired by StayARV's bold editorial
+   hierarchy, Nielsen Norman Group visual grouping, web.dev layout stability,
+   and WCAG 2.2 focus / target-size / reduced-motion guidance. */
+.mobile-sheet-preview{
+  position:relative;isolation:isolate;overflow:hidden;
+  margin:18px clamp(20px,5vw,34px) 8px;padding:21px 18px 17px;
+  background:radial-gradient(circle at 100% 0%,#426c54 0%,transparent 49%),linear-gradient(142deg,#123a31,#1a493a 75%,#245541);
+  border:1px solid #3e7058;border-radius:19px;color:#fff9eb;
+  box-shadow:0 12px 30px #123b3226;
+}
+.mobile-sheet-preview:before{
+  content:"";position:absolute;inset:9px;z-index:-1;pointer-events:none;
+  border:1px solid #f1d9a52e;border-radius:12px;
+}
+.mobile-sheet-preview-head{display:flex;align-items:end;justify-content:space-between;gap:12px}
+.mobile-sheet-preview-kicker{display:block;color:#f5d499;font-size:.62rem;line-height:1.5;font-weight:850;letter-spacing:.13em}
+.mobile-sheet-preview-head h3{font:400 clamp(1.55rem,5.7vw,2rem)/1.05 Georgia,"Times New Roman",serif;letter-spacing:-.04em;margin:6px 0 0;text-wrap:balance}
+.mobile-sheet-preview-head>small{flex:none;max-width:88px;color:#e4eddd;text-align:right;font-size:.65rem;line-height:1.4;font-weight:750}
+.mobile-sheet-preview-list{display:grid;gap:8px;margin:18px 0 0;min-height:64px}
+.mobile-sheet-match{
+  display:grid;grid-template-columns:38px minmax(0,1fr) 30px;align-items:center;gap:10px;
+  min-height:65px;padding:10px 11px;border:1px solid #f3dcad4c;border-radius:11px;
+  background:#f8f5e9;color:#1a4738;text-decoration:none;
+  transition:background .18s ease,transform .18s ease,border-color .18s ease;
+}
+.mobile-sheet-match:hover{background:#fff9e8;border-color:#d3a963;transform:translateY(-1px)}
+.mobile-sheet-match-number{display:grid;place-items:center;align-self:stretch;border-radius:8px;background:#dce8dc;color:#24513f;font:700 .87rem/1 Georgia,serif}
+.mobile-sheet-match-details{display:grid;gap:3px;min-width:0}
+.mobile-sheet-match-details strong{font-size:.85rem;line-height:1.28;font-weight:800;overflow-wrap:anywhere}
+.mobile-sheet-match-details small{font-size:.66rem;color:#647a66;font-weight:650}
+.mobile-sheet-match-arrow{display:grid;place-items:center;width:29px;height:29px;border-radius:50%;background:#1c523f;color:#fff1c9;font-size:1.18rem}
+.mobile-sheet-preview-empty{margin:0;padding:15px 13px;border:1px solid #e6d4a65c;border-radius:10px;background:#fff9eb12;color:#fff2d9;font-size:.81rem;line-height:1.5}
+.mobile-sheet-preview-note{margin:15px 1px 0;color:#e2ecdf;font-size:.69rem;line-height:1.55;max-width:48ch}
+.mobile-search-sheet .mobile-sheet-match:focus-visible{outline:3px solid #ffdda2;outline-offset:3px}
+.mobile-sheet-actions{position:sticky;bottom:0;z-index:2;background:#f8faf6;border-top:1px solid #d6e2d7;box-shadow:0 -8px 24px #183f351b}
+@media(max-width:360px){
+  .mobile-sheet-preview{padding:16px 13px}
+  .mobile-sheet-preview-head{align-items:start}
+  .mobile-sheet-preview-head h3{font-size:1.45rem}
+  .mobile-sheet-match{grid-template-columns:32px minmax(0,1fr) 26px;gap:7px;padding:8px}
+  .mobile-sheet-match-arrow{width:26px;height:26px}
+}
+@media(prefers-reduced-motion:reduce){.mobile-sheet-match{transition:none}.mobile-sheet-match:hover{transform:none}}
+@media print{.mobile-sheet-preview{display:none!important}}
