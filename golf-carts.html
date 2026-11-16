@@ -682,16 +682,33 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
 @media(max-width:440px){.cart-onward{border-radius:17px;margin:28px 0 35px}.cart-onward-photo{min-height:250px;padding:20px}.cart-onward-photo-monogram{font-size:6rem}.cart-onward-photo-top{font-size:.54rem;letter-spacing:.07em}.cart-onward-photo-caption{font-size:.98rem}.cart-onward-content{padding:27px 20px}.cart-onward h2{font-size:2.4rem}.cart-onward-routes a{gap:8px;padding:11px;grid-template-columns:23px minmax(0,1fr) 35px}.cart-onward-arrow{width:34px;height:34px}}
 @media(prefers-reduced-motion:reduce){.cart-onward-routes a{transition:none}.cart-onward-routes a:hover{transform:none}}
 
-/* Course-only cart reference: distinct from the seven regional event-rental operators. */
-.course-local{margin:24px 0 35px;padding:25px 30px;border:1px solid #c8d7c9;border-radius:19px;background:linear-gradient(130deg,#f4f7ec,#e9f0e2);color:#23443a;box-shadow:0 10px 29px #173e3010}
-.course-local .course-local-kicker{margin:0 0 8px;font-size:.72rem;font-weight:750;letter-spacing:.12em;text-transform:uppercase;color:#4a6b58}
-.course-local h2{margin:0 0 10px;font-size:clamp(1.38rem,2.5vw,1.95rem);line-height:1.17}
-.course-local p{max-width:940px;line-height:1.62;margin:8px 0}
-.course-local .course-local-contact{margin-top:14px;font-weight:600}
-.course-local a{color:#245b45;text-decoration:underline;text-underline-offset:3px}
-.course-local a:focus-visible{outline:3px solid #29745c;outline-offset:4px;border-radius:3px}
-@media(max-width:600px){.course-local{padding:22px 20px}}
-
+/* StayARV-inspired local on-course exception; editorial illustration not inventory.
+   NN/g visual hierarchy; web.dev responsive design; WCAG 2.2 reflow and focus. */
+.course-local{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:0;overflow:hidden;margin:clamp(50px,7vw,94px) 0;border:1px solid #c6d3c4;border-radius:27px;background:#fffcf5;color:#173f33;box-shadow:0 25px 59px #103d2e22}
+.course-local-scene{display:flex;flex-direction:column;justify-content:space-between;gap:20px;min-width:0;min-height:625px;padding:clamp(22px,3vw,36px);background:linear-gradient(145deg,#13382f,#235846);color:#fff8e9}
+.course-local-scene-top{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#f3d69e;font-size:.64rem;font-weight:850;line-height:1.5;letter-spacing:.14em}
+.course-local-scene svg{display:block;width:100%;height:auto;max-height:440px;flex:1;object-fit:contain;filter:drop-shadow(0 12px 20px #05271e60)}
+.course-local-scene-foot{display:flex;flex-direction:column;gap:8px;border-top:1px solid #f1d8a45c;padding-top:18px}
+.course-local-scene-foot strong{font:400 clamp(2.1rem,3.1vw,3.25rem)/1.08 Georgia,"Times New Roman",serif;letter-spacing:-.05em}
+.course-local-scene-foot small{max-width:45ch;color:#e4eadf;font-size:.71rem;line-height:1.57}
+.course-local-body{display:flex;flex-direction:column;min-width:0;padding:clamp(29px,4.1vw,55px);background:radial-gradient(circle at 100% 0%,#f3e3bd80,transparent 48%),#fffdf7}
+.course-local .course-local-kicker{margin:0 0 23px;color:#52735b;font-size:.67rem;line-height:1.5;letter-spacing:.14em;font-weight:900;text-transform:uppercase}
+.course-local h2{max-width:18ch;margin:0 0 21px;color:#174333;font:400 clamp(2.3rem,3.6vw,4.05rem)/1.07 Georgia,"Times New Roman",serif;letter-spacing:-.06em;text-wrap:balance}
+.course-local-body>p:not(.course-local-kicker):not(.course-local-contact){max-width:64ch;margin:0;color:#365749;font-size:clamp(.92rem,1.2vw,1.02rem);line-height:1.73}
+.course-local-body strong{color:#1a503c}
+.course-local-status{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin-top:clamp(25px,3vw,38px);border:1px solid #d9e2d4;border-radius:15px;background:#d9e2d4;overflow:hidden}
+.course-local-status>div{display:flex;flex-direction:column;justify-content:center;gap:11px;min-width:0;min-height:130px;padding:21px 19px;background:#e9f1e7}
+.course-local-status>div+div{background:#f7ead5}
+.course-local-status span{color:#4c7255;font-size:.62rem;font-weight:850;letter-spacing:.12em;line-height:1.4}
+.course-local-status>div+div span{color:#80623c}
+.course-local-status strong{display:block;color:#234a37;font:400 clamp(1.15rem,1.55vw,1.45rem)/1.18 Georgia,"Times New Roman",serif;letter-spacing:-.03em}
+.course-local .course-local-contact{margin:26px 0 0;padding-top:24px;color:#345547;font-size:.82rem;line-height:1.9;border-top:1px solid #d4dece;overflow-wrap:anywhere}
+.course-local-contact a{color:#1a6247;text-underline-offset:4px;font-weight:800;text-decoration-thickness:1.5px}
+.course-local a:hover{text-decoration-thickness:2px}
+.course-local a:focus-visible{outline:3px solid #a96813;outline-offset:3px;border-radius:2px}
+@media(max-width:950px){.course-local{grid-template-columns:minmax(0,1fr)}.course-local-scene{min-height:0;gap:15px;padding:28px 31px}.course-local-scene svg{max-width:580px;max-height:310px;margin:0 auto}.course-local-scene-foot{gap:6px}.course-local-body{padding:35px}.course-local h2{max-width:none}}
+@media(max-width:560px){.course-local{border-radius:18px;margin:40px 0}.course-local-scene{padding:23px 20px}.course-local-scene-top{font-size:.54rem;letter-spacing:.06em}.course-local-scene svg{max-height:230px}.course-local-scene-foot strong{font-size:2.15rem}.course-local-body{padding:27px 22px}.course-local h2{font-size:clamp(2.12rem,9vw,3.2rem)}.course-local-status{grid-template-columns:1fr}.course-local-status>div{min-height:100px;padding:17px 19px}.course-local-status strong{font-size:1.32rem}.course-local .course-local-contact{padding-top:20px}}
+@media print{.course-local{display:block;box-shadow:none;break-inside:avoid;border:1px solid #888}.course-local-scene{display:none}.course-local-body{padding:22px;background:#fff}.course-local-status>div{background:#fff!important;border:1px solid #aaa}.course-local :is(h2,.course-local-kicker,.course-local-status strong,.course-local-status span){color:#173f33!important}}
 </style>
 </head>
 <body>
@@ -1088,10 +1105,36 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
 </div>
 </section>
 <section class="course-local" aria-labelledby="galla-creek-cart-title">
+<div class="course-local-scene" aria-hidden="true">
+  <div class="course-local-scene-top"><span>R↗ / THE RIVER VALLEY</span><span>LOCAL COURSE NOTE · 01</span></div>
+  <svg viewBox="0 0 680 480" xmlns="http://www.w3.org/2000/svg" focusable="false">
+    <rect width="680" height="480" rx="24" fill="#a8bca5"/>
+    <circle cx="515" cy="92" r="58" fill="#f4d9a2" opacity=".94"/>
+    <path d="M0 239 98 150 184 225 297 119 391 220 492 143 590 203 680 146v334H0Z" fill="#749a85" opacity=".63"/>
+    <path d="M0 291 125 210 253 269 389 192 505 265 604 205 680 244v236H0Z" fill="#2e6355"/>
+    <path d="M0 350Q145 261 255 298T495 310Q594 272 680 301V480H0Z" fill="#184c3e"/>
+    <path d="M90 480C164 371 274 306 390 309s192 41 240 171H90Z" fill="#6d9c67"/>
+    <path d="M247 480c41-95 104-154 180-171" fill="none" stroke="#d8dda7" stroke-width="20" stroke-linecap="round" opacity=".7"/>
+    <path d="M240 480c41-95 104-154 180-171" fill="none" stroke="#f6eac3" stroke-width="2" stroke-dasharray="7 14" opacity=".75"/>
+    <ellipse cx="433" cy="332" rx="75" ry="23" fill="#b4cf89" transform="rotate(-10 433 332)"/>
+    <ellipse cx="482" cy="368" rx="33" ry="13" fill="#e8d9ae" transform="rotate(-23 482 368)"/>
+    <path d="M438 321V183" stroke="#f8efcc" stroke-width="7" stroke-linecap="round"/>
+    <path d="M443 188 516 202 443 232Z" fill="#f0ca82"/>
+    <ellipse cx="438" cy="325" rx="15" ry="5" fill="#214e39" opacity=".55"/>
+    <g fill="#143e32"><path d="m33 322 23-94 25 94H63v70H49v-70Z"/><path d="m94 317 17-71 19 71h-13v51h-12v-51Z"/><path d="m587 291 26-114 27 114h-19v80h-16v-80Z"/><path d="m631 318 17-79 20 79h-12v66h-13v-66Z"/></g>
+    <rect x="20" y="20" width="640" height="440" rx="16" stroke="#f4e6bf" stroke-opacity=".48" stroke-width="2" fill="none"/>
+    <text x="43" y="447" fill="#f7ead0" font-family="system-ui,sans-serif" font-size="12" letter-spacing="3" font-weight="800">ILLUSTRATED COURSE LANDSCAPE</text>
+  </svg>
+  <div class="course-local-scene-foot"><strong>The nearby exception.</strong><small>Concept illustration only · Not Galla Creek property, equipment, or live availability.</small></div>
+</div>
+<div class="course-local-body">
   <p class="course-local-kicker">Nearby on-course option · Not one of the seven event-rental operators</p>
   <h2 id="galla-creek-cart-title">Galla Creek Golf Course &amp; Country Club — Pottsville</h2>
   <p>Galla Creek's official website provides a <strong>cart-rental waiver</strong> alongside golf booking. A golf-booking directory also identifies carts for rent at the course. This is an <strong>on-course rental inquiry</strong>, not a verified golf-cart rental for weddings, festivals, personal transportation or off-site use. <strong>Off-site availability and delivery to Russellville are UNCONFIRMED.</strong> Confirm cart availability, current fees, eligible drivers, course use and booking requirements directly with the operator.</p>
-  <p class="course-local-contact">141 Golf Club Ln, Pottsville, AR 72858 · <a href="tel:+14798906653">479-890-6653</a> · <a href="https://gallacreekgolfcourse.com/" target="_blank" rel="noopener noreferrer">Official course and cart-rental waiver ↗</a> · <a href="https://www.golfnow.com/courses/1047333-galla-creek-golf-course-details" target="_blank" rel="noopener noreferrer">GolfNow cart-rental listing ↗</a></p>
+  
+<div class="course-local-status" aria-label="Scope of the golf cart rental inquiry"><div><span>ON-COURSE INQUIRY</span><strong>Cart rental waiver publicly linked</strong></div><div><span>OFF-SITE RENTAL</span><strong>Not confirmed for events or delivery</strong></div></div>
+<p class="course-local-contact">141 Golf Club Ln, Pottsville, AR 72858 · <a href="tel:+14798906653">479-890-6653</a> · <a href="https://gallacreekgolfcourse.com/" target="_blank" rel="noopener noreferrer">Official course and cart-rental waiver ↗</a> · <a href="https://www.golfnow.com/courses/1047333-galla-creek-golf-course-details" target="_blank" rel="noopener noreferrer">GolfNow cart-rental listing ↗</a></p>
+</div>
 </section>
 <section class="planning planning-fieldfolio" id="before-you-reserve" aria-labelledby="planning-title">
   <div class="planning-fieldfolio-visual">
