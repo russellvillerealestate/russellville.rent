@@ -693,6 +693,47 @@ html{scroll-padding-top:105px}
 @media(prefers-reduced-motion:reduce){.production-runbook .runbook-return{transition:none}.production-runbook .runbook-return:hover{transform:none}}
 @media print{.plan.production-runbook{color:#173d37;background:#fff;box-shadow:none;border-color:#c5d0c5}.production-runbook .runbook-cover{background:#fff;padding:20px;display:block}.production-runbook .runbook-cover:after,.production-runbook .runbook-art{display:none}.production-runbook .runbook-heading h2,.production-runbook .runbook-heading h2 em,.production-runbook .runbook-heading .eyebrow,.plan.production-runbook .runbook-heading>p:not(.eyebrow){color:#173d37}.production-runbook .runbook-return{display:none}.production-runbook .runbook-checklist{background:#fff;padding:20px}.plan.production-runbook .runbook-checklist li{box-shadow:none;break-inside:avoid}}
 
+
+/* 2026-11-16 | Mobile stage-show cover and condensed wayfinding.
+   Reference: live StayARV / Russellville.Rent; NN/g visual hierarchy;
+   web.dev responsive imagery; WCAG 2.2 reflow and tap targets.
+   This deliberately restores the already-present, provider-neutral inline
+   illustration on small screens. No new image request or listing claim. */
+@media (max-width:520px){
+  .site-header .header-inner{padding-top:9px;padding-bottom:8px}
+  .site-header .stage-route-nav{
+    gap:5px;margin-top:7px;padding-top:8px;border-top:1px solid #edca9045
+  }
+  .site-header .stage-route-nav a{
+    display:flex;flex-direction:row;gap:5px;min-height:45px;
+    padding:7px 5px;border:1px solid #e9c78b47;border-radius:8px;
+    background:linear-gradient(145deg,#204942,#16383a);
+    color:#fff7e9;font-size:.67rem;font-weight:750;line-height:1.2
+  }
+  .site-header .stage-route-nav a span{
+    display:inline-grid;flex:none;min-width:20px;width:20px;height:20px;
+    padding:0;border-color:#f1c98387;font-size:.58rem
+  }
+  .site-header .stage-route-nav a:hover,
+  .site-header .stage-route-nav a:focus-visible{background:#346158;border-color:#efcb8c}
+  .hero-inner{gap:24px;padding-top:45px;padding-bottom:82px}
+  .hero-inner .art{
+    display:block;width:min(100%,420px);max-width:420px;
+    min-height:0;margin:5px auto 0;padding:10px 8px 21px;
+    border:1px solid #eed49dab;border-radius:7px 32px 7px 32px;
+    background:linear-gradient(150deg,#1e4446,#0b2631 80%);
+    box-shadow:0 17px 45px #06171f8f;transform:none
+  }
+  .hero-inner .art svg{display:block;width:100%;height:auto;max-height:none}
+  .hero-inner .art-tag{top:12px;right:12px;padding:5px 8px;font-size:.58rem}
+  .hero-inner .art-label{bottom:10px;left:15px;font-size:.57rem;letter-spacing:.12em}
+  html{scroll-padding-top:133px}
+  #providers,#stage-scale,#planning,#stage-studio,.routes,.stage-contact-index,.grid>.card{scroll-margin-top:133px}
+}
+@media (max-width:350px){
+  .site-header .stage-route-nav a{gap:3px;padding:6px 3px;font-size:.62rem}
+  .site-header .stage-route-nav a span{min-width:18px;width:18px;height:18px}
+}
 </style>
 </head>
 <body>
