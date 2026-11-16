@@ -590,6 +590,47 @@ html{scroll-padding-top:28px}
   .guide-item{min-height:0;background:#fff!important;break-inside:avoid}
 }
 
+
+/* 2026-11-16 / River Valley formalwear lookbook: distinct original style illustrations,
+   NOT photographed inventory. StayARV immersive reference + current Russellville.Rent.
+   Nielsen Norman Group visual hierarchy; web.dev responsive art/layout stability;
+   WCAG 2.2 focus, target-size, reflow and reduced-motion guidance. */
+.look-grid{gap:16px}
+.look-card{position:relative;min-height:320px;border-radius:18px;background:#f9f5eb;border-color:#c6cec1;box-shadow:0 10px 28px #173a3010}
+.look-card:hover{box-shadow:0 20px 38px #173a3025}
+.look-card::after{content:"";position:absolute;top:12px;right:12px;width:26px;height:26px;border-radius:50%;border:1px solid #fff9ef77;background:#173b3230;z-index:3;transition:background .2s ease}
+.look-choice input:checked+.look-card{border-color:#295f48;box-shadow:0 0 0 3px #295f4838,0 20px 38px #173a301a}
+.look-choice input:checked+.look-card::after{content:"✓";display:grid;place-items:center;background:#f3cf91;border-color:#f3cf91;color:#193b30;font:900 16px/1 system-ui,sans-serif}
+.look-art{position:relative;isolation:isolate;display:block;min-height:216px;overflow:hidden;background:linear-gradient(143deg,#304c46,#101f1e)}
+.look-art:before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;top:5px;left:50%;transform:translateX(-50%);border:1px solid #ffffff52;box-shadow:0 0 0 32px #ffffff0a,0 0 0 66px #ffffff07}
+.look-art:after{content:"";position:absolute;inset:auto 12px 12px;height:1px;background:#ffffff55}
+.look-choice:nth-child(2) .look-art{background:linear-gradient(148deg,#a7b6a7,#506d67 56%,#24453e)}
+.look-choice:nth-child(3) .look-art{background:linear-gradient(148deg,#dfbf95,#bb9872 56%,#765a46)}
+.look-art svg{position:relative;z-index:1;display:block;width:100%;max-width:270px;height:210px;margin:17px auto 0;stroke:none;fill:none;filter:drop-shadow(0 10px 8px #06171335)}
+.look-art-stamp,.look-art-serial{position:absolute;z-index:2;left:16px;color:#fff9eb;font-size:.54rem;font-weight:850;letter-spacing:.15em;text-shadow:0 1px 8px #112a2a88}
+.look-art-stamp{top:18px}
+.look-art-serial{bottom:20px}
+.look-choice:nth-child(3) .look-art-stamp,.look-choice:nth-child(3) .look-art-serial{color:#2c3028;text-shadow:none}
+.look-copy{position:relative;padding:19px 17px 21px}
+.look-copy:before{content:"";position:absolute;top:0;left:17px;width:40px;height:3px;background:#c69d66}
+.look-choice:nth-child(2) .look-copy:before{background:#557a66}
+.look-choice:nth-child(3) .look-copy:before{background:#9e7051}
+.look-copy strong{font-size:clamp(1.3rem,1.8vw,1.62rem);letter-spacing:-.045em}
+.look-copy small{font-size:.78rem;max-width:23ch}
+@media(max-width:650px){
+ .look-grid{gap:12px}.look-card{min-height:150px;border-radius:15px}
+ .look-art{flex:0 0 148px;min-height:150px}
+ .look-art:before{width:140px;height:140px;top:16px;box-shadow:0 0 0 22px #ffffff0a}
+ .look-art svg{width:158px;height:150px;margin:9px 0 0 -5px}
+ .look-art-stamp{top:9px;left:10px;font-size:.44rem}
+ .look-art-serial{bottom:9px;left:10px;font-size:.4rem}
+ .look-art:after{left:9px;right:9px;bottom:6px}
+ .look-copy{padding:15px 16px}.look-card::after{top:8px;right:8px;width:23px;height:23px}
+}
+@media(max-width:390px){.look-art{flex-basis:119px}.look-art svg{width:145px;height:142px;margin:15px 0 0 -14px}.look-copy{padding:14px 10px}.look-copy strong{font-size:1.18rem}}
+@media(prefers-reduced-motion:reduce){.look-card,.look-card::after{transition:none}.look-card:hover{transform:none}}
+@media print{.look-card{box-shadow:none!important;break-inside:avoid}.look-art{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
@@ -650,7 +691,7 @@ html{scroll-padding-top:28px}
 <section class="atelier" id="atelier" aria-labelledby="atelier-title"><div class="shell">
 <div class="atelier-head"><div><p class="eyebrow">The occasion edit / Plan before you call</p><h2 id="atelier-title">Start with a look. Leave with a plan.</h2></div><p>Choose a visual direction and prepare a fitting inquiry. Illustrations are inspiration only, not confirmed styles or rental inventory.</p></div>
 <div class="atelier-layout"><form class="atelier-form" id="atelier-form">
-<fieldset><legend>01 / Your style direction</legend><div class="look-grid"><div class="look-choice"><input type="radio" id="look-tux" name="look" value="a classic tuxedo" checked><label class="look-card" for="look-tux"><span class="look-art"><svg viewBox="0 0 150 150" aria-hidden="true"><path class="jacket" d="M45 23 61 17h28l16 6 21 29-13 18-10-8v68H47V62l-10 8-13-18z"/><path d="M61 17 75 32 89 17M61 17 52 42 75 87 98 42 89 17M75 87v43"/><path d="m65 37 10 7 10-7-5 15-5-5-5 5z" fill="#eac998"/></svg></span><span class="look-copy"><strong>Classic tuxedo</strong><small>Black-tie-inspired direction</small></span></label></div><div class="look-choice"><input type="radio" id="look-suit" name="look" value="a tailored suit"><label class="look-card" for="look-suit"><span class="look-art"><svg viewBox="0 0 150 150" aria-hidden="true"><path class="jacket" d="M45 23 61 17h28l16 6 21 29-13 18-10-8v68H47V62l-10 8-13-18z"/><path d="M61 17 75 32 89 17M61 17 52 42 75 87 98 42 89 17M75 87v43"/><path d="m65 37 10 7 10-7-5 15-5-5-5 5z" fill="#eac998"/></svg></span><span class="look-copy"><strong>Tailored suit</strong><small>Versatile, refined event styling</small></span></label></div><div class="look-choice"><input type="radio" id="look-unsure" name="look" value="guidance on available formalwear options"><label class="look-card" for="look-unsure"><span class="look-art"><svg viewBox="0 0 150 150" aria-hidden="true"><path class="jacket" d="M45 23 61 17h28l16 6 21 29-13 18-10-8v68H47V62l-10 8-13-18z"/><path d="M61 17 75 32 89 17M61 17 52 42 75 87 98 42 89 17M75 87v43"/><path d="m65 37 10 7 10-7-5 15-5-5-5 5z" fill="#eac998"/></svg></span><span class="look-copy"><strong>Help me choose</strong><small>Ask about available styles and sizes</small></span></label></div></div></fieldset>
+<fieldset><legend>01 / Your style direction</legend><div class="look-grid"><div class="look-choice"><input type="radio" id="look-tux" name="look" value="a classic tuxedo" checked><label class="look-card" for="look-tux"><span class="look-art"><span class="look-art-stamp" aria-hidden="true">01 / BLACK TIE</span><svg viewBox="0 0 260 230" aria-hidden="true" focusable="false"><ellipse cx="130" cy="213" rx="80" ry="8" fill="#09231d" opacity=".22"/><path d="m99 50 12-10h38l12 10 30 12 27 34-19 25-18-15v98H79v-98l-18 15-19-25 27-34Z" fill="#172e29" stroke="#b9c7bb" stroke-width="2"/><path d="m111 40 19 20 19-20 8 65-27 78-27-78Z" fill="#fff8e7"/><path d="M111 40 91 53l20 59 19 71-44-65 17-17-21-14 17-37Z M149 40l20 13-20 59-19 71 44-65-17-17 21-14-17-37Z" fill="#30433d" stroke="#9fae9e" stroke-width="1.5"/><path d="m114 67 16 9 16-9-5 18-11-5-11 5Z" fill="#eccb9b" stroke="#eccb9b" stroke-width="1.6"/><path d="M130 89v111" stroke="#d1c2ac" stroke-width="1.6"/><circle cx="139" cy="128" r="2.5" fill="#eccb9b"/><circle cx="139" cy="156" r="2.5" fill="#eccb9b"/><path d="m168 124 19-5-6 12-13-2Z" fill="#f9e5c3"/></svg><span class="look-art-serial" aria-hidden="true">THE CEREMONY EDIT</span></span><span class="look-copy"><strong>Classic tuxedo</strong><small>Black-tie-inspired direction</small></span></label></div><div class="look-choice"><input type="radio" id="look-suit" name="look" value="a tailored suit"><label class="look-card" for="look-suit"><span class="look-art"><span class="look-art-stamp" aria-hidden="true">02 / MODERN SUIT</span><svg viewBox="0 0 260 230" aria-hidden="true" focusable="false"><ellipse cx="130" cy="213" rx="80" ry="8" fill="#193b34" opacity=".2"/><path d="m99 50 12-10h38l12 10 30 12 27 34-19 25-18-15v98H79v-98l-18 15-19-25 27-34Z" fill="#627c70" stroke="#f1e7d3" stroke-width="2"/><path d="m111 40 19 20 19-20 8 65-27 79-27-79Z" fill="#fcf7e8"/><path d="M111 40 91 53l20 59 19 72-44-65 17-17-21-14 17-38Z M149 40l20 13-20 59-19 72 44-65-17-17 21-14-17-38Z" fill="#344e49" stroke="#dae0d3" stroke-width="1.6"/><path d="m130 61 10 10-6 16 7 47-11 24-11-24 7-47-6-16Z" fill="#b87459"/><path d="M130 160v42" stroke="#d9dfd6" stroke-width="1.5"/><circle cx="139" cy="168" r="2.5" fill="#fcf7e8"/><circle cx="139" cy="187" r="2.5" fill="#fcf7e8"/><path d="m165 123 21-5-6 12-15-1Z" fill="#ecc49b"/></svg><span class="look-art-serial" aria-hidden="true">THE REFINED EDIT</span></span><span class="look-copy"><strong>Tailored suit</strong><small>Versatile, refined event styling</small></span></label></div><div class="look-choice"><input type="radio" id="look-unsure" name="look" value="guidance on available formalwear options"><label class="look-card" for="look-unsure"><span class="look-art"><span class="look-art-stamp" aria-hidden="true">03 / OPEN OPTIONS</span><svg viewBox="0 0 260 230" aria-hidden="true" focusable="false"><ellipse cx="130" cy="213" rx="82" ry="8" fill="#4f3727" opacity=".2"/><g transform="translate(-15 15) rotate(-8 130 125)" opacity=".8"><path d="m100 59 12-11h36l12 11 27 13 24 32-18 24-16-15v89H81v-89l-16 15-18-24 24-32Z" fill="#dfc8aa" stroke="#796348" stroke-width="2"/><path d="m112 48 18 22 18-22-18 102Z" fill="#f4e6d2"/><path d="m112 48-21 13 39 89-21-54 10-17Z m36 0 21 13-39 89 21-54-10-17Z" fill="#b09a7e"/></g><g transform="translate(20 3) rotate(7 130 125)"><path d="m100 59 12-11h36l12 11 27 13 24 32-18 24-16-15v89H81v-89l-16 15-18-24 24-32Z" fill="#557067" stroke="#f1e6cc" stroke-width="2"/><path d="m112 48 18 22 18-22-18 102Z" fill="#f8f0df"/><path d="m112 48-21 13 39 89-21-54 10-17Z m36 0 21 13-39 89 21-54-10-17Z" fill="#344f46" stroke="#b7c7b4" stroke-width="1.4"/></g><circle cx="198" cy="51" r="23" fill="#f5e6cd" stroke="#987752" stroke-width="2"/><path d="M192 45c0-9 14-11 17-3 3 8-10 8-10 16m0 6v1" fill="none" stroke="#624d38" stroke-width="3.7" stroke-linecap="round"/></svg><span class="look-art-serial" aria-hidden="true">THE DISCOVERY EDIT</span></span><span class="look-copy"><strong>Help me choose</strong><small>Ask about available styles and sizes</small></span></label></div></div></fieldset>
 <div class="atelier-fields"><label for="atelier-occasion">02 / Occasion<select id="atelier-occasion"><option value="a wedding">Wedding</option><option value="prom">Prom</option><option value="a formal event">Formal event</option><option value="another occasion">Other</option></select></label><label for="atelier-date">03 / Event date (optional)<input type="date" id="atelier-date"></label></div>
 <p class="atelier-help">Nothing is submitted or saved by this page. Use your note when you contact the provider.</p></form>
 <aside class="atelier-preview" aria-labelledby="atelier-preview-title"><p class="eyebrow">Your fitting brief / Live preview</p><h3 id="atelier-preview-title">Ready for the conversation.</h3><p class="atelier-message" id="atelier-message"></p><p class="atelier-caveat">Confirm style, size, price and availability directly with Formal Affairs.</p><button class="atelier-copy" id="atelier-copy" type="button">Copy my fitting inquiry ↗</button><p class="atelier-status" id="atelier-status" role="status" aria-live="polite"></p><p class="atelier-call">Prefer to call? <a href="tel:+14798909557">479-890-9557 ↗</a></p></aside></div>
