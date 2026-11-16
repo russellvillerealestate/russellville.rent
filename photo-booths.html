@@ -717,6 +717,45 @@ footer a{font-weight:750}
  .afterglow-link-body strong,.afterglow-link-body small,.afterglow-link-body span,.afterglow-arrow{color:#153a2d}
 }
 
+
+/* 2026-11-16 / A hometown celebration cover.
+   Compared live StayARV's immersive destination-led hierarchy with the live
+   Russellville.Rent directory and the Nov 12 mobile contact-sheet work.
+   Preserve the existing three-frame strip on all devices; add a spacious
+   original River Valley poster and event-ticket composition on wide screens.
+   No provider photos, inventory, price or delivery promises introduced.
+   Sources: NN/g visual hierarchy and signal-to-noise; web.dev stable image
+   dimensions/layout shift; WCAG 2.2 reflow, focus and reduced-motion. */
+@media(min-width:801px){
+  .hero .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:clamp(26px,4.3vw,64px);min-height:620px}
+  .hero .photo-scene{min-height:470px;isolation:isolate;place-items:center;overflow:visible}
+  .hero .booth-scenic-stage{
+    position:absolute;inset:0 2% 0 0;overflow:hidden;border-radius:26px;
+    background:linear-gradient(135deg,#28584b,#173e36);border:1px solid #e6c68d63;
+    box-shadow:0 26px 52px #061e1a82,0 0 0 9px #efdbac0c;
+  }
+  .hero .booth-scenic-stage svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero .booth-stage-kicker{position:absolute;top:26px;left:31px;right:24px;color:#f6dfae;font-size:.59rem;font-weight:850;letter-spacing:.16em;line-height:1.4}
+  .hero .booth-stage-title{position:absolute;top:21%;left:7%;font:400 clamp(2.3rem,3.4vw,4.15rem)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.055em;color:#fff9e6;text-shadow:0 3px 17px #1638299c}
+  .hero .booth-stage-title em{font-weight:400;color:#f0cd8e}
+  .hero .booth-stage-fine{position:absolute;left:30px;right:30px;bottom:17px;max-width:43ch;color:#e9ead6;font-size:.61rem;letter-spacing:.025em;line-height:1.5}
+  .hero .photo-strip{position:relative;z-index:2;justify-self:end;margin:88px 6% 0 0;box-shadow:20px 25px 0 #f3d19d25,0 28px 58px #041916af;transition:transform .2s ease}
+  .hero .photo-scene:hover .photo-strip{transform:rotate(3deg) translateY(-5px)}
+  .hero .booth-stage-ticket{position:absolute;z-index:3;left:-4%;bottom:11%;display:flex;flex-direction:column;gap:4px;min-width:185px;max-width:55%;padding:16px 20px;background:#f1d49b;color:#15392e;transform:rotate(-8deg);border:1px solid #fff5d6;box-shadow:0 12px 30px #0a2723a8;border-radius:3px}
+  .hero .booth-stage-ticket b{font-size:.62rem;letter-spacing:.16em}
+  .hero .booth-stage-ticket span{font:italic 1.16rem/1.1 Georgia,"Times New Roman",serif}
+}
+@media(max-width:800px){
+  .hero .booth-scenic-stage,.hero .booth-stage-ticket{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero .photo-strip{transition:none}
+  .hero .photo-scene:hover .photo-strip{transform:none}
+}
+@media print{
+  .hero .booth-scenic-stage,.hero .booth-stage-ticket{display:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -724,7 +763,25 @@ footer a{font-weight:750}
 <header><div class="wrap header-inner"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
 <section class="hero" aria-labelledby="page-title"><div class="wrap hero-grid">
 <div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Make the moment <em>memorable.</em></h1><p class="hero-copy">Photo and video booth rentals for weddings, school functions and celebrations. Explore local and regional options, then confirm packages and travel details with each provider.</p><nav class="hero-nav" aria-label="Jump to rental options"><a href="#russellville">Russellville service advertised ↓</a><a href="#more">More providers ↓</a><a href="#price-snapshots">Published prices ↓</a></nav><p class="booth-hero-provenance">Downtown Russellville scenery <span aria-hidden="true">/</span> Illustrated photo strip, not provider equipment or availability</p></div>
-<div class="photo-scene" aria-hidden="true"><div class="photo-strip"><div class="photo-frame"></div><div class="photo-frame"></div><div class="photo-frame"></div><div class="photo-strip-label">Your moment, captured.</div></div></div>
+<div class="photo-scene" aria-hidden="true">
+  <div class="booth-scenic-stage">
+    <svg viewBox="0 0 560 460" preserveAspectRatio="xMidYMid slice" focusable="false" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="427" cy="112" r="92" fill="#efcb83" opacity=".58"/>
+      <circle cx="427" cy="112" r="120" fill="none" stroke="#efcb83" stroke-opacity=".29" stroke-width="2"/>
+      <path d="M0 292 88 200l102 75 96-119 106 110 72-72 96 105v161H0Z" fill="#69977b" opacity=".58"/>
+      <path d="M0 351q107-73 198-18t184-30 178 16v141H0Z" fill="#285f4d"/>
+      <path d="M0 409q125-74 274-26t286-6v83H0Z" fill="#173f36"/>
+      <path d="M18 435q110-42 222-12t300-19" fill="none" stroke="#e5bc76" stroke-width="4" stroke-dasharray="3 17" opacity=".62"/>
+      <g fill="none" stroke="#f7db99" stroke-width="3" opacity=".48"><path d="m82 92 15-33 15 33 34 15-34 13-15 33-15-33-34-13z"/><path d="m470 305 10-22 10 22 24 10-24 9-10 22-10-22-24-9z"/></g>
+      <g fill="#efce90"><circle cx="200" cy="82" r="4"/><circle cx="243" cy="55" r="3"/><circle cx="516" cy="178" r="5"/></g>
+    </svg>
+    <span class="booth-stage-kicker">RIVER VALLEY / CELEBRATION FIELD NOTES</span>
+    <strong class="booth-stage-title">Your story.<br><em>In frames.</em></strong>
+    <span class="booth-stage-fine">Original editorial scene · Not a rental booth photograph</span>
+  </div>
+  <div class="photo-strip"><div class="photo-frame"></div><div class="photo-frame"></div><div class="photo-frame"></div><div class="photo-strip-label">Your moment, captured.</div></div>
+  <div class="booth-stage-ticket"><b>01 / 02 / 03</b><span>Snap. Share. Celebrate.</span></div>
+</div>
 </div></section>
 <main id="main" class="wrap content"><nav class="moment-wayfinder" aria-label="Choose where to start with photo booth rentals">
 <a href="#russellville"><span class="way-number">01 / Local first</span><strong>Start with Russellville service.</strong><small>Three providers advertise service covering Russellville. Confirm event-date availability.</small><span class="way-arrow" aria-hidden="true">↗</span></a>
