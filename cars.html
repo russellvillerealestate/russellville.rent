@@ -770,6 +770,71 @@ main.wrap{padding-top:52px}
 @media(prefers-reduced-motion:reduce){.road-continue-route,.road-continue-route-arrow{transition:none}.road-continue-route:hover{padding-left:0}.road-continue-route:hover .road-continue-route-arrow{transform:none}}
 @media print{.road-continue{box-shadow:none;break-inside:avoid}.road-continue-scene{min-height:0;background:#143a32!important;color:#fff!important}.road-continue-photo{display:none}.road-continue-route{break-inside:avoid}}
 
+
+/* 2026-11-16 — Mobile road desk: persistent three-way car-rental navigation.
+   Reuses existing Compare / Locations / Before you call destinations. On phones
+   the existing editorial route cards become a compact, thumb-reachable dock.
+   No provider, availability, rates, rules, or scripts changed.
+   Inspiration: live StayARV and Russellville.Rent; Nielsen Norman Group visible
+   mobile navigation; web.dev stable layout; WCAG 2.2 focus visibility/targets. */
+.road-dock-label,.road-dock-graphic{display:none}
+@media (max-width:720px) and (min-height:460px){
+  html{scroll-padding-bottom:calc(110px + env(safe-area-inset-bottom,0px))}
+  body{padding-bottom:calc(110px + env(safe-area-inset-bottom,0px))}
+  .road-quicknav{
+    position:fixed;z-index:70;left:50%;bottom:calc(10px + env(safe-area-inset-bottom,0px));
+    transform:translateX(-50%);width:min(calc(100% - 22px),510px);
+    margin:0;padding:5px;gap:4px;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    border:1px solid #efd6a2;border-radius:18px;
+    background:linear-gradient(135deg,#0a3029,#1c4f3f);
+    box-shadow:0 16px 40px #08261d86,0 0 0 1px #ffffff24 inset;
+    overflow:visible;
+  }
+  .road-quicklink,.road-quicklink:nth-child(2){
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:5px;min-width:0;min-height:72px;margin:0;padding:9px 5px;
+    border:0;border-radius:12px;background:transparent;
+    color:#fff7e7;text-align:center;box-shadow:none;transform:none;
+    transition:background-color .18s ease;
+  }
+  .road-quicklink:first-child{background:#f1d195;color:#15382e;box-shadow:0 5px 12px #041a145c}
+  .road-quicklink:hover,.road-quicklink:nth-child(2):hover{background:#ffffff1c}
+  .road-quicklink:first-child:hover{background:#ffe1a8}
+  .road-quick-index,.road-quicklink strong,.road-quicklink>span:last-child{display:none}
+  .road-dock-graphic{display:grid;place-items:center;width:23px;height:23px;flex:none}
+  .road-dock-graphic svg{
+    display:block;width:22px;height:22px;fill:none;stroke:currentColor;
+    stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;
+  }
+  .road-dock-label{
+    display:block;max-width:100%;color:inherit;
+    font:800 .73rem/1.15 system-ui,-apple-system,"Segoe UI",sans-serif;
+    letter-spacing:.005em;
+  }
+  .road-quicklink:focus-visible{
+    outline:3px solid #fff;outline-offset:2px;
+    background:#315f4c;color:#fff;
+  }
+  .road-quicklink:first-child:focus-visible{background:#f1d195;color:#15382e;outline-color:#fff}
+  main.wrap{padding-top:42px}
+}
+@media (max-width:350px) and (min-height:460px){
+  .road-quicknav{width:calc(100% - 12px);padding:4px;gap:2px}
+  .road-quicklink,.road-quicklink:nth-child(2){min-height:70px;padding:8px 2px}
+  .road-dock-label{font-size:.68rem}
+}
+@media (max-width:720px) and (max-height:459px){
+  /* Short landscape viewports retain the original in-flow route cards. */
+  .road-dock-graphic,.road-dock-label{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .road-quicklink{transition:none}
+}
+@media print{
+  .road-dock-graphic,.road-dock-label{display:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -818,17 +883,17 @@ main.wrap{padding-top:52px}
   </div>
 </div>
 <nav class="road-quicknav wrap" aria-label="Find car rental information quickly">
-    <a href="#compare-title" class="road-quicklink">
+    <a href="#compare-title" class="road-quicklink"><span class="road-dock-graphic" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="15" width="7" height="7" rx="1.5"/><rect x="14" y="15" width="7" height="7" rx="1.5"/></svg></span><span class="road-dock-label">Compare</span>
       <span class="road-quick-index">01 / Compare</span>
       <strong>See what’s known.</strong>
       <span>Vehicles, driver rules &amp; mileage <span aria-hidden="true">↗</span></span>
     </a>
-    <a href="#pickup-atlas-title" class="road-quicklink">
+    <a href="#pickup-atlas-title" class="road-quicklink"><span class="road-dock-graphic" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 22s7-6.3 7-13a7 7 0 0 0-14 0c0 6.7 7 13 7 13Z"/><circle cx="12" cy="9" r="2.5"/></svg></span><span class="road-dock-label">Locations</span>
       <span class="road-quick-index">02 / Locations</span>
       <strong>Start in Russellville.</strong>
       <span>Three listed street addresses <span aria-hidden="true">↗</span></span>
     </a>
-    <a href="#checklist-title" class="road-quicklink">
+    <a href="#checklist-title" class="road-quicklink"><span class="road-dock-graphic" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="5" y="3" width="14" height="19" rx="2"/><path d="m8 10 2 2 4-4M8 17h8"/></svg></span><span class="road-dock-label">Before you call</span>
       <span class="road-quick-index">03 / Before you call</span>
       <strong>Know what to ask.</strong>
       <span>Availability, insurance &amp; total costs <span aria-hidden="true">↗</span></span>
