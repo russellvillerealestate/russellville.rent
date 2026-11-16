@@ -6753,3 +6753,56 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   font-size:clamp(1.75rem,8vw,2.4rem);
  }
 }
+
+
+/* 2026-11-16 / Save the good finds, mobile Explore.
+   Reviewed live StayARV and Russellville.Rent. Inspired by the former's pine
+   and brass editorial hierarchy; adapted to a functional rental field guide.
+   Nielsen Norman Group: information scent; web.dev: inline vector, no requests;
+   W3C WCAG 2.2: keyboard focus, contrast, reflow, target size, reduced motion. */
+@media(max-width:760px){
+ .directory-masthead .mobile-menu-actions a.mobile-menu-saved-folio{
+  position:relative;isolation:isolate;overflow:hidden;
+  display:grid;grid-template-columns:minmax(0,1fr) 94px;
+  grid-column:1/-1;gap:8px;align-items:center;text-align:left;
+  min-height:171px;padding:20px 20px 19px;
+  border:1px solid #baac7c;border-radius:16px;
+  background:linear-gradient(128deg,#113d32 0%,#205743 67%,#28694e 100%);
+  box-shadow:0 11px 22px #173c322c;color:#fff9e9;
+  transition:background .18s ease,border-color .18s ease;
+ }
+ .directory-masthead .mobile-menu-actions a.mobile-menu-saved-folio::before{
+  content:"";position:absolute;z-index:-1;pointer-events:none;
+  inset:9px;border:1px solid #f5d69b46;border-radius:10px;
+ }
+ .mobile-menu-saved-story{display:flex;flex-direction:column;align-items:flex-start;gap:9px;min-width:0}
+ .mobile-menu-saved-kicker{font-size:.58rem;font-weight:850;letter-spacing:.15em;line-height:1.4;color:#f5dca8}
+ .directory-masthead .mobile-menu-saved-story strong{
+  font:400 clamp(1.65rem,5vw,2.15rem)/1.02 Georgia,"Times New Roman",serif;
+  letter-spacing:-.05em;color:#fff9e9;text-wrap:balance
+ }
+ .mobile-menu-saved-story small{max-width:28ch;color:#e6f1e7;font-size:.75rem;font-weight:500;line-height:1.48}
+ .mobile-menu-saved-cta{
+  display:inline-flex;align-items:center;gap:11px;
+  margin-top:3px;padding:7px 0 0;border-top:1px solid #e6d9a963;
+  color:#ffe1a9;font-size:.74rem;font-weight:900;line-height:1.4
+ }
+ .mobile-menu-saved-art{display:block;justify-self:end;align-self:center;width:94px;height:auto;max-width:100%;filter:drop-shadow(0 8px 10px #052c2066)}
+ .directory-masthead .mobile-menu-actions a.mobile-menu-saved-folio:hover{
+  background:linear-gradient(125deg,#164938,#29644a);border-color:#f4d59c
+ }
+ .directory-masthead .mobile-menu-actions a.mobile-menu-saved-folio:focus-visible{outline:3px solid #a66112;outline-offset:3px}
+}
+@media(max-width:410px){
+ .directory-masthead .mobile-menu-actions a.mobile-menu-saved-folio{
+  min-height:159px;grid-template-columns:minmax(0,1fr) 66px;gap:4px;padding:18px 15px
+ }
+ .directory-masthead .mobile-menu-saved-story strong{font-size:1.62rem}
+ .mobile-menu-saved-art{width:66px}
+ .mobile-menu-saved-story{gap:7px}
+ .mobile-menu-saved-kicker{letter-spacing:.09em;font-size:.55rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .directory-masthead .mobile-menu-actions a.mobile-menu-saved-folio{transition:none}
+}
+@media print{.directory-masthead .mobile-menu-actions a.mobile-menu-saved-folio{display:none!important}}

@@ -50,7 +50,24 @@
         </nav>
         <div class="mobile-menu-actions">
           <a class="mobile-menu-all" href="#browse">Browse every category <span aria-hidden="true">↗</span></a>
-          <a href="#saved-panel">Saved categories <span aria-hidden="true">↗</span></a>
+          <a class="mobile-menu-saved-folio" id="mobile-menu-saved-folio" href="#saved-panel">
+  <span class="mobile-menu-saved-story">
+    <span class="mobile-menu-saved-kicker">R↗ / YOUR LOCAL FIELD GUIDE</span>
+    <strong>Keep the good finds.</strong>
+    <small id="mobile-menu-saved-status">Save your favorite rental categories and return to them here.</small>
+    <span class="mobile-menu-saved-cta">Open your saved categories <span aria-hidden="true">↗</span></span>
+  </span>
+  <svg class="mobile-menu-saved-art" viewBox="0 0 112 130" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="62" cy="62" r="50" fill="none" stroke="#f5d89d" stroke-opacity=".32" stroke-width="1.5"/>
+    <circle cx="62" cy="62" r="37" fill="none" stroke="#f5d89d" stroke-opacity=".2" stroke-width="1.5"/>
+    <path d="M15 38 49 31 55 109 20 114Z" fill="#638b72" stroke="#e7d6a9" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="m40 22 41-7 12 83-40 7Z" fill="#f3d99e" stroke="#fff1c9" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M54 39 76 35M57 49l21-4M61 59l21-4" stroke="#4a725d" stroke-width="3" stroke-linecap="round"/>
+    <path d="M78 12v24l-8-7-7 10V15" fill="#b66e44" stroke="#f5e7c9" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M30 82h23m-19 10h20" stroke="#f3d99e" stroke-width="3" stroke-linecap="round"/>
+    <path d="m66 75 5 8 9 1-6 7 1 10-9-4-8 5 1-10-7-6 9-2Z" fill="#edc783" stroke="#fff0bb" stroke-width="2.5"/>
+  </svg>
+</a>
           <a href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
           <a href="#list">List your rental <span aria-hidden="true">↗</span></a>
         </div>
@@ -1325,6 +1342,7 @@ const categorySearchText = new Map(cards.map(card => [card, card.textContent.toL
 const savedToggle = document.getElementById("saved-toggle");
 const mobileSavedLink = document.getElementById("mobile-saved-link");
 const mobileSavedCount = document.getElementById("mobile-saved-count");
+const mobileMenuSavedStatus = document.getElementById("mobile-menu-saved-status");
 const savedPanel = document.getElementById("saved-panel");
 const savedCount = document.getElementById("saved-total");
 const savedLinks = document.getElementById("saved-links");
@@ -1357,6 +1375,7 @@ function rememberSavedCategories(){
 function renderSavedCategories(){
   savedCount.textContent = String(savedCategories.length);
   mobileSavedCount.textContent = String(savedCategories.length);
+  mobileMenuSavedStatus.textContent = savedCategories.length ? savedCategories.length + (savedCategories.length === 1 ? " category" : " categories") + " saved for your next visit." : "Save favorite rental categories and return to them here.";
   mobileSavedLink.dataset.hasSaved = String(savedCategories.length > 0);
   mobileSavedLink.setAttribute("aria-label", "View " + savedCategories.length + " saved rental categories");
   savedToggle.setAttribute("aria-label", (savedPanel.hidden ? "Show " : "Hide ") + savedCategories.length + " saved rental categories");
@@ -1496,6 +1515,24 @@ mobileSavedLink.addEventListener("click", event => {
   savedPanel.scrollIntoView({
     behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
     block:"start"
+  });
+});
+/* The prominent mobile Explore saved shortcut must open the hidden shortlist. */
+document.getElementById("mobile-menu-saved-folio").addEventListener("click", event => {
+  event.preventDefault();
+  const exploreMenu = document.querySelector(".directory-masthead .mobile-directory-menu");
+  if (exploreMenu) exploreMenu.open = false;
+  if (savedPanel.hidden) {
+    savedPanel.hidden = false;
+    savedToggle.setAttribute("aria-expanded", "true");
+    renderSavedCategories();
+  }
+  const heading = document.getElementById("saved-panel-title");
+  heading.setAttribute("tabindex", "-1");
+  heading.focus({preventScroll:true});
+  savedPanel.scrollIntoView({
+    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+    block: "start"
   });
 });
 savedClear.addEventListener("click", () => {
