@@ -15,6 +15,22 @@
      This is local editorial scenery, not rental-provider inventory. -->
 <link rel="preload" as="image" href="assets/lake-dardanelle-sunset.jpg" type="image/jpeg" fetchpriority="high">
 <link rel="stylesheet" href="home.css">
+<style>
+/* 2026-11-16: Search-first directory, scenic post-directory chapter.
+   NN/g visual hierarchy; web.dev layout stability; WCAG 2.2 focus/reflow. */
+.discovery--encore{position:relative;isolation:isolate;overflow:hidden;margin:clamp(42px,6vw,80px) 0 0;padding:clamp(24px,4.5vw,55px);border:1px solid #39735c;border-radius:clamp(20px,3vw,32px);background:radial-gradient(ellipse at 100% 0%,#2b7058 0%,transparent 44%),linear-gradient(135deg,#0d3029,#19493b 76%,#103a30);box-shadow:0 24px 58px #102f2b22;color:#fff9eb}
+.discovery--encore::before{content:"";position:absolute;right:-125px;top:-165px;z-index:-1;width:430px;height:430px;border:1px solid #ecd9a72c;border-radius:50%;box-shadow:0 0 0 44px #e9d69a0b,0 0 0 90px #e9d69a08;pointer-events:none}
+.discovery--encore .discovery-heading{align-items:end;gap:clamp(18px,4vw,48px);margin-bottom:27px}
+.discovery--encore .discovery-heading h2{max-width:15ch;color:#fff8e8;font:400 clamp(2.5rem,4.8vw,4.9rem)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.06em;text-wrap:balance}
+.discovery--encore .discovery-heading .eyebrow{color:#f2d397;letter-spacing:.17em}
+.discovery--encore .discovery-heading>p{max-width:380px;color:#e2eee4;font-size:.93rem;line-height:1.7}
+.discovery--encore .discovery-swipe-guide{color:#e9dbbb}
+.discovery--encore .discovery-grid>.discovery-card{box-shadow:0 16px 35px #071d1860;border-color:#e6dec050}
+.discovery--encore .discovery-card:focus-visible{outline:4px solid #f7d18b;outline-offset:4px}
+.discovery--encore .discovery-caption{color:#e4e9dc}
+@media(max-width:650px){.discovery--encore{margin-top:43px;padding:27px 17px;border-radius:20px}.discovery--encore .discovery-heading{margin-bottom:20px}.discovery--encore .discovery-heading h2{font-size:clamp(2.65rem,10vw,3.7rem)}.discovery--encore .discovery-heading>p{font-size:.84rem}}
+@media print{.discovery--encore{background:#fff!important;color:#111;box-shadow:none;border:1px solid #888}.discovery--encore .discovery-heading h2,.discovery--encore .discovery-heading>p,.discovery--encore .discovery-heading .eyebrow,.discovery--encore .discovery-caption{color:#111}}
+</style>
 
 </head>
 <body>
@@ -155,73 +171,12 @@
  </div>
 </section>
 
-<section class="discovery" aria-labelledby="discovery-title">
-  <div class="discovery-heading"><div><p class="eyebrow">MADE FOR THE RIVER VALLEY / FOUR WAYS IN</p><h2 id="discovery-title">Whatever your next chapter looks like.</h2></div><p>Start with what you have in mind. Choose a path to filter the directory, or explore all 35 categories below.</p></div>
-  <p class="discovery-swipe-guide"><span aria-hidden="true">↔</span> Four ways to begin · swipe to explore</p>
-  <div class="discovery-grid">
-    <a class="discovery-card discovery-card--home" href="#browse" data-discovery-category="homes">
-      <img src="assets/downtown-russellville-sunset.jpg" alt="" width="1200" height="544" loading="lazy">
-      <span class="path-kicker">01 / Settle in</span>
-      <div class="path-content"><div><h3>Find your place.</h3><span class="path-description">Browse homes &amp; apartments</span></div><span class="path-arrow" aria-hidden="true">↗</span></div>
-    </a>
-    <a class="discovery-card discovery-card--water" href="#browse" data-discovery-category="paddling">
-      <img src="assets/lake-dardanelle-sunset.jpg" alt="" width="1920" height="910" loading="lazy">
-      <span class="path-kicker">02 / Get outside</span>
-      <div class="path-content"><div><h3>Make a splash.</h3><span class="path-description">Browse kayaks &amp; paddling</span></div><span class="path-arrow" aria-hidden="true">↗</span></div>
-    </a>
-    <a class="discovery-card discovery-card--gear" href="#browse" data-discovery-category="tools">
-      <svg class="discovery-scene" viewBox="0 0 600 350" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-  <defs><linearGradient id="discovery-gear-sky" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#577a5b"/><stop offset="1" stop-color="#203f3c"/></linearGradient></defs>
-  <rect width="600" height="350" fill="url(#discovery-gear-sky)"/><circle cx="471" cy="81" r="58" fill="#ecc891" opacity=".87"/>
-  <path d="M0 168 92 116l91 39 103-60 128 62 89-59 97 69v183H0Z" fill="#63856b" opacity=".78"/>
-  <path d="M0 228 108 184l95 37 92-52 107 38 103-44 95 53v134H0Z" fill="#325d50"/>
-  <path d="M0 291c130-35 232-38 322-20s182-1 278-34v113H0Z" fill="#20453d"/>
-  <g stroke="#e4dec0" stroke-width="2" fill="none" opacity=".22"><path d="M28 308h543M52 326h498M58 265h98M395 262h155"/></g>
-  <g transform="translate(278 69)" fill="none" stroke="#f5deb0" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M34 162h161l19 16H26Z" fill="#bf996b" fill-opacity=".33" stroke-width="5"/>
-    <path d="M61 158V90h71v68M78 90V62h39v28M134 104l47-43 24 29-31 25" stroke-width="9"/>
-    <path d="M182 62 197 34l28 11-17 45M139 144h35m-115 0h42" stroke-width="8"/>
-    <circle cx="78" cy="180" r="15" fill="#d7ae74" stroke-width="6"/>
-    <circle cx="177" cy="180" r="15" fill="#d7ae74" stroke-width="6"/>
-  </g><path d="M0 349c88-55 170-44 238-31s169 37 362-13v44Z" fill="#143a33"/>
-</svg>
-      <span class="path-kicker">03 / Get to work</span>
-      <div class="path-content"><div><h3>Bring the tools.</h3><span class="path-description">Browse equipment rentals</span></div><span class="path-arrow" aria-hidden="true">↗</span></div>
-    </a>
-    <a class="discovery-card discovery-card--party" href="#browse" data-discovery-category="party">
-      <svg class="discovery-scene" viewBox="0 0 600 350" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-  <defs><linearGradient id="discovery-event-sky" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#bb856f"/><stop offset=".6" stop-color="#6c5868"/><stop offset="1" stop-color="#313f4f"/></linearGradient></defs>
-  <rect width="600" height="350" fill="url(#discovery-event-sky)"/><circle cx="487" cy="85" r="63" fill="#ffd9a1" opacity=".75"/>
-  <path d="M0 232Q110 177 223 222t377-13v141H0Z" fill="#344b52" opacity=".8"/>
-  <path d="M0 298q174-58 318-4t282-27v83H0Z" fill="#1c3942"/>
-  <path d="M75 125Q298 183 535 117" stroke="#fbe0ac" stroke-width="3" fill="none"/>
-  <g fill="#ffe1a4"><circle cx="99" cy="131" r="6"/><circle cx="153" cy="141" r="6"/><circle cx="208" cy="146" r="6"/><circle cx="267" cy="150" r="6"/><circle cx="328" cy="147" r="6"/><circle cx="386" cy="138" r="6"/><circle cx="447" cy="128" r="6"/><circle cx="509" cy="119" r="6"/></g>
-  <g fill="#f0c999" stroke="#ffebb9" stroke-width="3" stroke-linejoin="round">
-    <path d="M112 229 284 106l173 123Z"/><path d="m112 229 172-60 173 60" fill="#d89c79"/>
-    <path d="M125 228h317v73H125Z" fill="#f3d2a9" fill-opacity=".16"/>
-  </g><g stroke="#ead2aa" stroke-width="6"><path d="M131 227v96m153-150v147m155-93v96"/></g>
-  <g fill="#f5dfb0"><rect x="197" y="263" width="174" height="9" rx="4"/><path d="M222 270v37m125-37v37" stroke="#f5dfb0" stroke-width="6"/></g>
-  <path d="M0 341q123-58 296-16t304-5v30H0Z" fill="#182f35"/>
-</svg>
-      <span class="path-kicker">04 / Celebrate &amp; gather</span>
-      <div class="path-content"><div><h3>Make it a moment.</h3><span class="path-description">Browse parties &amp; event rentals</span></div><span class="path-arrow" aria-hidden="true">↗</span></div>
-    </a>
-  </div>
-  <p class="discovery-caption">River Valley photographs and original illustrative scenes are for navigation—not pictures of rental providers or proof of availability.</p>
 
-</section>
 
-<!-- Three existing planning doors, arranged as a photographed River Valley field-guide gallery. -->
+<!-- Search-first directory; the scenic four-route gallery follows the results. -->
 <section id="browse" aria-labelledby="browse-title"><div class="section-head"><div><p class="eyebrow">Find it around here</p><h2 id="browse-title">What are you looking for?</h2><p>Explore rental options, or ask us about a category we’re building.</p></div><span class="browse-label">35 categories. One local hub.</span></div>
 
-<section class="recent-trail" id="recent-trail" aria-labelledby="recent-trail-title" hidden>
- <div class="recent-trail-top">
-  <div><span class="recent-trail-kicker">RIVER VALLEY / YOUR BROWSING TRAIL</span><h3 id="recent-trail-title">Retrace your <em>rental trail.</em></h3></div>
-  <div class="recent-trail-explain"><p>Return to the rental categories you opened in this tab. Your searches, filters and saved categories remain below.</p><button id="recent-trail-clear" type="button">Clear recent categories</button></div>
- </div>
- <nav id="recent-trail-grid" class="recent-trail-grid" aria-label="Recently opened rental categories"></nav>
- <p class="recent-trail-foot">Remembered only in this browser tab; no account or request is created.</p>
-</section>
+
 <form class="filters" id="filters" role="search" hidden>
 <div class="finder-intro">
  <span class="finder-intro-kicker">RUSSELLVILLE.RENT / LOCAL RENTAL FINDER</span>
@@ -240,6 +195,14 @@
   <button type="button" class="quick-pick" data-quick-category="party" aria-pressed="false" style="--pick-tint:#f6e2d7"><span class="quick-pick-icon" aria-hidden="true"><svg class="quick-pictogram" viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-party"></use></svg></span>Events</button>
 </div>
 
+<section class="recent-trail" id="recent-trail" aria-labelledby="recent-trail-title" hidden>
+ <div class="recent-trail-top">
+  <div><span class="recent-trail-kicker">RIVER VALLEY / YOUR BROWSING TRAIL</span><h3 id="recent-trail-title">Retrace your <em>rental trail.</em></h3></div>
+  <div class="recent-trail-explain"><p>Return to the rental categories you opened in this tab. Your searches, filters and saved categories remain below.</p><button id="recent-trail-clear" type="button">Clear recent categories</button></div>
+ </div>
+ <nav id="recent-trail-grid" class="recent-trail-grid" aria-label="Recently opened rental categories"></nav>
+ <p class="recent-trail-foot">Remembered only in this browser tab; no account or request is created.</p>
+</section>
 <section class="intent-explorer" id="intent-explorer" aria-labelledby="intent-heading" hidden>
   <div class="intent-heading"><div><p class="eyebrow">EXPLORE BY YOUR PLANS</p><h3 id="intent-heading">Start with the reason.</h3><p>Not sure what to search for? Pick a path to see related rental categories. Every category remains available in the full directory.</p></div><button class="intent-all" type="button" data-intent-choice="all" aria-controls="rental-results" aria-pressed="true"><span data-intent-count="all">All categories</span> <span aria-hidden="true">↗</span></button></div>
   <div class="intent-grid" role="group" aria-label="Explore rental categories by purpose">
@@ -1054,6 +1017,61 @@
   </div>
 </div>
 <p class="directory-note">This is a growing local directory. Categories marked “Listings welcome” do not have published providers yet. Contact the provider or our hub to confirm availability, pricing, and rental terms.</p>
+</section>
+<section class="discovery discovery--encore" aria-labelledby="discovery-title">
+  <div class="discovery-heading"><div><p class="eyebrow">RUSSELLVILLE.RENT / A SECOND WAY TO EXPLORE</p><h2 id="discovery-title">Another way through the River Valley.</h2></div><p>Return to the full directory through one of four illustrated routes. Each route filters the same 35 categories, without implying availability or a booking.</p></div>
+  <p class="discovery-swipe-guide"><span aria-hidden="true">↔</span> Four routes into the directory · swipe to explore</p>
+  <div class="discovery-grid">
+    <a class="discovery-card discovery-card--home" href="#browse" data-discovery-category="homes">
+      <img src="assets/downtown-russellville-sunset.jpg" alt="" width="1200" height="544" loading="lazy">
+      <span class="path-kicker">01 / Settle in</span>
+      <div class="path-content"><div><h3>Find your place.</h3><span class="path-description">Browse homes &amp; apartments</span></div><span class="path-arrow" aria-hidden="true">↗</span></div>
+    </a>
+    <a class="discovery-card discovery-card--water" href="#browse" data-discovery-category="paddling">
+      <img src="assets/lake-dardanelle-sunset.jpg" alt="" width="1920" height="910" loading="lazy">
+      <span class="path-kicker">02 / Get outside</span>
+      <div class="path-content"><div><h3>Make a splash.</h3><span class="path-description">Browse kayaks &amp; paddling</span></div><span class="path-arrow" aria-hidden="true">↗</span></div>
+    </a>
+    <a class="discovery-card discovery-card--gear" href="#browse" data-discovery-category="tools">
+      <svg class="discovery-scene" viewBox="0 0 600 350" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+  <defs><linearGradient id="discovery-gear-sky" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#577a5b"/><stop offset="1" stop-color="#203f3c"/></linearGradient></defs>
+  <rect width="600" height="350" fill="url(#discovery-gear-sky)"/><circle cx="471" cy="81" r="58" fill="#ecc891" opacity=".87"/>
+  <path d="M0 168 92 116l91 39 103-60 128 62 89-59 97 69v183H0Z" fill="#63856b" opacity=".78"/>
+  <path d="M0 228 108 184l95 37 92-52 107 38 103-44 95 53v134H0Z" fill="#325d50"/>
+  <path d="M0 291c130-35 232-38 322-20s182-1 278-34v113H0Z" fill="#20453d"/>
+  <g stroke="#e4dec0" stroke-width="2" fill="none" opacity=".22"><path d="M28 308h543M52 326h498M58 265h98M395 262h155"/></g>
+  <g transform="translate(278 69)" fill="none" stroke="#f5deb0" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M34 162h161l19 16H26Z" fill="#bf996b" fill-opacity=".33" stroke-width="5"/>
+    <path d="M61 158V90h71v68M78 90V62h39v28M134 104l47-43 24 29-31 25" stroke-width="9"/>
+    <path d="M182 62 197 34l28 11-17 45M139 144h35m-115 0h42" stroke-width="8"/>
+    <circle cx="78" cy="180" r="15" fill="#d7ae74" stroke-width="6"/>
+    <circle cx="177" cy="180" r="15" fill="#d7ae74" stroke-width="6"/>
+  </g><path d="M0 349c88-55 170-44 238-31s169 37 362-13v44Z" fill="#143a33"/>
+</svg>
+      <span class="path-kicker">03 / Get to work</span>
+      <div class="path-content"><div><h3>Bring the tools.</h3><span class="path-description">Browse equipment rentals</span></div><span class="path-arrow" aria-hidden="true">↗</span></div>
+    </a>
+    <a class="discovery-card discovery-card--party" href="#browse" data-discovery-category="party">
+      <svg class="discovery-scene" viewBox="0 0 600 350" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+  <defs><linearGradient id="discovery-event-sky" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#bb856f"/><stop offset=".6" stop-color="#6c5868"/><stop offset="1" stop-color="#313f4f"/></linearGradient></defs>
+  <rect width="600" height="350" fill="url(#discovery-event-sky)"/><circle cx="487" cy="85" r="63" fill="#ffd9a1" opacity=".75"/>
+  <path d="M0 232Q110 177 223 222t377-13v141H0Z" fill="#344b52" opacity=".8"/>
+  <path d="M0 298q174-58 318-4t282-27v83H0Z" fill="#1c3942"/>
+  <path d="M75 125Q298 183 535 117" stroke="#fbe0ac" stroke-width="3" fill="none"/>
+  <g fill="#ffe1a4"><circle cx="99" cy="131" r="6"/><circle cx="153" cy="141" r="6"/><circle cx="208" cy="146" r="6"/><circle cx="267" cy="150" r="6"/><circle cx="328" cy="147" r="6"/><circle cx="386" cy="138" r="6"/><circle cx="447" cy="128" r="6"/><circle cx="509" cy="119" r="6"/></g>
+  <g fill="#f0c999" stroke="#ffebb9" stroke-width="3" stroke-linejoin="round">
+    <path d="M112 229 284 106l173 123Z"/><path d="m112 229 172-60 173 60" fill="#d89c79"/>
+    <path d="M125 228h317v73H125Z" fill="#f3d2a9" fill-opacity=".16"/>
+  </g><g stroke="#ead2aa" stroke-width="6"><path d="M131 227v96m153-150v147m155-93v96"/></g>
+  <g fill="#f5dfb0"><rect x="197" y="263" width="174" height="9" rx="4"/><path d="M222 270v37m125-37v37" stroke="#f5dfb0" stroke-width="6"/></g>
+  <path d="M0 341q123-58 296-16t304-5v30H0Z" fill="#182f35"/>
+</svg>
+      <span class="path-kicker">04 / Celebrate &amp; gather</span>
+      <div class="path-content"><div><h3>Make it a moment.</h3><span class="path-description">Browse parties &amp; event rentals</span></div><span class="path-arrow" aria-hidden="true">↗</span></div>
+    </a>
+  </div>
+  <p class="discovery-caption">River Valley photographs and original illustrative scenes are for navigation—not pictures of rental providers or proof of availability.</p>
+
 </section>
 <section class="field-guide-shelf" aria-labelledby="field-guide-shelf-title">
   <div class="field-guide-heading">
