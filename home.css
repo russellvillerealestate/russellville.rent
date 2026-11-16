@@ -6854,3 +6854,27 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 }
 @media(prefers-reduced-motion:reduce){.mobile-sheet-match{transition:none}.mobile-sheet-match:hover{transform:none}}
 @media print{.mobile-sheet-preview{display:none!important}}
+
+
+/* 2026-11-16 / River Valley cleanup field folio. Compared live StayARV
+   and Russellville.Rent and latest main commits; original SVG landscape,
+   not a provider equipment claim. Nielsen Norman Group hierarchy/contrast,
+   web.dev scalable inline art, W3C WCAG 2.2 reflow and reduced motion.
+   Editorial grid only; existing compact/list/print provider card retained. */
+.cleanup-folio-scene,.cleanup-folio-overline,.cleanup-folio-headline,.cleanup-folio-note{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="dumpsters"]{border:1px solid #b09b74;border-radius:23px;overflow:hidden;background:#fafbf7;box-shadow:0 17px 43px #123b3120}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="dumpsters"]>.cleanup-folio{position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:5px;min-width:0;height:342px;padding:29px 26px 19px;text-align:left;border:0;background:#173e37;color:#fff9e7}
+#rental-results[data-view="grid"][data-layout="editorial"] .cleanup-folio-scene{display:block;position:absolute;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none;transition:transform .32s ease}
+#rental-results[data-view="grid"][data-layout="editorial"] .cleanup-folio:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,#092e2633 0%,#092e2600 31%,#0a3028df 64%,#07211cfa 100%)}
+#rental-results[data-view="grid"][data-layout="editorial"] .cleanup-folio:after{content:"";position:absolute;inset:12px;border:1px solid #f4dca27a;border-radius:9px;pointer-events:none}
+#rental-results[data-view="grid"][data-layout="editorial"] .cleanup-folio-overline{display:block;position:absolute;top:26px;left:25px;right:112px;color:#ffe2ad;font-size:.56rem;letter-spacing:.12em;font-weight:850;line-height:1.5}
+#rental-results[data-view="grid"][data-layout="editorial"] .cleanup-folio-headline{display:block;position:relative;max-width:18ch;color:#fffbed;font:400 clamp(1.95rem,2.7vw,2.5rem)/1.05 Georgia,"Times New Roman",serif;letter-spacing:-.05em;text-shadow:0 3px 12px #041b1777}
+#rental-results[data-view="grid"][data-layout="editorial"] .cleanup-folio-headline em{display:block;font-style:italic;color:#f7d596}
+#rental-results[data-view="grid"][data-layout="editorial"] .cleanup-folio>img{position:absolute;top:17px;right:18px;width:77px;height:56px;padding:6px;border-radius:8px;background:#fffef7;object-fit:contain;box-shadow:0 5px 16px #08201b52}
+#rental-results[data-view="grid"][data-layout="editorial"] .cleanup-folio>.cleanup-provider-name{font-size:.76rem;color:#fff7db;line-height:1.35;font-weight:850}
+#rental-results[data-view="grid"][data-layout="editorial"] .cleanup-folio>small{font-size:.52rem;color:#f5d5a0;letter-spacing:.14em}
+#rental-results[data-view="grid"][data-layout="editorial"] .cleanup-folio-note{display:block;margin-top:7px;padding-top:9px;border-top:1px solid #f5e0ba70;color:#f1ebd8;font-size:.59rem;font-weight:600;line-height:1.4}
+@media(max-width:600px){#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="dumpsters"]>.cleanup-folio{height:310px;padding:25px 22px 18px}#rental-results[data-view="grid"][data-layout="editorial"] .cleanup-folio-headline{font-size:clamp(1.9rem,8vw,2.7rem)}#rental-results[data-view="grid"][data-layout="editorial"] .cleanup-folio-overline{left:22px;right:103px}}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="dumpsters"]:hover .cleanup-folio-scene{transform:scale(1.035)}}
+@media(prefers-reduced-motion:reduce){#rental-results .cleanup-folio-scene{transition:none!important;transform:none!important}}
+@media print{#rental-results .cleanup-folio-scene,#rental-results .cleanup-folio-overline,#rental-results .cleanup-folio-headline,#rental-results .cleanup-folio-note{display:none!important}#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="dumpsters"]>.cleanup-folio{background:#fff!important;color:#173e37!important;height:135px!important;border:1px solid #888}#rental-results[data-view="grid"][data-layout="editorial"] .cleanup-folio:before,#rental-results[data-view="grid"][data-layout="editorial"] .cleanup-folio:after{display:none!important}#rental-results[data-view="grid"][data-layout="editorial"] .cleanup-folio>.cleanup-provider-name,#rental-results[data-view="grid"][data-layout="editorial"] .cleanup-folio>small{color:#173e37!important}}
