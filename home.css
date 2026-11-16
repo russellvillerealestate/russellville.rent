@@ -6662,3 +6662,62 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-rentals"]>.carehire-folio{height:105px!important;min-height:0!important;background:#fff!important;color:#204e48!important}
  #rental-results[data-view="grid"][data-layout="editorial"] .carehire-folio>.directory-pictogram{display:block!important;position:relative!important}
 }
+
+
+/* Nov 16 2026: Original Lake Atkins illustrated park postcard. Compared live
+   StayARV/Russellville.Rent and recent main commits. Scenic reference,
+   not a provider photograph or representation of a specific available site.
+   Research: NN/g visual hierarchy, web.dev responsive images, WCAG 2.2 reflow,
+   keyboard focus and reduced-motion guidance. Preserve verified provider copy. */
+#rental-results .rv-lake-folio{position:relative;isolation:isolate;display:block;min-width:0;overflow:hidden;background:#17483e;color:#fff8e9}
+#rental-results .rv-lake-scene{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1);transition:transform .55s ease}
+#rental-results .rv-lake-folio:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,#09292375,transparent 31%,#072f2766 53%,#072a24f2 100%)}
+#rental-results .rv-folio-overline,#rental-results .rv-folio-story,#rental-results .rv-folio-logo,#rental-results .rv-folio-note{position:absolute;z-index:2}
+#rental-results .rv-folio-overline{top:27px;left:29px;right:110px;font-size:.64rem;font-weight:850;line-height:1.4;letter-spacing:.16em;color:#fff5d9;text-shadow:0 2px 6px #09251c}
+#rental-results .rv-folio-story{left:29px;right:22%;bottom:65px;display:flex;flex-direction:column;align-items:flex-start;gap:9px}
+#rental-results .rv-folio-story small{font-size:.64rem;color:#ffe2a8;letter-spacing:.17em;font-weight:850}
+#rental-results .rv-folio-story strong{font:400 clamp(2.5rem,4vw,4.25rem)/.98 Georgia,"Times New Roman",serif;letter-spacing:-.06em;text-wrap:balance;text-shadow:0 4px 20px #09251e}
+#rental-results .rv-folio-story strong em{color:#f6d599;font-weight:400}
+#rental-results .rv-folio-story>span{color:#f5f0de;font-size:.7rem;font-weight:850;letter-spacing:.15em}
+#rental-results .rv-folio-logo{top:24px;right:24px;width:100px;height:67px;display:grid;place-items:center;padding:7px 10px;border-radius:8px;background:#fffef7;box-shadow:0 8px 22px #05291e80}
+#rental-results .rv-folio-logo>img{display:block;width:100%;height:100%;object-fit:contain;transform:none!important}
+#rental-results .rv-folio-note{bottom:20px;left:29px;right:20px;color:#f3f0e2;font-size:.64rem;line-height:1.4;font-weight:700}
+#rental-results .rv-folio-amenities{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 15px;padding:0;list-style:none}
+#rental-results .rv-folio-amenities li{padding:8px 10px;border:1px solid #c3d3c1;border-radius:999px;background:#edf3e8;color:#24483c;font-size:.7rem;font-weight:760;line-height:1.4}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rvs"]{grid-column:span 2;display:grid;grid-template-columns:minmax(0,1.07fr) minmax(0,.93fr);min-height:425px;border:1px solid #b0c4b6;border-radius:23px;overflow:hidden;box-shadow:0 18px 47px #153b2a23}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rvs"]>.rv-lake-folio{height:100%;min-height:425px}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rvs"]>.card-body{justify-content:center;min-width:0;padding:clamp(28px,3.6vw,50px);background:linear-gradient(145deg,#fffef6,#e7f0e8)}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rvs"] .card-body h3{font:400 clamp(2.1rem,3vw,3.1rem)/1.07 Georgia,"Times New Roman",serif;letter-spacing:-.05em;color:#183f34;text-wrap:balance}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rvs"] .card-link{display:inline-flex;align-items:center;align-self:flex-start;gap:10px;min-height:48px;padding:11px 16px;margin-top:12px;background:#18513f;color:#fff;border-radius:10px;text-decoration:none;font-weight:800;font-size:.84rem}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rvs"] .card-link:hover{background:#2d7055}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rvs"] .card-link:focus-visible{outline:3px solid #b87920;outline-offset:4px}
+#rental-results[data-view="list"]>.rental-card[data-category="rvs"]>.rv-lake-folio{height:100%;min-height:230px}
+#rental-results[data-view="list"] .rv-folio-story{left:19px;right:10px;bottom:43px}
+#rental-results[data-view="list"] .rv-folio-story strong{font-size:clamp(1.25rem,2.5vw,1.8rem)}
+#rental-results[data-view="list"] .rv-folio-story small,#rental-results[data-view="list"] .rv-folio-story>span{display:none}
+#rental-results[data-view="list"] .rv-folio-overline{top:17px;left:17px;right:88px;font-size:.52rem;letter-spacing:.08em}
+#rental-results[data-view="list"] .rv-folio-logo{top:14px;right:14px;width:67px;height:44px;padding:4px}
+#rental-results[data-view="list"] .rv-folio-note{bottom:12px;left:19px;font-size:.51rem}
+@media(max-width:900px){
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rvs"]{grid-template-columns:1fr}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rvs"]>.rv-lake-folio{height:340px;min-height:340px}
+ #rental-results .rv-folio-story strong{font-size:clamp(2.55rem,6vw,3.6rem)}
+}
+@media(max-width:600px){
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rvs"]{grid-column:auto;display:flex;flex-direction:column;border-radius:18px}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rvs"]>.rv-lake-folio{height:310px;min-height:310px}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rvs"]>.card-body{padding:24px 22px}
+ #rental-results .rv-folio-overline{top:19px;left:19px;right:91px;font-size:.54rem;letter-spacing:.09em}
+ #rental-results .rv-folio-logo{top:16px;right:15px;width:74px;height:49px;padding:5px}
+ #rental-results .rv-folio-story{left:20px;right:14px;bottom:55px;gap:6px}
+ #rental-results .rv-folio-story strong{font-size:clamp(2.5rem,9vw,3.3rem)}
+ #rental-results .rv-folio-note{left:20px;right:13px;bottom:17px;font-size:.57rem}
+ #rental-results[data-view="list"]>.rental-card[data-category="rvs"]>.rv-lake-folio{height:100%;min-height:155px}
+ #rental-results[data-view="list"] .rv-folio-overline,#rental-results[data-view="list"] .rv-folio-story,#rental-results[data-view="list"] .rv-folio-note{display:none}
+ #rental-results[data-view="list"] .rv-folio-logo{top:12px;right:10px;width:58px;height:36px}
+}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+ #rental-results>.rental-card[data-category="rvs"]:hover .rv-lake-scene{transform:scale(1.045)}
+}
+@media(prefers-reduced-motion:reduce){#rental-results .rv-lake-scene{transition:none!important;transform:none!important}}
+@media print{#rental-results>.rental-card[data-category="rvs"] .rv-lake-folio{height:140px!important;min-height:140px!important}#rental-results .rv-folio-story,#rental-results .rv-folio-overline,#rental-results .rv-folio-note{display:none!important}#rental-results>.rental-card[data-category="rvs"]{break-inside:avoid}}
