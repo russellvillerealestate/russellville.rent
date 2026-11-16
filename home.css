@@ -6565,3 +6565,100 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
  #rental-results .rental-card[data-category="sheds"] .sheds-folio-scene{transition:none!important;transform:none!important}
 }
 @media print{.sheds-folio{display:none!important}}
+
+
+/* Care-and-mobility folio: illustrated paid rentals versus free-loan route.
+   Compared live stayarv.com and russellville.rent. Nielsen Norman Group:
+   visual hierarchy; web.dev: responsive imagery; W3C WCAG 2.2: reflow,
+   visible focus and target size. Preserve all directory content and modes. */
+.carehire-scene,.carehire-kicker,.carehire-title,.carehire-note,
+.carehire-checks,.carehire-loans-link{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-rentals"]{
+ grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);
+ border:1px solid #b1bdc3;border-radius:24px;overflow:hidden;
+ background:#fcfbf6;box-shadow:0 20px 48px #153c3925
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-rentals"]>.carehire-folio{
+ position:relative;isolation:isolate;display:flex;flex-direction:column;
+ align-items:flex-start;justify-content:flex-end;gap:16px;
+ width:100%;height:auto;min-height:485px;min-width:0;
+ padding:clamp(28px,3.5vw,47px);background:#314f64;color:#fff7e5;text-align:left
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .carehire-folio::before{
+ content:"";position:absolute;z-index:-1;inset:0;width:auto;height:auto;
+ border:0;border-radius:0;pointer-events:none;
+ background:linear-gradient(180deg,#152c41c9 0%,#142c3e3b 36%,#142c3e29 53%,#172f42ea 100%)
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .carehire-folio::after{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"] .carehire-folio>.carehire-scene{
+ display:block;position:absolute;inset:0;z-index:-2;pointer-events:none;
+ width:100%;height:100%;max-width:none;transition:transform .5s ease
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-rentals"]:hover .carehire-scene{transform:scale(1.025)}
+#rental-results[data-view="grid"][data-layout="editorial"] .carehire-folio>.directory-pictogram,
+#rental-results[data-view="grid"][data-layout="editorial"] .carehire-folio>small{display:none}
+#rental-results[data-view="grid"][data-layout="editorial"] .carehire-kicker{
+ display:block;position:relative;z-index:1;align-self:stretch;margin:0 0 auto;
+ color:#fff1cb;font-size:.67rem;font-weight:800;letter-spacing:.17em;line-height:1.6
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .carehire-title{
+ display:block;position:relative;z-index:1;max-width:16ch;color:#fffdf6;
+ font:400 clamp(2.65rem,4.6vw,4.3rem)/1.04 Georgia,"Times New Roman",serif;
+ letter-spacing:-.058em;text-wrap:balance;text-shadow:0 3px 17px #101f2b8c
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .carehire-title em{color:#f4d5a0;font-style:italic}
+#rental-results[data-view="grid"][data-layout="editorial"] .carehire-note{
+ display:block;position:relative;z-index:1;max-width:37ch;
+ color:#f4ead8;font-size:.7rem;line-height:1.5
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-rentals"]>.card-body{
+ min-width:0;justify-content:center;padding:clamp(26px,3.6vw,48px);
+ background:linear-gradient(145deg,#fffdf7,#e8efed)
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-rentals"] .card-body h3{
+ font:400 clamp(1.9rem,3vw,2.8rem)/1.09 Georgia,"Times New Roman",serif;
+ color:#193c3b;letter-spacing:-.045em;text-wrap:balance
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .carehire-checks{
+ display:grid;grid-template-columns:1fr;gap:8px;list-style:none;padding:0;margin:13px 0 8px
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .carehire-checks li{
+ display:flex;align-items:center;gap:14px;padding:11px 13px;border:1px solid #d5dfd9;
+ border-radius:10px;background:#ffffffbe;color:#2d504b;font-size:.82rem;line-height:1.4;font-weight:660
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .carehire-checks li span{
+ flex:none;color:#376a63;font-size:.7rem;font-weight:820;letter-spacing:.08em
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-rentals"] .card-link{
+ display:inline-flex;align-items:center;justify-content:space-between;gap:12px;
+ min-height:48px;width:fit-content;max-width:100%;padding:12px 17px;
+ background:#224e51;color:white;border-radius:10px;text-decoration:none;font-weight:760
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-rentals"] .card-link:hover{background:#32676a}
+#rental-results[data-view="grid"][data-layout="editorial"] .carehire-loans-link{
+ display:block;width:fit-content;margin:12px 0 0;color:#275b53;
+ font-size:.82rem;line-height:1.55;text-decoration:none;font-weight:680
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .carehire-loans-link span{text-decoration:underline;text-underline-offset:3px}
+#rental-results[data-view="grid"][data-layout="editorial"] .carehire-loans-link:focus-visible{outline:3px solid #a46a16;outline-offset:4px}
+@media(max-width:900px){
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-rentals"]{grid-template-columns:minmax(0,1fr)}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-rentals"]>.carehire-folio{min-height:355px;padding:29px}
+ #rental-results[data-view="grid"][data-layout="editorial"] .carehire-title{font-size:clamp(2.45rem,6vw,3.7rem)}
+}
+@media(max-width:600px){
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-rentals"]{border-radius:18px}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-rentals"]>.carehire-folio{min-height:326px;padding:24px}
+ #rental-results[data-view="grid"][data-layout="editorial"] .carehire-title{font-size:clamp(2.25rem,9vw,3.15rem)}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-rentals"]>.card-body{padding:26px 23px}
+}
+@media(prefers-reduced-motion:reduce){
+ #rental-results .carehire-scene{transition:none!important}
+ #rental-results>.rental-card:hover .carehire-scene{transform:none!important}
+}
+@media print{
+ .carehire-scene,.carehire-kicker,.carehire-title,.carehire-note,.carehire-checks,.carehire-loans-link{display:none!important}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-rentals"]{display:block!important;border:1px solid #aaa!important;box-shadow:none!important}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="medical-equipment-rentals"]>.carehire-folio{height:105px!important;min-height:0!important;background:#fff!important;color:#204e48!important}
+ #rental-results[data-view="grid"][data-layout="editorial"] .carehire-folio>.directory-pictogram{display:block!important;position:relative!important}
+}
