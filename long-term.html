@@ -1321,6 +1321,59 @@ body.has-comparison{padding-bottom:115px}
   .rental-alternatives-list a{min-height:0;box-shadow:none;break-inside:avoid}
 }
 
+
+/* 2026-11-16 / River Valley neighborhood masthead.
+   StayARV: immersive scenic hero, editorial type scale and strong primary route.
+   Nielsen Norman Group: scale, hierarchy and Gestalt; web.dev: fixed SVG aspect ratio
+   and no added network requests; WCAG 2.2: reflow, focus and pointer target size. */
+.longterm-art-hero{min-height:570px}
+.longterm-art-hero::after{background:linear-gradient(90deg,#071f1beF 0%,#0a2922cf 53%,#0a29229b 100%)}
+.longterm-hero-stage{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.82fr);align-items:center;gap:clamp(27px,4.5vw,73px);padding-block:clamp(64px,7.5vw,112px) clamp(100px,9vw,135px)}
+.longterm-hero-copy{min-width:0}
+.longterm-art-hero .longterm-hero-copy h1{max-width:14ch;font-size:clamp(3.05rem,5.9vw,5.55rem);line-height:1.035}
+.longterm-art-hero .longterm-hero-copy .hero-copy{max-width:54ch}
+.longterm-hero-atlas{min-width:0;overflow:hidden;align-self:center;position:relative;background:#f8f2e5;color:#183e34;border:1px solid #f5e7cc;border-radius:7px 25px 7px 25px;box-shadow:0 28px 65px #071e1b70;transform:rotate(1deg)}
+.longterm-atlas-head{display:flex;justify-content:space-between;align-items:center;padding:16px 23px 12px;gap:14px;color:#365e4c;font-size:.64rem;font-weight:850;letter-spacing:.16em}
+.longterm-atlas-seal{display:grid;place-items:center;flex:0 0 39px;width:39px;height:39px;border:1px solid #a7baa3;border-radius:50%;font-size:1rem;letter-spacing:-.07em}
+.longterm-atlas-art{position:relative;margin-inline:15px;overflow:hidden;border-radius:3px 13px 3px 13px;border:1px solid #c2ceb9;aspect-ratio:640/260;background:#c6dccb}
+.longterm-atlas-art svg{display:block;width:100%;height:100%}
+.longterm-atlas-art-caption{position:absolute;right:9px;bottom:7px;padding:4px 7px;background:#f9f5eae8;color:#264b40;font-size:.57rem;line-height:1.25;font-weight:700;max-width:76%;text-align:right}
+.longterm-atlas-body{padding:21px 25px 25px}
+.longterm-atlas-kicker{font-size:.63rem;font-weight:850;letter-spacing:.17em;color:#9b6242}
+.longterm-atlas-body h2{font:400 clamp(1.65rem,2.45vw,2.28rem)/1.07 Georgia,"Times New Roman",serif;letter-spacing:-.055em;margin:10px 0;color:#183e34}
+.longterm-atlas-body h2 em{font-style:italic;color:#9b6242}
+.longterm-atlas-body p{color:#426354;font-size:.82rem;line-height:1.55;margin:0 0 15px}
+.longterm-atlas-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:7px;margin-bottom:13px}
+.longterm-atlas-links a{display:flex;min-width:0;gap:4px;align-items:center;justify-content:space-between;padding:10px 8px;min-height:48px;background:#e5ece0;border:1px solid #b7c9b6;border-radius:6px;color:#1b4739;font-size:.75rem;font-weight:850;text-decoration:none;transition:background .18s,transform .18s}
+.longterm-atlas-links a:hover{background:#d1e2d0;transform:translateY(-2px)}
+.longterm-atlas-links a:focus-visible{outline:3px solid #a76c19;outline-offset:3px}
+.longterm-atlas-body small{display:block;color:#527161;font-size:.67rem;line-height:1.5}
+@media(max-width:980px){
+  .longterm-hero-stage{grid-template-columns:minmax(0,1fr) minmax(280px,.9fr);gap:24px}
+  .longterm-art-hero .longterm-hero-copy h1{font-size:clamp(2.65rem,5.2vw,4.5rem)}
+  .longterm-atlas-body{padding:18px}
+  .longterm-atlas-head{padding:12px 16px 9px}
+  .longterm-atlas-links{grid-template-columns:1fr}
+  .longterm-atlas-links a{padding-inline:12px;min-height:40px}
+}
+@media(max-width:730px){
+  .longterm-hero-stage{display:grid;grid-template-columns:minmax(0,1fr);padding:65px 0 94px;gap:28px}
+  .longterm-art-hero .longterm-hero-copy h1{font-size:clamp(2.7rem,9.7vw,4.2rem)}
+  .longterm-hero-atlas{transform:none;max-width:560px;width:100%;justify-self:center}
+  .longterm-atlas-links{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .longterm-atlas-links a{min-height:48px;padding-inline:8px}
+}
+@media(max-width:420px){
+  .longterm-hero-stage{padding:48px 0 82px;gap:22px}
+  .longterm-atlas-head{font-size:.56rem}
+  .longterm-atlas-body{padding:17px}
+  .longterm-atlas-links{grid-template-columns:1fr}
+  .longterm-atlas-links a{min-height:44px;padding-inline:13px}
+  .longterm-atlas-art-caption{font-size:.52rem}
+}
+@media(prefers-reduced-motion:reduce){.longterm-atlas-links a{transition:none}.longterm-atlas-links a:hover{transform:none}}
+@media print{.longterm-hero-atlas{box-shadow:none;transform:none}.longterm-atlas-art{display:none}}
+
 </style></head>
 <body>
 <a class="skip" href="#main">Skip to listings</a>
@@ -1349,9 +1402,10 @@ body.has-comparison{padding-bottom:115px}
   </div>
 </header>
 
-<section class="hero" aria-labelledby="hero-title">
+<section class="hero longterm-art-hero" aria-labelledby="hero-title">
   <img src="assets/lake-dardanelle-sunset.jpg" alt="Lake Dardanelle in Russellville, Arkansas" width="1920" height="910" fetchpriority="high">
-  <div class="wrap hero-content">
+  <div class="wrap hero-content longterm-hero-stage">
+    <div class="longterm-hero-copy">
     <p class="eyebrow">Russellville, Arkansas rental search</p>
     <h1 id="hero-title">Find a place to live.<br>Without checking ten websites.</h1>
     <p class="hero-copy">Search rental homes and apartments from multiple local property managers in one place. Compare the basics here, then verify the current details with the listing source.</p>
@@ -1359,6 +1413,53 @@ body.has-comparison{padding-bottom:115px}
       <a class="button primary" href="#filters">Search rentals ↓</a>
       <a class="button secondary" href="sms:+14799707301">Tell us what you need</a>
     </div>
+  </div>
+    <aside class="longterm-hero-atlas" aria-labelledby="longterm-atlas-title">
+      <div class="longterm-atlas-head"><span>THE RIVER VALLEY / HOME FINDER</span><span class="longterm-atlas-seal" aria-hidden="true">R↗</span></div>
+      <div class="longterm-atlas-art" aria-hidden="true">
+      <svg viewBox="0 0 640 260" fill="none" focusable="false" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="lt-sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e6eee0"/><stop offset="1" stop-color="#bfd8ca"/></linearGradient></defs>
+        <rect width="640" height="260" fill="url(#lt-sky)"/>
+        <circle cx="535" cy="45" r="28" fill="#edc482"/>
+        <path d="M0 131 75 99l73 26 90-43 78 44 92-37 88 42 80-38 64 42V260H0Z" fill="#adc6af"/>
+        <path d="M0 162Q104 120 208 157T423 145T640 157V260H0Z" fill="#7aa48d"/>
+        <path d="M0 211h640v49H0Z" fill="#d7d4bb"/>
+        <path d="M0 239h640" stroke="#a4b3a0" stroke-width="4" stroke-dasharray="15 16"/>
+        <g stroke="#285548" stroke-width="4" stroke-linejoin="round">
+          <path d="M44 143 136 78l90 65v75H44Z" fill="#f2e2c2"/>
+          <path d="m32 148 104-79 105 79" stroke="#b96e4e" stroke-width="11"/>
+          <path d="M115 176h43v42h-43z" fill="#386b60"/>
+          <path d="M60 160h33v30H60z" fill="#a9c6c0"/>
+          <path d="M175 160h30v30h-30z" fill="#a9c6c0"/>
+        </g>
+        <g stroke="#285548" stroke-width="4">
+          <path d="M267 107h127v111H267z" fill="#e4cfac"/>
+          <path d="M258 104h145v14H258z" fill="#b97958"/>
+          <path d="M283 130h32v30h-32zM344 130h32v30h-32zM283 172h32v28h-32zM344 172h32v28h-32z" fill="#a9c9be"/>
+          <path d="M320 218v-49h22v49" fill="#6d8f81"/>
+        </g>
+        <g stroke="#285548" stroke-width="4" stroke-linejoin="round">
+          <path d="M430 143 470 112l41 31 42-31 41 31v75H430Z" fill="#f0dfbd"/>
+          <path d="m423 146 47-41 41 35 42-35 49 41" stroke="#b97555" stroke-width="8"/>
+          <path d="M468 177h20v41h-20zM554 177h20v41h-20z" fill="#416e63"/>
+          <path d="M440 153h20v18h-20zM521 153h20v18h-20z" fill="#bad7cb"/>
+        </g>
+        <g fill="#2a5b49"><path d="m12 217 19-65 18 65h-12v14H24v-14zM614 218l15-63 17 63h-10v13h-12v-13z"/></g>
+      </svg>
+      <span class="longterm-atlas-art-caption">Original neighborhood illustration · Not listed rental properties</span>
+    </div>
+      <div class="longterm-atlas-body">
+        <span class="longterm-atlas-kicker">01 / FIND YOUR STARTING POINT</span>
+        <h2 id="longterm-atlas-title">A place for <em>your next chapter.</em></h2>
+        <p>Choose a home style to open the existing rental search with that filter selected.</p>
+        <nav class="longterm-atlas-links" aria-label="Search by home style">
+          <a href="?type=House#filters"><span>Houses</span><span aria-hidden="true">↗</span></a>
+          <a href="?type=Apartment#filters"><span>Apartments</span><span aria-hidden="true">↗</span></a>
+          <a href="?type=Townhouse#filters"><span>Townhomes</span><span aria-hidden="true">↗</span></a>
+        </nav>
+        <small>Directory shortcuts, not confirmed vacancies. Verify each listing with its source.</small>
+      </div>
+    </aside>
   </div>
 </section>
 
