@@ -513,9 +513,71 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
 @media(prefers-reduced-motion:reduce){.bike-next-link,.bike-next-arrow{transition:none!important}.bike-next-link:hover,.bike-next-link:hover .bike-next-arrow{transform:none}}
 @media print{.bike-next{background:white;padding:25px 0}.bike-next-scene{min-height:0;color:#173c32;background:white;box-shadow:none}.bike-next-scene:before,.bike-next-photo{display:none}.bike-next-scene-kicker,.bike-next-scene h2 em{color:#173c32}.bike-next-scene-content>p:not(.bike-next-scene-kicker),.bike-next-photo-note{color:#173c32}.bike-next-inner{display:block}.bike-next-link,.bike-next-link:nth-of-type(2),.bike-next-link:nth-of-type(3){color:#173c32;background:white;box-shadow:none;break-inside:avoid}.bike-next-link:nth-of-type(2) .bike-next-num{color:#49675b}}
 
+
+/* November 17 2026 — Mobile field-guide navigation.
+   Reference: StayARV's confident forest/gold identity, NN/g visual hierarchy
+   (https://www.nngroup.com/articles/visual-hierarchy-ux-definition/),
+   web.dev visual stability (https://web.dev/articles/cls),
+   WCAG 2.2 focus visibility (https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum).
+   CSS-only: native anchors; no extra assets or scripting. */
+.bike-mobile-dock{display:none}
+@media (max-width:720px){
+  html{scroll-padding-bottom:calc(116px + env(safe-area-inset-bottom,0px))}
+  body{padding-bottom:calc(108px + env(safe-area-inset-bottom,0px))}
+  .bike-mobile-dock{
+    position:fixed;inset:auto 0 0;z-index:60;
+    display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;
+    padding:10px max(8px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px));
+    background:linear-gradient(115deg,#0e3028,#174b3b 66%,#204d39);
+    border-top:1px solid #e8d09a7a;
+    box-shadow:0 -14px 35px #0b292b3d;
+  }
+  .bike-mobile-dock a{
+    min-width:0;min-height:73px;padding:9px 3px 7px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+    border:1px solid #ffffff26;border-radius:12px;
+    color:#fffdf5;text-decoration:none;text-align:center;line-height:1.18;
+    background:#ffffff08;
+    transition:background-color .18s ease,border-color .18s ease,transform .18s ease;
+  }
+  .bike-mobile-dock a:hover{background:#ffffff20;border-color:#ead49caa;transform:translateY(-2px)}
+  .bike-mobile-dock a:focus-visible{outline:3px solid #ffe2a5;outline-offset:-3px;background:#315c49}
+  .bike-mobile-dock-number{
+    display:inline-grid;place-items:center;width:24px;height:24px;
+    border:1px solid #f3d59e9e;border-radius:50%;
+    color:#f5d797;font:800 .63rem/1 system-ui,sans-serif;letter-spacing:.03em;
+  }
+  .bike-mobile-dock strong{font:700 clamp(.68rem,2.7vw,.85rem)/1.2 system-ui,-apple-system,sans-serif;letter-spacing:-.025em}
+  .bike-mobile-dock small{font:.58rem/1.22 system-ui,sans-serif;color:#d7e4d8}
+}
+@media (max-width:370px){
+  .bike-mobile-dock{gap:3px;padding-left:5px;padding-right:5px}
+  .bike-mobile-dock a{padding-inline:1px}
+  .bike-mobile-dock small{font-size:.54rem}
+}
+@media (max-height:440px) and (orientation:landscape){
+  .bike-mobile-dock{display:none}
+  body{padding-bottom:0}
+  html{scroll-padding-bottom:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .bike-mobile-dock a{transition:none}
+  .bike-mobile-dock a:hover{transform:none}
+}
+@media print{
+  .bike-mobile-dock{display:none!important}
+  body{padding-bottom:0!important}
+}
 </style></head><body>
 <a class="skip" href="#rates">Skip to rental rates</a>
 <header><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
+<!-- A compact four-stop navigation deck keeps the long bicycle guide accessible on phones. -->
+<nav class="bike-mobile-dock" aria-label="Bicycle rental quick navigation">
+  <a href="#ride-finder-title"><span class="bike-mobile-dock-number" aria-hidden="true">01</span><strong>Bike types</strong><small>Find a ride</small></a>
+  <a href="#rates"><span class="bike-mobile-dock-number" aria-hidden="true">02</span><strong>Rates</strong><small>Compare prices</small></a>
+  <a href="#bike-budget"><span class="bike-mobile-dock-number" aria-hidden="true">03</span><strong>Budget</strong><small>Plan a trip</small></a>
+  <a href="#bike-access-atlas"><span class="bike-mobile-dock-number" aria-hidden="true">04</span><strong>Providers</strong><small>Make contact</small></a>
+</nav>
 <main id="main">
 <section class="hero" aria-labelledby="page-title"><img class="ride-landscape" src="assets/downtown-russellville-sunset.jpg" alt="" width="1200" height="544" fetchpriority="high"><div class="wrap">
 <div><p class="eyebrow">Russellville, Arkansas · Ride local</p><h1 id="page-title">Find your next ride.</h1><p class="lead">Mountain trails, city streets or a gravel-road outing: compare bicycle rental styles and posted daily prices from a local Russellville shop.</p><div class="actions"><a class="button gold" href="#rates">Compare daily rates ↓</a><a class="button ghost" href="tel:+14798904950">Call the bike shop ↗</a></div><div class="ride-facts" aria-label="Bicycle rental facts"><span><strong>05</strong> Published day rates</span><span><strong>01</strong> Russellville shop with posted rates</span><span><strong>↗</strong> Call to confirm availability</span></div></div>
