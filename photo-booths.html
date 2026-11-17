@@ -756,6 +756,96 @@ footer a{font-weight:750}
   .hero .booth-scenic-stage,.hero .booth-stage-ticket{display:none!important}
 }
 
+
+/* Photo-booth editorial wayfinding / River Valley first / 2026-11-17.
+   StayARV's generous hero and clear primary action inform a larger hometown-first
+   chapter paired with two compact comparison routes. This transforms only the
+   existing three links; all verified providers, prices, search, forms and scripts
+   remain untouched. References: NN/g visual hierarchy and information scent;
+   web.dev stable responsive layout; W3C WCAG 2.2 focus visibility and reflow.
+   Decorative rings and monogram are CSS-only, not provider photography. */
+@media screen and (min-width:1040px){
+  .moment-wayfinder{
+    grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+    grid-template-rows:repeat(2,minmax(183px,auto));
+    gap:16px;
+    margin:-102px 0 72px;
+  }
+  .moment-wayfinder a{border-radius:21px}
+  .moment-wayfinder a:first-child{
+    position:relative;isolation:isolate;overflow:hidden;
+    grid-column:1;grid-row:1/3;min-height:0;
+    padding:38px clamp(31px,3.6vw,47px) 35px;
+    background:radial-gradient(circle at 85% 73%,#39735e 0,transparent 46%),
+      linear-gradient(142deg,#0b302c,#184a3c 70%,#225a45);
+    color:#fff9e9;border:1px solid #568674;
+    box-shadow:0 24px 48px #123a2d32;
+  }
+  .moment-wayfinder a:first-child::before{
+    content:"";position:absolute;z-index:0;right:-105px;bottom:-138px;
+    width:390px;height:390px;border:1px solid #f2d69e70;border-radius:50%;
+    box-shadow:0 0 0 39px #f3d6980a,0 0 0 84px #f3d69808;
+    pointer-events:none;
+  }
+  .moment-wayfinder a:first-child::after{
+    content:"R↗";position:absolute;z-index:0;top:23px;right:27px;
+    color:#f4d7a3;font:400 2rem/1 Georgia,"Times New Roman",serif;
+    opacity:.88;pointer-events:none;
+  }
+  .moment-wayfinder a:first-child>*{position:relative;z-index:1}
+  .moment-wayfinder a:first-child .way-number{color:#f5d69d;letter-spacing:.2em}
+  .moment-wayfinder a:first-child strong{
+    max-width:12ch;margin-top:auto;
+    font-size:clamp(2.55rem,3.9vw,3.7rem);
+    line-height:1.04;letter-spacing:-.055em;
+  }
+  .moment-wayfinder a:first-child small{
+    max-width:37ch;color:#e5f0e5;font-size:.93rem;line-height:1.57;
+  }
+  .moment-wayfinder a:first-child .way-arrow{
+    display:grid;place-items:center;width:47px;height:47px;
+    align-self:flex-start;margin-top:4px;border:1px solid #f4d59aa3;
+    border-radius:50%;color:#f5d79e;font-size:1.6rem;
+  }
+  .moment-wayfinder a:nth-child(2),
+  .moment-wayfinder a:nth-child(3){
+    grid-column:2;min-height:0;display:grid;
+    grid-template-columns:minmax(0,1fr) 34px;
+    grid-template-rows:auto auto 1fr;align-content:center;
+    gap:5px 14px;padding:24px 29px;
+  }
+  .moment-wayfinder a:nth-child(2){grid-row:1}
+  .moment-wayfinder a:nth-child(3){grid-row:2}
+  .moment-wayfinder a:nth-child(2) .way-number,
+  .moment-wayfinder a:nth-child(3) .way-number,
+  .moment-wayfinder a:nth-child(2) strong,
+  .moment-wayfinder a:nth-child(3) strong,
+  .moment-wayfinder a:nth-child(2) small,
+  .moment-wayfinder a:nth-child(3) small{grid-column:1;max-width:none}
+  .moment-wayfinder a:nth-child(2) strong,
+  .moment-wayfinder a:nth-child(3) strong{
+    font-size:clamp(1.42rem,2vw,1.76rem);line-height:1.12;
+  }
+  .moment-wayfinder a:nth-child(2) small,
+  .moment-wayfinder a:nth-child(3) small{font-size:.79rem;line-height:1.5}
+  .moment-wayfinder a:nth-child(2) .way-arrow,
+  .moment-wayfinder a:nth-child(3) .way-arrow{
+    grid-column:2;grid-row:1/4;align-self:center;justify-self:center;
+    margin:0;font-size:1.65rem;
+  }
+  .moment-wayfinder a:nth-child(2){background:#f5e9d6;color:#173d33;border-color:#e6d1b6}
+  .moment-wayfinder a:nth-child(2) .way-number{color:#835d33}
+  .moment-wayfinder a:nth-child(2) small{color:#495f50}
+  .moment-wayfinder a:nth-child(3){background:#e3ece4;border-color:#c8dbc9}
+  .moment-wayfinder a:nth-child(3) .way-number{color:#3b6851}
+  .moment-wayfinder a:nth-child(3) small{color:#495f50}
+  .moment-wayfinder a:focus-visible{outline:3px solid #b15e19;outline-offset:5px}
+}
+@media screen and (min-width:1040px) and (prefers-reduced-motion:reduce){
+  .moment-wayfinder a{transition:none}
+  .moment-wayfinder a:hover{transform:none}
+}
+
 </style>
 </head>
 <body>
