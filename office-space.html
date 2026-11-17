@@ -701,11 +701,88 @@ body:not([data-workspace-view="ledger"]) #offices .listing-card button:focus-vis
  }
 }
 
+
+/* 2026-11-17 / The four-stop mobile workroom.
+   Compared live StayARV and Russellville.Rent before editing. Adapt the scenic
+   dark-pine/brass hierarchy to the office directory's existing four categories.
+   NN/g visual hierarchy and navigation scent; web.dev responsive reflow;
+   W3C WCAG 2.2 touch targets, visible focus, focus-not-obscured and reduced motion.
+   This is an in-page route guide, not a new availability or rental claim. */
+.workspace-mobile-route{display:none}
+@media screen and (max-width:740px){
+  html{scroll-padding-bottom:calc(120px + env(safe-area-inset-bottom,0px))}
+  body{padding-bottom:calc(120px + env(safe-area-inset-bottom,0px))}
+  .workspace-mobile-route{
+    position:fixed;z-index:80;
+    display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+    column-gap:5px;row-gap:5px;
+    left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));
+    max-width:550px;margin-inline:auto;
+    padding:8px;
+    border:1px solid #d6b688;
+    border-radius:18px;
+    background:linear-gradient(120deg,#102d30,#1a4a43 72%,#12352f);
+    box-shadow:0 14px 35px #0a292a64,0 0 0 3px #fff4df20;
+  }
+  .workspace-mobile-route .route-caption{
+    grid-column:1/-1;margin:0;padding:0 4px 1px;
+    display:flex;align-items:center;gap:10px;
+    color:#f3d5a4;font-size:.57rem;line-height:1.35;font-weight:850;
+    letter-spacing:.14em;text-transform:uppercase;
+  }
+  .workspace-mobile-route .route-caption:after{
+    content:"";flex:1;min-width:0;height:1px;background:#efd1a35e;
+  }
+  .workspace-mobile-route a{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:5px;min-width:0;min-height:59px;padding:9px 2px 7px;
+    border:1px solid #dcece23d;border-radius:10px;
+    background:#ffffff0d;color:#fff9eb;
+    text-decoration:none;text-align:center;
+    font-size:clamp(.64rem,2.55vw,.78rem);font-weight:800;line-height:1.18;
+    transition:background-color .18s,border-color .18s;
+  }
+  .workspace-mobile-route a span{
+    color:#f4d4a1;font-size:.59rem;font-weight:850;letter-spacing:.11em;
+  }
+  .workspace-mobile-route a:hover{background:#ffffff24;border-color:#f6d8a4}
+  .workspace-mobile-route a:focus-visible{
+    outline:3px solid #ffe4a9;outline-offset:-3px;
+    background:#28584b;
+  }
+  .workspace-mobile-route a:first-of-type{
+    color:#163b34;background:#f3d7a7;border-color:#fff0cc;
+  }
+  .workspace-mobile-route a:first-of-type span{color:#75502b}
+  .workspace-mobile-route a:first-of-type:hover,
+  .workspace-mobile-route a:first-of-type:focus-visible{background:#ffe9c1}
+  #coworking,#offices,#meetings,#mobile{scroll-margin-top:22px}
+}
+@media screen and (max-width:740px) and (max-height:440px) and (orientation:landscape){
+  html{scroll-padding-bottom:0}
+  body{padding-bottom:0}
+  .workspace-mobile-route{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .workspace-mobile-route a{transition:none}
+}
+@media print{
+  .workspace-mobile-route{display:none!important}
+}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#coworking">Skip to rental listings</a>
 <header><div class="wrap header-inner"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
+<!-- Mobile office wayfinding follows existing in-page category anchors. -->
+<nav class="workspace-mobile-route" aria-label="Workspace category shortcuts">
+  <span class="route-caption" aria-hidden="true">The workroom / Four routes</span>
+  <a href="#coworking"><span aria-hidden="true">01</span>Desks</a>
+  <a href="#offices"><span aria-hidden="true">02</span>Offices</a>
+  <a href="#meetings"><span aria-hidden="true">03</span>Meetings</a>
+  <a href="#mobile"><span aria-hidden="true">04</span>Jobsites</a>
+</nav>
 <main>
 <section class="hero" aria-labelledby="page-title"><img class="hero-scene" src="/assets/downtown-russellville-sunset.jpg" alt="" aria-hidden="true" fetchpriority="high" decoding="async" width="1200" height="544"><div class="wrap hero-grid"><div><p class="eyebrow">Russellville, Arkansas · Find your workspace</p><h1 id="page-title">Room for <em>your next idea.</em></h1><p class="lead">From a desk for the day to a private office, meeting room or jobsite workspace, explore local options and contact each provider for current terms.</p><div class="hero-actions"><a class="button primary" href="#workspace-types">Explore workspace types ↓</a><a class="button secondary" href="#offices">Browse office suites ↗</a></div></div><div class="illustration" aria-hidden="true"><svg viewBox="0 0 540 390" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false">
 <defs><linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c5e0d9"/><stop offset="1" stop-color="#8bb8b5"/></linearGradient><linearGradient id="desk" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0c598"/><stop offset="1" stop-color="#b97656"/></linearGradient></defs>
