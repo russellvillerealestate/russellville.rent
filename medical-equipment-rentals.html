@@ -584,6 +584,97 @@
 @media(max-width:780px){.med-compare-heading{grid-template-columns:1fr;gap:11px}.med-compare-notes{flex-direction:column}.med-compare-scroll-hint{display:block}}
 @media(max-width:600px){.med-compare{padding:23px 17px;margin:26px 0 33px;border-radius:19px}.med-compare table{min-width:610px}.med-compare th,.med-compare td{padding:13px 10px}.med-compare h3{font-size:2.05rem}.med-compare-status{font-size:.69rem;padding:6px 8px}}
 @media print{.med-compare{background:#fff!important;color:#173d32!important;box-shadow:none;border:1px solid #8da99a;break-inside:avoid}.med-compare h3,.med-compare h3 em,.med-compare-kicker,.med-compare-heading p,.med-compare-notes p,.med-compare-notes a{color:#173d32!important}.med-compare-scroll{overflow:visible}.med-compare table{min-width:0}.med-compare-scroll-hint{display:none}}
+
+/* 2026-11-17: Equipment-path editorial dispatch — an asymmetric, image-free
+   forest/brass field guide inspired by live StayARV's hierarchy and spaciousness.
+   References: Nielsen Norman Group visual hierarchy, web.dev responsive reflow,
+   W3C WCAG 2.2 focus visibility and reduced-motion support.
+   Pure CSS: original three destinations, filters, provider records, scripts,
+   prices and the independent listings automation remain unchanged. */
+.rental-paths .rental-path-grid{gap:18px}
+.rental-paths .rental-path{border-radius:24px}
+.rental-paths .rental-path--mobility{
+ background:radial-gradient(circle at 86% 21%,#367761 0,transparent 40%),
+   linear-gradient(142deg,#0e322e,#184a3e 68%,#215a46);
+ color:#fff9e9;border-color:#366954;
+ box-shadow:0 23px 49px #123c302c
+}
+.rental-paths .rental-path--mobility:after{
+ top:auto;bottom:-175px;right:-110px;width:415px;height:415px;
+ border-color:#eed49e46;box-shadow:0 0 0 39px #f1d99c0b,0 0 0 86px #f1d99c08
+}
+.rental-paths .rental-path--mobility .path-index{color:#f5d89b}
+.rental-paths .rental-path--mobility .path-mark{border-color:#f6d99d80;color:#fff0ca}
+.rental-paths .rental-path--mobility .path-description{color:#e2eee5}
+.rental-paths .rental-path--mobility .path-action{color:#f7dda7;border-color:#f2dfb17d}
+.rental-paths .rental-path--mobility .path-art{
+ filter:brightness(0) invert(1);opacity:.8;pointer-events:none
+}
+.rental-paths .rental-path--mobility:focus-visible{outline:4px solid #f2d18b;outline-offset:4px}
+.rental-paths .rental-path--home{background:linear-gradient(145deg,#fff8e9,#efdcb8);border-color:#dec69d}
+.rental-paths .rental-path--access{background:linear-gradient(145deg,#eef5f3,#d8e9e5);border-color:#b8d4cd}
+@media(min-width:921px){
+ .rental-paths .rental-path-grid{
+   grid-template-columns:minmax(0,1.16fr) minmax(0,.84fr);
+   grid-template-rows:repeat(2,minmax(0,1fr))
+ }
+ .rental-paths .rental-path--mobility{
+   grid-column:1;grid-row:1/3;min-height:510px;
+   padding:clamp(34px,4.2vw,56px)
+ }
+ .rental-paths .rental-path--mobility strong{
+   font-size:clamp(2.7rem,4.4vw,4.35rem);max-width:12ch;text-wrap:balance
+ }
+ .rental-paths .rental-path--mobility .path-description{max-width:37ch;font-size:.95rem;line-height:1.65}
+ .rental-paths .rental-path--mobility .path-action{font-size:.85rem}
+ .rental-paths .rental-path--mobility .path-art{
+   position:absolute;right:13%;top:27%;margin:0;transform:scale(1.75);transform-origin:center
+ }
+ .rental-paths .rental-path--home,
+ .rental-paths .rental-path--access{grid-column:2;min-height:0;padding:24px clamp(24px,2.8vw,36px)}
+ .rental-paths .rental-path--home{grid-row:1}
+ .rental-paths .rental-path--access{grid-row:2}
+ .rental-paths .rental-path--home .path-art,
+ .rental-paths .rental-path--access .path-art{
+   position:absolute;right:27px;top:56px;margin:0;opacity:.37
+ }
+ .rental-paths .rental-path--home strong,
+ .rental-paths .rental-path--access strong{
+   max-width:17ch;margin-top:32px;font-size:clamp(1.7rem,2.15vw,2.25rem)
+ }
+ .rental-paths .rental-path--home .path-description,
+ .rental-paths .rental-path--access .path-description{max-width:35ch}
+ .rental-paths .rental-path--home .path-action,
+ .rental-paths .rental-path--access .path-action{margin-top:auto}
+}
+@media(min-width:761px) and (max-width:920px){
+ .rental-paths .rental-path-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .rental-paths .rental-path--mobility{
+   grid-column:1/-1;min-height:330px;padding:32px 39px
+ }
+ .rental-paths .rental-path--mobility strong{max-width:14ch;font-size:clamp(2.5rem,5vw,3.6rem)}
+ .rental-paths .rental-path--mobility .path-description{max-width:38ch}
+ .rental-paths .rental-path--mobility .path-art{
+   position:absolute;right:16%;top:31%;margin:0;transform:scale(1.45)
+ }
+ .rental-paths .rental-path--home,.rental-paths .rental-path--access{min-height:310px}
+}
+@media(max-width:760px){
+ .rental-paths .rental-path--mobility{min-height:290px}
+ .rental-paths .rental-path--mobility strong{font-size:clamp(2rem,7vw,2.75rem);max-width:16ch}
+ .rental-paths .rental-path--mobility .path-art{opacity:.43}
+}
+@media print{
+ .rental-paths .rental-path--mobility{
+   color:#173d32!important;background:#fff!important;border-color:#8aa99b;
+   box-shadow:none
+ }
+ .rental-paths .rental-path--mobility :is(.path-index,.path-mark,.path-description,.path-action){color:#173d32!important}
+ .rental-paths .rental-path--mobility .path-art{display:none}
+ .rental-paths .rental-path-grid{display:block}
+ .rental-paths .rental-path{min-height:0!important;break-inside:avoid;margin:0 0 16px}
+}
+
 </style>
 </head>
 <body>
