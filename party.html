@@ -690,12 +690,69 @@ html{scroll-padding-top:125px}
  .guide-stage-sheet-foot a{display:none!important}
 }
 
+
+/* 2026-11-17 River Valley celebration atlas: responsive editorial bento */
+/* Purpose: give four existing celebration paths more recognizable visual
+   hierarchy without changing provider facts, filters, or navigation. The
+   asymmetrical magazine grid draws from StayARV's immersive compositions,
+   adapted for multiple rental categories. NN/g scanning/hierarchy, web.dev
+   explicit media dimensions, W3C WCAG 2.2 focus, reflow, reduced motion. */
+@media screen and (min-width:980px){
+  .occasion-atlas{padding:clamp(34px,4vw,54px);border-radius:29px;background:linear-gradient(135deg,#fffdf7,#f3f1e7);box-shadow:0 28px 58px #153a342c}
+  .occasion-heading{grid-template-columns:minmax(0,1.15fr) minmax(270px,.7fr);gap:35px;margin-bottom:31px}
+  .occasion-heading .atlas-overline{font-size:.66rem;color:#87533b;letter-spacing:.18em}
+  .occasion-heading h2{max-width:18ch;font:400 clamp(2.7rem,4.2vw,4.45rem)/1.03 Georgia,"Times New Roman",serif;letter-spacing:-.06em;text-wrap:balance}
+  .occasion-heading p{font-size:.98rem;line-height:1.72;max-width:35ch}
+  .occasion-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:minmax(246px,auto) minmax(218px,auto);gap:15px}
+  .occasion-card{min-height:0;padding:clamp(24px,2.8vw,36px);border-radius:20px;box-shadow:inset 0 1px #ffffffb8;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+  .occasion-card:nth-child(1){grid-column:span 7;background:radial-gradient(ellipse at 92% 15%,#4f8b6c 0%,transparent 50%),linear-gradient(130deg,#123f34,#1b5747);color:#fff9e9;border-color:#286750}
+  .occasion-card:nth-child(2){grid-column:span 5;background:linear-gradient(134deg,#f5e8cf,#fff8ec);border-color:#dcc6a5}
+  .occasion-card:nth-child(3){grid-column:span 5;background:linear-gradient(134deg,#f1deda,#fff7ed);border-color:#e3c3c2}
+  .occasion-card:nth-child(4){grid-column:span 7;background:radial-gradient(ellipse at 80% 4%,#42776d 0%,transparent 55%),linear-gradient(128deg,#143d3d,#24544d)}
+  .occasion-card:after{right:-55px;top:-105px;width:235px;height:235px;opacity:.18}
+  .occasion-card .occasion-card-top{position:relative;z-index:1;min-height:29px}
+  .occasion-card .occasion-card-top span{font-size:.65rem;letter-spacing:.16em}
+  .occasion-card .occasion-card-top svg{position:absolute;top:-12px;right:-5px;width:clamp(102px,13vw,172px);height:clamp(102px,13vw,172px);opacity:.20;stroke-width:1.55;pointer-events:none}
+  .occasion-card strong{position:relative;z-index:1;font:400 clamp(2.1rem,3vw,3.55rem)/1.03 Georgia,"Times New Roman",serif;letter-spacing:-.056em;max-width:15ch;margin-top:auto;text-wrap:balance}
+  .occasion-card small{position:relative;z-index:1;max-width:48ch;font-size:.91rem;line-height:1.55;margin-top:8px}
+  .occasion-card .occasion-link{position:relative;z-index:1;margin-top:20px;padding-top:13px;font-size:.8rem;letter-spacing:.015em}
+  .occasion-card:nth-child(1) .occasion-link,.occasion-card:nth-child(4) .occasion-link{border-color:#f3dfb27d}
+  .occasion-card:hover{transform:translateY(-5px);box-shadow:0 21px 35px #173f342b}
+  .occasion-card:focus-visible{outline:4px solid #bd7330;outline-offset:5px}
+}
+@media screen and (min-width:650px) and (max-width:979px){
+  .occasion-grid{gap:15px}
+  .occasion-card{min-height:245px;padding:26px;border-radius:19px}
+  .occasion-card strong{font-size:clamp(1.75rem,3vw,2.3rem);text-wrap:balance}
+  .occasion-card .occasion-card-top svg{width:73px;height:73px}
+}
+@media screen and (max-width:649px){
+  .occasion-atlas{box-shadow:0 18px 39px #153b3024}
+  .occasion-grid{gap:10px}
+  .occasion-card:first-child{min-height:200px;background:radial-gradient(ellipse at 94% 12%,#4a896c,transparent 55%),linear-gradient(135deg,#133e34,#1a5545);border-color:#34765c;color:#fffaf0}
+  .occasion-card:first-child .occasion-card-top svg{width:84px;height:84px;opacity:.35}
+  .occasion-card:first-child strong{font-size:clamp(2rem,9vw,2.8rem);margin-top:18px}
+  .occasion-card:first-child .occasion-link{border-color:#eddab884}
+  .occasion-card:nth-child(n+2) {min-height:144px}
+  .occasion-card strong{text-wrap:balance}
+}
+@media (prefers-reduced-motion:reduce){
+  .occasion-atlas .occasion-card{transition:none}
+  .occasion-atlas .occasion-card:hover{transform:none}
+}
+@media print{
+  .occasion-atlas{box-shadow:none!important;border:1px solid #777}
+  .occasion-atlas .occasion-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}
+  .occasion-atlas .occasion-card:nth-child(n){grid-column:auto;background:#fff!important;color:#172f28!important;box-shadow:none!important;break-inside:avoid}
+  .occasion-atlas .occasion-card .occasion-link{border-color:#555}
+}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#providers">Skip to party rental providers</a>
 <header class="site-header"><div class="shell header-inner"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
-<section class="hero" aria-labelledby="page-title"><img class="party-hero-photo" src="assets/downtown-russellville-sunset.jpg" alt="" decoding="async" fetchpriority="high"><div class="shell hero-inner">
+<section class="hero" aria-labelledby="page-title"><img class="party-hero-photo" src="assets/downtown-russellville-sunset.jpg" alt="" width="1200" height="544" decoding="async" fetchpriority="high"><div class="shell hero-inner">
 <div><p class="eyebrow">Russellville, Arkansas · The River Valley</p><h1 id="page-title">Around here,<br><em>we celebrate big.</em></h1><p class="hero-copy">Party &amp; event rentals, from bounce houses and tables to décor and hosted celebrations. Find a provider that fits your plans, then confirm inventory, pricing and delivery directly.</p><div class="hero-actions"><a class="button primary" href="#providers">Explore providers ↓</a><a class="button secondary" href="#guide">Before you book ↗</a></div></div>
 <div class="hero-art" aria-hidden="true"><span class="spark one">✳</span><span class="spark two">✦</span><span class="spark three">✳</span><div class="ticket back-ticket"></div><div class="ticket front-ticket"><span class="mini">River Valley / Gatherings</span><span class="big">Good times<br>start here.</span><span class="bottom"><span>PARTY / EVENT</span><span>RUSSELLVILLE.Rent</span></span></div></div>
 </div><span class="party-photo-credit">Downtown Russellville at sunset · Scenic context, not a rental venue</span></section>
