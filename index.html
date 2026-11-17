@@ -247,6 +247,126 @@
  #rental-results>.rental-card[data-category="atv-utv"]{box-shadow:none!important}
 }
 
+
+/* 2026-11-17: Event-stage editorial atlas.
+   Compared live stayarv.com and russellville.rent; consulted NN/g visual
+   hierarchy, web.dev stable image layout, W3C WCAG 2.2 focus/reflow.
+   Use the existing original stage vector as a meaningful visual route to
+   the preserved provider directory. No inventory or availability claims.
+   Only in the unfiltered editorial grid; search/list/saved/print stay intact. */
+.stage-folio-story{display:none}
+@media screen{
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stages"]{
+  grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
+  min-width:0;min-height:465px;overflow:hidden;border:1px solid #b2b9a2;
+  border-radius:26px;background:#fffbf3;box-shadow:0 20px 52px #123c3028
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stages"]>.riverfield-tile{
+  display:flex;align-items:stretch;justify-content:stretch;
+  width:100%;height:100%;min-height:465px;min-width:0;background:#183e38
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stages"]>.riverfield-tile::after{
+  z-index:1;background:linear-gradient(180deg,#071d1c42 0%,#0b27217a 45%,#061b18ee 100%)
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stages"]>.riverfield-tile>.riverfield-eyebrow,
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stages"]>.riverfield-tile>small{
+  display:none
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stages"] .directory-pictogram{
+  top:26px;right:27px;width:76px;height:76px;padding:15px;transform:rotate(-6deg);
+  border-radius:18px;box-shadow:0 12px 26px #071f1b80
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .stage-folio-story{
+  position:relative;z-index:3;display:flex;flex-direction:column;
+  align-items:flex-start;justify-content:flex-end;min-width:0;width:100%;
+  gap:17px;padding:clamp(28px,4.4vw,56px);text-align:left;color:#fff9e9
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .stage-folio-overline{
+  margin-bottom:auto;max-width:calc(100% - 80px);
+  font-size:.62rem;line-height:1.6;font-weight:850;letter-spacing:.14em;color:#ffe3aa
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .stage-folio-story strong{
+  max-width:13ch;font:400 clamp(2.9rem,5vw,5.4rem)/1.01 Georgia,"Times New Roman",serif;
+  letter-spacing:-.062em;color:#fff9e9;text-wrap:balance;text-shadow:0 4px 19px #051611a6
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .stage-folio-story strong em{
+  color:#f7d59a;font-weight:400;font-style:italic
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .stage-folio-routes{
+  display:flex;flex-wrap:wrap;gap:8px
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .stage-folio-routes span{
+  display:inline-flex;align-items:center;min-height:32px;
+  padding:6px 11px;border:1px solid #f0d8a79a;border-radius:999px;
+  background:#0b332baa;color:#ffe5b6;
+  font-size:.62rem;line-height:1.4;font-weight:820;letter-spacing:.045em
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .stage-folio-note{
+  display:block;position:static;inset:auto;max-width:100%;margin:0;
+  padding:12px 0 0;border:0;border-top:1px solid #f7dba882;border-radius:0;
+  background:transparent;color:#fff0cf;font-size:.6rem;line-height:1.5;
+  letter-spacing:.035em;font-weight:650
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stages"]>.card-body{
+  min-width:0;justify-content:center;gap:11px;padding:clamp(29px,4.2vw,53px);
+  background:radial-gradient(ellipse at 100% 0%,#e8efe2 0%,transparent 55%),#fffbf3
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stages"] .card-body h3{
+  color:#183f33;font:400 clamp(2.1rem,3.25vw,3.45rem)/1.09 Georgia,"Times New Roman",serif;
+  letter-spacing:-.05em;text-wrap:balance
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stages"] .card-body .status{
+  padding:14px 16px;border-left:3px solid #b28f54;background:#f1eddf;
+  color:#445b4d!important;line-height:1.6
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stages"] .card-link{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  min-height:52px;margin-top:7px;padding:14px 18px;border:0;border-radius:11px;
+  background:#1b5142;color:#fff9ed;text-decoration:none
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stages"] .card-link:hover{background:#316b53}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stages"] .card-link:focus-visible{
+  outline:3px solid #a76814;outline-offset:4px
+ }
+}
+@media screen and (max-width:900px){
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stages"]{
+  display:flex;flex-direction:column;min-height:0;border-radius:21px
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stages"]>.riverfield-tile{
+  height:395px;min-height:395px
+ }
+}
+@media screen and (max-width:600px){
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stages"]>.riverfield-tile{
+  height:335px;min-height:335px
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .stage-folio-story{
+  gap:12px;padding:27px 22px 23px
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .stage-folio-story strong{
+  font-size:clamp(2.4rem,10.5vw,3.4rem)
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .stage-folio-overline{
+  font-size:.54rem;letter-spacing:.085em;max-width:calc(100% - 74px)
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .stage-folio-routes span{
+  min-height:29px;padding:5px 9px;font-size:.52rem
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .stage-folio-note{font-size:.54rem}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stages"] .directory-pictogram{
+  top:18px;right:17px;width:65px;height:65px;padding:14px
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="stages"]>.card-body{padding:27px 23px}
+}
+@media(prefers-reduced-motion:reduce){
+ #rental-results .rental-card[data-category="stages"] .riverfield-scene{transition:none!important;transform:none!important}
+}
+@media print{
+ .stage-folio-story{display:none!important}
+ #rental-results>.rental-card[data-category="stages"]{box-shadow:none!important}
+}
+
 </style>
 
 </head>
@@ -1153,7 +1273,13 @@
 <div class="card-body"><p class="eyebrow">Yard sign rentals</p><h3>Yard greetings &amp; signs</h3><p>Personalized yard signs for birthdays, celebrations and special occasions.</p><p class="status">Sign Gypsies River Valley (local) · Card My Yard Conway (Morrilton served; Russellville delivery unconfirmed) · K.C. Treasures (Fort Smith; Russellville delivery UNCONFIRMED)</p><ol class="greeting-checkpoints" aria-label="Questions to confirm with the yard greeting provider"><li><span>01</span>Confirm the date</li><li><span>02</span>Check delivery area</li><li><span>03</span>Ask about setup and pickup</li></ol><a class="card-link" href="yard-signs.html">Browse yard sign rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="stages">
 <div class="category-art icon-tile riverfield-tile" style="--tile-ink:#6d5443;--tile-bg:#efe6d9" role="img" aria-label="Original illustration of a generic outdoor performance stage at sunset, not a listed stage or provider"><svg class="riverfield-scene" viewBox="0 0 700 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="700" height="380" fill="#86aba2"/><circle cx="555" cy="68" r="71" fill="#f3d5a1"/><path d="M0 208 112 173 207 200 342 150 479 210 596 173 700 194V380H0Z" fill="#568c7a"/><path d="M0 245Q104 216 215 245T476 228T700 231V380H0Z" fill="#246356"/><path d="M0 320Q203 281 379 308T700 293V380H0Z" fill="#12483f"/><path d="M242 158h377l-47-57H289Z" fill="#173e3b"/><path d="M249 160h369" stroke="#f4dfa4" stroke-width="12" stroke-linecap="round"/><path d="M264 163v154m336-154v154" stroke="#f4dda1" stroke-width="9"/><path d="M282 189h298v101H282Z" fill="#2c675a"/><path d="M282 236q78-71 149 0t149 0v54H282Z" fill="#1a4a45" opacity=".75"/><path d="M253 297h370v33H253Z" fill="#dbbe86"/><path d="M256 330h372" stroke="#f6db9c" stroke-width="9"/><path d="M326 330v25h224v-25M346 355v16h184v-16" stroke="#d6bc82" stroke-width="10"/><path d="m285 159-28 45m355-45 30 45" stroke="#f9e5b6" stroke-width="3"/><circle cx="328" cy="178" r="8" fill="#f5dfb8"/><circle cx="433" cy="178" r="8" fill="#f5dfb8"/><circle cx="557" cy="178" r="8" fill="#f5dfb8"/><path d="M49 317v-78m-22 34h44m-35-20h30M116 321v-113m-26 51h52" stroke="#214e42" stroke-width="13" stroke-linecap="round"/><circle cx="49" cy="234" r="34" fill="#306b57"/><circle cx="116" cy="205" r="47" fill="#39765e"/><path d="M0 352Q189 334 332 347T700 334" stroke="#e8c58e" stroke-width="4" fill="none" opacity=".65"/></svg><span class="riverfield-eyebrow" aria-hidden="true">RIVER VALLEY / TAKE THE STAGE</span>
-<svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-stages"></use></svg><small>EVENT STAGING</small></div>
+<svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-stages"></use></svg><small>EVENT STAGING</small>
+<span class="stage-folio-story" aria-hidden="true">
+  <span class="stage-folio-overline">R↗ / THE RIVER VALLEY GATHERING GUIDE</span>
+  <strong>The stage is <em>yours to set.</em></strong>
+  <span class="stage-folio-routes"><span>01 / ON-SITE VENUES</span><span>02 / MOBILE STAGING</span></span>
+  <span class="stage-folio-note">Original illustration · Not an available stage or confirmed regional delivery</span>
+</span></div>
 <div class="card-body"><p class="eyebrow">Stage &amp; platform rentals</p><h3>Stages &amp; event platforms</h3><p>Compare mobile and modular stage rentals with fixed stages at Depot Park and The Center for the Arts in Russellville, plus Brookstock Events in Dover. Regional providers’ delivery to Russellville remains UNCONFIRMED.</p><p class="status">Historic Train Depot (Depot Park, on-site) · The Center for the Arts (theater, on-site; private events unconfirmed) · Brookstock Events (Dover, on-site) · CWP Productions · Intents Party Rentals (regional) · Stagemasters · Rock City Staging · SIDETRAXX Pro Sound (regional; Russellville delivery unconfirmed)</p><a class="card-link" href="stages.html">Browse stage rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="golf-simulators">
 <div class="category-art icon-tile sim-night-art" style="--tile-ink:#42604e;--tile-bg:#e2eddf" role="img" aria-label="Original conceptual illustration of an indoor golf simulator bay at twilight. Not a provider or inventory photograph.">
