@@ -601,6 +601,45 @@ main.wrap{padding-top:0}
 @media(max-width:690px){.fence-next{border-radius:19px;margin:38px 0 28px}.fence-next-cover{min-height:0;padding:46px 25px 60px;background-position:55% 50%}.fence-next-cover:after{inset:9px;border-radius:12px}.fence-next-cover h2{font-size:clamp(2.5rem,10vw,3.65rem)}.fence-next-copy>p{font-size:.9rem}.fence-next-grid{grid-template-columns:1fr;margin-top:-22px;padding:0 15px;gap:11px}.fence-next-card{min-height:0;padding:21px 22px;gap:10px}.fence-next-card strong{max-width:none;font-size:1.7rem}.fence-next-card-desc{font-size:.82rem}.fence-next-icon{width:47px;height:47px}.fence-next-foot{padding:18px 22px 23px}}
 @media(prefers-reduced-motion:reduce){.fence-next-card{transition:none}.fence-next-card:hover{transform:none}}
 @media print{.fence-next{border:1px solid #888;box-shadow:none;break-inside:avoid}.fence-next-cover{background:#fff!important;color:#173f35!important;min-height:0;padding:22px}.fence-next-cover h2,.fence-next-cover h2 em,.fence-next-copy>p,.fence-next-kicker,.fence-next-caption{color:#173f35!important}.fence-next-grid{margin:0;padding:12px;gap:8px}.fence-next-card,.fence-next-card:first-child{background:#fff!important;color:#173f35!important;box-shadow:none;min-height:0;border:1px solid #888;break-inside:avoid}.fence-next-card :is(.fence-next-card-top,.fence-next-card-desc,.fence-next-card-go){color:#173f35!important}}
+
+/* 2026-11-17: Site-dispatch chapter rail. stayarv.com-informed forest/gold hierarchy.
+   NN/g: visual hierarchy; web.dev: layout shift; W3C WCAG 2.2: focus and target size.
+   No provider, price, contact, filter, form, script, or workflow modifications. */
+.fence-route-rail{position:sticky;top:0;z-index:18;background:#0d332b;color:#f8f2e3;border-block:1px solid #bb9860;box-shadow:0 12px 27px #0a2c2536}
+.fence-route-track{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.fence-route-track a{position:relative;display:flex;flex-direction:column;justify-content:center;gap:2px;min-width:0;min-height:87px;padding:14px 26px 15px;border-right:1px solid #f5e8bf2c;color:#f8f2e3;text-decoration:none;transition:background-color .16s ease}
+.fence-route-track a:first-child{border-left:1px solid #f5e8bf2c}
+.fence-route-track a:hover{background:#1b5543}
+.fence-route-track a:focus-visible{outline:3px solid #f9d895;outline-offset:-4px;border-radius:3px;background:#1b5543}
+.fence-route-track small{display:block;color:#f1d39f;font:800 .63rem/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.13em}
+.fence-route-track strong{display:block;color:inherit;font:400 clamp(1.16rem,1.75vw,1.5rem)/1.18 Georgia,"Times New Roman",serif;letter-spacing:-.032em}
+.fence-route-track a>span{position:absolute;right:23px;top:26px;color:#efd6a3;font-size:1rem;line-height:1}
+#providers,#site-sketch,#quote-checklist,#fence-next-title{scroll-margin-top:115px}
+@media(max-width:700px){
+ .fence-route-rail{position:fixed;top:auto;left:0;right:0;bottom:0;z-index:35;border-top:2px solid #e2bb7c;border-bottom:0;background:linear-gradient(120deg,#092b25,#164537);box-shadow:0 -12px 28px #041e1866}
+ .fence-route-track{width:100%;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:9px 10px calc(9px + env(safe-area-inset-bottom,0px))}
+ .fence-route-track a,.fence-route-track a:first-child{min-height:67px;gap:4px;padding:9px 4px;border:1px solid #f2d69a54;border-radius:10px;align-items:center;text-align:center}
+ .fence-route-track a:first-child{background:#eacb901a;border-color:#eacb9091}
+ .fence-route-track small{font-size:.56rem;line-height:1.15;letter-spacing:.09em}
+ .fence-route-track strong{font:800 .73rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.015em;overflow-wrap:normal}
+ .fence-route-track a>span{display:none}
+ body{padding-bottom:calc(109px + env(safe-area-inset-bottom,0px))}
+ html{scroll-padding-bottom:calc(113px + env(safe-area-inset-bottom,0px))}
+ #providers,#site-sketch,#quote-checklist,#fence-next-title{scroll-margin-top:24px}
+}
+@media(max-width:365px){
+ .fence-route-track{gap:4px;padding-inline:6px}
+ .fence-route-track strong{font-size:.66rem}
+ .fence-route-track small{font-size:.51rem}
+}
+@media(max-width:700px) and (max-height:470px){
+ .fence-route-rail{position:relative;inset:auto;box-shadow:none}
+ .fence-route-track a,.fence-route-track a:first-child{min-height:51px;padding-block:6px}
+ body{padding-bottom:0}
+ html{scroll-padding-bottom:0}
+}
+@media(prefers-reduced-motion:reduce){.fence-route-track a{transition:none}}
+@media print{.fence-route-rail{display:none!important}body{padding-bottom:0!important}}
 </style>
 </head>
 <body>
@@ -611,6 +650,16 @@ main.wrap{padding-top:0}
 <div class="hero-visual"><div class="drawing" aria-hidden="true"><svg viewBox="0 0 500 350" role="img" aria-label="Decorative line drawing of freestanding temporary fence panels" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="mesh" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M12 0L24 12L12 24L0 12Z" fill="none" stroke="#b4d2d0" stroke-width="1" opacity=".6"/></pattern></defs><path d="M35 270H467M35 296H467" stroke="#6f9294" stroke-width="2" stroke-dasharray="7 8"/><rect x="72" y="75" width="354" height="194" rx="3" fill="url(#mesh)" stroke="#d4e9e4" stroke-width="6"/><path d="M72 76V288M249 76V288M426 76V288" stroke="#e7f2eb" stroke-width="9"/><path d="M50 288H94M227 288H271M404 288H448" stroke="#f2a65a" stroke-width="12" stroke-linecap="round"/><path d="M72 54V71M249 54V71M426 54V71" stroke="#f2a65a" stroke-width="7" stroke-linecap="round"/><path d="M72 43H426" stroke="#a8c4c4" stroke-width="1" stroke-dasharray="4 7"/><path d="M72 35V51M426 35V51" stroke="#a8c4c4" stroke-width="2"/><text x="249" y="29" text-anchor="middle" font-size="12" fill="#d4e9e4" font-family="system-ui">MODULAR FENCE PANELS</text></svg><span class="drawing-badge">Site &amp; event rentals</span><span class="drawing-label">Fence planning / River Valley</span></div><p class="hero-visual-caption">Concept illustration only · Not a photo of provider equipment. Confirm panel types and inventory with each operator.</p></div>
 </div></section>
 <div class="quickline fence-signal"><div class="wrap quickline-inner"><strong>4 provider options</strong><span>Three providers advertise Russellville service</span><span>Confirm site-specific availability and terms</span></div></div>
+
+<!-- A navigable four-stop field guide; links only to existing page sections. -->
+<nav class="fence-route-rail" aria-label="Temporary fencing field guide">
+  <div class="wrap fence-route-track">
+    <a href="#providers"><small>01 / CONTACT</small><strong>Find suppliers</strong><span aria-hidden="true">↗</span></a>
+    <a href="#site-sketch"><small>02 / MEASURE</small><strong>Sketch the site</strong><span aria-hidden="true">↗</span></a>
+    <a href="#quote-checklist"><small>03 / PREPARE</small><strong>Plan the quote</strong><span aria-hidden="true">↗</span></a>
+    <a href="#fence-next-title"><small>04 / EXPLORE</small><strong>More site rentals</strong><span aria-hidden="true">↗</span></a>
+  </div>
+</nav>
 <main class="wrap" id="fence-main">
 
 <section class="project-paths" aria-labelledby="path-title">
