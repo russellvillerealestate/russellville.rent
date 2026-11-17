@@ -1044,6 +1044,74 @@ body{background:#f6f6f0}
 }
 
 .regional-boat-option{padding:17px 19px;margin:19px 0 13px;border-left:4px solid #b68d45;border-radius:8px;background:#f2f5e9;color:#294d3b;line-height:1.75}.regional-boat-option strong{color:#163d32}.regional-boat-option a{font-weight:800;text-underline-offset:3px}@media(max-width:650px){.regional-boat-option{padding:15px 16px}}
+
+/* 2026-11-16 / Lake Bailey rental field note: turn one verified but buried
+   regional seasonal alternative into an editorial, scan-friendly feature.
+   Maintain the exact official-rate, closure, lake-location and booking caveats
+   as originally published. Conceptual illustration is not rental inventory.
+   NN/g hierarchy; web.dev responsive layout; W3C WCAG 2.2 contrast/reflow. */
+.lake-alternative-feature .regional-boat-option{
+  display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);
+  min-width:0;overflow:hidden;margin:28px 0 24px;padding:0;
+  border:1px solid #d7c28f;border-radius:20px;
+  background:#fffaf0;color:#29473c;box-shadow:0 16px 36px #041f1735;
+}
+.regional-boat-visual{
+  position:relative;isolation:isolate;display:flex;flex-direction:column;
+  justify-content:space-between;gap:12px;min-width:0;min-height:400px;
+  padding:clamp(24px,3vw,34px);
+  background:radial-gradient(ellipse at 80% 18%,#33695a,#153f36 56%,#0f302c);
+  color:#fff8e9;
+}
+.regional-boat-visual:before{
+  content:"";position:absolute;z-index:-1;inset:10px;
+  border:1px solid #f0d8a33d;border-radius:12px;pointer-events:none;
+}
+.regional-boat-eyebrow,.regional-boat-location,.regional-boat-art-note{
+  font-size:.61rem;font-weight:800;letter-spacing:.13em;line-height:1.55;
+}
+.regional-boat-eyebrow{color:#f2dcae}
+.regional-boat-illustration{display:block;align-self:center;width:min(100%,260px);height:auto;filter:drop-shadow(0 10px 17px #041b1755)}
+.regional-boat-place{font:400 clamp(2.4rem,3.6vw,3.7rem)/1.05 Georgia,"Times New Roman",serif;letter-spacing:-.06em;color:#fff9e9}
+.regional-boat-place em{font-weight:400;color:#f0cf90}
+.regional-boat-location{color:#f2dba8}
+.regional-boat-art-note{margin-top:auto;border-top:1px solid #e9dcc653;padding-top:12px;color:#d8e8dd;font-size:.56rem;letter-spacing:.07em}
+.regional-boat-details{min-width:0;padding:clamp(23px,3.5vw,43px)}
+.regional-boat-flags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:21px}
+.regional-boat-flags span{
+  display:inline-flex;align-items:center;min-height:32px;padding:7px 10px;
+  border-radius:6px;background:#e5ebdf;color:#254a39;font-size:.59rem;
+  line-height:1.3;font-weight:850;letter-spacing:.08em;
+}
+.regional-boat-flags span:last-child{background:#fae9c7;color:#754a19}
+.regional-boat-option .regional-boat-preserved{
+  margin:0;color:#29493b;font-size:.91rem;line-height:1.73;
+  overflow-wrap:anywhere;
+}
+.regional-boat-option .regional-boat-preserved strong{color:#163d32}
+.regional-boat-option .regional-boat-preserved a{color:#165b43;font-weight:850;text-decoration-thickness:1.5px}
+@media(max-width:1050px){
+ .lake-alternative-feature .regional-boat-option{grid-template-columns:1fr}
+ .regional-boat-visual{min-height:0;padding:24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(140px,.7fr);gap:7px 14px;align-items:center}
+ .regional-boat-eyebrow,.regional-boat-location,.regional-boat-art-note{grid-column:1}
+ .regional-boat-illustration{grid-column:2;grid-row:1/5;max-height:150px}
+ .regional-boat-place{font-size:clamp(2.5rem,6vw,3.4rem)}
+ .regional-boat-art-note{margin-top:7px}
+}
+@media(max-width:420px){
+ .regional-boat-visual{grid-template-columns:1fr;gap:9px;padding:22px}
+ .regional-boat-illustration{grid-column:1;grid-row:auto;height:115px}
+ .regional-boat-place{font-size:2.75rem}
+ .regional-boat-details{padding:23px 20px}
+}
+@media print{
+ .lake-alternative-feature .regional-boat-option{display:block;box-shadow:none;border:1px solid #888;break-inside:avoid}
+ .regional-boat-visual{background:#fff!important;min-height:0;padding:12px 20px;color:#173c32}
+ .regional-boat-visual:before,.regional-boat-illustration{display:none}
+ .regional-boat-eyebrow,.regional-boat-location,.regional-boat-place,.regional-boat-art-note{color:#173c32!important}
+ .regional-boat-details{padding:16px 20px}
+}
+
 </style>
 </head>
 <body>
@@ -1119,7 +1187,28 @@ body{background:#f6f6f0}
 <section class="availability lake-alternative-feature" id="alternatives" aria-labelledby="availability-title">
 <figure class="lake-alternative-portrait"><img src="assets/lake-dardanelle-docks.jpg" width="1920" height="1440" loading="lazy" decoding="async" alt="Covered docks and calm water on Lake Dardanelle"><figcaption>LAKE DARDANELLE SCENERY <span aria-hidden="true">/</span> NOT A RENTAL LISTING OR ACCESS CONFIRMATION</figcaption></figure>
 <div class="lake-alternative-copy"><p class="lake-alternative-kicker">THE RIVER VALLEY / WHAT TO EXPLORE NEXT</p><article><h2 id="availability-title">No verified active boat rentals on Lake Dardanelle</h2><p>Russellville Marina &amp; Boat Repair is excluded from active rental recommendations while the full federal closure remains in effect. The regional Lake Bailey alternative below is not on Lake Dardanelle and does not indicate that either marina has reopened.</p></article><p style="margin-top:12px"><strong>Verify the actual launch lake before booking.</strong> Hot Springs Marina publishes Russellville-targeted rental pages, but its own boat-rental information says the fleet is <strong>in the water on Lake Hamilton near Hot Springs</strong>. Pickup, launch or delivery on Lake Dardanelle is <strong>UNCONFIRMED</strong>; its Russellville marketing pages alone do not establish a local boat-rental operation. <a href="https://www.hotspringsmarina.com/russellville-ar-book-a-boat-rental/" target="_blank" rel="noopener noreferrer">Compare its advertised service area with its actual lake location ↗</a>.</p>
-<p class="regional-boat-option" id="petit-jean-boats"><strong>Verified regional boat-rental option (seasonal): Petit Jean State Park, Lake Bailey — Morrilton.</strong> Arkansas State Parks officially lists on-site 14-foot fishing boats without a motor ($15 half-day, $20 full day), and 14-foot fishing boats with a 2.5-horsepower motor ($60 half-day, $85 full day, plus a listed $50 deposit). These are published park rates, not confirmed current availability or an all-in booking quote. The park lists the Lake Bailey boathouse as seasonal, from Memorial Day through Labor Day with reduced late-summer days; <strong>the advertised 2026 boathouse season has ended</strong> as of November 16. Confirm future operating dates, rentals, lake rules and final charges before traveling. <strong>This is Lake Bailey, not Lake Dardanelle; no Russellville pickup, launch or delivery is claimed.</strong> Park: 1285 Petit Jean Mountain Road, Morrilton, AR 72110; 501-727-5431. <a href="https://www.arkansas.com/state-parks/explore/parks/petit-jean-state-park" target="_blank" rel="noopener noreferrer">Official park boat-rental rates, location and seasonal hours ↗</a>.</p>
+<aside class="regional-boat-option" id="petit-jean-boats" aria-label="Seasonal Lake Bailey fishing-boat rentals at Petit Jean State Park">
+  <div class="regional-boat-visual" aria-hidden="true">
+    <span class="regional-boat-eyebrow">RIVER VALLEY / REGIONAL WATERFRONT FIELD NOTE</span>
+    <svg class="regional-boat-illustration" viewBox="0 0 260 140" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="191" cy="39" r="28" fill="#eed19a" opacity=".9"/>
+      <path d="M9 112c19-7 32-7 51 0s32 7 51 0 32-7 51 0 32 7 51 0 27-7 38 0M7 128c20-7 32-7 51 0s32 7 51 0 32-7 51 0 32 7 51 0 27-7 40 0" fill="none" stroke="#bbd5c3" stroke-width="3" stroke-linecap="round"/>
+      <path d="M34 71h189l-28 37H65L34 71Z" fill="#f3e1b9" stroke="#f8e9c6" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M58 70c22-18 48-27 74-27 34 0 62 12 80 27" stroke="#f1d79e" stroke-width="4" fill="none"/>
+      <path d="M118 42V12M137 42V17" stroke="#d7e9dc" stroke-width="5" stroke-linecap="round"/>
+      <path d="M129 14v30" stroke="#e9ca91" stroke-width="4"/>
+      <path d="M70 81h122" stroke="#b17f51" stroke-width="3" opacity=".6"/>
+      <path d="M9 89 25 71 40 91M222 87l15-24 15 27" fill="none" stroke="#8fb6a3" stroke-width="4" stroke-linejoin="round"/>
+    </svg>
+    <span class="regional-boat-place">Lake <em>Bailey.</em></span>
+    <span class="regional-boat-location">PETIT JEAN STATE PARK · MORRILTON</span>
+    <span class="regional-boat-art-note">Original illustration · Not rental inventory or a Lake Dardanelle view</span>
+  </div>
+  <div class="regional-boat-details">
+    <div class="regional-boat-flags"><span>SEASONAL REGIONAL OPTION</span><span>2026 BOATHOUSE SEASON ENDED</span></div>
+    <p class="regional-boat-preserved"><strong>Verified regional boat-rental option (seasonal): Petit Jean State Park, Lake Bailey — Morrilton.</strong> Arkansas State Parks officially lists on-site 14-foot fishing boats without a motor ($15 half-day, $20 full day), and 14-foot fishing boats with a 2.5-horsepower motor ($60 half-day, $85 full day, plus a listed $50 deposit). These are published park rates, not confirmed current availability or an all-in booking quote. The park lists the Lake Bailey boathouse as seasonal, from Memorial Day through Labor Day with reduced late-summer days; <strong>the advertised 2026 boathouse season has ended</strong> as of November 16. Confirm future operating dates, rentals, lake rules and final charges before traveling. <strong>This is Lake Bailey, not Lake Dardanelle; no Russellville pickup, launch or delivery is claimed.</strong> Park: 1285 Petit Jean Mountain Road, Morrilton, AR 72110; 501-727-5431. <a href="https://www.arkansas.com/state-parks/explore/parks/petit-jean-state-park" target="_blank" rel="noopener noreferrer">Official park boat-rental rates, location and seasonal hours ↗</a>.</p>
+  </div>
+</aside>
 <p style="margin-top:12px">Looking for a different way onto the water? Kayak rentals are listed separately, with operator details and availability caveats.</p></div>
 <a class="alt-link" href="/paddling.html">Explore kayak rentals →</a>
 </section>
