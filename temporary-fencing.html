@@ -640,6 +640,130 @@ main.wrap{padding-top:0}
 }
 @media(prefers-reduced-motion:reduce){.fence-route-track a{transition:none}}
 @media print{.fence-route-rail{display:none!important}body{padding-bottom:0!important}}
+
+/* 2026-11-17 / Supplier routes: a substantial near-versus-regional editorial
+   composition. Existing four records and complete provider anchors are untouched.
+   Direction: stayarv.com immersive hierarchy, adapted for a multi-provider guide.
+   Evidence: Nielsen Norman Group information scent, web.dev responsive reflow,
+   WCAG 2.2 keyboard focus and target sizes; no new assets or requests. */
+@media (min-width:1050px) {
+  .fence-dispatch{padding:clamp(32px,4.5vw,54px)}
+  .fence-dispatch-intro{margin-bottom:34px}
+  .fence-dispatch-board{
+    grid-template-columns:minmax(0,1.27fr) minmax(0,.73fr);
+    gap:20px;align-items:stretch
+  }
+  .fence-dispatch-group{display:flex;flex-direction:column;border-radius:21px}
+  .fence-dispatch-group--near{
+    position:relative;isolation:isolate;min-height:535px;
+    border:1px solid #d7bd83;background:
+      radial-gradient(ellipse at 92% 5%,#5b82675e 0%,transparent 48%),
+      linear-gradient(148deg,#194d3c 0%,#123b30 58%,#0b2b26 100%);
+    color:#fff9ec;
+  }
+  .fence-dispatch-group--near:before{
+    content:"";position:absolute;z-index:-1;right:-95px;top:-115px;
+    width:350px;height:350px;border:1px solid #e8d2a93b;border-radius:50%;
+    box-shadow:0 0 0 57px #e8d2a90d,0 0 0 114px #e8d2a90b;
+    pointer-events:none
+  }
+  .fence-dispatch-group--near .fence-dispatch-group-head{
+    min-height:247px;display:flex;flex-direction:column;align-items:flex-start;
+    justify-content:flex-end;gap:11px;padding:39px 34px 24px;
+    background:transparent
+  }
+  .fence-dispatch-group--near .fence-dispatch-group-head>span{
+    color:#f2d9a8;font-size:.69rem
+  }
+  .fence-dispatch-group--near .fence-dispatch-group-head>strong{
+    max-width:13ch;font:400 clamp(2.4rem,3.8vw,3.9rem)/1.04 Georgia,serif;
+    letter-spacing:-.052em;text-wrap:balance;color:#fffaf0
+  }
+  .fence-dispatch-group--near .fence-dispatch-group-head>small{
+    max-width:42ch;font-size:.83rem;line-height:1.5;color:#e3ecdf
+  }
+  .fence-dispatch-group--near .fence-dispatch-links{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:13px;align-items:stretch;padding:8px 22px 25px
+  }
+  .fence-dispatch-group--near .fence-dispatch-link{
+    position:relative;display:flex;flex-direction:column;align-items:flex-start;
+    justify-content:flex-start;gap:10px;min-height:229px;min-width:0;
+    padding:20px 19px 19px;border:1px solid #d8dbb978;border-radius:14px;
+    background:#f4f3e8f0;color:#183e30;box-shadow:0 10px 30px #0820174b
+  }
+  .fence-dispatch-group--near .fence-dispatch-link:hover{
+    background:#fffaf0;box-shadow:0 15px 33px #061d194d
+  }
+  .fence-dispatch-group--near .fence-dispatch-link:focus-visible{
+    outline:4px solid #ffe0a0;outline-offset:3px;background:#fff9ee
+  }
+  .fence-dispatch-group--near .fence-dispatch-number{
+    width:43px;height:43px;flex:none;background:#dfeddd;border-color:#9fba9f
+  }
+  .fence-dispatch-group--near .fence-dispatch-link-copy{padding-right:4px}
+  .fence-dispatch-group--near .fence-dispatch-link-copy strong{
+    font:400 clamp(1.36rem,2vw,1.85rem)/1.13 Georgia,serif;letter-spacing:-.04em
+  }
+  .fence-dispatch-group--near .fence-dispatch-link-copy small{
+    font-size:.78rem;line-height:1.55;color:#42614f
+  }
+  .fence-dispatch-group--near .fence-dispatch-arrow{
+    position:absolute;right:17px;top:21px;font-size:1.35rem;color:#836432
+  }
+  .fence-dispatch-group--regional{
+    background:#f6f0e3;border-color:#ecd0a0;color:#274637
+  }
+  .fence-dispatch-group--regional .fence-dispatch-group-head{
+    min-height:226px;padding:37px 28px 24px;
+    background:linear-gradient(160deg,#fff8e9,#e9e1ce);color:#214537;
+    border-bottom:1px solid #d9c9a9
+  }
+  .fence-dispatch-group--regional .fence-dispatch-group-head>span{
+    color:#81572c
+  }
+  .fence-dispatch-group--regional .fence-dispatch-group-head>strong{
+    color:#173d32;font:400 clamp(2rem,2.85vw,2.9rem)/1.08 Georgia,serif;
+    letter-spacing:-.05em;text-wrap:balance
+  }
+  .fence-dispatch-group--regional .fence-dispatch-group-head>small{
+    color:#5d5746;font-size:.78rem;line-height:1.5
+  }
+  .fence-dispatch-group--regional .fence-dispatch-links{
+    flex:1;padding:11px 19px 19px;align-content:stretch
+  }
+  .fence-dispatch-group--regional .fence-dispatch-link{
+    grid-template-columns:37px minmax(0,1fr) 18px;gap:10px;
+    min-height:140px;padding:14px 7px;border-color:#d8cfbb
+  }
+  .fence-dispatch-group--regional .fence-dispatch-link-copy strong{
+    font-size:clamp(1.15rem,1.7vw,1.55rem)
+  }
+  .fence-dispatch-group--regional .fence-dispatch-link-copy small{
+    font-size:.76rem;color:#655c48
+  }
+  .fence-dispatch-group--regional .fence-dispatch-link:focus-visible{
+    outline:4px solid #9a571a;outline-offset:-3px;background:#fff9e9
+  }
+}
+@media print{
+  .fence-dispatch{background:#fff!important;color:#173a30!important;box-shadow:none}
+  .fence-dispatch:before,.fence-dispatch:after,
+  .fence-dispatch-group--near:before{display:none!important}
+  .fence-dispatch-board{grid-template-columns:1fr!important}
+  .fence-dispatch-group--near,.fence-dispatch-group--regional{
+    min-height:0!important;background:#fff!important;border-color:#888!important;
+    box-shadow:none!important;break-inside:avoid
+  }
+  .fence-dispatch-group-head{min-height:0!important;background:#fff!important;padding:15px!important}
+  .fence-dispatch-group-head :is(span,strong,small),
+  .fence-dispatch-intro :is(h3,h3 em,p),.fence-dispatch-foot{
+    color:#173a30!important
+  }
+  .fence-dispatch-links{grid-template-columns:1fr 1fr!important}
+  .fence-dispatch-link{min-height:0!important;box-shadow:none!important}
+}
+
 </style>
 </head>
 <body>
