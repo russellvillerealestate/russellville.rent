@@ -597,11 +597,112 @@ footer a{font-weight:750;color:var(--forest)}
 @media(max-width:760px){.ownership-lens-grid{grid-template-columns:1fr;padding-block:55px 70px}.ownership-story{max-width:none}.ownership-story h2{max-width:13ch;font-size:clamp(3.2rem,11vw,5rem)}.ownership-receipt{max-width:610px;width:100%;margin-inline:auto;transform:none}}
 @media(max-width:480px){.ownership-kicker{letter-spacing:.07em;font-size:.62rem}.ownership-story h2{font-size:clamp(2.9rem,12vw,3.8rem)}.ownership-receipt{padding:25px 21px}.ownership-receipt-top{font-size:.61rem}.ownership-action{width:100%}.ownership-receipt-foot{align-items:flex-start;flex-direction:column;gap:8px}}
 @media(prefers-reduced-motion:reduce){.ownership-action{transition:none}.ownership-action:hover{transform:none}}
+
+/* 2026-11-17 | Home Edit: guided mobile route + balanced storefront gallery.
+   References inspected: live StayARV and Russellville.Rent; NN/g visual
+   hierarchy (grouping/scale), web.dev layout stability, WCAG 2.2 focus,
+   reflow, target size and focus-not-obscured. No product or provider claims.
+   Existing anchors and scripts remain the source of truth. */
+.household-route-dock{display:none}
+/* Five fully visible retailers become a deliberate 3+2 editorial arrangement:
+   three equal discovery cards followed by two wider comparison cards.
+   The original grid takes over whenever the existing product filter is used. */
+@media screen and (min-width:1040px){
+  #provider-cards:not(:has(> .card[hidden])){
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:clamp(18px,2vw,25px);
+  }
+  #provider-cards:not(:has(> .card[hidden]))>.card:nth-child(-n+3){
+    grid-column:span 2;
+  }
+  #provider-cards:not(:has(> .card[hidden]))>.card:nth-child(n+4){
+    grid-column:span 3;
+  }
+  #provider-cards:not(:has(> .card[hidden]))>.card:nth-child(n+4) .shop-scene svg{
+    max-height:240px;
+  }
+}
+@media screen and (max-width:740px){
+  html{scroll-padding-bottom:calc(105px + env(safe-area-inset-bottom,0px))}
+  body{padding-bottom:calc(105px + env(safe-area-inset-bottom,0px))}
+  #providers,#cost-estimator,#questions{scroll-margin-top:22px}
+  .household-route-dock{
+    position:fixed;
+    z-index:50;
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:4px;
+    left:12px;
+    right:12px;
+    bottom:calc(10px + env(safe-area-inset-bottom,0px));
+    max-width:540px;
+    margin-inline:auto;
+    padding:7px;
+    border:1px solid #6e8a7670;
+    border-radius:18px;
+    background:#12362f;
+    box-shadow:0 14px 36px #0c271f55;
+  }
+  .household-route-dock a{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:4px;
+    min-width:0;
+    min-height:62px;
+    padding:7px 3px;
+    color:#f7f5ec;
+    font-size:clamp(.65rem,2.6vw,.79rem);
+    font-weight:800;
+    line-height:1.2;
+    text-align:center;
+    text-decoration:none;
+    border-radius:12px;
+    transition:background-color .18s ease,color .18s ease;
+  }
+  .household-route-dock .route-no{
+    color:#ecd39b;
+    font:800 .66rem/1 system-ui,sans-serif;
+    letter-spacing:.13em;
+  }
+  .household-route-dock a:hover{background:#2c5848}
+  .household-route-dock a:focus-visible{
+    outline:3px solid #ffda91;
+    outline-offset:-3px;
+    background:#2c5848;
+  }
+  .household-route-dock a:last-child{background:#f0d7a2;color:#18392e}
+  .household-route-dock a:last-child .route-no{color:#775321}
+  .household-route-dock a:last-child:hover,
+  .household-route-dock a:last-child:focus-visible{background:#fff0c6}
+}
+@media screen and (max-width:740px) and (max-height:440px) and (orientation:landscape){
+  html{scroll-padding-bottom:77px}
+  body{padding-bottom:77px}
+  .household-route-dock a{min-height:44px;flex-direction:row;gap:5px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .household-route-dock a{transition:none}
+}
+@media print{
+  .household-route-dock{display:none!important}
+}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to rental providers</a>
 <header class="site-header"><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="home-link" href="/#browse">← All rental categories</a></div></header>
+
+<!-- Home Edit mobile field-guide rail: existing page destinations only. -->
+<nav class="household-route-dock" aria-label="Household rental guide shortcuts">
+  <a href="#providers"><span class="route-no" aria-hidden="true">01</span><span>Retailers</span></a>
+  <a href="#cost-estimator"><span class="route-no" aria-hidden="true">02</span><span>Total cost</span></a>
+  <a href="#questions"><span class="route-no" aria-hidden="true">03</span><span>Questions</span></a>
+  <a href="/#browse"><span class="route-no" aria-hidden="true">↗</span><span>All rentals</span></a>
+</nav>
 <main id="main">
 <section class="hero household-editorial" aria-labelledby="page-title"><div class="wrap hero-grid">
 <div class="hero-copy-block"><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><p class="hero-series">THE HOME EDIT <span aria-hidden="true">/</span> LOCAL RENTAL GUIDE</p><h1 id="page-title">Furniture, appliance <em>&amp; electronics rentals.</em></h1><p class="lead">Explore local rent-to-own options for the essentials at home. Compare providers first, then confirm payment and ownership terms directly with the retailer.</p><div class="actions"><a class="button primary" href="#providers">Explore local providers ↓</a><a class="button outline" href="#questions">Questions before you sign ↗</a></div></div>
