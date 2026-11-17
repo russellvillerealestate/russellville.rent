@@ -449,6 +449,136 @@ footer a{color:#ffe3a5}
 @media(prefers-reduced-motion:reduce){.family-mobile-companion a{transition:none}}
 @media print{.family-mobile-companion{display:none!important}}
 
+
+/* 2026-11-17 · Family-travel chapter: an asymmetric photo-led field guide.
+   Visual reference: live StayARV and Russellville.Rent, evaluated before editing.
+   Principles: Nielsen Norman Group's scannable heading hierarchy,
+   web.dev's layout-stability/reuse guidance, and WCAG 2.2 focus/reflow.
+   Reuses the existing cached Lake Dardanelle scene (not provider inventory).
+   Content, providers, prices, scripts, URLs and listing workflow unchanged. */
+.trip-guide .guide-card:first-child{
+  background-image:linear-gradient(180deg,rgba(7,33,30,.60) 0%,rgba(9,40,33,.76) 43%,rgba(6,31,27,.97) 100%),url("assets/lake-dardanelle-sunset.jpg");
+  background-position:center 53%;
+  background-size:cover;
+  border-color:#e9cf9d;
+  border-top-color:#f5d9a6;
+  color:#fff9eb;
+  box-shadow:0 27px 65px #001b1b85;
+}
+.trip-guide .guide-card:first-child:before{
+  content:"";
+  position:absolute;
+  inset:12px;
+  border:1px solid #f4e0b44c;
+  border-radius:10px;
+  pointer-events:none;
+}
+.trip-guide .guide-card:first-child .guide-num{
+  color:#f9dfa8;
+}
+.trip-guide .guide-card:first-child .guide-icon{
+  color:#fce2af;
+  border:1px solid #f6dbac99;
+  background:#123e35bd;
+  box-shadow:0 13px 32px #0928206b;
+}
+.trip-guide .guide-card:first-child strong{
+  color:#fff9e9;
+  font-size:clamp(2.2rem,3.35vw,3.7rem);
+  line-height:1.04;
+  max-width:12ch;
+  text-wrap:balance;
+}
+.trip-guide .guide-card:first-child>span:nth-last-child(2){
+  color:#f2f2e8;
+  max-width:45ch;
+  font-size:clamp(.92rem,1.25vw,1.06rem);
+}
+.trip-guide .guide-card:first-child .guide-arrow{
+  color:#fce0a6;
+  border-top:1px solid #f0ddbb69;
+  width:100%;
+  text-underline-offset:6px;
+}
+.trip-guide .guide-card:first-child:after{
+  color:#f9e9c72d;
+}
+@media (min-width:980px){
+  .trip-guide .guide-grid{
+    grid-template-columns:minmax(0,1.14fr) minmax(0,1fr);
+    grid-template-rows:repeat(2,minmax(226px,auto));
+    gap:18px;
+  }
+  .trip-guide .guide-card:first-child{
+    grid-column:1;
+    grid-row:1 / span 2;
+    min-height:486px;
+    padding:clamp(29px,3.9vw,49px);
+  }
+  .trip-guide .guide-card:nth-child(2),
+  .trip-guide .guide-card:nth-child(3){
+    display:flex;
+    flex-direction:column;
+    grid-column:2;
+    grid-row:auto;
+    min-height:226px;
+    padding:25px 30px;
+  }
+  .trip-guide .guide-card:nth-child(2) .guide-icon,
+  .trip-guide .guide-card:nth-child(3) .guide-icon{
+    position:absolute;
+    top:23px;
+    right:26px;
+    width:65px;
+    height:65px;
+    margin:0;
+    opacity:.90;
+  }
+  .trip-guide .guide-card:nth-child(2) .guide-icon svg,
+  .trip-guide .guide-card:nth-child(3) .guide-icon svg{
+    width:47px;
+    height:47px;
+  }
+  .trip-guide .guide-card:nth-child(2) .guide-num,
+  .trip-guide .guide-card:nth-child(3) .guide-num{
+    max-width:calc(100% - 85px);
+    line-height:1.55;
+  }
+  .trip-guide .guide-card:nth-child(2) strong,
+  .trip-guide .guide-card:nth-child(3) strong{
+    max-width:18ch;
+    margin-top:12px;
+    font-size:clamp(1.43rem,2.1vw,2.02rem);
+  }
+  .trip-guide .guide-card:nth-child(2)>span:nth-last-child(2),
+  .trip-guide .guide-card:nth-child(3)>span:nth-last-child(2){
+    max-width:47ch;
+    margin-top:9px;
+    line-height:1.45;
+  }
+  .trip-guide .guide-card:nth-child(2) .guide-arrow,
+  .trip-guide .guide-card:nth-child(3) .guide-arrow{
+    padding-top:13px;
+  }
+}
+@media (max-width:760px){
+  .trip-guide .guide-card:first-child{
+    min-height:350px;
+    background-position:center 60%;
+  }
+  .trip-guide .guide-card:first-child strong{
+    font-size:clamp(2.05rem,7vw,2.65rem);
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .trip-guide .guide-card:first-child{
+    transition:none;
+  }
+  .trip-guide .guide-card:first-child:hover{
+    transform:none;
+  }
+}
+
 </style>
 </head>
 <body>
