@@ -6878,3 +6878,103 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 @media(hover:hover) and (prefers-reduced-motion:no-preference){#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="dumpsters"]:hover .cleanup-folio-scene{transform:scale(1.035)}}
 @media(prefers-reduced-motion:reduce){#rental-results .cleanup-folio-scene{transition:none!important;transform:none!important}}
 @media print{#rental-results .cleanup-folio-scene,#rental-results .cleanup-folio-overline,#rental-results .cleanup-folio-headline,#rental-results .cleanup-folio-note{display:none!important}#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="dumpsters"]>.cleanup-folio{background:#fff!important;color:#173e37!important;height:135px!important;border:1px solid #888}#rental-results[data-view="grid"][data-layout="editorial"] .cleanup-folio:before,#rental-results[data-view="grid"][data-layout="editorial"] .cleanup-folio:after{display:none!important}#rental-results[data-view="grid"][data-layout="editorial"] .cleanup-folio>.cleanup-provider-name,#rental-results[data-view="grid"][data-layout="editorial"] .cleanup-folio>small{color:#173e37!important}}
+
+/* 2026-11-17 Camper roadbook panorama. Compared live StayARV with the
+   Russellville.Rent category atlas. NN/g visual hierarchy; web.dev CLS;
+   W3C WCAG 2.2 focus, target size and reflow. Original riverfield illustration,
+   not an operator vehicle. Only the unfiltered editorial grid is enlarged;
+   provider text, conditions, links, search, saved cards and list view remain. */
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rv-rentals"]{
+  overflow:hidden;border:1px solid #9bb09d;border-radius:25px;
+  background:#fffaf0;box-shadow:0 18px 46px #173a3023
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rv-rentals"]>.camper-glow{
+  position:relative;isolation:isolate;display:block;height:clamp(295px,32vw,400px);
+  background:#153c34
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .camper-glow:before{
+  content:"THE SCENIC ROUTE";display:block;position:absolute;z-index:3;
+  left:clamp(20px,2.7vw,35px);top:45%;width:7ch;height:auto;
+  transform:translateY(-50%);border:0;border-radius:0;box-shadow:none;
+  background:transparent;color:#fff9eb;
+  font:400 clamp(2.5rem,3.6vw,3.75rem)/1.04 Georgia,"Times New Roman",serif;
+  letter-spacing:-.06em;text-shadow:0 4px 18px #031d18cf;pointer-events:none
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .camper-glow:after{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(90deg,#0b312ae9 0%,#113e35c2 44%,#123b3159 100%)
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .camper-glow .riverfield-eyebrow{
+  z-index:3;left:clamp(20px,2.7vw,35px);top:23px;
+  color:#ffe4a2;background:#0c3029df;border-color:#f3d39c90
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .camper-glow .directory-pictogram{
+  top:auto;right:24px;bottom:22px;width:75px;height:75px;padding:16px;
+  transform:rotate(-6deg);border-radius:17px;background:#fff7e3;color:#205544;
+  box-shadow:0 9px 24px #09271f99;z-index:3
+}
+#rental-results[data-view="grid"][data-layout="editorial"] .camper-glow small{
+  top:auto;bottom:25px;right:115px;left:auto;z-index:3;
+  color:#fff3dc;background:#0b3027d9;border-color:#f6ddad88
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rv-rentals"]>.card-body{
+  justify-content:center;padding:clamp(23px,3vw,39px);background:#fffaf0
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rv-rentals"] .card-body h3{
+  color:#153e35;font:400 clamp(1.85rem,2.8vw,2.7rem)/1.09 Georgia,"Times New Roman",serif;
+  letter-spacing:-.05em
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rv-rentals"] .card-body>.card-link{
+  display:flex;min-height:49px;align-items:center;justify-content:center;
+  margin-top:14px;padding:12px 17px;border-radius:11px;text-align:center;
+  background:#174b3e;color:#fff9eb;text-decoration:none
+}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rv-rentals"] .card-body>.card-link:hover{background:#286b50}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rv-rentals"] .card-body>.card-link:focus-visible{
+  outline:3px solid #a9610b;outline-offset:4px
+}
+@media(min-width:780px){
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rv-rentals"]{grid-column:span 2}
+}
+@media(min-width:1140px){
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rv-rentals"]{
+    display:grid;grid-template-columns:minmax(0,1.13fr) minmax(0,.87fr);min-height:395px
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rv-rentals"]>.camper-glow{
+    height:100%;min-height:395px
+  }
+}
+@media(max-width:600px){
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rv-rentals"]>.camper-glow{height:290px}
+  #rental-results[data-view="grid"][data-layout="editorial"] .camper-glow:before{
+    left:20px;font-size:clamp(2.15rem,9vw,3.15rem)
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .camper-glow .directory-pictogram{
+    right:14px;bottom:17px;width:62px;height:62px;padding:13px
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .camper-glow small{
+    right:86px;bottom:19px;font-size:.51rem
+  }
+}
+@media(max-width:380px){
+  #rental-results[data-view="grid"][data-layout="editorial"] .camper-glow small{display:none}
+}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rv-rentals"]:hover .riverfield-scene{
+    transform:scale(1.035)
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  #rental-results .camper-glow .riverfield-scene,
+  #rental-results .camper-glow .directory-pictogram{transition:none!important}
+  #rental-results .rental-card:hover .camper-glow .riverfield-scene{transform:none!important}
+}
+@media print{
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rv-rentals"]{
+    grid-column:auto;display:block;box-shadow:none;border:1px solid #999
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .camper-glow:before{display:none}
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rv-rentals"]>.camper-glow{
+    height:175px;min-height:0
+  }
+}
