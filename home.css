@@ -6894,14 +6894,15 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
 }
 #rental-results[data-view="grid"][data-layout="editorial"] .camper-glow:before{
   content:"THE SCENIC ROUTE";display:block;position:absolute;z-index:3;
-  left:clamp(20px,2.7vw,35px);top:45%;width:7ch;height:auto;
+  left:clamp(20px,2.7vw,35px);top:45%;right:auto;bottom:auto;width:7ch;height:auto;
   transform:translateY(-50%);border:0;border-radius:0;box-shadow:none;
   background:transparent;color:#fff9eb;
   font:400 clamp(2.5rem,3.6vw,3.75rem)/1.04 Georgia,"Times New Roman",serif;
   letter-spacing:-.06em;text-shadow:0 4px 18px #031d18cf;pointer-events:none
 }
 #rental-results[data-view="grid"][data-layout="editorial"] .camper-glow:after{
-  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  content:"";position:absolute;inset:0;width:auto;height:auto;z-index:1;
+  border:0;border-radius:0;box-shadow:none;pointer-events:none;
   background:linear-gradient(90deg,#0b312ae9 0%,#113e35c2 44%,#123b3159 100%)
 }
 #rental-results[data-view="grid"][data-layout="editorial"] .camper-glow .riverfield-eyebrow{
