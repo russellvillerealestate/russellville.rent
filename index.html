@@ -155,6 +155,98 @@
   .av-spotlight-story{display:none!important}
   #rental-results>.rental-card[data-category="audio-visual"]{box-shadow:none!important}
 }
+
+/* November 16, 2026: original Ozark trail-country editorial artwork.
+   Compared live StayARV and Russellville.Rent before redesign. NN/g visual
+   hierarchy; web.dev stable media ratios; WCAG 2.2 reflow, focus and motion.
+   Only the default unfiltered editorial grid; existing data and links untouched. */
+.trail-spotlight-copy{display:none}
+@media screen {
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="atv-utv"]{
+  grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.13fr) minmax(0,.87fr);
+  min-width:0;min-height:480px;overflow:hidden;border:1px solid #a5b9a6;
+  border-radius:26px;background:#fffaf0;box-shadow:0 22px 50px #10352d29
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="atv-utv"]>.riverfield-tile{
+  display:flex;align-items:stretch;justify-content:stretch;
+  min-width:0;width:100%;height:100%;min-height:480px;background:#173c32
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="atv-utv"]>.riverfield-tile::after{
+  background:linear-gradient(180deg,#071f1b19 0%,#0b2b2657 38%,#071e1bea 100%);z-index:1
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="atv-utv"]>.riverfield-tile>.riverfield-eyebrow,
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="atv-utv"]>.riverfield-tile>.directory-pictogram,
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="atv-utv"]>.riverfield-tile>small{display:none}
+ #rental-results[data-view="grid"][data-layout="editorial"] .trail-spotlight-copy{
+  position:relative;z-index:3;display:flex;flex-direction:column;
+  align-items:flex-start;justify-content:flex-end;gap:15px;width:100%;min-width:0;
+  padding:clamp(28px,4.3vw,55px);color:#fffaf0;text-align:left
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .trail-spotlight-overline{
+  display:block;margin-bottom:auto;color:#f7deb0;font-size:.64rem;
+  line-height:1.55;letter-spacing:.16em;font-weight:850
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .trail-spotlight-copy strong{
+  display:block;color:#fffbed;font:400 clamp(3rem,5vw,5.4rem)/1.01 Georgia,"Times New Roman",serif;
+  letter-spacing:-.064em;text-wrap:balance;text-shadow:0 4px 22px #041712ad
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .trail-spotlight-copy strong em{
+  color:#f8d59a;font-weight:400;font-style:italic
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .trail-spotlight-places{
+  display:block;color:#f8e9c6;font-size:.84rem;font-weight:800;line-height:1.5
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"] .trail-spotlight-copy small{
+  display:block;position:static;inset:auto;max-width:none;margin:0;
+  padding:11px 0 0;border:0;border-top:1px solid #f3dfb082;
+  border-radius:0;background:transparent;color:#f5ecdc;
+  font-size:.63rem;line-height:1.55;letter-spacing:.02em;font-weight:650
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="atv-utv"]>.card-body{
+  justify-content:center;gap:10px;min-width:0;padding:clamp(28px,4vw,50px);
+  background:radial-gradient(ellipse at 100% 0%,#e8efe2,transparent 56%),#fffaf0
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="atv-utv"] .card-body h3{
+  color:#193f34;font:400 clamp(2.15rem,3.3vw,3.55rem)/1.08 Georgia,"Times New Roman",serif;
+  letter-spacing:-.053em;text-wrap:balance
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="atv-utv"] .card-body .status{
+  padding:14px 16px;border-left:3px solid #b28b52;background:#f1eadb;color:#415d4e;line-height:1.65
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="atv-utv"] .card-link{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;align-self:stretch;
+  min-height:52px;margin-top:7px;padding:13px 18px;border:0;border-radius:10px;
+  background:#194c3c;color:#fffaf0;text-decoration:none
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="atv-utv"] .card-link:hover{background:#28654d}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="atv-utv"] .card-link:focus-visible{
+  outline:3px solid #a36b21;outline-offset:4px
+ }
+}
+@media screen and (max-width:900px){
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="atv-utv"]{
+  display:flex;flex-direction:column;min-height:0;border-radius:20px
+ }
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="atv-utv"]>.riverfield-tile{height:400px;min-height:400px}
+}
+@media screen and (max-width:600px){
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="atv-utv"]>.riverfield-tile{height:335px;min-height:335px}
+ #rental-results[data-view="grid"][data-layout="editorial"] .trail-spotlight-copy{gap:11px;padding:26px 22px 23px}
+ #rental-results[data-view="grid"][data-layout="editorial"] .trail-spotlight-copy strong{font-size:clamp(2.45rem,10.2vw,3.4rem)}
+ #rental-results[data-view="grid"][data-layout="editorial"] .trail-spotlight-overline{max-width:32ch;font-size:.57rem;letter-spacing:.1em}
+ #rental-results[data-view="grid"][data-layout="editorial"] .trail-spotlight-places{font-size:.7rem}
+ #rental-results[data-view="grid"][data-layout="editorial"] .trail-spotlight-copy small{font-size:.55rem}
+ #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="atv-utv"]>.card-body{padding:27px 23px}
+}
+@media(prefers-reduced-motion:reduce){
+ #rental-results .rental-card[data-category="atv-utv"] .riverfield-scene{transition:none!important}
+ #rental-results .rental-card[data-category="atv-utv"]:hover .riverfield-scene{transform:none!important}
+}
+@media print{
+ .trail-spotlight-copy{display:none!important}
+ #rental-results>.rental-card[data-category="atv-utv"]{box-shadow:none!important}
+}
+
 </style>
 
 </head>
@@ -859,7 +951,12 @@
 <a class="card-link" href="bicycles.html">Browse bicycle rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="atv-utv"><div class="category-art icon-tile riverfield-tile" style="--tile-ink:#46634d;--tile-bg:#e1ece0" role="img" aria-label="Original Ozark mountain and trail illustration with a side-by-side pictogram, not provider vehicles or authorized trails"><svg class="riverfield-scene" viewBox="0 0 700 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="700" height="380" fill="#c79f72"/><circle cx="537" cy="81" r="74" fill="#f9d69a"/><path d="M0 218 95 103 175 180 282 74 366 180 485 109 590 186 700 81V380H0Z" fill="#697c66"/><path d="M0 260 96 210 185 237 298 180 403 237 502 182 610 235 700 195V380H0Z" fill="#365f52"/><path d="M0 310Q121 262 239 294T481 280 700 291V380H0Z" fill="#214b40"/><path d="M72 380Q156 326 259 317T375 280" fill="none" stroke="#bc956a" stroke-width="70" stroke-linecap="round"/><path d="M72 380Q156 326 259 317T375 280" fill="none" stroke="#f1d49c" stroke-width="3" stroke-dasharray="9 18" stroke-linecap="round"/><path d="m36 270 16-45 17 45m-13-7 14-37 14 37m70 11 22-64 25 64m-20-9 18-48 18 48M608 265l17-54 19 54m-12-7 17-43 19 43" stroke="#123e35" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M0 341Q87 329 153 337" stroke="#fff0c8" stroke-width="2" opacity=".5"/></svg><span class="riverfield-eyebrow" aria-hidden="true">OZARKS / TRAIL COUNTRY</span>
 
-<svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 40h46M16 40l4-18h25l5 18M24 22l-3 18M43 22l4 18M20 31h29"/><circle cx="19" cy="44" r="6"/><circle cx="48" cy="44" r="6"/></g></svg><small>OFF-ROAD / SIDE-BY-SIDE</small></div>
+<svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 40h46M16 40l4-18h25l5 18M24 22l-3 18M43 22l4 18M20 31h29"/><circle cx="19" cy="44" r="6"/><circle cx="48" cy="44" r="6"/></g></svg><small>OFF-ROAD / SIDE-BY-SIDE</small><div class="trail-spotlight-copy" aria-hidden="true">
+ <span class="trail-spotlight-overline">THE RIVER VALLEY / OZARK TRAIL COUNTRY</span>
+ <strong>Take the<br><em>scenic route.</em></strong>
+ <span class="trail-spotlight-places">Ozone · Mount Magazine · Boxley area</span>
+ <small>Original landscape illustration · Not an authorized route, rental vehicle or available inventory</small>
+</div></div>
 <div class="card-body"><p class="eyebrow">Side-by-side &amp; off-road rentals</p><h3>Side-by-sides for Ozark trails</h3><p>Compare verified regional side-by-side rental operators near Ozone, Mount Magazine and the Boxley area. Russellville delivery UNCONFIRMED.</p><p class="status">Ozark Ridge Campground · Cove Creek Supply · Wilderness Rider Buffalo Ranch</p><a class="card-link" href="atv-utv-rentals.html">Browse side-by-side rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="rvs">
 <div class="image-wrap rv-lake-folio" role="img" aria-label="Original illustrated RV and Lake Atkins landscape with trees, sunset and docks; conceptual artwork, not a photograph of Adventure RV Park or an available site">
