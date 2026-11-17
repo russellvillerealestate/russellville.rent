@@ -6925,13 +6925,13 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   color:#153e35;font:400 clamp(1.85rem,2.8vw,2.7rem)/1.09 Georgia,"Times New Roman",serif;
   letter-spacing:-.05em
 }
-#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rv-rentals"] .card-body>.card-link{
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rv-rentals"] .card-body .card-link{
   display:flex;min-height:49px;align-items:center;justify-content:center;
   margin-top:14px;padding:12px 17px;border-radius:11px;text-align:center;
   background:#174b3e;color:#fff9eb;text-decoration:none
 }
-#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rv-rentals"] .card-body>.card-link:hover{background:#286b50}
-#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rv-rentals"] .card-body>.card-link:focus-visible{
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rv-rentals"] .card-body .card-link:hover{background:#286b50}
+#rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="rv-rentals"] .card-body .card-link:focus-visible{
   outline:3px solid #a9610b;outline-offset:4px
 }
 @media(min-width:780px){
