@@ -734,6 +734,93 @@ html{scroll-padding-top:105px}
   .site-header .stage-route-nav a{gap:3px;padding:6px 3px;font-size:.62rem}
   .site-header .stage-route-nav a span{min-width:18px;width:18px;height:18px}
 }
+
+/* 2026-11-17: Editorial stage route board — a production poster, not inventory.
+   Live StayARV photography-led composition adapted to three existing directory
+   pathways. NN/g visual hierarchy; web.dev stable layouts; WCAG 2.2 focus/reflow.
+   The regional-delivery caveat and fixed-stage distinction remain in the markup. */
+@media screen and (min-width:981px){
+  .routes .route-grid{
+    grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);
+    grid-template-rows:repeat(2,minmax(258px,auto));
+    gap:17px;
+  }
+  .routes .route{
+    min-height:0;border-radius:22px;
+    box-shadow:0 22px 48px #0e30372a;
+  }
+  .routes .route-mobile{
+    grid-column:1;grid-row:1/span 2;
+    display:flex;flex-direction:column;
+    padding:clamp(32px,4vw,48px);
+    background:linear-gradient(145deg,#092b31 0%,#174d50 56%,#315d50 100%);
+  }
+  .routes .route-mobile::after{
+    content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(ellipse at 72% 18%,#f5dca93e,transparent 40%),
+      repeating-linear-gradient(90deg,transparent 0,transparent calc(25% - 1px),#fff9e91a calc(25% - 1px),#fff9e91a 25%);
+  }
+  .routes .route-mobile .route-symbol{
+    top:74px;right:21px;width:min(56%,325px);height:auto;
+    opacity:.48;transform:rotate(-5deg);
+  }
+  .routes .route-mobile .route-title{
+    margin-top:auto;max-width:13ch;
+    font-size:clamp(3rem,4.1vw,4.4rem);
+    line-height:1.04;font-weight:400;text-wrap:balance;
+  }
+  .routes .route-mobile .route-description{
+    max-width:41ch;margin-top:19px;font-size:.95rem;
+  }
+  .routes .route-mobile .route-link{
+    margin-top:35px;padding-top:19px;
+  }
+  .routes .route-modular,.routes .route-local{
+    grid-column:2;min-height:0;
+    display:flex;flex-direction:column;
+    padding:26px 29px 22px;
+  }
+  .routes .route-modular{grid-row:1;background:linear-gradient(130deg,#24584d,#365e4d)}
+  .routes .route-local{grid-row:2;background:linear-gradient(130deg,#6d452f,#96633d)}
+  .routes .route-modular .route-symbol,.routes .route-local .route-symbol{
+    top:19px;right:22px;width:100px;height:81px;opacity:.39;
+  }
+  .routes .route-modular .route-title,.routes .route-local .route-title{
+    margin-top:auto;max-width:19ch;
+    font:400 clamp(1.9rem,2.45vw,2.45rem)/1.08 Georgia,"Times New Roman",serif;
+    letter-spacing:-.045em;text-wrap:balance;
+  }
+  .routes .route-modular .route-description,.routes .route-local .route-description{
+    max-width:43ch;margin-top:9px;font-size:.82rem;line-height:1.45;
+  }
+  .routes .route-modular .route-link,.routes .route-local .route-link{
+    margin-top:14px;padding-top:12px;
+  }
+}
+@media screen and (max-width:980px){
+  .routes .route{border-radius:20px;box-shadow:0 15px 38px #0d303625}
+  .routes .route-mobile{background:linear-gradient(145deg,#103c40,#286055)}
+  .routes .route-modular{background:linear-gradient(145deg,#285a50,#426653)}
+  .routes .route-local{background:linear-gradient(145deg,#6c4630,#996743)}
+}
+@media screen and (max-width:650px){
+  .routes .route-mobile{min-height:335px}
+  .routes .route-symbol{opacity:.38}
+  .routes .route-title{font-size:clamp(2rem,8vw,2.75rem);max-width:16ch}
+}
+@media (prefers-reduced-motion:reduce){
+  .routes .route{transition:none}
+  .routes .route:hover{transform:none}
+}
+@media print{
+  .routes .route,.routes .route-mobile,.routes .route-modular,.routes .route-local{
+    background:#fff!important;color:#18342f!important;box-shadow:none!important;
+    border:1px solid #64746d;
+  }
+  .routes .route-number,.routes .route-title em,.routes .route-description,
+  .routes .route-link{color:#18342f!important}
+}
+
 </style>
 </head>
 <body>
