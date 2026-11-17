@@ -41,10 +41,6 @@ h1{font-size:clamp(2.9rem,5.5vw,5.4rem);margin:0 0 24px;max-width:12ch}
 .room:before{content:"";position:absolute;inset:8% 6%;border:1px solid #ffffff24;border-radius:50%;box-shadow:0 0 0 35px #ffffff08,0 0 0 75px #ffffff04}
 .room svg{position:relative;width:100%;height:auto;display:block}
 .hero-caption{font-size:.78rem;color:#d5e2d9;letter-spacing:.08em;text-transform:uppercase;margin:8px 0 0;text-align:center}
-.intro-band{background:#fff;border-bottom:1px solid var(--line)}
-.intro-band .wrap{display:grid;grid-template-columns:1fr 1.5fr;align-items:center;gap:32px;padding-block:25px}
-.intro-band strong{font-size:.87rem;letter-spacing:.1em;text-transform:uppercase;color:var(--clay-dark)}
-.intro-band p{margin:0;color:#4d6157;font-size:.94rem}
 .providers{padding-block:clamp(58px,7vw,90px)}
 .section-top{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:29px}
 .section-top .eyebrow{color:var(--clay-dark);margin-bottom:10px}
@@ -565,6 +561,42 @@ footer a{font-weight:750;color:var(--forest)}
   .retail-atlas-route{transition:none}
   .retail-atlas-route:hover{transform:none}
 }
+
+/* Home Edit ownership lens: significant visual hierarchy, not extra provider claims.
+   Live reference StayARV; NN/g hierarchy; web.dev layout stability; WCAG 2.2.
+   CSS only; all provider records, price worksheet and JS remain unchanged. */
+.ownership-lens{position:relative;isolation:isolate;overflow:hidden;background:#e8e7d9;color:#173d35;border-block:1px solid #c8ccbd}
+.ownership-lens:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 6% 20%,#f9f4e3 0,transparent 48%),repeating-linear-gradient(135deg,transparent 0 37px,#3653440b 38px 39px,transparent 40px 75px);pointer-events:none}
+.ownership-lens-grid{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);align-items:center;column-gap:clamp(36px,7vw,105px);row-gap:35px;padding-block:clamp(65px,8vw,110px)}
+.ownership-story{min-width:0;max-width:590px}
+.ownership-kicker{margin:0 0 26px;display:flex;align-items:center;gap:14px;font-size:.7rem;font-weight:850;letter-spacing:.14em;line-height:1.5;color:#6d4433}
+.ownership-kicker span{display:grid;place-items:center;width:46px;height:46px;flex:0 0 46px;border-radius:50%;background:#193e34;color:#f4d6a6;font-size:1.2rem;letter-spacing:-.08em}
+.ownership-story h2{max-width:12ch;margin:0 0 26px;font:400 clamp(3.1rem,5.6vw,6rem)/1 Georgia,"Times New Roman",serif;letter-spacing:-.065em;text-wrap:balance}
+.ownership-story h2 em{color:#8e5138;font-weight:400}
+.ownership-lead{font-size:clamp(1.1rem,1.5vw,1.27rem);line-height:1.6;max-width:43ch;margin:0 0 18px;font-weight:650}
+.ownership-copy{color:#3e594c;max-width:49ch;margin:0 0 31px}
+.ownership-action{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:54px;padding:13px 21px;background:#173d35;color:#fffdf7;text-decoration:none;border-radius:6px;font-weight:800;box-shadow:0 13px 26px #173d3527;transition:background .2s,transform .2s}
+.ownership-action:hover{background:#285a48;transform:translateY(-2px)}
+.ownership-action:focus-visible,.ownership-receipt a:focus-visible{outline:3px solid #9a5123;outline-offset:4px}
+.ownership-receipt{min-width:0;position:relative;background:#fffaf0;border:1px solid #ded5c1;border-radius:17px;padding:clamp(27px,3vw,43px);transform:rotate(1.1deg);box-shadow:0 25px 65px #1a322924,0 0 0 9px #ffffff50}
+.ownership-receipt:after{content:"";position:absolute;inset:auto 22px -12px;height:14px;background:radial-gradient(circle at 7px 0,#e8e7d9 0 6px,transparent 6.5px) 0 0/24px 14px repeat-x;pointer-events:none}
+.ownership-receipt-top{display:flex;align-items:center;justify-content:space-between;gap:14px;border-bottom:1px solid #d8d6c6;padding-bottom:20px;color:#50665b;font-weight:850;font-size:.66rem;line-height:1.6;letter-spacing:.12em}
+.ownership-receipt-top span:last-child{display:grid;place-items:center;flex:0 0 41px;width:41px;height:41px;border:1px solid #c5cbbb;border-radius:50%;font-size:1.15rem;letter-spacing:-.1em;color:#1d4c3d}
+.ownership-receipt h3{font:400 clamp(2.5rem,3.8vw,4.1rem)/1.05 Georgia,"Times New Roman",serif;letter-spacing:-.055em;margin:27px 0 23px;color:#173d35}
+.ownership-receipt h3 em{font-weight:400;color:#ab6247}
+.ownership-ledger{list-style:none;padding:0;margin:0;border-top:1px solid #e0dccf}
+.ownership-ledger li{display:grid;grid-template-columns:43px minmax(0,1fr);gap:15px;padding:17px 0;border-bottom:1px solid #e0dccf}
+.ownership-number{font:400 1.45rem/1.2 Georgia,serif;color:#a45d40}
+.ownership-ledger li div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.ownership-ledger strong{font-size:.96rem;line-height:1.4;color:#173d35}
+.ownership-ledger li div span{font-size:.86rem;line-height:1.55;color:#496055}
+.ownership-receipt-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:22px;flex-wrap:wrap;font-size:.73rem;letter-spacing:.06em;text-transform:uppercase;font-weight:850}
+.ownership-receipt-foot>span{color:#8e5138}
+.ownership-receipt-foot a{color:#173d35;text-decoration-thickness:2px;text-underline-offset:4px}
+.ownership-fine{margin:17px 0 0;color:#59685e;font-size:.72rem;line-height:1.5}
+@media(max-width:760px){.ownership-lens-grid{grid-template-columns:1fr;padding-block:55px 70px}.ownership-story{max-width:none}.ownership-story h2{max-width:13ch;font-size:clamp(3.2rem,11vw,5rem)}.ownership-receipt{max-width:610px;width:100%;margin-inline:auto;transform:none}}
+@media(max-width:480px){.ownership-kicker{letter-spacing:.07em;font-size:.62rem}.ownership-story h2{font-size:clamp(2.9rem,12vw,3.8rem)}.ownership-receipt{padding:25px 21px}.ownership-receipt-top{font-size:.61rem}.ownership-action{width:100%}.ownership-receipt-foot{align-items:flex-start;flex-direction:column;gap:8px}}
+@media(prefers-reduced-motion:reduce){.ownership-action{transition:none}.ownership-action:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -603,7 +635,28 @@ footer a{font-weight:750;color:var(--forest)}
   <a class="journey-card" href="#cost-estimator"><span class="journey-kicker">02 / CALCULATE</span><span class="journey-heading">See the full cost.</span><span class="journey-detail">Use your written offer in the independent payment worksheet.</span><span class="journey-arrow" aria-hidden="true">↗</span></a>
   <a class="journey-card" href="#questions"><span class="journey-kicker">03 / PREPARE</span><span class="journey-heading">Know what to ask.</span><span class="journey-detail">Review ownership, return, delivery and fee questions.</span><span class="journey-arrow" aria-hidden="true">↗</span></a>
 </nav>
-<div class="intro-band"><div class="wrap"><strong>Know the difference</strong><p>Rent-to-own agreements are different from short-term rentals. Ask each retailer how payments, fees, returns and ownership work before agreeing to terms.</p></div></div>
+<section class="ownership-lens" aria-labelledby="ownership-lens-title">
+<div class="wrap ownership-lens-grid">
+  <div class="ownership-story">
+    <p class="ownership-kicker"><span aria-hidden="true">R↗</span> THE HOME EDIT / KNOW THE DIFFERENCE</p>
+    <h2 id="ownership-lens-title">A small payment. <em>A bigger picture.</em></h2>
+    <p class="ownership-lead">Rent-to-own agreements are different from short-term rentals. The monthly payment alone doesn't tell you what the agreement will cost.</p>
+    <p class="ownership-copy">Before choosing a retailer, ask how payments, fees, returns and ownership work. Compare the complete written terms—not just the advertised payment.</p>
+    <a class="ownership-action" href="#cost-estimator">Explore the cost worksheet <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="ownership-receipt" aria-label="Three questions to ask about rent-to-own agreements">
+    <div class="ownership-receipt-top"><span>RUSSELLVILLE.RENT / COST FIELD NOTES</span><span aria-hidden="true">R↗</span></div>
+    <h3>Look past<br><em>the monthly.</em></h3>
+    <ol class="ownership-ledger">
+      <li><span class="ownership-number">01</span><div><strong>Payment</strong><span>What is the amount and how often is it due?</span></div></li>
+      <li><span class="ownership-number">02</span><div><strong>Term</strong><span>How many payments are in the full agreement?</span></div></li>
+      <li><span class="ownership-number">03</span><div><strong>Everything else</strong><span>Which fees, delivery costs, returns and buyout terms apply?</span></div></li>
+    </ol>
+    <div class="ownership-receipt-foot"><span>Written terms first</span><a href="#questions">Questions before you sign <span aria-hidden="true">↗</span></a></div>
+    <p class="ownership-fine">Planning questions only. No prices, approvals or ownership outcomes are guaranteed by this directory.</p>
+  </div>
+</div>
+</section>
 
 <section class="need-explorer wrap" id="shop-by-need" aria-labelledby="need-title" hidden>
   <div class="need-cover">
