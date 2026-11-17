@@ -655,6 +655,85 @@ main{max-width:1400px;padding:22px clamp(15px,2.2vw,34px) 90px}
 @media(prefers-reduced-motion:reduce){.trail-next-route,.trail-next-action span{transition:none}.trail-next-route:hover .trail-next-action span{transform:none}}
 @media print{.trail-next{box-shadow:none;border:1px solid #888}.trail-next-cover{background:#fff!important;color:#163c30;min-height:0}.trail-next-story h2,.trail-next-story h2 em,.trail-next-story>p:not(.trail-next-kicker),.trail-next-kicker,.trail-next-postcard,.trail-next-return{color:#163c30}.trail-next-routes{background:#fff}.trail-next-route{background:#fff!important;border:1px solid #aaa;min-height:0;break-inside:avoid}.trail-next-note{color:#163c30;background:#fff}}
 
+
+/* 2026-11-17: Regional versus park-only trail comparison.
+   Desktop: two equal regional contact panels and a full-width park-only
+   exception. This clarifies riding restrictions, not operator ranking.
+   Mobile keeps all three full cards in original order. Reviewed live
+   StayARV and Russellville.Rent, recent main commits, NN/g visual hierarchy,
+   Google web.dev responsive design, and W3C WCAG 2.2 reflow.
+   Provider facts, prices, scripts, links and update workflow unchanged. */
+@media (min-width:801px) {
+  .ride-ledger-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:clamp(16px,2vw,24px);align-items:stretch
+  }
+  .ride-ledger-card {border-radius:20px}
+  .ride-ledger-card:nth-child(3) {
+    grid-column:1/-1;display:grid;
+    grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);
+    grid-template-rows:6px auto 1fr auto;
+    column-gap:clamp(12px,2.8vw,44px);
+    background:linear-gradient(112deg,#fff5e2 0%,#fff8eb 46%,#f8e8c8 100%);
+    border-color:#dfc38d;box-shadow:0 19px 38px #051e192e
+  }
+  .ride-ledger-card:nth-child(3)::before {
+    grid-column:1/-1;grid-row:1;height:6px;
+    background:linear-gradient(90deg,#e9c27e,#9f7a48)
+  }
+  .ride-ledger-card:nth-child(3) .ride-ledger-card-top {
+    grid-column:1;grid-row:2;
+    padding:clamp(25px,3.2vw,43px) clamp(24px,3.4vw,47px) 16px;
+    gap:12px
+  }
+  .ride-ledger-card:nth-child(3) .ride-ledger-index {color:#795b2e}
+  .ride-ledger-card:nth-child(3) h3 {
+    font-size:clamp(2.2rem,3.6vw,3.65rem);
+    line-height:1.04;letter-spacing:-.052em
+  }
+  .ride-ledger-card:nth-child(3) .ride-ledger-location {
+    color:#6e5a3b;font-weight:700;font-size:.84rem
+  }
+  .ride-ledger-card:nth-child(3) .ride-ledger-age {
+    grid-column:1;grid-row:3;align-self:start;
+    margin:0 clamp(24px,3.4vw,47px) 20px;
+    padding:0 0 20px;border-bottom:1px solid #d8bd85
+  }
+  .ride-ledger-card:nth-child(3) .ride-ledger-age strong {
+    color:#705123;font-size:clamp(3.4rem,5vw,5.5rem)
+  }
+  .ride-ledger-card:nth-child(3) .ride-ledger-age span {
+    max-width:26ch;color:#69583a;font-size:.83rem
+  }
+  .ride-ledger-card:nth-child(3) dl {
+    grid-column:2;grid-row:2/4;align-content:center;gap:18px;
+    padding:clamp(25px,3vw,43px) clamp(23px,3.2vw,46px) 24px;
+    border-left:1px solid #d6be90
+  }
+  .ride-ledger-card:nth-child(3) dt {color:#7a5c31}
+  .ride-ledger-card:nth-child(3) dd {
+    color:#354b39;font-size:.92rem;line-height:1.66
+  }
+  .ride-ledger-card:nth-child(3) .ride-ledger-link {
+    grid-column:1/-1;grid-row:4;min-height:55px;
+    margin:0 clamp(24px,3.4vw,47px) 24px;
+    padding-top:14px;border-top:1px solid #d7b980;color:#674919
+  }
+}
+@media (min-width:801px) and (max-width:950px) {
+  .ride-ledger-card:nth-child(3) {
+    grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr);
+    column-gap:8px
+  }
+  .ride-ledger-card:nth-child(3) dl {padding-left:20px;padding-right:20px}
+  .ride-ledger-card:nth-child(3) .ride-ledger-card-top {
+    padding-left:23px;padding-right:17px
+  }
+  .ride-ledger-card:nth-child(3) .ride-ledger-age {
+    margin-left:23px;margin-right:14px
+  }
+}
+
 </style></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-head"><a href="/">Russellville.Rent</a><a class="back" href="/">← All rental categories</a></header>
 <main id="main"><section class="hero" aria-labelledby="hero-title"><div class="hero-terrain" aria-hidden="true"><svg viewBox="0 0 1440 410" preserveAspectRatio="xMidYMax slice" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="trail-dusk" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c6c995" stop-opacity=".34"/><stop offset="1" stop-color="#214f3c" stop-opacity=".03"/></linearGradient></defs><circle cx="1155" cy="88" r="90" fill="#e7c78c" opacity=".23"/><path d="M0 265 118 173l95 66 128-145 138 143 112-75 136 95 114-113 132 122 145-102 137 91 135-83 50 41v191H0Z" fill="url(#trail-dusk)"/><path d="M0 312 146 216l126 65 118-83 132 101 112-49 144 59 121-88 129 81 134-97 178 112v93H0Z" fill="#6e9572" opacity=".27"/><path d="M0 355q152-85 306-37t278-17 268 34 278-9 310 19v65H0Z" fill="#224e3a" opacity=".67"/><path d="M0 389q242-40 447-7t414-15 579 17v26H0Z" fill="#102f28" opacity=".8"/><g fill="#153d2f" opacity=".68"><path d="m60 349 29-96 31 96h-21v57H78v-57Z"/><path d="m130 363 24-79 24 79h-17v43h-16v-43Z"/><path d="m1184 349 31-112 33 112h-22v61h-21v-61Z"/><path d="m1244 362 22-72 24 72h-15v48h-16v-48Z"/><path d="m1345 354 27-95 29 95h-20v56h-18v-56Z"/></g><path d="M-20 409q285-106 529-57t386-18 560 71" stroke="#cbaa78" stroke-opacity=".3" stroke-width="8" stroke-dasharray="3 20" fill="none"/></svg></div><div><p class="eyebrow">Russellville &amp; the Arkansas River Valley</p><h1 id="hero-title">Find a side-by-side.<br><em>Find your trail.</em></h1><p>Compare independently listed side-by-side rentals in the Ozarks, around Ozone and Mount Magazine. The operators below advertise rentals on their own websites; confirm dates, trail restrictions and exact pickup or delivery arrangements before traveling.</p><a href="#directory">Explore three providers <span aria-hidden="true">↗</span></a>
