@@ -30,6 +30,131 @@
 .discovery--encore .discovery-caption{color:#e4e9dc}
 @media(max-width:650px){.discovery--encore{margin-top:43px;padding:27px 17px;border-radius:20px}.discovery--encore .discovery-heading{margin-bottom:20px}.discovery--encore .discovery-heading h2{font-size:clamp(2.65rem,10vw,3.7rem)}.discovery--encore .discovery-heading>p{font-size:.84rem}}
 @media print{.discovery--encore{background:#fff!important;color:#111;box-shadow:none;border:1px solid #888}.discovery--encore .discovery-heading h2,.discovery--encore .discovery-heading>p,.discovery--encore .discovery-heading .eyebrow,.discovery--encore .discovery-caption{color:#111}}
+
+/* 2026-11-16: Audio-visual category as an immersive editorial stage.
+   Reference: live StayARV's photography-led hierarchy; adapted to a multi-category
+   directory using the existing original vector, without suggesting bookable stock.
+   NN/g visual scanning, web.dev layout stability, WCAG 2.2 focus/reflow.
+   Default unfiltered grid only; compact filtered/list, mobile, print preserved. */
+.av-spotlight-story{display:none}
+@media screen {
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="audio-visual"]{
+    grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.13fr) minmax(0,.87fr);
+    min-height:460px;border:1px solid #aac0b2;border-radius:25px;
+    overflow:hidden;background:#fffaf1;box-shadow:0 22px 50px #122e2930
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="audio-visual"]>.category-art{
+    width:100%;height:100%;min-height:460px;isolation:isolate;overflow:hidden;
+    background:#193f44;align-items:stretch;justify-content:stretch
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="audio-visual"]>.category-art:after{
+    background:linear-gradient(90deg,#091f2cea 0%,#09232cba 55%,#09273568 100%);
+    z-index:1;pointer-events:none
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .av-spotlight-story{
+    position:relative;z-index:3;display:flex;flex-direction:column;
+    align-items:start;justify-content:end;gap:20px;min-width:0;
+    width:100%;padding:clamp(26px,4.4vw,54px);color:#fff8e7;text-align:left
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .av-spotlight-overline{
+    margin-bottom:auto;color:#f4dbaf;font-size:.66rem;letter-spacing:.16em;
+    line-height:1.6;font-weight:850
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .av-spotlight-story strong{
+    display:block;max-width:11ch;color:#fffbed;font:400 clamp(2.8rem,5.1vw,5.3rem)/1.01 Georgia,"Times New Roman",serif;
+    letter-spacing:-.06em;text-wrap:balance;text-shadow:0 4px 20px #071b26bb
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .av-spotlight-story strong em{
+    display:block;color:#f3d49b;font-weight:400;font-style:italic
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .av-spotlight-topics{
+    display:flex;flex-wrap:wrap;gap:7px
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .av-spotlight-topics span{
+    display:inline-flex;align-items:center;min-height:31px;
+    border:1px solid #f5dfb87d;border-radius:99px;background:#092b32b8;
+    padding:6px 11px;color:#ffedc7;font-size:.6rem;font-weight:850;
+    letter-spacing:.08em;line-height:1.15
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .av-spotlight-disclaimer{
+    display:block;padding-top:12px;border-top:1px solid #e9d7ae7c;
+    color:#f5e9d5;font-size:.59rem;line-height:1.4;letter-spacing:.07em;font-weight:750
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="audio-visual"] .riverfield-eyebrow,
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="audio-visual"]>.category-art>small{display:none}
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="audio-visual"] .directory-pictogram{
+    right:26px;top:25px;width:80px;height:80px;padding:17px;transform:rotate(-5deg);
+    border-radius:19px;box-shadow:0 12px 28px #071b2591
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="audio-visual"]>.card-body{
+    justify-content:center;gap:10px;padding:clamp(28px,4vw,52px);
+    background:radial-gradient(ellipse at 100% 0%,#e4efe8 0%,transparent 56%),#fffaf1
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="audio-visual"] .card-body h3{
+    color:#173f36;font:400 clamp(2.15rem,3.3vw,3.5rem)/1.08 Georgia,"Times New Roman",serif;
+    letter-spacing:-.052em;text-wrap:balance
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="audio-visual"] .card-body .status{
+    padding:14px 16px;border-left:3px solid #bb9456;background:#f2eee1;
+    color:#555e4c!important;line-height:1.65
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="audio-visual"] .card-link{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    min-height:50px;margin-top:6px;padding:14px 18px;border:0;border-radius:10px;
+    background:#194c40;color:#fff9ed;text-decoration:none
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="audio-visual"] .card-link:hover{
+    background:#276950
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="audio-visual"] .card-link:focus-visible{
+    outline:3px solid #a9660d;outline-offset:4px
+  }
+}
+@media screen and (max-width:900px){
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="audio-visual"]{
+    display:flex;flex-direction:column;min-height:0;border-radius:20px
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="audio-visual"]>.category-art{
+    height:355px;min-height:355px
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .av-spotlight-story strong{
+    font-size:clamp(2.8rem,7vw,4.4rem)
+  }
+}
+@media screen and (max-width:600px){
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="audio-visual"]>.category-art{
+    height:340px;min-height:340px
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .av-spotlight-story{
+    gap:16px;padding:27px 22px 23px
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .av-spotlight-story strong{
+    font-size:clamp(2.25rem,10.5vw,3.3rem)
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .av-spotlight-overline{
+    max-width:calc(100% - 92px);font-size:.54rem;letter-spacing:.095em
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .av-spotlight-topics span{
+    font-size:.51rem;min-height:29px;padding:6px 9px
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"] .av-spotlight-disclaimer{
+    font-size:.52rem;letter-spacing:.03em
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="audio-visual"] .directory-pictogram{
+    right:15px;top:19px;width:67px;height:67px;padding:14px
+  }
+  #rental-results[data-view="grid"][data-layout="editorial"]>.rental-card[data-category="audio-visual"]>.card-body{
+    padding:27px 22px
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  #rental-results .rental-card[data-category="audio-visual"] .riverfield-scene{transition:none!important}
+  #rental-results .rental-card[data-category="audio-visual"]:hover .riverfield-scene{transform:none!important}
+}
+@media print{
+  .av-spotlight-story{display:none!important}
+  #rental-results>.rental-card[data-category="audio-visual"]{box-shadow:none!important}
+}
 </style>
 
 </head>
@@ -878,6 +1003,12 @@
 <li><span>03 / RETURN</span>Check the return deadline</li>
 </ol><a class="card-link" href="formalwear.html">Browse formalwear rentals <span aria-hidden="true">↗</span></a></div></article>
 <article class="rental-card" data-category="audio-visual"><div class="category-art icon-tile riverfield-tile" style="--tile-ink:#45517e;--tile-bg:#e1e5f5" role="img" aria-label="Original illustrated evening sound and lighting setup, not any rental provider's inventory"><svg class="riverfield-scene" viewBox="0 0 700 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="700" height="380" fill="#344e70"/><circle cx="556" cy="73" r="61" fill="#ebc7a2"/><path d="M0 195Q103 142 233 189T478 175T700 195V380H0Z" fill="#2b5870"/><path d="M0 249Q143 205 269 244T516 221T700 246V380H0Z" fill="#17485b"/><path d="M0 323Q203 278 380 314T700 291V380H0Z" fill="#103b43"/><path d="M210 292h388V174H210Z" fill="#163f4a"/><path d="M202 176h405M211 179l47-47h296l47 47M258 132v46m296-46v46" stroke="#e5c994" stroke-width="10" fill="none" stroke-linejoin="round"/><path d="m280 178-92 127 180-65m106-62 150 134-194-73m-88-60-51 122 114-11" fill="#e5d69d" opacity=".20"/><path d="m280 178-65 106m260-106 93 125m-218-125-37 96" stroke="#f6dfa0" stroke-opacity=".62" stroke-width="4"/><rect x="232" y="200" width="46" height="95" rx="8" fill="#0b292f" stroke="#d6bd91" stroke-width="5"/><rect x="530" y="200" width="46" height="95" rx="8" fill="#0b292f" stroke="#d6bd91" stroke-width="5"/><circle cx="255" cy="224" r="10" stroke="#8ab8aa" stroke-width="3" fill="none"/><circle cx="255" cy="266" r="15" stroke="#8ab8aa" stroke-width="3" fill="none"/><circle cx="554" cy="266" r="15" stroke="#8ab8aa" stroke-width="3" fill="none"/><path d="M300 287h205" stroke="#e3c990" stroke-width="7" stroke-linecap="round"/><rect x="340" y="235" width="120" height="51" rx="6" fill="#bdbeac" opacity=".88"/><path d="M358 256h84m-74 12h64" stroke="#1a4b53" stroke-width="4"/><path d="M0 347Q103 318 217 344T435 338T700 350V380H0Z" fill="#092e36"/></svg><span class="riverfield-eyebrow" aria-hidden="true">RIVER VALLEY / MAKE A SCENE</span>
+<span class="av-spotlight-story" aria-hidden="true">
+  <span class="av-spotlight-overline">R↗ / THE RIVER VALLEY AFTER DARK</span>
+  <strong>Make the moment <em>come alive.</em></strong>
+  <span class="av-spotlight-topics"><span>01 / SOUND</span><span>02 / SCREEN</span><span>03 / LIGHT</span></span>
+  <span class="av-spotlight-disclaimer">ORIGINAL ILLUSTRATION · NOT PROVIDER EQUIPMENT</span>
+</span>
 <svg class="directory-pictogram" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-audio-visual"></use></svg><small>AUDIO &amp; VISUAL</small></div><div class="card-body"><p class="eyebrow">Audio &amp; visual rentals</p><h3>Audio &amp; visual rentals</h3>
 <p>Speakers, projectors, event lighting and staffed production packages.</p>
 <p class="status">FunFlicks (Russellville service verified) · Roots &amp; Rhythm · A/V Arkansas · 636 Entertainment · EdmoSound · SIDETRAXX Pro Sound · Stagemasters Sound &amp; Lighting (regional providers; Russellville delivery UNCONFIRMED)</p>
