@@ -227,6 +227,41 @@ footer a{font-weight:700}
  .routes{padding-top:24px}
 }
 @media print{.recovery-atlas{padding:20px 0}.recovery-atlas-hero{min-height:0}.recovery-finder:not([hidden]){display:none!important}}
+
+/* 2026-11-17 / Two editorial waypoints + four compact paths on the missing-page route gallery.
+   Native links and 35-category recovery atlas are unchanged. Visual reference: stayarv.com;
+   research: Nielsen Norman Group visual hierarchy; web.dev stable layout; WCAG 2.2 reflow/focus. */
+@media (min-width:1040px){
+  .routes .route-grid{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(305px,auto);gap:16px}
+  .routes .route-card{min-height:0;border-radius:19px;padding:clamp(21px,2.4vw,30px)}
+  .routes .route-card:nth-child(2n){border-radius:19px}
+  .routes .route-card:nth-child(1),.routes .route-card:nth-child(6){grid-column:span 2;isolation:isolate;min-height:345px;box-shadow:0 24px 43px #0c30282b}
+  .routes .route-card:nth-child(1){background:radial-gradient(ellipse at 79% 54%,#386d54 0%,transparent 50%),linear-gradient(132deg,#0c2c27,#204f3d);color:#fffdf4;border-color:#45715e}
+  .routes .route-card:nth-child(6){background:radial-gradient(ellipse at 88% 60%,#d3ad7170,transparent 48%),linear-gradient(132deg,#f5e7cd,#e3d0a9);border-color:#cfb790}
+  .routes .route-card:nth-child(1)::after,.routes .route-card:nth-child(6)::after{content:"";position:absolute;pointer-events:none;inset:13px;border:1px solid #f0dbad59;border-radius:12px;z-index:-1}
+  .routes .route-card:nth-child(6)::after{border-color:#785b3938}
+  .routes .route-card:nth-child(1) .route-top{color:#f2dca9}
+  .routes .route-card:nth-child(1) .route-top .arrow{border-color:#f0d99e99;color:#f3dca9}
+  .routes .route-card:nth-child(6) .route-top{color:#70542e}
+  .routes .route-card:nth-child(6) .route-top .arrow{border-color:#947247;color:#624823}
+  .routes .route-card:nth-child(1) .route-art,.routes .route-card:nth-child(6) .route-art{position:absolute;right:clamp(20px,3vw,42px);bottom:clamp(31px,4vw,52px);width:43%;height:61%;margin:0;z-index:0}
+  .routes .route-card:nth-child(1) .route-art{color:#e7d7a5}
+  .routes .route-card:nth-child(6) .route-art{color:#765c38}
+  .routes .route-card:nth-child(1) .route-art::before,.routes .route-card:nth-child(6) .route-art::before{inset:-5%;background:radial-gradient(circle,#ffffff20,transparent 68%)}
+  .routes .route-card:nth-child(1) h3,.routes .route-card:nth-child(6) h3{position:relative;z-index:1;font-size:clamp(2.7rem,4vw,4rem);line-height:1.04;max-width:58%;margin:auto 0 15px}
+  .routes .route-card:nth-child(1) p,.routes .route-card:nth-child(6) p{position:relative;z-index:1;max-width:48%;line-height:1.55}
+  .routes .route-card:nth-child(1) p{color:#e3eee2}
+  .routes .route-card:nth-child(6) p{color:#5a4a32}
+  .routes .route-card:nth-child(2),.routes .route-card:nth-child(3),.routes .route-card:nth-child(4),.routes .route-card:nth-child(5){min-height:345px}
+  .routes .route-card:nth-child(n+2):nth-child(-n+5) .route-art{height:128px}
+  .routes .route-card:nth-child(n+2):nth-child(-n+5) h3{font-size:clamp(1.85rem,2.4vw,2.45rem)}
+}
+@media print and (min-width:1040px){
+  .routes .route-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:auto}
+  .routes .route-card:nth-child(n){grid-column:auto;min-height:0;box-shadow:none;background:#fff!important;color:#153b30!important}
+  .routes .route-card:nth-child(n) h3,.routes .route-card:nth-child(n) p{max-width:none;color:#153b30!important}
+  .routes .route-card:nth-child(1) .route-art,.routes .route-card:nth-child(6) .route-art{display:none}
+}
 </style>
 </head>
 <body>
