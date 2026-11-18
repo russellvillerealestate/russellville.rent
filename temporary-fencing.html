@@ -765,6 +765,121 @@ main.wrap{padding-top:0}
 }
 
 </style>
+
+<style id="fence-project-editorial-mosaic-2026">
+/* River Valley project routes: a site-scale visual lead with two horizontal companion
+   routes. Original illustrations and all inquiry behavior remain unchanged.
+   Studied live StayARV and Russellville.Rent, NN/g homepage visual hierarchy,
+   web.dev responsive layout stability, WCAG 2.2 focus visibility and reflow. */
+@media (min-width:1050px) {
+  .project-paths .path-grid {
+    display:grid;
+    grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);
+    grid-template-rows:repeat(2,minmax(265px,auto));
+    gap:17px;
+    align-items:stretch;
+  }
+  .project-paths .path-card { min-height:0; }
+  .project-paths .path-card:first-child {
+    grid-column:1;grid-row:1 / 3;
+    padding:clamp(30px,3.5vw,47px);
+    background:radial-gradient(circle at 81% 42%,#4d806a 0%,transparent 52%),
+      linear-gradient(145deg,#0f332c,#1b5240 85%);
+    border-color:#286148;
+    box-shadow:0 22px 44px #0c372b36;
+  }
+  .project-paths .path-card:first-child::before {
+    content:"";pointer-events:none;position:absolute;inset:17px;
+    border:1px solid #e9d3a13d;border-radius:11px;
+  }
+  .project-paths .path-card:first-child .path-overline {
+    position:relative;z-index:1;font-size:.76rem;letter-spacing:.18em;
+  }
+  .project-paths .path-card:first-child .path-art {
+    position:relative;z-index:1;
+    flex:none;height:245px;margin:22px 0 21px;border-radius:17px;
+    background:radial-gradient(ellipse at 55% 75%,#d2e4b333,transparent 70%),
+      linear-gradient(180deg,#f6e6ae12,#ffffff04);
+    border:1px solid #f2d8a24a;
+  }
+  .project-paths .path-card:first-child .path-art svg {
+    width:min(95%,440px);height:232px;stroke-width:2.4;
+  }
+  .project-paths .path-card:first-child > strong {
+    position:relative;font-size:clamp(2.75rem,4.3vw,4.15rem);
+    max-width:11ch;line-height:1.01;letter-spacing:-.06em;
+    text-wrap:balance;
+  }
+  .project-paths .path-card:first-child > small {
+    position:relative;max-width:39ch;color:#e2eee3;
+    font-size:.98rem;line-height:1.7;margin-top:6px;
+  }
+  .project-paths .path-card:first-child .path-cta {
+    position:relative;display:flex;justify-content:space-between;
+    width:100%;margin-top:25px;padding-top:19px;border-top:1px solid #e8d6ab65;
+    font-size:.88rem;color:#f5d99f;
+  }
+  .project-paths .path-card:not(:first-child) {
+    display:grid;grid-column:2;
+    grid-template-columns:minmax(0,1fr) minmax(0,146px);
+    grid-template-rows:auto auto minmax(0,1fr) auto;
+    gap:9px 15px;padding:clamp(23px,2.8vw,34px);
+    align-items:start;align-content:stretch;
+  }
+  .project-paths .path-card:nth-child(2) {
+    grid-row:1;background:linear-gradient(130deg,#f6faf2,#e6eee3);
+  }
+  .project-paths .path-card:nth-child(3) {
+    grid-row:2;background:linear-gradient(130deg,#fffaf0,#f0e9d8);
+  }
+  .project-paths .path-card:not(:first-child) .path-overline {
+    grid-column:1;grid-row:1;
+    font-size:.64rem;letter-spacing:.11em;line-height:1.5;
+  }
+  .project-paths .path-card:not(:first-child) .path-art {
+    grid-column:2;grid-row:1 / 5;
+    margin:0;width:100%;height:100%;min-height:188px;
+    border-radius:12px;background:radial-gradient(ellipse at center,#d6e7d6,transparent 75%);
+    align-self:stretch;
+  }
+  .project-paths .path-card:nth-child(3) .path-art {
+    background:radial-gradient(ellipse at center,#ead8b4,transparent 75%);
+    color:#8a6435;
+  }
+  .project-paths .path-card:not(:first-child) .path-art svg {
+    width:100%;height:155px;max-width:170px;
+  }
+  .project-paths .path-card:not(:first-child) > strong {
+    grid-column:1;grid-row:2;align-self:end;
+    font-size:clamp(1.58rem,2.25vw,2.2rem);
+    line-height:1.08;letter-spacing:-.048em;text-wrap:balance;
+    margin:0;
+  }
+  .project-paths .path-card:not(:first-child) > small {
+    grid-column:1;grid-row:3;line-height:1.48;font-size:.79rem;
+  }
+  .project-paths .path-card:not(:first-child) .path-cta {
+    grid-column:1;grid-row:4;
+    align-self:end;margin-top:3px;padding-top:9px;
+    border-top:1px solid #c5d8c8;font-size:.73rem;line-height:1.4;
+  }
+}
+@media print {
+  .project-paths .path-grid {grid-template-columns:1fr;grid-template-rows:auto;}
+  .project-paths .path-card:first-child,
+  .project-paths .path-card:not(:first-child) {
+    grid-column:auto;grid-row:auto;display:flex;min-height:0;
+    padding:18px;border:1px solid #888;background:#fff!important;
+    color:#163d31!important;box-shadow:none!important;break-inside:avoid;
+  }
+  .project-paths .path-card .path-art {display:none;}
+  .project-paths .path-card:first-child > strong,
+  .project-paths .path-card:not(:first-child) > strong {font-size:1.6rem;}
+  .project-paths .path-card:first-child > small,
+  .project-paths .path-card:not(:first-child) > small,
+  .project-paths .path-card:first-child .path-cta {color:#173e32!important;}
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#providers">Skip to rental providers</a>
