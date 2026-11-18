@@ -6979,3 +6979,140 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
     height:175px;min-height:0
   }
 }
+
+/* 2026-11-17 / The River Valley route ledger
+   A desktop-first wayfinding redesign of the four existing intent filters:
+   turn small four-across tiles into legible, cinematic horizontal routes with
+   parallel descriptions and clear actions. Reuse the site's own existing
+   photographs and SVG pictograms; no additional image request, HTML,
+   listing data, search, or saved-category JavaScript is changed.
+   Design sources: https://www.nngroup.com/articles/principles-visual-design/
+   (scale, hierarchy, Gestalt); https://web.dev/learn/design/responsive-images/
+   (reflow without overflow); https://www.w3.org/TR/WCAG22/
+   (visible focus, 24px minimum pointer targets). */
+@media(min-width:761px){
+  #browse>.intent-explorer:not([hidden]){
+    padding:clamp(27px,4vw,52px);
+    border:1px solid #466b59;
+    border-radius:26px;
+    background:radial-gradient(circle at 92% 5%,#2d6651 0,transparent 38%),
+      linear-gradient(125deg,#0a302a,#174438 70%,#0b302a);
+  }
+  #browse .intent-heading{margin-bottom:clamp(24px,3.2vw,41px)}
+  #browse .intent-heading h3{
+    font-size:clamp(2.65rem,5vw,4.65rem);
+    max-width:15ch;line-height:1.02;
+  }
+  #browse .intent-heading>div>p:last-child{max-width:50ch}
+  #browse .intent-grid{
+    display:grid;grid-template-columns:minmax(0,1fr);
+    gap:10px;
+  }
+  #browse .intent-grid>.intent-card{
+    display:grid;
+    grid-template-columns:clamp(56px,6vw,76px) minmax(0,1fr) minmax(0,1.15fr) minmax(130px,.48fr);
+    grid-template-rows:minmax(112px,auto);
+    align-items:center;
+    gap:10px clamp(15px,2.3vw,31px);
+    width:100%;min-height:130px;
+    padding:18px clamp(20px,3vw,35px);
+    border:1px solid #f1e9d371;
+    border-left:6px solid #efd095;
+    border-radius:13px;
+    box-shadow:0 10px 26px #071d1940;
+  }
+  #browse .intent-grid>.intent-card:nth-child(2){border-left-color:#a9d1a6}
+  #browse .intent-grid>.intent-card:nth-child(3){border-left-color:#97ced4}
+  #browse .intent-grid>.intent-card:nth-child(4){border-left-color:#dfb5bb}
+  #browse .intent-grid .intent-symbol{
+    grid-column:1;grid-row:1;
+    align-self:center;width:clamp(56px,6vw,76px);
+    height:clamp(56px,6vw,76px);margin:0;
+    border-radius:16px;
+    background:#f5e8bd25;
+  }
+  #browse .intent-grid .intent-symbol svg{width:40px;height:40px;max-width:75%}
+  #browse .intent-grid .intent-title{
+    grid-column:2;grid-row:1;
+    max-width:15ch;margin:0;
+    font-size:clamp(2.05rem,3.2vw,3.45rem);
+    line-height:1.04;
+  }
+  #browse .intent-grid .intent-detail{
+    grid-column:3;grid-row:1;
+    max-width:34ch;margin:0;
+    color:#f3f4e9;
+    font-size:clamp(.86rem,1.13vw,1rem);
+    line-height:1.55;
+  }
+  #browse .intent-grid .intent-foot{
+    grid-column:4;grid-row:1;
+    justify-content:space-between;
+    align-self:center;min-height:52px;
+    width:100%;margin:0;padding:10px 4px 10px 18px;
+    border-top:0;border-left:1px solid #f5e0b783;
+    font-size:.78rem;line-height:1.35;
+    color:#ffe1a1;
+  }
+  #browse .intent-card[aria-pressed="true"]::after{
+    width:26px;height:26px;top:7px;right:7px;font-size:.75rem;
+  }
+  #browse .intent-grid>.intent-card:hover{
+    transform:translateX(4px);
+    box-shadow:0 15px 32px #051a185f;
+  }
+}
+@media(min-width:761px) and (max-width:1040px){
+  #browse .intent-grid>.intent-card{
+    grid-template-columns:56px minmax(0,1fr) minmax(0,1.08fr) 126px;
+    padding-inline:22px;gap:17px;min-height:118px;
+  }
+  #browse .intent-grid .intent-symbol{width:56px;height:56px}
+  #browse .intent-grid .intent-symbol svg{width:34px;height:34px}
+  #browse .intent-grid .intent-title{font-size:clamp(1.75rem,2.9vw,2.3rem)}
+  #browse .intent-grid .intent-detail{font-size:.81rem}
+  #browse .intent-grid .intent-foot{padding-left:12px;font-size:.7rem}
+}
+@media(max-width:760px){
+  #browse>.intent-explorer:not([hidden]){border-radius:19px}
+  #browse .intent-grid{gap:10px}
+  #browse .intent-grid>.intent-card{
+    grid-column:1;grid-row:auto;
+    grid-template-columns:46px minmax(0,1fr);
+    grid-template-rows:auto auto auto;
+    gap:0 15px;
+    min-height:122px;
+    padding:17px 19px;
+    border-radius:13px;
+    border:1px solid #f1e9d36b;
+    border-left:5px solid #e8ca8c;
+  }
+  #browse .intent-grid>.intent-card:nth-child(2){border-left-color:#a9d1a6}
+  #browse .intent-grid>.intent-card:nth-child(3){border-left-color:#97ced4}
+  #browse .intent-grid>.intent-card:nth-child(4){border-left-color:#dfb5bb}
+  #browse .intent-grid .intent-symbol{
+    grid-column:1;grid-row:1/4;align-self:center;
+    width:46px;height:46px;margin:0;
+  }
+  #browse .intent-grid .intent-symbol svg{width:30px;height:30px}
+  #browse .intent-grid .intent-title{
+    grid-column:2;grid-row:1;margin:0;
+    font-size:clamp(1.65rem,5vw,2.1rem);
+  }
+  #browse .intent-grid .intent-detail{
+    grid-column:2;grid-row:2;margin:7px 0 0;
+    font-size:.81rem;line-height:1.45;
+  }
+  #browse .intent-grid .intent-foot{
+    grid-column:2;grid-row:3;margin-top:11px;padding-top:9px;
+    font-size:.76rem;
+  }
+  #browse .intent-card[aria-pressed="true"]::after{width:25px;height:25px;top:7px;right:7px}
+}
+@media(prefers-reduced-motion:reduce){
+  #browse .intent-grid>.intent-card:hover{transform:none}
+}
+@media print{
+  #browse>.intent-explorer:not([hidden]){background:#fff!important;color:#111;box-shadow:none}
+  #browse .intent-grid>.intent-card{break-inside:avoid;box-shadow:none}
+}
