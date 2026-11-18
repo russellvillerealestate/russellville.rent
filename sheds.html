@@ -562,6 +562,107 @@ footer a{font-weight:750}
 @media(prefers-reduced-motion:reduce){.shed-fieldbook-return a{transition:none}.shed-fieldbook-return a:hover{transform:none}}
 @media print{.checklist.shed-final-fieldboard{background:#fff!important;color:#173b2f}.shed-final-fieldboard h2,.shed-final-fieldboard .eyebrow,.shed-final-fieldboard .shed-fieldbook-copy>p:last-child,.shed-final-fieldboard .shed-fieldbook-return p{color:#173b2f}.shed-fieldbook-questions .question{break-inside:avoid;box-shadow:none;border:1px solid #777}.shed-fieldbook-art,.shed-fieldbook-return nav{display:none}}
 
+
+/* 2026-11-18 / River Valley blueprint edition. The three existing footprint
+   shortcuts become a large-format editorial atlas: one immersive starter
+   chapter and two compact companion routes. StayARV-inspired hierarchy adapted
+   for a comparison tool; all examples are illustrative, not dealer inventory.
+   NN/g visual hierarchy, web.dev layout stability, WCAG 2.2 focus/target sizes. */
+@media (min-width: 801px) {
+  .rental-paths .path-grid {
+    grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
+    grid-template-rows:repeat(2,minmax(0,1fr));
+    gap:16px;
+    align-items:stretch;
+  }
+  .rental-paths .path-card {
+    min-width:0;
+    min-height:246px;
+    border-radius:24px;
+    padding:clamp(23px,3.2vw,38px);
+  }
+  .rental-paths .path-card:first-child {
+    grid-row:1 / span 2;
+    min-height:552px;
+    padding:clamp(32px,4.3vw,55px);
+    color:#fff9e9;
+    background:linear-gradient(145deg,#0e302b,#164b3b 72%,#225544);
+    border-color:#467460;
+    box-shadow:0 22px 44px #12382d26;
+  }
+  .rental-paths .path-card:first-child::before {
+    width:155px;height:194px;right:9%;top:13%;
+    z-index:-1;opacity:.5;border-radius:3px;
+    border:2px solid #f5d49b;
+    transform:rotate(-9deg);
+    box-shadow:0 0 0 17px #f5d49b10,0 0 0 34px #f5d49b0a;
+  }
+  .rental-paths .path-card:first-child::after {
+    content:"";position:absolute;inset:0;z-index:-2;
+    pointer-events:none;
+    background-image:linear-gradient(#ffffff09 1px,transparent 1px),linear-gradient(90deg,#ffffff09 1px,transparent 1px);
+    background-size:28px 28px;
+    mask-image:linear-gradient(90deg,transparent 3%,black 60%);
+  }
+  .rental-paths .path-card:first-child .path-label {
+    max-width:11ch;
+    margin-top:auto;
+    font-size:clamp(2.4rem,4.5vw,4.5rem);
+    line-height:1.02;
+    text-wrap:balance;
+  }
+  .rental-paths .path-card:first-child .path-size {
+    margin-top:12px;
+    padding-top:0;
+    font-size:clamp(4.25rem,6.7vw,7.35rem);
+    line-height:.95;
+  }
+  .rental-paths .path-card:first-child .path-action {
+    border-top-color:#f1d99d7a;
+    margin-top:28px;
+  }
+  .rental-paths .path-card:nth-child(2) {
+    background:linear-gradient(135deg,#f7e7c7,#ebcd96);
+    color:#3c3529;
+    border-color:#d8b981;
+  }
+  .rental-paths .path-card:nth-child(3) {
+    background:linear-gradient(135deg,#eaf1e4,#cedfd0);
+    color:#193d32;
+    border-color:#b8d0bc;
+  }
+  .rental-paths .path-card:nth-child(n+2) .path-label {
+    margin-top:12px;
+    font-size:clamp(1.4rem,2vw,2rem);
+  }
+  .rental-paths .path-card:nth-child(n+2) .path-size {
+    padding-top:10px;
+    font-size:clamp(2.5rem,4vw,4.1rem);
+  }
+  .rental-paths .path-card:nth-child(n+2) .path-action {margin-top:14px}
+}
+@media (min-width:801px) and (max-width:1020px) {
+  .rental-paths .path-card:first-child {min-height:505px}
+  .rental-paths .path-card:first-child .path-size {font-size:clamp(3.8rem,6.5vw,5.3rem)}
+  .rental-paths .path-card:first-child::before {width:110px;height:138px;right:8%;top:15%}
+}
+@media (max-width:800px) {
+  .rental-paths .path-grid {grid-template-columns:1fr;gap:13px}
+  .rental-paths .path-card {min-height:218px}
+  .rental-paths .path-card:first-child {color:#fff9e9;background:#17483a;border-color:#3d745a}
+  .rental-paths .path-card:nth-child(2) {background:#f2e0bd;color:#3b372b}
+  .rental-paths .path-card:nth-child(3) {background:#e4efe3;color:#173d31}
+  .rental-paths .path-card .path-size {font-size:clamp(2.9rem,8vw,4rem)}
+}
+@media (prefers-reduced-motion:reduce) {
+  .rental-paths .path-card {transition:none}
+  .rental-paths .path-card:hover {transform:none}
+}
+@media print {
+  .rental-paths .path-card {box-shadow:none!important;break-inside:avoid;border:1px solid #5b6b60}
+  .rental-paths .path-card:first-child {min-height:0;background:#fff!important;color:#173b31!important}
+  .rental-paths .path-card:first-child::before,.rental-paths .path-card:first-child::after{display:none}
+}
 </style>
 </head>
 <body>
