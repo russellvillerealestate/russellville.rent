@@ -841,6 +841,48 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
   .hero-photo-credit:before{display:none}
 }
 
+
+/* 2026-11-18 / Scenic editorial event doorway. Before redesign inspected both
+   live StayARV and Russellville.Rent, plus recent main commits. NN/g visual
+   hierarchy; Google web.dev stable responsive imagery; W3C WCAG 2.2 focus,
+   reflow and targets. Reuses a local image, not provider inventory. */
+.quick-guide .guide-item:first-child{isolation:isolate;overflow:hidden;border-color:#e5c88c;color:#fffaf0;background:linear-gradient(160deg,#092722b0 0%,#0a2b24cf 48%,#08201dfa 100%),url("assets/downtown-russellville-sunset.jpg") center 53%/cover no-repeat}
+.quick-guide .guide-item:first-child:hover{background:linear-gradient(160deg,#0c342bb3 0%,#0d392dd1 48%,#092620fa 100%),url("assets/downtown-russellville-sunset.jpg") center 53%/cover no-repeat}
+.quick-guide .guide-item:first-child:before{content:"";position:absolute;inset:11px;z-index:0;pointer-events:none;border:1px solid #ffedc766;border-radius:12px}
+.quick-guide .guide-item:first-child>*{position:relative;z-index:1}
+.quick-guide .guide-item:first-child strong{font:400 clamp(2rem,3.45vw,3.7rem)/1.06 Georgia,"Times New Roman",serif;letter-spacing:-.055em;max-width:14ch;color:#fffaf0;text-wrap:balance}
+.quick-guide .guide-item:first-child>span:not(.guide-number):not(.guide-cta){color:#f3f3e9;max-width:38ch}
+.quick-guide .guide-item:first-child .guide-cta{border-top:1px solid #f6e2bb73;padding-top:20px;width:100%}
+.guide-photo-caption{margin:13px 0 0;color:#556b5e;font-size:.69rem;line-height:1.55;text-align:right}
+@media screen and (min-width:981px){
+ .quick-guide .guide-box{grid-template-columns:minmax(0,1.17fr) minmax(0,.83fr);grid-template-rows:repeat(2,minmax(195px,auto));align-items:stretch;gap:15px;overflow:visible;background:transparent;box-shadow:none;border:0;border-radius:0}
+ .quick-guide .guide-item{min-height:0;padding:clamp(25px,3vw,38px);border:1px solid #d7d9c6;border-radius:20px;box-shadow:0 14px 33px #143d301b}
+ .quick-guide .guide-item:first-child{grid-column:1;grid-row:1/span 2;min-height:468px;padding:clamp(29px,3.5vw,48px);justify-content:space-between}
+ .quick-guide .guide-item:first-child .guide-number{font-size:.7rem!important}
+ .quick-guide .guide-item:first-child strong{margin-top:auto;margin-bottom:20px}
+ .quick-guide .guide-item:nth-child(2),.quick-guide .guide-item:nth-child(3){grid-column:2;grid-row:auto;min-height:210px;padding:25px 31px}
+ .quick-guide .guide-item:nth-child(2){background:radial-gradient(circle at 98% 0,#f5dfb0,transparent 54%),#fff4df;border-color:#dbc79e}
+ .quick-guide .guide-item:nth-child(3){background:radial-gradient(circle at 98% 0,#dbeadc,transparent 54%),#edf2e9;border-color:#bfcebd}
+ .quick-guide .guide-item:nth-child(2):hover{background:#faecd0}
+ .quick-guide .guide-item:nth-child(3):hover{background:#e3eee1}
+ .quick-guide .guide-item:nth-child(n+2) .guide-number{margin-bottom:10px!important}
+ .quick-guide .guide-item:nth-child(n+2) strong{font-size:clamp(1.45rem,2.1vw,2.05rem);margin-bottom:8px}
+ .quick-guide .guide-item:nth-child(n+2) .guide-cta{padding-top:11px;margin-top:auto!important;border-top:1px solid #7d9a7e5c}
+}
+@media screen and (max-width:760px){
+ .quick-guide .guide-item:first-child{min-height:256px;padding:26px 25px}
+ .quick-guide .guide-item:first-child strong{font-size:clamp(2rem,7.4vw,2.85rem)}
+ .quick-guide .guide-item:first-child .guide-number{margin-bottom:24px!important}
+ .guide-photo-caption{text-align:left;margin-top:11px}
+}
+@media(prefers-reduced-motion:reduce){.quick-guide .guide-item{transition:none}.quick-guide .guide-item:hover{transform:none}}
+@media print{
+ .quick-guide .guide-box{display:block;box-shadow:none}
+ .quick-guide .guide-item{margin:0 0 10px;min-height:0!important;box-shadow:none!important;break-inside:avoid;background:#fff!important;color:#173c32!important}
+ .quick-guide .guide-item:first-child:before{display:none}
+ .quick-guide .guide-item:first-child :is(strong,.guide-number,.guide-cta,span){color:#173c32!important}
+ .guide-photo-caption{display:none}
+}
 </style>
 </head>
 <body>
@@ -856,7 +898,7 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
   <a class="guide-item" href="#confirmed"><span class="guide-number">01 / Service areas</span><strong>2 advertise Russellville service</strong><span>Other service details still require a quote</span><span class="guide-cta">See advertised delivery <span aria-hidden="true">↗</span></span></a>
   <a class="guide-item" href="#service-map"><span class="guide-number">02 / Choose a service</span><strong>11 listed providers</strong><span>Sound, lighting and event production</span><span class="guide-cta">Explore the eleven paths <span aria-hidden="true">↗</span></span></a>
   <a class="guide-item" href="#plan-title"><span class="guide-number">03 / Plan the details</span><strong>Verify before booking</strong><span>Equipment, dates, delivery and total cost</span><span class="guide-cta">Review the checklist <span aria-hidden="true">↗</span></span></a>
-</nav></div>
+</nav><p class="guide-photo-caption">River Valley editorial scenery · Not a provider, rental equipment or inventory photograph.</p></div>
 <main class="shell" id="main">
 
 <section class="service-map" id="service-map" aria-labelledby="service-map-title">
