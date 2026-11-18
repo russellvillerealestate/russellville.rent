@@ -678,6 +678,135 @@
 @media(max-width:620px){.band-encore{margin:52px 0 27px;border-radius:18px}.band-encore-scene{min-height:390px;padding:30px 24px;gap:34px}.band-encore-scene h2{font-size:clamp(2.65rem,10.5vw,4.05rem)}.band-encore-routes{padding:24px 18px;gap:16px}.band-encore-links{grid-template-columns:1fr}.band-encore-route{grid-template-columns:36px minmax(0,1fr) 24px;align-items:center;min-height:101px;padding:16px;gap:12px}.band-encore-number{width:36px;height:36px}.band-encore-arrow{justify-self:end}}
 @media(prefers-reduced-motion:reduce){.band-encore-route{transition:none}.band-encore-route:hover{transform:none}}
 @media print{.band-encore{display:block;box-shadow:none;break-inside:avoid}.band-encore-scene{min-height:0;background:#fff!important;color:#193c32;padding:18px}.band-encore-scene :is(h2,h2 em,p,small,.band-encore-kicker,.band-encore-edition){color:#193c32!important}.band-encore-routes{padding:18px;background:#fff}.band-encore-route{break-inside:avoid;box-shadow:none}}
+
+/* 2026-11-17 / Regional performance rental feature.
+   Live design comparison: stayarv.com + russellville.rent.
+   Evidence: Nielsen Norman Group visual hierarchy; web.dev responsive layout;
+   WCAG 2.2 focus indicators, reflow and reduced motion.
+   Distinguishes short-term regional stage rentals from local school-band programs;
+   original provider text, service status, links, scripts and data are unchanged. */
+#performance-instrument-rentals{
+  display:grid;grid-template-columns:minmax(0,.83fr) minmax(0,1.17fr);
+  margin:clamp(55px,7vw,88px) 0 20px;min-width:0;overflow:hidden;
+  border:1px solid #b7c7b7;border-radius:26px;
+  background:#f8f6ed;box-shadow:0 26px 58px #142f2727;
+  scroll-margin-top:28px
+}
+#performance-instrument-rentals>.section-heading{
+  position:relative;isolation:isolate;display:flex;flex-direction:column;
+  justify-content:space-between;align-items:flex-start;gap:32px;
+  min-width:0;min-height:600px;margin:0;padding:clamp(34px,4.4vw,58px);
+  background:linear-gradient(150deg,#092822f0 0%,#103a31df 60%,#0a2825f2 100%),
+    url("assets/downtown-russellville-sunset.jpg") center 51%/cover no-repeat;
+  color:#fff9e9
+}
+#performance-instrument-rentals>.section-heading::before{
+  content:"";position:absolute;inset:15px;z-index:-1;
+  border:1px solid #eacb8f65;border-radius:13px;pointer-events:none
+}
+#performance-instrument-rentals>.section-heading::after{
+  content:"♫";display:block;align-self:flex-end;margin-top:auto;
+  color:#f3d49b;font:400 clamp(7rem,14vw,13rem)/.85 Georgia,serif;
+  text-shadow:0 16px 38px #071e1f99;transform:rotate(-9deg);
+  pointer-events:none
+}
+#performance-instrument-rentals>.section-heading .eyebrow{
+  color:#f7d695;font-size:.72rem;letter-spacing:.17em;line-height:1.6
+}
+#performance-instrument-rentals>.section-heading h2{
+  max-width:12ch;color:#fff9eb;
+  font:400 clamp(2.85rem,4.5vw,4.85rem)/1.05 Georgia,"Times New Roman",serif;
+  letter-spacing:-.06em;text-wrap:balance
+}
+#performance-instrument-rentals>.section-heading>p{
+  max-width:44ch;margin:0;color:#e4eee5;font-size:.96rem;line-height:1.78
+}
+#performance-instrument-rentals>.provider-grid{
+  display:grid;grid-template-columns:minmax(0,1fr);gap:0;min-width:0
+}
+#performance-instrument-rentals .provider{
+  min-width:0;height:100%;border:0;border-radius:0;
+  background:#fffdf7;box-shadow:none
+}
+#performance-instrument-rentals .provider-top{
+  padding:18px clamp(23px,3.7vw,42px);background:#ecebdc;
+  border-color:#d7dfd0
+}
+#performance-instrument-rentals .provider-top span{color:#285843}
+#performance-instrument-rentals .provider-top b{color:#53695a}
+#performance-instrument-rentals .provider-art{
+  position:relative;isolation:isolate;display:flex;align-items:center;
+  justify-content:space-between;gap:15px;min-width:0;min-height:190px;
+  padding:24px clamp(23px,3.7vw,42px);overflow:hidden;
+  color:#fff8e8;background:radial-gradient(circle at 78% 18%,#628c76,transparent 47%),
+    linear-gradient(125deg,#1e4b3d,#0b2c26 85%)
+}
+#performance-instrument-rentals .provider-art::before{
+  content:"";position:absolute;z-index:-1;left:-3%;top:30%;
+  width:110%;height:115px;transform:rotate(-7deg);opacity:.28;
+  background:repeating-linear-gradient(to bottom,transparent 0 17px,#f8d99c 17px 19px,transparent 19px 29px);
+  pointer-events:none
+}
+#performance-instrument-rentals .provider-art-kicker,
+#performance-instrument-rentals .provider-art-caption{
+  position:relative;z-index:1;max-width:16ch;
+  font-size:.64rem;font-weight:850;line-height:1.6;
+  letter-spacing:.12em;text-transform:uppercase;color:#ffe2a8
+}
+#performance-instrument-rentals .provider-art-caption{max-width:20ch;color:#e7ecdf}
+#performance-instrument-rentals .provider-art-note{
+  position:relative;z-index:1;flex:0 0 auto;
+  color:#f5d89f;font:400 clamp(5rem,8vw,8rem)/1 Georgia,serif;
+  text-shadow:0 16px 26px #061f1b80;transform:rotate(-11deg)
+}
+#performance-instrument-rentals .provider-body{padding:clamp(24px,3.4vw,40px) clamp(23px,3.7vw,42px) 14px}
+#performance-instrument-rentals .provider h3{
+  margin-bottom:19px;color:#153b30;
+  font:400 clamp(1.8rem,2.6vw,2.75rem)/1.12 Georgia,"Times New Roman",serif;
+  letter-spacing:-.04em;text-wrap:balance
+}
+#performance-instrument-rentals .provider p{font-size:.89rem;line-height:1.75}
+#performance-instrument-rentals .provider-actions{padding:8px clamp(23px,3.7vw,42px) 37px}
+#performance-instrument-rentals .provider-actions .button{border-radius:11px}
+#performance-instrument-rentals .provider:target{outline:3px solid #b27c27;outline-offset:-5px;scroll-margin-top:28px}
+@media(max-width:900px){
+  #performance-instrument-rentals{grid-template-columns:1fr}
+  #performance-instrument-rentals>.section-heading{min-height:340px;gap:22px}
+  #performance-instrument-rentals>.section-heading h2{max-width:none}
+  #performance-instrument-rentals>.section-heading::after{
+    position:absolute;bottom:33px;right:40px;font-size:9rem;opacity:.17
+  }
+  #performance-instrument-rentals>.section-heading>p{position:relative;z-index:1;max-width:62ch}
+  #performance-instrument-rentals .provider-art{min-height:165px}
+}
+@media(max-width:540px){
+  #performance-instrument-rentals{margin:44px 0 14px;border-radius:17px}
+  #performance-instrument-rentals>.section-heading{min-height:0;padding:33px 25px 37px;gap:18px}
+  #performance-instrument-rentals>.section-heading::before{inset:9px;border-radius:9px}
+  #performance-instrument-rentals>.section-heading h2{font-size:clamp(2.55rem,10.5vw,3.55rem)}
+  #performance-instrument-rentals>.section-heading>p{font-size:.87rem}
+  #performance-instrument-rentals>.section-heading::after{right:20px;bottom:14px;font-size:6rem;opacity:.12}
+  #performance-instrument-rentals .provider-top{display:block;padding:16px 23px}
+  #performance-instrument-rentals .provider-top b{display:block;margin-top:5px}
+  #performance-instrument-rentals .provider-art{min-height:138px;gap:10px;padding:21px 23px}
+  #performance-instrument-rentals .provider-art-note{font-size:4.5rem}
+  #performance-instrument-rentals .provider-art-kicker,
+  #performance-instrument-rentals .provider-art-caption{font-size:.57rem;max-width:15ch}
+  #performance-instrument-rentals .provider-body{padding:25px 23px 10px}
+  #performance-instrument-rentals .provider-actions{padding:5px 23px 29px}
+}
+@media(prefers-reduced-motion:reduce){
+  #performance-instrument-rentals .provider-art-note,
+  #performance-instrument-rentals>.section-heading::after{transform:none}
+}
+@media print{
+  #performance-instrument-rentals{display:block;border:1px solid #888;box-shadow:none;break-inside:avoid}
+  #performance-instrument-rentals>.section-heading{min-height:0;background:#fff!important;color:#173b30}
+  #performance-instrument-rentals>.section-heading :is(h2,.eyebrow){color:#173b30!important}
+  #performance-instrument-rentals>.section-heading>p{color:#173b30}
+  #performance-instrument-rentals>.section-heading::after{display:none}
+  #performance-instrument-rentals .provider-art{display:none}
+}
 </style>
 </head>
 <body>
