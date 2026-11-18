@@ -1112,11 +1112,54 @@ body{background:#f6f6f0}
  .regional-boat-details{padding:16px 20px}
 }
 
+
+/* Lake status compass / mobile-first editorial wayfinding.
+   First the CLOSED marinas; then official owner-access instructions, an
+   ended seasonal regional offering, and unrelated outdoor alternatives.
+   References: live StayARV and Russellville.Rent; NN/g visual hierarchy,
+   web.dev responsive reflow, W3C WCAG 2.2 focus/target criteria. */
+.lake-quick-nav{display:none}
+@media screen and (max-width:760px) and (min-height:510px) and (orientation:portrait){
+  body{padding-bottom:calc(112px + env(safe-area-inset-bottom,0px))}
+  .lake-quick-nav{
+    position:fixed;z-index:100;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:5px;left:max(9px,env(safe-area-inset-left,0px));right:max(9px,env(safe-area-inset-right,0px));
+    bottom:calc(8px + env(safe-area-inset-bottom,0px));padding:6px;
+    border:1px solid #e5d3a0;border-radius:20px;
+    background:#102e2b;color:#fff9e9;box-shadow:0 15px 32px #071d1b72;
+  }
+  .lake-quick-nav a{
+    display:flex;min-width:0;min-height:64px;align-items:center;justify-content:center;
+    flex-direction:column;gap:4px;padding:10px 3px;border-radius:13px;
+    color:#f5f8ef;text-decoration:none;text-align:center;line-height:1.22;
+    transition:background-color .18s ease,color .18s ease;
+  }
+  .lake-quick-nav a:first-child{background:#e7c48c;color:#163b30}
+  .lake-quick-nav a:not(:first-child):hover{background:#275448}
+  .lake-quick-nav a:first-child:hover{background:#f5d8a6}
+  .lake-quick-nav a:focus-visible{outline:3px solid #fbe0a8;outline-offset:-3px}
+  .lake-quick-nav a:first-child:focus-visible{outline-color:#173d30}
+  .lake-quick-nav span{font-size:.59rem;font-weight:850;letter-spacing:.035em}
+  .lake-quick-nav strong{font-size:clamp(.69rem,2.9vw,.82rem);font-weight:850;overflow-wrap:anywhere}
+  #closure-details,#property-access,#petit-jean-boats,#other-rentals{scroll-margin-top:24px}
+}
+@media screen and (max-width:350px) and (min-height:510px) and (orientation:portrait){
+  .lake-quick-nav{left:5px;right:5px;gap:2px;padding:4px}
+  .lake-quick-nav a{min-height:64px;padding:10px 1px}
+  .lake-quick-nav span{font-size:.55rem;letter-spacing:0}
+}
+@media (prefers-reduced-motion:reduce){.lake-quick-nav a{transition:none}}
+@media print{.lake-quick-nav{display:none!important}body{padding-bottom:0!important}}
 </style>
 </head>
 <body>
 <a class="skip-link" href="#closure-details">Skip to marina closure details</a>
-<header class="site-header"><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back" href="/">← Browse all rentals</a></div></header>
+<header class="site-header"><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back" href="/">← Browse all rentals</a></div></header><nav class="lake-quick-nav" aria-label="Boat and marina guide shortcuts">
+  <a class="lake-quick-nav--closure" href="#closure-details"><span>01 / CLOSED</span><strong>Closures</strong></a>
+  <a href="#property-access"><span>02 / OWNERS</span><strong>Access</strong></a>
+  <a href="#petit-jean-boats"><span>03 / SEASONAL</span><strong>Lake Bailey</strong></a>
+  <a href="#other-rentals"><span>04 / EXPLORE</span><strong>More options</strong></a>
+</nav>
 <main>
 <section class="hero" aria-labelledby="page-title">
 <img class="marina-hero-photo" src="assets/lake-dardanelle-sunset.jpg" width="1920" height="910" alt="" decoding="async" fetchpriority="high">
@@ -1213,7 +1256,7 @@ body{background:#f6f6f0}
 <a class="alt-link" href="/paddling.html">Explore kayak rentals →</a>
 </section>
 
-<section class="lake-pathways" aria-labelledby="lake-pathways-title">
+<section class="lake-pathways" id="other-rentals" aria-labelledby="lake-pathways-title">
   <div class="lake-pathways-heading">
     <div><p class="eyebrow">Beyond the marina / River Valley experiences</p><h2 id="lake-pathways-title">Another way to enjoy the area.</h2></div>
     <p>Boat rentals at the closed marinas are not available. Explore these independently listed options for a different outing.</p>
