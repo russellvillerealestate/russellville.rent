@@ -579,6 +579,43 @@ footer a{color:#ffe3a5}
   }
 }
 
+
+/* 2026-11-18 / Family-gear service-area atlas: a visual decision point
+   for an advertised Russellville option vs an UNCONFIRMED regional option.
+   Reference: live StayARV + Russellville.Rent; NN/g visual hierarchy and
+   information scent; web.dev layout stability using an existing scenic image;
+   W3C WCAG 2.2 focus, reflow and target size. No inventory imagery. */
+.coverage-atlas{position:relative;isolation:isolate;margin:clamp(32px,5vw,58px) 0 16px;border:1px solid #55745e;border-radius:24px;overflow:hidden;background:#10382f;box-shadow:0 26px 55px #122e282a;scroll-margin-top:30px}
+.coverage-atlas-head{position:relative;display:flex;flex-direction:column;justify-content:center;min-height:320px;padding:clamp(28px,4.5vw,54px) clamp(25px,5vw,64px) 85px;background:linear-gradient(100deg,#092a25f5 0%,#133e34e9 54%,#113b30a8 100%),url("assets/lake-dardanelle-sunset.jpg") center 54%/cover no-repeat;color:#fff9ec}
+.coverage-atlas-head:after{content:"R ↗";position:absolute;right:clamp(26px,5vw,65px);top:28px;width:55px;height:55px;display:grid;place-items:center;border:1px solid #f1dba982;border-radius:50%;color:#f2d69b;font:italic 1.2rem Georgia,serif;transform:rotate(-10deg)}
+.coverage-atlas-overline{display:block;color:#f3d699;font-size:.7rem;font-weight:850;letter-spacing:.17em;line-height:1.55;text-transform:uppercase}
+.coverage-atlas-head h3{margin:15px 0 18px;max-width:17ch;color:#fff9e9;font:400 clamp(2.6rem,4.7vw,5rem)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.056em;text-wrap:balance}
+.coverage-atlas-head h3 em{color:#f5d397;font-weight:400}
+.coverage-atlas-head p{max-width:58ch;margin:0 0 15px;color:#e8eee3;font-size:clamp(.92rem,1.25vw,1.05rem);line-height:1.68}
+.coverage-atlas-photo{color:#e6d9b8;font-size:.68rem;line-height:1.5}
+.coverage-atlas-options{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:-50px clamp(16px,2.5vw,30px) 0}
+.coverage-atlas-route{display:flex;flex-direction:column;align-items:flex-start;gap:0;min-width:0;min-height:310px;padding:clamp(25px,3vw,38px);border:1px solid #e5d3a8;border-radius:18px;text-decoration:none;box-shadow:0 16px 32px #081e1942;transition:transform .22s ease,box-shadow .22s ease}
+.coverage-atlas-route:first-child{background:linear-gradient(142deg,#1d5242,#0c3029 85%);color:#fff8e9}
+.coverage-atlas-route:last-child{background:linear-gradient(130deg,#fff8e9,#e9eddc);color:#153c30;border-color:#ded6ba}
+.coverage-atlas-route:hover{transform:translateY(-4px);box-shadow:0 20px 38px #071f1857}
+.coverage-atlas-route:focus-visible{outline:4px solid #f5be59;outline-offset:4px}
+.coverage-atlas-index{display:block;font-size:.66rem;font-weight:850;letter-spacing:.15em;line-height:1.5;text-transform:uppercase}
+.coverage-atlas-route:first-child .coverage-atlas-index{color:#f3d89f}
+.coverage-atlas-route:last-child .coverage-atlas-index{color:#335e4a}
+.coverage-atlas-route strong{display:block;max-width:17ch;margin:21px 0 11px;font:400 clamp(2.05rem,3vw,3rem)/1.07 Georgia,"Times New Roman",serif;letter-spacing:-.043em;text-wrap:balance}
+.coverage-atlas-route:first-child strong em{color:#f2d69c}
+.coverage-atlas-route:last-child strong em{color:#45745a}
+.coverage-atlas-route-name{display:block;margin-bottom:22px;font-size:.91rem;line-height:1.53;font-weight:650}
+.coverage-atlas-action{display:flex;justify-content:space-between;align-items:center;gap:16px;width:100%;margin-top:auto;padding-top:16px;border-top:1px solid currentColor;font-size:.83rem;font-weight:830;line-height:1.45}
+.coverage-atlas-action b{display:grid;place-items:center;flex:0 0 37px;height:37px;border-radius:50%;background:#f2d596;color:#173d32;font-size:1.15rem}
+.coverage-atlas-route:last-child .coverage-atlas-action b{background:#194936;color:#fff4df}
+.coverage-atlas-foot{margin:0;padding:18px clamp(24px,3.6vw,43px) 23px;color:#dbe7da;font-size:.75rem;line-height:1.6}
+#babies-getaway-listing,#babyquip-fort-smith-heading{scroll-margin-top:28px}
+@media(max-width:720px){.coverage-atlas{margin-top:31px;border-radius:18px}.coverage-atlas-head{min-height:300px;padding:35px 25px 83px}.coverage-atlas-head:after{width:42px;height:42px;font-size:.95rem;right:20px;top:19px}.coverage-atlas-head h3{font-size:clamp(2.5rem,8vw,3.5rem)}.coverage-atlas-options{grid-template-columns:1fr;gap:12px;margin:-42px 15px 0}.coverage-atlas-route{min-height:240px;padding:27px}.coverage-atlas-route strong{font-size:clamp(2.08rem,6.3vw,2.65rem);margin-top:17px}.coverage-atlas-route-name{margin-bottom:16px}.coverage-atlas-foot{padding:17px 22px 21px}}
+@media(max-width:380px){.coverage-atlas-head{padding:31px 20px 76px}.coverage-atlas-head h3{font-size:2.28rem}.coverage-atlas-route{padding:22px}.coverage-atlas-route strong{font-size:2.02rem}}
+@media(prefers-reduced-motion:reduce){.coverage-atlas-route{transition:none}.coverage-atlas-route:hover{transform:none}}
+@media print{.coverage-atlas{background:#fff;box-shadow:none;border:1px solid #888;break-inside:avoid}.coverage-atlas-head{min-height:0;padding:22px;background:#fff!important;color:#173b31}.coverage-atlas-head:after{display:none}.coverage-atlas-head :is(h3,h3 em,p,.coverage-atlas-overline,.coverage-atlas-photo){color:#173b31!important}.coverage-atlas-options{margin:0 15px;gap:12px}.coverage-atlas-route,.coverage-atlas-route:first-child,.coverage-atlas-route:last-child{min-height:0;background:#fff!important;color:#173b31;box-shadow:none;border:1px solid #888}.coverage-atlas-route :is(.coverage-atlas-index,strong,em,.coverage-atlas-route-name,.coverage-atlas-action){color:#173b31!important}.coverage-atlas-foot{color:#173b31}}
+
 </style>
 </head>
 <body>
@@ -682,8 +719,32 @@ footer a{color:#ffe3a5}
 <div class="wrap"><p class="guide-photo-note">Lake Dardanelle scenic photograph · An editorial River Valley guide, not provider equipment or confirmed inventory.</p></div>
 </section>
 <main class="wrap main" id="providers"><div class="intro"><p class="eyebrow" style="color:#557565">Baby &amp; toddler equipment</p><h2>Russellville service and a regional option</h2><p>Babies Getaway explicitly advertises Russellville delivery. A separate BabyQuip provider in Fort Smith advertises the Arkansas River Valley generally but does not specifically name Russellville; <strong>Russellville service for that provider is UNCONFIRMED</strong>. Verify address eligibility, stock and total fees with each operator before booking.</p></div>
+
+<nav class="coverage-atlas" aria-labelledby="coverage-atlas-title">
+  <div class="coverage-atlas-head">
+    <span class="coverage-atlas-overline">RIVER VALLEY / FAMILY GEAR COVERAGE ATLAS</span>
+    <h3 id="coverage-atlas-title">One search.<br><em>Two different routes.</em></h3>
+    <p>Compare where service is advertised before choosing whom to contact. Neither listing confirms a delivery slot, equipment stock or the full price for your dates.</p>
+    <span class="coverage-atlas-photo">Lake Dardanelle scenery · Not provider inventory or a storefront</span>
+  </div>
+  <div class="coverage-atlas-options">
+    <a class="coverage-atlas-route" href="#babies-getaway-listing">
+      <span class="coverage-atlas-index">01 / RUSSELLVILLE SERVICE ADVERTISED</span>
+      <strong>Delivery listed <em>for Russellville.</em></strong>
+      <span class="coverage-atlas-route-name">Babies Getaway · Confirm your address, dates, gear and charges.</span>
+      <span class="coverage-atlas-action">View advertised-service details <b aria-hidden="true">↗</b></span>
+    </a>
+    <a class="coverage-atlas-route" href="#babyquip-fort-smith-heading">
+      <span class="coverage-atlas-index">02 / RUSSELLVILLE DELIVERY UNCONFIRMED</span>
+      <strong>Explore the <em>regional option.</em></strong>
+      <span class="coverage-atlas-route-name">BabyQuip · Christina Z. in Fort Smith · Verify whether your Russellville address qualifies.</span>
+      <span class="coverage-atlas-action">Review regional provider <b aria-hidden="true">↗</b></span>
+    </a>
+  </div>
+  <p class="coverage-atlas-foot">Advertised service is not a verified local storefront, booking or inventory guarantee. Check each provider's full terms before ordering.</p>
+</nav>
 <div class="provider-kicker"><span>Provider 01 / 02</span><span>Advertising Russellville delivery · Verify before ordering</span></div>
-<article class="provider"><div class="provider-service-checkpoint" aria-label="At-a-glance service and booking terms">
+<article class="provider" id="babies-getaway-listing"><div class="provider-service-checkpoint" aria-label="At-a-glance service and booking terms">
   <div class="provider-service-art" aria-hidden="true">
     <span class="provider-service-art-kicker">RIVER VALLEY / FAMILY TRAVEL · SERVICE GUIDE</span>
     <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false"><path d="M10 159h300" stroke="#b5d5bf" stroke-width="3" stroke-dasharray="7 8"/><rect x="19" y="42" width="105" height="110" rx="12" fill="#eac88c" stroke="#fff1c7" stroke-width="4"/><path d="M49 42V26a23 23 0 0 1 46 0v16M41 66h60M71 66v67" stroke="#ad8854" stroke-width="5"/><circle cx="42" cy="151" r="9" fill="#153f32" stroke="#f5db9a" stroke-width="4"/><circle cx="104" cy="151" r="9" fill="#153f32" stroke="#f5db9a" stroke-width="4"/><path d="M154 87q4-53 56-53t56 53l-11 20h-90l-11-20Z" fill="#d2e7d4" stroke="#f9f0d7" stroke-width="4"/><path d="M164 108h94l-20 31h-52l-22-31Zm80-26 22-57h26" fill="#f2d49a" stroke="#f6e7be" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="188" cy="153" r="11" fill="#f5db9a"/><circle cx="244" cy="153" r="11" fill="#f5db9a"/><path d="M129 69h19M139 60l10 9-10 9" stroke="#f5db9a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="292" cy="57" r="18" stroke="#f2d49a" opacity=".7"/><path d="M292 45v24m-12-12h24" stroke="#f2d49a" stroke-width="3" stroke-linecap="round"/></svg>
