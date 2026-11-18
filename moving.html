@@ -724,6 +724,108 @@ body.move-scan-on #local .provider p:last-child a,body.move-scan-on #nearby .pro
   .move-mobile-dock a:hover{transform:none}
 }
 @media print{.move-mobile-dock{display:none!important}body{padding-bottom:0!important}}
+</style><style>
+/* 2026-11-18 | River Valley regional pickup ledger.
+   After comparing live StayARV and Russellville.Rent, and reading recent
+   commits: six regional pickup options get one continuous, scannable contact
+   roster instead of six large standalone editorial covers. Existing local
+   features, optional quick scan, search, quotes and mobile dock stay intact.
+   References: NN/g visual hierarchy, web.dev layout stability, WCAG 2.2. */
+body:not(.move-scan-on) #nearby>.section-head{
+ position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:end;
+ justify-content:space-between;gap:25px;margin:36px 0 0;padding:clamp(28px,4vw,49px);
+ border:1px solid #376959;border-radius:22px 22px 0 0;
+ color:#fff9eb;background:radial-gradient(circle at 95% -20%,#487f63 0,transparent 45%),linear-gradient(128deg,#0c302b,#1c4b3d);
+}
+body:not(.move-scan-on) #nearby>.section-head:before{
+ content:"";position:absolute;right:-85px;top:-165px;z-index:-1;width:370px;height:370px;
+ border:1px solid #e9ca8552;border-radius:50%;box-shadow:0 0 0 42px #e9ca8510,0 0 0 83px #e9ca8509;pointer-events:none;
+}
+body:not(.move-scan-on) #nearby>.section-head h2{
+ max-width:18ch;margin:0 0 15px;color:#fff9eb;
+ font:400 clamp(2.4rem,4.5vw,4.1rem)/1.05 Georgia,serif;letter-spacing:-.055em;text-wrap:balance;
+}
+body:not(.move-scan-on) #nearby>.section-head p{max-width:63ch;color:#e7eee3;font-size:.9rem;line-height:1.7}
+body:not(.move-scan-on) #nearby>.section-head .section-label{
+ flex:0 0 auto;color:#f3d6a2;background:#12382f;border:1px solid #d7bf8f80;
+ border-radius:999px;padding:12px 16px;letter-spacing:.1em;
+}
+body:not(.move-scan-on) #nearby>.provider-list{
+ display:grid;grid-template-columns:1fr;gap:0;padding:0 0 6px;background:#e7ede3;
+ border:1px solid #bbd1be;border-top:0;border-radius:0 0 22px 22px;overflow:hidden;
+}
+body:not(.move-scan-on) #nearby .provider-list>.provider{
+ display:grid;grid-template-columns:minmax(175px,.3fr) minmax(0,1fr);gap:0;
+ min-height:0;margin:0;border:0;border-bottom:1px solid #c7d8c9;
+ border-radius:0;background:#fffef9;box-shadow:none;transform:none;
+}
+body:not(.move-scan-on) #nearby .provider-list>.provider:nth-child(even){background:#f8f7ed}
+body:not(.move-scan-on) #nearby .provider-list>.provider:last-child{border-bottom:0}
+body:not(.move-scan-on) #nearby .provider-list>.provider:hover{transform:none;background:#f1f5e9;box-shadow:inset 5px 0 #b68c51}
+body:not(.move-scan-on) #nearby .provider-list>.provider:nth-child(n)>.number{
+ grid-column:1;grid-row:1;min-width:0;min-height:275px;
+ padding:clamp(20px,2.3vw,30px);border-radius:0;
+ background:linear-gradient(150deg,#1d5348,#153a36);font-size:clamp(2.8rem,4vw,4.1rem);
+}
+body:not(.move-scan-on) #nearby .provider-list>.provider:nth-child(even)>.number{background:linear-gradient(150deg,#285c57,#174744)}
+body:not(.move-scan-on) #nearby .provider-list>.provider:nth-child(n)>.provider-body{
+ grid-column:2;grid-row:1;padding:clamp(24px,3vw,38px);
+}
+body:not(.move-scan-on) #nearby .provider-body>h3{max-width:34ch;font-size:clamp(1.53rem,2.4vw,2.2rem);margin-bottom:11px}
+body:not(.move-scan-on) #nearby .provider-body>.tag{margin-bottom:12px}
+body:not(.move-scan-on) #nearby .provider-body>p{line-height:1.6}
+body:not(.move-scan-on) #nearby .provider-body>.detail{margin-top:13px;padding-top:11px}
+body:not(.move-scan-on) #nearby .provider-body>p:last-child{margin-top:14px}
+body:not(.move-scan-on) #nearby .dispatch-art{min-height:100px}
+body:not(.move-scan-on) #nearby .dispatch-art svg{max-height:140px}
+body:not(.move-scan-on) #nearby .dispatch-caption{font-size:.55rem;line-height:1.5}
+@media(max-width:940px){
+ body:not(.move-scan-on) #nearby>.section-head{display:block;padding:31px 26px}
+ body:not(.move-scan-on) #nearby>.section-head .section-label{display:inline-block;margin-top:18px}
+ body:not(.move-scan-on) #nearby .provider-list>.provider{grid-template-columns:1fr}
+ body:not(.move-scan-on) #nearby .provider-list>.provider:nth-child(n)>.number{
+  grid-column:1;grid-row:1;min-height:130px;padding:18px 24px;
+  display:flex;flex-direction:row;align-items:center;gap:18px;
+ }
+ body:not(.move-scan-on) #nearby .provider-list>.provider:nth-child(n)>.provider-body{
+  grid-column:1;grid-row:2;padding:25px 27px 29px;
+ }
+ body:not(.move-scan-on) #nearby .dispatch-art{
+  position:relative;inset:auto;flex:0 1 190px;min-height:0;max-height:100px;overflow:hidden;
+ }
+ body:not(.move-scan-on) #nearby .dispatch-art svg{max-height:100px}
+ body:not(.move-scan-on) #nearby .dispatch-caption{margin:0 0 0 auto;max-width:19ch}
+}
+@media(max-width:560px){
+ body:not(.move-scan-on) #nearby>.section-head{margin-top:23px;padding:27px 21px;border-radius:17px 17px 0 0}
+ body:not(.move-scan-on) #nearby>.section-head h2{font-size:clamp(2.3rem,9vw,3.1rem)}
+ body:not(.move-scan-on) #nearby>.provider-list{border-radius:0 0 17px 17px}
+ body:not(.move-scan-on) #nearby .provider-list>.provider:nth-child(n)>.number{
+  min-height:104px;padding:14px 19px;gap:11px;font-size:2.6rem;
+ }
+ body:not(.move-scan-on) #nearby .dispatch-art{flex:0 1 125px;max-height:78px}
+ body:not(.move-scan-on) #nearby .dispatch-art svg{max-height:78px}
+ body:not(.move-scan-on) #nearby .dispatch-caption{font-size:.48rem;max-width:14ch}
+ body:not(.move-scan-on) #nearby .provider-list>.provider:nth-child(n)>.provider-body{padding:24px 20px 27px}
+ body:not(.move-scan-on) #nearby .provider-body>h3{font-size:clamp(1.55rem,6vw,1.95rem)}
+}
+@media(prefers-reduced-motion:reduce){
+ body:not(.move-scan-on) #nearby .provider-list>.provider{transition:none}
+}
+@media print{
+ body:not(.move-scan-on) #nearby>.section-head{display:block;background:white;color:black;padding:15px;border:1px solid #777}
+ body:not(.move-scan-on) #nearby>.section-head h2,
+ body:not(.move-scan-on) #nearby>.section-head p{color:black}
+ body:not(.move-scan-on) #nearby .provider-list>.provider{
+  grid-template-columns:70px 1fr;break-inside:avoid;background:white!important;border:1px solid #aaa;
+ }
+ body:not(.move-scan-on) #nearby .provider-list>.provider:nth-child(n)>.number{
+  grid-column:1;grid-row:1;min-height:0;background:white;color:black;
+ }
+ body:not(.move-scan-on) #nearby .provider-list>.provider:nth-child(n)>.provider-body{grid-column:2;grid-row:1}
+ body:not(.move-scan-on) #nearby .dispatch-art,
+ body:not(.move-scan-on) #nearby .dispatch-caption{display:none}
+}
 </style></head>
 <body><a class="skip" href="#main">Skip to rental options</a><header><div class="wrap"><a class="brand" href="/">Russellville<span>.Rent</span></a><a class="back" href="/">← Browse all rentals</a></div></header>
 
