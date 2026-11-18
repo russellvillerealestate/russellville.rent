@@ -783,11 +783,76 @@ footer a{font-weight:750}
   .occasion-pathways .occasion-path:nth-child(n){grid-column:auto;grid-row:auto;min-height:0;box-shadow:none}
 }
 
+
+/* 2026-11-18 / Celebration wayfinder: a bold four-stop mobile navigation ribbon.
+   Compared live StayARV and Russellville.Rent and preserved the existing
+   editorial mosaic. References: Nielsen Norman Group card grouping and
+   information scent; web.dev responsive design/layout stability; W3C WCAG 2.2
+   focus not obscured, visible keyboard focus and 24px target minimum.
+   Four existing in-page anchors only; no listing, pricing or script changes. */
+.celebration-wayfinder{display:none}
+@media screen and (max-width:760px) and (min-height:510px){
+  html{scroll-padding-bottom:calc(112px + env(safe-area-inset-bottom,0px))}
+  body{padding-bottom:calc(112px + env(safe-area-inset-bottom,0px))}
+  #paths-title,#service-atlas,#provider,#planning-title{scroll-margin-top:20px}
+  .celebration-wayfinder{
+    position:fixed;z-index:45;
+    display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:5px;
+    left:calc(10px + env(safe-area-inset-left,0px));
+    right:calc(10px + env(safe-area-inset-right,0px));
+    bottom:calc(10px + env(safe-area-inset-bottom,0px));
+    max-width:560px;margin-inline:auto;padding:8px;
+    border:1px solid #d5bb827d;border-radius:21px;
+    background:linear-gradient(135deg,#0d312a,#1c503f 76%,#245c48);
+    box-shadow:0 17px 42px #0929217d,0 0 0 1px #f8e2ab17;
+  }
+  .celebration-wayfinder a{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:5px;min-width:0;min-height:65px;padding:8px 3px;
+    color:#fff9e8;border:1px solid #e7d5ab3a;border-radius:13px;
+    text-align:center;text-decoration:none;
+    transition:background-color .18s ease,border-color .18s ease;
+  }
+  .celebration-wayfinder a:hover{background:#ffffff21;border-color:#e9d39a}
+  .celebration-wayfinder a:focus-visible{
+    outline:3px solid #ffe09f;outline-offset:-3px;background:#316a54;
+  }
+  .celebration-wayfinder a:nth-child(3){background:#f0d395;color:#1a3e31;border-color:#f0d395}
+  .celebration-wayfinder a:nth-child(3):hover,
+  .celebration-wayfinder a:nth-child(3):focus-visible{background:#ffe6b2}
+  .celebration-wayfinder small{
+    font:850 .6rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;
+    letter-spacing:.12em;color:#f7dca4;
+  }
+  .celebration-wayfinder a:nth-child(3) small{color:#6e4b20}
+  .celebration-wayfinder strong{
+    font:800 clamp(.68rem,2.4vw,.82rem)/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;
+    letter-spacing:-.015em;
+  }
+}
+@media screen and (max-width:350px) and (min-height:510px){
+  .celebration-wayfinder{left:6px;right:6px;gap:3px;padding:6px}
+  .celebration-wayfinder a{padding-inline:2px;min-height:62px}
+  .celebration-wayfinder strong{font-size:.67rem}
+  .celebration-wayfinder small{font-size:.53rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .celebration-wayfinder a{transition:none}
+}
+@media print{.celebration-wayfinder{display:none!important}}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#provider">Skip to rental provider</a>
 <header><div class="wrap header-inner"><a class="brand" href="/" aria-label="Russellville.Rent homepage">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
+<nav class="celebration-wayfinder" aria-label="Yard greeting page shortcuts">
+  <a href="#paths-title"><small>01 / DREAM</small><strong>Ideas</strong></a>
+  <a href="#service-atlas"><small>02 / MAP</small><strong>Towns</strong></a>
+  <a href="#provider"><small>03 / CALL</small><strong>Provider</strong></a>
+  <a href="#planning-title"><small>04 / READY</small><strong>Plan</strong></a>
+</nav>
 <main>
 <section class="hero" aria-labelledby="page-title"><div class="wrap hero-grid">
 <div><p class="eyebrow">Russellville · Arkansas River Valley</p><h1 id="page-title">Make their day. <em>From the front yard.</em></h1><p class="hero-lead">Personalized temporary yard greetings for birthdays, graduations, announcements and celebrations. Contact the operator directly to confirm available dates, custom designs and final pricing.</p><div class="actions"><a class="btn btn-primary" href="#provider">See local rental details ↓</a><a class="btn btn-outline" href="tel:+14793856923">Call the provider ↗</a></div></div>
