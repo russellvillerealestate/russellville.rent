@@ -709,11 +709,60 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
 @media(max-width:950px){.course-local{grid-template-columns:minmax(0,1fr)}.course-local-scene{min-height:0;gap:15px;padding:28px 31px}.course-local-scene svg{max-width:580px;max-height:310px;margin:0 auto}.course-local-scene-foot{gap:6px}.course-local-body{padding:35px}.course-local h2{max-width:none}}
 @media(max-width:560px){.course-local{border-radius:18px;margin:40px 0}.course-local-scene{padding:23px 20px}.course-local-scene-top{font-size:.54rem;letter-spacing:.06em}.course-local-scene svg{max-height:230px}.course-local-scene-foot strong{font-size:2.15rem}.course-local-body{padding:27px 22px}.course-local h2{font-size:clamp(2.12rem,9vw,3.2rem)}.course-local-status{grid-template-columns:1fr}.course-local-status>div{min-height:100px;padding:17px 19px}.course-local-status strong{font-size:1.32rem}.course-local .course-local-contact{padding-top:20px}}
 @media print{.course-local{display:block;box-shadow:none;break-inside:avoid;border:1px solid #888}.course-local-scene{display:none}.course-local-body{padding:22px;background:#fff}.course-local-status>div{background:#fff!important;border:1px solid #aaa}.course-local :is(h2,.course-local-kicker,.course-local-status strong,.course-local-status span){color:#173f33!important}}
+
+/* 2026-11-18 / Golf cart mobile field compass.
+   Consistent with the site's forest-and-brass editorial navigation.
+   Reference reviewed: live StayARV / Russellville.Rent; Nielsen Norman Group
+   visible navigation and information scent; Google web.dev stable reflow;
+   W3C WCAG 2.2 keyboard focus, target spacing and reduced motion.
+   Existing directory records, inquiries, and full desktop route deck remain intact. */
+.cart-mobile-dock{display:none}
+@media screen and (max-width:700px) and (min-height:520px){
+  .cart-mobile-dock{
+    position:fixed;z-index:120;left:0;right:0;bottom:0;
+    display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;
+    padding:8px max(10px,env(safe-area-inset-right)) calc(9px + env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left));
+    border-top:2px solid #eac98d;background:linear-gradient(125deg,#102f29,#1c4d3d);
+    box-shadow:0 -12px 32px #0a29215c;color:#fff8e9;
+  }
+  .cart-mobile-dock a{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:5px;min-width:0;min-height:59px;padding:7px 2px;
+    border-radius:9px;color:#fff8e9;text-decoration:none;
+    font-size:clamp(.62rem,2.2vw,.76rem);font-weight:800;line-height:1.15;
+    text-align:center;transition:background-color .18s ease;
+  }
+  .cart-mobile-dock svg{
+    width:24px;height:24px;display:block;flex:none;
+    color:#f5d59b;stroke-width:1.9;
+  }
+  .cart-mobile-dock a:hover,.cart-mobile-dock a:active{background:#2e6552}
+  .cart-mobile-dock a:focus-visible{
+    outline:3px solid #ffe6b6;outline-offset:-3px;background:#2e6552;
+  }
+  .cart-mobile-dock a span{white-space:nowrap}
+  .jump-deck-hint,.jump-deck{display:none}
+  body{padding-bottom:calc(89px + env(safe-area-inset-bottom))}
+  #delivery,#request-title,#providers,#before-you-reserve{scroll-margin-top:24px}
+}
+@media screen and (max-width:355px) and (min-height:520px){
+  .cart-mobile-dock{gap:2px;padding-inline:5px}
+  .cart-mobile-dock a{font-size:.6rem;padding-inline:1px}
+}
+@media (prefers-reduced-motion:reduce){.cart-mobile-dock a{transition:none}}
+@media print{.cart-mobile-dock{display:none!important}}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header"><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back" href="/">← Browse all rentals</a></div></header>
+<nav class="cart-mobile-dock" aria-label="Golf cart rentals: mobile quick navigation">
+  <a href="#delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 18h13V7H3v11Zm13-7h3l2 3v4h-5v-7Z"/><circle cx="7" cy="19" r="2"/><circle cx="18" cy="19" r="2"/><path d="M6 10h6m-6 4h4"/></svg><span>Delivery</span></a>
+  <a href="#request-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="5" width="14" height="17" rx="2"/><path d="M9 5V3h6v2M9 11h6M9 15h6M9 19h4"/></svg><span>Inquiry</span></a>
+  <a href="#providers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="8" height="7" rx="1"/><rect x="13" y="4" width="8" height="7" rx="1"/><rect x="3" y="13" width="8" height="7" rx="1"/><rect x="13" y="13" width="8" height="7" rx="1"/></svg><span>Providers</span></a>
+  <a href="#before-you-reserve"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="19" rx="2"/><path d="m8 10 2 2 4-4M8 17h8"/></svg><span>Checklist</span></a>
+</nav>
 <main id="main">
 <section class="hero" aria-labelledby="page-title">
 <img class="hero-landscape" src="assets/lake-dardanelle-sunset.jpg" alt="" width="1920" height="910" fetchpriority="high" decoding="async" aria-hidden="true">
