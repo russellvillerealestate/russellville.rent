@@ -1374,6 +1374,61 @@ body.has-comparison{padding-bottom:115px}
 @media(prefers-reduced-motion:reduce){.longterm-atlas-links a{transition:none}.longterm-atlas-links a:hover{transform:none}}
 @media print{.longterm-hero-atlas{box-shadow:none;transform:none}.longterm-atlas-art{display:none}}
 
+
+/* 2026-11-18 / Visible mobile rental compass.
+   Adapted from StayARV's persistent place-first wayfinding to a rental
+   search and landlord directory, not a copied site layout. NN/g visible
+   navigation/information scent; Google web.dev responsive edge-to-edge
+   safe-area layout; W3C WCAG 2.2 2.4.11, 2.5.8 and focus visibility.
+   The existing mobile disclosure remains for short landscape screens.
+   The pinned-listing tray clears this dock rather than obscuring it.
+   No prices, listings, saved comparisons, filters or scripts are changed. */
+.longterm-pocket-nav{display:none}
+@media (max-width:650px) and (min-height:481px){
+  .site-header .mobile-nav{display:none}
+  .longterm-pocket-nav{
+    position:fixed;z-index:60;left:0;right:0;bottom:0;
+    display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:6px;padding:9px 11px calc(9px + env(safe-area-inset-bottom,0px));
+    background:linear-gradient(110deg,#092f2a,#154838 75%,#21563f);
+    border-top:2px solid #e5c48a;
+    box-shadow:0 -10px 30px #0a292645;
+  }
+  .longterm-pocket-nav a{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:5px;min-width:0;min-height:62px;padding:9px 3px;
+    background:#ffffff0b;border:1px solid #e2d6a854;border-radius:10px;
+    color:#fffaf0;text-decoration:none;text-align:center;
+    transition:background-color .18s ease,border-color .18s ease;
+  }
+  .longterm-pocket-nav a:first-child{background:#e2c58b20;border-color:#f0d79b9e}
+  .longterm-pocket-nav a span{
+    color:#f2d49d;font:850 .61rem/1.1 system-ui,-apple-system,"Segoe UI",sans-serif;
+    letter-spacing:.11em;
+  }
+  .longterm-pocket-nav a strong{
+    color:inherit;font:800 .75rem/1.19 system-ui,-apple-system,"Segoe UI",sans-serif;
+    letter-spacing:-.01em;
+  }
+  .longterm-pocket-nav a:hover{background:#ffffff20;border-color:#f2d49d}
+  .longterm-pocket-nav a:focus-visible{
+    outline:3px solid #ffe6b7;outline-offset:-3px;background:#32634d;
+  }
+  html{scroll-padding-top:92px;scroll-padding-bottom:calc(110px + env(safe-area-inset-bottom,0px))}
+  #filters,#listings,#sources,#property-managers,#compareDesk{scroll-margin-top:92px}
+  footer{padding-bottom:calc(113px + env(safe-area-inset-bottom,0px))}
+  .compare-tray{bottom:calc(108px + env(safe-area-inset-bottom,0px))}
+}
+@media (max-width:360px) and (min-height:481px){
+  .longterm-pocket-nav{gap:4px;padding-inline:6px}
+  .longterm-pocket-nav a{padding-inline:2px}
+  .longterm-pocket-nav a strong{font-size:.68rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .longterm-pocket-nav a{transition:none}
+}
+@media print{.longterm-pocket-nav{display:none!important}}
+
 </style></head>
 <body>
 <a class="skip" href="#main">Skip to listings</a>
@@ -1401,6 +1456,14 @@ body.has-comparison{padding-bottom:115px}
     </nav>
   </div>
 </header>
+<!-- Mobile rental compass: always-visible routes; the original short-landscape menu remains available. -->
+<nav class="longterm-pocket-nav" aria-label="Quick rental search navigation">
+  <a href="#filters"><span aria-hidden="true">01</span><strong>Search</strong></a>
+  <a href="#listings"><span aria-hidden="true">02</span><strong>Listings</strong></a>
+  <a href="#sources"><span aria-hidden="true">03</span><strong>Sources</strong></a>
+  <a href="#property-managers"><span aria-hidden="true">04</span><strong>List a home</strong></a>
+</nav>
+
 
 <section class="hero longterm-art-hero" aria-labelledby="hero-title">
   <img src="assets/lake-dardanelle-sunset.jpg" alt="Lake Dardanelle in Russellville, Arkansas" width="1920" height="910" fetchpriority="high">
