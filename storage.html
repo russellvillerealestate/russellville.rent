@@ -596,7 +596,39 @@ main#main{padding:0 16px 54px!important}
 @media(max-width:500px){.storage-rate-feature{border-radius:17px;padding:21px 16px}.storage-rate-list{grid-template-columns:1fr}.storage-rate-list li{min-height:154px}.storage-rate-diagram{grid-template-columns:1fr;text-align:left}.storage-rate-diagram svg{grid-column:1;grid-row:auto;max-width:195px}.storage-rate-diagram figcaption{grid-column:1;grid-row:auto}.storage-rate-head h2{font-size:clamp(2.15rem,10vw,3.25rem)}}
 @media(prefers-reduced-motion:reduce){.storage-rate-feature *{scroll-behavior:auto}}
 @media print{.storage-rate-feature{break-inside:avoid;box-shadow:none}.storage-rate-list li{break-inside:avoid}}
-</style></head><body><a class="storage-skip" href="#storage-grid">Skip to storage providers</a><header class="storage-topbar"><div class="storage-topbar-inner"><a class="storage-brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="storage-back" href="/">← All rental categories</a></div></header><main id="main"><section class="storage-hero" aria-labelledby="storage-title">
+</style>
+<style id="storage-mobile-compass-design">
+/* 2026-11-18 / River Valley storage navigator: progressive enhancement; static anchors. */
+.storage-compass[hidden]{display:none!important}
+.storage-compass{display:none}
+@media(max-width:700px) and (min-height:560px){
+ html{scroll-padding-bottom:116px}
+ main#main{padding-bottom:calc(145px + env(safe-area-inset-bottom,0px))!important}
+ .storage-compass:not([hidden]){
+  position:fixed;z-index:90;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;
+  inset-inline:12px;bottom:calc(11px + env(safe-area-inset-bottom,0px));
+  width:min(520px,calc(100% - 24px));margin-inline:auto;
+  padding:9px 8px;border:1px solid #6b977e;border-radius:21px;
+  background:#10382f;color:#fff;
+  box-shadow:0 0 0 5px #f7f8f4b8,0 15px 38px #0c302c63;
+ }
+ .storage-compass::before{content:"";position:absolute;left:20px;right:20px;top:0;height:2px;background:linear-gradient(90deg,transparent,#f1c88d,transparent)}
+ .storage-compass a{
+  display:flex;min-width:0;min-height:64px;flex-direction:column;align-items:center;justify-content:center;
+  gap:5px;padding:8px 2px;border-radius:13px;color:#fcfcf4!important;text-decoration:none!important;
+  font:800 .69rem/1.15 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.015em;text-align:center;white-space:normal;
+ }
+ .storage-compass a svg{display:block;width:22px;height:22px;fill:none;stroke:#edca93;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
+ .storage-compass a:hover{background:#245848}
+ .storage-compass a:focus-visible{outline:3px solid #ffdc94;outline-offset:-1px;background:#265b48}
+}
+@media(max-width:360px) and (min-height:560px){
+ .storage-compass:not([hidden]){inset-inline:7px;width:calc(100% - 14px);padding:8px 5px;gap:1px}
+ .storage-compass a{font-size:.66rem;min-height:60px}
+}
+@media print{.storage-compass{display:none!important}}
+</style>
+</head><body><a class="storage-skip" href="#storage-grid">Skip to storage providers</a><header class="storage-topbar"><div class="storage-topbar-inner"><a class="storage-brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="storage-back" href="/">← All rental categories</a></div></header><main id="main"><section class="storage-hero" aria-labelledby="storage-title">
 <div class="storage-hero-content">
 <p class="storage-eyebrow">Russellville · Arkansas River Valley</p>
 <h1 id="storage-title">Room for what<br>comes next.</h1>
@@ -658,7 +690,7 @@ main#main{padding:0 16px 54px!important}
 <button type="button" data-storage-filter="vehicles" aria-pressed="false"><span class="storage-filter-icon" aria-hidden="true"><svg viewBox="0 0 72 58" focusable="false"><path d="M6 37h59v12H6zM15 37l8-17h26l10 17"/><path d="M28 20v17M18 27h35"/><circle cx="19" cy="49" r="5"/><circle cx="53" cy="49" r="5"/></svg></span><strong>Boat &amp; RV parking</strong><small>Vehicle storage options</small></button>
 <button type="button" data-storage-filter="climate" aria-pressed="false"><span class="storage-filter-icon" aria-hidden="true"><svg viewBox="0 0 72 58" focusable="false"><circle cx="36" cy="29" r="20"/><path d="M36 10v38M17 29h38M23 16l26 26M49 16 23 42"/></svg></span><strong>Climate-controlled</strong><small>Temperature-managed units</small></button>
 </div></fieldset>
-<div class="storage-locations" role="group" aria-labelledby="storage-locations-title">
+<div class="storage-locations" id="storage-locations" role="group" aria-labelledby="storage-locations-title">
  <div class="storage-locations-heading">
   <div><p class="storage-locations-kicker">02 / Explore nearby</p><h3 id="storage-locations-title">Where should your space be?</h3><p class="storage-locations-intro">Choose a town to focus the directory. Location, storage type and keyword filters work together.</p></div>
   <button type="button" class="storage-city-all" data-storage-city="all" aria-pressed="true">All locations <span data-city-count="all"></span></button>
@@ -813,6 +845,8 @@ main#main{padding:0 16px 54px!important}
   };
   const reset = () => { input.value = ''; active = 'all'; activeCity = 'all'; update(); };
   finder.hidden = false;
+  const compass = document.getElementById('storage-compass');
+  if (compass) compass.hidden = false;
   document.getElementById('storage-search-form').addEventListener('submit', event => event.preventDefault());
   input.addEventListener('input', update);
   buttons.forEach(button => button.addEventListener('click', () => { active = button.dataset.storageFilter; update(); }));
@@ -1019,4 +1053,11 @@ main#main{padding:0 16px 54px!important}
   });
 })();
 </script>
+
+<nav class="storage-compass" id="storage-compass" aria-label="Storage directory quick navigation" hidden>
+ <a href="#storage-finder"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.6" cy="10.6" r="6.7"/><path d="m16 16 5 5"/></svg><span>Search</span></a>
+ <a href="#storage-locations"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 5.6-8 11-8 11S4 15.6 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.7"/></svg><span>By town</span></a>
+ <a href="#storage-rate-notebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM8 9h8M8 13h2M8 17h8M14 13h2"/></svg><span>Rates</span></a>
+ <a href="#storage-grid"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="7" height="7" rx="1"/><rect x="13.5" y="3.5" width="7" height="7" rx="1"/><rect x="3.5" y="13.5" width="7" height="7" rx="1"/><rect x="13.5" y="13.5" width="7" height="7" rx="1"/></svg><span>Listings</span></a>
+</nav>
 </body></html>
