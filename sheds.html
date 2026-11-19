@@ -663,6 +663,41 @@ footer a{font-weight:750}
   .rental-paths .path-card:first-child {min-height:0;background:#fff!important;color:#173b31!important}
   .rental-paths .path-card:first-child::before,.rental-paths .path-card:first-child::after{display:none}
 }
+
+/* Four-step shed-planning journey: preserve original destination links and add
+   the overlooked delivery/site check before comparing full ownership costs.
+   Design: StayARV's immersive landscape and generous navigation, adapted to a
+   compact River Valley field-ticket grid (not a copy of the RV park page).
+   NN/g: descriptive scannable wayfinding; web.dev: stable, asset-free layout;
+   WCAG 2.2: visible focus and generously sized link targets. */
+.shed-hero-route{grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:#d4b879}
+.shed-hero-route a,.shed-hero-route a+a{min-height:111px;border:0;background:#0c302a}
+.shed-hero-route a:nth-child(2){background:#123d33}
+.shed-hero-route a:nth-child(3){background:#1b4638}
+.shed-hero-route a:nth-child(4){background:#29483a}
+.shed-hero-route a:hover{background:#315f4c}
+.shed-hero-route .shed-route-copy strong{font-size:clamp(1.02rem,1.5vw,1.25rem)}
+#delivery-plan,#quote-comparison{scroll-margin-top:90px}
+@media(max-width:950px){
+  .shed-hero-route{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .shed-hero-route a{min-height:89px}
+  .shed-hero-route .shed-route-copy strong{font-size:1.14rem}
+  .shed-route-arrow{display:block}
+}
+@media(max-width:700px){
+  .shed-hero-route{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .shed-hero-route a{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:7px;min-height:119px;padding:14px 17px}
+  .shed-route-index{font-size:1.22rem}
+  .shed-hero-route .shed-route-copy strong{font-size:1.06rem;line-height:1.2;margin-top:3px}
+  .shed-hero-route .shed-route-copy small{font-size:.69rem;line-height:1.35}
+  .shed-hero-route .shed-route-arrow{display:none}
+}
+@media(max-width:430px){
+  .shed-hero-route a{min-height:114px;padding:11px 12px;gap:5px}
+  .shed-route-index{font-size:1.12rem}
+  .shed-hero-route .shed-route-copy strong{font-size:1rem}
+  .shed-hero-route .shed-route-copy small{font-size:.64rem}
+}
 </style>
 </head>
 <body>
@@ -693,7 +728,8 @@ footer a{font-weight:750}
   <nav class="shed-hero-route" aria-label="Jump to your next shed rental planning step">
     <a href="#dealer-atlas"><span class="shed-route-index">01</span><span class="shed-route-copy"><small>Begin close to home</small><strong>Explore local dealers</strong></span><span class="shed-route-arrow" aria-hidden="true">↗</span></a>
     <a href="#footprint-studio"><span class="shed-route-index">02</span><span class="shed-route-copy"><small>See how much fits</small><strong>Preview shed footprints</strong></span><span class="shed-route-arrow" aria-hidden="true">↗</span></a>
-    <a href="#quote-comparison"><span class="shed-route-index">03</span><span class="shed-route-copy"><small>Bring your own quotes</small><strong>Compare rental costs</strong></span><span class="shed-route-arrow" aria-hidden="true">↗</span></a>
+    <a href="#delivery-plan"><span class="shed-route-index">03</span><span class="shed-route-copy"><small>Plan access and placement</small><strong>Review delivery site</strong></span><span class="shed-route-arrow" aria-hidden="true">↗</span></a>
+    <a href="#quote-comparison"><span class="shed-route-index">04</span><span class="shed-route-copy"><small>Bring your own quotes</small><strong>Compare rental costs</strong></span><span class="shed-route-arrow" aria-hidden="true">↗</span></a>
   </nav>
 </div></section>
 <div class="wrap truth-strip" aria-label="Important rental distinctions"><div class="truth"><span class="truth-icon" aria-hidden="true">01</span><div><strong>Rent-to-own arrangements</strong><small>Review ownership terms and total cost with the provider.</small></div></div><div class="truth"><span class="truth-icon" aria-hidden="true">02</span><div><strong>Not a self-storage facility</strong><small>Looking for a storage unit instead? <a href="/storage.html">Browse self-storage options ↗</a></small></div></div></div>
