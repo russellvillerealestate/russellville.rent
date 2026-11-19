@@ -752,6 +752,13 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
 @media (prefers-reduced-motion:reduce){.cart-mobile-dock a{transition:none}}
 @media print{.cart-mobile-dock{display:none!important}}
 
+
+/* Distinguish course-only golf carts from the eight off-site rental inquiries. */
+.course-local-secondary{margin-top:clamp(26px,3.5vw,40px);padding-top:clamp(23px,3vw,32px);border-top:2px solid #cbdacb}
+.course-local-secondary .course-local-kicker{margin:0 0 10px}
+.course-local-secondary h3{max-width:24ch;margin:0 0 12px;color:#174333;font:400 clamp(1.55rem,2.5vw,2.3rem)/1.14 Georgia,"Times New Roman",serif;letter-spacing:-.025em}
+.course-local-secondary>p:not(.course-local-kicker):not(.course-local-contact){max-width:64ch;margin:0;color:#365749;font-size:clamp(.92rem,1.2vw,1.02rem);line-height:1.73}
+.course-local-secondary .course-local-contact{margin-top:16px;padding-top:15px}
 </style>
 </head>
 <body>
@@ -1219,6 +1226,12 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
   
 <div class="course-local-status" aria-label="Scope of the golf cart rental inquiry"><div><span>ON-COURSE INQUIRY</span><strong>Cart rental waiver publicly linked</strong></div><div><span>OFF-SITE RENTAL</span><strong>Not confirmed for events or delivery</strong></div></div>
 <p class="course-local-contact">141 Golf Club Ln, Pottsville, AR 72858 · <a href="tel:+14798906653">479-890-6653</a> · <a href="https://gallacreekgolfcourse.com/" target="_blank" rel="noopener noreferrer">Official course and cart-rental waiver ↗</a> · <a href="https://www.golfnow.com/courses/1047333-galla-creek-golf-course-details" target="_blank" rel="noopener noreferrer">GolfNow cart-rental listing ↗</a></p>
+<div class="course-local-secondary" aria-labelledby="rcc-course-cart-title">
+  <p class="course-local-kicker">Second nearby on-course option · Membership and guest terms apply</p>
+  <h3 id="rcc-course-cart-title">Russellville Country Club — Dover</h3>
+  <p>The club's official course page describes a semi-private course open to the public for golf, while its <strong>2026 membership agreement documents on-course golf cart use, member cart plans and cart-rental responsibilities</strong>. These are <strong>course-use carts</strong>, not a verified off-site rental for an event, wedding, neighborhood or jobsite. Public/guest cart eligibility, per-round rates, cart availability and any off-site rental or delivery are <strong>UNCONFIRMED</strong>; confirm directly before booking.</p>
+  <p class="course-local-contact">186 Country Club Rd, Dover, AR 72837 · <a href="tel:+14799681139">479-968-1139</a> · <a href="https://russellvillecountryclub.org/course-details/" target="_blank" rel="noopener noreferrer">Official public course and tee-time policy ↗</a> · <a href="https://russellvillecountryclub.org/wp-content/uploads/sites/20/2026/03/2026-RCC-Membership-Application-Form.pdf" target="_blank" rel="noopener noreferrer">Official 2026 golf-cart agreement (PDF) ↗</a></p>
+</div>
 </div>
 </section>
 <section class="planning planning-fieldfolio" id="before-you-reserve" aria-labelledby="planning-title">
