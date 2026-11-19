@@ -734,6 +734,60 @@ main{max-width:1400px;padding:22px clamp(15px,2.2vw,34px) 90px}
   }
 }
 
+
+/* 2026-11-19 | Provider-to-field-note correspondence cards.
+   Each independently verified operator now has a direct, preselected route
+   to the existing private inquiry form. No third-party contact or booking.
+   StayARV reference: strong editorial contrast, gentle brass accents;
+   NN/g hierarchy & proximity; web.dev stable responsive layout;
+   WCAG 2.2 focus, targets and keyboard navigation. */
+#directory .call-note-route{
+  display:grid;grid-template-columns:auto minmax(0,1fr) 40px;
+  gap:clamp(12px,1.8vw,19px);align-items:center;min-width:0;
+  margin-top:clamp(21px,3vw,30px);padding:17px clamp(16px,2.6vw,23px);
+  border:1px solid #c7d4bf;border-left:5px solid #b58c4d;border-radius:15px;
+  background:linear-gradient(120deg,#edf3e7,#faf5e7);
+  color:#183f31;text-decoration:none;box-shadow:0 8px 22px #103b2620;
+  transition:transform .2s ease,background-color .2s ease,box-shadow .2s ease
+}
+#directory .call-note-route .call-note-serial{
+  align-self:start;display:grid;place-items:center;min-width:55px;min-height:42px;
+  padding:8px;border:1px solid #d0c298;border-radius:8px;
+  background:#fffaf0;color:#6c5c38;font-size:.62rem;font-weight:850;
+  letter-spacing:.08em;white-space:nowrap
+}
+#directory .call-note-copy{display:block;min-width:0}
+#directory .call-note-copy strong{
+  display:block;font:400 clamp(1.25rem,2.1vw,1.7rem)/1.13 Georgia,"Times New Roman",serif;
+  letter-spacing:-.045em;color:#193b30
+}
+#directory .call-note-copy small{
+  display:block;margin-top:7px;color:#435d4f;font-size:.77rem;line-height:1.5
+}
+#directory .call-note-arrow{
+  display:grid;place-items:center;width:40px;height:40px;border-radius:50%;
+  background:#173f34;color:#fff7e5;font-size:1.2rem;transition:transform .2s ease
+}
+#directory .call-note-route:hover{
+  transform:translateY(-2px);background:#f5f8ed;
+  box-shadow:0 14px 27px #103b2632
+}
+#directory .call-note-route:hover .call-note-arrow{transform:translate(2px,-2px)}
+#directory .call-note-route:focus-visible{
+  outline:3px solid #a76510;outline-offset:4px
+}
+@media(max-width:560px){
+  #directory .call-note-route{grid-template-columns:minmax(0,1fr) 40px;padding:16px;gap:10px}
+  #directory .call-note-serial{grid-column:1/-1;justify-self:start;min-height:34px}
+  #directory .call-note-copy strong{font-size:1.32rem}
+}
+@media(prefers-reduced-motion:reduce){
+  #directory .call-note-route,#directory .call-note-arrow{transition:none}
+  #directory .call-note-route:hover,#directory .call-note-route:hover .call-note-arrow{transform:none}
+}
+@media print{
+  #directory .call-note-route{border:1px solid #777;box-shadow:none;background:#fff}
+}
 </style></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-head"><a href="/">Russellville.Rent</a><a class="back" href="/">← All rental categories</a></header>
 <main id="main"><section class="hero" aria-labelledby="hero-title"><div class="hero-terrain" aria-hidden="true"><svg viewBox="0 0 1440 410" preserveAspectRatio="xMidYMax slice" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="trail-dusk" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c6c995" stop-opacity=".34"/><stop offset="1" stop-color="#214f3c" stop-opacity=".03"/></linearGradient></defs><circle cx="1155" cy="88" r="90" fill="#e7c78c" opacity=".23"/><path d="M0 265 118 173l95 66 128-145 138 143 112-75 136 95 114-113 132 122 145-102 137 91 135-83 50 41v191H0Z" fill="url(#trail-dusk)"/><path d="M0 312 146 216l126 65 118-83 132 101 112-49 144 59 121-88 129 81 134-97 178 112v93H0Z" fill="#6e9572" opacity=".27"/><path d="M0 355q152-85 306-37t278-17 268 34 278-9 310 19v65H0Z" fill="#224e3a" opacity=".67"/><path d="M0 389q242-40 447-7t414-15 579 17v26H0Z" fill="#102f28" opacity=".8"/><g fill="#153d2f" opacity=".68"><path d="m60 349 29-96 31 96h-21v57H78v-57Z"/><path d="m130 363 24-79 24 79h-17v43h-16v-43Z"/><path d="m1184 349 31-112 33 112h-22v61h-21v-61Z"/><path d="m1244 362 22-72 24 72h-15v48h-16v-48Z"/><path d="m1345 354 27-95 29 95h-20v56h-18v-56Z"/></g><path d="M-20 409q285-106 529-57t386-18 560 71" stroke="#cbaa78" stroke-opacity=".3" stroke-width="8" stroke-dasharray="3 20" fill="none"/></svg></div><div><p class="eyebrow">Russellville &amp; the Arkansas River Valley</p><h1 id="hero-title">Find a side-by-side.<br><em>Find your trail.</em></h1><p>Compare independently listed side-by-side rentals in the Ozarks, around Ozone and Mount Magazine. The operators below advertise rentals on their own websites; confirm dates, trail restrictions and exact pickup or delivery arrangements before traveling.</p><a href="#directory">Explore three providers <span aria-hidden="true">↗</span></a>
@@ -850,7 +904,7 @@ main{max-width:1400px;padding:22px clamp(15px,2.2vw,34px) 90px}
 <div class="provider-folio-body">
 <div class="main-copy"><span class="tag">Ozone, Arkansas · River Valley area</span><h3>Ozark Ridge Campground &amp; Side-by-Side Rentals</h3><p>The official rental page advertises two-, four- and six-seat Can-Am side-by-side vehicles for Ozark National Forest recreation. It also states that delivery is offered, but gives no verified Russellville service area. <strong>Delivery to Russellville: UNCONFIRMED.</strong> A valid driver’s license, proof of insurance and minimum driver age of 25 are stated requirements; confirm the contract and permitted trails directly.</p>
 <p class="facts"><strong>138 County Road 4540, Ozone, AR 72854</strong><br><a href="tel:+14797744470">479-774-4470</a> · Rates and equipment availability subject to confirmation.</p>
-<div class="links"><a href="https://ozarkridgerv.com/side-by-side-rentals-ozark-national-forest.htm" target="_blank" rel="noopener noreferrer">Official rentals &amp; rates ↗</a><a class="secondary" href="camping.html">See campground listing ↗</a></div></div>
+<div class="links"><a href="https://ozarkridgerv.com/side-by-side-rentals-ozark-national-forest.htm" target="_blank" rel="noopener noreferrer">Official rentals &amp; rates ↗</a><a class="secondary" href="camping.html">See campground listing ↗</a></div><a class="call-note-route" href="#trip-desk" data-operator-preset="ozark" aria-label="Prepare a private first-call note for Ozark Ridge"><span class="call-note-serial" aria-hidden="true">01 / NOTE</span><span class="call-note-copy"><strong>Make the first call count.</strong><small>Start a private inquiry note for Ozark Ridge — nothing is sent or booked.</small></span><span class="call-note-arrow" aria-hidden="true">↗</span></a></div>
 <div class="price-panel"><div class="rate"><strong>From $375 / full day</strong>Officially posted effective June 1, 2026 for the two-seat Can-Am XRC; four- and six-seat models list $475 per full day. Confirm current rates, deposits and insurance with the operator.</div><p>Trail map/tracking application required; the provider says a preloaded tablet is supplied with a rental.</p></div>
 </div>
 </article>
@@ -885,7 +939,7 @@ main{max-width:1400px;padding:22px clamp(15px,2.2vw,34px) 90px}
 <span class="tag">Mount Magazine · Paris, Arkansas</span><h3>Cove Creek Supply — Side-by-side (SXS) Rentals</h3><p>The operator’s official website has a dedicated <strong>SXS Rentals</strong> booking link and advertises nearby trails and recreational vehicle spaces. Rental model, capacity, rates and inventory are not independently verified; check the booking page or contact the store. <strong>Russellville delivery: UNCONFIRMED.</strong></p>
 <p class="rate"><strong>Pricing not confirmed</strong>Operator directs renters to its own booking provider.</p>
 <p class="facts"><strong>11071 State Highway 309, Paris, AR</strong><br><a href="tel:+14799632702">479-963-2702</a></p>
-<div class="links"><a href="https://www.cove-creek.com/" target="_blank" rel="noopener noreferrer">Official site &amp; booking link ↗</a></div>
+<div class="links"><a href="https://www.cove-creek.com/" target="_blank" rel="noopener noreferrer">Official site &amp; booking link ↗</a></div><a class="call-note-route" href="#trip-desk" data-operator-preset="cove" aria-label="Prepare a private first-call note for Cove Creek Supply"><span class="call-note-serial" aria-hidden="true">02 / NOTE</span><span class="call-note-copy"><strong>Make the first call count.</strong><small>Start a private inquiry note for Cove Creek Supply — nothing is sent or booked.</small></span><span class="call-note-arrow" aria-hidden="true">↗</span></a>
 </div>
 </article>
 <article id="wilderness-rider" class="provider" data-area="northwest" data-search="wilderness rider buffalo ranch adventure park kingston boxley northwest arkansas side by side 6 seats yamaha viking on site rental 2 hours 4 hours 6 hours 8 hours">
@@ -919,7 +973,7 @@ main{max-width:1400px;padding:22px clamp(15px,2.2vw,34px) 90px}
 <span class="tag">Boxley area · Northwest Arkansas</span><h3>Wilderness Rider Buffalo Ranch &amp; Adventure Park</h3><p>The operator officially advertises on-site side-by-side rentals seating up to six, with park trail fees and fuel included. <strong>Vehicles may only be operated on Wilderness Rider property;</strong> off-site use and Russellville delivery are not offered for these rentals. Driver must be at least 21 with a valid license, according to the operator’s rules.</p>
 <p class="rate"><strong>From $225 / 2 hours</strong>Official side-by-side rental page lists $375 / 4 hours, $550 / 6 hours, $650 / 8 hours and $95 for each additional hour. <strong>Published operating hours conflict:</strong> the <a href="https://wildernessrider.com/side-x-side-rentals/" target="_blank" rel="noopener noreferrer">rental details page ↗</a> states 10 a.m.–6 p.m., while the <a href="https://wildernessrider.com/atv-sxs/" target="_blank" rel="noopener noreferrer">ATV/SXS page ↗</a> states 9 a.m.–5 p.m. Verify the permitted rental window, hours, availability, booking requirements, and final price with the operator before traveling.</p>
 <p class="facts"><strong>Boxley area, Northwest Arkansas</strong> · Use the official directions page to locate the ranch; a postal box is not a pickup address.<br><a href="tel:+18702202944">870-220-2944</a></p>
-<div class="links"><a href="https://wildernessrider.com/side-x-side-rentals/" target="_blank" rel="noopener noreferrer">Official rentals &amp; rules ↗</a></div>
+<div class="links"><a href="https://wildernessrider.com/side-x-side-rentals/" target="_blank" rel="noopener noreferrer">Official rentals &amp; rules ↗</a></div><a class="call-note-route" href="#trip-desk" data-operator-preset="wilderness" aria-label="Prepare a private first-call note for Wilderness Rider"><span class="call-note-serial" aria-hidden="true">03 / NOTE</span><span class="call-note-copy"><strong>Make the first call count.</strong><small>Start a private inquiry note for Wilderness Rider — nothing is sent or booked.</small></span><span class="call-note-arrow" aria-hidden="true">↗</span></a>
 </div>
 </article>
 </div><p class="result" id="no-results" hidden>No providers match those filters. Clear the search or select all regions.</p></section>
@@ -1072,6 +1126,18 @@ bar.addEventListener('click',event=>{const b=event.target.closest('[data-area]')
       output.focus();output.select();
       feedback.textContent='Select and copy the highlighted call brief. Nothing was sent.';
     }
+  });
+  // Native links still reach the three-question checklist without JavaScript.
+  // With JavaScript, they also preselect the corresponding existing call brief.
+  document.querySelectorAll('a[data-operator-preset]').forEach(link=>{
+    link.addEventListener('click',()=>{
+      const key=link.getAttribute('data-operator-preset');
+      if(!Object.prototype.hasOwnProperty.call(names,key))return;
+      operator.value=key;
+      render();
+      feedback.textContent=names[key]+' selected. Nothing has been sent or booked.';
+      requestAnimationFrame(()=>operator.focus({preventScroll:true}));
+    });
   });
   render();form.hidden=false;staticCard.hidden=true;
 })();
