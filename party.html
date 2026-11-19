@@ -747,6 +747,73 @@ html{scroll-padding-top:125px}
   .occasion-atlas .occasion-card .occasion-link{border-color:#555}
 }
 
+
+/* 2026-11-19 / The mobile celebration atlas.
+   The former four vertically stacked choice cards delayed discovery on small
+   screens. Recompose the SAME four working occasion shortcuts as a two-by-two
+   ticket mosaic, with distinct forest and plum anchors and compact cream
+   companion tickets. No category is hidden, swiped offscreen or reordered.
+   Live design comparison: StayARV + Russellville.Rent. References:
+   Nielsen Norman Group visual hierarchy / card scanability; Google web.dev
+   responsive layout / no image shifts; W3C WCAG 2.2 reflow and visible focus.
+   Retain all provider data, prices, filters, event edit and search scripts. */
+@media screen and (min-width:381px) and (max-width:649px){
+  .occasion-atlas{padding:25px 17px 22px;background:#f7f3e8;border-color:#cbbca4}
+  .occasion-atlas .occasion-heading{margin-bottom:19px}
+  .occasion-atlas .occasion-heading h2{
+    max-width:16ch;font:400 clamp(2.25rem,8vw,3.25rem)/1.04 Georgia,"Times New Roman",serif;
+    letter-spacing:-.055em;text-wrap:balance
+  }
+  .occasion-atlas .occasion-heading p{max-width:48ch;font-size:.82rem;line-height:1.55}
+  .occasion-atlas .occasion-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto auto;
+    gap:10px;align-items:stretch
+  }
+  .occasion-atlas .occasion-card{
+    display:flex;flex-direction:column;min-width:0;min-height:226px;
+    padding:19px 16px 15px;border-radius:17px;
+    box-shadow:0 8px 21px #15382e15
+  }
+  .occasion-atlas .occasion-card:first-child{
+    min-height:226px;background:radial-gradient(ellipse at 95% 10%,#50896b 0,transparent 55%),linear-gradient(145deg,#103b32,#1d5847);
+    border-color:#2c6d53;color:#fff9e9
+  }
+  .occasion-atlas .occasion-card:nth-child(2){background:#f6e8d1;border-color:#d9c49c}
+  .occasion-atlas .occasion-card:nth-child(3){background:#f5e8e3;border-color:#ddc5c0}
+  .occasion-atlas .occasion-card:nth-child(4){background:linear-gradient(145deg,#213d3b,#4a4453);border-color:#5b5665}
+  .occasion-atlas .occasion-card .occasion-card-top{
+    min-height:40px;margin-bottom:11px;align-items:flex-start;gap:5px
+  }
+  .occasion-atlas .occasion-card .occasion-card-top span{
+    max-width:12ch;font-size:.56rem;line-height:1.36;letter-spacing:.105em
+  }
+  .occasion-atlas .occasion-card .occasion-card-top svg{
+    position:relative;inset:auto;flex:0 0 33px;width:33px;height:33px;
+    opacity:.58;stroke-width:2.2
+  }
+  .occasion-atlas .occasion-card strong{
+    max-width:12ch;margin:0;font:400 clamp(1.46rem,4.7vw,1.94rem)/1.08 Georgia,"Times New Roman",serif;
+    letter-spacing:-.044em;overflow-wrap:normal
+  }
+  .occasion-atlas .occasion-card small{
+    margin-top:8px;font-size:.73rem;line-height:1.46;opacity:.94
+  }
+  .occasion-atlas .occasion-card .occasion-link{
+    align-items:center;min-height:35px;margin-top:auto;padding-top:9px;
+    font-size:.7rem;line-height:1.25;letter-spacing:0
+  }
+  .occasion-atlas .occasion-card .occasion-link span{font-size:1rem;flex:none}
+  .occasion-atlas .occasion-card:focus-visible{outline:3px solid #a96517;outline-offset:3px}
+}
+/* Very narrow phones retain every full label and a readable one-column route. */
+@media screen and (max-width:380px){
+  .occasion-atlas .occasion-card{min-height:0;padding:18px 20px}
+  .occasion-atlas .occasion-card:first-child{min-height:190px}
+  .occasion-atlas .occasion-card:nth-child(n+2){min-height:143px}
+  .occasion-atlas .occasion-card strong{font-size:clamp(1.55rem,7.4vw,1.85rem)}
+  .occasion-atlas .occasion-card .occasion-link{min-height:35px}
+}
+
 </style>
 </head>
 <body>
