@@ -756,6 +756,73 @@
 @media(prefers-reduced-motion:reduce){.med-choice-option{transition:none}.med-choice-option:hover{transform:none}}
 @media print{.med-choice-roadbook{background:#fff;color:#163b31;border:1px solid #668577;box-shadow:none;break-inside:avoid}.med-choice-roadbook h2,.med-choice-roadbook h2 em,.med-choice-kicker,.med-choice-intro p{color:#163b31}.med-choice-option{break-inside:avoid;border:1px solid #668577}}
 
+
+/* 2026-11-19 | Regional medical-rental pocket navigation.
+   Live reference: StayARV's clear, high-contrast navigation alongside
+   Russellville.Rent's existing forest/brass field-guide language.
+   NN/g: visual hierarchy & wayfinding. web.dev: responsive layout and
+   no extra image resources. W3C WCAG 2.2: clear focus, target size,
+   focus-not-obscured and short-landscape reflow.
+   Native anchors only: no new inventory, data, dependencies or scripts. */
+.med-pocket-nav{display:none}
+@media screen and (max-width:720px) and (min-height:541px){
+  html{scroll-padding-bottom:calc(118px + env(safe-area-inset-bottom,0px))}
+  body{padding-bottom:calc(111px + env(safe-area-inset-bottom,0px))}
+  .med-pocket-nav{
+    position:fixed;z-index:60;
+    left:max(9px,env(safe-area-inset-left,0px));
+    right:max(9px,env(safe-area-inset-right,0px));
+    bottom:calc(9px + env(safe-area-inset-bottom,0px));
+    display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:5px;max-width:560px;margin-inline:auto;
+    padding:7px;border:1px solid #ead2a38a;border-radius:18px;
+    background:linear-gradient(110deg,#092a27,#15483c 62%,#235a46);
+    box-shadow:0 17px 38px #061e1a78;
+  }
+  .med-pocket-nav a{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:5px;min-width:0;min-height:64px;padding:8px 3px;
+    border:1px solid #ffffff32;border-radius:11px;
+    background:#ffffff0b;color:#fffaf0;text-align:center;
+    text-decoration:none;line-height:1.15;
+    transition:background-color .16s ease,border-color .16s ease;
+  }
+  .med-pocket-nav a:first-child{
+    background:#f2d79f;border-color:#f2d79f;color:#14382f;
+  }
+  .med-pocket-nav .med-pocket-index{
+    display:block;color:#f5d9a2;font:850 .61rem/1 system-ui,sans-serif;
+    letter-spacing:.13em;
+  }
+  .med-pocket-nav a:first-child .med-pocket-index{color:#77572c}
+  .med-pocket-nav strong{
+    display:block;color:inherit;
+    font:800 clamp(.66rem,2.45vw,.78rem)/1.18 system-ui,-apple-system,"Segoe UI",sans-serif;
+    letter-spacing:-.01em;
+  }
+  .med-pocket-nav a:hover{background:#336a52;border-color:#eecf98}
+  .med-pocket-nav a:first-child:hover{background:#fff0ca;color:#14382f}
+  .med-pocket-nav a:focus-visible{
+    outline:3px solid #ffe3a6;outline-offset:-3px;
+    background:#346b51;color:#fffdf8;
+  }
+  .med-pocket-nav a:first-child:focus-visible{
+    outline-color:#11372e;background:#fff0ca;color:#14382f;
+  }
+  #finder-title,#providers,#published-rates,#call-desk{
+    scroll-margin-bottom:calc(118px + env(safe-area-inset-bottom,0px));
+  }
+}
+@media screen and (max-width:370px) and (min-height:541px){
+  .med-pocket-nav{gap:3px;padding:5px}
+  .med-pocket-nav a{min-height:63px;padding-inline:2px}
+  .med-pocket-nav strong{font-size:.65rem}
+  .med-pocket-nav .med-pocket-index{font-size:.55rem;letter-spacing:.07em}
+}
+@media(prefers-reduced-motion:reduce){
+  .med-pocket-nav a{transition:none}
+}
+@media print{.med-pocket-nav{display:none!important}}
 </style>
 </head>
 <body>
@@ -1049,6 +1116,13 @@
 <p class="note">Independent directory, reviewed October 31, 2026. Listings describe operator-advertised rental services, not guaranteed local delivery or availability. For no-cost alternatives, see <a href="medical-equipment-loans.html">medical equipment lending programs</a>. <a href="sms:+14799707301">Suggest a correction</a>.</p>
 <footer><span>© 2026 Russellville.Rent · Independent rental directory</span><a href="/">Return to homepage ↗</a></footer>
 </div></main>
+
+<nav class="med-pocket-nav" aria-label="Quick links through the medical equipment rental guide">
+  <a href="#finder-title"><span class="med-pocket-index" aria-hidden="true">01 / FIND</span><strong>Equipment</strong></a>
+  <a href="#providers"><span class="med-pocket-index" aria-hidden="true">02 / CALL</span><strong>Providers</strong></a>
+  <a href="#published-rates"><span class="med-pocket-index" aria-hidden="true">03 / COST</span><strong>Rates</strong></a>
+  <a href="#call-desk"><span class="med-pocket-index" aria-hidden="true">04 / NOTE</span><strong>Call note</strong></a>
+</nav>
 <script>
 (function(){
   document.documentElement.classList.add('has-js');
