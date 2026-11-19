@@ -946,11 +946,79 @@ html{scroll-padding-top:105px}
   .grid > .stage-roster-card .stage-roster-body{background:#fff!important}
 }
 
+
+/* 2026-11-19 | Mobile stage-production ticket strip.
+   Compared live StayARV and Russellville.Rent to retain the existing pine,
+   warm-metal and editorial hierarchy, without copying source design.
+   NN/g: visual hierarchy and grouping — https://www.nngroup.com/articles/visual-hierarchy-ux-definition/
+   web.dev: preserve layout stability — https://web.dev/articles/cls
+   WCAG 2.2: touch targets, focus not obscured, reflow — https://www.w3.org/TR/WCAG22/
+   Replaces a two-row sticky header on taller small screens with a compact
+   top brand and thumb-reachable four-stop native-anchor guide. No scripts,
+   external assets, operator data, contact information or booking behavior changed. */
+.stage-mobile-guide{display:none}
+@media screen and (max-width:720px) and (min-height:500px){
+  .site-header .header-inner{min-height:66px;padding:11px 0}
+  .site-header .stage-route-nav{display:none}
+  .stage-mobile-guide{
+    position:fixed;inset:auto 0 0;z-index:65;display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;
+    padding:9px max(9px,env(safe-area-inset-right,0px))
+      calc(9px + env(safe-area-inset-bottom,0px))
+      max(9px,env(safe-area-inset-left,0px));
+    border-top:1px solid #dcb97f;
+    background:linear-gradient(120deg,#102e2d,#173e37 65%,#315243);
+    box-shadow:0 -12px 32px #061e2538;
+  }
+  .stage-mobile-guide a{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:3px;min-width:0;min-height:70px;padding:7px 2px;
+    border:1px solid #f1d7a436;border-radius:12px;
+    background:#fffaf00a;color:#fff6e7;text-align:center;text-decoration:none;
+    transition:background-color .17s ease,border-color .17s ease;
+  }
+  .stage-mobile-guide a:hover{background:#f8e3ba1c;border-color:#f0d2a5a0}
+  .stage-mobile-guide a:focus-visible{
+    outline:3px solid #ffe3ae;outline-offset:-3px;
+    background:#37625a;color:#fff;
+  }
+  .stage-mobile-guide-num{
+    display:grid;place-items:center;width:23px;height:23px;
+    border:1px solid #f6d8a28a;border-radius:50%;
+    color:#f9d899;font:800 .65rem/1 system-ui,sans-serif;
+  }
+  .stage-mobile-guide strong{font:800 clamp(.69rem,2.65vw,.86rem)/1.12 system-ui,sans-serif}
+  .stage-mobile-guide small{font:.59rem/1.16 system-ui,sans-serif;color:#dcebe4}
+  body{padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}
+  html{scroll-padding-top:88px;scroll-padding-bottom:calc(105px + env(safe-area-inset-bottom,0px))}
+  #providers,#routes-title,#stage-contact-title,#stage-scale,#stage-studio,#planning,
+  .routes,.stage-contact-index,.grid>.card{scroll-margin-top:88px;scroll-margin-bottom:112px}
+}
+@media screen and (max-width:360px) and (min-height:500px){
+  .stage-mobile-guide{gap:3px;padding-left:5px;padding-right:5px}
+  .stage-mobile-guide a{padding-inline:1px}
+  .stage-mobile-guide small{font-size:.56rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .stage-mobile-guide a{transition:none}
+}
+@media print{
+  .stage-mobile-guide{display:none!important}
+}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#providers">Skip to stage providers</a>
 <header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">Russellville<span>.Rent</span></a><nav class="stage-route-nav" aria-label="Stage rental section navigation"><a href="#providers"><span aria-hidden="true">01</span> Find providers</a><a href="#stage-scale"><span aria-hidden="true">02</span> Compare sizes</a><a href="#planning"><span aria-hidden="true">03</span> Before booking</a></nav><a class="back" href="/">← Browse all rentals</a></div></header>
+<!-- Mobile stage-production ticket strip: native in-page links; no booking or inventory claims. -->
+<nav class="stage-mobile-guide" aria-label="Stage rentals mobile section shortcuts">
+  <a href="#routes-title"><span class="stage-mobile-guide-num" aria-hidden="true">01</span><strong>Choose</strong><small>Stage type</small></a>
+  <a href="#stage-contact-title"><span class="stage-mobile-guide-num" aria-hidden="true">02</span><strong>Providers</strong><small>13 contacts</small></a>
+  <a href="#stage-scale"><span class="stage-mobile-guide-num" aria-hidden="true">03</span><strong>Sizes</strong><small>Footprints</small></a>
+  <a href="#stage-studio"><span class="stage-mobile-guide-num" aria-hidden="true">04</span><strong>Plan</strong><small>Call brief</small></a>
+</nav>
+
 <section class="hero" aria-labelledby="page-title">
 <div class="wrap hero-inner">
 <div>
