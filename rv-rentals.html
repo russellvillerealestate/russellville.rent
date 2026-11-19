@@ -986,6 +986,44 @@ main{max-width:1160px;margin:0 auto;padding:0 28px}.hero{position:relative;isola
   #rv-grid > article {break-inside:avoid}
 }
 
+
+/* Nov 18, 2026 — River Valley camper-to-campsite crossroads.
+   Inspired by StayARV's immersive lakeside editorial treatment, not copied:
+   two explicitly separate booking routes, with source links, fees and delivery
+   caveats intact. W3C WCAG 2.2 2.4.7/2.5.8: visible focus and spacious targets.
+   Google web.dev: reserve media area to avoid layout shifts; NN/g: clear
+   hierarchy and progressive choice rather than equal-weight clutter. */
+.rv-crossroads{grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);min-height:540px;margin-top:clamp(44px,6vw,82px);border-radius:30px;border:1px solid #c6a86f;box-shadow:0 26px 62px #1131262d;background:#12352e;isolation:isolate}
+.rv-crossroads .travel-bridge-scene{display:flex;flex-direction:column;justify-content:space-between;min-height:540px;padding:clamp(22px,3vw,35px);background:linear-gradient(180deg,#0b27276b 0%,#0e313617 43%,#092322dc 100%),url("assets/lake-dardanelle-sunset.jpg") center 56%/cover no-repeat}
+.rv-crossroads-photo-head{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;color:#fff8e9}
+.rv-crossroads-photo-head b{font-size:.73rem;letter-spacing:.18em;font-weight:850}
+.rv-crossroads-photo-head small{border:1px solid #fff8e980;border-radius:99px;padding:7px 11px;font-size:.59rem;line-height:1.3;letter-spacing:.12em;font-weight:800}
+.rv-crossroads-photo-footer{display:flex;flex-direction:column;align-items:flex-start;gap:19px;color:#fff7e7}
+.rv-crossroads-photo-footer strong{font:400 clamp(2.2rem,4.1vw,4.05rem)/1.07 Georgia,serif;letter-spacing:-.055em;text-wrap:balance;text-shadow:0 3px 24px #061e1b80}
+.rv-crossroads-photo-footer em{font-weight:400;color:#f3d3a0}
+.rv-crossroads-photo-footer small{max-width:45ch;font-size:.72rem;line-height:1.55;letter-spacing:.03em;color:#f9f3e9}
+.rv-crossroads .rv-crossroads-panel{padding:clamp(30px,4vw,58px);align-items:stretch;background:radial-gradient(circle at 95% 0%,#285c475e,transparent 48%),#12352e;color:#f8f4e9}
+.rv-crossroads .travel-bridge-kicker{margin-bottom:18px;color:#eac88c;line-height:1.55}
+.rv-crossroads h2{font-size:clamp(2.1rem,3.3vw,3.55rem);color:#fcf7eb}
+.rv-crossroads h2 em{color:#e5bf80}
+.rv-crossroads .rv-crossroads-panel>p{max-width:54ch;margin:20px 0 27px;font-size:1rem;line-height:1.65;color:#dce8df}
+.rv-crossroads-routes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:100%}
+.rv-crossroads a.rv-crossroads-route{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:13px;min-width:0;min-height:174px;padding:20px;border:1px solid #f5dfb477;border-radius:15px;background:#f5f0e5;color:#163e32;text-align:left;text-decoration:none;box-shadow:none;transition:transform .18s ease,background-color .18s ease,box-shadow .18s ease}
+.rv-crossroads a.rv-crossroads-route--gold{background:#e9c68b;border-color:#e9c68b}
+.rv-crossroads-route-number{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;font-size:.65rem;letter-spacing:.12em;font-weight:850;color:#426557}
+.rv-crossroads-route-number span{font-size:1.1rem}
+.rv-crossroads-route strong{font-size:1.12rem;line-height:1.2;font-weight:850;letter-spacing:-.025em}
+.rv-crossroads-route small{font-size:.8rem;line-height:1.5;color:#455c4f;font-weight:550}
+.rv-crossroads a.rv-crossroads-route:hover{background:#fffaf0;color:#163e32;transform:translateY(-3px);box-shadow:0 11px 22px #031e192d}
+.rv-crossroads a.rv-crossroads-route--gold:hover{background:#ffdfa4}
+.rv-crossroads a.rv-crossroads-notebook{align-self:flex-start;min-height:45px;margin-top:18px;padding:10px 0;border-radius:0;background:transparent;color:#f0d39c;font-size:.87rem;font-weight:800;text-decoration:underline;text-underline-offset:5px}
+.rv-crossroads a.rv-crossroads-notebook:hover{background:transparent;color:#fff}
+.rv-crossroads a:focus-visible{outline:3px solid #ffe5a7;outline-offset:4px}
+.rv-crossroads a.rv-crossroads-route:focus-visible{outline-color:#0d443b}
+@media(max-width:900px){.rv-crossroads{grid-template-columns:1fr}.rv-crossroads .travel-bridge-scene{min-height:320px}.rv-crossroads .rv-crossroads-panel{padding:clamp(28px,5vw,46px)}.rv-crossroads-photo-footer strong{font-size:clamp(2.2rem,7vw,3.6rem)}}
+@media(max-width:600px){.rv-crossroads{border-radius:21px;margin-top:40px}.rv-crossroads .travel-bridge-scene{min-height:270px;padding:22px}.rv-crossroads-photo-head small{display:none}.rv-crossroads-photo-footer{gap:12px}.rv-crossroads-photo-footer strong{font-size:clamp(2rem,9vw,3rem)}.rv-crossroads .rv-crossroads-panel{padding:29px 23px 32px}.rv-crossroads h2{font-size:clamp(2rem,8.5vw,2.85rem)}.rv-crossroads-routes{grid-template-columns:1fr;gap:10px}.rv-crossroads a.rv-crossroads-route{min-height:0;padding:19px;gap:8px}.rv-crossroads .rv-crossroads-panel>p{font-size:.95rem}}
+@media(prefers-reduced-motion:reduce){.rv-crossroads a.rv-crossroads-route{transition:none}.rv-crossroads a.rv-crossroads-route:hover{transform:none}}
+@media print{.rv-crossroads{box-shadow:none;break-inside:avoid}.rv-crossroads .travel-bridge-scene{min-height:190px}.rv-crossroads a.rv-crossroads-route{min-height:auto}}
 </style></head><body>
 <a class="skip-link" href="#providers">Skip to rental listings</a>
 <header class="roadbook-header">
@@ -1076,7 +1114,33 @@ main{max-width:1160px;margin:0 auto;padding:0 28px}.hero{position:relative;isola
 <article data-type="marketplace"><div class="rv-card-scene rv-card-scene--marketplace" aria-hidden="true"><div class="rv-card-scene-copy"><span class="rv-card-scene-index">08 / ONLINE SEARCH</span><strong>Individual hosts · verify each listing</strong><small>Illustrative rental guide / not current inventory</small></div><div class="rv-card-scene-art"><svg viewBox="0 0 220 150" xmlns="http://www.w3.org/2000/svg" focusable="false"><rect x="22" y="20" width="176" height="116" rx="12" fill="#e7efe7" stroke="#2c635b" stroke-width="3"/><path d="M22 49h176" stroke="#2c635b" stroke-width="3"/><circle cx="39" cy="35" r="4" fill="#6b9d8a"/><circle cx="53" cy="35" r="4" fill="#b7ae79"/><rect x="38" y="65" width="87" height="54" rx="7" fill="#c1d5c3"/><path d="M44 108h77M58 108V85l16-11 15 11v23M89 108V92l13-9 13 9v16" stroke="#315d52" stroke-width="3" fill="none"/><path d="M137 70h45M137 82h37M137 100h29" stroke="#3b7568" stroke-width="5" stroke-linecap="round"/><circle cx="179" cy="113" r="10" fill="#e6c487" stroke="#2c635b" stroke-width="2"/><path d="m185 119 9 9" stroke="#2c635b" stroke-width="4" stroke-linecap="round"/></svg></div></div><span class="tag market">Rental marketplace — not one operator</span><h3>RVezy — Russellville search</h3><p>Peer-to-peer RV rental marketplace with a Russellville-area search for towable campers and motorhomes. Results can include hosts based in other Arkansas cities, so proximity and delivery must be checked on each individual listing. <strong>Current availability, price, and Russellville delivery are not guaranteed by a search result.</strong></p><p class="detail">Online marketplace · Host-specific pickup, delivery and campsite terms</p><p><a href="https://www.rvezy.com/rv-rentals/destination/united-states/arkansas/russellville" target="_blank" rel="noopener noreferrer">Browse Russellville-area rental listings ↗</a></p></article>
 </div><div class="empty-state" id="rv-empty" hidden><h3>No matching options</h3><p>Try another provider, rental type or delivery keyword.</p><button id="rv-reset" type="button">Show all options</button></div></section>
 
-<aside class="travel-bridge" aria-labelledby="bridge-title"><div class="travel-bridge-scene" aria-hidden="true"><span>Lake Dardanelle / River Valley scenery</span></div><div class="travel-bridge-copy"><span class="travel-bridge-kicker">Plan the second reservation</span><h2 id="bridge-title">Your camper is one part.<br><em>Your campsite is another.</em></h2><p>A camper listing does not reserve a place to park it. Compare River Valley campgrounds, then confirm hookups, delivery permissions and arrival windows directly with each park.</p><a href="/camping.html">Browse campgrounds <span aria-hidden="true">↗</span></a></div></aside>
+<aside class="travel-bridge rv-crossroads" aria-labelledby="bridge-title">
+  <div class="travel-bridge-scene" role="img" aria-label="Lake Dardanelle scenery, not a rental camper or campsite photograph">
+    <div class="rv-crossroads-photo-head"><b>R↗ &nbsp; THE RIVER VALLEY</b><small>YOUR GETAWAY / TWO RESERVATIONS</small></div>
+    <div class="rv-crossroads-photo-footer">
+      <strong>Find the road.<br><em>Then find your place.</em></strong>
+      <small>Lake Dardanelle scenery · Not a rental camper, campsite, or available inventory photograph</small>
+    </div>
+  </div>
+  <div class="travel-bridge-copy rv-crossroads-panel">
+    <span class="travel-bridge-kicker">Plan the second reservation / the River Valley roadbook</span>
+    <h2 id="bridge-title">Your camper is one part.<br><em>Your campsite is another.</em></h2>
+    <p>A camper listing does not reserve a place to park it. Compare River Valley campgrounds, then confirm hookups, delivery permissions and arrival windows directly with each park.</p>
+    <div class="rv-crossroads-routes" aria-label="Two separate arrangements for a camper trip">
+      <a class="rv-crossroads-route" href="#providers">
+        <span class="rv-crossroads-route-number">01 / THE VEHICLE <span aria-hidden="true">↗</span></span>
+        <strong>Compare camper rentals</strong>
+        <small>Ask a provider about dates, pickup or delivery, and the full price.</small>
+      </a>
+      <a class="rv-crossroads-route rv-crossroads-route--gold" href="/camping.html">
+        <span class="rv-crossroads-route-number">02 / THE PLACE <span aria-hidden="true">↗</span></span>
+        <strong>Browse campgrounds</strong>
+        <small>Confirm a separate campsite reservation, site fit and hookups.</small>
+      </a>
+    </div>
+    <a class="rv-crossroads-notebook" href="#rv-trip-planner">Make a private trip inquiry note <span aria-hidden="true">↗</span></a>
+  </div>
+</aside>
 
 <section class="rv-planner" id="rv-trip-planner" aria-labelledby="rv-planner-title">
   <div class="rv-planner-scene" aria-hidden="true">
