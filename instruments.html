@@ -807,6 +807,100 @@
   #performance-instrument-rentals>.section-heading::after{display:none}
   #performance-instrument-rentals .provider-art{display:none}
 }
+
+/* 2026-11-18 / The two-route music desk.
+   Compared live stayarv.com and russellville.rent/instruments.html.
+   Research: NN/g visual hierarchy (contrast, scale, grouping);
+   web.dev layout stability (no injected image dimensions or scripts);
+   W3C WCAG 2.2 focus visibility / touch-target spacing / logical reading order.
+   Navigation only: all verified provider copy, service caveats and contract terms
+   remain within their existing source sections. */
+.music-crossroads{
+  display:grid;grid-template-columns:minmax(210px,.73fr) minmax(0,1.8fr);
+  align-items:center;gap:clamp(20px,3vw,35px);
+  margin:24px 0 10px;padding:clamp(23px,3.6vw,42px);
+  border:1px solid #ccdbc9;border-radius:25px;
+  background:linear-gradient(135deg,#f0f3e9,#faf4e9 90%);
+  box-shadow:0 15px 30px #143d3210;
+}
+.music-crossroads-intro{min-width:0}
+.music-crossroads-overline{
+  display:block;margin:0 0 12px;color:#496953;font-size:.67rem;
+  letter-spacing:.16em;line-height:1.5;text-transform:uppercase;font-weight:900
+}
+.music-crossroads h2{
+  margin:0;color:#183f34;font:400 clamp(1.95rem,3vw,2.7rem)/1.11 Georgia,"Times New Roman",serif;
+  letter-spacing:-.048em;text-wrap:balance
+}
+.music-crossroads h2 em{color:#8b5e28}
+.music-crossroads-intro>p:last-child{
+  max-width:39ch;margin:17px 0 0;color:#456354;font-size:.85rem;line-height:1.65
+}
+.music-crossroads-routes{display:grid;grid-template-columns:1fr 1fr;gap:13px;min-width:0}
+.music-crossroads-route{
+  position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;min-width:0;
+  min-height:285px;gap:12px;padding:clamp(21px,2.6vw,29px);border:1px solid #c4d7c8;
+  border-radius:19px;background:#fff;color:#1c4637;text-decoration:none;
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease
+}
+.music-crossroads-route--school:after{
+  content:"♫";position:absolute;z-index:-1;right:8px;top:0;
+  font:400 10rem/1 Georgia,serif;color:#cee0cd;opacity:.35;pointer-events:none
+}
+.music-crossroads-route--performance{
+  border-color:#466b55;color:#fff8ea;
+  background:linear-gradient(105deg,rgba(9,34,29,.98),rgba(15,50,42,.87) 60%,rgba(20,49,42,.69)),
+    url("assets/downtown-russellville-sunset.jpg") center/cover no-repeat
+}
+.music-crossroads-route-kicker{
+  display:block;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;
+  font-weight:900;line-height:1.5;color:#597251
+}
+.music-crossroads-route--performance .music-crossroads-route-kicker{color:#f5dba3}
+.music-crossroads-route>strong{
+  display:block;margin-top:10px;max-width:16ch;font:400 clamp(1.48rem,2.4vw,1.9rem)/1.14 Georgia,"Times New Roman",serif;
+  letter-spacing:-.042em;text-wrap:balance;color:#173e33
+}
+.music-crossroads-route--performance>strong{color:#fff9e7}
+.music-crossroads-route-desc{display:block;font-size:.78rem;line-height:1.55;color:#4b6455}
+.music-crossroads-route--performance .music-crossroads-route-desc{color:#e5eee5}
+.music-crossroads-route-action{
+  display:flex;align-items:center;justify-content:space-between;gap:9px;
+  margin-top:auto;padding-top:13px;border-top:1px solid #d6e4d8;
+  color:#235b43;font-size:.76rem;line-height:1.5;font-weight:850
+}
+.music-crossroads-route--performance .music-crossroads-route-action{border-top-color:#ffffff65;color:#f5dba3}
+.music-crossroads-route:hover{transform:translateY(-3px);border-color:#7ba98b;box-shadow:0 15px 28px #143d3226}
+.music-crossroads-route:focus-visible{outline:3px solid #a76c18;outline-offset:4px}
+.music-crossroads-route--performance:focus-visible{outline-color:#f5dba3}
+.music-crossroads-disclaimer{
+  grid-column:1/-1;margin:0;color:#55705f;font-size:.73rem;line-height:1.55
+}
+@media(max-width:900px){
+  .music-crossroads{grid-template-columns:1fr}
+  .music-crossroads-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 20px;align-items:center}
+  .music-crossroads-overline{grid-column:1/-1}
+  .music-crossroads-intro>p:last-child{margin:0;max-width:42ch}
+  .music-crossroads-route{min-height:265px}
+}
+@media(max-width:620px){
+  .music-crossroads{padding:22px 18px;gap:17px;border-radius:19px}
+  .music-crossroads-intro{display:block}
+  .music-crossroads-intro>p:last-child{margin-top:10px}
+  .music-crossroads-routes{grid-template-columns:1fr;gap:11px}
+  .music-crossroads-route{min-height:0;padding:22px 21px;gap:10px}
+  .music-crossroads-route>strong{margin-top:1px}
+}
+@media(prefers-reduced-motion:reduce){
+  .music-crossroads-route{transition:none}
+  .music-crossroads-route:hover{transform:none}
+}
+@media print{
+  .music-crossroads{background:#fff;box-shadow:none}
+  .music-crossroads-route{min-height:0;break-inside:avoid}
+  .music-crossroads-route--performance{background:#173f35}
+}
+
 </style>
 </head>
 <body>
@@ -865,6 +959,31 @@
         </svg>
         <span class="art-caption">The student band guide</span>
       </div>
+    </section>
+
+
+    <!-- Clear route selection: student rent-to-own and short-term stage rentals are distinct. -->
+    <section class="music-crossroads" aria-labelledby="music-crossroads-title">
+      <div class="music-crossroads-intro">
+        <span class="music-crossroads-overline">The River Valley / Music rental desk</span>
+        <h2 id="music-crossroads-title">Two kinds of rental. <em>One place to start.</em></h2>
+        <p>Student band programs and temporary performance gear follow different agreements. Choose the route that matches your plans.</p>
+      </div>
+      <nav class="music-crossroads-routes" aria-label="Choose a music rental type">
+        <a class="music-crossroads-route music-crossroads-route--school" href="#compare-programs">
+          <span class="music-crossroads-route-kicker">01 / School band · Rent-to-own</span>
+          <strong>For the first rehearsal.</strong>
+          <span class="music-crossroads-route-desc">Compare three student programs: two with published Russellville locations and one school-linked online option.</span>
+          <span class="music-crossroads-route-action">Explore school-band programs <span aria-hidden="true">↗</span></span>
+        </a>
+        <a class="music-crossroads-route music-crossroads-route--performance" href="#performance-instrument-rentals">
+          <span class="music-crossroads-route-kicker">02 / Live performance · Short-term</span>
+          <strong>For the next big night.</strong>
+          <span class="music-crossroads-route-desc">See a Little Rock operator advertising instruments and stage gear for temporary rental. Russellville delivery is unconfirmed.</span>
+          <span class="music-crossroads-route-action">Explore performance rentals <span aria-hidden="true">↗</span></span>
+        </a>
+      </nav>
+      <p class="music-crossroads-disclaimer">Directory routes only, not bookings or inventory claims. Confirm instrument models, rental terms, dates, service areas and all charges directly with each provider. The photograph is River Valley scenery, not provider equipment.</p>
     </section>
 
     <nav class="guide-strip band-route" aria-label="Band rental guide: plan, compare and contact">
