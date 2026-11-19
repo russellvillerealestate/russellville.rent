@@ -832,6 +832,90 @@ header.equipment-site-header .equipment-home-link:hover{background:#ffe9b8}
  #equipment-results.equipment-compact>article>.equipment-folio-left h2{color:#163e34!important}
  #equipment-results.equipment-compact>article::before{color:#163e34;text-shadow:none}
 }
+
+/* 2026-11-19 / River Valley jobsite atlas: immersive 1+3 equipment route selector.
+   Inspected live stayarv.com and russellville.rent, current main history, NN/g visual
+   hierarchy, web.dev stable responsive layout, and WCAG 2.2 focus and target size.
+   Only presentation changes; all native filters, provider data and scripts stay intact.
+   Downtown scene and equipment illustrations are editorial, not rental inventory. */
+@media screen and (min-width:980px){
+  .equipment-types{
+    grid-template-columns:minmax(0,1.2fr) minmax(325px,.94fr);
+    grid-template-rows:auto repeat(3,minmax(148px,auto)) auto;
+    gap:14px 19px;align-items:stretch;
+  }
+  .equipment-types-label{grid-column:1/-1;grid-row:1;margin-bottom:13px}
+  .equipment-types button[data-equipment-type="earth"]{
+    grid-column:1;grid-row:2/5;
+    grid-template-columns:minmax(0,1fr);
+    grid-template-rows:auto minmax(145px,1fr) auto auto auto;
+    gap:12px;min-height:525px;padding:clamp(27px,3vw,39px);
+    border:1px solid #d7bc81;border-radius:22px;
+    background:linear-gradient(115deg,#0b3129ee,#1b4b3aeb 62%,#0e352cee),url("assets/downtown-russellville-sunset.jpg") center/cover;
+    color:#fff9e9;box-shadow:0 21px 44px #0a332936;
+  }
+  .equipment-types button[data-equipment-type="earth"]::before{
+    content:"01 / CONSTRUCTION · SCENIC RUSSELLVILLE";
+    grid-column:1;grid-row:1;color:#f1d89e;border-color:#f4deab65;
+  }
+  .equipment-types button[data-equipment-type="earth"] .equipment-type-visual{
+    grid-column:1;grid-row:2;justify-self:center;align-self:center;
+    width:min(100%,390px);aspect-ratio:1.67;color:#f6db9d;
+    background:linear-gradient(130deg,#e9f2db32,#e5cb9224);
+    box-shadow:inset 0 0 0 1px #ffe7b47a,0 17px 36px #071e1848;border-radius:20px;
+  }
+  .equipment-types button[data-equipment-type="earth"] .equipment-type-visual svg{
+    max-width:325px;max-height:220px;filter:drop-shadow(0 9px 9px #071f1b6b);
+  }
+  .equipment-types button[data-equipment-type="earth"] .equipment-type-name{
+    grid-column:1;grid-row:3;max-width:14ch;
+    font-size:clamp(2.2rem,3.1vw,3.35rem);line-height:1.08;color:inherit;
+  }
+  .equipment-types button[data-equipment-type="earth"] .equipment-type-caption{
+    grid-column:1;grid-row:4;font-size:.93rem;max-width:41ch;line-height:1.65;color:#e9f1e6;
+  }
+  .equipment-types button[data-equipment-type="earth"]::after{
+    grid-column:1;grid-row:5;font-size:.79rem;color:#f6dba3;border-color:#f5dfb96b;
+  }
+  .equipment-types button[data-equipment-type="earth"]:hover:not([aria-pressed="true"]){
+    border-color:#ffe8b7;box-shadow:0 24px 48px #0a332947;
+  }
+  .equipment-types button[data-equipment-type="earth"][aria-pressed="true"]{
+    background:linear-gradient(115deg,#092f27ef,#215840e9),url("assets/downtown-russellville-sunset.jpg") center/cover;
+    border:2px solid #f3d89f;box-shadow:0 0 0 3px #bc8d4380,0 20px 44px #0c332c44;
+  }
+  .equipment-types button[data-equipment-type]:not([data-equipment-type="earth"]):not([data-equipment-type="all"]){
+    grid-column:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(94px,112px);
+    grid-template-rows:auto 1fr auto;gap:5px 12px;min-height:0;
+    padding:17px 20px;border-radius:16px;
+  }
+  .equipment-types button[data-equipment-type="auto"]{grid-row:2}
+  .equipment-types button[data-equipment-type="lift"]{grid-row:3}
+  .equipment-types button[data-equipment-type="power"]{grid-row:4}
+  .equipment-types button[data-equipment-type]:not([data-equipment-type="earth"]):not([data-equipment-type="all"])::before{
+    grid-column:1;grid-row:1;border:0;padding:0;margin:0;font-size:.6rem;letter-spacing:.12em;
+  }
+  .equipment-types button[data-equipment-type]:not([data-equipment-type="earth"]):not([data-equipment-type="all"]) .equipment-type-name{
+    grid-column:1;grid-row:2;align-self:end;font-size:clamp(1.3rem,1.75vw,1.73rem);line-height:1.18;
+  }
+  .equipment-types button[data-equipment-type]:not([data-equipment-type="earth"]):not([data-equipment-type="all"]) .equipment-type-caption{
+    grid-column:1;grid-row:3;align-self:start;font-size:.73rem;line-height:1.42;
+  }
+  .equipment-types button[data-equipment-type]:not([data-equipment-type="earth"]):not([data-equipment-type="all"]) .equipment-type-visual{
+    grid-column:2;grid-row:1/4;align-self:center;width:100%;aspect-ratio:1.35;
+  }
+  .equipment-types button[data-equipment-type]:not([data-equipment-type="earth"]):not([data-equipment-type="all"])::after{display:none}
+  .equipment-types button[data-equipment-type="all"]{grid-column:1/-1;grid-row:5}
+}
+@media screen and (min-width:980px) and (max-width:1120px){
+  .equipment-types{grid-template-columns:minmax(0,1.06fr) minmax(320px,1fr)}
+  .equipment-types button[data-equipment-type]:not([data-equipment-type="earth"]):not([data-equipment-type="all"]){
+    grid-template-columns:minmax(0,1fr) 94px;padding:14px 15px;
+  }
+  .equipment-types button[data-equipment-type]:not([data-equipment-type="earth"]):not([data-equipment-type="all"]) .equipment-type-name{font-size:1.28rem}
+}
+@media print{.equipment-types button[data-equipment-type="earth"]{background:#f0f4ed!important;color:#173f35!important}}
+
 </style>
 </head><body>
 <a class="equipment-skip" href="#equipment-results">Skip to equipment rental providers</a>
