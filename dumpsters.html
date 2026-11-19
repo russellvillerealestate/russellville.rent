@@ -1011,6 +1011,99 @@ main{padding-top:clamp(62px,8vw,104px)}
   .project-chooser .project-path{break-inside:avoid}
 }
 
+
+
+/* 2026-11-19: Scenic published-price fieldbook. Both live sites reviewed before
+   designing: StayARV and Russellville.Rent. Preserve prices, caveats, source links
+   and provider content. NN/g: comparison hierarchy; web.dev: responsive layout
+   and stable imagery; W3C WCAG 2.2: focus visibility, keyboard/reflow and motion. */
+.rate-guide{background:linear-gradient(180deg,#e6ede4,#f3f5ed);color:#143d31;padding:clamp(57px,7vw,94px) 0 clamp(66px,8vw,111px)}
+.rate-guide::before{inset:0 0 auto;height:clamp(550px,51vw,680px);background:linear-gradient(100deg,rgba(7,35,30,.97),rgba(8,38,32,.92) 46%,rgba(10,37,32,.72)),url("assets/downtown-russellville-sunset.jpg") center 47%/cover no-repeat;pointer-events:none}
+.rate-guide .container{position:relative;z-index:1}
+.rate-heading{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.6fr);gap:clamp(30px,5vw,75px);align-items:end;min-height:280px;margin:0;padding-bottom:38px}
+.rate-heading h2{max-width:13ch;color:#fff9ee;font-size:clamp(3.15rem,6.3vw,6.2rem);line-height:1.01;letter-spacing:-.069em;text-wrap:balance}
+.rate-heading h2 em{color:#f4d49a}
+.rate-heading .rate-kicker{color:#f4d092;font-size:.74rem}
+.rate-heading .rate-aside{border-top:1px solid #dfebdc91;padding-top:20px}
+.rate-heading .rate-aside p{color:#ebf1e9;font-size:.96rem}
+.rate-heading .rate-aside a{color:#ffe1ad}
+.rate-scene-caption{margin:0 0 24px;color:#f2eedf;font-size:.7rem;letter-spacing:.035em;line-height:1.5;text-align:right}
+.rate-board{position:relative;z-index:2;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;gap:clamp(17px,2.7vw,30px)}
+.rate-sheet,.rate-sheet.morrilton{padding:0;overflow:hidden;border:1px solid #cedbcb;border-radius:23px;background:#fffdf6;box-shadow:0 20px 42px #0c2a2142}
+.rate-sheet.morrilton{background:#f2f6ed;border-color:#b7cbb7}
+.rate-sheet .rate-top{isolation:isolate;position:relative;min-height:205px;align-items:start;padding:clamp(24px,3vw,36px);border-bottom:1px solid #d5dfcf;background:linear-gradient(127deg,#f3e5c7,#fffaee 87%)}
+.rate-sheet.morrilton .rate-top{background:linear-gradient(130deg,#d5e4d5,#f0f5ed 85%)}
+.rate-sheet .rate-top::after{content:"";position:absolute;z-index:-1;right:-64px;top:-95px;width:260px;height:260px;border:1px solid #6b896f3b;border-radius:50%;box-shadow:0 0 0 26px #6b896f0a,0 0 0 53px #6b896f09;pointer-events:none}
+.rate-sheet .rate-number{display:inline-block;margin-bottom:14px;font-size:1.45rem;letter-spacing:-.035em;color:#6d5c40;border-bottom:2px solid #ae8345;padding-bottom:6px}
+.rate-sheet.morrilton .rate-number{color:#42614c;border-color:#608a72}
+.rate-sheet .rate-label{color:#694b2c;line-height:1.5;max-width:27ch}
+.rate-sheet.morrilton .rate-label{color:#385c47}
+.rate-sheet h3{max-width:18ch;font-size:clamp(2rem,3.3vw,3.15rem);line-height:1.07;letter-spacing:-.058em;text-wrap:balance}
+.rate-sheet .rate-art{position:relative;z-index:1;margin-top:42px}
+.rate-sheet .rate-list{margin:17px clamp(22px,3vw,36px) 13px}
+.rate-sheet .rate-list>div{min-height:81px;gap:7px 12px;padding:15px 0;border-color:#dce4d8}
+.rate-sheet .rate-list dt{font-size:.89rem;line-height:1.4}
+.rate-sheet .rate-list strong{font-size:clamp(1.9rem,2.7vw,2.5rem)}
+.rate-sheet .rate-list small{font-size:.7rem}
+.rate-sheet .rate-sheet-note{margin:0;padding:14px clamp(22px,3vw,36px) 22px;font-size:.84rem;line-height:1.65}
+.rate-sheet .rate-link{min-height:57px;margin:auto clamp(22px,3vw,36px) clamp(22px,3vw,36px);padding:14px 18px;border-radius:12px;background:#153d32;color:#fff;font-size:.85rem}
+.rate-sheet .rate-link:focus-visible{outline:3px solid #b97421;outline-offset:4px}
+.rate-sheet .rate-link:hover{background:#2c604c}
+.rate-guide .rate-checks{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(24px,4vw,38px);gap:0;overflow:hidden;border:1px solid #bfcebf;border-radius:20px;background:#e0e9de}
+.rate-guide .rate-check{padding:clamp(22px,3vw,31px);border:0;border-radius:0;background:transparent}
+.rate-guide .rate-check:not(:last-child){border-right:1px solid #b9cdbd}
+.rate-guide .rate-check strong{font-size:.84rem;color:#315e45}
+.rate-guide .rate-check p{font-size:.82rem;color:#3d5a4a}
+.rate-guide .rate-foot{color:#465f51;font-size:.78rem;max-width:88ch}
+.rate-guide .rate-foot a{color:#15573f;text-decoration:underline}
+@media(max-width:900px){
+ .rate-heading{grid-template-columns:minmax(0,1fr);gap:23px;min-height:0}
+ .rate-heading h2{font-size:clamp(3.05rem,7vw,5rem)}
+ .rate-heading .rate-aside{max-width:70ch}
+ .rate-guide::before{height:675px}
+ .rate-board{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+ .rate-sheet .rate-top{padding:24px 22px;min-height:200px}
+ .rate-sheet .rate-list{margin-inline:22px}
+ .rate-sheet .rate-sheet-note{padding-inline:22px}
+ .rate-sheet .rate-link{margin-inline:22px}
+ .rate-sheet .rate-art{transform:scale(.7);transform-origin:right top}
+ .rate-sheet h3{font-size:clamp(1.85rem,3.5vw,2.55rem)}
+}
+@media(max-width:700px){
+ .rate-guide{padding-block:50px 70px}
+ .rate-guide::before{height:790px;background-position:62% 40%}
+ .rate-heading{padding-bottom:23px}
+ .rate-heading h2{font-size:clamp(3rem,10vw,4.65rem)}
+ .rate-scene-caption{margin-bottom:20px;text-align:left}
+ .rate-board{grid-template-columns:minmax(0,1fr);gap:18px}
+ .rate-sheet .rate-top{min-height:175px}
+ .rate-guide .rate-checks{grid-template-columns:1fr;margin-top:22px}
+ .rate-guide .rate-check:not(:last-child){border-right:0;border-bottom:1px solid #b9cdbd}
+}
+@media(max-width:390px){
+ .rate-sheet .rate-top{padding:22px 19px}
+ .rate-sheet .rate-list{margin-inline:18px}
+ .rate-sheet .rate-sheet-note{padding-inline:18px}
+ .rate-sheet .rate-link{margin-inline:18px}
+ .rate-sheet .rate-art{transform:scale(.62)}
+ .rate-sheet h3{font-size:1.95rem}
+ .rate-sheet .rate-list>div{gap:7px}
+ .morrilton .rate-list>div{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .morrilton .rate-list dt{grid-column:1/-1}
+ .morrilton .rate-list dd{align-items:start;text-align:left}
+}
+@media(prefers-reduced-motion:reduce){.rate-sheet .rate-link{transition:none}}
+@media print{
+ .rate-guide{background:#fff!important;color:#183c33!important;padding:28px 0}
+ .rate-guide::before{display:none}
+ .rate-heading{min-height:0}
+ .rate-heading h2,.rate-heading .rate-kicker,.rate-heading .rate-aside p,.rate-heading .rate-aside a{color:#183c33!important}
+ .rate-scene-caption{display:none}
+ .rate-board{break-inside:auto}
+ .rate-sheet{break-inside:avoid;box-shadow:none!important}
+ .rate-guide .rate-foot{color:#183c33}
+}
+
 </style>
 </head>
 <body>
@@ -1073,7 +1166,8 @@ main{padding-top:clamp(62px,8vw,104px)}
    <div><p class="rate-kicker">02 / Published-price field guide · October 31, 2026</p><h2 id="rates-heading">Start with a rate.<br><em>Finish with a quote.</em></h2></div>
    <div class="rate-aside"><p>Two area-serving operators are compared below using their published prices. Additional providers may publish separate starting rates in their full listings. Compare rental terms before calling—not as a promise of the lowest delivered price.</p><a href="#questions">Which costs should I confirm? ↗</a></div>
   </div>
-  <div class="rate-board">
+<p class="rate-scene-caption">Downtown Russellville scenery / not rental equipment, supplier premises or available inventory.</p>
+    <div class="rate-board">
    <article class="rate-sheet" aria-labelledby="rate-danny-title">
     <div class="rate-top"><div><span class="rate-number">01</span><p class="rate-label">Russellville delivery advertised</p><h3 id="rate-danny-title">Danny's Roll Offs</h3></div><div class="rate-art" aria-hidden="true"><i></i><i></i><i></i></div></div>
     <dl class="rate-list">
