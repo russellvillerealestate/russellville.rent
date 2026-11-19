@@ -581,6 +581,85 @@ footer{font-size:.82rem;color:var(--muted);margin:35px 0 45px}
   #venue-grid:not(.view-rows)>article:not(.venue-folio):hover{transform:none}
 }
 
+
+/* 2026-11-19 / Venue audience-size folios: recompose the existing 4 published
+   examples into a legible 2x2 editorial comparison. Bars are purely illustrative
+   normalized to the largest displayed figure, not certified capacities.
+   Live design reference: stayarv.com alongside russellville.rent/venues.html.
+   Sources: NN/g information scent & scanning; web.dev responsive layout;
+   W3C WCAG 2.2 visible focus, reflow, target size, reduced motion. */
+.capacity-atlas-cards{
+  grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;
+  background:transparent;border:0;border-radius:0;overflow:visible;
+  box-shadow:none;margin-top:14px
+}
+.capacity-atlas-card{
+  display:grid;grid-template-columns:minmax(0,.76fr) minmax(0,1.24fr);
+  grid-template-rows:auto auto 1fr auto;column-gap:clamp(16px,2.3vw,27px);
+  min-height:274px;border:1px solid #bdd0c0;border-radius:19px;
+  padding:clamp(22px,2.7vw,32px);box-shadow:0 15px 35px #143c2b14
+}
+.capacity-atlas-card:nth-child(2){background:#fff8ea}
+.capacity-atlas-card:nth-child(3){background:#e8f1ec}
+.capacity-atlas-card:nth-child(4){background:#f1eee8}
+.capacity-atlas-index{grid-column:1/-1;grid-row:1}
+.capacity-atlas-figure{
+  grid-column:1;grid-row:2/4;align-self:stretch;
+  min-width:0;margin:22px 0 14px;padding:3px clamp(10px,1.7vw,20px) 0 0;
+  border-right:1px solid #b9cdbd;
+  font:400 clamp(3.55rem,4.7vw,5.05rem)/.98 Georgia,serif;
+  letter-spacing:-.08em;font-variant-numeric:lining-nums tabular-nums
+}
+.capacity-atlas-figure small{
+  display:block;margin:10px 0 0;line-height:1.5;letter-spacing:.09em;
+  overflow-wrap:normal
+}
+.capacity-scale{
+  display:block;width:100%;height:9px;overflow:hidden;
+  margin-top:20px;border-radius:999px;background:#cfdbce;
+  box-shadow:inset 0 1px 3px #183e3219
+}
+.capacity-scale i{
+  display:block;width:var(--capacity-fill);height:100%;
+  border-radius:inherit;background:linear-gradient(90deg,#ba8747,#1e7051)
+}
+.capacity-atlas-card strong{
+  grid-column:2;grid-row:2;align-self:end;
+  margin:22px 0 10px;
+  font:400 clamp(1.35rem,2vw,1.75rem)/1.14 Georgia,"Times New Roman",serif;
+  letter-spacing:-.04em
+}
+.capacity-atlas-detail{grid-column:2;grid-row:3;min-height:0;max-width:27ch}
+.capacity-atlas-link{grid-column:1/-1;grid-row:4;align-self:end;margin-top:14px}
+.capacity-atlas-scale-note{
+  margin:16px 2px 0;color:#4d6758;
+  font-size:.79rem;line-height:1.65
+}
+@media(max-width:920px){
+  .capacity-atlas-cards{grid-template-columns:1fr}
+  .capacity-atlas-card{min-height:230px;grid-template-columns:minmax(115px,.4fr) minmax(0,1.6fr)}
+  .capacity-atlas-figure{font-size:clamp(3.5rem,7vw,5rem)}
+}
+@media(max-width:480px){
+  .capacity-atlas-card{
+    grid-template-columns:1fr;grid-template-rows:auto auto auto auto auto;
+    min-height:0;padding:23px
+  }
+  .capacity-atlas-index{grid-row:1}
+  .capacity-atlas-figure{
+    grid-column:1;grid-row:2;margin:15px 0 3px;padding:0 0 14px;
+    border-right:0;border-bottom:1px solid #b9cdbd;
+    font-size:clamp(3.65rem,15vw,4.6rem)
+  }
+  .capacity-atlas-figure small{margin-top:5px}
+  .capacity-scale{max-width:255px;margin-top:12px}
+  .capacity-atlas-card strong{grid-column:1;grid-row:3;margin:16px 0 8px}
+  .capacity-atlas-detail{grid-column:1;grid-row:4;max-width:none;margin:0 0 16px}
+  .capacity-atlas-link{grid-column:1;grid-row:5;margin-top:0}
+}
+@media(prefers-reduced-motion:reduce){
+ .capacity-atlas-card{transition:none}
+}
 </style></head><body><a class="skip-link" href="#venues">Skip to venue listings</a><header><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back-link" href="/">← All rental categories</a></div></header><main>
 <section class="venue-hero" aria-labelledby="page-title">
 <img class="venue-hero-photo" src="assets/downtown-russellville-sunset.jpg" alt="" fetchpriority="high" decoding="async" width="1200" height="544">
@@ -626,10 +705,10 @@ footer{font-size:.82rem;color:var(--muted);margin:35px 0 45px}
   <p class="occasion-footnote">Groups reflect uses described in the listings, not confirmed availability. Contact venues directly about your event.</p>
 </div></section>
 
-<section class="capacity-atlas" id="venue-capacities" aria-labelledby="capacity-atlas-heading"><div class="capacity-atlas-hero"><div><p class="capacity-atlas-label">Four published capacities / Russellville, Arkansas</p><h2 id="capacity-atlas-heading">Make space for <em>the right size.</em></h2></div><p class="capacity-atlas-intro">From a small meeting to a larger gathering. Compare example room sizes and open the full listing for details. Scenic photo is not a venue photograph.</p></div><div class="capacity-atlas-cards" aria-label="Four venue capacity examples"><a class="capacity-atlas-card" href="#capacity-hampton" aria-label="View Hampton Inn Russellville, published capacity up to 35 groups"><span class="capacity-atlas-index">01 / HOTEL MEETING<span aria-hidden="true">✳</span></span><span class="capacity-atlas-figure">35<small>Up to / groups</small></span><strong>Hampton Inn Russellville</strong><span class="capacity-atlas-detail">One meeting room · Group booking figure.</span><span class="capacity-atlas-link">Read full venue listing <span aria-hidden="true">↗</span></span></a>
-<a class="capacity-atlas-card" href="#capacity-cocreate" aria-label="View Co-Create Innovation Hub, published capacity up to 50 seated"><span class="capacity-atlas-index">02 / DOWNTOWN LOUNGE<span aria-hidden="true">⌁</span></span><span class="capacity-atlas-figure">50<small>Up to / seated</small></span><strong>Co-Create Innovation Hub</strong><span class="capacity-atlas-detail">Think Lounge · Presentation and event seating.</span><span class="capacity-atlas-link">Read full venue listing <span aria-hidden="true">↗</span></span></a>
-<a class="capacity-atlas-card" href="#capacity-laquinta" aria-label="View La Quinta Inn and Suites, published capacity up to 72 guests"><span class="capacity-atlas-index">03 / HOTEL EVENT<span aria-hidden="true">◇</span></span><span class="capacity-atlas-figure">72<small>Up to / guests</small></span><strong>La Quinta Inn &amp; Suites</strong><span class="capacity-atlas-detail">One published meeting and event room.</span><span class="capacity-atlas-link">Read full venue listing <span aria-hidden="true">↗</span></span></a>
-<a class="capacity-atlas-card" href="#capacity-depot" aria-label="View Historic Train Depot, published capacity up to 146 attendees"><span class="capacity-atlas-index">04 / COMMUNITY ROOM<span aria-hidden="true">◎</span></span><span class="capacity-atlas-figure">146<small>Up to / attendees</small></span><strong>Historic Train Depot</strong><span class="capacity-atlas-detail">Large meeting room · Verify furniture setup.</span><span class="capacity-atlas-link">Read full venue listing <span aria-hidden="true">↗</span></span></a></div><p class="capacity-atlas-foot">Published examples, not live availability, certified maximum occupancy, or a guaranteed layout. Confirm seating, accessible facilities, permitted use, total charges and dates directly with each operator. Browse all venue listings below for other options.</p></section>
+<section class="capacity-atlas" id="venue-capacities" aria-labelledby="capacity-atlas-heading"><div class="capacity-atlas-hero"><div><p class="capacity-atlas-label">Four published capacities / Russellville, Arkansas</p><h2 id="capacity-atlas-heading">Make space for <em>the right size.</em></h2></div><p class="capacity-atlas-intro">From a small meeting to a larger gathering. Compare example room sizes and open the full listing for details. Scenic photo is not a venue photograph.</p></div><div class="capacity-atlas-cards" aria-label="Four venue capacity examples"><a class="capacity-atlas-card" href="#capacity-hampton" aria-label="View Hampton Inn Russellville, published capacity up to 35 groups"><span class="capacity-atlas-index">01 / HOTEL MEETING<span aria-hidden="true">✳</span></span><span class="capacity-atlas-figure">35<small>Up to / groups</small><span class="capacity-scale" aria-hidden="true"><i style="--capacity-fill:24%"></i></span></span><strong>Hampton Inn Russellville</strong><span class="capacity-atlas-detail">One meeting room · Group booking figure.</span><span class="capacity-atlas-link">Read full venue listing <span aria-hidden="true">↗</span></span></a>
+<a class="capacity-atlas-card" href="#capacity-cocreate" aria-label="View Co-Create Innovation Hub, published capacity up to 50 seated"><span class="capacity-atlas-index">02 / DOWNTOWN LOUNGE<span aria-hidden="true">⌁</span></span><span class="capacity-atlas-figure">50<small>Up to / seated</small><span class="capacity-scale" aria-hidden="true"><i style="--capacity-fill:34%"></i></span></span><strong>Co-Create Innovation Hub</strong><span class="capacity-atlas-detail">Think Lounge · Presentation and event seating.</span><span class="capacity-atlas-link">Read full venue listing <span aria-hidden="true">↗</span></span></a>
+<a class="capacity-atlas-card" href="#capacity-laquinta" aria-label="View La Quinta Inn and Suites, published capacity up to 72 guests"><span class="capacity-atlas-index">03 / HOTEL EVENT<span aria-hidden="true">◇</span></span><span class="capacity-atlas-figure">72<small>Up to / guests</small><span class="capacity-scale" aria-hidden="true"><i style="--capacity-fill:49%"></i></span></span><strong>La Quinta Inn &amp; Suites</strong><span class="capacity-atlas-detail">One published meeting and event room.</span><span class="capacity-atlas-link">Read full venue listing <span aria-hidden="true">↗</span></span></a>
+<a class="capacity-atlas-card" href="#capacity-depot" aria-label="View Historic Train Depot, published capacity up to 146 attendees"><span class="capacity-atlas-index">04 / COMMUNITY ROOM<span aria-hidden="true">◎</span></span><span class="capacity-atlas-figure">146<small>Up to / attendees</small><span class="capacity-scale" aria-hidden="true"><i style="--capacity-fill:100%"></i></span></span><strong>Historic Train Depot</strong><span class="capacity-atlas-detail">Large meeting room · Verify furniture setup.</span><span class="capacity-atlas-link">Read full venue listing <span aria-hidden="true">↗</span></span></a></div><p class="capacity-atlas-scale-note">The bars compare these four published figures relative to the largest example shown. They are not certified occupancy limits or directly interchangeable seating layouts: “groups,” seated guests and attendees may describe different arrangements.</p><p class="capacity-atlas-foot">Published examples, not live availability, certified maximum occupancy, or a guaranteed layout. Confirm seating, accessible facilities, permitted use, total charges and dates directly with each operator. Browse all venue listings below for other options.</p></section>
 
 <section class="venue-notebook" id="venue-notebook" aria-labelledby="notebook-title" hidden>
   <div class="notebook-header">
