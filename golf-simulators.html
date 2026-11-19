@@ -829,6 +829,111 @@ html{scroll-padding-top:114px}
   .golf-round-dock{display:none!important}
   main{padding-bottom:50px!important}
 }
+
+/* 2026-11-18 / Photo-led clubhouse cover. Compared the live StayARV and
+   Russellville.Rent landing pages: borrow the immersive photographic opening,
+   framed hierarchy and brass accents, never a property or booking claim.
+   Reuse an existing first-party River Valley photograph; the visible caption
+   makes clear it is not a provider photograph. No listing, price, provider,
+   navigation, interaction or external media dependencies change.
+   Guidance: Nielsen Norman Group homepage navigation/information scent;
+   web.dev image rendering and layout stability; W3C WCAG 2.2 focus and reflow. */
+.hero.golf-photo-cover{
+  grid-template-columns:minmax(0,1.13fr) minmax(245px,.87fr);
+  align-items:center;
+  gap:clamp(25px,4vw,55px);
+  min-height:590px;
+  padding:clamp(38px,5.4vw,69px);
+  border:1px solid #e7d4a28c;
+  border-radius:5px 30px 5px 30px;
+  background:linear-gradient(100deg,#092622f5 2%,#0a302be3 52%,#0b332ec7 100%),
+    url("assets/downtown-russellville-sunset.jpg") center 48%/cover no-repeat;
+  box-shadow:0 26px 65px #092c2842;
+}
+.hero.golf-photo-cover:before{
+  opacity:1;mask-image:none;
+  background:linear-gradient(180deg,transparent 60%,#061d1ab5 100%);
+}
+.hero.golf-photo-cover:after{
+  content:"";position:absolute;inset:12px;
+  z-index:-1;pointer-events:none;
+  border:1px solid #f0dca65c;border-radius:2px 22px 2px 22px;
+}
+.golf-photo-cover>div:first-child{min-width:0}
+.golf-photo-cover h1{
+  font-size:clamp(3.55rem,6.5vw,6.25rem);
+  text-shadow:0 7px 30px #02120fbb;
+}
+.golf-photo-cover .hero-art{
+  position:relative;isolation:isolate;
+  display:grid;place-items:center;
+  min-height:300px;
+  padding:clamp(16px,2.6vw,29px);
+  border:1px solid #f1daab9e;
+  border-radius:4px 26px 4px 26px;
+  background:linear-gradient(150deg,#e7eaca2e,#0b302de8 85%);
+  box-shadow:0 19px 43px #02120f9c,inset 0 1px #ffffff53;
+  transform:rotate(1.1deg);
+}
+.golf-photo-cover .hero-art svg{max-width:470px;filter:drop-shadow(0 20px 17px #02171399)}
+.golf-photo-cover .hero-facts{
+  padding-top:16px;
+  border-top:1px solid #f3d8a778;
+}
+.golf-photo-cover .hero-facts b{
+  width:36px;height:36px;
+  border-color:#f3d8a7;
+  background:#0d352ecc;color:#f8dea6;
+}
+.golf-hero-credit{
+  grid-column:1/-1;position:relative;z-index:1;
+  margin:-8px 0 0;
+  padding-top:13px;
+  border-top:1px solid #f4deae59;
+  color:#f8e6c5;
+  font:800 .65rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;
+  text-transform:uppercase;letter-spacing:.135em;
+}
+@media(max-width:900px){
+  .hero.golf-photo-cover{
+    min-height:0;grid-template-columns:minmax(0,1fr) minmax(210px,.72fr);
+    gap:21px;padding:clamp(32px,4vw,47px);
+  }
+  .golf-photo-cover .hero-art{min-height:240px;transform:none}
+}
+@media(max-width:740px){
+  .hero.golf-photo-cover{
+    grid-template-columns:minmax(0,1fr);
+    padding:37px 26px 27px;
+    background-position:62% center;
+    gap:24px;
+    border-radius:4px 23px 4px 23px;
+  }
+  .golf-photo-cover .hero-art{
+    min-height:0;max-width:420px;width:100%;
+    justify-self:center;padding:14px 22px;
+  }
+  .golf-photo-cover .hero-art svg{max-height:230px}
+  .golf-hero-credit{grid-column:1;margin:0;font-size:.59rem}
+}
+@media(max-width:410px){
+  .hero.golf-photo-cover{padding:31px 20px 24px}
+  .golf-photo-cover h1{font-size:clamp(2.85rem,12vw,3.65rem)}
+  .golf-photo-cover .hero-art{max-width:290px}
+}
+@media(prefers-reduced-motion:reduce){
+  .golf-photo-cover .hero-art{transform:none}
+}
+@media print{
+  .hero.golf-photo-cover{background:#fff!important;color:#173a31!important;box-shadow:none}
+  .golf-photo-cover h1,.golf-photo-cover h1 em,
+  .golf-photo-cover .eyebrow,.golf-photo-cover .intro,
+  .golf-photo-cover .hero-facts,.golf-hero-credit{color:#173a31!important;text-shadow:none}
+  .golf-photo-cover .hero-art{box-shadow:none;transform:none}
+  .golf-photo-cover .hero-art svg{filter:none}
+  .golf-photo-cover .hero-facts b{color:#173a31;background:#fff}
+}
+
 </style></head>
 <body><a class="skip" href="#main">Skip to rental options</a>
 <header class="golf-site-header"><div class="header-inner golf-header-inner">
@@ -848,7 +953,8 @@ html{scroll-padding-top:114px}
   <a href="#golf-event-inquiry"><span aria-hidden="true">04 / PLAN</span><strong>Plan an event</strong></a>
 </nav>
 <main id="main">
-<section class="hero" aria-labelledby="page-title"><div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Your next round.<br><em>Your kind of day.</em></h1><p class="intro">Choose between an <strong>on-site simulator bay in Russellville</strong> and mobile simulators that come to an event. <strong>Mobile delivery to Russellville is UNCONFIRMED</strong>; ask providers about travel charges, setup space and available dates.</p><div class="hero-actions"><a href="#local">Find a local bay ↓</a><a href="#mobile">Explore mobile events ↗</a></div><div class="hero-facts" aria-label="Options at a glance"><span><b>01</b> Russellville indoor bay</span><span><b>04</b> Regional event providers · delivery unconfirmed</span></div></div><div class="hero-art" aria-hidden="true"><svg viewBox="0 0 500 345" xmlns="http://www.w3.org/2000/svg" focusable="false"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#356e50"/><stop offset="1" stop-color="#123a30"/></linearGradient></defs><path d="M49 72 246 20 457 72 457 273 246 328 49 273Z" fill="#092722" opacity=".6"/><path d="M77 94 246 49 431 94 431 255 246 306 77 255Z" fill="#24523f" stroke="#b5d5a2" stroke-width="3"/><path d="M99 113 246 75 408 113 408 238 246 281 99 238Z" fill="url(#g)"/><path d="M99 210 246 183 408 210 408 238 246 281 99 238Z" fill="#387650"/><path d="M246 281V183M99 238 246 183 408 238" stroke="#e0f0c0" stroke-opacity=".22" stroke-width="2" fill="none"/><path d="M168 292 250 273 350 297 263 322Z" fill="#6c9e66" stroke="#b6d69c" stroke-width="3"/><path d="M228 287Q282 185 366 136" fill="none" stroke="#dcef9b" stroke-width="4" stroke-dasharray="7 10" stroke-linecap="round"/><circle cx="366" cy="136" r="7" fill="#e5f8b4"/><circle cx="260" cy="298" r="8" fill="white"/><path d="M280 296 318 223 335 215" stroke="#e4e8dc" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="142" cy="128" r="17" fill="none" stroke="#dcef9b" stroke-width="2"/><path d="M133 128h18m-9-9v18" stroke="#dcef9b" stroke-width="2"/></svg></div></section>
+<section class="hero golf-photo-cover" aria-labelledby="page-title"><div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Your next round.<br><em>Your kind of day.</em></h1><p class="intro">Choose between an <strong>on-site simulator bay in Russellville</strong> and mobile simulators that come to an event. <strong>Mobile delivery to Russellville is UNCONFIRMED</strong>; ask providers about travel charges, setup space and available dates.</p><div class="hero-actions"><a href="#local">Find a local bay ↓</a><a href="#mobile">Explore mobile events ↗</a></div><div class="hero-facts" aria-label="Options at a glance"><span><b>01</b> Russellville indoor bay</span><span><b>04</b> Regional event providers · delivery unconfirmed</span></div></div><div class="hero-art" aria-hidden="true"><svg viewBox="0 0 500 345" xmlns="http://www.w3.org/2000/svg" focusable="false"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#356e50"/><stop offset="1" stop-color="#123a30"/></linearGradient></defs><path d="M49 72 246 20 457 72 457 273 246 328 49 273Z" fill="#092722" opacity=".6"/><path d="M77 94 246 49 431 94 431 255 246 306 77 255Z" fill="#24523f" stroke="#b5d5a2" stroke-width="3"/><path d="M99 113 246 75 408 113 408 238 246 281 99 238Z" fill="url(#g)"/><path d="M99 210 246 183 408 210 408 238 246 281 99 238Z" fill="#387650"/><path d="M246 281V183M99 238 246 183 408 238" stroke="#e0f0c0" stroke-opacity=".22" stroke-width="2" fill="none"/><path d="M168 292 250 273 350 297 263 322Z" fill="#6c9e66" stroke="#b6d69c" stroke-width="3"/><path d="M228 287Q282 185 366 136" fill="none" stroke="#dcef9b" stroke-width="4" stroke-dasharray="7 10" stroke-linecap="round"/><circle cx="366" cy="136" r="7" fill="#e5f8b4"/><circle cx="260" cy="298" r="8" fill="white"/><path d="M280 296 318 223 335 215" stroke="#e4e8dc" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="142" cy="128" r="17" fill="none" stroke="#dcef9b" stroke-width="2"/><path d="M133 128h18m-9-9v18" stroke="#dcef9b" stroke-width="2"/></svg></div><p class="golf-hero-credit">Downtown Russellville scenery · Editorial photograph, not a golf simulator provider, venue, or available rental</p>
+</section>
 <section class="round-board" aria-labelledby="round-board-title">
   <div class="round-board-head">
     <div><span class="round-board-kicker">THE RIVER VALLEY PLAYBOOK / FIVE RENTAL ROUTES</span>
