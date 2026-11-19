@@ -455,11 +455,78 @@ footer a{font-weight:750}
 @media(prefers-reduced-motion:reduce){.storage-route-group a{transition:none}.storage-route-group a:hover{transform:none}}
 @media print{.storage-route-desk{box-shadow:none;break-inside:avoid}.storage-route-scene{background:#fff;color:#173a30}.storage-route-scene h2,.storage-route-scene h2 em,.storage-route-scene>p,.storage-route-overline,.storage-route-filter-link{color:#173a30}.storage-route-art{display:none}.storage-route-group a{box-shadow:none}}
 
+
+/* 2026-11-18: Mobile storage field-dispatch dock.
+   References: live StayARV & Russellville.Rent, NN/g visual hierarchy,
+   web.dev responsive design/Chrome touch targets, W3C WCAG 2.2.
+   Preserve original rates, providers, scripts, filters and destinations. */
+.storage-mobile-dispatch{display:none}
+@media(max-width:690px){
+  .storage-mobile-dispatch{
+    display:grid;position:fixed;z-index:45;bottom:0;left:0;right:0;
+    grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;
+    padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));
+    border-top:3px solid #ebcb91;
+    background:linear-gradient(120deg,#0b2a26,#164a3a 80%);
+    box-shadow:0 -12px 30px #09251e55;
+  }
+  .storage-mobile-dispatch a{
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    gap:6px;min-width:0;min-height:62px;padding:8px 3px;
+    border:1px solid #b9d3bd70;border-radius:11px;
+    background:#ffffff0c;color:#fff7e8;text-align:center;text-decoration:none;
+    line-height:1.15;transition:background .18s ease,border-color .18s ease;
+  }
+  .storage-mobile-dispatch a:first-child{background:#e9ca8b22;border-color:#e9ca8baa}
+  .storage-mobile-dispatch-step{
+    font:850 .61rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;
+    letter-spacing:.07em;color:#f5d49a;white-space:nowrap;
+  }
+  .storage-mobile-dispatch strong{
+    font:800 clamp(.69rem,2.65vw,.85rem)/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;
+    letter-spacing:-.02em;color:inherit;
+  }
+  .storage-mobile-dispatch a:hover{background:#ffffff24;border-color:#f6d5a2}
+  .storage-mobile-dispatch a:focus-visible{
+    outline:3px solid #ffe8af;outline-offset:-3px;background:#2a6049;
+  }
+  body{padding-bottom:calc(101px + env(safe-area-inset-bottom,0px))}
+  html{scroll-padding-bottom:calc(109px + env(safe-area-inset-bottom,0px))}
+  #size-explorer,#rates,#delivery-check,#providers{
+    scroll-margin-bottom:calc(109px + env(safe-area-inset-bottom,0px));
+  }
+}
+@media(max-width:350px){
+  .storage-mobile-dispatch{gap:3px;padding-inline:6px}
+  .storage-mobile-dispatch a{padding-inline:1px}
+  .storage-mobile-dispatch-step{font-size:.55rem}
+  .storage-mobile-dispatch strong{font-size:.66rem}
+}
+@media(max-width:690px) and (max-height:460px){
+  .storage-mobile-dispatch{display:none}
+  body{padding-bottom:0}
+  html{scroll-padding-bottom:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .storage-mobile-dispatch a{transition:none}
+}
+@media print{
+  .storage-mobile-dispatch{display:none!important}
+  body{padding-bottom:0!important}
+}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
 <header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">Russellville<span>.Rent</span></a><a class="back" href="/">← All rentals</a></div></header>
+<!-- Mobile dispatch dock: existing guide sections only; no availability claims. -->
+<nav class="storage-mobile-dispatch" aria-label="Portable storage quick navigation">
+  <a href="#size-explorer"><span class="storage-mobile-dispatch-step">01 / SIZES</span><strong>Size guide</strong></a>
+  <a href="#rates"><span class="storage-mobile-dispatch-step">02 / PRICES</span><strong>Rates</strong></a>
+  <a href="#delivery-check"><span class="storage-mobile-dispatch-step">03 / ACCESS</span><strong>Delivery</strong></a>
+  <a href="#providers"><span class="storage-mobile-dispatch-step">04 / CONTACT</span><strong>Providers</strong></a>
+</nav>
 <section class="hero" aria-labelledby="page-title"><div class="wrap hero-inner"><div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Portable storage, <em>room to work.</em></h1><p class="hero-copy">Rent portable storage containers, trailers and jobsite offices. Compare documented local service, published rates and options that still need a direct quote.</p><div class="hero-actions"><a class="button primary" href="#providers">Explore providers ↓</a><a class="button ghost" href="#rates">See published rates</a><a class="button ghost" href="#delivery-check">Plan delivery access ↓</a></div></div><div class="hero-visual" aria-hidden="true"><svg viewBox="0 0 600 440" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="container" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#df9d69"/><stop offset="1" stop-color="#ac6047"/></linearGradient><linearGradient id="office" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c4d4bc"/><stop offset="1" stop-color="#729b8c"/></linearGradient></defs><ellipse cx="300" cy="388" rx="252" ry="23" fill="#071d1a" opacity=".55"/><path d="M154 103 380 51 526 103 302 158Z" fill="#bed2bf"/><path d="M154 103 302 158 302 284 154 226Z" fill="#6f9486"/><path d="M302 158 526 103 526 227 302 284Z" fill="url(#office)"/><g stroke="#4c7567" stroke-width="5"><path d="M335 157v120M365 149v121M395 142v120M425 134v121M455 127v121M485 119v120"/></g><path d="M170 124v96M193 133v96M216 141v96M239 150v96M262 158v96" stroke="#527d70" stroke-width="4"/><path d="M61 224 323 167 552 237 286 300Z" fill="#f3c28c"/><path d="M61 224 286 300 286 392 61 319Z" fill="#a75c42"/><path d="M286 300 552 237 552 329 286 392Z" fill="url(#container)"/><g stroke="#98513e" stroke-width="5"><path d="M312 299v87M341 292v87M370 285v88M399 278v88M428 271v88M457 264v88M486 257v87M515 249v88"/></g><g stroke="#874934" stroke-width="4"><path d="M82 237v88M109 246v88M136 254v88M163 263v88M190 272v88M217 281v88M244 289v88"/></g><path d="M286 300 552 237" stroke="#ffe2b3" stroke-width="6"/><rect x="315" y="315" width="76" height="28" rx="3" fill="#183e34"/><text x="353" y="333" text-anchor="middle" font-size="13" font-weight="700" font-family="system-ui" fill="#fff3d9">STORAGE</text></svg><span class="art-caption">Store · Move · Work</span></div></div><p class="scenic-note">Downtown Russellville scenery · Storage units shown are illustrations</p></section>
 
 <nav class="storage-paths wrap" aria-label="Choose a portable storage planning guide">
