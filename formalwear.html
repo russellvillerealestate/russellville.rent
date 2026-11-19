@@ -631,11 +631,76 @@ html{scroll-padding-top:28px}
 @media(prefers-reduced-motion:reduce){.look-card,.look-card::after{transition:none}.look-card:hover{transform:none}}
 @media print{.look-card{box-shadow:none!important;break-inside:avoid}.look-art{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 
+
+/* Nov 18, 2026 — Fitting-ticket mobile wayfinding. Native anchors retain the
+   existing fitting planner, local retailer, five-store atlas, and preparation guide.
+   The dark stitched rail parallels the established forest/brass occasion palette,
+   with 60px minimum tap targets and a distinct local-store shortcut. */
+.formalwear-pocket-dock{display:none}
+@media(max-width:650px){
+  body{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+  html{scroll-padding-bottom:calc(95px + env(safe-area-inset-bottom,0px))}
+  .formalwear-pocket-dock{
+    position:fixed;z-index:80;inset:auto 0 0;
+    display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:5px;padding:11px max(10px,env(safe-area-inset-right,0px))
+      calc(8px + env(safe-area-inset-bottom,0px))
+      max(10px,env(safe-area-inset-left,0px));
+    background:linear-gradient(115deg,#102e29,#1b493a 58%,#12362f);
+    border-top:2px solid #d1ad72;
+    box-shadow:0 -13px 33px #09201968;
+  }
+  .formalwear-pocket-dock:before{
+    content:"";position:absolute;pointer-events:none;
+    top:5px;left:14px;right:14px;height:1px;
+    background:repeating-linear-gradient(90deg,#f0d29c80 0 7px,transparent 7px 14px);
+  }
+  .formalwear-pocket-dock a{
+    min-width:0;min-height:60px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+    border:1px solid #e6d6b33f;border-radius:9px;
+    background:#ffffff0b;color:#fffaf0;
+    text-align:center;text-decoration:none;
+    padding:8px 3px 7px;line-height:1.2;
+  }
+  .formalwear-pocket-dock .pocket-no{
+    font-size:.56rem;letter-spacing:.08em;
+    font-weight:850;color:#f0d29c;white-space:nowrap;
+  }
+  .formalwear-pocket-dock strong{
+    font-size:clamp(.68rem,2.65vw,.81rem);font-weight:800;
+    letter-spacing:-.02em;white-space:nowrap;
+  }
+  .formalwear-pocket-dock .pocket-local{
+    background:#f0d49c;border-color:#f0d49c;color:#14372e;
+    box-shadow:inset 0 1px #ffffffa8;
+  }
+  .formalwear-pocket-dock .pocket-local .pocket-no{color:#66502d}
+  .formalwear-pocket-dock a:focus-visible{
+    outline:3px solid #fff;outline-offset:-4px;
+    box-shadow:0 0 0 2px #12362f;
+  }
+  .formalwear-pocket-dock a:not(.pocket-local):active{background:#ffffff30}
+}
+@media(max-width:650px) and (max-height:480px) and (orientation:landscape){
+  .formalwear-pocket-dock{display:none}
+  body{padding-bottom:0}
+  html{scroll-padding-bottom:0}
+}
+@media(prefers-reduced-motion:reduce){.formalwear-pocket-dock a{transition:none}}
+@media print{.formalwear-pocket-dock{display:none!important}}
 </style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to formalwear rentals</a>
 <header class="site-header"><div class="shell"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
+<!-- Native mobile fitting-ticket shortcuts; original six-stop itinerary remains intact. -->
+<nav class="formalwear-pocket-dock" aria-label="Quick formalwear rental navigation">
+  <a href="#atelier"><span class="pocket-no" aria-hidden="true">01 / PLAN</span><strong>Style</strong></a>
+  <a class="pocket-local" href="#formal-affairs-title"><span class="pocket-no" aria-hidden="true">02 / HERE</span><strong>Local shop</strong></a>
+  <a href="#fit-atlas-title"><span class="pocket-no" aria-hidden="true">03 / EXPLORE</span><strong>All shops</strong></a>
+  <a href="#guide-title"><span class="pocket-no" aria-hidden="true">04 / READY</span><strong>Checklist</strong></a>
+</nav>
 <main id="main">
 <section class="hero" aria-labelledby="page-title"><div class="shell hero-grid">
 <div>
