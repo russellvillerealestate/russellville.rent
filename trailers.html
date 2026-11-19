@@ -612,6 +612,69 @@ html{scroll-padding-top:110px}
   }
 }
 
+
+/* 2026-11-19: Mobile chapter-index redesign, adapted from StayARV's
+   legible forest/brass navigation. The seven existing anchors stay in their
+   original order; the route progress observer still uses the same links.
+   No scripting: original horizontally scrollable index remains visible.
+   Reference: Nielsen Norman Group IA/wayfinding, web.dev responsive layouts,
+   WCAG 2.2 keyboard focus, target sizing and focus-not-obscured. */
+.directory-route-toggle{display:none}
+@media screen and (max-width:760px){
+  #trailer-route-nav{
+    grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;
+    margin:0 -8px;padding:11px 13px;border-radius:0 0 15px 15px
+  }
+  #trailer-route-nav .directory-jumps-label{gap:2px;min-width:0;font-size:.57rem;letter-spacing:.14em}
+  #trailer-route-nav .directory-route-progress{
+    color:#f2d598;font:400 1.55rem/1.2 Georgia,"Times New Roman",serif;
+    letter-spacing:-.055em
+  }
+  #trailer-route-nav .directory-route-toggle:not([hidden]){
+    display:inline-flex;align-items:center;justify-content:space-between;
+    gap:14px;min-height:48px;padding:10px 13px;border:1px solid #f4d99c;
+    border-radius:12px;background:#f0d498;color:#193a2e;
+    font:800 .76rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;
+    cursor:pointer;box-shadow:inset 0 1px #ffedc5
+  }
+  #trailer-route-nav .directory-route-toggle:focus-visible{
+    outline:3px solid #fff;outline-offset:3px
+  }
+  #trailer-route-nav .route-toggle-glyph{font-size:1.35rem;line-height:1;transition:transform .15s}
+  #trailer-route-nav[data-mobile-menu="open"] .route-toggle-glyph{transform:rotate(180deg)}
+  #trailer-route-nav .jump{
+    grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+    align-content:start;gap:8px;min-width:0;max-height:min(53dvh,355px);
+    overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;
+    margin:2px 0 0;padding:7px 3px 5px;border-top:1px solid #c8d4bc57;
+    scrollbar-width:thin;scrollbar-color:#dbcb98 #204b3e
+  }
+  #trailer-route-nav[data-mobile-menu="closed"] .jump{display:none}
+  #trailer-route-nav .jump a,
+  #trailer-route-nav .jump a:first-child{
+    display:flex;justify-content:space-between;align-items:center;
+    flex:initial;min-width:0;min-height:57px;padding:12px 13px;
+    white-space:normal;text-align:left;line-height:1.32;
+    border:1px solid #d5dbce;border-radius:12px;background:#f7f3e8;
+    color:#194032;font-size:.76rem;box-shadow:0 4px 10px #061b1620
+  }
+  #trailer-route-nav .jump a:nth-child(2n){background:#e9e2ce}
+  #trailer-route-nav .jump a[aria-current="location"],
+  #trailer-route-nav .jump a:first-child[aria-current="location"]{
+    background:#edcf8b;color:#17392b;border:2px solid #f5e6b3
+  }
+  #trailer-route-nav .jump a:hover{background:#fff9df;color:#17382b}
+  #trailer-route-nav .jump a:focus-visible{outline:3px solid #fff;outline-offset:2px}
+}
+@media screen and (max-width:350px){
+  #trailer-route-nav .jump{grid-template-columns:1fr}
+  #trailer-route-nav .jump a,#trailer-route-nav .jump a:first-child{min-height:49px}
+}
+@media screen and (max-height:470px){#trailer-route-nav{position:relative}}
+@media (prefers-reduced-motion:reduce){
+  #trailer-route-nav .route-toggle-glyph{transition:none}
+}
+@media print{.directory-route-toggle{display:none!important}}
 </style></head><body>
 <a class="skip-link" href="#main">Skip to trailer rentals</a>
 <header><nav class="nav" aria-label="Site navigation"><a class="logo" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← Browse all rentals</a></nav></header>
@@ -631,7 +694,7 @@ html{scroll-padding-top:110px}
     <div class="hero-stage-bottom"><span>LOCAL HAULING</span><strong>Find a fit.<br>Then confirm it.</strong></div>
   </div>
 </section>
-<div class="directory-jumps" id="trailer-route-nav"><span class="directory-jumps-label">TRAILER ROUTE <span class="directory-route-progress" aria-hidden="true">01 / 07</span></span><nav class="jump" aria-label="Jump to trailer options"><a href="#haul-guide">Choose by hauling job ↓</a><a href="#local">Russellville rentals ↓</a><a href="#nearby">Nearby option ↓</a><a href="#cold-storage">Refrigerated storage ↓</a><a href="#rent-to-own">Rent-to-own ↓</a><a href="#commercial-freight">Commercial freight ↓</a><a href="#regional-haulers">Central Arkansas rentals ↓</a></nav></div>
+<div class="directory-jumps" id="trailer-route-nav"><span class="directory-jumps-label">TRAILER ROUTE <span class="directory-route-progress" aria-hidden="true">01 / 07</span></span><button class="directory-route-toggle" id="trailer-route-toggle" type="button" aria-controls="trailer-route-links" aria-expanded="false" hidden><span>Explore 7 sections</span><span class="route-toggle-glyph" aria-hidden="true">⌄</span></button><nav class="jump" id="trailer-route-links" aria-label="Jump to trailer options"><a href="#haul-guide">Choose by hauling job ↓</a><a href="#local">Russellville rentals ↓</a><a href="#nearby">Nearby option ↓</a><a href="#cold-storage">Refrigerated storage ↓</a><a href="#rent-to-own">Rent-to-own ↓</a><a href="#commercial-freight">Commercial freight ↓</a><a href="#regional-haulers">Central Arkansas rentals ↓</a></nav></div>
 <div class="overview" aria-label="Directory overview"><div><strong>5</strong><span>Russellville short-term rental providers</span></div><div><strong>3</strong><span>Nearby and regional U-Haul pickup dealers</span></div><div><strong>2</strong><span>Regional refrigerated-trailer inquiries</span></div><div><strong>1</strong><span>Separate rent-to-own program</span></div><div><strong>2</strong><span>Commercial freight-trailer inquiries</span></div><div><strong>2</strong><span>Regional operators · North Little Rock &amp; Hot Springs pickup</span></div></div>
 
 <section class="rental-lanes" aria-labelledby="rental-lanes-title">
@@ -940,6 +1003,45 @@ html{scroll-padding-top:110px}
   });
   box.hidden=false;
   update();
+})();
+</script>
+
+<script>
+/* Progressive enhancement for the mobile trailer route index. Keep native
+   anchors, original chapter-highlighting controller, and all providers. */
+(function(){
+  "use strict";
+  const rail=document.getElementById("trailer-route-nav");
+  const toggle=document.getElementById("trailer-route-toggle");
+  const list=document.getElementById("trailer-route-links");
+  if(!rail||!toggle||!list||list.querySelectorAll('a[href^="#"]').length!==7)return;
+  function close(){
+    rail.dataset.mobileMenu="closed";
+    toggle.setAttribute("aria-expanded","false");
+  }
+  rail.dataset.mobileMenu="closed";
+  toggle.hidden=false;
+  toggle.addEventListener("click",function(){
+    const open=rail.dataset.mobileMenu!=="open";
+    rail.dataset.mobileMenu=open?"open":"closed";
+    toggle.setAttribute("aria-expanded",String(open));
+  });
+  rail.addEventListener("keydown",function(event){
+    if(event.key==="Escape"&&rail.dataset.mobileMenu==="open"){
+      close();toggle.focus();event.preventDefault();
+    }
+  });
+  list.addEventListener("click",function(event){
+    const link=event.target instanceof Element?event.target.closest('a[href^="#"]'):null;
+    if(!link)return;
+    close();
+    const target=document.getElementById(link.getAttribute("href").slice(1));
+    if(target)requestAnimationFrame(function(){
+      if(!target.hasAttribute("tabindex"))target.tabIndex=-1;
+      target.focus({preventScroll:true});
+    });
+  });
+  window.addEventListener("hashchange",close);
 })();
 </script>
 </body></html>
