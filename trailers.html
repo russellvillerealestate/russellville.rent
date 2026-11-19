@@ -535,6 +535,83 @@ html{scroll-padding-top:110px}
 @media(prefers-reduced-motion:reduce){.preflight-check{transition:none}}
 @media print{.preflight{display:block;border-radius:0;box-shadow:none;border:1px solid #777;background:white;color:#111}.preflight-intro{background:white;color:#111;padding:20px}.preflight-intro h2,.preflight-intro p,.preflight-intro .eyebrow{color:#111}.preflight-illustration{display:none}.preflight-panel{padding:20px;background:white}.preflight-check{box-shadow:none;border-color:#999;break-inside:avoid}.preflight-stamp{color:#111;border-color:#999}}
 
+
+/* 2026-11-18 | Three agreements, three distinct visual weights.
+   StayARV's immersive, asymmetric editorial scale adapted to a trailer
+   directory, without suggesting availability or altering the three
+   independent agreements. Nielsen Norman Group: visual hierarchy;
+   web.dev: CSS-only stable layout; W3C WCAG 2.2: keyboard focus,
+   source-order navigation and responsive reflow. */
+@media screen and (min-width:1051px){
+  .rental-lanes-grid{
+    grid-template-columns:minmax(0,1.16fr) minmax(0,.84fr);
+    grid-template-rows:repeat(2,minmax(275px,auto));
+    gap:18px;
+  }
+  .rental-lanes-grid .rental-lane{
+    min-height:0;padding:27px 30px;border-radius:23px;
+    box-shadow:0 20px 43px #13382f24;
+  }
+  .rental-lanes-grid .rental-lane-a{
+    grid-column:1;grid-row:1 / 3;
+    padding:clamp(36px,4vw,54px);
+    background:linear-gradient(145deg,#123a31 5%,#245a43 72%,#3d7058);
+  }
+  .rental-lanes-grid .rental-lane-a::before{
+    content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;
+    background:radial-gradient(circle at 85% 12%,#f4d99e26,transparent 38%),
+      repeating-linear-gradient(90deg,transparent 0,transparent calc(25% - 1px),#ffffff09 calc(25% - 1px),#ffffff09 25%);
+  }
+  .rental-lanes-grid .rental-lane-a .lane-art{
+    width:170px;height:140px;border-radius:25px;
+    margin:0 0 auto;background:#ffffff16;
+  }
+  .rental-lanes-grid .rental-lane-a .lane-art svg{width:150px;height:122px}
+  .rental-lanes-grid .rental-lane-a .lane-number{
+    font-size:.77rem;letter-spacing:.18em;margin-bottom:16px;
+  }
+  .rental-lanes-grid .rental-lane-a strong{
+    font-size:clamp(3rem,4.4vw,4.5rem);line-height:1.05;
+    max-width:11ch;text-wrap:balance;
+  }
+  .rental-lanes-grid .rental-lane-a .lane-description{
+    font-size:1rem;line-height:1.7;max-width:43ch;margin:19px 0 30px;
+  }
+  .rental-lanes-grid .rental-lane-a .lane-link{
+    font-size:.88rem;padding-top:20px;
+  }
+  .rental-lanes-grid .rental-lane-b,
+  .rental-lanes-grid .rental-lane-c{grid-column:2}
+  .rental-lanes-grid .rental-lane-b{grid-row:1}
+  .rental-lanes-grid .rental-lane-c{grid-row:2}
+  .rental-lanes-grid .rental-lane-b .lane-art,
+  .rental-lanes-grid .rental-lane-c .lane-art{
+    width:73px;height:62px;margin-bottom:3px;
+  }
+  .rental-lanes-grid .rental-lane-b .lane-art svg,
+  .rental-lanes-grid .rental-lane-c .lane-art svg{
+    width:67px;height:57px;
+  }
+  .rental-lanes-grid .rental-lane-b strong,
+  .rental-lanes-grid .rental-lane-c strong{
+    font-size:clamp(1.74rem,2.35vw,2.26rem);line-height:1.1;
+  }
+  .rental-lanes-grid .rental-lane-b .lane-description,
+  .rental-lanes-grid .rental-lane-c .lane-description{
+    margin:9px 0 16px;line-height:1.55;
+  }
+  .rental-lanes-grid .rental-lane-b .lane-link,
+  .rental-lanes-grid .rental-lane-c .lane-link{
+    padding-top:12px;
+  }
+}
+@media print{
+  .rental-lanes-grid{display:block}
+  .rental-lanes-grid .rental-lane{
+    min-height:0;break-inside:avoid;margin-bottom:12px;box-shadow:none;
+  }
+}
+
 </style></head><body>
 <a class="skip-link" href="#main">Skip to trailer rentals</a>
 <header><nav class="nav" aria-label="Site navigation"><a class="logo" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← Browse all rentals</a></nav></header>
