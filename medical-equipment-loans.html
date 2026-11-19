@@ -802,6 +802,74 @@ h1{font-size:clamp(3.4rem,6.4vw,6.2rem);line-height:1.035;max-width:12ch;letter-
 @media(prefers-reduced-motion:reduce){.resource-wayfinding a{transition:none}}
 @media print{.resource-wayfinding{display:none!important}}
 
+
+/* 2026-11-19 | Community lending pocket guide.
+   Read live stayarv.com and russellville.rent, reviewed recent main commits,
+   Nielsen Norman Group homepage wayfinding, web.dev layout stability, and
+   W3C WCAG 2.2 focus-not-obscured and target-size guidance.
+   Four existing sections, native links, no new programs or data claims. */
+.loan-pocket-routes{display:none}
+@media screen and (max-width:720px) and (min-height:541px){
+  html{scroll-padding-bottom:calc(116px + env(safe-area-inset-bottom,0px))}
+  body{padding-bottom:calc(109px + env(safe-area-inset-bottom,0px))}
+  .loan-pocket-routes{
+    position:fixed;z-index:60;
+    left:max(9px,env(safe-area-inset-left,0px));
+    right:max(9px,env(safe-area-inset-right,0px));
+    bottom:calc(9px + env(safe-area-inset-bottom,0px));
+    display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:5px;max-width:560px;margin-inline:auto;
+    padding:7px;border:1px solid #e5ca907d;border-radius:18px;
+    background:linear-gradient(120deg,#0a2b27,#164638 64%,#1f5443);
+    box-shadow:0 16px 38px #061e1a6b;
+  }
+  .loan-pocket-routes a{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:4px;min-width:0;min-height:64px;padding:8px 3px;
+    border:1px solid #ffffff2b;border-radius:11px;
+    text-decoration:none;text-align:center;line-height:1.18;
+    color:#fff9ec;background:#ffffff0c;
+    transition:background-color .16s ease,border-color .16s ease;
+  }
+  .loan-pocket-routes a:first-child{
+    background:#efd49e;border-color:#efd49e;color:#14372e;
+  }
+  .loan-pocket-routes .loan-route-step{
+    display:block;font:850 .6rem/1 system-ui,sans-serif;
+    letter-spacing:.13em;color:#f3d49a;
+  }
+  .loan-pocket-routes a:first-child .loan-route-step{color:#78552c}
+  .loan-pocket-routes strong{
+    display:block;font:800 clamp(.65rem,2.5vw,.8rem)/1.22
+      system-ui,-apple-system,"Segoe UI",sans-serif;
+    letter-spacing:-.01em;overflow-wrap:normal;
+  }
+  .loan-pocket-routes a:hover{background:#346a52;border-color:#f1d39c}
+  .loan-pocket-routes a:first-child:hover{background:#fff0c9;color:#14372e}
+  .loan-pocket-routes a:focus-visible{
+    outline:3px solid #ffe6af;outline-offset:-3px;
+    background:#346a52;color:#fffdf7;
+  }
+  .loan-pocket-routes a:first-child:focus-visible{
+    outline-color:#15392d;background:#fff0c9;color:#14372e;
+  }
+  #route-title,#call-studio,#programs,#before-you-go{
+    scroll-margin-bottom:calc(114px + env(safe-area-inset-bottom,0px));
+  }
+}
+@media screen and (max-width:370px) and (min-height:541px){
+  .loan-pocket-routes{gap:3px;padding:5px}
+  .loan-pocket-routes a{min-height:62px;padding-inline:2px}
+  .loan-pocket-routes strong{font-size:.65rem}
+  .loan-pocket-routes .loan-route-step{letter-spacing:.06em;font-size:.55rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .loan-pocket-routes a{transition:none}
+}
+@media print{
+  .loan-pocket-routes{display:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -998,4 +1066,12 @@ h1{font-size:clamp(3.4rem,6.4vw,6.2rem);line-height:1.035;max-width:12ch;letter-
   refresh();
 })();
 </script>
+
+<nav class="loan-pocket-routes" aria-label="Quick navigation for equipment loan programs">
+  <a href="#route-title"><span class="loan-route-step" aria-hidden="true">01 / START</span><strong>Compare routes</strong></a>
+  <a href="#call-studio"><span class="loan-route-step" aria-hidden="true">02 / PLAN</span><strong>Call note</strong></a>
+  <a href="#programs"><span class="loan-route-step" aria-hidden="true">03 / CONTACT</span><strong>Programs</strong></a>
+  <a href="#before-you-go"><span class="loan-route-step" aria-hidden="true">04 / CHECK</span><strong>Before travel</strong></a>
+</nav>
+
 </body></html>
