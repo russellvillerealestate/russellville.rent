@@ -835,6 +835,81 @@ main.wrap{padding-top:52px}
   .road-dock-graphic,.road-dock-label{display:none!important}
 }
 
+
+/* 2026-11-19 — River Valley car-trip atlas.
+   Compared live StayARV's immersive place-led cover with the Russellville.Rent
+   car guide and its recent mobile dock, then retained the same palette and
+   trip-purpose anchors. One panoramic hometown route + two compact planning
+   tickets makes the primary choice clearer without adding availability claims.
+   Guidance: Nielsen Norman Group visual hierarchy; web.dev responsive reflow
+   and stable local imagery; W3C WCAG 2.2 focus visibility and target sizing.
+   Provider information, original form bindings and comparison remain intact. */
+@media (min-width:781px){
+  .journey-grid{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);grid-template-rows:repeat(2,minmax(190px,1fr));gap:15px}
+  .journey-grid>.journey-card{min-height:0}
+  .journey-grid>.journey-card:first-child{
+    grid-row:1 / span 2;min-height:425px;display:flex;flex-direction:column;align-items:flex-start;
+    padding:clamp(29px,4vw,44px);gap:12px;border-radius:5px 29px 5px 29px;
+    background:linear-gradient(180deg,#0a2728e8 0%,#113e35d9 53%,#0a2928f5 100%),
+      url("/assets/downtown-russellville-sunset.jpg") center 57%/cover no-repeat;
+    border:1px solid #295e53;color:#fffdf3;box-shadow:0 20px 45px #0d342b2b
+  }
+  .journey-grid>.journey-card:first-child::before{display:none}
+  .journey-grid>.journey-card:first-child .journey-index{color:#f7d79a;opacity:1}
+  .journey-grid>.journey-card:first-child .journey-icon{color:#f4d69c;border-color:#f5dfa89c;background:#092e2d88}
+  .journey-grid>.journey-card:first-child .journey-title{
+    max-width:10ch;margin-top:auto;font-size:clamp(2.85rem,4.7vw,4.7rem);
+    line-height:1.025;letter-spacing:-.06em;color:#fffdf5;text-wrap:balance
+  }
+  .journey-grid>.journey-card:first-child .journey-description{max-width:32ch;font-size:.91rem;color:#e4f0e7;line-height:1.62}
+  .journey-grid>.journey-card:first-child .journey-action{color:#f7d79a;min-height:26px;margin-top:3px}
+  .journey-grid>.journey-card:nth-child(n+2){
+    display:grid;grid-template-columns:53px minmax(0,1fr);grid-template-rows:auto auto auto auto;
+    gap:5px 17px;align-items:center;padding:23px clamp(20px,2.4vw,31px);border-radius:5px 22px 5px 22px;
+    background:linear-gradient(125deg,#f9f0de,#f5ead6);border-color:#ddcbad
+  }
+  .journey-grid>.journey-card:nth-child(3){background:linear-gradient(125deg,#e2efeb,#edf4eb);border-color:#c6d9d0}
+  .journey-grid>.journey-card:nth-child(n+2)::before{width:180px;height:180px;top:-105px;right:-95px}
+  .journey-grid>.journey-card:nth-child(n+2) .journey-index{grid-column:1 / -1;grid-row:1;margin-bottom:4px}
+  .journey-grid>.journey-card:nth-child(n+2) .journey-icon{grid-column:1;grid-row:2 / span 3;margin:0;width:49px;height:49px}
+  .journey-grid>.journey-card:nth-child(n+2) .journey-title{grid-column:2;grid-row:2;max-width:none;margin:0;font-size:clamp(1.75rem,2.4vw,2.25rem);line-height:1.12}
+  .journey-grid>.journey-card:nth-child(n+2) .journey-description{grid-column:2;grid-row:3;margin:0;font-size:.82rem;max-width:42ch}
+  .journey-grid>.journey-card:nth-child(n+2) .journey-action{grid-column:2;grid-row:4;margin-top:5px}
+}
+.journey-grid>.journey-card:first-child .journey-photo-note{
+  display:block;align-self:stretch;margin-top:12px;padding-top:11px;border-top:1px solid #f7dba15e;
+  color:#f3e4ca;font-size:.65rem;font-weight:700;letter-spacing:.02em;line-height:1.4
+}
+@media (max-width:780px){
+  .journey-grid{grid-template-columns:minmax(0,1fr);grid-template-rows:auto;gap:13px}
+  .journey-grid>.journey-card:first-child{
+    grid-column:auto;grid-row:auto;display:flex;flex-direction:column;align-items:flex-start;
+    gap:9px;min-height:280px;padding:27px;border-radius:5px 23px 5px 23px;
+    background:linear-gradient(110deg,#082a2be8,#17483cce 67%,#102d29df),
+      url("/assets/downtown-russellville-sunset.jpg") center 58%/cover no-repeat;
+    border-color:#295e53;color:#fffdf3
+  }
+  .journey-grid>.journey-card:first-child::before{display:none}
+  .journey-grid>.journey-card:first-child .journey-index{color:#f5d29a;opacity:1}
+  .journey-grid>.journey-card:first-child .journey-icon{grid-column:auto;grid-row:auto;width:42px;height:42px;margin:0;border-color:#f5d29a;color:#f5d29a}
+  .journey-grid>.journey-card:first-child .journey-title{
+    grid-column:auto;grid-row:auto;margin-top:auto;color:#fffdf3;
+    max-width:14ch;font-size:clamp(2.35rem,7.5vw,3.7rem);line-height:1.03
+  }
+  .journey-grid>.journey-card:first-child .journey-description{grid-column:auto;color:#e2f0e7;font-size:.86rem;line-height:1.55;max-width:40ch}
+  .journey-grid>.journey-card:first-child .journey-action{grid-column:auto;color:#f4d39c}
+  .journey-grid>.journey-card:nth-child(n+2){min-height:0}
+}
+@media (max-width:440px){
+  .journey-grid>.journey-card:first-child{min-height:260px;padding:22px 20px}
+  .journey-grid>.journey-card:first-child .journey-title{font-size:clamp(2.25rem,11vw,3rem)}
+}
+@media print{
+  .journey-grid>.journey-card{break-inside:avoid;box-shadow:none!important}
+  .journey-grid>.journey-card:first-child{background:#eff3e9!important;color:#183f33!important}
+  .journey-grid>.journey-card:first-child :is(.journey-index,.journey-icon,.journey-title,.journey-description,.journey-action,.journey-photo-note){color:#183f33!important}
+}
+
 </style>
 </head>
 <body>
@@ -903,7 +978,7 @@ main.wrap{padding-top:52px}
   <section class="journey" aria-labelledby="journey-title">
     <div class="journey-head"><div><p class="eyebrow">The River Valley road guide / 01</p><h2 id="journey-title">What brings you<br>behind the wheel?</h2></div><p>Choose what best describes your trip. We'll bring that purpose into a ready-to-copy rental inquiry—or you can browse the providers directly.</p></div>
     <div class="journey-grid">
-      <a class="journey-card" href="#providers-title" data-trip-reason="a local trip"><span class="journey-index">01 / Around town</span><span class="journey-icon" aria-hidden="true">↗</span><strong class="journey-title">Everyday miles.</strong><span class="journey-description">Getting around Russellville and the River Valley.</span><span class="journey-action">Prepare an inquiry <span aria-hidden="true">↗</span></span></a>
+      <a class="journey-card" href="#providers-title" data-trip-reason="a local trip"><span class="journey-index">01 / Around town</span><span class="journey-icon" aria-hidden="true">↗</span><strong class="journey-title">Everyday miles.</strong><span class="journey-description">Getting around Russellville and the River Valley.</span><span class="journey-action">Prepare an inquiry <span aria-hidden="true">↗</span></span><span class="journey-photo-note">Downtown Russellville scenery · Not a rental vehicle</span></a>
       <a class="journey-card" href="#providers-title" data-trip-reason="an out-of-town trip"><span class="journey-index">02 / On the road</span><span class="journey-icon" aria-hidden="true">→</span><strong class="journey-title">A longer way out.</strong><span class="journey-description">A weekend trip, a visit, or miles beyond town.</span><span class="journey-action">Prepare an inquiry <span aria-hidden="true">↗</span></span></a>
       <a class="journey-card" href="#providers-title" data-trip-reason="temporary transportation while my own vehicle is unavailable"><span class="journey-index">03 / In between</span><span class="journey-icon" aria-hidden="true">✳</span><strong class="journey-title">Keep life moving.</strong><span class="journey-description">Transportation while your own vehicle is unavailable.</span><span class="journey-action">Prepare an inquiry <span aria-hidden="true">↗</span></span></a>
     </div>
