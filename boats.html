@@ -1150,6 +1150,99 @@ body{background:#f6f6f0}
 }
 @media (prefers-reduced-motion:reduce){.lake-quick-nav a{transition:none}}
 @media print{.lake-quick-nav{display:none!important}body{padding-bottom:0!important}}
+
+/* Nov 19, 2026 — Marina closure-first editorial decision wall.
+   Live comparison: StayARV's immersive forest/brass typographic rhythm and
+   Russellville.Rent's existing safety-first marina page. References: Nielsen
+   Norman Group visual hierarchy, web.dev responsive layout and layout
+   stability, W3C WCAG 2.2 focus visibility, reflow and reduced motion.
+   First closure route receives a full-height feature; owner access and
+   unrelated alternatives form concise companion folios. All cards retain
+   their existing original links, caveats, illustrations and reading order.
+   Pure CSS, no extra network requests, no claims of marina reopening. */
+@media screen and (min-width:1001px){
+  .decision-directory .decision-rail{
+    display:grid;
+    grid-template-columns:minmax(0,1.09fr) minmax(0,.91fr);
+    grid-template-rows:repeat(2,minmax(250px,auto));
+    gap:18px;align-items:stretch;
+  }
+  .decision-directory .decision-link{min-width:0;min-height:0}
+  .decision-directory .decision-link:first-child{
+    grid-column:1;grid-row:1/span 2;display:flex;flex-direction:column;
+    padding:0 0 35px;
+    border:1px solid #3c775d;
+    background:linear-gradient(155deg,#0e332b,#1a5140 68%,#0c3028);
+    box-shadow:0 24px 49px #0b342b2c;
+  }
+  .decision-directory .decision-link:first-child .decision-art{
+    flex:none;min-height:274px;
+    background:radial-gradient(ellipse at 77% 24%,#467a61,#11382e 75%);
+    border-bottom:1px solid #dac58e73;
+  }
+  .decision-directory .decision-link:first-child .decision-art svg{
+    width:min(65%,235px);height:184px;
+  }
+  .decision-directory .decision-link:first-child .decision-art-caption{
+    font-size:.65rem;letter-spacing:.14em;bottom:17px;
+  }
+  .decision-directory .decision-link:first-child .decision-kicker{
+    margin:30px 35px 14px;font-size:.75rem;letter-spacing:.13em;
+  }
+  .decision-directory .decision-link:first-child strong{
+    margin:0 35px 16px;max-width:14ch;
+    font:400 clamp(2.45rem,3.75vw,3.8rem)/1.04 Georgia,"Times New Roman",serif;
+    letter-spacing:-.058em;color:#fff9eb;
+  }
+  .decision-directory .decision-link:first-child small{
+    margin:0 35px;max-width:35ch;
+    font-size:1rem;line-height:1.65;color:#e8eee5;
+  }
+  .decision-directory .decision-link:not(:first-child){
+    display:grid;grid-template-columns:minmax(0,1fr) minmax(128px,39%);
+    grid-template-rows:auto auto 1fr;
+    column-gap:0;row-gap:0;min-height:0;padding:0;align-items:stretch;
+    background:linear-gradient(130deg,#fffefa,#f4f4e9);
+  }
+  .decision-directory .decision-link:not(:first-child) .decision-art{
+    grid-column:2;grid-row:1/span 3;min-height:0;align-self:stretch;
+    border-left:1px solid #d2dcca;
+  }
+  .decision-directory .decision-link:not(:first-child) .decision-art svg{
+    width:min(80%,164px);height:130px;
+  }
+  .decision-directory .decision-link:not(:first-child) .decision-art-caption{
+    left:10px;right:10px;bottom:13px;font-size:.55rem;letter-spacing:.07em;
+  }
+  .decision-directory .decision-link:not(:first-child) .decision-kicker{
+    grid-column:1;grid-row:1;
+    margin:27px 15px 12px 26px;line-height:1.4;
+  }
+  .decision-directory .decision-link:not(:first-child) strong{
+    grid-column:1;grid-row:2;
+    margin:0 15px 11px 26px;max-width:14ch;
+    font:400 clamp(1.5rem,2.15vw,2.35rem)/1.1 Georgia,"Times New Roman",serif;
+    letter-spacing:-.045em;
+  }
+  .decision-directory .decision-link:not(:first-child) small{
+    grid-column:1;grid-row:3;
+    margin:0 15px 23px 26px;
+    font-size:.82rem;line-height:1.6;
+  }
+}
+@media screen and (min-width:701px) and (max-width:1000px){
+  .decision-directory .decision-rail{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .decision-directory .decision-link:last-child{grid-column:1/-1}
+}
+@media screen and (max-width:700px){
+  .decision-directory .decision-rail{grid-template-columns:minmax(0,1fr);gap:14px}
+  .decision-directory .decision-link,
+  .decision-directory .decision-link:last-child{grid-column:auto;min-height:0}
+}
+@media screen and (max-width:380px){
+  .decision-directory .decision-link strong{overflow-wrap:anywhere}
+}
+
 </style>
 </head>
 <body>
