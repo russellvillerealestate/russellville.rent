@@ -675,6 +675,189 @@ html{scroll-padding-top:110px}
   #trailer-route-nav .route-toggle-glyph{transition:none}
 }
 @media print{.directory-route-toggle{display:none!important}}
+
+/* 2026-11-20 / The hauling dispatch board.
+   Checked live StayARV and Russellville.Rent, then recent main commits.
+   StayARV's immersive landscape scale informs a three-column, asymmetric
+   trailer-category summary, not another set of generic metric tiles.
+   NN/g: scale + grouping distinguish local pickup from specialized inquiries.
+   web.dev: reuse already-loaded downtown scenery; no new media or layout shift.
+   WCAG 2.2: all content stays in the DOM; contrast, reflow, print supported.
+   All six original counts and descriptors are preserved verbatim. */
+@media screen {
+ .trailer-dispatch-board {
+  display:grid;
+  grid-template-columns:minmax(0,1.06fr) minmax(0,.88fr) minmax(260px,1.08fr);
+  grid-template-rows:repeat(4,minmax(91px,auto));
+  gap:9px;
+  padding:9px;
+  margin:clamp(23px,3.5vw,39px) 0 clamp(52px,7vw,83px);
+  border:1px solid #557f68;
+  border-radius:25px;
+  background:#133e33;
+  box-shadow:0 22px 55px #0b302727;
+  overflow:hidden
+ }
+ .trailer-dispatch-board>div {
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-width:0;
+  min-height:91px;
+  padding:clamp(17px,2vw,24px);
+  border:1px solid #d4dfd0;
+  border-radius:15px;
+  background:#faf9f2;
+  box-shadow:inset 0 1px 0 #ffffffa3
+ }
+ .trailer-dispatch-board>div strong {
+  display:block;
+  margin:0;
+  color:#204b3b;
+  font:400 clamp(2.5rem,4vw,3.4rem)/.95 Georgia,"Times New Roman",serif;
+  letter-spacing:-.07em
+ }
+ .trailer-dispatch-board>div span {
+  display:block;
+  color:#445e4f;
+  font-size:clamp(.77rem,1vw,.92rem);
+  font-weight:700;
+  line-height:1.5
+ }
+ .trailer-dispatch-board>div:first-child {
+  grid-column:1;
+  grid-row:1/5;
+  justify-content:flex-end;
+  gap:12px;
+  min-height:392px;
+  padding:clamp(26px,3.4vw,42px);
+  border:1px solid #719c82;
+  background:linear-gradient(0deg,#092b25f7 0%,#0e3f32e6 40%,#173f349c 76%,#16392b70 100%),url("assets/downtown-russellville-sunset.jpg") center 56%/cover no-repeat;
+  box-shadow:inset 0 0 0 1px #fff1c41c;
+ }
+ .trailer-dispatch-board>div:first-child:before,
+ .trailer-dispatch-board>div:nth-child(2):before {
+  display:block;
+  margin-bottom:auto;
+  color:#f1d59d;
+  content:"01 / RUSSELLVILLE";
+  font-size:.66rem;
+  font-weight:850;
+  letter-spacing:.17em;
+  line-height:1.5
+ }
+ .trailer-dispatch-board>div:first-child strong {
+  color:#f5d697;
+  font-size:clamp(6.3rem,10vw,9rem);
+  line-height:.86;
+  text-shadow:0 3px 24px #09251e69
+ }
+ .trailer-dispatch-board>div:first-child span {
+  max-width:19ch;
+  color:#fff8e8;
+  font-size:clamp(1.05rem,1.7vw,1.37rem);
+  line-height:1.35
+ }
+ .trailer-dispatch-board>div:nth-child(2) {
+  grid-column:2;
+  grid-row:1/5;
+  justify-content:flex-end;
+  gap:14px;
+  padding:clamp(25px,3vw,39px);
+  border:1px solid #f0dfb5;
+  background:radial-gradient(circle at 87% 18%,#f7e1ae 0,transparent 31%),linear-gradient(146deg,#fffdf3,#eee4c9 100%);
+ }
+ .trailer-dispatch-board>div:nth-child(2):before {content:"02 / NEARBY PICKUP";color:#67512f}
+ .trailer-dispatch-board>div:nth-child(2):after {
+  content:"↗";position:absolute;right:clamp(22px,3vw,35px);top:clamp(52px,7vw,90px);
+  width:81px;height:81px;display:grid;place-items:center;
+  border:1px solid #b9a77d;border-radius:50%;
+  color:#886f40;font:400 2.8rem/1 Georgia,serif;
+  box-shadow:0 0 0 18px #d6c79d33,0 0 0 39px #d6c79d1b;
+  pointer-events:none
+ }
+ .trailer-dispatch-board>div:nth-child(2) strong {
+  color:#214d3b;
+  font-size:clamp(6rem,9vw,8.2rem);
+  line-height:.88
+ }
+ .trailer-dispatch-board>div:nth-child(2) span {
+  color:#345342;
+  max-width:18ch;
+  font-size:clamp(1.01rem,1.52vw,1.22rem);
+  line-height:1.4
+ }
+ .trailer-dispatch-board>div:nth-child(n+3) {
+  grid-column:3;
+  display:grid;
+  grid-template-columns:clamp(44px,5vw,65px) minmax(0,1fr);
+  align-items:center;
+  justify-content:start;
+  column-gap:clamp(13px,2vw,23px);
+  padding:18px clamp(16px,2vw,24px);
+  border-left:4px solid #a7bda8
+ }
+ .trailer-dispatch-board>div:nth-child(4) {background:#e6efe5}
+ .trailer-dispatch-board>div:nth-child(5) {background:#f2ebdc}
+ .trailer-dispatch-board>div:nth-child(6) {background:#e9efed}
+ .trailer-dispatch-board>div:nth-child(n+3) strong {
+  text-align:center;
+  font-size:clamp(2.65rem,3.5vw,3.55rem)
+ }
+ .trailer-dispatch-board>div:nth-child(n+3) span {
+  max-width:32ch;
+  font-size:clamp(.8rem,1.02vw,.93rem)
+ }
+}
+@media screen and (max-width:940px){
+ .trailer-dispatch-board {grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}
+ .trailer-dispatch-board>div:first-child,
+ .trailer-dispatch-board>div:nth-child(2) {
+  grid-row:auto;grid-column:auto;min-height:278px
+ }
+ .trailer-dispatch-board>div:nth-child(n+3) {
+  grid-column:auto;min-height:104px
+ }
+ .trailer-dispatch-board>div:nth-child(2):after {width:58px;height:58px;font-size:2rem}
+}
+@media screen and (max-width:590px){
+ .trailer-dispatch-board {
+  grid-template-columns:minmax(0,1fr);
+  gap:7px;padding:7px;margin:17px 0 45px;border-radius:20px
+ }
+ .trailer-dispatch-board>div:first-child,
+ .trailer-dispatch-board>div:nth-child(2) {
+  grid-column:1;min-height:215px;padding:24px;border-radius:14px
+ }
+ .trailer-dispatch-board>div:first-child strong,
+ .trailer-dispatch-board>div:nth-child(2) strong {font-size:clamp(5.1rem,16vw,7.3rem)}
+ .trailer-dispatch-board>div:first-child span,
+ .trailer-dispatch-board>div:nth-child(2) span {font-size:1rem;max-width:26ch}
+ .trailer-dispatch-board>div:nth-child(2):after {top:52px;right:23px}
+ .trailer-dispatch-board>div:nth-child(n+3) {
+  grid-column:1;min-height:88px;padding:15px 17px;
+  grid-template-columns:54px minmax(0,1fr)
+ }
+ .trailer-dispatch-board>div:nth-child(n+3) strong {font-size:2.85rem}
+ .trailer-dispatch-board>div:nth-child(n+3) span {font-size:.86rem}
+}
+@media print {
+ .trailer-dispatch-board {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;background:white;border:1px solid #888;box-shadow:none}
+ .trailer-dispatch-board>div,
+ .trailer-dispatch-board>div:first-child,
+ .trailer-dispatch-board>div:nth-child(2),
+ .trailer-dispatch-board>div:nth-child(n+3) {
+  grid-column:auto;grid-row:auto;min-height:0;break-inside:avoid;
+  padding:14px;border:1px solid #999;background:white!important;
+  color:#12372c!important;box-shadow:none
+ }
+ .trailer-dispatch-board>div strong,.trailer-dispatch-board>div span,
+ .trailer-dispatch-board>div:first-child strong,.trailer-dispatch-board>div:first-child span,
+ .trailer-dispatch-board>div:nth-child(2) strong,.trailer-dispatch-board>div:nth-child(2) span {color:#12372c!important;text-shadow:none;font-size:inherit}
+ .trailer-dispatch-board>div:nth-child(2):after {display:none}
+}
+
 </style></head><body>
 <a class="skip-link" href="#main">Skip to trailer rentals</a>
 <header><nav class="nav" aria-label="Site navigation"><a class="logo" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← Browse all rentals</a></nav></header>
@@ -695,7 +878,7 @@ html{scroll-padding-top:110px}
   </div>
 </section>
 <div class="directory-jumps" id="trailer-route-nav"><span class="directory-jumps-label">TRAILER ROUTE <span class="directory-route-progress" aria-hidden="true">01 / 07</span></span><button class="directory-route-toggle" id="trailer-route-toggle" type="button" aria-controls="trailer-route-links" aria-expanded="false" hidden><span>Explore 7 sections</span><span class="route-toggle-glyph" aria-hidden="true">⌄</span></button><nav class="jump" id="trailer-route-links" aria-label="Jump to trailer options"><a href="#haul-guide">Choose by hauling job ↓</a><a href="#local">Russellville rentals ↓</a><a href="#nearby">Nearby option ↓</a><a href="#cold-storage">Refrigerated storage ↓</a><a href="#rent-to-own">Rent-to-own ↓</a><a href="#commercial-freight">Commercial freight ↓</a><a href="#regional-haulers">Central Arkansas rentals ↓</a></nav></div>
-<div class="overview" aria-label="Directory overview"><div><strong>5</strong><span>Russellville short-term rental providers</span></div><div><strong>3</strong><span>Nearby and regional U-Haul pickup dealers</span></div><div><strong>2</strong><span>Regional refrigerated-trailer inquiries</span></div><div><strong>1</strong><span>Separate rent-to-own program</span></div><div><strong>2</strong><span>Commercial freight-trailer inquiries</span></div><div><strong>2</strong><span>Regional operators · North Little Rock &amp; Hot Springs pickup</span></div></div>
+<div class="overview trailer-dispatch-board" aria-label="Directory overview"><div><strong>5</strong><span>Russellville short-term rental providers</span></div><div><strong>3</strong><span>Nearby and regional U-Haul pickup dealers</span></div><div><strong>2</strong><span>Regional refrigerated-trailer inquiries</span></div><div><strong>1</strong><span>Separate rent-to-own program</span></div><div><strong>2</strong><span>Commercial freight-trailer inquiries</span></div><div><strong>2</strong><span>Regional operators · North Little Rock &amp; Hot Springs pickup</span></div></div>
 
 <section class="rental-lanes" aria-labelledby="rental-lanes-title">
  <div class="rental-lanes-intro"><div><span class="eyebrow">The rental route / Know your agreement</span><h2 id="rental-lanes-title">One need.<br><em>Different ways to rent.</em></h2></div><p>Not every trailer listing works the same way. Start with the arrangement you need, then compare actual providers and their terms.</p></div>
