@@ -7315,3 +7315,118 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   .welcome-hero .welcome-route-copy strong,
   .welcome-hero .welcome-route-copy small { color:#111!important; }
 }
+
+
+/* 2026-11-20 / Homepage live-match editorial deck.
+   Compared live stayarv.com and russellville.rent and main commit history.
+   Build on the November 20 forest-and-brass search desk rather than replacing it.
+   NN/g visual hierarchy: lead with the highest-ranked real category match.
+   Google web.dev: CSS-only responsive reflow, no image request or layout shift.
+   W3C WCAG 2.2: native links, high-contrast visible focus, touch-sized targets,
+   and motion-free presentation. Search logic, category URLs, zero-match recovery,
+   saved categories, listing facts and update-listings workflow stay unchanged. */
+@media screen {
+  .welcome-search-shell .search-preview-list:not(.search-preview-list--fallback) {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:11px;
+  }
+  .welcome-search-shell .search-preview-list:not(.search-preview-list--fallback) .search-match:first-child {
+    position:relative;
+    grid-column:1/-1;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:flex-start;
+    gap:clamp(16px,2.4vw,27px);
+    min-height:133px;
+    padding:clamp(19px,2.7vw,27px);
+    border:2px solid #d4a95a;
+    border-radius:18px;
+    background:
+      radial-gradient(circle at 93% 15%,#f1d89d9a 0,transparent 41%),
+      linear-gradient(110deg,#fffaf0,#f3ead5);
+    box-shadow:inset 7px 0 #245d43,0 13px 32px #031a1438;
+    color:#153e30;
+  }
+  .welcome-search-shell .search-preview-list:not(.search-preview-list--fallback) .search-match:first-child .search-match-top {
+    width:auto;
+    flex:0 0 auto;
+  }
+  .welcome-search-shell .search-preview-list:not(.search-preview-list--fallback) .search-match:first-child .search-match-icon {
+    width:clamp(55px,5vw,70px);
+    height:clamp(55px,5vw,70px);
+    background:#174b39;
+    color:#f4deac;
+    border:1px solid #174b39;
+    border-radius:15px;
+  }
+  .welcome-search-shell .search-preview-list:not(.search-preview-list--fallback) .search-match:first-child .search-match-icon svg {
+    width:41px;
+    height:41px;
+    max-width:75%;
+    max-height:75%;
+  }
+  .welcome-search-shell .search-preview-list:not(.search-preview-list--fallback) .search-match:first-child .search-match-copy strong {
+    font:400 clamp(1.5rem,2.2vw,2.15rem)/1.07 Georgia,"Times New Roman",serif;
+    letter-spacing:-.045em;
+    text-wrap:balance;
+  }
+  .welcome-search-shell .search-preview-list:not(.search-preview-list--fallback) .search-match:first-child .search-match-copy small {
+    margin-top:9px;
+    font-size:.72rem;
+    color:#3d5e4c;
+  }
+  .welcome-search-shell .search-preview-list:not(.search-preview-list--fallback) .search-match:first-child .search-match-arrow {
+    position:absolute;
+    top:13px;
+    right:17px;
+    color:#265b42;
+  }
+  .welcome-search-shell .search-preview-list:not(.search-preview-list--fallback) .search-match:not(:first-child) {
+    min-height:123px;
+    border-color:#d2dece;
+    background:#fffdf6;
+  }
+  .welcome-search-shell .search-preview-list:not(.search-preview-list--fallback) .search-match:focus-visible {
+    outline:3px solid #edc46c;
+    outline-offset:4px;
+    box-shadow:0 0 0 7px #153f34;
+  }
+}
+@media screen and (min-width:1150px) {
+  .welcome-search-shell .search-preview-list:not(.search-preview-list--fallback) {
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+}
+@media screen and (max-width:460px) {
+  .welcome-search-shell .search-preview-list:not(.search-preview-list--fallback) {
+    grid-template-columns:1fr;
+  }
+  .welcome-search-shell .search-preview-list:not(.search-preview-list--fallback) .search-match:first-child {
+    min-height:110px;
+    padding:18px 15px;
+    gap:12px;
+  }
+  .welcome-search-shell .search-preview-list:not(.search-preview-list--fallback) .search-match:first-child .search-match-icon {
+    width:49px;
+    height:49px;
+  }
+  .welcome-search-shell .search-preview-list:not(.search-preview-list--fallback) .search-match:first-child .search-match-icon svg {
+    width:30px;
+    height:30px;
+  }
+  .welcome-search-shell .search-preview-list:not(.search-preview-list--fallback) .search-match:first-child .search-match-copy strong {
+    font-size:1.37rem;
+  }
+  .welcome-search-shell .search-preview-list:not(.search-preview-list--fallback) .search-match:not(:first-child) {
+    min-height:76px;
+  }
+}
+@media print {
+  .welcome-search-shell .search-preview-list:not(.search-preview-list--fallback) .search-match:first-child {
+    background:#fff!important;
+    color:#111!important;
+    border:2px solid #555;
+    box-shadow:none;
+  }
+}
