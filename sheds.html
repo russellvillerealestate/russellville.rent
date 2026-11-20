@@ -698,11 +698,77 @@ footer a{font-weight:750}
   .shed-hero-route .shed-route-copy strong{font-size:1rem}
   .shed-hero-route .shed-route-copy small{font-size:.64rem}
 }
+
+/* 2026-11-20 / Shed planning field ticket: persistent four-stage navigation
+   for long portrait-phone guides. The existing cinematic hero's four route
+   targets are reused, not duplicated on screen. Short-height screens retain
+   the original in-flow route to avoid obscuring controls and the onscreen
+   keyboard. The dock makes all four in-page decisions reachable throughout
+   the provider and cost worksheets. StayARV-informed forest/brass identity.
+   Guidance: NN/g visible navigation; web.dev responsive and stable layout;
+   W3C WCAG 2.2 2.4.11 focus not obscured and 2.5.8 target size.
+   No scripting, rental data, prices, business facts, images or extra assets. */
+.shed-pocket-dock{display:none}
+@media screen and (max-width:700px) and (min-height:561px){
+  html{scroll-padding-bottom:calc(120px + env(safe-area-inset-bottom,0px))}
+  body{padding-bottom:calc(99px + env(safe-area-inset-bottom,0px))}
+  .shed-hero-route{display:none}
+  .shed-hero-bottom{padding-bottom:25px}
+  .shed-pocket-dock{
+    position:fixed;z-index:70;
+    display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+    left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));
+    padding:6px;gap:3px;
+    background:#0c302a;color:#fff9e8;
+    border:1px solid #e2bd7c;border-radius:17px;
+    box-shadow:0 15px 42px #09251dd9,0 0 0 3px #f8f1df4d;
+  }
+  .shed-pocket-dock a{
+    min-width:0;min-height:72px;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    gap:2px;padding:7px 3px;
+    border-radius:11px;text-decoration:none;text-align:center;
+    color:#fff9e8;background:transparent;
+    touch-action:manipulation;
+  }
+  .shed-pocket-dock a:hover{background:#285747}
+  .shed-pocket-dock a:active{background:#356a54}
+  .shed-pocket-dock a:focus-visible{
+    outline:3px solid #ffe2a4;outline-offset:-3px;background:#245847;
+  }
+  .shed-pocket-dock svg{
+    width:23px;height:23px;flex:none;
+    fill:none;stroke:#f3d49c;stroke-width:1.8;
+    stroke-linecap:round;stroke-linejoin:round;
+  }
+  .shed-pocket-dock small{
+    font-size:.52rem;line-height:1.3;letter-spacing:.07em;
+    color:#f1cf8f;font-weight:850;white-space:nowrap;
+  }
+  .shed-pocket-dock strong{
+    font-size:clamp(.65rem,2.6vw,.79rem);line-height:1.2;
+    font-weight:800;white-space:nowrap;
+  }
+  #dealer-atlas,#footprint-studio,#delivery-plan,#quote-comparison{
+    scroll-margin-bottom:calc(120px + env(safe-area-inset-bottom,0px));
+  }
+}
+@media print{.shed-pocket-dock{display:none!important}}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to shed rental providers</a>
 <header><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent homepage">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
+<!-- Persistent mobile field ticket for this long, four-stage planning guide.
+     The original four-stop hero route remains the desktop/tablet and short-viewport fallback. -->
+<nav class="shed-pocket-dock" aria-label="Shed planning sections">
+  <a href="#dealer-atlas"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M3 20V8l9-5 9 5v12H3Zm6 0v-7h6v7M7 10h2m6 0h2"/></svg><small>01 / FIND</small><strong>Dealers</strong></a>
+  <a href="#footprint-studio"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 3v5m5-5v3m5-3v5M3 13h5m-5 5h3"/></svg><small>02 / SIZE</small><strong>Footprints</strong></a>
+  <a href="#delivery-plan"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M2 7h12v11H2zM14 11h5l3 4v3h-8M6 18a2 2 0 1 0 4 0m7 0a2 2 0 1 0 4 0"/></svg><small>03 / CHECK</small><strong>Delivery</strong></a>
+  <a href="#quote-comparison"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3zM9 8h6m-6 4h6m-6 4h3"/></svg><small>04 / PLAN</small><strong>Costs</strong></a>
+</nav>
+
 <main id="main">
 <section class="hero" aria-labelledby="page-title"><div class="wrap hero-inner">
 <div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Room to grow. <em>Space to own.</em></h1><p class="hero-copy">Explore portable buildings and sheds available through rent-to-own plans around Russellville. These are <strong>lease-to-own purchases, not self-storage units.</strong></p><div class="hero-actions"><a class="button gold" href="#providers">Compare 6 dealer options ↓</a><a class="button outline" href="#questions">What to ask before signing ↗</a></div></div>
