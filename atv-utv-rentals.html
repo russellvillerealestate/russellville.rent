@@ -902,6 +902,41 @@ main{max-width:1400px;padding:22px clamp(15px,2.2vw,34px) 90px}
   .route-swipe{display:none}
 }
 
+
+/* 2026-11-20 — Trail dispatch: substantial provider-search composition inspired by
+   StayARV's immersive hero/strong hierarchy, adapted for an independent directory.
+   Consulted Nielsen Norman Group wayfinding, web.dev responsive composition, W3C
+   WCAG 2.2 focus visibility and pointer-target guidance. No provider changes. */
+.trail-dispatch{display:grid;grid-template-columns:minmax(0,.91fr) minmax(0,1.09fr);margin:32px 0 26px;overflow:hidden;border-radius:27px;border:1px solid #b9cbb9;background:#fdfbf4;box-shadow:0 22px 48px #143d2b20}
+.trail-dispatch-story{position:relative;isolation:isolate;overflow:hidden;min-height:350px;padding:clamp(28px,3.6vw,46px);background:linear-gradient(140deg,#0b2e27 0%,#1a4a3a 63%,#2c654c 100%);color:#fff8eb}
+.trail-dispatch-story:before{content:"";position:absolute;z-index:-1;right:-120px;top:-170px;width:370px;height:370px;border:1px solid #f4dab04b;border-radius:50%;box-shadow:0 0 0 55px #f4dab00b,0 0 0 110px #f4dab009}
+.trail-dispatch-kicker,.trail-dispatch-overline{display:block;font:850 .66rem/1.45 system-ui,sans-serif;letter-spacing:.17em;text-transform:uppercase}
+.trail-dispatch-kicker{color:#f3d39b}
+.trail-dispatch-story h3{font:400 clamp(2.7rem,4.2vw,4.7rem)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.056em;max-width:10ch;margin:19px 0}
+.trail-dispatch-story h3 em{font-weight:400;color:#f4d59e}
+.trail-dispatch-story p{max-width:48ch;margin:0;color:#e7eee5;font-size:.92rem;line-height:1.68}
+.trail-dispatch-scene{display:block;width:min(100%,440px);height:auto;margin:14px -20px -8px;opacity:.95}
+.trail-dispatch-caption{display:block;color:#d6e6d7;font-size:.64rem;line-height:1.5;letter-spacing:.04em;margin-top:5px}
+.trail-dispatch-tools{display:flex;flex-direction:column;justify-content:center;min-width:0;padding:clamp(26px,3.8vw,50px);background:radial-gradient(circle at 100% 0%,#e6eddf,transparent 55%),#fffcf3}
+.trail-dispatch-overline{color:#4c7660;margin-bottom:15px}
+.trail-dispatch .toolbar{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin:0;padding:0;background:transparent;border:0;border-radius:0;box-shadow:none}
+.trail-dispatch .toolbar[hidden]{display:none}
+.trail-dispatch .toolbar label{font:800 clamp(1.2rem,2.1vw,1.65rem)/1.2 Georgia,"Times New Roman",serif;letter-spacing:-.025em;color:#173c30}
+.trail-dispatch .toolbar input{width:100%;min-width:0;min-height:56px;margin:0;padding:13px 18px;border:2px solid #9eb8a8;border-radius:12px;background:#fff;color:#173c30;box-shadow:0 5px 14px #133b3010;font-size:1rem;flex:auto}
+.trail-dispatch .toolbar input::placeholder{color:#60766a;opacity:1}
+.trail-dispatch-chip-group{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.trail-dispatch .toolbar button{flex:1 1 128px;min-height:49px;padding:11px 13px;border:1px solid #b9cbbd;border-radius:10px;background:#eef3e9;color:#1c4b3b;line-height:1.25;transition:background-color .16s,border-color .16s,transform .16s}
+.trail-dispatch .toolbar button:hover{background:#dfe9db;transform:translateY(-1px)}
+.trail-dispatch .toolbar button[aria-pressed="true"]{background:#1c5543;border-color:#1c5543;color:white}
+.trail-dispatch .toolbar button:focus-visible,.trail-dispatch .toolbar input:focus-visible{outline:3px solid #a86b18;outline-offset:3px}
+.trail-dispatch .result{display:flex;align-items:center;gap:10px;min-height:40px;margin:17px 0 0;padding:10px 13px;border:1px solid #d8e2d3;border-radius:10px;background:#f0f5eb;color:#315641;font-size:.83rem;font-weight:750;line-height:1.5}
+.trail-dispatch .result:before{content:"";width:8px;height:8px;border-radius:50%;flex:none;background:#347b59;box-shadow:0 0 0 4px #347b5920}
+.trail-dispatch-note{margin:13px 0 0;color:#587163;font-size:.78rem;line-height:1.55;max-width:49ch}
+@media(max-width:900px){.trail-dispatch{grid-template-columns:minmax(0,1fr)}.trail-dispatch-story{min-height:0;padding:34px 38px 16px}.trail-dispatch-story h3{max-width:none}.trail-dispatch-scene{width:min(100%,500px);max-height:135px;object-fit:cover;object-position:center}.trail-dispatch-tools{padding:32px 38px 39px}}
+@media(max-width:560px){.trail-dispatch{border-radius:20px;margin:24px 0}.trail-dispatch-story{padding:29px 23px 14px}.trail-dispatch-story h3{font-size:clamp(2.65rem,11vw,3.4rem);max-width:10ch}.trail-dispatch-story p{font-size:.9rem}.trail-dispatch-tools{padding:25px 22px 29px}.trail-dispatch-chip-group{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.trail-dispatch .toolbar button{min-width:0;min-height:48px;flex:auto;padding:10px 8px;font-size:.78rem}.trail-dispatch .toolbar button:first-child{grid-column:1/-1}.trail-dispatch .toolbar label{font-size:1.4rem}}
+@media(prefers-reduced-motion:reduce){.trail-dispatch .toolbar button{transition:none}.trail-dispatch .toolbar button:hover{transform:none}}
+@media print{.trail-dispatch{display:block;box-shadow:none;break-inside:avoid}.trail-dispatch-story{background:#fff!important;color:#173c30!important;min-height:0}.trail-dispatch-story :is(.trail-dispatch-kicker,.trail-dispatch-story h3,.trail-dispatch-story h3 em,.trail-dispatch-story p,.trail-dispatch-caption){color:#173c30!important}.trail-dispatch-scene{display:none}.trail-dispatch-tools{padding:18px 26px}}
+
 </style></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-head"><a href="/">Russellville.Rent</a><a class="back" href="/">← All rental categories</a></header>
 <main id="main"><section class="hero" aria-labelledby="hero-title"><div class="hero-terrain" aria-hidden="true"><svg viewBox="0 0 1440 410" preserveAspectRatio="xMidYMax slice" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="trail-dusk" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c6c995" stop-opacity=".34"/><stop offset="1" stop-color="#214f3c" stop-opacity=".03"/></linearGradient></defs><circle cx="1155" cy="88" r="90" fill="#e7c78c" opacity=".23"/><path d="M0 265 118 173l95 66 128-145 138 143 112-75 136 95 114-113 132 122 145-102 137 91 135-83 50 41v191H0Z" fill="url(#trail-dusk)"/><path d="M0 312 146 216l126 65 118-83 132 101 112-49 144 59 121-88 129 81 134-97 178 112v93H0Z" fill="#6e9572" opacity=".27"/><path d="M0 355q152-85 306-37t278-17 268 34 278-9 310 19v65H0Z" fill="#224e3a" opacity=".67"/><path d="M0 389q242-40 447-7t414-15 579 17v26H0Z" fill="#102f28" opacity=".8"/><g fill="#153d2f" opacity=".68"><path d="m60 349 29-96 31 96h-21v57H78v-57Z"/><path d="m130 363 24-79 24 79h-17v43h-16v-43Z"/><path d="m1184 349 31-112 33 112h-22v61h-21v-61Z"/><path d="m1244 362 22-72 24 72h-15v48h-16v-48Z"/><path d="m1345 354 27-95 29 95h-20v56h-18v-56Z"/></g><path d="M-20 409q285-106 529-57t386-18 560 71" stroke="#cbaa78" stroke-opacity=".3" stroke-width="8" stroke-dasharray="3 20" fill="none"/></svg></div><div><p class="eyebrow">Russellville &amp; the Arkansas River Valley</p><h1 id="hero-title">Find a side-by-side.<br><em>Find your trail.</em></h1><p>Compare independently listed side-by-side rentals in the Ozarks, around Ozone and Mount Magazine. The operators below advertise rentals on their own websites; confirm dates, trail restrictions and exact pickup or delivery arrangements before traveling.</p><a href="#directory">Explore three providers <span aria-hidden="true">↗</span></a>
@@ -985,8 +1020,38 @@ main{max-width:1400px;padding:22px clamp(15px,2.2vw,34px) 90px}
   <div class="ride-ledger-foot"><p>Rates above cover different rental durations and are <strong>not directly comparable</strong>. Requirements are summarized from the operator information below; always confirm current policy, permitted routes, insurance and availability before travel.</p><a href="#directory">Search all three providers ↗</a></div>
 </section>
 <section id="directory" aria-labelledby="directory-title"><div class="section-head"><div><p class="eyebrow">01 / Verified operator sources</p><h2 id="directory-title">Choose your starting point.</h2></div><p>Three regional options, listed by the operator’s stated rental service—not by unverified availability or review counts.</p></div>
-<div class="toolbar" id="filters" hidden role="search" aria-label="Filter off-road rental providers"><label for="provider-search">Find a provider</label><input id="provider-search" type="search" placeholder="Try Ozone, Magazine, six seats…" autocomplete="off"><button type="button" data-area="all" aria-pressed="true">All regions</button><button type="button" data-area="river-valley" aria-pressed="false">River Valley area</button><button type="button" data-area="northwest" aria-pressed="false">Northwest Arkansas</button></div>
-<p class="result" id="result-count" role="status" aria-live="polite">Showing 3 regional rental operators</p>
+<!-- River Valley trail dispatch: an editorial, accessible search station. Native provider listings remain available without JavaScript. -->
+<section class="trail-dispatch" aria-labelledby="trail-dispatch-title">
+  <div class="trail-dispatch-story">
+    <span class="trail-dispatch-kicker">R↗ / THE RIVER VALLEY FIELD DESK</span>
+    <h3 id="trail-dispatch-title">Find your <em>starting line.</em></h3>
+    <p>Search the three listed regional operators by location, seating or advertised rental details. The provider must confirm inventory, permitted routes and pickup or delivery.</p>
+    <svg class="trail-dispatch-scene" viewBox="0 0 530 175" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="414" cy="49" r="39" fill="#e8c58b"/>
+      <path d="M0 124 72 65 137 118 223 20 328 109 389 74 471 117 530 68v107H0Z" fill="#668f79"/>
+      <path d="m0 144 88-53 84 59 97-75 92 73 93-47 76 36v38H0Z" fill="#396b55"/>
+      <path d="M0 162q105-41 196-11t167-5 167 8v21H0Z" fill="#1b493b"/>
+      <path d="M157 180q65-70 148-43t95-63" fill="none" stroke="#f4d6a3" stroke-width="24" stroke-linecap="round"/>
+      <path d="M157 180q65-70 148-43t95-63" fill="none" stroke="#7d805d" stroke-width="2.5" stroke-dasharray="6 9"/>
+      <circle cx="400" cy="74" r="8" fill="#fbebcb" stroke="#194b3b" stroke-width="4"/>
+    </svg>
+    <span class="trail-dispatch-caption">Illustrated route · Not a verified riding trail</span>
+  </div>
+  <div class="trail-dispatch-tools">
+    <span class="trail-dispatch-overline">03 OPERATORS / A CLEARER SEARCH</span>
+    <div class="toolbar" id="filters" hidden role="search" aria-label="Filter off-road rental providers">
+      <label for="provider-search">Where do you want to start?</label>
+      <input id="provider-search" type="search" placeholder="Try Ozone, Magazine, six seats…" autocomplete="off">
+      <div class="trail-dispatch-chip-group" role="group" aria-label="Filter listed operators by region">
+        <button type="button" data-area="all" aria-pressed="true">All regions</button>
+        <button type="button" data-area="river-valley" aria-pressed="false">River Valley area</button>
+        <button type="button" data-area="northwest" aria-pressed="false">Northwest Arkansas</button>
+      </div>
+    </div>
+    <p class="result" id="result-count" role="status" aria-live="polite">Showing 3 regional rental operators</p>
+    <p class="trail-dispatch-note">These are directory matches, not available vehicles or confirmed reservation slots.</p>
+  </div>
+</section>
 <div class="grid">
 <article id="ozark-ridge" class="provider" data-area="river-valley" data-search="ozark ridge campground ozone johnson county sxs side by side can am defender max sport xrc rental delivery trail mill creek moccasin gap">
 <figure class="provider-folio-scene" aria-hidden="true">
