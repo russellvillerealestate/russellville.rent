@@ -881,6 +881,73 @@ body.restroom-scan .call-add{margin-top:17px}
   .equipment-lens-card:first-child:before{display:none}
 }
 
+
+/* 2026-11-20 | Mobile restroom dispatch dock.
+   Live comparison: StayARV.com's legible forest/brass navigation and the
+   Russellville.Rent directory's existing four-step editorial route.
+   Preserve all four original anchors and full desktop descriptions; on
+   portrait-height phones, recompose that SAME navigation as a persistent,
+   thumb-reachable field desk. Short landscape retains the original cards.
+   Research: Nielsen Norman Group navigation information scent/visual hierarchy;
+   Google web.dev stable responsive reflow; W3C WCAG 2.2 focus visibility,
+   focus not obscured and accessible pointer target size. No scripts/assets. */
+.restroom-pocket-index,.restroom-pocket-label{display:none}
+@media screen and (max-width:700px) and (min-height:540px){
+ html{scroll-padding-bottom:calc(114px + env(safe-area-inset-bottom,0px))}
+ body{padding-bottom:calc(114px + env(safe-area-inset-bottom,0px))}
+ .jump-panel{
+  position:fixed;z-index:80;top:auto;bottom:calc(9px + env(safe-area-inset-bottom,0px));
+  left:50%;right:auto;transform:translateX(-50%);
+  width:min(calc(100% - 20px),540px);
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:5px;margin:0;padding:7px;overflow:visible;
+  border:1px solid #e7c78a;border-radius:18px;
+  background:linear-gradient(115deg,#0b312a,#194c3c 70%,#235b43);
+  box-shadow:0 16px 38px #05221987;
+ }
+ .jump-panel a,.jump-panel a:nth-child(n){
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:6px;min-height:70px;min-width:0;margin:0;padding:8px 3px;
+  border:1px solid #ffffff32!important;border-radius:11px;
+  background:#ffffff0a;color:#fffaef;text-align:center;
+  box-shadow:none;transform:none;transition:background-color .18s ease;
+ }
+ .jump-panel a:first-child{
+  border-color:#f2d499!important;background:#f2d499;color:#15382f;
+ }
+ .jump-panel a:hover,.jump-panel a:nth-child(n):hover{
+  transform:none;box-shadow:none;background:#29664d;color:#fffdf4;
+ }
+ .jump-panel a:first-child:hover{background:#ffe6b4;color:#15382f}
+ .jump-panel a:focus-visible{
+  outline:3px solid #ffe3a3;outline-offset:-3px;background:#305e4d;color:#fff;
+ }
+ .jump-panel a:first-child:focus-visible{
+  outline-color:#173b2f;background:#ffe6b4;color:#15382f;
+ }
+ .jump-panel .jump-meta,.jump-panel .jump-copy{display:none}
+ .jump-panel .restroom-pocket-index{
+  display:block;color:#f4d49b;
+  font:850 .6rem/1 system-ui,-apple-system,"Segoe UI",sans-serif;
+  letter-spacing:.12em;
+ }
+ .jump-panel a:first-child .restroom-pocket-index{color:#735326}
+ .jump-panel .restroom-pocket-label{
+  display:block;max-width:100%;color:inherit;
+  font:800 clamp(.67rem,2.6vw,.79rem)/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;
+  overflow-wrap:normal;
+ }
+ #local,#regional,#site-planner,#restroom-call-plan{
+  scroll-margin-bottom:calc(118px + env(safe-area-inset-bottom,0px));
+ }
+}
+@media screen and (max-width:370px) and (min-height:540px){
+ .jump-panel{gap:3px;padding:5px;width:calc(100% - 12px)}
+ .jump-panel a,.jump-panel a:nth-child(n){min-height:67px;padding-inline:2px}
+ .jump-panel .restroom-pocket-label{font-size:.66rem}
+}
+@media(prefers-reduced-motion:reduce){.jump-panel a{transition:none}}
+
 </style>
 </head>
 <body>
@@ -925,10 +992,10 @@ body.restroom-scan .call-add{margin-top:17px}
 </div></div></section>
 <main id="main" class="wrap">
 <nav class="jump-panel" aria-label="Choose a restroom rental planning path">
-<a href="#local"><span class="jump-meta"><span class="jump-count">01 / CLOSE TO HOME</span><span class="jump-arrow" aria-hidden="true">↗</span></span><span class="jump-copy"><strong>Find nearby providers.</strong><small>Russellville listings and advertised local delivery.</small></span></a>
-<a href="#regional"><span class="jump-meta"><span class="jump-count">02 / WIDEN THE SEARCH</span><span class="jump-arrow" aria-hidden="true">↗</span></span><span class="jump-copy"><strong>Compare regional options.</strong><small>Verify exact-address delivery and total charges.</small></span></a>
-<a href="#site-planner"><span class="jump-meta"><span class="jump-count">03 / PREPARE YOUR SITE</span><span class="jump-arrow" aria-hidden="true">↗</span></span><span class="jump-copy"><strong>Picture the setup.</strong><small>Explore an illustrative event or jobsite layout.</small></span></a>
-<a href="#restroom-call-plan"><span class="jump-meta"><span class="jump-count">04 / MAKE YOUR SHORTLIST</span><span class="jump-arrow" aria-hidden="true">↗</span></span><span class="jump-copy"><strong>Plan your calls.</strong><small>Keep up to four provider contacts together.</small></span></a>
+<a href="#local" aria-label="Find nearby restroom rental providers"><span class="restroom-pocket-index" aria-hidden="true">01</span><span class="restroom-pocket-label" aria-hidden="true">Nearby</span><span class="jump-meta"><span class="jump-count">01 / CLOSE TO HOME</span><span class="jump-arrow" aria-hidden="true">↗</span></span><span class="jump-copy"><strong>Find nearby providers.</strong><small>Russellville listings and advertised local delivery.</small></span></a>
+<a href="#regional" aria-label="Compare regional restroom rental providers"><span class="restroom-pocket-index" aria-hidden="true">02</span><span class="restroom-pocket-label" aria-hidden="true">Regional</span><span class="jump-meta"><span class="jump-count">02 / WIDEN THE SEARCH</span><span class="jump-arrow" aria-hidden="true">↗</span></span><span class="jump-copy"><strong>Compare regional options.</strong><small>Verify exact-address delivery and total charges.</small></span></a>
+<a href="#site-planner" aria-label="Plan restroom placement for an event or jobsite"><span class="restroom-pocket-index" aria-hidden="true">03</span><span class="restroom-pocket-label" aria-hidden="true">Site plan</span><span class="jump-meta"><span class="jump-count">03 / PREPARE YOUR SITE</span><span class="jump-arrow" aria-hidden="true">↗</span></span><span class="jump-copy"><strong>Picture the setup.</strong><small>Explore an illustrative event or jobsite layout.</small></span></a>
+<a href="#restroom-call-plan" aria-label="Build a restroom provider call list"><span class="restroom-pocket-index" aria-hidden="true">04</span><span class="restroom-pocket-label" aria-hidden="true">Call list</span><span class="jump-meta"><span class="jump-count">04 / MAKE YOUR SHORTLIST</span><span class="jump-arrow" aria-hidden="true">↗</span></span><span class="jump-copy"><strong>Plan your calls.</strong><small>Keep up to four provider contacts together.</small></span></a>
 </nav>
 
 
