@@ -568,6 +568,199 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
   .bike-mobile-dock{display:none!important}
   body{padding-bottom:0!important}
 }
+
+/* 2026-11-19 / Ride-style panorama: a clear 3:1:1 editorial comparison.
+   The mountain group has three published bicycle types, while the electric
+   and road/gravel groups each have one. Make this real information difference
+   visible without changing buttons, their data-ride-filter values or any
+   published prices. Reference: StayARV's landscape-first composition,
+   Nielsen Norman Group's hierarchy/scale/grouping guidance,
+   web.dev's layout stability through reserved visual dimensions, and
+   W3C WCAG 2.2 keyboard focus, reflow and target-size guidance.
+   The Lake Dardanelle background is editorial scenery, not inventory. */
+.ride-finder .ride-options{
+  display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
+  grid-template-rows:repeat(2,minmax(210px,1fr));
+  gap:18px;
+  align-items:stretch;
+}
+.ride-finder .ride-option{
+  min-width:0;
+  min-height:0;
+  border-radius:23px;
+  padding:clamp(23px,3vw,34px);
+}
+.ride-finder .ride-option:first-child{
+  grid-column:1;
+  grid-row:1 / span 2;
+  min-height:480px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:30px;
+  padding:clamp(30px,4vw,53px);
+  color:#fffdf5;
+  border-color:#9fb5a56e;
+  background:
+    linear-gradient(180deg,#09281dc9 0%,#09281d63 38%,#08251fe8 83%,#08251ff7 100%),
+    url("assets/lake-dardanelle-sunset.jpg") center / cover no-repeat,
+    #143b30;
+  box-shadow:0 23px 48px #123c3233;
+}
+.ride-finder .ride-option:first-child[aria-pressed="true"]{
+  background:
+    linear-gradient(180deg,#09281ddc 0%,#09281d85 38%,#08251ff0 83%,#08251ff7 100%),
+    url("assets/lake-dardanelle-sunset.jpg") center / cover no-repeat,
+    #143b30;
+}
+.ride-finder .ride-option:first-child::before{
+  content:"01 / THREE PUBLISHED BIKE TYPES";
+  display:block;
+  max-width:60%;
+  color:#ffdc97;
+  font:850 .68rem/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;
+  letter-spacing:.12em;
+}
+.ride-finder .ride-option:first-child .ride-symbol{
+  align-self:flex-end;
+  width:clamp(122px,15vw,170px);
+  height:clamp(122px,15vw,170px);
+  margin:-5px 0 0;
+  border:1px solid #e6efd058;
+  border-radius:50%;
+  background:#092b2480;
+  color:#ffe0a2;
+  box-shadow:0 0 0 18px #fff2d20b,0 0 0 40px #fff2d208;
+}
+.ride-finder .ride-option:first-child .ride-symbol svg{width:74%;height:74%}
+.ride-finder .ride-option:first-child .ride-copy{margin-top:auto;max-width:38ch}
+.ride-finder .ride-option:first-child .ride-copy strong{
+  max-width:10ch;
+  font-size:clamp(3.15rem,5vw,5.7rem);
+  line-height:1.02;
+  text-wrap:balance;
+  text-shadow:0 2px 12px #071e1b8a;
+}
+.ride-finder .ride-option:first-child .ride-copy small{color:#f0f5ed;font-size:1.01rem}
+.ride-finder .ride-option:first-child .ride-copy em{color:#ffe0a0}
+.ride-finder .ride-option:nth-child(n+2){
+  display:grid;
+  grid-template-columns:92px minmax(0,1fr);
+  align-items:center;
+  justify-content:start;
+  gap:clamp(17px,2.3vw,31px);
+  min-height:220px;
+  box-shadow:0 11px 26px #123c3217;
+}
+.ride-finder .ride-option:nth-child(2){background:linear-gradient(120deg,#f7e8bf,#efe0b8)}
+.ride-finder .ride-option:nth-child(3){background:linear-gradient(120deg,#dcebe8,#c9dfe3)}
+.ride-finder .ride-option:nth-child(n+2) .ride-symbol{
+  width:92px;height:92px;border-radius:22px;
+}
+.ride-finder .ride-option:nth-child(n+2) .ride-copy strong{
+  font-size:clamp(1.65rem,2.5vw,2.45rem);
+  max-width:13ch;
+}
+.ride-finder .ride-option:nth-child(n+2) .ride-copy small{max-width:30ch}
+.ride-finder .ride-option:nth-child(n+2) .ride-copy em{margin-top:11px}
+.ride-finder .ride-option[aria-pressed="true"]::after{
+  right:16px;top:11px;
+  padding:5px 8px;
+  border-radius:30px;
+  background:#fffdf2;
+  color:#174434;
+  font-size:.64rem;
+}
+.ride-finder .ride-option:first-child[aria-pressed="true"]::after{
+  top:50px;right:clamp(22px,3vw,37px);
+}
+.ride-photo-notice{
+  margin:15px 2px 0;
+  color:#496257;
+  font-size:.74rem;
+  line-height:1.55;
+}
+.ride-finder .ride-result{margin-top:12px}
+@media(max-width:920px){
+  .ride-finder .ride-options{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-template-rows:auto auto;
+  }
+  .ride-finder .ride-option:first-child{
+    grid-column:1 / -1;
+    grid-row:auto;
+    min-height:340px;
+    padding:clamp(27px,5vw,41px);
+  }
+  .ride-finder .ride-option:first-child .ride-symbol{
+    position:absolute;right:clamp(30px,7vw,70px);top:clamp(34px,5vw,60px);
+    width:120px;height:120px;
+  }
+  .ride-finder .ride-option:first-child .ride-copy strong{
+    font-size:clamp(3.1rem,7vw,5rem);
+  }
+  .ride-finder .ride-option:nth-child(n+2){
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:19px;
+    min-height:265px;
+  }
+}
+@media(max-width:620px){
+  .ride-finder .ride-options{grid-template-columns:minmax(0,1fr);gap:13px}
+  .ride-finder .ride-option:first-child{
+    grid-column:auto;
+    min-height:365px;
+    padding:27px 25px;
+  }
+  .ride-finder .ride-option:first-child .ride-symbol{
+    right:29px;top:49px;width:94px;height:94px;
+    box-shadow:0 0 0 12px #fff2d20b;
+  }
+  .ride-finder .ride-option:first-child::before{max-width:66%;font-size:.61rem}
+  .ride-finder .ride-option:first-child .ride-copy strong{
+    font-size:clamp(3.1rem,12vw,4.4rem);
+  }
+  .ride-finder .ride-option:nth-child(n+2){
+    display:grid;
+    grid-template-columns:70px minmax(0,1fr);
+    align-items:center;
+    gap:15px;
+    min-height:156px;
+    padding:22px 18px;
+  }
+  .ride-finder .ride-option:nth-child(n+2) .ride-symbol{
+    width:70px;height:70px;border-radius:17px;
+  }
+  .ride-finder .ride-option:nth-child(n+2) .ride-symbol svg{width:53px;height:53px}
+  .ride-finder .ride-option:nth-child(n+2) .ride-copy strong{
+    font-size:clamp(1.5rem,6vw,1.95rem);
+  }
+  .ride-finder .ride-option:nth-child(n+2) .ride-copy small{font-size:.78rem}
+  .ride-finder .ride-option:nth-child(n+2) .ride-copy em{margin-top:8px;font-size:.72rem}
+}
+@media(max-width:370px){
+  .ride-finder .ride-option:first-child .ride-symbol{
+    width:76px;height:76px;right:20px;top:60px;
+  }
+  .ride-finder .ride-option:first-child .ride-copy strong{font-size:3rem}
+  .ride-finder .ride-option:nth-child(n+2){grid-template-columns:60px minmax(0,1fr)}
+  .ride-finder .ride-option:nth-child(n+2) .ride-symbol{width:60px;height:60px}
+  .ride-finder .ride-option:nth-child(n+2) .ride-symbol svg{width:48px;height:48px}
+}
+@media print{
+  .ride-finder .ride-option:first-child,
+  .ride-finder .ride-option:first-child[aria-pressed="true"]{
+    background:#fff!important;color:#173c32!important;box-shadow:none;
+  }
+  .ride-finder .ride-option:first-child::before,
+  .ride-finder .ride-option:first-child .ride-copy small,
+  .ride-finder .ride-option:first-child .ride-copy em{color:#173c32!important}
+  .ride-finder .ride-option:first-child .ride-symbol{color:#173c32;box-shadow:none}
+  .ride-photo-notice{display:none}
+}
 </style></head><body>
 <a class="skip" href="#rates">Skip to rental rates</a>
 <header><div class="wrap"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
@@ -600,7 +793,7 @@ body{background:var(--paper)}header{background:#0a2721}header .wrap{max-width:14
 <button class="ride-option" type="button" data-ride-filter="mountain" aria-controls="rate-grid" aria-pressed="false"><span class="ride-symbol" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M5 49 23 17l10 16 8-12 18 28H5Z"/><path d="m16 29 7 6 7-6M38 31l3 5 5-4"/></svg></span><span class="ride-copy"><strong>Mountain trails</strong><small>Hardtail and full-suspension options</small><em>3 advertised bike types →</em></span></button>
 <button class="ride-option" type="button" data-ride-filter="electric" aria-controls="rate-grid" aria-pressed="false"><span class="ride-symbol" aria-hidden="true"><svg viewBox="0 0 64 64"><rect x="9" y="17" width="43" height="30" rx="6"/><path d="M52 27h4v10h-4M34 21 24 34h9l-4 10"/></svg></span><span class="ride-copy"><strong>Electric commuting</strong><small>Electric commuter bicycle</small><em>1 advertised bike type →</em></span></button>
 <button class="ride-option" type="button" data-ride-filter="road" aria-controls="rate-grid" aria-pressed="false"><span class="ride-symbol" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M9 51c9-18 35-9 45-36"/><path d="M19 51c10-12 29-8 35-24"/><path d="M29 39v-5m11-2v-5m10-8v-4"/></svg></span><span class="ride-copy"><strong>Road &amp; gravel</strong><small>Road or gravel bicycle</small><em>1 advertised bike type →</em></span></button>
-</div><p class="ride-result" id="ride-results" role="status" aria-live="polite" aria-atomic="true">Showing all 5 advertised bike types.</p></div></section>
+</div><p class="ride-photo-notice">Lake Dardanelle scenery is an editorial backdrop, not a photograph of a designated riding trail, listed bike or current rental inventory.</p><p class="ride-result" id="ride-results" role="status" aria-live="polite" aria-atomic="true">Showing all 5 advertised bike types.</p></div></section>
 <section class="rates wrap" id="rates" aria-labelledby="rates-title"><div class="section-head"><div><p class="eyebrow">Five advertised rental categories</p><h2 id="rates-title">Pick the bike. See the price.</h2></div><p>These are <strong>Jackalope Cycling's advertised daily rates</strong>, not guaranteed quotes. Confirm current prices, bicycle fit and availability directly with the shop.</p></div>
 
 <div class="rate-snapshot" id="rate-snapshot" aria-labelledby="rate-snapshot-title" hidden>
