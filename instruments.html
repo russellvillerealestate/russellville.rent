@@ -955,6 +955,56 @@
   .band-pocket-nav{display:none!important}
 }
 
+
+/* 2026-11-20: Desktop band-room score rail. Route-first hierarchy inspired by
+   the live StayARV site; complementary to the existing mobile ticket dock.
+   Editorial music-staff pattern is decorative and never covers link focus. */
+.band-desktop-rail{
+  position:relative;isolation:isolate;overflow:hidden;
+  background:#f1eadc;border-bottom:1px solid #d9c9a8;
+  box-shadow:inset 0 3px #c79a53;
+}
+.band-desktop-rail:before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.25;
+  background:repeating-linear-gradient(180deg,transparent 0,transparent 22px,#b7a383 23px,#b7a383 24px);
+  mask-image:linear-gradient(90deg,transparent 0%,#000 42%,transparent 100%);
+}
+.band-desktop-rail-inner{
+  display:grid;grid-template-columns:minmax(0,1.18fr) repeat(4,minmax(0,1fr));
+  align-items:stretch;gap:0;padding-block:13px;
+}
+.band-rail-intro{
+  display:flex;flex-direction:column;justify-content:center;gap:3px;
+  min-width:0;padding:10px 18px 10px 0;
+}
+.band-rail-intro span{font-size:.63rem;font-weight:850;letter-spacing:.16em;color:#705b3b}
+.band-rail-intro strong{
+  font:400 clamp(1.34rem,2.1vw,1.86rem)/1.12 Georgia,"Times New Roman",serif;
+  letter-spacing:-.035em;color:#173f35;
+}
+.band-rail-stop{
+  position:relative;display:flex;flex-direction:column;justify-content:center;
+  min-width:0;min-height:90px;gap:3px;padding:11px 24px 12px 18px;
+  text-decoration:none;border-left:1px solid #cabb9d;
+  transition:background-color .2s ease,transform .2s ease;
+}
+.band-rail-stop:hover{background:#fffbf2;transform:translateY(-2px)}
+.band-rail-stop:focus-visible{outline:3px solid #a66e1b;outline-offset:-4px;background:#fffaf0}
+.band-rail-stop .rail-number{
+  font-size:.6rem;font-weight:850;letter-spacing:.15em;color:#866232;
+}
+.band-rail-stop strong{font-size:.95rem;line-height:1.24;color:#173f35}
+.band-rail-stop small{font-size:.71rem;line-height:1.35;color:#586558}
+.band-rail-stop .rail-arrow{position:absolute;right:7px;top:calc(50% - 15px);font-size:1.2rem;color:#9e6e31}
+@media(max-width:980px) and (min-width:721px){
+  .band-desktop-rail-inner{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .band-rail-intro{display:none}
+  .band-rail-stop:first-of-type{border-left:0}
+}
+@media(max-width:720px){.band-desktop-rail{display:none}}
+@media(prefers-reduced-motion:reduce){.band-rail-stop{transition:none}.band-rail-stop:hover{transform:none}}
+@media print{.band-desktop-rail{display:none!important}}
+
 </style>
 </head>
 <body>
@@ -965,6 +1015,16 @@
       <a class="back-link" href="/">← Browse all rentals</a>
     </div>
   </header>
+<!-- Desktop band-room score rail: visible first-fold shortcuts, with mobile ticket dock below. -->
+<nav class="band-desktop-rail" aria-label="Student music rental steps">
+  <div class="wrap band-desktop-rail-inner">
+    <div class="band-rail-intro"><span>THE RIVER VALLEY / BAND ROOM</span><strong>Find your next note.</strong></div>
+    <a class="band-rail-stop" href="#compare-programs"><span class="rail-number">01 / FIND</span><strong>Rental programs</strong><small>Local and online choices</small><span class="rail-arrow" aria-hidden="true">↗</span></a>
+    <a class="band-rail-stop" href="#instrument-explorer"><span class="rail-number">02 / CHOOSE</span><strong>Instruments</strong><small>Explore band options</small><span class="rail-arrow" aria-hidden="true">↗</span></a>
+    <a class="band-rail-stop" href="#contract-scorecard"><span class="rail-number">03 / COMPARE</span><strong>Full rental costs</strong><small>Use your written figures</small><span class="rail-arrow" aria-hidden="true">↗</span></a>
+    <a class="band-rail-stop" href="#inquiry-desk"><span class="rail-number">04 / PREPARE</span><strong>Your inquiry</strong><small>Questions before you call</small><span class="rail-arrow" aria-hidden="true">↗</span></a>
+  </div>
+</nav>
 <!-- Mobile band-room route: direct links to existing interactive sections. -->
 <nav class="band-pocket-nav" aria-label="Student music rental quick navigation">
   <a href="#compare-programs"><span class="band-pocket-count">01 / FIND</span><strong>Programs</strong></a>
