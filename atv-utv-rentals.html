@@ -937,8 +937,59 @@ main{max-width:1400px;padding:22px clamp(15px,2.2vw,34px) 90px}
 @media(prefers-reduced-motion:reduce){.trail-dispatch .toolbar button{transition:none}.trail-dispatch .toolbar button:hover{transform:none}}
 @media print{.trail-dispatch{display:block;box-shadow:none;break-inside:avoid}.trail-dispatch-story{background:#fff!important;color:#173c30!important;min-height:0}.trail-dispatch-story :is(.trail-dispatch-kicker,.trail-dispatch-story h3,.trail-dispatch-story h3 em,.trail-dispatch-story p,.trail-dispatch-caption){color:#173c30!important}.trail-dispatch-scene{display:none}.trail-dispatch-tools{padding:18px 26px}}
 
+/* 2026-11-20 / Off-road pocket compass, mobile-only wayfinding.
+   Compared live StayARV and Russellville.Rent before design. Preserve the
+   established scenic Ozark page; make the four existing travel decisions
+   reachable from anywhere on tall phone screens. References: NN/g information
+   scent and visual hierarchy; web.dev mobile reflow; W3C WCAG 2.2 target size,
+   visible focus, focus not obscured, and reduced motion. No provider data change. */
+.trail-pocket-compass{display:none}
+@media screen and (max-width:760px) and (min-height:520px){
+  html{scroll-padding-bottom:calc(122px + env(safe-area-inset-bottom,0px))}
+  body{padding-bottom:calc(122px + env(safe-area-inset-bottom,0px))}
+  #route-title,#ride-ledger-title,#directory,#trip-desk{scroll-margin-bottom:calc(122px + env(safe-area-inset-bottom,0px))}
+  .trail-pocket-compass{
+    position:fixed;z-index:45;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+    left:calc(10px + env(safe-area-inset-left,0px));
+    right:calc(10px + env(safe-area-inset-right,0px));
+    bottom:calc(10px + env(safe-area-inset-bottom,0px));
+    width:auto;max-width:560px;margin-inline:auto;padding:8px;gap:5px;
+    border:1px solid #ebd3a46b;border-radius:20px;
+    background:linear-gradient(135deg,#0b302a 0%,#194d3b 69%,#26654b 100%);
+    box-shadow:0 20px 42px #06201999,0 0 0 2px #ffffff12;
+  }
+  .trail-pocket-compass a{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    min-width:0;min-height:66px;gap:5px;padding:9px 2px;
+    border:1px solid #e9d6a53e;border-radius:12px;
+    color:#fff8e7;text-align:center;text-decoration:none;
+    transition:background-color .18s,border-color .18s;
+  }
+  .trail-pocket-compass a:hover{background:#ffffff20;border-color:#f1d89f}
+  .trail-pocket-compass a:focus-visible{outline:3px solid #ffdc90;outline-offset:-3px;background:#2c7253}
+  .trail-pocket-compass .trail-pocket-step{font:850 .57rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.09em;color:#efcf97;white-space:nowrap}
+  .trail-pocket-compass strong{font:800 clamp(.68rem,2.5vw,.82rem)/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.015em;white-space:nowrap}
+  .trail-pocket-compass a:last-child{background:#f1d59e;border-color:#f1d59e;color:#173c30}
+  .trail-pocket-compass a:last-child .trail-pocket-step{color:#6c4a21}
+  .trail-pocket-compass a:last-child:hover,.trail-pocket-compass a:last-child:focus-visible{background:#ffe6b8}
+}
+@media screen and (max-width:355px) and (min-height:520px){
+  .trail-pocket-compass{left:6px;right:6px;padding:5px;gap:3px}
+  .trail-pocket-compass a{min-height:64px;padding-inline:1px}
+  .trail-pocket-compass .trail-pocket-step{font-size:.51rem;letter-spacing:.045em}
+  .trail-pocket-compass strong{font-size:.66rem}
+}
+@media(prefers-reduced-motion:reduce){.trail-pocket-compass a{transition:none}}
+@media print{.trail-pocket-compass{display:none!important}body{padding-bottom:0!important}}
 </style></head>
 <body><a class="skip" href="#main">Skip to content</a><header class="site-head"><a href="/">Russellville.Rent</a><a class="back" href="/">← All rental categories</a></header>
+<!-- Native pocket compass: four existing stops in this long off-road guide. -->
+<nav class="trail-pocket-compass" aria-label="Off-road rental quick navigation">
+  <a href="#route-title"><span class="trail-pocket-step" aria-hidden="true">01 / CHOOSE</span><strong>Routes</strong></a>
+  <a href="#ride-ledger-title"><span class="trail-pocket-step" aria-hidden="true">02 / CHECK</span><strong>Rules</strong></a>
+  <a href="#directory"><span class="trail-pocket-step" aria-hidden="true">03 / FIND</span><strong>Providers</strong></a>
+  <a href="#trip-desk"><span class="trail-pocket-step" aria-hidden="true">04 / PREPARE</span><strong>Trip note</strong></a>
+</nav>
 <main id="main"><section class="hero" aria-labelledby="hero-title"><div class="hero-terrain" aria-hidden="true"><svg viewBox="0 0 1440 410" preserveAspectRatio="xMidYMax slice" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="trail-dusk" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c6c995" stop-opacity=".34"/><stop offset="1" stop-color="#214f3c" stop-opacity=".03"/></linearGradient></defs><circle cx="1155" cy="88" r="90" fill="#e7c78c" opacity=".23"/><path d="M0 265 118 173l95 66 128-145 138 143 112-75 136 95 114-113 132 122 145-102 137 91 135-83 50 41v191H0Z" fill="url(#trail-dusk)"/><path d="M0 312 146 216l126 65 118-83 132 101 112-49 144 59 121-88 129 81 134-97 178 112v93H0Z" fill="#6e9572" opacity=".27"/><path d="M0 355q152-85 306-37t278-17 268 34 278-9 310 19v65H0Z" fill="#224e3a" opacity=".67"/><path d="M0 389q242-40 447-7t414-15 579 17v26H0Z" fill="#102f28" opacity=".8"/><g fill="#153d2f" opacity=".68"><path d="m60 349 29-96 31 96h-21v57H78v-57Z"/><path d="m130 363 24-79 24 79h-17v43h-16v-43Z"/><path d="m1184 349 31-112 33 112h-22v61h-21v-61Z"/><path d="m1244 362 22-72 24 72h-15v48h-16v-48Z"/><path d="m1345 354 27-95 29 95h-20v56h-18v-56Z"/></g><path d="M-20 409q285-106 529-57t386-18 560 71" stroke="#cbaa78" stroke-opacity=".3" stroke-width="8" stroke-dasharray="3 20" fill="none"/></svg></div><div><p class="eyebrow">Russellville &amp; the Arkansas River Valley</p><h1 id="hero-title">Find a side-by-side.<br><em>Find your trail.</em></h1><p>Compare independently listed side-by-side rentals in the Ozarks, around Ozone and Mount Magazine. The operators below advertise rentals on their own websites; confirm dates, trail restrictions and exact pickup or delivery arrangements before traveling.</p><a href="#directory">Explore three providers <span aria-hidden="true">↗</span></a>
 <nav class="trail-compass" aria-label="Plan your side-by-side rental">
   <a href="#route-title"><span class="trail-compass-no">01 / PICK A ROUTE</span><strong>Choose a rental path</strong><span aria-hidden="true" class="trail-compass-arrow">↗</span></a>
