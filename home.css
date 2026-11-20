@@ -7116,3 +7116,202 @@ nav{gap:clamp(14px,2.5vw,38px);font-size:.93rem}
   #browse>.intent-explorer:not([hidden]){background:#fff!important;color:#111;box-shadow:none}
   #browse .intent-grid>.intent-card{break-inside:avoid;box-shadow:none}
 }
+
+
+/* 2026-11-20 / River Valley rental desk: photographic hero + editorial route cards.
+   Reference comparison: live stayarv.com and russellville.rent; NN/g visual
+   hierarchy (contrast, scale, grouping); Google web.dev layout stability
+   (fixed icon footprints / no late-loaded assets); W3C WCAG 2.2 focus,
+   target size, reduced motion and responsive reflow.
+   Recompose the EXISTING homepage hero's working search and four category
+   shortcuts as a substantial warm-paper/forest-brass wayfinding desk.
+   No new inventory photos, provider claims, listing or filter changes. */
+@media screen {
+  .hero.welcome-hero .hero-find {
+    gap:21px;
+    padding:clamp(26px,3.1vw,43px);
+    border:1px solid #d8bf89;
+    border-top:6px solid #cda25a;
+    border-radius:22px 22px 27px 27px;
+    background:
+      radial-gradient(circle at 100% 0%,#f8eccf 0,transparent 44%),
+      linear-gradient(145deg,#fffdf5 0%,#f4f0e4 100%);
+    box-shadow:0 31px 78px #051d18a6,0 0 0 7px #ffffff17;
+  }
+  .welcome-hero .hero-find-kicker {
+    color:#486c56;
+    letter-spacing:.2em;
+    font-weight:900;
+  }
+  .welcome-hero .hero-find-copy strong {
+    margin-top:7px;
+    max-width:13ch;
+    color:#163e32;
+    font:400 clamp(2rem,3vw,3rem)/1.06 Georgia,"Times New Roman",serif;
+    letter-spacing:-.06em;
+    text-wrap:balance;
+  }
+  .welcome-hero .hero-find-copy::after {
+    content:"";
+    display:block;
+    width:67px;
+    height:3px;
+    margin-top:17px;
+    border-radius:3px;
+    background:#cda25a;
+  }
+  .welcome-hero .hero-find-form { gap:10px; }
+  .welcome-hero .hero-find-input {
+    border:2px solid #9bae9e;
+    border-radius:12px;
+    background:#fffefa;
+  }
+  .welcome-hero .hero-find-input:focus-within {
+    border-color:#285c43;
+    box-shadow:0 0 0 3px #e2c580;
+  }
+  .welcome-hero .hero-find-input input { min-height:62px; }
+  .welcome-hero .hero-find-submit {
+    min-height:57px;
+    border:1px solid #163a2d;
+    border-radius:12px;
+    background:#153d32;
+    color:#fff9ed;
+    font-size:.95rem;
+    letter-spacing:.015em;
+    box-shadow:inset 0 1px #ffffff28;
+  }
+  .welcome-hero .hero-find-submit:hover {
+    background:#25614b;
+  }
+  .welcome-hero .welcome-popular {
+    gap:10px;
+    padding-top:20px;
+    border-top:1px solid #d0d5c6;
+  }
+  .welcome-hero .welcome-popular-label { margin-bottom:5px; }
+  .welcome-hero .welcome-popular-label>span {
+    color:#3e604b;
+    font-weight:900;
+    letter-spacing:.17em;
+  }
+  .welcome-hero .welcome-popular-label>small { color:#526c5a; }
+  .welcome-hero .welcome-popular a,
+  .welcome-hero .welcome-popular a:nth-of-type(2),
+  .welcome-hero .welcome-popular a:nth-of-type(3),
+  .welcome-hero .welcome-popular a:nth-of-type(4) {
+    grid-template-columns:45px minmax(0,1fr) 12px;
+    gap:10px;
+    min-height:101px;
+    padding:15px 12px;
+    border:1px solid #547966;
+    border-radius:13px;
+    background:linear-gradient(135deg,#1e5040,#12392f);
+    color:#fff9eb;
+    box-shadow:0 8px 17px #173a3028;
+  }
+  .welcome-hero .welcome-route-icon,
+  .welcome-hero .welcome-popular a:nth-of-type(2) .welcome-route-icon,
+  .welcome-hero .welcome-popular a:nth-of-type(3) .welcome-route-icon,
+  .welcome-hero .welcome-popular a:nth-of-type(4) .welcome-route-icon {
+    width:45px;
+    height:49px;
+    border:1px solid #f7e6bd80;
+    border-radius:10px;
+    background:#e9d4a3;
+    color:#234b3a;
+  }
+  .welcome-hero .welcome-route-icon svg { width:30px;height:30px; }
+  .welcome-hero .welcome-route-copy strong {
+    color:#fffaf0;
+    font-size:.97rem;
+    line-height:1.1;
+  }
+  .welcome-hero .welcome-route-copy small {
+    color:#e7dcc1;
+    font-size:.72rem;
+    line-height:1.35;
+  }
+  .welcome-hero .welcome-route-arrow { color:#efca84; }
+  .welcome-hero .welcome-popular a:hover,
+  .welcome-hero .welcome-popular a:nth-of-type(2):hover,
+  .welcome-hero .welcome-popular a:nth-of-type(3):hover,
+  .welcome-hero .welcome-popular a:nth-of-type(4):hover {
+    border-color:#eed39a;
+    background:linear-gradient(135deg,#27644f,#1b4b3b);
+    box-shadow:0 11px 23px #09291e60;
+  }
+  .welcome-hero .welcome-popular a:focus-visible {
+    outline:4px solid #a35e08;
+    outline-offset:3px;
+  }
+}
+@media screen and (min-width:991px) {
+  .hero.welcome-hero {
+    grid-template-columns:minmax(0,1fr) minmax(380px,.95fr);
+    column-gap:clamp(32px,4.5vw,78px);
+    padding:clamp(40px,6vw,84px);
+  }
+  .hero.welcome-hero h1 {
+    font-size:clamp(3.5rem,5.6vw,6.65rem);
+    line-height:.99;
+    letter-spacing:-.065em;
+  }
+}
+@media screen and (max-width:600px) {
+  .hero.welcome-hero .hero-find {
+    gap:16px;
+    padding:22px 17px 23px;
+    border-top-width:5px;
+    border-radius:17px 17px 20px 20px;
+  }
+  .welcome-hero .hero-find-copy strong {
+    font-size:clamp(1.85rem,7.5vw,2.5rem);
+  }
+  .welcome-hero .hero-find-copy::after { margin-top:12px; }
+  .welcome-hero .welcome-popular a,
+  .welcome-hero .welcome-popular a:nth-of-type(2),
+  .welcome-hero .welcome-popular a:nth-of-type(3),
+  .welcome-hero .welcome-popular a:nth-of-type(4) {
+    grid-template-columns:36px minmax(0,1fr);
+    gap:7px;
+    min-height:88px;
+    padding:11px 9px;
+  }
+  .welcome-hero .welcome-route-icon,
+  .welcome-hero .welcome-popular a:nth-of-type(2) .welcome-route-icon,
+  .welcome-hero .welcome-popular a:nth-of-type(3) .welcome-route-icon,
+  .welcome-hero .welcome-popular a:nth-of-type(4) .welcome-route-icon {
+    width:36px;
+    height:43px;
+  }
+  .welcome-hero .welcome-route-icon svg { width:25px;height:25px; }
+  .welcome-hero .welcome-route-copy strong { font-size:.84rem; }
+  .welcome-hero .welcome-route-copy small { font-size:.64rem; }
+  .welcome-hero .welcome-route-arrow { display:none; }
+}
+@media (hover:hover) and (prefers-reduced-motion:no-preference) {
+  .welcome-hero .welcome-popular a:hover { transform:translateY(-3px); }
+}
+@media (prefers-reduced-motion:reduce) {
+  .welcome-hero .welcome-popular a,
+  .welcome-hero .hero-find-submit { transition:none!important; }
+  .welcome-hero .welcome-popular a:hover,
+  .welcome-hero .hero-find-submit:hover { transform:none!important; }
+}
+@media print {
+  .hero.welcome-hero .hero-find {
+    background:#fff!important;
+    color:#111;
+    border:1px solid #777;
+    box-shadow:none;
+  }
+  .welcome-hero .welcome-popular a {
+    background:#fff!important;
+    color:#111!important;
+    border:1px solid #777;
+    box-shadow:none;
+  }
+  .welcome-hero .welcome-route-copy strong,
+  .welcome-hero .welcome-route-copy small { color:#111!important; }
+}
