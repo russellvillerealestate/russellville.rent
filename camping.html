@@ -630,6 +630,53 @@ footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:.79rem;col
   .finder .finder-row{box-shadow:none}
 }
 
+
+/* 2026-11-20: Destination-first camping atlas.
+   Design evidence: NN/g visual hierarchy (scale, contrast and grouping);
+   web.dev visual stability (sized media region); WCAG 2.2 focus visibility and reflow.
+   Scenic photographs are editorial River Valley context, never campground inventory.
+   Keep all four pre-existing destination filters, labels and their DOM/keyboard order. */
+.camp-area-link:first-child{
+  background:linear-gradient(0deg,rgba(5,31,27,.98) 0%,rgba(8,43,35,.88) 42%,rgba(13,57,45,.50) 100%),url("assets/lake-dardanelle-docks.jpg") center 58%/cover no-repeat;
+  border-color:#ebd4a5;color:#fff9e9;box-shadow:0 19px 35px #041d1a69;
+}
+.camp-area-link:first-child .camp-area-index{color:#f9dfa9}
+.camp-area-link:first-child small{color:#f1eee0;max-width:41ch}
+.camp-area-link:first-child .camp-area-action{border-color:#ffffff72;color:#ffe0a3}
+.camp-area-link:first-child:hover{
+  background:linear-gradient(0deg,rgba(5,31,27,.96) 0%,rgba(8,43,35,.83) 42%,rgba(13,57,45,.43) 100%),url("assets/lake-dardanelle-docks.jpg") center 58%/cover no-repeat;
+  border-color:#ffe2aa;box-shadow:0 24px 43px #041d1a74
+}
+@media(min-width:1001px){
+  .camp-area-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);grid-template-rows:repeat(3,minmax(140px,auto));gap:12px}
+  .camp-area-link{min-height:140px;padding:18px 23px;gap:5px}
+  .camp-area-link:first-child{grid-column:1;grid-row:1 / span 3;min-height:445px;padding:35px}
+  .camp-area-link:first-child .camp-area-index{margin-bottom:auto}
+  .camp-area-link:first-child strong{font-size:clamp(3.5rem,5.4vw,5.2rem);letter-spacing:-.055em}
+  .camp-area-link:first-child small{font-size:.96rem;line-height:1.6}
+  .camp-area-link:not(:first-child){grid-column:2}
+  .camp-area-link:not(:first-child) strong{font-size:clamp(1.6rem,2.2vw,2rem)}
+  .camp-area-link:not(:first-child) .camp-area-action{padding-top:7px}
+}
+@media(min-width:641px) and (max-width:1000px){
+  .camp-area-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .camp-area-link:first-child{grid-column:1/-1;min-height:270px;padding:28px}
+  .camp-area-link:first-child strong{font-size:clamp(2.6rem,5.8vw,4rem)}
+  .camp-area-link:last-child{grid-column:1/-1;min-height:145px}
+}
+@media(max-width:640px){
+  .camp-area-link:first-child{grid-column:1;min-height:245px;padding:22px 20px}
+  .camp-area-link:first-child strong{font-size:clamp(2.35rem,10vw,3.2rem)}
+  .camp-area-link:first-child small{font-size:.85rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .camp-area-link:first-child:hover{transform:none}
+}
+@media print{
+  .camp-area-link:first-child,.camp-area-link:first-child:hover{background:#fff!important;color:#153c30;box-shadow:none;border:1px solid #a7b6a8}
+  .camp-area-link:first-child .camp-area-index,.camp-area-link:first-child small,.camp-area-link:first-child .camp-area-action{color:#153c30}
+  .camp-area-link:first-child .camp-area-action{border-color:#9aa89e}
+}
 </style>
 </head>
 <body>
