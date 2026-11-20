@@ -810,7 +810,7 @@ footer a{color:#ffe3a5}
    <div class="family-desk-field"><label class="desk-label" for="family-brief-notes">Other questions (optional)</label><textarea id="family-brief-notes" rows="3" maxlength="360" placeholder="Equipment size, delivery timing or model preferences…"></textarea></div>
    <div class="family-desk-output">
     <label class="desk-label" for="family-brief-output">Your ready-to-copy inquiry</label>
-    <textarea id="family-brief-output" rows="9" readonly>Baby gear inquiry for Russellville, Arkansas. Please confirm equipment availability, delivery and pickup, total rental charges including the published three-day minimum, cleaning/recall policies, correct fit and rental terms.</textarea>
+    <textarea id="family-brief-output" rows="9" readonly>Baby gear inquiry for Russellville, Arkansas. Please confirm equipment availability, delivery and pickup, total rental charges including any provider-specific minimum rental period, cleaning/recall policies, correct fit and rental terms.</textarea>
     <div class="family-desk-actions"><button id="family-brief-copy" type="button" hidden>Copy my inquiry ↗</button><small>Nothing is submitted, sent or stored by this page.</small></div>
     <p id="family-brief-feedback" class="family-desk-status" role="status" aria-live="polite">Choose your equipment and dates, then copy the inquiry.</p>
    </div>
@@ -847,7 +847,7 @@ footer a{color:#ffe3a5}
     <article class="family-checkpoint-step">
       <span class="family-checkpoint-top"><b>04 / THE AGREEMENT</b><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 8h32v48l-8-5-8 5-8-5-8 5z"/><path d="M23 20h18m-18 8h18m-18 8h12"/></svg></span>
       <h3>Fees &amp; damage.</h3>
-      <p>Request the complete charges, the published three-day minimum, and the written damage and return terms.</p>
+      <p>Request complete charges, each provider's minimum rental period (Babies Getaway advertises a three-day minimum), and written damage and return terms.</p>
     </article>
   </div>
   <p class="family-checkpoint-safety"><strong>Equipment safety comes first.</strong> Check age and size compatibility, recalls, cleaning policy, instructions, pickup and drop-off arrangements, damage terms and total charges. A rental listing does not replace following each child's equipment safety instructions or applicable car-seat rules.</p>
@@ -916,7 +916,7 @@ footer a{color:#ffe3a5}
    'Other questions: '+(notes.value.trim()||'None yet'),
    warning,
    '',
-   'Please confirm actual gear availability and safe age/size compatibility, delivery coverage, all fees and the published three-day minimum charge, cleaning/recall status, instructions, pickup and return terms.',
+   'Please confirm actual gear availability and safe age/size compatibility, delivery coverage, all fees and your minimum rental period (Babies Getaway advertises a three-day minimum), cleaning/recall status, instructions, pickup and return terms.',
    'No reservation or message has been created.'
   ].join('\n').trim();
   feedback.textContent=warning||'Private draft only. Nothing has been sent.';
