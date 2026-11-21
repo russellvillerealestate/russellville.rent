@@ -971,6 +971,127 @@ html{scroll-padding-top:114px}
 .mobile-rate-atlas__card-link{display:block;background:#eee;color:#173e30}
 }
 
+
+/* 2026-11-21 / Panoramic four-rate field ledger.
+   Live reference review: StayARV's place-first scenic masthead alongside
+   Russellville.Rent's existing category hierarchy. Move the already sourced
+   four different published prices into one equal-weight, scan-friendly row
+   below an immersive editorial cover. No operator is ranked or endorsed.
+   Existing downtown scenic asset, content, disclaimers, links, calculations,
+   scripts and listing workflow remain intact. Applied NN/g visual hierarchy,
+   web.dev image-reuse/reflow guidance, W3C WCAG 2.2 focus and motion support. */
+@media screen and (min-width:951px){
+  .mobile-rate-atlas{
+    display:block;
+    border-radius:28px 28px 10px 10px;
+    box-shadow:0 27px 68px #0c31282c;
+  }
+  .mobile-rate-atlas__cover{
+    min-height:410px;
+    display:grid;
+    grid-template-columns:minmax(0,1.25fr) minmax(275px,.75fr);
+    gap:clamp(24px,4.3vw,67px);
+    align-items:end;
+    padding:clamp(39px,5.3vw,70px);
+    background:
+      linear-gradient(105deg,#082720f5 0%,#123d33e8 44%,#204b3db9 100%),
+      url("assets/downtown-russellville-sunset.jpg") center 46%/cover no-repeat;
+  }
+  .mobile-rate-atlas__cover:after{
+    inset:18px;
+    border-radius:16px;
+  }
+  .mobile-rate-atlas__cover h2{
+    max-width:15ch;
+    margin:20px 0;
+    font-size:clamp(3.65rem,5.55vw,6.15rem);
+    line-height:.99;
+  }
+  .mobile-rate-atlas__cover p{
+    max-width:56ch;
+    font-size:1rem;
+  }
+  .mobile-rate-atlas__cover-foot{
+    min-width:0;
+    align-self:end;
+    padding:25px 26px;
+    border:1px solid #f2dcb575;
+    border-radius:15px;
+    background:#0b2c27d9;
+    backdrop-filter:blur(6px);
+    box-shadow:0 16px 36px #071b1755;
+  }
+  .mobile-rate-atlas__cover-foot strong{
+    font:400 clamp(1.6rem,2.4vw,2.3rem)/1.1 Georgia,serif;
+    letter-spacing:-.035em;
+  }
+  .mobile-rate-atlas__cover-foot small{font-size:.81rem}
+  .mobile-rate-atlas__body{padding:clamp(28px,4vw,48px)}
+  .mobile-rate-atlas__grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+  .mobile-rate-atlas__card{
+    min-height:360px;
+    padding:21px 18px 0;
+    border-radius:13px;
+    box-shadow:0 9px 24px #143e2814;
+  }
+  .mobile-rate-atlas__card:nth-child(even){background:#f0f3e9}
+  .mobile-rate-atlas__card:nth-child(odd){background:#fffdf5}
+  .mobile-rate-atlas__value{
+    font-size:clamp(2.2rem,2.8vw,3.2rem);
+    overflow-wrap:anywhere;
+    margin-top:26px;
+  }
+  .mobile-rate-atlas__card b{font-size:1.02rem}
+  .mobile-rate-atlas__card p{font-size:.82rem}
+  .mobile-rate-atlas__card-link{margin:0 -18px;padding:15px 18px;min-height:51px}
+}
+@media screen and (min-width:951px) and (max-width:1150px){
+  .mobile-rate-atlas__cover{grid-template-columns:minmax(0,1.1fr) minmax(250px,.9fr)}
+  .mobile-rate-atlas__body{padding:27px}
+  .mobile-rate-atlas__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .mobile-rate-atlas__card{min-height:278px}
+  .mobile-rate-atlas__value{font-size:2.9rem;margin-top:20px}
+}
+@media screen and (min-width:631px) and (max-width:950px){
+  .mobile-rate-atlas__cover{
+    background:
+      linear-gradient(105deg,#082720f5,#123d33d9 69%,#204b3db2),
+      url("assets/downtown-russellville-sunset.jpg") center 46%/cover no-repeat;
+  }
+  .mobile-rate-atlas__cover h2{max-width:15ch;font-size:clamp(3.25rem,6vw,4.8rem)}
+  .mobile-rate-atlas__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .mobile-rate-atlas__card{min-height:280px}
+}
+@media screen and (max-width:630px){
+  .mobile-rate-atlas__cover{
+    background:
+      linear-gradient(100deg,#082720f5,#123d33e5 70%,#204b3dbd),
+      url("assets/downtown-russellville-sunset.jpg") 58% center/cover no-repeat;
+  }
+  .mobile-rate-atlas__cover h2{max-width:14ch;line-height:1.015}
+  .mobile-rate-atlas__cover-foot{
+    background:#082e285e;
+    border-top:1px solid #f2d5a795;
+    padding-top:18px;
+  }
+  .mobile-rate-atlas__grid{grid-template-columns:minmax(0,1fr)}
+  .mobile-rate-atlas__card{min-height:0}
+  .mobile-rate-atlas__value{margin-top:14px}
+}
+@media(prefers-reduced-motion:reduce){
+  .mobile-rate-atlas__card{transition:none}
+  .mobile-rate-atlas__card:hover{transform:none}
+}
+@media print{
+  .mobile-rate-atlas__cover{
+    min-height:0;display:block;padding:20px;background:#fff!important;color:#111!important;
+  }
+  .mobile-rate-atlas__cover:after{display:none}
+  .mobile-rate-atlas__cover-foot{background:#fff!important;box-shadow:none;border:0;padding:10px 0}
+  .mobile-rate-atlas__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .mobile-rate-atlas__card{min-height:0;break-inside:avoid;box-shadow:none}
+}
+
 </style></head>
 <body><a class="skip" href="#main">Skip to rental options</a>
 <header class="golf-site-header"><div class="header-inner golf-header-inner">
