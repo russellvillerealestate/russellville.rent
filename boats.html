@@ -1243,6 +1243,174 @@ body{background:#f6f6f0}
   .decision-directory .decision-link strong{overflow-wrap:anywhere}
 }
 
+
+/* 2026-11-21 / Boat-owner access ledger.
+   Compared live stayarv.com and russellville.rent/boats.html before redesign.
+   References: NN/g visual hierarchy (contrast, scale, grouping);
+   Google web.dev responsive reflow (no new image downloads or layout shift);
+   W3C WCAG 2.2 focus visibility, readable contrast, and 320px reflow.
+   The old three-column grid orphaned its fourth timeline event. This
+   replaces it with a chronological 2-row editorial dispatch: two prior
+   notices, the present appointment process, and the federal deadline.
+   Dates, restrictions, contact links and source information are untouched. */
+@media screen {
+  .boat-access-guide {
+    position:relative;isolation:isolate;overflow:hidden;
+    margin-top:36px;padding:clamp(26px,4.4vw,48px);
+    border:1px solid #47725c;border-radius:28px;
+    background:
+      radial-gradient(ellipse at 98% 0%,#4c795555 0,transparent 46%),
+      linear-gradient(139deg,#0c2e2b 0%,#17493d 75%,#0e352e 100%);
+  }
+  .boat-access-guide::before {
+    content:"";position:absolute;z-index:-1;pointer-events:none;
+    width:min(57vw,580px);aspect-ratio:1;right:-270px;top:-310px;
+    border:1px solid #f2d9a52d;border-radius:50%;
+    box-shadow:0 0 0 62px #f5e2b509,0 0 0 122px #f5e2b507;
+  }
+  .boat-access-top {
+    grid-template-columns:minmax(0,1.05fr) minmax(0,.8fr);
+    gap:clamp(22px,4vw,54px);align-items:end;padding-bottom:30px;
+  }
+  .boat-access-guide h2 {
+    max-width:17ch;font-size:clamp(2.35rem,4.3vw,3.85rem);
+    line-height:1.045;letter-spacing:-.055em;
+  }
+  .boat-access-intro {
+    max-width:44ch;font-size:.97rem;line-height:1.7;
+  }
+  .boat-access-steps {
+    display:grid;grid-template-columns:repeat(12,minmax(0,1fr));
+    grid-template-rows:auto auto;gap:14px;margin-top:25px;
+  }
+  .boat-access-steps li {
+    position:relative;min-width:0;min-height:260px;
+    display:flex;flex-direction:column;align-items:stretch;gap:12px;
+    overflow:hidden;padding:clamp(22px,2.7vw,31px);
+    border:1px solid #c9d7c2;border-radius:18px;
+    background:#f6f3e9;color:#1c4338;
+    box-shadow:0 14px 24px #041b1640;
+  }
+  .boat-access-steps li::before {
+    position:absolute;pointer-events:none;right:14px;top:-21px;
+    font:400 clamp(6rem,9vw,9rem)/1 Georgia,"Times New Roman",serif;
+    letter-spacing:-.1em;opacity:.09;
+  }
+  .boat-access-steps li:nth-child(1)::before{content:"01"}
+  .boat-access-steps li:nth-child(2)::before{content:"02"}
+  .boat-access-steps li:nth-child(3)::before{content:"03"}
+  .boat-access-steps li:nth-child(4)::before{content:"04"}
+  .boat-access-steps li:nth-child(1),
+  .boat-access-steps li:nth-child(2){grid-column:span 3}
+  .boat-access-steps li:nth-child(2){background:#e4eee4}
+  .boat-access-steps li:nth-child(3){
+    grid-column:span 6;border:1px solid #9ec5a3;
+    background:radial-gradient(circle at 96% 9%,#3d886e8a,transparent 41%),
+      linear-gradient(125deg,#225f4b,#104537 85%);
+    color:#fffbee;box-shadow:inset 0 0 0 1px #ffffff1d,0 17px 33px #061e1955;
+  }
+  .boat-access-steps .boat-access-date {
+    position:relative;z-index:1;align-self:flex-start;
+    display:inline-flex;align-items:center;min-height:32px;
+    margin:0;padding:5px 10px;border-radius:6px;
+    background:#e1e9d7;color:#3c5a45;
+    font-size:.75rem;line-height:1.3;font-weight:900;
+    letter-spacing:.085em;text-transform:uppercase;
+  }
+  .boat-access-steps li:nth-child(3) .boat-access-date {
+    background:#f3d999;color:#214333;
+  }
+  .boat-access-steps li strong {
+    position:relative;z-index:1;max-width:21ch;
+    margin-top:auto;color:inherit;
+    font:400 clamp(1.45rem,2.05vw,2.2rem)/1.13 Georgia,"Times New Roman",serif;
+    letter-spacing:-.04em;text-wrap:balance;
+  }
+  .boat-access-steps li small {
+    position:relative;z-index:1;display:block;max-width:42ch;
+    font-size:.84rem;line-height:1.62;color:#435a4b;
+  }
+  .boat-access-steps li:nth-child(3) small {color:#e2f0e6}
+  .boat-access-steps li:nth-child(4) {
+    grid-column:1/-1;min-height:150px;display:grid;
+    grid-template-columns:minmax(170px,.5fr) minmax(210px,.75fr) minmax(0,1fr);
+    gap:clamp(18px,3vw,42px);align-items:center;
+    padding:clamp(24px,3vw,34px);
+    background:linear-gradient(100deg,#f0d49a,#f7e8c6 66%,#fcf8ee);
+    color:#183c31;border:2px solid #f1ce84;
+  }
+  .boat-access-steps li:nth-child(4)::before {
+    right:17px;top:-21px;color:#ae7f3c;opacity:.1;
+  }
+  .boat-access-steps li:nth-child(4) .boat-access-date {
+    background:#244b3a;color:#fff9e9;
+    min-height:48px;padding:12px 16px;font-size:.91rem;
+    border-radius:9px;text-wrap:balance;
+  }
+  .boat-access-steps li:nth-child(4) strong {
+    margin:0;max-width:15ch;
+    font-size:clamp(1.65rem,2.8vw,2.65rem);
+  }
+  .boat-access-steps li:nth-child(4) small {
+    margin:0;max-width:47ch;color:#42574b;
+    font-size:.88rem;
+  }
+  .boat-access-contact {
+    margin-top:27px;padding-top:28px;gap:24px;
+  }
+  .boat-access-actions a {min-height:49px}
+}
+@media screen and (max-width:1000px) {
+  .boat-access-steps li:nth-child(1),
+  .boat-access-steps li:nth-child(2) {grid-column:span 6;min-height:210px}
+  .boat-access-steps li:nth-child(3) {grid-column:1/-1;min-height:205px}
+  .boat-access-steps li:nth-child(4) {
+    grid-template-columns:minmax(155px,.8fr) minmax(0,1.2fr);
+  }
+  .boat-access-steps li:nth-child(4) small {grid-column:2}
+}
+@media screen and (max-width:700px) {
+  .boat-access-guide {padding:25px 19px;border-radius:20px}
+  .boat-access-top {grid-template-columns:minmax(0,1fr);gap:14px;padding-bottom:22px}
+  .boat-access-guide h2 {font-size:clamp(2.05rem,7vw,2.9rem)}
+  .boat-access-intro {font-size:.88rem}
+  .boat-access-steps {grid-template-columns:minmax(0,1fr);gap:11px}
+  .boat-access-steps li,
+  .boat-access-steps li:nth-child(1),
+  .boat-access-steps li:nth-child(2),
+  .boat-access-steps li:nth-child(3),
+  .boat-access-steps li:nth-child(4) {
+    grid-column:1;min-height:0;display:flex;flex-direction:column;
+    align-items:flex-start;gap:9px;padding:21px 19px;border-radius:14px;
+  }
+  .boat-access-steps li strong,
+  .boat-access-steps li:nth-child(4) strong {
+    grid-column:auto;margin:3px 0 0;
+    font-size:clamp(1.4rem,5vw,1.85rem);max-width:25ch;
+  }
+  .boat-access-steps li small,
+  .boat-access-steps li:nth-child(4) small {
+    grid-column:auto;max-width:58ch;font-size:.83rem;
+  }
+  .boat-access-steps li:nth-child(4) .boat-access-date {
+    min-height:41px;font-size:.83rem;padding:9px 12px;
+  }
+  .boat-access-contact {padding-top:23px;gap:15px}
+}
+@media screen and (max-width:380px) {
+  .boat-access-steps li,
+  .boat-access-steps li:nth-child(4){padding:19px 15px}
+  .boat-access-steps li strong{overflow-wrap:anywhere}
+}
+@media print {
+  .boat-access-steps {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .boat-access-steps li,.boat-access-steps li:nth-child(n) {
+    grid-column:auto;min-height:0;break-inside:avoid;
+    color:#111;background:#fff;border:1px solid #666;box-shadow:none;
+  }
+  .boat-access-steps li:nth-child(n) small {color:#222}
+}
+
 </style>
 </head>
 <body>
