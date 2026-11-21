@@ -1429,6 +1429,152 @@ body.has-comparison{padding-bottom:115px}
 }
 @media print{.longterm-pocket-nav{display:none!important}}
 
+
+/* 2026-11-21 / River Valley owner fieldnote.
+   A photographic, editorial landlord contact feature adapted from StayARV's
+   immersive local imagery and visual hierarchy. The photo is explicitly
+   scenery, not a rental. The listing feed, phones and original owner copy
+   are unchanged. Responsive reflow, clear focus, reduced motion and print
+   reflect web.dev and WCAG 2.2. */
+main .owner-band.owner-fieldnote{
+  display:grid;grid-template-columns:minmax(0,.97fr) minmax(0,1.03fr);
+  gap:0;padding:0;margin:clamp(64px,7vw,108px) 0 clamp(54px,6vw,82px);
+  overflow:hidden;isolation:isolate;min-height:580px;border:1px solid #bbccc0;
+  border-radius:25px;background:#f9f5eb;color:#163e32;
+  box-shadow:0 26px 60px #143c3125
+}
+.owner-fieldnote-photo{
+  position:relative;isolation:isolate;display:flex;flex-direction:column;
+  justify-content:space-between;gap:45px;min-width:0;min-height:580px;
+  padding:clamp(28px,4vw,54px);
+  background:linear-gradient(180deg,#092d2b9a,#123c35af 42%,#092820ed),
+    url("assets/downtown-russellville-sunset.jpg") center 48%/cover;
+  color:#fff9e7
+}
+.owner-fieldnote-photo:after{
+  content:"";position:absolute;z-index:-1;inset:15px;
+  border:1px solid #f9e9bf5e;border-radius:12px;pointer-events:none
+}
+.owner-fieldnote-edition,.owner-fieldnote-scene-copy>span:first-child{
+  display:block;color:#f5dba9;font-size:.65rem;font-weight:850;
+  letter-spacing:.16em;line-height:1.5
+}
+.owner-fieldnote-edition{padding-bottom:19px;border-bottom:1px solid #f4e8cf7d}
+.owner-fieldnote-scene-copy{margin-top:auto;min-width:0}
+.owner-fieldnote-scene-copy strong{
+  display:block;max-width:12ch;margin:20px 0 29px;
+  color:#fff9e9;font:400 clamp(3rem,5.2vw,5.3rem)/1.02 Georgia,"Times New Roman",serif;
+  letter-spacing:-.065em;text-wrap:balance
+}
+.owner-fieldnote-scene-copy strong em{color:#f1d49b;font-weight:400}
+.owner-fieldnote-rule{display:block;width:min(100%,250px);height:1px;background:#f1dbad8c}
+.owner-fieldnote-scene-copy small{display:block;margin-top:15px;color:#eee9d7;font-size:.82rem}
+.owner-fieldnote-caption{
+  margin:0!important;color:#eee6d4!important;font-size:.69rem!important;line-height:1.55;
+  letter-spacing:.02em
+}
+.owner-fieldnote-content{
+  display:flex;flex-direction:column;align-items:stretch;min-width:0;
+  padding:clamp(33px,4.2vw,64px);
+  background:linear-gradient(155deg,#fffcf4,#eff3e9 87%)
+}
+.owner-fieldnote-issue{
+  display:block;margin-bottom:clamp(36px,4vw,59px);padding-bottom:20px;
+  border-bottom:1px solid #bfd3c2;color:#4b6e5a;
+  font-size:.68rem;font-weight:850;letter-spacing:.17em;line-height:1.5
+}
+.owner-fieldnote .owner-fieldnote-message .eyebrow{
+  margin-bottom:12px;color:#8d6430;font-size:.69rem;letter-spacing:.16em
+}
+.owner-fieldnote .owner-fieldnote-message h2{
+  margin:0 0 24px;max-width:15ch;
+  color:#163d31;font:400 clamp(2.6rem,4.2vw,4.5rem)/1.05 Georgia,"Times New Roman",serif;
+  letter-spacing:-.058em;text-wrap:balance
+}
+.owner-fieldnote .owner-fieldnote-message>p:last-child{
+  max-width:62ch;margin:0;color:#415e4d;font-size:.96rem;line-height:1.73
+}
+.owner-fieldnote-services{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;margin:clamp(26px,4vw,42px) 0 22px;
+  padding:17px 0;border-top:1px solid #c9d8c9;border-bottom:1px solid #c9d8c9
+}
+.owner-fieldnote-services span{
+  display:flex;flex-direction:column;gap:10px;
+  padding:3px 15px;color:#355b45;font-size:.74rem;line-height:1.45;font-weight:700
+}
+.owner-fieldnote-services span:first-child{padding-left:0}
+.owner-fieldnote-services span+span{border-left:1px solid #c9d8c9}
+.owner-fieldnote-services b{
+  color:#9e783e;font:400 1.42rem/1 Georgia,"Times New Roman",serif
+}
+.owner-fieldnote.owner-band .owner-actions{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  justify-content:stretch;align-self:stretch;gap:10px
+}
+.owner-fieldnote.owner-band .owner-actions a{
+  display:inline-flex;align-items:center;justify-content:center;min-width:0;
+  min-height:53px;padding:14px 15px;border-radius:9px;
+  font-weight:850;font-size:.82rem;line-height:1.35;text-align:center;text-decoration:none;
+  transition:transform .18s ease,background-color .18s ease,box-shadow .18s ease
+}
+.owner-fieldnote.owner-band .owner-actions .primary{
+  background:#1a4b3b;border:1px solid #1a4b3b;color:#fffdf4
+}
+.owner-fieldnote.owner-band .owner-actions .secondary{
+  background:#f4e4c4;border:1px solid #c9af83;color:#234936
+}
+.owner-fieldnote.owner-band .owner-actions a:hover{
+  transform:translateY(-2px);box-shadow:0 8px 18px #15392c22
+}
+.owner-fieldnote.owner-band .owner-actions .primary:hover{background:#27634d}
+.owner-fieldnote.owner-band .owner-actions .secondary:hover{background:#eed3a3}
+.owner-fieldnote.owner-band .owner-actions a:focus-visible{
+  outline:3px solid #ae6e14;outline-offset:4px
+}
+.owner-fieldnote .owner-fieldnote-fine{
+  margin:18px 0 0;color:#5b715f;font-size:.73rem;line-height:1.6
+}
+@media(max-width:960px){
+  main .owner-band.owner-fieldnote{grid-template-columns:1fr}
+  .owner-fieldnote-photo{min-height:360px;padding:35px}
+  .owner-fieldnote-scene-copy strong{max-width:none;font-size:clamp(2.7rem,6vw,4.4rem)}
+  .owner-fieldnote-issue{margin-bottom:28px}
+}
+@media(max-width:620px){
+  main .owner-band.owner-fieldnote{margin:47px 0 44px;border-radius:18px}
+  .owner-fieldnote-photo{min-height:340px;padding:27px 22px;gap:24px}
+  .owner-fieldnote-photo:after{inset:10px;border-radius:10px}
+  .owner-fieldnote-scene-copy strong{font-size:clamp(2.6rem,10vw,3.7rem);margin:14px 0 19px}
+  .owner-fieldnote-content{padding:30px 22px 32px}
+  .owner-fieldnote .owner-fieldnote-message h2{font-size:clamp(2.55rem,9vw,3.6rem)}
+  .owner-fieldnote-services{grid-template-columns:1fr;margin:25px 0 20px;padding:6px 0}
+  .owner-fieldnote-services span,.owner-fieldnote-services span:first-child{
+    flex-direction:row;align-items:center;gap:16px;padding:13px 3px
+  }
+  .owner-fieldnote-services span+span{border-left:0;border-top:1px solid #c9d8c9}
+  .owner-fieldnote-services b{min-width:32px;font-size:1.5rem}
+  .owner-fieldnote.owner-band .owner-actions{grid-template-columns:1fr}
+  .owner-fieldnote.owner-band .owner-actions a{min-height:51px}
+}
+@media(prefers-reduced-motion:reduce){
+  .owner-fieldnote.owner-band .owner-actions a{transition:none}
+  .owner-fieldnote.owner-band .owner-actions a:hover{transform:none}
+}
+@media print{
+  main .owner-band.owner-fieldnote{
+    display:block;min-height:0;box-shadow:none;background:#fff;
+    border:1px solid #666;break-inside:avoid
+  }
+  .owner-fieldnote-photo{display:none!important}
+  .owner-fieldnote-content{display:block;padding:22px;background:#fff}
+  .owner-fieldnote .owner-fieldnote-message h2,
+  .owner-fieldnote .owner-fieldnote-message>p:last-child,
+  .owner-fieldnote .owner-fieldnote-issue,
+  .owner-fieldnote .owner-fieldnote-fine{color:#173d32!important}
+  .owner-fieldnote.owner-band .owner-actions a{color:#173d32!important;background:#fff!important;border:1px solid #666}
+}
+
 </style></head>
 <body>
 <a class="skip" href="#main">Skip to listings</a>
@@ -1964,15 +2110,34 @@ body.has-comparison{padding-bottom:115px}
     </div>
   </section>
 
-  <section id="property-managers" class="owner-band" aria-labelledby="manager-title">
-    <div>
-      <p class="eyebrow">Property managers & owners</p>
-      <h2 id="manager-title">Put your vacancies in front of Russellville renters.</h2>
-      <p>Want your listings added directly, corrected, removed, or connected to a cleaner inventory feed? Russellville.Rent is building a central local search experience while keeping each listing attributed to its actual manager.</p>
+  <section id="property-managers" class="owner-band owner-fieldnote" aria-labelledby="manager-title">
+    <div class="owner-fieldnote-photo">
+      <span class="owner-fieldnote-edition">R↗ / THE RIVER VALLEY RENTAL INDEX</span>
+      <div class="owner-fieldnote-scene-copy">
+        <span>THE LOCAL LISTING DESK / RUSSELLVILLE</span>
+        <strong>Every place has<br><em>a next chapter.</em></strong>
+        <span class="owner-fieldnote-rule" aria-hidden="true"></span>
+        <small>Local property owners &amp; managers</small>
+      </div>
+      <p class="owner-fieldnote-caption">Downtown Russellville scenery · Not a listed rental property</p>
     </div>
-    <div class="owner-actions">
-      <a class="button primary" href="sms:+14799707301">Text about listings</a>
-      <a class="button secondary" href="tel:+14799707301">Call 479-970-7301</a>
+    <div class="owner-fieldnote-content">
+      <span class="owner-fieldnote-issue">FOR PROPERTY MANAGERS / 01—03</span>
+      <div class="owner-fieldnote-message">
+        <p class="eyebrow">Property managers & owners</p>
+        <h2 id="manager-title">Put your vacancies in front of Russellville renters.</h2>
+        <p>Want your listings added directly, corrected, removed, or connected to a cleaner inventory feed? Russellville.Rent is building a central local search experience while keeping each listing attributed to its actual manager.</p>
+      </div>
+      <div class="owner-fieldnote-services" aria-label="Reasons to contact the directory">
+        <span><b>01</b> Add a vacancy</span>
+        <span><b>02</b> Correct or remove a listing</span>
+        <span><b>03</b> Discuss inventory updates</span>
+      </div>
+      <div class="owner-actions">
+        <a class="button primary" href="sms:+14799707301">Text about listings</a>
+        <a class="button secondary" href="tel:+14799707301">Call 479-970-7301</a>
+      </div>
+      <p class="owner-fieldnote-fine">Listing details remain attributed to the original manager. Contact the directory to discuss any additions or changes.</p>
     </div>
   </section>
 
