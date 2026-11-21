@@ -616,6 +616,119 @@ footer a{color:#ffe3a5}
 @media(prefers-reduced-motion:reduce){.coverage-atlas-route{transition:none}.coverage-atlas-route:hover{transform:none}}
 @media print{.coverage-atlas{background:#fff;box-shadow:none;border:1px solid #888;break-inside:avoid}.coverage-atlas-head{min-height:0;padding:22px;background:#fff!important;color:#173b31}.coverage-atlas-head:after{display:none}.coverage-atlas-head :is(h3,h3 em,p,.coverage-atlas-overline,.coverage-atlas-photo){color:#173b31!important}.coverage-atlas-options{margin:0 15px;gap:12px}.coverage-atlas-route,.coverage-atlas-route:first-child,.coverage-atlas-route:last-child{min-height:0;background:#fff!important;color:#173b31;box-shadow:none;border:1px solid #888}.coverage-atlas-route :is(.coverage-atlas-index,strong,em,.coverage-atlas-route-name,.coverage-atlas-action){color:#173b31!important}.coverage-atlas-foot{color:#173b31}}
 
+
+/* 2026-11-21 / Regional family-gear provider dossier.
+   Compared live StayARV's immersive sense-of-place hierarchy with Russellville.Rent's
+   family directory; reinterpret as a restrained mapless dispatch folio rather than
+   imply a Fort Smith provider serves Russellville. Nielsen Norman Group information
+   scent / visual hierarchy, Google web.dev responsive layouts, W3C WCAG 2.2
+   1.4.10 reflow and 2.4.7 focus visibility. Existing provider facts and inquiry
+   tools are preserved byte-for-byte; no new assets or external requests. */
+.regional-folio{
+  grid-template-columns:minmax(0,1.45fr) minmax(270px,.85fr);
+  gap:0;padding:0;border:1px solid #b4c7b8;border-top:0;
+  border-radius:23px;overflow:hidden;background:#fffdf6;
+  box-shadow:0 25px 60px #0c302b21;
+}
+.regional-folio-banner{
+  position:relative;isolation:isolate;display:flex;flex-direction:column;
+  justify-content:space-between;grid-column:1/-1;min-width:0;min-height:350px;
+  overflow:hidden;padding:clamp(27px,4.5vw,52px) clamp(26px,5vw,60px);
+  background:radial-gradient(circle at 88% 8%,#52796088 0%,transparent 32%),
+             linear-gradient(116deg,#092a24 0%,#164334 61%,#315944 100%);
+  color:#fff7e8;
+}
+.regional-folio-banner:before{
+  content:"";position:absolute;z-index:-1;inset:-60% -10% -65% 47%;
+  background:repeating-radial-gradient(circle at 50% 50%,transparent 0 37px,#efd49a20 38px 39px,transparent 40px 76px);
+  pointer-events:none;transform:rotate(-14deg);
+}
+.regional-folio-banner:after{
+  content:"02";position:absolute;right:clamp(22px,4vw,50px);top:8px;
+  font:italic 400 clamp(6rem,14vw,12rem)/1 Georgia,"Times New Roman",serif;
+  color:#e8cc8425;pointer-events:none;
+}
+.regional-folio-kicker,.regional-folio-footnote{
+  position:relative;z-index:1;display:block;max-width:70ch;
+  font-size:.68rem;font-weight:800;line-height:1.55;letter-spacing:.13em;
+  text-transform:uppercase;color:#f2d49c;
+}
+.regional-folio-banner-inner{
+  position:relative;z-index:1;display:flex;justify-content:space-between;
+  align-items:end;gap:30px;padding:24px 0;
+}
+.regional-folio-display{
+  margin:0 0 14px;max-width:18ch;color:#fff9e9;
+  font:400 clamp(2.6rem,5vw,5.2rem)/1.03 Georgia,"Times New Roman",serif;
+  letter-spacing:-.055em;text-wrap:balance;
+}
+.regional-folio-display em{color:#f3d8a3;font-style:italic}
+.regional-folio-deck{
+  margin:0;max-width:57ch;color:#e7eee4;
+  font-size:clamp(.92rem,1.4vw,1.08rem);line-height:1.7;
+}
+.regional-folio-seal{
+  position:relative;display:grid;place-items:center;flex:0 0 clamp(110px,14vw,175px);
+  width:clamp(110px,14vw,175px);height:clamp(110px,14vw,175px);
+  border:2px dashed #edcf96a8;border-radius:50%;
+  box-shadow:inset 0 0 0 9px #f1d69b0b,0 0 0 7px #f1d69b0c;
+  color:#f2d8a2;transform:rotate(-12deg);
+}
+.regional-folio-seal span{font:italic 400 clamp(3.5rem,7vw,6rem)/1 Georgia,serif}
+.regional-folio-seal small{position:absolute;bottom:22%;right:23%;font:800 1.4rem system-ui,sans-serif}
+.regional-folio-footnote{font-size:.62rem;letter-spacing:.04em;text-transform:none;color:#d1dfd1}
+.regional-folio-body{min-width:0;padding:clamp(29px,4.7vw,53px)}
+.regional-folio-body .tag{background:#e5eee2;color:#27563f}
+.regional-folio-body h3{
+  font:400 clamp(1.95rem,3.1vw,3.2rem)/1.14 Georgia,"Times New Roman",serif;
+  letter-spacing:-.047em;color:#173c30;max-width:26ch;
+}
+.regional-folio-body p{color:#40594e;line-height:1.78}
+.regional-folio-body p.fine{color:#566c5e;font-size:.87rem}
+.regional-folio .box{
+  align-self:stretch;min-width:0;margin:clamp(18px,2.6vw,30px);
+  margin-left:0;border:1px solid #cadac7;border-top:5px solid #c49b5f;
+  padding:clamp(25px,3vw,35px);background:linear-gradient(145deg,#edf3e7,#e3ebde);
+  color:#183c31;box-shadow:none;
+}
+.regional-folio .box:before{background:#9c7443}
+.regional-folio .box h4{color:#163d31}
+.regional-folio .box p{color:#395b48}
+.regional-folio .box a:not(.button){color:#225940}
+.regional-folio .box .button{
+  background:#173d32;color:#fff;min-height:50px;
+}
+.regional-folio .box .button:hover{background:#2d644d}
+.regional-folio :is(a):focus-visible{outline:3px solid #a16b1c;outline-offset:4px}
+@media(max-width:840px){
+  .regional-folio{grid-template-columns:1fr}
+  .regional-folio-banner{min-height:300px}
+  .regional-folio-body{padding:35px 30px 19px}
+  .regional-folio .box{margin:0 30px 31px}
+}
+@media(max-width:570px){
+  .regional-folio{border-radius:18px}
+  .regional-folio-banner{min-height:0;padding:29px 23px;gap:20px}
+  .regional-folio-banner-inner{padding:4px 0 9px}
+  .regional-folio-display{font-size:clamp(2.45rem,9vw,3.7rem)}
+  .regional-folio-seal{display:none}
+  .regional-folio-body{padding:28px 23px 20px}
+  .regional-folio .box{margin:0 22px 24px}
+}
+@media(max-width:350px){
+  .regional-folio-display{font-size:2.2rem}
+  .regional-folio-banner{padding:25px 19px}
+  .regional-folio-body{padding:24px 18px 17px}
+  .regional-folio .box{margin:0 17px 20px;padding:22px 18px}
+}
+@media print{
+  .regional-folio{break-inside:avoid;background:#fff;box-shadow:none;border:1px solid #888}
+  .regional-folio-banner{min-height:0;background:#fff!important;border-bottom:1px solid #888;color:#183d31}
+  .regional-folio-banner:before,.regional-folio-banner:after,.regional-folio-seal{display:none}
+  .regional-folio-banner :is(.regional-folio-kicker,.regional-folio-display,.regional-folio-display em,.regional-folio-deck,.regional-folio-footnote){color:#183d31!important}
+  .regional-folio .box{background:#fff;box-shadow:none}
+}
+
 </style>
 </head>
 <body>
@@ -764,8 +877,19 @@ footer a{color:#ffe3a5}
 <div><span class="tag">Russellville service advertised</span><h3>Babies Getaway — Cribs, Strollers &amp; Car Seats</h3><p>Babies Getaway's <strong>official Russellville page</strong> advertises rentals of cribs, strollers, car seats, high chairs, playpens and related baby equipment for trips to Russellville, with delivery and pickup from vacation homes, hotels and other destinations. The provider's public policy describes a <strong>three-day minimum rental charge</strong> and advises booking <strong>at least 3–4 days ahead</strong>. It confirms individual orders after reviewing equipment availability, delivery dates and driver capacity.</p><p><strong>Important:</strong> Russellville service is advertised by the operator, but a local storefront, individual item inventory, confirmed delivery availability, all-in pricing and any rush-service eligibility are <strong>UNCONFIRMED</strong>. The provider says delivery charges appear during checkout; do not treat its location page as a confirmed booking.</p><p class="fine">Regional delivery service · No independently verified Russellville pickup address · Source checked November 6, 2026</p><p><a href="https://www.babiesgetaway.com/Russellville-AR" target="_blank" rel="noopener noreferrer">Official Russellville service and rental terms ↗</a> · <a href="https://www.babiesgetaway.com/" target="_blank" rel="noopener noreferrer">Company rental catalog ↗</a></p></div><aside class="box" id="delivery-details"><h4>Check before booking</h4><p><strong>Phone:</strong> <a href="tel:+18447951539">844-795-1539</a> (official national booking line)</p><p><strong>Examples:</strong> Cribs · strollers · car seats · high chairs · playpens</p><p><strong>Timing:</strong> Three-day minimum charge; provider recommends several days' notice.</p><p><strong>Delivery:</strong> Russellville advertised; exact address, date, stock and fees need confirmation.</p><a class="button" href="https://www.babiesgetaway.com/Russellville-AR" target="_blank" rel="noopener noreferrer">Check provider options ↗</a></aside></article>
 
 <div class="provider-kicker"><span>Provider 02 / 02</span><span>Fort Smith · Russellville delivery UNCONFIRMED</span></div>
-<article class="provider" aria-labelledby="babyquip-fort-smith-heading">
-  <div>
+<article class="provider regional-folio" aria-labelledby="babyquip-fort-smith-heading">
+  <div class="regional-folio-banner">
+    <span class="regional-folio-kicker">02 / THE RIVER VALLEY · REGIONAL INQUIRY</span>
+    <div class="regional-folio-banner-inner">
+      <div>
+        <p class="regional-folio-display">A regional lead.<br><em>Not a local promise.</em></p>
+        <p class="regional-folio-deck">Before comparing equipment, ask whether the Fort Smith operator can serve your exact Russellville address.</p>
+      </div>
+      <span class="regional-folio-seal" aria-hidden="true"><span>R</span><small>?</small></span>
+    </div>
+    <span class="regional-folio-footnote">Illustrative directory design · Not a verified delivery route or available inventory</span>
+  </div>
+  <div class="regional-folio-body">
     <span class="tag">Regional provider · address eligibility unconfirmed</span>
     <h3 id="babyquip-fort-smith-heading">BabyQuip — Christina Z.’s Fort Smith Rental Shop</h3>
     <p>BabyQuip's operator-hosted profile identifies a Fort Smith-based quality provider offering baby-gear rentals and describing its service area as the <strong>Arkansas River Valley and surrounding areas</strong>, naming Fort Smith, Barling, Van Buren, Greenwood, Bonanza, Hackett and Pocola. <strong>Russellville is not specifically named, so Russellville delivery is UNCONFIRMED.</strong> Do not assume an address in Russellville qualifies for delivery or pickup.</p>
