@@ -826,6 +826,132 @@ body:not(.move-scan-on) #nearby .dispatch-caption{font-size:.55rem;line-height:1
  body:not(.move-scan-on) #nearby .dispatch-art,
  body:not(.move-scan-on) #nearby .dispatch-caption{display:none}
 }
+
+/* 2026-11-20 | River Valley moving dispatch: a photographic first stop.
+   The existing three-step roadbook becomes a clear visual sequence on desktop:
+   one prominent local pickup route, two practical follow-up tickets.
+   Local downtown image is editorial scenery, not a rental truck or inventory.
+   Compared live StayARV and Russellville.Rent, and recent main design commits.
+   NN/g: visual hierarchy and signposting; web.dev: responsive, stable image
+   layout; WCAG 2.2: reading order, visible keyboard focus, reflow, reduced motion.
+   Existing route links, provider facts, filters, pricing and automation unchanged. */
+.move-roadbook-grid .move-roadbook-stop:first-child .move-roadbook-photo-note{
+  position:relative;z-index:2;display:block;align-self:end;grid-column:1/-1;
+  margin-top:11px;color:#f5dfb5;font-size:.64rem;line-height:1.55;
+  letter-spacing:.06em;font-weight:750
+}
+@media screen and (min-width:980px){
+  .move-roadbook-grid{
+    grid-template-columns:minmax(0,1.16fr) minmax(0,.84fr);
+    grid-template-rows:repeat(2,minmax(222px,auto));
+    gap:17px;align-items:stretch
+  }
+  .move-roadbook-grid .move-roadbook-stop{min-width:0;min-height:0}
+  .move-roadbook-grid .move-roadbook-stop:first-child{
+    isolation:isolate;overflow:hidden;grid-column:1;grid-row:1/3;
+    display:grid;grid-template-columns:minmax(0,1fr);
+    grid-template-rows:auto 1fr auto auto;align-items:stretch;
+    min-height:480px;padding:33px 37px 28px;gap:13px;
+    border:1px solid #8fa98c;border-radius:23px;
+    background:linear-gradient(180deg,#102f2bdb 0%,#0d332edc 43%,#082c28fa 100%),
+      url("assets/downtown-russellville-sunset.jpg") center 51%/cover no-repeat;
+    color:#fffaf0;box-shadow:0 21px 39px #05291f5e
+  }
+  .move-roadbook-grid .move-roadbook-stop:first-child .move-roadbook-number{
+    grid-column:1;grid-row:1;color:#f9d99e;font-size:.73rem
+  }
+  .move-roadbook-grid .move-roadbook-stop:first-child strong{
+    grid-column:1;grid-row:2;align-self:end;z-index:1;max-width:11ch;
+    padding:0;margin:0;font:400 clamp(2.6rem,4.2vw,4.1rem)/1.04 Georgia,serif;
+    letter-spacing:-.064em;color:#fff9ea;text-shadow:0 4px 20px #021f19c4
+  }
+  .move-roadbook-grid .move-roadbook-stop:first-child svg{
+    position:absolute;top:66px;right:27px;grid-column:auto;grid-row:auto;
+    width:min(34%,170px);height:auto;opacity:.88;stroke:#f8dea9;
+    filter:drop-shadow(0 9px 13px #021e1b83)
+  }
+  .move-roadbook-grid .move-roadbook-stop:first-child .move-roadbook-bottom{
+    grid-column:1;grid-row:3;margin:8px 0 0;
+    border-color:#f2d9a26b;color:#e8f0e7;font-size:.95rem;line-height:1.65
+  }
+  .move-roadbook-grid .move-roadbook-stop:first-child .move-roadbook-bottom b{
+    color:#f8d799;font-size:1.55rem
+  }
+  .move-roadbook-grid .move-roadbook-stop:nth-child(2){
+    grid-column:2;grid-row:1;background:linear-gradient(145deg,#f1d8a9,#e4c283)
+  }
+  .move-roadbook-grid .move-roadbook-stop:nth-child(3){
+    grid-column:2;grid-row:2;background:linear-gradient(145deg,#f5f8ed,#d9e9dc)
+  }
+  .move-roadbook-grid .move-roadbook-stop:not(:first-child){
+    grid-template-columns:minmax(0,1fr) 85px;grid-template-rows:auto 1fr auto;
+    padding:26px 28px;gap:8px 11px;min-height:0;border-radius:19px
+  }
+  .move-roadbook-grid .move-roadbook-stop:not(:first-child) strong{
+    grid-column:1;grid-row:2;align-self:center;
+    padding:0;font-size:clamp(1.75rem,2.45vw,2.55rem);max-width:13ch
+  }
+  .move-roadbook-grid .move-roadbook-stop:not(:first-child) svg{
+    position:static;grid-column:2;grid-row:1/3;align-self:center;
+    width:84px;max-width:100%;opacity:1
+  }
+  .move-roadbook-grid .move-roadbook-stop:not(:first-child) .move-roadbook-bottom{
+    grid-row:3;margin:0
+  }
+}
+@media screen and (min-width:650px) and (max-width:979px){
+  .move-roadbook-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+  .move-roadbook-grid .move-roadbook-stop:first-child{
+    grid-column:1/-1;min-height:290px;isolation:isolate;
+    background:linear-gradient(105deg,#0b332ef7 0%,#0b332edf 67%,#0b332d9e),
+      url("assets/downtown-russellville-sunset.jpg") center 48%/cover no-repeat;
+    color:#fffaf0
+  }
+  .move-roadbook-grid .move-roadbook-stop:first-child strong{color:#fff9eb}
+  .move-roadbook-grid .move-roadbook-stop:first-child .move-roadbook-number,
+  .move-roadbook-grid .move-roadbook-stop:first-child .move-roadbook-bottom,
+  .move-roadbook-grid .move-roadbook-stop:first-child .move-roadbook-bottom b{
+    color:#f3d99f
+  }
+  .move-roadbook-grid .move-roadbook-stop:first-child svg{stroke:#f8d7a2}
+  .move-roadbook-grid .move-roadbook-stop:not(:first-child){min-height:235px}
+}
+@media screen and (max-width:649px){
+  .move-roadbook-grid .move-roadbook-stop:first-child{
+    isolation:isolate;min-height:255px;
+    background:linear-gradient(120deg,#0c352fe8 0%,#0a302af0 63%,#0d342cb7),
+      url("assets/downtown-russellville-sunset.jpg") center/cover no-repeat;
+    border-color:#c0a775;color:#fff9eb
+  }
+  .move-roadbook-grid .move-roadbook-stop:first-child strong{color:#fff9eb}
+  .move-roadbook-grid .move-roadbook-stop:first-child .move-roadbook-number,
+  .move-roadbook-grid .move-roadbook-stop:first-child .move-roadbook-bottom,
+  .move-roadbook-grid .move-roadbook-stop:first-child .move-roadbook-bottom b{
+    color:#f6dba5
+  }
+  .move-roadbook-grid .move-roadbook-stop:first-child svg{stroke:#f5d79c}
+  .move-roadbook-grid .move-roadbook-stop:first-child .move-roadbook-photo-note{
+    font-size:.58rem;letter-spacing:.02em;margin-top:0
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .move-roadbook-grid .move-roadbook-stop{transition:none}
+  .move-roadbook-grid .move-roadbook-stop:hover{transform:none}
+}
+@media print{
+  .move-roadbook-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:auto!important}
+  .move-roadbook-grid .move-roadbook-stop,
+  .move-roadbook-grid .move-roadbook-stop:first-child{
+    grid-column:auto!important;grid-row:auto!important;min-height:0!important;
+    background:#fff!important;color:#111!important;box-shadow:none!important;
+    border:1px solid #777!important;break-inside:avoid
+  }
+  .move-roadbook-grid .move-roadbook-stop:first-child strong,
+  .move-roadbook-grid .move-roadbook-stop:first-child .move-roadbook-number,
+  .move-roadbook-grid .move-roadbook-stop:first-child .move-roadbook-bottom,
+  .move-roadbook-grid .move-roadbook-stop:first-child .move-roadbook-photo-note{color:#111!important}
+}
+
 </style></head>
 <body><a class="skip" href="#main">Skip to rental options</a><header><div class="wrap"><a class="brand" href="/">Russellville<span>.Rent</span></a><a class="back" href="/">← Browse all rentals</a></div></header>
 
@@ -895,6 +1021,7 @@ body:not(.move-scan-on) #nearby .dispatch-caption{font-size:.55rem;line-height:1
     <a class="move-roadbook-stop" href="#local"><span class="move-roadbook-number">01 / FIND THE RENTAL</span><strong>Start with a pickup.</strong>
       <svg viewBox="0 0 96 88" aria-hidden="true" focusable="false"><path d="M8 29h47v35H8zM55 42h18l13 14v8H55zM19 38h25m-25 10h25M6 64h83"/><circle cx="27" cy="65" r="9"/><circle cx="72" cy="65" r="9"/><path d="M10 18h38m-38-8h25"/></svg>
       <span class="move-roadbook-bottom"><span>Browse the Russellville listings, then check the regional alternatives.</span><b aria-hidden="true">↗</b></span>
+      <span class="move-roadbook-photo-note">Downtown Russellville scenery · Not rental vehicle inventory</span>
     </a>
     <a class="move-roadbook-stop" href="#move-quote"><span class="move-roadbook-number">02 / COMPARE THE TOTAL</span><strong>See beyond the day rate.</strong>
       <svg viewBox="0 0 96 88" aria-hidden="true" focusable="false"><path d="M19 8h56v70l-9-6-9 6-10-6-9 6-10-6-9 6zM31 26h32m-32 11h22m-22 11h32m-32 12h14"/><path d="m60 58 6 5 8-11"/></svg>
