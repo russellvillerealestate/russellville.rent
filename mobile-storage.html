@@ -515,6 +515,184 @@ footer a{font-weight:750}
   body{padding-bottom:0!important}
 }
 
+
+/* 2026-11-21 / Portable-storage dispatch: three existing functional routes
+   now read as an editorial freight folio rather than equal generic tiles.
+   Live references: StayARV and Russellville.Rent, reviewed before redesign.
+   NN/g visual hierarchy and clear information scent; web.dev responsive
+   reflow and native image reuse; WCAG 2.2 keyboard focus and target sizes.
+   Reuses the site's downtown photograph as labelled scenery, never stock. */
+.storage-paths.storage-dispatch-board{
+  isolation:isolate;grid-template-columns:minmax(0,1.14fr) minmax(0,.86fr);
+  grid-template-rows:auto repeat(2,minmax(205px,auto));gap:15px;
+  width:min(1180px,calc(100% - 42px));margin-top:-37px;
+}
+.storage-dispatch-heading{
+  grid-column:1/-1;display:grid;gap:13px;padding:31px clamp(26px,4.1vw,49px) 30px;
+  background:#f6f1e6;border:1px solid #cdbd9d;border-radius:21px 21px 9px 9px;
+  box-shadow:0 16px 32px #102e2434;
+}
+.storage-dispatch-edition{
+  display:flex;justify-content:space-between;gap:14px;align-items:center;
+  color:#6b5c3d;font-size:.64rem;letter-spacing:.17em;font-weight:850;line-height:1.4;
+}
+.storage-dispatch-edition b{color:#1c5641;white-space:nowrap;font-size:.75rem;letter-spacing:.1em}
+.storage-dispatch-heading-row{
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(240px,.85fr);
+  align-items:end;gap:30px;
+}
+.storage-dispatch-heading h2{
+  margin:0;font:400 clamp(2.6rem,4.35vw,4.7rem)/1.04 Georgia,"Times New Roman",serif;
+  letter-spacing:-.062em;color:#163e32;text-wrap:balance;
+}
+.storage-dispatch-heading h2 em{color:#96642c;font-weight:400}
+.storage-dispatch-heading p{
+  max-width:44ch;margin:0 0 5px;color:#3a5b48;font-size:.91rem;line-height:1.75;
+}
+.storage-paths.storage-dispatch-board>.storage-path{
+  min-width:0;min-height:205px;border-radius:15px;overflow:hidden;
+  box-shadow:0 17px 37px #102d2531;
+}
+.storage-paths.storage-dispatch-board>.storage-path:first-of-type{
+  isolation:isolate;grid-column:1;grid-row:2/4;min-height:461px;
+  padding:clamp(28px,4.2vw,51px);
+  justify-content:flex-end;gap:13px;
+  border:1px solid #e4ce9a;color:#fff8ea;
+  background:linear-gradient(0deg,#082820 2%,#0b3029e9 45%,#13433791 100%),
+    url("/assets/downtown-russellville-sunset.jpg") center 55%/cover no-repeat;
+}
+.storage-paths.storage-dispatch-board>.storage-path:first-of-type:before{
+  content:"";position:absolute;inset:13px;border:1px solid #f7dfaa6b;
+  border-radius:8px;pointer-events:none;
+}
+.storage-paths.storage-dispatch-board>.storage-path:first-of-type:after{
+  content:"RUSSELLVILLE SCENERY · NOT RENTAL INVENTORY";
+  display:block;margin-top:12px;padding-top:13px;border-top:1px solid #ead39d8a;
+  color:#e5e7d8;font-size:.62rem;font-weight:800;letter-spacing:.08em;line-height:1.55;
+}
+.storage-paths.storage-dispatch-board>.storage-path:first-of-type .path-number{
+  margin-bottom:auto;color:#f7dba1;font-size:.73rem;
+}
+.storage-paths.storage-dispatch-board>.storage-path:first-of-type strong{
+  max-width:12ch;color:#fff9e9;font:400 clamp(2.9rem,4.7vw,4.9rem)/1.02 Georgia,serif;
+  letter-spacing:-.065em;text-wrap:balance;
+}
+.storage-paths.storage-dispatch-board>.storage-path:first-of-type small{
+  max-width:36ch;color:#e8efe4;font-size:1rem;line-height:1.7;
+}
+.storage-paths.storage-dispatch-board>.storage-path:first-of-type .path-diagram{
+  height:64px;overflow:visible;gap:11px;
+}
+.storage-paths.storage-dispatch-board>.storage-path:first-of-type .path-diagram i{
+  height:38px;width:63px;border-color:#f1d29a;
+  background:repeating-linear-gradient(90deg,#e1bb77b8 0 11px,#997347 11px 13px);
+  box-shadow:0 9px 20px #061a1660;
+}
+.storage-paths.storage-dispatch-board>.storage-path:first-of-type .path-diagram i:nth-child(2){
+  height:49px;width:80px;
+}
+.storage-paths.storage-dispatch-board>.storage-path:first-of-type .path-diagram i:nth-child(3){
+  height:61px;width:103px;
+}
+.storage-paths.storage-dispatch-board>.storage-path:first-of-type .path-arrow{
+  width:45px;height:45px;top:30px;right:29px;
+  background:#f4dbad;color:#194236;border-color:#f4dbad;
+}
+.storage-paths.storage-dispatch-board>.storage-path:nth-of-type(2){
+  grid-column:2;grid-row:2;padding:clamp(24px,2.7vw,35px);
+  background:radial-gradient(circle at 100% 0,#f6dcaf 0,transparent 58%),#fff3dc;
+  border:1px solid #e2c99b;
+}
+.storage-paths.storage-dispatch-board>.storage-path:nth-of-type(3){
+  grid-column:2;grid-row:3;padding:clamp(24px,2.7vw,35px);
+  background:radial-gradient(circle at 100% 0,#d6e9d8 0,transparent 58%),#e7f1e7;
+  border:1px solid #c3d8c3;
+}
+.storage-paths.storage-dispatch-board>.storage-path:nth-of-type(n+2) strong{
+  max-width:18ch;font-size:clamp(1.7rem,2.5vw,2.35rem);line-height:1.08;
+}
+.storage-paths.storage-dispatch-board>.storage-path:nth-of-type(n+2) small{
+  max-width:42ch;color:#42604c;
+}
+.storage-paths.storage-dispatch-board>.storage-path:nth-of-type(n+2) .path-diagram{
+  height:39px;
+}
+.storage-paths.storage-dispatch-board>.storage-path:focus-visible{
+  outline:4px solid #bd7727;outline-offset:4px;
+}
+.storage-paths.storage-dispatch-board>.storage-path:first-of-type:focus-visible{
+  outline-color:#ffe6a7;outline-offset:-7px;
+}
+@media(max-width:880px){
+  .storage-paths.storage-dispatch-board{grid-template-columns:1fr;grid-template-rows:auto;gap:12px}
+  .storage-dispatch-heading{grid-column:1;gap:10px;padding:26px 27px}
+  .storage-dispatch-heading-row{grid-template-columns:1fr;gap:13px}
+  .storage-dispatch-heading h2{font-size:clamp(2.55rem,6.1vw,3.7rem)}
+  .storage-dispatch-heading p{max-width:65ch}
+  .storage-paths.storage-dispatch-board>.storage-path:first-of-type{
+    grid-column:1;grid-row:auto;min-height:315px;padding:30px;gap:11px;
+  }
+  .storage-paths.storage-dispatch-board>.storage-path:first-of-type strong{
+    max-width:19ch;font-size:clamp(2.7rem,6.6vw,4rem);
+  }
+  .storage-paths.storage-dispatch-board>.storage-path:first-of-type .path-diagram{height:47px}
+  .storage-paths.storage-dispatch-board>.storage-path:nth-of-type(n+2){
+    grid-column:1;grid-row:auto;min-height:180px;
+  }
+}
+@media(max-width:520px){
+  .storage-paths.storage-dispatch-board{
+    width:calc(100% - 30px);gap:10px;margin-top:-22px;
+  }
+  .storage-dispatch-heading{padding:24px 22px;border-radius:16px 16px 8px 8px}
+  .storage-dispatch-edition{font-size:.57rem;letter-spacing:.08em}
+  .storage-dispatch-heading h2{font-size:clamp(2.35rem,9.3vw,3.05rem)}
+  .storage-dispatch-heading p{font-size:.83rem}
+  .storage-paths.storage-dispatch-board>.storage-path:first-of-type{
+    min-height:330px;padding:28px 24px;
+  }
+  .storage-paths.storage-dispatch-board>.storage-path:first-of-type strong{
+    font-size:clamp(2.5rem,10.8vw,3.45rem);
+  }
+  .storage-paths.storage-dispatch-board>.storage-path:first-of-type small{font-size:.87rem}
+  .storage-paths.storage-dispatch-board>.storage-path:first-of-type .path-arrow{
+    top:19px;right:18px;width:36px;height:36px;
+  }
+  .storage-paths.storage-dispatch-board>.storage-path:first-of-type .path-diagram{
+    height:40px;
+  }
+  .storage-paths.storage-dispatch-board>.storage-path:first-of-type .path-diagram i{
+    width:37px;height:25px;
+  }
+  .storage-paths.storage-dispatch-board>.storage-path:first-of-type .path-diagram i:nth-child(2){
+    width:47px;height:32px;
+  }
+  .storage-paths.storage-dispatch-board>.storage-path:first-of-type .path-diagram i:nth-child(3){
+    width:59px;height:39px;
+  }
+  .storage-paths.storage-dispatch-board>.storage-path:nth-of-type(n+2){
+    padding:23px 23px 22px;min-height:160px;
+  }
+  .storage-paths.storage-dispatch-board>.storage-path:nth-of-type(n+2) strong{font-size:1.7rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .storage-paths.storage-dispatch-board>.storage-path{transition:none}
+  .storage-paths.storage-dispatch-board>.storage-path:hover{transform:none}
+}
+@media print{
+  .storage-dispatch-heading{box-shadow:none;background:#fff;color:#173e32;border:1px solid #999}
+  .storage-paths.storage-dispatch-board{display:block;margin-top:25px;width:100%}
+  .storage-paths.storage-dispatch-board>.storage-path{
+    display:block;min-height:0!important;margin:10px 0;padding:20px!important;
+    box-shadow:none;break-inside:avoid;background:#fff!important;color:#173e32!important;
+  }
+  .storage-paths.storage-dispatch-board>.storage-path:first-of-type strong,
+  .storage-paths.storage-dispatch-board>.storage-path:first-of-type .path-number,
+  .storage-paths.storage-dispatch-board>.storage-path:first-of-type small{color:#173e32!important}
+  .storage-paths.storage-dispatch-board>.storage-path:first-of-type:after{color:#173e32}
+  .storage-paths.storage-dispatch-board>.storage-path .path-arrow{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -529,7 +707,11 @@ footer a{font-weight:750}
 </nav>
 <section class="hero" aria-labelledby="page-title"><div class="wrap hero-inner"><div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Portable storage, <em>room to work.</em></h1><p class="hero-copy">Rent portable storage containers, trailers and jobsite offices. Compare documented local service, published rates and options that still need a direct quote.</p><div class="hero-actions"><a class="button primary" href="#providers">Explore providers ↓</a><a class="button ghost" href="#rates">See published rates</a><a class="button ghost" href="#delivery-check">Plan delivery access ↓</a></div></div><div class="hero-visual" aria-hidden="true"><svg viewBox="0 0 600 440" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="container" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#df9d69"/><stop offset="1" stop-color="#ac6047"/></linearGradient><linearGradient id="office" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c4d4bc"/><stop offset="1" stop-color="#729b8c"/></linearGradient></defs><ellipse cx="300" cy="388" rx="252" ry="23" fill="#071d1a" opacity=".55"/><path d="M154 103 380 51 526 103 302 158Z" fill="#bed2bf"/><path d="M154 103 302 158 302 284 154 226Z" fill="#6f9486"/><path d="M302 158 526 103 526 227 302 284Z" fill="url(#office)"/><g stroke="#4c7567" stroke-width="5"><path d="M335 157v120M365 149v121M395 142v120M425 134v121M455 127v121M485 119v120"/></g><path d="M170 124v96M193 133v96M216 141v96M239 150v96M262 158v96" stroke="#527d70" stroke-width="4"/><path d="M61 224 323 167 552 237 286 300Z" fill="#f3c28c"/><path d="M61 224 286 300 286 392 61 319Z" fill="#a75c42"/><path d="M286 300 552 237 552 329 286 392Z" fill="url(#container)"/><g stroke="#98513e" stroke-width="5"><path d="M312 299v87M341 292v87M370 285v88M399 278v88M428 271v88M457 264v88M486 257v87M515 249v88"/></g><g stroke="#874934" stroke-width="4"><path d="M82 237v88M109 246v88M136 254v88M163 263v88M190 272v88M217 281v88M244 289v88"/></g><path d="M286 300 552 237" stroke="#ffe2b3" stroke-width="6"/><rect x="315" y="315" width="76" height="28" rx="3" fill="#183e34"/><text x="353" y="333" text-anchor="middle" font-size="13" font-weight="700" font-family="system-ui" fill="#fff3d9">STORAGE</text></svg><span class="art-caption">Store · Move · Work</span></div></div><p class="scenic-note">Downtown Russellville scenery · Storage units shown are illustrations</p></section>
 
-<nav class="storage-paths wrap" aria-label="Choose a portable storage planning guide">
+<nav class="storage-paths wrap storage-dispatch-board" aria-label="Choose a portable storage planning guide">
+<div class="storage-dispatch-heading">
+ <span class="storage-dispatch-edition">RIVER VALLEY / PORTABLE STORAGE FIELD GUIDE <b>01—03</b></span>
+ <div class="storage-dispatch-heading-row"><h2>Plan the space.<br><em>Then the delivery.</em></h2><p>Three practical checks before your first quote: compare the advertised base rate, choose a nominal container length, and make sure a delivery truck can reach the site.</p></div>
+</div>
 <a class="storage-path" href="#rates"><span class="path-number">01 / Monthly prices</span><span class="path-diagram" aria-hidden="true"><i></i><i></i><i></i></span><strong>Compare advertised rates.</strong><small>See published container and office prices, plus local delivery details.</small><span class="path-arrow" aria-hidden="true">↗</span></a>
 <a class="storage-path" href="#size-explorer"><span class="path-number">02 / Container lengths</span><span class="path-diagram" aria-hidden="true"><i></i><i></i><i></i></span><strong>See how sizes compare.</strong><small>Visualize nominal 10-, 20- and 40-foot container lengths.</small><span class="path-arrow" aria-hidden="true">↗</span></a>
 <a class="storage-path" href="#delivery-check"><span class="path-number">03 / Site access</span><span class="path-diagram" aria-hidden="true"><i></i><i></i><i></i></span><strong>Plan the drop-off.</strong><small>Review truck access, ground conditions and overhead clearance questions.</small><span class="path-arrow" aria-hidden="true">↗</span></a>
