@@ -1005,6 +1005,135 @@
 @media(prefers-reduced-motion:reduce){.band-rail-stop{transition:none}.band-rail-stop:hover{transform:none}}
 @media print{.band-desktop-rail{display:none!important}}
 
+
+/* 2026-11-21: Immersive band-room field gallery. Both live StayARV and
+   Russellville.Rent were reviewed. NN/g visual hierarchy; web.dev responsive
+   stability; W3C WCAG 2.2 keyboard focus and reflow. The already-used downtown
+   photograph is EDITORIAL SCENERY, NOT PROVIDER INVENTORY. No script, link,
+   provider, pricing, contract, or inquiry behavior is changed. */
+@media screen {
+ .band-explorer-grid>.band-explorer-card{position:relative;isolation:isolate;overflow:hidden}
+ .band-explorer-grid>.band-explorer-card:first-child{
+  color:#fff9ec;border:1px solid #ecd09d;
+  background:linear-gradient(180deg,#07221ddd 0%,#092f28b8 42%,#07241ff5 100%),url("assets/downtown-russellville-sunset.jpg") center 57%/cover no-repeat;
+  box-shadow:0 24px 49px #041c1670
+ }
+ .band-explorer-grid>.band-explorer-card:first-child:before{
+  content:"";position:absolute;inset:10px;z-index:0;pointer-events:none;
+  border:1px solid #f5d9a45e;border-radius:12px
+ }
+ .band-explorer-grid>.band-explorer-card:first-child>*{position:relative;z-index:1}
+ .band-explorer-grid>.band-explorer-card:first-child .band-explorer-index{color:#f6d798}
+ .band-explorer-grid>.band-explorer-card:first-child .band-explorer-art{color:#f8d79b}
+ .band-explorer-grid>.band-explorer-card:first-child .band-explorer-name{
+  color:#fff8e8;font-size:clamp(2.65rem,4vw,4rem);letter-spacing:-.063em;line-height:1.04
+ }
+ .band-explorer-grid>.band-explorer-card:first-child .band-explorer-desc{
+  color:#f4ede3;font-size:.92rem;line-height:1.65
+ }
+ .band-explorer-grid>.band-explorer-card:not(:first-child):not(:last-child){
+  border:1px solid #d9d5bd;box-shadow:0 11px 25px #031c1640
+ }
+ .band-explorer-grid>.band-explorer-card.is-selected{
+  border-color:#f9d48e;box-shadow:0 0 0 3px #ffe7aa,0 14px 31px #041e1863
+ }
+ .band-explorer-grid>.band-explorer-card:focus-visible{
+  outline:4px solid #f6d88e;outline-offset:4px
+ }
+}
+@media screen and (min-width:1080px){
+ .band-explorer-grid{
+  grid-template-columns:minmax(0,1.1fr) repeat(2,minmax(0,.95fr));
+  grid-template-rows:repeat(2,minmax(218px,auto)) minmax(176px,auto);gap:14px
+ }
+ .band-explorer-grid>.band-explorer-card{min-height:0;padding:22px 23px}
+ .band-explorer-grid>.band-explorer-card:first-child{
+  grid-column:1;grid-row:1 / span 2;min-height:450px;padding:31px
+ }
+ .band-explorer-grid>.band-explorer-card:first-child .band-explorer-art{
+  flex:1;min-height:155px;margin:7px 0 12px
+ }
+ .band-explorer-grid>.band-explorer-card:first-child .band-explorer-art svg{
+  width:min(100%,255px);max-height:185px;filter:drop-shadow(0 13px 18px #031c1699)
+ }
+ .band-explorer-grid>.band-explorer-card:nth-child(n+2):nth-child(-n+5) .band-explorer-art{
+  min-height:84px;margin:4px 0 5px
+ }
+ .band-explorer-grid>.band-explorer-card:nth-child(n+2):nth-child(-n+5) .band-explorer-art svg{max-height:89px}
+ .band-explorer-grid>.band-explorer-card:nth-child(6){
+  display:grid;grid-column:1;grid-row:3;grid-template-columns:76px minmax(0,1fr);
+  grid-template-rows:auto 1fr auto;gap:5px 12px
+ }
+ .band-explorer-grid>.band-explorer-card:nth-child(6) .band-explorer-index{grid-column:2;grid-row:1;align-self:end}
+ .band-explorer-grid>.band-explorer-card:nth-child(6) .band-explorer-art{grid-column:1;grid-row:1/4;min-height:0;margin:0;align-self:center}
+ .band-explorer-grid>.band-explorer-card:nth-child(6) .band-explorer-art svg{width:76px;max-height:96px}
+ .band-explorer-grid>.band-explorer-card:nth-child(6) .band-explorer-name{grid-column:2;grid-row:2;margin:0;font-size:1.68rem}
+ .band-explorer-grid>.band-explorer-card:nth-child(6) .band-explorer-desc{grid-column:2;grid-row:3;margin:0}
+ .band-explorer-grid>.band-explorer-card:last-child{grid-column:2/span 2;grid-row:3;min-height:176px}
+}
+@media screen and (min-width:720px) and (max-width:1079px){
+ .band-explorer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .band-explorer-grid>.band-explorer-card:first-child{
+  grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(115px,.48fr);
+  grid-template-rows:auto 1fr auto;gap:10px 22px;min-height:270px;padding:30px
+ }
+ .band-explorer-grid>.band-explorer-card:first-child .band-explorer-index{grid-column:1;grid-row:1}
+ .band-explorer-grid>.band-explorer-card:first-child .band-explorer-name{grid-column:1;grid-row:2;align-self:end;margin:0}
+ .band-explorer-grid>.band-explorer-card:first-child .band-explorer-desc{grid-column:1;grid-row:3;margin:0}
+ .band-explorer-grid>.band-explorer-card:first-child .band-explorer-art{
+  grid-column:2;grid-row:1/4;align-self:center;min-height:0;margin:0
+ }
+ .band-explorer-grid>.band-explorer-card:first-child .band-explorer-art svg{width:min(100%,230px);max-height:195px}
+ .band-explorer-grid>.band-explorer-card:last-child{grid-column:1/-1}
+}
+@media screen and (max-width:719px){
+ .band-explorer{padding:25px 18px}
+ .band-explorer-grid{grid-template-columns:minmax(0,1fr);gap:11px}
+ .band-explorer-grid>.band-explorer-card:first-child{
+  grid-column:1;display:flex;flex-direction:column;min-height:290px;padding:26px 24px
+ }
+ .band-explorer-grid>.band-explorer-card:first-child .band-explorer-art{
+  flex:1;min-height:103px;margin:5px 0 10px
+ }
+ .band-explorer-grid>.band-explorer-card:first-child .band-explorer-art svg{max-height:115px;width:min(100%,190px)}
+ .band-explorer-grid>.band-explorer-card:first-child .band-explorer-name{font-size:clamp(2.45rem,9vw,3.6rem)}
+ .band-explorer-grid>.band-explorer-card:not(:first-child){
+  grid-column:1;display:grid;grid-template-columns:85px minmax(0,1fr);
+  grid-template-rows:auto auto auto;gap:4px 14px;min-height:132px;padding:18px 19px
+ }
+ .band-explorer-grid>.band-explorer-card:not(:first-child) .band-explorer-index{grid-column:2;grid-row:1;align-self:end}
+ .band-explorer-grid>.band-explorer-card:not(:first-child) .band-explorer-art{
+  grid-column:1;grid-row:1/4;min-height:0;margin:0;align-self:center
+ }
+ .band-explorer-grid>.band-explorer-card:not(:first-child) .band-explorer-art svg{width:82px;max-height:89px}
+ .band-explorer-grid>.band-explorer-card:not(:first-child) .band-explorer-art strong{width:73px;height:73px;font-size:3.3rem}
+ .band-explorer-grid>.band-explorer-card:not(:first-child) .band-explorer-name{
+  grid-column:2;grid-row:2;margin:0;font-size:clamp(1.5rem,5vw,1.9rem)
+ }
+ .band-explorer-grid>.band-explorer-card:not(:first-child) .band-explorer-desc{grid-column:2;grid-row:3;margin:0;font-size:.78rem}
+}
+@media screen and (max-width:360px){
+ .band-explorer-grid>.band-explorer-card:not(:first-child){grid-template-columns:64px minmax(0,1fr);gap:4px 9px;padding:17px 14px}
+ .band-explorer-grid>.band-explorer-card:not(:first-child) .band-explorer-art svg{width:63px}
+ .band-explorer-grid>.band-explorer-card:not(:first-child) .band-explorer-art strong{width:60px;height:60px;font-size:2.9rem}
+ .band-explorer-grid>.band-explorer-card:not(:first-child) .band-explorer-name{font-size:1.35rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .band-explorer-grid>.band-explorer-card{transition:none}
+ .band-explorer-grid>.band-explorer-card:hover{transform:none}
+}
+@media print{
+ .band-explorer-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}
+ .band-explorer-grid>.band-explorer-card,.band-explorer-grid>.band-explorer-card:first-child,
+ .band-explorer-grid>.band-explorer-card:last-child{
+  grid-column:auto;grid-row:auto;display:flex;min-height:0;padding:16px;
+  background:#fff!important;color:#153e32!important;box-shadow:none;
+  border:1px solid #888;break-inside:avoid
+ }
+ .band-explorer-grid>.band-explorer-card:first-child:before{display:none}
+ .band-explorer-grid>.band-explorer-card :is(.band-explorer-index,.band-explorer-name,.band-explorer-desc,.band-explorer-art){color:#153e32!important}
+}
+
 </style>
 </head>
 <body>
