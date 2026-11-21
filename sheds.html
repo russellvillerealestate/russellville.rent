@@ -755,6 +755,54 @@ footer a{font-weight:750}
 }
 @media print{.shed-pocket-dock{display:none!important}}
 
+
+/* Same-scale shed footprint atelier, Nov 21 2026.
+   Inspired by StayARV's immersive forest/brass visual hierarchy; original
+   comparative diagrams are illustrative, never dealer inventory.
+   NN/g visual grouping; web.dev responsive layouts; WCAG 2.2 focus/targets. */
+.rental-paths .path-grid{display:grid;grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr);grid-template-rows:repeat(2,minmax(245px,auto));gap:17px}
+.rental-paths .path-card{display:flex;flex-direction:row;align-items:stretch;min-width:0;min-height:0;padding:0;border-radius:25px;overflow:hidden;background:#e8efe4;color:#173e31;border:1px solid #d0ddcd;box-shadow:0 13px 35px #173c2e17}
+.rental-paths .path-card::before{display:none}
+.rental-paths .path-card:nth-child(2){background:#f3e3c8;color:#3b4634;border-color:#dcc59d}
+.rental-paths .path-card:nth-child(3){grid-column:2;grid-row:1/span 2;min-height:507px;flex-direction:column;background:linear-gradient(153deg,#1e5947 0%,#0f352d 72%);color:#fff9e8;border-color:#1d5944;box-shadow:0 20px 48px #123b2c30}
+.rental-paths .path-content{flex:1;min-width:0;display:flex;flex-direction:column;padding:clamp(21px,2.5vw,31px);position:relative;z-index:1}
+.rental-paths .path-label{margin-top:15px;font-size:clamp(1.36rem,2vw,1.85rem);line-height:1.11;max-width:16ch}
+.rental-paths .path-size{margin-top:auto;padding-top:14px;font-size:clamp(2.3rem,3.5vw,3.55rem);letter-spacing:-.076em}
+.rental-paths .path-detail{margin-top:7px}
+.rental-paths .path-action{margin-top:18px;padding-top:11px}
+.rental-paths .path-plan{flex:0 0 42%;min-width:0;align-self:stretch;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;gap:6px;overflow:hidden;padding:14px 8px;background-color:#ffffff23;background-image:linear-gradient(#24543a1d 1px,transparent 1px),linear-gradient(90deg,#24543a1d 1px,transparent 1px);background-size:14px 14px;border-left:1px solid #2d684027}
+.rental-paths .path-plan svg{display:block;width:100%;max-width:200px;height:auto;max-height:190px;filter:drop-shadow(0 9px 9px #122d2230)}
+.rental-paths .path-plan small{font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;font-weight:850;text-align:center;line-height:1.35;color:inherit;opacity:.76}
+.rental-paths .path-card:nth-child(3) .path-content{flex:0 0 auto;padding:clamp(29px,4vw,48px)}
+.rental-paths .path-card:nth-child(3) .path-label{margin-top:20px;font-size:clamp(2rem,3.1vw,2.75rem)}
+.rental-paths .path-card:nth-child(3) .path-size{margin-top:15px;padding:0;font-size:clamp(3.3rem,5.7vw,5.3rem)}
+.rental-paths .path-card:nth-child(3) .path-plan{flex:1;width:100%;min-height:250px;border-left:0;border-top:1px solid #f8e0b744;background-color:#0b302a70;background-image:linear-gradient(#f4d69a17 1px,transparent 1px),linear-gradient(90deg,#f4d69a17 1px,transparent 1px)}
+.rental-paths .path-card:nth-child(3) .path-plan svg{max-height:255px;max-width:300px}
+.rental-paths .path-card:nth-child(3) .path-plan small{color:#f5ddb3;opacity:1}
+.rental-paths .path-card:focus-visible{outline:4px solid #a96821;outline-offset:5px}
+@media (max-width:950px){
+.rental-paths .path-grid{grid-template-columns:1fr;grid-template-rows:none}
+.rental-paths .path-card,.rental-paths .path-card:nth-child(3){grid-column:auto;grid-row:auto;flex-direction:row;min-height:245px}
+.rental-paths .path-card:nth-child(3) .path-content{flex:1;padding:clamp(21px,2.5vw,31px)}
+.rental-paths .path-card:nth-child(3) .path-label{font-size:clamp(1.36rem,2.4vw,1.85rem);margin-top:15px}
+.rental-paths .path-card:nth-child(3) .path-size{font-size:clamp(2.3rem,4vw,3.55rem);margin-top:auto;padding-top:14px}
+.rental-paths .path-card:nth-child(3) .path-plan{flex:0 0 42%;width:auto;min-height:0;border-left:1px solid #f8e0b744;border-top:0}
+.rental-paths .path-card:nth-child(3) .path-plan svg{max-height:190px;max-width:200px}
+}
+@media (max-width:480px){
+.rental-paths .path-grid{gap:14px}
+.rental-paths .path-card,.rental-paths .path-card:nth-child(3){min-height:263px}
+.rental-paths .path-content,.rental-paths .path-card:nth-child(3) .path-content{padding:21px 17px}
+.rental-paths .path-label,.rental-paths .path-card:nth-child(3) .path-label{font-size:1.38rem;max-width:15ch}
+.rental-paths .path-size,.rental-paths .path-card:nth-child(3) .path-size{font-size:clamp(2rem,9vw,2.6rem)}
+.rental-paths .path-size small{font-size:.68rem}
+.rental-paths .path-plan,.rental-paths .path-card:nth-child(3) .path-plan{flex-basis:34%;padding:10px 2px}
+.rental-paths .path-plan small{font-size:.49rem;max-width:13ch}
+.rental-paths .path-action{font-size:.71rem}
+}
+@media (prefers-reduced-motion:reduce){.rental-paths .path-card{transition:none}.rental-paths .path-card:hover{transform:none}}
+@media print{.rental-paths .path-card,.rental-paths .path-card:nth-child(3){box-shadow:none;break-inside:avoid}.rental-paths .path-card:nth-child(3){background:#153c32;color:#fff}}
+
 </style>
 </head>
 <body>
@@ -835,9 +883,9 @@ footer a{font-weight:750}
 <section class="rental-paths wrap" aria-labelledby="paths-title">
   <div class="paths-heading"><div><p class="eyebrow">Three ways to start · Illustration only</p><h2 id="paths-title">Picture the space before you pick a building.</h2></div><p>Not sure what size to ask about? Preview three example footprints on the same scale, then compare the actual options offered by local dealers.</p></div>
   <div class="path-grid">
-    <a class="path-card" href="#footprint-studio" data-shed-shortcut="8x10"><span class="path-index">01 / Small footprint</span><span class="path-label">A little extra room.</span><strong class="path-size">8 <span>×</span> 10 <small>ft</small></strong><span class="path-detail">80 square feet · example dimensions</span><span class="path-action">Preview this footprint <b aria-hidden="true">↗</b></span></a>
-    <a class="path-card" href="#footprint-studio" data-shed-shortcut="10x12"><span class="path-index">02 / Mid-size footprint</span><span class="path-label">Space for everyday plans.</span><strong class="path-size">10 <span>×</span> 12 <small>ft</small></strong><span class="path-detail">120 square feet · example dimensions</span><span class="path-action">Preview this footprint <b aria-hidden="true">↗</b></span></a>
-    <a class="path-card" href="#footprint-studio" data-shed-shortcut="12x20"><span class="path-index">03 / Larger footprint</span><span class="path-label">More room to imagine.</span><strong class="path-size">12 <span>×</span> 20 <small>ft</small></strong><span class="path-detail">240 square feet · example dimensions</span><span class="path-action">Preview this footprint <b aria-hidden="true">↗</b></span></a>
+    <a class="path-card" href="#footprint-studio" data-shed-shortcut="8x10"><span class="path-content"><span class="path-index">01 / Small footprint</span><span class="path-label">A little extra room.</span><strong class="path-size">8 <span>×</span> 10 <small>ft</small></strong><span class="path-detail">80 square feet · example dimensions</span><span class="path-action">Preview this footprint <b aria-hidden="true">↗</b></span></span><span class="path-plan" aria-hidden="true"><svg viewBox="0 0 190 200" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M24 20V180M166 20V180M20 20H170M20 180H170" fill="none" stroke="currentColor" stroke-opacity=".21" stroke-width="1.5" stroke-dasharray="3 7"/><rect x="67" y="65" width="56" height="70" rx="1.5" fill="#f9dba7" stroke="#235644" stroke-width="3"/><path d="M75 73H115M75 85H115M75 125H115" fill="none" stroke="#235644" stroke-opacity=".3" stroke-width="1.5"/><path d="M67 142V148M123 142V148M67 145H123" fill="none" stroke="currentColor" stroke-opacity=".75" stroke-width="1.5"/></svg><small>Same-scale example</small></span></a>
+    <a class="path-card" href="#footprint-studio" data-shed-shortcut="10x12"><span class="path-content"><span class="path-index">02 / Mid-size footprint</span><span class="path-label">Space for everyday plans.</span><strong class="path-size">10 <span>×</span> 12 <small>ft</small></strong><span class="path-detail">120 square feet · example dimensions</span><span class="path-action">Preview this footprint <b aria-hidden="true">↗</b></span></span><span class="path-plan" aria-hidden="true"><svg viewBox="0 0 190 200" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M24 20V180M166 20V180M20 20H170M20 180H170" fill="none" stroke="currentColor" stroke-opacity=".21" stroke-width="1.5" stroke-dasharray="3 7"/><rect x="60" y="58" width="70" height="84" rx="1.5" fill="#2f6652" stroke="#244d3b" stroke-width="3"/><path d="M68 66H122M68 78H122M68 132H122" fill="none" stroke="#244d3b" stroke-opacity=".3" stroke-width="1.5"/><path d="M60 149V155M130 149V155M60 152H130" fill="none" stroke="currentColor" stroke-opacity=".75" stroke-width="1.5"/></svg><small>Same-scale example</small></span></a>
+    <a class="path-card" href="#footprint-studio" data-shed-shortcut="12x20"><span class="path-content"><span class="path-index">03 / Larger footprint</span><span class="path-label">More room to imagine.</span><strong class="path-size">12 <span>×</span> 20 <small>ft</small></strong><span class="path-detail">240 square feet · example dimensions</span><span class="path-action">Preview this footprint <b aria-hidden="true">↗</b></span></span><span class="path-plan" aria-hidden="true"><svg viewBox="0 0 190 200" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M24 20V180M166 20V180M20 20H170M20 180H170" fill="none" stroke="currentColor" stroke-opacity=".21" stroke-width="1.5" stroke-dasharray="3 7"/><rect x="53" y="27" width="84" height="140" rx="1.5" fill="#edca86" stroke="#fff0ce" stroke-width="3"/><path d="M61 35H129M61 47H129M61 157H129" fill="none" stroke="#fff0ce" stroke-opacity=".3" stroke-width="1.5"/><path d="M53 174V180M137 174V180M53 177H137" fill="none" stroke="currentColor" stroke-opacity=".75" stroke-width="1.5"/></svg><small>Same-scale example</small></span></a>
   </div>
   <p class="paths-note">Example footprints are not dealer inventory, quotes, usable interior measurements or building-placement guidance. All four example sizes remain available in the planning studio.</p>
 </section>
