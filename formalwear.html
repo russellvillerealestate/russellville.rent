@@ -689,6 +689,95 @@ html{scroll-padding-top:28px}
 }
 @media(prefers-reduced-motion:reduce){.formalwear-pocket-dock a{transition:none}}
 @media print{.formalwear-pocket-dock{display:none!important}}
+
+/* 2026-11-20 / The hometown fitting folio.
+   Reference checked live: StayARV.com and Russellville.Rent; original photo is
+   local scenery, not the retailer. Place-led imagery, visual hierarchy and
+   strong information scent guide one local retailer before regional options.
+   Nielsen Norman Group: information hierarchy; Google web.dev: responsive
+   content, avoid layout instability; W3C WCAG 2.2: reflow, contrast, focus.
+   Native anchors, form controls, provider facts and scripts stay unchanged. */
+.provider-spotlight{
+  grid-template-columns:minmax(240px,.67fr) minmax(0,1.33fr);
+  gap:0;overflow:hidden;
+  border:1px solid #ccdacd;border-radius:7px 33px 7px 33px;
+  background:#f7f7ed;box-shadow:0 28px 70px #173b2a22;
+}
+.provider-spotlight .spotlight-rail{
+  min-height:610px;border-radius:0;padding:clamp(28px,4vw,51px);
+  background:linear-gradient(180deg,#092c29d9 0%,#103d34a3 36%,#092821c7 73%,#071e1cf2 100%),
+    url("/assets/downtown-russellville-sunset.jpg") center 50%/cover no-repeat;
+}
+.provider-spotlight .spotlight-rail:before{
+  content:"";position:absolute;inset:18px;pointer-events:none;
+  border:1px solid #f4dcae75;border-radius:3px 23px 3px 23px;
+}
+.provider-spotlight .spotlight-rail:after{
+  content:"R↗";right:-.04em;bottom:.21em;
+  font:400 clamp(9.2rem,18vw,16rem)/1 Georgia,"Times New Roman",serif;
+  letter-spacing:-.12em;color:#e8dbb625;
+}
+.provider-spotlight .spotlight-rail-kicker{
+  display:inline-block;align-self:flex-start;max-width:100%;
+  padding:9px 12px;border:1px solid #eed9aa8c;border-radius:999px;
+  background:#0c3029b8;color:#ffe6b5;font-size:.7rem;
+}
+.provider-spotlight .spotlight-rail strong{
+  max-width:9ch;font:400 clamp(3rem,5vw,5.5rem)/.97 Georgia,"Times New Roman",serif;
+  letter-spacing:-.072em;text-shadow:0 3px 22px #071e1b80;
+}
+.provider-spotlight .spotlight-rail-note{
+  margin-top:auto;padding-top:17px;border-top:1px solid #f1dcb06e;
+  color:#fff6e6;font-size:clamp(.83rem,1.12vw,.96rem);
+}
+.spotlight-scene-note{
+  display:block;max-width:36ch;margin-top:-22px;
+  color:#fbedd5;font-size:.72rem;line-height:1.55;
+}
+.provider-spotlight .provider-card{
+  min-width:0;display:flex;flex-direction:column;overflow:hidden;
+  border:0;border-radius:0;background:#fffefa;box-shadow:none;
+}
+.provider-spotlight .provider-main{padding:clamp(28px,4.2vw,52px)}
+.provider-spotlight .provider-name{max-width:13ch}
+.provider-spotlight .provider-details{
+  margin-top:auto;padding:clamp(25px,3.8vw,43px);
+  border-left:0;border-top:1px solid #d6dfd3;
+  background:linear-gradient(135deg,#edf1e9,#e6ede3);
+}
+@media(max-width:980px){
+  .provider-spotlight{grid-template-columns:1fr}
+  .provider-spotlight .spotlight-rail{
+    min-height:345px;gap:16px;background-position:center 55%;
+  }
+  .provider-spotlight .spotlight-rail strong{
+    font-size:clamp(3.1rem,7vw,4.6rem);max-width:13ch;
+  }
+  .spotlight-scene-note{margin-top:0}
+  .provider-spotlight .provider-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.85fr)}
+  .provider-spotlight .provider-details{margin-top:0;border-top:0;border-left:1px solid #d6dfd3}
+}
+@media(max-width:720px){
+  .provider-spotlight{border-radius:5px 24px 5px 24px}
+  .provider-spotlight .spotlight-rail{min-height:375px;padding:30px 27px}
+  .provider-spotlight .spotlight-rail:before{inset:12px;border-radius:3px 15px 3px 15px}
+  .provider-spotlight .spotlight-rail strong{font-size:clamp(3.1rem,10vw,4.25rem)}
+  .provider-spotlight .provider-card{display:flex;flex-direction:column}
+  .provider-spotlight .provider-details{border-left:0;border-top:1px solid #d6dfd3}
+}
+@media(max-width:380px){
+  .provider-spotlight .spotlight-rail{min-height:360px;padding:25px 21px}
+  .provider-spotlight .spotlight-rail-kicker{font-size:.61rem}
+  .provider-spotlight .spotlight-rail strong{font-size:2.85rem}
+}
+@media print{
+  .provider-spotlight{display:block;border:1px solid #889c8b;box-shadow:none}
+  .provider-spotlight .spotlight-rail{min-height:0;background:#173e34!important;color:#fff!important}
+  .provider-spotlight .spotlight-rail:before,.provider-spotlight .spotlight-rail:after{display:none}
+  .provider-spotlight .provider-card{display:block}
+  .provider-spotlight .provider-details{background:#edf1e9!important}
+}
+
 </style>
 </head>
 <body>
@@ -804,6 +893,7 @@ html{scroll-padding-top:28px}
     <span class="spotlight-rail-kicker">01 / Right here · Russellville</span>
     <strong>Begin<br>close to<br><em>home.</em></strong>
     <span class="spotlight-rail-note">One local storefront.<br>Fitting details, first-hand.</span>
+    <span class="spotlight-scene-note">Downtown Russellville scenery · Not a photograph of Formal Affairs</span>
   </div>
   <article class="provider-card" aria-labelledby="formal-affairs-title">
 <div class="provider-main"><span class="card-kicker">Russellville · Formalwear</span><h3 class="provider-name" id="formal-affairs-title">Formal Affairs</h3><p class="provider-description">Jim's Formal Wear identifies this locally owned Russellville retailer as an authorized tuxedo and suit rental location, with fittings and accessories for weddings, proms and other formal events. Confirm rental sizes, alterations, deadlines, deposits and current availability directly.</p><div class="provider-actions"><a class="button button-dark" href="tel:+14798909557">Call 479-890-9557 <span aria-hidden="true">↗</span></a><a class="button button-light" href="https://www.jimsformalwear.com/store-detail/formal-affairs-FF441" target="_blank" rel="noopener noreferrer">Authorized formalwear retailer &amp; listed hours <span aria-hidden="true">↗</span></a></div></div>
