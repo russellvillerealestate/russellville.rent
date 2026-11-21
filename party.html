@@ -814,6 +814,67 @@ html{scroll-padding-top:125px}
   .occasion-atlas .occasion-card .occasion-link{min-height:35px}
 }
 
+
+/* 2026-11-21 / River Valley event chapter spine.
+   Live design comparison: stayarv.com (bold typographic landscape, forest/brass
+   navigation) and russellville.rent (editorial rental discovery).
+   Nielsen Norman Group: visible, task-labelled navigation and information
+   scent; web.dev: responsive composition; W3C WCAG 2.2: target size 2.5.8,
+   focus not obscured 2.4.11 and reduced motion. Static links only.
+   Desktop: horizontal field-guide itinerary. Phone portrait: fixed,
+   thumb-reachable four-way route, without covering page-end content.
+   No providers, pricing, filters, saved lists or scripts are changed. */
+.party-field-nav{position:relative;z-index:6;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;overflow:visible;margin:21px auto 15px;padding:8px;background:linear-gradient(115deg,#132f34,#214f48 78%,#2f5f50);border:1px solid #d2b383;border-radius:18px;box-shadow:0 18px 38px #162d3429}
+.party-field-nav a{position:relative;display:flex;flex-direction:column;align-items:flex-start;min-width:0;min-height:132px;padding:20px 22px 17px;border-radius:11px;color:#fff8eb;text-decoration:none;transition:background-color .18s ease,transform .18s ease}
+.party-field-nav a+a:before{content:"";position:absolute;left:0;top:17px;bottom:17px;width:1px;background:#f7e5bc40}
+.party-field-nav a:hover{background:#ffffff15;transform:translateY(-2px)}
+.party-field-nav a:focus-visible{outline:3px solid #ffe5ae;outline-offset:-3px;background:#315c4e}
+.party-field-nav .party-field-step{display:block;margin-bottom:11px;color:#f1cc94;font-size:.66rem;font-weight:850;letter-spacing:.12em;line-height:1.4}
+.party-field-nav strong{display:block;color:inherit;font:400 clamp(1.5rem,2.4vw,2.25rem)/1.06 Georgia,"Times New Roman",serif;letter-spacing:-.045em}
+.party-field-nav small{display:block;margin-top:9px;color:#e5eee6;font-size:.76rem;line-height:1.45}
+.party-field-nav a:nth-child(3){background:#efd4a0;color:#213e35}
+.party-field-nav a:nth-child(3) .party-field-step,.party-field-nav a:nth-child(3) small{color:#5d4b2f}
+.party-field-nav a:nth-child(3):hover,.party-field-nav a:nth-child(3):focus-visible{background:#ffe6b6}
+.party-field-nav a:nth-child(3):focus-visible{outline-color:#243e32}
+#occasion-title,#published-party-prices,#providers,#guide{scroll-margin-top:23px}
+@media screen and (min-width:651px) and (max-width:920px){
+  .party-field-nav{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .party-field-nav a{min-height:112px;padding:16px 20px}
+  .party-field-nav a:nth-child(3):before{display:none}
+  .party-field-nav a:nth-child(-n+2){border-bottom:1px solid #ffffff32}
+  .party-field-nav strong{font-size:1.7rem}
+}
+@media screen and (max-width:650px){
+  .party-field-nav{grid-template-columns:repeat(2,minmax(0,1fr));width:calc(100% - 28px);margin:15px auto;gap:4px;border-radius:15px}
+  .party-field-nav a{min-height:88px;padding:12px 13px}
+  .party-field-nav a+a:before{display:none}
+  .party-field-nav .party-field-step{font-size:.59rem;margin-bottom:4px}
+  .party-field-nav strong{font-size:1.45rem}
+  .party-field-nav small{font-size:.67rem;margin-top:4px}
+}
+@media screen and (max-width:650px) and (min-height:510px) and (orientation:portrait){
+  body{padding-bottom:calc(103px + env(safe-area-inset-bottom,0px))}
+  html{scroll-padding-bottom:calc(108px + env(safe-area-inset-bottom,0px))}
+  .party-field-nav{position:fixed;z-index:90;bottom:calc(8px + env(safe-area-inset-bottom,0px));left:max(8px,env(safe-area-inset-left,0px));right:max(8px,env(safe-area-inset-right,0px));width:auto;max-width:630px;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;margin:0 auto;padding:6px;border-radius:19px;background:linear-gradient(115deg,#102c30,#214a43);box-shadow:0 15px 34px #061e2478}
+  .party-field-nav a{align-items:center;justify-content:center;min-height:64px;padding:7px 2px 8px;border:1px solid #ffffff2b;text-align:center;border-radius:12px;transform:none}
+  .party-field-nav a:hover{transform:none}
+  .party-field-nav .party-field-step{margin:0 0 4px;font-size:clamp(.49rem,1.9vw,.61rem);letter-spacing:.015em;white-space:nowrap}
+  .party-field-nav strong{font:800 clamp(.7rem,3vw,.86rem)/1.16 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.01em}
+  .party-field-nav small{display:none}
+  .party-field-nav a:nth-child(3){border-color:#efd4a0}
+  #occasion-title,#published-party-prices,#providers,#guide{scroll-margin-bottom:calc(110px + env(safe-area-inset-bottom,0px))}
+  /* Keep the search form unobstructed while a virtual keyboard is active. */
+  body:has(input:focus) .party-field-nav,body:has(textarea:focus) .party-field-nav,body:has(select:focus) .party-field-nav{display:none}
+}
+@media screen and (max-width:350px) and (min-height:510px) and (orientation:portrait){
+  .party-field-nav{left:5px;right:5px;gap:2px;padding:4px}
+  .party-field-nav a{min-height:61px;padding:8px 1px}
+  .party-field-nav .party-field-step{font-size:.49rem;letter-spacing:0}
+  .party-field-nav strong{font-size:.68rem}
+}
+@media(prefers-reduced-motion:reduce){.party-field-nav a{transition:none}.party-field-nav a:hover{transform:none}}
+@media print{.party-field-nav{display:none!important}body{padding-bottom:0!important}}
+
 </style>
 </head>
 <body>
@@ -827,6 +888,14 @@ html{scroll-padding-top:125px}
 <a class="occasion-card" data-party-journey="tables" href="#providers"><span class="occasion-card-top"><span>02 / Host together</span><svg viewBox="0 0 70 70" aria-hidden="true" focusable="false"><path d="M7 30 35 12l28 18H7ZM11 30v29M59 30v29M19 59h32M23 43h24M26 43v16M44 43v16M35 12v18"/></svg></span><strong>Gather the crowd.</strong><small>Tents, tables and chairs for the setup.</small><span class="occasion-link">See essentials <span aria-hidden="true">↗</span></span></a>
 <a class="occasion-card" data-party-journey="decor" href="#providers"><span class="occasion-card-top"><span>03 / Make a memory</span><svg viewBox="0 0 70 70" aria-hidden="true" focusable="false"><rect x="9" y="15" width="52" height="42" rx="4"/><circle cx="45" cy="28" r="6"/><path d="m12 51 15-15 11 10 8-8 12 13M19 8v7M51 8v7"/></svg></span><strong>Make it yours.</strong><small>Décor, photo backdrops and special details.</small><span class="occasion-link">See the details <span aria-hidden="true">↗</span></span></a>
 <a class="occasion-card" data-party-journey="onsite" href="#providers"><span class="occasion-card-top"><span>04 / Show up & celebrate</span><svg viewBox="0 0 70 70" aria-hidden="true" focusable="false"><path d="M12 58V19l23-9 23 9v39H12ZM24 58V39h22v19M22 26h5m8 0h5m8 0h5M12 34h46"/></svg></span><strong>Go to the party.</strong><small>On-site celebrations and hosted experiences.</small><span class="occasion-link">See destinations <span aria-hidden="true">↗</span></span></a></nav></section>
+
+<!-- River Valley event chapter spine: static anchors, no script or inventory dependencies. -->
+<nav class="party-field-nav shell" aria-label="Party planning chapter shortcuts">
+  <a href="#occasion-title"><span class="party-field-step">01 / IMAGINE</span><strong>Ideas</strong><small>Explore the kind of event</small></a>
+  <a href="#published-party-prices"><span class="party-field-step">02 / ESTIMATE</span><strong>Prices</strong><small>Compare published examples</small></a>
+  <a href="#providers"><span class="party-field-step">03 / FIND</span><strong>Providers</strong><small>Browse all local contacts</small></a>
+  <a href="#guide"><span class="party-field-step">04 / PREPARE</span><strong>Plan</strong><small>Questions before booking</small></a>
+</nav>
 <main class="shell" id="main">
 <div class="summary"><strong>60 publicly listed party and event options</strong><p>Rental equipment and on-site party venues are different services. Read each listing's availability and delivery caveats.</p></div>
 
