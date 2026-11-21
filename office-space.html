@@ -770,6 +770,114 @@ body:not([data-workspace-view="ledger"]) #offices .listing-card button:focus-vis
   .workspace-mobile-route{display:none!important}
 }
 
+
+/* 2026-11-20 / Workroom rate folio.
+   A visual commitment ladder rather than four undifferentiated tiles:
+   asymmetric paper/brass day-pass feature, paired membership/desk entries,
+   and a full-width forest office feature. Same Co-Create rates, sources,
+   reading order and routes. Compared live StayARV and Russellville.Rent.
+   NN/g information scent; web.dev stable grids; WCAG 2.2 focus/reflow. */
+.workspace-menu{
+  background:radial-gradient(ellipse at 6% 10%,#f5dfad77,transparent 37%),linear-gradient(150deg,#edf2e8 2%,#e0ebe2 100%);
+  padding:clamp(50px,6vw,86px) 0 clamp(44px,5vw,73px);
+}
+.workspace-menu .wrap{width:min(1210px,calc(100% - 40px))}
+.workspace-menu-head{margin-bottom:32px}
+.workspace-menu-head h2{font-size:clamp(2.35rem,4.2vw,3.85rem);max-width:18ch;line-height:1.04}
+.workspace-menu-grid{
+  grid-template-columns:minmax(0,1.08fr) repeat(2,minmax(0,1fr));
+  grid-template-areas:"day member desk" "day office office";
+  grid-template-rows:minmax(230px,auto) minmax(230px,auto);
+  gap:16px;
+}
+.workspace-menu-grid>li:nth-child(1){grid-area:day}
+.workspace-menu-grid>li:nth-child(2){grid-area:member}
+.workspace-menu-grid>li:nth-child(3){grid-area:desk}
+.workspace-menu-grid>li:nth-child(4){grid-area:office}
+.workspace-menu-grid .workspace-menu-card{min-height:0;border-radius:22px;padding:26px 27px 24px}
+.workspace-menu-grid>li:nth-child(1) .workspace-menu-card{
+  isolation:isolate;
+  background:linear-gradient(142deg,#fff9e9,#f1ebd9);
+  border-color:#d5c397;
+  padding:35px 32px 30px;
+}
+.workspace-menu-grid>li:nth-child(1) .workspace-menu-card:before{
+  content:"01";position:absolute;z-index:-1;right:-.04em;bottom:.13em;
+  color:#b89b63;opacity:.14;font:400 clamp(9rem,20vw,18rem)/1 Georgia,serif;
+  letter-spacing:-.13em;pointer-events:none;
+}
+.workspace-menu-grid>li:nth-child(1) .workspace-menu-price{
+  margin-top:clamp(60px,9vw,135px);font-size:clamp(4.1rem,7vw,6.5rem);color:#164b3c;
+}
+.workspace-menu-grid>li:nth-child(1) .workspace-menu-name{
+  font:400 clamp(1.45rem,2vw,1.95rem)/1.17 Georgia,serif;letter-spacing:-.04em;
+}
+.workspace-menu-grid>li:nth-child(1) .workspace-menu-detail{max-width:28ch;font-size:.9rem}
+.workspace-menu-grid>li:nth-child(2) .workspace-menu-card{background:#fffdf7}
+.workspace-menu-grid>li:nth-child(3) .workspace-menu-card{background:#f9fcf6}
+.workspace-menu-grid>li:nth-child(2) .workspace-menu-price,
+.workspace-menu-grid>li:nth-child(3) .workspace-menu-price{margin-top:18px;font-size:clamp(2.6rem,4vw,3.4rem)}
+.workspace-menu-grid>li:nth-child(4) .workspace-menu-card{
+  background:radial-gradient(circle at 91% 20%,#427667aa 0%,transparent 43%),
+    linear-gradient(112deg,#102f2d,#1d4b42 88%);
+  border-color:#477367;padding:27px 35px;
+}
+.workspace-menu-grid>li:nth-child(4) .workspace-menu-card:after{
+  content:"";position:absolute;right:-90px;bottom:-190px;width:340px;height:340px;
+  border:1px solid #f2d7a94d;border-radius:50%;
+  box-shadow:0 0 0 42px #f0d9a211,0 0 0 84px #f0d9a209;
+  pointer-events:none;
+}
+.workspace-menu-grid>li:nth-child(4) .workspace-menu-top,
+.workspace-menu-grid>li:nth-child(4) .workspace-menu-price,
+.workspace-menu-grid>li:nth-child(4) .workspace-menu-name,
+.workspace-menu-grid>li:nth-child(4) .workspace-menu-detail,
+.workspace-menu-grid>li:nth-child(4) .workspace-menu-link{position:relative;z-index:1}
+.workspace-menu-grid>li:nth-child(4) .workspace-menu-price{margin:14px 0 4px;font-size:clamp(3.2rem,5.2vw,5.1rem)}
+.workspace-menu-grid>li:nth-child(4) .workspace-menu-name{font:400 1.45rem/1.2 Georgia,serif;letter-spacing:-.03em}
+.workspace-menu-grid>li:nth-child(4) .workspace-menu-detail{max-width:55ch;font-size:.88rem;margin:8px 0 12px}
+.workspace-menu-grid>li:nth-child(4) .workspace-menu-link{width:min(100%,370px)}
+.workspace-menu-card:hover{transform:translateY(-3px)}
+@media(max-width:900px){
+  .workspace-menu-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-template-areas:"day member" "day desk" "office office";
+    grid-template-rows:auto auto auto;
+  }
+  .workspace-menu-grid>li:nth-child(1) .workspace-menu-price{margin-top:80px}
+  .workspace-menu-grid .workspace-menu-card{padding:25px}
+  .workspace-menu-grid>li:nth-child(4) .workspace-menu-card{min-height:255px}
+}
+@media(max-width:650px){
+  .workspace-menu{padding:42px 0 45px}
+  .workspace-menu .wrap{width:calc(100% - 30px)}
+  .workspace-menu-head h2{font-size:clamp(2.2rem,10vw,3.2rem)}
+  .workspace-menu-grid{grid-template-columns:1fr;grid-template-areas:"day" "member" "desk" "office";gap:12px}
+  .workspace-menu-grid .workspace-menu-card{min-height:0;padding:23px 24px}
+  .workspace-menu-grid>li:nth-child(1) .workspace-menu-price{font-size:3.8rem;margin-top:34px}
+  .workspace-menu-grid>li:nth-child(1) .workspace-menu-detail{margin-bottom:27px}
+  .workspace-menu-grid>li:nth-child(2) .workspace-menu-price,
+  .workspace-menu-grid>li:nth-child(3) .workspace-menu-price{font-size:2.6rem}
+  .workspace-menu-grid>li:nth-child(4) .workspace-menu-price{font-size:3.4rem}
+  .workspace-menu-grid>li:nth-child(4) .workspace-menu-card{min-height:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .workspace-menu-grid .workspace-menu-card{transition:none}
+  .workspace-menu-grid .workspace-menu-card:hover{transform:none}
+}
+@media print{
+  .workspace-menu{background:white!important;padding:20px 0}
+  .workspace-menu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"day member" "desk office"}
+  .workspace-menu-grid .workspace-menu-card{background:white!important;border:1px solid #aaa;color:#153d34!important;box-shadow:none;break-inside:avoid}
+  .workspace-menu-grid>li:nth-child(1) .workspace-menu-price{font-size:2.5rem;margin-top:18px}
+  .workspace-menu-grid>li:nth-child(4) .workspace-menu-price,
+  .workspace-menu-grid>li:nth-child(4) .workspace-menu-detail,
+  .workspace-menu-grid>li:nth-child(4) .workspace-menu-top,
+  .workspace-menu-grid>li:nth-child(4) .workspace-menu-link{color:#153d34!important}
+  .workspace-menu-grid>li:nth-child(1) .workspace-menu-card:before,
+  .workspace-menu-grid>li:nth-child(4) .workspace-menu-card:after{display:none}
+}
+
 </style>
 </head>
 <body>
