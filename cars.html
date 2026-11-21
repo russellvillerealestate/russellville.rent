@@ -910,6 +910,72 @@ main.wrap{padding-top:52px}
   .journey-grid>.journey-card:first-child :is(.journey-index,.journey-icon,.journey-title,.journey-description,.journey-action,.journey-photo-note){color:#183f33!important}
 }
 
+
+/* 2026-11-20 — River Valley provider passport edition.
+   Editorial factual cards adapt StayARV's hierarchy to a multi-provider directory.
+   Original facts and full table preserved in native accessible disclosure.
+   NN/g information hierarchy; web.dev responsive reflow; WCAG 2.2 focus/targets. */
+.compare-board{position:relative;isolation:isolate;padding:clamp(25px,4vw,46px);background:linear-gradient(142deg,#e3eee5 0%,#f7f5ea 56%,#ede7d6 100%);border-color:#bbcebf;border-radius:29px}
+.compare-board:before{content:"";position:absolute;z-index:-1;right:28px;top:20px;width:190px;aspect-ratio:1;border-radius:50%;border:1px solid #6f98742b;box-shadow:0 0 0 34px #6f987412,0 0 0 70px #6f98740a;pointer-events:none}
+.compare-board .compare-head h2{font-size:clamp(2.3rem,4vw,3.85rem);line-height:1.06;max-width:14ch;text-wrap:balance}
+.compare-details{margin-top:23px;border:1px solid #b9cfbe;border-radius:15px;background:#fffdf8;overflow:hidden;box-shadow:0 7px 20px #102e2510}
+.compare-details>summary{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:67px;padding:17px 21px;list-style:none;cursor:pointer;color:#184537}
+.compare-details>summary::-webkit-details-marker{display:none}
+.compare-details>summary:hover{background:#f1f5eb}
+.compare-details>summary:focus-visible{outline:3px solid #a86e22;outline-offset:-4px}
+.compare-details-summary{display:grid;gap:3px;min-width:0}
+.compare-details-summary strong{font-size:.91rem;line-height:1.35}
+.compare-details-summary small{font-size:.74rem;color:#516d5b;line-height:1.5}
+.compare-details-toggle{display:grid;place-items:center;flex:none;width:33px;height:33px;border-radius:50%;background:#174c3c;color:#f8ddb0;font-size:1.55rem;line-height:1;transition:transform .2s}
+.compare-details[open] .compare-details-toggle{transform:rotate(45deg)}
+.compare-details .compare-scroll{border:0;border-top:1px solid #d5e0d6;border-radius:0;background:#fff}
+.compare-details .compare-table{min-width:710px}
+@media(min-width:751px){
+ .compare-board .mobile-compare{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(13px,1.7vw,20px);margin:28px 0 0}
+ .compare-board .mobile-compare li{min-width:0}
+ .compare-board .mobile-pass{display:flex;flex-direction:column;height:100%;overflow:hidden;border:1px solid #cbdacb;border-radius:6px 23px 6px 23px;background:#fffefa;box-shadow:0 16px 34px #16392b1b}
+ .compare-board .mobile-compare li:nth-child(2) .mobile-pass{border-radius:23px 6px 23px 6px}
+ .compare-board .mobile-pass:before{inset:auto 0 0;width:auto;height:5px}
+ .compare-board .pass-head{align-items:start;min-height:138px;gap:14px;padding:24px 23px 23px;border-bottom:1px solid #cbdacb}
+ .compare-board .pass-number{width:43px;height:43px;border-radius:11px;font-size:1.35rem}
+ .compare-board .pass-head h3{font-size:clamp(1.45rem,2.1vw,2.1rem);line-height:1.06;letter-spacing:-.045em}
+ .compare-board .pass-head p{font-size:.74rem;line-height:1.5}
+ .compare-board .pass-facts{flex:1;padding:9px 24px}
+ .compare-board .pass-facts>div{display:block;padding:14px 0}
+ .compare-board .pass-facts dt{margin:0 0 4px;font-size:.66rem;line-height:1.5;letter-spacing:.11em}
+ .compare-board .pass-facts dd{font-size:.87rem;line-height:1.62}
+ .compare-board .pass-action{min-height:56px;margin:14px 20px 23px;padding:14px 16px;font-size:.82rem;background:#153e33}
+ .compare-board .pass-action:hover{background:#28604b}
+ .compare-board .mobile-compare li:first-child .pass-head{background:#123d33;border-color:#225749;color:#fffaf0}
+ .compare-board .mobile-compare li:first-child .pass-head h3{color:#fffaf0}
+ .compare-board .mobile-compare li:first-child .pass-head p{color:#dceadf}
+ .compare-board .mobile-compare li:first-child .pass-number{border-color:#efcf97;background:#efcf97;color:#153a2f}
+ .compare-board .mobile-compare li:nth-child(2) .pass-head{background:#f3ead7}
+ .compare-board .mobile-compare li:nth-child(3) .pass-head{background:#e6efea}
+}
+@media(min-width:751px) and (max-width:1040px){
+ .compare-board .mobile-compare{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .compare-board .mobile-compare li:first-child{grid-column:1/-1}
+ .compare-board .mobile-compare li:first-child .mobile-pass{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-template-rows:minmax(0,1fr) auto}
+ .compare-board .mobile-compare li:first-child .pass-head{grid-column:1;grid-row:1/3;min-height:270px;align-items:start;align-content:start}
+ .compare-board .mobile-compare li:first-child .pass-facts{grid-column:2;grid-row:1}
+ .compare-board .mobile-compare li:first-child .pass-action{grid-column:2;grid-row:2}
+}
+@media(max-width:750px){
+ .compare-board{padding:23px 17px;border-radius:22px}
+ .compare-board:before{display:none}
+ .compare-details{display:none}
+ .compare-board .compare-head h2{font-size:clamp(2rem,7vw,2.75rem)}
+}
+@media(max-width:540px){.compare-board{padding:21px 14px}}
+@media(prefers-reduced-motion:reduce){.compare-details-toggle{transition:none}}
+@media print{
+ .compare-board{padding:20px;border:1px solid #888;box-shadow:none;background:white}
+ .compare-board:before,.compare-details{display:none!important}
+ .compare-board .mobile-compare{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .compare-board .mobile-pass{height:100%;box-shadow:none;break-inside:avoid}
+ .compare-board .pass-head{min-height:0}
+}
 </style>
 </head>
 <body>
