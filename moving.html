@@ -952,6 +952,224 @@ body:not(.move-scan-on) #nearby .dispatch-caption{font-size:.55rem;line-height:1
   .move-roadbook-grid .move-roadbook-stop:first-child .move-roadbook-photo-note{color:#111!important}
 }
 
+
+/* 2026-11-21 / Moving-day companion atlas.
+   Compared live stayarv.com and russellville.rent/moving.html before redesign.
+   Recompose the three unchanged cross-category paths into one spacious scenic
+   trailer feature and two legible companion dispatch cards. The reused local
+   image is place photography, NEVER equipment inventory or a provider claim.
+   Guidance: NN/g visual hierarchy/grouping; web.dev layout stability and fluid
+   reflow; WCAG 2.2 focus visibility, 24px targets and reduced motion.
+   Provider, link, quote, filter, checklist and booking facts stay untouched. */
+.move-kit{
+  position:relative;isolation:isolate;overflow:hidden;
+  margin:clamp(60px,7vw,94px) 0 16px;
+  padding:clamp(24px,4.2vw,49px);
+  border:1px solid #557a66;border-radius:29px;
+  background:
+    linear-gradient(110deg,rgba(7,34,29,.97),rgba(11,48,39,.92) 60%,rgba(11,49,38,.8)),
+    url("assets/downtown-russellville-sunset.jpg") center 57%/cover no-repeat;
+  box-shadow:0 24px 52px #0b362c32;color:#f6f4e9;
+}
+.move-kit:after{
+  position:absolute;content:"";pointer-events:none;
+  inset:12px;border:1px solid #d6c69f42;border-radius:19px;
+}
+.move-kit-head{
+  position:relative;z-index:1;
+  grid-template-columns:minmax(0,1.1fr) minmax(220px,.65fr);
+  gap:clamp(19px,4vw,55px);align-items:end;
+  padding:6px 5px clamp(23px,3.3vw,36px);
+  margin:0 0 clamp(18px,2.5vw,28px);
+  border-bottom:1px solid #d2deca4d;
+}
+.move-kit-head .eyebrow{
+  color:#f2d298;font-size:.69rem;letter-spacing:.15em;
+}
+.move-kit h2{
+  max-width:15ch;color:#fff9e9;
+  font-size:clamp(2.7rem,4.6vw,4.65rem);line-height:1.035;
+  letter-spacing:-.065em;text-wrap:balance;
+}
+.move-kit-head>p{
+  max-width:38ch;margin:0 0 5px;color:#e0ebe0;
+  font-size:.91rem;line-height:1.75;
+}
+.move-kit-grid{
+  position:relative;z-index:1;
+  grid-template-columns:minmax(0,1.16fr) minmax(0,.84fr);
+  grid-template-rows:repeat(2,minmax(190px,auto));
+  align-items:stretch;gap:16px;
+}
+.move-kit-card{
+  border-color:#cad4bd;border-radius:20px;
+  box-shadow:0 15px 32px #041d1838;
+}
+.move-kit-card:hover{
+  transform:translateY(-3px);
+  border-color:#f6dba5;box-shadow:0 22px 42px #041d1857;
+}
+.move-kit-card:focus-visible{
+  outline:4px solid #ffe3a7;outline-offset:5px;
+}
+.move-kit-grid .move-kit-card:first-child{
+  grid-column:1;grid-row:1 / span 2;
+  display:flex;flex-direction:column;
+  background:#f5dfb4;border-color:#e9cf95;
+}
+.move-kit-card--trailers .move-kit-art{
+  flex:1 0 280px;height:auto;min-height:300px;
+  background:#174737 url("assets/downtown-russellville-sunset.jpg") center 58%/cover no-repeat;
+}
+.move-kit-card--trailers .move-kit-art:before{
+  z-index:0;inset:0;width:auto;height:auto;border:0;border-radius:0;
+  box-shadow:none;
+  background:linear-gradient(180deg,#0a302a66 5%,#0a302ad8 100%);
+}
+.move-kit-card--trailers .move-kit-art svg{
+  z-index:1;width:min(82%,350px);height:auto;
+  max-height:210px;filter:drop-shadow(0 16px 20px #001710b6);
+}
+.move-kit-scene-caption{
+  position:absolute;z-index:2;left:18px;bottom:14px;right:18px;
+  padding-top:9px;border-top:1px solid #f6e2b080;
+  color:#fff5df;font-size:.62rem;font-weight:800;line-height:1.5;
+  text-align:center;letter-spacing:.04em;
+}
+.move-kit-card--trailers .move-kit-copy{
+  padding:clamp(25px,3.6vw,41px);
+  background:linear-gradient(137deg,#f7e4bd,#f3d6a0);
+}
+.move-kit-card--trailers .move-kit-index{color:#765125}
+.move-kit-card--trailers strong{
+  max-width:14ch;
+  font-size:clamp(2.35rem,3.7vw,3.5rem);
+  line-height:1.05;letter-spacing:-.06em;
+}
+.move-kit-card--trailers .move-kit-description{
+  max-width:48ch;color:#435448;
+  font-size:.92rem;line-height:1.7;
+}
+.move-kit-grid .move-kit-card:not(:first-child){
+  grid-column:2;display:grid;
+  grid-template-columns:minmax(112px,.37fr) minmax(0,.63fr);
+  min-height:236px;
+  background:#fdfaf1;
+}
+.move-kit-grid .move-kit-card:nth-child(2){grid-row:1}
+.move-kit-grid .move-kit-card:nth-child(3){grid-row:2}
+.move-kit-grid .move-kit-card:not(:first-child) .move-kit-art{
+  min-height:100%;height:auto;
+  border-right:1px solid #d3dccb;
+}
+.move-kit-grid .move-kit-card:not(:first-child) .move-kit-art:before{
+  right:-150px;top:-140px;
+}
+.move-kit-grid .move-kit-card:not(:first-child) .move-kit-art svg{
+  width:100%;height:auto;max-width:172px;
+  padding:8px;filter:drop-shadow(0 10px 10px #184c3022);
+}
+.move-kit-grid .move-kit-card:not(:first-child) .move-kit-copy{
+  min-width:0;padding:clamp(20px,2.35vw,29px);
+}
+.move-kit-grid .move-kit-card:not(:first-child) strong{
+  font-size:clamp(1.5rem,2.2vw,2.15rem);line-height:1.13;
+}
+.move-kit-grid .move-kit-card:not(:first-child) .move-kit-description{
+  margin:12px 0 19px;font-size:.82rem;line-height:1.57;
+}
+.move-kit-cta{min-height:34px;align-items:center}
+.move-kit-note{
+  position:relative;z-index:1;
+  max-width:88ch;margin:22px 4px 2px;padding-top:18px;
+  border-top:1px solid #e4e3ce4b;color:#e2eae0;
+  font-size:.78rem;line-height:1.65;
+}
+@media(max-width:1010px){
+  .move-kit-grid{grid-template-columns:1fr;grid-template-rows:auto}
+  .move-kit-grid .move-kit-card:first-child{
+    grid-column:1;grid-row:auto;display:grid;
+    grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);
+    min-height:270px;
+  }
+  .move-kit-card--trailers .move-kit-art{
+    height:100%;min-height:270px;flex:none;
+  }
+  .move-kit-grid .move-kit-card:nth-child(2),
+  .move-kit-grid .move-kit-card:nth-child(3){
+    grid-column:1;grid-row:auto;min-height:190px;
+    grid-template-columns:minmax(155px,.35fr) minmax(0,.65fr);
+  }
+  .move-kit-grid .move-kit-card:not(:first-child) .move-kit-art{
+    min-height:190px;
+  }
+}
+@media(max-width:700px){
+  .move-kit{margin-top:51px;padding:25px 19px;border-radius:21px}
+  .move-kit:after{inset:7px;border-radius:14px}
+  .move-kit-head{grid-template-columns:1fr;gap:13px;padding:3px 3px 22px}
+  .move-kit h2{font-size:clamp(2.6rem,8.4vw,3.65rem)}
+  .move-kit-head>p{max-width:60ch;font-size:.87rem}
+  .move-kit-grid{gap:13px}
+  .move-kit-grid .move-kit-card:first-child{
+    grid-template-columns:1fr;
+  }
+  .move-kit-card--trailers .move-kit-art{height:220px;min-height:220px}
+  .move-kit-card--trailers .move-kit-art svg{max-width:250px;max-height:135px}
+  .move-kit-card--trailers .move-kit-copy{padding:25px 24px 27px}
+  .move-kit-card--trailers strong{font-size:clamp(2.25rem,6.8vw,3.2rem)}
+  .move-kit-grid .move-kit-card:nth-child(2),
+  .move-kit-grid .move-kit-card:nth-child(3){
+    grid-template-columns:minmax(110px,.32fr) minmax(0,.68fr);
+    min-height:180px;
+  }
+  .move-kit-grid .move-kit-card:not(:first-child) .move-kit-art{
+    min-height:180px;
+  }
+  .move-kit-grid .move-kit-card:not(:first-child) .move-kit-copy{
+    padding:20px;
+  }
+}
+@media(max-width:450px){
+  .move-kit{padding:19px 14px}
+  .move-kit-card--trailers .move-kit-art{height:195px;min-height:195px}
+  .move-kit-grid .move-kit-card:nth-child(2),
+  .move-kit-grid .move-kit-card:nth-child(3){
+    grid-template-columns:1fr;min-height:0;
+  }
+  .move-kit-grid .move-kit-card:not(:first-child) .move-kit-art{
+    height:110px;min-height:110px;border-right:0;
+    border-bottom:1px solid #d3dccb;
+  }
+  .move-kit-grid .move-kit-card:not(:first-child) .move-kit-art svg{
+    max-width:155px;max-height:90px;
+  }
+  .move-kit-grid .move-kit-card:not(:first-child) .move-kit-copy{padding:20px 22px}
+  .move-kit-grid .move-kit-card:not(:first-child) .move-kit-description{margin-bottom:10px}
+  .move-kit-scene-caption{font-size:.58rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .move-kit .move-kit-card{transition:none}
+  .move-kit .move-kit-card:hover{transform:none}
+}
+@media print{
+  .move-kit{display:block;margin:15px 0;background:#fff!important;color:#111!important;border:1px solid #777;box-shadow:none;padding:16px}
+  .move-kit:after{display:none}
+  .move-kit-head{display:block;border-color:#777}
+  .move-kit h2,.move-kit-head .eyebrow,.move-kit-head>p,.move-kit-note{color:#111!important}
+  .move-kit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto;gap:10px}
+  .move-kit-grid .move-kit-card,.move-kit-grid .move-kit-card:first-child,
+  .move-kit-grid .move-kit-card:not(:first-child){
+    display:block;grid-column:auto;grid-row:auto;
+    min-height:0;box-shadow:none;border:1px solid #777;
+    background:#fff!important;break-inside:avoid;
+  }
+  .move-kit .move-kit-art{display:none}
+  .move-kit-grid .move-kit-card .move-kit-copy{background:#fff!important;padding:17px}
+  .move-kit-grid .move-kit-card strong{font-size:1.3rem}
+  .move-kit-note{border-color:#777}
+}
+
 </style></head>
 <body><a class="skip" href="#main">Skip to rental options</a><header><div class="wrap"><a class="brand" href="/">Russellville<span>.Rent</span></a><a class="back" href="/">← Browse all rentals</a></div></header>
 
@@ -1107,6 +1325,7 @@ body:not(.move-scan-on) #nearby .dispatch-caption{font-size:.55rem;line-height:1
     <a class="move-kit-card move-kit-card--trailers" href="trailers.html">
       <span class="move-kit-art" aria-hidden="true">
         <svg viewBox="0 0 270 116" focusable="false"><path d="M11 94h248" stroke="#8aa89b" stroke-width="2" stroke-linecap="round"/><path d="M42 43h147v44H42z" fill="#f7fcf6" stroke="#285b48" stroke-width="4"/><path d="M55 51v29m120-29v29" stroke="#a6c0b1" stroke-width="3"/><path d="M189 66h28l18 17h19" stroke="#285b48" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/><circle cx="81" cy="91" r="16" fill="#244b3c"/><circle cx="81" cy="91" r="6" fill="#f1d5a1"/><circle cx="166" cy="91" r="16" fill="#244b3c"/><circle cx="166" cy="91" r="6" fill="#f1d5a1"/><path d="M61 35h109" stroke="#4f8c72" stroke-width="5" stroke-linecap="round"/></svg>
+        <span class="move-kit-scene-caption">Downtown Russellville scenery · not rental inventory</span>
       </span>
       <span class="move-kit-copy"><span class="move-kit-index">01 / Haul the extras</span><strong>Trailer rentals</strong><span class="move-kit-description">Browse cargo and utility trailer listings when one load is not enough.</span><span class="move-kit-cta">Browse trailers</span></span>
     </a>
