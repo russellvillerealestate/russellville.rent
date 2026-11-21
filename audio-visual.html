@@ -883,11 +883,48 @@ h2.section-title{font:400 clamp(2.15rem,3.9vw,3.45rem)/1.08 Georgia,"Times New R
  .quick-guide .guide-item:first-child :is(strong,.guide-number,.guide-cta,span){color:#173c32!important}
  .guide-photo-caption{display:none}
 }
+
+/* The River Valley production route: a persistent, four-stop editorial wayfinder.
+   Respect the existing provider cards, filter controls, and direct-contact details. */
+.av-stage-nav{position:sticky;top:0;z-index:30;background:#112f29;color:#fff;border-top:1px solid #557568;border-bottom:3px solid #cda96d;box-shadow:0 12px 24px #102c2430}
+.av-stage-nav__inner{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:1120px;margin:auto;padding:0 20px}
+.av-stage-nav__item{position:relative;display:flex;flex-direction:column;justify-content:center;min-height:79px;padding:13px clamp(12px,2.5vw,28px);color:#f5f5ec;text-decoration:none;border-left:1px solid #ffffff28;transition:background .2s ease}
+.av-stage-nav__item:last-child{border-right:1px solid #ffffff28}
+.av-stage-nav__item:hover{background:#245447}
+.av-stage-nav__item:focus-visible{outline:3px solid #f5d28b;outline-offset:-6px;background:#245447}
+.av-stage-nav__index{display:block;margin-bottom:4px;color:#e5c58d;font-size:.62rem;font-weight:800;line-height:1.2;letter-spacing:.15em;text-transform:uppercase}
+.av-stage-nav__item strong{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:clamp(.81rem,1.25vw,1rem);font-weight:750;line-height:1.2;letter-spacing:-.025em}
+.av-stage-nav__item strong:after{content:"↗";color:#e7c995;font-weight:400;font-size:1.2rem}
+html{scroll-padding-top:95px}
+#service-map,#confirmed,#more-options,#event-brief{scroll-margin-top:95px}
+@media(max-width:760px) and (min-height:650px){
+ .av-stage-nav{position:fixed;top:auto;bottom:0;left:0;right:0;padding-bottom:env(safe-area-inset-bottom,0px);border-top:3px solid #cda96d;border-bottom:0;box-shadow:0 -10px 30px #102c2450}
+ .av-stage-nav__inner{padding:0 4px}
+ .av-stage-nav__item{min-height:75px;padding:12px 8px;text-align:center;align-items:center}
+ .av-stage-nav__index{font-size:.54rem;letter-spacing:.1em}
+ .av-stage-nav__item strong{display:block;font-size:clamp(.7rem,2.7vw,.84rem);line-height:1.25}
+ .av-stage-nav__item strong:after{display:none}
+ body{padding-bottom:calc(80px + env(safe-area-inset-bottom,0px))}
+ html{scroll-padding-top:18px}
+ #service-map,#confirmed,#more-options,#event-brief{scroll-margin-top:25px}
+}
+@media(max-width:360px) and (min-height:650px){.av-stage-nav__item{padding:12px 3px}.av-stage-nav__index{font-size:.49rem}}
+@media(prefers-reduced-motion:reduce){.av-stage-nav__item{transition:none}}
+@media print{.av-stage-nav{display:none!important}body{padding-bottom:0!important}}
+
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to rental providers</a>
 <header class="site-head"><div class="shell"><a class="brand" href="/">Russellville<span>.Rent</span></a><a class="back" href="/">← Browse all rentals</a></div></header>
+<nav class="av-stage-nav" aria-label="Audio and visual rental page navigation">
+ <div class="av-stage-nav__inner">
+  <a class="av-stage-nav__item" href="#service-map"><span class="av-stage-nav__index">01 / Discover</span><strong>11 service paths</strong></a>
+  <a class="av-stage-nav__item" href="#confirmed"><span class="av-stage-nav__index">02 / Close to home</span><strong>Local service</strong></a>
+  <a class="av-stage-nav__item" href="#more-options"><span class="av-stage-nav__index">03 / Widen search</span><strong>More providers</strong></a>
+  <a class="av-stage-nav__item" href="#event-brief"><span class="av-stage-nav__index">04 / Get ready</span><strong>Plan your event</strong></a>
+ </div>
+</nav>
 <section class="hero" aria-labelledby="page-title"><img class="hero-photo" src="assets/downtown-russellville-sunset.jpg" alt="" width="1200" height="544" fetchpriority="high" decoding="async"><div class="shell hero-grid">
 <div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley · Event rentals</p><h1 id="page-title">Audio, visual <br><em>and event equipment</em> <br>rentals</h1><p class="hero-copy">Sound equipment, microphones, lighting, projectors and production gear for Russellville events. Compare what providers advertise—and what still needs to be confirmed.</p><div class="hero-actions"><a class="action primary" href="#confirmed">Explore confirmed delivery ↓</a><a class="action secondary" href="#more-options">Other providers ↓</a></div><p class="hero-photo-credit">Downtown Russellville at sunset <span aria-hidden="true">·</span> Local scenery, not a listed rental or a provider event</p></div>
 <div class="sound-art" aria-hidden="true"><div class="wave"><i style="--h:34px"></i><i style="--h:62px"></i><i style="--h:94px"></i><i style="--h:49px"></i><i style="--h:126px"></i><i style="--h:76px"></i><i style="--h:154px"></i><i style="--h:92px"></i><i style="--h:120px"></i><i style="--h:48px"></i><i style="--h:90px"></i><i style="--h:60px"></i><i style="--h:36px"></i></div><span class="art-label">SOUND / LIGHT / PRODUCTION</span></div>
