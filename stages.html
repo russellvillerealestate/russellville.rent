@@ -1006,6 +1006,128 @@ html{scroll-padding-top:105px}
   .stage-mobile-guide{display:none!important}
 }
 
+
+/* 2026-11-21 / Fixed-stage hometown atlas: a substantial five-stop
+   on-site venue index. Compared live StayARV's immersive lake hero with live
+   Russellville.Rent; retain the scenic scene while giving five existing
+   Russellville / Dover / Dardanelle destinations a legible editorial ledger.
+   Nielsen Norman Group: clear information hierarchy and scanning.
+   Google web.dev: responsive reflow, no added image or network request.
+   W3C WCAG 2.2: native links, visible focus, target size, mobile and print.
+   All venue wording, stage facts, links, scripts and listing automation intact. */
+@media screen {
+  .venue-chapter {
+    grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+    border:1px solid #b8c9b8;border-radius:25px;
+    background:#f7f3e8;box-shadow:0 27px 60px #123a3024;
+  }
+  .venue-chapter-scene {
+    min-height:650px;background-position:center 49%;
+  }
+  .venue-chapter-copy {
+    justify-content:center;min-width:0;
+    padding:clamp(32px,4.5vw,62px);
+    background:radial-gradient(circle at 100% 0%,#e3ecdf,transparent 50%),#f8f5eb;
+    color:#183f33;
+  }
+  .venue-chapter-copy .eyebrow {
+    color:#805a2c;font-size:.69rem;letter-spacing:.14em;
+  }
+  .venue-chapter h2 {
+    color:#153c30;font-size:clamp(2.45rem,4.35vw,4.5rem);
+    line-height:1.03;max-width:17ch;
+  }
+  .venue-chapter h2 em {color:#92672f}
+  .venue-chapter-copy>p:not(.eyebrow):not(.venue-chapter-small) {
+    color:#506458;line-height:1.7;margin:19px 0 26px;
+    font-size:clamp(.88rem,1.1vw,.99rem);
+  }
+  .venue-chapter-small {color:#51695b;font-size:.75rem;line-height:1.58}
+  .venue-chapter-links {
+    display:grid;grid-template-columns:1fr;gap:9px;
+    counter-reset:localStage;width:100%;
+  }
+  .venue-chapter-links a {
+    counter-increment:localStage;
+    display:grid;grid-template-columns:42px minmax(0,1fr);
+    align-items:center;justify-content:initial;gap:13px;
+    min-width:0;min-height:66px;padding:10px 16px 10px 11px;
+    border:1px solid #d6dfd2;border-left:4px solid #b58f56;
+    border-radius:11px;background:#fffef9;
+    color:#214a3b;text-align:left;text-decoration:none;
+    font-size:clamp(.76rem,1vw,.86rem);line-height:1.35;
+    font-weight:800;box-shadow:0 5px 15px #1b40300c;
+    transition:background-color .18s ease,transform .18s ease;
+  }
+  .venue-chapter-links a::before {
+    content:"0" counter(localStage);
+    display:grid;place-items:center;width:42px;height:42px;
+    border-radius:9px;background:#e7eee4;color:#35624c;
+    font:850 .8rem/1 system-ui,-apple-system,"Segoe UI",sans-serif;
+    letter-spacing:.03em;
+  }
+  .venue-chapter-links a:first-child {
+    background:#1c503e;border-color:#1c503e;
+    border-left-color:#f0ce90;color:#fffbed;
+    box-shadow:0 9px 19px #0b38292a;
+  }
+  .venue-chapter-links a:first-child::before {
+    background:#ffffff19;color:#f5dcaa;border:1px solid #f7dca74a;
+  }
+  .venue-chapter-links a:hover {
+    background:#e8f1e6;color:#153b2f;transform:translateX(3px);
+  }
+  .venue-chapter-links a:first-child:hover {
+    background:#285f48;color:#fffbed;
+  }
+  .venue-chapter-links a:focus-visible {
+    outline:3px solid #8e501c;outline-offset:3px;
+  }
+  .venue-chapter-links a:first-child:focus-visible {
+    outline:4px solid #e8ba67;outline-offset:3px;
+  }
+}
+@media screen and (max-width:990px) {
+  .venue-chapter {grid-template-columns:1fr}
+  .venue-chapter-scene {min-height:320px}
+  .venue-chapter-copy {padding:35px}
+  .venue-chapter h2 {max-width:20ch}
+}
+@media screen and (max-width:600px) {
+  .venue-chapter {border-radius:17px}
+  .venue-chapter-scene {min-height:255px}
+  .venue-chapter-copy {padding:29px 20px 34px}
+  .venue-chapter h2 {font-size:clamp(2.2rem,9.5vw,3.15rem)}
+  .venue-chapter-links {gap:8px}
+  .venue-chapter-links a {
+    min-height:62px;grid-template-columns:37px minmax(0,1fr);
+    gap:10px;padding:9px 12px 9px 9px;font-size:.79rem;
+  }
+  .venue-chapter-links a::before {width:37px;height:37px;font-size:.74rem}
+}
+@media (prefers-reduced-motion:reduce) {
+  .venue-chapter-links a {transition:none}
+  .venue-chapter-links a:hover {transform:none}
+}
+@media print {
+  .venue-chapter {
+    grid-template-columns:1fr!important;background:#fff!important;
+    color:#111!important;border:1px solid #888;box-shadow:none;
+    break-inside:avoid;
+  }
+  .venue-chapter-scene {display:none!important}
+  .venue-chapter-copy {background:#fff!important;color:#111!important;padding:19px}
+  .venue-chapter-copy :is(h2,h2 em,.eyebrow,.venue-chapter-small) {
+    color:#111!important;
+  }
+  .venue-chapter-copy>p:not(.eyebrow):not(.venue-chapter-small) {color:#111!important}
+  .venue-chapter-links a {
+    min-height:0;box-shadow:none!important;background:#fff!important;
+    color:#111!important;border:1px solid #777;break-inside:avoid;
+  }
+  .venue-chapter-links a::before {color:#111!important;background:#fff!important}
+}
+
 </style>
 </head>
 <body>
