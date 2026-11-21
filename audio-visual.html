@@ -912,6 +912,114 @@ html{scroll-padding-top:95px}
 @media(prefers-reduced-motion:reduce){.av-stage-nav__item{transition:none}}
 @media print{.av-stage-nav{display:none!important}body{padding-bottom:0!important}}
 
+
+/* 2026-11-21 / Two-route local event service spread.
+   Inspected live stayarv.com and russellville.rent/audio-visual.html and main
+   history before redesign. The two EXISTING services that explicitly advertise
+   Russellville coverage are now a clear, equal-weight editorial pair, rather
+   than two long stacked folios. No ranking, local offices, inventory, dates or
+   unverified delivery claims are implied. Reuse original service SVG artwork.
+   Principles: NN/g hierarchy & grouping, web.dev responsive reflow, WCAG 2.2
+   visible focus, readable text, small-screen reflow and reduced motion. */
+#confirmed{
+  margin-block:clamp(46px,6vw,82px);
+  padding:clamp(14px,2.3vw,25px);
+  border:1px solid #c2d3c5;border-radius:26px;
+  background:linear-gradient(145deg,#e6efe6,#f1f0e5 78%);
+  box-shadow:0 21px 55px #103b3020;
+}
+#confirmed .section-heading{
+  position:relative;isolation:isolate;overflow:hidden;
+  padding:clamp(28px,4.7vw,55px);margin:0 0 19px;
+  border:1px solid #416851;border-radius:18px;
+  background:linear-gradient(118deg,#102e2b 0%,#1a4a3b 64%,#295b4a 100%);
+  color:#fffaf0;
+}
+#confirmed .section-heading:before{
+  content:"";position:absolute;z-index:-1;pointer-events:none;
+  width:390px;height:390px;right:-115px;top:-245px;
+  border:1px solid #f1d59a70;border-radius:50%;
+  box-shadow:0 0 0 45px #f4db9e10,0 0 0 94px #f4db9e08;
+}
+#confirmed .section-heading .kicker{
+  color:#f4d59a;letter-spacing:.2em;
+}
+#confirmed .section-title{
+  color:#fffaf0;max-width:16ch;
+  font-size:clamp(2.6rem,5.5vw,4.85rem);
+  line-height:1.04;letter-spacing:-.065em;
+}
+#confirmed .section-intro{
+  color:#dfeee4;max-width:43ch;
+  font-size:clamp(.94rem,1.25vw,1.08rem);line-height:1.75;
+}
+#confirmed .provider,#confirmed .provider.featured{
+  min-width:0;overflow:hidden;border:1px solid #c6d8cc;
+  border-radius:17px;background:#fffdf5;
+  box-shadow:0 10px 24px #173f2e14;
+}
+#confirmed .provider+.provider{margin-top:18px}
+#confirmed .provider .provider-content a:focus-visible{
+  outline:3px solid #a76a20;outline-offset:3px;
+}
+@media screen and (min-width:1040px){
+  #confirmed{
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+    align-items:stretch;gap:18px;
+  }
+  #confirmed .section-heading{
+    grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
+    gap:32px;align-items:end;margin:0 0 3px;min-height:250px;
+  }
+  #confirmed .provider,#confirmed .provider.featured{
+    display:flex;flex-direction:column;min-height:0;
+  }
+  #confirmed #provider-1 .card-top,#confirmed #provider-2 .card-top{
+    display:flex;flex:none;grid-column:auto;grid-row:auto;
+    width:100%;min-height:280px;padding:28px 31px;
+  }
+  #confirmed #provider-1 .folio-scene,#confirmed #provider-2 .folio-scene{
+    inset:26px 18px 55px;
+  }
+  #confirmed #provider-1 .folio-scene svg,#confirmed #provider-2 .folio-scene svg{
+    max-width:390px;max-height:210px;
+  }
+  #confirmed #provider-1 .provider-content,#confirmed #provider-2 .provider-content{
+    display:flex;flex-direction:column;flex:1;
+    align-self:stretch;grid-column:auto;grid-row:auto;
+    padding:clamp(27px,3.2vw,43px);
+  }
+  #confirmed #provider-1 h2,#confirmed #provider-2 h2{
+    font-size:clamp(2.05rem,2.7vw,2.9rem);
+    max-width:17ch;
+  }
+  #confirmed #provider-1 .area,#confirmed #provider-2 .area{
+    margin-top:auto;
+  }
+  #confirmed .provider+.provider{margin-top:0}
+}
+@media screen and (max-width:600px){
+  #confirmed{padding:11px;border-radius:17px;margin-block:40px}
+  #confirmed .section-heading{padding:29px 22px;border-radius:11px;margin-bottom:12px}
+  #confirmed .section-title{font-size:clamp(2.3rem,9.2vw,3.15rem)}
+  #confirmed .section-intro{font-size:.9rem}
+  #confirmed .provider,#confirmed .provider.featured{border-radius:11px}
+  #confirmed .provider+.provider{margin-top:12px}
+}
+@media print{
+  #confirmed{display:block!important;background:transparent!important;
+    border:0;box-shadow:none;padding:0}
+  #confirmed .section-heading{display:block;background:#fff!important;
+    color:#173b31!important;border:1px solid #777;padding:20px}
+  #confirmed .section-title,#confirmed .section-intro,#confirmed .section-heading .kicker{
+    color:#173b31!important;
+  }
+  #confirmed .provider,#confirmed .provider.featured{
+    display:block!important;box-shadow:none!important;break-inside:avoid;
+    margin:13px 0!important;
+  }
+}
+
 </style>
 </head>
 <body>
