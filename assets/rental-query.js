@@ -7,9 +7,13 @@ const RentalQuery = (() => {
     [/\bcondos?\b/i, 'Condo'], [/\b(?:houses?|single[- ]family)\b/i, 'House']
   ];
   function words(text) {
-    return text.toLowerCase().replace(/\b(?:for rent|near me|in russellville|around russellville)\b/gi,' ')
-      .replace(/\b(?:find|looking for|rentals?|rent|please|a|an|the|to|me)\b/gi,' ')
-      .replace(/\s+/g,' ').trim();
+    // Understand conversational requests while keeping rental type, beds and budget terms.
+    return text.toLowerCase()
+      .replace(/\b(?:for rent|near me|in russellville|around russellville)\b/gi,' ')
+      .replace(/\b(?:i'm|we're|i'd|we'd)\b/gi,' ')
+      .replace(/\b(?:find|looking|trying|need|needs|want|wants|show|have|can|could|do|you|us|we|i|my|our|some|any|available|for|in|at|rentals?|rent|please|a|an|the|to|me)\b/gi,' ')
+      .replace(/\s+/g,' ').trim()
+      .replace(/^[^a-z0-9$]+|[^a-z0-9$]+$/g,'');
   }
   const addressWords = {
     north: 'n', south: 's', east: 'e', west: 'w', street: 'st', avenue: 'ave',

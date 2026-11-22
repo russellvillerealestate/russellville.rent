@@ -215,3 +215,42 @@ footer a{display:inline-flex;align-items:center;min-height:44px;font-weight:650}
 }
 @media(prefers-reduced-motion:reduce){#search-results>ul>.search-row{transition:none}#search-results>ul>.search-row:hover{transform:none}}
 @media print{#search-results>ul>.search-row.primary-match{background:white;color:black;border-color:#aaa}#search-results .primary-match .match-chapter,#search-results .primary-match .match-action,#search-results .primary-match .match-description{color:black}}
+
+
+/* Rental index: a local-photo lead chapter and three compact, distinct paths.
+   Decorative photography represents downtown Russellville, not a listed property. */
+#rental-results:not(.single-list){align-items:stretch}
+#rental-results:not(.single-list) .category-group{
+  border-top:4px solid #527661;
+  box-shadow:0 10px 28px #173b2810;
+  transition:box-shadow .2s ease;
+}
+#rental-results:not(.single-list) .category-group:hover{box-shadow:0 14px 32px #173b281f}
+#rental-results:not(.single-list) .category-group>h3{font-size:clamp(1.21rem,2vw,1.56rem);line-height:1.16;margin-bottom:.7rem}
+#rental-results:not(.single-list) [data-chapter=everyday]{background:#fbfcf8;border-top-color:#38654e}
+#rental-results:not(.single-list) [data-chapter=projects]{background:#fdfaf4;border-top-color:#b1874d}
+#rental-results:not(.single-list) [data-chapter=outdoors]{background:#f6fbf9;border-top-color:#4b8782}
+#rental-results:not(.single-list) [data-chapter=gather]{background:#fdf9f6;border-top-color:#ae7965}
+@media(min-width:900px){
+  #rental-results:not(.single-list){grid-template-columns:repeat(3,minmax(0,1fr));gap:1.05rem}
+  #rental-results:not(.single-list) #rental-chapter-everyday{
+    grid-column:1/-1;display:grid;
+    grid-template-columns:minmax(0,1.05fr) minmax(0,1.4fr);
+    grid-template-rows:auto 1fr auto;column-gap:clamp(1.15rem,3vw,2.25rem);
+    padding:.95rem clamp(1.15rem,2.4vw,1.75rem) .85rem 0;
+    overflow:hidden;border-top:0;
+  }
+  #rental-results:not(.single-list) #rental-chapter-everyday::before{
+    content:"";grid-column:1;grid-row:1/4;min-height:14.5rem;
+    margin:-.95rem 0 -.85rem;
+    background-color:#204638;
+    background-image:linear-gradient(0deg,#173c3155,transparent 65%),url("assets/downtown-russellville-sunset.jpg");
+    background-position:center;background-size:cover;
+  }
+  #rental-results:not(.single-list) #rental-chapter-everyday>h3{grid-column:2;grid-row:1;align-self:end;margin-top:.35rem}
+  #rental-results:not(.single-list) #rental-chapter-everyday>ul{grid-column:2;grid-row:2}
+  #rental-results:not(.single-list) #rental-chapter-everyday>details{grid-column:2;grid-row:3}
+  #rental-results:not(.single-list) .category-group:not(#rental-chapter-everyday){padding:1rem 1.12rem .65rem}
+}
+@media(prefers-reduced-motion:reduce){#rental-results:not(.single-list) .category-group{transition:none}}
+@media print{#rental-results:not(.single-list) #rental-chapter-everyday::before{display:none}}
