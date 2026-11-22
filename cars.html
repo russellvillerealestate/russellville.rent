@@ -976,6 +976,97 @@ main.wrap{padding-top:52px}
  .compare-board .mobile-pass{height:100%;box-shadow:none;break-inside:avoid}
  .compare-board .pass-head{min-height:0}
 }
+
+/* 2026-11-21 / The hometown pickup triptych.
+   Layout only plus address-specific maps: no route time or pickup guarantee.
+   Design reference: StayARV's panoramic local photography and strong serif hierarchy.
+   Research: NN/g Good Visual Design (2025); web.dev Responsive Design Basics;
+   W3C WCAG 2.2 focus visibility, 24px targets and reflow. */
+@media screen{
+ .pickup-atlas{
+   display:grid;grid-template-columns:minmax(0,1fr);min-height:0;
+   border-radius:28px;box-shadow:0 26px 65px #0c322626;
+ }
+ .pickup-atlas-scene{
+   min-height:clamp(340px,36vw,465px);
+   padding:clamp(32px,5vw,68px);
+   justify-content:center;
+ }
+ .pickup-atlas-scene:before{
+   background:linear-gradient(92deg,#082a26f0 0%,#123a30d9 49%,#183d3273 100%),url("/assets/downtown-russellville-sunset.jpg") center 55%/cover no-repeat;
+ }
+ .pickup-atlas-scene h2{max-width:20ch;font-size:clamp(3rem,6vw,5.9rem);line-height:.99}
+ .pickup-atlas-scene>p:not(.pickup-atlas-eyebrow){margin:22px 0 34px;max-width:55ch}
+ .pickup-atlas-eyebrow{margin-bottom:20px}
+ .pickup-atlas-board{padding:clamp(26px,4vw,52px);background:#f3f5ed}
+ .pickup-board-kicker{margin-bottom:22px;letter-spacing:.17em}
+ .pickup-stops{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,20px)}
+ .pickup-stops:before{display:none}
+ .pickup-stop,.pickup-stop:first-child,.pickup-stop:last-child{
+   display:flex;flex-direction:column;align-items:flex-start;gap:0;
+   min-width:0;min-height:300px;padding:clamp(22px,2.3vw,33px);
+   border:1px solid #d1decf;border-radius:20px;background:#fffdf7;
+   box-shadow:0 11px 30px #133e3111;
+ }
+ .pickup-stop:nth-child(2){background:#f9f3e5;border-color:#ddcba8}
+ .pickup-stop:nth-child(3){background:#edf3ee}
+ .pickup-stop-index{width:49px;height:49px;margin-bottom:24px;border-width:2px;font-size:.74rem}
+ .pickup-stop-copy{flex:1;min-width:0;width:100%;margin-bottom:22px}
+ .pickup-stop-street{font-size:.67rem;letter-spacing:.135em}
+ .pickup-stop h3{font-size:clamp(1.48rem,2.2vw,2.03rem);line-height:1.12;max-width:18ch}
+ .pickup-stop p{font-size:.83rem;line-height:1.56;margin-top:12px}
+ .pickup-stop-actions{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;width:100%;margin-top:auto}
+ .pickup-stop-actions .pickup-stop-link{grid-column:auto;justify-self:auto;min-height:48px;margin:0;flex:1 1 115px}
+ .pickup-map-link{
+   display:inline-flex;align-items:center;justify-content:center;gap:10px;
+   min-height:48px;flex:1 1 80px;padding:10px 13px;
+   border:1px solid #b2c7b7;border-radius:11px;background:#e6efe6;
+   color:#194734;text-decoration:none;text-align:center;
+   font-size:.82rem;font-weight:850;transition:background-color .2s;
+ }
+ .pickup-map-link:hover{background:#d1e4d5}
+ .pickup-map-link:focus-visible{outline:3px solid #a66816;outline-offset:3px}
+ .pickup-atlas-foot{margin-top:25px;padding-top:21px}
+}
+@media screen and (max-width:940px){
+ .pickup-atlas-scene{min-height:335px}
+ .pickup-stops{grid-template-columns:1fr;gap:12px}
+ .pickup-stop,.pickup-stop:first-child,.pickup-stop:last-child{
+   display:grid;grid-template-columns:52px minmax(0,1fr) auto;
+   gap:8px 17px;align-items:start;min-height:0;padding:23px;
+ }
+ .pickup-stop-index{grid-column:1;grid-row:1/3;margin:0}
+ .pickup-stop-copy{grid-column:2;grid-row:1/3;margin:0}
+ .pickup-stop-actions{grid-column:3;grid-row:1/3;align-self:center;width:min(100%,180px);flex-direction:column}
+ .pickup-stop h3{font-size:1.55rem}
+}
+@media screen and (max-width:650px){
+ .pickup-atlas{border-radius:21px}
+ .pickup-atlas-scene{min-height:335px;padding:31px 24px}
+ .pickup-atlas-scene h2{font-size:clamp(2.7rem,9vw,4rem)}
+ .pickup-atlas-board{padding:24px 17px}
+ .pickup-stop,.pickup-stop:first-child,.pickup-stop:last-child{
+   grid-template-columns:44px minmax(0,1fr);
+   gap:8px 13px;padding:21px 18px;
+ }
+ .pickup-stop-index{grid-column:1;grid-row:1;width:44px;height:44px}
+ .pickup-stop-copy{grid-column:2;grid-row:1;margin-bottom:0}
+ .pickup-stop-actions{grid-column:2;grid-row:2;flex-direction:row;width:100%;margin-top:9px}
+ .pickup-stop-actions .pickup-stop-link,.pickup-map-link{min-height:47px;flex:1 1 100px}
+ .pickup-stop h3{font-size:1.45rem}
+}
+@media(prefers-reduced-motion:reduce){.pickup-map-link{transition:none}}
+@media print{
+ .pickup-atlas{display:block!important;box-shadow:none;border:1px solid #888}
+ .pickup-atlas-scene{min-height:0;padding:22px;color:#173e33;background:#fff}
+ .pickup-atlas-scene:before,.pickup-atlas-scene:after{display:none}
+ .pickup-atlas-scene h2,.pickup-atlas-scene h2 em,.pickup-atlas-scene>p:not(.pickup-atlas-eyebrow),.pickup-atlas-eyebrow{color:#173e33}
+ .pickup-atlas-board{padding:18px;background:#fff}
+ .pickup-stops{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+ .pickup-stop,.pickup-stop:first-child,.pickup-stop:last-child{display:block;min-height:0;break-inside:avoid;border:1px solid #888;padding:13px;box-shadow:none}
+ .pickup-stop-index{margin-bottom:10px}
+ .pickup-stop-actions{display:none}
+}
 </style>
 </head>
 <body>
@@ -1081,17 +1172,17 @@ main.wrap{padding-top:52px}
         <li class="pickup-stop">
           <span class="pickup-stop-index" aria-hidden="true">01</span>
           <div class="pickup-stop-copy"><span class="pickup-stop-street">South Arkansas Avenue</span><h3>24/7 Rent-A-Ride</h3><p>111 S Arkansas Ave · Russellville, AR 72801</p></div>
-          <a class="pickup-stop-link" href="#rental-ride" aria-label="View 24/7 Rent-A-Ride contact details">Details <span aria-hidden="true">↗</span></a>
+          <div class="pickup-stop-actions"><a class="pickup-stop-link" href="#rental-ride" aria-label="View 24/7 Rent-A-Ride contact details">Details <span aria-hidden="true">↗</span></a><a class="pickup-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=111%20S%20Arkansas%20Ave%2C%20Russellville%2C%20AR%2072801" target="_blank" rel="noopener noreferrer" aria-label="Open Google Maps for 24/7 Rent-A-Ride at 111 S Arkansas Ave, Russellville, AR 72801">Map <span aria-hidden="true">↗</span></a></div>
         </li>
         <li class="pickup-stop">
           <span class="pickup-stop-index" aria-hidden="true">02</span>
           <div class="pickup-stop-copy"><span class="pickup-stop-street">East Main Street</span><h3>Cogswell Motors Rentals</h3><p>1900 E Main St · Russellville, AR 72801</p></div>
-          <a class="pickup-stop-link" href="#cogswell-rentals" aria-label="View Cogswell Motors rental details">Details <span aria-hidden="true">↗</span></a>
+          <div class="pickup-stop-actions"><a class="pickup-stop-link" href="#cogswell-rentals" aria-label="View Cogswell Motors rental details">Details <span aria-hidden="true">↗</span></a><a class="pickup-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=1900%20E%20Main%20St%2C%20Russellville%2C%20AR%2072801" target="_blank" rel="noopener noreferrer" aria-label="Open Google Maps for Cogswell Motors Rentals at 1900 E Main St, Russellville, AR 72801">Map <span aria-hidden="true">↗</span></a></div>
         </li>
         <li class="pickup-stop">
           <span class="pickup-stop-index" aria-hidden="true">03</span>
           <div class="pickup-stop-copy"><span class="pickup-stop-street">South Arkansas Avenue</span><h3>Enterprise Rent-A-Car</h3><p>1903 S Arkansas Ave · Russellville, AR 72801</p></div>
-          <a class="pickup-stop-link" href="#enterprise-rentals" aria-label="View Enterprise Rent-A-Car branch details">Details <span aria-hidden="true">↗</span></a>
+          <div class="pickup-stop-actions"><a class="pickup-stop-link" href="#enterprise-rentals" aria-label="View Enterprise Rent-A-Car branch details">Details <span aria-hidden="true">↗</span></a><a class="pickup-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=1903%20S%20Arkansas%20Ave%2C%20Russellville%2C%20AR%2072801" target="_blank" rel="noopener noreferrer" aria-label="Open Google Maps for Enterprise Rent-A-Car at 1903 S Arkansas Ave, Russellville, AR 72801">Map <span aria-hidden="true">↗</span></a></div>
         </li>
       </ol>
       <div class="pickup-atlas-foot"><span aria-hidden="true">↗</span><p><strong>Before you go:</strong> This is a contact guide, not a scaled map or pickup confirmation. Call each provider to verify vehicles, business hours, exact pickup arrangements and all charges.</p></div>
