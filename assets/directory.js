@@ -146,12 +146,12 @@
       try {if(new URL(item.source_url).protocol!=='https:')return false;}catch{return false;}
       if(type && String(item.type||'').toLowerCase()!==type.toLowerCase())return false;
       if(beds){
-        if(!Number.isFinite(Number(item.beds)))return false;
+        if(item.beds==null || !Number.isFinite(Number(item.beds)))return false;
         const amount=Number(beds.replace(/^eq/,'')),actual=Number(item.beds);
         if(beds.startsWith('eq') ? actual!==amount : actual<amount)return false;
       }
-      if(minRent!==null && (!Number.isFinite(Number(item.rent)) || (filters.has('above') ? Number(item.rent)<=minRent : Number(item.rent)<minRent)))return false;
-      if(maxRent!==null && (!Number.isFinite(Number(item.rent)) || (filters.has('below') ? Number(item.rent)>=maxRent : Number(item.rent)>maxRent)))return false;
+      if(minRent!==null && (item.rent==null || !Number.isFinite(Number(item.rent)) || (filters.has('above') ? Number(item.rent)<=minRent : Number(item.rent)<minRent)))return false;
+      if(maxRent!==null && (item.rent==null || !Number.isFinite(Number(item.rent)) || (filters.has('below') ? Number(item.rent)>=maxRent : Number(item.rent)>maxRent)))return false;
       return RentalQuery.matchesListing(query,RentalQuery.listingWords(item).concat(RentalQuery.terms([item.city,item.state].filter(Boolean).join(' '))));
     }).sort((left,right)=>(Number(left.rent)||Infinity)-(Number(right.rent)||Infinity));
   }
@@ -259,7 +259,7 @@
     clearTimeout(pendingLookup);render();
     const value=input.value.trim();
     if(value.length>=3&&!housingRequest&&(RentalQuery.housing(value)||lastResults.some(({card})=>card.key==='homes')||!lastResults.length||/\d+\s+\D/.test(value)))
-      pendingLookup=setTimeout(async()=>{await loadHousing();if(input.value.trim()===value)render();},180);
+      pendingLookup=setTimeout(async()=>{await loadHousing();if(input.value.trim())render();},180);
   });
   input.addEventListener('keydown',event=>{
     if(event.key==='ArrowDown'&&lastResults.length){event.preventDefault();results.querySelector('a')?.focus();}
