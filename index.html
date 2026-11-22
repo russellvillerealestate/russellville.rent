@@ -369,6 +369,8 @@
 
 </style>
 
+<link rel="stylesheet" href="assets/finder.css">
+<script src="assets/rental-query.js"></script>
 </head>
 <body>
 <svg class="rental-symbol-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><symbol id="rental-pictogram-homes" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 29 32 10 57 29"/><path d="M14 26v29h36V26"/><path d="M27 55V37h11v18"/><path d="M19 32h5m16 0h5"/></g></symbol><symbol id="rental-pictogram-storage" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="10" width="28" height="22" rx="2"/><path d="M21 10v22M7 19h28"/><rect x="27" y="32" width="30" height="22" rx="2"/><path d="M42 32v22M27 40h30"/></g></symbol><symbol id="rental-pictogram-tools" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 42h31l6 7H14z"/><rect x="15" y="48" width="33" height="8" rx="4"/><path d="M18 41V30h18v11M23 30V22h9v8M32 22l9-12 11 11M52 21l4 14-8 4-5-8"/><circle cx="25" cy="52" r="1.8"/><circle cx="38" cy="52" r="1.8"/></g></symbol><symbol id="rental-pictogram-paddling" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 36c5 14 43 14 48 0H8Z"/><path d="M32 36V20M16 18l32 18M15 15l7 1-7 6-7-1zM49 34l7 1-7 6-7-1z"/><path d="M7 52c7-4 11 4 18 0s11 4 18 0 10 4 14 0"/></g></symbol><symbol id="rental-pictogram-bicycles" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="45" r="10"/><circle cx="51" cy="45" r="10"/><path d="m13 45 14-24 13 24H13l13-24 25 24M21 19h10M42 21h6l4 24M42 21l-5-5"/><circle cx="40" cy="45" r="2"/></g></symbol><symbol id="rental-pictogram-boats" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 38h48l-9 15H17L8 38Z"/><path d="M20 38V23h22v15M25 23v-9h11v9M31 14V8"/><path d="M5 58c6-3 9 3 15 0s9 3 15 0 9 3 15 0 7 3 10 0"/><circle cx="27" cy="31" r="2"/><circle cx="36" cy="31" r="2"/></g></symbol><symbol id="rental-pictogram-commercial" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><rect x="11" y="10" width="26" height="45" rx="2"/><path d="M37 26h16v29H37M18 18h5m7 0h1M18 27h5m7 0h1M18 36h5m7 0h1M18 45h5m7 0h1M43 34h4m-4 8h4M25 55V47h7v8M7 55h50"/></g></symbol><symbol id="rental-pictogram-camping" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 52 32 12l26 40H6Z"/><path d="M32 12 18 52M32 12l14 40M24 52l8-16 8 16M6 56h52"/><path d="M13 24l-3-5m44 5 3-5"/></g></symbol><symbol id="rental-pictogram-rv-rentals" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="18" width="51" height="31" rx="6"/><path d="M7 42h50M17 18v24m0-15h12v9H17M37 26h12v10H37M32 18v24"/><circle cx="17" cy="50" r="5"/><circle cx="47" cy="50" r="5"/><path d="M31 42h4"/></g></symbol><symbol id="rental-pictogram-mobile-storage" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="17" width="48" height="36" rx="2"/><path d="M13 21v28m8-28v28m8-28v28m8-28v28m8-28v28m8-28v28M6 53h52"/><path d="M19 12h26"/></g></symbol><symbol id="rental-pictogram-venues" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 24 32 10l25 14H7ZM10 52h44M7 56h50M14 28v21m10-21v21m16-21v21m10-21v21M11 49h42"/><circle cx="32" cy="20" r="2"/></g></symbol><symbol id="rental-pictogram-restrooms" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 13h27l4 7v35H15V20l4-7ZM20 20h25M32 22v33M25 30h4m8 0h4M24 48h4m9 0h4"/><path d="M24 9h18"/></g></symbol><symbol id="rental-pictogram-formalwear" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><path d="m22 10-8 6-7 36 15 4 10-17 10 17 15-4-7-36-8-6-10 9-10-9Z"/><path d="m22 10 10 25 10-25M32 19l-4 7 4 10 4-10-4-7M15 20l7 16-8 18M49 20l-7 16 8 18"/><path d="M29 46h6"/></g></symbol><symbol id="rental-pictogram-household-rentals" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><rect x="11" y="31" width="42" height="20" rx="5"/><path d="M11 37H7V26a6 6 0 0 1 12 0v7M53 37h4V26a6 6 0 0 0-12 0v7M19 31V21a5 5 0 0 1 5-5h16a5 5 0 0 1 5 5v10M19 51v5m26-5v5M32 31v15"/></g></symbol><symbol id="rental-pictogram-audio-visual" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><rect x="24" y="8" width="16" height="29" rx="8"/><path d="M18 29a14 14 0 0 0 28 0M32 43v11m-12 0h24M12 19c-3 6-3 14 0 20M52 19c3 6 3 14 0 20"/></g></symbol><symbol id="rental-pictogram-instruments" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 28h30M7 35h30M17 22v19M23 22v19M29 22v19"/><path d="M37 24c7 0 10-5 17-9v33c-7-4-10-9-17-9V24ZM54 15l3 33M8 28v7m-3-7h8m-8 7h8M20 20v5m8-5v5"/></g></symbol><symbol id="rental-pictogram-yard-signs" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="9" width="44" height="29" rx="3"/><path d="M24 38v19M40 38v19M14 57h36M21 22h22M26 28h12"/><path d="m18 15 2 2m26-2-2 2"/></g></symbol><symbol id="rental-pictogram-golf-carts" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 21h42l-6-8H17l-6 8ZM16 21v25m32-25v25M17 34h30l7 12H10l7-12Z"/><path d="M30 34v12m-10-12v12M36 27h8"/><circle cx="18" cy="50" r="6"/><circle cx="47" cy="50" r="6"/></g></symbol><symbol id="rental-pictogram-stages" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 15h48M14 15v32M50 15v32M14 21l9 9-9 9m36-18-9 9 9 9M10 47h44v7H10z"/><path d="M22 40v-8h20v8M28 32v-8h8v8M20 15l4 8m20-8-4 8"/><circle cx="24" cy="24" r="2"/><circle cx="40" cy="24" r="2"/></g></symbol><symbol id="rental-pictogram-golf-simulators" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="11" width="48" height="36" rx="3"/><path d="M12 42h40M14 35c8-12 15-11 24-20M38 15v13M32 52h-8m17 0h-7"/><circle cx="32" cy="51" r="4"/><path d="m38 15 11 4-11 5"/></g></symbol><symbol id="rental-pictogram-medical-equipment-rentals" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="35" cy="13" r="5"/><circle cx="22" cy="46" r="12"/><path d="M31 23v12h14l7 16h6M24 22h8l3 13h11M22 46h-7M46 35v-9M10 23h9"/><path d="M8 46h2"/></g></symbol><symbol id="rental-pictogram-medical-equipment-loans" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22h34l5 26H10l5-26ZM19 22v-8h26v8M16 33h32M19 48v8m26-8v8"/><path d="M32 27v13m-6-7h12"/><circle cx="14" cy="55" r="3"/><circle cx="50" cy="55" r="3"/></g></symbol><symbol id="rental-pictogram-other" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><path d="M39 8 18 43M36 13l6 5M18 43l-6 12 6 3 10-11-10-4Z"/><path d="M25 49l-6-2M21 54l-6-2M31 13l4 3M43 35h11M48 29v12"/><path d="m11 12 2 4 4 2-4 2-2 4-2-4-4-2 4-2z"/></g></symbol><symbol id="rental-pictogram-cars" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 42v-9l7-13h34l7 13v9H8ZM10 34h44M17 33l4-9h22l4 9M15 42v8m34-8v8"/><circle cx="18" cy="39" r="3"/><circle cx="46" cy="39" r="3"/></g></symbol><symbol id="rental-pictogram-party" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 54 32 13l24 41H8ZM32 13v41M18 37h28"/><path d="M16 16l-4-5m36 5 4-5M32 9V5M14 54v4m36-4v4"/></g></symbol>
@@ -428,127 +430,41 @@
       </div>
     </details>
   </div>
-  <div class="masthead-routes">
-    <div class="wrap masthead-routes-inner">
-      <span class="masthead-route-label"><span class="masthead-route-glyph" aria-hidden="true">R↗</span> <span>THE RIVER VALLEY / EXPLORE</span></span>
-      <nav class="masthead-route-links" aria-label="Quick links to rental categories">
-        <a href="long-term.html">Homes</a>
-        <a href="storage.html">Storage</a>
-        <a href="equipment.html">Equipment</a>
-        <a href="paddling.html">Lake &amp; outdoors</a>
-        <a href="party.html">Events</a>
-        <a href="cars.html">Vehicles</a>
-        <a class="masthead-route-all" href="#browse">All rentals <span aria-hidden="true">↗</span></a>
-      </nav>
-    </div>
-  </div>
+
 </header>
 <!-- Thumb-reachable directory wayfinding; all four anchors work without JavaScript. -->
-<nav class="mobile-rental-dock" aria-label="Mobile rental wayfinding">
-  <a class="mobile-rental-dock__find" href="#browse"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m15.5 15.5 5 5"></path></svg><span>Find rentals</span></a>
-  <a href="#rental-results"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7.2" height="7.2" rx="1.5"></rect><rect x="13.8" y="3" width="7.2" height="7.2" rx="1.5"></rect><rect x="3" y="13.8" width="7.2" height="7.2" rx="1.5"></rect><rect x="13.8" y="13.8" width="7.2" height="7.2" rx="1.5"></rect></svg><span>Directory</span></a>
-  <a href="#list"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v16M4 12h16"></path><rect x="2" y="2" width="20" height="20" rx="5" opacity=".36"></rect></svg><span>List a rental</span></a>
-  <a href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v11H9l-5 4V5Z"></path><path d="M8 9h8m-8 3h5"></path></svg><span>Contact</span></a>
-</nav>
+
 <main id="main" class="wrap">
-<section class="hero welcome-hero" aria-labelledby="hero-title"><img class="hero-photo" src="assets/lake-dardanelle-sunset.jpg" alt="Sunset over the covered docks at Lake Dardanelle State Park, reflected in the still water" width="1920" height="910" fetchpriority="high">
-<div class="welcome-copy">
-<h1 id="hero-title">Rent what you need.<br><em>Right here at home.</em></h1><p class="intro">From a place near Tech to a weekend on Lake Dardanelle. Find what you need from the people who call this place home.</p>
-</div>
-<div class="welcome-search-shell">
-
-<section class="hero-find" id="hero-find" aria-label="Find local rentals" hidden>
-  <div class="hero-find-copy"><span class="hero-find-kicker">YOUR NEXT RENTAL STARTS HERE</span><strong>What are you looking for?</strong></div>
-  <form class="hero-find-form" id="hero-search-form" role="search" aria-label="Search rental categories from the homepage">
-    <label class="sr-only" for="hero-query">Search local rental categories</label>
-    <div class="hero-find-input">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
-      <input id="hero-query" type="search" placeholder="Homes, kayaks, equipment…" autocomplete="off">
-    </div>
-    <button class="hero-find-submit" type="submit">Find rentals ↗</button>
-  </form>
-  <nav class="welcome-popular" aria-label="Direct links to popular rental categories">
-    <div class="welcome-popular-label"><span>TAKE THE SHORT WAY</span><small>Browse a category directly</small></div>
-    <a href="long-term.html"><span class="welcome-route-icon" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-homes"></use></svg></span><span class="welcome-route-copy"><strong>Homes</strong><small>Settle in</small></span><span class="welcome-route-arrow" aria-hidden="true">↗</span></a>
-    <a href="storage.html"><span class="welcome-route-icon" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-storage"></use></svg></span><span class="welcome-route-copy"><strong>Storage</strong><small>Make room</small></span><span class="welcome-route-arrow" aria-hidden="true">↗</span></a>
-    <a href="equipment.html"><span class="welcome-route-icon" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-tools"></use></svg></span><span class="welcome-route-copy"><strong>Equipment</strong><small>Get it done</small></span><span class="welcome-route-arrow" aria-hidden="true">↗</span></a>
-    <a href="party.html"><span class="welcome-route-icon" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-party"></use></svg></span><span class="welcome-route-copy"><strong>Events</strong><small>Come together</small></span><span class="welcome-route-arrow" aria-hidden="true">↗</span></a>
-  </nav>
-  <span class="sr-only" id="search-preview-help">Type to see direct links to matching rental categories. Press Down Arrow to focus the first match, or Enter to filter all categories.</span>
-</section>
-
-<section class="search-preview" id="search-preview" aria-label="Rental categories matching your search" hidden>
-  <div class="search-preview-head"><div><span class="search-preview-kicker">FIND YOUR WAY, FASTER</span><h2>Go straight to your rental.</h2></div><p class="search-preview-status" id="search-preview-status" role="status" aria-live="polite" aria-atomic="true"></p></div>
-  <div class="search-preview-list" id="search-preview-list"></div>
-  <div class="search-preview-footer"><span>Direct links to existing rental categories. Availability and prices remain with each provider.</span><a href="#browse" id="search-preview-all">Browse matching categories ↗</a></div>
-</section>
-</div>
-<div class="welcome-actions">
-<div class="actions"><a class="button primary" href="#browse">Explore rentals <span aria-hidden="true">&nbsp; ↗</span></a><a class="button secondary" href="#list">Have something to rent?</a></div><div class="hero-note"><span>Local businesses & owners</span><span>Everyday needs to weekend plans</span><span>Connect directly</span></div>
-</div>
-</section>
-
-
-<!-- Saved-category wayfinding: hidden entirely for visitors with no saved categories. -->
-<section class="return-trail" id="return-trail" aria-labelledby="return-trail-title" hidden>
- <div class="return-trail-story">
-  <span class="return-trail-overline">RUSSELLVILLE.RENT / YOUR FIELD NOTES</span>
-  <span class="return-trail-emblem" aria-hidden="true">R↗</span>
-  <div>
-   <p class="return-trail-kicker">Your shortcuts are ready</p>
-   <h2 id="return-trail-title">Pick up where<br><em>you left off.</em></h2>
-   <p>Places you saved are here when you come back. Go directly to the rental categories you chose.</p>
-   <span class="return-trail-privacy">Saved in this browser when available · No account or booking required</span>
-  </div>
- </div>
- <div class="return-trail-directory">
-  <div class="return-trail-top"><div><span>THE RETURN ROUTE</span><strong id="return-trail-count">Your saved categories</strong></div><a href="#browse">Explore all categories <span aria-hidden="true">↗</span></a></div>
-  <ol class="return-trail-links" id="return-trail-links" aria-label="Your saved rental category shortcuts"></ol>
-  <p class="return-trail-foot">Confirm availability, prices and terms directly with each provider.</p>
- </div>
-</section>
-
+<section class="local-finder" aria-labelledby="hero-title">
+<img class="finder-photo" src="assets/lake-dardanelle-sunset.jpg" width="1920" height="910" fetchpriority="high" alt="Sunset over the covered docks at Lake Dardanelle">
+<div class="finder-content"><p class="finder-location">Russellville, Arkansas &middot; The River Valley</p>
+<h1 id="hero-title">Find your next <em>rental.</em></h1>
+<p class="finder-introduction">Search local homes, equipment, and more. Connect directly with the people who rent them.</p>
+<div id="hero-find"><div id="search"><form id="hero-search-form" class="finder-search" role="search" action="./#browse">
+<label class="sr-only" for="hero-query">Search homes and rental providers</label>
+<input id="hero-query" name="q" type="search" placeholder="Try 2 beds under $1k or a trencher" autocomplete="off" maxlength="160">
+<button type="submit">Search rentals</button></form></div>
+<span class="sr-only" id="search-preview-help">Press Enter to search or Down Arrow to select a suggestion.</span>
+<div class="finder-suggestions" id="search-preview" hidden><p id="search-preview-status" role="status"></p><div id="search-preview-list"></div></div>
+</div></div></section>
+<nav class="finder-categories" aria-label="Popular rental categories"><a href="long-term.html"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#rental-pictogram-homes"></use></svg><span>Homes &amp; apartments</span></a>
+<a href="storage.html"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#rental-pictogram-storage"></use></svg><span>Storage</span></a>
+<a href="equipment.html"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#rental-pictogram-tools"></use></svg><span>Tools &amp; equipment</span></a>
+<a href="paddling.html"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#rental-pictogram-paddling"></use></svg><span>Lake &amp; outdoors</span></a>
+<a href="party.html"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#rental-pictogram-party"></use></svg><span>Events &amp; parties</span></a>
+<a href="cars.html"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#rental-pictogram-cars"></use></svg><span>Vehicles</span></a><a class="finder-all" href="#browse">All rentals</a></nav>
 
 
 <!-- Search-first directory; the scenic four-route gallery follows the results. -->
-<section id="browse" aria-labelledby="browse-title"><div class="section-head"><div><p class="eyebrow">Find it around here</p><h2 id="browse-title">What are you looking for?</h2><p>Explore rental options, or ask us about a category we’re building.</p></div><span class="browse-label">35 categories. One local hub.</span></div>
+<section id="browse" aria-labelledby="browse-title"><div class="finder-directory-heading"><h2 id="browse-title">Rental directory</h2></div>
 
 
-<form class="filters" id="filters" role="search" hidden>
-<div class="finder-intro">
- <span class="finder-intro-kicker">RUSSELLVILLE.RENT / LOCAL RENTAL FINDER</span>
- <h3>Find your next <em>good fit.</em></h3>
- <p>Search all 35 rental categories, choose a rental type, or take a shortcut below.</p>
- <small>Lake Dardanelle scenery · Not a rental provider or inventory photograph</small>
-</div><div><label for="search">Search rentals</label><input type="search" id="search" placeholder="Try houses, cars, kayaks, storage…" autocomplete="off"></div><div><label for="category">Category</label><select id="category"><option value="all">All categories</option><option value="homes">Long-term rentals</option><option value="storage">Storage</option><option value="tools">Tools &amp; equipment</option><option value="paddling">Kayaks, canoes &amp; paddleboards</option><option value="bicycles">Bicycles &amp; e-bikes</option><option value="atv-utv">Side-by-side &amp; off-road rentals</option><option value="rvs">RV site rentals</option><option value="rv-rentals">RV &amp; camper vehicle rentals</option><option value="cars">Car rentals</option><option value="boats">Boats</option><option value="party">Party &amp; event rentals</option><option value="commercial">Commercial spaces</option><option value="stays">Short-term stays</option><option value="camping">Camping &amp; RV sites</option><option value="trailers">Trailer rentals</option><option value="mobile-storage">Portable storage</option><option value="dumpsters">Dumpster rentals</option><option value="venues">Event venues</option><option value="moving">Moving trucks</option><option value="restrooms">Portable restroom rentals</option><option value="photo-booths">Photo booth rentals</option><option value="temporary-fencing">Temporary fencing rentals</option><option value="formalwear">Formalwear rentals</option><option value="sheds">Portable building rentals</option><option value="household-rentals">Furniture &amp; appliance rentals</option><option value="audio-visual">Audio &amp; visual rentals</option><option value="instruments">Band instrument rentals</option><option value="yard-signs">Yard sign rentals</option><option value="golf-carts">Golf cart rentals</option><option value="stages">Stage &amp; platform rentals</option><option value="golf-simulators">Golf simulator rentals</option><option value="medical-equipment-rentals">Medical equipment rentals</option><option value="medical-equipment-loans">Medical equipment loans</option><option value="baby-gear">Baby gear rentals</option><option value="other">Other local rentals</option></select></div><button type="reset" class="button reset">Clear filters</button></form>
+<form id="filters" class="finder-directory-filter" aria-label="Filter rental categories" hidden><label for="category">Category</label><select id="category"><option value="all">All categories</option><option value="homes">Long-term rentals</option><option value="storage">Storage</option><option value="tools">Tools &amp; equipment</option><option value="paddling">Kayaks, canoes &amp; paddleboards</option><option value="bicycles">Bicycles &amp; e-bikes</option><option value="atv-utv">Side-by-side &amp; off-road rentals</option><option value="rvs">RV site rentals</option><option value="rv-rentals">RV &amp; camper vehicle rentals</option><option value="cars">Car rentals</option><option value="boats">Boats</option><option value="party">Party &amp; event rentals</option><option value="commercial">Commercial spaces</option><option value="stays">Short-term stays</option><option value="camping">Camping &amp; RV sites</option><option value="trailers">Trailer rentals</option><option value="mobile-storage">Portable storage</option><option value="dumpsters">Dumpster rentals</option><option value="venues">Event venues</option><option value="moving">Moving trucks</option><option value="restrooms">Portable restroom rentals</option><option value="photo-booths">Photo booth rentals</option><option value="temporary-fencing">Temporary fencing rentals</option><option value="formalwear">Formalwear rentals</option><option value="sheds">Portable building rentals</option><option value="household-rentals">Furniture &amp; appliance rentals</option><option value="audio-visual">Audio &amp; visual rentals</option><option value="instruments">Band instrument rentals</option><option value="yard-signs">Yard sign rentals</option><option value="golf-carts">Golf cart rentals</option><option value="stages">Stage &amp; platform rentals</option><option value="golf-simulators">Golf simulator rentals</option><option value="medical-equipment-rentals">Medical equipment rentals</option><option value="medical-equipment-loans">Medical equipment loans</option><option value="baby-gear">Baby gear rentals</option><option value="other">Other local rentals</option></select><button type="reset">Clear filters</button></form>
 
-<div class="quick-paths" id="quick-paths" role="group" aria-label="Quick rental category filters" hidden>
-  <span class="quick-paths-label">QUICK START</span>
-  <button type="button" class="quick-pick" data-quick-category="homes" aria-pressed="false" style="--pick-tint:#e2edde"><span class="quick-pick-icon" aria-hidden="true"><svg class="quick-pictogram" viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-homes"></use></svg></span>Homes</button>
-  <button type="button" class="quick-pick" data-quick-category="storage" aria-pressed="false" style="--pick-tint:#e5ebdf"><span class="quick-pick-icon" aria-hidden="true"><svg class="quick-pictogram" viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-storage"></use></svg></span>Storage</button>
-  <button type="button" class="quick-pick" data-quick-category="tools" aria-pressed="false" style="--pick-tint:#f3e7d0"><span class="quick-pick-icon" aria-hidden="true"><svg class="quick-pictogram" viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-tools"></use></svg></span>Equipment</button>
-  <button type="button" class="quick-pick" data-quick-category="paddling" aria-pressed="false" style="--pick-tint:#d9eef0"><span class="quick-pick-icon" aria-hidden="true"><svg class="quick-pictogram" viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-paddling"></use></svg></span>Kayaks</button>
-  <button type="button" class="quick-pick" data-quick-category="cars" aria-pressed="false" style="--pick-tint:#e0e8ef"><span class="quick-pick-icon" aria-hidden="true"><svg class="quick-pictogram" viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-cars"></use></svg></span>Cars</button>
-  <button type="button" class="quick-pick" data-quick-category="party" aria-pressed="false" style="--pick-tint:#f6e2d7"><span class="quick-pick-icon" aria-hidden="true"><svg class="quick-pictogram" viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-party"></use></svg></span>Events</button>
-</div>
 
-<section class="recent-trail" id="recent-trail" aria-labelledby="recent-trail-title" hidden>
- <div class="recent-trail-top">
-  <div><span class="recent-trail-kicker">RIVER VALLEY / YOUR BROWSING TRAIL</span><h3 id="recent-trail-title">Retrace your <em>rental trail.</em></h3></div>
-  <div class="recent-trail-explain"><p>Return to the rental categories you opened in this tab. Your searches, filters and saved categories remain below.</p><button id="recent-trail-clear" type="button">Clear recent categories</button></div>
- </div>
- <nav id="recent-trail-grid" class="recent-trail-grid" aria-label="Recently opened rental categories"></nav>
- <p class="recent-trail-foot">Remembered only in this browser tab; no account or request is created.</p>
-</section>
-<section class="intent-explorer" id="intent-explorer" aria-labelledby="intent-heading" hidden>
-  <div class="intent-heading"><div><p class="eyebrow">EXPLORE BY YOUR PLANS</p><h3 id="intent-heading">Start with the reason.</h3><p>Not sure what to search for? Pick a path to see related rental categories. Every category remains available in the full directory.</p></div><button class="intent-all" type="button" data-intent-choice="all" aria-controls="rental-results" aria-pressed="true"><span data-intent-count="all">All categories</span> <span aria-hidden="true">↗</span></button></div>
-  <div class="intent-grid" role="group" aria-label="Explore rental categories by purpose">
-    <button type="button" class="intent-card intent-card--space" data-intent-choice="space" aria-pressed="false" aria-controls="rental-results"><span class="intent-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-homes"></use></svg></span><span class="intent-title">Settle & stay</span><span class="intent-detail">Homes, space, storage and everyday essentials</span><span class="intent-foot"><span data-intent-count="space">Explore categories</span><span aria-hidden="true">↗</span></span></button>
-    <button type="button" class="intent-card intent-card--projects" data-intent-choice="projects" aria-pressed="false" aria-controls="rental-results"><span class="intent-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-tools"></use></svg></span><span class="intent-title">Build & move</span><span class="intent-detail">Equipment, hauling, jobsites and workspace</span><span class="intent-foot"><span data-intent-count="projects">Explore categories</span><span aria-hidden="true">↗</span></span></button>
-    <button type="button" class="intent-card intent-card--outdoors" data-intent-choice="outdoors" aria-pressed="false" aria-controls="rental-results"><span class="intent-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-paddling"></use></svg></span><span class="intent-title">Explore & travel</span><span class="intent-detail">Lake days, recreation, trips and vehicles</span><span class="intent-foot"><span data-intent-count="outdoors">Explore categories</span><span aria-hidden="true">↗</span></span></button>
-    <button type="button" class="intent-card intent-card--events" data-intent-choice="events" aria-pressed="false" aria-controls="rental-results"><span class="intent-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-party"></use></svg></span><span class="intent-title">Celebrate & create</span><span class="intent-detail">Gatherings, special occasions and events</span><span class="intent-foot"><span data-intent-count="events">Explore categories</span><span aria-hidden="true">↗</span></span></button>
-  </div>
-</section>
+
+
+
 
 <div class="browse-toolbar" id="browse-toolbar" hidden>
 <p id="result-count" role="status" aria-live="polite" tabindex="-1"></p>
@@ -587,6 +503,26 @@
 </section>
 
 
+
+
+ <details class="finder-options"><summary>More ways to browse</summary><div class="quick-paths" id="quick-paths" role="group" aria-label="Quick rental category filters" hidden>
+  <span class="quick-paths-label">QUICK START</span>
+  <button type="button" class="quick-pick" data-quick-category="homes" aria-pressed="false" style="--pick-tint:#e2edde"><span class="quick-pick-icon" aria-hidden="true"><svg class="quick-pictogram" viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-homes"></use></svg></span>Homes</button>
+  <button type="button" class="quick-pick" data-quick-category="storage" aria-pressed="false" style="--pick-tint:#e5ebdf"><span class="quick-pick-icon" aria-hidden="true"><svg class="quick-pictogram" viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-storage"></use></svg></span>Storage</button>
+  <button type="button" class="quick-pick" data-quick-category="tools" aria-pressed="false" style="--pick-tint:#f3e7d0"><span class="quick-pick-icon" aria-hidden="true"><svg class="quick-pictogram" viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-tools"></use></svg></span>Equipment</button>
+  <button type="button" class="quick-pick" data-quick-category="paddling" aria-pressed="false" style="--pick-tint:#d9eef0"><span class="quick-pick-icon" aria-hidden="true"><svg class="quick-pictogram" viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-paddling"></use></svg></span>Kayaks</button>
+  <button type="button" class="quick-pick" data-quick-category="cars" aria-pressed="false" style="--pick-tint:#e0e8ef"><span class="quick-pick-icon" aria-hidden="true"><svg class="quick-pictogram" viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-cars"></use></svg></span>Cars</button>
+  <button type="button" class="quick-pick" data-quick-category="party" aria-pressed="false" style="--pick-tint:#f6e2d7"><span class="quick-pick-icon" aria-hidden="true"><svg class="quick-pictogram" viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-party"></use></svg></span>Events</button>
+</div>
+<section class="intent-explorer" id="intent-explorer" aria-labelledby="intent-heading" hidden>
+  <div class="intent-heading"><div><p class="eyebrow">EXPLORE BY YOUR PLANS</p><h3 id="intent-heading">Start with the reason.</h3><p>Not sure what to search for? Pick a path to see related rental categories. Every category remains available in the full directory.</p></div><button class="intent-all" type="button" data-intent-choice="all" aria-controls="rental-results" aria-pressed="true"><span data-intent-count="all">All categories</span> <span aria-hidden="true">↗</span></button></div>
+  <div class="intent-grid" role="group" aria-label="Explore rental categories by purpose">
+    <button type="button" class="intent-card intent-card--space" data-intent-choice="space" aria-pressed="false" aria-controls="rental-results"><span class="intent-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-homes"></use></svg></span><span class="intent-title">Settle & stay</span><span class="intent-detail">Homes, space, storage and everyday essentials</span><span class="intent-foot"><span data-intent-count="space">Explore categories</span><span aria-hidden="true">↗</span></span></button>
+    <button type="button" class="intent-card intent-card--projects" data-intent-choice="projects" aria-pressed="false" aria-controls="rental-results"><span class="intent-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-tools"></use></svg></span><span class="intent-title">Build & move</span><span class="intent-detail">Equipment, hauling, jobsites and workspace</span><span class="intent-foot"><span data-intent-count="projects">Explore categories</span><span aria-hidden="true">↗</span></span></button>
+    <button type="button" class="intent-card intent-card--outdoors" data-intent-choice="outdoors" aria-pressed="false" aria-controls="rental-results"><span class="intent-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-paddling"></use></svg></span><span class="intent-title">Explore & travel</span><span class="intent-detail">Lake days, recreation, trips and vehicles</span><span class="intent-foot"><span data-intent-count="outdoors">Explore categories</span><span aria-hidden="true">↗</span></span></button>
+    <button type="button" class="intent-card intent-card--events" data-intent-choice="events" aria-pressed="false" aria-controls="rental-results"><span class="intent-symbol" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#rental-pictogram-party"></use></svg></span><span class="intent-title">Celebrate & create</span><span class="intent-detail">Gatherings, special occasions and events</span><span class="intent-foot"><span data-intent-count="events">Explore categories</span><span aria-hidden="true">↗</span></span></button>
+  </div>
+</section>
 <nav class="chapter-wayfinder" id="chapter-wayfinder" aria-label="Jump to a rental category chapter">
   <div class="chapter-wayfinder__head">
     <small>R↗ / The River Valley atlas</small>
@@ -615,9 +551,8 @@
       <span class="chapter-wayfinder__count">10 categories</span>
     </a>
   </div>
-</nav>
-
- <div class="rentals-grid" id="rental-results" data-view="grid" data-layout="editorial">
+</nav></details>
+<div class="rentals-grid" id="rental-results" data-view="grid" data-layout="editorial">
 <div class="directory-chapter directory-chapter--everyday" data-chapter="everyday" id="rental-chapter-everyday">
  <div class="chapter-intro"><p class="chapter-eyebrow">The River Valley rental atlas / Everyday living</p><h3>Make room for <em>real life.</em></h3><p>Find a place to live, an everyday essential, or a little more space.</p><span class="chapter-count" aria-live="off">10 rental categories</span></div>
  <div class="chapter-illustration" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#rental-pictogram-homes"></use></svg><span class="chapter-sequence">01 / 04</span></div>
@@ -1372,6 +1307,31 @@
 </div>
 <p class="directory-note">This is a growing local directory. Categories marked “Listings welcome” do not have published providers yet. Contact the provider or our hub to confirm availability, pricing, and rental terms.</p>
 </section>
+<section class="return-trail" id="return-trail" aria-labelledby="return-trail-title" hidden>
+ <div class="return-trail-story">
+  <span class="return-trail-overline">RUSSELLVILLE.RENT / YOUR FIELD NOTES</span>
+  <span class="return-trail-emblem" aria-hidden="true">R↗</span>
+  <div>
+   <p class="return-trail-kicker">Your shortcuts are ready</p>
+   <h2 id="return-trail-title">Pick up where<br><em>you left off.</em></h2>
+   <p>Places you saved are here when you come back. Go directly to the rental categories you chose.</p>
+   <span class="return-trail-privacy">Saved in this browser when available · No account or booking required</span>
+  </div>
+ </div>
+ <div class="return-trail-directory">
+  <div class="return-trail-top"><div><span>THE RETURN ROUTE</span><strong id="return-trail-count">Your saved categories</strong></div><a href="#browse">Explore all categories <span aria-hidden="true">↗</span></a></div>
+  <ol class="return-trail-links" id="return-trail-links" aria-label="Your saved rental category shortcuts"></ol>
+  <p class="return-trail-foot">Confirm availability, prices and terms directly with each provider.</p>
+ </div>
+</section>
+<section class="recent-trail" id="recent-trail" aria-labelledby="recent-trail-title" hidden>
+ <div class="recent-trail-top">
+  <div><span class="recent-trail-kicker">RIVER VALLEY / YOUR BROWSING TRAIL</span><h3 id="recent-trail-title">Retrace your <em>rental trail.</em></h3></div>
+  <div class="recent-trail-explain"><p>Return to the rental categories you opened in this tab. Your searches, filters and saved categories remain below.</p><button id="recent-trail-clear" type="button">Clear recent categories</button></div>
+ </div>
+ <nav id="recent-trail-grid" class="recent-trail-grid" aria-label="Recently opened rental categories"></nav>
+ <p class="recent-trail-foot">Remembered only in this browser tab; no account or request is created.</p>
+</section>
 <section class="discovery discovery--encore" aria-labelledby="discovery-title">
   <div class="discovery-heading"><div><p class="eyebrow">RUSSELLVILLE.RENT / A SECOND WAY TO EXPLORE</p><h2 id="discovery-title">Another way through the River Valley.</h2></div><p>Return to the full directory through one of four illustrated routes. Each route filters the same 35 categories, without implying availability or a booking.</p></div>
   <p class="discovery-swipe-guide"><span aria-hidden="true">↔</span> Four routes into the directory · swipe to explore</p>
@@ -1680,37 +1640,16 @@
   <a href="#list" aria-label="List your rental"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/><circle cx="12" cy="12" r="10"/></svg>List yours</a>
 </nav>
 
-<dialog class="mobile-search-sheet" id="mobile-search-sheet" aria-labelledby="mobile-sheet-title" aria-describedby="mobile-sheet-description">
-  <div class="mobile-sheet-top">
-    <div class="mobile-sheet-handle" aria-hidden="true"></div>
-    <div class="mobile-sheet-heading"><div><span class="sheet-kicker">River Valley / Quick search</span><h2 id="mobile-sheet-title">Find your kind of rental.</h2><p id="mobile-sheet-description">Refine the directory without losing your place. Results update as you type.</p></div><button class="mobile-sheet-close" id="mobile-sheet-close" type="button" aria-label="Close rental search">×</button></div>
-  </div>
-  <div class="mobile-sheet-fields">
-    <label for="mobile-sheet-query">What are you looking for?<input id="mobile-sheet-query" type="search" placeholder="Homes, trailers, kayaks…" autocomplete="off"></label>
-    <label for="mobile-sheet-category">Rental category<select id="mobile-sheet-category"></select></label>
-  </div>
-  <p class="mobile-sheet-context" id="mobile-sheet-context">Search across local rental categories.</p>
-  <div class="mobile-sheet-summary" role="status" aria-live="polite" aria-atomic="true"><strong id="mobile-sheet-count">35</strong><span id="mobile-sheet-count-label">matching rental categories</span></div>
 
-  <section class="mobile-sheet-preview" aria-labelledby="mobile-sheet-preview-title">
-    <div class="mobile-sheet-preview-head">
-      <div><span class="mobile-sheet-preview-kicker">R↗ / YOUR ROUTE STARTS HERE</span><h3 id="mobile-sheet-preview-title">A few good first stops.</h3></div>
-      <small id="mobile-sheet-preview-more">Direct category links</small>
-    </div>
-    <div class="mobile-sheet-preview-list" id="mobile-sheet-preview-list"></div>
-    <p class="mobile-sheet-preview-note">Go straight to a rental category. Verify availability, prices and terms with each provider.</p>
-  </section>
-  <div class="mobile-sheet-actions"><button class="mobile-sheet-reset" id="mobile-sheet-reset" type="button">Clear filters</button><button class="mobile-sheet-apply" id="mobile-sheet-show" type="button">View matching categories ↗</button></div>
-</dialog>
 
 <script>
 const chapterGroups = {"everyday":["homes","storage","commercial","stays","mobile-storage","sheds","household-rentals","baby-gear","medical-equipment-rentals","medical-equipment-loans"],"projects":["tools","trailers","dumpsters","moving","temporary-fencing","restrooms"],"outdoors":["paddling","bicycles","atv-utv","rvs","cars","boats","camping","rv-rentals","golf-carts"],"gather":["party","venues","photo-booths","formalwear","audio-visual","instruments","yard-signs","stages","golf-simulators","other"]};
 
 document.getElementById("year").textContent = new Date().getFullYear();
 const form = document.getElementById("filters");
-const search = document.getElementById("search");
+const search = document.getElementById("hero-query");
 const heroSearchForm = document.getElementById("hero-search-form");
-const heroQuery = document.getElementById("hero-query");
+const heroQuery = search;
 const category = document.getElementById("category");
 const cards = Array.from(document.querySelectorAll(".rental-card"));
 const count = document.getElementById("result-count");
@@ -1791,7 +1730,7 @@ function renderSavedCategories(){
     const item = document.createElement("li");
     item.className = "saved-item";
     const link = document.createElement("a");
-    link.href = source.getAttribute("href");
+    link.href = source.dataset.originalHref || source.getAttribute("href");
     link.setAttribute("aria-label", "Open " + name + " rental category");
     const number = document.createElement("span");
     number.className = "saved-item-number";
@@ -1841,7 +1780,7 @@ function renderSavedCategories(){
     const heading=card?.querySelector("h3");
     if(!originalLink||!heading)return;
     const li=document.createElement("li"),link=document.createElement("a");
-    link.href=originalLink.getAttribute("href");
+    link.href=originalLink.dataset.originalHref || originalLink.getAttribute("href");
     link.setAttribute("aria-label","Open "+heading.textContent.trim()+" rental category");
     if(originalLink.target==="_blank"){link.target="_blank";link.rel="noopener noreferrer";}
     const number=document.createElement("span");number.className="return-trail-link-no";
@@ -2099,88 +2038,94 @@ viewButtons.forEach(button => button.addEventListener("click", () => {
   viewButtons.forEach(choice => choice.setAttribute("aria-pressed", String(choice === button)));
   clearShareFeedback();
 }));
-const aliases = {homes:"house houses apartment apartments home housing long term monthly spring lake springlake lindsey management river valley realty natural state property management leasing russellville housing authority public housing section 8 housing choice voucher glenwood urban loft urban loft co furnished apartments harrell drive lakewood apartments woodbrook apartments parker place apartments shadow lake apartments treeview apartments",storage:"self storage unit units pottsville dardanelle arkansas storage centers pine ridge apache self storage river road bay meadows mini storage state highway 22 vehicle storage covered parking boat rv",tools:"tool equipment machinery carpet cleaner carpet cleaning rug cleaner rug cleaning carpet shampooer upholstery cleaner upholstery shampooer floor buffer floor buffers floor scrubber floor scrubbers shop vac wet dry vacuum commercial cleaning equipment sweepscrub bissell big green lowes lowe\'s stump grinder stump grinding trencher trenching wood chipper wood chipping wood splitter log splitter log splitting tiller rototiller rotavator landscaping lawn garden yard maintenance trailer trailers yell county gin ycg rental dardanelle carrs carr\'s morrilton central rental central rental supply united rentals excavators skid steers skidsteer skid-steer attachments brush cutter harley rake jackhammer pickup broom post hole auger grapple bucket post driver pallet forks hay spikes padfoot roller tree puller backhoe kubota b26 nifty lifts scissor lift boom lift generators resilient energy industrial power climate hvac solar security trailer security trailers mobile surveillance surveillance camera trailer security camera rental rubbl equipment marketplace construction site security digital alarm systems ridout lumber hardware tool rentals automotive specialty loaner loan-a-tool borrow tool autozone advance auto parts o'reilly oreilly brakes suspension puller",paddling:"kayak kayaks canoe canoes paddleboard paddleboards sup adventure water guided kayaking guided kayak tours park interpreter sunset kayaking lake dardanelle state park guided paddle outings weekender plainview fourche la fave river single tandem kayak arkansas tech university atu outdoor recreation campus free student faculty staff gear checkout",bicycles:"bicycle bicycles bike bikes cycling mountain road gravel hardtail full suspension electric ebike e-bike commuter jackalope jackalope cycling rent rental downtown commerce arkansas tech university atu outdoor recreation campus free student faculty staff bicycle checkout horsehead lake lodge clarksville the weekender cabins rv retreat plainview on-site bicycle rental","atv-utv":"side-by-side side by side sxs off-road off road utv utility task vehicle atv all terrain vehicle four wheeler recreational trail ride ozark ridge ozone cove creek mount magazine paris arkansas wilderness rider boxley kingston",rvs:"rv rvs recreational vehicle camper motorhome camping site sites hookups monthly lake atkins adventure rv park","rv-rentals":"rv rental rentals camper campers travel trailer motorhome motorhomes recreational vehicle vehicles rvshare rvezy huddleston jez delivered delivery campsite road trip",cars:"car cars vehicle vehicles auto automobile sedan suv truck passenger rental rent a ride enterprise cogswell",boats:"boat boats boating lake",party:"party parties event events tent tents table tables chair chairs mobile escape room escape rooms escape game axe throwing team building portable mini golf miniature golf minigolf putt putt putt-putt event props flower walls neon signs centerpieces backdrop backdrops wedding arches dance floor mobile bar",commercial:"commercial office offices retail shop shops warehouse coworking shared workspace desk desks conference room meeting room co create cocreate innovation hub hidden gem suites",stays:"airbnb vacation short term lodging furnished cabin cabins cabin rental rentals getaways dover ozark piney cabins ozark mountain escape treat retreat dover treat road cabin moccasin gap indian creek weekender plainview mount nebo petit jean state park dardanelle tiny cabin mount magazine state park cabins paris logan county one two three bedroom cabin hot tub bluff cove creek supply cabin 61 cabin 63 magazine cabin mount magazine trail access paris laben properties hobbit house russellville tolkien themed furnished guest suite short term mid term",camping:"camp camping campground campgrounds rv rvs recreational vehicle sites hookups overnight monthly ivys cove ivy edens rv resort quail run rv living hickeytown rv park lake dardanelle state park pottsville london ozark ridge ozone side by side utv utility terrain vehicle trail riding weekender plainview fourche la fave river kayak cabins carter cove sunlight bay quarry cove river road nimrod lake nimrod dam plainview federal recreation campground blue mountain lake waveland park outlet area outlet campground near havana 2026 drawdown redding campground wolf pen campground mulberry river ozark national forest near ozark turner bend outfitter cass pig trail byrds byrd adventure center ozark mulberry river tent camping campground showers morrilton rv park deluca properties lakeview landing lake overcup kamper lane back in the ozarks rv park backintheozarks dover broomfield road full hookup tiny cabin the patch rv park patch rv clarksville palmer road contractor workforce lodging extended stays mount magazine state park paris arkansas mountaintop camping cameron bluff campground 18 campsites arkansas highest point aux arc campground ozark lake ozark arkansas clear creek campground alma frog bayou river camping federal corps of engineers haw creek falls campground hagarville highway 123 ozark highlands trail waterfall primitive camping brock creek lake campground jerusalem van buren county forest service campsite vault toilet pack it out free first come bayou bluff illinois bayou hector lower loop primitive free camping richland creek witts springs searcy county ozark highlands trail first come vault toilets cove creek supply rv spaces mount magazine paris state highway 309 store trail riding",trailers:"trailer trailers car hauler cargo utility enclosed dump equipment towing wattstheload watts the load rent to own grace pro refrigerated refrigeration cooler cold storage reefer keep it cool mobile generator festival catering northwest arkansas", "mobile-storage":"portable mobile storage container office trailer u box u-box uhaul mobile container solutions scottys provision storage solutions dry van refrigerated storage trailer rubbl storage container rental marketplace u pack upack u-pack relocube moving cubes long distance relocation",dumpsters:"dumpster dumpsters roll off rolloff trash waste bin small cleanup bin commercial 2 yard 3 yard 4 yard 6 yard garage cleanout conway dumpster rental group brandons trash service",venues:"venue venues event hall room meeting space depot wedding weddings reception barn welcome hill brookstock potts inn museum outdoor courtyard orenwood oren wood morrilton chamber commerce community board classroom pope county library public library room reservation carden point nimrod lake picnic shelter plainview day use group shelter no overnight byrds byrd adventure center ozark mulberry river outdoor event leasing pavilion pavilions gazebo gazebos park shelter community center community centers pool party pool parties aquatic center airport conference room municipal meeting rooms marvin vinson center clarksville covered bandstand reunion weddings picnics",moving:"moving truck trucks van boxes uhaul u haul penske space world dardanelle old bank gun pawn union street","restrooms":"portable toilet toilets porta potty porta potties portable potty portable potties sanitation restroom bathroom handwashing jobsite septic arkansas portable toilets luxury restroom trailer arportabletoilets mountain aire sanitation bonds septic posh potties searcy","photo-booths":"photo booth booths camera 360 video wedding selfie rental photoboothsofarkansas photo booths of arkansas hot springs ntrusted touch central arkansas digital photo booth 360 booth audio guestbook inflatable movie screen projector","temporary-fencing":"temporary fencing fence panel panels barrier construction chain link afg af&g modern fence fort smith russellville temporary fence rental","formalwear":"formal formalwear tuxedo tuxedos suit suits wedding prom clothes","sheds":"shed sheds portable building buildings rent to own lease storage duvall duvalls duvall's derksen sams sam's affordable buildings frontier","household-rentals":"furniture appliance appliances electronics couch sofa washer dryer television rent to own","audio-visual":"audio visual av microphone speakers sound lighting projector event equipment","instruments":"band musical instrument instruments music trumpet trombone saxophone flute clarinet student school orchestra rent to own cooper music arkansas school band service sweetwater online rentals","yard-signs":"yard sign signs greeting birthday celebration lawn sign gypsies","golf-carts":"golf cart carts buggy event vehicle transport mobility rental river valley golf carts arkansas golf powersports clear creek golf car utility vehicles hot springs village kaptain chris pups hot springs",stages:"stage stages staging portable mobile concert platform platforms riser risers festival performance production truss modular stage stairs guardrails intents party rentals historic train depot depot park fixed stage on site onsite main street russellville brookstock events dover venue outdoor stage courtyard","golf-simulators":"golf simulator simulators indoor golf golf bay virtual golf tee time mobile golf event games","medical-equipment-rentals":"medical equipment rental rentals wheelchair wheelchairs scooter scooters mobility hospital bed beds patient lift knee walker ramp attention medical supply diamond medical trumotion medical paid regional delivery","medical-equipment-loans":"medical equipment loan loans wheelchair walker crutches shower chair assistive technology free goodwill ican mobility reuse borrow spinal cord commission ascc regional loan closet loaner equipment","baby-gear":"baby babygear infant infants toddler toddlers crib cribs stroller strollers car seat car seats high chair high chairs playpen playpens pack and play travel family babies getaway gear rentals russellville","other":"other services miscellaneous"};
+const aliases = {homes:"house houses apartment apartments home housing long term monthly spring lake springlake lindsey management river valley realty natural state property management leasing russellville housing authority public housing section 8 housing choice voucher glenwood urban loft urban loft co furnished apartments harrell drive lakewood apartments woodbrook apartments parker place apartments shadow lake apartments treeview apartments",storage:"self storage unit units pottsville dardanelle arkansas storage centers pine ridge apache self storage river road bay meadows mini storage state highway 22 vehicle storage covered parking boat rv",tools:"tool equipment machinery carpet cleaner carpet cleaning rug cleaner rug cleaning carpet shampooer upholstery cleaner upholstery shampooer floor buffer floor buffers floor scrubber floor scrubbers shop vac wet dry vacuum commercial cleaning equipment sweepscrub bissell big green lowes lowe\'s stump grinder stump grinding trencher trenching wood chipper wood chipping wood splitter log splitter log splitting tiller rototiller rotavator landscaping lawn garden yard maintenance trailer trailers yell county gin ycg rental dardanelle carrs carr\'s morrilton central rental central rental supply united rentals excavators skid steers skidsteer skid-steer attachments brush cutter harley rake jackhammer pickup broom post hole auger grapple bucket post driver pallet forks hay spikes padfoot roller tree puller backhoe kubota b26 nifty lifts scissor lift boom lift generators resilient energy industrial power climate hvac solar security trailer security trailers mobile surveillance surveillance camera trailer security camera rental rubbl equipment marketplace construction site security digital alarm systems ridout lumber hardware tool rentals automotive specialty loaner loan-a-tool borrow tool autozone advance auto parts o'reilly oreilly brakes suspension puller",paddling:"kayak kayaks canoe canoes paddleboard paddleboards sup adventure water guided kayaking guided kayak tours park interpreter sunset kayaking lake dardanelle state park guided paddle outings weekender plainview fourche la fave river single tandem kayak arkansas tech university atu outdoor recreation campus free student faculty staff gear checkout",bicycles:"bicycle bicycles bike bikes cycling mountain road gravel hardtail full suspension electric ebike e-bike commuter jackalope jackalope cycling rent rental downtown commerce arkansas tech university atu outdoor recreation campus free student faculty staff bicycle checkout horsehead lake lodge clarksville the weekender cabins rv retreat plainview on-site bicycle rental","atv-utv":"side-by-side side by side sxs off-road off road utv utility task vehicle atv all terrain vehicle four wheeler recreational trail ride ozark ridge ozone cove creek mount magazine paris arkansas wilderness rider boxley kingston",rvs:"rv rvs recreational vehicle camper motorhome camping site sites hookups monthly lake atkins adventure rv park","rv-rentals":"rv rental rentals camper campers travel trailer motorhome motorhomes recreational vehicle vehicles rvshare rvezy huddleston jez delivered delivery campsite road trip",cars:"car cars vehicle vehicles auto automobile sedan suv truck passenger rental rent a ride enterprise cogswell",boats:"boat boats boating lake",party:"party parties event events tent tents table tables chair chairs mobile escape room escape rooms escape game axe throwing team building portable mini golf miniature golf minigolf putt putt putt-putt event props flower walls neon signs centerpieces backdrop backdrops wedding arches dance floor mobile bar",commercial:"commercial restaurant restaurants 2410 e main east suites office offices retail shop shops warehouse coworking shared workspace desk desks conference room meeting room co create cocreate innovation hub hidden gem suites",stays:"airbnb vacation short term lodging furnished cabin cabins cabin rental rentals getaways dover ozark piney cabins ozark mountain escape treat retreat dover treat road cabin moccasin gap indian creek weekender plainview mount nebo petit jean state park dardanelle tiny cabin mount magazine state park cabins paris logan county one two three bedroom cabin hot tub bluff cove creek supply cabin 61 cabin 63 magazine cabin mount magazine trail access paris laben properties hobbit house russellville tolkien themed furnished guest suite short term mid term",camping:"camp camping campground campgrounds rv rvs recreational vehicle sites hookups overnight monthly ivys cove ivy edens rv resort quail run rv living hickeytown rv park lake dardanelle state park pottsville london ozark ridge ozone side by side utv utility terrain vehicle trail riding weekender plainview fourche la fave river kayak cabins carter cove sunlight bay quarry cove river road nimrod lake nimrod dam plainview federal recreation campground blue mountain lake waveland park outlet area outlet campground near havana 2026 drawdown redding campground wolf pen campground mulberry river ozark national forest near ozark turner bend outfitter cass pig trail byrds byrd adventure center ozark mulberry river tent camping campground showers morrilton rv park deluca properties lakeview landing lake overcup kamper lane back in the ozarks rv park backintheozarks dover broomfield road full hookup tiny cabin the patch rv park patch rv clarksville palmer road contractor workforce lodging extended stays mount magazine state park paris arkansas mountaintop camping cameron bluff campground 18 campsites arkansas highest point aux arc campground ozark lake ozark arkansas clear creek campground alma frog bayou river camping federal corps of engineers haw creek falls campground hagarville highway 123 ozark highlands trail waterfall primitive camping brock creek lake campground jerusalem van buren county forest service campsite vault toilet pack it out free first come bayou bluff illinois bayou hector lower loop primitive free camping richland creek witts springs searcy county ozark highlands trail first come vault toilets cove creek supply rv spaces mount magazine paris state highway 309 store trail riding",trailers:"trailer trailers car hauler cargo utility enclosed dump equipment towing wattstheload watts the load rent to own grace pro refrigerated refrigeration cooler cold storage reefer keep it cool mobile generator festival catering northwest arkansas", "mobile-storage":"portable mobile storage container office trailer u box u-box uhaul mobile container solutions scottys provision storage solutions dry van refrigerated storage trailer rubbl storage container rental marketplace u pack upack u-pack relocube moving cubes long distance relocation",dumpsters:"dumpster dumpsters roll off rolloff trash waste bin small cleanup bin commercial 2 yard 3 yard 4 yard 6 yard garage cleanout conway dumpster rental group brandons trash service",venues:"venue venues event hall room meeting space depot wedding weddings reception barn welcome hill brookstock potts inn museum outdoor courtyard orenwood oren wood morrilton chamber commerce community board classroom pope county library public library room reservation carden point nimrod lake picnic shelter plainview day use group shelter no overnight byrds byrd adventure center ozark mulberry river outdoor event leasing pavilion pavilions gazebo gazebos park shelter community center community centers pool party pool parties aquatic center airport conference room municipal meeting rooms marvin vinson center clarksville covered bandstand reunion weddings picnics",moving:"moving truck trucks van boxes uhaul u haul penske space world dardanelle old bank gun pawn union street","restrooms":"portable toilet toilets porta potty porta potties portable potty portable potties sanitation restroom bathroom handwashing jobsite septic arkansas portable toilets luxury restroom trailer arportabletoilets mountain aire sanitation bonds septic posh potties searcy","photo-booths":"photo booth booths camera 360 video wedding selfie rental photoboothsofarkansas photo booths of arkansas hot springs ntrusted touch central arkansas digital photo booth 360 booth audio guestbook inflatable movie screen projector","temporary-fencing":"temporary fencing fence panel panels barrier construction chain link afg af&g modern fence fort smith russellville temporary fence rental","formalwear":"formal formalwear tuxedo tuxedos suit suits wedding prom clothes","sheds":"shed sheds portable building buildings rent to own lease storage duvall duvalls duvall's derksen sams sam's affordable buildings frontier","household-rentals":"furniture appliance appliances electronics couch sofa washer dryer television rent to own","audio-visual":"audio visual av microphone speakers sound lighting projector event equipment","instruments":"band musical instrument instruments music trumpet trombone saxophone flute clarinet student school orchestra rent to own cooper music arkansas school band service sweetwater online rentals","yard-signs":"yard sign signs greeting birthday celebration lawn sign gypsies","golf-carts":"golf cart carts buggy event vehicle transport mobility rental river valley golf carts arkansas golf powersports clear creek golf car utility vehicles hot springs village kaptain chris pups hot springs",stages:"stage stages staging portable mobile concert platform platforms riser risers festival performance production truss modular stage stairs guardrails intents party rentals historic train depot depot park fixed stage on site onsite main street russellville brookstock events dover venue outdoor stage courtyard","golf-simulators":"golf simulator simulators indoor golf golf bay virtual golf tee time mobile golf event games","medical-equipment-rentals":"medical equipment rental rentals wheelchair wheelchairs scooter scooters mobility hospital bed beds patient lift knee walker ramp attention medical supply diamond medical trumotion medical paid regional delivery","medical-equipment-loans":"medical equipment loan loans wheelchair walker crutches shower chair assistive technology free goodwill ican mobility reuse borrow spinal cord commission ascc regional loan closet loaner equipment","baby-gear":"baby babygear infant infants toddler toddlers crib cribs stroller strollers car seat car seats high chair high chairs playpen playpens pack and play travel family babies getaway gear rentals russellville","other":"other services miscellaneous"};
 
 /* Source category suggestions directly from existing cards/aliases. No duplicate inventory. */
 const searchPreview=document.getElementById("search-preview");
 const searchPreviewList=document.getElementById("search-preview-list");
 const searchPreviewStatus=document.getElementById("search-preview-status");
-const searchPreviewAll=document.getElementById("search-preview-all");
-function updateSearchPreview(){
- const query=heroQuery.value.toLowerCase().trim().replace(/\s+/g," ");
- if(!query){searchPreview.hidden=true;return;}
- const terms=query.split(" ");
- const matches=cards.map(card=>{
-   const title=card.querySelector(".card-body h3")?.textContent.trim()||"";
-   const label=card.querySelector(".card-body .eyebrow")?.textContent.trim()||"Rental category";
-   const key=card.dataset.category;
-   const searchable=categorySearchText.get(card)+" "+(aliases[key]||"");
-   if(!terms.every(term=>searchable.includes(term)))return null;
-   const lower=title.toLowerCase();
-   const labelLower=label.toLowerCase();
-   const score=(lower.startsWith(query)?5:0)+(labelLower.startsWith(query)?4:0)+(lower.includes(query)?2:0)+(key.startsWith(query)?3:0);
-   return {card,title,label,key,score};
- }).filter(Boolean).sort((a,b)=>b.score-a.score);
- searchPreviewList.replaceChildren();
- // A dead-end search should offer real, existing category routes—not invented listings.
- const noDirectMatch=matches.length===0;
- const fallbackKeys=["homes","storage","tools","party"];
- const displayMatches=noDirectMatch?fallbackKeys.map(key=>{
-   const card=cards.find(item=>item.dataset.category===key);
-   if(!card)return null;
-   return {card,key,title:card.querySelector(".card-body h3")?.textContent.trim()||key,
-     label:card.querySelector(".card-body .eyebrow")?.textContent.trim()||"Rental category"};
- }).filter(Boolean):matches.slice(0,4);
- searchPreviewList.classList.toggle("search-preview-list--fallback",noDirectMatch);
- displayMatches.forEach(item=>{
-   const source=item.card.querySelector(".card-link[href]");
-   if(!source)return;
-   const link=document.createElement("a");link.className="search-match";link.href=source.href;
-   if(source.target){link.target=source.target;link.rel=source.rel||"noopener noreferrer";}
-   const top=document.createElement("span");top.className="search-match-top";
-   const icon=document.createElement("span");icon.className="search-match-icon";icon.setAttribute("aria-hidden","true");
-   const svg=document.createElementNS("http://www.w3.org/2000/svg","svg");svg.setAttribute("viewBox","0 0 64 64");
-   const use=document.createElementNS("http://www.w3.org/2000/svg","use");
-   const replacement={rvs:"rv-rentals",stays:"homes"};
-   const symbol=document.getElementById("rental-pictogram-"+item.key)?item.key:(replacement[item.key]||"other");
-   use.setAttribute("href","#rental-pictogram-"+symbol);
-   svg.appendChild(use);icon.appendChild(svg);
-   const arrow=document.createElement("span");arrow.className="search-match-arrow";arrow.setAttribute("aria-hidden","true");arrow.textContent="↗";
-   top.append(icon,arrow);
-   const copy=document.createElement("span");copy.className="search-match-copy";
-   const heading=document.createElement("strong");heading.textContent=item.title;
-   const label=document.createElement("small");label.textContent=item.label;
-   copy.append(heading,label);link.append(top,copy);searchPreviewList.appendChild(link);
- });
- if(noDirectMatch){
-   const empty=document.createElement("div");empty.className="search-preview-empty";
-   const heading=document.createElement("strong");heading.textContent="No direct match. Another way in?";
-   const guidance=document.createElement("span");guidance.textContent="Try one of these existing rental categories, or browse the complete directory. Pricing and availability are confirmed with each provider.";
-   empty.append(heading,guidance);
-   searchPreviewList.prepend(empty);
- }
- searchPreviewStatus.textContent=matches.length===0?"No matching categories":matches.length+" matching "+(matches.length===1?"category":"categories")+(matches.length>4?" · top four shown":"");
- searchPreview.hidden=false;
+let listingIndex = [];
+let listingRequest;
+function loadSearchListings() {
+  if (!listingRequest) {
+    listingRequest = fetch("data/listings.json").then(response => {
+      if (!response.ok) throw new Error("Listing index unavailable");
+      return response.json();
+    }).then(listings => {
+      listingIndex = listings.map(RentalQuery.listingWords);
+      if (heroQuery.value.trim()) {
+        filterRentals();
+        if (document.activeElement === heroQuery) updateSearchPreview();
+      }
+    }).catch(() => {});
+  }
+  return listingRequest;
+}
+function matchCategories(query) {
+  const housing = RentalQuery.housing(query);
+  if (housing) return [{ key: 'homes', title: 'Matching homes & apartments', href: housing }];
+  const cleaned = RentalQuery.words(query);
+  if (!cleaned) return [];
+  const terms = cleaned.split(" ");
+  const listingTerms = RentalQuery.terms(cleaned);
+  const propertyMatch = listingTerms.some(word => word.length >= 3) &&
+    listingIndex.some(record => RentalQuery.matchesListing(listingTerms, record));
+  return cards.map(card => {
+    const key = card.dataset.category;
+    const title = card.querySelector(".card-body h3").textContent.trim();
+    const label = card.querySelector(".card-body .eyebrow")?.textContent || "";
+    const source = card.querySelector(".card-link");
+    const hay = categorySearchText.get(card) + " " + (aliases[key] || "");
+    const property = key === "homes" && propertyMatch;
+    if (!property && !terms.every(term => hay.includes(term))) return null;
+    const generic = [key, title, label].some(value => RentalQuery.words(value) === cleaned);
+    const score = generic ? 10 : property ? 6 : title.toLowerCase().includes(cleaned) ? 4 : 0;
+    let href = source.dataset.originalHref || source.getAttribute("href");
+    if (key === "homes") href = RentalQuery.housing(query, true) || href;
+    else if (!generic && href.endsWith(".html") && key !== "boats")
+      href += "?" + new URLSearchParams({q: cleaned}) + "#provider-matches";
+    return { key, title, href, score, target:source.target };
+  }).filter(Boolean).sort((a,b)=>b.score-a.score);
+}
+function updateSearchPreview() {
+  const query = heroQuery.value.trim();
+  searchPreviewList.replaceChildren();
+  if (!query) { searchPreview.hidden = true; return; }
+  const matches = matchCategories(query);
+  for (const item of matches.slice(0,5)) {
+    const link=document.createElement("a");
+    link.textContent=item.title;
+    link.href=item.href;
+    if(item.target){link.target=item.target;link.rel="noopener noreferrer";}
+    searchPreviewList.append(link);
+  }
+  searchPreviewStatus.textContent = matches.length ? "Suggested results" : "No direct match. Search the full directory or try another word.";
+  searchPreview.hidden=false;
 }
 heroQuery.setAttribute("aria-controls","search-preview");
 heroQuery.setAttribute("aria-describedby","search-preview-help");
+heroQuery.addEventListener("focus",loadSearchListings,{once:true});
 heroQuery.addEventListener("input",updateSearchPreview);
 heroQuery.addEventListener("keydown",event=>{
  if(event.key==="Escape")searchPreview.hidden=true;
  if(event.key==="ArrowDown"&&!searchPreview.hidden){const first=searchPreviewList.querySelector("a");if(first){event.preventDefault();first.focus();}}
 });
 searchPreview.addEventListener("keydown",event=>{if(event.key==="Escape"){searchPreview.hidden=true;heroQuery.focus();}});
-searchPreviewAll.addEventListener("click",event=>{event.preventDefault();searchPreview.hidden=true;heroSearchForm.requestSubmit();});
+
 heroSearchForm.addEventListener("submit",()=>{searchPreview.hidden=true;});
 
 function filterRentals(){
-  const terms = search.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+  const terms = RentalQuery.words(search.value).split(/\s+/).filter(Boolean);
+  const searchMatches = new Map((search.value.trim() ? matchCategories(search.value.trim()) : []).map(item => [item.key,item]));
   let visible = 0;
   cards.forEach(card=>{
     const key = card.dataset.category;
     const text = categorySearchText.get(card) + " " + aliases[key];
-    const matches = (activeIntent === "all" || intentSets[activeIntent].has(key)) && (category.value === "all" || category.value === key) && terms.every(term=>text.includes(term));
+    const matches = (activeIntent === "all" || intentSets[activeIntent].has(key)) && (category.value === "all" || category.value === key) && (searchMatches.has(key) || terms.every(term=>text.includes(term)));
     card.hidden = !matches;
+    const link = card.querySelector(".card-link");
+    if (!link.dataset.originalHref) link.dataset.originalHref = link.getAttribute("href");
+    link.href = searchMatches.get(key)?.href || link.dataset.originalHref;
     if(matches) visible++;
   });
   // Chapter headings disappear only when no categories in that group match.
@@ -2215,9 +2160,20 @@ if(sharedSearch.get("view") === "list"){
 
 form.hidden=false;document.getElementById("browse-toolbar").hidden=false;quickPaths.hidden=false;intentExplorer.hidden=false;document.getElementById("mobile-dock").hidden=false;
 document.getElementById("hero-find").hidden=false;
-heroSearchForm.addEventListener("submit", event => {
+heroSearchForm.addEventListener("submit", async event => {
   event.preventDefault();
-  search.value = heroQuery.value.trim();
+  const query = heroQuery.value.trim();
+  let matches = query ? matchCategories(query) : [];
+  if (query && !matches.length) {
+    await loadSearchListings();
+    if (heroQuery.value.trim() !== query) return;
+    matches = matchCategories(query);
+  }
+  if (matches.length === 1 || (matches[0]?.score === 10 && matches[1]?.score !== 10)) {
+    window.location.assign(matches[0].href);
+    return;
+  }
+  search.value = query;
   category.value = "all";
   setIntent("all");
   filterRentals();
@@ -2295,106 +2251,17 @@ browseReturn.addEventListener("click",event=>{
 queueBrowseReturn();
 
 form.addEventListener("submit",event=>event.preventDefault());
-search.addEventListener("input",()=>{setIntent("all");filterRentals();});
+search.addEventListener("input",()=>{setIntent("all"); category.value="all"; filterRentals();});
+document.querySelector(".mobile-dock-search")?.addEventListener("click", event => {
+  event.preventDefault(); heroQuery.focus(); heroQuery.scrollIntoView({block:"center"});
+});
+document.addEventListener("pointerdown",event=>{
+  if (!document.getElementById("hero-find").contains(event.target)) searchPreview.hidden=true;
+});
 category.addEventListener("change",()=>{setIntent("all");filterRentals();});
 form.addEventListener("reset",()=>{search.value="";category.value="all";setIntent("all");filterRentals();});
 filterRentals();
 
-
-/* Mobile-only live filter tray. Uses the existing search logic and category options. */
-(function(){
-  const sheet=document.getElementById("mobile-search-sheet");
-  const launch=document.querySelector(".mobile-dock-search");
-  if(!sheet || !launch || typeof sheet.showModal!=="function") return;
-  const query=document.getElementById("mobile-sheet-query");
-  const type=document.getElementById("mobile-sheet-category");
-  const total=document.getElementById("mobile-sheet-count");
-  const totalLabel=document.getElementById("mobile-sheet-count-label");
-  const context=document.getElementById("mobile-sheet-context");
-  const show=document.getElementById("mobile-sheet-show");
-  const preview=document.getElementById("mobile-sheet-preview-list");
-  const previewMore=document.getElementById("mobile-sheet-preview-more");
-  function syncSheet(){
-    query.value=search.value;
-    type.value=category.value;
-    const matchedCards=cards.filter(card=>!card.hidden);
-    const matches=matchedCards.length;
-    total.textContent=String(matches);
-    totalLabel.textContent=matches===1?"matching rental category":"matching rental categories";
-    context.textContent=activeIntent==="all"
-      ?"Search terms and categories filter the directory instantly."
-      :"Currently exploring “"+intentLabels[activeIntent]+"”. Editing either field searches all pathways.";
-    show.textContent="View "+matches+" "+(matches===1?"category":"categories")+" ↗";
-    // Show working direct-category links as mobile filters change.
-    // Names and URLs are derived from the untouched rental cards.
-    preview.replaceChildren();
-    matchedCards.slice(0,3).forEach((card,index)=>{
-      const source=card.querySelector(".card-link[href]");
-      const heading=card.querySelector("h3");
-      if(!source||!heading)return;
-      const link=document.createElement("a");
-      link.className="mobile-sheet-match";
-      link.href=source.getAttribute("href");
-      link.setAttribute("aria-label","Open "+heading.textContent.trim()+" rental category");
-      const number=document.createElement("span");
-      number.className="mobile-sheet-match-number";
-      number.textContent=String(index+1).padStart(2,"0");
-      number.setAttribute("aria-hidden","true");
-      const details=document.createElement("span");
-      details.className="mobile-sheet-match-details";
-      const title=document.createElement("strong");
-      title.textContent=heading.textContent.trim();
-      const hint=document.createElement("small");
-      hint.textContent="Explore category";
-      details.append(title,hint);
-      const arrow=document.createElement("span");
-      arrow.className="mobile-sheet-match-arrow";
-      arrow.textContent="↗";
-      arrow.setAttribute("aria-hidden","true");
-      link.append(number,details,arrow);
-      preview.appendChild(link);
-    });
-    if(!matches){
-      const empty=document.createElement("p");
-      empty.className="mobile-sheet-preview-empty";
-      empty.textContent="No matching categories. Try another search or clear the filters.";
-      preview.appendChild(empty);
-    }
-    previewMore.textContent=matches>3
-      ? "3 of "+matches+" routes"
-      : matches ? "Direct category links" : "Try another search";
-  }
-  function updateFromSheet(){
-    search.value=query.value;
-    category.value=type.value;
-    setIntent("all");
-    filterRentals();
-    syncSheet();
-  }
-  launch.addEventListener("click",event=>{
-    if(!window.matchMedia("(max-width: 600px)").matches) return;
-    event.preventDefault();
-    type.replaceChildren(...Array.from(category.options,option=>option.cloneNode(true)));
-    syncSheet();
-    sheet.showModal();
-    query.focus({preventScroll:true});
-  });
-  preview.addEventListener("click",event=>{if(event.target.closest("a"))sheet.close();});
-  query.addEventListener("input",updateFromSheet);
-  type.addEventListener("change",updateFromSheet);
-  document.getElementById("mobile-sheet-reset").addEventListener("click",()=>{
-    query.value="";
-    type.value="all";
-    updateFromSheet();
-    query.focus();
-  });
-  document.getElementById("mobile-sheet-close").addEventListener("click",()=>sheet.close());
-  show.addEventListener("click",()=>{
-    sheet.close();
-    count.focus({preventScroll:true});
-    count.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
-  });
-})();
 
 /* A broken third-party image should never leave an empty directory card. */
 (function(){

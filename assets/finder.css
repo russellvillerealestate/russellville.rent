@@ -1,0 +1,99 @@
+.local-finder {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+  margin: 1.25rem 0 0;
+  border-radius: 1.25rem;
+  color: #fffdf6;
+  background: #173e34;
+}
+.finder-photo, .local-finder::after {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  z-index: -1;
+}
+.finder-photo { object-fit: cover; object-position: 50% 59%; }
+.local-finder::after {
+  content: "";
+  background: linear-gradient(90deg,rgba(8,37,32,.95),rgba(8,37,32,.78) 45%,rgba(8,37,32,.1));
+}
+.finder-content { padding: clamp(1.5rem,4.6vw,4rem); max-width: 55rem; }
+.finder-location { margin: 0 0 .65rem; font-size: .92rem; font-weight: 700; color: #f9dc9c; }
+.local-finder h1, .housing-heading h1 { font-family: Georgia,serif; letter-spacing: -.045em; line-height: 1.03; }
+.local-finder h1 { margin: 0; font-size: clamp(2.8rem,5.5vw,5.4rem); color: white; }
+.local-finder h1 em { color: #f5d38b; font-weight: inherit; }
+.finder-introduction { margin: .85rem 0 1.35rem; max-width: 33rem; line-height: 1.5; font-size: 1.05rem; color: #fffdf8; }
+.finder-search { display: flex; align-items: stretch; gap: .55rem; width: min(42rem,100%); margin: 0; }
+.finder-search input, .finder-search button, .finder-directory-filter select, .finder-directory-filter button, .housing-filters input, .housing-filters select {
+  box-sizing: border-box; min-width: 0; min-height: 2.85rem; font: inherit; border-radius: .5rem;
+}
+.finder-search input { flex: 1; width: 100%; border: 1px solid #fff; background: #fff; color:#153c32; padding: .8rem 1rem; }
+.finder-search button { padding: .7rem 1.18rem; font-weight: 750; color: #13352c; background: #f2ce83; border: 1px solid #f2ce83; cursor:pointer; white-space:nowrap; }
+.finder-search button:hover { background: #ffe3a8; }
+.finder-suggestions { margin-top:.55rem; padding:.75rem 1rem; max-width:42rem; border-radius:.6rem; background:#fffdf7; color:#14382f; }
+.finder-suggestions p { margin:0; font-size:.9rem; }
+#search-preview-list { display:flex; flex-wrap:wrap; gap:.15rem .9rem; }
+#search-preview-list a { color:#15523c; padding:.55rem 0; font-weight:700; text-decoration:underline; }
+.finder-categories { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)) auto; gap:.45rem; margin: .75rem 0 2rem; }
+.finder-categories a { display:flex; gap:.5rem; align-items:center; justify-content:center; text-align:center; min-height:3.5rem; padding:.5rem .65rem; background:#fffdf7; color:#193f34; border:1px solid #bbcabc; border-radius:.55rem; text-decoration:none; line-height:1.2; font-weight:700; }
+.finder-categories a:hover, .finder-categories a:focus-visible { background:#e6eee2; border-color:#2b6251; }
+.finder-categories svg { width:1.65rem; height:1.65rem; flex:none; }
+.finder-categories .finder-all { background:#174035; color:white; border-color:#174035; }
+.finder-categories .finder-all:hover,.finder-categories .finder-all:focus-visible { background:#255545; }
+.finder-directory-heading h2 { font-family:Georgia,serif; font-size:clamp(1.9rem,3.5vw,3rem); margin:0 0 .7rem; color:#173d33; letter-spacing:-.035em; }
+#browse .finder-directory-filter { display:flex; flex-wrap:wrap; align-items:center; gap:.6rem; margin:0 0 .65rem; padding:0; background:none; border:0; box-shadow:none; }
+.finder-directory-filter label { font-weight:700; }
+.finder-directory-filter select { width:auto; max-width:100%; background:#fff; color:#143c30; padding:.4rem .75rem; border:1px solid #a9b9a9; }
+.finder-directory-filter button,.housing-reset,.housing-summary button { color:#245240; background:transparent; border:0; text-decoration:underline; font:inherit; font-weight:650; padding:.4rem .65rem; cursor:pointer; }
+.finder-options,.housing-guides { margin:.75rem 0; border:1px solid #d1d9ce; border-radius:.7rem; background:#fffdf8; }
+.finder-options>summary,.housing-guides>summary { padding:.8rem 1rem; font-weight:700; color:#204f3c; cursor:pointer; }
+.housing-heading { padding:clamp(1.1rem,3.3vw,2.4rem) 0 .4rem; }
+.housing-directory { font-size:.95rem; color:#286246; text-decoration:underline; }
+.housing-heading h1 { font-size:clamp(2.2rem,4.3vw,3.7rem); color:#163d32; margin:.5rem 0; }
+.housing-heading p { font-size:1rem; margin:.4rem 0 .65rem; color:#40574c; }
+main .search-section:has(.housing-heading) { padding-top:0; margin-top:0; }
+.housing-filters { display:grid; grid-template-columns:1.65fr .8fr .8fr .82fr .85fr 1.4fr auto; gap:.6rem; align-items:end; border:1px solid #cbd5c8; border-radius:.8rem; background:#fffdf7; padding:.85rem; margin:0; }
+.housing-filters label { display:grid; gap:.25rem; min-width:0; color:#1d4435; font-size:.9rem; font-weight:700; }
+.housing-filters input,.housing-filters select { width:100%; background-color:#fff; color:#193e30; padding:.45rem .6rem; border:1px solid #9cae9c; font-size:1rem; font-weight:400; }
+.housing-reset { min-height:2.85rem; }
+.housing-filters [hidden] { display:none!important; }
+.housing-summary { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:.35rem .8rem; padding:.45rem 0; }
+.housing-summary .search-chips { margin:0; }
+.housing-summary [hidden], .local-finder [hidden], .finder-directory-filter[hidden] { display:none!important; }
+#listings, #provider-matches { scroll-margin-top:6rem; }
+.card-actions a.inquire,.card-actions a.source-link { min-height:2.7rem; display:inline-flex; align-items:center; justify-content:center; }
+.provider-matches { font-family:system-ui,sans-serif; max-width:64rem; margin:1.25rem auto; padding:clamp(1rem,3vw,2rem); box-sizing:border-box; border:1px solid #becebf; background:#fcfaf3; border-radius:1rem; color:#193f34; }
+.provider-matches h2 { margin:0 0 .3rem; font-family:Georgia,serif; font-size:clamp(1.65rem,3vw,2.35rem); color:#173e32; text-transform:none; letter-spacing:-.025em; }
+.provider-matches p { margin:.35rem 0 .7rem; font-size:1rem; }
+.provider-matches ul { margin:.5rem 0; padding:0; list-style:none; }
+.provider-matches li { border-top:1px solid #d5dfd2; display:flex; flex-wrap:wrap; gap:.35rem .7rem; align-items:center; padding:.5rem 0; }
+.provider-matches .result-name { flex:1 1 14rem; font-size:1rem; color:#214c3a; font-weight:700; text-decoration:underline; }
+.provider-matches .result-call { padding:.5rem .85rem; border-radius:.4rem; background:#194635; color:#fff; text-decoration:none; min-height:2.75rem; display:inline-flex; align-items:center; font-weight:700; }
+.provider-matches .result-all { color:#28583f; text-decoration:underline; }
+.finder-search :focus-visible,.finder-categories a:focus-visible,.housing-filters :focus-visible,.provider-matches a:focus-visible { outline:3px solid #b37c1d; outline-offset:3px; }
+@media(max-width:980px) {
+  .finder-categories { grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .housing-filters { grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .housing-query { grid-column:span 2; }
+}
+@media(max-width:600px) {
+  .local-finder { margin-top:.65rem; }
+  .local-finder::after { background:linear-gradient(90deg,rgba(8,37,32,.91),rgba(8,37,32,.67)); }
+  .finder-content { padding:1.35rem 1.05rem; }
+  .finder-search { flex-direction:column; gap:.4rem; }
+  .finder-search input,.finder-search button { min-height:2.9rem; }
+  .finder-introduction { margin:.55rem 0 1rem; font-size:1rem; }
+  .finder-categories { grid-template-columns:repeat(2,minmax(0,1fr)); margin:.5rem 0 1.35rem; }
+  .finder-categories a { min-height:2.85rem; justify-content:flex-start; text-align:left; }
+  .finder-categories .finder-all { grid-column:1/-1; justify-content:center; }
+  .housing-filters { grid-template-columns:repeat(2,minmax(0,1fr)); padding:.65rem; gap:.4rem .55rem; }
+  .housing-directory { display:none; }
+  .housing-heading h1 { margin-top:0; }
+  .housing-filters .housing-reset { align-self:end; }
+  .housing-filters #moreHousingFilters { text-align:left; }
+  .provider-matches { margin:.65rem; }
+}
+@media print { .finder-search,.finder-suggestions,.housing-filters,.housing-summary { display:none; } }

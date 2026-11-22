@@ -1,6 +1,6 @@
 const state={listings:[],filtered:[],compareIds:new Set()};
 const $=id=>document.getElementById(id);
-const money=n=>n?new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(n):"Call";
+const money=n=>n?new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",minimumFractionDigits:0,maximumFractionDigits:2}).format(n):"Call";
 const PROPERTY_ART="<div class=\"property-placeholder\" role=\"img\" aria-label=\"Illustrated River Valley homes, not a photograph of the listed rental\">\n<span class=\"property-placeholder-head\">R↗ / THE RIVER VALLEY RENTAL ATLAS</span>\n<svg viewBox=\"0 0 640 360\" preserveAspectRatio=\"xMidYMax slice\" aria-hidden=\"true\" focusable=\"false\">\n<path d=\"M0 240Q110 150 232 218T462 201T640 205V360H0Z\" fill=\"#91b9a1\"/>\n<path d=\"M0 265Q112 207 210 253T430 229T640 257V360H0Z\" fill=\"#4b8d75\"/>\n<path d=\"M0 318Q176 275 321 315T640 292V360H0Z\" fill=\"#25624d\"/>\n<path d=\"M123 220 233 134l112 86v130H123Z\" fill=\"#f6ead0\" stroke=\"#204b3d\" stroke-width=\"8\"/>\n<path d=\"m106 222 127-105 132 105\" fill=\"none\" stroke=\"#1a4a3a\" stroke-width=\"17\" stroke-linejoin=\"round\"/>\n<path d=\"M200 277h68v73h-68z\" fill=\"#517862\"/>\n<rect x=\"144\" y=\"242\" width=\"38\" height=\"38\" rx=\"4\" fill=\"#d9c18d\"/>\n<rect x=\"290\" y=\"242\" width=\"35\" height=\"38\" rx=\"4\" fill=\"#d9c18d\"/>\n<path d=\"M408 253 481 198l80 55v96H408Z\" fill=\"#e1d1ae\" stroke=\"#205141\" stroke-width=\"7\"/>\n<path d=\"m395 254 85-68 95 68\" fill=\"none\" stroke=\"#205141\" stroke-width=\"12\" stroke-linejoin=\"round\"/>\n<rect x=\"464\" y=\"280\" width=\"39\" height=\"69\" rx=\"2\" fill=\"#719982\"/>\n<path d=\"M82 338v-77m-25 34h51m-45-18h35M582 341v-92m-30 38h65m-57-20h48\" fill=\"none\" stroke=\"#164b3c\" stroke-width=\"12\" stroke-linecap=\"round\"/>\n</svg><span class=\"property-placeholder-foot\">Illustration / No verified property photo</span></div>";
 const hasVerifiedPhoto=item=>Boolean(item.image_url)&&item.image_verified!==false;
 function replaceFailedPhoto(img){
@@ -15,50 +15,49 @@ function replaceFailedPhoto(img){
 }
 
 const safe=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
-const ageLabel=item=>{
-  if(!item.updated_at) return "Availability should be verified";
-  const hours=Math.floor((Date.now()-new Date(item.updated_at))/36e5);
-  if(hours<1)return"Source checked recently";
-  if(hours<24)return`Source checked ${hours}h ago`;
-  const days=Math.floor(hours/24);
-  return`Source checked ${days}d ago`;
-};
+const dateFormat = new Intl.DateTimeFormat("en-US", {month:"short", day:"numeric", year:"numeric", timeZone:"America/Chicago"});
+const ageLabel = item => item.updated_at ? "Source checked " + dateFormat.format(new Date(item.updated_at)) : "Check date unavailable";
+const publicPhone = item => /^\d{10}$/.test(item.phone || "") ? "+1" + item.phone : "";
 function card(item){
   const specs=[
     item.beds!=null?`${item.beds} bed${item.beds===1?"":"s"}`:null,
     item.baths!=null?`${item.baths} bath${item.baths===1?"":"s"}`:null,
     item.type||null
   ].filter(Boolean).map(s=>`<span>${safe(s)}</span>`).join("");
+  const phone=publicPhone(item);
   const sms=`sms:+14799707301?&body=${encodeURIComponent("I'm interested in "+item.address+" listed on Russellville.Rent. Can you help me verify availability?")}`;
   const photoHTML=hasVerifiedPhoto(item)?`<img class="property-photo" src="${safe(item.image_url)}" alt="Listing-source photograph for ${safe(item.address)}" loading="lazy" decoding="async" width="640" height="400">`:PROPERTY_ART;
   return `<article class="card">
     <div class="property-art">${photoHTML}<span class="source-badge">${safe(item.source_name)}</span>${!hasVerifiedPhoto(item)?'<span class="photo-note">Illustration only</span>':''}</div>
     <div class="card-body">
-      <div class="price">${money(item.rent)} <small>/ month</small></div>
+      <div class="price">${item.rent ? money(item.rent) + " <small>/ month</small>" : "Ask manager for rent"}</div>
       <div class="specs">${specs}</div>
       <h3 class="address">${safe(item.address)}</h3>
       <p class="location">Russellville, Arkansas ${safe(item.zip||"")}</p>
       <div class="manager">Listed by <strong>${safe(item.manager)}</strong><div class="freshness">${safe(ageLabel(item))}</div></div>
       <div class="card-actions">
-        <a class="inquire" href="${sms}">Ask about rental</a>
-        <a class="source-link" href="${safe(item.source_url)}" target="_blank" rel="noopener noreferrer">View source ↗</a>
+        <a class="inquire" href="${safe(item.source_url)}" target="_blank" rel="noopener noreferrer">View property</a>
+        <a class="source-link" href="${phone ? "tel:" + phone : sms}">${phone ? "Call manager" : "Text rental directory"}</a>
       </div>
       <button type="button" class="compare-pick" data-compare-id="${safe(item.id)}" aria-controls="compareDesk" aria-pressed="${state.compareIds.has(String(item.id))}"><span>${state.compareIds.has(String(item.id))?"Pinned to compare":"Pin to compare"}</span><span aria-hidden="true">${state.compareIds.has(String(item.id))?"✓":"+"}</span></button>
     </div>
   </article>`;
 }
 function apply(){
-  const q=$("q").value.toLowerCase().trim();
+  const terms=RentalQuery.terms($("q").value);
   const min=Number($("minRent").value)||0;
-  const max=Number($("maxRent").value)||Infinity;
-  const beds=Number($("beds").value)||0;
+  const max=$("maxRent").value==="" ? Infinity : Number($("maxRent").value);
+  const bedValue=$("beds").value;
+  const exactBeds=bedValue.startsWith("eq");
+  const beds=Number(exactBeds ? bedValue.slice(2) : bedValue);
+  const strictMax=$("maxRent").dataset.exclusive==="true";
+  const strictMin=$("minRent").dataset.exclusive==="true";
   const manager=$("manager").value;
   const type=$("type").value;
   let list=state.listings.filter(x=>{
-    const hay=`${x.address} ${x.manager} ${x.type} ${x.zip}`.toLowerCase();
-    return (!q||hay.includes(q)) &&
-      (!x.rent||(x.rent>=min&&x.rent<=max)) &&
-      (!beds||(x.beds!=null&&x.beds>=beds)) &&
+    return (!terms.length || RentalQuery.matchesListing(terms, RentalQuery.listingWords(x))) &&
+      ((!min && max===Infinity) || (x.rent!=null && (strictMin ? x.rent>min : x.rent>=min) && (strictMax ? x.rent<max : x.rent<=max))) &&
+      (!bedValue || (x.beds!=null && (exactBeds ? x.beds===beds : x.beds>=beds))) &&
       (!manager||x.manager===manager) &&
       (!type||x.type===type);
   });
@@ -115,31 +114,43 @@ function restoreSharedSearch(){
   SEARCH_KEYS.forEach(id=>{
     if(!params.has(id))return;
     const field=$(id),value=params.get(id);
-    if(id==="q"){field.value=value.slice(0,120);return;}
+    if(id==="q"){field.value=value.slice(0,160);return;}
+    if (id==="minRent" || id==="maxRent") {
+      if (/^\d+(?:\.\d{1,2})?$/.test(value)) field.value=value;
+      field.dataset.exclusive=String(params.get(id==="maxRent"?"below":"above")==="1" && field.value!=="");
+      return;
+    }
+    if(id==="type" && !Array.from(field.options).some(o=>o.value===value) && ["House","Apartment","Townhouse","Duplex","Tiny house","Condo"].includes(value)) field.add(new Option(value,value));
+    if(id==="beds" && /^(?:eq)?\d{1,2}$/.test(value) && !Array.from(field.options).some(o=>o.value===value)) field.add(new Option(value.startsWith('eq') ? value.slice(2)+' bedrooms' : value+'+',value));
     if(Array.from(field.options).some(option=>option.value===value))field.value=value;
   });
 }
 function searchShareUrl(){
   const url=new URL(window.location.href);
+  for(const [id,key] of [["maxRent","below"],["minRent","above"]]){url.searchParams.delete(key);if($(id).value && $(id).dataset.exclusive==="true")url.searchParams.set(key,"1");}
   SEARCH_KEYS.forEach(id=>url.searchParams.delete(id));
   SEARCH_KEYS.forEach(id=>{
     const value=$(id).value.trim();
     if(value && !(id==="sort" && value==="rent-asc"))url.searchParams.set(id,value);
   });
-  url.hash="main";
+  url.hash="listings";
   return url.href;
 }
 function renderSearchSummary(){
   const container=$("activeFilters");
   if(!container)return;
   const chips=[];
+  $("maxRentLabel").textContent=$("maxRent").dataset.exclusive==="true" ? "Rent under ($)" : "Max rent ($)";
+  $("minRentLabel").textContent=$("minRent").dataset.exclusive==="true" ? "Rent over ($)" : "Min rent ($)";
   const q=$("q").value.trim(),min=$("minRent").value,max=$("maxRent").value;
   if(q)chips.push({label:"Search: “"+q+"”",key:"q"});
   if(min||max){
-    const price=min&&max?money(Number(min))+"–"+money(Number(max))+" / month":min?"From "+money(Number(min))+" / month":"Up to "+money(Number(max))+" / month";
+    const lower=min ? ($("minRent").dataset.exclusive==="true" ? "Over " : "From ") + money(Number(min)) : "";
+    const upper=max ? ($("maxRent").dataset.exclusive==="true" ? "Under " : "Up to ") + money(Number(max)) : "";
+    const price=[lower,upper].filter(Boolean).join(" · ") + " / month";
     chips.push({label:price,key:"rent"});
   }
-  if($("beds").value)chips.push({label:$("beds").value+"+ bedrooms",key:"beds"});
+  if($("beds").value)chips.push({label:$("beds").selectedOptions[0].textContent+($("beds").value.startsWith("eq")?"":" bedrooms"),key:"beds"});
   for(const id of ["type","manager"]){
     const field=$(id);
     if(field.value)chips.push({label:(id==="type"?"Type: ":"Manager: ")+field.selectedOptions[0].textContent,key:id});
@@ -177,7 +188,7 @@ function bindSearchSummary(){
     const button=event.target.closest("button[data-clear]");
     if(!button)return;
     const key=button.dataset.clear;
-    if(key==="rent"){$("minRent").value="";$("maxRent").value="";}
+    if(key==="rent"){$("minRent").value="";$("maxRent").value="";delete $("maxRent").dataset.exclusive;delete $("minRent").dataset.exclusive;}
     else if(key==="sort")$("sort").value="rent-asc";
     else if(SEARCH_KEYS.includes(key))$(key).value="";
     else return;
@@ -288,10 +299,10 @@ async function load(){
     [...new Set(state.listings.map(x=>x.type).filter(Boolean))].sort().forEach(v=>typeSel.insertAdjacentHTML("beforeend",`<option value="${safe(v)}">${safe(v)}</option>`));
     restoreSharedSearch();
     state.filtered=[...state.listings];
-    render();
     apply();
   }catch(error){
     $("listings").innerHTML="";
+    $("resultCount").textContent="Rental data unavailable";
     $("empty").hidden=false;
     $("empty").querySelector("h3").textContent="Listings are temporarily unavailable.";
     $("empty").querySelector("p").textContent="Use the source links below or contact Russellville.Rent.";
@@ -308,6 +319,7 @@ if(rentLandscape)rentLandscape.addEventListener("click",event=>{
     high:["1500",""]
   }[button.dataset.rentBand];
   if(!selected)return;
+  delete $("maxRent").dataset.exclusive;delete $("minRent").dataset.exclusive;
   $("minRent").value=selected[0];
   $("maxRent").value=selected[1];
   $("filters").dispatchEvent(new Event("change",{bubbles:true}));
@@ -317,9 +329,21 @@ if(rentLandscape)rentLandscape.addEventListener("click",event=>{
   count.scrollIntoView({block:"start",behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
 });
 
-$("filters").addEventListener("input",apply);
+$("filters").addEventListener("submit",event=>{event.preventDefault();apply();});
+const compactFilters=window.matchMedia("(max-width:600px)");
+const moreFilters=$("moreHousingFilters");
+function showFilterOptions(expanded){
+  moreFilters.hidden=!compactFilters.matches;
+  moreFilters.setAttribute("aria-expanded",String(expanded));
+  moreFilters.textContent=expanded?"Fewer filters":"More filters";
+  $("filters").querySelectorAll(".housing-extra").forEach(label=>{label.hidden=compactFilters.matches && !expanded;});
+}
+moreFilters.addEventListener("click",()=>showFilterOptions(moreFilters.getAttribute("aria-expanded")!=="true"));
+compactFilters.addEventListener("change",()=>showFilterOptions(false));
+showFilterOptions(false);
+$("filters").addEventListener("input",event=>{if(event.target.matches("#minRent, #maxRent"))delete event.target.dataset.exclusive;apply();});
 $("filters").addEventListener("change",apply);
-$("filters").addEventListener("reset",()=>setTimeout(apply,0));
+$("filters").addEventListener("reset",()=>{delete $("maxRent").dataset.exclusive;delete $("minRent").dataset.exclusive;setTimeout(apply,0);});
 $("sort").addEventListener("change",apply);
 $("year").textContent=new Date().getFullYear();
 bindSearchSummary();

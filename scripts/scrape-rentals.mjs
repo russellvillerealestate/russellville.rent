@@ -1,284 +1,145 @@
 import fs from "node:fs/promises";
-import * as cheerio from "cheerio";
+import { load } from "cheerio";
 
-const OUT = new URL("../data/listings.json", import.meta.url);
-const UA = "Russellville.Rent listing indexer/0.1 (+https://russellville.rent; public listing pages only)";
-const now = new Date().toISOString();
-
+const output = new URL("../data/listings.json", import.meta.url);
+const checkedAt = new Date().toISOString();
 const managers = [
-  {
-    key: "rvr",
-    name: "River Valley Realty Management Service",
-    sourceName: "River Valley Realty",
-    base: "https://www.rentrvr.com",
-    kind: "appfolio"
-  },
-  {
-    key: "natural-state",
-    name: "Natural State Property Management",
-    sourceName: "Natural State Property Management",
-    base: "https://www.naturalstatepropertymanagement.com",
-    kind: "appfolio"
-  },
-  {
-    key: "moore",
-    name: "Moore & Co. Rental",
-    sourceName: "Moore & Co.",
-    base: "https://www.mooreforrent.com",
-    kind: "wordpress"
-  }
+  { key: "natural-state", name: "Natural State Property Management", label: "Natural State Property Management", phone: "4799685158", url: "https://nspm.appfolio.com/listings/listings?filters%5Bcities%5D%5B%5D=Russellville", kind: "appfolio" },
+  { key: "rvr", name: "River Valley Realty Management Service", label: "River Valley Realty", phone: "4799688800", url: "https://rivervalley.appfolio.com/listings/listings?filters%5Bcities%5D%5B%5D=Russellville", kind: "appfolio" },
+  { key: "moore", name: "Moore & Co. Rental", label: "Moore & Co.", phone: "4799683300", url: "https://mooreforrent.managebuilding.com/Resident/Public/Rentals", kind: "buildium" }
 ];
 
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-const clean = value => String(value || "").replace(/\s+/g, " ").trim();
-const slug = value => clean(value).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 90);
+const clean = value => String(value ?? "").replace(/\s+/g, " ").trim();
 
-async function get(url) {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 20000);
-  try {
-    const response = await fetch(url, {
-      headers: { "user-agent": UA, "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" },
-      redirect: "follow",
-      signal: controller.signal
-    });
-    if (!response.ok) throw new Error(`${response.status} ${response.statusText} for ${url}`);
-    const text = await response.text();
-    await sleep(350);
-    return text;
-  } finally {
-    clearTimeout(timeout);
-  }
+function propertyLink(href, manager) {
+  if (!href) return null;
+  const url = new URL(href, manager.url);
+  const detail = manager.kind === "appfolio"
+    ? /^\/listings\/detail\/[a-f0-9-]+\/?$/i
+    : /^\/resident\/public\/rentals\/\d+\/?$/i;
+  return url.origin === new URL(manager.url).origin && detail.test(url.pathname) ? url.href : null;
 }
 
-function money(text) {
-  const values = [...clean(text).matchAll(/\$\s*([0-9][0-9,]{2,5})(?:\.\d{2})?/g)]
-    .map(m => Number(m[1].replace(/,/g, "")))
-    .filter(v => v >= 300 && v <= 10000);
-  return values[0] ?? null;
+function publishedAmount(value) {
+  const text = clean(value);
+  if (!/^\$?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d{1,2})?$/.test(text)) return null;
+  const amount = Number(text.replace(/[$,]/g, ""));
+  return Number.isFinite(amount) && amount > 0 ? amount : null;
 }
 
-function count(text, label) {
-  const patterns = label === "beds"
-    ? [/(\d+(?:\.\d+)?)\s*(?:beds?|bedrooms?)/i, /beds?\s*(\d+(?:\.\d+)?)/i]
-    : [/(\d+(?:\.\d+)?)\s*(?:baths?|bathrooms?)/i, /baths?\s*(\d+(?:\.\d+)?)/i];
-  for (const re of patterns) {
-    const match = clean(text).match(re);
-    if (match) return Number(match[1]);
-  }
+function publicPhoto(src, base) {
+  if (!src) return null;
+  const photo = new URL(src, base);
+  return photo.protocol === "https:" ? photo.href : null;
+}
+
+function explicitType(title, description, address) {
+  const text = title + " " + description;
+  if (/\b(?:townhome|townhouse)\b/i.test(text)) return "Townhouse";
+  if (/\bduplex\b/i.test(text)) return "Duplex";
+  if (/\b(?:tiny house|tiny home)\b/i.test(text)) return "Tiny house";
+  if (/\b(?:single[- ]family|manufactured home|mobile home)\b/i.test(text)) return "House";
+  if (/\bapartment\b/i.test(text) || /\bapt\.?\s+\w/i.test(address)) return "Apartment";
+  if (/\b(?:condo|condominium)\b/i.test(text)) return "Condo";
   return null;
 }
 
-function inferType(text) {
-  const t = clean(text).toLowerCase();
-  if (t.includes("townhouse") || t.includes("townhome")) return "Townhouse";
-  if (t.includes("duplex")) return "Duplex";
-  if (t.includes("tiny house") || t.includes("tiny home")) return "Tiny house";
-  if (t.includes("apartment") || t.includes("apt ")) return "Apartment";
-  if (t.includes("commercial") || t.includes("office space") || t.includes("retail")) return "Commercial";
-  if (t.includes("house") || t.includes("home")) return "House";
-  return "Rental";
-}
-
-function parseAddressTitle(raw) {
-  let title = clean(raw)
-    .replace(/\*\*/g, "")
-    .replace(/\$\s*[0-9][0-9,]*(?:\.\d+)?(?:\s*\/\s*\$?\s*[0-9][0-9,]*)?/g, "")
-    .replace(/\b(?:rent|security deposit|sec deposit|per month|for rent|new listing|pet friendly|no pets allowed)\b.*$/i, "")
-    .replace(/[–—-]\s*$/,"")
-    .trim();
-  return title || clean(raw);
-}
-
-function appfolioListing(html, url, manager) {
-  const $ = cheerio.load(html);
-  const h1 = clean($("h1").first().text());
-  const text = clean($("main").text() || $("body").text());
-  const combined = clean(h1 + " " + text);
-  if (!/Russellville\s*,?\s*AR/i.test(combined)) return null;
-  if (/commercial|office space|retail/i.test(combined) && !/(bed|bedroom)/i.test(combined)) return null;
-
-  const rent = money(combined);
-  const beds = count(combined, "beds");
-  const baths = count(combined, "baths");
-  if (!h1 || !rent) return null;
-
-  const zipMatch = combined.match(/Russellville\s*,?\s*AR\s*(7280[12])?/i);
-  const availabilityMatch = combined.match(/Available\s+(NOW|[A-Za-z]+\s+\d{1,2}(?:,\s*\d{4})?)/i);
-  const rawImage = $("meta[property='og:image']").attr("content") ||
-    $("img[src*='images.cdn.appfolio.com']").first().attr("src") ||
-    $("img[data-src*='images.cdn.appfolio.com']").first().attr("data-src") ||
-    null;
-  const imageUrl = rawImage ? new URL(rawImage, manager.base).href : null;
-
-  return {
-    id: `${manager.key}-${slug(h1)}`,
-    address: h1.replace(/,?\s*Russellville\s*,?\s*AR\s*7280[12]?/i, "").trim(),
-    city: "Russellville",
-    state: "AR",
-    zip: zipMatch?.[1] || "",
-    rent,
-    beds,
-    baths,
-    type: inferType(combined),
-    manager: manager.name,
-    source_name: manager.sourceName,
-    source_url: url,
-    availability: availabilityMatch ? `Available ${availabilityMatch[1]}` : "Check source",
-    image_url: imageUrl,
-    image_verified: Boolean(imageUrl),
-    updated_at: now,
-    seeded: false
-  };
-}
-
-async function discoverAppfolio(manager) {
-  const listingUrls = new Set();
-  const seenXml = new Set();
-
-  async function readSitemap(url, depth = 0) {
-    if (depth > 3 || seenXml.has(url)) return;
-    seenXml.add(url);
-    let xml;
-    try { xml = await get(url); } catch { return; }
-    const urls = [...xml.matchAll(/<loc>(.*?)<\/loc>/gsi)].map(m => m[1].replace(/&amp;/g, "&").trim());
-    for (const found of urls) {
-      if (/\/listings\/detail\//i.test(found)) listingUrls.add(found);
-      else if (/sitemap.*\.xml/i.test(found) || /\.xml(?:\?|$)/i.test(found)) await readSitemap(found, depth + 1);
-    }
+function appfolioRecords($, manager) {
+  const cards = $(".js-listing-item");
+  if (!cards.length && !/no (?:matching |available )?(?:listings|units|rentals)|no vacancies/i.test($("body").text())) {
+    throw new Error("Unrecognized listings page");
   }
+  const records = [];
+  for (const element of cards) {
+    const card = $(element);
+    const location = clean(card.find(".js-listing-address").text()).match(/^(.+?),\s*Russellville,\s*AR\s+(\d{5})(?:-\d{4})?$/i);
+    const title = clean(card.find(".js-listing-title").text());
+    const description = clean(card.find(".js-listing-description").text());
+    const specs = clean(card.find(".js-listing-blurb-bed-bath").first().text());
+    const layout = specs.match(/^(?:(\d+)\s*(?:bd|beds?)|studio)\s*\/\s*(\d+(?:\.\d+)?)\s*(?:ba|baths?)\b/i);
+    const commercial = card.find(".js-listing-commercial-category").length ||
+      /\b(?:commercial (?:space|property|building|lease)|office space|retail space|restaurant (?:space|for lease))\b/i.test(title + " " + description);
+    if (!location || !layout || commercial) continue;
+    const rent = publishedAmount(card.find(".js-listing-blurb-rent").first().text());
+    const source = propertyLink(card.find(".js-link-to-detail").attr("href"), manager);
+    if (!source || !rent) continue;
+    records.push({
+      address: clean(location[1]), zip: location[2], rent, beds: Number(layout[1] || 0), baths: Number(layout[2]),
+      type: explicitType(title, description, location[1]), source_url: source,
+      image_url: publicPhoto(card.find("img.js-listing-image").attr("data-original"), manager.url)
+    });
+  }
+  return records;
+}
 
-  await readSitemap(`${manager.base}/sitemap.xml`);
-  await readSitemap(`${manager.base}/sitemap_index.xml`);
+const buildiumTypes = { SingleFamily: "House", MultiFamily: "Apartment", CondoTownhome: null };
+function buildiumRecords($, manager) {
+  const cards = $("a.featured-listing");
+  if (!cards.length && !/no matching results|no rentals available/i.test($("body").text())) {
+    throw new Error("Unrecognized listings page");
+  }
+  const records = [];
+  for (const element of cards) {
+    const card = $(element);
+    const location = clean(card.attr("data-location")).match(/^Russellville,\s*AR\|(\d{5})$/i);
+    const kind = card.attr("data-type");
+    const rent = publishedAmount(card.attr("data-rent"));
+    const source = propertyLink(card.attr("href"), manager);
+    const address = clean(card.find(".featured-listing__title").text());
+    if (!location || !Object.hasOwn(buildiumTypes, kind) || !rent || !source || !address) continue;
+    const layoutNumber = key => {
+      const value = clean(card.attr(key));
+      return /^\d+(?:\.\d+)?$/.test(value) ? Number(value) : null;
+    };
+    records.push({
+      address, zip: location[1], rent, beds: layoutNumber("data-bedrooms"), baths: layoutNumber("data-bathrooms"),
+      type: buildiumTypes[kind] || explicitType(address, clean(card.find(".featured-listing__description").text()), address),
+      source_url: source, image_url: publicPhoto(card.find(".featured-listing__image").attr("src"), manager.url)
+    });
+  }
+  return records;
+}
 
-  for (const fallback of ["/all-vacancies", "/availability", "/pope-county"]) {
-    try {
-      const html = await get(manager.base + fallback);
-      const $ = cheerio.load(html);
-      $("a[href*='/listings/detail/']").each((_, a) => {
-        const href = $(a).attr("href");
-        if (href) listingUrls.add(new URL(href, manager.base).href);
+async function readManager(manager) {
+  const records = new Map();
+  const pages = new Set();
+  let url = manager.url;
+  while (url && !pages.has(url)) {
+    pages.add(url);
+    const response = await fetch(url, { headers: { "User-Agent": "Russellville.Rent public listing index (+https://russellville.rent)" }, signal: AbortSignal.timeout(25000) });
+    if (!response.ok || new URL(response.url).origin !== new URL(manager.url).origin) {
+      throw new Error("Could not read listings (" + response.status + ")");
+    }
+    const $ = load(await response.text());
+    const found = manager.kind === "appfolio" ? appfolioRecords($, manager) : buildiumRecords($, manager);
+    for (const item of found) {
+      records.set(item.source_url, {
+        id: manager.key + "-" + new URL(item.source_url).pathname.split("/").filter(Boolean).at(-1),
+        ...item, city: "Russellville", state: "AR", manager: manager.name, source_name: manager.label,
+        phone: manager.phone, image_verified: Boolean(item.image_url), updated_at: checkedAt
       });
-    } catch {}
-  }
-
-  const results = [];
-  for (const url of [...listingUrls].slice(0, 150)) {
-    try {
-      const listing = appfolioListing(await get(url), url, manager);
-      if (listing) results.push(listing);
-    } catch (error) {
-      console.warn("Listing skipped:", url, error.message);
     }
+    const next = $("a[rel=next], .pagination a.next, .pagination .next a").first().attr("href");
+    url = next ? new URL(next, response.url) : null;
+    if (url && url.origin !== new URL(manager.url).origin) throw new Error("Unexpected pagination link");
+    url = url?.href;
   }
-  return results;
+  return Array.from(records.values());
 }
 
-function mooreArticle(article, $, pageUrl, manager) {
-  const text = clean($(article).text());
-  if (!text || !/For Rent|available soon|rent/i.test(text)) return null;
-  const heading = $(article).find("h1,h2,h3,h4").first();
-  const rawTitle = clean(heading.text()) || clean($(article).find("a").first().text());
-  if (!rawTitle) return null;
-
-  const href = heading.find("a").attr("href") || $(article).find("a").first().attr("href") || pageUrl;
-  const sourceUrl = new URL(href, manager.base).href;
-  const rent = money(rawTitle + " " + text);
-  if (!rent) return null;
-  const rawImage = $(article).find("img").first().attr("data-src") || $(article).find("img").first().attr("src") || null;
-  const imageUrl = rawImage ? new URL(rawImage, manager.base).href : null;
-
-  const address = parseAddressTitle(rawTitle);
-  if (!address || /calling all property owners|rental resources|meet the team/i.test(address)) return null;
-
-  return {
-    id: `${manager.key}-${slug(address)}`,
-    address,
-    city: "Russellville",
-    state: "AR",
-    zip: "",
-    rent,
-    beds: count(text, "beds"),
-    baths: count(text, "baths"),
-    type: inferType(text),
-    manager: manager.name,
-    source_name: manager.sourceName,
-    source_url: sourceUrl,
-    availability: /available soon/i.test(text) ? "Available soon" : "Check source",
-    image_url: imageUrl,
-    image_verified: Boolean(imageUrl),
-    updated_at: now,
-    seeded: false
-  };
-}
-
-async function discoverMoore(manager) {
-  const results = [];
-  const seen = new Set();
-  for (let page = 1; page <= 5; page++) {
-    const url = page === 1
-      ? `${manager.base}/rental-properties/russellville/`
-      : `${manager.base}/rental-properties/russellville/page/${page}/`;
-    let html;
-    try { html = await get(url); } catch { continue; }
-    const $ = cheerio.load(html);
-
-    let nodes = $("article").toArray();
-    if (!nodes.length) nodes = $(".property, .listing, .property-item, .property-listing").toArray();
-
-    for (const node of nodes) {
-      const listing = mooreArticle(node, $, url, manager);
-      if (listing && !seen.has(listing.source_url + listing.address)) {
-        seen.add(listing.source_url + listing.address);
-        results.push(listing);
-      }
-    }
+const current = JSON.parse(await fs.readFile(output, "utf8"));
+const results = await Promise.allSettled(managers.map(readManager));
+if (results.every(result => result.status === "rejected")) throw new Error("All manager feeds failed; keeping the last published index.");
+const listings = results.flatMap((result, index) => {
+  const manager = managers[index];
+  if (result.status === "fulfilled") {
+    console.log(manager.label + ": " + result.value.length + " local residential listings");
+    return result.value;
   }
-  return results;
-}
-
-function dedupe(listings) {
-  const map = new Map();
-  for (const item of listings) {
-    const key = `${slug(item.manager)}|${slug(item.address)}`;
-    const existing = map.get(key);
-    if (!existing || (!existing.updated_at && item.updated_at)) map.set(key, item);
-  }
-  return [...map.values()].sort((a, b) =>
-    (a.rent ?? 999999) - (b.rent ?? 999999) || a.address.localeCompare(b.address)
-  );
-}
-
-const current = JSON.parse(await fs.readFile(OUT, "utf8"));
-let live = [];
-
-for (const manager of managers) {
-  try {
-    const found = manager.kind === "appfolio"
-      ? await discoverAppfolio(manager)
-      : await discoverMoore(manager);
-    console.log(`${manager.name}: ${found.length} Russellville listings found`);
-    if (found.length) {
-      const enriched = found.map(item => {
-        const previous = current.find(x => slug(x.manager) === slug(item.manager) && slug(x.address) === slug(item.address));
-        if (!item.image_url && previous?.image_url) {
-          item.image_url = previous.image_url;
-          item.image_verified = previous.image_verified ?? false;
-        }
-        return item;
-      });
-      live.push(...enriched);
-    } else {
-      live.push(...current.filter(x => x.manager === manager.name));
-    }
-  } catch (error) {
-    console.warn(`${manager.name} failed: ${error.message}`);
-    live.push(...current.filter(x => x.manager === manager.name));
-  }
-}
-
-live = dedupe(live).filter(x => x.city === "Russellville");
-if (!live.length) throw new Error("No listings collected; refusing to overwrite existing data.");
-
-await fs.writeFile(OUT, JSON.stringify(live, null, 2) + "\n");
-console.log(`Wrote ${live.length} listings to data/listings.json`);
+  console.warn(manager.label + ": " + result.reason.message + ". Keeping previously sourced records with their original check dates.");
+  return current.filter(item => item.manager === manager.name && item.updated_at && !item.seeded && propertyLink(item.source_url, manager));
+});
+listings.sort((a, b) => a.rent - b.rent || a.address.localeCompare(b.address));
+const temporary = new URL("listings-" + process.pid + ".tmp", output);
+await fs.writeFile(temporary, JSON.stringify(listings, null, 2) + "\n");
+await fs.rename(temporary, output);

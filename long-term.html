@@ -1575,7 +1575,8 @@ main .owner-band.owner-fieldnote{
   .owner-fieldnote.owner-band .owner-actions a{color:#173d32!important;background:#fff!important;border:1px solid #666}
 }
 
-</style></head>
+</style><link rel="stylesheet" href="assets/finder.css">
+</head>
 <body>
 <a class="skip" href="#main">Skip to listings</a>
 
@@ -1603,85 +1604,117 @@ main .owner-band.owner-fieldnote{
   </div>
 </header>
 <!-- Mobile rental compass: always-visible routes; the original short-landscape menu remains available. -->
-<nav class="longterm-pocket-nav" aria-label="Quick rental search navigation">
-  <a href="#filters"><span aria-hidden="true">01</span><strong>Search</strong></a>
-  <a href="#listings"><span aria-hidden="true">02</span><strong>Listings</strong></a>
-  <a href="#sources"><span aria-hidden="true">03</span><strong>Sources</strong></a>
-  <a href="#property-managers"><span aria-hidden="true">04</span><strong>List a home</strong></a>
-</nav>
 
 
-<section class="hero longterm-art-hero" aria-labelledby="hero-title">
-  <img src="assets/lake-dardanelle-sunset.jpg" alt="Lake Dardanelle in Russellville, Arkansas" width="1920" height="910" fetchpriority="high">
-  <div class="wrap hero-content longterm-hero-stage">
-    <div class="longterm-hero-copy">
-    <p class="eyebrow">Russellville, Arkansas rental search</p>
-    <h1 id="hero-title">Find a place to live.<br>Without checking ten websites.</h1>
-    <p class="hero-copy">Search rental homes and apartments from multiple local property managers in one place. Compare the basics here, then verify the current details with the listing source.</p>
-    <div class="hero-actions">
-      <a class="button primary" href="#filters">Search rentals ↓</a>
-      <a class="button secondary" href="sms:+14799707301">Tell us what you need</a>
-    </div>
-  </div>
-    <aside class="longterm-hero-atlas" aria-labelledby="longterm-atlas-title">
-      <div class="longterm-atlas-head"><span>THE RIVER VALLEY / HOME FINDER</span><span class="longterm-atlas-seal" aria-hidden="true">R↗</span></div>
-      <div class="longterm-atlas-art" aria-hidden="true">
-      <svg viewBox="0 0 640 260" fill="none" focusable="false" xmlns="http://www.w3.org/2000/svg">
-        <defs><linearGradient id="lt-sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e6eee0"/><stop offset="1" stop-color="#bfd8ca"/></linearGradient></defs>
-        <rect width="640" height="260" fill="url(#lt-sky)"/>
-        <circle cx="535" cy="45" r="28" fill="#edc482"/>
-        <path d="M0 131 75 99l73 26 90-43 78 44 92-37 88 42 80-38 64 42V260H0Z" fill="#adc6af"/>
-        <path d="M0 162Q104 120 208 157T423 145T640 157V260H0Z" fill="#7aa48d"/>
-        <path d="M0 211h640v49H0Z" fill="#d7d4bb"/>
-        <path d="M0 239h640" stroke="#a4b3a0" stroke-width="4" stroke-dasharray="15 16"/>
-        <g stroke="#285548" stroke-width="4" stroke-linejoin="round">
-          <path d="M44 143 136 78l90 65v75H44Z" fill="#f2e2c2"/>
-          <path d="m32 148 104-79 105 79" stroke="#b96e4e" stroke-width="11"/>
-          <path d="M115 176h43v42h-43z" fill="#386b60"/>
-          <path d="M60 160h33v30H60z" fill="#a9c6c0"/>
-          <path d="M175 160h30v30h-30z" fill="#a9c6c0"/>
-        </g>
-        <g stroke="#285548" stroke-width="4">
-          <path d="M267 107h127v111H267z" fill="#e4cfac"/>
-          <path d="M258 104h145v14H258z" fill="#b97958"/>
-          <path d="M283 130h32v30h-32zM344 130h32v30h-32zM283 172h32v28h-32zM344 172h32v28h-32z" fill="#a9c9be"/>
-          <path d="M320 218v-49h22v49" fill="#6d8f81"/>
-        </g>
-        <g stroke="#285548" stroke-width="4" stroke-linejoin="round">
-          <path d="M430 143 470 112l41 31 42-31 41 31v75H430Z" fill="#f0dfbd"/>
-          <path d="m423 146 47-41 41 35 42-35 49 41" stroke="#b97555" stroke-width="8"/>
-          <path d="M468 177h20v41h-20zM554 177h20v41h-20z" fill="#416e63"/>
-          <path d="M440 153h20v18h-20zM521 153h20v18h-20z" fill="#bad7cb"/>
-        </g>
-        <g fill="#2a5b49"><path d="m12 217 19-65 18 65h-12v14H24v-14zM614 218l15-63 17 63h-10v13h-12v-13z"/></g>
-      </svg>
-      <span class="longterm-atlas-art-caption">Original neighborhood illustration · Not listed rental properties</span>
-    </div>
-      <div class="longterm-atlas-body">
-        <span class="longterm-atlas-kicker">01 / FIND YOUR STARTING POINT</span>
-        <h2 id="longterm-atlas-title">A place for <em>your next chapter.</em></h2>
-        <p>Choose a home style to open the existing rental search with that filter selected.</p>
-        <nav class="longterm-atlas-links" aria-label="Search by home style">
-          <a href="?type=House#filters"><span>Houses</span><span aria-hidden="true">↗</span></a>
-          <a href="?type=Apartment#filters"><span>Apartments</span><span aria-hidden="true">↗</span></a>
-          <a href="?type=Townhouse#filters"><span>Townhomes</span><span aria-hidden="true">↗</span></a>
-        </nav>
-        <small>Directory shortcuts, not confirmed vacancies. Verify each listing with its source.</small>
-      </div>
-    </aside>
-  </div>
-</section>
 
-<div class="market-strip">
-  <div class="wrap market-box">
-    <div class="market-stat"><strong><span id="inventoryCount">—</span> rentals</strong><span>in the current index</span></div>
-    <div class="market-stat"><strong><span id="managerCount">—</span> sources</strong><span>local managers indexed</span></div>
-    <p class="market-note">Russellville.Rent is building a local rental index. Availability, fees, screening criteria and lease terms remain subject to confirmation with the property manager.</p>
-  </div>
-</div>
+
+
+
 
 <!-- Published-rent landscape: calculated only from existing index records, never vacancies. -->
-<section class="rent-landscape" id="rent-landscape" aria-labelledby="rent-landscape-title" hidden>
+
+
+<main id="main" class="wrap">
+
+  <section class="search-section" aria-labelledby="search-title">
+
+    <header class="housing-heading"><a class="housing-directory" href="/">All rentals</a><h1 id="search-title">Homes for rent in Russellville</h1>
+<p><span id="inventoryCount">—</span> listings from <span id="managerCount">—</span> property managers. Check openings directly with the manager.</p></header>
+
+
+    <form id="filters" class="housing-filters" role="search">
+<label class="housing-query">Address or manager<input id="q" type="search" placeholder="Street, address, or manager"></label>
+<label id="minimum-filter" class="housing-extra"><span id="minRentLabel">Min rent ($)</span><input id="minRent" type="number" min="0" step="0.01" inputmode="decimal" placeholder="No minimum"></label>
+<label><span id="maxRentLabel">Max rent ($)</span><input id="maxRent" type="number" min="0" step="0.01" inputmode="decimal" placeholder="No maximum"></label>
+<label>Bedrooms<select id="beds"><option value="">Any</option><optgroup label="Exact bedrooms"><option value="eq0">Studio</option><option value="eq1">1 bedroom</option><option value="eq2">2 bedrooms</option><option value="eq3">3 bedrooms</option><option value="eq4">4 bedrooms</option><option value="eq5">5 bedrooms</option><option value="eq6">6 bedrooms</option></optgroup><optgroup label="Minimum bedrooms"><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option><option value="5">5+</option><option value="6">6+</option></optgroup></select></label>
+<label id="type-filter" class="housing-extra">Home type<select id="type"><option value="">Any type</option></select></label>
+<label id="manager-filter" class="housing-extra">Manager<select id="manager"><option value="">Any manager</option></select></label>
+<button type="button" id="moreHousingFilters" class="housing-reset" aria-expanded="false" aria-controls="minimum-filter type-filter manager-filter" hidden>More filters</button>
+<button class="housing-reset" type="reset">Clear filters</button></form>
+
+    <div class="housing-summary"><div class="search-chips" id="activeFilters" aria-label="Active rental search filters"></div><button type="button" id="copySearch" hidden>Copy search link</button><span id="shareStatus" role="status"></span><label id="shareFallbackWrap" hidden>Search link<input id="shareFallback" type="text" readonly></label></div>
+
+    <div class="toolbar">
+      <div id="resultCount" class="results-count" role="status" aria-live="polite">Loading rentals…</div>
+      <div class="toolbar-controls">
+        <div id="layoutSwitch" class="layout-switch" role="group" aria-label="Rental result layout" hidden>
+          <button type="button" data-layout="cards" aria-pressed="true" aria-controls="listings"><span class="layout-icon" aria-hidden="true">▦</span> Gallery</button>
+          <button type="button" data-layout="rows" aria-pressed="false" aria-controls="listings"><span class="layout-icon" aria-hidden="true">☷</span> Compare</button>
+        </div>
+        <select id="sort" class="sort" aria-label="Sort rentals">
+          <option value="rent-asc">Rent: low to high</option>
+          <option value="rent-desc">Rent: high to low</option>
+          <option value="beds">Most bedrooms</option>
+        </select>
+      </div>
+    </div>
+
+
+
+    <div id="listings" class="listings" aria-live="polite"></div>
+<div id="empty" class="empty rental-empty-journey" hidden>
+      <div class="rental-empty-copy">
+        <span class="rental-empty-kicker">R↗ / THE RIVER VALLEY RENTAL DESK</span>
+        <h3>No matching rentals.</h3>
+        <p>Change the filters or text Russellville.Rent and tell us what you need.</p>
+        <div class="rental-empty-actions">
+          <a class="rental-empty-primary" href="#filters">Adjust your search <span aria-hidden="true">↗</span></a>
+          <a class="rental-empty-secondary" href="#sources">Check listing sources <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="rental-empty-help">A narrow search may have no indexed listings. Try a wider rent range or fewer requirements. Vacancies are not verified in real time.</p>
+        <a class="rental-empty-contact button ghost" href="sms:+14799707301">Text Russellville.Rent <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="rental-empty-scene" aria-hidden="true">
+        <div class="rental-empty-scene-top"><span>THE SEARCH CONTINUES</span><span>01 / R↗</span></div>
+        <svg viewBox="0 0 500 370" xmlns="http://www.w3.org/2000/svg" focusable="false">
+          <circle cx="376" cy="86" r="60" fill="#efd09a"/>
+          <path d="M0 201Q92 113 173 170t155-27q95-54 172 24v203H0Z" fill="#a6bfa8"/>
+          <path d="M0 241q128-82 249-17t251-26v172H0Z" fill="#6e9b80"/>
+          <path d="M0 301q109-51 214-10t286-34v113H0Z" fill="#346752"/>
+          <path d="M0 343q126-21 248-2t252-31v60H0Z" fill="#204e3f"/>
+          <path d="m114 198 138-106 140 106" stroke="#173e34" stroke-width="14" fill="none" stroke-linejoin="round"/>
+          <path d="m131 198 121-92 122 92v141H131Z" fill="#f9efdb" stroke="#173e34" stroke-width="8"/>
+          <rect x="232" y="241" width="61" height="98" rx="3" fill="#2d6653"/>
+          <circle cx="280" cy="291" r="4.5" fill="#f4d18c"/>
+          <rect x="159" y="225" width="54" height="48" fill="#a0c6b8" stroke="#2b6152" stroke-width="7"/>
+          <path d="M186 225v48m-27-24h54" stroke="#f8e8ca" stroke-width="4"/>
+          <rect x="314" y="225" width="37" height="48" fill="#a0c6b8" stroke="#2b6152" stroke-width="7"/>
+          <path d="M332 225v48" stroke="#f8e8ca" stroke-width="4"/>
+          <path d="M74 343h355" stroke="#efd09a" stroke-width="7" stroke-linecap="round"/>
+        </svg>
+        <div class="rental-empty-scene-caption"><strong>Still looking for the right place?</strong><span>River Valley illustration · Not an available property or listing photograph.</span></div>
+      </div>
+    </div>
+<div class="compare-intro" id="compareIntro">
+      <div><p class="compare-label">The renter's field guide / Side by side</p><p><strong>Found a few possible homes?</strong> Pin up to three listings to compare published rent, layout and listing sources.</p></div>
+      <a href="#compareDesk" id="compareJump" hidden>Review <span id="compareCount">0</span> pinned rentals ↓</a>
+      <p id="compareStatus" class="compare-status" role="status" aria-live="polite"></p>
+    </div>
+
+    <!-- Persistent shortlist shortcut: a visual bridge from pinned cards to the existing comparison. -->
+    <aside class="compare-tray" id="compareTray" aria-label="Pinned rental comparison shortcut" hidden>
+      <span class="compare-tray-emblem" aria-hidden="true">R↗</span>
+      <span class="compare-tray-story">
+        <small>THE RIVER VALLEY / YOUR SHORTLIST</small>
+        <strong><span id="compareTrayCount">0</span> of 3 rentals pinned</strong>
+      </span>
+      <a class="compare-tray-open" href="#compareDesk">Review <span class="compare-tray-open-full">comparison</span><span aria-hidden="true">↗</span></a>
+    </aside>
+    <section class="compare-desk" id="compareDesk" aria-labelledby="compareHeading" hidden>
+      <div class="compare-desk-header"><div><p class="eyebrow">Your shortlist / The River Valley</p><h2 id="compareHeading">The right place is in the <em>details.</em></h2><p>Compare what current sources publish, then check actual openings and terms with the manager.</p></div><button type="button" class="compare-clear" id="compareClear">Clear comparison</button></div>
+      <div class="compare-choices" id="compareChoices"></div>
+      <p class="compare-desk-note">This is not an availability check, booking or application. Monthly rent may exclude utilities, deposits or other fees; generic images do not show the actual property. Confirm all terms with the source.</p>
+    </section>
+    <!-- Task-led no-results recovery; scenery is illustrative, not inventory. -->
+
+
+    <div class="notice">
+      <strong>Important:</strong> This index summarizes publicly available rental information and identifies the original listing source. Confirm availability, pricing, application requirements and all lease terms before relying on a listing. Property managers can request corrections or removal at any time.
+    </div>
+  </section>
+
+
+  <details class="housing-guides"><summary>Browse by price or home type</summary><section class="rent-landscape" id="rent-landscape" aria-labelledby="rent-landscape-title" hidden>
   <div class="wrap rent-landscape-shell">
     <div class="rent-landscape-story">
       <span class="rent-landscape-kicker">THE RIVER VALLEY / RENTAL PRICE ATLAS</span>
@@ -1716,12 +1749,9 @@ main .owner-band.owner-fieldnote{
     </div>
   </div>
 </section>
-
-<main id="main" class="wrap">
-  <section class="rental-paths" aria-labelledby="rental-paths-title"><div class="rental-paths-heading"><div><p class="rental-paths-kicker">The River Valley / Find your fit</p><h2 id="rental-paths-title">What feels like home?</h2></div><p>Start with a kind of place. We will open the existing rental search with that filter ready to explore.</p></div><div class="rental-paths-grid"><a class="rental-path" href="?type=House#filters"><div class="rental-path-header"><span class="rental-path-index">01 / HOUSES</span><svg viewBox="0 0 76 64" aria-hidden="true" focusable="false"><path d="M5 31 38 6 71 31 M13 28v30h50V28 M30 58V38h16v20 M19 32h8v9h-8 M49 32h8v9h-8"/></svg></div><div class="rental-path-content"><h3>Houses</h3><p>Start with standalone-home listings.</p><span class="rental-path-action">Browse houses ↗</span></div></a>
+<section class="rental-paths" aria-labelledby="rental-paths-title"><div class="rental-paths-heading"><div><p class="rental-paths-kicker">The River Valley / Find your fit</p><h2 id="rental-paths-title">What feels like home?</h2></div><p>Start with a kind of place. We will open the existing rental search with that filter ready to explore.</p></div><div class="rental-paths-grid"><a class="rental-path" href="?type=House#filters"><div class="rental-path-header"><span class="rental-path-index">01 / HOUSES</span><svg viewBox="0 0 76 64" aria-hidden="true" focusable="false"><path d="M5 31 38 6 71 31 M13 28v30h50V28 M30 58V38h16v20 M19 32h8v9h-8 M49 32h8v9h-8"/></svg></div><div class="rental-path-content"><h3>Houses</h3><p>Start with standalone-home listings.</p><span class="rental-path-action">Browse houses ↗</span></div></a>
 <a class="rental-path" href="?type=Apartment#filters"><div class="rental-path-header"><span class="rental-path-index">02 / APARTMENTS</span><svg viewBox="0 0 76 64" aria-hidden="true" focusable="false"><path d="M14 58V10h48v48 M8 58h60 M23 20h9v10h-9z M44 20h9v10h-9z M23 37h9v10h-9z M44 37h9v10h-9z M34 58V43h8v15"/></svg></div><div class="rental-path-content"><h3>Apartments</h3><p>Browse units in apartment properties.</p><span class="rental-path-action">Browse apartments ↗</span></div></a>
 <a class="rental-path" href="?type=Townhouse#filters"><div class="rental-path-header"><span class="rental-path-index">03 / TOWNHOMES</span><svg viewBox="0 0 76 64" aria-hidden="true" focusable="false"><path d="M4 28 20 14 36 28 56 14 72 28 M8 26v32h64V26 M36 28v30 M18 37h9v9h-9z M48 37h9v9h-9z M14 58V47h8v11 M54 58V47h8v11"/></svg></div><div class="rental-path-content"><h3>Townhomes</h3><p>Explore townhome-style rental listings.</p><span class="rental-path-action">Browse townhomes ↗</span></div></a></div><p class="rental-paths-foot"><span>Photo: downtown Russellville. Decorative local backdrop, not a property listing.</span><span>All types and current vacancies remain subject to source verification. <a href="#filters">Use all filters ↗</a></span></p></section>
-  <section class="search-section" aria-labelledby="search-title">
 <section class="renter-shortcuts" aria-labelledby="shortcuts-title">
 <div class="shortcut-intro"><p class="eyebrow">Your search, your priorities</p><h3 id="shortcuts-title">Start with what matters.</h3><p>Choose a budget or bedroom starting point. Refine every detail with the filters below.</p></div>
 <div class="shortcut-controls">
@@ -1736,123 +1766,7 @@ main .owner-band.owner-fieldnote{
 <button type="button" data-quick-beds="two" aria-pressed="false">2+ bedrooms</button>
 <button type="button" data-quick-beds="three" aria-pressed="false">3+ bedrooms</button>
 </div></div></div></section>
-    <div class="section-head">
-      <div>
-        <p class="eyebrow">Residential rentals</p>
-        <h2 id="search-title">Search Russellville listings</h2>
-        <p>Houses, apartments, duplexes and other long-term rentals.</p>
-      </div>
-    </div>
-
-    
-    <form id="filters" class="filters rental-console" role="search">
-      <div class="rental-console-head">
-        <div class="rental-console-head-copy">
-          <span class="rental-console-overline">The Russellville rental desk / Find your next address</span>
-          <h3>Make the search <em>yours.</em></h3>
-          <p>Look up a property or manager, then narrow down the spaces that fit your budget and day-to-day needs.</p>
-        </div>
-        <aside class="rental-console-glance" aria-label="Matching rental records">
-          <span class="rental-console-landmark">RUSSELLVILLE, ARKANSAS <span aria-hidden="true">↗</span></span>
-          <div class="rental-console-glance-stat">
-            <strong id="consoleMatchCount" aria-live="off">—</strong>
-            <span>indexed rentals match your search</span>
-          </div>
-          <a href="#listings" class="rental-console-glance-link">View matching rentals <span aria-hidden="true">↗</span></a>
-          <small>Directory matches only. Confirm availability and terms with each source.</small>
-        </aside>
-      </div>
-      <div class="rental-console-body">
-        <div class="rental-console-find">
-          <div class="rental-console-step"><span>01 / START HERE</span><strong>Search the directory</strong><small>Street, manager, or property type</small></div>
-          <div class="field field-search">
-        <label for="q">Search</label>
-        <input id="q" type="search" placeholder="Address, manager, property type…">
-      </div>
-        </div>
-        <div class="rental-console-sections">
-          <fieldset class="rental-console-group">
-            <legend><span>02 / YOUR BUDGET</span> Set a price range</legend>
-            <p>Use the published monthly rent to narrow your results. Fees and utilities may cost extra.</p>
-            <div class="rental-console-pair"><div class="field">
-        <label for="minRent">Min rent</label>
-        <select id="minRent">
-          <option value="">No min</option><option value="500">$500</option><option value="750">$750</option>
-          <option value="1000">$1,000</option><option value="1250">$1,250</option><option value="1500">$1,500</option>
-        </select>
-      </div><div class="field">
-        <label for="maxRent">Max rent</label>
-        <select id="maxRent">
-          <option value="">No max</option><option value="750">$750</option><option value="1000">$1,000</option>
-          <option value="1250">$1,250</option><option value="1500">$1,500</option><option value="2000">$2,000</option>
-          <option value="2500">$2,500</option>
-        </select>
-      </div></div>
-          </fieldset>
-          <fieldset class="rental-console-group">
-            <legend><span>03 / YOUR SPACE</span> Choose the layout</legend>
-            <p>Pick a bedroom minimum and a property type, or leave either field open.</p>
-            <div class="rental-console-pair"><div class="field">
-        <label for="beds">Bedrooms</label>
-        <select id="beds"><option value="">Any</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select>
-      </div><div class="field">
-        <label for="type">Type</label>
-        <select id="type"><option value="">Any type</option></select>
-      </div></div>
-          </fieldset>
-        </div>
-      </div>
-      <div class="rental-console-foot">
-        <div class="rental-console-manager">
-          <span class="rental-console-foot-label">04 / PROPERTY SOURCE</span>
-          <div class="field">
-        <label for="manager">Manager</label>
-        <select id="manager"><option value="">Any manager</option></select>
-      </div>
-        </div>
-        <div class="rental-console-clear">
-          <span>Filters update the results below. Confirm current availability with each original source.</span>
-          <button class="reset" type="reset">Clear filters <span aria-hidden="true">↺</span></button>
-        </div>
-      </div>
-    </form>
-
-    <section class="search-summary" aria-labelledby="summary-title">
-      <div>
-        <p class="summary-kicker">Your rental search / At a glance</p>
-        <h3 id="summary-title">The details that matter.</h3>
-        <div class="search-chips" id="activeFilters" aria-label="Active rental search filters"><span class="search-chip search-chip--default">All Russellville rentals</span></div>
-      </div>
-      <div class="summary-actions">
-        <button class="summary-copy" type="button" id="copySearch" hidden>Copy search link <span aria-hidden="true">↗</span></button>
-        <p class="summary-hint">Share these search settings with someone. Listings and availability may change.</p>
-        <p class="summary-status" id="shareStatus" role="status" aria-live="polite"></p>
-        <div class="summary-fallback" id="shareFallbackWrap" hidden>
-          <label for="shareFallback">Select and copy this search link</label>
-          <input id="shareFallback" type="text" readonly>
-        </div>
-      </div>
-    </section>
-
-    <div class="toolbar">
-      <div id="resultCount" class="results-count" role="status" aria-live="polite">Loading rentals…</div>
-      <div class="toolbar-controls">
-        <div id="layoutSwitch" class="layout-switch" role="group" aria-label="Rental result layout" hidden>
-          <button type="button" data-layout="cards" aria-pressed="true" aria-controls="listings"><span class="layout-icon" aria-hidden="true">▦</span> Gallery</button>
-          <button type="button" data-layout="rows" aria-pressed="false" aria-controls="listings"><span class="layout-icon" aria-hidden="true">☷</span> Compare</button>
-        </div>
-        <select id="sort" class="sort" aria-label="Sort rentals">
-          <option value="rent-asc">Rent: low to high</option>
-          <option value="rent-desc">Rent: high to low</option>
-          <option value="beds">Most bedrooms</option>
-        </select>
-      </div>
-    </div>
-
-
-
-    <!-- Contextual listing wayfinder; links are functional without JavaScript. -->
-    <nav class="renter-route-desk" id="renter-route-desk" aria-label="Find your way through rental results">
+<nav class="renter-route-desk" id="renter-route-desk" aria-label="Find your way through rental results">
       <div class="renter-route-story"><span class="renter-route-glyph" aria-hidden="true">R↗</span><div>
         <small>THE RIVER VALLEY / RENTAL ROUTE</small>
         <strong>Keep your search in sight.</strong>
@@ -1864,71 +1778,8 @@ main .owner-band.owner-fieldnote{
         <a class="renter-route-link" href="#sources"><span>03 / THE SOURCE <b aria-hidden="true">↗</b></span><strong>Check providers</strong></a>
         <a class="renter-route-compare" id="renter-route-compare" href="#compareDesk" hidden>Review your pinned rentals ↗</a>
       </div>
-    </nav>
-
-    <div class="compare-intro" id="compareIntro">
-      <div><p class="compare-label">The renter's field guide / Side by side</p><p><strong>Found a few possible homes?</strong> Pin up to three listings to compare published rent, layout and listing sources.</p></div>
-      <a href="#compareDesk" id="compareJump" hidden>Review <span id="compareCount">0</span> pinned rentals ↓</a>
-      <p id="compareStatus" class="compare-status" role="status" aria-live="polite"></p>
-    </div>
-    <div id="listings" class="listings" aria-live="polite"></div>
-
-    <!-- Persistent shortlist shortcut: a visual bridge from pinned cards to the existing comparison. -->
-    <aside class="compare-tray" id="compareTray" aria-label="Pinned rental comparison shortcut" hidden>
-      <span class="compare-tray-emblem" aria-hidden="true">R↗</span>
-      <span class="compare-tray-story">
-        <small>THE RIVER VALLEY / YOUR SHORTLIST</small>
-        <strong><span id="compareTrayCount">0</span> of 3 rentals pinned</strong>
-      </span>
-      <a class="compare-tray-open" href="#compareDesk">Review <span class="compare-tray-open-full">comparison</span><span aria-hidden="true">↗</span></a>
-    </aside>
-    <section class="compare-desk" id="compareDesk" aria-labelledby="compareHeading" hidden>
-      <div class="compare-desk-header"><div><p class="eyebrow">Your shortlist / The River Valley</p><h2 id="compareHeading">The right place is in the <em>details.</em></h2><p>Compare what current sources publish, then check actual openings and terms with the manager.</p></div><button type="button" class="compare-clear" id="compareClear">Clear comparison</button></div>
-      <div class="compare-choices" id="compareChoices"></div>
-      <p class="compare-desk-note">This is not an availability check, booking or application. Monthly rent may exclude utilities, deposits or other fees; generic images do not show the actual property. Confirm all terms with the source.</p>
-    </section>
-    <!-- Task-led no-results recovery; scenery is illustrative, not inventory. -->
-    <div id="empty" class="empty rental-empty-journey" hidden>
-      <div class="rental-empty-copy">
-        <span class="rental-empty-kicker">R↗ / THE RIVER VALLEY RENTAL DESK</span>
-        <h3>No matching rentals.</h3>
-        <p>Change the filters or text Russellville.Rent and tell us what you need.</p>
-        <div class="rental-empty-actions">
-          <a class="rental-empty-primary" href="#filters">Adjust your search <span aria-hidden="true">↗</span></a>
-          <a class="rental-empty-secondary" href="#sources">Check listing sources <span aria-hidden="true">↗</span></a>
-        </div>
-        <p class="rental-empty-help">A narrow search may have no indexed listings. Try a wider rent range or fewer requirements. Vacancies are not verified in real time.</p>
-        <a class="rental-empty-contact button ghost" href="sms:+14799707301">Text Russellville.Rent <span aria-hidden="true">↗</span></a>
-      </div>
-      <div class="rental-empty-scene" aria-hidden="true">
-        <div class="rental-empty-scene-top"><span>THE SEARCH CONTINUES</span><span>01 / R↗</span></div>
-        <svg viewBox="0 0 500 370" xmlns="http://www.w3.org/2000/svg" focusable="false">
-          <circle cx="376" cy="86" r="60" fill="#efd09a"/>
-          <path d="M0 201Q92 113 173 170t155-27q95-54 172 24v203H0Z" fill="#a6bfa8"/>
-          <path d="M0 241q128-82 249-17t251-26v172H0Z" fill="#6e9b80"/>
-          <path d="M0 301q109-51 214-10t286-34v113H0Z" fill="#346752"/>
-          <path d="M0 343q126-21 248-2t252-31v60H0Z" fill="#204e3f"/>
-          <path d="m114 198 138-106 140 106" stroke="#173e34" stroke-width="14" fill="none" stroke-linejoin="round"/>
-          <path d="m131 198 121-92 122 92v141H131Z" fill="#f9efdb" stroke="#173e34" stroke-width="8"/>
-          <rect x="232" y="241" width="61" height="98" rx="3" fill="#2d6653"/>
-          <circle cx="280" cy="291" r="4.5" fill="#f4d18c"/>
-          <rect x="159" y="225" width="54" height="48" fill="#a0c6b8" stroke="#2b6152" stroke-width="7"/>
-          <path d="M186 225v48m-27-24h54" stroke="#f8e8ca" stroke-width="4"/>
-          <rect x="314" y="225" width="37" height="48" fill="#a0c6b8" stroke="#2b6152" stroke-width="7"/>
-          <path d="M332 225v48" stroke="#f8e8ca" stroke-width="4"/>
-          <path d="M74 343h355" stroke="#efd09a" stroke-width="7" stroke-linecap="round"/>
-        </svg>
-        <div class="rental-empty-scene-caption"><strong>Still looking for the right place?</strong><span>River Valley illustration · Not an available property or listing photograph.</span></div>
-      </div>
-    </div>
-
-    <div class="notice">
-      <strong>Important:</strong> This index summarizes publicly available rental information and identifies the original listing source. Confirm availability, pricing, application requirements and all lease terms before relying on a listing. Property managers can request corrections or removal at any time.
-    </div>
-  </section>
-
-
-  <section class="renter-guide" id="renter-guide" aria-labelledby="renter-guide-title">
+    </nav></details>
+<section class="renter-guide" id="renter-guide" aria-labelledby="renter-guide-title">
     <div class="renter-guide-scene">
       <div>
         <span class="renter-guide-kicker">THE RIVER VALLEY / BEFORE YOU APPLY</span>
@@ -2203,7 +2054,7 @@ function sync(){
 budgetButtons.forEach(b=>{const pair=budget[b.dataset.quickBudget];b.setAttribute('aria-pressed',String(min.value===pair[0]&&max.value===pair[1]));});
 bedButtons.forEach(b=>b.setAttribute('aria-pressed',String(beds.value===bedrooms[b.dataset.quickBeds])));
 }
-budgetButtons.forEach(b=>b.addEventListener('click',()=>{[min.value,max.value]=budget[b.dataset.quickBudget];form.dispatchEvent(new Event('change',{bubbles:true}));sync();}));
+budgetButtons.forEach(b=>b.addEventListener('click',()=>{delete min.dataset.exclusive;delete max.dataset.exclusive;[min.value,max.value]=budget[b.dataset.quickBudget];form.dispatchEvent(new Event('change',{bubbles:true}));sync();}));
 bedButtons.forEach(b=>b.addEventListener('click',()=>{beds.value=bedrooms[b.dataset.quickBeds];form.dispatchEvent(new Event('change',{bubbles:true}));sync();}));
 form.addEventListener('input',sync);form.addEventListener('change',sync);form.addEventListener('reset',()=>setTimeout(sync,0));sync();
 })();
@@ -2319,6 +2170,7 @@ form.addEventListener('input',sync);form.addEventListener('change',sync);form.ad
 })();
 </script>
 
+<script src="assets/rental-query.js" defer></script>
 <script src="assets/app.js" defer></script>
 </body>
 </html>
