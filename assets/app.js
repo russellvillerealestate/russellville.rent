@@ -98,7 +98,8 @@ function render(){
   document.querySelectorAll(".property-photo").forEach(img=>img.addEventListener("error",()=>replaceFailedPhoto(img),{once:true}));
   $("empty").hidden=state.filtered.length!==0;
   $("resultCount").textContent=`${state.filtered.length} rental${state.filtered.length===1?"":"s"} shown`;
-  $("phoneShowRentals").textContent=`Show ${state.filtered.length} rental${state.filtered.length===1?"":"s"}`;
+  const phoneSubmit=$("phoneShowRentals");
+  if(phoneSubmit)phoneSubmit.textContent=`Show ${state.filtered.length} rental${state.filtered.length===1?"":"s"}`;
   const consoleMatch=$("consoleMatchCount");
   if(consoleMatch)consoleMatch.textContent=String(state.filtered.length);
   $("inventoryCount").textContent=state.listings.length;
@@ -158,7 +159,8 @@ function renderSearchSummary(){
   }
   if($("sort").value!=="rent-asc")chips.push({label:"Sorted: "+$("sort").selectedOptions[0].textContent,key:"sort"});
   const filterCount=chips.filter(chip=>chip.key!=="sort").length;
-  $("phoneFilterCount").textContent=filterCount ? " ("+filterCount+")" : "";
+  const phoneCount=$("phoneFilterCount");
+  if(phoneCount)phoneCount.textContent=filterCount ? " ("+filterCount+")" : "";
   const fragment=document.createDocumentFragment();
   if(!chips.length){
     const span=document.createElement("span");
@@ -336,17 +338,19 @@ const compactFilters=window.matchMedia("(max-width:600px)");
 const filterToggle=$("phoneHousingFilters");
 const regularSortParent=$("sort").parentElement;
 function openPhoneFilters(open) {
+  if(!filterToggle)return;
   filterToggle.setAttribute("aria-expanded",String(open));
   $("filters").hidden=compactFilters.matches && !open;
 }
 function fitHousingControls() {
+  if(!filterToggle)return;
   $("housingPhoneBar").hidden=!compactFilters.matches;
   $("phoneShowRentals").hidden=!compactFilters.matches;
   const parent=compactFilters.matches ? $("phoneSortSlot") : regularSortParent;
   parent.appendChild($("sort"));
   openPhoneFilters(compactFilters.matches && location.hash==="#filters");
 }
-filterToggle.addEventListener("click",()=>openPhoneFilters(filterToggle.getAttribute("aria-expanded")!=="true"));
+filterToggle?.addEventListener("click",()=>openPhoneFilters(filterToggle.getAttribute("aria-expanded")!=="true"));
 document.addEventListener("click",event=>{
   if(compactFilters.matches && event.target.closest('a[href="#filters"]'))openPhoneFilters(true);
 });
@@ -358,14 +362,14 @@ fitHousingControls();
 $("filters").addEventListener("submit",event=>{
   event.preventDefault();
   apply();
-  if(compactFilters.matches){
+  if(compactFilters.matches && filterToggle){
     openPhoneFilters(false);
     $("resultCount").focus({preventScroll:true});
     $("resultCount").scrollIntoView({block:"nearest"});
   }
 });
 $("filters").addEventListener("keydown",event=>{
-  if(event.key==="Escape" && compactFilters.matches){
+  if(event.key==="Escape" && compactFilters.matches && filterToggle){
     event.preventDefault();
     openPhoneFilters(false);
     filterToggle.focus();
