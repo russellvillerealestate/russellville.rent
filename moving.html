@@ -1446,7 +1446,8 @@ body:not(.move-scan-on) #nearby .dispatch-caption{font-size:.55rem;line-height:1
  ['pickup-uhaul-clarksville','regional','truck trailer'],
  ['pickup-uhaul-morrilton','regional','truck trailer'],
  ['pickup-uhaul-atkins','regional','truck trailer'],
- ['pickup-uhaul-pelsor','regional','truck trailer']
+ ['pickup-uhaul-pelsor','regional','truck trailer'],
+ ['pickup-uhaul-jacks-clarksville','regional','truck trailer']
  ];
  const entries=data.map(([id,place,kinds])=>({card:document.getElementById(id),place,kinds:kinds.split(' ')}));
  if(!chooser || entries.some(entry=>!entry.card))return;
