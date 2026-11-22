@@ -200,3 +200,126 @@ body.directory-page main {
   .directory-page .directory-top nav { gap: .5rem; }
   .directory-page .directory-top nav a { white-space: nowrap; word-break: normal; font-size: .76rem; }
 }
+
+/* Provider marks stay attached to their names in the directory and in expanded records. */
+.directory-page .provider-brand {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 5.35rem;
+  height: 3.4rem;
+  padding: .24rem;
+  overflow: hidden;
+  vertical-align: middle;
+  background: #fff;
+  border: 1px solid #d8dfd4;
+  border-radius: .5rem;
+}
+.directory-page .provider-brand img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  object-fit: contain;
+}
+.directory-page .provider-brand-dark { background: #25463f; border-color: #25463f; }
+.directory-page .provider-brand:empty {
+  background: #eef2ea;
+  border-color: #dce3d7;
+}
+.directory-page .provider-brand:empty::before {
+  content: attr(data-initials);
+  color: #526758;
+  font: 600 1.18rem/1 Georgia, serif;
+  letter-spacing: .05em;
+}
+.directory-page h2 > .provider-brand { margin-inline-end: .65rem; }
+.directory-page .with-provider-brand {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "title title" "meta action";
+  align-items: center;
+  gap: .4rem .7rem;
+}
+.with-provider-brand .record-identity { display: contents; }
+.with-provider-brand [role="heading"] { grid-area: title; min-width: 0; }
+.directory-page .with-provider-brand .record-toggle {
+  display: inline-flex;
+  gap: .7rem;
+  align-items: center;
+  padding: 0;
+  max-width: 100%;
+  text-decoration: none;
+}
+.directory-page .with-provider-brand .record-toggle::after { content: none; }
+.record-brand-name { position: relative; min-width: 0; padding-inline-end: 1rem; }
+.record-brand-name::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: .15rem;
+  top: 43%;
+  width: .36rem;
+  height: .36rem;
+  border: solid var(--directory-green);
+  border-width: 0 1.6px 1.6px 0;
+  transform: rotate(45deg);
+}
+.record-open .record-brand-name::after { transform: rotate(225deg); top: 52%; }
+.record-toggle:hover .record-brand-name { text-decoration: underline; }
+.record-brand-meta { grid-area: meta; min-width: 0; }
+.directory-page .with-provider-brand .record-action { grid-area: action; }
+.directory-page .with-provider-brand .record-action span { display: none; }
+.directory-page .with-provider-brand .record-mobile-number { display: block; }
+.directory-page .record-submit-logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--directory-green);
+  font: 600 .87rem/1.3 system-ui, sans-serif;
+  text-decoration: underline;
+}
+@media (min-width: 23.01rem) {
+  .directory-page .with-provider-brand {
+    --logo-width: 5.35rem;
+    --logo-height: 3.4rem;
+    position: relative;
+    padding-inline-start: calc(var(--logo-width) + .7rem);
+    min-height: calc(var(--logo-height) + .25rem);
+    row-gap: 0;
+  }
+  .with-provider-brand .provider-brand {
+    position: absolute;
+    inset-inline-start: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: var(--logo-width);
+    height: var(--logo-height);
+  }
+  .directory-page .with-provider-brand .record-toggle { position: static; }
+}
+@media (min-width: 43.01rem) {
+  .directory-page .with-provider-brand { grid-template-areas: "title action" "meta action"; }
+  .record-open .with-provider-brand { --logo-width: 7rem; --logo-height: 4.5rem; }
+}
+@media (max-width: 23rem) {
+  .directory-page .provider-brand { width: 4.5rem; height: 3.05rem; }
+  .directory-page .with-provider-brand .record-toggle { gap: .55rem; }
+}
+body:not(.directory-ready) #storage-grid article > h2:has(> .provider-brand) {
+  display: flex;
+  align-items: flex-start;
+  gap: .55rem;
+  max-width: 100%;
+}
+body:not(.directory-ready) #storage-grid h2 > .provider-brand {
+  width: 3.3rem;
+  height: 2.4rem;
+  margin: 0;
+}
+@layer directory-layout {
+  @media (min-width: 43.01rem) and (max-width: 55rem) {
+    .directory-page #storage-grid.directory-records { grid-template-columns: minmax(0, 1fr) !important; }
+  }
+}

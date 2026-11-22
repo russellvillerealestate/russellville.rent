@@ -145,10 +145,33 @@ function setupProviderDirectory(intro) {
     row.toggle.setAttribute("aria-expanded", String(open));
   }
 
+  function titleBrand(title, name) {
+    if (!intro.hasAttribute("data-provider-brands")) return null;
+    let brand = title.querySelector(".provider-brand");
+    if (!brand) {
+      brand = document.createElement("span");
+      brand.className = "provider-brand";
+      brand.setAttribute("aria-hidden", "true");
+      const words = name.split(" — ")[0].match(/[\p{L}\p{N}]+/gu) || [];
+      brand.dataset.initials = words.slice(0, 2).map(word => word[0].toUpperCase()).join("");
+    }
+    const image = brand.querySelector("img");
+    if (image) {
+      function useInitials() {
+        image.remove();
+        brand.classList.remove("provider-brand-dark");
+      }
+      image.addEventListener("error", useInitials, { once: true });
+      if (image.complete && !image.naturalWidth) useInitials();
+    }
+    return brand;
+  }
+
   for (const card of document.querySelectorAll(intro.dataset.providerCards)) {
     const title = card.querySelector("h2,h3,h4");
     if (!title) continue;
     const name = title.textContent.trim();
+    const brand = titleBrand(title, name);
     const call = card.querySelector('a[href^="tel:"]');
     const sites = [...card.querySelectorAll('a[href^="https://"],a[href^="http://"]')];
     const site = sites.find(a => /website|official operator|official rental|official site/i.test(a.textContent)) ||
@@ -160,34 +183,52 @@ function setupProviderDirectory(intro) {
     const locationText = shortLocation(card);
     const searchable = clean([name, card.textContent, locationText].join(" "));
     if (!card.id) card.id = "provider-record-" + (rows.length + 1);
+    if (brand && !brand.dataset.logoSource) {
+      const submit = document.createElement("a");
+      submit.className = "record-submit-logo";
+      submit.href = "/#contact";
+      submit.textContent = "Send this business’s logo";
+      card.append(submit);
+    }
     const parts = [...card.children];
     const ids = parts.map((part, index) => part.id || (part.id = card.id + "-part-" + (index + 1)));
     const head = document.createElement("div");
     head.className = "directory-contact-head";
     const identity = document.createElement("div");
     identity.className = "record-identity";
+    const metadata = brand ? document.createElement("div") : identity;
     const heading = document.createElement("div");
     heading.setAttribute("role", "heading");
     heading.setAttribute("aria-level", "2");
     const toggle = document.createElement("button");
     toggle.className = "record-toggle";
     toggle.type = "button";
-    toggle.textContent = name;
+    if (brand) {
+      head.classList.add("with-provider-brand");
+      const label = document.createElement("span");
+      label.className = "record-brand-name";
+      label.textContent = name;
+      toggle.append(brand, label);
+      metadata.className = "record-brand-meta";
+    } else {
+      toggle.textContent = name;
+    }
     toggle.setAttribute("aria-expanded", "false");
     toggle.setAttribute("aria-controls", ids.join(" "));
     heading.append(toggle);
     identity.append(heading);
+    if (brand) identity.append(metadata);
     if (locationText) {
       const locationLine = document.createElement("p");
       locationLine.className = "record-location";
       locationLine.textContent = locationText;
-      identity.append(locationLine);
+      metadata.append(locationLine);
     }
     if (restriction) {
       const note = document.createElement("p");
       note.className = "record-location";
       note.textContent = restriction;
-      identity.append(note);
+      metadata.append(note);
     }
     head.append(identity);
     if (call || site || hubContact) {
@@ -205,7 +246,7 @@ function setupProviderDirectory(intro) {
         const smallNumber = document.createElement("span");
         smallNumber.className = "record-mobile-number";
         smallNumber.textContent = label;
-        identity.append(smallNumber);
+        metadata.append(smallNumber);
       } else {
         action.textContent = hubContact ? "Ask directory" : "Website";
         action.setAttribute("aria-label", hubContact ? "Contact Russellville.Rent about " + name : "Visit website for " + name);
