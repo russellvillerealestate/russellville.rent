@@ -940,11 +940,82 @@ footer a{font-weight:750}
   .moment-wayfinder a:hover{transform:none}
 }
 
+
+/* 2026-11-21 | The pocket photo reel: 20 provider profiles need persistent
+   category-level wayfinding without shrinking the cinematic desktop story.
+   StayARV reference: confident forest and warm brass, generous large targets;
+   Nielsen Norman Group: grouping and visual hierarchy; web.dev: responsive
+   reflow; WCAG 2.2: keyboard focus, target sizing, reduced motion.
+   No new imagery, network requests, scripts, rates or provider claims. */
+.booth-pocket-reel{display:none}
+@media screen and (max-width:700px) and (min-height:560px) and (orientation:portrait){
+  body{padding-bottom:calc(110px + env(safe-area-inset-bottom,0px))}
+  .booth-pocket-reel{
+    position:fixed;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:4px;z-index:1000;
+    left:calc(8px + env(safe-area-inset-left,0px));
+    right:calc(8px + env(safe-area-inset-right,0px));
+    bottom:calc(9px + env(safe-area-inset-bottom,0px));
+    padding:12px 7px 7px;border:1px solid #e2c68b;border-radius:18px;
+    background:#0f342d;box-shadow:0 18px 48px #071b17a8;
+  }
+  .booth-pocket-reel:before{
+    content:"";pointer-events:none;position:absolute;
+    left:20px;right:20px;top:5px;height:3px;
+    background:repeating-linear-gradient(90deg,#efcc87 0 7px,transparent 7px 20px);
+    opacity:.76;
+  }
+  .booth-pocket-reel a{
+    min-width:0;min-height:68px;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:5px;
+    padding:8px 2px;border:1px solid #598069;border-radius:11px;
+    background:#1f4b3e;color:#fff8e9;text-decoration:none;
+    transition:background .18s ease;
+  }
+  .booth-pocket-reel a:first-child{
+    background:#f1d7a1;border-color:#f1d7a1;color:#123a2e;
+  }
+  .booth-pocket-reel a small{
+    font:800 .54rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;
+    letter-spacing:.055em;white-space:nowrap;color:#e2c28a;
+  }
+  .booth-pocket-reel a:first-child small{color:#684b26}
+  .booth-pocket-reel a strong{
+    font:850 clamp(.68rem,2.5vw,.8rem)/1.15 system-ui,-apple-system,"Segoe UI",sans-serif;
+    letter-spacing:-.015em;white-space:nowrap;
+  }
+  .booth-pocket-reel a:hover{background:#2c6a51;color:#fff8e9}
+  .booth-pocket-reel a:first-child:hover{background:#ffe5b0;color:#123a2e}
+  .booth-pocket-reel a:focus-visible{
+    outline:3px solid #fff4d9;outline-offset:-4px;background:#34765a;
+  }
+  .booth-pocket-reel a:first-child:focus-visible{
+    outline-color:#173d30;background:#ffe5b0;color:#123a2e;
+  }
+  /* Keep editing fields unobstructed when the touch keyboard appears. */
+  body:has(input:focus,textarea:focus,select:focus) .booth-pocket-reel{display:none}
+}
+@media screen and (max-width:355px) and (min-height:560px) and (orientation:portrait){
+  .booth-pocket-reel{left:5px;right:5px;padding-inline:5px;gap:3px}
+  .booth-pocket-reel a{min-height:65px}
+  .booth-pocket-reel a small{font-size:.49rem;letter-spacing:.02em}
+  .booth-pocket-reel a strong{font-size:.67rem}
+}
+@media(prefers-reduced-motion:reduce){.booth-pocket-reel a{transition:none}}
+@media print{.booth-pocket-reel{display:none!important}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to rental options</a>
 <header><div class="wrap header-inner"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
+<!-- A pocket-sized four-stop reel for the long, twenty-provider photo booth guide.
+     Full-size editorial wayfinding remains on wider and short-landscape screens. -->
+<nav class="booth-pocket-reel" aria-label="Photo booth guide: Russellville service, more providers, published prices and event planning">
+  <a href="#russellville"><small>01 / IN AREA</small><strong>Service</strong></a>
+  <a href="#more"><small>02 / WIDEN</small><strong>More</strong></a>
+  <a href="#price-snapshots"><small>03 / BUDGET</small><strong>Prices</strong></a>
+  <a href="#event-brief"><small>04 / DETAILS</small><strong>Plan</strong></a>
+</nav>
 <section class="hero" aria-labelledby="page-title"><div class="wrap hero-grid">
 <div><p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p><h1 id="page-title">Make the moment <em>memorable.</em></h1><p class="hero-copy">Photo and video booth rentals for weddings, school functions and celebrations. Explore local and regional options, then confirm packages and travel details with each provider.</p><nav class="hero-nav" aria-label="Jump to rental options"><a href="#russellville">Russellville service advertised ↓</a><a href="#more">More providers ↓</a><a href="#price-snapshots">Published prices ↓</a></nav><p class="booth-hero-provenance">Downtown Russellville scenery <span aria-hidden="true">/</span> Illustrated photo strip, not provider equipment or availability</p></div>
 <div class="photo-scene" aria-hidden="true">
