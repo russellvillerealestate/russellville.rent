@@ -870,6 +870,101 @@ h1{font-size:clamp(3.4rem,6.4vw,6.2rem);line-height:1.035;max-width:12ch;letter-
   .loan-pocket-routes{display:none!important}
 }
 
+
+/* 2026-11-21 · Separate verified school-only program from the three general
+   lending pathways. Scenic editorial hierarchy: StayARV forest/brass,
+   Nielsen Norman Group grouping, web.dev reflow, W3C WCAG 2.2 focus.
+   Decorative CSS notebook does not depict program inventory. */
+aside.explainer.school-loan-feature{
+ display:grid;grid-template-columns:minmax(0,.83fr) minmax(0,1.17fr);
+ grid-template-rows:minmax(0,1fr) auto;column-gap:0;row-gap:0;
+ position:relative;overflow:hidden;margin:clamp(60px,7vw,90px) 0 42px;
+ padding:0;border:1px solid #c3d4c3;border-radius:27px;
+ background:#fcfaf3;box-shadow:0 25px 56px #0a332827;
+}
+.school-loan-feature .school-loan-cover{
+ grid-column:1;grid-row:1/3;position:relative;isolation:isolate;
+ display:flex;flex-direction:column;min-width:0;min-height:540px;
+ padding:clamp(30px,3.8vw,47px);
+ background:radial-gradient(ellipse at 88% 77%,#3e7461,transparent 52%),
+ linear-gradient(145deg,#0b302d,#20503e 80%);color:#fff9ed;
+}
+.school-loan-cover:before{
+ content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+ background:repeating-linear-gradient(90deg,transparent 0 94px,#ffffff0a 95px 96px);
+}
+.school-loan-overline{padding:0 0 13px;border-bottom:1px solid #f1d29a7d;
+ color:#f0d7a2;font-size:.68rem;letter-spacing:.15em;font-weight:850;line-height:1.4}
+.school-loan-feature .school-loan-cover-title{
+ display:block;margin:clamp(34px,5vw,59px) 0 19px;
+ font:400 clamp(2.7rem,4.2vw,4.7rem)/.99 Georgia,"Times New Roman",serif;
+ letter-spacing:-.065em;color:#fff8ea;text-wrap:balance;
+}
+.school-loan-feature .school-loan-cover-title em{color:#f2d39a;font-weight:400}
+.school-loan-paper{
+ position:relative;display:flex;flex-direction:column;gap:12px;
+ width:min(75%,260px);min-height:155px;margin:14px 0 25px auto;
+ padding:23px 24px 18px;border-radius:5px 5px 16px 5px;
+ background:#f8f0dd;color:#193e33;transform:rotate(6deg);
+ box-shadow:-15px 14px 0 #dfc68e73,0 19px 30px #031d175e;
+}
+.school-loan-paper:before{content:"";position:absolute;inset:10px;border:1px solid #b8baa1;pointer-events:none}
+.school-loan-paper-mark{position:relative;font:850 1.8rem/1 system-ui,sans-serif;letter-spacing:-.09em;color:#1b5b46}
+.school-loan-paper-rule{position:relative;display:block;width:100%;height:1px;background:#acc1b0}
+.school-loan-paper-rule.short{width:60%}
+.school-loan-paper-foot{position:relative;margin-top:auto;color:#527666;font-size:.5rem;letter-spacing:.1em;font-weight:850}
+.school-loan-cover-foot{margin-top:auto;color:#e5f0e2;font-size:.72rem;line-height:1.5;letter-spacing:.065em}
+.school-loan-feature>div:not(.school-loan-cover){
+ grid-column:2;grid-row:1;min-width:0;
+ padding:clamp(36px,4.9vw,64px) clamp(27px,4.6vw,58px) 20px;
+}
+.school-loan-feature>div:not(.school-loan-cover)>strong{
+ display:block;max-width:24ch;margin:0 0 24px;
+ font:400 clamp(1.73rem,2.5vw,2.52rem)/1.17 Georgia,"Times New Roman",serif;
+ letter-spacing:-.04em;color:#123d33;
+}
+.school-loan-feature>div:not(.school-loan-cover)>p{
+ max-width:67ch;margin:0;color:#365448;font-size:clamp(.9rem,1.05vw,1rem);line-height:1.82;
+}
+.school-loan-feature>div:not(.school-loan-cover) p strong{color:#244d3b;font-size:inherit}
+.school-loan-feature>div:not(.school-loan-cover) a{
+ color:#145b47;font-weight:850;overflow-wrap:anywhere;text-underline-offset:3px
+}
+.school-loan-feature>div:not(.school-loan-cover) a:focus-visible{outline:3px solid #ad641f;outline-offset:4px}
+.school-loan-feature>.explainer-mark{
+ grid-column:2;grid-row:2;justify-self:start;align-self:end;
+ margin:12px clamp(27px,4.6vw,58px) 36px;padding:8px 15px;
+ border-radius:100px;background:#e5eddf;color:#29533c;
+ font-size:.71rem;line-height:1.5;letter-spacing:.1em;text-transform:uppercase;font-weight:900;
+}
+@media(max-width:850px){
+ aside.explainer.school-loan-feature{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto;margin-top:52px}
+ .school-loan-feature .school-loan-cover{grid-column:1;grid-row:1;min-height:310px;padding:29px 32px;overflow:hidden}
+ .school-loan-feature .school-loan-cover-title{margin:34px 0 0;max-width:17ch}
+ .school-loan-paper{position:absolute;right:18px;bottom:16px;width:210px;opacity:.54;transform:translateX(17%) rotate(7deg)}
+ .school-loan-cover-foot{margin-top:27px}
+ .school-loan-feature>div:not(.school-loan-cover){grid-column:1;grid-row:2;padding:30px 32px 10px}
+ .school-loan-feature>.explainer-mark{grid-column:1;grid-row:3;margin:16px 32px 33px}
+}
+@media(max-width:520px){
+ aside.explainer.school-loan-feature{margin:43px 0 32px;border-radius:18px}
+ .school-loan-feature .school-loan-cover{min-height:275px;padding:25px 24px}
+ .school-loan-overline{font-size:.58rem}
+ .school-loan-feature .school-loan-cover-title{font-size:clamp(2.65rem,10vw,3.52rem);margin-top:28px}
+ .school-loan-paper{width:135px;min-height:115px;right:0;bottom:17px;opacity:.27;padding:15px}
+ .school-loan-cover-foot{font-size:.65rem}
+ .school-loan-feature>div:not(.school-loan-cover){padding:28px 24px 10px}
+ .school-loan-feature>div:not(.school-loan-cover)>strong{font-size:1.8rem}
+ .school-loan-feature>.explainer-mark{margin:16px 24px 29px}
+}
+@media print{
+ aside.explainer.school-loan-feature{display:block!important;margin:22px 0!important;border:1px solid #888;box-shadow:none;break-inside:avoid}
+ .school-loan-feature .school-loan-cover{display:none!important}
+ .school-loan-feature>div:not(.school-loan-cover){padding:22px!important}
+ .school-loan-feature>div:not(.school-loan-cover)>strong,.school-loan-feature>div:not(.school-loan-cover)>p{color:#111}
+ .school-loan-feature>.explainer-mark{display:inline-block;margin:6px 22px 20px}
+}
+
 </style>
 </head>
 <body>
@@ -992,7 +1087,19 @@ h1{font-size:clamp(3.4rem,6.4vw,6.2rem);line-height:1.035;max-width:12ch;letter-
 </div>
 </article>
 </div></section>
-<aside class="explainer" aria-label="Additional school-district assistive technology loan resource">
+<aside class="explainer school-loan-feature" aria-label="Additional school-district assistive technology loan resource">
+<div class="school-loan-cover" aria-hidden="true">
+  <span class="school-loan-overline">THE RIVER VALLEY / EDUCATION ACCESS</span>
+  <strong class="school-loan-cover-title">Tools for<br><em>school teams.</em></strong>
+  <div class="school-loan-paper">
+    <span class="school-loan-paper-mark">R↗</span>
+    <span class="school-loan-paper-rule"></span>
+    <span class="school-loan-paper-rule"></span>
+    <span class="school-loan-paper-rule short"></span>
+    <span class="school-loan-paper-foot">EDUCATION · RESOURCE NOTES</span>
+  </div>
+  <span class="school-loan-cover-foot">A separate pathway · Eligibility applies</span>
+</div>
   <div><strong>Also available to Arkansas school teams: short-term assistive technology loans.</strong>
     <p>Educational Support and Related Services Specialists (ESRSS) operates a <strong>statewide school-based assistive-technology loan program</strong> for Arkansas educators, therapists and school teams evaluating devices for students with disabilities. Its official November 2026 information describes communication aids, mobility equipment and specialized software, with a <strong>default 90-day loan period</strong> and possible extensions subject to program approval. Local education agency supervisors should request checkout access through the official school-team program; <strong>this is not a general-public medical-equipment rental or individual loan.</strong> Verify eligibility, current device availability, checkout terms, pickup and returns with the program. <strong>Russellville pickup or delivery is UNCONFIRMED.</strong> Questions: <a href="mailto:laura.woodard@ade.arkansas.gov">laura.woodard@ade.arkansas.gov</a> (official program contact). <a href="https://www.arkansasaem.org/esrss_at" target="_blank" rel="noopener noreferrer">School-team checkout access ↗</a> · <a href="https://esrssarkansas.org/generalresources/" target="_blank" rel="noopener noreferrer">Official eligibility, 90-day loan period and contact ↗</a>.</p>
   </div><span class="explainer-mark">School teams only</span>
