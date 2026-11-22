@@ -161,8 +161,16 @@
     if(!text || !housingResult || !housingRecords.length){panel.hidden=true;list.replaceChildren();return 0;}
     const matches=homeMatches(text);
     if(!matches.length){panel.hidden=true;list.replaceChildren();return 0;}
+    // Preserve the two cheapest homes but include a different listing source when possible.
+    const shortlist=matches.slice(0,3);
+    const provider=item=>String(item.source_name||item.manager||'').trim().toLowerCase();
+    const firstSource=provider(shortlist[0]);
+    if(shortlist.length===3 && firstSource && shortlist.every(item=>provider(item)===firstSource)){
+      const other=matches.find(item=>provider(item) && provider(item)!==firstSource);
+      if(other)shortlist[2]=other;
+    }
     list.replaceChildren();
-    for(const item of matches.slice(0,3)){
+    for(const item of shortlist){
       const article=document.createElement('article'),link=document.createElement('a');
       article.className='home-result-card';link.className='home-result-link';
       link.href=item.source_url;link.target='_blank';link.rel='noopener noreferrer';
@@ -188,7 +196,8 @@
       }
       list.append(article);
     }
-    byId('home-preview-note').textContent='Showing '+Math.min(3,matches.length)+' of '+matches.length+' provider-posted listings. Confirm current availability.';
+    const sourceCount=new Set(shortlist.map(provider).filter(Boolean)).size;
+    byId('home-preview-note').textContent='Showing '+shortlist.length+' of '+matches.length+' provider-posted listings'+(sourceCount>1?' from '+sourceCount+' listing sources':'')+'. Confirm current availability.';
     byId('home-preview-all').href=RentalQuery.housing(text,true)||'long-term.html#listings';
     panel.hidden=false;return matches.length;
   }

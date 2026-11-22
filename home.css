@@ -314,3 +314,38 @@ footer a{display:inline-flex;align-items:center;min-height:44px;font-weight:650}
 }
 /* Direct manager contact remains a full-size touch target on narrow phones. */
 @media(max-width:650px){.home-result-call{min-height:44px}}
+
+
+/* Editorial property results: photographic lead and two compact comparisons.
+   Keep the original links, rates, provider data and phone calls intact. */
+@media (min-width:760px) {
+  .home-preview {background:linear-gradient(125deg,#e7f0e7 0%,#f3f5e9 54%,#fcf8ec 100%);padding:clamp(1rem,2.3vw,1.55rem);border-bottom:1px solid #b6cbb8}
+  .home-preview-head {margin-bottom:1rem;align-items:center}
+  .home-preview-grid {grid-template-columns:minmax(0,1.14fr) minmax(0,1fr);grid-template-rows:repeat(2,minmax(0,auto));align-items:stretch;gap:.75rem}
+  .home-result-card:first-child {grid-row:span 2}
+  .home-result-card:first-child .home-result-photo {height:clamp(10rem,17vw,14.5rem)}
+  .home-result-card:first-child .home-result-info {padding:.8rem 1rem}
+  .home-result-card:first-child .home-result-price {font-size:1.75rem}
+  .home-result-card:not(:first-child) {display:grid;grid-template-rows:minmax(0,1fr) auto}
+  .home-result-card:not(:first-child) .home-result-link {display:grid;grid-template-columns:minmax(6rem,34%) minmax(0,1fr);align-items:stretch}
+  .home-result-card:not(:first-child) .home-result-photo {height:100%;min-height:8rem}
+  .home-result-card:not(:first-child) .home-result-info {padding:.6rem .7rem;gap:.07rem}
+  .home-result-card:not(:first-child) .home-result-price {font-size:1.2rem}
+  .home-result-card:not(:first-child) .home-result-address {font-size:.9rem}
+  .home-result-card:not(:first-child) .home-result-call {min-height:40px;margin:.1rem .7rem .55rem}
+}
+@media (max-width:759px) {
+  .home-preview-grid {grid-template-columns:minmax(0,1fr);gap:.6rem}
+  .home-result-card {display:grid;grid-template-columns:minmax(0,1fr)}
+  .home-result-link {display:grid;grid-template-columns:minmax(6.5rem,31%) minmax(0,1fr)}
+  .home-result-photo {height:100%;min-height:7.2rem}
+  .home-result-info {padding:.6rem .75rem}
+  .home-result-price {font-size:1.23rem}
+  .home-result-call {min-height:44px;margin:0 .65rem .55rem}
+}
+@media (max-width:380px) {
+  .home-result-link {grid-template-columns:6rem minmax(0,1fr)}
+  .home-result-info {padding:.5rem .6rem}
+  .home-result-address {font-size:.91rem}
+}
+@media (prefers-reduced-motion:reduce) {.home-result-card:hover {transform:none}}
