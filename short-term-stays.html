@@ -605,6 +605,41 @@ main.wrap{padding-top:28px}
   box-shadow:0 0 0 3px #f1d597,0 15px 34px #173a2c26;
 }
 
+
+/* 2026-11-22 · Stay search arrival desk. Reference: StayARV photographic hierarchy,
+NN/g grouping, web.dev responsive reflow and W3C WCAG 2.2. All original controls remain. */
+.stay-search-station{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);overflow:hidden;isolation:isolate;margin:clamp(28px,4vw,58px) 0 34px;border:1px solid #d1dacb;border-radius:25px;background:#fffdf7;box-shadow:0 24px 62px #173b2e20}
+.stay-search-cover{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;gap:50px;min-height:510px;padding:clamp(28px,4vw,49px);background:linear-gradient(180deg,#0b312abf 0%,#174a3a4d 36%,#0b3029ed 100%),url("assets/lake-dardanelle-sunset.jpg") center/cover;color:#fffaf0}
+.stay-search-cover:before{content:"";position:absolute;z-index:-1;inset:16px;border:1px solid #f2e1bb81;border-radius:12px;pointer-events:none}
+.stay-search-topline{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.6rem;line-height:1.5;font-weight:850;letter-spacing:.17em;color:#f6e7c7}
+.stay-search-topline span:last-child{text-align:right}
+.stay-search-story{max-width:520px;margin-top:auto}
+.stay-search-edition{display:block;margin-bottom:19px;font-weight:850;letter-spacing:.16em;font-size:.7rem;color:#f5dbab}
+.stay-search-cover h2{margin:0;max-width:12ch;font:400 clamp(3rem,5.1vw,5.6rem)/.98 Georgia,"Times New Roman",serif;letter-spacing:-.06em;text-shadow:0 3px 16px #10281d6b;text-wrap:balance}
+.stay-search-cover h2 em{color:#f3d296;font-weight:400}
+.stay-search-story p{max-width:39ch;margin:19px 0 0;font-size:clamp(.91rem,1.25vw,1.05rem);line-height:1.65;color:#f8f5e8}
+.stay-search-credit{display:block;border-top:1px solid #f2e5d580;padding-top:13px;font-size:.69rem;line-height:1.5;color:#f3e6d4}
+.stay-search-desk{display:flex;min-width:0;flex-direction:column;padding:clamp(28px,4.3vw,51px)}
+.stay-search-kicker{margin:0 0 13px;font-size:.68rem;font-weight:850;letter-spacing:.15em;color:#936836}
+.stay-search-desk h3{margin:0;color:#173e30;font:400 clamp(2rem,3vw,3.1rem)/1.03 Georgia,"Times New Roman",serif;letter-spacing:-.05em}
+.stay-search-lead{margin:17px 0 24px;max-width:54ch;color:#506759;font-size:.9rem;line-height:1.64}
+.stay-search-desk .controls{display:grid;gap:17px;align-items:stretch;margin:0;padding:23px;border:1px solid #cddbc8;border-radius:17px;background:#eff3e9;box-shadow:none}
+.stay-search-desk .search-wrap{flex:none;min-width:0}
+.stay-search-desk .search-wrap label{margin-bottom:9px;color:#214838}
+.stay-search-desk .search-wrap input{min-height:54px;background:#fffdf8;border:1.5px solid #9bb29e;padding:13px 16px;border-radius:10px;font-size:1rem;color:#143d30}
+.stay-search-desk .filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.stay-search-desk .filter{min-height:49px;border-radius:9px;padding:9px 10px;line-height:1.35;font-size:.78rem}
+.stay-search-desk :is(.filter,input):focus-visible{outline:3px solid #ae711c;outline-offset:3px}
+.stay-search-desk .count{align-self:flex-start;margin:13px 0 0;padding:7px 12px;background:#e0ebdd;border-radius:7px;color:#265440;font-size:.81rem;font-weight:800;line-height:1.45;font-variant-numeric:tabular-nums}
+.stay-search-route{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:25px 0 0;padding:17px 0 0;border-top:1px solid #d8e0d3;font-size:.67rem;font-weight:850;color:#516b58}
+.stay-search-route a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;margin-left:auto;padding:10px 15px;border-radius:9px;background:#1b513e;color:white;text-decoration:none;font-size:.77rem}
+.stay-search-route a:hover{background:#2c674f}
+.stay-search-route a:focus-visible{outline:3px solid #af711b;outline-offset:3px}
+.stay-search-caution{max-width:60ch;margin:15px 0 0;font-size:.75rem;line-height:1.55;color:#5e705f}
+@media(max-width:940px){.stay-search-station{grid-template-columns:1fr}.stay-search-cover{min-height:365px;background-position:center 43%}.stay-search-cover h2{font-size:clamp(3rem,7vw,4.6rem)}.stay-search-desk{padding:clamp(28px,4vw,41px)}}
+@media(max-width:560px){.stay-search-station{margin:30px 0 24px;border-radius:18px}.stay-search-cover{min-height:338px;padding:29px 23px;gap:29px}.stay-search-cover:before{inset:10px}.stay-search-topline{display:block}.stay-search-topline span{display:block;text-align:left!important}.stay-search-topline span+span{margin-top:6px}.stay-search-cover h2{font-size:clamp(2.8rem,11.5vw,4rem)}.stay-search-story p{font-size:.88rem}.stay-search-desk{padding:26px 19px}.stay-search-desk h3{font-size:2.25rem}.stay-search-desk .controls{padding:17px 14px}.stay-search-desk .filters{grid-template-columns:1fr}.stay-search-desk .filter{min-height:46px}.stay-search-route a{width:100%;margin-left:0}}
+@media print{.stay-search-station{display:block;border:1px solid #777;box-shadow:none;break-inside:avoid}.stay-search-cover{min-height:0;background:#fff!important;color:#163e30;padding:20px}.stay-search-cover:before,.stay-search-topline{display:none}.stay-search-cover :is(h2,h2 em,p,small,span){color:#163e30!important;text-shadow:none}.stay-search-desk{padding:18px}.stay-search-desk .controls{background:#fff}.stay-search-route a{color:#163e30;background:#fff;border:1px solid #777}}
+
 </style>
 </head>
 <body>
@@ -668,8 +703,26 @@ main.wrap{padding-top:28px}
  <p class="stay-mood-caution">These are text-search shortcuts, not independently verified amenities, pet permissions, current inventory or confirmed bookings. Check details directly with each operator.</p>
  <div class="region-footer"><button class="region-all" type="button" data-region-filter="all" aria-pressed="true" aria-controls="stay-grid">All destinations <span class="region-total">23 stays</span> ↗</button><small>Choose a setting, or search all operators below.</small></div>
 </section>
+<!-- Original live controls retained byte-for-byte in a photographic search-first arrival desk. -->
+<section class="stay-search-station" aria-labelledby="stay-search-heading">
+<div class="stay-search-cover">
+  <div class="stay-search-topline"><span>R↗ / THE RIVER VALLEY</span><span>FIELD GUIDE · SHORT STAYS</span></div>
+  <div class="stay-search-story"><span class="stay-search-edition">YOUR NEXT PLACE / COLLECTION NO. 02</span>
+    <h2 id="stay-search-heading">Find a place<br>to <em>get away.</em></h2>
+    <p>From the mountain roads to somewhere near town, start with what matters to your trip.</p>
+  </div>
+  <small class="stay-search-credit">Lake Dardanelle scenery · Not a photograph of any listed rental</small>
+</div>
+<div class="stay-search-desk">
+  <p class="stay-search-kicker">THE LOCAL STAY DESK / EXPLORE &amp; COMPARE</p>
+  <h3>Search the collection.</h3>
+  <p class="stay-search-lead">Search operator descriptions or towns, then narrow the results by lodging type. Each listing retains its original source and terms.</p>
 <div class="controls" id="stay-controls"><div class="search-wrap"><label for="search">Search stays or towns</label><input id="search" type="search" autocomplete="off" placeholder="Try Dover, tiny cabin, pet friendly…"></div><div class="filters" role="group" aria-label="Filter by lodging type"><button class="filter" data-filter="all" aria-pressed="true">All stays</button><button class="filter" data-filter="private" aria-pressed="false">Private operators</button><button class="filter" data-filter="park" aria-pressed="false">State parks</button></div></div>
 <p class="count" id="count" role="status" aria-live="polite">Showing 23 of 23 stays</p>
+  <div class="stay-search-route"><span>01 / Search</span><span aria-hidden="true">→</span><span>02 / Compare</span><span aria-hidden="true">→</span><span>03 / Confirm with operator</span><a href="#stay-grid">View matches ↗</a></div>
+  <p class="stay-search-caution">Directory results are not bookings or live inventory. Confirm prices, dates, policies and amenities directly with each operator.</p>
+</div>
+</section>
 
 <section class="stay-board" id="stay-board" aria-labelledby="stay-board-title" hidden>
   <div class="stay-board-visual"><span class="stay-board-kicker">River Valley / Your travel folio</span><h3 id="stay-board-title">A little list of <em>somewhere next.</em></h3><p>Collect up to four stay operators while you compare towns and options. Nothing is booked, sent or shared.</p><a href="#stay-grid">Find stays to save ↗</a><small class="stay-board-caption">Downtown Russellville scenery · Not a listed rental property</small></div>
