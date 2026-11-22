@@ -858,6 +858,137 @@ html{scroll-padding-top:28px}
 }
 @media print{.formalwear-pocket-dock{display:none!important}}
 
+
+/* 2026-11-21 · Formalwear fitting-ticket editorial.
+   Compared the live StayARV immersive forest-and-gold cover with the live
+   Russellville.Rent formalwear guide before designing this section.
+   The existing three booking questions become a two-column, photographed
+   appointment folio: one scenic orientation panel + a scannable numbered
+   fitting ledger. No retailer information, pricing, booking, or links change.
+   NN/g information scent and scannability; Google web.dev responsive layout;
+   W3C WCAG 2.2 reflow, contrast and reduced motion. */
+.guide{
+  padding-block:clamp(64px,8vw,112px);
+  border-block:1px solid #d6dece;
+  background:linear-gradient(165deg,#e9ede6 0%,#f5efe4 52%,#e2e8e0 100%);
+}
+.guide>.shell{
+  display:grid;
+  grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  min-height:560px;gap:0;
+  overflow:hidden;
+  border:1px solid #244f3d;
+  border-radius:5px 30px 5px 30px;
+  box-shadow:0 32px 70px #143a2f26;
+  background:#f8f4e9;
+}
+.guide .guide-heading{
+  position:relative;isolation:isolate;
+  display:flex;flex-direction:column;align-items:flex-start;
+  justify-content:center;gap:0;
+  margin:0;padding:clamp(36px,5vw,66px);
+  background:#113d33;color:#fff;
+}
+.guide .guide-heading:before{
+  content:"";position:absolute;inset:0;z-index:-2;
+  background:linear-gradient(145deg,#092b27ee 1%,#16483ad9 54%,#0a2a25e0 100%),
+    url("/assets/downtown-russellville-sunset.jpg") center 54%/cover no-repeat;
+}
+.guide .guide-heading:after{
+  content:"";position:absolute;z-index:-1;pointer-events:none;
+  inset:22px;border:1px solid #e8c9886b;
+  border-radius:2px 23px 2px 23px;
+}
+.guide .guide-heading>div,.guide .guide-heading>p,.guide .guide-heading>.guide-photo-credit{
+  position:relative;z-index:1;
+}
+.guide .guide-heading .eyebrow{
+  color:#f4d19b;letter-spacing:.19em;margin:0 0 24px;
+}
+.guide .guide-heading h2{
+  max-width:12ch;
+  font:400 clamp(3rem,4.7vw,5rem)/1.03 Georgia,"Times New Roman",serif;
+  letter-spacing:-.064em;color:#fffdf4;text-wrap:balance;margin:0;
+}
+.guide .guide-heading>p{
+  max-width:40ch;margin:26px 0 0;
+  font-size:clamp(.94rem,1.25vw,1.03rem);line-height:1.75;
+  color:#eef2e6;
+}
+.guide .guide-photo-credit{
+  display:block;max-width:43ch;margin-top:auto;padding-top:30px;
+  font-size:.71rem;line-height:1.55;letter-spacing:.03em;
+  color:#eddfbf;
+}
+.guide .guide-grid{
+  min-width:0;display:grid;grid-template-columns:minmax(0,1fr);
+  align-content:stretch;gap:0;
+  padding:clamp(17px,2.8vw,43px);
+  background:linear-gradient(145deg,#fdfaf3,#ede9de);
+}
+.guide .guide-item{
+  position:relative;min-width:0;
+  display:grid;grid-template-columns:72px minmax(0,1fr);
+  grid-template-rows:auto auto;align-content:center;column-gap:24px;
+  min-height:153px;padding:clamp(22px,2.5vw,32px) clamp(10px,2vw,26px);
+  border:0;border-bottom:1px solid #d9d7ca;
+  border-radius:0;background:transparent;box-shadow:none;
+}
+.guide .guide-item:last-child{border-bottom:0}
+.guide .guide-number{
+  grid-column:1;grid-row:1/3;align-self:center;
+  margin:0;color:#967347;
+  font:400 clamp(2.8rem,4.2vw,4.25rem)/1 Georgia,"Times New Roman",serif;
+  letter-spacing:-.07em;
+}
+.guide .guide-item h3{
+  grid-column:2;grid-row:1;
+  margin:0 0 8px;color:#183d30;
+  font:400 clamp(1.4rem,2.2vw,1.9rem)/1.16 Georgia,"Times New Roman",serif;
+  letter-spacing:-.042em;
+}
+.guide .guide-item p{
+  grid-column:2;grid-row:2;
+  max-width:48ch;margin:0;color:#4b6456;
+  font-size:.92rem;line-height:1.65;
+}
+@media(max-width:970px){
+  .guide>.shell{grid-template-columns:minmax(0,1fr)}
+  .guide .guide-heading{min-height:360px;padding:43px 48px}
+  .guide .guide-heading h2{max-width:17ch;font-size:clamp(3.1rem,7vw,4.5rem)}
+  .guide .guide-photo-credit{margin-top:20px;padding-top:10px}
+  .guide .guide-grid{padding:18px 36px}
+  .guide .guide-item{min-height:135px}
+}
+@media(max-width:590px){
+  .guide{padding-block:51px 64px}
+  .guide>.shell{border-radius:4px 21px 4px 21px;box-shadow:0 20px 40px #143a2f21}
+  .guide .guide-heading{min-height:390px;padding:40px 29px}
+  .guide .guide-heading:after{inset:12px;border-radius:2px 13px 2px 13px}
+  .guide .guide-heading .eyebrow{font-size:.68rem;letter-spacing:.12em;margin-bottom:18px}
+  .guide .guide-heading h2{font-size:clamp(2.8rem,11vw,3.85rem);max-width:12ch}
+  .guide .guide-heading>p{font-size:.91rem;margin-top:19px}
+  .guide .guide-photo-credit{font-size:.66rem}
+  .guide .guide-grid{padding:6px 19px}
+  .guide .guide-item{
+    grid-template-columns:51px minmax(0,1fr);
+    gap:0 16px;min-height:0;padding:26px 2px;
+  }
+  .guide .guide-number{font-size:2.55rem}
+  .guide .guide-item h3{font-size:1.42rem}
+  .guide .guide-item p{font-size:.85rem}
+}
+@media print{
+  .guide{background:#fff!important;padding-block:24px;border:0}
+  .guide>.shell{min-height:0;display:block;border:1px solid #a5b7a8;box-shadow:none}
+  .guide .guide-heading{min-height:0;background:#fff!important;color:#173c31!important;padding:20px 25px}
+  .guide .guide-heading:before,.guide .guide-heading:after{display:none}
+  .guide .guide-heading h2,.guide .guide-heading>p,.guide .guide-heading .eyebrow{color:#173c31!important}
+  .guide .guide-photo-credit{display:none}
+  .guide .guide-grid{padding:0 25px;background:#fff!important}
+  .guide .guide-item{min-height:0;break-inside:avoid;padding:17px 0}
+}
+
 </style>
 </head>
 <body>
@@ -1070,7 +1201,7 @@ html{scroll-padding-top:28px}
 </section>
 </section>
 <section class="guide" aria-labelledby="guide-title"><div class="shell">
-<div class="guide-heading"><div><p class="eyebrow">Before you reserve</p><h2 id="guide-title">Three questions worth asking.</h2></div><p>A quick checklist to help you plan your rental. Policies and inventory have not been independently verified.</p></div>
+<div class="guide-heading"><div><p class="eyebrow">Before you reserve</p><h2 id="guide-title">Three questions worth asking.</h2></div><p>A quick checklist to help you plan your rental. Policies and inventory have not been independently verified.</p><span class="guide-photo-credit">Downtown Russellville scenery · Not a retailer storefront or available rental inventory.</span></div>
 <div class="guide-grid">
 <article class="guide-item"><span class="guide-number">01</span><h3>What fits your event?</h3><p>Ask about available sizes, styles, fitting appointments and accessories.</p></article>
 <article class="guide-item"><span class="guide-number">02</span><h3>When should you reserve?</h3><p>Confirm your event date, pickup window, return deadline and availability.</p></article>
