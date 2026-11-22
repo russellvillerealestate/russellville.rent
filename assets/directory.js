@@ -179,6 +179,27 @@
       const other=matches.find(item=>provider(item) && provider(item)!==firstSource);
       if(other)shortlist[2]=other;
     }
+
+    // Surface actual searchable fields; provider feeds omit amenity verification.
+    const criteria=byId('home-preview-criteria');
+    criteria.replaceChildren();
+    const filters=new URL(RentalQuery.housing(text,true),location.href).searchParams;
+    const applied=[];
+    if(filters.has('type'))applied.push(filters.get('type'));
+    if(filters.has('beds')){
+      const count=filters.get('beds').replace(/^eq/,'');
+      applied.push(count+(filters.get('beds').startsWith('eq')?'':'+')+' bedrooms');
+    }
+    if(filters.has('minRent'))applied.push((filters.has('above')?'Over ':'From ')+Number(filters.get('minRent')).toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}));
+    if(filters.has('maxRent'))applied.push((filters.has('below')?'Under ':'Up to ')+Number(filters.get('maxRent')).toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}));
+    if(filters.has('q'))applied.push('Keyword: '+filters.get('q'));
+    for(const label of applied){
+      const chip=document.createElement('span');chip.className='criteria-applied';chip.textContent=label;criteria.append(chip);
+    }
+    for(const label of RentalQuery.preferences(text)){
+      const chip=document.createElement('span');chip.className='criteria-unverified';chip.textContent=label+' not checked · ask manager';criteria.append(chip);
+    }
+    criteria.hidden=!criteria.childElementCount;
     list.replaceChildren();
     for(const item of shortlist){
       const article=document.createElement('article'),link=document.createElement('a');

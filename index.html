@@ -10,9 +10,9 @@
 <meta property="og:description" content="Find rentals in Russellville and the Arkansas River Valley.">
 <meta property="og:type" content="website"><meta property="og:url" content="https://russellville.rent/"><meta name="theme-color" content="#133c32">
 <link rel="preload" as="image" type="image/webp" media="(max-width:600px)" href="assets/lake-dardanelle-sunset-phone.webp">
-<link rel="stylesheet" href="home.css?v=directory-9">
-<script defer src="assets/rental-query.js?v=directory-3"></script>
-<script defer src="assets/directory.js?v=directory-8"></script>
+<link rel="stylesheet" href="home.css?v=directory-10">
+<script defer src="assets/rental-query.js?v=directory-4"></script>
+<script defer src="assets/directory.js?v=directory-9"></script>
 </head>
 <body>
 <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><symbol id="icon-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></g></symbol><symbol id="icon-bookmark" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4.5h12v16l-6-3.7-6 3.7z"/></g></symbol><symbol id="icon-everyday" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="m2.5 11 9.5-8 9.5 8M5.5 9.7v10.8h13V9.7M10 20v-6.5h4V20"/></g></symbol><symbol id="icon-projects" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5h18v12H3zM8.5 8V5h7v3M3 13h18M10 13v2h4v-2"/></g></symbol><symbol id="icon-outdoors" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="m2 17 6-10 4.2 6.2L15.5 8 22 17M2 20h20"/><circle cx="17.5" cy="4.8" r="1.6"/></g></symbol><symbol id="icon-gather" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 9h17v12h-17zM7 3v4m10-4v4M3.5 12h17"/><path d="m8 16 2 2 5-4"/></g></symbol></svg>
@@ -34,6 +34,7 @@
 <div class="directory-heading" id="filters"><div><h2 id="browse-title">Rental categories</h2><span id="result-count" role="status" aria-live="polite"></span></div><label class="group-filter" hidden><span class="sr-only">Filter categories by group</span><select id="category"><option value="all">All categories</option><option value="everyday">Homes &amp; everyday needs</option><option value="projects">Tools &amp; moving</option><option value="outdoors">Travel &amp; outdoors</option><option value="gather">Events &amp; parties</option></select></label></div>
 <div id="search-results" hidden><section id="home-preview" class="home-preview" hidden aria-labelledby="home-preview-title">
 <div class="home-preview-head"><div><p class="home-preview-eyebrow">From local property managers</p><h3 id="home-preview-title">Rental homes that fit</h3></div><p id="home-preview-note" role="status" aria-live="polite"></p></div>
+<div id="home-preview-criteria" class="home-preview-criteria" role="group" aria-label="Search criteria" hidden></div>
 <div id="home-preview-list" class="home-preview-grid"></div>
 <a class="home-preview-more" id="home-preview-all" href="long-term.html#listings">See all matching homes &amp; filters</a>
 </section><ul></ul><div class="no-results" hidden><p>Try a shorter search, or browse the categories below.</p><button type="button" id="clear-search">Browse all rentals</button></div></div>

@@ -459,3 +459,13 @@ footer a{display:inline-flex;align-items:center;min-height:44px;font-weight:650}
  #search-results .related-match .match-title{font-size:1.42rem}
 }
 @media print{#search-results>ul>.search-row.related-match{background:white;border-color:#aaa}}
+
+/* Search interpretation: show matched fields; flag amenities the public listing
+   feed cannot validate. Appears only when rental homes actually match. */
+.home-preview-criteria{display:flex;flex-wrap:wrap;gap:.35rem .4rem;margin:-.08rem 0 .82rem}
+.home-preview-criteria>span{display:inline-flex;align-items:center;min-height:30px;padding:.23rem .68rem;border:1px solid #b6ccb7;border-radius:99px;background:#fffdf7;color:#1c513a;font-size:.77rem;line-height:1.32;font-weight:750}
+.home-preview-criteria>.criteria-applied:before{content:"✓";margin-right:.36rem;font-size:.83rem}
+.home-preview-criteria>.criteria-unverified{border-color:#d2ad6d;background:#fff3d7;color:#67481d}
+.home-preview-criteria>.criteria-unverified:before{content:"!";display:grid;place-items:center;width:1.12rem;height:1.12rem;margin-right:.38rem;border-radius:50%;background:#e4bd75;color:#51360e;font-size:.76rem}
+@media(max-width:650px){.home-preview-criteria{gap:.3rem;margin:0 0 .66rem}.home-preview-criteria>span{font-size:.73rem;padding:.24rem .55rem}}
+@media print{.home-preview-criteria{display:none!important}}

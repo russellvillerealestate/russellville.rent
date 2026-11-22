@@ -15,6 +15,20 @@ const RentalQuery = (() => {
       .replace(/\s+/g,' ').trim()
       .replace(/^[^a-z0-9$]+|[^a-z0-9$]+$/g,'');
   }
+
+  // The public listings feed has beds, type, rent and location, but not amenities.
+  // Do not pass unverified amenities as mandatory address/manager keywords.
+  const housingPreferences = [
+    { label:'Pet policy', pattern:/\b(?:pet[- ]friendly|pets?\s+(?:allowed|welcome|ok|okay)|dogs?\s+allowed|cats?\s+allowed)\b/i },
+    { label:'Furnishings', pattern:/\b(?:fully\s+)?furnished\b/i },
+    { label:'Utilities', pattern:/\b(?:utilities?\s+included|all\s+bills\s+paid|bills\s+included)\b/i },
+    { label:'Laundry', pattern:/\b(?:washer\s*(?:and|&|\/)\s*dryer|in[- ]unit\s+laundry|laundry\s+hookups?)\b/i },
+    { label:'Fenced yard', pattern:/\bfenced\s+(?:yard|back\s?yard)\b/i },
+    { label:'Parking', pattern:/\b(?:garage|covered\s+parking)\b/i }
+  ];
+  function preferences(text) {
+    return housingPreferences.filter(item => item.pattern.test(text)).map(item => item.label);
+  }
   const addressWords = {
     north: 'n', south: 's', east: 'e', west: 'w', street: 'st', avenue: 'ave',
     road: 'rd', drive: 'dr', cove: 'cv', court: 'ct', lane: 'ln', boulevard: 'blvd',
@@ -50,12 +64,13 @@ const RentalQuery = (() => {
       if (/^(over|above)$/i.test(condition)) params.set('above','1');
       return ' ';
     });
+    query = housingPreferences.reduce((value, item) => value.replace(item.pattern, ' '), query);
     const type=types.find(([pattern])=>pattern.test(query));
     if(type){params.set('type',type[1]);query=query.replace(type[0],' ');}
-    query=words(query.replace(/\b(?:long[- ]term|housing|homes?|for|under|with|monthly|per month|dollars?)\b/gi,' '));
+    query=words(query.replace(/\b(?:long[- ]term|housing|homes?|for|under|with|and|including|monthly|per month|dollars?)\b/gi,' '));
     if(query && query!=='russellville')params.set('q',query);
     const suffix=params.toString();
     return 'long-term.html'+(suffix?'?'+suffix:'')+'#listings';
   }
-  return { words, housing, terms, listingWords, matchesListing };
+  return { words, housing, terms, listingWords, matchesListing, preferences };
 })();
