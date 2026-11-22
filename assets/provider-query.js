@@ -1,5 +1,28 @@
 /* A directory search can land directly on contacts for the requested item. */
 document.addEventListener("DOMContentLoaded", () => {
+  const menu = document.querySelector(".equipment-menu-toggle");
+  if (menu) {
+    const links = document.getElementById(menu.getAttribute("aria-controls"));
+    const phone = window.matchMedia("(max-width:600px)");
+    function setMenu(open) {
+      menu.hidden = !phone.matches;
+      menu.setAttribute("aria-expanded", String(open));
+      links.hidden = phone.matches && !open;
+    }
+    setMenu(false);
+    phone.addEventListener("change", () => setMenu(false));
+    menu.addEventListener("click", () => setMenu(menu.getAttribute("aria-expanded") !== "true"));
+    links.addEventListener("click", event => {if (event.target.closest("a")) setMenu(false);});
+    document.addEventListener("pointerdown", event => {
+      if (menu.getAttribute("aria-expanded") === "true" && !menu.parentElement.contains(event.target)) setMenu(false);
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && menu.getAttribute("aria-expanded") === "true") {
+        setMenu(false);
+        menu.focus();
+      }
+    });
+  }
   const query = (new URLSearchParams(location.search).get("q") || "").trim().slice(0,160);
   const main = document.querySelector("main");
   if (!query || !main) return;
@@ -59,9 +82,16 @@ document.addEventListener("DOMContentLoaded", () => {
       action.href=number;
       const digits=number.replace(/\D/g,"").replace(/^1(?=\d{10}$)/,"");
       const label=digits.length===10?"("+digits.slice(0,3)+") "+digits.slice(3,6)+"-"+digits.slice(6):call.textContent.trim();
-      action.textContent="Call "+label;
+      const numberInButton=document.createElement("span");
+      numberInButton.className="call-button-number";
+      numberInButton.textContent=" "+label;
+      action.append("Call",numberInButton);
       action.setAttribute("aria-label","Call "+name+" at "+label);
-      row.append(action);
+      const mobileNumber=document.createElement("span");
+      mobileNumber.className="provider-phone-number";
+      mobileNumber.setAttribute("aria-hidden","true");
+      mobileNumber.textContent=label;
+      row.append(mobileNumber,action);
     } else if (website) {
       const action=document.createElement("a");
       action.className="result-call";

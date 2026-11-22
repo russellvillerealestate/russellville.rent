@@ -93,7 +93,203 @@ main .search-section:has(.housing-heading) { padding-top:0; margin-top:0; }
   .housing-directory { display:none; }
   .housing-heading h1 { margin-top:0; }
   .housing-filters .housing-reset { align-self:end; }
-  .housing-filters #moreHousingFilters { text-align:left; }
   .provider-matches { margin:.65rem; }
 }
 @media print { .finder-search,.finder-suggestions,.housing-filters,.housing-summary { display:none; } }
+
+.finder-picture { display:contents; border-radius:inherit; }
+.layout-phone-label, .provider-phone-number { display:none; }
+.housing-phone-bar[hidden], .housing-filters[hidden], .equipment-menu-toggle[hidden],
+#equipment-section-links[hidden] { display:none; }
+
+@media screen and (max-width:600px) {
+  /* Keep search, category choices and the active keyboard from competing for space. */
+  .directory-masthead .masthead-primary { min-height:3.5rem; padding-block:.28rem; }
+  .directory-masthead .mobile-directory-menu > summary { min-height:2.75rem; padding:.5rem .85rem; }
+  .finder-content { padding:1.1rem 1rem 1rem; }
+  .finder-desktop-intro { display:none; }
+  .finder-location { font-size:.875rem; margin-bottom:.45rem; }
+  .local-finder h1 { font-size:clamp(2.45rem,9.5vw,3.25rem); line-height:1.02; }
+  .finder-introduction { margin:.5rem 0 .9rem; }
+  .local-finder #hero-find { margin:0; }
+  .local-finder .finder-search {
+    display:grid; grid-template-columns:minmax(0,1fr) auto; gap:0;
+    background:white; padding:3px; border-radius:.65rem; width:100%;
+  }
+  .local-finder .finder-search input { padding:.55rem .55rem; border:0; background:transparent; font-size:1rem; }
+  .local-finder .finder-search button { padding:.55rem .85rem; border-radius:.48rem; }
+  .local-finder .finder-search :focus-visible { outline-offset:-3px; }
+  .finder-suggestions { margin-top:.45rem; }
+  #search-preview-list { display:grid; gap:0; }
+  #search-preview-list a { display:flex; align-items:center; min-height:44px; padding:.35rem 0; }
+  .finder-categories { margin-bottom:1rem; }
+  .finder-categories a { min-height:3rem; padding:.44rem .63rem; gap:.45rem; }
+  .finder-categories .finder-all { min-height:2.75rem; }
+  body:has(#mobile-dock) { padding-bottom:calc(4rem + env(safe-area-inset-bottom,0px)); }
+  #mobile-dock:not([hidden]) {
+    width:auto; left:0; right:0; bottom:0; transform:none; gap:.15rem;
+    border:0; border-top:1px solid #547665; border-radius:0; background:#13392f;
+    padding:.16rem max(.38rem,env(safe-area-inset-right)) calc(.16rem + env(safe-area-inset-bottom)) max(.38rem,env(safe-area-inset-left));
+    box-shadow:0 -3px 14px #10372a24;
+  }
+  #mobile-dock a { min-height:3.05rem; gap:2px; padding:.18rem .25rem; font-size:.77rem; border-radius:.4rem; }
+  #mobile-dock a.mobile-dock-search { background:transparent; box-shadow:none; color:#ffdf9d; }
+  #mobile-dock .mobile-saved-count { right:12%; top:2px; }
+  #mobile-dock .mobile-dock-saved:not([data-has-saved="true"]) .mobile-saved-count { display:none; }
+  body:has(#hero-query:focus, .mobile-directory-menu[open]) #mobile-dock { display:none; }
+
+  #browse .browse-toolbar-edit { display:none; }
+  #rental-results[data-view="list"] { gap:.55rem; }
+  #rental-results[data-view="list"] > .rental-card:not([hidden]) {
+    display:block; position:relative; min-height:4.5rem; padding:0;
+    border:1px solid #ced9cf; border-radius:.7rem; background:#fffefa; box-shadow:none;
+  }
+  #rental-results[data-view="list"] > .rental-card::before,
+  #rental-results[data-view="list"] > .rental-card > :not(.card-body) { display:none; }
+  #rental-results[data-view="list"] > .rental-card > .card-body {
+    position:static; display:block; min-height:0; padding:.8rem 4.4rem .8rem .9rem; background:transparent;
+  }
+  #rental-results[data-view="list"] > .rental-card .card-body > .eyebrow,
+  #rental-results[data-view="list"] > .rental-card .card-body > .status { display:none; }
+  #rental-results[data-view="list"] > .rental-card .card-body h3 {
+    margin:0; font:700 1.05rem/1.3 system-ui,sans-serif; letter-spacing:-.015em; color:#174534;
+  }
+  #rental-results[data-view="list"] > .rental-card .card-body > p:not(.eyebrow,.status) {
+    margin:.23rem 0 0; font:400 .93rem/1.4 system-ui,sans-serif; color:#4c6056;
+  }
+  #rental-results[data-view="list"] > .rental-card .card-actions { display:contents; }
+  #rental-results[data-view="list"] > .rental-card .card-link {
+    position:absolute; z-index:1; inset:0 3.65rem 0 0; display:block; margin:0; padding:0;
+    min-height:44px; font-size:0; color:transparent; border:0; background:none; box-shadow:none;
+  }
+  #rental-results[data-view="list"] > .rental-card .card-link span { display:none; }
+  #rental-results[data-view="list"] > .rental-card .card-link:focus-visible { outline:3px solid #98701c; outline-offset:-3px; }
+  #rental-results[data-view="list"] > .rental-card .save-category {
+    position:absolute; z-index:2; top:50%; right:.45rem; transform:translateY(-50%); width:44px; height:44px;
+    min-height:44px; padding:0; display:grid; place-items:center; border-radius:.65rem;
+  }
+  #rental-results[data-view="list"] .save-category .save-word { display:none; }
+  #rental-results[data-view="list"] .save-star { font-size:1.4rem; }
+
+  /* Browse first; open all the housing filters together when needed. */
+  .site-header:has(.mobile-nav-disclosure) { z-index:45; background:#123b31; border-bottom:1px solid #446957; }
+  .site-header:has(.mobile-nav-disclosure) .header-inner { min-height:3.5rem; }
+  .site-header:has(.mobile-nav-disclosure) .brand { color:white; font:700 1.28rem Georgia,serif; letter-spacing:-.045em; }
+  .site-header:has(.mobile-nav-disclosure) .brand span { color:#f3d18b; }
+  .site-header .mobile-nav { display:flex; }
+  .site-header .mobile-nav .mobile-search-link { display:none!important; }
+  .site-header .mobile-nav-disclosure summary { min-height:44px; border:1px solid #8aab91; color:#f8fcf7; background:transparent; }
+  .housing-heading { padding:.95rem 0 .4rem; }
+  .housing-heading h1 { margin:0; font-size:clamp(1.95rem,7.8vw,2.65rem); line-height:1.07; }
+  .housing-heading p { margin:.4rem 0 .5rem; line-height:1.4; }
+  .housing-phone-bar:not([hidden]) { display:grid; grid-template-columns:auto minmax(0,1fr); gap:.6rem; align-items:center; margin:.15rem 0 .5rem; }
+  .housing-phone-bar button,.housing-phone-bar .sort,.phone-show-rentals {
+    box-sizing:border-box; min-height:46px; border-radius:.55rem; font:650 1rem/1.2 system-ui,sans-serif;
+  }
+  .housing-phone-bar button,.phone-show-rentals { border:1px solid #194b38; padding:.6rem 1rem; background:#194b38; color:white; cursor:pointer; }
+  .housing-phone-bar .sort { width:100%; min-width:0; padding:.5rem .55rem; color:#204734; background-color:#fff; border:1px solid #aabbaa; }
+  #filters.housing-filters { scroll-margin-top:4.5rem; }
+  .housing-filters:not([hidden]) { margin-bottom:.6rem; padding:.8rem; gap:.65rem; }
+  .housing-filters .housing-query,.housing-filters #manager-filter { grid-column:1/-1; }
+  .housing-filters .phone-show-rentals { align-self:stretch; }
+  .housing-summary:has(.search-chip--default) { display:none; }
+  .housing-summary { gap:.2rem .6rem; padding:0; }
+  .housing-summary #shareStatus:empty { display:none; }
+  .housing-summary .search-chip,.housing-summary button { min-height:44px; }
+  .housing-summary button:focus-visible,.housing-phone-bar :focus-visible,.phone-show-rentals:focus-visible { outline:3px solid #a8751a; outline-offset:2px; }
+  .housing-heading ~ .toolbar { flex-flow:row wrap; align-items:center; justify-content:space-between; gap:.25rem .45rem; margin:.25rem 0 .55rem; padding:0; }
+  .housing-heading ~ .toolbar .toolbar-controls { flex:0 0 auto; margin-left:auto; }
+  .housing-heading ~ .toolbar .layout-switch { flex:none; }
+  .housing-heading ~ .toolbar .layout-switch button { min-height:44px; padding:.35rem .55rem; font-size:.87rem; }
+  .layout-phone-label { display:inline; }
+  .layout-wide-label { display:none; }
+  #resultCount { scroll-margin-top:4.5rem; }
+  #listings.is-compact { gap:.7rem; }
+  #listings.is-compact .card {
+    display:grid; grid-template-columns:clamp(4.5rem,21vw,6.25rem) minmax(0,1fr);
+    grid-template-areas:"photo price" "photo address" "photo specs" "location location" "actions actions" "manager manager" "pin pin";
+    grid-template-rows:auto; align-content:start; align-items:center; gap:.2rem .75rem;
+    padding:.8rem; border:1px solid #c9d7cb; border-radius:.9rem; box-shadow:0 2px 7px #173c300a;
+  }
+  #listings.is-compact .card-body { display:contents; }
+  #listings.is-compact .property-art { grid-area:photo; width:100%; min-height:0; height:auto; aspect-ratio:1/1.12; align-self:start; border-radius:.5rem; }
+  #listings.is-compact .property-photo,#listings.is-compact .property-placeholder { width:100%; height:100%; min-height:0; }
+  #listings.is-compact .property-art::before,#listings.is-compact .property-art::after,#listings.is-compact .source-badge,
+  #listings.is-compact .property-placeholder-head,#listings.is-compact .property-placeholder-foot { display:none; }
+  #listings.is-compact .photo-note { bottom:0; left:0; right:0; max-width:none; padding:.15rem; font-size:.65rem; text-align:center; }
+  #listings.is-compact .price { justify-self:start; align-self:end; font:700 1.5rem/1.1 system-ui,sans-serif; color:#174634; margin:0; }
+  #listings.is-compact .price small { display:inline; font-size:.76rem; margin:0; }
+  #listings.is-compact .address { align-self:center; margin:0; font:600 1.16rem/1.22 Georgia,serif; text-wrap:initial; }
+  #listings.is-compact .specs { justify-self:start; align-self:start; flex-wrap:wrap; padding:0; margin:.1rem 0 0; gap:.15rem .5rem; border:0; }
+  #listings.is-compact .specs span { padding:0; border:0; background:none; color:#3a5b49; font-size:.86rem; }
+  #listings.is-compact .location { margin:.2rem 0 0; font-size:.84rem; }
+  #listings.is-compact .card-actions { grid-template-columns:repeat(2,minmax(0,1fr)); gap:.5rem; margin:.35rem 0; }
+  #listings.is-compact .card-actions a { border-radius:.5rem; font-size:.9rem; min-height:46px; padding:.45rem .35rem; }
+  #listings.is-compact .manager { margin:.12rem 0; padding:0; font-size:.84rem; line-height:1.45; }
+  #listings.is-compact .freshness { font-size:.8rem; }
+  #listings.is-compact .compare-pick { margin:.15rem 0 0; min-height:44px; padding:.4rem .65rem; border-radius:.5rem; }
+  #listings.is-compact .card:hover,#listings.is-compact .card:hover .property-photo { transform:none; }
+
+  /* Keep the business name, number and call action together as text wraps. */
+  .provider-matches { margin:.35rem 0 .8rem; padding:.9rem; border-radius:.75rem; }
+  .provider-matches h2 { font-size:1.55rem; line-height:1.15; }
+  .provider-matches p { line-height:1.45; }
+  .provider-matches ul { margin:.4rem 0; }
+  .provider-matches li { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:0 .65rem; align-items:center; padding:.4rem 0; }
+  .provider-matches .result-name { grid-column:1; grid-row:1/3; align-self:stretch; display:flex; align-items:center; min-height:44px; line-height:1.3; }
+  .provider-matches li:has(.provider-phone-number) .result-name { grid-row:1; align-self:end; }
+  .provider-phone-number { display:block; grid-column:1; grid-row:2; font-size:.9rem; color:#42624f; line-height:1.3; }
+  .provider-matches .result-call { grid-column:2; grid-row:1/3; align-self:center; min-width:3.7rem; justify-content:center; min-height:46px; padding:.4rem .7rem; border-radius:.5rem; }
+  .provider-matches .call-button-number { display:none; }
+  .provider-matches .result-all { display:inline-flex; align-items:center; min-height:44px; }
+  header.equipment-site-header .equipment-nav-wrap { position:relative; display:flex; align-items:center; gap:.45rem; min-height:3.5rem; padding:.3rem 0; }
+  header.equipment-site-header .equipment-brand { margin-right:auto; }
+  header.equipment-site-header .equipment-brand-mark,header.equipment-site-header .equipment-brand-type small { display:none; }
+  header.equipment-site-header .equipment-brand-name { font:700 1.28rem/1.1 Georgia,serif; letter-spacing:-.045em; }
+  header.equipment-site-header .equipment-home-link { order:1; min-height:44px; padding:.4rem .65rem; }
+  header.equipment-site-header .equipment-home-link span { display:none; }
+  .equipment-menu-toggle { order:2; min-height:44px; padding:.4rem .7rem; border:1px solid #8cab92; border-radius:.5rem; color:#fff; background:transparent; font:700 .91rem system-ui,sans-serif; }
+  .equipment-menu-toggle:focus-visible { outline:3px solid #f0ce83; outline-offset:2px; }
+  .equipment-menu-toggle:not([hidden]) ~ .equipment-top-links:not([hidden]) {
+    position:absolute; z-index:5; top:100%; right:0; display:grid; width:min(18rem,100%);
+    padding:.45rem; margin:0; gap:.15rem; border:1px solid #adbcac; border-radius:.6rem; background:#173e33; overflow:visible;
+  }
+  .equipment-site-header:has(.equipment-menu-toggle[hidden]) .equipment-nav-wrap { flex-wrap:wrap; }
+  .equipment-site-header:has(.equipment-menu-toggle[hidden]) .equipment-top-links { order:3; flex:1 0 100%; }
+  .equipment-menu-toggle ~ .equipment-top-links a span { display:none; }
+  html:has(.equipment-menu-toggle:not([hidden])) { scroll-padding-top:3.7rem; }
+  .equipment-site-header ~ main :is(#equipment-finder,#equipment-catalog-heading,#equipment-results,#provider-matches) { scroll-margin-top:.65rem; }
+}
+
+.chapter-name-phone { display:none; }
+@media screen and (max-width:600px) {
+  #browse #browse-toolbar { margin:0 0 .15rem; padding:0; gap:0; }
+  #browse #browse-toolbar #result-count { width:auto; min-height:0; margin:0; padding:0; border:0; background:none; box-shadow:none; color:#52665a; }
+  #browse #share-feedback:empty { display:none; }
+  #browse > .finder-options { margin:.45rem 0 .6rem; }
+  #browse > .finder-options > summary { min-height:44px; padding:.65rem .8rem; }
+  #phoneDirectoryControls { padding:0 .8rem .6rem; }
+  #phoneDirectoryControls #filters {
+    display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:end; gap:.2rem .65rem;
+    margin:0; padding:.45rem 0 .6rem; border:0; background:none; box-shadow:none;
+  }
+  #phoneDirectoryControls #filters label { grid-column:1/-1; margin:0; font:650 .9rem system-ui,sans-serif; text-transform:none; letter-spacing:0; }
+  #phoneDirectoryControls #filters::before,#phoneDirectoryControls #filters::after { display:none; }
+  #phoneDirectoryControls #filters select { width:100%; padding:.45rem .55rem; height:46px; min-height:46px; font-size:1rem; }
+  #phoneDirectoryControls .browse-actions { display:flex; flex-wrap:wrap; align-items:center; gap:.4rem; }
+  #phoneDirectoryControls button { min-height:44px; }
+  #browse #rental-results[data-view="list"] > .directory-chapter:not([hidden]) {
+    display:block; min-height:0; height:auto; margin:.4rem 0 0; padding:0 .12rem; border:0;
+    border-radius:0; box-shadow:none; background:none;
+  }
+  #browse #rental-results[data-view="list"] > .directory-chapter::before,
+  #browse #rental-results[data-view="list"] > .directory-chapter::after,
+  #browse #rental-results[data-view="list"] .directory-chapter .chapter-illustration,
+  #browse #rental-results[data-view="list"] .directory-chapter .chapter-intro > :not(h3),
+  #browse #rental-results[data-view="list"] .directory-chapter .chapter-name-story { display:none; }
+  #browse #rental-results[data-view="list"] .directory-chapter .chapter-intro { display:block; margin:0; padding:0; }
+  #browse #rental-results[data-view="list"] .directory-chapter h3 {
+    margin:0; padding:0; font:600 1.18rem/1.3 Georgia,serif; color:#314f40; letter-spacing:-.015em;
+  }
+  #browse #rental-results[data-view="list"] .chapter-name-phone { display:inline; }
+}

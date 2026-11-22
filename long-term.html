@@ -1774,6 +1774,10 @@ main .owner-band.owner-fieldnote{
 <p><span id="inventoryCount">—</span> listings from <span id="managerCount">—</span> property managers. Check openings directly with the manager.</p></header>
 
 
+    <div id="housingPhoneBar" class="housing-phone-bar" hidden>
+      <button type="button" id="phoneHousingFilters" aria-controls="filters" aria-expanded="false">Filters<span id="phoneFilterCount"></span></button>
+      <div id="phoneSortSlot"></div>
+    </div>
     <form id="filters" class="housing-filters" role="search">
 <label class="housing-query">Address or manager<input id="q" type="search" placeholder="Street, address, or manager"></label>
 <label id="minimum-filter" class="housing-extra"><span id="minRentLabel">Min rent ($)</span><input id="minRent" type="number" min="0" step="0.01" inputmode="decimal" placeholder="No minimum"></label>
@@ -1781,17 +1785,17 @@ main .owner-band.owner-fieldnote{
 <label>Bedrooms<select id="beds"><option value="">Any</option><optgroup label="Exact bedrooms"><option value="eq0">Studio</option><option value="eq1">1 bedroom</option><option value="eq2">2 bedrooms</option><option value="eq3">3 bedrooms</option><option value="eq4">4 bedrooms</option><option value="eq5">5 bedrooms</option><option value="eq6">6 bedrooms</option></optgroup><optgroup label="Minimum bedrooms"><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option><option value="5">5+</option><option value="6">6+</option></optgroup></select></label>
 <label id="type-filter" class="housing-extra">Home type<select id="type"><option value="">Any type</option></select></label>
 <label id="manager-filter" class="housing-extra">Manager<select id="manager"><option value="">Any manager</option></select></label>
-<button type="button" id="moreHousingFilters" class="housing-reset" aria-expanded="false" aria-controls="minimum-filter type-filter manager-filter" hidden>More filters</button>
-<button class="housing-reset" type="reset">Clear filters</button></form>
+<button class="housing-reset" type="reset">Clear filters</button>
+<button id="phoneShowRentals" class="phone-show-rentals" type="submit" hidden>Show rentals</button></form>
 
     <div class="housing-summary"><div class="search-chips" id="activeFilters" aria-label="Active rental search filters"></div><button type="button" id="copySearch" hidden>Copy search link</button><span id="shareStatus" role="status"></span><label id="shareFallbackWrap" hidden>Search link<input id="shareFallback" type="text" readonly></label></div>
 
     <div class="toolbar">
-      <div id="resultCount" class="results-count" role="status" aria-live="polite">Loading rentals…</div>
+      <div id="resultCount" class="results-count" role="status" aria-live="polite" tabindex="-1">Loading rentals…</div>
       <div class="toolbar-controls">
         <div id="layoutSwitch" class="layout-switch" role="group" aria-label="Rental result layout" hidden>
           <button type="button" data-layout="cards" aria-pressed="true" aria-controls="listings"><span class="layout-icon" aria-hidden="true">▦</span> Gallery</button>
-          <button type="button" data-layout="rows" aria-pressed="false" aria-controls="listings"><span class="layout-icon" aria-hidden="true">☷</span> Compare</button>
+          <button type="button" data-layout="rows" aria-pressed="false" aria-controls="listings"><span class="layout-icon" aria-hidden="true">☷</span> <span class="layout-wide-label">Compare</span><span class="layout-phone-label">List</span></button>
         </div>
         <select id="sort" class="sort" aria-label="Sort rentals">
           <option value="rent-asc">Rent: low to high</option>
@@ -2226,13 +2230,22 @@ form.addEventListener('input',sync);form.addEventListener('change',sync);form.ad
     buttons.forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.layout===layout)));
     if(persist){try{localStorage.setItem(storageKey,layout)}catch(error){/* Storage optional. */}}
   }
-  let saved="cards";
-  try{if(localStorage.getItem(storageKey)==="rows")saved="rows"}catch(error){/* Storage optional. */}
-  show(saved,false);
+  const smallScreen=window.matchMedia("(max-width:600px)");
+  let preferred;
+  try{preferred=localStorage.getItem(storageKey)}catch(error){/* Storage optional. */}
+  function fitScreen(){
+    const layout=["cards","rows"].includes(preferred)?preferred:(smallScreen.matches?"rows":"cards");
+    show(layout,false);
+  }
+  fitScreen();
+  smallScreen.addEventListener("change",fitScreen);
   switcher.hidden=false;
   switcher.addEventListener("click",event=>{
     const button=event.target.closest("button[data-layout]");
-    if(button && switcher.contains(button))show(button.dataset.layout,true);
+    if(button && switcher.contains(button)){
+      preferred=button.dataset.layout;
+      show(preferred,true);
+    }
   });
 })();
 </script>
