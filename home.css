@@ -446,3 +446,16 @@ footer a{display:inline-flex;align-items:center;min-height:44px;font-weight:650}
     }
   }
 }
+
+/* Approximate category suggestions for longer renter requests. Compact,
+   legible on phones, separate from the dark exact-match feature. */
+#search-results>ul>.search-row.related-match{border-color:#d4c49d;background:linear-gradient(135deg,#fffdf6 0%,#faf4e7 100%)}
+#search-results>ul>.search-row.related-match:before{background:#ba9155}
+#search-results .related-match>a{min-height:7.4rem;padding:.88rem 1.12rem .92rem 1.36rem;gap:.32rem}
+#search-results .related-match .match-title{font-size:clamp(1.3rem,2vw,1.6rem)}
+#search-results .related-match .match-chapter{color:#745831}
+@media(max-width:650px){
+ #search-results .related-match>a{min-height:0;padding:.8rem .92rem .85rem 1.1rem}
+ #search-results .related-match .match-title{font-size:1.42rem}
+}
+@media print{#search-results>ul>.search-row.related-match{background:white;border-color:#aaa}}

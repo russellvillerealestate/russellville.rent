@@ -8,6 +8,16 @@
   const clean = text => text.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, ' ').trim();
   const stem = word => word.length > 3 && word.endsWith('s') && !word.endsWith('ss') ? word.slice(0,-1) : word;
   const tokens = text => clean(RentalQuery.words(text)).split(/\s+/).filter(word => word && !['in','and','or','of','near','around','arkansas','russellville','ar'].includes(word)).map(stem);
+  // Timing and nearby-town words are context, not item requirements.
+  // Housing queries retain their full text for city, bed and budget matching.
+  const browseContext=new Set([
+    'today','tomorrow','tonight','weekend','weekends','weekday','weekdays',
+    'monday','tuesday','wednesday','thursday','friday','saturday','sunday',
+    'next','this','coming','week','weeks','month','months','day','days',
+    'atkins','pottsville','dardanelle','london','dover','morrilton',
+    'clarksville','danville','plainview','havana','paris','nearby'
+  ].map(stem));
+  const searchTerms=text=>tokens(text).filter(word=>!browseContext.has(word));
   const cards = [...directory.querySelectorAll('.rental-card')].map(element => {
     const link = element.querySelector('.card-link');
     const name = link.querySelector('.category-name').textContent;
@@ -214,42 +224,61 @@
     return card.href+'?'+new URLSearchParams({q:search})+'#provider-matches';
   }
   function matches(text) {
-    const query=RentalQuery.words(text), terms=tokens(text);
+    const query=RentalQuery.words(text),terms=searchTerms(text);
     if(!terms.length)return [];
     const result=(card,href,rank)=>inGroup(card)?[{card,href,rank}]:[];
-    const route=forcedRoutes.find(([pattern])=>pattern.test(query));
-    if(route){const card=byKey.get(route[1]);return result(card,destination(card,route[2]??query),110);}
-    const housing=RentalQuery.housing(text);
+    const categoryQuery=terms.join(' ');
+    const route=forcedRoutes.find(([pattern])=>pattern.test(query)||pattern.test(categoryQuery));
+    if(route){const card=byKey.get(route[1]);return result(card,destination(card,route[2]??categoryQuery),110);}
+    // A reference to a house being remodeled should not turn a dumpster,
+    // truck or trailer request into a residential-property search.
+    const nonhousing=/\b(?:dumpsters?|roll[- ]?offs?|moving trucks?|trailers?|skid steers?|lawn mowers?|photo booths?|porta[- ]?pott(?:y|ies))\b/i.test(text);
+    const housing=nonhousing?null:RentalQuery.housing(text);
     if(housing)return result(byKey.get('homes'),housing,110);
     const address=RentalQuery.terms(query);
     const foundProperty=address.some(word=>word.length>=3)&&housingIndex.some(record=>RentalQuery.matchesListing(address,record));
-    return cards.filter(inGroup).flatMap(card=>{
+    // When dates or nearby towns are supplied, provider-page filters should
+    // receive the item words only, not unsupported schedule/geography terms.
+    const detailQuery=tokens(text).length===terms.length?query:categoryQuery;
+    const exactMatches=cards.filter(inGroup).flatMap(card=>{
       if(card.key==='homes'&&foundProperty)return [{card,href:destination(card,query),rank:95}];
       if(!terms.every(word=>card.words.has(word)))return [];
       const title=card.titleWords.join(' '),needle=terms.join(' ');
-      const exact=title===needle || card.key===query || (genericNames[card.key]||[]).includes(needle);
+      const exact=title===needle||card.key===query||(genericNames[card.key]||[]).includes(needle);
       const rank=exact?100:terms.every(w=>card.titleWords.includes(w))?60:35;
-      return [{card,href:destination(card,query,exact),rank}];
+      return [{card,href:destination(card,detailQuery,exact),rank}];
     }).sort((a,b)=>b.rank-a.rank);
+    if(exactMatches.length)return exactMatches;
+    // Recovery suggestions never claim availability or inherit unmatched
+    // constraints; a partial result is not presented as an exact match.
+    if(terms.length<2)return [];
+    return cards.filter(inGroup).map(card=>{
+      const titleHits=terms.filter(word=>card.titleWords.includes(word)).length;
+      const matched=terms.filter(word=>card.words.has(word)).length;
+      if(!matched||(!titleHits&&matched<Math.ceil(terms.length/2)))return null;
+      return {card,href:destination(card,categoryQuery,true),rank:titleHits*8+matched*2,related:true};
+    }).filter(Boolean).sort((a,b)=>b.rank-a.rank).slice(0,3);
   }
   let lastResults=[];
   function render({groupChanged=false}={}) {
     const text=input.value.trim(), active=Boolean(text);
     lastResults=active?matches(text):[];
-    byId('browse-title').textContent=active?'Search results':'Rental categories';
+    const relatedOnly=active&&lastResults.length>0&&lastResults.every(item=>item.related);
+    byId('browse-title').textContent=active?(relatedOnly?'Related rental categories':'Search results'):'Rental categories';
     results.hidden=!active;directory.hidden=active;
     if(active){
       const list=results.querySelector('ul'); list.replaceChildren();
       const propertyCount=renderHomePreview(text);
-      for(const {card,href} of lastResults){
+      for(const {card,href,related} of lastResults){
         // Direct property links and the filtered-homes route already appear above this category list.
         if(propertyCount && card.key==='homes')continue;
         const row=document.createElement('li'),link=categoryLink(card);
         row.className='search-row';
-        if(!list.children.length)row.classList.add('primary-match');
+        if(related)row.classList.add('related-match');
+        else if(!list.children.length)row.classList.add('primary-match');
         link.href=href;
         const chapter=document.createElement('small');chapter.className='match-chapter';
-        chapter.textContent=groupNames.get(card.group)||'Rental category';
+        chapter.textContent=(related?'Suggested category · ':'')+(groupNames.get(card.group)||'Rental category');
         const title=document.createElement('strong');title.className='match-title';title.textContent=card.name;
         const summary=document.createElement('span');summary.className='match-description';
         summary.textContent=card.element.querySelector('.category-notes p')?.textContent||'Explore local rental providers.';
@@ -275,7 +304,9 @@
       }
       results.querySelector('.no-results').hidden=lastResults.length>0;
       const otherCount=lastResults.length-(propertyCount?1:0);
-      byId('result-count').textContent=propertyCount
+      byId('result-count').textContent=relatedOnly
+        ? 'No exact category match. These may help; confirm service area, dates and availability.'
+        : propertyCount
         ? propertyCount+' matching home'+(propertyCount===1?'':'s')+(otherCount?' · '+otherCount+' related rental '+(otherCount===1?'category':'categories'):'')
         : lastResults.length+' matching '+(lastResults.length===1?'category':'categories');
     }else {
@@ -312,7 +343,7 @@
       byId('home-preview-list').querySelector('a')?.focus({preventScroll:true});
       return;
     }
-    if(lastResults.length===1 || (lastResults[0]?.rank>=95 && lastResults[0].rank>lastResults[1]?.rank)) {
+    if(!lastResults.some(item=>item.related) && (lastResults.length===1 || (lastResults[0]?.rank>=95 && lastResults[0].rank>lastResults[1]?.rank))) {
       const {card,href}=lastResults[0];
       if(card.href.endsWith('.html')){
         const path=new URL(card.href,location.href).pathname;
