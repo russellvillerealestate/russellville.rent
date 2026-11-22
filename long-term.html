@@ -1575,6 +1575,158 @@ main .owner-band.owner-fieldnote{
   .owner-fieldnote.owner-band .owner-actions a{color:#173d32!important;background:#fff!important;border:1px solid #666}
 }
 
+
+/* 2026-11-22 / Home-type portrait gallery: scenic chapter + real filter shortcuts.
+   Keeps property-type links and all automated listing content unchanged. */
+.rental-paths{
+  display:grid;grid-template-columns:minmax(0,.91fr) minmax(0,1.09fr);
+  align-items:stretch;gap:0;min-height:490px;padding:0;
+  border-radius:27px;overflow:hidden;background:#103a30
+}
+.rental-paths::before{
+  background:linear-gradient(108deg,#09251fdb,#0e3a31b9 75%),
+    url("assets/downtown-russellville-sunset.jpg") center 42%/cover no-repeat
+}
+.rental-paths::after{width:260px;height:260px;right:auto;left:-170px;bottom:-105px;box-shadow:0 0 0 42px #f6ca7e0b,0 0 0 84px #f6ca7e08}
+.rental-paths-heading{
+  display:flex;flex-direction:column;justify-content:space-between;
+  align-items:flex-start;gap:28px;min-height:490px;
+  margin:0;padding:clamp(32px,4.1vw,54px);
+  border-right:1px solid #ffffff40
+}
+.rental-paths h2{
+  max-width:10ch;font-size:clamp(2.85rem,4.5vw,4.7rem);
+  line-height:1.03;letter-spacing:-.06em
+}
+.rental-paths-heading>p{
+  max-width:34ch;margin:0;color:#e9f0e7;
+  font-size:1rem;line-height:1.67
+}
+.rental-paths-grid{
+  display:grid;grid-template-columns:minmax(0,1fr);
+  grid-template-rows:repeat(3,minmax(0,1fr));
+  gap:11px;padding:clamp(16px,2.4vw,30px);
+  background:linear-gradient(145deg,#f8f7ef,#e9eee5)
+}
+.rental-path{
+  display:grid;grid-template-columns:99px minmax(0,1fr);
+  align-items:center;justify-content:stretch;gap:22px;
+  min-width:0;min-height:0;padding:20px 21px;
+  border:1px solid #d4dfd2;border-radius:13px;
+  color:#173d32!important;background:#fffdf8;
+  box-shadow:0 5px 16px #173b2d0b;
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease
+}
+.rental-path:hover{
+  transform:translateX(3px);background:#fffdf8;border-color:#ad8544;
+  box-shadow:0 10px 25px #173b2d1c
+}
+.rental-path-header{
+  display:flex;flex-direction:column;justify-content:space-between;
+  align-items:flex-start;align-self:stretch;gap:12px;
+  padding-right:13px;border-right:1px solid #d9e3d7
+}
+.rental-path-index{color:#92652d;font-size:.62rem;letter-spacing:.1em;line-height:1.5}
+.rental-path svg{
+  display:block;width:65px;height:55px;max-width:100%;
+  stroke:#396450;stroke-width:2;flex:none
+}
+.rental-path-content{min-width:0}
+.rental-path h3{
+  margin:0 0 7px;color:#173d32;
+  font-size:clamp(1.6rem,2.5vw,2.25rem);letter-spacing:-.045em
+}
+.rental-path p{color:#4a6655;font-size:.83rem;line-height:1.58}
+.rental-path-action{
+  display:inline-block;margin-top:15px;color:#835b28;
+  font-size:.8rem;font-weight:850
+}
+.rental-paths-foot{
+  grid-column:1/-1;display:flex;align-items:center;
+  justify-content:space-between;gap:18px;margin:0;padding:15px 30px;
+  background:#143c31;color:#e8ede1;
+  border-top:1px solid #ffffff30;font-size:.7rem;line-height:1.65
+}
+.rental-paths-foot a{color:#f6d69b;text-decoration-thickness:1px}
+.rental-path:focus-visible{
+  outline:3px solid #d29336;outline-offset:-5px;
+  box-shadow:0 0 0 5px #fffdf8
+}
+@media(max-width:900px){
+  .rental-paths{display:block;min-height:0}
+  .rental-paths-heading{
+    min-height:275px;padding:38px 33px;gap:22px;border:0;
+    justify-content:center
+  }
+  .rental-paths h2{max-width:16ch;font-size:clamp(2.5rem,6.4vw,4.2rem)}
+  .rental-paths-heading>p{max-width:55ch;margin:0}
+  .rental-paths-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    grid-template-rows:auto;gap:10px;padding:18px
+  }
+  .rental-path{
+    grid-template-columns:minmax(0,1fr);align-content:space-between;
+    gap:16px;min-height:235px;padding:18px 16px
+  }
+  .rental-path-header{
+    flex-direction:row;align-items:flex-start;gap:7px;
+    border-right:0;border-bottom:1px solid #d9e3d7;
+    padding:0 0 11px
+  }
+  .rental-path svg{width:47px;height:42px}
+  .rental-path h3{font-size:1.65rem}
+}
+@media(max-width:640px){
+  .rental-paths{margin:22px 0 35px;border-radius:18px}
+  .rental-paths-heading{min-height:0;padding:35px 25px 42px}
+  .rental-paths h2{font-size:clamp(2.7rem,10vw,3.65rem)}
+  .rental-paths-heading>p{font-size:.92rem}
+  .rental-paths-grid{grid-template-columns:1fr;padding:12px;gap:8px}
+  .rental-path{
+    grid-template-columns:86px minmax(0,1fr);
+    min-height:122px;gap:15px;padding:16px 14px
+  }
+  .rental-path-header{
+    flex-direction:column;justify-content:space-between;
+    gap:7px;align-self:stretch;border-right:1px solid #d9e3d7;
+    border-bottom:0;padding:0 10px 0 0
+  }
+  .rental-path-index{font-size:.55rem;letter-spacing:.045em}
+  .rental-path svg{width:53px;height:44px}
+  .rental-path h3{font-size:1.57rem}
+  .rental-path p{font-size:.79rem}
+  .rental-path-action{margin-top:9px;font-size:.73rem}
+  .rental-paths-foot{
+    display:block;padding:13px 22px;font-size:.68rem
+  }
+  .rental-paths-foot span{display:block;margin:0 0 6px}
+}
+@media(max-width:360px){
+  .rental-path{grid-template-columns:71px minmax(0,1fr);gap:10px;padding:13px 11px}
+  .rental-path svg{width:44px;height:39px}
+  .rental-path h3{font-size:1.4rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .rental-path{transition:none}
+  .rental-path:hover{transform:none}
+}
+@media print{
+  .rental-paths{
+    display:block;min-height:0;border:1px solid #777;
+    box-shadow:none;background:#fff;color:#173d32
+  }
+  .rental-paths::before,.rental-paths::after{display:none}
+  .rental-paths-heading{
+    min-height:0;display:block;padding:18px;
+    border:0;color:#173d32
+  }
+  .rental-paths h2,.rental-paths-heading>p,.rental-paths-kicker{color:#173d32}
+  .rental-paths-grid{display:block;padding:12px;background:#fff}
+  .rental-path{min-height:0;margin:0 0 8px;box-shadow:none;break-inside:avoid}
+  .rental-paths-foot{background:#fff;color:#173d32;padding:10px 18px}
+  .rental-paths-foot a{color:#173d32}
+}
+
 </style><link rel="stylesheet" href="assets/finder.css">
 </head>
 <body>
