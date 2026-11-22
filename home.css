@@ -378,3 +378,71 @@ footer a{display:inline-flex;align-items:center;min-height:44px;font-weight:650}
   #search-results .primary-match .match-provider-label,
   #search-results .primary-match .match-provider-names{color:black}
 }
+
+/* Search atelier: immersive Lake Dardanelle hero with a single working
+   search and small, accurate rental-intent links rather than another menu. */
+.hero-search-desk{
+  min-width:0;padding:1.05rem 1.15rem 1.1rem;
+  background:#10382fee;border:1px solid #a9c2af80;border-radius:1rem;
+  box-shadow:0 17px 44px #091f1d55;
+}
+.search-desk-label{
+  color:#f2d9a4;font-size:.75rem;font-weight:800;
+  line-height:1.4;letter-spacing:.105em;text-transform:uppercase;
+  margin:0 0 .65rem;
+}
+.hero-search-desk #search{width:100%}
+.search-examples{display:flex;align-items:center;flex-wrap:wrap;gap:.35rem .45rem;margin-top:.65rem}
+.search-examples span{font-size:.82rem;font-weight:700;color:#cfdfcf;margin-right:.1rem}
+.search-examples a{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:.4rem .72rem;
+  border:1px solid #dceadd73;border-radius:99px;
+  color:#fff9e8;background:#ffffff15;
+  font-size:.87rem;font-weight:650;line-height:1.2;text-decoration:none;
+  white-space:nowrap;
+}
+.search-examples a:hover{background:#f0daac;color:#173b30;border-color:#f0daac}
+.search-examples a:focus-visible{outline:3px solid #ffe5a4;outline-offset:3px}
+@media(min-width:900px){
+  .hero-copy{
+    display:grid;grid-template-columns:minmax(0,1fr) minmax(20rem,.93fr);
+    grid-template-rows:auto auto;column-gap:clamp(1.15rem,3vw,2.8rem);
+    align-items:center;max-width:none;min-height:20rem;
+    padding:clamp(1.7rem,4vw,3.25rem);
+  }
+  .hero-copy>p{grid-column:1;grid-row:1;align-self:end}
+  .hero h1{
+    grid-column:1;grid-row:2;align-self:start;
+    margin:.28rem 0 0;font-size:clamp(3.1rem,5.1vw,5.05rem);
+  }
+  .hero-search-desk{grid-column:2;grid-row:1/3;align-self:center}
+}
+@media(min-width:651px) and (max-width:899px){
+  .hero-search-desk{max-width:42rem;margin-top:.9rem}
+}
+@media(max-width:650px){
+  .hero-search-desk{
+    padding:0;margin-top:.55rem;border:0;border-radius:0;
+    background:transparent;box-shadow:none;
+  }
+  .search-desk-label{display:none}
+  .search-examples{gap:.3rem .45rem;margin-top:.45rem}
+  .search-examples span,.search-examples a:last-child{display:none}
+  .search-examples a{min-height:44px;padding:.35rem .68rem;background:#143d32cb}
+}
+/* Searching collapses the decorations so the results remain near the top. */
+@supports selector(.hero:has(#hero-query:not(:placeholder-shown))){
+  .hero:has(#hero-query:not(:placeholder-shown)) .hero-search-desk{
+    grid-column:2;grid-row:1/3;align-self:center;
+    min-width:0;margin:0;padding:0;border:0;border-radius:0;
+    box-shadow:none;background:transparent;
+  }
+  .hero:has(#hero-query:not(:placeholder-shown)) .search-desk-label,
+  .hero:has(#hero-query:not(:placeholder-shown)) .search-examples{display:none}
+  @media(max-width:650px){
+    .hero:has(#hero-query:not(:placeholder-shown)) .hero-search-desk{
+      display:block;margin:0;padding:0;
+    }
+  }
+}
