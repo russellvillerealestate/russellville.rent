@@ -126,10 +126,71 @@
     [/^(?:portable toilets?|porta[- ]pott(?:y|ies))$/i,'restrooms','portable']
   ];
   const genericNames={homes:['housing','homes apartments'],storage:['self storage'],tools:['tools equipment'],cars:['vehicles'],party:['events parties','party supplies'],stays:['short stays']};
-  let housingIndex=[], housingRequest, pendingLookup;
+  let housingIndex=[], housingRecords=[], housingRequest, pendingLookup;
   function loadHousing() {
-    if(!housingRequest)housingRequest=fetch('data/listings.json').then(r=>r.ok?r.json():[]).then(items=>{housingIndex=items.map(RentalQuery.listingWords);}).catch(()=>{housingRequest=null;});
+    if(!housingRequest)housingRequest=fetch('data/listings.json').then(r=>r.ok?r.json():[]).then(items=>{
+      housingRecords=Array.isArray(items)?items.filter(item=>item && typeof item==='object'):[];
+      housingIndex=housingRecords.map(RentalQuery.listingWords);
+    }).catch(()=>{housingRequest=null;});
     return housingRequest;
+  }
+  function homeMatches(text) {
+    const route=RentalQuery.housing(text,true);
+    if(!route)return [];
+    const filters=new URL(route,location.href).searchParams;
+    const query=RentalQuery.terms(filters.get('q')||'');
+    const type=filters.get('type'),beds=filters.get('beds');
+    const minRent=filters.has('minRent')?Number(filters.get('minRent')):null;
+    const maxRent=filters.has('maxRent')?Number(filters.get('maxRent')):null;
+    return housingRecords.filter(item=>{
+      try {if(new URL(item.source_url).protocol!=='https:')return false;}catch{return false;}
+      if(type && String(item.type||'').toLowerCase()!==type.toLowerCase())return false;
+      if(beds){
+        if(!Number.isFinite(Number(item.beds)))return false;
+        const amount=Number(beds.replace(/^eq/,'')),actual=Number(item.beds);
+        if(beds.startsWith('eq') ? actual!==amount : actual<amount)return false;
+      }
+      if(minRent!==null && (!Number.isFinite(Number(item.rent)) || (filters.has('above') ? Number(item.rent)<=minRent : Number(item.rent)<minRent)))return false;
+      if(maxRent!==null && (!Number.isFinite(Number(item.rent)) || (filters.has('below') ? Number(item.rent)>=maxRent : Number(item.rent)>maxRent)))return false;
+      return RentalQuery.matchesListing(query,RentalQuery.listingWords(item).concat(RentalQuery.terms([item.city,item.state].filter(Boolean).join(' '))));
+    }).sort((left,right)=>(Number(left.rent)||Infinity)-(Number(right.rent)||Infinity));
+  }
+  function renderHomePreview(text) {
+    const panel=byId('home-preview'),list=byId('home-preview-list');
+    const housingResult=lastResults.some(({card})=>card.key==='homes');
+    if(!text || !housingResult || !housingRecords.length){panel.hidden=true;list.replaceChildren();return 0;}
+    const matches=homeMatches(text);
+    if(!matches.length){panel.hidden=true;list.replaceChildren();return 0;}
+    list.replaceChildren();
+    for(const item of matches.slice(0,3)){
+      const article=document.createElement('article'),link=document.createElement('a');
+      article.className='home-result-card';link.className='home-result-link';
+      link.href=item.source_url;link.target='_blank';link.rel='noopener noreferrer';
+      const photo=document.createElement('div');photo.className='home-result-photo';
+      if(item.image_verified && String(item.image_url||'').startsWith('https://')){
+        const img=document.createElement('img');img.src=item.image_url;img.alt='';
+        img.loading='lazy';img.decoding='async';img.width=420;img.height=264;photo.append(img);
+      }else photo.textContent='River Valley rental';
+      const body=document.createElement('div');body.className='home-result-info';
+      const price=document.createElement('strong');price.className='home-result-price';
+      if(Number(item.rent)>0){price.textContent=Number(item.rent).toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});const per=document.createElement('small');per.textContent=' / month';price.append(per);}
+      else price.textContent='Ask for price';
+      const address=document.createElement('span');address.className='home-result-address';address.textContent=item.address||'View rental details';
+      const facts=document.createElement('span');facts.className='home-result-facts';
+      facts.textContent=[item.beds!=null?(item.beds+' bed'):'',item.baths!=null?(item.baths+' bath'):'',item.city||''].filter(Boolean).join(' · ');
+      const manager=document.createElement('span');manager.className='home-result-manager';manager.textContent=item.source_name||item.manager||'Property manager';
+      body.append(price,address,facts,manager);link.append(photo,body);article.append(link);
+      const phone=String(item.phone||'').replace(/\D/g,'');
+      if(phone.length===10 || (phone.length===11&&phone.startsWith('1'))){
+        const call=document.createElement('a');call.className='home-result-call';call.href='tel:+'+(phone.length===10?'1':'')+phone;
+        call.textContent='Call property manager';call.setAttribute('aria-label','Call '+(item.source_name||item.manager||'property manager')+' about '+(item.address||'this rental'));
+        article.append(call);
+      }
+      list.append(article);
+    }
+    byId('home-preview-note').textContent='Showing '+Math.min(3,matches.length)+' of '+matches.length+' provider-posted listings. Confirm current availability.';
+    byId('home-preview-all').href=RentalQuery.housing(text,true)||'long-term.html#listings';
+    panel.hidden=false;return matches.length;
   }
   function inGroup(card) {
     const value = select.value;
@@ -176,9 +237,11 @@
         const detail=document.createElement('small');detail.textContent=groupNames.get(card.group);
         link.append(detail);row.append(link);list.append(row);
       }
+      const propertyCount=renderHomePreview(text);
       results.querySelector('.no-results').hidden=lastResults.length>0;
-      byId('result-count').textContent=lastResults.length+' matching '+(lastResults.length===1?'category':'categories');
+      byId('result-count').textContent=(propertyCount?propertyCount+' matching homes · ':'')+lastResults.length+' matching '+(lastResults.length===1?'category':'categories');
     }else {
+      byId('home-preview').hidden=true;byId('home-preview-list').replaceChildren();
       let total=0;
       for(const group of groups) {
         const groupCards=cards.filter(card=>card.group===group.dataset.chapter);
@@ -195,7 +258,7 @@
   input.addEventListener('input',()=>{
     clearTimeout(pendingLookup);render();
     const value=input.value.trim();
-    if(value.length>=3&&!housingIndex.length&&(!lastResults.length || /\d+\s+\D/.test(value)))
+    if(value.length>=3&&!housingRequest&&(RentalQuery.housing(value)||lastResults.some(({card})=>card.key==='homes')||!lastResults.length||/\d+\s+\D/.test(value)))
       pendingLookup=setTimeout(async()=>{await loadHousing();if(input.value.trim()===value)render();},180);
   });
   input.addEventListener('keydown',event=>{
@@ -205,7 +268,12 @@
   byId('search').addEventListener('submit',async event=>{
     event.preventDefault();
     const query=input.value.trim();
-    if(query&&!lastResults.length&&query.length>=3){await loadHousing();if(input.value.trim()!==query)return;render();}
+    if(query&&query.length>=3&&(!lastResults.length||lastResults.some(({card})=>card.key==='homes')||RentalQuery.housing(query))){await loadHousing();if(input.value.trim()!==query)return;render();}
+    if(!byId('home-preview').hidden){
+      byId('browse').scrollIntoView({block:'start'});
+      byId('home-preview-list').querySelector('a')?.focus({preventScroll:true});
+      return;
+    }
     if(lastResults.length===1 || (lastResults[0]?.rank>=95 && lastResults[0].rank>lastResults[1]?.rank)) {
       const {card,href}=lastResults[0];
       if(card.href.endsWith('.html')){
@@ -254,7 +322,7 @@
   input.value=(params.get('q')||'').slice(0,160);
   if(params.get('view')==='list')layout.value='list';
   renderSaved();renderRecent();applyLayout();render();
-  if(input.value&&!lastResults.length)loadHousing().then(()=>render());
+  if(input.value&&(RentalQuery.housing(input.value)||lastResults.some(({card})=>card.key==='homes')||!lastResults.length))loadHousing().then(()=>render());
   const headerSearch=document.querySelector('.header-search');
   if('IntersectionObserver' in window)new IntersectionObserver(([entry])=>{headerSearch.hidden=entry.isIntersecting;},{rootMargin:'-55px 0px 0px'}).observe(byId('search'));
   headerSearch.addEventListener('click',event=>{event.preventDefault();input.focus();input.scrollIntoView({block:'center'});});
