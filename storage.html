@@ -627,6 +627,104 @@ main#main{padding:0 16px 54px!important}
  .storage-compass a{font-size:.66rem;min-height:60px}
 }
 @media print{.storage-compass{display:none!important}}
+
+/* 2026-11-21: Storage pricing field ledger. Existing provider-published rates
+   appear on a uniform $0–$80/month visual scale, without value-ranking or
+   availability claims. Reference: live StayARV/Russellville.Rent side-by-side;
+   Nielsen Norman Group hierarchy; web.dev reflow; WCAG 2.2 focus/target size.
+   Printed numbers, provider links and caveats remain the authoritative text. */
+.storage-rate-feature{padding:0;border:1px solid #c2b18b;border-radius:28px;overflow:hidden;background:#faf8f0;box-shadow:0 24px 57px #103d3026}
+.storage-rate-feature:before{display:none}
+.storage-rate-head{
+ display:grid;grid-template-columns:minmax(0,1.05fr) minmax(230px,.95fr);
+ align-items:end;gap:clamp(20px,3vw,38px);margin:0;
+ padding:clamp(29px,4vw,49px) clamp(28px,4.3vw,54px);
+ border-bottom:1px solid #d0b780;
+ background:radial-gradient(circle at 98% 5%,#37745b78,transparent 45%),#103a30;
+}
+.storage-rate-head .storage-rate-kicker{color:#f6d59a}
+.storage-rate-head h2{max-width:19ch;font-size:clamp(2.5rem,4.55vw,4.8rem);line-height:1.03;color:#fff9eb;letter-spacing:-.06em}
+.storage-rate-head h2 em{color:#f2cf91}
+.storage-rate-head>p{max-width:47ch;margin:0 0 4px;color:#ecf2e8;font-size:clamp(.91rem,1.15vw,1.02rem);line-height:1.7}
+.storage-rate-head>p strong{color:#ffe0a1}
+.storage-rate-layout{display:grid;grid-template-columns:minmax(230px,.41fr) minmax(0,.59fr);gap:0;align-items:stretch}
+.storage-rate-diagram{
+ display:flex;flex-direction:column;justify-content:space-between;gap:27px;
+ min-width:0;min-height:652px;margin:0;padding:clamp(25px,3.5vw,42px);
+ border:0;border-right:1px solid #67917a;border-radius:0;
+ background:repeating-linear-gradient(0deg,transparent 0 36px,#d7e9d409 37px 38px),
+ repeating-linear-gradient(90deg,transparent 0 36px,#d7e9d409 37px 38px),
+ linear-gradient(145deg,#174d3b,#0b302a);
+}
+.storage-rate-diagram>span{color:#f2d89f;font-size:.67rem}
+.storage-rate-diagram svg{width:min(100%,310px);max-width:310px;align-self:center;filter:drop-shadow(0 18px 24px #031d1780)}
+.storage-rate-diagram strong{font-size:clamp(2.6rem,4.2vw,4.2rem);line-height:1;color:#f8d998}
+.storage-rate-diagram figcaption{max-width:38ch;color:#e7efe3}
+.storage-rate-diagram small{color:#d2e4d2;line-height:1.65}
+.storage-rate-sheet{min-width:0;display:flex;flex-direction:column;background:#fbfaf5}
+.storage-rate-scale{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px 16px;padding:16px clamp(19px,2.7vw,32px);border-bottom:1px solid #cfd7c9;color:#355448;font-size:.69rem;line-height:1.35;letter-spacing:.09em;text-transform:uppercase}
+.storage-rate-scale strong{font-weight:900}
+.storage-rate-scale span{font-weight:800;color:#715b38}
+.storage-rate-list{display:grid;grid-template-columns:minmax(0,1fr);gap:0;flex:1;min-width:0;margin:0;padding:0}
+.storage-rate-list li,.storage-rate-list li:nth-child(2),.storage-rate-list li:nth-child(3){
+ display:grid;grid-template-columns:minmax(0,1fr) auto;
+ grid-template-areas:"index price" "name price" "bar bar" "link link";
+ grid-template-rows:auto auto 10px auto;align-content:center;align-items:center;gap:7px 18px;
+ min-width:0;min-height:0;margin:0;padding:clamp(19px,2.2vw,27px) clamp(19px,2.7vw,32px);
+ border:0;border-bottom:1px solid #cbd7cb;border-radius:0;background:#fffef9;box-shadow:none;
+}
+.storage-rate-list li:nth-child(even){background:#f0f4eb}
+.storage-rate-list li:last-child{border-bottom:0}
+.storage-rate-list li>span:first-child{grid-area:index;color:#54715e;font-size:.64rem;letter-spacing:.1em}
+.storage-rate-list h3{grid-area:name;margin:0;max-width:28ch;font-size:clamp(1.05rem,1.55vw,1.34rem);line-height:1.25;color:#173e32}
+.storage-rate-amount{grid-area:price;align-self:center;justify-self:end;margin:0;text-align:right;color:#123b2f}
+.storage-rate-amount strong{font-size:clamp(2.6rem,4.15vw,4rem);line-height:.98}
+.storage-rate-amount small{display:block;margin:5px 0 0;font-size:.74rem;line-height:1.2;letter-spacing:.03em;color:#536959}
+.storage-rate-list li>.storage-rate-track{grid-area:bar;display:block;overflow:hidden;width:100%;height:10px;margin:5px 0 0;border:1px solid #ccdac8;border-radius:99px;background:#dce6db}
+.storage-rate-track>span{display:block;width:var(--rate-width,0%);height:100%;border-radius:99px;background:linear-gradient(90deg,#437d62,#0d493a)}
+.storage-rate-list a{grid-area:link;justify-self:start;min-height:44px;margin:0;padding:8px 0;font-size:.81rem;color:#185442;text-underline-offset:4px}
+.storage-rate-list a:focus-visible{outline:3px solid #985d20;outline-offset:3px}
+.storage-rate-foot{margin:0;padding:20px clamp(25px,3.6vw,45px) 23px;border-top:1px solid #cdd7c5;background:#e9eee2;color:#345648;font-size:.78rem;line-height:1.72}
+@media(max-width:850px){
+ .storage-rate-head{grid-template-columns:1fr;gap:13px}
+ .storage-rate-head>p{max-width:70ch}
+ .storage-rate-layout{grid-template-columns:minmax(180px,.35fr) minmax(0,.65fr)}
+ .storage-rate-diagram{min-height:630px;padding:25px 21px}
+}
+@media(max-width:650px){
+ .storage-rate-feature{border-radius:20px}
+ .storage-rate-head{padding:29px 23px 31px}
+ .storage-rate-head h2{font-size:clamp(2.4rem,9.3vw,3.4rem)}
+ .storage-rate-layout{grid-template-columns:minmax(0,1fr)}
+ .storage-rate-diagram{min-height:0;flex-direction:row;align-items:center;gap:13px;padding:23px 20px;border-right:0;border-bottom:1px solid #67917a}
+ .storage-rate-diagram>span{display:none}
+ .storage-rate-diagram svg{width:36%;min-width:88px;max-width:160px}
+ .storage-rate-diagram figcaption{flex:1;min-width:0}
+ .storage-rate-diagram strong{font-size:clamp(1.75rem,6vw,2.6rem)}
+ .storage-rate-diagram small{font-size:.68rem}
+ .storage-rate-scale{padding:15px 19px;font-size:.63rem}
+ .storage-rate-list li,.storage-rate-list li:nth-child(2),.storage-rate-list li:nth-child(3){padding:21px 19px;gap:9px 12px}
+ .storage-rate-list h3{font-size:1.03rem}
+ .storage-rate-amount strong{font-size:clamp(2.35rem,10vw,3.35rem)}
+ .storage-rate-amount small{font-size:.68rem}
+ .storage-rate-foot{padding:18px 20px;font-size:.75rem}
+}
+@media(max-width:355px){
+ .storage-rate-list li,.storage-rate-list li:nth-child(2),.storage-rate-list li:nth-child(3){grid-template-columns:minmax(0,1fr) 80px;gap:8px;padding-inline:14px}
+ .storage-rate-list h3{font-size:.93rem}
+ .storage-rate-amount strong{font-size:2.35rem}
+}
+@media(prefers-reduced-motion:reduce){.storage-rate-track>span{transition:none}}
+@media print{
+ .storage-rate-feature{box-shadow:none;border:1px solid #777;break-inside:auto}
+ .storage-rate-head{background:#fff!important;color:#173e32}
+ .storage-rate-head :is(h2,h2 em,.storage-rate-kicker,p,p strong){color:#173e32!important}
+ .storage-rate-diagram{min-height:0;background:#fff!important;color:#173e32}
+ .storage-rate-diagram :is(strong,small,figcaption,span){color:#173e32!important}
+ .storage-rate-list li{break-inside:avoid}
+ .storage-rate-foot{background:#fff!important}
+}
+
 </style>
 </head><body>
 <!-- Shared decorative storage illustrations: source geometry preserved in one reusable SVG sprite.
@@ -762,12 +860,12 @@ main#main{padding:0 16px 54px!important}
    </svg>
    <figcaption><strong>100 square feet</strong><small>Illustration only · Not a provider unit photograph or exact inside dimension.</small></figcaption>
   </figure>
-  <ol class="storage-rate-list" aria-label="Four operator-published 10 by 10-foot storage prices">
-   <li><span>01 / Highway 64 · Russellville</span><h3>London RV Park &amp; Storage</h3><div class="storage-rate-amount"><strong>$35</strong><small>/ month</small></div><a href="#storage-price-london" data-storage-rate-link>Read provider details ↘</a></li>
-   <li><span>02 / State Route 124 · Russellville</span><h3>B &amp; L Mini Storage</h3><div class="storage-rate-amount"><strong>$60</strong><small>/ month</small></div><a href="#storage-price-bandl" data-storage-rate-link>Read provider details ↘</a></li>
-   <li><span>03 / Bradley Cove Road · Russellville</span><h3>Bradley Cove Storage</h3><div class="storage-rate-amount"><strong>$65</strong><small>/ month</small></div><a href="#storage-price-bradley" data-storage-rate-link>Read provider details ↘</a></li>
-   <li><span>04 / East 2nd Street · Russellville</span><h3>EZ Storage — East 2nd Street</h3><div class="storage-rate-amount"><strong>$77</strong><small>/ month</small></div><a href="#storage-price-ez" data-storage-rate-link>Read provider details ↘</a></li>
-  </ol>
+  <div class="storage-rate-sheet"><div class="storage-rate-scale"><strong>Published monthly examples</strong><span>Price bars · $0–$80 per month</span></div><ol class="storage-rate-list" aria-label="Four operator-published 10 by 10-foot storage prices">
+   <li><span>01 / Highway 64 · Russellville</span><h3>London RV Park &amp; Storage</h3><div class="storage-rate-amount"><strong>$35</strong><small>/ month</small></div><span class="storage-rate-track" aria-hidden="true" style="--rate-width:43.75%"><span></span></span><a href="#storage-price-london" data-storage-rate-link>Read provider details ↘</a></li>
+   <li><span>02 / State Route 124 · Russellville</span><h3>B &amp; L Mini Storage</h3><div class="storage-rate-amount"><strong>$60</strong><small>/ month</small></div><span class="storage-rate-track" aria-hidden="true" style="--rate-width:75.00%"><span></span></span><a href="#storage-price-bandl" data-storage-rate-link>Read provider details ↘</a></li>
+   <li><span>03 / Bradley Cove Road · Russellville</span><h3>Bradley Cove Storage</h3><div class="storage-rate-amount"><strong>$65</strong><small>/ month</small></div><span class="storage-rate-track" aria-hidden="true" style="--rate-width:81.25%"><span></span></span><a href="#storage-price-bradley" data-storage-rate-link>Read provider details ↘</a></li>
+   <li><span>04 / East 2nd Street · Russellville</span><h3>EZ Storage — East 2nd Street</h3><div class="storage-rate-amount"><strong>$77</strong><small>/ month</small></div><span class="storage-rate-track" aria-hidden="true" style="--rate-width:96.25%"><span></span></span><a href="#storage-price-ez" data-storage-rate-link>Read provider details ↘</a></li>
+  </ol></div>
  </div>
  <p class="storage-rate-foot"><strong>Source check: November 8, 2026; EZ Storage updated November 19, 2026.</strong> Prices are published examples for nominal 10 × 10-foot units, not live quotes, reservations, guaranteed openings, or a ranking by value. Verify the actual inside dimensions, unit type, available inventory, access hours, taxes, fees, discounts and rental terms with each operator. Full provider records and source links remain below.</p>
 </section>
