@@ -459,3 +459,125 @@
     }
   }
 }
+
+
+/* River Valley discovery board: single-row chapters and provider-first search, November 22 2026.
+   Inspiration: stayarv.com editorial photography and strong headings, adapted to a
+   multi-category directory; Nielsen Norman Group information scent, web.dev
+   responsive grids, and WCAG 2.2 pointer targets and focus visibility.
+   No data, contact, pricing, links, scripts or workflow modifications. */
+@media screen and (min-width: 1080px) {
+  body[data-field-guide="river-valley"] #rental-results:not(.single-list) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+    gap: .78rem;
+  }
+  body[data-field-guide="river-valley"] #rental-results:not(.single-list) .category-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: .35rem;
+    overflow: clip;
+  }
+  body[data-field-guide="river-valley"] #rental-results:not(.single-list) .category-group > h3 {
+    min-height: 6.3rem;
+    padding: .65rem .7rem;
+    font-size: clamp(1.1rem, 1.34vw, 1.28rem);
+    line-height: 1.17;
+    align-items: flex-end;
+    gap: .4rem;
+  }
+  body[data-field-guide="river-valley"] #rental-results:not(.single-list) .category-group > h3 svg {
+    width: 1.8rem;
+    height: 1.8rem;
+    flex: none;
+  }
+  body[data-field-guide="river-valley"] #rental-results:not(.single-list) .category-group > ul,
+  body[data-field-guide="river-valley"] #rental-results:not(.single-list) .category-group > details {
+    min-width: 0;
+    width: 100%;
+  }
+  body[data-field-guide="river-valley"] #rental-results:not(.single-list) .category-group > details {
+    margin-top: auto;
+  }
+  body[data-field-guide="river-valley"] #rental-results:not(.single-list) .rental-card > .card-link {
+    min-height: 3.3rem;
+    padding-inline-start: .55rem;
+    padding-inline-end: .45rem;
+    font-size: .92rem;
+    line-height: 1.26;
+  }
+  body[data-field-guide="river-valley"] #rental-results:not(.single-list) .field-tile-photo {
+    width: 42%;
+    opacity: .55;
+  }
+  body[data-field-guide="river-valley"] #rental-results:not(.single-list) .rental-card .category-name {
+    max-width: 19ch;
+    overflow-wrap: anywhere;
+  }
+}
+@media screen and (min-width: 760px) {
+  body[data-field-guide="river-valley"] #search-results > ul > .primary-match:has(.match-provider-peek) > a {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(13rem, .75fr);
+    grid-template-areas:
+      "chapter providers"
+      "title providers"
+      "description providers"
+      "action providers";
+    align-content: center;
+    column-gap: clamp(1rem, 3vw, 2.2rem);
+    min-height: 12.2rem;
+  }
+  body[data-field-guide="river-valley"] .primary-match .match-chapter { grid-area: chapter; }
+  body[data-field-guide="river-valley"] .primary-match .match-title { grid-area: title; }
+  body[data-field-guide="river-valley"] .primary-match .match-description { grid-area: description; }
+  body[data-field-guide="river-valley"] .primary-match .match-action { grid-area: action; }
+  body[data-field-guide="river-valley"] #search-results .primary-match .match-provider-peek {
+    grid-area: providers;
+    align-self: stretch;
+    align-content: center;
+    display: grid;
+    gap: .4rem;
+    border: 1px solid #d6dfcc;
+    border-radius: .68rem;
+    padding: 1rem;
+    background: #fffaf1f2;
+    box-shadow: 0 8px 24px #0e281b29;
+  }
+  body[data-field-guide="river-valley"] #search-results .primary-match .match-provider-label {
+    color: #596d44;
+    white-space: normal;
+  }
+  body[data-field-guide="river-valley"] #search-results .primary-match .match-provider-names {
+    color: #193e31;
+    font-size: .96rem;
+    font-weight: 650;
+    line-height: 1.5;
+  }
+}
+@media screen and (max-width: 759px) {
+  body[data-field-guide="river-valley"] #search-results .primary-match .match-provider-peek {
+    border-radius: .5rem;
+    background: #fffcf6f2;
+    padding: .6rem .7rem;
+    margin-top: .2rem;
+  }
+  body[data-field-guide="river-valley"] #search-results .primary-match .match-provider-label {
+    color: #596d44;
+  }
+  body[data-field-guide="river-valley"] #search-results .primary-match .match-provider-names {
+    color: #193e31;
+  }
+}
+body[data-field-guide="river-valley"] #search-results .match-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+@media screen and (max-width: 650px) {
+  body[data-field-guide="river-valley"] #search-results .match-description {
+    -webkit-line-clamp: 2;
+  }
+}
