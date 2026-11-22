@@ -1,0 +1,461 @@
+[data-field-photo="mountain-vista"] {
+  --field-thumb: url("field-photos/mountain-vista-small.webp");
+  --field-wide: url("field-photos/mountain-vista.webp");
+}
+[data-field-photo="lake-nimrod"] {
+  --field-thumb: url("field-photos/lake-nimrod-small.webp");
+  --field-wide: url("field-photos/lake-nimrod.webp");
+}
+[data-field-photo="ozark-woods"] {
+  --field-thumb: url("field-photos/ozark-woods-small.webp");
+  --field-wide: url("field-photos/ozark-woods.webp");
+}
+[data-field-guide="atv-utv"], [data-field-photo="atv-utv"] {
+  --field-thumb: url("field-photos/atv-utv-small.webp");
+  --field-wide: url("field-photos/atv-utv.webp");
+}
+[data-field-guide="audio-visual"], [data-field-photo="audio-visual"] {
+  --field-thumb: url("field-photos/audio-visual-small.webp");
+  --field-wide: url("field-photos/audio-visual.webp");
+}
+[data-field-guide="baby-gear"], [data-field-photo="baby-gear"] {
+  --field-thumb: url("field-photos/baby-gear-small.webp");
+  --field-wide: url("field-photos/baby-gear.webp");
+}
+[data-field-guide="bicycles"], [data-field-photo="bicycles"] {
+  --field-thumb: url("field-photos/bicycles-small.webp");
+  --field-wide: url("field-photos/bicycles.webp");
+}
+[data-field-guide="boats"], [data-field-photo="boats"] {
+  --field-thumb: url("field-photos/boats-small.webp");
+  --field-wide: url("field-photos/boats.webp");
+}
+[data-field-guide="camping"], [data-field-photo="camping"] {
+  --field-thumb: url("field-photos/camping-small.webp");
+  --field-wide: url("field-photos/camping.webp");
+}
+[data-field-guide="cars"], [data-field-photo="cars"] {
+  --field-thumb: url("field-photos/cars-small.webp");
+  --field-wide: url("field-photos/cars.webp");
+}
+[data-field-guide="commercial"], [data-field-photo="commercial"] {
+  --field-thumb: url("field-photos/commercial-small.webp");
+  --field-wide: url("field-photos/commercial.webp");
+}
+[data-field-guide="dumpsters"], [data-field-photo="dumpsters"] {
+  --field-thumb: url("field-photos/dumpsters-small.webp");
+  --field-wide: url("field-photos/dumpsters.webp");
+}
+[data-field-guide="formalwear"], [data-field-photo="formalwear"] {
+  --field-thumb: url("field-photos/formalwear-small.webp");
+  --field-wide: url("field-photos/formalwear.webp");
+}
+[data-field-guide="golf-carts"], [data-field-photo="golf-carts"] {
+  --field-thumb: url("field-photos/golf-carts-small.webp");
+  --field-wide: url("field-photos/golf-carts.webp");
+}
+[data-field-guide="golf-simulators"], [data-field-photo="golf-simulators"] {
+  --field-thumb: url("field-photos/golf-simulators-small.webp");
+  --field-wide: url("field-photos/golf-simulators.webp");
+}
+[data-field-guide="homes"], [data-field-photo="homes"] {
+  --field-thumb: url("field-photos/homes-small.webp");
+  --field-wide: url("field-photos/homes.webp");
+}
+[data-field-guide="household-rentals"], [data-field-photo="household-rentals"] {
+  --field-thumb: url("field-photos/household-rentals-small.webp");
+  --field-wide: url("field-photos/household-rentals.webp");
+}
+[data-field-guide="instruments"], [data-field-photo="instruments"] {
+  --field-thumb: url("field-photos/instruments-small.webp");
+  --field-wide: url("field-photos/instruments.webp");
+}
+[data-field-guide="medical-equipment-loans"], [data-field-photo="medical-equipment-loans"] {
+  --field-thumb: url("field-photos/medical-equipment-loans-small.webp");
+  --field-wide: url("field-photos/medical-equipment-loans.webp");
+}
+[data-field-guide="medical-equipment-rentals"], [data-field-photo="medical-equipment-rentals"] {
+  --field-thumb: url("field-photos/medical-equipment-rentals-small.webp");
+  --field-wide: url("field-photos/medical-equipment-rentals.webp");
+}
+[data-field-guide="mobile-storage"], [data-field-photo="mobile-storage"] {
+  --field-thumb: url("field-photos/mobile-storage-small.webp");
+  --field-wide: url("field-photos/mobile-storage.webp");
+}
+[data-field-guide="moving"], [data-field-photo="moving"] {
+  --field-thumb: url("field-photos/moving-small.webp");
+  --field-wide: url("field-photos/moving.webp");
+}
+[data-field-guide="other"], [data-field-photo="other"] {
+  --field-thumb: url("field-photos/other-small.webp");
+  --field-wide: url("field-photos/other.webp");
+}
+[data-field-guide="paddling"], [data-field-photo="paddling"] {
+  --field-thumb: url("field-photos/paddling-small.webp");
+  --field-wide: url("field-photos/paddling.webp");
+}
+[data-field-guide="party"], [data-field-photo="party"] {
+  --field-thumb: url("field-photos/party-small.webp");
+  --field-wide: url("field-photos/party.webp");
+}
+[data-field-guide="photo-booths"], [data-field-photo="photo-booths"] {
+  --field-thumb: url("field-photos/photo-booths-small.webp");
+  --field-wide: url("field-photos/photo-booths.webp");
+}
+[data-field-guide="restrooms"], [data-field-photo="restrooms"] {
+  --field-thumb: url("field-photos/restrooms-small.webp");
+  --field-wide: url("field-photos/restrooms.webp");
+}
+[data-field-guide="river-valley"], [data-field-photo="river-valley"] {
+  --field-thumb: url("field-photos/river-valley-small.webp");
+  --field-wide: url("field-photos/river-valley.webp");
+}
+[data-field-guide="rv-rentals"], [data-field-photo="rv-rentals"] {
+  --field-thumb: url("field-photos/rv-rentals-small.webp");
+  --field-wide: url("field-photos/rv-rentals.webp");
+}
+[data-field-guide="rvs"], [data-field-photo="rvs"] {
+  --field-thumb: url("field-photos/rvs-small.webp");
+  --field-wide: url("field-photos/rvs.webp");
+}
+[data-field-guide="sheds"], [data-field-photo="sheds"] {
+  --field-thumb: url("field-photos/sheds-small.webp");
+  --field-wide: url("field-photos/sheds.webp");
+}
+[data-field-guide="stages"], [data-field-photo="stages"] {
+  --field-thumb: url("field-photos/stages-small.webp");
+  --field-wide: url("field-photos/stages.webp");
+}
+[data-field-guide="stays"], [data-field-photo="stays"] {
+  --field-thumb: url("field-photos/stays-small.webp");
+  --field-wide: url("field-photos/stays.webp");
+}
+[data-field-guide="storage"], [data-field-photo="storage"] {
+  --field-thumb: url("field-photos/storage-small.webp");
+  --field-wide: url("field-photos/storage.webp");
+}
+[data-field-guide="temporary-fencing"], [data-field-photo="temporary-fencing"] {
+  --field-thumb: url("field-photos/temporary-fencing-small.webp");
+  --field-wide: url("field-photos/temporary-fencing.webp");
+}
+[data-field-guide="tools"], [data-field-photo="tools"] {
+  --field-thumb: url("field-photos/tools-small.webp");
+  --field-wide: url("field-photos/tools.webp");
+}
+[data-field-guide="trailers"], [data-field-photo="trailers"] {
+  --field-thumb: url("field-photos/trailers-small.webp");
+  --field-wide: url("field-photos/trailers.webp");
+}
+[data-field-guide="venues"], [data-field-photo="venues"] {
+  --field-thumb: url("field-photos/venues-small.webp");
+  --field-wide: url("field-photos/venues.webp");
+}
+[data-field-guide="yard-signs"], [data-field-photo="yard-signs"] {
+  --field-thumb: url("field-photos/yard-signs-small.webp");
+  --field-wide: url("field-photos/yard-signs.webp");
+}
+
+/* Photography is decorative. Text, contact details and listing photographs stay in the document. */
+@media screen {
+  [data-field-guide], [data-field-photo] { --field-cover-image: var(--field-thumb); }
+  @media (min-width: 46rem) {
+    [data-field-guide], [data-field-photo] { --field-cover-image: var(--field-wide); }
+  }
+
+  [data-field-guide] {
+    --field-ink: #183b30;
+    --field-paper: #fffaf0;
+    --field-gold: #f2d294;
+    --field-night: linear-gradient(98deg, #0a2b25f5 0%, #0c3028df 43%, #0a2a247a 78%, #0c30274d);
+    --field-caption: linear-gradient(98deg, #0c322bf2 0%, #153a30ed 44%, #15372cbf 71%, #152e246b);
+    --field-pale: linear-gradient(98deg, #fffcf4 0%, #fffcf4fa 43%, #fffcf4eb 62%, #fffcf4d6 80%, #fffcf4be);
+    --field-tab-shade: linear-gradient(110deg, #0a2e27dc, #173c32ae);
+    --field-selected: linear-gradient(115deg, #f6dfa8f7, #f3d696e3);
+  }
+
+  /* A shared editorial surface on previously unillustrated chapter introductions. */
+  [data-field-panel] {
+    box-sizing: border-box;
+    max-inline-size: 100%;
+    min-inline-size: 0;
+    border-radius: .7rem;
+    overflow-wrap: break-word;
+  }
+  [data-field-panel="story"] {
+    padding: clamp(.85rem, 2.3vw, 1.5rem) clamp(.95rem, 2.8vw, 1.8rem);
+    box-shadow: inset 0 0 0 1px #e7ca923d;
+  }
+  [data-field-panel="title"] {
+    padding: .45em .65em;
+    border-inline-start: 3px solid #bd9457;
+  }
+  [data-field-panel] :where(h2,h3):first-child,
+  [data-field-panel] > :first-child { margin-block-start: 0; }
+  [data-field-panel] > :last-child { margin-block-end: 0; }
+
+  /* The five quick-search directories share a compact photographic front cover. */
+  body.directory-page [data-field-cover="finder"], [data-field-cover="housing"] {
+    box-sizing: border-box;
+    border: 1px solid #425a46;
+    border-radius: .95rem;
+    box-shadow: inset 0 0 0 6px #132e2214, inset 0 0 0 7px #e3c69050;
+    padding: clamp(1.12rem, 3vw, 2.15rem);
+  }
+  .directory-page [data-field-cover="finder"] :is(.directory-search label,#directory-count,#directory-clear),
+  [data-field-cover="housing"] :where(p,a) { color: #faf5e4; }
+  .directory-page [data-field-cover="finder"] .directory-search button {
+    background: #f2d294; color: #15372a; border-color: #e2bc76;
+  }
+  .directory-page [data-field-cover="finder"] .directory-search button:hover { background: #ffe2a7; }
+  [data-field-cover="housing"] .housing-directory { padding: .3rem .65rem; color: #fff9e9; background: #173c32e6; border-radius: .35rem; }
+  [data-field-cover="editorial"] :is(h1,.hero-copy > p,.hero-copy-block > p) { color: #fff8e9; }
+  [data-field-cover="editorial"] h1 em { color: #f5d292; }
+  [data-field-footer] .field-photo-credit, .fine-print .field-photo-credit {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-inline: .25rem;
+    font: 600 .8rem/1.35 system-ui,sans-serif;
+    text-decoration: underline;
+    text-underline-offset: .2em;
+  }
+
+  /* Home index – four chapter covers and one right-hand photograph for each rental.
+     These native lazy images do not make a closed chapter fetch the whole collection. */
+  #rental-results:not(.single-list) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+  #rental-results .category-group,
+  #rental-results:not(.single-list) :is(.category-group,#rental-chapter-everyday,.category-group:not(#rental-chapter-everyday)) {
+    display: block; grid-column: auto; padding: .38rem;
+    background: #fcfaf3; border: 1px solid #c7d2c5; border-radius: .95rem;
+    box-shadow: 0 .2rem .9rem #183b3010; overflow: visible;
+  }
+  #rental-results:not(.single-list) #rental-chapter-everyday::before { content: none; display: none; }
+  #rental-results .category-group > h3,
+  #rental-results:not(.single-list) .category-group > h3,
+  #rental-results:not(.single-list) #rental-chapter-everyday > h3 {
+    min-height: clamp(4.2rem, 7vw, 6rem);
+    margin: 0 0 .25rem; padding: .7rem .95rem;
+    color: #fff8e7; background-color: #193e32;
+    background-image: var(--field-caption), var(--field-thumb);
+    background-position: center, center 51%; background-size: cover;
+    border-radius: .65rem; box-shadow: inset 0 0 0 5px #122b211b, inset 0 0 0 6px #ecd39568;
+    letter-spacing: -.025em; text-shadow: 0 1px 3px #123428;
+  }
+  #rental-results .category-group > h3 svg { color: #f0cf91; background: #173b32c2; }
+  .rental-card {
+    position: relative; isolation: isolate; border: 0; border-radius: .45rem;
+    background: #fbf8ef; overflow: clip; color: var(--field-ink); margin-block: 2px;
+    box-shadow: inset 0 -1px #a8b6a42e;
+  }
+  .field-tile-photo {
+    grid-row: 1; grid-column: 1 / -1; align-self: stretch; justify-self: end;
+    position: relative; width: 46%; min-width: 0; min-height: 0; pointer-events: none;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #0009 30%, #000 55%);
+    mask-image: linear-gradient(90deg, transparent, #0009 30%, #000 55%);
+  }
+  .field-tile-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .rental-card > .card-link {
+    position: relative; grid-row: 1; grid-column: 1;
+    display: flex; align-self: stretch; min-height: 3.55rem; padding: .5rem min(7vw,3.5rem) .5rem .72rem;
+    font-size: 1.01rem; line-height: 1.25; font-weight: 680; color: #183e31;
+  }
+  .rental-card .category-name { max-width: 25ch; width: fit-content; border-radius: .25rem; background: #fbf8efeb; box-shadow: 3px 0 #fbf8efeb, -2px 0 #fbf8efeb; }
+  .rental-card > .save-category { grid-row: 1; grid-column: 2; z-index: 1; color: #193f33; background: radial-gradient(ellipse 52% 52%,#f9f7ecf2 67%,transparent 72%); }
+  .rental-card > .save-category[aria-pressed="true"] { color: #153f2d; background: radial-gradient(ellipse 52% 52%,#f5d493 67%,transparent 72%); }
+  .rental-card > .category-notes { grid-row: 2; padding: .5rem .72rem .7rem; background: #fcfaf4; }
+  .rental-card:focus-within { outline: 2px solid #846431; outline-offset: -2px; }
+  .rental-card .card-link:focus-visible, .rental-card .save-category:focus-visible { outline-offset: -4px; }
+  #rental-results .more-categories > summary { padding-inline: .72rem; }
+  #browse .directory-heading, .saved-panel .panel-head, .home-preview-head {
+    background-color: #fbf8ee; background-image: var(--field-pale), var(--field-thumb);
+    background-repeat: no-repeat; background-size: cover;
+    background-position: center, right center; border-radius: .65rem; padding: .65rem .75rem;
+  }
+  .quiet-tools summary {
+    padding-inline: .7rem; border-radius: .5rem; background-color: #f3f2e7;
+    background-image: var(--field-pale), var(--field-thumb); background-position: center; background-size: cover;
+  }
+  [data-field-guide="river-valley"] footer { padding: 0; gap: .5rem; border: 0; border-radius: .65rem; }
+  [data-field-guide="river-valley"] footer > [data-field-photo] {
+    padding: .85rem 1rem; border-radius: .65rem;
+    background: var(--field-pale), var(--field-thumb) right center / cover;
+  }
+  #saved-links > [data-field-photo], #recent-trail li[data-field-photo],
+  #search-results > ul > .search-row[data-field-photo] {
+    background-color: #fffaf0;
+    background-image: var(--field-pale), var(--field-thumb);
+    background-position: center, right center; background-size: 100% 100%, max(40%,9rem) auto;
+    background-repeat: no-repeat;
+  }
+  #saved-links li > a, #recent-trail li .recent-link { padding-inline-start: .6rem; }
+  #saved-links .save-category { background: #f6f3e4df; }
+  #search-results > ul > .primary-match[data-field-photo] {
+    background-image: linear-gradient(95deg,#10362efc 0%,#123a30f5 45%,#10352edc 72%,#12392dc7),var(--field-thumb);
+    background-size: cover; background-position: center;
+  }
+  @media (max-width: 650px) {
+    [data-field-guide] {
+      --field-night: linear-gradient(100deg, #0a2b25f2 0%, #0c3028dc 50%, #0c3028ae 77%, #0c302797);
+      --field-caption: linear-gradient(100deg, #0c322bf2 0%, #133b30ea 46%, #15372ccc 74%, #152e24a8);
+    }
+    #rental-results:not(.single-list) { grid-template-columns: minmax(0,1fr); }
+    .rental-card > .card-link { min-height: 3.25rem; font-size: .97rem; }
+    #rental-results .category-group > h3 { min-height: 3.9rem; }
+    body.directory-page [data-field-cover="finder"], [data-field-cover="housing"] { padding: 1rem .9rem; }
+  }
+
+  /* Older category pages have individual themes, including important rules.
+     Paint the marked surfaces without changing deck layout, navigation position or control behavior. */
+  @layer field-photographs {
+    [data-field-nav="dock"] {
+      background-color: #12382e !important;
+      background-image: linear-gradient(110deg,#123d34de,#17372de0),var(--field-thumb) !important;
+      background-size: cover !important; background-position: center !important;
+    }
+    [data-field-nav="group"]:not(:has([data-field-tab],[data-field-route])) {
+      background-image: linear-gradient(110deg,#faf8f0f5,#f8f6eed9),var(--field-thumb) !important;
+      background-size: cover !important; background-position: center !important;
+    }
+    [data-field-nav="group"]:not(:has([data-field-tab],[data-field-route])) > :where(p,h2,h3) { color: #183a2e !important; }
+    [data-field-mast], [data-field-footer] {
+      background-color: #f6f5eb !important;
+      background-image: linear-gradient(100deg,#faf8effb 0%,#faf8eff5 45%,#f6f4e9e0 76%,#f6f4e9c9),var(--field-thumb) !important;
+      background-position: center, right 48% !important;
+      background-size: cover !important;
+      background-repeat: no-repeat !important;
+    }
+    [data-field-mast] :where(a:not([data-field-tab]),.wordmark,.brand),
+    [data-field-footer], [data-field-footer] :where(span, a, p, h2) { color: #173d31 !important; }
+    [data-field-mast] :where(.wordmark,.brand,.directory-name) > span { color: #845c25 !important; }
+    [data-field-cover], [data-field-panel="story"] {
+      background-color: #183b32 !important;
+      background-image: var(--field-night), var(--field-cover-image) !important;
+      background-size: cover !important; background-position: center, 58% 51% !important;
+      background-repeat: no-repeat !important;
+    }
+    [data-field-panel="story"] { background-image: var(--field-caption), var(--field-cover-image) !important; }
+    [data-field-panel="story"], [data-field-panel="story"] :where(h2,h3,p,span,small,strong),
+    [data-field-cover="housing"] :where(h1,p) { color: #fff9e9 !important; text-shadow: 0 1px 3px #13332966; }
+    [data-field-panel="story"] :where(em,[class*="eyebrow"],[class*="kicker"]) { color: #f5d899 !important; }
+    [data-field-panel="title"], [data-field-route], [data-field-sheet] {
+      background-color: #faf7ef !important;
+      background-image: var(--field-pale), var(--field-thumb) !important;
+      background-repeat: no-repeat !important;
+      background-position: center, right center !important;
+      background-size: cover !important;
+      color: #153c30 !important;
+    }
+    [data-field-panel="title"] :where(h2,h3,span,small,em,strong),
+    [data-field-route] :where(strong,small,p,em,span:not([aria-hidden])),
+    [data-field-sheet] :where(h2,h3,p,label) { color: #1c4435 !important; text-shadow: none; }
+    [data-field-tab] {
+      background-color: #153a30 !important; background-image: var(--field-tab-shade),var(--field-thumb) !important;
+      background-repeat: no-repeat !important; background-position: center, 52% 49% !important;
+      background-size: cover !important; color: #fff9e9 !important;
+    }
+    [data-field-tab] :where(span,small,strong,em) { color: inherit !important; }
+    [data-field-tab="mast"] { border-radius: .4rem; }
+    [data-field-tab]:nth-child(3n+2) { background-position: center, 48% 32% !important; }
+    [data-field-tab]:nth-child(3n) { background-position: center, 56% 72% !important; }
+    [data-field-tab]:is([data-field-primary],[aria-pressed="true"],[aria-current]:not([aria-current="false"]),[aria-selected="true"],.is-active,.active,.selected),
+    [data-field-route]:is([aria-pressed="true"],[aria-selected="true"],[aria-current]:not([aria-current="false"])) {
+      background-image: var(--field-selected), var(--field-thumb) !important; background-color: #e9cb90 !important;
+      color: #163a2e !important; box-shadow: inset 0 0 0 2px #a37e3e !important;
+    }
+    @media (hover:hover) {
+      [data-field-tab]:hover { background-image: linear-gradient(110deg,#224d3ee8,#214638ca),var(--field-thumb) !important; text-decoration: underline; }
+      [data-field-tab]:is([data-field-primary],[aria-pressed="true"],[aria-current]:not([aria-current="false"]),[aria-selected="true"],.is-active,.active,.selected):hover { background-image: var(--field-selected), var(--field-thumb) !important; }
+      [data-field-route]:hover { box-shadow: inset 0 0 0 2px #a1824a; }
+    }
+    :is([data-field-tab],[data-field-route],.field-photo-credit):focus-visible { outline: 3px solid #e4b45d !important; outline-offset: -3px !important; }
+  }
+  @layer directory-layout {
+    body.directory-page .directory-top[data-field-mast] {
+      background-image: linear-gradient(100deg,#faf8effb 0%,#faf8eff8 50%,#f6f4e9d6),var(--field-thumb) !important;
+      background-size: cover !important;
+      background-repeat: no-repeat !important; background-position: center,right center !important;
+    }
+    body.directory-page .directory-top nav [data-field-tab] {
+      color: #fff8e6 !important; padding-inline: clamp(.34rem,1.35vw,.68rem) !important; border-radius: .42rem;
+    }
+    body.directory-page .directory-top nav { gap: clamp(.22rem,.8vw,.55rem); }
+    body.directory-page .directory-intro[data-field-cover] { margin: .7rem 0 .65rem !important; }
+    body.directory-page .directory-intro[data-field-cover] h1 { color: #fff8e7 !important; }
+    .directory-page .directory-records > article.directory-record:not(.record-open) {
+      background-color: #fffdf5 !important;
+      background-image: linear-gradient(98deg,#fffdf6 0%,#fffdf6 54%,#fffdf6f2 65%,#fffdf6db 84%,#fffdf6c7),var(--field-thumb) !important;
+      background-size: cover !important; background-position: center,right center !important;
+      background-repeat: no-repeat !important;
+    }
+    @media(max-width: 23rem) {
+      body.directory-page .directory-top > div { gap: .32rem; padding-inline: .55rem; }
+      body.directory-page .directory-top nav { gap: .2rem; }
+      body.directory-page .directory-top nav [data-field-tab] { padding-inline: .28rem !important; }
+    }
+  }
+}
+
+@media screen {
+  /* Printed names and the photograph meet without a hard edge, at any card height. */
+  @layer field-photographs {
+    [data-field-listing] {
+      padding: .24em .42em; border-inline-start: 2px solid #b99b67; border-radius: .25rem;
+      color: #173c30 !important; background-color: #fffaf1;
+      background-image: linear-gradient(98deg,#fffcf8fc 20%,#fffcf8f5 58%,#fffcf8d9 82%,#fffcf8bf),var(--field-thumb);
+      background-size: cover; background-position: center,right center;
+    }
+    [data-field-listing] :where(a,span,em,strong) { color: #173c30 !important; }
+  }
+
+}
+
+@media screen {
+  .region-card .region-scene { position: relative; }
+  .region-card .region-scene picture, .region-card .region-scene img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  }
+  @media(max-width: 359px) {
+    #browse .directory-heading { padding-inline: .45rem; gap: .4rem; }
+    #browse .directory-heading h2 { font-size: 1.26rem; }
+    #browse .group-filter { max-width: 49%; }
+    #browse .group-filter select { padding-inline: .35rem; font-size: .92rem; }
+    .directory-page .directory-top .directory-name { font-size: 1.04rem; }
+    .directory-page .directory-top > div { gap: .3rem; padding-inline: .5rem; }
+  }
+}
+@media screen {
+  @layer field-photographs {
+    [data-field-route] > :where([class$="-body"], [class$="-copy"], [class$="-content"]) {
+      background-color: #faf7ef !important;
+      background-image: var(--field-pale),var(--field-thumb) !important;
+      background-size: cover !important; background-position: center !important;
+    }
+    .region-explorer .region-card:first-child .region-body {
+      background-color: #153a30 !important; background-image: var(--field-caption),var(--field-thumb) !important;
+      background-size: cover !important; background-position: center !important;
+    }
+    .region-explorer .region-card:first-child :is(.region-name,.region-description) { color: #fff9e8 !important; }
+    .region-explorer .region-card:first-child .region-eyebrow { color: #f5d495 !important; }
+    .region-explorer .region-card[aria-pressed="true"] .region-count { color: #fff9e8 !important; background: #1c543e !important; }
+  }
+  @media (max-width: 650px) {
+    .guide-strip.band-route, .guide-strip.band-route .band-route-opening, .guide-strip.band-route .band-route-steps {
+      grid-template-columns: minmax(0,1fr); min-width: 0;
+    }
+    .guide-strip.band-route > *, .guide-strip.band-route .band-route-steps a { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
+  }
+  .school-loan-feature .school-loan-cover, .route-lanes .route-lane:first-child { overflow: clip; }
+  [data-field-guide="baby-gear"] .art-caption span:last-child { color: #705322; }
+}
+@media screen {
+  @layer field-photographs {
+    [data-field-route] :is(.band-route-step-number,.mark),
+    [data-field-tab] :is(.stage-contact-number,.occasion-index,.occasion-total,.mark),
+    .venue-route-links [data-field-tab] > span[aria-hidden="true"]:first-child {
+      color: #183c30 !important; background: #ead5a8 !important;
+    }
+  }
+}

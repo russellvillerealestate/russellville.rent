@@ -762,8 +762,9 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
 </style>
 <link rel="stylesheet" href="assets/finder.css">
 <script defer src="assets/provider-query.js"></script>
+<link rel="stylesheet" href="/assets/field-guide.css?v=1">
 </head>
-<body>
+<body data-field-guide="golf-carts">
 <!-- Shared original cart illustration: a single vector master for all ten scenic operator profiles. -->
 <svg class="folio-vector-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden;pointer-events:none">
  <defs><symbol id="river-valley-golf-cart-vector" viewBox="0 0 620 350">
@@ -787,12 +788,12 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
  </symbol></defs>
 </svg>
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header"><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back" href="/">← Browse all rentals</a></div></header>
-<nav class="cart-mobile-dock" aria-label="Golf cart rentals: mobile quick navigation">
-  <a href="#delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 18h13V7H3v11Zm13-7h3l2 3v4h-5v-7Z"/><circle cx="7" cy="19" r="2"/><circle cx="18" cy="19" r="2"/><path d="M6 10h6m-6 4h4"/></svg><span>Delivery</span></a>
-  <a href="#request-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="5" width="14" height="17" rx="2"/><path d="M9 5V3h6v2M9 11h6M9 15h6M9 19h4"/></svg><span>Inquiry</span></a>
-  <a href="#providers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="8" height="7" rx="1"/><rect x="13" y="4" width="8" height="7" rx="1"/><rect x="3" y="13" width="8" height="7" rx="1"/><rect x="13" y="13" width="8" height="7" rx="1"/></svg><span>Providers</span></a>
-  <a href="#before-you-reserve"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="19" rx="2"/><path d="m8 10 2 2 4-4M8 17h8"/></svg><span>Checklist</span></a>
+<header class="site-header" data-field-mast><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back" href="/">← Browse all rentals</a></div></header>
+<nav class="cart-mobile-dock" aria-label="Golf cart rentals: mobile quick navigation" data-field-nav="dock">
+  <a href="#delivery" data-field-tab><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 18h13V7H3v11Zm13-7h3l2 3v4h-5v-7Z"/><circle cx="7" cy="19" r="2"/><circle cx="18" cy="19" r="2"/><path d="M6 10h6m-6 4h4"/></svg><span>Delivery</span></a>
+  <a href="#request-title" data-field-tab><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="5" width="14" height="17" rx="2"/><path d="M9 5V3h6v2M9 11h6M9 15h6M9 19h4"/></svg><span>Inquiry</span></a>
+  <a href="#providers" data-field-tab><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="8" height="7" rx="1"/><rect x="13" y="4" width="8" height="7" rx="1"/><rect x="3" y="13" width="8" height="7" rx="1"/><rect x="13" y="13" width="8" height="7" rx="1"/></svg><span>Providers</span></a>
+  <a href="#before-you-reserve" data-field-tab><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="19" rx="2"/><path d="m8 10 2 2 4-4M8 17h8"/></svg><span>Checklist</span></a>
 </nav>
 <main id="main">
 <section class="hero" aria-labelledby="page-title">
@@ -843,28 +844,28 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
 </div>
 
 <p class="jump-deck-hint">FOUR STOPS / SWIPE TO EXPLORE <span aria-hidden="true">↔</span></p>
-<nav class="jump-deck" aria-label="Explore this golf cart rental guide">
-<a href="#delivery"><span class="jump-index">01 / SERVICE</span><strong>Check delivery</strong><span class="jump-arrow" aria-hidden="true">↗</span></a>
-<a href="#request-title"><span class="jump-index">02 / INQUIRY</span><strong>Prepare your request</strong><span class="jump-arrow" aria-hidden="true">↗</span></a>
-<a href="#providers"><span class="jump-index">03 / PROVIDERS</span><strong>Compare options</strong><span class="jump-arrow" aria-hidden="true">↗</span></a>
-<a href="#before-you-reserve"><span class="jump-index">04 / CHECKLIST</span><strong>Confirm the terms</strong><span class="jump-arrow" aria-hidden="true">↗</span></a>
+<nav class="jump-deck" aria-label="Explore this golf cart rental guide" data-field-nav="group">
+<a href="#delivery" data-field-tab><span class="jump-index">01 / SERVICE</span><strong>Check delivery</strong><span class="jump-arrow" aria-hidden="true">↗</span></a>
+<a href="#request-title" data-field-tab><span class="jump-index">02 / INQUIRY</span><strong>Prepare your request</strong><span class="jump-arrow" aria-hidden="true">↗</span></a>
+<a href="#providers" data-field-tab><span class="jump-index">03 / PROVIDERS</span><strong>Compare options</strong><span class="jump-arrow" aria-hidden="true">↗</span></a>
+<a href="#before-you-reserve" data-field-tab><span class="jump-index">04 / CHECKLIST</span><strong>Confirm the terms</strong><span class="jump-arrow" aria-hidden="true">↗</span></a>
 </nav>
 
 <section class="delivery-board" id="delivery" aria-labelledby="delivery-title">
-<div class="delivery-heading"><div><p class="eyebrow">Delivery first · Ten inquiry paths</p><h2 id="delivery-title">Start with the service-area question.</h2><p>These ten providers are outside Russellville. Before choosing a cart, ask whether delivery or pickup works for your location. Select a starting point to jump to its provider contact.</p></div><span class="delivery-flag">Russellville delivery unconfirmed</span></div>
+<div class="delivery-heading" data-field-panel="story"><div><p class="eyebrow">Delivery first · Ten inquiry paths</p><h2 id="delivery-title">Start with the service-area question.</h2><p>These ten providers are outside Russellville. Before choosing a cart, ask whether delivery or pickup works for your location. Select a starting point to jump to its provider contact.</p></div><span class="delivery-flag">Russellville delivery unconfirmed</span></div>
 <div class="delivery-diagram">
 <p class="delivery-map-kicker">TEN OPERATOR PROFILES <span>Review the advertised rental format, then check the provider details.</span></p>
-<nav class="delivery-origins" aria-label="Jump to golf cart rental providers">
-<a class="delivery-origin" href="#provider-river-valley"><span class="delivery-index" aria-hidden="true">01</span><span class="delivery-origin-text"><strong>Conway</strong><small>River Valley Golf Carts · Contact details ↗</small><span class="delivery-offer">Event cart rentals · Online inquiry advertised</span></span></a>
-<a class="delivery-origin" href="#provider-arkansas-powersports"><span class="delivery-index" aria-hidden="true">02</span><span class="delivery-origin-text"><strong>North Little Rock</strong><small>Arkansas Golf &amp; Powersports · Contact details ↗</small><span class="delivery-offer">Rental reservation inquiry advertised</span></span></a>
-<a class="delivery-origin" href="#provider-clear-creek"><span class="delivery-index" aria-hidden="true">03</span><span class="delivery-origin-text"><strong>Hot Springs Village</strong><small>Clear Creek Golf Car · Contact details ↗</small><span class="delivery-offer">Daily, weekend, weekly and monthly terms advertised</span></span></a>
-<a class="delivery-origin" href="#provider-kaptain-chris"><span class="delivery-index" aria-hidden="true">04</span><span class="delivery-origin-text"><strong>Hot Springs</strong><small>Kaptain Chris &amp; Pup's · Contact details ↗</small><span class="delivery-offer">Two-, four- and six-passenger options advertised</span></span></a>
-<a class="delivery-origin" href="#provider-lone-star"><span class="delivery-index" aria-hidden="true">05</span><span class="delivery-origin-text"><strong>North Little Rock</strong><small>Lone Star Golf Cars · Contact details ↗</small><span class="delivery-offer">Passenger and utility configurations advertised</span></span></a>
-<a class="delivery-origin" href="#provider-mid-state"><span class="delivery-index" aria-hidden="true">06</span><span class="delivery-origin-text"><strong>Bryant</strong><small>Mid-State Golf Cars · Contact details ↗</small><span class="delivery-offer">Event and operations rentals advertised</span></span></a>
-<a class="delivery-origin" href="#provider-golf-cart-elite"><span class="delivery-index" aria-hidden="true">07</span><span class="delivery-origin-text"><strong>Hot Springs</strong><small>Golf Cart Elite · Contact details ↗</small><span class="delivery-offer">Published daily rate · Russellville delivery UNCONFIRMED</span></span></a>
-<a class="delivery-origin" href="#provider-golf-cars-fort-smith"><span class="delivery-index" aria-hidden="true">08</span><span class="delivery-origin-text"><strong>Fort Smith</strong><small>Golf Cars of Fort Smith · Official rentals ↗</small><span class="delivery-offer">2-, 4-, 6-passenger & utility rentals · Delivery UNCONFIRMED</span></span></a>
-<a class="delivery-origin" href="#provider-mccoy-custom-carts"><span class="delivery-index" aria-hidden="true">09</span><span class="delivery-origin-text"><strong>Springdale</strong><small>McCoy Custom Carts · Official rentals ↗</small><span class="delivery-offer">2-, 4- &amp; 6-passenger rentals · Russellville delivery UNCONFIRMED</span></span></a>
-<a class="delivery-origin" href="#provider-little-rock-cart"><span class="delivery-index" aria-hidden="true">10</span><span class="delivery-origin-text"><strong>Little Rock market</strong><small>Little Rock Golf Cart Rental · Official inquiry ↗</small><span class="delivery-offer">Electric passenger &amp; utility carts advertised · Russellville delivery UNCONFIRMED</span></span></a>
+<nav class="delivery-origins" aria-label="Jump to golf cart rental providers" data-field-nav="group">
+<a class="delivery-origin" href="#provider-river-valley" data-field-route><span class="delivery-index" aria-hidden="true">01</span><span class="delivery-origin-text"><strong>Conway</strong><small>River Valley Golf Carts · Contact details ↗</small><span class="delivery-offer">Event cart rentals · Online inquiry advertised</span></span></a>
+<a class="delivery-origin" href="#provider-arkansas-powersports" data-field-route><span class="delivery-index" aria-hidden="true">02</span><span class="delivery-origin-text"><strong>North Little Rock</strong><small>Arkansas Golf &amp; Powersports · Contact details ↗</small><span class="delivery-offer">Rental reservation inquiry advertised</span></span></a>
+<a class="delivery-origin" href="#provider-clear-creek" data-field-route><span class="delivery-index" aria-hidden="true">03</span><span class="delivery-origin-text"><strong>Hot Springs Village</strong><small>Clear Creek Golf Car · Contact details ↗</small><span class="delivery-offer">Daily, weekend, weekly and monthly terms advertised</span></span></a>
+<a class="delivery-origin" href="#provider-kaptain-chris" data-field-route><span class="delivery-index" aria-hidden="true">04</span><span class="delivery-origin-text"><strong>Hot Springs</strong><small>Kaptain Chris &amp; Pup's · Contact details ↗</small><span class="delivery-offer">Two-, four- and six-passenger options advertised</span></span></a>
+<a class="delivery-origin" href="#provider-lone-star" data-field-route><span class="delivery-index" aria-hidden="true">05</span><span class="delivery-origin-text"><strong>North Little Rock</strong><small>Lone Star Golf Cars · Contact details ↗</small><span class="delivery-offer">Passenger and utility configurations advertised</span></span></a>
+<a class="delivery-origin" href="#provider-mid-state" data-field-route><span class="delivery-index" aria-hidden="true">06</span><span class="delivery-origin-text"><strong>Bryant</strong><small>Mid-State Golf Cars · Contact details ↗</small><span class="delivery-offer">Event and operations rentals advertised</span></span></a>
+<a class="delivery-origin" href="#provider-golf-cart-elite" data-field-route><span class="delivery-index" aria-hidden="true">07</span><span class="delivery-origin-text"><strong>Hot Springs</strong><small>Golf Cart Elite · Contact details ↗</small><span class="delivery-offer">Published daily rate · Russellville delivery UNCONFIRMED</span></span></a>
+<a class="delivery-origin" href="#provider-golf-cars-fort-smith" data-field-route><span class="delivery-index" aria-hidden="true">08</span><span class="delivery-origin-text"><strong>Fort Smith</strong><small>Golf Cars of Fort Smith · Official rentals ↗</small><span class="delivery-offer">2-, 4-, 6-passenger & utility rentals · Delivery UNCONFIRMED</span></span></a>
+<a class="delivery-origin" href="#provider-mccoy-custom-carts" data-field-route><span class="delivery-index" aria-hidden="true">09</span><span class="delivery-origin-text"><strong>Springdale</strong><small>McCoy Custom Carts · Official rentals ↗</small><span class="delivery-offer">2-, 4- &amp; 6-passenger rentals · Russellville delivery UNCONFIRMED</span></span></a>
+<a class="delivery-origin" href="#provider-little-rock-cart" data-field-route><span class="delivery-index" aria-hidden="true">10</span><span class="delivery-origin-text"><strong>Little Rock market</strong><small>Little Rock Golf Cart Rental · Official inquiry ↗</small><span class="delivery-offer">Electric passenger &amp; utility carts advertised · Russellville delivery UNCONFIRMED</span></span></a>
 </nav>
 <div class="delivery-gate" aria-hidden="true"><span>Ask about<br>delivery</span></div>
 <div class="delivery-destination"><span class="delivery-pin" aria-hidden="true">◎</span><strong>Russellville</strong><small>Service not verified</small></div>
@@ -925,23 +926,23 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
   </div>
 </section>
 <section id="providers" aria-labelledby="providers-title">
-<div class="section-head"><h2 id="providers-title">Explore rental providers</h2><p>Contact providers to verify service in Russellville.</p></div>
+<div class="section-head" data-field-panel="story"><h2 id="providers-title">Explore rental providers</h2><p>Contact providers to verify service in Russellville.</p></div>
 
 <!-- The ten-stop index stays visible while comparing lengthy listings; editorial
      place labels are provider locations, never implied Russellville service. -->
-<nav class="cart-route-nav" aria-label="Ten-stop golf cart rental provider index">
+<nav class="cart-route-nav" aria-label="Ten-stop golf cart rental provider index" data-field-nav="group">
   <div class="cart-route-title"><span>THE OPERATOR LINEUP</span><strong>Ten stops.<br><em>One clear view.</em></strong><small>Provider hometowns, not verified delivery routes.</small></div>
-  <a href="#provider-river-valley" data-cart-route="provider-river-valley"><span class="cart-route-stop">01 <i aria-hidden="true"></i></span><strong>Conway</strong><small>River Valley Golf Carts</small></a>
-  <a href="#provider-arkansas-powersports" data-cart-route="provider-arkansas-powersports"><span class="cart-route-stop">02 <i aria-hidden="true"></i></span><strong>North Little Rock</strong><small>Arkansas Golf &amp; Powersports</small></a>
-  <a href="#provider-clear-creek" data-cart-route="provider-clear-creek"><span class="cart-route-stop">03 <i aria-hidden="true"></i></span><strong>Hot Springs Village</strong><small>Clear Creek Golf Car</small></a>
-  <a href="#provider-kaptain-chris" data-cart-route="provider-kaptain-chris"><span class="cart-route-stop">04 <i aria-hidden="true"></i></span><strong>Hot Springs</strong><small>Kaptain Chris &amp; Pup's</small></a>
-  <a href="#provider-lone-star" data-cart-route="provider-lone-star"><span class="cart-route-stop">05 <i aria-hidden="true"></i></span><strong>North Little Rock</strong><small>Lone Star Golf Cars</small></a>
-  <a href="#provider-mid-state" data-cart-route="provider-mid-state"><span class="cart-route-stop">06 <i aria-hidden="true"></i></span><strong>Bryant</strong><small>Mid-State Golf Cars</small></a>
-  <a href="#provider-golf-cart-elite" data-cart-route="provider-golf-cart-elite"><span class="cart-route-stop">07 <i aria-hidden="true"></i></span><strong>Hot Springs</strong><small>Golf Cart Elite</small></a>
-  <a href="#provider-golf-cars-fort-smith" data-cart-route="provider-golf-cars-fort-smith"><span class="cart-route-stop">08 <i aria-hidden="true"></i></span><strong>Fort Smith</strong><small>Golf Cars of Fort Smith</small></a>
-  <a href="#provider-mccoy-custom-carts" data-cart-route="provider-mccoy-custom-carts"><span class="cart-route-stop">09 <i aria-hidden="true"></i></span><strong>Springdale</strong><small>McCoy Custom Carts</small></a>
-  <a href="#provider-little-rock-cart" data-cart-route="provider-little-rock-cart"><span class="cart-route-stop">10 <i aria-hidden="true"></i></span><strong>Little Rock market</strong><small>Little Rock Golf Cart Rental</small></a>
-  <a class="cart-route-ask" href="#request-title"><span aria-hidden="true">↗</span><strong>Need a quote?</strong><small>Return to the inquiry builder</small></a>
+  <a href="#provider-river-valley" data-cart-route="provider-river-valley" data-field-route><span class="cart-route-stop">01 <i aria-hidden="true"></i></span><strong>Conway</strong><small>River Valley Golf Carts</small></a>
+  <a href="#provider-arkansas-powersports" data-cart-route="provider-arkansas-powersports" data-field-route><span class="cart-route-stop">02 <i aria-hidden="true"></i></span><strong>North Little Rock</strong><small>Arkansas Golf &amp; Powersports</small></a>
+  <a href="#provider-clear-creek" data-cart-route="provider-clear-creek" data-field-route><span class="cart-route-stop">03 <i aria-hidden="true"></i></span><strong>Hot Springs Village</strong><small>Clear Creek Golf Car</small></a>
+  <a href="#provider-kaptain-chris" data-cart-route="provider-kaptain-chris" data-field-route><span class="cart-route-stop">04 <i aria-hidden="true"></i></span><strong>Hot Springs</strong><small>Kaptain Chris &amp; Pup's</small></a>
+  <a href="#provider-lone-star" data-cart-route="provider-lone-star" data-field-route><span class="cart-route-stop">05 <i aria-hidden="true"></i></span><strong>North Little Rock</strong><small>Lone Star Golf Cars</small></a>
+  <a href="#provider-mid-state" data-cart-route="provider-mid-state" data-field-route><span class="cart-route-stop">06 <i aria-hidden="true"></i></span><strong>Bryant</strong><small>Mid-State Golf Cars</small></a>
+  <a href="#provider-golf-cart-elite" data-cart-route="provider-golf-cart-elite" data-field-route><span class="cart-route-stop">07 <i aria-hidden="true"></i></span><strong>Hot Springs</strong><small>Golf Cart Elite</small></a>
+  <a href="#provider-golf-cars-fort-smith" data-cart-route="provider-golf-cars-fort-smith" data-field-route><span class="cart-route-stop">08 <i aria-hidden="true"></i></span><strong>Fort Smith</strong><small>Golf Cars of Fort Smith</small></a>
+  <a href="#provider-mccoy-custom-carts" data-cart-route="provider-mccoy-custom-carts" data-field-route><span class="cart-route-stop">09 <i aria-hidden="true"></i></span><strong>Springdale</strong><small>McCoy Custom Carts</small></a>
+  <a href="#provider-little-rock-cart" data-cart-route="provider-little-rock-cart" data-field-route><span class="cart-route-stop">10 <i aria-hidden="true"></i></span><strong>Little Rock market</strong><small>Little Rock Golf Cart Rental</small></a>
+  <a class="cart-route-ask" href="#request-title" data-field-route><span aria-hidden="true">↗</span><strong>Need a quote?</strong><small>Return to the inquiry builder</small></a>
 </nav>
 
 <section class="cart-view-switcher" id="cart-view-switcher" aria-labelledby="cart-view-title" hidden>
@@ -950,8 +951,8 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
   <p>The same ten operators, two ways to compare. Contacts, service qualifications, published terms and source links remain available in either layout.</p>
  </div>
  <div class="cart-view-controls" role="group" aria-label="Golf cart provider display">
-  <button type="button" data-cart-view="folio" aria-pressed="true" aria-controls="cart-provider-grid"><span aria-hidden="true">▦</span> Scenic profiles</button>
-  <button type="button" data-cart-view="compact" aria-pressed="false" aria-controls="cart-provider-grid"><span aria-hidden="true">☷</span> Quick comparison</button>
+  <button type="button" data-cart-view="folio" aria-pressed="true" aria-controls="cart-provider-grid" data-field-tab><span aria-hidden="true">▦</span> Scenic profiles</button>
+  <button type="button" data-cart-view="compact" aria-pressed="false" aria-controls="cart-provider-grid" data-field-tab><span aria-hidden="true">☷</span> Quick comparison</button>
  </div>
 </section>
 <div class="provider-grid" id="cart-provider-grid">
@@ -963,7 +964,7 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
  <figcaption class="folio-disclaimer">Original illustration · Not a provider vehicle or proof of available inventory</figcaption>
 </figure>
 <div class="provider-body">
-<h3>River Valley Golf Carts — Conway</h3>
+<h3 data-field-listing>River Valley Golf Carts — Conway</h3>
 <p>Officially advertises golf cart rentals for events. Its rental-request form asks for the cart type, number of vehicles, start and end dates, and requested location; the operator follows up with an individual quote rather than showing live inventory or prices. The same operator also lists Bryant and Stuttgart branches, but it does not specify which location fulfills each rental. Confirm the available cart type, quantity, pickup or transport arrangement, total charges and dates directly; Russellville delivery remains unconfirmed.</p>
 <address class="address">355 JR Dr, Conway, AR 72032</address>
 <p><strong>Official Conway showroom hours:</strong> Monday–Friday, 8 a.m.–5 p.m.; Saturday, 10 a.m.–2 p.m.; Sunday closed. These are dealership contact hours, not confirmed golf-cart rental pickup or return hours. <a href="https://rivervalleygolfcarts.com/contact-golf-cart-dealership-conway/" target="_blank" rel="noopener noreferrer">Official Conway location and hours ↗</a></p>
@@ -979,7 +980,7 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
  <figcaption class="folio-disclaimer">Original illustration · Not a provider vehicle or proof of available inventory</figcaption>
 </figure>
 <div class="provider-body">
-<h3>Arkansas Golf &amp; Powersports — North Little Rock</h3>
+<h3 data-field-listing>Arkansas Golf &amp; Powersports — North Little Rock</h3>
 <p>Golf cart dealer with an official rental reservation inquiry form. The operator&#39;s current form asks for rental contact and location information plus date of birth, driver&#39;s-license number, issuing state and license expiration date; use the provider&#39;s official form rather than sending those details to third parties. Submission is an inquiry, not a confirmed rental. Ask whether golf carts are available for your requested dates and location, and confirm eligibility, pickup or delivery, rates and fees directly.</p>
 <address class="address">7322 Cock of the Walk Lane, North Little Rock, AR 72113</address>
 <div class="status">Russellville delivery UNCONFIRMED</div>
@@ -994,7 +995,7 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
  <figcaption class="folio-disclaimer">Original illustration · Not a provider vehicle or proof of available inventory</figcaption>
 </figure>
 <div class="provider-body">
-<h3>Clear Creek Golf Car &amp; Utility Vehicles — Hot Springs Village</h3>
+<h3 data-field-listing>Clear Creek Golf Car &amp; Utility Vehicles — Hot Springs Village</h3>
 <p>Established multi-location golf cart dealer with an official short- and long-term golf cart and utility vehicle rental program for events, weddings and jobsites. The operator advertises day, weekend, week and month rentals plus delivery and pickup services. Its <a href="https://www.clearcreekgolfcar.com/blog/faq--103279" target="_blank" rel="noopener noreferrer">official rental FAQ</a> describes gas and electric two-, four- and six-passenger carts plus utility vehicles; these are companywide fleet types, not confirmed Hot Springs Village inventory. The operator&#39;s <a href="https://www.clearcreekgolfcar.com/about-us-golf-cars-dealership--info" target="_blank" rel="noopener noreferrer">current location list</a> does not include its former Russellville store, whose remaining <a href="https://www.clearcreekgolfcar.com/map-hours-directions-golf-cars-dealership--hours-russellville" target="_blank" rel="noopener noreferrer">location page shows no open days</a>; do not assume local pickup at 701 S Arkansas Ave. Confirm available models at the Hot Springs Village branch, whether rental delivery reaches Russellville, transport charges and all terms directly.</p>
 <address class="address">3305 N State Hwy 7, Hot Springs Village, AR 71909</address>
 <div class="status">Russellville rental delivery UNCONFIRMED; nationwide shipping for purchased carts does not establish rental delivery</div>
@@ -1009,7 +1010,7 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
  <figcaption class="folio-disclaimer">Original illustration · Not a provider vehicle or proof of available inventory</figcaption>
 </figure>
 <div class="provider-body">
-<h3>Kaptain Chris &amp; Pup's Family Outdoor Store — Hot Springs</h3>
+<h3 data-field-listing>Kaptain Chris &amp; Pup's Family Outdoor Store — Hot Springs</h3>
 <p>Official golf cart rental catalog advertises two-, four- and six-passenger rental options, and describes larger passenger carts and utility or cargo configurations for events. Request a quote for the exact cart, dates, pickup or delivery, and all charges; the published catalog does not confirm a Russellville rental service area or available units.</p>
 <address class="address">4964 Malvern Ave, Hot Springs, AR 71901</address>
 <div class="status">Russellville rental delivery UNCONFIRMED; ask whether pickup or transport is possible</div>
@@ -1025,7 +1026,7 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
  <figcaption class="folio-disclaimer">Original illustration · Not a provider vehicle or proof of available inventory</figcaption>
 </figure>
 <div class="provider-body">
-<h3>Lone Star Golf Cars — North Little Rock</h3>
+<h3 data-field-listing>Lone Star Golf Cars — North Little Rock</h3>
 <p>Official Arkansas rental page advertises two-, four- and six-passenger golf carts plus utility configurations for events, campuses and commercial uses, with a rental quote form. The company describes delivery and pickup options, but has not explicitly confirmed service to Russellville; request a written quote for your precise location and dates.</p>
 <address class="address">7520 Counts Massie Rd, Suite 1, North Little Rock, AR 72113</address>
 <div class="status">Russellville rental delivery UNCONFIRMED; confirm transport and insurance requirements</div>
@@ -1040,7 +1041,7 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
  <figcaption class="folio-disclaimer">Original illustration · Not a provider vehicle or proof of available inventory</figcaption>
 </figure>
 <div class="provider-body">
-<h3>Mid-State Golf Cars — Bryant</h3>
+<h3 data-field-listing>Mid-State Golf Cars — Bryant</h3>
 <p>Family-owned Central Arkansas golf car business whose official website advertises rentals for events and operations, with a rental inquiry option. Ask which carts are in the rental fleet and whether pickup or transport could work for your event; Russellville service is not advertised.</p>
 <address class="address">24206 Interstate 30, Bryant, AR 72022</address>
 <div class="status">Russellville rental delivery UNCONFIRMED; not a Russellville branch</div>
@@ -1055,7 +1056,7 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
  <figcaption class="folio-disclaimer">Original illustration · Not a provider vehicle or proof of available inventory</figcaption>
 </figure>
 <div class="provider-body">
-<h3>Golf Cart Elite — Hot Springs</h3>
+<h3 data-field-listing>Golf Cart Elite — Hot Springs</h3>
 <p>Hot Springs golf-cart dealer with an official rental offering for weddings, festivals, outdoor events, weekend use and property transportation. Its published example rate is $125 per day with a two-day minimum, plus a $50 pickup/drop-off charge. Those advertised terms are not a Russellville delivery quote; confirm rental models, service coverage, current rates, insurance and transport charges directly before booking.</p>
 <address class="address">2051 Higdon Ferry Rd, Hot Springs, AR 71913</address>
 <div class="status">Russellville rental delivery UNCONFIRMED; not a Russellville branch</div>
@@ -1070,7 +1071,7 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
  <figcaption class="folio-disclaimer">Original illustration · Not a provider vehicle or proof of available inventory</figcaption>
 </figure>
 <div class="provider-body">
-<h3>Golf Cars of Fort Smith — Fort Smith</h3>
+<h3 data-field-listing>Golf Cars of Fort Smith — Fort Smith</h3>
 <p>Established Fort Smith golf-cart dealer with an official rental and leasing program. The operator advertises two-, four- and six-passenger golf carts and utility vehicles, available for daily, weekend, weekly, monthly or seasonal rental inquiries. Its published event and commercial uses include festivals, trade shows, corporate functions and large properties. The operator also advertises longer-term leasing for golf carts and industrial vehicles. Its rental page says supplied carts arrive clean and fueled or charged, but <strong>this is not confirmation of delivery to Russellville</strong>. <strong>Russellville delivery, vehicle availability, transport charges and pickup arrangements are UNCONFIRMED.</strong> Request a date- and location-specific quote; do not assume a rental can be collected in Russellville.</p>
 <address class="address">1100 Wheeler Ave, Fort Smith, AR 72901</address>
 <div class="status">Fort Smith operator; Russellville rental delivery UNCONFIRMED; not a Russellville branch</div>
@@ -1085,7 +1086,7 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
  <figcaption class="folio-disclaimer">Original illustration · Not a provider vehicle or proof of available inventory</figcaption>
 </figure>
 <div class="provider-body">
-<h3>McCoy Custom Carts — Springdale</h3>
+<h3 data-field-listing>McCoy Custom Carts — Springdale</h3>
 <p>Officially advertises <strong>two-, four- and six-passenger golf cart rentals</strong> for events, neighborhoods, campuses and other short-term uses. The operator offers rental inquiries through its own website and says delivery and pickup are available in its advertised Midwest and Northwest Arkansas market. <strong>Russellville is not a verified delivery destination; Russellville delivery is UNCONFIRMED.</strong> Springdale rental inventory, dates, transport eligibility to the requested address, pricing, deposits and return terms must be confirmed directly. This is a regional rental inquiry, not a Russellville storefront.</p>
 <address class="address">20208 Sonora Rd, Suite J, Springdale, AR 72764</address>
 <div class="status">Springdale regional provider; Russellville delivery UNCONFIRMED</div>
@@ -1100,7 +1101,7 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
  <figcaption class="folio-disclaimer">Original illustration · Not a provider vehicle, verified branch or proof of inventory</figcaption>
 </figure>
 <div class="provider-body">
-<h3>Little Rock Golf Cart Rental — Regional Inquiry</h3>
+<h3 data-field-listing>Little Rock Golf Cart Rental — Regional Inquiry</h3>
 <p>The operator's website advertises electric passenger and utility golf-cart rentals for events and jobsites, with half-day through longer rental terms and delivery/pickup available for a fee. Its official reservation form asks for a delivery location and says requests should be submitted at least seven days ahead. <strong>A physical Little Rock rental branch, current Arkansas fulfillment, inventory and delivery to Russellville are not independently verified; Russellville delivery is UNCONFIRMED.</strong> Confirm whether the company can fulfill the requested Arkansas location, model and dates before paying; obtain a written quote for transport, deposit, insurance and return conditions.</p>
 <div class="status">Little Rock market advertised · Physical location and Russellville delivery UNCONFIRMED</div>
 <div class="provider-actions"><a class="action action-primary" href="tel:+18552278329" aria-label="Call Little Rock Golf Cart Rental at 855-227-8329">Call 855-227-8329</a><a class="action action-secondary" href="https://littlerockgolfcartrental.com/golf-cart-rental-reservation/" target="_blank" rel="noopener noreferrer">Official rental request &amp; terms ↗</a></div>
@@ -1134,7 +1135,7 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
 </div>
 <div class="course-local-body">
   <p class="course-local-kicker">Nearby on-course option · Not one of the ten event-rental operators</p>
-  <h2 id="galla-creek-cart-title">Galla Creek Golf Course &amp; Country Club — Pottsville</h2>
+  <h2 id="galla-creek-cart-title" data-field-panel="title">Galla Creek Golf Course &amp; Country Club — Pottsville</h2>
   <p>Galla Creek's official website provides a <strong>cart-rental waiver</strong> alongside golf booking. A golf-booking directory also identifies carts for rent at the course. This is an <strong>on-course rental inquiry</strong>, not a verified golf-cart rental for weddings, festivals, personal transportation or off-site use. <strong>Off-site availability and delivery to Russellville are UNCONFIRMED.</strong> Confirm cart availability, current fees, eligible drivers, course use and booking requirements directly with the operator.</p>
   
 <div class="course-local-status" aria-label="Scope of the golf cart rental inquiry"><div><span>ON-COURSE INQUIRY</span><strong>Cart rental waiver publicly linked</strong></div><div><span>OFF-SITE RENTAL</span><strong>Not confirmed for events or delivery</strong></div></div>
@@ -1184,7 +1185,7 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
   </div>
   <div class="cart-onward-content">
     <p class="cart-onward-eyebrow">THE NEXT CHAPTER / EVENT PLANNING</p>
-    <h2 id="cart-onward-title">One moving piece.<br><em>A whole occasion.</em></h2>
+    <h2 id="cart-onward-title" data-field-panel="title">One moving piece.<br><em>A whole occasion.</em></h2>
     <p class="cart-onward-lead">A golf cart can be one part of a larger event. Continue with three separate rental directories to plan the setting, the setup and guest essentials.</p>
     <div class="cart-onward-routes" aria-label="Related event rental directories">
       <a href="venues.html"><span class="cart-onward-number">01</span><span class="cart-onward-route-copy"><strong>Find the place</strong><small>Venues &amp; gathering spaces</small></span><span class="cart-onward-arrow" aria-hidden="true">↗</span></a>
@@ -1195,7 +1196,7 @@ main>:not(.hero){width:calc(100% - 52px);max-width:1320px;margin-left:auto;margi
   </div>
 </section>
 <p class="note">Independent local directory. Rental service and Russellville delivery are not guaranteed. Confirm current inventory, transport coverage, pricing, availability and terms directly with each provider. <a href="sms:+14799707301">Suggest a correction</a>.</p>
-<footer>Russellville.Rent · <a href="/">Return to homepage</a></footer>
+<footer data-field-footer>Russellville.Rent · <a href="/">Return to homepage</a> <a class="field-photo-credit" href="/photo-credits.html">Photo credits</a></footer>
 </main>
 <script>
 

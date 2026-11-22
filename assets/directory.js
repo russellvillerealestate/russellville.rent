@@ -65,6 +65,7 @@
     list.replaceChildren();
     for(const path of recent) {
       const row = document.createElement('li'), link = categoryLink(byPath.get(path));
+      row.dataset.fieldPhoto = byPath.get(path).key;
       link.className = 'recent-link'; row.append(link); list.append(row);
     }
   }
@@ -95,6 +96,7 @@
       const card = byKey.get(key), row = document.createElement('li');
       const remove = card.element.querySelector('.save-category').cloneNode(true);
       remove.dataset.remove = key;
+      row.dataset.fieldPhoto = key;
       row.append(categoryLink(card),remove); list.append(row);
     }
   }
@@ -295,6 +297,7 @@
         if(propertyCount && card.key==='homes')continue;
         const row=document.createElement('li'),link=categoryLink(card);
         row.className='search-row';
+        row.dataset.fieldPhoto=card.key;
         if(related)row.classList.add('related-match');
         else if(!list.children.length)row.classList.add('primary-match');
         link.href=href;

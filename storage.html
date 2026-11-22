@@ -729,12 +729,13 @@ main#main{padding:0 16px 54px!important}
 <link rel="stylesheet" href="assets/finder.css">
 <script defer src="assets/provider-query.js?v=storage-logos-1"></script>
 <link rel="stylesheet" href="assets/category-browse.css?v=storage-logos-1">
-</head><body class="directory-page">
+<link rel="stylesheet" href="/assets/field-guide.css?v=1">
+</head><body class="directory-page" data-field-guide="storage">
 <!-- Shared decorative storage illustrations: source geometry preserved in one reusable SVG sprite.
      Original scene paths, sizes and colors are unchanged; no external image request. -->
 <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;overflow:hidden"><defs><symbol id="storage-art-units-master" viewBox="0 0 400 160"><path d="M18 137H382M50 52h300v85H50z" fill="#164639" stroke="#f1d398" stroke-width="3"/><path d="M68 137V66h75v71M163 137V66h75v71M258 137V66h74v71" stroke="#f1d398" stroke-width="4"/><path d="M78 80h55M78 92h55M78 104h55M78 116h55M173 80h55M173 92h55M173 104h55M173 116h55M268 80h54M268 92h54M268 104h54M268 116h54" stroke="#d9e9d9" stroke-width="2" opacity=".65"/><path d="M36 52 85 26h230l49 26" fill="#2b6651" stroke="#f1d398" stroke-width="3" stroke-linejoin="round"/><circle cx="50" cy="30" r="3" fill="#f1d398"/><circle cx="349" cy="29" r="3" fill="#f1d398"/></symbol><symbol id="storage-art-vehicles-master" viewBox="0 0 400 160"><path d="M15 139H385M68 49h267" stroke="#f2d5a1" stroke-width="3" opacity=".7"/><path d="M91 49 63 139M307 49l30 90" stroke="#f2d5a1" stroke-width="5"/><path d="M50 139h304" stroke="#f2d5a1" stroke-width="3"/><path d="M81 79h240l-26 44H114L81 79Z" fill="#dbe9dd" stroke="#f2d5a1" stroke-width="3"/><path d="M124 79q34-46 81-46 47 0 86 46" fill="none" stroke="#dbe9dd" stroke-width="4"/><path d="M102 111h190" stroke="#548f80" stroke-width="4"/><circle cx="148" cy="135" r="12" fill="#1d4a40" stroke="#f2d5a1" stroke-width="4"/><circle cx="264" cy="135" r="12" fill="#1d4a40" stroke="#f2d5a1" stroke-width="4"/><path d="M306 125h42" stroke="#f2d5a1" stroke-width="5" stroke-linecap="round"/></symbol></defs></svg>
-<a class="storage-skip" href="#storage-grid">Skip to storage providers</a><header class="directory-top"><div><a class="directory-name" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><nav aria-label="Directory navigation"><a href="/#browse">Categories</a><a href="#directory-extras">Filters &amp; guides</a></nav></div></header><main id="main">
-<section id="provider-matches" class="directory-intro" data-provider-brands data-provider-cards="#storage-grid &gt; article"><h1>Self-storage in Russellville</h1><form class="directory-search" role="search" hidden><label for="provider-query-main">Search providers and rental items</label><div><input id="provider-query-main" type="search" name="q" placeholder="Facility, street, or climate control" maxlength="160" autocomplete="off" enterkeyhint="search"><button type="submit">Search</button></div></form><div class="directory-result-line"><p id="directory-count" role="status" aria-live="polite"></p><button type="button" id="directory-clear" hidden>Clear search</button></div></section>
+<a class="storage-skip" href="#storage-grid">Skip to storage providers</a><header class="directory-top" data-field-mast><div><a class="directory-name" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><nav aria-label="Directory navigation"><a href="/#browse" data-field-tab="mast">Categories</a><a href="#directory-extras" data-field-tab="mast">Filters &amp; guides</a></nav></div></header><main id="main">
+<section id="provider-matches" class="directory-intro" data-provider-brands data-provider-cards="#storage-grid &gt; article" data-field-cover="finder"><h1>Self-storage in Russellville</h1><form class="directory-search" role="search" hidden><label for="provider-query-main">Search providers and rental items</label><div><input id="provider-query-main" type="search" name="q" placeholder="Facility, street, or climate control" maxlength="160" autocomplete="off" enterkeyhint="search"><button type="submit">Search</button></div></form><div class="directory-result-line"><p id="directory-count" role="status" aria-live="polite"></p><button type="button" id="directory-clear" hidden>Clear search</button></div></section>
 
 <!-- Distinct, progressive-enhancement wayfinding. Provider classifications stay in the existing filter script. -->
 
@@ -754,26 +755,26 @@ main#main{padding:0 16px 54px!important}
 <section class="storage-finder" id="storage-finder" aria-labelledby="storage-finder-title" hidden><div class="storage-finder-top"><div><h2 id="storage-finder-title">Find the right space</h2><p class="storage-finder-intro">Search providers or narrow by advertised storage options.</p></div><button type="button" class="storage-reset" id="storage-reset">Reset filters</button></div><form id="storage-search-form" role="search"><label class="storage-search-label" for="storage-search">Search by name, location, or feature</label><input class="storage-search" id="storage-search" type="search" autocomplete="off" placeholder="Try “boat”, “Main Street”, or “24-hour”"></form><fieldset class="storage-filter-fieldset"><legend>Choose your storage need</legend>
 <p class="storage-filter-hint">Browse by advertised storage type. Inventory and availability are not guaranteed.</p>
 <div class="storage-filter-list" role="group" aria-label="Storage type">
-<button type="button" data-storage-filter="all" aria-pressed="true"><span class="storage-filter-icon" aria-hidden="true"><svg viewBox="0 0 72 58" focusable="false"><rect x="7" y="8" width="25" height="20" rx="3"/><rect x="40" y="8" width="25" height="20" rx="3"/><rect x="7" y="35" width="25" height="16" rx="3"/><rect x="40" y="35" width="25" height="16" rx="3"/></svg></span><strong>All providers</strong><small>Explore the full directory</small></button>
-<button type="button" data-storage-filter="units" aria-pressed="false"><span class="storage-filter-icon" aria-hidden="true"><svg viewBox="0 0 72 58" focusable="false"><path d="M7 20 36 7l29 13v31H7z"/><path d="M17 25h38v26H17z"/><path d="M21 32h30M21 39h30M21 46h30"/></svg></span><strong>Storage units</strong><small>Traditional unit space</small></button>
-<button type="button" data-storage-filter="vehicles" aria-pressed="false"><span class="storage-filter-icon" aria-hidden="true"><svg viewBox="0 0 72 58" focusable="false"><path d="M6 37h59v12H6zM15 37l8-17h26l10 17"/><path d="M28 20v17M18 27h35"/><circle cx="19" cy="49" r="5"/><circle cx="53" cy="49" r="5"/></svg></span><strong>Boat &amp; RV parking</strong><small>Vehicle storage options</small></button>
-<button type="button" data-storage-filter="climate" aria-pressed="false"><span class="storage-filter-icon" aria-hidden="true"><svg viewBox="0 0 72 58" focusable="false"><circle cx="36" cy="29" r="20"/><path d="M36 10v38M17 29h38M23 16l26 26M49 16 23 42"/></svg></span><strong>Climate-controlled</strong><small>Temperature-managed units</small></button>
+<button type="button" data-storage-filter="all" aria-pressed="true" data-field-route><span class="storage-filter-icon" aria-hidden="true"><svg viewBox="0 0 72 58" focusable="false"><rect x="7" y="8" width="25" height="20" rx="3"/><rect x="40" y="8" width="25" height="20" rx="3"/><rect x="7" y="35" width="25" height="16" rx="3"/><rect x="40" y="35" width="25" height="16" rx="3"/></svg></span><strong>All providers</strong><small>Explore the full directory</small></button>
+<button type="button" data-storage-filter="units" aria-pressed="false" data-field-route><span class="storage-filter-icon" aria-hidden="true"><svg viewBox="0 0 72 58" focusable="false"><path d="M7 20 36 7l29 13v31H7z"/><path d="M17 25h38v26H17z"/><path d="M21 32h30M21 39h30M21 46h30"/></svg></span><strong>Storage units</strong><small>Traditional unit space</small></button>
+<button type="button" data-storage-filter="vehicles" aria-pressed="false" data-field-route><span class="storage-filter-icon" aria-hidden="true"><svg viewBox="0 0 72 58" focusable="false"><path d="M6 37h59v12H6zM15 37l8-17h26l10 17"/><path d="M28 20v17M18 27h35"/><circle cx="19" cy="49" r="5"/><circle cx="53" cy="49" r="5"/></svg></span><strong>Boat &amp; RV parking</strong><small>Vehicle storage options</small></button>
+<button type="button" data-storage-filter="climate" aria-pressed="false" data-field-route><span class="storage-filter-icon" aria-hidden="true"><svg viewBox="0 0 72 58" focusable="false"><circle cx="36" cy="29" r="20"/><path d="M36 10v38M17 29h38M23 16l26 26M49 16 23 42"/></svg></span><strong>Climate-controlled</strong><small>Temperature-managed units</small></button>
 </div></fieldset>
 <div class="storage-locations" id="storage-locations" role="group" aria-labelledby="storage-locations-title">
  <div class="storage-locations-heading">
   <div><p class="storage-locations-kicker">02 / Explore nearby</p><h3 id="storage-locations-title">Where should your space be?</h3><p class="storage-locations-intro">Choose a town to focus the directory. Location, storage type and keyword filters work together.</p></div>
-  <button type="button" class="storage-city-all" data-storage-city="all" aria-pressed="true">All locations <span data-city-count="all"></span></button>
+  <button type="button" class="storage-city-all" data-storage-city="all" aria-pressed="true" data-field-tab>All locations <span data-city-count="all"></span></button>
  </div>
  <div class="storage-location-rail" aria-label="Listed facility locations">
-  <button type="button" class="storage-city" data-storage-city="russellville" aria-pressed="false"><span class="storage-city-marker">Local hub</span><strong>Russellville</strong><span class="storage-city-count" data-city-count="russellville"></span></button>
-  <button type="button" class="storage-city" data-storage-city="pottsville" aria-pressed="false"><span class="storage-city-marker">Nearby</span><strong>Pottsville</strong><span class="storage-city-count" data-city-count="pottsville"></span></button>
-  <button type="button" class="storage-city" data-storage-city="atkins" aria-pressed="false"><span class="storage-city-marker">Nearby</span><strong>Atkins</strong><span class="storage-city-count" data-city-count="atkins"></span></button>
-  <button type="button" class="storage-city" data-storage-city="dardanelle" aria-pressed="false"><span class="storage-city-marker">Across the river</span><strong>Dardanelle</strong><span class="storage-city-count" data-city-count="dardanelle"></span></button>
-  <button type="button" class="storage-city" data-storage-city="dover" aria-pressed="false"><span class="storage-city-marker">Nearby</span><strong>Dover</strong><span class="storage-city-count" data-city-count="dover"></span></button>
-  <button type="button" class="storage-city" data-storage-city="clarksville" aria-pressed="false"><span class="storage-city-marker">Farther west</span><strong>Clarksville</strong><span class="storage-city-count" data-city-count="clarksville"></span></button>
-  <button type="button" class="storage-city" data-storage-city="danville" aria-pressed="false"><span class="storage-city-marker">Yell County</span><strong>Danville</strong><span class="storage-city-count" data-city-count="danville"></span></button>
-  <button type="button" class="storage-city" data-storage-city="morrilton" aria-pressed="false"><span class="storage-city-marker">River Valley</span><strong>Morrilton</strong><span class="storage-city-count" data-city-count="morrilton"></span></button>
-  <button type="button" class="storage-city" data-storage-city="scranton" aria-pressed="false"><span class="storage-city-marker">Logan County</span><strong>Scranton</strong><span class="storage-city-count" data-city-count="scranton"></span></button>
+  <button type="button" class="storage-city" data-storage-city="russellville" aria-pressed="false" data-field-tab><span class="storage-city-marker">Local hub</span><strong>Russellville</strong><span class="storage-city-count" data-city-count="russellville"></span></button>
+  <button type="button" class="storage-city" data-storage-city="pottsville" aria-pressed="false" data-field-tab><span class="storage-city-marker">Nearby</span><strong>Pottsville</strong><span class="storage-city-count" data-city-count="pottsville"></span></button>
+  <button type="button" class="storage-city" data-storage-city="atkins" aria-pressed="false" data-field-tab><span class="storage-city-marker">Nearby</span><strong>Atkins</strong><span class="storage-city-count" data-city-count="atkins"></span></button>
+  <button type="button" class="storage-city" data-storage-city="dardanelle" aria-pressed="false" data-field-tab><span class="storage-city-marker">Across the river</span><strong>Dardanelle</strong><span class="storage-city-count" data-city-count="dardanelle"></span></button>
+  <button type="button" class="storage-city" data-storage-city="dover" aria-pressed="false" data-field-tab><span class="storage-city-marker">Nearby</span><strong>Dover</strong><span class="storage-city-count" data-city-count="dover"></span></button>
+  <button type="button" class="storage-city" data-storage-city="clarksville" aria-pressed="false" data-field-tab><span class="storage-city-marker">Farther west</span><strong>Clarksville</strong><span class="storage-city-count" data-city-count="clarksville"></span></button>
+  <button type="button" class="storage-city" data-storage-city="danville" aria-pressed="false" data-field-tab><span class="storage-city-marker">Yell County</span><strong>Danville</strong><span class="storage-city-count" data-city-count="danville"></span></button>
+  <button type="button" class="storage-city" data-storage-city="morrilton" aria-pressed="false" data-field-tab><span class="storage-city-marker">River Valley</span><strong>Morrilton</strong><span class="storage-city-count" data-city-count="morrilton"></span></button>
+  <button type="button" class="storage-city" data-storage-city="scranton" aria-pressed="false" data-field-tab><span class="storage-city-marker">Logan County</span><strong>Scranton</strong><span class="storage-city-count" data-city-count="scranton"></span></button>
  </div>
  <p class="storage-locations-note">Grouped by towns mentioned in published facility details, not by guaranteed unit availability. A provider advertising multiple locations can appear in more than one town.</p>
 </div></section>
@@ -782,10 +783,10 @@ main#main{padding:0 16px 54px!important}
  <div class="size-lab-layout">
   <div class="size-lab-controls"><p>Choose a size example. <strong>These dimensions do not represent verified available units.</strong></p>
    <div class="size-lab-choices" role="group" aria-label="Example unit dimensions">
-    <button type="button" class="size-lab-choice" data-size-choice="5x5" aria-pressed="false"><strong>5 × 5 ft</strong><small>25 square feet</small></button>
-    <button type="button" class="size-lab-choice" data-size-choice="5x10" aria-pressed="true"><strong>5 × 10 ft</strong><small>50 square feet</small></button>
-    <button type="button" class="size-lab-choice" data-size-choice="10x10" aria-pressed="false"><strong>10 × 10 ft</strong><small>100 square feet</small></button>
-    <button type="button" class="size-lab-choice" data-size-choice="10x20" aria-pressed="false"><strong>10 × 20 ft</strong><small>200 square feet</small></button>
+    <button type="button" class="size-lab-choice" data-size-choice="5x5" aria-pressed="false" data-field-route><strong>5 × 5 ft</strong><small>25 square feet</small></button>
+    <button type="button" class="size-lab-choice" data-size-choice="5x10" aria-pressed="true" data-field-route><strong>5 × 10 ft</strong><small>50 square feet</small></button>
+    <button type="button" class="size-lab-choice" data-size-choice="10x10" aria-pressed="false" data-field-route><strong>10 × 10 ft</strong><small>100 square feet</small></button>
+    <button type="button" class="size-lab-choice" data-size-choice="10x20" aria-pressed="false" data-field-route><strong>10 × 20 ft</strong><small>200 square feet</small></button>
    </div><p id="size-lab-status" role="status" aria-live="polite">5 by 10 feet is 50 square feet, one quarter of the reference area.</p>
    <a class="size-lab-link" href="#storage-grid">Browse storage providers ↗</a>
   </div>
@@ -805,7 +806,7 @@ main#main{padding:0 16px 54px!important}
  </div>
 </section>
 <section class="storage-rate-feature" id="storage-rate-notebook" aria-labelledby="storage-rate-title">
- <div class="storage-rate-head">
+ <div class="storage-rate-head" data-field-panel="story">
   <div><p class="storage-rate-kicker">River Valley / Monthly price notebook</p><h2 id="storage-rate-title">One floor plan.<br><em>Four local prices.</em></h2></div>
   <p>Four Russellville operators publish monthly rates for a <strong>10 × 10-foot storage unit</strong>. The nominal footprint is the same; the facilities, access, features and total charges may not be.</p>
  </div>
@@ -861,13 +862,13 @@ main#main{padding:0 16px 54px!important}
 <section class="storage-view-dock" id="storage-view-dock" aria-labelledby="storage-view-title" hidden>
  <div><span class="storage-view-kicker">River Valley / Browse your way</span><h2 id="storage-view-title">A better view of your options.</h2><p>Use cards for an overview or scan one facility at a time in compact rows. Search, town filters, public details and your shortlist work in either view.</p></div>
  <div class="storage-view-controls" role="group" aria-label="Storage directory layout">
-  <button type="button" data-storage-view="cards" aria-pressed="true"><strong>▦ &nbsp; Card gallery</strong><span>Explore providers side by side</span></button>
-  <button type="button" data-storage-view="compact" aria-pressed="false"><strong>☷ &nbsp; Scan list</strong><span>Read each facility in one row</span></button>
+  <button type="button" data-storage-view="cards" aria-pressed="true" data-field-tab><strong>▦ &nbsp; Card gallery</strong><span>Explore providers side by side</span></button>
+  <button type="button" data-storage-view="compact" aria-pressed="false" data-field-tab><strong>☷ &nbsp; Scan list</strong><span>Read each facility in one row</span></button>
  </div>
 </section>
 <p class="storage-atlas-note">Decorative sketches indicate broad storage types described in the directory. They are not photographs of facilities or evidence of current availability, vehicle fit or access.</p>
 <section class="storage-route-guide" aria-labelledby="storage-route-title">
-  <div class="storage-route-heading">
+  <div class="storage-route-heading" data-field-panel="story">
     <div><p class="storage-route-eyebrow">THE RIVER VALLEY STORAGE FIELD GUIDE / START HERE</p><h2 id="storage-route-title">Find room for <em>what matters.</em></h2></div>
     <p>Start with the kind of space you need. These paths use the directory's existing storage-type filters; verify current units and access directly with each facility.</p>
   </div>
@@ -890,7 +891,7 @@ main#main{padding:0 16px 54px!important}
 <section class="storage-hero" aria-labelledby="storage-title">
 <div class="storage-hero-content">
 <p class="storage-eyebrow">Russellville · Arkansas River Valley</p>
-<h2 id="storage-title">Room for what<br>comes next.</h2>
+<h2 id="storage-title" data-field-panel="title">Room for what<br>comes next.</h2>
 <p class="storage-hero-copy">Explore self-storage, climate-controlled units, and parking for boats and recreational vehicles. Compare local providers, then confirm rates and availability directly.</p>
 <div class="storage-hero-actions"><a class="storage-hero-primary" href="#storage-grid">Explore storage providers <span aria-hidden="true">↗</span></a><p>Browse the directory, or use the filters below to narrow by storage type and town.</p></div>
 <div class="storage-hero-meta"><strong>35</strong><span>Storage listings in and around Russellville</span></div>
@@ -920,7 +921,7 @@ main#main{padding:0 16px 54px!important}
 </div></div>
 </section>
 </div></details>
-<footer>Russellville.Rent · <a href="/">Return to homepage</a></footer></main><script>
+<footer data-field-footer>Russellville.Rent · <a href="/">Return to homepage</a> <a class="field-photo-credit" href="/photo-credits.html">Photo credits</a></footer></main><script>
 (() => {
   const cards = Array.from(document.querySelectorAll('#storage-grid article'));
   const finder = document.getElementById('storage-finder');

@@ -732,15 +732,16 @@ footer a{color:#ffe3a5}
 </style>
 <link rel="stylesheet" href="assets/finder.css">
 <script defer src="assets/provider-query.js"></script>
+<link rel="stylesheet" href="/assets/field-guide.css?v=1">
 </head>
-<body>
-<a class="skip-link" href="#providers">Skip to provider</a><header><div class="wrap top"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span class="brand-dot">.</span>Rent</a><nav class="top-nav" aria-label="Page navigation"><a href="#providers">Provider</a><a href="#trip-checklist">Travel checklist</a><a class="back" href="/#browse">← All rental categories</a></nav></div></header>
-<nav class="family-mobile-companion" aria-label="Family travel quick links">
- <a href="#providers"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M4 8h16v12H4zM7 8V5h10v3M8 12h8M8 16h8"/></svg><small>01 / FIND</small><strong>Baby gear</strong></a>
- <a href="#family-trip-note"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h7M9 16h5"/></svg><small>02 / PLAN</small><strong>Trip note</strong></a>
- <a href="#trip-checklist"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 9l2 2 4-4M8 16h8"/></svg><small>03 / CHECK</small><strong>Safety</strong></a>
+<body data-field-guide="baby-gear">
+<a class="skip-link" href="#providers">Skip to provider</a><header data-field-mast><div class="wrap top"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span class="brand-dot">.</span>Rent</a><nav class="top-nav" aria-label="Page navigation"><a href="#providers" data-field-tab="mast">Provider</a><a href="#trip-checklist" data-field-tab="mast">Travel checklist</a><a class="back" href="/#browse" data-field-tab="mast">← All rental categories</a></nav></div></header>
+<nav class="family-mobile-companion" aria-label="Family travel quick links" data-field-nav="dock">
+ <a href="#providers" data-field-tab><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M4 8h16v12H4zM7 8V5h10v3M8 12h8M8 16h8"/></svg><small>01 / FIND</small><strong>Baby gear</strong></a>
+ <a href="#family-trip-note" data-field-tab><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h7M9 16h5"/></svg><small>02 / PLAN</small><strong>Trip note</strong></a>
+ <a href="#trip-checklist" data-field-tab><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 9l2 2 4-4M8 16h8"/></svg><small>03 / CHECK</small><strong>Safety</strong></a>
 </nav>
-<section class="hero" aria-labelledby="family-hero-title">
+<section class="hero" aria-labelledby="family-hero-title" data-field-cover="editorial">
   <div class="hero-ambient" aria-hidden="true"></div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
@@ -835,7 +836,7 @@ footer a{color:#ffe3a5}
 </section>
 <main class="wrap main" id="providers"><div class="intro"><p class="eyebrow" style="color:#557565">Baby &amp; toddler equipment</p><h2>Russellville service and a regional option</h2><p>Babies Getaway explicitly advertises Russellville delivery. A separate BabyQuip provider in Fort Smith advertises the Arkansas River Valley generally but does not specifically name Russellville; <strong>Russellville service for that provider is UNCONFIRMED</strong>. Verify address eligibility, stock and total fees with each operator before booking.</p></div>
 
-<nav class="coverage-atlas" aria-labelledby="coverage-atlas-title">
+<nav class="coverage-atlas" aria-labelledby="coverage-atlas-title" data-field-nav="group">
   <div class="coverage-atlas-head">
     <span class="coverage-atlas-overline">RIVER VALLEY / FAMILY GEAR COVERAGE ATLAS</span>
     <h3 id="coverage-atlas-title">One search.<br><em>Two different routes.</em></h3>
@@ -843,13 +844,13 @@ footer a{color:#ffe3a5}
     <span class="coverage-atlas-photo">Lake Dardanelle scenery · Not provider inventory or a storefront</span>
   </div>
   <div class="coverage-atlas-options">
-    <a class="coverage-atlas-route" href="#babies-getaway-listing">
+    <a class="coverage-atlas-route" href="#babies-getaway-listing" data-field-route>
       <span class="coverage-atlas-index">01 / RUSSELLVILLE SERVICE ADVERTISED</span>
       <strong>Delivery listed <em>for Russellville.</em></strong>
       <span class="coverage-atlas-route-name">Babies Getaway · Confirm your address, dates, gear and charges.</span>
       <span class="coverage-atlas-action">View advertised-service details <b aria-hidden="true">↗</b></span>
     </a>
-    <a class="coverage-atlas-route" href="#babyquip-fort-smith-heading">
+    <a class="coverage-atlas-route" href="#babyquip-fort-smith-heading" data-field-route>
       <span class="coverage-atlas-index">02 / RUSSELLVILLE DELIVERY UNCONFIRMED</span>
       <strong>Explore the <em>regional option.</em></strong>
       <span class="coverage-atlas-route-name">BabyQuip · Christina Z. in Fort Smith · Verify whether your Russellville address qualifies.</span>
@@ -867,7 +868,7 @@ footer a{color:#ffe3a5}
   </div>
   <div class="provider-service-details">
     <span class="provider-service-heading">At a glance / Before contacting the provider</span>
-    <h3>Check the details before you pack.</h3>
+    <h3 data-field-listing>Check the details before you pack.</h3>
     <div class="provider-service-facts">
       <div class="provider-service-fact"><strong>Advertised</strong><span>Russellville service is listed by the operator; actual delivery needs confirmation.</span></div>
       <div class="provider-service-fact"><strong>3 days</strong><span>Published minimum rental charge, even for shorter stays.</span></div>
@@ -893,7 +894,7 @@ footer a{color:#ffe3a5}
   </div>
   <div class="regional-folio-body">
     <span class="tag">Regional provider · address eligibility unconfirmed</span>
-    <h3 id="babyquip-fort-smith-heading">BabyQuip — Christina Z.’s Fort Smith Rental Shop</h3>
+    <h3 id="babyquip-fort-smith-heading" data-field-listing>BabyQuip — Christina Z.’s Fort Smith Rental Shop</h3>
     <p>BabyQuip's operator-hosted profile identifies a Fort Smith-based quality provider offering baby-gear rentals and describing its service area as the <strong>Arkansas River Valley and surrounding areas</strong>, naming Fort Smith, Barling, Van Buren, Greenwood, Bonanza, Hackett and Pocola. <strong>Russellville is not specifically named, so Russellville delivery is UNCONFIRMED.</strong> Do not assume an address in Russellville qualifies for delivery or pickup.</p>
     <p>The provider's public rental catalog, checked November 18, 2026, lists a Graco Pack 'n Play with bassinet at <strong>$8 per day</strong>, a Dream On Me folding full-size crib at <strong>$20 per day</strong> and a Graco SlimFit 3-in-1 car seat at <strong>$12 per day</strong>. These are item prices, <strong>not confirmed Russellville availability or all-in quotes</strong>; verify dates, safety/fit, minimum charge, delivery, tax, cleaning and pickup terms. The additional Amazon Delivery entry is a purchase-related service, not baby equipment for rent.</p>
     <p class="fine">Fort Smith, Arkansas · No Russellville storefront or local inventory verified · Exact self-pickup address provided after a confirmed reservation.</p>
@@ -911,7 +912,7 @@ footer a{color:#ffe3a5}
 
 <section class="family-desk" id="family-trip-note" aria-labelledby="family-desk-title">
  <div class="family-desk-story">
-  <div><span class="family-desk-kicker">Field notes / Family travel</span><h2 id="family-desk-title">One trip.<br><em>One clear request.</em></h2><p>Choose the gear and travel window you want to discuss. Bring one organized note to the provider instead of remembering questions across several pages. This page does not make reservations.</p></div>
+  <div data-field-panel="story"><span class="family-desk-kicker">Field notes / Family travel</span><h2 id="family-desk-title">One trip.<br><em>One clear request.</em></h2><p>Choose the gear and travel window you want to discuss. Bring one organized note to the provider instead of remembering questions across several pages. This page does not make reservations.</p></div>
   <div class="family-desk-art" aria-hidden="true">
    <svg viewBox="0 0 340 230" xmlns="http://www.w3.org/2000/svg" fill="none"><rect x="20" y="58" width="122" height="138" rx="15" fill="#e8c688" stroke="#fff1ca" stroke-width="5"/><path d="M58 55V40c0-19 13-22 22-22s22 3 22 22v15" stroke="#f3d99f" stroke-width="10" stroke-linecap="round"/><path d="M36 85h90M81 85v95" stroke="#b18b58" stroke-width="4"/><circle cx="46" cy="194" r="10" fill="#163e31" stroke="#f3d99f" stroke-width="5"/><circle cx="116" cy="194" r="10" fill="#163e31" stroke="#f3d99f" stroke-width="5"/><rect x="151" y="34" width="169" height="137" rx="13" fill="#faf1d8" stroke="#e6cb91" stroke-width="5"/><path d="M170 65h132M170 84h132M170 103h102" stroke="#b9cbb5" stroke-width="6" stroke-linecap="round"/><path d="m172 134 12 12 28-29" stroke="#2c7655" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M224 137h78" stroke="#c7d9bc" stroke-width="6" stroke-linecap="round"/><path d="M14 214h312" stroke="#e8c688" stroke-opacity=".6" stroke-dasharray="5 8"/></svg>
   </div>
@@ -1016,7 +1017,7 @@ footer a{color:#ffe3a5}
   </div>
   <p class="family-next-foot">Lake Dardanelle scenery and original illustrations are for navigation, not provider photographs. These are independent rental categories, not a package; confirm family suitability, pricing, service area, current availability and terms with each operator.</p>
 </section>
-</main><footer><div class="wrap">Independent local directory · Provider information can change · <a href="/#contact">Request a correction</a> · <a href="/">Russellville.Rent home</a></div></footer>
+</main><footer data-field-footer><div class="wrap">Independent local directory · Provider information can change · <a href="/#contact">Request a correction</a> · <a href="/">Russellville.Rent home</a> <a class="field-photo-credit" href="/photo-credits.html">Photo credits</a></div></footer>
 
 <script>
 /* Pure client-side planning helper; never stores or submits the form data. */

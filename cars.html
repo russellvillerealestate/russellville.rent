@@ -1071,14 +1071,15 @@ main.wrap{padding-top:52px}
 <link rel="stylesheet" href="assets/finder.css">
 <script defer src="assets/provider-query.js?v=directory-2"></script>
 <link rel="stylesheet" href="assets/category-browse.css?v=2">
+<link rel="stylesheet" href="/assets/field-guide.css?v=1">
 </head>
-<body class="directory-page">
+<body class="directory-page" data-field-guide="cars">
 <a class="skip" href="#main">Skip to car rental options</a>
-<header class="directory-top"><div><a class="directory-name" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><nav aria-label="Directory navigation"><a href="/#browse">Categories</a><a href="#directory-extras">Filters &amp; guides</a></nav></div></header>
+<header class="directory-top" data-field-mast><div><a class="directory-name" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><nav aria-label="Directory navigation"><a href="/#browse" data-field-tab="mast">Categories</a><a href="#directory-extras" data-field-tab="mast">Filters &amp; guides</a></nav></div></header>
 
 
 <main id="main" class="wrap">
-<section id="provider-matches" class="directory-intro" data-provider-cards=".car-folios &gt; article"><h1>Car rentals in Russellville</h1><form class="directory-search" role="search" hidden><label for="provider-query-main">Search providers and rental items</label><div><input id="provider-query-main" type="search" name="q" placeholder="Rental company, pickup, or vehicle" maxlength="160" autocomplete="off" enterkeyhint="search"><button type="submit">Search</button></div></form><div class="directory-result-line"><p id="directory-count" role="status" aria-live="polite"></p><button type="button" id="directory-clear" hidden>Clear search</button></div></section>
+<section id="provider-matches" class="directory-intro" data-provider-cards=".car-folios &gt; article" data-field-cover="finder"><h1>Car rentals in Russellville</h1><form class="directory-search" role="search" hidden><label for="provider-query-main">Search providers and rental items</label><div><input id="provider-query-main" type="search" name="q" placeholder="Rental company, pickup, or vehicle" maxlength="160" autocomplete="off" enterkeyhint="search"><button type="submit">Search</button></div></form><div class="directory-result-line"><p id="directory-count" role="status" aria-live="polite"></p><button type="button" id="directory-clear" hidden>Clear search</button></div></section>
 
 
 
@@ -1181,7 +1182,7 @@ main.wrap{padding-top:52px}
 
 <details class="directory-extras" id="directory-extras"><summary>Filters, comparisons &amp; planning guides</summary><div class="directory-extras-body">
 <section class="compare-board" aria-labelledby="compare-title">
-    <div class="compare-head"><div><p class="eyebrow">Rental desk / At a glance</p><h2 id="compare-title">Compare before you call.</h2></div><p>Three local contacts, one clear view of the details currently listed.</p><span class="compare-edition" aria-hidden="true"><b>03</b><small>Russellville<br>rental desks</small></span></div>
+    <div class="compare-head" data-field-panel="story"><div><p class="eyebrow">Rental desk / At a glance</p><h2 id="compare-title">Compare before you call.</h2></div><p>Three local contacts, one clear view of the details currently listed.</p><span class="compare-edition" aria-hidden="true"><b>03</b><small>Russellville<br>rental desks</small></span></div>
     <p class="compare-hint" id="compare-scroll-hint">Scroll sideways to compare all three providers →</p>
     <ol class="mobile-compare" aria-label="Car rental provider comparison">
       <li><article class="mobile-pass"><div class="pass-head"><span class="pass-number" aria-hidden="true">01</span><div><h3>24/7 Rent-A-Ride</h3><p>Russellville · Local rental contact</p></div></div><dl class="pass-facts"><div><dt>Vehicles</dt><dd>Car rentals; specific vehicle classes not listed here.</dd></div><div><dt>Driver rules</dt><dd class="pass-unconfirmed">Confirm directly</dd></div><div><dt>Mileage</dt><dd class="pass-unconfirmed">Confirm directly</dd></div><div><dt>Location</dt><dd>111 S Arkansas Ave</dd></div></dl><a class="pass-action" href="#rental-ride">Contact and rental details <span aria-hidden="true">↗</span></a></article></li>
@@ -1329,7 +1330,7 @@ main.wrap{padding-top:52px}
     <div class="road-continue-scene">
       <img class="road-continue-photo" src="assets/lake-dardanelle-sunset.jpg" width="1920" height="910" decoding="async" alt="" loading="lazy">
       <p class="road-continue-eyebrow">The River Valley / After the drive</p>
-      <h2 id="road-continue-title">The trip doesn't stop <em>at the keys.</em></h2>
+      <h2 id="road-continue-title" data-field-panel="title">The trip doesn't stop <em>at the keys.</em></h2>
       <p class="road-continue-scene-copy">A car gets you on the road. Find the rest of what your plans call for, from a place to stay to room for the things you're bringing.</p>
       <p class="road-continue-caption">Lake Dardanelle scenery · Not a rental vehicle, provider photograph or availability confirmation</p>
     </div>
@@ -1394,7 +1395,7 @@ main.wrap{padding-top:52px}
   </div>
 </div>
 </div></details>
-<footer><span>© 2026 Russellville.Rent</span><span>Local rentals. Local connections. Russellville, Arkansas.</span><a href="/#contact">Request a listing or correction</a></footer>
+<footer data-field-footer><span>© 2026 Russellville.Rent</span><span>Local rentals. Local connections. Russellville, Arkansas.</span><a href="/#contact">Request a listing or correction</a> <a class="field-photo-credit" href="/photo-credits.html">Photo credits</a></footer>
 </main>
 
 <script>

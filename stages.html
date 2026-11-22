@@ -1131,16 +1131,17 @@ html{scroll-padding-top:105px}
 </style>
 <link rel="stylesheet" href="assets/finder.css">
 <script defer src="assets/provider-query.js"></script>
+<link rel="stylesheet" href="/assets/field-guide.css?v=1">
 </head>
-<body>
+<body data-field-guide="stages">
 <a class="skip" href="#providers">Skip to stage providers</a>
-<header class="site-header"><div class="wrap header-inner"><a class="brand" href="/">Russellville<span>.Rent</span></a><nav class="stage-route-nav" aria-label="Stage rental section navigation"><a href="#providers"><span aria-hidden="true">01</span> Find providers</a><a href="#stage-scale"><span aria-hidden="true">02</span> Compare sizes</a><a href="#planning"><span aria-hidden="true">03</span> Before booking</a></nav><a class="back" href="/">← Browse all rentals</a></div></header>
+<header class="site-header" data-field-mast><div class="wrap header-inner"><a class="brand" href="/">Russellville<span>.Rent</span></a><nav class="stage-route-nav" aria-label="Stage rental section navigation"><a href="#providers" data-field-tab="mast"><span aria-hidden="true">01</span> Find providers</a><a href="#stage-scale" data-field-tab="mast"><span aria-hidden="true">02</span> Compare sizes</a><a href="#planning" data-field-tab="mast"><span aria-hidden="true">03</span> Before booking</a></nav><a class="back" href="/">← Browse all rentals</a></div></header>
 <!-- Mobile stage-production ticket strip: native in-page links; no booking or inventory claims. -->
-<nav class="stage-mobile-guide" aria-label="Stage rentals mobile section shortcuts">
-  <a href="#routes-title"><span class="stage-mobile-guide-num" aria-hidden="true">01</span><strong>Choose</strong><small>Stage type</small></a>
-  <a href="#stage-contact-title"><span class="stage-mobile-guide-num" aria-hidden="true">02</span><strong>Providers</strong><small>16 contacts</small></a>
-  <a href="#stage-scale"><span class="stage-mobile-guide-num" aria-hidden="true">03</span><strong>Sizes</strong><small>Footprints</small></a>
-  <a href="#stage-studio"><span class="stage-mobile-guide-num" aria-hidden="true">04</span><strong>Plan</strong><small>Call brief</small></a>
+<nav class="stage-mobile-guide" aria-label="Stage rentals mobile section shortcuts" data-field-nav="dock">
+  <a href="#routes-title" data-field-tab><span class="stage-mobile-guide-num" aria-hidden="true">01</span><strong>Choose</strong><small>Stage type</small></a>
+  <a href="#stage-contact-title" data-field-tab><span class="stage-mobile-guide-num" aria-hidden="true">02</span><strong>Providers</strong><small>16 contacts</small></a>
+  <a href="#stage-scale" data-field-tab><span class="stage-mobile-guide-num" aria-hidden="true">03</span><strong>Sizes</strong><small>Footprints</small></a>
+  <a href="#stage-studio" data-field-tab><span class="stage-mobile-guide-num" aria-hidden="true">04</span><strong>Plan</strong><small>Call brief</small></a>
 </nav>
 
 <section class="hero" aria-labelledby="page-title">
@@ -1175,7 +1176,7 @@ html{scroll-padding-top:105px}
 <div class="ribbon"><div class="wrap ribbon-inner"><strong>Stage rental essentials</strong><span>10 regional stage providers + 6 on-site stage/amphitheater venues</span><span>Regional delivery unconfirmed</span><span>Request a written quote</span></div></div>
 <main class="wrap" id="providers">
 <section class="routes" aria-labelledby="routes-title">
- <div class="routes-intro"><div><p class="eyebrow">Find the right starting point</p><h2 id="routes-title">An event looks different <em>from every stage.</em></h2></div><p>Explore the right kind of setup first. Portable-stage delivery to Russellville remains unconfirmed; Depot Park, The Center for the Arts, Hughes Community Center, Brookstock Events and Carolyn McGee Community Center have fixed stages; Lake Dardanelle State Park separately lists an on-site amphitheater rental. All are venue-use inquiries, not portable stage delivery.</p></div>
+ <div class="routes-intro" data-field-panel="story"><div><p class="eyebrow">Find the right starting point</p><h2 id="routes-title">An event looks different <em>from every stage.</em></h2></div><p>Explore the right kind of setup first. Portable-stage delivery to Russellville remains unconfirmed; Depot Park, The Center for the Arts, Hughes Community Center, Brookstock Events and Carolyn McGee Community Center have fixed stages; Lake Dardanelle State Park separately lists an on-site amphitheater rental. All are venue-use inquiries, not portable stage delivery.</p></div>
  <div class="route-grid">
   <a class="route route-mobile" href="#mobile-stage">
    <span class="route-number">01 / Mobile production</span>
@@ -1203,7 +1204,7 @@ html{scroll-padding-top:105px}
 </section>
 <div class="section-top"><div><p class="eyebrow">01 / Find a provider</p><h2>Stage rental options</h2></div><p>Compare delivered stages with fixed-stage venues in and near Russellville. Confirm availability, event suitability and total charges directly.</p></div>
 
-<nav class="stage-contact-index" aria-labelledby="stage-contact-title">
+<nav class="stage-contact-index" aria-labelledby="stage-contact-title" data-field-nav="group">
   <div class="stage-contact-story">
     <div><span class="stage-contact-overline">The River Valley / Provider atlas</span>
       <h3 id="stage-contact-title">The right name. <em>One direct path.</em></h3></div>
@@ -1215,27 +1216,27 @@ html{scroll-padding-top:105px}
     <div class="stage-contact-group">
       <h5><span>01 / Regional mobile &amp; modular stages</span><span>Delivery unconfirmed</span></h5>
       <ol class="stage-contact-links">
-<li><a href="#mobile-stage"><span class="stage-contact-number" aria-hidden="true">01</span><span class="stage-contact-name">CWP Productions</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
-<li><a href="#stagemasters-stage"><span class="stage-contact-number" aria-hidden="true">02</span><span class="stage-contact-name">Stagemasters Sound &amp; Lighting</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
-<li><a href="#rock-city-stage"><span class="stage-contact-number" aria-hidden="true">03</span><span class="stage-contact-name">Rock City Staging</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
-<li><a href="#modular-staging"><span class="stage-contact-number" aria-hidden="true">04</span><span class="stage-contact-name">Intents Party Rentals</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
-<li><a href="#smoothman-stage"><span class="stage-contact-number" aria-hidden="true">05</span><span class="stage-contact-name">Smoothman Music Productions</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
-<li><a href="#edmosound-stage"><span class="stage-contact-number" aria-hidden="true">06</span><span class="stage-contact-name">EdmoSound</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
-<li><a href="#upside-stage"><span class="stage-contact-number" aria-hidden="true">07</span><span class="stage-contact-name">Upside Sound</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
-<li><a href="#sidetraxx-stage"><span class="stage-contact-number" aria-hidden="true">08</span><span class="stage-contact-name">SIDETRAXX Pro Sound</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
-<li><a href="#red-phox-stage"><span class="stage-contact-number" aria-hidden="true">09</span><span class="stage-contact-name">Red Phox Productions</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
-<li><a href="#rock-city-events-stage"><span class="stage-contact-number" aria-hidden="true">10</span><span class="stage-contact-name">Rock City Events</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
+<li><a href="#mobile-stage" data-field-tab><span class="stage-contact-number" aria-hidden="true">01</span><span class="stage-contact-name">CWP Productions</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
+<li><a href="#stagemasters-stage" data-field-tab><span class="stage-contact-number" aria-hidden="true">02</span><span class="stage-contact-name">Stagemasters Sound &amp; Lighting</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
+<li><a href="#rock-city-stage" data-field-tab><span class="stage-contact-number" aria-hidden="true">03</span><span class="stage-contact-name">Rock City Staging</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
+<li><a href="#modular-staging" data-field-tab><span class="stage-contact-number" aria-hidden="true">04</span><span class="stage-contact-name">Intents Party Rentals</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
+<li><a href="#smoothman-stage" data-field-tab><span class="stage-contact-number" aria-hidden="true">05</span><span class="stage-contact-name">Smoothman Music Productions</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
+<li><a href="#edmosound-stage" data-field-tab><span class="stage-contact-number" aria-hidden="true">06</span><span class="stage-contact-name">EdmoSound</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
+<li><a href="#upside-stage" data-field-tab><span class="stage-contact-number" aria-hidden="true">07</span><span class="stage-contact-name">Upside Sound</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
+<li><a href="#sidetraxx-stage" data-field-tab><span class="stage-contact-number" aria-hidden="true">08</span><span class="stage-contact-name">SIDETRAXX Pro Sound</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
+<li><a href="#red-phox-stage" data-field-tab><span class="stage-contact-number" aria-hidden="true">09</span><span class="stage-contact-name">Red Phox Productions</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
+<li><a href="#rock-city-events-stage" data-field-tab><span class="stage-contact-number" aria-hidden="true">10</span><span class="stage-contact-name">Rock City Events</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
       </ol>
     </div>
     <div class="stage-contact-group stage-contact-group--venues">
       <h5><span>02 / Fixed stages at venues</span><span>On-site only</span></h5>
       <ol class="stage-contact-links">
-<li><a href="#depot-stage"><span class="stage-contact-number" aria-hidden="true">11</span><span class="stage-contact-name">Historic Train Depot / Depot Park</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
-<li><a href="#arts-stage"><span class="stage-contact-number" aria-hidden="true">12</span><span class="stage-contact-name">The Center for the Arts</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
-<li><a href="#brookstock-stage"><span class="stage-contact-number" aria-hidden="true">13</span><span class="stage-contact-name">Brookstock Events / Dover</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
-<li><a href="#hughes-stage"><span class="stage-contact-number" aria-hidden="true">14</span><span class="stage-contact-name">Hughes Community Center / Russellville</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
-<li><a href="#dardanelle-stage"><span class="stage-contact-number" aria-hidden="true">15</span><span class="stage-contact-name">Carolyn McGee Community Center / Dardanelle</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
-<li><a href="#dardanelle-state-park-amphitheater"><span class="stage-contact-number" aria-hidden="true">16</span><span class="stage-contact-name">Lake Dardanelle State Park / Amphitheater</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
+<li><a href="#depot-stage" data-field-tab><span class="stage-contact-number" aria-hidden="true">11</span><span class="stage-contact-name">Historic Train Depot / Depot Park</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
+<li><a href="#arts-stage" data-field-tab><span class="stage-contact-number" aria-hidden="true">12</span><span class="stage-contact-name">The Center for the Arts</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
+<li><a href="#brookstock-stage" data-field-tab><span class="stage-contact-number" aria-hidden="true">13</span><span class="stage-contact-name">Brookstock Events / Dover</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
+<li><a href="#hughes-stage" data-field-tab><span class="stage-contact-number" aria-hidden="true">14</span><span class="stage-contact-name">Hughes Community Center / Russellville</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
+<li><a href="#dardanelle-stage" data-field-tab><span class="stage-contact-number" aria-hidden="true">15</span><span class="stage-contact-name">Carolyn McGee Community Center / Dardanelle</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
+<li><a href="#dardanelle-state-park-amphitheater" data-field-tab><span class="stage-contact-number" aria-hidden="true">16</span><span class="stage-contact-name">Lake Dardanelle State Park / Amphitheater</span><span class="stage-contact-arrow" aria-hidden="true">↗</span></a></li>
       </ol>
     </div>
     <p class="stage-contact-note">These are shortcuts to the original listings, not reservations. All ten regional stage operators require location-specific delivery confirmation. The six on-site stage or amphitheater venues cannot be delivered off-site. Confirm dates, suitability and total charges directly.</p>
@@ -1375,7 +1376,7 @@ html{scroll-padding-top:105px}
  </div>
  <div class="venue-chapter-copy">
   <p class="eyebrow">02 / On-site performance spaces · Arkansas River Valley</p>
-  <h2 id="venue-chapter-title">The stage is <em>already there.</em></h2>
+  <h2 id="venue-chapter-title" data-field-panel="title">The stage is <em>already there.</em></h2>
   <p>Not every event needs a stage delivered. Six listed venues offer existing on-site stages or an amphitheater. Park amphitheater equipment and suitability require separate confirmation. Compare the locations, then ask about dates, permitted use and the full venue rental terms.</p>
   <div class="venue-chapter-links">
    <a href="#depot-stage">Russellville · Depot Park ↓</a>
@@ -1391,42 +1392,42 @@ html{scroll-padding-top:105px}
 
 <article class="card card-local" id="depot-stage">
 <div class="card-top"><span class="index">LOCAL VENUE 11</span><span class="tag">On-site stage only</span></div>
-<h3>Historic Train Depot — Depot Park Stage (Russellville)</h3>
+<h3 data-field-listing>Historic Train Depot — Depot Park Stage (Russellville)</h3>
 <p>Main Street Russellville officially includes access to the existing Depot Park stage with a Depot Park event rental. Published park rental rates are $50 for seven hours or $100 for a full day; these are park-use rates, not a standalone stage rental. The stage stays at the venue: no portable stage, delivery or off-site installation is offered by this listing. Confirm event permits, stage suitability, dates and current total charges directly.</p>
 <p class="detail">320 W C St, Russellville, AR 72801 · Fixed local event venue, not a mobile-stage supplier</p>
 <div class="actions"><a href="tel:+14799671437" aria-label="Call Main Street Russellville at 479-967-1437">Call 479-967-1437</a><a href="https://www.mainstreetrussellville.com/venue-rental" target="_blank" rel="noopener noreferrer">Official Depot Park rentals and stage access ↗</a></div>
 </article>
 <article class="card card-local" id="arts-stage">
 <div class="card-top"><span class="index">LOCAL VENUE 12</span><span class="tag">On-site theater stage only</span></div>
-<h3>The Center for the Arts — Theater Stage (Russellville)</h3>
+<h3 data-field-listing>The Center for the Arts — Theater Stage (Russellville)</h3>
 <p>Russellville's public-school performing arts center has a fixed, <strong>1,875-seat theater</strong>, a BlackBox theater, dressing rooms and an orchestra pit, as described on the City of Russellville's official arts page. The school district maintains a public <strong>Rental Information and Quotes</strong> section for the facility. <strong>This is an inquiry about use of an existing venue, not a portable-stage rental.</strong> Private-event eligibility, theater or stage-only rental, staffing, dates, pricing and venue terms remain UNCONFIRMED; contact the operator before making plans. This is the same venue listed in the event-venues directory, not a separate rental company.</p>
 <p class="detail">2209 S Knoxville Ave, Russellville, AR 72802 · Existing indoor performance venue, not a stage-delivery service</p>
 <div class="actions"><a href="tel:+14794986600" aria-label="Call The Center for the Arts at 479-498-6600">Call 479-498-6600</a><a href="https://www.russellvilleschools.net/o/the-center/documents" target="_blank" rel="noopener noreferrer">Official rental-information section ↗</a><a href="https://www.russellvillearkansas.org/291/Arts-Culture" target="_blank" rel="noopener noreferrer">City description of theater facilities ↗</a><a href="venues.html">Compare event venues ↗</a></div>
 </article>
 <article class="card card-local" id="brookstock-stage">
 <div class="card-top"><span class="index">REGIONAL VENUE 13</span><span class="tag">On-site stage only</span></div>
-<h3>Brookstock Events — Outdoor Stage (Dover)</h3>
+<h3 data-field-listing>Brookstock Events — Outdoor Stage (Dover)</h3>
 <p>Brookstock Events officially offers rentals of its 35-acre outdoor live-music and event venue near Dover, including an existing outdoor stage and courtyard. The venue advertises private events, weddings and receptions. <strong>This is an on-site facility rental, not a portable stage or standalone off-site stage rental.</strong> Russellville delivery does not apply. Stage-only booking, capacity, rental rates, availability and event requirements are UNCONFIRMED; contact the venue directly.</p>
 <p class="detail">560 Peaceful Valley Rd, Dover, AR 72837 · Regional fixed-stage venue, not a mobile-stage supplier</p>
 <div class="actions"><a href="tel:+15013149492" aria-label="Call Brookstock Events at 501-314-9492">Call 501-314-9492</a><a href="https://www.brookstockevents.com/blank-3" target="_blank" rel="noopener noreferrer">Official facility rental and stage information ↗</a></div>
 </article>
 <article class="card card-local" id="hughes-stage">
 <div class="card-top"><span class="index">LOCAL VENUE 14</span><span class="tag">On-site gymnasium stage only</span></div>
-<h3>Hughes Community Center — Gymnasium Stage (Russellville)</h3>
+<h3 data-field-listing>Hughes Community Center — Gymnasium Stage (Russellville)</h3>
 <p>The City of Russellville officially describes a fixed stage inside the Hughes Community Center gymnasium, whose published seating capacity is <strong>412</strong>. The city offers Hughes Center facility rentals for parties, meetings and other activities and supplies a rental contract. <strong>This is an existing on-site stage, not a portable or independently rentable stage.</strong> Stage access for a specific rental, event eligibility, usable seating layout, equipment, current fees and dates must be confirmed directly with Recreation &amp; Parks. This is the <strong>same city operator</strong> already listed under <a href="venues.html">event venues</a>, not an additional rental business.</p>
 <p class="detail">1000 E Parkway Ave, Russellville, AR · Official city sources list conflicting ZIP codes (72801/72802); confirm before mailing</p>
 <div class="actions"><a href="tel:+14799681272" aria-label="Call Russellville Recreation and Parks at 479-968-1272">Call 479-968-1272</a><a href="https://www.russellvillearkansas.org/Facilities/Facility/Details/Hughes-Community-Center-7" target="_blank" rel="noopener noreferrer">Official city stage and gym capacity ↗</a><a href="https://russellvillear.gov/195/Forms-Reports" target="_blank" rel="noopener noreferrer">Official city rental contract ↗</a><a href="venues.html">Compare event venues ↗</a></div>
 </article>
 <article class="card card-local" id="dardanelle-stage">
 <div class="card-top"><span class="index">REGIONAL VENUE 15</span><span class="tag">On-site community center stage only</span></div>
-<h3>Carolyn McGee Community Center — Performance Stage (Dardanelle)</h3>
+<h3 data-field-listing>Carolyn McGee Community Center — Performance Stage (Dardanelle)</h3>
 <p>The City of Dardanelle's official Parks and Recreation page identifies a fixed <strong>performance stage</strong> inside the Carolyn McGee Community Center, alongside basketball and pickleball courts and a computer room. The city says the center can be rented for social events and business meetings. <strong>This is an inquiry about an existing on-site facility, not a standalone stage-only rental or a portable stage.</strong> Stage access under a particular reservation, permitted performances, seating capacity, equipment, pricing and dates are UNCONFIRMED; contact city Parks and Recreation before planning. This is the <strong>same City of Dardanelle operator</strong> already listed in <a href="venues.html">event venues</a>, not a new rental company.</p>
 <p class="detail">Dardanelle, AR 72834 · Specific facility street address and stage booking terms UNCONFIRMED</p>
 <div class="actions"><a href="tel:+14792295084" aria-label="Call Dardanelle Parks and Recreation at 479-229-5084">Call 479-229-5084</a><a href="https://www.dardanelle.com/o/dardanelle/page/parks-and-recreation" target="_blank" rel="noopener noreferrer">Official city stage and rental information ↗</a><a href="venues.html">Compare event venues ↗</a></div>
 </article>
 <article class="card card-local" id="dardanelle-state-park-amphitheater">
 <div class="card-top"><span class="index">PARK VENUE 16</span><span class="tag">On-site amphitheater only</span></div>
-<h3>Lake Dardanelle State Park — Amphitheater</h3>
+<h3 data-field-listing>Lake Dardanelle State Park — Amphitheater</h3>
 <p>Arkansas State Parks officially lists an on-site <strong>amphitheater rental at $85 per day</strong> in its Lake Dardanelle State Park group-facilities information. This is a published <strong>park facility rate</strong>, not a portable-stage rental, equipment delivery, live availability, or confirmation of a staffed performance stage. The official listing does not establish which side of the lake the amphitheater occupies, capacity, seating, sound and lighting equipment, permitted event types, deposits or date-specific booking terms. Confirm the exact facility location, accessibility, event eligibility, setup requirements, all charges and available dates with park staff. This is the <strong>same Arkansas State Parks operator</strong> already listed in camping and venue categories, not a new business.</p>
 <p class="detail">Park office (not confirmed amphitheater location): 100 State Park Drive, Russellville, AR 72802</p>
 <div class="actions"><a href="tel:+14799675516" aria-label="Call Lake Dardanelle State Park at 479-967-5516">Call 479-967-5516</a><a href="https://www.arkansas.com/state-parks/explore/parks/lake-dardanelle-state-park" target="_blank" rel="noopener noreferrer">Official amphitheater rental rate and park contact ↗</a><a href="venues.html">Compare event venues ↗</a></div>
@@ -1544,7 +1545,7 @@ html{scroll-padding-top:105px}
 </section>
 <p class="note">Independent directory; listings are not endorsements or guarantees of operating status, inventory or availability. Request a written quote covering transportation, setup, insurance, safety and site requirements. <a href="sms:+14799707301">Suggest a correction</a>.</p>
 </main>
-<footer><div class="wrap">Russellville.Rent · <a href="/">Return to homepage</a></div></footer>
+<footer data-field-footer><div class="wrap">Russellville.Rent · <a href="/">Return to homepage</a> <a class="field-photo-credit" href="/photo-credits.html">Photo credits</a></div></footer>
 
 <script>
 (() => {

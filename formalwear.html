@@ -992,16 +992,17 @@ html{scroll-padding-top:28px}
 </style>
 <link rel="stylesheet" href="assets/finder.css">
 <script defer src="assets/provider-query.js"></script>
+<link rel="stylesheet" href="/assets/field-guide.css?v=1">
 </head>
-<body>
+<body data-field-guide="formalwear">
 <a class="skip-link" href="#main">Skip to formalwear rentals</a>
-<header class="site-header"><div class="shell"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
+<header class="site-header" data-field-mast><div class="shell"><a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><a class="back" href="/#browse">← All rental categories</a></div></header>
 <!-- Native mobile fitting-ticket shortcuts; original six-stop itinerary remains intact. -->
-<nav class="formalwear-pocket-dock" aria-label="Quick formalwear rental navigation">
-  <a href="#atelier"><span class="pocket-no" aria-hidden="true">01 / PLAN</span><strong>Style</strong></a>
-  <a class="pocket-local" href="#formal-affairs-title"><span class="pocket-no" aria-hidden="true">02 / HERE</span><strong>Local shop</strong></a>
-  <a href="#fit-atlas-title"><span class="pocket-no" aria-hidden="true">03 / EXPLORE</span><strong>All shops</strong></a>
-  <a href="#guide-title"><span class="pocket-no" aria-hidden="true">04 / READY</span><strong>Checklist</strong></a>
+<nav class="formalwear-pocket-dock" aria-label="Quick formalwear rental navigation" data-field-nav="dock">
+  <a href="#atelier" data-field-tab><span class="pocket-no" aria-hidden="true">01 / PLAN</span><strong>Style</strong></a>
+  <a class="pocket-local" href="#formal-affairs-title" data-field-tab><span class="pocket-no" aria-hidden="true">02 / HERE</span><strong>Local shop</strong></a>
+  <a href="#fit-atlas-title" data-field-tab><span class="pocket-no" aria-hidden="true">03 / EXPLORE</span><strong>All shops</strong></a>
+  <a href="#guide-title" data-field-tab><span class="pocket-no" aria-hidden="true">04 / READY</span><strong>Checklist</strong></a>
 </nav>
 <main id="main">
 <section class="hero" aria-labelledby="page-title"><div class="shell hero-grid">
@@ -1034,7 +1035,7 @@ html{scroll-padding-top:28px}
 
 
 <section class="occasion-routes" aria-labelledby="occasion-routes-title"><div class="shell">
-<h2 class="visually-hidden" id="occasion-routes-title">Choose an occasion to start your fitting inquiry</h2>
+<h2 class="visually-hidden" id="occasion-routes-title" data-field-panel="title">Choose an occasion to start your fitting inquiry</h2>
 <div class="occasion-grid">
 <a class="occasion-card occasion-wedding" href="#atelier" data-occasion="a wedding"><span class="route-top"><span>01 / THE CEREMONY</span><span class="route-mark" aria-hidden="true">✳</span></span><strong>Wedding <i>day.</i></strong><span class="route-desc">Start with the occasion, then ask about tuxedos, suits and fitting appointments.</span><span class="route-go">Plan a wedding fitting <span aria-hidden="true">↗</span></span></a>
 <a class="occasion-card occasion-prom" href="#atelier" data-occasion="prom"><span class="route-top"><span>02 / THE CELEBRATION</span><span class="route-mark" aria-hidden="true">✦</span></span><strong>Prom <i>night.</i></strong><span class="route-desc">Find your direction, add your date and prepare the right questions.</span><span class="route-go">Plan a prom fitting <span aria-hidden="true">↗</span></span></a>
@@ -1044,19 +1045,19 @@ html{scroll-padding-top:28px}
 </div></section>
 
 <!-- Fitting route: existing guide chapter links, no new provider information. -->
-<nav class="fit-itinerary" aria-label="Explore the formalwear guide">
+<nav class="fit-itinerary" aria-label="Explore the formalwear guide" data-field-nav="dock">
 <div class="shell fit-itinerary-layout">
 <div class="fit-itinerary-heading" aria-hidden="true"><span>THE FITTING ROUTE / 06 STOPS</span><strong>From the first look<br><em>to the final detail.</em></strong></div>
 <div class="fit-itinerary-steps">
-<a href="#atelier" data-fit-chapter><span class="fit-itinerary-number">01</span><span>Plan your look</span><span class="fit-itinerary-arr" aria-hidden="true">↗</span></a>
-<a href="#fit-atlas-title" data-fit-chapter><span class="fit-itinerary-number">02</span><span>Explore towns</span><span class="fit-itinerary-arr" aria-hidden="true">↗</span></a>
-<a href="#provider" data-fit-chapter><span class="fit-itinerary-number">03</span><span>Russellville</span><span class="fit-itinerary-arr" aria-hidden="true">↗</span></a>
-<a href="#nearby-formalwear" data-fit-chapter><span class="fit-itinerary-number">04</span><span>Nearby stores</span><span class="fit-itinerary-arr" aria-hidden="true">↗</span></a>
-<a href="#regional-formalwear" data-fit-chapter><span class="fit-itinerary-number">05</span><span>Regional shops</span><span class="fit-itinerary-arr" aria-hidden="true">↗</span></a>
-<a href="#guide-title" data-fit-chapter><span class="fit-itinerary-number">06</span><span>Before booking</span><span class="fit-itinerary-arr" aria-hidden="true">↗</span></a>
+<a href="#atelier" data-fit-chapter data-field-tab><span class="fit-itinerary-number">01</span><span>Plan your look</span><span class="fit-itinerary-arr" aria-hidden="true">↗</span></a>
+<a href="#fit-atlas-title" data-fit-chapter data-field-tab><span class="fit-itinerary-number">02</span><span>Explore towns</span><span class="fit-itinerary-arr" aria-hidden="true">↗</span></a>
+<a href="#provider" data-fit-chapter data-field-tab><span class="fit-itinerary-number">03</span><span>Russellville</span><span class="fit-itinerary-arr" aria-hidden="true">↗</span></a>
+<a href="#nearby-formalwear" data-fit-chapter data-field-tab><span class="fit-itinerary-number">04</span><span>Nearby stores</span><span class="fit-itinerary-arr" aria-hidden="true">↗</span></a>
+<a href="#regional-formalwear" data-fit-chapter data-field-tab><span class="fit-itinerary-number">05</span><span>Regional shops</span><span class="fit-itinerary-arr" aria-hidden="true">↗</span></a>
+<a href="#guide-title" data-fit-chapter data-field-tab><span class="fit-itinerary-number">06</span><span>Before booking</span><span class="fit-itinerary-arr" aria-hidden="true">↗</span></a>
 </div></div></nav>
 <section class="atelier" id="atelier" aria-labelledby="atelier-title"><div class="shell">
-<div class="atelier-head"><div><p class="eyebrow">The occasion edit / Plan before you call</p><h2 id="atelier-title">Start with a look. Leave with a plan.</h2></div><p>Choose a visual direction and prepare a fitting inquiry. Illustrations are inspiration only, not confirmed styles or rental inventory.</p></div>
+<div class="atelier-head" data-field-panel="story"><div><p class="eyebrow">The occasion edit / Plan before you call</p><h2 id="atelier-title">Start with a look. Leave with a plan.</h2></div><p>Choose a visual direction and prepare a fitting inquiry. Illustrations are inspiration only, not confirmed styles or rental inventory.</p></div>
 <div class="atelier-layout"><form class="atelier-form" id="atelier-form">
 <fieldset><legend>01 / Your style direction</legend><div class="look-grid"><div class="look-choice"><input type="radio" id="look-tux" name="look" value="a classic tuxedo" checked><label class="look-card" for="look-tux"><span class="look-art"><span class="look-art-stamp" aria-hidden="true">01 / BLACK TIE</span><svg viewBox="0 0 260 230" aria-hidden="true" focusable="false"><ellipse cx="130" cy="213" rx="80" ry="8" fill="#09231d" opacity=".22"/><path d="m99 50 12-10h38l12 10 30 12 27 34-19 25-18-15v98H79v-98l-18 15-19-25 27-34Z" fill="#172e29" stroke="#b9c7bb" stroke-width="2"/><path d="m111 40 19 20 19-20 8 65-27 78-27-78Z" fill="#fff8e7"/><path d="M111 40 91 53l20 59 19 71-44-65 17-17-21-14 17-37Z M149 40l20 13-20 59-19 71 44-65-17-17 21-14-17-37Z" fill="#30433d" stroke="#9fae9e" stroke-width="1.5"/><path d="m114 67 16 9 16-9-5 18-11-5-11 5Z" fill="#eccb9b" stroke="#eccb9b" stroke-width="1.6"/><path d="M130 89v111" stroke="#d1c2ac" stroke-width="1.6"/><circle cx="139" cy="128" r="2.5" fill="#eccb9b"/><circle cx="139" cy="156" r="2.5" fill="#eccb9b"/><path d="m168 124 19-5-6 12-13-2Z" fill="#f9e5c3"/></svg><span class="look-art-serial" aria-hidden="true">THE CEREMONY EDIT</span></span><span class="look-copy"><strong>Classic tuxedo</strong><small>Black-tie-inspired direction</small></span></label></div><div class="look-choice"><input type="radio" id="look-suit" name="look" value="a tailored suit"><label class="look-card" for="look-suit"><span class="look-art"><span class="look-art-stamp" aria-hidden="true">02 / MODERN SUIT</span><svg viewBox="0 0 260 230" aria-hidden="true" focusable="false"><ellipse cx="130" cy="213" rx="80" ry="8" fill="#193b34" opacity=".2"/><path d="m99 50 12-10h38l12 10 30 12 27 34-19 25-18-15v98H79v-98l-18 15-19-25 27-34Z" fill="#627c70" stroke="#f1e7d3" stroke-width="2"/><path d="m111 40 19 20 19-20 8 65-27 79-27-79Z" fill="#fcf7e8"/><path d="M111 40 91 53l20 59 19 72-44-65 17-17-21-14 17-38Z M149 40l20 13-20 59-19 72 44-65-17-17 21-14-17-38Z" fill="#344e49" stroke="#dae0d3" stroke-width="1.6"/><path d="m130 61 10 10-6 16 7 47-11 24-11-24 7-47-6-16Z" fill="#b87459"/><path d="M130 160v42" stroke="#d9dfd6" stroke-width="1.5"/><circle cx="139" cy="168" r="2.5" fill="#fcf7e8"/><circle cx="139" cy="187" r="2.5" fill="#fcf7e8"/><path d="m165 123 21-5-6 12-15-1Z" fill="#ecc49b"/></svg><span class="look-art-serial" aria-hidden="true">THE REFINED EDIT</span></span><span class="look-copy"><strong>Tailored suit</strong><small>Versatile, refined event styling</small></span></label></div><div class="look-choice"><input type="radio" id="look-unsure" name="look" value="guidance on available formalwear options"><label class="look-card" for="look-unsure"><span class="look-art"><span class="look-art-stamp" aria-hidden="true">03 / OPEN OPTIONS</span><svg viewBox="0 0 260 230" aria-hidden="true" focusable="false"><ellipse cx="130" cy="213" rx="82" ry="8" fill="#4f3727" opacity=".2"/><g transform="translate(-15 15) rotate(-8 130 125)" opacity=".8"><path d="m100 59 12-11h36l12 11 27 13 24 32-18 24-16-15v89H81v-89l-16 15-18-24 24-32Z" fill="#dfc8aa" stroke="#796348" stroke-width="2"/><path d="m112 48 18 22 18-22-18 102Z" fill="#f4e6d2"/><path d="m112 48-21 13 39 89-21-54 10-17Z m36 0 21 13-39 89 21-54-10-17Z" fill="#b09a7e"/></g><g transform="translate(20 3) rotate(7 130 125)"><path d="m100 59 12-11h36l12 11 27 13 24 32-18 24-16-15v89H81v-89l-16 15-18-24 24-32Z" fill="#557067" stroke="#f1e6cc" stroke-width="2"/><path d="m112 48 18 22 18-22-18 102Z" fill="#f8f0df"/><path d="m112 48-21 13 39 89-21-54 10-17Z m36 0 21 13-39 89 21-54-10-17Z" fill="#344f46" stroke="#b7c7b4" stroke-width="1.4"/></g><circle cx="198" cy="51" r="23" fill="#f5e6cd" stroke="#987752" stroke-width="2"/><path d="M192 45c0-9 14-11 17-3 3 8-10 8-10 16m0 6v1" fill="none" stroke="#624d38" stroke-width="3.7" stroke-linecap="round"/></svg><span class="look-art-serial" aria-hidden="true">THE DISCOVERY EDIT</span></span><span class="look-copy"><strong>Help me choose</strong><small>Ask about available styles and sizes</small></span></label></div></div></fieldset>
 <div class="atelier-fields"><label for="atelier-occasion">02 / Occasion<select id="atelier-occasion"><option value="a wedding">Wedding</option><option value="prom">Prom</option><option value="a formal event">Formal event</option><option value="another occasion">Other</option></select></label><label for="atelier-date">03 / Event date (optional)<input type="date" id="atelier-date"></label></div>
@@ -1066,14 +1067,14 @@ html{scroll-padding-top:28px}
 
 <section class="fit-atlas" aria-labelledby="fit-atlas-title">
   <div class="shell">
-    <div class="fit-atlas-heading">
+    <div class="fit-atlas-heading" data-field-panel="story">
       <div>
         <p class="fit-atlas-kicker">The fitting atlas / Five storefronts</p>
         <h2 id="fit-atlas-title">Start local.<br><em>Explore your options.</em></h2>
       </div>
       <p>One Russellville rental storefront, two nearby-town options and two regional shops. Choose a location to jump straight to verified provider information and contact details.</p>
     </div>
-    <nav class="fit-atlas-grid" aria-label="Jump to suit and tuxedo rental storefronts by city">
+    <nav class="fit-atlas-grid" aria-label="Jump to suit and tuxedo rental storefronts by city" data-field-nav="group">
       <a class="fit-atlas-local" href="#formal-affairs-title">
         <span class="fit-atlas-card-kicker">01 / Russellville · Local storefront</span>
         <span class="fit-atlas-local-city">Right here<br>in town.</span>
@@ -1084,15 +1085,15 @@ html{scroll-padding-top:28px}
       <div class="fit-atlas-tier" aria-label="Nearby-town formalwear stores">
         <p class="fit-atlas-tier-title"><span>02—03 / Nearby towns</span><span>Separate storefronts</span></p>
         <div class="fit-atlas-pair">
-          <a class="fit-atlas-stop" href="#danielles-title"><small>02 · Nearby</small><strong>Clarksville.</strong><span class="fit-atlas-store">Danielle's</span><span class="fit-atlas-go">View retailer details ↗</span></a>
-          <a class="fit-atlas-stop" href="#merle-norman-title"><small>03 · Nearby</small><strong>Morrilton.</strong><span class="fit-atlas-store">Merle Norman &amp; More</span><span class="fit-atlas-go">View retailer details ↗</span></a>
+          <a class="fit-atlas-stop" href="#danielles-title" data-field-route><small>02 · Nearby</small><strong>Clarksville.</strong><span class="fit-atlas-store">Danielle's</span><span class="fit-atlas-go">View retailer details ↗</span></a>
+          <a class="fit-atlas-stop" href="#merle-norman-title" data-field-route><small>03 · Nearby</small><strong>Morrilton.</strong><span class="fit-atlas-store">Merle Norman &amp; More</span><span class="fit-atlas-go">View retailer details ↗</span></a>
         </div>
       </div>
       <div class="fit-atlas-tier" aria-label="Regional formalwear stores">
         <p class="fit-atlas-tier-title"><span>04—05 / Regional destinations</span><span>Travel required</span></p>
         <div class="fit-atlas-pair">
-          <a class="fit-atlas-stop" href="#bell-sward-title"><small>04 · Regional</small><strong>Conway.</strong><span class="fit-atlas-store">Bell &amp; Sward Gentlemen's Clothier</span><span class="fit-atlas-go">View retailer details ↗</span></a>
-          <a class="fit-atlas-stop" href="#rainwaters-title"><small>05 · Regional</small><strong>Fort Smith.</strong><span class="fit-atlas-store">Rainwater's Men's Clothing and Tuxedo Rental</span><span class="fit-atlas-go">View retailer details ↗</span></a>
+          <a class="fit-atlas-stop" href="#bell-sward-title" data-field-route><small>04 · Regional</small><strong>Conway.</strong><span class="fit-atlas-store">Bell &amp; Sward Gentlemen's Clothier</span><span class="fit-atlas-go">View retailer details ↗</span></a>
+          <a class="fit-atlas-stop" href="#rainwaters-title" data-field-route><small>05 · Regional</small><strong>Fort Smith.</strong><span class="fit-atlas-store">Rainwater's Men's Clothing and Tuxedo Rental</span><span class="fit-atlas-go">View retailer details ↗</span></a>
         </div>
       </div>
     </nav>
@@ -1100,7 +1101,7 @@ html{scroll-padding-top:28px}
   </div>
 </section>
 <section class="provider-section shell" id="provider" aria-labelledby="provider-title">
-<div class="section-intro"><div><p class="eyebrow">01 / Local &amp; nearby rental providers</p><h2 class="section-title" id="provider-title">Find your formal fit.</h2></div><p>Compare one Russellville provider with nearby stores in Clarksville and Morrilton plus regional storefronts in Conway and Fort Smith. These are separate businesses, not Russellville branches. Confirm styles, fittings, prices and availability directly.</p></div>
+<div class="section-intro" data-field-panel="story"><div><p class="eyebrow">01 / Local &amp; nearby rental providers</p><h2 class="section-title" id="provider-title">Find your formal fit.</h2></div><p>Compare one Russellville provider with nearby stores in Clarksville and Morrilton plus regional storefronts in Conway and Fort Smith. These are separate businesses, not Russellville branches. Confirm styles, fittings, prices and availability directly.</p></div>
 <div class="provider-spotlight">
   <div class="spotlight-rail" aria-label="Russellville hometown option">
     <span class="spotlight-rail-kicker">01 / Right here · Russellville</span>
@@ -1109,12 +1110,12 @@ html{scroll-padding-top:28px}
     <span class="spotlight-scene-note">Downtown Russellville scenery · Not a photograph of Formal Affairs</span>
   </div>
   <article class="provider-card" aria-labelledby="formal-affairs-title">
-<div class="provider-main"><span class="card-kicker">Russellville · Formalwear</span><h3 class="provider-name" id="formal-affairs-title">Formal Affairs</h3><p class="provider-description">Jim's Formal Wear identifies this locally owned Russellville retailer as an authorized tuxedo and suit rental location, with fittings and accessories for weddings, proms and other formal events. Confirm rental sizes, alterations, deadlines, deposits and current availability directly.</p><div class="provider-actions"><a class="button button-dark" href="tel:+14798909557">Call 479-890-9557 <span aria-hidden="true">↗</span></a><a class="button button-light" href="https://www.jimsformalwear.com/store-detail/formal-affairs-FF441" target="_blank" rel="noopener noreferrer">Authorized formalwear retailer &amp; listed hours <span aria-hidden="true">↗</span></a></div></div>
+<div class="provider-main"><span class="card-kicker">Russellville · Formalwear</span><h3 class="provider-name" id="formal-affairs-title" data-field-listing>Formal Affairs</h3><p class="provider-description">Jim's Formal Wear identifies this locally owned Russellville retailer as an authorized tuxedo and suit rental location, with fittings and accessories for weddings, proms and other formal events. Confirm rental sizes, alterations, deadlines, deposits and current availability directly.</p><div class="provider-actions"><a class="button button-dark" href="tel:+14798909557">Call 479-890-9557 <span aria-hidden="true">↗</span></a><a class="button button-light" href="https://www.jimsformalwear.com/store-detail/formal-affairs-FF441" target="_blank" rel="noopener noreferrer">Authorized formalwear retailer &amp; listed hours <span aria-hidden="true">↗</span></a></div></div>
 <div class="provider-details"><p class="detail-label">Visit / Contact</p><address>121 E Harrell Dr, Suite 11<br>Russellville, AR 72802</address><p class="detail-label">Phone</p><a class="contact" href="tel:+14798909557">479-890-9557</a><p class="detail-label">Published email</p><a href="mailto:SALES@ALLFORMALAFFAIRS.COM">sales@allformalaffairs.com</a><p class="detail-label">Published store hours</p><p>Monday–Friday 10 a.m.–5 p.m.; Saturday 10 a.m.–3 p.m.; closed Sunday. The retailer's own website also advertises visits by appointment; arrange a specific time directly. Confirm holiday hours, fitting appointments and current rental availability before visiting. <a href="https://allformalaffairs.com/" target="_blank" rel="noopener noreferrer">Official Formal Affairs website ↗</a> · <a href="https://www.jimsformalwear.com/store-detail/formal-affairs-FF441" target="_blank" rel="noopener noreferrer">Authorized rental retailer and hours ↗</a></p></div>
 </article>
 </div>
 <section class="provider-region" aria-labelledby="nearby-formalwear">
-  <div class="provider-region-heading">
+  <div class="provider-region-heading" data-field-panel="story">
     <div><span class="provider-region-index">02 / The neighboring towns</span><h3 id="nearby-formalwear">A little farther.<br><em>More options.</em></h3></div>
     <p>Two independently operated storefronts in Clarksville and Morrilton. Check fitting appointments, inventory and return arrangements before traveling.</p>
   </div>
@@ -1158,7 +1159,7 @@ html{scroll-padding-top:28px}
   </div>
 </section>
 <section class="provider-region provider-region--regional" aria-labelledby="regional-formalwear">
-  <div class="provider-region-heading">
+  <div class="provider-region-heading" data-field-panel="story">
     <div><span class="provider-region-index">03 / Beyond the immediate valley</span><h3 id="regional-formalwear">Make the trip<br><em>count.</em></h3></div>
     <p>Conway and Fort Smith are regional in-store choices, not Russellville branches. Confirm fitting, pickup and return requirements before planning travel.</p>
   </div>
@@ -1212,22 +1213,22 @@ html{scroll-padding-top:28px}
 </div></section>
 
 <section class="occasion-next shell" aria-labelledby="occasion-next-title">
-  <div class="occasion-next-intro">
+  <div class="occasion-next-intro" data-field-panel="story">
     <div><span class="occasion-next-kicker">The event edit / Beyond the outfit</span><h2 id="occasion-next-title">A great look.<br><em>An entire occasion.</em></h2></div>
     <p>Putting together a wedding, prom or celebration? Keep planning with these separate River Valley rental directories. Start with your outfit, then find the space, details and sound.</p>
   </div>
-  <nav class="occasion-next-grid" aria-label="Explore related event rental categories">
-  <a class="occasion-next-card occasion-next-card--venue" href="/venues.html"><span class="occasion-next-card-tag"><span>01 / The setting</span><span aria-hidden="true">✳</span></span><span class="occasion-next-card-copy"><strong>Find the place.</strong><small>Explore event venues and gathering spaces around the River Valley.</small><span class="occasion-next-go">Browse event venues <span aria-hidden="true">↗</span></span></span></a>
-  <a class="occasion-next-card occasion-next-card--photo" href="/photo-booths.html"><span class="occasion-next-card-tag"><span>02 / The memories</span><span aria-hidden="true">▣</span></span><span class="occasion-next-card-copy"><strong>Capture the night.</strong><small>Compare separately listed photo booth rental options.</small><span class="occasion-next-go">Browse photo booths <span aria-hidden="true">↗</span></span></span></a>
-  <a class="occasion-next-card occasion-next-card--party" href="/party.html"><span class="occasion-next-card-tag"><span>03 / The celebration</span><span aria-hidden="true">✦</span></span><span class="occasion-next-card-copy"><strong>Make it a moment.</strong><small>Find party and event rental categories, from practical equipment to extras.</small><span class="occasion-next-go">Browse party rentals <span aria-hidden="true">↗</span></span></span></a>
-  <a class="occasion-next-card occasion-next-card--sound" href="/audio-visual.html"><span class="occasion-next-card-tag"><span>04 / The atmosphere</span><span aria-hidden="true">♫</span></span><span class="occasion-next-card-copy"><strong>Set the scene.</strong><small>Explore sound, lighting and audio-visual rental providers for events.</small><span class="occasion-next-go">Browse sound &amp; lighting <span aria-hidden="true">↗</span></span></span></a>
+  <nav class="occasion-next-grid" aria-label="Explore related event rental categories" data-field-nav="group">
+  <a class="occasion-next-card occasion-next-card--venue" href="/venues.html" data-field-photo="venues"><span class="occasion-next-card-tag"><span>01 / The setting</span><span aria-hidden="true">✳</span></span><span class="occasion-next-card-copy"><strong>Find the place.</strong><small>Explore event venues and gathering spaces around the River Valley.</small><span class="occasion-next-go">Browse event venues <span aria-hidden="true">↗</span></span></span></a>
+  <a class="occasion-next-card occasion-next-card--photo" href="/photo-booths.html" data-field-photo="photo-booths" data-field-route><span class="occasion-next-card-tag"><span>02 / The memories</span><span aria-hidden="true">▣</span></span><span class="occasion-next-card-copy"><strong>Capture the night.</strong><small>Compare separately listed photo booth rental options.</small><span class="occasion-next-go">Browse photo booths <span aria-hidden="true">↗</span></span></span></a>
+  <a class="occasion-next-card occasion-next-card--party" href="/party.html" data-field-photo="party" data-field-route><span class="occasion-next-card-tag"><span>03 / The celebration</span><span aria-hidden="true">✦</span></span><span class="occasion-next-card-copy"><strong>Make it a moment.</strong><small>Find party and event rental categories, from practical equipment to extras.</small><span class="occasion-next-go">Browse party rentals <span aria-hidden="true">↗</span></span></span></a>
+  <a class="occasion-next-card occasion-next-card--sound" href="/audio-visual.html" data-field-photo="audio-visual" data-field-route><span class="occasion-next-card-tag"><span>04 / The atmosphere</span><span aria-hidden="true">♫</span></span><span class="occasion-next-card-copy"><strong>Set the scene.</strong><small>Explore sound, lighting and audio-visual rental providers for events.</small><span class="occasion-next-go">Browse sound &amp; lighting <span aria-hidden="true">↗</span></span></span></a>
   </nav>
   <p class="occasion-next-note">These are links to independent category guides—not a coordinated package or a claim of confirmed availability. The Russellville sunset photograph is local scenery, not a listed event venue.</p>
 </section>
 
 <aside class="disclaimer shell"><p><strong>Independent directory.</strong> Contact the provider to confirm current rental availability, address, prices and terms.</p></aside>
 </main>
-<footer class="site-footer"><div class="shell"><span>© 2026 Russellville.Rent · Local rentals. Local connections.</span><a href="/">Return to homepage ↗</a></div></footer>
+<footer class="site-footer" data-field-footer><div class="shell"><span>© 2026 Russellville.Rent · Local rentals. Local connections.</span><a href="/">Return to homepage ↗</a> <a class="field-photo-credit" href="/photo-credits.html">Photo credits</a></div></footer>
 <script>
 (function(){
 const form=document.getElementById("atelier-form"),message=document.getElementById("atelier-message"),status=document.getElementById("atelier-status");

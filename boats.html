@@ -1412,14 +1412,15 @@ body{background:#f6f6f0}
 }
 
 </style>
+<link rel="stylesheet" href="/assets/field-guide.css?v=1">
 </head>
-<body>
+<body data-field-guide="boats">
 <a class="skip-link" href="#closure-details">Skip to marina closure details</a>
-<header class="site-header"><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back" href="/">← Browse all rentals</a></div></header><nav class="lake-quick-nav" aria-label="Boat and marina guide shortcuts">
-  <a class="lake-quick-nav--closure" href="#closure-details"><span>01 / CLOSED</span><strong>Closures</strong></a>
-  <a href="#property-access"><span>02 / OWNERS</span><strong>Access</strong></a>
-  <a href="#petit-jean-boats"><span>03 / SEASONAL</span><strong>Lake Bailey</strong></a>
-  <a href="#other-rentals"><span>04 / EXPLORE</span><strong>More options</strong></a>
+<header class="site-header" data-field-mast><div class="header-inner"><a class="brand" href="/">Russellville.Rent</a><a class="back" href="/">← Browse all rentals</a></div></header><nav class="lake-quick-nav" aria-label="Boat and marina guide shortcuts" data-field-nav="group">
+  <a class="lake-quick-nav--closure" href="#closure-details" data-field-tab><span>01 / CLOSED</span><strong>Closures</strong></a>
+  <a href="#property-access" data-field-tab><span>02 / OWNERS</span><strong>Access</strong></a>
+  <a href="#petit-jean-boats" data-field-tab><span>03 / SEASONAL</span><strong>Lake Bailey</strong></a>
+  <a href="#other-rentals" data-field-tab><span>04 / EXPLORE</span><strong>More options</strong></a>
 </nav>
 <main>
 <section class="hero" aria-labelledby="page-title">
@@ -1448,15 +1449,15 @@ body{background:#f6f6f0}
 </aside>
 <p class="scene-caption">Lake Dardanelle scenery is illustrative; it does not indicate that either marina is open or accessible.</p>
 <section class="decision-directory" aria-labelledby="decision-title">
-<div class="decision-directory-heading"><div><span class="decision-overline">A local lake guide / Three clear next steps</span><h2 id="decision-title">Closed marinas. <em>Clear next steps.</em></h2></div><p>Start with the closure details, coordinate property access with the Corps, or browse separate outdoor options that do not depend on the closed marinas.</p></div>
-<nav class="decision-rail" aria-label="Find the information you need">
-<a class="decision-link" href="#closure-details"><span class="decision-kicker">01 · Safety first</span><span class="decision-art decision-art--safety" aria-hidden="true"><svg viewBox="0 0 160 125" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><circle cx="125" cy="32" r="25" stroke="currentColor" stroke-opacity=".25" stroke-width="2"/><circle cx="125" cy="32" r="38" stroke="currentColor" stroke-opacity=".1" stroke-width="2"/><path d="M80 15 127 32v31c0 27-18 42-47 52C51 105 33 90 33 63V32L80 15Z" fill="#f3dab0" stroke="#163e34" stroke-width="5" stroke-linejoin="round"/><path d="M80 41v29" stroke="#965325" stroke-width="8" stroke-linecap="round"/><circle cx="80" cy="87" r="5" fill="#965325"/><path d="M25 101h17m76 0h17" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="decision-art-caption">CLOSURE NOTICE / READ FIRST</span></span><strong>Check marina closures ↗</strong><small>Read the federal closure information before visiting.</small></a>
-<a class="decision-link" href="#property-access"><span class="decision-kicker">02 · For boat owners</span><span class="decision-art decision-art--access" aria-hidden="true"><svg viewBox="0 0 160 125" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><circle cx="127" cy="33" r="35" stroke="currentColor" stroke-opacity=".18" stroke-width="2"/><rect x="32" y="23" width="94" height="83" rx="12" fill="#f8e8bf" stroke="#214c3f" stroke-width="5"/><path d="M32 48h94M53 13v23m52-23v23" stroke="#214c3f" stroke-width="7" stroke-linecap="round"/><path d="m54 77 13 13 30-29" stroke="#2c7759" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M26 109h19m67 0h19" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="decision-art-caption">OWNER ACCESS / BY APPOINTMENT</span></span><strong>Understand property access ↗</strong><small>Arrange access by appointment; see the July 7, 2027 property deadline.</small></a>
-<a class="decision-link" href="#alternatives"><span class="decision-kicker">03 · Explore alternatives</span><span class="decision-art decision-art--water" aria-hidden="true"><svg viewBox="0 0 160 125" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><circle cx="120" cy="27" r="26" fill="#e6c78c" opacity=".85"/><path d="M17 95c19-8 28-8 47 0s28 8 47 0 28-8 35-5M17 109c19-8 28-8 47 0s28 8 47 0 28-8 35-5" stroke="#e2f1e1" stroke-width="4" stroke-linecap="round" opacity=".82"/><path d="M26 73c30 16 77 19 113 0l-10 20c-31 11-63 11-94 0L26 73Z" fill="#f1d39d" stroke="#173b38" stroke-width="4" stroke-linejoin="round"/><path d="m79 16-16 54m-8-55 20 6-6 16-20-6 6-16Zm25 50 20 7-6 16-20-7 6-16Z" fill="#e2f1e1" stroke="#17473f" stroke-width="3" stroke-linejoin="round"/></svg><span class="decision-art-caption">SEPARATE RENTAL DIRECTORY</span></span><strong>Find another way on the water ↗</strong><small>See separately listed kayak rental opportunities.</small></a>
+<div class="decision-directory-heading" data-field-panel="story"><div><span class="decision-overline">A local lake guide / Three clear next steps</span><h2 id="decision-title">Closed marinas. <em>Clear next steps.</em></h2></div><p>Start with the closure details, coordinate property access with the Corps, or browse separate outdoor options that do not depend on the closed marinas.</p></div>
+<nav class="decision-rail" aria-label="Find the information you need" data-field-nav="group">
+<a class="decision-link" href="#closure-details" data-field-route><span class="decision-kicker">01 · Safety first</span><span class="decision-art decision-art--safety" aria-hidden="true"><svg viewBox="0 0 160 125" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><circle cx="125" cy="32" r="25" stroke="currentColor" stroke-opacity=".25" stroke-width="2"/><circle cx="125" cy="32" r="38" stroke="currentColor" stroke-opacity=".1" stroke-width="2"/><path d="M80 15 127 32v31c0 27-18 42-47 52C51 105 33 90 33 63V32L80 15Z" fill="#f3dab0" stroke="#163e34" stroke-width="5" stroke-linejoin="round"/><path d="M80 41v29" stroke="#965325" stroke-width="8" stroke-linecap="round"/><circle cx="80" cy="87" r="5" fill="#965325"/><path d="M25 101h17m76 0h17" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="decision-art-caption">CLOSURE NOTICE / READ FIRST</span></span><strong>Check marina closures ↗</strong><small>Read the federal closure information before visiting.</small></a>
+<a class="decision-link" href="#property-access" data-field-route><span class="decision-kicker">02 · For boat owners</span><span class="decision-art decision-art--access" aria-hidden="true"><svg viewBox="0 0 160 125" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><circle cx="127" cy="33" r="35" stroke="currentColor" stroke-opacity=".18" stroke-width="2"/><rect x="32" y="23" width="94" height="83" rx="12" fill="#f8e8bf" stroke="#214c3f" stroke-width="5"/><path d="M32 48h94M53 13v23m52-23v23" stroke="#214c3f" stroke-width="7" stroke-linecap="round"/><path d="m54 77 13 13 30-29" stroke="#2c7759" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><path d="M26 109h19m67 0h19" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span class="decision-art-caption">OWNER ACCESS / BY APPOINTMENT</span></span><strong>Understand property access ↗</strong><small>Arrange access by appointment; see the July 7, 2027 property deadline.</small></a>
+<a class="decision-link" href="#alternatives" data-field-route><span class="decision-kicker">03 · Explore alternatives</span><span class="decision-art decision-art--water" aria-hidden="true"><svg viewBox="0 0 160 125" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><circle cx="120" cy="27" r="26" fill="#e6c78c" opacity=".85"/><path d="M17 95c19-8 28-8 47 0s28 8 47 0 28-8 35-5M17 109c19-8 28-8 47 0s28 8 47 0 28-8 35-5" stroke="#e2f1e1" stroke-width="4" stroke-linecap="round" opacity=".82"/><path d="M26 73c30 16 77 19 113 0l-10 20c-31 11-63 11-94 0L26 73Z" fill="#f1d39d" stroke="#173b38" stroke-width="4" stroke-linejoin="round"/><path d="m79 16-16 54m-8-55 20 6-6 16-20-6 6-16Zm25 50 20 7-6 16-20-7 6-16Z" fill="#e2f1e1" stroke="#17473f" stroke-width="3" stroke-linejoin="round"/></svg><span class="decision-art-caption">SEPARATE RENTAL DIRECTORY</span></span><strong>Find another way on the water ↗</strong><small>See separately listed kayak rental opportunities.</small></a>
 </nav>
 </section>
 <section id="closure-details" aria-labelledby="closures-title">
-<div class="section-head"><h2 id="closures-title">Know before you go</h2><p>Federal marina closure notices</p></div>
+<div class="section-head" data-field-panel="story"><h2 id="closures-title">Know before you go</h2><p>Federal marina closure notices</p></div>
 <div class="notice notice--critical"><div class="notice-label">Full closure · Russellville Marina</div><p><strong>Important closure notice — October 23, 2026:</strong> The U.S. Army Corps of Engineers ordered a full closure of Russellville Marina, including its grounds, docks, cabins, store, repair shop and all commercial operations. <strong>Boat and cabin rentals at this marina are not available.</strong> <strong>Background:</strong> The Corps first closed unsafe docks on July 8, 2026, citing damage from a February winter storm compounded by deferred maintenance. The operator had not completed required safety measures and corrective repairs before the October 23 full closure. <a href="https://www.swl.usace.army.mil/Media/News-Releases/Article/4538674/russellville-marina-docks-temporarily-closed-as-of-july-8-2026/" target="_blank" rel="noopener noreferrer">Official July dock-safety notice ↗</a> The operator website may still advertise rentals, but the federal closure supersedes that information. Do not attempt to access closed facilities.</p></div>
 <div class="notice-grid">
 <div class="notice notice--access" id="property-access"><div class="notice-label">Personal property access</div><p><strong>Boat owners and marina patrons:</strong> The general property-removal window <strong>ended October 30, 2026</strong>. Removal from open marina areas is now <strong>by appointment only</strong>, coordinated through the U.S. Army Corps of Engineers. Previously closed docks must not be entered without explicit coordination. <strong>Property remaining after July 7, 2027 may be subject to federal impoundment and removal.</strong> For access instructions, contact the <strong>Russellville Site Office at <a href="tel:+15013401762">501-340-1762</a></strong> or the <strong>Corps Real Estate Division at <a href="tel:+15013245716">501-324-5716</a></strong> (weekdays, 8 a.m.–4 p.m.). Do not enter closed or unsafe facilities. <a href="https://www.arkansasbusiness.com/article/russellville-marina-closed-due-to-safety-violations-lease-default/" target="_blank" rel="noopener noreferrer">October 23 closure report ↗</a> · <a href="https://www.swl.usace.army.mil/Media/News-Releases/Article/4538674/russellville-marina-docks-temporarily-closed-as-of-july-8-2026/" target="_blank" rel="noopener noreferrer">Official Corps site-office contacts ↗</a></p></div>
@@ -1465,7 +1466,7 @@ body{background:#f6f6f0}
 </section>
 
 <section class="boat-access-guide" id="boat-access-guide" aria-labelledby="boat-access-guide-title">
-  <div class="boat-access-top">
+  <div class="boat-access-top" data-field-panel="story">
     <div>
       <p class="boat-access-kicker">Marina owner access / Important dates</p>
       <h2 id="boat-access-guide-title">Have a boat or belongings at the marina?</h2>
@@ -1519,7 +1520,7 @@ body{background:#f6f6f0}
 </section>
 
 <section class="lake-pathways" id="other-rentals" aria-labelledby="lake-pathways-title">
-  <div class="lake-pathways-heading">
+  <div class="lake-pathways-heading" data-field-panel="story">
     <div><p class="eyebrow">Beyond the marina / River Valley experiences</p><h2 id="lake-pathways-title">Another way to enjoy the area.</h2></div>
     <p>Boat rentals at the closed marinas are not available. Explore these independently listed options for a different outing.</p>
   </div>
@@ -1568,7 +1569,7 @@ body{background:#f6f6f0}
   </div>
 </section>
 <p class="note">Independent local directory. Information is drawn from public listings and may change. Some business services and contact details are not independently confirmed. Please confirm pricing, availability and terms directly with each provider. <a href="sms:+14799707301">Submit corrections</a>.</p>
-<footer>Russellville.Rent · <a href="/">Return to homepage</a></footer>
+<footer data-field-footer>Russellville.Rent · <a href="/">Return to homepage</a> <a class="field-photo-credit" href="/photo-credits.html">Photo credits</a></footer>
 </main>
 </body>
 </html>

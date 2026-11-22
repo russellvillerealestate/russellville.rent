@@ -1137,31 +1137,32 @@
 </style>
 <link rel="stylesheet" href="assets/finder.css">
 <script defer src="assets/provider-query.js"></script>
+<link rel="stylesheet" href="/assets/field-guide.css?v=1">
 </head>
-<body>
+<body data-field-guide="instruments">
   <a class="skip" href="#main">Skip to main content</a>
-  <header class="site-header">
+  <header class="site-header" data-field-mast>
     <div class="wrap header-inner">
       <a class="brand" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a>
       <a class="back-link" href="/">← Browse all rentals</a>
     </div>
   </header>
 <!-- Desktop band-room score rail: visible first-fold shortcuts, with mobile ticket dock below. -->
-<nav class="band-desktop-rail" aria-label="Student music rental steps">
+<nav class="band-desktop-rail" aria-label="Student music rental steps" data-field-nav="group">
   <div class="wrap band-desktop-rail-inner">
     <div class="band-rail-intro"><span>THE RIVER VALLEY / BAND ROOM</span><strong>Find your next note.</strong></div>
-    <a class="band-rail-stop" href="#compare-programs"><span class="rail-number">01 / FIND</span><strong>Rental programs</strong><small>Local and online choices</small><span class="rail-arrow" aria-hidden="true">↗</span></a>
-    <a class="band-rail-stop" href="#instrument-explorer"><span class="rail-number">02 / CHOOSE</span><strong>Instruments</strong><small>Explore band options</small><span class="rail-arrow" aria-hidden="true">↗</span></a>
-    <a class="band-rail-stop" href="#contract-scorecard"><span class="rail-number">03 / COMPARE</span><strong>Full rental costs</strong><small>Use your written figures</small><span class="rail-arrow" aria-hidden="true">↗</span></a>
-    <a class="band-rail-stop" href="#inquiry-desk"><span class="rail-number">04 / PREPARE</span><strong>Your inquiry</strong><small>Questions before you call</small><span class="rail-arrow" aria-hidden="true">↗</span></a>
+    <a class="band-rail-stop" href="#compare-programs" data-field-route><span class="rail-number">01 / FIND</span><strong>Rental programs</strong><small>Local and online choices</small><span class="rail-arrow" aria-hidden="true">↗</span></a>
+    <a class="band-rail-stop" href="#instrument-explorer" data-field-route><span class="rail-number">02 / CHOOSE</span><strong>Instruments</strong><small>Explore band options</small><span class="rail-arrow" aria-hidden="true">↗</span></a>
+    <a class="band-rail-stop" href="#contract-scorecard" data-field-route><span class="rail-number">03 / COMPARE</span><strong>Full rental costs</strong><small>Use your written figures</small><span class="rail-arrow" aria-hidden="true">↗</span></a>
+    <a class="band-rail-stop" href="#inquiry-desk" data-field-route><span class="rail-number">04 / PREPARE</span><strong>Your inquiry</strong><small>Questions before you call</small><span class="rail-arrow" aria-hidden="true">↗</span></a>
   </div>
 </nav>
 <!-- Mobile band-room route: direct links to existing interactive sections. -->
-<nav class="band-pocket-nav" aria-label="Student music rental quick navigation">
-  <a href="#compare-programs"><span class="band-pocket-count">01 / FIND</span><strong>Programs</strong></a>
-  <a href="#instrument-explorer"><span class="band-pocket-count">02 / PICK</span><strong>Instruments</strong></a>
-  <a href="#contract-scorecard"><span class="band-pocket-count">03 / PLAN</span><strong>Compare costs</strong></a>
-  <a href="#inquiry-desk"><span class="band-pocket-count">04 / CALL</span><strong>Inquiry note</strong></a>
+<nav class="band-pocket-nav" aria-label="Student music rental quick navigation" data-field-nav="dock">
+  <a href="#compare-programs" data-field-tab><span class="band-pocket-count">01 / FIND</span><strong>Programs</strong></a>
+  <a href="#instrument-explorer" data-field-tab><span class="band-pocket-count">02 / PICK</span><strong>Instruments</strong></a>
+  <a href="#contract-scorecard" data-field-tab><span class="band-pocket-count">03 / PLAN</span><strong>Compare costs</strong></a>
+  <a href="#inquiry-desk" data-field-tab><span class="band-pocket-count">04 / CALL</span><strong>Inquiry note</strong></a>
 </nav>
   <main id="main" class="wrap">
     <section class="hero" aria-labelledby="page-title">
@@ -1216,13 +1217,13 @@
 
     <!-- Clear route selection: student rent-to-own and short-term stage rentals are distinct. -->
     <section class="music-crossroads" aria-labelledby="music-crossroads-title">
-      <div class="music-crossroads-intro">
+      <div class="music-crossroads-intro" data-field-panel="story">
         <span class="music-crossroads-overline">The River Valley / Music rental desk</span>
         <h2 id="music-crossroads-title">Two kinds of rental. <em>One place to start.</em></h2>
         <p>Student band programs and temporary performance gear follow different agreements. Choose the route that matches your plans.</p>
       </div>
-      <nav class="music-crossroads-routes" aria-label="Choose a music rental type">
-        <a class="music-crossroads-route music-crossroads-route--school" href="#compare-programs">
+      <nav class="music-crossroads-routes" aria-label="Choose a music rental type" data-field-nav="group">
+        <a class="music-crossroads-route music-crossroads-route--school" href="#compare-programs" data-field-route>
           <span class="music-crossroads-route-kicker">01 / School band · Rent-to-own</span>
           <strong>For the first rehearsal.</strong>
           <span class="music-crossroads-route-desc">Compare three student programs: two with published Russellville locations and one school-linked online option.</span>
@@ -1238,7 +1239,7 @@
       <p class="music-crossroads-disclaimer">Directory routes only, not bookings or inventory claims. Confirm instrument models, rental terms, dates, service areas and all charges directly with each provider. The photograph is River Valley scenery, not provider equipment.</p>
     </section>
 
-    <nav class="guide-strip band-route" aria-label="Band rental guide: plan, compare and contact">
+    <nav class="guide-strip band-route" aria-label="Band rental guide: plan, compare and contact" data-field-nav="group">
       <div class="band-route-opening">
         <div class="band-route-story">
           <span class="band-route-kicker">THE BAND ROOM / A RIVER VALLEY FIELD GUIDE</span>
@@ -1264,19 +1265,19 @@
       </div>
       <div class="band-route-label"><strong>Start with what you need</strong><span>Choose a step; all tools work independently.</span></div>
       <div class="band-route-steps">
-        <a href="#instrument-explorer"><span class="band-route-step-number">01</span><span><strong>Choose your instrument</strong><small>Explore common band choices and school questions.</small></span><span class="band-route-step-arrow" aria-hidden="true">↗</span></a>
-        <a href="#contract-scorecard"><span class="band-route-step-number">02</span><span><strong>Compare written quotes</strong><small>Estimate total cost using amounts you enter.</small></span><span class="band-route-step-arrow" aria-hidden="true">↗</span></a>
-        <a href="#inquiry-desk"><span class="band-route-step-number">03</span><span><strong>Prepare your inquiry</strong><small>Draft the details to confirm with a provider.</small></span><span class="band-route-step-arrow" aria-hidden="true">↗</span></a>
+        <a href="#instrument-explorer" data-field-route><span class="band-route-step-number">01</span><span><strong>Choose your instrument</strong><small>Explore common band choices and school questions.</small></span><span class="band-route-step-arrow" aria-hidden="true">↗</span></a>
+        <a href="#contract-scorecard" data-field-route><span class="band-route-step-number">02</span><span><strong>Compare written quotes</strong><small>Estimate total cost using amounts you enter.</small></span><span class="band-route-step-arrow" aria-hidden="true">↗</span></a>
+        <a href="#inquiry-desk" data-field-route><span class="band-route-step-number">03</span><span><strong>Prepare your inquiry</strong><small>Draft the details to confirm with a provider.</small></span><span class="band-route-step-arrow" aria-hidden="true">↗</span></a>
       </div>
       <div class="band-route-label band-route-label--providers"><strong>Or go straight to a listed program</strong><span>Three distinct options; availability and terms are not verified.</span></div>
-      <a href="#cooper-music"><span class="mark" aria-hidden="true">01</span><span><strong>Local music store</strong>Russellville storefront</span><span class="guide-arrow" aria-hidden="true">↗</span></a>
-      <a href="#school-band-service"><span class="mark" aria-hidden="true">02</span><span><strong>Russellville branch</strong>Local address published</span><span class="guide-arrow" aria-hidden="true">↗</span></a>
-      <a href="#sweetwater-instrument-rentals"><span class="mark" aria-hidden="true">03</span><span><strong>Online school-linked</strong>Russellville schools listed; terms to confirm</span><span class="guide-arrow" aria-hidden="true">↗</span></a>
+      <a href="#cooper-music" data-field-tab><span class="mark" aria-hidden="true">01</span><span><strong>Local music store</strong>Russellville storefront</span><span class="guide-arrow" aria-hidden="true">↗</span></a>
+      <a href="#school-band-service" data-field-tab><span class="mark" aria-hidden="true">02</span><span><strong>Russellville branch</strong>Local address published</span><span class="guide-arrow" aria-hidden="true">↗</span></a>
+      <a href="#sweetwater-instrument-rentals" data-field-route><span class="mark" aria-hidden="true">03</span><span><strong>Online school-linked</strong>Russellville schools listed; terms to confirm</span><span class="guide-arrow" aria-hidden="true">↗</span></a>
     </nav>
 
 
     <section class="compare" id="compare-programs" aria-labelledby="compare-title">
-      <div class="compare-heading">
+      <div class="compare-heading" data-field-panel="story">
         <div><p class="eyebrow">The program atlas / Three rental paths</p><h2 id="compare-title">Three paths to<br><em>the first note.</em></h2></div>
         <p>Start with either of two providers listing Russellville locations, or a school-linked online option. Live inventory, eligibility, pricing and delivery still require confirmation.</p>
       </div>
@@ -1351,7 +1352,7 @@
 
 
     <section class="contract-studio" id="contract-scorecard" aria-labelledby="contract-title">
-      <div class="contract-banner">
+      <div class="contract-banner" data-field-panel="story">
         <div><p class="eyebrow">Band-room ledger / Your own quotes</p><h2 id="contract-title">Make the numbers <em>sing.</em></h2>
           <p>Two programs, one time period. Enter the monthly payments and one-time fees quoted to you to see estimated costs side by side. We do not publish provider prices here.</p></div>
         <div class="contract-art" aria-hidden="true"><div class="contract-melody"><span>♪</span><span>♫</span><span>♩</span></div><small>Illustration · Not rental inventory</small></div>
@@ -1388,7 +1389,7 @@
 
     <section class="band-desk" id="inquiry-desk" aria-labelledby="desk-title">
       <p class="eyebrow">The band-room desk / Ready for your first call</p>
-      <div class="desk-header">
+      <div class="desk-header" data-field-panel="story">
         <h2 id="desk-title">Turn questions into <em>one clear note.</em></h2>
         <p>Keep the details together when contacting any listed school-band rental provider, including the online option. This is a planning note, not a reservation or quote.</p>
       </div>
@@ -1417,7 +1418,7 @@ Could you confirm current availability, the monthly price and all fees, how paym
     </section>
 
     <section id="providers" aria-labelledby="providers-title">
-      <div class="section-heading">
+      <div class="section-heading" data-field-panel="story">
         <div><p class="eyebrow">Find your starting point</p><h2 id="providers-title">Compare band programs</h2></div>
         <p>Ask each provider about instrument availability and the exact payment agreement.</p>
       </div>
@@ -1490,7 +1491,7 @@ Could you confirm current availability, the monthly price and all fees, how paym
             <span class="provider-art-caption" aria-hidden="true">ILLUSTRATIVE ART · NOT ACTUAL RENTAL INVENTORY</span>
           </div>
           <div class="provider-body">
-            <h3>Guitar Center — Little Rock Instrument Rentals</h3>
+            <h3 data-field-listing>Guitar Center — Little Rock Instrument Rentals</h3>
             <p>The official Little Rock store rental page advertises temporary guitar, bass, drum and keyboard rentals for gigs, recordings, productions and other projects, as well as amplifiers, speakers, microphones, mixers, stage lighting and sound-system packages. Inventory varies; specific models, quantities, dates and prices are not guaranteed. The operator says renters need a valid state-issued identification document and a credit card in their name; organizations may inquire about business rental accounts. Confirm the full charges, equipment availability, return rules and collection arrangements directly. <strong>Delivery or service to Russellville is UNCONFIRMED.</strong> Do not mistake this regional store's temporary equipment rentals for the student band rent-to-own programs above.</p>
             <p class="location">12315 Chenal Parkway, Suite A, Little Rock, AR 72211-2723 · No Russellville branch or delivery verified · Russellville delivery UNCONFIRMED</p>
           </div>
@@ -1507,7 +1508,7 @@ Could you confirm current availability, the monthly price and all fees, how paym
             <span class="provider-art-caption" aria-hidden="true">ILLUSTRATIVE ART · NOT ACTUAL RENTAL INVENTORY</span>
           </div>
           <div class="provider-body">
-            <h3>Big Event Music — Hot Springs Live Sound &amp; Backline</h3>
+            <h3 data-field-listing>Big Event Music — Hot Springs Live Sound &amp; Backline</h3>
             <p>The operator's official website advertises professional live-sound and <strong>backline rentals</strong> for concerts, venues, city and school events. Its site does not verify specific instruments, individual model availability, quantities or published rental prices; ask which performance instruments, amplifiers and other backline pieces can actually be rented for your date. The store says it opens for walk-ins on Mondays from 10 a.m. to 5:30 p.m.; other visits require an appointment. Confirm pickup, staffing, deposits, delivery/setup, return terms and the full quote directly. <strong>Russellville delivery is UNCONFIRMED</strong>, and this is not a school-band rent-to-own provider.</p>
             <p class="location">149 East Grand Avenue, Hot Springs, AR 71901 · Regional shop, not a Russellville location · Russellville delivery UNCONFIRMED</p>
           </div>
@@ -1526,9 +1527,9 @@ Could you confirm current availability, the monthly price and all fees, how paym
           <p class="eyebrow">Before you enroll</p>
           <h2 id="questions-title">Four questions worth asking.</h2>
           <p class="checklist-intro">Instrument programs are not short-term event sound-equipment rentals. Confirm the agreement that fits your student and school.</p>
-          <nav class="band-score-nav" aria-label="Band rental planning shortcuts">
-            <a href="#contract-scorecard">Return to quote comparison <span aria-hidden="true">↗</span></a>
-            <a href="#inquiry-desk">Prepare a rental inquiry <span aria-hidden="true">↗</span></a>
+          <nav class="band-score-nav" aria-label="Band rental planning shortcuts" data-field-nav="group">
+            <a href="#contract-scorecard" data-field-tab>Return to quote comparison <span aria-hidden="true">↗</span></a>
+            <a href="#inquiry-desk" data-field-tab>Prepare a rental inquiry <span aria-hidden="true">↗</span></a>
           </nav>
           <small>Conceptual musical artwork · Not rental inventory, a contract or a school recommendation.</small>
         </div>
@@ -1572,17 +1573,17 @@ Could you confirm current availability, the monthly price and all fees, how paym
       </div>
       <div class="band-encore-routes">
         <div><span class="band-encore-routes-label">Continue exploring / Three independent guides</span><strong class="band-encore-routes-title">Take the next step.</strong></div>
-        <nav class="band-encore-links" aria-label="Related event rental categories">
-          <a class="band-encore-route" href="stages.html"><span class="band-encore-number" aria-hidden="true">01</span><span class="band-encore-route-text"><strong>Stages &amp; platforms</strong><small>Compare regional stage contacts and on-site venues.</small></span><span class="band-encore-arrow" aria-hidden="true">↗</span></a>
-          <a class="band-encore-route" href="audio-visual.html"><span class="band-encore-number" aria-hidden="true">02</span><span class="band-encore-route-text"><strong>Sound &amp; lighting</strong><small>Explore separate event audio and visual equipment rentals.</small></span><span class="band-encore-arrow" aria-hidden="true">↗</span></a>
-          <a class="band-encore-route" href="venues.html"><span class="band-encore-number" aria-hidden="true">03</span><span class="band-encore-route-text"><strong>Places to gather</strong><small>Browse local and regional event venue options.</small></span><span class="band-encore-arrow" aria-hidden="true">↗</span></a>
+        <nav class="band-encore-links" aria-label="Related event rental categories" data-field-nav="group">
+          <a class="band-encore-route" href="stages.html" data-field-photo="stages" data-field-route><span class="band-encore-number" aria-hidden="true">01</span><span class="band-encore-route-text"><strong>Stages &amp; platforms</strong><small>Compare regional stage contacts and on-site venues.</small></span><span class="band-encore-arrow" aria-hidden="true">↗</span></a>
+          <a class="band-encore-route" href="audio-visual.html" data-field-photo="audio-visual" data-field-route><span class="band-encore-number" aria-hidden="true">02</span><span class="band-encore-route-text"><strong>Sound &amp; lighting</strong><small>Explore separate event audio and visual equipment rentals.</small></span><span class="band-encore-arrow" aria-hidden="true">↗</span></a>
+          <a class="band-encore-route" href="venues.html" data-field-photo="venues" data-field-route><span class="band-encore-number" aria-hidden="true">03</span><span class="band-encore-route-text"><strong>Places to gather</strong><small>Browse local and regional event venue options.</small></span><span class="band-encore-arrow" aria-hidden="true">↗</span></a>
         </nav>
         <p class="band-encore-disclaimer">These guides are separate from student instrument programs. Confirm prices, dates, services and any delivery requirements directly with each operator.</p>
       </div>
     </section>
         <aside class="note">Independent directory. Rent-to-own plans differ from temporary instrument rentals; ask about total cost, fees, repairs, return policies and school compatibility. <a href="sms:+14799707301">Suggest a correction</a>.</aside>
   </main>
-  <footer class="wrap"><span>Russellville.Rent · Independent local rental directory</span><a href="/">Return to homepage</a></footer>
+  <footer class="wrap" data-field-footer><span>Russellville.Rent · Independent local rental directory</span><a href="/">Return to homepage</a> <a class="field-photo-credit" href="/photo-credits.html">Photo credits</a></footer>
 
 <script>
 (() => {
