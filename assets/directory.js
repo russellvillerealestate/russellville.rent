@@ -272,6 +272,42 @@
       return [{card,href:destination(card,detailQuery,exact),rank}];
     }).sort((a,b)=>b.rank-a.rank);
     if(exactMatches.length)return exactMatches;
+    // Recover common one-word misspellings without guessing a provider,
+    // promising inventory, or silently redirecting the renter.
+    // Damerau edit distance accepts an inserted/missing letter or adjacent swap.
+    if(terms.length===1 && terms[0].length>=5){
+      const typo=terms[0],maxEdits=typo.length>=7?2:1;
+      const distance=(left,right)=>{
+        if(Math.abs(left.length-right.length)>maxEdits)return maxEdits+1;
+        let older=null,previous=Array.from({length:right.length+1},(_,i)=>i);
+        for(let i=1;i<=left.length;i++){
+          const current=[i];
+          for(let j=1;j<=right.length;j++){
+            let edits=Math.min(previous[j]+1,current[j-1]+1,previous[j-1]+(left[i-1]===right[j-1]?0:1));
+            if(older && i>1 && j>1 && left[i-1]===right[j-2] && left[i-2]===right[j-1])
+              edits=Math.min(edits,older[j-2]+1);
+            current[j]=edits;
+          }
+          older=previous;previous=current;
+        }
+        return previous[right.length];
+      };
+      const suggestions=cards.filter(inGroup).map(card=>{
+        let best=maxEdits+1;
+        for(const word of card.words){
+          if(word.length<4 || Math.abs(word.length-typo.length)>maxEdits)continue;
+          // Two-edit matches need a shared beginning to avoid unrelated guesses.
+          if(maxEdits===2 && word.slice(0,2)!==typo.slice(0,2))continue;
+          const edits=distance(typo,word);
+          if(edits<best)best=edits;
+          if(best===1)break;
+        }
+        if(best>maxEdits)return null;
+        const titleNear=card.titleWords.some(word=>distance(typo,word)<=maxEdits);
+        return {card,href:destination(card,'',true),rank:(maxEdits+1-best)*20+(titleNear?10:0),related:true,spelling:true};
+      }).filter(Boolean).sort((a,b)=>b.rank-a.rank).slice(0,3);
+      if(suggestions.length)return suggestions;
+    }
     // Recovery suggestions never claim availability or inherit unmatched
     // constraints; a partial result is not presented as an exact match.
     if(terms.length<2)return [];
@@ -292,7 +328,7 @@
     if(active){
       const list=results.querySelector('ul'); list.replaceChildren();
       const propertyCount=renderHomePreview(text);
-      for(const {card,href,related} of lastResults){
+      for(const {card,href,related,spelling} of lastResults){
         // Direct property links and the filtered-homes route already appear above this category list.
         if(propertyCount && card.key==='homes')continue;
         const row=document.createElement('li'),link=categoryLink(card);
@@ -302,7 +338,7 @@
         else if(!list.children.length)row.classList.add('primary-match');
         link.href=href;
         const chapter=document.createElement('small');chapter.className='match-chapter';
-        chapter.textContent=(related?'Suggested category · ':'')+(groupNames.get(card.group)||'Rental category');
+        chapter.textContent=(related?(spelling?'Possible spelling match · ':'Suggested category · '):'')+(groupNames.get(card.group)||'Rental category');
         const title=document.createElement('strong');title.className='match-title';title.textContent=card.name;
         const summary=document.createElement('span');summary.className='match-description';
         summary.textContent=card.element.querySelector('.category-notes p')?.textContent||'Explore local rental providers.';
