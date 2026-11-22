@@ -1,0 +1,202 @@
+body.directory-page {
+  --directory-ink: #183e36;
+  --directory-green: #185542;
+  --directory-muted: #52655e;
+  --directory-line: #cdd8cb;
+  margin: 0;
+  padding: 0;
+  color: var(--directory-ink);
+  background: #f7f8f1;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+body.directory-page * { box-sizing: border-box; }
+.directory-page .directory-top {
+  position: relative;
+  z-index: 2;
+  inset: auto;
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid var(--directory-line);
+  background: #fffef7;
+  color: var(--directory-ink);
+  box-shadow: none;
+}
+.directory-top > div {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  width: min(72rem, 100%); min-height: 3.8rem; margin: auto; padding: 0 2rem;
+}
+.directory-page .directory-name {
+  font: 700 1.45rem/1.1 Georgia, serif; letter-spacing: -.045em; text-decoration: none;
+  color: var(--directory-ink); white-space: nowrap; text-transform: none;
+}
+.directory-name span { color: #8b601d; }
+.directory-page .directory-top nav { display: flex; align-items: center; gap: 1.35rem; margin: 0; padding: 0; background: none; }
+.directory-page .directory-top nav a {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0; border: 0; background: none;
+  color: var(--directory-green); font: 650 .9rem/1.15 system-ui, sans-serif; letter-spacing: normal;
+  text-transform: none; text-decoration: none;
+}
+.directory-page .directory-top nav a:hover { text-decoration: underline; }
+body.directory-page main {
+  display: block; width: min(72rem, 100%); max-width: none; margin: 0 auto; padding: 0 2rem 2.5rem;
+}
+.directory-page .directory-intro {
+  display: block; background: none; border: 0; box-shadow: none;
+  max-width: none; margin: 0; padding: clamp(1.45rem, 3.4vw, 2.75rem) 0 .7rem;
+}
+.directory-page .directory-intro h1 {
+  max-width: none; margin: 0 0 .95rem; color: var(--directory-ink);
+  font: 600 clamp(2rem, 4vw, 3.15rem)/1.04 Georgia, serif;
+  text-transform: none; letter-spacing: -.045em; text-shadow: none;
+}
+.directory-page .directory-search { display: block; width: min(100%, 40rem); margin: 0; }
+.directory-page .directory-search[hidden], .directory-page #directory-clear[hidden] { display: none; }
+.directory-page .directory-search label {
+  display: block; margin: 0 0 .35rem;
+  color: var(--directory-muted); font: 600 .88rem/1.3 system-ui, sans-serif; letter-spacing: normal; text-transform: none;
+}
+.directory-search > div { display: flex; gap: .4rem; }
+.directory-page .directory-search input {
+  display: block; min-width: 0; width: 100%; height: 46px; padding: .55rem .85rem; margin: 0;
+  border: 1px solid #a7b7aa; border-radius: .55rem; background: #fff; color: var(--directory-ink);
+  font: 1rem/1.3 system-ui, sans-serif;
+}
+.directory-page .directory-search button, .directory-page .record-action {
+  display: inline-flex; align-items: center; justify-content: center; gap: .35rem;
+  min-width: 44px; min-height: 44px; padding: .55rem .95rem;
+  border: 1px solid var(--directory-green); border-radius: .55rem; background: var(--directory-green);
+  color: #fff; font: 650 .92rem/1.2 system-ui, sans-serif; letter-spacing: normal;
+  text-decoration: none; text-transform: none; cursor: pointer; box-shadow: none;
+}
+.directory-page .directory-search button:hover, .directory-page .record-action:hover { background: #103c30; color: #fff; }
+.directory-result-line { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem; margin-top: .55rem; }
+.directory-page #directory-count { margin: 0; color: var(--directory-muted); font: 550 .91rem/1.35 system-ui, sans-serif; }
+.directory-page #directory-clear {
+  display: inline-flex; align-items: center; min-height: 44px; margin: -.25rem 0; padding: 0 .25rem;
+  border: 0; background: none; color: var(--directory-green); text-decoration: underline; font: 650 .9rem/1.3 system-ui, sans-serif; cursor: pointer;
+}
+.directory-page #providers, .directory-page .car-provider-directory, .directory-page #paddle-directory-stage {
+  display: block; margin: 0; padding: 0; border: none; background: transparent; box-shadow: none;
+}
+.directory-page #providers > .party-art-disclaimer { display: none; }
+.directory-page :is(#equipment-results, #storage-grid, #provider-grid, #paddle-provider-grid, .car-folios).directory-records {
+  display: grid; align-items: start; grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: .5rem .75rem; margin: 0; padding: 0; border: none; background: none; box-shadow: none;
+}
+.directory-page .directory-records > article.directory-record {
+  display: block; position: relative; inset: auto; grid-column: auto; grid-row: auto; width: 100%;
+  max-width: none; min-width: 0; height: auto; min-height: 0; margin: 0; padding: .65rem .85rem;
+  border: 1px solid var(--directory-line); border-radius: .68rem; background: #fffefa;
+  color: var(--directory-ink); box-shadow: none; transform: none; scroll-margin: 1rem;
+}
+.directory-page .directory-records > .directory-record::before, .directory-page .directory-records > .directory-record::after { content: none; }
+.directory-page .directory-records > article.directory-record[hidden], .directory-page .directory-records > article.directory-no-match { display: none !important; }
+.directory-page .directory-record:not(.record-open) > :not(.directory-contact-head) { display: none !important; }
+.directory-page .directory-record.record-open { grid-column: 1 / -1; }
+.directory-page .record-open .directory-contact-head { padding-bottom: .55rem; margin-bottom: .45rem; border-bottom: 1px solid var(--directory-line); }
+.directory-contact-head { display: flex; align-items: center; justify-content: space-between; gap: .8rem; min-height: 4.45rem; }
+.record-identity { min-width: 0; }
+.directory-page .record-toggle {
+  display: inline-block; position: relative; min-height: 44px; max-width: 100%; min-width: 0; margin: 0;
+  padding: .15rem 1.05rem .15rem 0; border: 0; border-radius: .2rem;
+  background: none; box-shadow: none; text-shadow: none; color: var(--directory-ink);
+  font: 650 1.1rem/1.2 Georgia, serif; text-align: left; text-transform: none; letter-spacing: -.015em;
+  overflow-wrap: anywhere; cursor: pointer;
+}
+.directory-page .record-toggle::after {
+  content: ""; position: absolute; right: 1px; top: 45%; width: .36rem; height: .36rem;
+  border-right: 1.6px solid var(--directory-green); border-bottom: 1.6px solid var(--directory-green);
+  transform: rotate(45deg);
+}
+.directory-page .record-open .record-toggle::after { transform: rotate(225deg); top: 52%; }
+.directory-page .record-toggle:hover { color: var(--directory-green); text-decoration: underline; }
+.directory-page .record-location, .directory-page .record-mobile-number {
+  display: block; margin: -.1rem 0 .13rem; padding: 0; color: var(--directory-muted);
+  font: .85rem/1.35 system-ui, sans-serif; letter-spacing: normal; text-transform: none; overflow-wrap: anywhere;
+}
+.directory-page .record-mobile-number { display: none; }
+.directory-page .record-action { flex: 0 0 auto; padding: .48rem .65rem; background: #eff4eb; border-color: #c7d7c8; color: var(--directory-green); }
+.directory-page .directory-extras {
+  display: block; clear: both; margin: 1.75rem 0 0; padding: 0;
+  border: 1px solid var(--directory-line); border-radius: .65rem; background: #fffefa;
+}
+.directory-page .directory-extras > summary {
+  display: list-item; min-height: 48px; padding: .82rem 1rem; color: var(--directory-green);
+  cursor: pointer; font: 650 1rem/1.3 system-ui, sans-serif;
+}
+.directory-page .directory-extras-body { padding: .3rem clamp(.6rem,2vw,1.25rem) 1.1rem; }
+.directory-page .directory-extras-body > :first-child { margin-top: 0; }
+.directory-page .directory-extras-body nav { position: static; }
+.directory-ready .directory-extras :is(#equipment-filter, #storage-search-form, .finder-controls .search-field) { display: none; }
+.directory-ready #storage-results { display: none; }
+.directory-page main > footer { margin: 1.5rem 0 0; }
+.directory-page :is(.directory-top,.directory-intro,.directory-contact-head,.directory-extras > summary) :focus-visible,
+.directory-page .directory-extras > summary:focus-visible { outline: 3px solid #9b6018; outline-offset: 3px; }
+@media (max-width: 55rem) {
+  .directory-page .record-action span { display: none; }
+  .directory-page .record-mobile-number { display: block; }
+}
+@media (max-width: 43rem) {
+  body.directory-page main, .directory-page .directory-top > div { padding-inline: 1rem; }
+  .directory-page .directory-top nav { gap: .85rem; }
+  .directory-page :is(#equipment-results, #storage-grid, #provider-grid, #paddle-provider-grid, .car-folios).directory-records { grid-template-columns: minmax(0,1fr); }
+  .directory-page .directory-contact-head { min-height: 3.8rem; }
+}
+@media (max-width: 26rem) {
+  .directory-page .directory-top nav { gap: .6rem; }
+  .directory-page .directory-top nav a { font-size: .79rem; }
+  .directory-page .directory-name { font-size: 1.24rem; }
+}
+@media print {
+  .directory-top nav, .directory-search, .directory-extras, #directory-clear { display: none !important; }
+  body.directory-page main { width: 100%; padding: 0; }
+  .directory-page .directory-record { break-inside: avoid; }
+  .directory-page .record-action span { display: inline; }
+}
+/* The older category themes use unlayered important rules. Keep those themes inside expanded guides. */
+@layer directory-layout {
+  body.directory-page { background: #f7f8f1 !important; padding: 0 !important; }
+  .directory-page .directory-top {
+    position: relative !important; margin: 0 !important; padding: 0 !important; width: 100% !important;
+    background: #fffef7 !important; border: 0 !important; border-bottom: 1px solid var(--directory-line) !important; box-shadow: none !important;
+  }
+  .directory-page .directory-top a { color: var(--directory-ink) !important; }
+  .directory-page main { width: min(72rem,100%) !important; max-width: none !important; padding: 0 2rem 2.5rem !important; margin: 0 auto !important; }
+  .directory-page .directory-intro { margin: 0 !important; }
+  .directory-page .directory-intro h1 {
+    margin: 0 0 .95rem !important; font: 600 clamp(2rem,4vw,3.15rem)/1.04 Georgia,serif !important;
+    color: var(--directory-ink) !important; letter-spacing: -.045em !important;
+  }
+  .directory-page .directory-records {
+    display: grid !important; grid-template-columns: repeat(2,minmax(0,1fr)) !important; align-items: start !important;
+    gap: .5rem .75rem !important; margin: 0 !important; padding: 0 !important;
+  }
+  .directory-page .directory-records > .directory-record {
+    display: block !important; grid-column: auto !important; width: 100% !important; min-width: 0 !important;
+    min-height: 0 !important; height: auto !important; margin: 0 !important; padding: .65rem .85rem !important;
+    background: #fffefa !important; border: 1px solid var(--directory-line) !important; border-radius: .68rem !important; box-shadow: none !important;
+  }
+  .directory-page .directory-records > .directory-record.record-open { grid-column: 1/-1 !important; }
+  .directory-page .directory-records > .directory-record[hidden], .directory-page .directory-records > .directory-no-match,
+  .directory-page .directory-record:not(.record-open) > :not(.directory-contact-head) { display: none !important; }
+  .directory-page .directory-record::before, .directory-page .directory-record::after,
+  .directory-page .directory-record::marker { content: none !important; display: none !important; }
+  .directory-page .directory-record .directory-contact-head { grid-column: 1/-1 !important; min-width: 0 !important; }
+  .directory-page .directory-record .record-toggle { color: var(--directory-ink) !important; }
+  .directory-page .directory-record .record-location, .directory-page .directory-record .record-mobile-number {
+    font: .85rem/1.35 system-ui,sans-serif !important; color: var(--directory-muted) !important; margin: -.1rem 0 .13rem !important;
+  }
+  @media (max-width:43rem) {
+    .directory-page main { padding: 0 1rem 2rem !important; }
+    .directory-page .directory-records { grid-template-columns: minmax(0,1fr) !important; }
+  }
+}
+@media (max-width: 23rem) {
+  .directory-page .directory-top > div { padding-inline: .75rem; gap: .5rem; }
+  .directory-page .directory-name { font-size: 1.14rem; }
+  .directory-page .directory-top nav { gap: .5rem; }
+  .directory-page .directory-top nav a { white-space: nowrap; word-break: normal; font-size: .76rem; }
+}

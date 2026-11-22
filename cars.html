@@ -1069,152 +1069,28 @@ main.wrap{padding-top:52px}
 }
 </style>
 <link rel="stylesheet" href="assets/finder.css">
-<script defer src="assets/provider-query.js"></script>
+<script defer src="assets/provider-query.js?v=directory-2"></script>
+<link rel="stylesheet" href="assets/category-browse.css?v=2">
 </head>
-<body>
+<body class="directory-page">
 <a class="skip" href="#main">Skip to car rental options</a>
-<header class="site-header"><div class="wrap header-inner">
-  <a class="brand" href="/" aria-label="Russellville.Rent home"><span class="brand-symbol" aria-hidden="true">R.</span><span class="brand-word">Russellville<span>.Rent</span></span></a>
-  <nav class="header-routes" aria-label="Car rental page navigation">
-    <a href="#compare-title">Compare options</a>
-    <a href="#pickup-atlas-title">Pickup locations</a>
-    <a href="#providers-title">Provider contacts</a>
-    <a class="back" href="/#browse">All rental categories <span aria-hidden="true">↗</span></a>
-  </nav>
-</div></header>
-<div class="hero">
-  <div class="wrap hero-inner">
-    <div class="hero-copy-block">
-      <p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p>
-      <h1>Find your <em>next ride.</em></h1>
-      <p class="hero-copy">Need a car for a trip, while yours is being repaired, or for a visit to the River Valley? Contact these Russellville-area rental providers directly.</p>
-      <a class="button gold" href="#providers-title">Compare local options <span aria-hidden="true">↘</span></a>
-    </div>
-    <div class="hero-art" aria-hidden="true">
-      <svg viewBox="0 0 560 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M-20 315C123 244 249 306 368 231C435 189 497 184 581 212" stroke="#f0ca79" stroke-opacity=".33" stroke-width="3" stroke-dasharray="12 15"/>
-        <ellipse cx="286" cy="282" rx="220" ry="25" fill="#071e19" opacity=".5"/>
-        <path d="M81 206C103 196 137 191 174 187L235 119C245 108 261 104 278 104H363C380 104 394 110 406 125L457 189C480 191 499 199 508 218L514 245C516 255 510 263 498 263H71C60 263 54 257 56 247L63 225C65 217 70 211 81 206Z" fill="#f0ca79" stroke="#f8e4b0" stroke-width="5"/>
-        <path d="M188 187L245 127C252 120 262 117 274 117H313V187H188Z" fill="#173f37"/>
-        <path d="M328 117H361C374 117 383 122 393 133L436 187H328V117Z" fill="#173f37"/>
-        <path d="M312 119V187" stroke="#7ea391" stroke-width="4"/>
-        <path d="M70 221H502" stroke="#d4a753" stroke-width="4"/>
-        <path d="M77 247H499" stroke="#d4a753" stroke-width="4"/>
-        <path d="M77 210L105 203" stroke="#fff6da" stroke-width="6" stroke-linecap="round"/>
-        <path d="M464 206L490 212" stroke="#fff6da" stroke-width="6" stroke-linecap="round"/>
-        <rect x="68" y="226" width="28" height="13" rx="5" fill="#fff7df"/>
-        <rect x="484" y="226" width="25" height="13" rx="5" fill="#f2a876"/>
-        <circle cx="160" cy="258" r="40" fill="#0e2924" stroke="#e4ba69" stroke-width="7"/>
-        <circle cx="160" cy="258" r="18" fill="#b6c8b8"/>
-        <circle cx="425" cy="258" r="40" fill="#0e2924" stroke="#e4ba69" stroke-width="7"/>
-        <circle cx="425" cy="258" r="18" fill="#b6c8b8"/>
-        <path d="M253 207H286M351 207H379" stroke="#b98537" stroke-width="5" stroke-linecap="round"/>
-        <path d="M121 150L143 138M105 167L125 156M448 135L467 146" stroke="#f0ca79" stroke-opacity=".55" stroke-width="4" stroke-linecap="round"/>
-      </svg>
-      <span class="route-label">Local roads · Local options</span>
-      <span class="scenic-caption">Russellville skyline · Scenic photo, not a rental vehicle</span>
-    </div>
-  </div>
-</div>
-<nav class="road-quicknav wrap" aria-label="Find car rental information quickly">
-    <a href="#compare-title" class="road-quicklink"><span class="road-dock-graphic" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="15" width="7" height="7" rx="1.5"/><rect x="14" y="15" width="7" height="7" rx="1.5"/></svg></span><span class="road-dock-label">Compare</span>
-      <span class="road-quick-index">01 / Compare</span>
-      <strong>See what’s known.</strong>
-      <span>Vehicles, driver rules &amp; mileage <span aria-hidden="true">↗</span></span>
-    </a>
-    <a href="#pickup-atlas-title" class="road-quicklink"><span class="road-dock-graphic" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 22s7-6.3 7-13a7 7 0 0 0-14 0c0 6.7 7 13 7 13Z"/><circle cx="12" cy="9" r="2.5"/></svg></span><span class="road-dock-label">Locations</span>
-      <span class="road-quick-index">02 / Locations</span>
-      <strong>Start in Russellville.</strong>
-      <span>Three listed street addresses <span aria-hidden="true">↗</span></span>
-    </a>
-    <a href="#checklist-title" class="road-quicklink"><span class="road-dock-graphic" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="5" y="3" width="14" height="19" rx="2"/><path d="m8 10 2 2 4-4M8 17h8"/></svg></span><span class="road-dock-label">Before you call</span>
-      <span class="road-quick-index">03 / Before you call</span>
-      <strong>Know what to ask.</strong>
-      <span>Availability, insurance &amp; total costs <span aria-hidden="true">↗</span></span>
-    </a>
-  </nav>
-<main id="main" class="wrap">
-  <section class="journey" aria-labelledby="journey-title">
-    <div class="journey-head"><div><p class="eyebrow">The River Valley road guide / 01</p><h2 id="journey-title">What brings you<br>behind the wheel?</h2></div><p>Choose what best describes your trip. We'll bring that purpose into a ready-to-copy rental inquiry—or you can browse the providers directly.</p></div>
-    <div class="journey-grid">
-      <a class="journey-card" href="#providers-title" data-trip-reason="a local trip"><span class="journey-index">01 / Around town</span><span class="journey-icon" aria-hidden="true">↗</span><strong class="journey-title">Everyday miles.</strong><span class="journey-description">Getting around Russellville and the River Valley.</span><span class="journey-action">Prepare an inquiry <span aria-hidden="true">↗</span></span><span class="journey-photo-note">Downtown Russellville scenery · Not a rental vehicle</span></a>
-      <a class="journey-card" href="#providers-title" data-trip-reason="an out-of-town trip"><span class="journey-index">02 / On the road</span><span class="journey-icon" aria-hidden="true">→</span><strong class="journey-title">A longer way out.</strong><span class="journey-description">A weekend trip, a visit, or miles beyond town.</span><span class="journey-action">Prepare an inquiry <span aria-hidden="true">↗</span></span></a>
-      <a class="journey-card" href="#providers-title" data-trip-reason="temporary transportation while my own vehicle is unavailable"><span class="journey-index">03 / In between</span><span class="journey-icon" aria-hidden="true">✳</span><strong class="journey-title">Keep life moving.</strong><span class="journey-description">Transportation while your own vehicle is unavailable.</span><span class="journey-action">Prepare an inquiry <span aria-hidden="true">↗</span></span></a>
-    </div>
-    <p class="journey-note">These are planning shortcuts, not vehicle availability, eligibility or booking confirmations. You contact each provider directly.</p>
-  </section>
-  <div class="intro-strip"><strong>Three rental providers serving Russellville</strong><span>Compare local contacts and ask each provider about current vehicles, availability, rates, insurance, and pickup arrangements.</span></div>
+<header class="directory-top"><div><a class="directory-name" href="/" aria-label="Russellville.Rent home">Russellville<span>.Rent</span></a><nav aria-label="Directory navigation"><a href="/#browse">Categories</a><a href="#directory-extras">Filters &amp; guides</a></nav></div></header>
 
-  <section class="compare-board" aria-labelledby="compare-title">
-    <div class="compare-head"><div><p class="eyebrow">Rental desk / At a glance</p><h2 id="compare-title">Compare before you call.</h2></div><p>Three local contacts, one clear view of the details currently listed.</p><span class="compare-edition" aria-hidden="true"><b>03</b><small>Russellville<br>rental desks</small></span></div>
-    <p class="compare-hint" id="compare-scroll-hint">Scroll sideways to compare all three providers →</p>
-    <ol class="mobile-compare" aria-label="Car rental provider comparison">
-      <li><article class="mobile-pass"><div class="pass-head"><span class="pass-number" aria-hidden="true">01</span><div><h3>24/7 Rent-A-Ride</h3><p>Russellville · Local rental contact</p></div></div><dl class="pass-facts"><div><dt>Vehicles</dt><dd>Car rentals; specific vehicle classes not listed here.</dd></div><div><dt>Driver rules</dt><dd class="pass-unconfirmed">Confirm directly</dd></div><div><dt>Mileage</dt><dd class="pass-unconfirmed">Confirm directly</dd></div><div><dt>Location</dt><dd>111 S Arkansas Ave</dd></div></dl><a class="pass-action" href="#rental-ride">Contact and rental details <span aria-hidden="true">↗</span></a></article></li>
-      <li><article class="mobile-pass"><div class="pass-head"><span class="pass-number" aria-hidden="true">02</span><div><h3>Cogswell Motors Rentals</h3><p>Russellville · Local dealership rental desk</p></div></div><dl class="pass-facts"><div><dt>Vehicles</dt><dd>Cars, trucks, minivans, sport utility vehicles and 15-passenger vans.</dd></div><div><dt>Driver rules</dt><dd>Published terms: at least 21, valid driver's license and major credit card.</dd></div><div><dt>Mileage</dt><dd>Published standard allowance: 200 miles/day, 1,400/week or 3,000/month unless otherwise specified.</dd></div><div><dt>Location</dt><dd>1900 E Main St</dd></div></dl><a class="pass-action" href="#cogswell-rentals">Terms and contact details <span aria-hidden="true">↗</span></a></article></li>
-      <li><article class="mobile-pass"><div class="pass-head"><span class="pass-number" aria-hidden="true">03</span><div><h3>Enterprise Rent-A-Car</h3><p>Russellville · Local branch</p></div></div><dl class="pass-facts"><div><dt>Vehicles</dt><dd>Local rental branch; specific vehicle classes not listed here.</dd></div><div><dt>Driver rules</dt><dd class="pass-unconfirmed">Confirm directly</dd></div><div><dt>Mileage</dt><dd class="pass-unconfirmed">Confirm directly</dd></div><div><dt>Location</dt><dd>1903 S Arkansas Ave</dd></div></dl><a class="pass-action" href="#enterprise-rentals">Branch and contact details <span aria-hidden="true">↗</span></a></article></li>
-    </ol>
-    <details class="compare-details">
-      <summary><span class="compare-details-summary"><strong>Full line-by-line comparison</strong><small>Explore vehicle types, driver rules, mileage and location in one table.</small></span><span class="compare-details-toggle" aria-hidden="true">+</span></summary>
-    <div class="compare-scroll" role="region" tabindex="0" aria-label="Rental provider comparison, horizontally scrollable on small screens" aria-describedby="compare-scroll-hint"><table class="compare-table"><caption class="sr-only">Published car rental information for three Russellville providers. Unlisted terms require confirmation.</caption><thead><tr><th scope="col">What matters</th><th scope="col">24/7 Rent-A-Ride</th><th scope="col">Cogswell Motors Rentals</th><th scope="col">Enterprise Rent-A-Car</th></tr></thead><tbody><tr><th scope="row">Rental offering</th><td>Car rentals; specific vehicle classes not listed here.</td><td><span class="known">Vehicle types listed</span><br>Cars, trucks, minivans, sport utility vehicles and 15-passenger vans.</td><td>Local rental branch; specific vehicle classes not listed here.</td></tr><tr><th scope="row">Driver requirements</th><td class="unknown">Confirm directly</td><td><span class="known">Published terms</span><br>At least 21; valid driver's license and major credit card.</td><td class="unknown">Confirm directly</td></tr><tr><th scope="row">Included mileage</th><td class="unknown">Confirm directly</td><td><span class="known">Published standard allowance</span><br>200 miles/day, 1,400/week or 3,000/month, unless otherwise specified.</td><td class="unknown">Confirm directly</td></tr><tr><th scope="row">Russellville location</th><td>111 S Arkansas Ave</td><td>1900 E Main St</td><td>1903 S Arkansas Ave</td></tr><tr><th scope="row">Next step</th><td><a href="#rental-ride">View contact details ↗</a></td><td><a href="#cogswell-rentals">View rental terms &amp; contact ↗</a></td><td><a href="#enterprise-rentals">View branch details ↗</a></td></tr></tbody></table></div>
-    </details>
-    <p class="compare-footnote"><strong>“Confirm directly” means not specified in this directory, not that the provider lacks the service.</strong> This is not a live inventory or price comparison. Ask each provider for availability, total charges, insurance, pickup arrangements and current terms.</p>
-  </section>
+
+<main id="main" class="wrap">
+<section id="provider-matches" class="directory-intro" data-provider-cards=".car-folios &gt; article"><h1>Car rentals in Russellville</h1><form class="directory-search" role="search" hidden><label for="provider-query-main">Search providers and rental items</label><div><input id="provider-query-main" type="search" name="q" placeholder="Rental company, pickup, or vehicle" maxlength="160" autocomplete="off" enterkeyhint="search"><button type="submit">Search</button></div></form><div class="directory-result-line"><p id="directory-count" role="status" aria-live="polite"></p><button type="button" id="directory-clear" hidden>Clear search</button></div></section>
+
+
+
+
+
 
   <!-- Location-first pickup atlas: addresses repeat the verified comparison data above. -->
-  <section class="pickup-atlas" aria-labelledby="pickup-atlas-title">
-    <div class="pickup-atlas-scene">
-      <p class="pickup-atlas-eyebrow">The hometown pickup atlas / Russellville</p>
-      <h2 id="pickup-atlas-title">Three local contacts.<br><em>One hometown.</em></h2>
-      <p>All three rental listings have Russellville street addresses. Start with the location that works for your plans, then confirm pickup arrangements directly.</p>
-      <span class="pickup-scene-caption">Downtown Russellville at sunset · Local scenery, not a rental branch photograph</span>
-    </div>
-    <div class="pickup-atlas-board">
-      <p class="pickup-board-kicker">Russellville pickup research / three starting points</p>
-      <ol class="pickup-stops">
-        <li class="pickup-stop">
-          <span class="pickup-stop-index" aria-hidden="true">01</span>
-          <div class="pickup-stop-copy"><span class="pickup-stop-street">South Arkansas Avenue</span><h3>24/7 Rent-A-Ride</h3><p>111 S Arkansas Ave · Russellville, AR 72801</p></div>
-          <div class="pickup-stop-actions"><a class="pickup-stop-link" href="#rental-ride" aria-label="View 24/7 Rent-A-Ride contact details">Details <span aria-hidden="true">↗</span></a><a class="pickup-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=111%20S%20Arkansas%20Ave%2C%20Russellville%2C%20AR%2072801" target="_blank" rel="noopener noreferrer" aria-label="Open Google Maps for 24/7 Rent-A-Ride at 111 S Arkansas Ave, Russellville, AR 72801">Map <span aria-hidden="true">↗</span></a></div>
-        </li>
-        <li class="pickup-stop">
-          <span class="pickup-stop-index" aria-hidden="true">02</span>
-          <div class="pickup-stop-copy"><span class="pickup-stop-street">East Main Street</span><h3>Cogswell Motors Rentals</h3><p>1900 E Main St · Russellville, AR 72801</p></div>
-          <div class="pickup-stop-actions"><a class="pickup-stop-link" href="#cogswell-rentals" aria-label="View Cogswell Motors rental details">Details <span aria-hidden="true">↗</span></a><a class="pickup-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=1900%20E%20Main%20St%2C%20Russellville%2C%20AR%2072801" target="_blank" rel="noopener noreferrer" aria-label="Open Google Maps for Cogswell Motors Rentals at 1900 E Main St, Russellville, AR 72801">Map <span aria-hidden="true">↗</span></a></div>
-        </li>
-        <li class="pickup-stop">
-          <span class="pickup-stop-index" aria-hidden="true">03</span>
-          <div class="pickup-stop-copy"><span class="pickup-stop-street">South Arkansas Avenue</span><h3>Enterprise Rent-A-Car</h3><p>1903 S Arkansas Ave · Russellville, AR 72801</p></div>
-          <div class="pickup-stop-actions"><a class="pickup-stop-link" href="#enterprise-rentals" aria-label="View Enterprise Rent-A-Car branch details">Details <span aria-hidden="true">↗</span></a><a class="pickup-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=1903%20S%20Arkansas%20Ave%2C%20Russellville%2C%20AR%2072801" target="_blank" rel="noopener noreferrer" aria-label="Open Google Maps for Enterprise Rent-A-Car at 1903 S Arkansas Ave, Russellville, AR 72801">Map <span aria-hidden="true">↗</span></a></div>
-        </li>
-      </ol>
-      <div class="pickup-atlas-foot"><span aria-hidden="true">↗</span><p><strong>Before you go:</strong> This is a contact guide, not a scaled map or pickup confirmation. Call each provider to verify vehicles, business hours, exact pickup arrangements and all charges.</p></div>
-    </div>
-  </section>
-  
-  <section class="trip-studio" id="trip-studio" aria-labelledby="trip-title" hidden>
-    <div class="trip-intro"><div><p class="eyebrow">02 / Prepare your call</p><h2 id="trip-title">Your trip, <em>in a few lines.</em></h2></div><p>Create a clear inquiry for a rental desk. This is a planning tool—not a reservation or price quote.</p></div>
-    <div class="trip-layout">
-      <form class="trip-form" id="trip-form" autocomplete="off">
-        <fieldset><legend>What is the rental for?</legend><div class="trip-reasons">
-          <label><input type="radio" name="trip-reason" value="a local trip" checked><span>Getting around town</span></label>
-          <label><input type="radio" name="trip-reason" value="an out-of-town trip"><span>A trip out of town</span></label>
-          <label><input type="radio" name="trip-reason" value="temporary transportation while my own vehicle is unavailable"><span>While my car is in the shop</span></label>
-        </div></fieldset>
-        <div class="trip-dates"><label class="trip-field" for="trip-pickup">Pickup date <small>(optional)</small><input id="trip-pickup" type="date"></label><label class="trip-field" for="trip-return">Return date <small>(optional)</small><input id="trip-return" type="date"></label></div>
-        <label class="trip-field" for="trip-vehicle">Preferred vehicle <small>(optional)</small><select id="trip-vehicle"><option value="Open to available options">Open to options</option><option value="Car">Car</option><option value="Truck">Truck</option><option value="Sport utility vehicle">Sport utility vehicle</option><option value="Minivan">Minivan</option><option value="Passenger van">Passenger van</option></select></label>
-        <p class="trip-fine">Vehicle types and dates are preferences, not verified inventory. Nothing entered here is submitted or saved by the page.</p>
-      </form>
-      <aside class="trip-preview" aria-labelledby="trip-preview-title"><p class="eyebrow">Ready-to-use / Inquiry note</p><h3 id="trip-preview-title">Know what to ask.</h3>
-        <div class="trip-route" aria-hidden="true"><span>RUSSELLVILLE</span><i></i><span>YOUR NEXT STOP</span></div>
-        <p class="trip-message" id="trip-message">Choose your details to prepare an inquiry.</p>
-        <button class="trip-copy" id="trip-copy" type="button">Copy rental inquiry ↗</button><p class="trip-status" id="trip-status" role="status" aria-live="polite"></p>
-        <div class="trip-fallback" id="trip-fallback" hidden><label for="trip-fallback-text">Select and copy this text</label><textarea id="trip-fallback-text" readonly></textarea></div>
-        <div class="trip-contacts"><strong>Call a local rental desk</strong><a href="tel:+14795672470">24/7 Rent-A-Ride ↗</a><a href="tel:+14794982530">Cogswell ↗</a><a href="tel:+14799682779">Enterprise ↗</a></div>
-      </aside>
-    </div>
-  </section>
+
+
+
   <section class="car-provider-directory" aria-labelledby="providers-title">
-    <div class="section-head"><div><p class="eyebrow" style="color:#698167">Find a vehicle</p><h2 id="providers-title">Your rental options</h2><p>Start with a local provider and confirm the details directly before making plans.</p></div><span class="section-number">01 / Compare</span></div>
+
     <div class="grid car-folios">
       <article class="card" id="rental-ride">
         <figure class="car-provider-scene" aria-hidden="true"><span class="car-scene-top"><span>RIVER VALLEY / ROAD ATLAS</span><b>01</b></span><svg class="car-folio-car" viewBox="0 0 640 380" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -1296,7 +1172,90 @@ main.wrap{padding-top:52px}
   <p class="note">Directory information was checked in October 2026. Russellville.Rent does not book or operate these rental vehicles. Pricing, vehicle selection, rental requirements, hours, and services may change; confirm details directly with each provider.</p>
 
   <!-- Published mileage field atlas: local scenery and illustrative comparison, not a quote. -->
-  <section class="mileage-atlas" id="mileage-atlas" aria-labelledby="mileage-title">
+
+
+
+  <!-- Editorial exit route: scenery and directory categories, not provider inventory. -->
+
+
+
+<details class="directory-extras" id="directory-extras"><summary>Filters, comparisons &amp; planning guides</summary><div class="directory-extras-body">
+<section class="compare-board" aria-labelledby="compare-title">
+    <div class="compare-head"><div><p class="eyebrow">Rental desk / At a glance</p><h2 id="compare-title">Compare before you call.</h2></div><p>Three local contacts, one clear view of the details currently listed.</p><span class="compare-edition" aria-hidden="true"><b>03</b><small>Russellville<br>rental desks</small></span></div>
+    <p class="compare-hint" id="compare-scroll-hint">Scroll sideways to compare all three providers →</p>
+    <ol class="mobile-compare" aria-label="Car rental provider comparison">
+      <li><article class="mobile-pass"><div class="pass-head"><span class="pass-number" aria-hidden="true">01</span><div><h3>24/7 Rent-A-Ride</h3><p>Russellville · Local rental contact</p></div></div><dl class="pass-facts"><div><dt>Vehicles</dt><dd>Car rentals; specific vehicle classes not listed here.</dd></div><div><dt>Driver rules</dt><dd class="pass-unconfirmed">Confirm directly</dd></div><div><dt>Mileage</dt><dd class="pass-unconfirmed">Confirm directly</dd></div><div><dt>Location</dt><dd>111 S Arkansas Ave</dd></div></dl><a class="pass-action" href="#rental-ride">Contact and rental details <span aria-hidden="true">↗</span></a></article></li>
+      <li><article class="mobile-pass"><div class="pass-head"><span class="pass-number" aria-hidden="true">02</span><div><h3>Cogswell Motors Rentals</h3><p>Russellville · Local dealership rental desk</p></div></div><dl class="pass-facts"><div><dt>Vehicles</dt><dd>Cars, trucks, minivans, sport utility vehicles and 15-passenger vans.</dd></div><div><dt>Driver rules</dt><dd>Published terms: at least 21, valid driver's license and major credit card.</dd></div><div><dt>Mileage</dt><dd>Published standard allowance: 200 miles/day, 1,400/week or 3,000/month unless otherwise specified.</dd></div><div><dt>Location</dt><dd>1900 E Main St</dd></div></dl><a class="pass-action" href="#cogswell-rentals">Terms and contact details <span aria-hidden="true">↗</span></a></article></li>
+      <li><article class="mobile-pass"><div class="pass-head"><span class="pass-number" aria-hidden="true">03</span><div><h3>Enterprise Rent-A-Car</h3><p>Russellville · Local branch</p></div></div><dl class="pass-facts"><div><dt>Vehicles</dt><dd>Local rental branch; specific vehicle classes not listed here.</dd></div><div><dt>Driver rules</dt><dd class="pass-unconfirmed">Confirm directly</dd></div><div><dt>Mileage</dt><dd class="pass-unconfirmed">Confirm directly</dd></div><div><dt>Location</dt><dd>1903 S Arkansas Ave</dd></div></dl><a class="pass-action" href="#enterprise-rentals">Branch and contact details <span aria-hidden="true">↗</span></a></article></li>
+    </ol>
+    <details class="compare-details">
+      <summary><span class="compare-details-summary"><strong>Full line-by-line comparison</strong><small>Explore vehicle types, driver rules, mileage and location in one table.</small></span><span class="compare-details-toggle" aria-hidden="true">+</span></summary>
+    <div class="compare-scroll" role="region" tabindex="0" aria-label="Rental provider comparison, horizontally scrollable on small screens" aria-describedby="compare-scroll-hint"><table class="compare-table"><caption class="sr-only">Published car rental information for three Russellville providers. Unlisted terms require confirmation.</caption><thead><tr><th scope="col">What matters</th><th scope="col">24/7 Rent-A-Ride</th><th scope="col">Cogswell Motors Rentals</th><th scope="col">Enterprise Rent-A-Car</th></tr></thead><tbody><tr><th scope="row">Rental offering</th><td>Car rentals; specific vehicle classes not listed here.</td><td><span class="known">Vehicle types listed</span><br>Cars, trucks, minivans, sport utility vehicles and 15-passenger vans.</td><td>Local rental branch; specific vehicle classes not listed here.</td></tr><tr><th scope="row">Driver requirements</th><td class="unknown">Confirm directly</td><td><span class="known">Published terms</span><br>At least 21; valid driver's license and major credit card.</td><td class="unknown">Confirm directly</td></tr><tr><th scope="row">Included mileage</th><td class="unknown">Confirm directly</td><td><span class="known">Published standard allowance</span><br>200 miles/day, 1,400/week or 3,000/month, unless otherwise specified.</td><td class="unknown">Confirm directly</td></tr><tr><th scope="row">Russellville location</th><td>111 S Arkansas Ave</td><td>1900 E Main St</td><td>1903 S Arkansas Ave</td></tr><tr><th scope="row">Next step</th><td><a href="#rental-ride">View contact details ↗</a></td><td><a href="#cogswell-rentals">View rental terms &amp; contact ↗</a></td><td><a href="#enterprise-rentals">View branch details ↗</a></td></tr></tbody></table></div>
+    </details>
+    <p class="compare-footnote"><strong>“Confirm directly” means not specified in this directory, not that the provider lacks the service.</strong> This is not a live inventory or price comparison. Ask each provider for availability, total charges, insurance, pickup arrangements and current terms.</p>
+  </section>
+<section class="pickup-atlas" aria-labelledby="pickup-atlas-title">
+    <div class="pickup-atlas-scene">
+      <p class="pickup-atlas-eyebrow">The hometown pickup atlas / Russellville</p>
+      <h2 id="pickup-atlas-title">Three local contacts.<br><em>One hometown.</em></h2>
+      <p>All three rental listings have Russellville street addresses. Start with the location that works for your plans, then confirm pickup arrangements directly.</p>
+      <span class="pickup-scene-caption">Downtown Russellville at sunset · Local scenery, not a rental branch photograph</span>
+    </div>
+    <div class="pickup-atlas-board">
+      <p class="pickup-board-kicker">Russellville pickup research / three starting points</p>
+      <ol class="pickup-stops">
+        <li class="pickup-stop">
+          <span class="pickup-stop-index" aria-hidden="true">01</span>
+          <div class="pickup-stop-copy"><span class="pickup-stop-street">South Arkansas Avenue</span><h3>24/7 Rent-A-Ride</h3><p>111 S Arkansas Ave · Russellville, AR 72801</p></div>
+          <div class="pickup-stop-actions"><a class="pickup-stop-link" href="#rental-ride" aria-label="View 24/7 Rent-A-Ride contact details">Details <span aria-hidden="true">↗</span></a><a class="pickup-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=111%20S%20Arkansas%20Ave%2C%20Russellville%2C%20AR%2072801" target="_blank" rel="noopener noreferrer" aria-label="Open Google Maps for 24/7 Rent-A-Ride at 111 S Arkansas Ave, Russellville, AR 72801">Map <span aria-hidden="true">↗</span></a></div>
+        </li>
+        <li class="pickup-stop">
+          <span class="pickup-stop-index" aria-hidden="true">02</span>
+          <div class="pickup-stop-copy"><span class="pickup-stop-street">East Main Street</span><h3>Cogswell Motors Rentals</h3><p>1900 E Main St · Russellville, AR 72801</p></div>
+          <div class="pickup-stop-actions"><a class="pickup-stop-link" href="#cogswell-rentals" aria-label="View Cogswell Motors rental details">Details <span aria-hidden="true">↗</span></a><a class="pickup-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=1900%20E%20Main%20St%2C%20Russellville%2C%20AR%2072801" target="_blank" rel="noopener noreferrer" aria-label="Open Google Maps for Cogswell Motors Rentals at 1900 E Main St, Russellville, AR 72801">Map <span aria-hidden="true">↗</span></a></div>
+        </li>
+        <li class="pickup-stop">
+          <span class="pickup-stop-index" aria-hidden="true">03</span>
+          <div class="pickup-stop-copy"><span class="pickup-stop-street">South Arkansas Avenue</span><h3>Enterprise Rent-A-Car</h3><p>1903 S Arkansas Ave · Russellville, AR 72801</p></div>
+          <div class="pickup-stop-actions"><a class="pickup-stop-link" href="#enterprise-rentals" aria-label="View Enterprise Rent-A-Car branch details">Details <span aria-hidden="true">↗</span></a><a class="pickup-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=1903%20S%20Arkansas%20Ave%2C%20Russellville%2C%20AR%2072801" target="_blank" rel="noopener noreferrer" aria-label="Open Google Maps for Enterprise Rent-A-Car at 1903 S Arkansas Ave, Russellville, AR 72801">Map <span aria-hidden="true">↗</span></a></div>
+        </li>
+      </ol>
+      <div class="pickup-atlas-foot"><span aria-hidden="true">↗</span><p><strong>Before you go:</strong> This is a contact guide, not a scaled map or pickup confirmation. Call each provider to verify vehicles, business hours, exact pickup arrangements and all charges.</p></div>
+    </div>
+  </section>
+<section class="trip-studio" id="trip-studio" aria-labelledby="trip-title" hidden>
+    <div class="trip-intro"><div><p class="eyebrow">02 / Prepare your call</p><h2 id="trip-title">Your trip, <em>in a few lines.</em></h2></div><p>Create a clear inquiry for a rental desk. This is a planning tool—not a reservation or price quote.</p></div>
+    <div class="trip-layout">
+      <form class="trip-form" id="trip-form" autocomplete="off">
+        <fieldset><legend>What is the rental for?</legend><div class="trip-reasons">
+          <label><input type="radio" name="trip-reason" value="a local trip" checked><span>Getting around town</span></label>
+          <label><input type="radio" name="trip-reason" value="an out-of-town trip"><span>A trip out of town</span></label>
+          <label><input type="radio" name="trip-reason" value="temporary transportation while my own vehicle is unavailable"><span>While my car is in the shop</span></label>
+        </div></fieldset>
+        <div class="trip-dates"><label class="trip-field" for="trip-pickup">Pickup date <small>(optional)</small><input id="trip-pickup" type="date"></label><label class="trip-field" for="trip-return">Return date <small>(optional)</small><input id="trip-return" type="date"></label></div>
+        <label class="trip-field" for="trip-vehicle">Preferred vehicle <small>(optional)</small><select id="trip-vehicle"><option value="Open to available options">Open to options</option><option value="Car">Car</option><option value="Truck">Truck</option><option value="Sport utility vehicle">Sport utility vehicle</option><option value="Minivan">Minivan</option><option value="Passenger van">Passenger van</option></select></label>
+        <p class="trip-fine">Vehicle types and dates are preferences, not verified inventory. Nothing entered here is submitted or saved by the page.</p>
+      </form>
+      <aside class="trip-preview" aria-labelledby="trip-preview-title"><p class="eyebrow">Ready-to-use / Inquiry note</p><h3 id="trip-preview-title">Know what to ask.</h3>
+        <div class="trip-route" aria-hidden="true"><span>RUSSELLVILLE</span><i></i><span>YOUR NEXT STOP</span></div>
+        <p class="trip-message" id="trip-message">Choose your details to prepare an inquiry.</p>
+        <button class="trip-copy" id="trip-copy" type="button">Copy rental inquiry ↗</button><p class="trip-status" id="trip-status" role="status" aria-live="polite"></p>
+        <div class="trip-fallback" id="trip-fallback" hidden><label for="trip-fallback-text">Select and copy this text</label><textarea id="trip-fallback-text" readonly></textarea></div>
+        <div class="trip-contacts"><strong>Call a local rental desk</strong><a href="tel:+14795672470">24/7 Rent-A-Ride ↗</a><a href="tel:+14794982530">Cogswell ↗</a><a href="tel:+14799682779">Enterprise ↗</a></div>
+      </aside>
+    </div>
+  </section>
+<section class="journey" aria-labelledby="journey-title">
+    <div class="journey-head"><div><p class="eyebrow">The River Valley road guide / 01</p><h2 id="journey-title">What brings you<br>behind the wheel?</h2></div><p>Choose what best describes your trip. We'll bring that purpose into a ready-to-copy rental inquiry—or you can browse the providers directly.</p></div>
+    <div class="journey-grid">
+      <a class="journey-card" href="#providers-title" data-trip-reason="a local trip"><span class="journey-index">01 / Around town</span><span class="journey-icon" aria-hidden="true">↗</span><strong class="journey-title">Everyday miles.</strong><span class="journey-description">Getting around Russellville and the River Valley.</span><span class="journey-action">Prepare an inquiry <span aria-hidden="true">↗</span></span><span class="journey-photo-note">Downtown Russellville scenery · Not a rental vehicle</span></a>
+      <a class="journey-card" href="#providers-title" data-trip-reason="an out-of-town trip"><span class="journey-index">02 / On the road</span><span class="journey-icon" aria-hidden="true">→</span><strong class="journey-title">A longer way out.</strong><span class="journey-description">A weekend trip, a visit, or miles beyond town.</span><span class="journey-action">Prepare an inquiry <span aria-hidden="true">↗</span></span></a>
+      <a class="journey-card" href="#providers-title" data-trip-reason="temporary transportation while my own vehicle is unavailable"><span class="journey-index">03 / In between</span><span class="journey-icon" aria-hidden="true">✳</span><strong class="journey-title">Keep life moving.</strong><span class="journey-description">Transportation while your own vehicle is unavailable.</span><span class="journey-action">Prepare an inquiry <span aria-hidden="true">↗</span></span></a>
+    </div>
+    <p class="journey-note">These are planning shortcuts, not vehicle availability, eligibility or booking confirmations. You contact each provider directly.</p>
+  </section>
+<div class="intro-strip"><strong>Three rental providers serving Russellville</strong><span>Compare local contacts and ask each provider about current vehicles, availability, rates, insurance, and pickup arrangements.</span></div>
+<section class="mileage-atlas" id="mileage-atlas" aria-labelledby="mileage-title">
     <div class="mileage-scene">
       <p class="mileage-kicker">River Valley road notes / Published terms</p>
       <h2 id="mileage-title">Make room for <em>the miles.</em></h2>
@@ -1331,8 +1290,7 @@ main.wrap{padding-top:52px}
       <a href="#cogswell-rentals">Cogswell contact and official terms <span aria-hidden="true">↗</span></a>
     </div>
   </section>
-  
-  <section class="checklist departure-roadbook" aria-labelledby="checklist-title">
+<section class="checklist departure-roadbook" aria-labelledby="checklist-title">
     <div class="roadbook-cover">
       <div class="roadbook-intro">
         <p class="eyebrow">Before you book / The River Valley roadbook</p>
@@ -1367,10 +1325,9 @@ main.wrap{padding-top:52px}
     </div>
     <p class="roadbook-fineprint">This independent directory does not confirm vehicle availability, insurance coverage or final terms. Check all details directly with each rental provider.</p>
   </section>
-  <!-- Editorial exit route: scenery and directory categories, not provider inventory. -->
-  <section class="road-continue" aria-labelledby="road-continue-title">
+<section class="road-continue" aria-labelledby="road-continue-title">
     <div class="road-continue-scene">
-      <img class="road-continue-photo" src="assets/lake-dardanelle-sunset.jpg" width="1920" height="910" loading="lazy" decoding="async" alt="">
+      <img class="road-continue-photo" src="assets/lake-dardanelle-sunset.jpg" width="1920" height="910" decoding="async" alt="" loading="lazy">
       <p class="road-continue-eyebrow">The River Valley / After the drive</p>
       <h2 id="road-continue-title">The trip doesn't stop <em>at the keys.</em></h2>
       <p class="road-continue-scene-copy">A car gets you on the road. Find the rest of what your plans call for, from a place to stay to room for the things you're bringing.</p>
@@ -1401,8 +1358,43 @@ main.wrap{padding-top:52px}
       </div>
     </div>
   </section>
-
-  <footer><span>© 2026 Russellville.Rent</span><span>Local rentals. Local connections. Russellville, Arkansas.</span><a href="/#contact">Request a listing or correction</a></footer>
+<div class="section-head"><div><p class="eyebrow" style="color:#698167">Find a vehicle</p><h2 id="providers-title">Your rental options</h2><p>Start with a local provider and confirm the details directly before making plans.</p></div><span class="section-number">01 / Compare</span></div>
+<div class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-copy-block">
+      <p class="eyebrow">Russellville, Arkansas &amp; the River Valley</p>
+      <h2>Find your <em>next ride.</em></h2>
+      <p class="hero-copy">Need a car for a trip, while yours is being repaired, or for a visit to the River Valley? Contact these Russellville-area rental providers directly.</p>
+      <a class="button gold" href="#providers-title">Compare local options <span aria-hidden="true">↘</span></a>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 560 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-20 315C123 244 249 306 368 231C435 189 497 184 581 212" stroke="#f0ca79" stroke-opacity=".33" stroke-width="3" stroke-dasharray="12 15"/>
+        <ellipse cx="286" cy="282" rx="220" ry="25" fill="#071e19" opacity=".5"/>
+        <path d="M81 206C103 196 137 191 174 187L235 119C245 108 261 104 278 104H363C380 104 394 110 406 125L457 189C480 191 499 199 508 218L514 245C516 255 510 263 498 263H71C60 263 54 257 56 247L63 225C65 217 70 211 81 206Z" fill="#f0ca79" stroke="#f8e4b0" stroke-width="5"/>
+        <path d="M188 187L245 127C252 120 262 117 274 117H313V187H188Z" fill="#173f37"/>
+        <path d="M328 117H361C374 117 383 122 393 133L436 187H328V117Z" fill="#173f37"/>
+        <path d="M312 119V187" stroke="#7ea391" stroke-width="4"/>
+        <path d="M70 221H502" stroke="#d4a753" stroke-width="4"/>
+        <path d="M77 247H499" stroke="#d4a753" stroke-width="4"/>
+        <path d="M77 210L105 203" stroke="#fff6da" stroke-width="6" stroke-linecap="round"/>
+        <path d="M464 206L490 212" stroke="#fff6da" stroke-width="6" stroke-linecap="round"/>
+        <rect x="68" y="226" width="28" height="13" rx="5" fill="#fff7df"/>
+        <rect x="484" y="226" width="25" height="13" rx="5" fill="#f2a876"/>
+        <circle cx="160" cy="258" r="40" fill="#0e2924" stroke="#e4ba69" stroke-width="7"/>
+        <circle cx="160" cy="258" r="18" fill="#b6c8b8"/>
+        <circle cx="425" cy="258" r="40" fill="#0e2924" stroke="#e4ba69" stroke-width="7"/>
+        <circle cx="425" cy="258" r="18" fill="#b6c8b8"/>
+        <path d="M253 207H286M351 207H379" stroke="#b98537" stroke-width="5" stroke-linecap="round"/>
+        <path d="M121 150L143 138M105 167L125 156M448 135L467 146" stroke="#f0ca79" stroke-opacity=".55" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <span class="route-label">Local roads · Local options</span>
+      <span class="scenic-caption">Russellville skyline · Scenic photo, not a rental vehicle</span>
+    </div>
+  </div>
+</div>
+</div></details>
+<footer><span>© 2026 Russellville.Rent</span><span>Local rentals. Local connections. Russellville, Arkansas.</span><a href="/#contact">Request a listing or correction</a></footer>
 </main>
 
 <script>
