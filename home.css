@@ -349,3 +349,32 @@ footer a{display:inline-flex;align-items:center;min-height:44px;font-weight:650}
   .home-result-address {font-size:.91rem}
 }
 @media (prefers-reduced-motion:reduce) {.home-result-card:hover {transform:none}}
+
+
+/* Search result context: name actual directory providers before the click.
+   Names are copied from the existing source notes, not availability claims.
+   The restrained editorial rule reads on both photographic dark lead and ivory cards. */
+#search-results .match-provider-peek{
+  display:grid;grid-template-columns:auto minmax(0,1fr);align-items:baseline;
+  gap:.25rem .7rem;width:100%;margin-top:.1rem;padding:.52rem .1rem .1rem;
+  border-top:1px solid #d8e2d7;min-width:0;
+}
+#search-results .match-provider-label{
+  font-size:.68rem;line-height:1.35;font-weight:800;letter-spacing:.055em;
+  text-transform:uppercase;color:#51735c;white-space:nowrap;
+}
+#search-results .match-provider-names{
+  color:#315b47;font-size:.85rem;line-height:1.45;overflow-wrap:anywhere;
+}
+#search-results .primary-match .match-provider-peek{border-top-color:#8aab9477}
+#search-results .primary-match .match-provider-label{color:#f1d399}
+#search-results .primary-match .match-provider-names{color:#f1f6ed}
+@media(max-width:650px){
+  #search-results .match-provider-peek{grid-template-columns:minmax(0,1fr);gap:.1rem;padding-top:.45rem}
+  #search-results .match-provider-label{font-size:.65rem}
+  #search-results .match-provider-names{font-size:.82rem}
+}
+@media print{
+  #search-results .primary-match .match-provider-label,
+  #search-results .primary-match .match-provider-names{color:black}
+}

@@ -255,7 +255,22 @@
         summary.textContent=card.element.querySelector('.category-notes p')?.textContent||'Explore local rental providers.';
         const action=document.createElement('span');action.className='match-action';
         action.textContent=card.href.startsWith('#')?'Contact the directory':card.href.startsWith('http')?'Visit provider':'See providers and rental details';
-        link.replaceChildren(chapter,title,summary,action);
+        // Expose existing provider examples at the point of search; never imply availability.
+        // The category page remains the source for full provider terms and contacts.
+        const providerNote=card.element.querySelector('.category-notes p:nth-child(2)')?.textContent?.trim()||'';
+        const providerNames=providerNote.split(' · ').map(name=>name.trim()).filter(Boolean);
+        if(providerNames.length>1 && !['boats','other'].includes(card.key)){
+          const peek=document.createElement('div');
+          peek.className='match-provider-peek';
+          const label=document.createElement('span');
+          label.className='match-provider-label';
+          label.textContent='Names in directory';
+          const names=document.createElement('span');
+          names.className='match-provider-names';
+          names.textContent=providerNames.slice(0,2).join(' · ');
+          peek.append(label,names);
+          link.replaceChildren(chapter,title,summary,peek,action);
+        }else link.replaceChildren(chapter,title,summary,action);
         row.append(link);list.append(row);
       }
       results.querySelector('.no-results').hidden=lastResults.length>0;
