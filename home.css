@@ -181,3 +181,37 @@ footer a{display:inline-flex;align-items:center;min-height:44px;font-weight:650}
 }
 @media(prefers-reduced-motion:reduce){.home-result-card{transition:none}.home-result-card:hover{transform:none}}
 @media print{.home-preview{display:none!important}}
+
+/* Search turns the directory into an editorial result board with descriptive destinations. */
+#search-results{background:transparent;border:0;border-radius:0;padding:0}
+#search-results>ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin:0;padding:0}
+#search-results>ul:empty{display:none}
+#search-results>ul>.search-row{position:relative;display:flex;min-width:0;overflow:hidden;border:1px solid #cedbd0;border-radius:.9rem;background:#fffefa;box-shadow:0 8px 26px #173b2812;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+#search-results>ul>.search-row:before{position:absolute;inset:0 auto 0 0;width:.3rem;background:#a9c4ac;content:""}
+#search-results .search-row>a{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:.48rem;width:100%;min-height:9.8rem;padding:1rem 1.15rem 1.1rem 1.4rem;color:#184635;text-decoration:none;font-weight:400}
+#search-results .match-chapter{color:#547562;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+#search-results .match-title{color:inherit;font:700 clamp(1.45rem,2.3vw,1.82rem)/1.12 Georgia,"Times New Roman",serif;letter-spacing:-.045em;text-wrap:balance}
+#search-results .match-description{max-width:65ch;color:#4b6457;font-size:.9rem;line-height:1.46}
+#search-results .match-action{display:inline-flex;align-items:center;gap:.45rem;margin-top:.1rem;color:#266043;font-size:.86rem;font-weight:800}
+#search-results .match-action:after{content:"↗";font-size:1.15em}
+#search-results>ul>.search-row.primary-match{grid-column:1/-1;border-color:#21513f;background:radial-gradient(circle at 92% 10%,#82b69f50,transparent 34%),linear-gradient(118deg,#153c31 0%,#235742 100%);color:white}
+#search-results>ul>.search-row.primary-match:before{width:.47rem;background:#f1ce8a}
+#search-results .primary-match>a{min-height:11rem;padding:1.35rem 1.5rem 1.35rem 1.75rem;color:white}
+#search-results .primary-match .match-chapter,#search-results .primary-match .match-action{color:#f6dba3}
+#search-results .primary-match .match-title{font-size:clamp(1.8rem,3.6vw,2.8rem)}
+#search-results .primary-match .match-description{color:#edf5ec;font-size:1rem}
+#search-results>ul>.search-row:hover{transform:translateY(-2px);border-color:#95b49e;box-shadow:0 13px 31px #173b2822}
+#search-results>ul>.search-row:focus-within{outline:3px solid #b47b1b;outline-offset:2px}
+#search-results .no-results{padding:1.2rem;border:1px solid #cddccf;border-radius:.85rem;background:#fffefa}
+#search-results .home-preview{margin:0 0 .85rem;padding:1.15rem;border:1px solid #bed0be;border-radius:.9rem}
+@media(max-width:650px){
+  #search-results>ul{grid-template-columns:minmax(0,1fr);gap:.6rem}
+  #search-results .search-row>a{min-height:0;padding:.95rem 1rem 1rem 1.2rem}
+  #search-results .primary-match>a{min-height:0;padding:1.1rem 1.05rem 1.15rem 1.35rem}
+  #search-results .primary-match .match-title{font-size:clamp(1.65rem,7vw,2.15rem)}
+  #search-results .match-description{font-size:.88rem}
+  #search-results .primary-match .match-description{font-size:.91rem}
+  #search-results .home-preview{padding:.9rem;margin:0 0 .7rem}
+}
+@media(prefers-reduced-motion:reduce){#search-results>ul>.search-row{transition:none}#search-results>ul>.search-row:hover{transform:none}}
+@media print{#search-results>ul>.search-row.primary-match{background:white;color:black;border-color:#aaa}#search-results .primary-match .match-chapter,#search-results .primary-match .match-action,#search-results .primary-match .match-description{color:black}}

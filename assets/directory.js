@@ -231,15 +231,29 @@
     results.hidden=!active;directory.hidden=active;
     if(active){
       const list=results.querySelector('ul'); list.replaceChildren();
-      for(const {card,href} of lastResults){
-        const row=document.createElement('li'),link=categoryLink(card);
-        row.className='search-row';link.href=href;
-        const detail=document.createElement('small');detail.textContent=groupNames.get(card.group);
-        link.append(detail);row.append(link);list.append(row);
-      }
       const propertyCount=renderHomePreview(text);
+      for(const {card,href} of lastResults){
+        // Direct property links and the filtered-homes route already appear above this category list.
+        if(propertyCount && card.key==='homes')continue;
+        const row=document.createElement('li'),link=categoryLink(card);
+        row.className='search-row';
+        if(!list.children.length)row.classList.add('primary-match');
+        link.href=href;
+        const chapter=document.createElement('small');chapter.className='match-chapter';
+        chapter.textContent=groupNames.get(card.group)||'Rental category';
+        const title=document.createElement('strong');title.className='match-title';title.textContent=card.name;
+        const summary=document.createElement('span');summary.className='match-description';
+        summary.textContent=card.element.querySelector('.category-notes p')?.textContent||'Explore local rental providers.';
+        const action=document.createElement('span');action.className='match-action';
+        action.textContent=card.href.startsWith('#')?'Contact the directory':card.href.startsWith('http')?'Visit provider':'See providers and rental details';
+        link.replaceChildren(chapter,title,summary,action);
+        row.append(link);list.append(row);
+      }
       results.querySelector('.no-results').hidden=lastResults.length>0;
-      byId('result-count').textContent=(propertyCount?propertyCount+' matching homes · ':'')+lastResults.length+' matching '+(lastResults.length===1?'category':'categories');
+      const otherCount=lastResults.length-(propertyCount?1:0);
+      byId('result-count').textContent=propertyCount
+        ? propertyCount+' matching home'+(propertyCount===1?'':'s')+(otherCount?' · '+otherCount+' related rental '+(otherCount===1?'category':'categories'):'')
+        : lastResults.length+' matching '+(lastResults.length===1?'category':'categories');
     }else {
       byId('home-preview').hidden=true;byId('home-preview-list').replaceChildren();
       let total=0;
