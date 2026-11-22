@@ -254,3 +254,63 @@ footer a{display:inline-flex;align-items:center;min-height:44px;font-weight:650}
 }
 @media(prefers-reduced-motion:reduce){#rental-results:not(.single-list) .category-group{transition:none}}
 @media print{#rental-results:not(.single-list) #rental-chapter-everyday::before{display:none}}
+
+/* Keep the Lake Dardanelle masthead immersive while browsing, then yield
+   screen space to actual results as soon as the renter enters a query. */
+@supports selector(.hero:has(#hero-query:not(:placeholder-shown))) {
+  .hero:has(#hero-query:not(:placeholder-shown)) {
+    margin-top:.8rem;
+    border-radius:.8rem;
+  }
+  .hero:has(#hero-query:not(:placeholder-shown)):after {
+    background:linear-gradient(90deg,#12372df5 0%,#12372de4 58%,#12372d9c 100%);
+  }
+  .hero:has(#hero-query:not(:placeholder-shown)) .hero-copy {
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1.55fr);
+    grid-template-rows:auto auto;
+    column-gap:clamp(1rem,3.2vw,2.5rem);
+    align-items:center;
+    max-width:none;
+    padding:clamp(.8rem,1.9vw,1.2rem) clamp(1rem,2.5vw,1.6rem);
+  }
+  .hero:has(#hero-query:not(:placeholder-shown)) .hero-copy>p {
+    grid-column:1;
+    grid-row:1;
+    align-self:end;
+    font-size:.79rem;
+  }
+  .hero:has(#hero-query:not(:placeholder-shown)) h1 {
+    grid-column:1;
+    grid-row:2;
+    align-self:start;
+    margin:.12rem 0 0;
+    font-size:clamp(1.6rem,2.7vw,2.35rem);
+    letter-spacing:-.045em;
+  }
+  .hero:has(#hero-query:not(:placeholder-shown)) #search {
+    grid-column:2;
+    grid-row:1/3;
+    width:100%;
+  }
+  main:has(#hero-query:not(:placeholder-shown)) #browse { margin-top:.8rem; }
+  @media(max-width:650px) {
+    .hero:has(#hero-query:not(:placeholder-shown)) { margin-top:.45rem; }
+    .hero:has(#hero-query:not(:placeholder-shown)) .hero-copy {
+      display:block;
+      padding:.7rem .85rem .8rem;
+    }
+    .hero:has(#hero-query:not(:placeholder-shown)) .hero-copy>p {
+      font-size:.72rem;
+      letter-spacing:.01em;
+    }
+    .hero:has(#hero-query:not(:placeholder-shown)) h1 {
+      margin:.08rem 0 .5rem;
+      font-size:1.45rem;
+    }
+    .hero:has(#hero-query:not(:placeholder-shown)) #search { width:100%; }
+    main:has(#hero-query:not(:placeholder-shown)) #browse { margin-top:.65rem; }
+  }
+}
+/* Direct manager contact remains a full-size touch target on narrow phones. */
+@media(max-width:650px){.home-result-call{min-height:44px}}
